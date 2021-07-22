@@ -322,7 +322,7 @@ class StackController extends BaseController {
         const isAboveMaximizePopup: boolean = this._isAboveMaximizePopup(item);
         const position = StackStrategy.getPosition(targetCoords, item, isAboveMaximizePopup);
         item.popupOptions.stackWidth = position.width;
-        item.popupOptions.workspaceWidth = position.width;
+        item.popupOptions.workspaceWidth = Math.min(position.width, position.maxWidth);
         item.popupOptions.stackMinWidth = position.minWidth;
         item.popupOptions.stackMaxWidth = position.maxWidth;
         // todo https://online.sbis.ru/opendoc.html?guid=256679aa-fac2-4d95-8915-d25f5d59b1ca
