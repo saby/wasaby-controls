@@ -93,7 +93,8 @@
                         on:click="_onCutClick()"
                         clickableAreaClass="js-controls-BaseControl__cut"
                         value="{{_cutExpanded}}"
-                        cutSize="{{_cutSize}}""/>        </ws:if>
+                        cutSize="{{_cutSize}}"/>
+        </ws:if>
     </div>
 </ws:template>
 

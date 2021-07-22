@@ -6208,7 +6208,7 @@ export default class BaseControl<TOptions extends IBaseControlOptions = IBaseCon
         _private.startDragNDrop(this, this._savedItemMouseDownEventArgs.domEvent, this._savedItemMouseDownEventArgs.itemData);
     }
 
-    protected _onMoreButtonClick(e): void {
+    protected _onMoreButtonClick(e: SyntheticEvent): void {
         if (e.target.closest('.js-controls-BaseControl__loadMore')) {
             _private.loadToDirectionIfNeed(this, 'down');
         }
@@ -6216,11 +6216,11 @@ export default class BaseControl<TOptions extends IBaseControlOptions = IBaseCon
 
     // region Cut
 
-    protected _onCutClick() {
-		if (e.target.closest('.js-controls-BaseControl__cut')) {
-	        const newExpanded = !this._cutExpanded;
-	        this._reCountCut(newExpanded).then(() => this._cutExpanded = newExpanded);
-		}
+    protected _onCutClick(e: SyntheticEvent): void {
+        if (e.target.closest('.js-controls-BaseControl__cut')) {
+            const newExpanded = !this._cutExpanded;
+            this._reCountCut(newExpanded).then(() => this._cutExpanded = newExpanded);
+        }
     }
 
     private _reCountCut(newExpanded: boolean): Promise<void> {
