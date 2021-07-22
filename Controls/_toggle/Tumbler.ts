@@ -16,7 +16,7 @@ interface IBackgroundPositionData {
     left: number;
 }
 
-interface ITumblerOptions extends IButtonGroupOptions, IItemTemplateOptions {}
+export interface ITumblerOptions extends IButtonGroupOptions, IItemTemplateOptions {}
 
 /**
  * @name Controls/_toggle/Tumbler#keyProperty

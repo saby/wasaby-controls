@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper">
+   <Controls.context:ContextOptionsProvider value="{{ _contextValue }}">
+      <Controls.filter:FilterTumblerContainer bind:selectedKey="_selectedKey">
+         <Controls.toggle:Tumbler/>
+      </Controls.filter:FilterTumblerContainer>
+   </Controls.context:ContextOptionsProvider>
+</div>

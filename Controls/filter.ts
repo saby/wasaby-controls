@@ -26,6 +26,7 @@
  */
 
 import ViewItemTemplate = require('wml!Controls/_filter/View/ItemTemplate');
+import FilterTumblerContainer = require('wml!Controls/_filter/FilterTumblerContainerWrapper');
 import HistoryUtils = require('Controls/_filter/HistoryUtils');
 import FilterUtils = require('Controls/_filter/resetFilterUtils');
 
@@ -42,5 +43,6 @@ export {ICalculatedFilter, ICalculateFilterParams} from './_filter/ControllerCla
 export {
    ViewItemTemplate,
    HistoryUtils,
-   FilterUtils
+   FilterUtils,
+   FilterTumblerContainer
 };
