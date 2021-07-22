@@ -51,7 +51,7 @@ export {IToggleGroupOptions, IToggleGroup} from './_toggle/interface/IToggleGrou
 export {default as RadioGroup} from './_toggle/RadioGroup';
 export {default as ButtonGroup} from './_toggle/ButtonGroup';
 export {default as ButtonGroupBase} from './_toggle/ButtonGroupBase';
-export {default as Tumbler} from './_toggle/Tumbler';
+export {default as Tumbler, ITumblerOptions} from './_toggle/Tumbler';
 export {default as Chips} from './_toggle/Chips';
 
 import ItemTemplate = require('wml!Controls/_toggle/RadioGroup/resources/ItemTemplate');
