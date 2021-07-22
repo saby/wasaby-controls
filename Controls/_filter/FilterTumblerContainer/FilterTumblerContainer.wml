@@ -1,0 +1,6 @@
+<ws:partial template="{{_options.content}}"
+            scope="{{ _options }}"
+            items="{{_items}}"
+            selectedKey="{{_selectedKey}}"
+            on:selectedKeyChanged="_handleSelectedKeyChanged()"
+/>
