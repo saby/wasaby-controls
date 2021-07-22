@@ -244,7 +244,7 @@ class BaseOpener<TBaseOpenerOptions extends IBaseOpenerOptions = {}>
             delete cfg.templateOptions.opener;
             Logger.error('Controls/popup: Опция opener не должна задаваться на templateOptions');
         }
-        if (cfg.opener && !cInstance.instanceOfModule(cfg.opener, 'UI/Base:Control') && !cInstance.instanceOfModule(cfg.opener, 'Lib/Control/CompoundControl/CompoundControl')) {
+        if (cfg.opener && !cInstance.instanceOfModule(cfg.opener, 'UI/Base:Control') && !cInstance.instanceOfModule(cfg.opener, 'Lib/Control/Control:Control')) {
             delete cfg.opener;
             Logger.error('Controls/popup: Задано некорректное значение опции opener. Опция в качестве значения принимает инстанс контрола.');
         }
