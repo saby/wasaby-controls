@@ -124,7 +124,7 @@ export interface IList extends IItemActionsOptions, IMarkerListOptions, IMovable
  * </pre>
  * @remark
  * Подробнее о настройка контрола без элементов читайте в соответствующих статьях для:
- * 
+ *
  * * {@link /doc/platform/developmentapl/interface-development/controls/list/list/empty/ плоского списка}
  * * {@link /doc/platform/developmentapl/interface-development/controls/list/grid/empty/ таблицы}
  * * {@link /doc/platform/developmentapl/interface-development/controls/list/tree/empty/ дерева}
@@ -156,12 +156,22 @@ export interface IList extends IItemActionsOptions, IMarkerListOptions, IMovable
  */
 
 /**
+ * @name Controls/_list/interface/IList#moreButtonTemplate
+ * @cfg {TemplateFunction|String} Пользовательский шаблон отображения кнопки "Ещё" в подвале списка.
+ * @demo Controls-demo/list_new/Navigation/MoreButtonTemplate/Index
+ * @remark
+ * Если в опции ничего не указано, то отображается кнопка "Ещё" с количеством оставшихся для загрузки записей.
+ * Платформой предоставляется шаблон {@link Controls/_list/interface/MoreButtonExpandTemplate MoreButtonExpandTemplate},
+ * который позволяет вывести вместо кнопки "Ещё" кнопку "Развернуть".
+ */
+
+/**
  * @name Controls/_list/interface/IList#footerTemplate
  * @cfg {TemplateFunction|String} Пользовательский шаблон отображения подвала контрола.
  * @demo Controls-demo/list_new/FooterTemplate/Index
  * @remark
  * Подробнее о настройка подвала читайте в соответствующих статьях для:
- * 
+ *
  * * {@link /doc/platform/developmentapl/interface-development/controls/list/list/footer/ плоского списка}
  * * {@link /doc/platform/developmentapl/interface-development/controls/list/grid/footer/ таблицы}
  * * {@link /doc/platform/developmentapl/interface-development/controls/list/tree/footer/ дерева}

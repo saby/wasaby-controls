@@ -8,7 +8,7 @@
         nodeProperty="type"
         navigation="{{_navigation}}">
     <ws:moreButtonTemplate>
-        <ws:partial template="Controls/baseList:MoreButtonCutTemplate"/>
+        <ws:partial template="Controls/baseList:MoreButtonExpandTemplate"/>
     </ws:moreButtonTemplate>
     <ws:nodeFooterTemplate>
         <ws:partial template="Controls/treeGrid:NodeFooterTemplate" colspan="{{ false }}" cellClassName="customClass" />
