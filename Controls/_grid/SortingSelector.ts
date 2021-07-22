@@ -12,21 +12,207 @@ import 'css!Controls/CommonClasses';
 
 type Order = 'ASC'|'DESC'|'';
 
+/**
+ * Интерфейс опций для конфигурации параметров сортировки.
+ * @interface Controls/grid:ISortingParam
+ * @public
+ * @author Авраменко А.С.
+ */
 export interface ISortingParam {
+    /**
+     * @name Controls/grid:ISortingParam#paramName
+     * @cfg {String|null} Имя поля элемента, по которому может осуществляться сортировка. Чтобы задать сброс сортировки, нужно указать значение null.
+     * @remark Если не задан пункт, сбрасывающий сортировку, то необходимо указать непустую конфигурацию сортировки в опции value.
+     */
     paramName: string | null;
+    /**
+     * @name Controls/grid:ISortingParam#title
+     * @cfg {String} Подпись пункта меню, соответствующего данному полю.
+     */
     title: string;
+    /**
+     * @name Controls/grid:ISortingParam#value
+     * @cfg {String} Направление сортировки.
+     * @variant ASC
+     * @variant DESC
+     */
     value: 'ASC' | 'DESC';
+    /**
+     * @name Controls/grid:ISortingParam#icon
+     * @cfg {String} Имя иконки, которая отображается в меню рядом с подписью (см. свойство title), а также в заголовке выпадающего меню. Список иконок можно найти в демо-примере {@link Controls/grid:SortingSelector}.
+     * @default undefined
+     * @see iconStyle
+     * @see iconSize
+     */
     icon: string;
+    /**
+     * @name Controls/grid:ISortingParam#iconStyle
+     * @cfg {String} Стиль иконки.
+     * @see icon
+     * @see iconSize
+     */
     iconStyle: string;
+    /**
+     * @name Controls/grid:ISortingParam#iconSize
+     * @cfg {String} Размер иконки.
+     * @variant s
+     * @variant m
+     * @variant l
+     * @see icon
+     * @see iconStyle
+     */
     iconSize: 's' | 'm' | 'l';
+    /**
+     * @name Controls/grid:ISortingParam#titleAsc
+     * @cfg {String} Подсказка при наведении на стрелку сортировки по возрастанию.
+     * @see titleDesc
+     */
     titleAsc: string;
+    /**
+     * @name Controls/grid:ISortingParam#titleDesc
+     * @cfg {String} Подсказка при наведении на стрелку сортировки по убыванию.
+     * @see titleAsc
+     */
     titleDesc: string;
 }
+
+/**
+ * Интерфейс опций для конфигурации параметров сортировки.
+ * @interface Controls/grid:ISortingSelector
+ * @public
+ * @author Авраменко А.С.
+ */
 export interface ISortingSelectorOptions extends IControlOptions, IFontColorStyleOptions, IFontSizeOptions {
+    /**
+     * @name Controls/grid:ISortingSelector#sortingParams
+     * @cfg {Array.<Controls/grid:ISortingParam>} Параметры сортировки.
+     * @demo Controls-demo/gridNew/Sorting/SortingSelector/Default/Index
+     * @demo Controls-demo/gridNew/Sorting/SortingSelector/SortingSelectorWithReset/Index
+     * @demo Controls-demo/gridNew/Sorting/SortingSelector/Icons/Index
+     * @demo Controls-demo/gridNew/Sorting/SortingSelector/ArrowTitle/Index
+     * @demo Controls-demo/gridNew/Sorting/SortingSelector/SingleField/Index
+     * @example
+     * В опцию передается массив вида
+     * <pre class="brush: js;">
+     * _sortingParam: null,
+     * _beforeMount: function(options) {
+     *    this._sortingParam = [
+     *       {
+     *          paramName: 'FirstParam',
+     *          title: 'По первому параметру'
+     *       },
+     *       {
+     *          paramName: 'SecondParam',
+     *          title: 'По второму параметру'
+     *       }
+     *    ]
+     * }
+     * </pre>
+     *
+     * Чтобы дать возможность сброса сортировки, нужно добавить пункт со значением paramName = null.
+     *
+     *
+     * <pre class="brush: js; highlight: [5]">
+     * _sortingParam: null,
+     * _beforeMount: function(options) {
+     *    this._sortingParam = [
+     *       {
+     *          paramName: null,
+     *          title: 'По умолчанию'
+     *       },
+     *       {
+     *          paramName: 'Name',
+     *          title: 'По имени'
+     *       }
+     *    ]
+     * }
+     * </pre>
+     *
+     * Чтобы отобразить иконки в выпадающем списке, нужно задать поля icon и iconSize. Выпадающий элемент так же отобразится в виде иконки
+     *
+     *
+     * <pre class="brush: js; highlight: [5]">
+     * _sortingParam: null,
+     * _beforeMount: function(options) {
+     *    this._sortingParam = [
+     *       {
+     *          paramName: null,
+     *          title: 'По умолчанию',
+     *          icon: 'icon-Attach',
+     *          iconSize: 's'
+     *       },
+     *       {
+     *          paramName: 'Name',
+     *          title: 'По имени',
+     *          icon: 'icon-1c',
+     *          iconSize: 's'
+     *       }
+     *    ]
+     * }
+     * </pre>
+     */
     sortingParams: [ISortingParam];
+    /**
+     * @nameControls/grid:ISortingSelector#value
+     * @cfg {Array.<Object>} Конфигурация сортировки.
+     * @remark Если нет возможности сброса сортировки, то опция value должна содержать данные для сортировки.
+     * @example
+     * <pre class="brush: js;">
+     * _sortingValue: null,
+     * _sortingParam: null,
+     * _beforeMount: function(options) {
+     *    this._sortingParam = [
+     *       {
+     *          paramName: 'Name',
+     *          title: 'По имени'
+     *       },
+     *       {
+     *          paramName: 'Surname',
+     *          title: 'По фамилии'
+     *       }
+     *    ]
+     *    this._sortingValue = [
+     *       {
+     *          Name: 'DESC'
+     *       }
+     *    ];
+     * }
+     * </pre>
+     *
+     * Следует использовать директиву bind для опции value.
+     *
+     * <pre class="brush: html; highlight: [2,4]">
+     * <Controls.grid:SortingSelector
+     *   bind:value="_sortingValue"
+     *   sortingParams="{{_sortingParam}}" />
+     * </pre>
+     */
     value: [object];
+    /**
+     * @name Controls/grid:ISortingSelector#header
+     * @cfg {String} Заголовок для выпадающего списка сортировки.
+     * @remark Если заголовок не требуется, опцию можно не указывать.
+     * @demo Controls-demo/gridNew/Sorting/SortingSelector/SortingSelectorWithHeader/Index
+     */
     header: string;
+    /**
+     * @name Controls/grid:ISortingSelector#viewMode
+     * @cfg {String} Режим отображения кнопки.
+     * @variant linkButton В виде кнопки-ссылки.
+     * @variant toolButton В виде кнопки для панели инструментов с круглым ховером.
+     * @default linkButton
+     * @demo Controls-demo/gridNew/Sorting/SortingSelector/ViewMode/Index
+     */
     viewMode: IViewMode;
+    /**
+     * @name Controls/grid:ISortingSelector#iconSize
+     * @cfg {String} Размер иконки кнопки.
+     * @variant s малый
+     * @variant m средний
+     * @variant l большой
+     * @remark Не влияет на размер иконок в меню, их размер фиксирован.
+     * @demo Controls-demo/gridNew/Sorting/SortingSelector/IconSize/Index
+     */
     iconSize: 's' | 'm' | 'l';
 }
 
@@ -41,8 +227,10 @@ const iconSizeMap = {
  * @implements Controls/interface:IFontColorStyle
  * @implements Controls/interface:IFontSize
  * @implements Controls/grid:IPropStorage
+ * @implements Controls/grid:ISortingSelector
  * @demo Controls-demo/gridNew/Sorting/SortingSelector/Default/Index
  * @demo Controls-demo/gridNew/Sorting/SortingSelector/Icons/Index
+ * @demo Controls-demo/gridNew/Sorting/SortingSelector/IconsSvg/Index В этом демо-примере показан полный список иконок, которые можно использовать для свойства {@link Controls/grid:ISortingParam#icon icon} при настройка опции {@link sortingParams}.
  * @author Авраменко А.С.
  */
 class SortingSelector extends Control<ISortingSelectorOptions> {
@@ -235,148 +423,6 @@ Object.defineProperty(SortingSelector, 'defaultProps', {
         return SortingSelector.getDefaultOptions();
     }
 });
-
-/**
- * @typedef {Object} Controls/_grid/SortingSelector/SortingParam
- * @description Допустимые свойства объекта, которые передаются в массиве {@link sortingParams}.
- * @property {String|null} paramName Имя поля элемента, по которому может осуществляться сортировка. Чтобы задать сброс сортировки, нужно указать значение null.
- * Если не задан пункт, сбрасывающий сортировку, то необходимо указать непустую конфигурацию сортировки в опции value.
- * @property {String} title Подпись пункта меню, соответствующего данному полю.
- * @property {String} [icon=undefined] Имя иконки, которая отображается в меню рядом с подписью (см. свойство title), а также в заголовке выпадающего меню. Список иконок {@link /icons/ тут}.
- * @property {string} titleAsc Подсказка при наведении на стрелку сортировки по возрастанию.
- * @property {string} titleDesc Подсказка при наведении на стрелку сортировки по убыванию.
- */
-
-
-/**
- * @name Controls/_grid/SortingSelector#sortingParams
- * @cfg {Array.<Controls/_grid/SortingSelector/SortingParam.typedef>} Параметры сортировки.
- * @demo Controls-demo/gridNew/Sorting/SortingSelector/Default/Index
- * @demo Controls-demo/gridNew/Sorting/SortingSelector/SortingSelectorWithReset/Index
- * @demo Controls-demo/gridNew/Sorting/SortingSelector/Icons/Index
- * @demo Controls-demo/gridNew/Sorting/SortingSelector/ArrowTitle/Index
- * @demo Controls-demo/gridNew/Sorting/SortingSelector/SingleField/Index
- * @example
- * В опцию передается массив вида
- * <pre class="brush: js;">
- * _sortingParam: null,
- * _beforeMount: function(options) {
- *    this._sortingParam = [
- *       {
- *          paramName: 'FirstParam',
- *          title: 'По первому параметру'
- *       },
- *       {
- *          paramName: 'SecondParam',
- *          title: 'По второму параметру'
- *       }
- *    ]
- * }
- * </pre>
- *
- * Чтобы дать возможность сброса сортировки, нужно добавить пункт со значением paramName = null.
- *
- *
- * <pre class="brush: js; highlight: [5]">
- * _sortingParam: null,
- * _beforeMount: function(options) {
- *    this._sortingParam = [
- *       {
- *          paramName: null,
- *          title: 'По умолчанию'
- *       },
- *       {
- *          paramName: 'Name',
- *          title: 'По имени'
- *       }
- *    ]
- * }
- * </pre>
- *
- * Чтобы отобразить иконки в выпадающем списке, нужно задать поля icon и iconSize. Выпадающий элемент так же отобразится в виде иконки
- *
- *
- * <pre class="brush: js; highlight: [5]">
- * _sortingParam: null,
- * _beforeMount: function(options) {
- *    this._sortingParam = [
- *       {
- *          paramName: null,
- *          title: 'По умолчанию',
- *          icon: 'icon-Attach',
- *          iconSize: 's'
- *       },
- *       {
- *          paramName: 'Name',
- *          title: 'По имени',
- *          icon: 'icon-1c',
- *          iconSize: 's'
- *       }
- *    ]
- * }
- * </pre>
- */
-/**
- * @name Controls/_grid/SortingSelector#value
- * @cfg {Array.<Object>} Конфигурация сортировки.
- * @remark Если нет возможности сброса сортировки, то опция value должна содержать данные для сортировки.
- * @example
- * <pre class="brush: js;">
- * _sortingValue: null,
- * _sortingParam: null,
- * _beforeMount: function(options) {
- *    this._sortingParam = [
- *       {
- *          paramName: 'Name',
- *          title: 'По имени'
- *       },
- *       {
- *          paramName: 'Surname',
- *          title: 'По фамилии'
- *       }
- *    ]
- *    this._sortingValue = [
- *       {
- *          Name: 'DESC'
- *       }
- *    ];
- * }
- * </pre>
- *
- * Следует использовать директиву bind для опции value.
- *
- * <pre class="brush: html; highlight: [2,4]">
- * <Controls.grid:SortingSelector
- *   bind:value="_sortingValue"
- *   sortingParams="{{_sortingParam}}" />
- * </pre>
- */
-
-/**
- * @name Controls/_grid/SortingSelector#header
- * @cfg {String} Заголовок для выпадающего списка сортировки.
- * @remark Если заголовок не требуется, опцию можно не указывать.
- * @demo Controls-demo/gridNew/Sorting/SortingSelector/SortingSelectorWithHeader/Index
- */
-
-/**
- * @name Controls/_grid/SortingSelector#viewMode
- * @cfg {String} Режим отображения кнопки.
- * @variant linkButton В виде кнопки-ссылки.
- * @variant toolButton В виде кнопки для панели инструментов с круглым ховером.
- * @default linkButton
- * @demo Controls-demo/gridNew/Sorting/SortingSelector/ViewMode/Index
- */
-
-/**
- * @name Controls/_grid/SortingSelector#iconSize
- * @cfg {String} Размер иконки кнопки.
- * @variant s малый
- * @variant m средний
- * @variant l большой
- * @remark Не влияет на размер иконок в меню, их размер фиксирован.
- * @demo Controls-demo/gridNew/Sorting/SortingSelector/IconSize/Index
- */
 
 /**
  * @event Происходит при изменении выбранной сортировки.

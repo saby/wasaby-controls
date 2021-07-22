@@ -66,6 +66,8 @@ import {register} from 'Types/di';
  * @includes IGridEditingConfig Controls/_grid/interface/IGridEditingConfig
  * @includes IItemAddOptions Controls/_grid/interface/IItemAddOptions
  * @includes IItemEditOptions Controls/_grid/interface/IItemEditOptions
+ * @includes ISortingParam Controls/grid:ISortingParam
+ * @includes ISortingSelector Controls/grid:ISortingSelector
  * @public
  * @author Крайнов Д.О.
  */
