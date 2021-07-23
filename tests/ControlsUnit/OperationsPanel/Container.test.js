@@ -79,7 +79,7 @@ define(['Controls/operations', 'Types/collection'], function(operations, collect
                assert.deepStrictEqual(containerInstance._selectedKeys, [1]);
             });
             it('with items', () => {
-               containerInstance._beforeUpdate({
+               let options = {
                   listMarkedKey: 1,
                   selectedKeys: [],
                   items: new collection.RecordSet({
@@ -90,8 +90,14 @@ define(['Controls/operations', 'Types/collection'], function(operations, collect
                         }
                      ]
                   })
-               });
+               };
+               containerInstance._beforeUpdate(options);
                assert.deepStrictEqual(containerInstance._selectedKeys, [1]);
+
+               options = {...options};
+               options.listMarkedKey = null;
+               containerInstance._beforeUpdate(options);
+               assert.deepStrictEqual(containerInstance._selectedKeys, []);
             });
          });
       });
