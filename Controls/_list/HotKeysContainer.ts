@@ -2,6 +2,7 @@ import {Control, IControlOptions} from 'UI/Base';
 import template = require('wml!Controls/_list/HotKeysContainer');
 import {constants} from 'Env/Env';
 import {SyntheticEvent} from 'Vdom/Vdom';
+import {dispatcherHandler} from 'UI/HotKeys';
 
 /**
  * Контрол добавляет обработку клавиш KeyUp и KeyDown в контрол {@link Controls/list:Container}.
@@ -53,6 +54,7 @@ class HotKeysContainer extends Control<IControlOptions> {
     protected _keyDown(event: SyntheticEvent<KeyboardEvent>): void {
         const hotKeys = this._defaultActions.map((e) => e.keyCode );
         if (hotKeys.includes(event.nativeEvent.keyCode)) {
+            dispatcherHandler(event);
             event.preventDefault();
         }
     }
