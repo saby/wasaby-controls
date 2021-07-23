@@ -56,11 +56,11 @@
     <ws:if data="{{collectionItem.getEditorTemplateName()}}">
        <div class="controls-PropertyGrid__gridLayout_editor
                    controls-PropertyGrid__gridLayout_editor_theme-{{theme}}
-                   {{!item.caption ? 'controls-PropertyGrid__gridLayout_editor-withoutCaption'}}
+                   {{(!item.caption || _options.captionPosition === 'top') ? 'controls-PropertyGrid__gridLayout_editor-withoutCaption'}}
                    {{collectionItem.isHovered() && highlightOnHover ? 'controls-PropertyGrid__cell_highlightOnHover_theme-' + theme}}
-                   {{collectionItem.getItemPaddingClasses(theme, 2)}}"
+                   {{collectionItem.getItemPaddingClasses(theme, _options.captionPosition === 'top' ? 1 : 2)}}"
              style="{{getItemStyles(collectionItem, 2, !item.caption)}}">
-           <ws:if data="{{!(!item.editorOptions.jumpingLabel && item.caption)}}">
+           <ws:if data="{{!(!item.editorOptions.jumpingLabel && item.caption) || (item.caption && _options.captionPosition === 'top')}}">
                <ws:partial template="levelPadding"/>
            </ws:if>
           <ws:partial template="wml!Controls/_propertyGrid/Render/resources/editorTemplate"
