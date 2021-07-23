@@ -1,0 +1,13 @@
+<div class="controls-BaseControl__loadingIndicator-content controls-BaseControl__portionedSearch-content">
+  <div class="controls-BaseControl__loadingIndicatorImage"></div>
+  <div class="ws-flexbox ws-flex-column">
+     <div class="js-controls-BaseControl__abortSearch controls-BaseControl__abortSearch">
+         {[Прервать поиск]}
+     </div>
+      <ws:if data="{{ footerTemplate }}">
+        <div class="controls-BaseControl__portionedSearch-footerTemplate">
+           <ws:partial template="{{ footerTemplate }}"/>
+        </div>
+     </ws:if>
+  </div>
+</div>

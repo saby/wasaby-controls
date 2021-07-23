@@ -110,17 +110,159 @@ https://online.sbis.ru/opendoc.html?guid=16c81a19-f2a0-4b3f-a7e8-56d154b68e4c
    pointer-events: auto;
 }
 
+// region Indicators
+
+.controls-BaseControl__loadingTrigger {
+   position: absolute;
+   grid-column-start: 1;
+   grid-column-end: -1;
+}
+
 .controls-BaseControl__loadingIndicator {
    background-color: transparent;
    display: flex;
    justify-content: center;
    cursor: auto;
    min-height: 48px;
+   pointer-events: none;
+   grid-column-start: 1;
+   grid-column-end: -1;
+}
 
-   // TODO: KINGO
+.controls-BaseControl__loadingIndicator__state-global {
+   position: absolute;
+   align-items: center;
+   left: 0;
+   right: 0;
+
    // Локальный индикатор загрузки на весь экран должен блокировать список, перекрывая кнопки навигации и скроллбар.
    z-index: 17;
 }
+
+.controls-BaseControl__loadingIndicator-content {
+   padding: var(--content_l_border_radius_loadingIndicator);
+   background-color: var(--content_background-color_loadingIndicator);
+   border-radius: var(--content_l_border_radius_loadingIndicator);
+   z-index: 1;
+   display: inline-flex;
+   align-items: center;
+   pointer-events: auto;
+}
+
+.controls-BaseControl__loadingIndicatorImage {
+   background: var(--spinner_l_background-image_loadingIndicator) 0 0 no-repeat;
+   width: var(--spinner_l_size_loadingIndicator);
+   height: var(--spinner_l_size_loadingIndicator);
+   background-size: var(--spinner_l_size_loadingIndicator);
+}
+
+// В Яндекс браузере для win-XP css переменные поддерживаются не в полном объеме, из-за чего браузер ожидает
+// полный путь с указанием домена, поэтому каскадом задаем корректный путь
+.ws-is-chrome .ws-is-windows-xp {
+   .controls-BaseControl__loadingIndicatorImage {
+      background: url('/cdn/LoaderIndicator/1.0.0/ajax-loader-indicator.gif') 0 0 no-repeat;
+   }
+}
+
+.controls-BaseControl__portionedSearch {
+   position: sticky;
+}
+
+.controls-BaseControl__portionedSearch__state-top {
+   top: var(--scrollpaging_offset-vertical_list);
+   padding-bottom: var(--offset_s);
+}
+
+.controls-BaseControl__portionedSearch__state-bottom {
+   bottom: var(--scrollpaging_offset-vertical_list);
+   padding-top: var(--offset_s);
+}
+
+// По стандарту индикатор загрузки данных вниз должен "прилипать" к нижней границе вьюпорта списка.
+// IE не поддерживает position: sticky, поэтому прижимаем индикатор загрузки к низу последней записи, тем самым урезая функционал в IE
+.ws-is-ie .controls-BaseControl__portionedSearch {
+   position: absolute;
+   left: 0;
+   right: 0;
+}
+
+.controls-BaseControl__portionedSearch-content {
+   box-shadow: var(--loadingIndicator_iterativeSearch_box-shadow_list);
+}
+
+.controls-BaseControl__portionedSearch-footerTemplate {
+   margin-left: var(--content_l_padding_loadingIndicator);
+   color: var(--text-color);
+   font-size: var(--font-size_xs);
+}
+
+.controls-BaseControl__abortSearch {
+   display: inline-block;
+   color: var(--link_text-color);
+   margin-left: var(--content_l_padding_loadingIndicator);
+   font-size: var(--font-size_default);
+}
+
+.ws-is-no-touch .controls-BaseControl__abortSearch:hover {
+   text-decoration: underline;
+   color: var(--link_hover_text-color);
+   cursor: pointer;
+}
+
+.controls-BaseControl__abortSearch:active {
+   text-decoration: underline;
+   color: var(--link_hover_text-color);
+}
+
+.controls-BaseControl__continueSearch {
+   display: inline-flex;
+   width: 100%;
+   grid-column-start: 1;
+   grid-column-end: -1;
+   padding-top: calc(var(--offset_s) + var(--content_l_border_radius_loadingIndicator));
+   padding-bottom: var(--content_l_padding_loadingIndicator);
+}
+
+.controls-BaseControl__continueSearch_content {
+   color: var(--link_text-color);
+   cursor: pointer;
+}
+
+.ws-is-no-touch .controls-BaseControl__continueSearch_content:hover {
+   color: var(--link_hover_text-color);
+   cursor: pointer;
+}
+
+.ws-is-no-touch .controls-BaseControl__continueSearch_content:hover .controls-BaseControl__continueSearch_caption {
+   text-decoration: underline;
+}
+
+.controls-BaseControl__continueSearch_content:active {
+   color: var(--link_hover_text-color);
+}
+
+.controls-BaseControl__continueSearch_content:active .controls-BaseControl__continueSearch_caption {
+   text-decoration: underline;
+}
+
+.controls-BaseControl__continueSearch_icon {
+   margin-right: var(--offset_s);
+   color: var(--secondary_icon-color);
+}
+
+.ws-is-no-touch .controls-BaseControl__continueSearch_content:hover .controls-BaseControl__continueSearch_icon {
+   color: var(--secondary_hover_icon-color);
+}
+
+.controls-BaseControl__continueSearch_content:active .controls-BaseControl__continueSearch_icon {
+   color: var(--secondary_hover_icon-color);
+}
+
+.controls-BaseControl__continueSearch_footerTemplate {
+   font-size: var(--font-size_xs);
+}
+
+// endregion Indicators
 
 .controls-BaseControl__emptyTemplate {
    height: 100%;
@@ -132,96 +274,6 @@ https://online.sbis.ru/opendoc.html?guid=16c81a19-f2a0-4b3f-a7e8-56d154b68e4c
    // Пустое представление обязано и расширяться и сжиматья, подстраиваясь под список
    flex-grow: 1;
    max-width: 100%;
-}
-
-.controls-BaseControl__loadingIndicator__state-attachToNull {
-   display: flex;
-   justify-content: center;
-}
-
-.controls-BaseControl__loadingIndicator__state-up {
-   position: relative;
-   pointer-events: none;
-}
-
-.controls-BaseControl__loadingIndicator__state-up-absolute {
-   position: absolute;
-   top: var(--scrollpaging_offset-vertical_list);
-   left: 0;
-   right: 0;
-   pointer-events: none;
-}
-
-// По стандарту индикатор загрузки данных вниз должен "прилипать" к нижней границе вьюпорта списка
-.controls-BaseControl__loadingIndicator__state-down {
-   position: sticky;
-   pointer-events: none;
-   padding-top: var(--offset_s);
-   bottom: var(--scrollpaging_offset-vertical_list);
-}
-
-.controls-BaseControl__loadingIndicator_style-portionedSearch {
-   padding-top: var(--offset_s);
-   bottom: var(--scrollpaging_offset-vertical_list);
-}
-
-// По стандарту индикатор загрузки данных вниз должен "прилипать" к нижней границе вьюпорта списка.
-// IE не поддерживает position: sticky, поэтому прижимаем индикатор загрузки к низу последней записи, тем самым урезая функционал в IE
-.ws-is-ie .controls-BaseControl__loadingIndicator__state-down {
-   position: absolute;
-   left: 0;
-   right: 0;
-}
-
-// IE не поддерживает position: sticky, положение sticky контейнера не нужно компенсировать на контейнер с пагинацией.
-.ws-is-ie .controls-BaseControl_withPaging__loadingIndicator__state-down {
-   margin-bottom: 0;
-}
-
-.controls-BaseControl__loadingIndicator__state-up .controls-BaseControl__loadingIndicatorImg-wrapper {
-   position: absolute;
-   top: 0;
-}
-
-.controls-BaseControl_empty__loadingIndicator__state-down {
-   min-height: calc(var(--content_l_padding_loadingIndicator) * 2 + var(--spinner_l_size_loadingIndicator));
-}
-
-.controls-BaseControl_empty__loadingIndicator__state-down .controls-BaseControl__loadingIndicatorImg-wrapper {
-   top: 0;
-}
-
-.controls-BaseControl__loadingIndicator__state-all {
-   position: absolute;
-   top: 0;
-   left: 0;
-   right: 0;
-   align-items: center;
-}
-
-.controls-BaseControl__loadingIndicatorImg-wrapper {
-   padding: var(--content_l_border_radius_loadingIndicator);
-   background-color: var(--content_background-color_loadingIndicator);
-   border-radius: var(--content_l_border_radius_loadingIndicator);
-   z-index: 1;
-   display: inline-flex;
-   align-items: center;
-   pointer-events: auto;
-}
-
-.controls-BaseControl__loadingIndicatorImg-wrapper_style-portionedSearch {
-   box-shadow: var(--loadingIndicator_iterativeSearch_box-shadow_list);
-}
-
-.controls-BaseControl__loadingIndicatorImg {
-   background: var(--spinner_l_background-image_loadingIndicator) 0 0 no-repeat;/**/
-   width: var(--spinner_l_size_loadingIndicator);
-   height: var(--spinner_l_size_loadingIndicator);
-   background-size: var(--spinner_l_size_loadingIndicator);
-}
-
-.controls-BaseControl__trigger {
-   position: relative;
 }
 
 .controls__BaseControl__footer-default__paddingLeft_withCheckboxes,
@@ -297,76 +349,6 @@ https://online.sbis.ru/opendoc.html?guid=16c81a19-f2a0-4b3f-a7e8-56d154b68e4c
 
 .controls-BaseControl_paging-pageSizeChooser {
    margin-left: var(--offset_2xs);
-}
-
-.controls-BaseControl__abortSearch {
-   display: inline-block;
-   color: var(--link_text-color);
-   margin-left: var(--content_l_padding_loadingIndicator);
-   font-size: var(--font-size_default);
-}
-
-.controls-BaseControl__loadingIndicator-footerTemplate {
-   margin-left: var(--content_l_padding_loadingIndicator);
-   color: var(--text-color);
-   font-size: var(--font-size_xs);
-}
-
-.ws-is-no-touch .controls-BaseControl__abortSearch:hover {
-   text-decoration: underline;
-   color: var(--link_hover_text-color);
-   cursor: pointer;
-}
-
-.controls-BaseControl__abortSearch:active {
-   text-decoration: underline;
-   color: var(--link_hover_text-color);
-}
-
-.controls-BaseControl__continueSearch {
-   display: inline-flex;
-   width: 100%;
-   padding-top: calc(var(--offset_s) + var(--content_l_border_radius_loadingIndicator));
-   padding-bottom: var(--content_l_padding_loadingIndicator);
-}
-
-.controls-BaseControl__continueSearch_wrapper {
-   color: var(--link_text-color);
-   cursor: pointer;
-}
-
-.ws-is-no-touch .controls-BaseControl__continueSearch_wrapper:hover {
-   color: var(--link_hover_text-color);
-   cursor: pointer;
-}
-
-.ws-is-no-touch .controls-BaseControl__continueSearch_wrapper:hover .controls-BaseControl__continueSearch_caption {
-   text-decoration: underline;
-}
-
-.controls-BaseControl__continueSearch_wrapper:active {
-   color: var(--link_hover_text-color);
-}
-
-.controls-BaseControl__continueSearch_wrapper:active .controls-BaseControl__continueSearch_caption {
-   text-decoration: underline;
-}
-
-.controls-BaseControl__continueSearch_icon {
-   margin-right: var(--offset_s);
-   color: var(--secondary_icon-color);
-}
-
-.ws-is-no-touch .controls-BaseControl__continueSearch_wrapper:hover .controls-BaseControl__continueSearch_icon {
-   color: var(--secondary_hover_icon-color);
-}
-
-.controls-BaseControl__continueSearch_wrapper:active .controls-BaseControl__continueSearch_icon {
-   color: var(--secondary_hover_icon-color);
-}
-
-.controls-BaseControl__continueSearch_footerTemplate {
-   font-size: var(--font-size_xs);
 }
 
 .controls-BaseControl__cut-container_s {

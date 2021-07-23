@@ -1,0 +1,4 @@
+<div name="{{item.isTopIndicator() ? 'topIndicator' : item.isBottomIndicator() ? 'bottomIndicator' }}"
+     class="{{ item.getClasses() }}" style="{{ item.getStyles() }}" data-qa="{{ item.getQAData() }}">
+    <ws:partial if="{{ item.getContentTemplate() }}" template="{{ item.getContentTemplate() }}"/>
+</div>

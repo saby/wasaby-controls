@@ -1,0 +1,35 @@
+<ws:template name="contentTemplate">
+    <div class="js-controls-BaseControl__continueSearch controls-BaseControl__continueSearch_caption">
+        {[Продолжить поиск]}
+    </div>
+</ws:template>
+
+<ws:template name="searchIcon">
+    <div class="controls-BaseControl__continueSearch_icon controls-icon icon-Search2 controls-icon_size-{{iconSize}}"></div>
+</ws:template>
+
+<ws:template name="searchWithoutFooter">
+    <div class="controls-BaseControl__continueSearch_content ws-inline-flexbox ws-align-items-center">
+        <ws:partial template="searchIcon" iconSize="m"/>
+        <ws:partial template="contentTemplate"/>
+    </div>
+</ws:template>
+
+<ws:template name="searchWithFooter">
+    <ws:partial template="searchIcon" iconSize="l"/>
+    <div>
+        <div class="controls-BaseControl__continueSearch_content ws-inline-flexbox ws-align-items-center">
+            <ws:partial template="contentTemplate"/>
+        </div>
+        <div class="controls-BaseControl__continueSearch_footerTemplate">
+            <ws:partial template="{{ footerTemplate }}"/>
+        </div>
+    </div>
+</ws:template>
+
+<ws:if data="{{ footerTemplate }}">
+    <ws:partial template="searchWithFooter"/>
+</ws:if>
+<ws:else>
+    <ws:partial template="searchWithoutFooter"/>
+</ws:else>
