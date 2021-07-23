@@ -2,7 +2,7 @@
     <Controls.scroll:Container
             attr:class="controlsDemo__height300"
             initialScrollPosition="{{_initialScrollPosition}}"
-            scrollMode="horizontal">
+            scrollOrientation="horizontal">
         <div class="controlsDemo_fixedWidth550">
             <ws:for data="i in 3">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
