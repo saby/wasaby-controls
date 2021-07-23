@@ -1,7 +1,6 @@
 import {Control, IControlOptions, TemplateFunction} from 'UI/Base';
 import template = require('wml!Controls/_baseList/Data');
-import * as isNewEnvironment from 'Core/helpers/isNewEnvironment';
-import {RegisterClass} from 'Controls/event';
+import {RegisterClass, RegisterUtil, UnregisterUtil} from 'Controls/event';
 import {RecordSet} from 'Types/collection';
 import {QueryWhereExpression, PrefetchProxy, ICrud, ICrudPlus, IData, Memory, CrudEntityKey} from 'Types/source';
 import {
@@ -18,7 +17,8 @@ import {
    INavigationOptions,
    ISortingOptions,
    TKey,
-   Direction
+   Direction,
+   IErrorControllerOptions
 } from 'Controls/interface';
 import {SyntheticEvent} from 'UI/Vdom';
 import {isEqual} from 'Types/object';
@@ -28,7 +28,8 @@ export interface IDataOptions extends IControlOptions,
     IHierarchyOptions,
     IFilterOptions,
     INavigationOptions<unknown>,
-    ISortingOptions {
+    ISortingOptions,
+    IErrorControllerOptions {
    dataLoadErrback?: Function;
    dataLoadCallback?: Function;
    root?: TKey;
@@ -39,6 +40,7 @@ export interface IDataOptions extends IControlOptions,
    sourceController?: SourceController;
    expandedItems?: CrudEntityKey[];
    nodeHistoryId?: string;
+   processError?: boolean;
 }
 
 export interface IDataContextOptions extends ISourceOptions,
@@ -50,8 +52,9 @@ export interface IDataContextOptions extends ISourceOptions,
 }
 
 interface IReceivedState {
-   items: RecordSet | Error;
-   expandedItems: CrudEntityKey[];
+   items?: RecordSet | Error;
+   expandedItems?: CrudEntityKey[];
+   errorConfig?: dataSourceError.ViewConfig;
 }
 
 /**
@@ -120,7 +123,7 @@ class Data extends Control<IDataOptions, IReceivedState>/** @lends Controls/_lis
    private _isMounted: boolean;
    private _loading: boolean = false;
    private _itemsReadyCallback: Function = null;
-   private _errorRegister: RegisterClass = null;
+   private _loadToDirectionRegister: RegisterClass = null;
    private _sourceController: SourceController = null;
    private _source: ICrudPlus | ICrud & ICrudPlus & IData;
    private _sourceControllerState: ISourceControllerState;
@@ -132,6 +135,8 @@ class Data extends Control<IDataOptions, IReceivedState>/** @lends Controls/_lis
    protected _breadCrumbsItemsWithoutBackButton: Path;
    protected _expandedItems: CrudEntityKey[];
    protected _shouldSetExpandedItemsOnUpdate: boolean;
+   protected _errorController: dataSourceError.Controller;
+   protected _errorConfig: dataSourceError.ViewConfig;
 
    private _filter: QueryWhereExpression<unknown>;
 
@@ -139,15 +144,12 @@ class Data extends Control<IDataOptions, IReceivedState>/** @lends Controls/_lis
        options: IDataOptions,
        context?: object,
        receivedState?: IReceivedState
-   ): Promise<RecordSet|Error>|void {
-      // TODO придумать как отказаться от этого свойства
+   ): Promise<IReceivedState>|void {
       this._itemsReadyCallback = this._itemsReadyCallbackHandler.bind(this);
-      this._notifyNavigationParamsChanged = this._notifyNavigationParamsChanged.bind(this);
       this._dataLoadCallback = this._dataLoadCallback.bind(this);
-
-      if (!options.hasOwnProperty('sourceController')) {
-         this._errorRegister = new RegisterClass({register: 'dataError'});
-      }
+      this._notifyNavigationParamsChanged = this._notifyNavigationParamsChanged.bind(this);
+      this._errorController = options.errorController || new dataSourceError.Controller({});
+      this._loadToDirectionRegister = new RegisterClass({register: 'loadToDirection'});
 
       if (options.expandedItems) {
          this._shouldSetExpandedItemsOnUpdate = true;
@@ -162,16 +164,9 @@ class Data extends Control<IDataOptions, IReceivedState>/** @lends Controls/_lis
       if (options.root !== undefined) {
          this._root = options.root;
       }
-
-      this._sourceController = options.sourceController || this._getSourceController(options, receivedState);
-      this._fixRootForMemorySource(options);
-      // Подпишемся на изменение данных хлебных крошек для того, что бы если пользователь
-      // руками меняет path в RecordSet то эти изменения долетели до контролов
-      this._sourceController.subscribe('breadcrumbsDataChanged', () => {
-         this._updateBreadcrumbsFromSourceController();
-      });
-
-      const controllerState = this._sourceController.getState();
+      this._initSourceController(options, receivedState);
+      const sourceController = this._sourceController;
+      const controllerState = sourceController.getState();
 
       // TODO filter надо распространять либо только по контексту, либо только по опциям. Щас ждут и так и так
       this._filter = controllerState.filter;
@@ -185,17 +180,19 @@ class Data extends Control<IDataOptions, IReceivedState>/** @lends Controls/_lis
             options.dataLoadCallback(options.sourceController.getItems());
          }
          this._setItemsAndUpdateContext();
-      } else if (receivedState?.items instanceof RecordSet && isNewEnvironment()) {
+      } else if (receivedState?.items instanceof RecordSet) {
          if (options.source && options.dataLoadCallback) {
             options.dataLoadCallback(receivedState.items);
          }
-         this._sourceController.setItems(receivedState.items);
+         sourceController.setItems(receivedState.items);
          this._setItemsAndUpdateContext();
+      } else if (receivedState?.errorConfig) {
+         this._showError(receivedState.errorConfig);
       } else if (options.source) {
-         return this._sourceController
+         return sourceController
              .reload(undefined, true)
              .then((items) => {
-                const state = this._sourceController.getState();
+                const state = sourceController.getState();
                 this._items = state.items;
                 this._updateBreadcrumbsFromSourceController();
 
@@ -204,9 +201,18 @@ class Data extends Control<IDataOptions, IReceivedState>/** @lends Controls/_lis
                    expandedItems: state.expandedItems
                 };
              })
-             .catch((error) => error)
+             .catch((error) => {
+                if (options.processError) {
+                   return this._processError({error}).then((errorConfig) => {
+                      this._showError(errorConfig);
+                      return { errorConfig };
+                   });
+                } else {
+                   return error;
+                }
+             })
              .finally(() => {
-                this._updateContext(this._sourceController.getState());
+                this._updateContext(sourceController.getState());
              });
       } else {
          this._updateContext(controllerState);
@@ -219,6 +225,7 @@ class Data extends Control<IDataOptions, IReceivedState>/** @lends Controls/_lis
       // После монтирования пошлем событие о изменении хлебных крошек для того,
       // что бы эксплорер заполнил свое состояние, которое завязано на хлебные крошки
       this._notifyAboutBreadcrumbsChanged();
+      RegisterUtil(this, 'dataError', this._onDataError.bind(this));
    }
 
    protected _beforeUpdate(newOptions: IDataOptions): void|Promise<RecordSet|Error> {
@@ -247,6 +254,27 @@ class Data extends Control<IDataOptions, IReceivedState>/** @lends Controls/_lis
       return updateResult;
    }
 
+   private _initSourceController(options: IDataOptions, receivedState: IReceivedState): void {
+      const sourceController = options.sourceController || this._getSourceController(options, receivedState);
+      this._sourceController = sourceController;
+      this._fixRootForMemorySource(options);
+      // Подпишемся на изменение данных хлебных крошек для того, что бы если пользователь
+      // руками меняет path в RecordSet то эти изменения долетели до контролов
+      sourceController.subscribe('breadcrumbsDataChanged', () => {
+         this._updateBreadcrumbsFromSourceController();
+      });
+      sourceController.subscribe('dataLoadError', (event, error, root, direction) => {
+         if (this._isMounted) {
+            this._processAndShowError(
+                {error, ...this._getErrorConfig(sourceController.getRoot(), root, direction)}
+            );
+         }
+      });
+      this._sourceController.subscribe('dataLoad', () => {
+         this._hideError();
+      });
+   }
+
    _updateWithoutSourceControllerInOptions(newOptions: IDataOptions): void|Promise<RecordSet|Error> {
       let filterChanged;
       let expandedItemsChanged;
@@ -271,7 +299,7 @@ class Data extends Control<IDataOptions, IReceivedState>/** @lends Controls/_lis
       const isChanged = this._sourceController.updateOptions(this._getSourceControllerOptions(newOptions));
 
       if (isChanged) {
-         return this._reload(this._options);
+         return this._reload(newOptions);
       } else if (filterChanged) {
          this._filter = this._sourceController.getFilter();
          this._updateContext(this._sourceController.getState());
@@ -352,9 +380,9 @@ class Data extends Control<IDataOptions, IReceivedState>/** @lends Controls/_lis
    }
 
    _beforeUnmount(): void {
-      if (this._errorRegister) {
-         this._errorRegister.destroy();
-         this._errorRegister = null;
+      if (this._loadToDirectionRegister) {
+         this._loadToDirectionRegister.destroy();
+         this._loadToDirectionRegister = null;
       }
       if (this._sourceController) {
          if (!this._options.sourceController) {
@@ -362,18 +390,15 @@ class Data extends Control<IDataOptions, IReceivedState>/** @lends Controls/_lis
          }
          this._sourceController = null;
      }
+      UnregisterUtil(this, 'dataError');
    }
 
    _registerHandler(event, registerType, component, callback, config): void {
-      if (this._errorRegister) {
-         this._errorRegister.register(event, registerType, component, callback, config);
-      }
+      this._loadToDirectionRegister.register(event, registerType, component, callback, config);
    }
 
    _unregisterHandler(event, registerType, component, config): void {
-      if (this._errorRegister) {
-         this._errorRegister.unregister(event, component, config);
-      }
+      this._loadToDirectionRegister.unregister(event, component, config);
    }
 
    _itemsReadyCallbackHandler(items): void {
@@ -452,14 +477,9 @@ class Data extends Control<IDataOptions, IReceivedState>/** @lends Controls/_lis
              return reloadResult;
           })
           .catch((error) => {
-             this._onDataError(
-                 null,
-                 {
-                    error,
-                    mode: dataSourceError.Mode.include
-                 }
-             );
-             return error;
+             return this._processAndShowError({error}).then(() => {
+                return error;
+             });
           })
           .finally(() => {
              if (!this._destroyed) {
@@ -511,10 +531,78 @@ class Data extends Control<IDataOptions, IReceivedState>/** @lends Controls/_lis
       }
    }
 
-   _onDataError(event, errbackConfig): void {
-      if (this._errorRegister) {
-         this._errorRegister.start(errbackConfig);
+   private _onDataError(errorConfig): void {
+      if (this._options.processError) {
+         this._processAndShowError({
+            error: errorConfig.error,
+            mode: errorConfig.mode || dataSourceError.Mode.dialog
+         });
       }
+   }
+
+   private _showError(errorConfig: dataSourceError.ViewConfig): void {
+      this._errorConfig = errorConfig;
+   }
+
+   private _hideError(): void {
+      this._errorConfig = null;
+   }
+
+   private _processError(config): Promise<dataSourceError.ViewConfig> {
+      if (config.error.canceled || config.error.isCanceled) {
+         return Promise.resolve();
+      }
+      return this._errorController.process({
+         error: config.error,
+         theme: this._options.theme,
+         mode: config.mode || dataSourceError.Mode.include
+      }).then((errorConfig) => {
+         if (errorConfig && config.templateOptions) {
+            Object.assign(errorConfig.options, config.templateOptions);
+         }
+
+         return errorConfig as dataSourceError.ViewConfig;
+      });
+   }
+
+   private _processAndShowError(config: dataSourceError.ViewConfig): Promise<unknown> {
+      return this._processError(config).then((errorConfig) => {
+         if (errorConfig) {
+            this._showError(errorConfig);
+         }
+         return errorConfig;
+      });
+   }
+
+   private _getErrorConfig(currentRoot: TKey, root: TKey, direction: Direction): Partial<dataSourceError.ViewConfig> {
+      const errorConfig = {
+         mode: Data._getErrorViewMode(currentRoot, root, direction),
+         templateOptions: {
+            showInDirection: direction
+         }
+      };
+
+      if (direction) {
+         errorConfig.templateOptions.action = () => {
+            this._loadToDirectionRegister.start('down');
+            return Promise.resolve();
+         };
+      }
+      return errorConfig;
+   }
+
+   private static _getErrorViewMode(currentRoot?: TKey, root?: TKey, direction?: Direction): dataSourceError.Mode {
+      let errorViewMode;
+
+      if (direction && root === currentRoot) {
+         errorViewMode = dataSourceError.Mode.inlist;
+      } else if (root !== currentRoot) {
+         errorViewMode = dataSourceError.Mode.dialog;
+      } else {
+         errorViewMode = dataSourceError.Mode.include;
+      }
+
+      return errorViewMode;
    }
 
    static getDefaultOptions(): object {

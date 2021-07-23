@@ -3,6 +3,7 @@
       attr:class="controls-Explorer__wrapper"
       scope="{{_options}}"
       root="{{_getRoot(_options.root)}}"
+      processError="{{true}}"
       on:breadCrumbsItemsChanged="_onBreadcrumbsChanged()"
    >
       <ws:content>

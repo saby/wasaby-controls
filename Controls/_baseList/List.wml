@@ -1,4 +1,4 @@
-<Controls._baseList.Data scope="{{_options}}">
+<Controls._baseList.Data scope="{{_options}}" processError="{{true}}">
     <ws:partial
         name="listControl"
         template="{{_viewTemplate}}"

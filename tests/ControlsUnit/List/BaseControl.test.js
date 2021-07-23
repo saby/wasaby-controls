@@ -22,8 +22,9 @@ define([
    'Controls/dataSource',
    'Controls/marker',
    'Controls/display',
+   'Browser/Transport',
    'Core/polyfill/PromiseAPIDeferred',
-], function(sourceLib, collection, lists, treeGrid, tUtil, cDeferred, cInstance, Env, EnvTouch, clone, entity, SettingsController, popup, listDragNDrop, dragNDrop, listRender, itemActions, dataSource, marker, display) {
+], function(sourceLib, collection, lists, treeGrid, tUtil, cDeferred, cInstance, Env, EnvTouch, clone, entity, SettingsController, popup, listDragNDrop, dragNDrop, listRender, itemActions, dataSource, marker, display, Transport) {
    describe('Controls.List.BaseControl', function() {
       var data, result, source, rs, sandbox;
 
@@ -466,19 +467,6 @@ define([
 
          assert.isTrue(afterReloadCallbackCalled, 'afterReloadCallbackCalled is not called.');
          assert.isTrue(dataLoadCallbackCalled, 'dataLoadCallback is not called.');
-
-         // emulate reload with error
-         ctrl._sourceController.reload = function() {
-            return cDeferred.fail();
-         };
-
-         afterReloadCallbackCalled = false;
-         dataLoadCallbackCalled = false;
-
-         await ctrl.reload();
-
-         assert.isTrue(afterReloadCallbackCalled, 'afterReloadCallbackCalled is not called.');
-         assert.isFalse(dataLoadCallbackCalled, 'dataLoadCallback is called.');
       });
 
       it('save loaded items into the controls\' state', async function () {
@@ -1593,69 +1581,6 @@ define([
          assert.equal(6, lists.BaseControl._private.getItemsCount(baseControl), 'Items wasn\'t load');
       });
 
-      it('loadToDirection error and restore', async function() {
-         const source = new sourceLib.Memory({
-            keyProperty: 'id',
-            data: data
-         });
-
-         const cfg = {
-            viewName: 'Controls/List/ListView',
-            source: source,
-            viewConfig: { keyProperty: 'id' },
-            viewModelConfig: { collection: [], keyProperty: 'id' },
-            viewModelConstructor: 'Controls/display:Collection',
-            navigation: {
-               source: 'page',
-               sourceConfig: {
-                  pageSize: 2,
-                  page: 0,
-                  hasMore: false
-               }
-            }
-         };
-
-         var ctrl = correctCreateBaseControl(cfg);
-         ctrl.saveOptions(cfg);
-         await ctrl._beforeMount(cfg);
-         ctrl._container = {
-            getElementsByClassName: () => ([{ clientHeight: 100, offsetHeight: 0 }]),
-            getBoundingClientRect: function() { return {}; }
-         };
-         ctrl._afterMount(cfg);
-
-         ctrl._sourceController.load = sinon.stub()
-            .rejects(new Error('test'))
-            .onThirdCall()
-            .resolves(
-               new collection.RecordSet({
-                  keyProperty: 'id',
-                  rawData: []
-               })
-            );
-
-         ctrl.__errorController.process = sinon.stub().callsFake(function(config) {
-            return Promise.resolve({
-               mode: config.mode,
-               options: {}
-            });
-         });
-
-         // on error
-         await lists.BaseControl._private.loadToDirection(ctrl, 'down').catch(() => 1);
-         assert.isDefined(ctrl.__error, 'error was not set');
-         assert.strictEqual(ctrl.__error.mode, 'inlist', 'wrong errorConfig mode');
-         assert.typeOf(ctrl.__error.options.action, 'function', 'wrong action type');
-         assert.strictEqual(ctrl.__error.options.showInDirection, 'down', 'wrong error template position');
-
-         // on loading restoring
-         await lists.BaseControl._private.loadToDirection(ctrl, 'down')
-            .catch(() => ctrl.__error.options.action())
-            .then(callback => callback());
-
-         assert.isNull(ctrl.__error, 'error was not hidden after successful loading');
-      });
-
       it('items should get loaded when a user scrolls to the bottom edge of the list', function(done) {
          var rs = new collection.RecordSet({
             keyProperty: 'id',
@@ -2715,16 +2640,6 @@ define([
             };
          });
 
-         it('should not init when __error is occurred', async () => {
-            const instance = correctCreateBaseControl(cfg);
-            instance.saveOptions(cfg);
-            await instance._beforeMount(cfg);
-            lists.BaseControl._private.showError(instance, {
-               mode: 'inlist'
-            });
-            assert.notExists(lists.BaseControl._private.getItemActionsController(instance, instance._options));
-         });
-
          it('should not init when _listViewModel is not set', async () => {
             const instance = correctCreateBaseControl(cfg);
             instance.saveOptions(cfg);
@@ -2737,17 +2652,6 @@ define([
             instance.saveOptions(cfg);
             await instance._beforeMount(cfg);
             assert.notExists(lists.BaseControl._private.getItemActionsController(instance, instance._options));
-         });
-
-         it('should return existing controller instance despite errors', async () => {
-            const instance = correctCreateBaseControl(cfg);
-            instance.saveOptions(cfg);
-            await instance._beforeMount(cfg);
-            lists.BaseControl._private.updateItemActions(instance, instance._options);
-            lists.BaseControl._private.showError(instance, {
-               mode: 'inlist'
-            });
-            assert.exists(lists.BaseControl._private.getItemActionsController(instance, instance._options));
          });
 
          it('should init when itemActions are set, but, there are no itemActionsProperty and toolbarVisibility is false', async () => {
@@ -2847,15 +2751,6 @@ define([
             stubItemActionsController.restore();
          });
 
-         it('control in error state, should not call update', async function() {
-            baseControl = await initTestBaseControl(cfg);
-            baseControl._itemActionsController = null;
-            baseControl.__error = true;
-            isActionsUpdated = false;
-            lists.BaseControl._private.updateItemActions(baseControl, baseControl._options);
-            assert.isFalse(isActionsUpdated);
-            baseControl.__error = false;
-         });
          it('without listViewModel should not call update', async function() {
             baseControl = await initTestBaseControl(cfg);
             baseControl._listViewModel = null;
@@ -6143,23 +6038,6 @@ define([
          });
       });
 
-      it('should not call _getItemsContainer on error', () => {
-         const baseControl = new lists.BaseControl();
-         let isGetItemsContainerCalled = false;
-         baseControl._isMounted = true;
-         baseControl._loadTriggerVisibility = {down: false};
-         baseControl._scrollController = { destroy: () => null };
-         lists.BaseControl._private.showError(baseControl, {
-            mode: dataSource.error.Mode.include
-         });
-         baseControl._getItemsContainer = () => {
-            isGetItemsContainerCalled = true;
-         };
-         baseControl._afterRender();
-         assert.isFalse(isGetItemsContainerCalled);
-         assert.isNull(baseControl._scrollController);
-      });
-
       it('_getLoadingIndicatorClasses', function() {
          const theme = 'default';
          function testCaseWithArgs(indicatorState, hasPaging, isPortionedSearchInProgress = false) {
@@ -7401,15 +7279,6 @@ define([
             baseControl._afterMount(cfg);
             assert.isTrue(registered);
          });
-         it('with error', async () => {
-
-            baseControl._container = {};
-            baseControl.saveOptions(cfg);
-            await baseControl._beforeMount(cfg);
-            baseControl.__error = {};
-            baseControl._afterMount(cfg);
-            assert.isFalse(registered);
-         });
       });
 
       describe('drag-n-drop', () => {
@@ -7721,7 +7590,8 @@ define([
          it('loadToDirection, is dragging', () => {
             baseControl._sourceController = {
                hasMoreData: () => true,
-               isLoading: () => false
+               isLoading: () => false,
+               getLoadError: () => null
             };
             baseControl._loadedItems = new collection.RecordSet();
             let isLoadStarted = false;
@@ -8267,6 +8137,7 @@ define([
             it('not set new marked key, when load items', () => {
                const sourceController = {
                   isLoading: () => true,
+                  getLoadError: () => null,
                   getState: () => {
                      return {
                         source: {}

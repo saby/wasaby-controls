@@ -933,22 +933,6 @@ describe('Controls/list_clean/BaseControl', () => {
             loggerErrorStub.restore();
         });
 
-        it('_beforeMount returns errorConfig', async () => {
-            const baseControlOptions = {...getBaseControlOptionsWithEmptyItems(),
-                sourceController: new NewSourceController({
-                    source: new Memory({
-                        keyProperty: 'keyProperty',
-                        data: []
-                    }),
-                    keyProperty: 'id'
-                })
-            };
-            const baseControl = new BaseControl(baseControlOptions);
-            baseControlOptions.sourceController._loadError = new Error('test error');
-            const receivedState = await baseControl._beforeMount(baseControlOptions);
-            assert.ok(receivedState.hasOwnProperty('errorConfig'));
-        });
-
         it('_beforeMount with items in options', async () => {
             const items = new RecordSet({
                 rawData: getData(10)
@@ -1223,48 +1207,6 @@ describe('Controls/list_clean/BaseControl', () => {
                     baseControl._beforeUpdate(baseControlOptions);
                     baseControl.saveOptions(baseControlOptions);
                 });
-
-                baseControl.__error = {testErrorField: 'testErrorValue'};
-                sourceControllerOptions = {...sourceControllerOptions};
-                sourceControllerOptions.source = new Memory();
-                sourceController.updateOptions(sourceControllerOptions);
-                await sourceController.reload();
-                baseControlOptions = {...baseControlOptions};
-                baseControlOptions.source = new Memory();
-                baseControlOptions.loading = false;
-                baseControl._beforeUpdate(baseControlOptions);
-                assert.ok(!baseControl.__error);
-            });
-
-            it('sourceController load error on _beforeUpdate', async () => {
-                let sourceControllerOptions = getBaseControlOptionsWithEmptyItems();
-                const sourceController = new NewSourceController(sourceControllerOptions);
-                let baseControlOptions = {...sourceControllerOptions, sourceController};
-                const baseControl = new BaseControl(baseControlOptions);
-                await sourceController.reload();
-                await baseControl._beforeMount(baseControlOptions);
-                baseControl.saveOptions(baseControlOptions);
-
-                sourceControllerOptions = {...sourceControllerOptions};
-                sourceControllerOptions.source = new Memory();
-                sourceControllerOptions.source.query = () => {
-                    const error = new fetch.Errors.HTTP({
-                        httpError: HTTPStatus.GatewayTimeout,
-                        message: undefined,
-                        url: undefined
-                    });
-                    error.processed = true;
-                    return Promise.reject(error);
-                };
-                sourceController.updateOptions(sourceControllerOptions);
-                await sourceController.reload().catch(() => {});
-                baseControlOptions.loading = true;
-                baseControl.saveOptions(baseControlOptions);
-
-                baseControlOptions = {...baseControlOptions};
-                baseControlOptions.loading = false;
-                const errorResult = await baseControl._beforeUpdate(baseControlOptions);
-                assert.ok(errorResult.error);
             });
 
             it('_beforeUpdate while source controller is loading', async () => {

@@ -7,9 +7,10 @@ define(
       'Application/Initializer',
       'Application/Env',
       'EnvConfig/Config',
-      'Controls/dataSource'
+      'Controls/dataSource',
+      'Browser/Transport'
    ],
-   function(lists, sourceLib, Deferred, collection, AppInit, AppEnv, Config, dataSourceLib) {
+   function(lists, sourceLib, Deferred, collection, AppInit, AppEnv, Config, dataSourceLib, Transport) {
       describe('Container/Data', function() {
 
          var sourceData = [
@@ -100,9 +101,11 @@ define(
 
             const errorSource = new sourceLib.Memory();
             errorSource.query = () => {
-               const error = new Error('testError');
-               error.processed = true;
-               return Promise.reject(error);
+               return Promise.reject(new Transport.fetch.Errors.HTTP({
+                  httpError: Transport.HTTPStatus.GatewayTimeout,
+                  message: undefined,
+                  url: undefined
+               }));
             };
             dataOptions = {...dataOptions};
             dataOptions.source = errorSource;
@@ -112,7 +115,7 @@ define(
             const updateResult = await data._beforeUpdate(dataOptions);
 
             assert.ok(updateResult instanceof Error);
-            assert.ok(isErrorProcessed);
+            assert.ok(data._errorConfig);
             assert.ok(!data._loading);
          });
 
@@ -231,6 +234,20 @@ define(
             assert.ok(data._sourceController.getItems());
             assert.ok(data._sourceController.getState().items);
             resetCallback();
+         });
+
+         it('_beforeMount with error in receivedState', async function() {
+            let options = {
+               source,
+               keyProperty: 'id',
+               filter: {}
+            };
+            const errorConfig = {};
+            const sourceController = new dataSourceLib.NewSourceController(options);
+            options = {...options, sourceController};
+            let data = getDataWithConfig(options);
+            await data._beforeMount({source: newSource, idProperty: 'id'}, {}, {errorConfig});
+            assert.ok(data._errorConfig === errorConfig);
          });
 
          it('_beforeMount with receivedState and prefetchProxy', function() {

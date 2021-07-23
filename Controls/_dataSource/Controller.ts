@@ -872,7 +872,7 @@ export default class Controller extends mixin<ObservableMixin>(ObservableMixin) 
                 .then((result: RecordSet) => this._processQueryResult(result, key, navigationSourceConfig, direction))
                 .catch((error) => {
                     if (error && !error.isCanceled && !error.canceled) {
-                        this._processQueryError(error);
+                        this._processQueryError(error, key, direction);
                     }
                     return Promise.reject(error);
                 });
@@ -1045,6 +1045,7 @@ export default class Controller extends mixin<ObservableMixin>(ObservableMixin) 
 
     private _processQueryError(
         queryError: Error,
+        key?: TKey,
         direction?: Direction
     ): Error {
         // Если упала ошибка при загрузке в каком-то направлении,
@@ -1058,6 +1059,7 @@ export default class Controller extends mixin<ObservableMixin>(ObservableMixin) 
             this._options.dataLoadErrback(queryError);
         }
         this._loadError = queryError;
+        this._notify('dataLoadError', queryError, key, direction);
         // Выводим ошибку в консоль, иначе из-за того, что она произошла в Promise,
         // у которого есть обработка ошибок через catch, никто о ней не узнает
         if (!queryError.processed && !queryError.hasOwnProperty('httpError')) {
