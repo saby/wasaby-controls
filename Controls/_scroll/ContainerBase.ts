@@ -365,9 +365,6 @@ export default class ContainerBase<T extends IContainerBaseOptions> extends Cont
                 // Сообщаем нижнему VirtualScrollContainer'у состояние виртуальной навигации при его регистрации.
                 callback('bottom', this._virtualNavigationState.bottom);
                 break;
-            case 'scrollResize':
-                this._registrars.scrollResize.register(event, registerType, component, callback);
-                break;
         }
     }
 
@@ -387,9 +384,6 @@ export default class ContainerBase<T extends IContainerBaseOptions> extends Cont
                 break;
             case 'virtualNavigation':
                 this._virtualNavigationRegistrar.unregister(event, registerType, component);
-                break;
-            case 'scrollResize':
-                this._registrars.scrollResize.unregister(event, registerType, component);
                 break;
         }
     }

@@ -303,9 +303,6 @@ export default class StickyBlock extends Control<IStickyHeaderOptions> {
         });
 
         RegisterUtil(this, 'scrollStateChanged', this._onScrollStateChanged);
-        // Обработаем scrollResize, который генерируется при срабатывание resizeObserver'a скролл контейнера,
-        // т.к в случае поддержки бразуером resizeObserver'a controlResize'ы не обрабатываются.
-        RegisterUtil(this, 'scrollResize', this._resizeHandler);
         RegisterUtil(this, 'controlResize', this._resizeHandler);
 
         this._initObserver();
@@ -313,7 +310,6 @@ export default class StickyBlock extends Control<IStickyHeaderOptions> {
 
     _release(): void {
         UnregisterUtil(this, 'controlResize');
-        UnregisterUtil(this, 'scrollResize');
         UnregisterUtil(this, 'scrollStateChanged');
         if (this._model) {
             //Let the listeners know that the element is no longer fixed before the unmount.
@@ -484,6 +480,15 @@ export default class StickyBlock extends Control<IStickyHeaderOptions> {
         if (this._isHidden || isInitializing || !scrollState.canVerticalScroll && !scrollState.canHorizontalScroll) {
             return;
         }
+
+        if (scrollState.clientHeight !== oldScrollState.clientHeight
+            || scrollState.clientWidth !== oldScrollState.clientWidth
+            || scrollState.scrollHeight !== oldScrollState.scrollHeight
+            || scrollState.scrollWidth !== oldScrollState.scrollWidth) {
+            // В случае поддержки бразуером resizeObserver'a controlResize'ы не обрабатываются.
+            this._resizeHandler();
+        }
+
         const position = this._options.position;
         if ((position.vertical === 'top' || position.vertical === 'bottom' ||
             position.vertical === 'topBottom') &&
