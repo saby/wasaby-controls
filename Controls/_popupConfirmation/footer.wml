@@ -10,7 +10,7 @@
                     viewMode="{{button.viewMode || 'button'}}"
                     caption="{{button.caption}}"
                     attr:ws-autofocus="{{button.buttonStyle === 'primary'}}"
-                    attr:data-qa="controls-ConfirmationDialog__button-{{button.value}}"
+                    attr:data-qa="controls-ConfirmationDialog__button-{{_calkBehavior(index, button)}}"
                     attr:class="controls-ConfirmationDialog__button"
                     on:click="_tmplNotify('result', button.value)"/>
          </div>
