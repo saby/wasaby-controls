@@ -35,6 +35,14 @@ export default interface IEmptyTemplateOptions {
      */
 
     /**
+     * @typedef {String} Controls/_list/interface/EmptyTemplate/Align
+     * @description Допустимые значения для опции {@link align}.
+     * @variant center Выравнивание текста по центру.
+     * @variant left Выравнивание текста по левому краю.
+     * @variant right Выравнивание текста по правому краю.
+     */
+
+    /**
      * @name Controls/_list/interface/EmptyTemplate#topSpacing
      * @cfg {Controls/_list/interface/EmptyTemplate/Spacing.typedef|null} Отступ между верхней границей  и шаблоном contentTemplate.
      * @remark
@@ -52,6 +60,12 @@ export default interface IEmptyTemplateOptions {
      * @default l
      */
     bottomSpacing?: string;
+    /**
+     * @name Controls/_list/interface/EmptyTemplate#align
+     * @cfg {Controls/_list/interface/EmptyTemplate/Align.typedef|null} Выравнивание текста в шаблоне пустого представления.
+     * @default center
+     */
+    align?: 'center' | 'left' | 'right';
     /**
      * @name Controls/_list/interface/EmptyTemplate#contentTemplate
      * @cfg {String|TemplateFunction|undefined} Шаблон, описывающий контент плоского списка без элементов.

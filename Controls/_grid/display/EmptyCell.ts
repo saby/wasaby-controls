@@ -3,6 +3,8 @@ import EmptyRow from './EmptyRow';
 import Cell, {IOptions as IBaseCellOptions} from './Cell';
 import CellCompatibility from './compatibility/DataCell';
 
+type TContentAlign = 'center' | 'left' | 'right';
+
 class EmptyCell<T> extends mixin<Cell<T, EmptyRow<T>>, CellCompatibility>(Cell, CellCompatibility) {
     protected readonly _defaultCellTemplate: string = 'Controls/grid:EmptyColumnTemplate';
 
@@ -29,7 +31,7 @@ class EmptyCell<T> extends mixin<Cell<T, EmptyRow<T>>, CellCompatibility>(Cell, 
         return classes;
     }
 
-    getContentClasses(theme: string, topSpacing: string = 'default', bottomSpacing: string = 'default'): string {
+    getContentClasses(theme: string, topSpacing: string = 'default', bottomSpacing: string = 'default', align: TContentAlign = 'center'): string {
         let classes;
 
         // todo https://online.sbis.ru/opendoc.html?guid=024784a6-cc47-4d1a-9179-08c897edcf72
@@ -37,6 +39,7 @@ class EmptyCell<T> extends mixin<Cell<T, EmptyRow<T>>, CellCompatibility>(Cell, 
 
         if (this._$isSingleColspanedCell && hasRowTemplate) {
             classes = 'controls-ListView__empty'
+                + ` controls-ListView__empty-textAlign_${align}`
                 + ` controls-ListView__empty_topSpacing_${topSpacing}`
                 + ` controls-ListView__empty_bottomSpacing_${bottomSpacing}`;
         } else if (this.isMultiSelectColumn()) {
