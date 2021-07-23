@@ -62,10 +62,11 @@ class View extends Control<IDateLitePopupOptions> {
     protected _displayedRanges: Date[];
     protected _prevArrowButtonReadOnly: boolean = false;
     protected _nextArrowButtonReadOnly: boolean = false;
+    protected _tabPressed: boolean = false;
 
     protected _beforeMount(options: IDateLitePopupOptions): void {
         document.body.addEventListener('focus', function(e) {
-            console.log(e.target);
+            //console.log(e.target);
         }, true);
         this._displayedRanges = options.displayedRanges;
         if (!options.emptyCaption) {
@@ -245,8 +246,16 @@ class View extends Control<IDateLitePopupOptions> {
         }
     }
 
-    protected _keyPressed(event: SyntheticEvent, year: Date): void {
+    protected _keyupHandler(): void {
+        this._tabPressed = true;
+    }
+
+    protected _keyupHandlerYear(event: SyntheticEvent, year: Date): void {
         this._yearHovered = year;
+    }
+
+    protected _mouseEnter(): void {
+        this._children.shortDatePicker.focus();
     }
 
     protected _onBlurYear(): void {

@@ -1,28 +1,27 @@
 <Controls.calendar:MonthList
+        name="monthList"
         attachLoadTopTriggerToNull="{{ false }}"
         displayedRanges="{{_displayedRanges}}"
         stubTemplate="{{stubTemplate}}"
         bind:position="_position"
         attr:class="controls-PeriodLiteDialog-MonthList{{ isExpandedPopup ? '_expanded' }}"
         source="{{_options.source}}"
-        on:focus="_focusHandler()">
+        on:keyup="_keyupHandler()">
     <ws:yearHeaderTemplate>
-
         <div
                 on:mouseenter="_onYearMouseEnter(yearHeaderTemplate.date.getFullYear())"
                 on:touchstart="_onYearMouseEnter(yearHeaderTemplate.date.getFullYear())"
                 on:mouseleave="_onYearMouseLeave()"
                 on:touchmove="_onYearMouseLeave()"
                 on:click="_onYearClick(yearHeaderTemplate.date.getFullYear())"
-                on:keyup="_keyPressed(yearHeaderTemplate.date.getFullYear())"
+                on:keyup="_keyupHandlerYear(yearHeaderTemplate.date.getFullYear())"
                 class="controls-PeriodLiteDialog__fullYear-listElement
                        {{ _options.chooseYears && _yearHovered === yearHeaderTemplate.date.getFullYear() ?  'controls-PeriodLiteDialog__fullYear-listElement-hovered' +
                        ' controls-PeriodLiteDialog__fullYear-listElement-hovered controls-PeriodLiteDialog__yearHeader-background-hovered'}}
                        controls-PeriodLiteDialog__vLayoutItem-caption controls-PeriodLiteDialog__text-align-left
                     {{ _options.chooseMonths && _options.chooseQuarters ? 'controls-PeriodLiteDialog__fullPicker'}}">
-            <div tabindex="0"
-                 on:blur="_onBlurYear()"
-            >
+            <div tabindex="{{_tabPressed ? 0 : -1}}"
+                 on:blur="_onBlurYear()">
                 {{ yearHeaderTemplate.date.getFullYear() }}
             </div>
         </div>
@@ -33,6 +32,7 @@
                 attr:data-date="{{_dateToDataString(yearTemplate.date)}}"
                 scope="{{_options}}"
                 monthTemplate="{{monthTemplate}}"
+                _tabPressed="{{_tabPressed}}"
                 _position="{{_position}}"
                 _yearHovered="{{_yearHovered}}"
                 formatDate="{{formatDate}}"

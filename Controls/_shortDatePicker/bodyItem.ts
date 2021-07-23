@@ -8,6 +8,7 @@ import itemQuartersTmpl = require('wml!Controls/_shortDatePicker/ItemQuarters');
 import {Date as WSDate} from 'Types/entity';
 import {IDateConstructor, IDateConstructorOptions} from 'Controls/interface';
 import {SyntheticEvent} from 'Vdom/Vdom';
+import {constants} from 'Env/Env';
 
 interface IShortDatePickerOptions extends IControlOptions, IDateConstructorOptions {
     currentYear?: number;
@@ -142,14 +143,24 @@ class BodyItem extends Control<IShortDatePickerOptions> implements IDateConstruc
         this._notify('sendResult', [month, dateUtils.getEndOfMonth(month)], {bubbling: true});
     }
 
+    protected _getTabindex(): number {
+        let tabindex = -1;
+        if (this._options.date.getTime() === this._options._position.getTime() || this._options._tabPressed) {
+            tabindex = 0;
+        }
+        return tabindex;
+    }
+
     protected _keyPressed(event: SyntheticEvent): void {
-        const targetName = event.target.getAttribute('name');
-        if (targetName) {
-            const period = parseInt(targetName[2], 10);
-            if (targetName[0] === 'q') {
-                this._quarterHovered = period;
-            } else {
-                this._halfYearHovered = period;
+        if (event.nativeEvent.keyCode === constants.key.tab) {
+            const focusName = event.target.getAttribute('name');
+            if (focusName) {
+                const period = parseInt(focusName[2], 10);
+                if (focusName[0] === 'q') {
+                    this._quarterHovered = period;
+                } else {
+                    this._halfYearHovered = period;
+                }
             }
         }
     }

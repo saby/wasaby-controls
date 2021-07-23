@@ -25,6 +25,7 @@
                                 template="{{monthTemplate}}"
                                 month="{{month}}"
                                 formatDate="{{_formatDate}}"
+                                attr:tabindex="{{_getTabindex()}}"
                                 extData="{{_options.extData && _options.extData[month.date.getMonth()]}}"
                         />
                      </ws:for>
@@ -38,7 +39,7 @@
                        on:mouseleave="_onQuarterMouseLeave(quarter.number)"
                        on:touchmove="_onQuarterMouseLeave(quarter.number)"
                        on:blur="_onBlurQuarter()"
-                       tabindex="0"
+                       tabindex="{{_getTabindex()}}"
                        name="q-{{quarter.number}}"
                   >
                      {{ quarter.name }}
@@ -56,7 +57,7 @@
                  on:touchmove="_onHalfYearMouseLeave()"
                  on:blur="_onBlurHalfYear()"
                  title="{{ halfYear.tooltip }}"
-                 tabindex="0"
+                 tabindex="{{_getTabindex()}}"
                  name="h-{{halfYear.number}}"
             >
                {{ halfYear.name }}
