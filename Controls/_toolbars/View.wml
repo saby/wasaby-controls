@@ -1,5 +1,5 @@
 <div class="controls-Toolbar">
-   <div class="controls-Toolbar_content controls-Toolbar_content-{{_options.direction}}">
+   <div class="controls-Toolbar_content controls-Toolbar_content-{{_options.direction}}" name="toolbarItems">
       <ws:for data="item in _items">
          <ws:if data="{{_isShowToolbar(item, _parentProperty)}}">
             <ws:partial template="{{_getTemplateByItem(item)}}"

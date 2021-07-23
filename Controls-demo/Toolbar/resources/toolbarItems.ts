@@ -385,12 +385,12 @@ export const data = {
     getItemsWithDirection: () => ([
         {
             id: '1',
-            showType: showType.TOOLBAR,
             icon: 'icon-Time',
             viewMode: 'functionalButton',
             buttonStyle: 'pale',
             inlineHeight: 'l',
             '@parent': false,
+            title: 'Отметить время',
             parent: null
         }, {
             id: '2',
