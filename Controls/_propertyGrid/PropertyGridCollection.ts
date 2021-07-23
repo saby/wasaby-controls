@@ -5,6 +5,7 @@ import {Model} from 'Types/entity';
 import {ItemsFactory} from 'Controls/_display/Collection';
 import PropertyGridGroupItem from 'Controls/_propertyGrid/PropertyGridGroupItem';
 import TToggledEditors from './PropertyGrid';
+import {TCaptionPosition} from 'Controls/_propertyGrid/IPropertyGrid';
 
 export interface IPropertyGridCollectionOptions<S, T> extends ITreeCollectionOptions<S, T> {
     toggledEditors?: TToggledEditors;
@@ -16,6 +17,7 @@ export default class PropertyGridCollection<S, T extends PropertyGridCollectionI
 
     protected _$toggledEditors: TToggledEditors;
     protected _$editingObject: object | Model | Record<string, unknown>;
+    protected _$captionPosition: TCaptionPosition;
 
     constructor(options?: IPropertyGridCollectionOptions<S, T>) {
         this._$toggledEditors = options.toggledEditors || {};
@@ -41,6 +43,15 @@ export default class PropertyGridCollection<S, T extends PropertyGridCollectionI
             this._$editingObject,
             '[Controls/_propertyGrid/PropertyGridCollectionItem]');
         this.nextVersion();
+    }
+
+    setCaptionPosition(captionPosition: TCaptionPosition): void {
+        this._$captionPosition = captionPosition;
+        this.nextVersion();
+    }
+
+    getCaptionPosition(): TCaptionPosition {
+        return this._$captionPosition;
     }
 
     protected _getItemsFactory(): ItemsFactory<T> {

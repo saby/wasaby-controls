@@ -92,6 +92,9 @@ export default class PropertyGridView extends Control<IPropertyGridOptions> {
             this._collapsedGroups = this._getCollapsedGroups(newOptions.collapsedGroups);
             this._listModel.setFilter(this._displayFilter.bind(this));
         }
+        if (newOptions.captionPosition !== this._options.captionPosition) {
+            this._listModel.setCaptionPosition(newOptions.captionPosition);
+        }
     }
 
     protected _afterUpdate(oldOptions: IPropertyGridOptions): void {
