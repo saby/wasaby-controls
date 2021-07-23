@@ -197,7 +197,8 @@ class Toolbar extends Control<IToolbarOptions, TItems> implements IHierarchy, II
     private _loadViewPromise: Promise<unknown> = null;
 
     _children: {
-        menuTarget: HTMLElement
+        menuTarget: HTMLElement,
+        toolbarItems: HTMLElement
     };
 
     readonly '[Controls/_interface/IHierarchy]': boolean = true;
@@ -288,7 +289,7 @@ class Toolbar extends Control<IToolbarOptions, TItems> implements IHierarchy, II
                 footerContentTemplate: options.popupFooterTemplate,
                 closeButtonVisibility: true
             },
-            target: this._children.menuTarget
+            target: options.direction === 'vertical' ? this._children.toolbarItems : this._children.menuTarget
         };
     }
 
@@ -342,10 +343,10 @@ class Toolbar extends Control<IToolbarOptions, TItems> implements IHierarchy, II
         return {
             direction: {
                 horizontal: 'left',
-                vertical: isVertical ? 'top' : 'bottom'
+                vertical: 'bottom'
             },
             targetPoint: {
-                vertical: isVertical ? 'bottom' : 'top',
+                vertical: 'top',
                 horizontal: 'right'
             },
             eventHandlers: {

@@ -13,6 +13,7 @@
     <div class="controlsDemo__cell">
         <div class="controls-text-label">direction=vertical</div>
         <Controls.toolbars:View
+                attr:style="margin-left: 12px"
                 direction="vertical"
                 menuButtonViewMode="toolButton"
                 source="{{_buttonsSource}}"
