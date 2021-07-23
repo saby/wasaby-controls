@@ -34,6 +34,7 @@
  * @includes IItemAddOptions Controls/_baseList/interface/IItemAddOptions
  * @includes IItemEditOptions Controls/_baseList/interface/IItemEditOptions
  * @includes FooterTemplate Controls/_list/interface/FooterTemplate
+ * @includes MoreButtonExpandTemplate Controls/_list/interface/MoreButtonExpandTemplate
  * @public
  * @author Крайнов Д.О.
  */
@@ -74,6 +75,7 @@
  * @includes IItemAddOptions Controls/_baseList/interface/IItemAddOptions
  * @includes IItemEditOptions Controls/_baseList/interface/IItemEditOptions
  * @includes FooterTemplate Controls/_list/interface/FooterTemplate
+ * @includes MoreButtonExpandTemplate Controls/_list/interface/MoreButtonExpandTemplate
  * @public
  * @author Крайнов Д.О.
  */
