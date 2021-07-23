@@ -62,7 +62,7 @@ export default class PropertyGridCollectionItem<T> extends TreeItem<T> {
             classes.push(editorClass);
         }
 
-        if (!caption) {
+        if (!caption || this.getOwner().getCaptionPosition() === 'top') {
             classes.push('controls-PropertyGrid__editor-withoutCaption');
         }
 
@@ -131,6 +131,10 @@ export default class PropertyGridCollectionItem<T> extends TreeItem<T> {
         const itemContents = this.getContents();
         this._$propertyValue = object.getPropertyValue(editingObject, itemContents.get(this._$keyProperty));
         this._nextVersion();
+    }
+
+    getOwner(): PropertyGridCollection<T> {
+        return super.getOwner() as PropertyGridCollection<T>;
     }
 }
 
