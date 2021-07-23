@@ -1,7 +1,7 @@
 import {assert} from 'chai';
 import {RecordSet} from 'Types/collection';
 import {NavigationController} from 'Controls/dataSource';
-import {IBasePageSourceConfig} from 'Controls/interface';
+import {IBasePageSourceConfig, IBasePositionSourceConfig} from 'Controls/interface';
 import {relation} from 'Types/entity';
 const dataPrev = [
     {
@@ -1246,6 +1246,29 @@ describe('Controls/_source/NavigationController', () => {
                 const edgeQueryConfig = nc.shiftToEdge('forward') as IBasePageSourceConfig;
                 assert.equal(edgeQueryConfig.page, 1);
                 assert.equal(edgeQueryConfig.pageSize, 15);
+            });
+        });
+        describe('position', () => {
+            it ('shift to edge', () => {
+                const nc = new NavigationController({
+                    navigationType: 'position',
+                    navigationConfig: {
+                        field: 'id',
+                        direction: 'bothways'
+                    }
+                });
+
+                const rs = new RecordSet({
+                    rawData: data,
+                    keyProperty: 'id'
+                });
+
+                nc.updateQueryProperties(rs);
+
+                let edgeQueryConfig = nc.shiftToEdge('forward') as IBasePositionSourceConfig;
+                assert.deepEqual(edgeQueryConfig.position, [-1]);
+                edgeQueryConfig = nc.shiftToEdge('backward') as IBasePositionSourceConfig;
+                assert.deepEqual(edgeQueryConfig.position, [-2]);
             });
         });
     });
