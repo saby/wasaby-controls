@@ -119,7 +119,7 @@ define('Controls/_decorator/Money', ['UI/Executor', 'Controls/_decorator/resourc
  *
  * @mixes Controls/interface:ITooltip
  * @mixes Controls/interface:IFontColorStyle
- * @mixes Controls/interface:IFontWeightOptions
+ * @mixes Controls/interface:IFontWeight
  * @mixes Controls/interface:IFontSize
  * @mixes Controls/interface:INumberFormat
  * @mixes Controls/decorator:IMoney
