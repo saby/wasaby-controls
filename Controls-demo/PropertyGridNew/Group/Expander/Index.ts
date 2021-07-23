@@ -6,6 +6,10 @@ export default class extends Control {
     protected _template: TemplateFunction = Template;
     protected _editingObject: object = null;
     protected _source: object[] = null;
+    protected _captionColumnOptions: object = {
+        width: 'fit-content(50%)',
+        compatibleWidth: '50%'
+    };
 
     protected _beforeMount(): void {
         this._editingObject = getEditingObject();
