@@ -14,7 +14,7 @@
                 on:mouseleave="_onYearMouseLeave()"
                 on:touchmove="_onYearMouseLeave()"
                 on:click="_onYearClick(yearHeaderTemplate.date.getFullYear())"
-                on:keyup="_keyupHandlerYear(yearHeaderTemplate.date.getFullYear())"
+                on:keyup="_keyupYearHandler(yearHeaderTemplate.date.getFullYear())"
                 class="controls-PeriodLiteDialog__fullYear-listElement
                        {{ _options.chooseYears && _yearHovered === yearHeaderTemplate.date.getFullYear() ?  'controls-PeriodLiteDialog__fullYear-listElement-hovered' +
                        ' controls-PeriodLiteDialog__fullYear-listElement-hovered controls-PeriodLiteDialog__yearHeader-background-hovered'}}

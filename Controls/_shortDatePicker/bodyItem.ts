@@ -31,8 +31,8 @@ class BodyItem extends Control<IShortDatePickerOptions> implements IDateConstruc
 
     protected _yearModel: object[];
 
-    protected _halfYearHovered: number;
-    protected _quarterHovered: number;
+    protected _halfYearHovered: number = null;
+    protected _quarterHovered: number = null;
 
     protected _formatDate: Function = formatDate;
 
@@ -120,56 +120,99 @@ class BodyItem extends Control<IShortDatePickerOptions> implements IDateConstruc
         const lastMonth: number = 11;
         const lastDay: number = 31;
         if (this._options.chooseYears) {
-            this._notify(
-                'sendResult',
-                [new this._options.dateConstructor(year, 0, 1), new WSDate(year, lastMonth, lastDay )],
-                {bubbling: true});
+            const start = new this._options.dateConstructor(year, 0, 1);
+            const end = new WSDate(year, lastMonth, lastDay );
+            this._notifySendResult(start, end);
         }
     }
 
     protected _onHalfYearClick(event: Event, halfYear: number, year: number): void {
         const start = new this._options.dateConstructor(year, halfYear * MONTHS_IN_HALFYEAR, 1);
         const end = new this._options.dateConstructor(year, (halfYear + 1) * MONTHS_IN_HALFYEAR, 0);
-        this._notify('sendResult', [start, end], {bubbling: true});
+        this._notifySendResult(start, end);
     }
 
     protected _onQuarterClick(event: Event, quarter: number, year: number): void {
         const start = new this._options.dateConstructor(year, quarter * MONTHS_IN_QUARTER, 1);
         const end = new this._options.dateConstructor(year, (quarter + 1) * MONTHS_IN_QUARTER, 0);
-        this._notify('sendResult', [start, end], {bubbling: true});
+        this._notifySendResult(start, end);
     }
 
     protected _onMonthClick(event: Event, month: Date): void {
-        this._notify('sendResult', [month, dateUtils.getEndOfMonth(month)], {bubbling: true});
+        this._notifySendResult(month, dateUtils.getEndOfMonth(month));
+    }
+
+    private _notifySendResult(start: Date, end: Date): void {
+        this._notify('sendResult', [start, end], {bubbling: true});
     }
 
     protected _getTabindex(): number {
         let tabindex = -1;
-        if (this._options.date.getTime() === this._options._position.getTime() || this._options._tabPressed) {
+        if (this._options.date.getFullYear() === this._options._position.getFullYear() || this._options._tabPressed) {
             tabindex = 0;
         }
         return tabindex;
     }
 
-    protected _keyPressed(event: SyntheticEvent): void {
+    protected _keyupHandler(event: SyntheticEvent): void {
         if (event.nativeEvent.keyCode === constants.key.tab) {
-            const focusName = event.target.getAttribute('name');
-            if (focusName) {
-                const period = parseInt(focusName[2], 10);
-                if (focusName[0] === 'q') {
-                    this._quarterHovered = period;
-                } else {
-                    this._halfYearHovered = period;
-                }
+            const key = event.target.getAttribute('name');
+            this._hoverPeriod(key);
+        } else if (event.nativeEvent.keyCode === constants.key.enter) {
+            this._selectPeriodByPressEnter();
+        }
+    }
+
+    protected _keyupMonthHandler(event: SyntheticEvent, month: Date): void {
+        if (event.nativeEvent.keyCode === constants.key.enter) {
+            this._onMonthClick(event, month);
+        }
+    }
+
+    protected _keyupQuarterHandler(event: SyntheticEvent, quarter: number, year: number): void {
+        if (event.nativeEvent.keyCode === constants.key.enter) {
+            this._onQuarterClick(event, quarter, year);
+        }
+    }
+
+    private _selectPeriodByPressEnter(): void {
+        if (this._halfYearHovered === null && this._quarterHovered === null) {
+            return;
+        }
+
+        let start;
+        let end;
+        if (this._halfYearHovered !== null) {
+            start = new this._options.dateConstructor(this._options.currentYear,
+                this._halfYearHovered * MONTHS_IN_HALFYEAR, 1);
+            end = new this._options.dateConstructor(this._options.currentYear,
+                (this._halfYearHovered + 1) * MONTHS_IN_HALFYEAR, 0);
+        }
+        if (this._quarterHovered !== null) {
+            start = new this._options.dateConstructor(this._options.currentYear,
+                this._quarterHovered * MONTHS_IN_QUARTER, 1);
+            end = new this._options.dateConstructor(this._options.currentYear,
+                (this._quarterHovered + 1) * MONTHS_IN_QUARTER, 0);
+        }
+        this._notifySendResult(start, end);
+    }
+
+    private _hoverPeriod(key: string): void {
+        if (key) {
+            const period = parseInt(key[2], 10);
+            if (key[0] === 'q') {
+                this._quarterHovered = period;
+            } else {
+                this._halfYearHovered = period;
             }
         }
     }
 
-    protected _onBlurHalfYear(): void {
+    protected _onHalfYearBlur(): void {
         this._halfYearHovered = null;
     }
 
-    protected _onBlurQuarter(): void {
+    protected _onQuarterBlur(): void {
         this._quarterHovered = null;
     }
 

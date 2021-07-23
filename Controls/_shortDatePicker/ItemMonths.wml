@@ -10,8 +10,10 @@
                     <ws:partial
                             attr:class="controls-PeriodLiteDialog-item__month-caption"
                             on:click="_onMonthClick(month.date)"
+                            on:keyup="_keyupMonthHandler(month.date)"
                             template="{{monthTemplate}}"
                             month="{{month}}"
+                            attr:tabindex="{{_getTabindex()}}"
                             formatDate="{{_formatDate}}"
                             extData="{{_options.extData && _options.extData[month.date.getMonth()]}}"
                     />

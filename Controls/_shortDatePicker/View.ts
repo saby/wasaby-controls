@@ -1,6 +1,6 @@
 import rk = require('i18n!Controls');
 import {Control, TemplateFunction} from 'UI/Base';
-import {detection} from 'Env/Env';
+import {constants, detection} from 'Env/Env';
 import {Date as WSDate, descriptor} from 'Types/entity';
 import {default as IPeriodSimpleDialog, IDateLitePopupOptions} from './IDateLitePopup';
 import {Base as dateUtils} from 'Controls/dateUtils';
@@ -246,12 +246,24 @@ class View extends Control<IDateLitePopupOptions> {
         }
     }
 
-    protected _keyupHandler(): void {
-        this._tabPressed = true;
+    protected _keyupHandler(event: SyntheticEvent): void {
+        if (event.nativeEvent.keyCode === constants.key.tab) {
+            this._tabPressed = true;
+        }
     }
 
-    protected _keyupHandlerYear(event: SyntheticEvent, year: Date): void {
-        this._yearHovered = year;
+    protected _keyupYearHandler(event: SyntheticEvent, year: Date): void {
+        if (event.nativeEvent.keyCode === constants.key.tab) {
+            this._tabPressed = true;
+            this._yearHovered = year;
+        } else if (event.nativeEvent.keyCode === constants.key.enter) {
+            this._selectYear(year);
+        }
+    }
+
+    // Костыль из-за не работы реактивности в tabindex.
+    protected _forReactivity(): void {
+        return '';
     }
 
     protected _mouseEnter(): void {
@@ -413,6 +425,10 @@ class View extends Control<IDateLitePopupOptions> {
     }
 
     protected _onYearClick(event: Event, year: Date): void {
+        this._selectYear(year);
+    }
+
+    private _selectYear(year: Date): void {
         const lastMonth: number = 11;
         const lastDay: number = 31;
         if (this._options.chooseYears) {
@@ -420,6 +436,14 @@ class View extends Control<IDateLitePopupOptions> {
                 [new this._options.dateConstructor(year, 0, 1),
                     new this._options.dateConstructor(year, lastMonth, lastDay)], {bubbling: true});
         }
+    }
+
+    protected _getTabindex(year: number): number {
+        let tabindex = -1;
+        if (year <= this._position.getFullYear() || this._tabPressed) {
+            tabindex = 0;
+        }
+        return tabindex;
     }
 
     protected _getSizeCssClass(data: string): string {
