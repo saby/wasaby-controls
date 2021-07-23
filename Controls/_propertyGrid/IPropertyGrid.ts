@@ -13,6 +13,8 @@ interface IItemsContainerPadding {
     bottom: TPadding;
 }
 
+export type TCaptionPosition = 'left'|'top';
+
 export interface IPropertyGridColumnOptions {
     width: string;
     compatibleWidth: string;
@@ -34,6 +36,7 @@ export interface IPropertyGridOptions extends IControlOptions {
     itemPadding: IItemPadding;
     withoutLevelPadding?: boolean;
     itemsContainerPadding?: IItemsContainerPadding;
+    captionPosition?: TCaptionPosition;
 }
 
 /**

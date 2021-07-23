@@ -52,6 +52,23 @@ export default class PropertyGridCollectionItem<T> extends TreeItem<T> {
         return DEFAULT_EDITORS[getType(propertyValue)];
     }
 
+    getEditorClasses(): string {
+        const itemContents = this.getContents();
+        const classes = [];
+        const editorClass = itemContents.get('editorClass');
+        const caption = itemContents.get('caption');
+
+        if (editorClass) {
+            classes.push(editorClass);
+        }
+
+        if (!caption || this.getOwner().getCaptionPosition() === 'top') {
+            classes.push('controls-PropertyGrid__editor-withoutCaption');
+        }
+
+        return classes.join(' ');
+    }
+
     getItemPaddingClasses(theme: string, gridColumnIndex?: number): string {
         const owner = this.getOwner();
         let classes = `controls-PropertyGrid__editor_spacingTop_${owner.getTopPadding()}_theme-${theme}
@@ -59,7 +76,7 @@ export default class PropertyGridCollectionItem<T> extends TreeItem<T> {
         if (gridColumnIndex !== 1) {
             classes += ` controls-PropertyGrid__editor_spacingRight_${owner.getRightPadding()}_theme-${theme}`;
         }
-        if (gridColumnIndex !== 2) {
+        if (gridColumnIndex !== 2 || !this.getContents().get('caption')) {
             classes += ` controls-PropertyGrid__editor_spacingLeft_${owner.getLeftPadding()}_theme-${theme}`;
         }
         return classes;
@@ -114,6 +131,10 @@ export default class PropertyGridCollectionItem<T> extends TreeItem<T> {
         const itemContents = this.getContents();
         this._$propertyValue = object.getPropertyValue(editingObject, itemContents.get(this._$keyProperty));
         this._nextVersion();
+    }
+
+    getOwner(): PropertyGridCollection<T> {
+        return super.getOwner() as PropertyGridCollection<T>;
     }
 }
 
