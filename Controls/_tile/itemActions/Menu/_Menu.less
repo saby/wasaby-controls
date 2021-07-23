@@ -51,6 +51,11 @@
    justify-content: center;
 }
 
+// Меню плитки строится с шаблоном стики, но она не должна скругляться
+.controls-TileView__itemActions_menuPopup.controls-StickyTemplate {
+   border-radius: 0;
+}
+
 .controls-TileView__itemActions_menu .controls-StickyTemplate__top-area {
    background: var(--background-color);
 }

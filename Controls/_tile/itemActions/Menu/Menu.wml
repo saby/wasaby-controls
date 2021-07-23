@@ -2,6 +2,7 @@
    <Controls.Container.Async
       templateName="Controls/popupTemplate:Sticky">
       <ws:partial
+        attr:class="controls-TileView__itemActions_menuPopup"
         template="{{content.resolvedTemplate}}"
         shadowVisible="{{true}}">
          <ws:headerContentTemplate>
