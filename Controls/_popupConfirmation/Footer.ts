@@ -29,6 +29,21 @@ class Footer extends Control<IFooterOptions> implements IConfirmationFooter {
         this._prepareData(options);
     }
 
+    protected _calkBehavior(index: number, button: any): string {
+        if (this._options.buttons) {
+            return button.value ? 'yes' : (button.value === undefined ? 'cancel' : 'no');
+        } else {
+            switch (index) {
+                case 0:
+                    return 'yes';
+                case 1:
+                    return 'no';
+                case 2:
+                    return 'cancel';
+            }
+        }
+    }
+
     protected _prepareData(options: IFooterOptions): void {
         if (options.buttons) {
             this._buttons = options.buttons;
@@ -39,7 +54,7 @@ class Footer extends Control<IFooterOptions> implements IConfirmationFooter {
                         caption: options.okCaption,
                         viewMode: 'button',
                         buttonStyle: options.primaryAction === 'yes' ? 'primary' : 'secondary',
-                        value: true
+                        value: undefined
                     }
                 ];
             } else if (options.type === 'yesno') {
