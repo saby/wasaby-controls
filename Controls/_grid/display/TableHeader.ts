@@ -44,7 +44,7 @@ export default class TableHeader<T> extends Header<T> {
 
         return order.map((rowCellsIndexes) => new factory({
             ...options,
-            header: options.header.filter((h, i) => rowCellsIndexes.indexOf(i) !== -1)
+            columnsConfig: options.header.filter((h, i) => rowCellsIndexes.indexOf(i) !== -1)
         }));
     }
 }
