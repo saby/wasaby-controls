@@ -2,7 +2,7 @@ import { Control, TemplateFunction } from 'UI/Base';
 import { Memory } from 'Types/source';
 import { IColumn } from 'Controls/grid';
 
-import * as Template from 'wml!Controls-demo/gridNew/Grouped/TextVisibility/Base/Base';
+import * as Template from 'wml!Controls-demo/gridNew/Grouped/TextAlign/WithoutSeparator/Left/Left';
 import { Tasks } from 'Controls-demo/gridNew/DemoHelpers/Data/Tasks';
 
 export default class extends Control {

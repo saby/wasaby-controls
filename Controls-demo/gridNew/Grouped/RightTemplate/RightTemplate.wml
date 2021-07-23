@@ -1,29 +1,18 @@
-<div class="controlsDemo__wrapper controlDemo__grid-header-sticky">
-    <div class="controlsDemo__cell">
-        <Controls.buttons:Button caption="Переключить separatorVisibility" on:click="_onToggleSeparatorVisibility()"/>
+<div class="controlsDemo__wrapper controlsDemo__flexRow controlsDemo__childMinWidth400">
+    <div class="controlsDemo__cell ControlsDemo-grouped__custom">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/gridNew/Grouped/RightTemplate/WithoutSeparator/Index' }}">
+            <a href="{{content.href}}">Без разделителя</a>
+        </Router.router:Reference>
+        <Controls-demo.gridNew.Grouped.RightTemplate.WithoutSeparator.Index/>
     </div>
-    <Controls.scroll:Container attr:style="height: 250px; width: 530px;">
-        <Controls.list:Container>
-            <Controls.grid:View
-                    attr:class=""
-                    keyProperty="key"
-                    source="{{_viewSource}}"
-                    rowSeparatorSize="s"
-                    columns="{{_columns}}"
-                    groupProperty="fullName">
-                <ws:groupTemplate>
-                    <ws:partial template="Controls/grid:GroupTemplate"
-                                scope="{{ _options }}"
-                                separatorVisibility={{false}}
-                                expanderVisible={{true}}
-                                expanderAlign="right"
-                                columnAlignGroup="{{2}}">
-                        <ws:rightTemplate>
-                            <Controls.decorator:Money value="{{itemData.metaData.groupResults[item.contents]}}" fontColorStyle="group" useGrouping="{{false}}"/>
-                        </ws:rightTemplate>
-                    </ws:partial>
-                </ws:groupTemplate>
-            </Controls.grid:View>
-        </Controls.list:Container>
-    </Controls.scroll:Container>
+    <div class="controlsDemo__cell ControlsDemo-grouped__custom">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/gridNew/Grouped/RightTemplate/WithSeparator/Index' }}">
+            <a href="{{content.href}}">С разделителем</a>
+        </Router.router:Reference>
+        <Controls-demo.gridNew.Grouped.RightTemplate.WithSeparator.Index/>
+    </div>
 </div>

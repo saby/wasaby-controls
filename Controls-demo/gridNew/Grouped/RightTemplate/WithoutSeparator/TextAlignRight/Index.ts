@@ -2,8 +2,8 @@ import { Control, TemplateFunction } from 'UI/Base';
 import { Memory } from 'Types/source';
 import { IColumn } from 'Controls/grid';
 
-import * as Template from 'wml!Controls-demo/gridNew/Grouped/TextVisibility/RightTemplate/RightTemplate';
-import { Tasks } from 'Controls-demo/gridNew/DemoHelpers/Data/Tasks';
+import * as Template from 'wml!Controls-demo/gridNew/Grouped/RightTemplate/WithoutSeparator/TextAlignRight/TextAlignRight';
+import {Tasks} from 'Controls-demo/gridNew/DemoHelpers/Data/Tasks';
 
 export default class extends Control {
     protected _template: TemplateFunction = Template;

@@ -1,0 +1,19 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow controlsDemo__childMinWidth400">
+    <div class="controlsDemo__cell ControlsDemo-grouped__SeparatorVisibility-left">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/gridNew/Grouped/SeparatorVisibility/WithoutSeparator/Index' }}">
+            <a href="{{content.href}}">Без разделителей</a>
+        </Router.router:Reference>
+        <Controls-demo.gridNew.Grouped.SeparatorVisibility.WithoutSeparator.Index/>
+    </div>
+
+    <div class="controlsDemo__cell ControlsDemo-grouped__SeparatorVisibility-left">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/gridNew/Grouped/SeparatorVisibility/WithSeparator/Index' }}">
+            <a href="{{content.href}}">С разделителями</a>
+        </Router.router:Reference>
+        <Controls-demo.gridNew.Grouped.SeparatorVisibility.WithSeparator.Index/>
+    </div>
+</div>

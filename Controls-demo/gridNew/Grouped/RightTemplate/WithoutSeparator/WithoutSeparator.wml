@@ -1,0 +1,37 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow controlsDemo__childMinWidth400">
+    <div class="controlsDemo__cell ControlsDemo-grouped__withoutSeparator_Base">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/gridNew/Grouped/RightTemplate/WithoutSeparator/Base/Index' }}">
+            <a href="{{content.href}}">Без разделителя, с шаблоном справа</a>
+        </Router.router:Reference>
+        <Controls-demo.gridNew.Grouped.RightTemplate.WithoutSeparator.Base.Index/>
+    </div>
+
+    <div class="controlsDemo__cell ControlsDemo-grouped__withoutSeparator_TextAlignLeft">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/gridNew/Grouped/RightTemplate/WithoutSeparator/TextAlignLeft/Index' }}">
+            <a href="{{content.href}}">Без разделителя, с шаблоном справа, с текстом слева</a>
+        </Router.router:Reference>
+        <Controls-demo.gridNew.Grouped.RightTemplate.WithoutSeparator.TextAlignLeft.Index/>
+    </div>
+
+    <div class="controlsDemo__cell ControlsDemo-grouped__withoutSeparator_TextAlignRight">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/gridNew/Grouped/RightTemplate/WithoutSeparator/TextAlignRight/Index' }}">
+            <a href="{{content.href}}">Без разделителя, с шаблоном справа, с текстом справа</a>
+        </Router.router:Reference>
+        <Controls-demo.gridNew.Grouped.RightTemplate.WithoutSeparator.TextAlignRight.Index/>
+    </div>
+
+    <div class="controlsDemo__cell ControlsDemo-grouped__withoutSeparator_TextVisibleFalse">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/gridNew/Grouped/RightTemplate/WithoutSeparator/TextVisibleFalse/Index' }}">
+            <a href="{{content.href}}">Без разделителя, с шаблоном справа, без текста</a>
+        </Router.router:Reference>
+        <Controls-demo.gridNew.Grouped.RightTemplate.WithoutSeparator.TextVisibleFalse.Index/>
+    </div>
+</div>

@@ -1,4 +1,4 @@
-<div class="controlsDemo__wrapper {{_options.theme.indexOf('large')<0 ? 'controlsDemo_fixedWidth500' : 'controlsDemo_fixedWidth800'}}">
+<div class="controlsDemo__wrapper">
     <div class="controlsDemo__cell ControlsDemo-grouped__custom">
         <Router.router:Reference attr:class="controls-text-label"
                                  state="/Controls-demo/app/:app"
@@ -17,4 +17,57 @@
         <Controls-demo.gridNew.Grouped.WithEditing.Index/>
     </div>
 
+    <div class="controlsDemo__cell ControlsDemo-grouped__groupHistoryId">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/gridNew/Grouped/groupHistoryId/Index' }}">
+            <a href="{{content.href}}">Сохранение состояния групп</a>
+        </Router.router:Reference>
+        <Controls-demo.gridNew.Grouped.groupHistoryId.Index/>
+    </div>
+
+    <div class="controlsDemo__cell ControlsDemo-grouped__HiddenGroup">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/gridNew/Grouped/HiddenGroup/Index' }}">
+            <a href="{{content.href}}">Скрытая группа</a>
+        </Router.router:Reference>
+        <Controls-demo.gridNew.Grouped.HiddenGroup.Index/>
+    </div>
+
+    <div class="controlsDemo__cell ControlsDemo-grouped__RightTemplate">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/gridNew/Grouped/RightTemplate/Index' }}">
+            <a href="{{content.href}}">Шаблон справа</a>
+        </Router.router:Reference>
+        <Controls-demo.gridNew.Grouped.RightTemplate.Index/>
+    </div>
+
+    <div class="controlsDemo__cell ControlsDemo-grouped__SeparatorVisibility">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/gridNew/Grouped/SeparatorVisibility/Index' }}">
+            <a href="{{content.href}}">Видимость разделителя</a>
+        </Router.router:Reference>
+        <Controls-demo.gridNew.Grouped.SeparatorVisibility.Index/>
+    </div>
+
+    <div class="controlsDemo__cell ControlsDemo-grouped__TextAlign">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/gridNew/Grouped/TextAlign/Index' }}">
+            <a href="{{content.href}}">Расположение текста</a>
+        </Router.router:Reference>
+        <Controls-demo.gridNew.Grouped.TextAlign.Index/>
+    </div>
+
+    <div class="controlsDemo__cell ControlsDemo-grouped__textVisible">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/gridNew/Grouped/TextVisible/Index' }}">
+            <a href="{{content.href}}">Видимость текста и экспандера</a>
+        </Router.router:Reference>
+        <Controls-demo.gridNew.Grouped.TextVisible.Index/>
+    </div>
 </div>

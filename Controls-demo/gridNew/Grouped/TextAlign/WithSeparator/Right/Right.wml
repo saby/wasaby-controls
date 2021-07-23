@@ -1,5 +1,5 @@
 <div class="controlsDemo__wrapper">
-    <Controls.scroll:Container attr:style="height: 250px; width: 330px;">
+    <Controls.scroll:Container attr:style="height: 250px; width: 530px;">
         <Controls.list:Container>
             <Controls.grid:View
                     attr:class=""
@@ -9,12 +9,12 @@
                     columns="{{_columns}}"
                     groupProperty="fullName">
                 <ws:groupTemplate>
-                    <ws:partial template="Controls/grid:GroupTemplate" scope="{{ _options }}" expanderAlign="right">
+                    <ws:partial template="Controls/grid:GroupTemplate"
+                                scope="{{ _options }}"
+                                separatorVisibility="{{ true }}"
+                                textAlign="right">
                     </ws:partial>
                 </ws:groupTemplate>
-                <ws:editingConfig>
-                    <ws:Object editOnClick="{{true}}" autoAdd="{{true}}"/>
-                </ws:editingConfig>
             </Controls.grid:View>
         </Controls.list:Container>
     </Controls.scroll:Container>
