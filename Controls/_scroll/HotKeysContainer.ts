@@ -1,14 +1,15 @@
 import {Control, IControlOptions} from 'UI/Base';
 import template = require('wml!Controls/_scroll/HotKeysContainer');
 import {SyntheticEvent} from 'Vdom/Vdom';
+import {dispatcherHandler} from 'UI/HotKeys';
 
 /**
  * Контрол настраивает Controls/scroll:Container на перехват клавиш "up", "down", "page up", "page down", "home", "end" по умолчанию.
- * 
+ *
  * @remark
  * Полезные ссылки:
  * * {@link https://github.com/saby/wasaby-controls/blob/rc-20.4000/Controls-default-theme/aliases/_scroll.less переменные тем оформления}
- * 
+ *
  * @extends UI/Base:Control
  * @author Шипин А.А.
  * @public
@@ -41,6 +42,7 @@ class HotKeysContainer extends Control<IControlOptions> {
     protected _keyDown(event: SyntheticEvent<KeyboardEvent>): void {
         const hotKeys = this._defaultActions.map((e) => e.keyCode );
         if (hotKeys.includes(event.nativeEvent.keyCode)) {
+            dispatcherHandler(event);
             event.preventDefault();
         }
     }
