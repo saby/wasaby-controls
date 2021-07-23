@@ -14,7 +14,7 @@ export default class extends Control {
     protected _beforeMount(): void {
         this._viewSource = new Memory({
             keyProperty: 'key',
-            data: Countries.getData()
+            data: Countries.getData().slice(0, 9)
         });
         this._columns[1].width = '224px';
     }
