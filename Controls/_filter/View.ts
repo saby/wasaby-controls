@@ -193,9 +193,6 @@ class FilterView extends Control<IFilterViewOptions, IFilterReceivedState> imple
         } else if (options.source) {
             this._resolveItems(options.source);
             resultDef = this._reload(true, !!options.panelTemplateName);
-            if (!resultDef) {
-                this._updateText(this._source, this._configs);
-            }
         }
         this._detailPanelTemplateName = this._getDetailPanelTemplateName(options);
         return resultDef;
@@ -975,6 +972,8 @@ class FilterView extends Control<IFilterViewOptions, IFilterReceivedState> imple
                     };
                 });
             });
+        } else {
+            this._updateText(this._source, this._configs);
         }
     }
 
