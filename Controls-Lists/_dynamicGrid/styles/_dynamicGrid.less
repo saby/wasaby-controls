@@ -1,0 +1,40 @@
+.ControlsLists-dynamicGrid__dynamicCellsWrapper {
+    display: grid;
+    overflow: hidden;
+    height: 100%;
+}
+
+.ControlsLists-dynamicGrid__dynamicCellsWrapper_columns-spacing {
+    @variants: ~'3xs', ~'2xs', xs, s, st, m, l, xl, ~'2xl', ~'3xl';
+    .for(@variants, {
+        &_@{_item} {
+            column-gap: ~'var(--offset_@{_item})';
+            margin-left: ~'var(--offset_@{_item})';
+        }
+    });
+}
+
+.ControlsLists-dynamicGrid__dynamicHeaderCell {
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.ControlsLists-dynamicGrid__dynamicDataCell {
+    height: 100%;
+    position: relative;
+}
+
+.ControlsLists-dynamicGrid__selectionCheckbox__wrapper {
+    position: absolute;
+    bottom: 0;
+    justify-content: center;
+
+    width: 100%;
+    display: none;
+}
+
+.ControlsLists-dynamicGrid__dynamicDataCell:hover .ControlsLists-dynamicGrid__selectionCheckbox__wrapper {
+    display: flex;
+}

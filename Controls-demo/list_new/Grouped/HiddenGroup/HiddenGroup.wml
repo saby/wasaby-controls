@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container>
+        <Controls.list:View
+                keyProperty="key"
+                source="{{_viewSource}}"
+                groupProperty="brand"/>
+    </Controls.scroll:Container>
+</div>

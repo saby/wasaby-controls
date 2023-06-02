@@ -1,0 +1,47 @@
+<ws:template name="itemAction">
+    <div attr:data-qa="controls-itemActions__action"
+         attr:title="{{ action.tooltip }}"
+         attr:class="controls-itemActionsV__action js-controls-ItemActions__ItemAction
+                     controls-itemActionsV__action_style_{{ actionStyle || action.style }}
+                     controls-itemActionsV__action_iconSize_{{ action.iconSize }}
+                     {{ actionMode === 'adaptive' ? 'controls-itemActionsV_action_adaptive' }}"
+         on:mousedown="_onItemActionMouseDown(action, item)"
+         on:mouseup="_onItemActionMouseUp(action, item)"
+         on:click="_onItemActionClick(action, item)"
+         attr:tabindex="-1"
+         attr:ws-no-focus="true"
+         attr:key="{{ action.id }}">
+        <ws:partial
+            template="Controls/buttons:ButtonTemplate"
+            _viewMode="{{ action.viewMode }}"
+            _buttonStyle="{{ actionStyle || action.style }}"
+            _fontSize="{{ action.fontSize }}"
+            _icon="{{ action.icon }}"
+            _iconSize="{{ action.iconSize }}"
+            _caption="{{ action.caption }}"
+            _fontColorStyle="{{ actionStyle || 'link' }}"
+            _hasIcon="{{ action.hasIcon }}"
+            _stringCaption="{{ true }}"
+            _iconStyle="{{ action.showType === 3 ? action.iconStyle : (iconStyle || action.iconStyle) }}"
+            _height="{{ action.inlineHeight }}"
+            _isSVGIcon="{{ action.isSVGIcon }}"
+            _captionPosition="end"
+            readOnly="{{ false }}"
+            attr:class="controls-itemActionsV__Button_iconSize_{{ action.iconSize }}"
+            attr:ws-no-focus="true"/>
+    </div>
+</ws:template>
+
+<ws:for data="action in showedActions">
+    <ws:if data="{{ action.isMenu }}">
+        <ws:partial template="itemAction"
+                    item="{{ item || itemData }}"
+                    on:mouseEnter="_onItemActionMouseEnter()"
+                    on:mouseLeave="_onItemActionMouseLeave()"/>
+    </ws:if>
+    <ws:else>
+        <ws:partial template="itemAction"
+                    item="{{ item || itemData }}"
+                    attr:class="controls-itemActionsV__action_padding{{ actionPadding ? '_' + actionPadding }}"/>
+    </ws:else>
+</ws:for>

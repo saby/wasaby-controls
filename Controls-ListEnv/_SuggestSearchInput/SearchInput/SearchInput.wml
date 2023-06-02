@@ -1,0 +1,16 @@
+<ExtSearch.suggest:Input
+   searchParam="{{_options.searchParam}}"
+   source="{{_options.source}}"
+   navigation="{{_options.navigation}}"
+   multiSelect="{{true}}"
+   filterDescription="{{_filterDescription}}"
+   filter="{{_options.filter}}"
+   placeholder="{{_options.placeholder}}"
+   footerTemplate="{{_options.footerTemplate}}"
+   maxLength="{{_options.maxLength}}"
+   contrastBackground="{{_options.contrastBackground}}"
+   suggestWidth="{{_options.suggestWidth}}"
+   searchDelay="{{_options.searchDelay}}"
+   bind:value="_value"
+   on:filterDescriptionChanged="_filterSourceChangedInternal()"
+/>

@@ -1,0 +1,24 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:class="controlsDemo__height400" shadowMode="js">
+        <Controls.listDeprecate:Mover name="listMover"/>
+        <Controls.grid:View
+				name="grid"
+                keyProperty="key"
+                source="{{_viewSource}}"
+                columns="{{_columns}}"
+                itemsDragNDrop="{{true}}"
+                on:customdragStart="_dragStart()"
+                on:customdragEnd="_dragEnd()"
+                multiSelectVisibility="visible"
+                bind:selectedKeys="_selectedKeys"
+                header="{{_header}}"
+                resultsPosition="top"
+                ladderProperties="{{_ladderProperties}}">
+			<ws:footerTemplate>
+				<ws:partial template="Controls/grid:FooterTemplate">
+					<Controls.list:AddButton caption="Add record" on:click="_beginAdd()" data-qa="controlsDemo-GridLadder__addButton"/>
+				</ws:partial>
+			</ws:footerTemplate>
+		</Controls.grid:View>
+    </Controls.scroll:Container>
+</div>

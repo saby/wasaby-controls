@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300 controlsDemo_treeGrid-offset-levelIndent-all-xl">
+    <Controls.tree:View
+            keyProperty="key"
+            source="{{_viewSource}}"
+            parentProperty="parent"
+            nodeProperty="type"
+            bind:expandedItems="_expandedItems">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/tree:ItemTemplate" levelIndentSize="xl" />
+        </ws:itemTemplate>
+    </Controls.tree:View>
+</div>

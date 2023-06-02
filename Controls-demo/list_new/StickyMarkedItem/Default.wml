@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:class="controlsDemo__maxWidth500" attr:style="max-height: 250px">
+        <Controls.list:View source="{{_viewSource}}"
+                            keyProperty="key"
+                            style="master"
+                            backgroundStyle="default"
+                            stickyMarkedItem="{{true}}">
+            <ws:navigation view="infinity" source="page">
+                <ws:sourceConfig pageSize="{{20}}" page="{{0}}" hasMore="{{false}}"/>
+            </ws:navigation>
+            <ws:virtualScrollConfig pageSize="{{20}}"/>
+        </Controls.list:View>
+    </Controls.scroll:Container>
+</div>

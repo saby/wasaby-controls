@@ -1,0 +1,17 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center controlsDemo__cell ws-justify-content-center controlsDemo_fixedWidth500"
+         data-qa="controlsDemo_capture">
+        <Controls.Chips:Control items="{{_items}}"
+                               bind:selectedKeys="_selectedKeys"
+                               attr:data-qa="controlsButtonGroup__first_group">
+            <ws:itemTemplate>
+                <ws:partial template="Controls/Chips:chipsItemTemplate" scope="{{itemTemplate}}">
+                    <ws:contentTemplate>
+                        <span>{{itemTemplate.item.get('caption')}}</span>
+                        <span class="controls-margin_left-xs controls-text-{{itemTemplate.item.get('color')}}">{{itemTemplate.item.get('info')}}</span>
+                    </ws:contentTemplate>
+                </ws:partial>
+            </ws:itemTemplate>
+        </Controls.Chips:Control>
+    </div>
+</div>

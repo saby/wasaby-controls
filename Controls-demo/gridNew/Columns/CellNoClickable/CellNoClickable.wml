@@ -1,0 +1,21 @@
+<div class="controlsDemo__wrapper">
+    <Controls.grid:View
+            keyProperty="key"
+            source="{{_viewSource}}">
+        <ws:columns>
+            <ws:Array>
+                <ws:Object displayProperty="number" width="40px">
+                    <ws:template>
+                        <ws:partial template="Controls/grid:ColumnTemplate" cursor="default" scope="{{ _options }}"/>
+                    </ws:template>
+                </ws:Object>
+                <ws:Object displayProperty="country" width="300px"/>
+                <ws:Object displayProperty="capital" width="max-content" compatibleWidth="98px">
+                    <ws:template>
+                        <ws:partial template="Controls/grid:ColumnTemplate" cursor="default" scope="{{ _options }}"/>
+                    </ws:template>
+                </ws:Object>
+            </ws:Array>
+        </ws:columns>
+    </Controls.grid:View>
+</div>

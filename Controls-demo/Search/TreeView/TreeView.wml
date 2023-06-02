@@ -1,0 +1,36 @@
+<div class="controlsDemo__wrapper">
+<div class="controlsDemo__cell">
+  <div class="controls-text-label">Поиск в TreeView</div>
+  <div class="controlsDemo__default">
+
+    <Controls.browser:Browser
+        keyProperty="id"
+        source="{{_viewSource}}"
+        parentProperty="parent"
+        nodeProperty="parent@"
+        searchParam="title"
+        searchDelay="700"
+        minSearchLength="{{3}}"
+        searchStartingWith="{{_startingWith}}"
+        bind:root="_root"
+        bind:filter="_filter"
+    >
+      <div class="ws-fragment">
+        <Controls.search:InputContainer>
+          <Controls.search:Input/>
+        </Controls.search:InputContainer>
+        <Controls.listDeprecate:Remover name="remover"/>
+        <Controls.list:Container>
+          <Controls.treeGrid:View
+              attr:class="demo-Explorer ControlsDemo-Explorer"
+              itemActions="{{_itemActions}}"
+              displayProperty="title"
+              multiSelectVisibility="{{_multiselect}}"
+              columns="{{_columns}}">
+          </Controls.treeGrid:View>
+        </Controls.list:Container>
+      </div>
+    </Controls.browser:Browser>
+  </div>
+</div>
+</div>

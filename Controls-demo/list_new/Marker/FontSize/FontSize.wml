@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper">
+    <Controls.list:View
+            keyProperty="key"
+            source="{{_viewSource}}"
+            displayProperty="description"
+            markerVisibility="visible">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/list:ItemTemplate" attr:style="font-size: 16px;"/>
+        </ws:itemTemplate>
+    </Controls.list:View>
+</div>

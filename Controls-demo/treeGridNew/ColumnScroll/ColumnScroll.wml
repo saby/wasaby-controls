@@ -1,0 +1,30 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:style="width: 600px; height: 400px">
+        <Controls.treeGrid:View
+                keyProperty="key"
+                parentProperty="parent"
+                nodeProperty="type"
+                source="{{_viewSource}}"
+                header="{{_header}}"
+                bind:expandedItems="_expandedItems"
+                columns="{{_columns}}"
+                columnScroll="{{true}}"
+                rowSeparatorSize="s"
+                itemActions="{{ _itemActions }}"
+                stickyColumnsCount="{{2}}">
+        <ws:nodeFooterTemplate>
+            <ws:partial template="Controls/treeGrid:NodeFooterTemplate">
+                <Controls.list:AddButton caption="Добавить товар" on:click="_addButtonHandler(nodeFooterTemplate.item)"/>
+            </ws:partial>
+        </ws:nodeFooterTemplate>
+          <ws:footerTemplate>
+            <ws:partial template="Controls/grid:FooterTemplate">
+              <div class="controlsDemo__treeGrid__footer__content">
+                <span>Подвал дерева</span>
+                <div class="controlsDemo__treeGrid__footer__locator"></div>
+              </div>
+            </ws:partial>
+          </ws:footerTemplate>
+        </Controls.treeGrid:View>
+    </Controls.scroll:Container>
+</div>

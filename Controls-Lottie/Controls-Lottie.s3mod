@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-Lottie" kaizen_zone="9f7e4829-fcdd-437e-b4c2-85343c02e891" 
+           id="c0ca8e26-b7d2-4d5c-88c8-1f6d727e7d44"
+           package="Wasaby"
+           responsible="Кондратьев И.Н."
+           required="1"
+           version="1.00">
+  <description>Модуль содержит контрол анимации.</description>
+    <depends>
+      <module id="f6fdf353-3ab3-4dbb-8671-01c2b418bf0a" name="Controls"/>
+      <module id="af50caf5-f84b-4b81-a19c-6f6618372dbd" name="Controls-default-theme"/>
+    </depends>
+  <load_after/>
+  <parameters/>
+  <resources/>
+  <preload/>
+</ui_module>

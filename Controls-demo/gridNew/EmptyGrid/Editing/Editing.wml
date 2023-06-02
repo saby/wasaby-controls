@@ -1,0 +1,74 @@
+<div class="controlsDemo__wrapper">
+	<Controls-demo.gridNew.DemoLayout.Index>
+		<ws:content>
+			<div>
+				<Controls.input:Text placeholder="Введите значение и нажмите Enter для активации добавления в список"
+									 title="Введите значение и нажмите Tab для активации добавления в список"
+									 attr:style="width: 500px"
+									 attr:class="controlsDemo__mb2"
+									 bind:value="_inputValue"/>
+				<Controls.grid:View
+					name="grid"
+					keyProperty="key"
+					source="{{_viewSource}}"
+					attr:class="controlsDemo__wrapper__padding-top controlsDemo__wrapper__padding-bottom"
+					attr:style="{{ _hasGridBackground ? 'background-color: #ffefef;' }}"
+					multiSelectVisibility="visible"
+					on:afterBeginEdit="_onAfterBeginEnd()"
+					on:beforeEndEdit="_onBeforeEndEdit()"
+					columns="{{_columns}}">
+					<ws:editingConfig editOnClick="{{true}}" toolbarVisibility="{{true}}"/>
+					<ws:emptyTemplateOptions backgroundColorStyle="{{ _emptyEditorStyle === 'light' ? 'transparent' }}"/>
+					<ws:emptyTemplateColumns>
+						<ws:Array>
+							<ws:Object startColumn="{{ 1 }}" endColumn="{{ 2 }}">
+								<ws:template>
+									<ws:partial template="Controls/grid:EmptyColumnTemplate">
+										<ws:partial template="Controls/list:EditingTemplate"
+													enabled="{{ _emptyEditorStyle === 'default' }}"
+													inputBorderVisibility="{{ _emptyEditorStyle === 'light' ? 'partial' }}">
+											<ws:viewTemplate>
+												<div on:click="_beginAdd()">Введите наименование, штрих-код или артикул</div>
+											</ws:viewTemplate>
+										</ws:partial>
+									</ws:partial>
+								</ws:template>
+							</ws:Object>
+							<ws:Object startColumn="{{ 2 }}" endColumn="{{ 6 }}">
+								<ws:template>
+									<ws:partial template="Controls/grid:EmptyColumnTemplate">
+										<div>или выберите из <a href="#" class="controls-text-link">каталога</a></div>
+									</ws:partial>
+								</ws:template>
+							</ws:Object>
+						</ws:Array>
+					</ws:emptyTemplateColumns>
+					<ws:footerTemplate>
+						<Controls.list:AddButton if="{{ _hasItems && !_isEditing }}" caption="Запись" on:click="_beginAdd()" class="test_add_record_1"/>
+					</ws:footerTemplate>
+				</Controls.grid:View>
+			</div>
+		</ws:content>
+		<ws:rightSidebar isExpanded="{{ false }}">
+			<ws:items>
+				<ws:Array>
+					<ws:Object>
+						<ws:template>
+							<h4 class="controlsDemo__mb1">Стиль пустого представления</h4>
+							<button on:click="_setEmptyEditorStyle('default')" class="controlsDemo__mr1" style="padding: 3px;">Стандартный</button>
+							<button on:click="_setEmptyEditorStyle('light')" class="controlsDemo__mr1" style="padding: 3px;">Облегченный</button>
+						</ws:template>
+					</ws:Object>
+					<ws:Object>
+						<ws:template>
+							<h4 class="controlsDemo__mb1">Фон контейнера</h4>
+							<button on:click="_toggleGridBackground()" class="controlsDemo__mr1" style="padding: 3px;">
+								{{ _hasGridBackground ? 'Выключить' : 'Включить' }}
+							</button>
+						</ws:template>
+					</ws:Object>
+				</ws:Array>
+			</ws:items>
+		</ws:rightSidebar>
+	</Controls-demo.gridNew.DemoLayout.Index>
+</div>

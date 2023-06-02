@@ -1,0 +1,40 @@
+<div class="controlsDemo__wrapper controlDemo_Tile_default ws-flexbox">
+   <div class="ws-flex-column controls-padding_right-l" attr:data-qa="controlDemo_Tile_default_stickyGroup-true">
+      <span>stickyGroup=true</span>
+      <Controls.scroll:Container attr:style="width: 500px; height: 500px">
+         <Controls.treeTile:View
+                 keyProperty="id"
+                 imageProperty="image"
+                 groupProperty="group"
+                 nodeProperty="parent@"
+                 parentProperty="parent"
+                 displayProperty="title"
+
+                 tileMode="dynamic"
+                 stickyGroup="{{true}}"
+                 stickyHeader="{{false}}"
+
+                 source="{{_viewSource}}"
+         />
+      </Controls.scroll:Container>
+   </div>
+   <div class="ws-flex-column">
+      <Controls.scroll:Container attr:style="width: 500px; height: 500px" attr:data-qa="controlDemo_Tile_default_stickyGroup-false">
+         <span>stickyGroup=false</span>
+         <Controls.treeTile:View
+                 keyProperty="id"
+                 imageProperty="image"
+                 groupProperty="group"
+                 nodeProperty="parent@"
+                 parentProperty="parent"
+                 displayProperty="title"
+
+                 tileMode="dynamic"
+                 stickyGroup="{{false}}"
+                 stickyHeader="{{false}}"
+
+                 source="{{_viewSource}}"
+         />
+      </Controls.scroll:Container>
+   </div>
+</div>

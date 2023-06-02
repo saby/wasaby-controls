@@ -1,0 +1,13 @@
+<Controls.tile:View
+        displayProperty="title"
+        keyProperty="key"
+        source="{{_viewSource}}"
+        attr:class="controlsDemo_fixedWidth850">
+   <ws:itemTemplate>
+      <ws:partial
+              template="Controls/tile:SmallItemTemplate"
+              cursor="{{itemTemplate.item.contents.cursor}}"
+              scope="{{itemTemplate}}">
+      </ws:partial>
+   </ws:itemTemplate>
+</Controls.tile:View>

@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper controlsDemo__maxWidth500 controlDemo_list-new__decorators">
+    <Controls.list:View source="{{_viewSource}}">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/list:ItemTemplate">
+                <ws:contentTemplate>
+                    <div>
+                        <Controls.baseDecorator:Money
+                                fontColorStyle="{{itemTemplate.item.contents.get('fontColorStyle')}}"
+                                value="{{itemTemplate.item.contents.get('value')}}"
+                                fontWeight="bold"/>
+                    </div>
+                </ws:contentTemplate>
+            </ws:partial>
+        </ws:itemTemplate>
+    </Controls.list:View>
+</div>

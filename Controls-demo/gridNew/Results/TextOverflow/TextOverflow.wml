@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper controlDemo__grid-header-longHeader" style="max-width: 300px">
+    <Controls.scroll:Container attr:class="controlsDemo__inline-flex">
+        <Controls.grid:View
+                keyProperty="key"
+                source="{{_viewSource}}"
+                stickyHeader="{{false}}"
+                columns="{{_columns}}"
+                dataLoadCallback="{{ _dataLoadCallback }}"
+                itemsReadyCallback="{{ _itemsReadyCallback }}"
+                resultsPosition="top"/>
+    </Controls.scroll:Container>
+</div>

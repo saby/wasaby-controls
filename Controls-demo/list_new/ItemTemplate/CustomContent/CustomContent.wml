@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth600">
+    <Controls.list:View keyProperty="key" source="{{_viewSource}}">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/list:ItemTemplate">
+                <ws:contentTemplate>
+                    <div>
+                        <div>{{itemTemplate.item.contents.get('title')}}</div>
+                        <div style="font-size: 11px; color: grey">{{itemTemplate.item.contents.get('description')}}
+                        </div>
+                    </div>
+                </ws:contentTemplate>
+            </ws:partial>
+        </ws:itemTemplate>
+    </Controls.list:View>
+</div>

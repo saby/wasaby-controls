@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <Controls.input:AdapterMask
+                bind:value="_valueAdapterMask"
+                mask="ddd-dd-d"
+                formatMaskChars="{{_formatMaskChars}}"
+                replacer="-">
+            <Controls.input:Mask/>
+        </Controls.input:AdapterMask>
+        <div class="controls-text-label controls-margin_top-m">Текущее значение{{_valueAdapterMask}}</div>
+    </div>
+</div>

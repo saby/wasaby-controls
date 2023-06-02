@@ -1,0 +1,24 @@
+<div class="controlsDemo__wrapper">
+   <Controls.scroll:Container attr:class="controlsDemo__height400">
+      <Controls.treeTile:View
+              attr:class="demo-Tile__static demo-Tile__staticGroup"
+              tileMode="static"
+              parentProperty="parent"
+              nodeProperty="type"
+              displayProperty="title"
+              imageProperty="image"
+              keyProperty="id"
+              multiSelectVisibility="{{_multiSelectVisibility}}"
+              stickyHeader="{{true}}"
+              source="{{_viewSource}}"
+              groupProperty="group">
+         <ws:itemTemplate>
+            <ws:partial
+                    shadowVisibility="onhover"
+                    template="Controls/tile:ItemTemplate"
+                    hasTitle="{{itemTemplate.item.contents.isDocument}}"/>
+         </ws:itemTemplate>
+      </Controls.treeTile:View>
+   </Controls.scroll:Container>
+   <div attr:class="ws-link controlsDemo_m" on:click="_switchMultiSelect()">Переключить чекбоксы</div>
+</div>

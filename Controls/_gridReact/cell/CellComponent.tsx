@@ -1,0 +1,234 @@
+import * as React from 'react';
+
+import { DraggingCounterTemplate } from 'Controls/baseList';
+import { default as Marker } from 'Controls/markerComponent';
+import { StickyGroupedBlock } from 'Controls/stickyBlock';
+
+import { ICellComponentProps } from './interface';
+import ActionsWrapper from '../components/ActionsWrapper';
+import TagTemplate from 'Controls/Application/TagTemplate/TagTemplateReact';
+import { EditArrowComponent } from 'Controls/grid';
+
+const DEFAULT_PROPS: Partial<ICellComponentProps> = {
+    paddingTop: 'grid_s',
+    paddingBottom: 'grid_s',
+    paddingLeft: 'grid_m',
+    paddingRight: 'grid_m',
+
+    hoverBackgroundStyle: 'list_default',
+};
+
+function getClassName({
+    isFirstCell,
+    isLastCell,
+    fontSize,
+    fontColorStyle,
+    fontWeight,
+    cursor = 'pointer',
+    paddingTop = DEFAULT_PROPS.paddingTop,
+    paddingBottom = DEFAULT_PROPS.paddingBottom,
+    paddingLeft = DEFAULT_PROPS.paddingLeft,
+    paddingRight = DEFAULT_PROPS.paddingRight,
+    hoverBackgroundStyle = DEFAULT_PROPS.hoverBackgroundStyle,
+    backgroundStyle,
+    halign,
+    valign = 'baseline',
+    className: propsClassName,
+    borderVisibility = 'hidden',
+    borderStyle = 'default',
+    shadowVisibility = 'hidden',
+    editable,
+    editing,
+    minHeightClassName,
+    stickied,
+    topSeparatorSize,
+    bottomSeparatorSize,
+    leftSeparatorSize,
+    rightSeparatorSize
+}: ICellComponentProps): string {
+    let className = 'controls-GridReact__cell tw-flex';
+    className += ' js-controls-Grid__row-cell';
+
+    // Если запись может стикаться, то не нужно задавать position: relative, т.к. этим мы перебьем position: sticky
+    if (!stickied) {
+        className += ' tw-relative';
+    }
+
+    if (minHeightClassName) {
+        className += ` ${minHeightClassName}`;
+    }
+
+    if (propsClassName) {
+        className += ` ${propsClassName}`;
+    }
+
+    if (fontSize) {
+        className += ` controls-fontsize-${fontSize}`;
+    }
+    if (fontWeight) {
+        className += ` controls-fontweight-${fontWeight}`;
+    }
+    if (fontColorStyle) {
+        className += ` controls-text-${fontColorStyle}`;
+    }
+
+    if (cursor) {
+        className += ` tw-cursor-${cursor}`;
+    }
+
+    if (paddingTop && paddingTop !== 'null') {
+        className += ` controls-padding_top-${paddingTop}`;
+    }
+    if (paddingBottom && paddingBottom !== 'null') {
+        className += ` controls-padding_bottom-${paddingBottom}`;
+    }
+    if (paddingLeft && paddingLeft !== 'null') {
+        className += ` controls-padding_left-${paddingLeft}`;
+    }
+    if (paddingRight && paddingRight !== 'null') {
+        className += ` controls-padding_right-${paddingRight}`;
+    }
+
+    if (backgroundStyle !== 'none') {
+        className += ` controls-background-${backgroundStyle}`;
+    }
+    if (hoverBackgroundStyle !== 'none') {
+        className += ` controls-hover-background-${hoverBackgroundStyle}`;
+    }
+
+    if (halign) {
+        className += ` tw-justify-${halign}`;
+    }
+    if (valign) {
+        className += ` tw-items-${valign}`;
+        if (valign === 'baseline') {
+            // Добавляем для выравнивания псевдосимвол в 17px
+            className += ' controls-GridReact__cell-baseline';
+        }
+    }
+
+    if (topSeparatorSize !== 'null') {
+        className += ` controls-GridReact-cell_topSeparatorSize-${topSeparatorSize}`;
+    }
+
+    if (bottomSeparatorSize !== 'null') {
+        className += ` controls-GridReact-cell_bottomSeparatorSize-${bottomSeparatorSize}`;
+    }
+
+    if (leftSeparatorSize !== 'null') {
+        className += ` controls-GridReact-cell_leftSeparatorSize-${leftSeparatorSize}`;
+    }
+
+    if (rightSeparatorSize !== 'null') {
+        className += ` controls-GridReact-cell_rightSeparatorSize-${rightSeparatorSize}`;
+    }
+
+    if (borderVisibility !== 'hidden') {
+        className += ` controls-GridReact__cell-border_${borderVisibility}`;
+        className += ` controls-GridReact__cell-borderStyle_${borderStyle}`;
+    }
+
+    if (shadowVisibility !== 'hidden') {
+        className += ` controls-ListView__item_shadow_${shadowVisibility}`;
+        if (isFirstCell) {
+            className += ' controls-GridReact__first-cell_shadow-mask';
+        }
+        if (isLastCell) {
+            className += ' controls-GridReact__last-cell_shadow-mask';
+        }
+        if (!isFirstCell && !isLastCell) {
+            className += ' controls-GridReact__cell_shadow-mask';
+        }
+    }
+
+    if (editable) {
+        className += ' js-controls-ListView__editingTarget';
+    }
+
+    return className;
+}
+
+function getStyles(props: ICellComponentProps): React.CSSProperties {
+    const styles: React.CSSProperties = {};
+    if (props.startColspanIndex !== undefined) {
+        const endIndex =
+            // @ts-ignore
+            !!props.cCount && props.isLastCell ? '-1' : props.endColspanIndex;
+        styles.gridColumn = `${props.startColspanIndex} / ${endIndex}`;
+    }
+    if (props.startRowspanIndex !== undefined) {
+        styles.gridRow = `${props.startRowspanIndex} / ${props.endRowspanIndex}`;
+    }
+    return styles;
+}
+
+function CellComponent(props: ICellComponentProps): React.ReactElement {
+    const hoverBackgroundStyle = props.hoverBackgroundStyle ?? DEFAULT_PROPS.hoverBackgroundStyle;
+    const marker = props.markerVisible && (
+        <Marker markerSize={props.markerSize} className={props.markerClassName} />
+    );
+    const actions = props.actionsVisibility !== 'hidden' && (
+        <ActionsWrapper
+            actionsVisibility={props.actionsVisibility}
+            actionHandlers={props.actionHandlers}
+            hoverBackgroundStyle={hoverBackgroundStyle}
+            actionsClassName={props.actionsClassName}
+        />
+    );
+    const draggingCounter = props.draggingItemsCount && (
+        <DraggingCounterTemplate itemsCount={props.draggingItemsCount} />
+    );
+    const tag = props.tagStyle && (
+        <div
+            className={`js-controls-tag controls-Grid__cell_tag controls-Grid__cell_tag_position_${props.tagPosition}`}
+        >
+            <TagTemplate tagStyle={props.tagStyle} />
+        </div>
+    );
+    const editArrow = props.showEditArrow && (
+        <EditArrowComponent backgroundStyle={props.hoverBackgroundStyle} />
+    );
+
+    const content = (
+        <>
+            {marker}
+            {props.render}
+            {editArrow}
+            {tag}
+            {actions}
+            {draggingCounter}
+        </>
+    );
+
+    const className = getClassName(props);
+    const style = getStyles(props);
+    const title = props.tooltip !== undefined && props.tooltip !== '' ? props.tooltip : null;
+
+    if (props.stickied) {
+        return (
+            <StickyGroupedBlock
+                className={className}
+                position={props.stickyPosition}
+                mode={props.stickyMode}
+                fixedZIndex={props.stickiedZIndex}
+                backgroundStyle={props.stickiedBackgroundStyle}
+                shadowVisibility={props.shadowVisibility}
+                attrs={{
+                    style,
+                    title,
+                    'data-qa': 'cell',
+                }}
+            >
+                {content}
+            </StickyGroupedBlock>
+        );
+    }
+
+    return (
+        <div className={className} style={style} title={title} data-qa={'cell'}>
+            {content}
+        </div>
+    );
+}
+
+export default React.memo(CellComponent);

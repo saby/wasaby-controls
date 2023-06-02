@@ -1,0 +1,64 @@
+.controls_calendar_theme-@{themeName} {
+   //Общие переменные для переключателя месяцев
+   //
+   //Цвета и размеры
+   --monthview_width_monthSlider: calc(
+      var(--monthview_item_height_monthSlider) * 7 +
+         var(--monthview_item_border-thickness_monthSlider) * 8
+   );
+   --monthview_height_monthSlider: calc(
+      var(--header_height_monthSlider) + 6 *
+         var(--monthview_item_height_monthSlider) + 7 *
+         var(--monthview_item_border-thickness_monthSlider)
+   );
+
+   //Переменные для шапки переключателя
+   //
+   //Размеры
+   --header_height_monthSlider: 28px;
+
+   //Иконка переключения месяца
+   --arrow_icon-size_monthSlider: var(--icon-size_s);
+
+   //Заголовок
+   --heading_text-color_monthSlider: #587ab0;
+   --value_min-width_MonthSlider: 110px;
+
+   //Обозначения дней недели
+   --weekdays_height_monthSlider: 24px;
+   --weekdays_text-color_monthSlider: var(--unaccented_color);
+
+   //Переменные для ячеек
+   //
+   //Размеры
+   --monthview_item_height_monthSlider: 28px;
+
+   //Обводка
+   --monthview_item_border-thickness_monthSlider: var(--border-thickness);
+   --monthview_today_offset_monthSlider: 0;
+   --monthview_item_border-color_monthSlider: transparent;
+   --monthview_item_hover_border-color_monthSlider: #8991a9;
+   --monthview_today_border-thickness_monthSlider: 0;
+   --monthview_today_border-color_monthSlider: var(
+      --monthview_item_border-color_monthSlider
+   );
+
+   //Фон
+   --monthview_today_background-color_monthSlider: #da4600;
+   --monthview_item_background-color_monthSlider: #f4f4f4;
+   --monthview_item_hover_background-color_monthSlider: var(
+      --monthview_item_background-color_monthSlider
+   );
+
+   //Текст в ячейках
+
+   --monthview_item_text-color_monthSlider: var(--text-color);
+   --monthview_weekend_text-color_monthSlider: var(--primary_text-color);
+   --monthview_otherday_text-color_monthSlider: var(
+      --monthview_item_text-color_monthSlider
+   );
+   --monthview_today_text-color_monthSlider: #fff;
+   --monthview_weekend_today_text-color_monthSlider: var(
+      --monthview_today_text-color_monthSlider
+   );
+}

@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+    <Controls.tree:View
+            keyProperty="key"
+            source="{{_viewSource}}"
+            parentProperty="parent"
+            hasChildrenProperty="hasChild"
+            nodeProperty="type"
+            bind:expandedItems="_expandedItems"
+            bind:collapsedItems="_collapsedItems"/>
+</div>

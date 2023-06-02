@@ -1,0 +1,6 @@
+<div class="controlsDemo__wrapper controlsDemo__childMinWidth400">
+    <Controls.list:View
+            keyProperty="key"
+            source="{{_viewSource}}"
+            itemActions="{{_itemActions}}"/>
+</div>

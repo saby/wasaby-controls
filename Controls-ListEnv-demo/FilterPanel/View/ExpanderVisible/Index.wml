@@ -1,0 +1,6 @@
+<div class="engine-demo__Widgets_filter-container">
+    <Controls-ListEnv.filterPanel:View filterNames="['isDevelopment']"
+        storeId="departments"
+        attr:class="engine-demo__Widgets_filterPanel"/>
+    <Controls.list:View storeId="departments" />
+</div>

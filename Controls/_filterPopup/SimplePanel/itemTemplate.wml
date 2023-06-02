@@ -1,0 +1,19 @@
+<ws:if data="{{_options.nodeProperty}}">
+   <Controls._filterPopup.SimplePanel._HierarchyList
+           scope="{{_options}}"
+      />
+</ws:if>
+<ws:else data="{{_options.editorTemplateName === 'Controls/filterPanel:DateMenuEditor'}}">
+   <Controls.Container.Async templateName="Controls/filterPanel:DateMenuEditor"
+                             >
+      <ws:partial template="{{ content.resolvedTemplate }}"
+                  viewMode="frequent"
+                  scope="{{_options}}"
+                  />
+   </Controls.Container.Async>
+</ws:else>
+<ws:else>
+   <Controls._filterPopup.SimplePanel._List
+      scope="{{_options}}"
+   />
+</ws:else>

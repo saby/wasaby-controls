@@ -1,0 +1,36 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container>
+        <Controls.list:View
+                keyProperty="key"
+                source="{{_rootSource}}"
+                markerVisibility="hidden"
+                groupProperty="group"
+                on:groupClick="_groupClick()">
+            <ws:groupTemplate>
+                <ws:partial template="Controls/list:GroupTemplate" fontSize="xl" textAlign="left" expanderAlign="right"/>
+            </ws:groupTemplate>
+            <ws:itemTemplate>
+                <ws:partial template="Controls/list:ItemTemplate" highlightOnHover="{{false}}">
+                    <ws:contentTemplate>
+                        <div>
+                            {{ contentTemplate.item.contents.get('title') }}
+                        </div>
+                        <Controls.list:View
+                                keyProperty="key"
+                                source="{{_nestedSource}}"
+                                groupProperty="group"
+                                itemActions="{{_nestedItemActions}}"
+                                on:groupClick="_groupClick()">
+                            <ws:groupTemplate>
+                                <ws:partial template="Controls/list:GroupTemplate" textAlign="left"  expanderAlign="right"/>
+                            </ws:groupTemplate>
+                        </Controls.list:View>
+                    </ws:contentTemplate>
+                </ws:partial>
+            </ws:itemTemplate>
+        </Controls.list:View>
+    </Controls.scroll:Container>
+    <div if="{{_lastClickedGroup}}">
+        Кликнули на {{_lastClickedElement}}
+    </div>
+</div>

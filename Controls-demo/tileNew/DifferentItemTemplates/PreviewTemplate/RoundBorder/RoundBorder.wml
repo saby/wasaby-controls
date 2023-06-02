@@ -1,0 +1,56 @@
+<div class="controlsDemo__wrapper">
+
+    <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-previewTemplate_roundBorder-null">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/tileNew/DifferentItemTemplates/PreviewTemplate/RoundBorder/null/Index' }}">
+            <a href="{{content.href}}">Скругления размера null</a>
+        </Router.router:Reference>
+        <Controls-demo.tileNew.DifferentItemTemplates.PreviewTemplate.RoundBorder.null.Index />
+    </div>
+
+    <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-previewTemplate_roundBorder-3xs">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/tileNew/DifferentItemTemplates/PreviewTemplate/RoundBorder/3xs/Index' }}">
+            <a href="{{content.href}}">Скругления размера 3xs</a>
+        </Router.router:Reference>
+        <Controls-demo.tileNew.DifferentItemTemplates.PreviewTemplate.RoundBorder.3xs.Index />
+    </div>
+
+    <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-previewTemplate_roundBorder-2xs">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/tileNew/DifferentItemTemplates/PreviewTemplate/RoundBorder/2xs/Index' }}">
+            <a href="{{content.href}}">Скругления размера 2xs</a>
+        </Router.router:Reference>
+        <Controls-demo.tileNew.DifferentItemTemplates.PreviewTemplate.RoundBorder.2xs.Index />
+    </div>
+
+    <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-previewTemplate_roundBorder-xs">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/tileNew/DifferentItemTemplates/PreviewTemplate/RoundBorder/xs/Index' }}">
+            <a href="{{content.href}}">Скругления размера xs</a>
+        </Router.router:Reference>
+        <Controls-demo.tileNew.DifferentItemTemplates.PreviewTemplate.RoundBorder.xs.Index />
+    </div>
+
+    <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-previewTemplate_roundBorder-s">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/tileNew/DifferentItemTemplates/PreviewTemplate/RoundBorder/s/Index' }}">
+            <a href="{{content.href}}">Скругления размера s</a>
+        </Router.router:Reference>
+        <Controls-demo.tileNew.DifferentItemTemplates.PreviewTemplate.RoundBorder.s.Index />
+    </div>
+
+    <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-previewTemplate_roundBorder-m">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/tileNew/DifferentItemTemplates/PreviewTemplate/RoundBorder/m/Index' }}">
+            <a href="{{content.href}}">Скругления размера m</a>
+        </Router.router:Reference>
+        <Controls-demo.tileNew.DifferentItemTemplates.PreviewTemplate.RoundBorder.m.Index />
+    </div>
+</div>

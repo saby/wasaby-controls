@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper controlsDemo__width800px">
+    <div class="controls-text-label">Размер скруглений l</div>
+    <Controls.columns:View
+            keyProperty="key"
+            source="{{ _viewSource }}"
+            itemActions="{{_itemActions}}">
+        <ws:roundBorder tl="l" tr="l" bl="l" br="l"/>
+        <ws:itemTemplate>
+            <ws:partial template="Controls/columns:ItemTemplate"
+                        highlightOnHover="{{false}}"
+                        attr:class="controlsDemo__height36_item"/>
+        </ws:itemTemplate>
+    </Controls.columns:View>
+</div>

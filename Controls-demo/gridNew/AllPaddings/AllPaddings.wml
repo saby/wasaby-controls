@@ -1,0 +1,42 @@
+<div class="controlsDemo__wrapper">
+    <Controls.grid:View
+            keyProperty="key"
+            source="{{ _viewSource }}"
+            header="{{ _header }}"
+            resultsPosition="top"
+            columns="{{ _columns }}">
+        <ws:itemPadding top="l" bottom="l" left="xl" right="xl"/>
+        <ws:footer>
+            <ws:Array>
+                <ws:Object startColumn="{{ 1 }}" endColumn="{{ 3 }}">
+                    <ws:template>
+                        <ws:partial template="Controls/grid:FooterColumnTemplate">
+                            <span>Подвал под названием</span>
+                        </ws:partial>
+                    </ws:template>
+                </ws:Object>
+                <ws:Object startColumn="{{ 3 }}" endColumn="{{ 4 }}">
+                    <ws:template>
+                        <ws:partial template="Controls/grid:FooterColumnTemplate">
+                            <span>3-4</span>
+                        </ws:partial>
+                    </ws:template>
+                </ws:Object>
+                <ws:Object startColumn="{{ 4 }}" endColumn="{{ 6 }}">
+                    <ws:template>
+                        <ws:partial template="Controls/grid:FooterColumnTemplate">
+                            <span>4-6</span>
+                        </ws:partial>
+                    </ws:template>
+                </ws:Object>
+                <ws:Object startColumn="{{ 6 }}" endColumn="{{ 7 }}">
+                    <ws:template>
+                        <ws:partial template="Controls/grid:FooterColumnTemplate">
+                            <span>6-7</span>
+                        </ws:partial>
+                    </ws:template>
+                </ws:Object>
+            </ws:Array>
+        </ws:footer>
+    </Controls.grid:View>
+</div>

@@ -1,0 +1,20 @@
+<ws:partial template="Controls/grid:ColumnTemplate" scope="{{ _options }}">
+    <ws:contentTemplate>
+        <div class="ws-flex-column">
+            <div data-qa="controlsDemo-GridNested__columnTitle">
+                {{ contentTemplate.item.contents.get('title') }}
+            </div>
+            <Controls.grid:View
+                    keyProperty="key"
+                    source="{{nestedSource}}"
+                    groupProperty="group"
+                    columns="{{nestedColumns}}"
+                    itemActions="{{nestedItemActions}}"
+                    on:groupClick="_groupClick()">
+                <ws:groupTemplate>
+                    <ws:partial template="Controls/grid:GroupTemplate" textAlign="left"  expanderAlign="right"/>
+                </ws:groupTemplate>
+            </Controls.grid:View>
+        </div>
+    </ws:contentTemplate>
+</ws:partial>

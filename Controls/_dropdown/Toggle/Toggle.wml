@@ -1,0 +1,8 @@
+<Controls._dropdown.Selector source="{{_source}}"
+                             keyProperty="key"
+                             displayProperty="title"
+                             emptyText="{[Не выбрано]}"
+                             iconSize="m"
+                             contentTemplate="Controls/dropdown:defaultContentTemplateWithIcon"
+                             validationStatus="{{_options.validationStatus}}"
+                             bind:selectedKeys="_selectedKeys" />

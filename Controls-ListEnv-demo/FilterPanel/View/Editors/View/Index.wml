@@ -1,0 +1,28 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__flexRow">
+        <div class="controls-FilterViewPanel controlsDemo__flexColumn">
+            <Controls-ListEnv.filterPanel:View filterNames="['owner']"
+                storeId="viewData"
+                editorsViewMode="default"
+                attr:class="controls-demo__filterButton controls-ListEnv__filterPanel"
+            />
+            <Controls-ListEnv.filterPanel:View filterNames="['amount']"
+                storeId="viewData"
+                editorsViewMode="cloud"
+                attr:class="controls-demo__filterButton controls-ListEnv__filterPanel"
+            />
+        </div>
+        <Controls.list:View storeId="viewData" emptyTemplate="Не найдено">
+            <ws:itemTemplate>
+                <ws:partial template="Controls/list:ItemTemplate">
+                    <ws:contentTemplate>
+                        <div class="demo-FilterSearch__listItem-wrapper">
+                            <span class="demo-FilterSearch__department"> {{itemTemplate.item.contents.get('department')}} </span>
+                            <span class="demo-FilterSearch__title">{{itemTemplate.item.contents.get('owner')}}<span class="icon-16 icon-Company icon-disabled"></span> ({{itemTemplate.item.contents.get('amount')}})</span>
+                        </div>
+                    </ws:contentTemplate>
+                </ws:partial>
+            </ws:itemTemplate>
+        </Controls.list:View>
+    </div>
+</div>

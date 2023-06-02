@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+   <ws:for data="markerSize in _markerSizes">
+      <div class="controlsDemo__cell">
+         <div class="controlsDemo__flexColumn controlsDemo__list-item">
+            <div class="controls-text-label">markerSize='<b>{{ markerSize }}</b>'</div>
+            <ws:partial template="Controls/markerComponent" markerSize="{{markerSize}}" className="controlsDemo__list-item__marker"/>
+         </div>
+      </div>
+   </ws:for>
+</div>

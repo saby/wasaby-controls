@@ -1,0 +1,17 @@
+<ws:template name="suggest">
+   <Controls.context:ContextOptionsConsumer>
+       <ws:contextOptionsInnerComponent>
+           <Controls-ListEnv._SuggestSearchInput.SearchInput
+               scope="{{ _options }}" _dataOptionsValue="{{contextOptionsInnerCompon._dataOptionsValue}}"/>
+       </ws:contextOptionsInnerComponent>
+   </Controls.context:ContextOptionsConsumer>
+</ws:template>
+
+<ws:if data="{{ _options.storeId }}">
+   <Controls.search:InputContainer storeId="{{ _options.storeId }}">
+      <ws:partial template="suggest" />
+   </Controls.search:InputContainer>
+</ws:if>
+<ws:else>
+   <ws:partial template="suggest" />
+</ws:else>

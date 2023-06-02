@@ -1,0 +1,6 @@
+<ws:if data="{{column.config.result }}">
+   <Controls.baseDecorator:Money value="{{column.result}}" fontColorStyle="results" fontWeight="bold" fontSize="l"/>
+</ws:if>
+<ws:else>
+   <invisible-node />
+</ws:else>

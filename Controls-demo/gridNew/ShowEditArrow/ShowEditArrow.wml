@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper">
+    <Controls.grid:View
+            keyProperty="key"
+            attr:style="max-width: 274px;"
+            multiSelectVisibility="visible"
+            showEditArrow="{{true}}"
+            source="{{_viewSource}}"
+            columns="{{_columns}}"
+            on:editArrowClick="_editArrowClick()"/>
+    <div if="{{_clickedKey}}" attr:data-qa="indicator-clicked-on">Кликнули по стрелке на записи с ключом {{_clickedKey}}</div>
+</div>

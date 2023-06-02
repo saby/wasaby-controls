@@ -1,0 +1,6 @@
+<Controls.filterPanel:View scope="{{_options}}"
+                           bind:editorsViewMode="_editorsViewMode"
+                           resetButtonVisible="{{_resetButtonVisible}}"
+                           source="{{_filterPanelSource}}"
+                           style="master"
+                           on:sourceChanged="_filterPanelSourceChanged()"/>

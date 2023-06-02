@@ -1,0 +1,33 @@
+<Controls.browser:Browser source="{{_listSource}}"
+                          keyProperty="id"
+                          filterButtonSource="{{_filterSource}}"
+                          root="{{null}}"
+                          attr:style="width: 600px">
+    <div>
+        <Controls-ListEnv.SuggestSearchInput filterNames="{{_filters}}"
+                                              storeId="0"
+                                              searchParam="title"
+                                              displayProperty="title"
+                                              source="{{_filterSource}}"
+                                              keyProperty="id"
+                                              attr:class="engine-demo__widgets_suggest">
+        </Controls-ListEnv.SuggestSearchInput>
+
+        <Controls.list:Container>
+            <Controls.grid:View >
+                <ws:columns>
+                    <ws:Array>
+                        <ws:Object displayProperty="name"/>
+                        <ws:Object displayProperty="city"/>
+                    </ws:Array>
+                </ws:columns>
+                <ws:header>
+                    <ws:Array>
+                        <ws:Object title="Имя"/>
+                        <ws:Object title="Город проживания"/>
+                    </ws:Array>
+                </ws:header>
+            </Controls.grid:View>
+        </Controls.list:Container>
+    </div>
+</Controls.browser:Browser>

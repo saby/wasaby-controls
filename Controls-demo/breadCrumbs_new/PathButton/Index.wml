@@ -1,0 +1,42 @@
+<div class="controlsDemo__wrapper controlsDemo__wrapper__padding-left">
+   <span data-qa="controlsDemo-PathButton__rootTitle">root: {{_rootTitle}}</span>
+   <div>
+      <Controls.breadcrumbs:PathButton
+         attr:data-qa="controlsDemo-PathButton__root"
+         source="{{_source}}"
+         keyProperty="id"
+         nodeProperty="node"
+         parentProperty="parent"
+         displayProperty="title"
+         bind:path="_path"
+         on:pathChanged="_updateRootTitle()"
+      />
+   </div>
+   <div>
+      <div class="controls-text-label">Readonly</div>
+      <Controls.breadcrumbs:PathButton
+         attr:data-qa="controlsDemo-PathButton__readonly"
+         source="{{_source}}"
+         keyProperty="id"
+         nodeProperty="node"
+         parentProperty="parent"
+         displayProperty="title"
+         readOnly="{{true}}"
+         bind:path="_path"
+         on:pathChanged="_updateRootTitle()"
+      />
+   </div>
+   <div style="text-align: right;">
+      <div class="controls-text-label">Align right</div>
+      <Controls.breadcrumbs:PathButton
+         attr:data-qa="controlsDemo-PathButton__alignRight"
+         source="{{_source}}"
+         keyProperty="id"
+         nodeProperty="node"
+         parentProperty="parent"
+         displayProperty="title"
+         bind:path="_path"
+         on:pathChanged="_updateRootTitle()"
+      />
+   </div>
+</div>

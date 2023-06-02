@@ -1,0 +1,39 @@
+<Controls.popup:InfoboxTarget targetSide="bottom"
+                              trigger="{{_needInfobox ? 'hover' : 'demand'}}"
+                              name="infoboxTarget"
+                              horizontalPadding="null"
+                              attr:class="controls-Dropdown"
+                              on:click="_handleClick()"
+                              on:mousedown="_handleMouseDown()"
+                              on:mouseenter="_handleMouseEnter()"
+                              on:mouseleave="_handleMouseLeave()"
+                              on:keydown="_handleKeyDown()"
+                              on:deactivated="_deactivated()">
+    <ws:content>
+        <div>
+            <ws:partial template="{{_options.contentTemplate || _defaultContentTemplate}}"
+                        item="{{_item}}"
+                        icon="{{_icon}}"
+                        iconSize="{{_item && _item.get('iconSize') || _options.iconSize}}"
+                        iconStyle="{{_options.iconStyle}}"
+                        fontSize="{{_options.fontSize}}"
+                        fontColorStyle="{{_options.fontColorStyle}}"
+                        text="{{_text}}"
+                        underline="{{_options.underline}}"
+                        tooltip="{{_needInfobox ? '' : _tooltip}}"
+                        countItems="{{_countItems}}"
+                        hasMoreText="{{_hasMoreText}}"
+                        isEmptyItem="{{_isEmptyItem}}"
+                        validationStatus="{{_options.validationStatus}}"
+                        readOnly="{{_options.readOnly}}"
+                        needOpenMenuOnClick="{{_needOpenMenuOnClick}}"
+                        footerTemplate="{{_options.footerTemplate || _options.footerContentTemplate}}"
+                        attr:tabindex="0" />
+        </div>
+    </ws:content>
+    <ws:template>
+        <ws:partial template="wml!Controls/_dropdown/Selector/resources/infoBoxContentTemplate"
+                    selectedItems="{{_selectedItems}}"
+                    displayProperty="{{_options.displayProperty}}"/>
+    </ws:template>
+</Controls.popup:InfoboxTarget>

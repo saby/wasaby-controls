@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper">
+    <span class="controls-text-label controlsDemo__mb1">pageSize 20, остальные опции не заданы, показ с первой страницы</span>
+    <Controls-demo.list_new.VirtualScroll.NavigationSwitcher.Index totalCount="{{300}}">
+        <ws:content>
+            <Controls.scroll:Container attr:class="controlsDemo__maxWidth500 controlsDemo_line-height18" attr:style="max-height: 250px">
+                <Controls.list:View source="{{_viewSource}}"
+                                    keyProperty="key"
+                                    navigation="{{_options.navigation}}">
+                    <ws:virtualScrollConfig pageSize="{{20}}"/>
+                </Controls.list:View>
+            </Controls.scroll:Container>
+        </ws:content>
+    </Controls-demo.list_new.VirtualScroll.NavigationSwitcher.Index>
+</div>

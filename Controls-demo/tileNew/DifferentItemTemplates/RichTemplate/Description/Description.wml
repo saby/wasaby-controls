@@ -1,0 +1,19 @@
+<div class="controlsDemo__wrapper">
+   <Controls.scroll:Container class="controlsDemo__height500 controlsDemo__maxWidth600">
+      <Controls.tile:View
+              multiSelectVisibility="hidden"
+              tileMode="static"
+              keyProperty="key"
+              displayProperty="title"
+              imageProperty="image"
+              source="{{_viewSource}}">
+         <ws:itemTemplate>
+            <ws:partial
+                    scope="{{ itemTemplate }}"
+                    template="Controls/tile:RichTemplate"
+                    descriptionLines="{{ itemTemplate.item.contents.descriptionLines }}"
+                    description="{{ itemTemplate.item.contents.description }}"/>
+         </ws:itemTemplate>
+      </Controls.tile:View>
+   </Controls.scroll:Container>
+</div>

@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300 controlsDemo_tree-reverseType-singleExpand">
+    <Controls.tree:View
+            keyProperty="key"
+            source="{{_viewSource}}"
+            parentProperty="parent"
+            singleExpand="{{true}}"
+            nodeProperty="type"/>
+</div>

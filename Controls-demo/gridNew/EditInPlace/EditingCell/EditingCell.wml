@@ -1,0 +1,34 @@
+<div class="controlsDemo__cell">
+    <Controls.scroll:Container>
+        <Controls.list:DataContainer source="{{_viewSource}}" keyProperty="key" attr:class="controlsDemo__inline-flex">
+            <ws:content>
+                <div>
+                    <Controls.listDeprecate:Remover name="remover" on:afterItemsRemove="_afterItemsRemove()"/>
+                    <Controls.list:Container>
+                        <Controls.grid:View
+                                name="list"
+                                attr:class="controlsDemo__inline-flex controlsDemo__maxWidth800"
+                                bind:markedKey="_markedKey"
+                                dataLoadCallback="{{_dataLoadCallback}}"
+                                resultsPosition="top"
+                                itemActionsType="outside"
+                                itemActions="{{_itemActions}}"
+                                on:afterEndEdit="_toggleAddButton()"
+                                multiSelectVisibility="visible"
+                                bind:selectedKeys="_selectedKeys"
+                                columns="{{_columns}}">
+                            <ws:editingConfig>
+                                <ws:Object editOnClick="{{true}}" autoAdd="{{true}}"/>
+                            </ws:editingConfig>
+                            <ws:footerTemplate>
+                                <ws:partial template="Controls/grid:FooterTemplate">
+                                    <Controls.list:AddButton caption="Add record" on:click="_beginAdd()" class="test_add_record_1"/>
+                                </ws:partial>
+                            </ws:footerTemplate>
+                        </Controls.grid:View>
+                    </Controls.list:Container>
+                </div>
+            </ws:content>
+        </Controls.list:DataContainer>
+    </Controls.scroll:Container>
+</div>

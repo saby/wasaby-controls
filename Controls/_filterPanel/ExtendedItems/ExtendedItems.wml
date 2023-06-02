@@ -1,0 +1,59 @@
+<ws:template name="column">
+    <ws:for data="filter in column">
+        <Controls.Container.Async templateName="{{filter.editorTemplateName}}"
+                                  attr:key="{{'filterPanel-extended-' + filter.name}}">
+            <ws:partial template="{{content.resolvedTemplate}}"
+                        scope="{{filter.editorOptions}}"
+                        viewMode="{{filter.viewMode}}"
+                        propertyValue="{{filter.value}}"
+                        fontColorStyle="filterExtendedItem"
+                        fontSize="m"
+                        attr:class="controls-FilterViewPanel__additional-editor
+                                    controls-fontsize-m
+                                    controls-text-filterExtendedItem
+                                    controls-FilterViewPanel__additional-editor-{{_options.viewMode}}
+                                    controls-FilterViewPanel__additional-editor-{{_options.viewMode}}-in-{{_options.extendedItemsViewMode}}"
+                        attr:data-qa="FilterViewPanel__additional-editor"
+                        on:propertyValueChanged="_extendedValueChanged(filter)"/>
+        </Controls.Container.Async>
+    </ws:for>
+</ws:template>
+
+<ws:partial template="wml!Controls/_filterPanel/ExtendedItems/DefaultExtendedTemplate"
+            headingCaption="{{_options.headingCaption}}"
+            bottomSpacing="{{_expandButtonVisible ? 's' : 'l'}}">
+    <ws:bodyContentTemplate>
+        <div class="controls-FilterViewPanel__additional-editors
+                controls-FilterViewPanel__additional-editors-{{_options.viewMode}}
+                controls-FilterViewPanel__additional-editors-in-{{_options.extendedItemsViewMode}}">
+            <ws:if data="{{_options.viewMode === 'default' || _options.extendedItemsViewMode === 'row'}}">
+                <ws:partial template="column" column="{{_viewModel.getExtendedFilterItems()}}"/>
+            </ws:if>
+            <ws:else>
+                <ws:if data="{{_viewModel.getVisibleAdditionalColumns().left.length}}">
+                    <div class="controls-FilterViewPanel__additional_left-column"
+                         data-qa="controls-FilterViewPanel__additional_left-column">
+                        <ws:partial template="column" column="{{_viewModel.getVisibleAdditionalColumns().left}}"/>
+                    </div>
+                </ws:if>
+                <div class="controls-FilterViewPanel__additional_right-column"
+                     data-qa="controls-FilterViewPanel__additional_right-column">
+                    <ws:partial template="column" column="{{_viewModel.getVisibleAdditionalColumns().right}}"/>
+                </div>
+
+            </ws:else>
+        </div>
+        <ws:if data="{{_expandButtonVisible}}">
+            <div class="controls-FilterViewPanel__expanderButton">
+                <Controls.Container.Async templateName="Controls/ShowMoreButton">
+                    <ws:partial template="{{content.resolvedTemplate}}"
+                                iconSize="l"
+                                value="{{_viewModel.isListExpanded()}}"
+                                on:click="_handleExpanderClick()"
+                                attr:ws-no-focus="true"
+                                attr:data-qa="FilterViewPanel-additional__more"/>
+                </Controls.Container.Async>
+            </div>
+        </ws:if>
+    </ws:bodyContentTemplate>
+</ws:partial>

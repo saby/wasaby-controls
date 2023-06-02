@@ -1,0 +1,57 @@
+<div class="root">
+    <Router.router:Reference attr:class="controls-text-label"
+                             state="/Controls-demo/app/:app"
+                             app="{{ 'Controls-demo/Tabs/Buttons/ItemAlign/Index' }}">
+        <a href="{{content.href}}">Расположение вкладок</a>
+    </Router.router:Reference>
+    <Controls-demo.Tabs.Buttons.ItemAlign.Index/>
+
+    <Router.router:Reference attr:class="controls-text-label"
+                             state="/Controls-demo/app/:app"
+                             app="{{ 'Controls-demo/Tabs/Buttons/ItemRightTemplate/Index' }}">
+        <a href="{{content.href}}">itemTemplate</a>
+    </Router.router:Reference>
+    <Controls-demo.Tabs.Buttons.ItemRightTemplate.Index/>
+
+    <Router.router:Reference attr:class="controls-text-label"
+                             state="/Controls-demo/app/:app"
+                             app="{{ 'Controls-demo/Tabs/Buttons/SelectedKey/Index' }}">
+        <a href="{{content.href}}">selectedKey</a>
+    </Router.router:Reference>
+    <Controls-demo.Tabs.Buttons.SelectedKey.Index/>
+
+    <Router.router:Reference attr:class="controls-text-label"
+                             state="/Controls-demo/app/:app"
+                             app="{{ 'Controls-demo/Tabs/Buttons/UserContent/Index' }}">
+        <a href="{{content.href}}">Прикладной контент</a>
+    </Router.router:Reference>
+    <Controls-demo.Tabs.Buttons.UserContent.Index/>
+
+    <Router.router:Reference attr:class="controls-text-label"
+                             state="/Controls-demo/app/:app"
+                             app="{{ 'Controls-demo/Tabs/Buttons/DisplayProperty/Index' }}">
+        <a href="{{content.href}}">displayProperty</a>
+    </Router.router:Reference>
+    <Controls-demo.Tabs.Buttons.DisplayProperty.Index/>
+
+    <Router.router:Reference attr:class="controls-text-label"
+                             state="/Controls-demo/app/:app"
+                             app="{{ 'Controls-demo/Tabs/Buttons/TabSpaceTemplate/Index' }}">
+        <a href="{{content.href}}">tabSpaceTemplate</a>
+    </Router.router:Reference>
+    <Controls-demo.Tabs.Buttons.TabSpaceTemplate.Index/>
+
+    <Router.router:Reference attr:class="controls-text-label"
+                             state="/Controls-demo/app/:app"
+                             app="{{ 'Controls-demo/Tabs/Buttons/ChangeSource/Index' }}">
+        <a href="{{content.href}}">ChangeSource</a>
+    </Router.router:Reference>
+    <Controls-demo.Tabs.Buttons.ChangeSource.Index/>
+
+    <Router.router:Reference attr:class="controls-text-label"
+                             state="/Controls-demo/app/:app"
+                             app="{{ 'Controls-demo/Tabs/Buttons/WithPhoto/Index' }}">
+        <a href="{{content.href}}">WithPhoto</a>
+    </Router.router:Reference>
+    <Controls-demo.Tabs.Buttons.WithPhoto.Index/>
+</div>

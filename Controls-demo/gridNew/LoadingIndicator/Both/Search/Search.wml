@@ -1,0 +1,37 @@
+<div class="controlsDemo__cell">
+  <div class="controlsDemo__default">
+      <Controls.browser:Browser
+          keyProperty="key"
+          source="{{_viewSource}}"
+          searchParam="title"
+          minSearchLength="{{3}}"
+          bind:filter="_filter"
+      >
+        <ws:navigation source="position" view="infinity">
+          <ws:sourceConfig field="key" position="{{_position}}" direction="bothways" limit="{{15}}"/>
+        </ws:navigation>
+
+        <ws:content>
+          <div class="ws-fragment">
+            <Controls.search:InputContainer>
+              <Controls.search:Input/>
+            </Controls.search:InputContainer>
+            <Controls.scroll:Container attr:class="controlsDemo__height400" attr:style="max-width: 700px">
+              <Controls.list:Container>
+                <Controls.grid:View columns="{{_columns}}"/>
+              </Controls.list:Container>
+            </Controls.scroll:Container>
+          </div>
+        </ws:content>
+      </Controls.browser:Browser>
+  </div>
+
+  <div class="controlsDemo__flexColumn">
+    <Controls.checkbox:Checkbox caption="Загрузить мало данных вниз при поиске"
+                              bind:value="_littleData"
+                              on:valueChanged="_littleDataChangedHandler()"/>
+    <Controls.checkbox:Checkbox caption="Вернуть вверх more: true, но при подгрузке не загрузить данные"
+                              bind:value="_moreUpTrueAndWithoutData"
+                              on:valueChanged="_moreUpTrueAndWithoutDataChangedHandler()"/>
+  </div>
+</div>

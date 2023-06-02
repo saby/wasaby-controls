@@ -1,0 +1,44 @@
+<Controls.WorkByKeyboard.Consumer getContextValue="{{_setWorkByKeyboard}}">
+    <div class="controls-ComboBox
+            controls_toggle_theme-{{_options.theme}}
+            controls-ComboBox-{{_readOnly ? 'readOnly' : 'borderStyle-' + _borderStyle}} {{_isOpened ? 'controls-ComboBox__opened'}}
+            {{!_readOnly && _options.contrastBackground ? 'controls-ComboBox-validationStatus-' + _options.validationStatus}}
+            {{_isOpened ? 'controls-Popup__isolatedFocusingContext'}}
+            controls-text-{{_options.fontColorStyle}}
+            controls-fontweight-{{_options.fontWeight}}
+            controls-inlineheight-{{_options.inlineHeight}}
+            controls-Combobox-fontsize-{{_options.fontSize}}
+            controls-ComboBox_textAlign-{{_options.textAlign}}
+            {{_highlightedOnFocus ? 'controls-focused-item_underline' : !_readOnly && 'controls-ComboBox-borderStyle-' + _borderStyle + '_focusing'}}
+            {{_options.contrastBackground ? 'controls-ComboBox_background-contrast' : 'controls-ComboBox_background-same'}}
+            controls-ComboBox_border-{{_options.borderVisibility}}"
+     title="{{_options.tooltip || _value}}"
+     on:keydown="_handleKeyDown()"
+     on:click="_handleClick()"
+     on:mousedown="_handleMouseDown()"
+     on:mouseenter="_handleMouseEnter()"
+     on:mouseleave="_handleMouseLeave()"
+     on:focusout="_deactivated()">
+    <div class="controls-ComboBox-wrapper">
+        <div class="controls-ComboBox__field controls-ComboBox__field_margin-{{_horizontalPadding}}
+                    {{_highlightedOnFocus ? 'controls-focused-item_background'}}"
+            tabindex="0">
+            <ws:if data="{{(!_readOnly || _options.placeholderVisibility === 'empty') && _placeholder && !_value}}">
+                <div class="controls-ComboBox__placeholder">{{_placeholder}}</div>
+            </ws:if>
+            <ws:else>
+                {{_value}}
+            </ws:else>
+        </div>
+        <span if="{{!_readOnly}}" class="controls-ComboBox__arrow-wrapper controls-ComboBox__arrow-wrapper_offset-{{_horizontalPadding}}">
+            <span attr:class="controls-ComboBox__iconArrow icon-{{_isOpened ? 'CollapseLight' : 'ExpandLight'}}"></span>
+        </span>
+        </div>
+        <ws:if data="{{_options.tagStyle}}">
+            <ws:partial template="wml!Controls/Application/TagTemplate/TagTemplate"
+                        tagStyle="{{_options.tagStyle}}"
+                        on:click="_notifyHandler('tagClick')"
+                        on:mouseenter="_notifyHandler('tagHover')"/>
+        </ws:if>
+    </div>
+</Controls.WorkByKeyboard.Consumer>

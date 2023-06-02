@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper controlsDemo__maxWidth800 controlDemo_list-new_base">
+    <Controls.list:View keyProperty="key"
+                        itemsSpacing="m"
+                        source="{{_viewSource}}">
+                <ws:itemTemplate>
+                    <ws:partial template="Controls/list:ItemTemplate"
+                                borderVisibility="visible"
+                                borderStyle="danger"/>
+                </ws:itemTemplate>
+                <ws:roundBorder tl="m" tr="m" br="m" bl="m"/>
+    </Controls.list:View>
+</div>

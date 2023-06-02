@@ -1,0 +1,11 @@
+<ws:partial template="Controls/grid:ColumnTemplate" scope="{{_options}}">
+   <ws:contentTemplate>
+      <ws:if data="{{item.contents.sum}}">
+         <Controls.baseDecorator:Money value="{{item.contents.sum}}"
+                                   fontColorStyle="unaccented"
+                                   fontSize="l"
+                                   fontWeight="bold"
+         />
+      </ws:if>
+   </ws:contentTemplate>
+</ws:partial>

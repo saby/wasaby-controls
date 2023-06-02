@@ -1,0 +1,26 @@
+<div class="controlsDemo__wrapper ws-flexbox ws-flex-column ws-align-items-center">
+    <Controls.scroll:Container
+            attr:class="controlsDemo_fixedWidth500 controlsDemo__maxWidth500 controlsDemo__height500 controlsDemo__mb1">
+        <Controls.scroll:VirtualScrollContainer >
+            <div data-qa="ControlsDemo-VisualScrollContainer__top">
+                Контент, который расположен выше списка.
+                Он не должен отображаться, пока у списка есть данные наверху.
+                Появляется только если отображается первая запись списка.
+            </div>
+        </Controls.scroll:VirtualScrollContainer>
+        <Controls.list:View
+                attr:class="{{_hidden ? 'ws-hidden'}}"
+                if="{{_listEnabled}}"
+                name="list"
+                source="{{_source}}"
+                keyProperty="key">
+            <ws:navigation source="page" view="infinity">
+                <ws:sourceConfig page="{{0}}" pageSize="{{20}}" hasMore="{{false}}"/>
+                <ws:viewConfig pagingMode="edge"/>
+            </ws:navigation>
+            <ws:virtualScrollConfig pageSize="{{20}}"/>
+        </Controls.list:View>
+    </Controls.scroll:Container>
+    <div class="ws-link" on:click="_switchListVisibility()" data-qa="hide-list">{{_hidden ? 'Показать' : 'Скрыть'}} список</div>
+    <div class="ws-link" on:click="_switchListExistance()" data-qa="destroy-list">{{_listEnabled ? 'Удалить' : 'Создать'}} список</div>
+</div>

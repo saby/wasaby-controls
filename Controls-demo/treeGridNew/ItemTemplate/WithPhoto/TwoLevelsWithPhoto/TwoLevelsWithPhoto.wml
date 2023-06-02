@@ -1,0 +1,19 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth1700">
+    <Controls.treeGrid:View
+        attr:class="demoTreeWithProto__treeGridTwoLevels"
+        keyProperty="key"
+        parentProperty="Раздел"
+        nodeProperty="Раздел@"
+        source="{{_viewSourceTwo}}"
+        columns="{{_twoLvlColumns}}"
+        bind:expandedItems="_expandedItems">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/treeGrid:ItemTemplate" withoutLevelPadding="{{true}}" scope="{{ _options }}"/>
+        </ws:itemTemplate>
+        <ws:footerTemplate>
+            <ws:partial template="Controls/grid:FooterTemplate">
+                <div class="controlsDemo__hor-padding__list__footerContent">Подвал списка</div>
+            </ws:partial>
+        </ws:footerTemplate>
+    </Controls.treeGrid:View>
+</div>

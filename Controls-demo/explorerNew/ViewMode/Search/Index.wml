@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper">
+   <Controls.explorer:View
+      viewMode="search"
+      searchValue="sata"
+
+      keyProperty="id"
+      displayProperty="title"
+      nodeProperty="parent@"
+      parentProperty="parent"
+
+      columns="{{_columns}}"
+      source="{{_viewSource}}"
+   />
+</div>

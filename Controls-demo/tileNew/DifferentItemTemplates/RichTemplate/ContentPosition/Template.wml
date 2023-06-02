@@ -1,0 +1,33 @@
+<ws:template name="tile">
+   <Controls.treeTile:View
+           displayProperty="title"
+           parentProperty="parent"
+           nodeProperty="parent@"
+           tileMode="static"
+           itemActions="{{_itemActions}}"
+           tileWidth="200"
+           imageProperty="image"
+           keyProperty="key"
+           source="{{_viewSource}}">
+      <ws:itemTemplate>
+         <ws:partial
+                 template="Controls/tile:RichTemplate"
+                 contentPosition="{{contentPosition}}"
+                 titleLines="{{3}}"
+                 descriptionLines="{{3}}"
+                 imageProportion="1:2"
+                 imageViewMode="rectangle"
+                 imagePosition="top"
+                 description="{{itemTemplate.item.contents.description}}"
+                 imageEffect="none"
+                 scope="{{itemTemplate}}">
+         </ws:partial>
+      </ws:itemTemplate>
+   </Controls.treeTile:View>
+</ws:template>
+<div class="controlsDemo__wrapper">
+<div class="controls-text-label">Контент на изображении сверху</div>
+   <ws:partial template="tile" contentPosition="onImageTop"></ws:partial>
+<div class="controls-text-label">Контент на изображении снизу</div>
+   <ws:partial template="tile" contentPosition="onImageBottom"></ws:partial>
+</div>

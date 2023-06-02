@@ -1,0 +1,21 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth550">
+    <Controls.list:View
+            keyProperty="title"
+            markerVisibility="hidden"
+            source="{{_source}}"
+            roundBorder="{{_roundBorder}}"
+            itemActions="{{_itemActions}}">
+        <ws:itemTemplate>
+            <ws:partial
+                    template="Controls/listTemplates:ListItemTemplate"
+                    scope="{{itemTemplate}}"
+                    imageProperty="photoUrl"
+                    title="{{itemTemplate.item.contents.title}}"
+                    description="{{itemTemplate.item.contents.description}}">
+                <ws:contentTemplate>
+                    {{contentTemplate.item.contents.description}}
+                </ws:contentTemplate>
+            </ws:partial>
+        </ws:itemTemplate>
+    </Controls.list:View>
+</div>

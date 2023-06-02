@@ -1,0 +1,39 @@
+<div class="controlsDemo__wrapper controlDemo_Tile_default">
+    tileWidth <Controls.RadioGroup:Control
+        bind:selectedKey="_tileWidth"
+        source="{{_tileWidthSource}}"
+        keyProperty="id"
+        displayProperty="id"
+        direction="horizontal"/>
+    <Controls.scroll:Container
+            scrollOrientation="horizontal"
+            horizontalScrollMode="buttons"
+            attr:class="controlsDemo_fixedWidth800"
+    >
+        <Controls.treeTile:View
+                tileMode="static"
+                displayProperty="title"
+                imageProperty="image"
+                keyProperty="id"
+                source="{{_viewSource}}"
+                itemsDragNDrop="{{true}}"
+                orientation="horizontal"
+        >
+            <ws:roundBorder tl="m" tr="m" br="m" bl="m"/>
+            <ws:itemsContainerPadding left="s" right="s"/>
+            <ws:itemTemplate>
+                <ws:partial
+                        template="Controls/tile:RichTemplate"
+                        titleLines="2"
+                        imagePosition="left"
+                        width="{{_tileWidth}}"
+                        imageViewMode="rectangle"
+                        border="{{false}}"
+                        imageSize="3xl"
+                        contentPadding="s"
+                        scope="{{itemTemplate}}">
+                </ws:partial>
+            </ws:itemTemplate>
+        </Controls.treeTile:View>
+    </Controls.scroll:Container>
+</div>

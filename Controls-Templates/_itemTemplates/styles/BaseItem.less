@@ -1,0 +1,186 @@
+/* stylelint-disable-next-line unit-no-unknown */
+@sizes: 3xs, 2xs, xs, s, m, l, xl, 2xl, 3xl;
+
+.Controls-Templates-BaseItem__wrapper {
+   position: relative;
+   display: flex;
+
+   // Создаем отдельный стек для шаблона, чтобы управлять внутренними слоями независимо от окружения.
+   z-index: 1;
+}
+
+.Controls-Templates-BaseItem__cursor_default {
+   cursor: default;
+}
+
+.Controls-Templates-BaseItem__cursor_pointer {
+   cursor: pointer;
+}
+
+.Controls-Templates-BaseItem__shadow_visible {
+   box-shadow: var(--shadow_c);
+}
+
+.Controls-Templates-BaseItem__border-visibility_onhover {
+   border: var(--border-thickness) solid transparent;
+}
+
+.ws-is-hover .Controls-Templates-BaseItem__border-visibility_onhover:hover,
+.Controls-Templates-BaseItem__border-visibility_visible {
+   border: var(--border-thickness) solid var(--border-color);
+}
+
+.ws-is-hover .Controls-Templates-BaseItem__shadow_visible:hover,
+.ws-is-hover .Controls-Templates-BaseItem__shadow_onhover:hover {
+   box-shadow: var(--shadow_b);
+}
+
+.Controls-Templates-BaseItem__checkbox-visibility_onhover .controls-ListView__checkbox-onhover {
+  visibility: hidden;
+}
+
+.Controls-Templates-BaseItem__checkbox-visibility_onhover .Controls-Templates-BaseItem__checkbox_selected,
+.ws-is-hover .Controls-Templates-BaseItem__checkbox-visibility_onhover:hover .controls-ListView__checkbox-onhover {
+  visibility: visible;
+}
+
+.Controls-Templates-BaseItem__borderRadius-tr {
+   .for(@sizes, {
+      &_@{_item} {
+         border-top-right-radius: ~'var(--border-radius_@{_item})';
+      }
+   });
+}
+
+.Controls-Templates-BaseItem__borderRadius-tl {
+   .for(@sizes, {
+      &_@{_item},
+      &_@{_item} .controls-itemActionsV_position_bottomRight {
+         border-top-left-radius: ~'var(--border-radius_@{_item})';
+      }
+   });
+}
+
+.Controls-Templates-BaseItem__borderRadius-br {
+   .for(@sizes, {
+      &_@{_item} {
+         border-bottom-right-radius: ~'var(--border-radius_@{_item})';
+      }
+   });
+}
+
+.Controls-Templates-BaseItem__borderRadius-bl {
+   .for(@sizes, {
+      &_@{_item},
+      &_@{_item} .controls-itemActionsV_position_topRight {
+         border-bottom-left-radius: ~'var(--border-radius_@{_item})';
+      }
+   });
+}
+
+.Controls-Templates-BaseItem__marker {
+   position: absolute;
+   display: inline-flex;
+   z-index: 2;
+   left: 0;
+}
+
+.Controls-Templates-BaseItem__marker::after {
+   content: '';
+   background-color: var(--marker_color);
+   border-top-right-radius: var(--border-radius_2xs);
+   border-bottom-right-radius: var(--border-radius_2xs);
+}
+
+.Controls-Templates-BaseItem__marker_size_content-xs {
+   align-items: center;
+}
+
+.Controls-Templates-BaseItem__marker_size {
+   @variants: image-s, image-m, image-mt, image-l, content-xs, content-xl;
+   .for(@variants, {
+      &_@{_item}::after {
+         height: ~'var(--marker_size_@{_item}_list)';;
+         width: ~'var(--marker_thickness_@{_item}_list)';
+      }
+   });
+}
+
+.Controls-Templates-BaseItem__content {
+   width: 100%;
+   display: flex;
+}
+
+.Controls-Templates-BaseItem__content_padding-top {
+   .for(@sizes, {
+      &_@{_item} {
+         padding-top: ~'var(--offset_@{_item})';
+      }
+   });
+}
+
+.Controls-Templates-BaseItem__content_margin-top {
+   .for(@sizes, {
+      &_@{_item} {
+         margin-top: ~'var(--offset_@{_item})';
+      }
+   });
+}
+
+.Controls-Templates-BaseItem__content_padding-bottom {
+   .for(@sizes, {
+      &_@{_item} {
+         padding-bottom: ~'var(--offset_@{_item})';
+      }
+   });
+}
+
+.Controls-Templates-BaseItem__content_margin-bottom {
+   .for(@sizes, {
+      &_@{_item} {
+         margin-bottom: ~'var(--offset_@{_item})';
+      }
+   });
+}
+
+.Controls-Templates-BaseItem__content_padding-left {
+   .for(@sizes, {
+      &_@{_item} {
+         padding-left: ~'var(--offset_@{_item})';
+      }
+   });
+}
+
+.Controls-Templates-BaseItem__content_margin-left {
+   .for(@sizes, {
+      &_@{_item} {
+         margin-left: ~'var(--offset_@{_item})';
+      }
+   });
+}
+
+.Controls-Templates-BaseItem__content_padding-right {
+   .for(@sizes, {
+      &_@{_item} {
+         padding-right: ~'var(--offset_@{_item})';
+      }
+   });
+}
+
+.Controls-Templates-BaseItem__content_margin-right {
+   .for(@sizes, {
+      &_@{_item} {
+         margin-right: ~'var(--offset_@{_item})';
+      }
+   });
+}
+
+.Controls-Templates-TickMarker {
+   position: absolute;
+   bottom: calc(-1 * var(--offset_3xs));
+   right: calc(-1 * var(--offset_s));
+   border-radius: 50%;
+   color: var(--contrast_icon-color);
+   background-color: var(--success_contrast_background-color);
+   padding: var(--offset_2xs);
+}

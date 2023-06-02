@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper">
+   <Controls.scroll:Container attr:class="controlsDemo__height200 controlsDemo__minWidth600 controlsDemo__maxWidth800">
+      <Controls.columns:View
+         keyProperty="key"
+         source="{{ _viewSource }}">
+         <ws:itemsContainerPadding left="{{_itemsContainerPaddingSize}}"
+                         right="{{_itemsContainerPaddingSize}}"
+                         top="{{_itemsContainerPaddingSize}}"
+                         bottom="{{_itemsContainerPaddingSize}}"/>
+         <ws:itemTemplate>
+            <ws:partial template="Controls/columns:ItemTemplate" attr:class="controlsDemo__height36_item"></ws:partial>
+         </ws:itemTemplate>
+      </Controls.columns:View>
+   </Controls.scroll:Container>
+</div>

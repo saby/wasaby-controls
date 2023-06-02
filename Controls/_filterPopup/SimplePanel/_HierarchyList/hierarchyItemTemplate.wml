@@ -1,0 +1,6 @@
+<ws:partial template="Controls/dropdown:ItemTemplate"
+            scope="{{_options}}"
+            treeItem="{{treeItem}}"
+            multiSelect="{{itemData.getPropValue(itemData.item, nodeProperty) ? false : multiSelect}}"
+            marker="{{itemData.getPropValue(itemData.item, nodeProperty) ? true : !multiSelect}}">
+</ws:partial>

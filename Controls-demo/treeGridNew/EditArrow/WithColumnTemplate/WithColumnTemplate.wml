@@ -1,0 +1,17 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <Controls.treeGrid:View
+            keyProperty="key"
+            attr:style="width: 500px;"
+            parentProperty="parent"
+            nodeProperty="parent@"
+            showEditArrow="{{ true }}"
+            editArrowVisibilityCallback="{{ _editArrowVisibilityCallback }}"
+            displayProperty="title"
+            columns="{{ _columns }}"
+            header="{{ _header }}"
+            source="{{ _source }}">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/treeGrid:ItemTemplate" highlightOnHover="{{ _getHighlightOnHover(itemTemplate.item.contents) }}"/>
+        </ws:itemTemplate>
+    </Controls.treeGrid:View>
+</div>

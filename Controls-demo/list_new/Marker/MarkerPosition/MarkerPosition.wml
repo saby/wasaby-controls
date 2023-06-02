@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+    <Controls.list:View
+            keyProperty="key"
+            source="{{_viewSource}}">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/list:ItemTemplate" scope="{{ itemTemplate }}" markerPosition="outside"/>
+        </ws:itemTemplate>
+    </Controls.list:View>
+</div>
+

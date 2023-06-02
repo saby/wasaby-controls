@@ -1,0 +1,66 @@
+<div class="controlsDemo__wrapper  controlsDemo__flex controlsDemo__flex-flow_wrap">
+    <div class="controlsDemo__cell demo-Tumbler__base controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/toggle/Tumbler/Base/Index' }}">
+            <a href="{{content.href}}">Базовая настройка тумблера</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Tumbler.Base.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-Tumbler__selectedKeys controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/toggle/Tumbler/SelectedKeys/Index' }}">
+            <a href="{{content.href}}">Настройка выбранных элементов</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Tumbler.SelectedKeys.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-Tumbler__horizontal controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/toggle/Tumbler/Direction/Index' }}">
+            <a href="{{content.href}}">Настройка ориентации</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Tumbler.Direction.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-Tumbler__displayProperty controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/toggle/Tumbler/displayProperty/Index' }}">
+            <a href="{{content.href}}">Настройка поля, значение которого будет отображаться</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Tumbler.displayProperty.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-Tumbler__ItemTemplate controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/toggle/Tumbler/ItemTemplate/Index' }}">
+            <a href="{{content.href}}">Настройка пользовательского шаблона ItemTemplate</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Tumbler.ItemTemplate.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-Tumbler__ContrastBackground controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/toggle/Tumbler/ContrastBackground/Index' }}">
+            <a href="{{content.href}}">Настройка фона</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Tumbler.ContrastBackground.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-Tumbler__ReadOnly controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/toggle/Tumbler/ReadOnly/Index' }}">
+            <a href="{{content.href}}">Настройка состояния 'только для чтения'</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Tumbler.ReadOnly.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-Tumbler__WorkspaceWidth controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/toggle/Tumbler/WorkspaceWidth/Index' }}">
+            <a href="{{content.href}}">Настройка ширины области</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Tumbler.WorkspaceWidth.Index/>
+    </div>
+</div>

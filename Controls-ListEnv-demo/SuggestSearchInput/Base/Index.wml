@@ -1,0 +1,12 @@
+<div style="height: 500px">
+   <Controls-ListEnv.SuggestSearchInput storeId="employees"
+      attr:class="engine-demo__widgets_suggest"
+      searchParam="title"
+      filterNames="{{ ['city', 'company', 'owner'] }}"
+   />
+   <Controls.treeGrid:View storeId="employees"
+       nodeProperty="node"
+       parentProperty="parent"
+       columns="{{ _columns }}"
+   />
+</div>

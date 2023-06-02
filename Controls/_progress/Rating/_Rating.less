@@ -1,0 +1,58 @@
+.controls-rating {
+   display: inline-flex;
+   justify-content: space-around;
+   vertical-align: middle;
+}
+
+.controls-icon_style-rate {
+   fill: var(--rate_icon-color);
+   color: var(--rate_icon-color);
+}
+
+.controls-icon_style-rate2 {
+   fill: var(--rate2_color);
+   color: var(--rate2_color);
+}
+
+.controls-icon_style-rate4 {
+   fill: var(--rate4_color);
+   color: var(--rate4_color);
+}
+
+.controls-icon_style-rate6 {
+   fill: var(--rate6_color);
+   color: var(--rate6_color);
+}
+
+.controls-icon_style-rate8 {
+   fill: var(--rate8_color);
+   color: var(--rate8_color);
+}
+
+.controls-icon_style-rate10 {
+   fill: var(--rate10_color);
+   color: var(--rate10_color);
+}
+
+//TODO для всех размеров иконок надо использовать один шрифт, т.к. в m шрифте большие отступы в иконке. Убрать после перехода на свг.
+.controls-rating__star {
+   &.controls-icon_size-default {
+      font-family: var(--icon_font-family_s);
+      line-height: 1;
+   }
+
+   &.controls-icon_size-m {
+      font-family: var(--icon_font-family_s);
+      line-height: 1;
+   }
+}
+
+.controls-rating__star:last-child {
+   padding-right: 0;
+}
+
+.ws-is-hover {
+   .controls-rating-active:hover {
+      cursor: pointer;
+   }
+}

@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth350">
+    <Controls.scroll:Container attr:style="max-height: 200px" attr:class="controls-background-unaccented">
+        <Controls.list:View
+                keyProperty="key"
+                source="{{_viewSource}}"
+                stickyHeader="{{true}}"
+                backgroundStyle="unaccented"
+                groupProperty="group">
+            <ws:navigation source="position" view="infinity">
+                <ws:sourceConfig field="key" position="{{_position}}" direction="bothways" limit="{{25}}"/>
+                <ws:viewConfig pagingMode="direct" showEndButton="true" resetButtonMode="home"/>
+            </ws:navigation>
+            <ws:virtualScrollConfig pageSize="{{40}}"/>
+        </Controls.list:View>
+    </Controls.scroll:Container>
+</div>

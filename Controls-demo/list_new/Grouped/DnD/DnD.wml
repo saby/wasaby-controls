@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper">
+    <Controls.browser:Browser name="dataContainer" source="{{_viewSource}}" keyProperty="key" bind:selectedKeys="_selectedKeys">
+            <div>
+                <Controls.listDeprecate:Mover name="listMover"/>
+                <Controls.list:Container>
+                    <Controls.list:View
+                            keyProperty="key"
+                            source="{{_viewSource}}"
+                            groupProperty="brand"
+                            itemsDragNDrop="{{true}}"
+                            on:customdragEnd="_dragEnd()"
+                    />
+                </Controls.list:Container>
+            </div>
+    </Controls.browser:Browser>
+</div>

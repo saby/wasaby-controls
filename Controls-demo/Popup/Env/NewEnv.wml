@@ -1,0 +1,23 @@
+<div class="popup-page">
+   <Controls.popup:Dialog name="dialog" template="Controls-demo/Popup/Env/template/oldTemplate">
+      <ws:templateOptions type="dialog"/>
+   </Controls.popup:Dialog>
+   <Controls.popup:Stack name="stack" template="Controls-demo/Popup/Env/template/oldTemplate">
+      <ws:templateOptions type="stack"/>
+   </Controls.popup:Stack>
+
+   <br/>
+   <div>
+      <Controls.buttons:Button name="dialogButton" caption="newDialog + oldTemplate" on:click="openDialog()"/>
+   </div>
+   <div>
+      <Controls.buttons:Button name="stackButton" caption="newStack + oldTemplate" on:click="openStack()"/>
+   </div>
+   <br/>
+   <div>
+      <Controls.buttons:Button name="oldStackButton" caption="oldDialog + newTemplate" on:click="openNewTemplate('dialog')"/>
+   </div>
+   <div>
+      <Controls.buttons:Button name="oldStackButton" caption="oldStack + newTemplate" on:click="openNewTemplate('floatArea')"/>
+   </div>
+</div>

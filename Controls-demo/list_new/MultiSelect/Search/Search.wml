@@ -1,0 +1,25 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <div class="tw-break-words">
+        selectedKeys: {{_toStringArray(_selectedKeys)}}<br/>
+        excludedKeys: {{_toStringArray(_excludedKeys)}}
+    </div>
+    <Controls.browser:Browser keyProperty="key"
+                              source="{{_viewSource}}"
+                              navigation="{{_navigation}}"
+                              searchParam="title"
+                              bind:selectedKeys="_selectedKeys"
+                              bind:excludedKeys="_excludedKeys">
+        <div>
+            <Controls.search:InputContainer>
+                <Controls.search:Input/>
+            </Controls.search:InputContainer>
+            <Controls.operations:Panel selectedCountConfig="{{_selectedCountConfig}}" source="{{ null }}" items="{{ null }}"/>
+
+            <Controls.scroll:Container attr:class="controlsDemo__height500">
+                <Controls.list:Container>
+                    <Controls.list:View multiSelectVisibility="visible"/>
+                </Controls.list:Container>
+            </Controls.scroll:Container>
+        </div>
+    </Controls.browser:Browser>
+</div>

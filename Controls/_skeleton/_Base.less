@@ -1,0 +1,34 @@
+.controls-skeleton {
+   overflow: hidden;
+   position: relative;
+}
+
+.controls-skeleton__bg {
+   background-color: var(--unaccented_contrast_background-color);
+   width: 100%;
+   height: 100%;
+}
+
+@keyframes ant-skeleton-loading {
+   0% {
+      transform: translate(-37.5%);
+   }
+
+   to {
+      transform: translate(37.5%);
+   }
+}
+
+.controls-skeleton_active::after {
+   position: absolute;
+   inset: 0 -150%;
+   background: linear-gradient(
+      90deg,
+      rgba(190, 190, 190, 0.2) 25%,
+      rgba(129, 129, 129, 0.24) 37%,
+      rgba(190, 190, 190, 0.2) 63%
+   );
+   -webkit-animation: ant-skeleton-loading 1.4s ease infinite;
+   animation: ant-skeleton-loading 1.4s ease infinite;
+   content: '';
+}

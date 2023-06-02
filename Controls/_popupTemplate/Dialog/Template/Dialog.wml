@@ -1,0 +1,85 @@
+<ws:if data="{{ _isAdaptive }}">
+    <Controls.Container.Async templateName="Controls/popupSliding:Template">
+        <ws:partial template="{{ content.resolvedTemplate }}"
+                    slidingPanelOptions="{{ _slidingPanelOptions }}"
+                    closeButtonVisible="{{ false }}"
+                    scope="{{ _options }}"/>
+    </Controls.Container.Async>
+</ws:if>
+<ws:else>
+    <Controls.dragnDrop:Container name="dragNDrop" on:dragMove="_onDragMove()" on:documentDragEnd="_onDragEnd()">
+        <div class="controls_popupTemplate_theme-{{_options.theme}} controls-DialogTemplate {{_getBackgroundColor()}}
+                {{_options.closeButtonVisible && _options.closeButtonViewMode.includes('external') ? 'controls-PopupTemplate__margin-horizontal'}}
+                {{!_options.maximize ? ('controls-PopupTemplate__roundBorder controls_border-radius-' + _options.borderRadius)}}
+                {{_options.draggable ? 'ws-window-draggable'}}" ws-tab-cycling="true">
+            <ws:if data="{{_options.headingCaption || _options.headerContentTemplate }}">
+                <ws:partial template="Controls/_popupTemplate/Dialog/Template/Header"
+                            scope="{{_options}}"
+                            attr:class="{{_getRoundedClass(_options, 'header')}}"
+                            on:mousedown="_onMouseDown()"
+                            on:mouseup="_onMouseUp()"
+                            on:touchstart="_onMouseDown()"
+                            dragState="{{_dragState}}"/>
+            </ws:if>
+            <ws:else>
+                <div class="controls-DialogTemplate__close-button_without_head">
+                    <ws:if data="{{_options.closeButtonVisible}}">
+                        <Controls.buttons:CloseButton
+                            offset="{{ _options.closeButtonViewMode !== 'toolButton' ? 'null' }}"
+                            name="closeButton"
+                            attr:class="controls-DialogTemplate__close_button
+                            controls-DialogTemplate__close_button_size-{{_options.closeButtonSize}}
+                            controls-DialogTemplate__close_{{_options.closeButtonViewMode}}{{_options.closeButtonViewMode === 'external' ? '_headerSize-' + _options.headerSize + '_closeButtonSize-' + _options.closeButtonSize}}"
+                            on:click="close()"
+                            size="{{_options.closeButtonSize}}"
+                            viewMode="{{_options.closeButtonViewMode}}"/>
+                    </ws:if>
+                </div>
+            </ws:else>
+            <ws:if data="{{ _options.bodyContentTemplate }}">
+                <div class="controls-DialogTemplate__content-area {{_getBackgroundColor()}}
+                                                                                {{_getRoundedClass(_options, 'body')}}">
+                    <ws:partial template="{{_options.bodyContentTemplate}}"
+                                scope="{{_options.contentAreaOptions}}"
+                                bodyContentTemplate="{{null}}"
+                                headerContentTemplate="{{null}}"
+                                footerContentTemplate="{{null}}"/>
+                </div>
+            </ws:if>
+            <ws:if data="{{ _options.footerContentTemplate }}">
+                <ws:partial template="{{ _options.footerContentTemplate}}"
+                            attr:class="controls-DialogTemplate__footer
+                        {{_options.footerBorderVisible ? 'controls-DialogTemplate__footer-area-border'}}
+                                    {{!_options.backgroundStyle ?
+                                    'controls-DialogTemplate__footerBackgroundColor' : 'controls-background-' + _options.backgroundStyle}}
+                                    {{!_options.maximize ? ('controls-PopupTemplate__roundBorder_bottom controls_border-radius-' + _options.borderRadius)}}"/>
+            </ws:if>
+            <ws:if data="{{_options.resizable}}">
+                <ws:if
+                    data="{{_options.resizingOptions.position === 'right' || _options.resizingOptions.position === 'bottom'}}">
+                    <Controls.dragnDrop:ResizingLine
+                        attr:class="controls-DialogTemplate__resizingLine-{{_options.resizingOptions.position}}"
+                        minOffset="{{_minWidthOffset}}"
+                        maxOffset="{{_maxWidthOffset}}"
+                        direction="direct"
+                        position="{{_options.resizingOptions.position}}"
+                        orientation="{{_options.resizingOptions.position === 'bottom' ? 'vertical' : 'horizontal'}}"
+                        step="{{_options.resizingOptions.step}}"
+                        on:offset="_onResizingOffset()"/>
+                </ws:if>
+                <ws:else>
+                    <Controls._popupTemplate.ResizingArrow
+                        attr:class="controls-DialogTemplate__resizingArrow"
+                        minWidthOffset="{{_minWidthOffset}}"
+                        maxWidthOffset="{{_maxWidthOffset}}"
+                        minHeightOffset="{{_minHeightOffset}}"
+                        maxHeightOffset="{{_maxHeightOffset}}"
+                        borderRadius="{{_options.borderRadius}}"
+                        position="{{_options.resizingOptions.position}}"
+                        step="{{_options.resizingOptions.step}}"
+                        on:offset="_onResizingOffset()"/>
+                </ws:else>
+            </ws:if>
+        </div>
+    </Controls.dragnDrop:Container>
+</ws:else>

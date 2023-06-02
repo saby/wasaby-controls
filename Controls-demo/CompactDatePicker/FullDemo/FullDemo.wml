@@ -1,0 +1,34 @@
+<div class="controlsDemo__wrapper controlsDemo__flex">
+    <div class="controlsDemo__cell controlsDemo__ml2">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/CompactDatePicker/Index' }}">
+            <a href="{{content.href}}">Компактный выбор периода</a>
+        </Router.router:Reference>
+        <Controls-demo.CompactDatePicker.Index/>
+    </div>
+    <div class="controlsDemo__cell controlsDemo__ml2">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/CompactDatePicker/DisplayedRanges/Index' }}">
+            <a href="{{content.href}}">Ограничение периода с помощью опции displayedRanges</a>
+        </Router.router:Reference>
+        <Controls-demo.CompactDatePicker.DisplayedRanges.Index/>
+    </div>
+    <div class="controlsDemo__cell controlsDemo__ml2">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/CompactDatePicker/IsDayAvailable/Index' }}">
+            <a href="{{content.href}}">Ограничение доступных для выбора дней с помощью опции isDayAvailable</a>
+        </Router.router:Reference>
+        <Controls-demo.CompactDatePicker.IsDayAvailable.Index/>
+    </div>
+    <div class="controlsDemo__cell controlsDemo__ml2">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/CompactDatePicker/Selector/Index' }}">
+            <a href="{{content.href}}">Вызывающий элемент компакного выбора периода</a>
+        </Router.router:Reference>
+        <Controls-demo.CompactDatePicker.Selector.Index/>
+    </div>
+</div>

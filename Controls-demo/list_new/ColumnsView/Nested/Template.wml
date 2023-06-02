@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container>
+        <Controls.list:View
+                keyProperty="key"
+                source="{{_rootSource}}">
+            <ws:itemTemplate>
+                <ws:partial template="Controls/list:ItemTemplate">
+                    <ws:contentTemplate>
+                        <div>
+                            {{ contentTemplate.item.contents.get('title') }}
+                        </div>
+                        <Controls-demo.list_new.ColumnsView.Nested.Columns.Columns/>
+                    </ws:contentTemplate>
+                </ws:partial>
+            </ws:itemTemplate>
+        </Controls.list:View>
+    </Controls.scroll:Container>
+</div>

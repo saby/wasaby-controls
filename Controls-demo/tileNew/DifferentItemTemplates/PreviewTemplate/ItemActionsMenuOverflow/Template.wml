@@ -1,0 +1,24 @@
+<div class="controlsDemo__wrapper">
+   <Controls.scroll:Container attr:class="controls-demo-Tile__scalingMode_scroll">
+      <Controls.treeTile:View
+              displayProperty="title"
+              parentProperty="parent"
+              nodeProperty="type"
+              tileMode="dynamic"
+              tileScalingMode="inside"
+              actionMenuViewMode="preview"
+              actionMode="adaptive"
+              itemActions="{{_actions}}"
+              contextMenuConfig="{{_contextMenuConfig}}"
+              imageHeightProperty="imageHeight"
+              imageWidthProperty="imageWidth"
+              tileHeight="200"
+              tileWidth="50"
+              imageProperty="image"
+              keyProperty="id"
+              itemTemplate="Controls/tile:PreviewTemplate"
+              source="{{_viewSource}}"
+              on:itemClick="_itemClick()"/>
+   </Controls.scroll:Container>
+   <span>itemClick на записи с ключом: </span><span data-qa="itemClick-log">{{_clickedItem}}</span>
+</div>

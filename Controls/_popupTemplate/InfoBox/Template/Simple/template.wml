@@ -1,0 +1,31 @@
+<Controls._popupTemplate.InfoBox.Template.InfoBox stickyPosition="{{_options.stickyPosition}}"
+                                 closeButtonVisible="{{false}}"
+                                 borderStyle="{{_options.borderStyle}}"
+                                 validationStatus="{{_options.validationStatus}}"
+                                 backgroundStyle="{{_options.backgroundStyle}}"
+                                 on:mouseenter="_sendResult()"
+                                 on:mouseleave="_sendResult()"
+                                 attr:template="{{_getTemplateName()}}">
+   <div class="controls_popupTemplate_theme-{{_options.theme}} controls-InfoBox controls-InfoBox__horizontal-padding-{{_options.horizontalPadding}}">
+      <ws:if data="{{_options.closeButtonVisible}}">
+         <Controls.buttons:CloseButton attr:class="controls-InfoBoxTemplate__closeButton" offset="null"
+                                              on:click="_close()" viewMode="link" attr:ws-no-focus="true"/>
+         <ws:if data="{{_options.floatCloseButton && _options.horizontalPadding !== 'null'}}">
+            <div class="controls-InfoBox_floatElement"></div>
+         </ws:if>
+      </ws:if>
+      <ws:if data="{{_options.template}}">
+         <ws:partial
+            template="{{_options.template}}"
+            scope="{{_options.templateOptions}}"
+            attr:class="controls-InfoBox__content controls-InfoBox__message
+                  {{!_options.floatCloseButton && _options.horizontalPadding !== 'null' ? 'controls-InfoBox__message_margin'}}">
+         </ws:partial>
+      </ws:if>
+      <ws:else>
+         <div class="controls-InfoBox__message {{!_options.floatCloseButton ? 'controls-InfoBox__message_margin'}}">
+               {{_options.message}}
+         </div>
+      </ws:else>
+   </div>
+</Controls._popupTemplate.InfoBox.Template.InfoBox>

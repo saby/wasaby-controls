@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper">
+    <Controls.list:View
+            keyProperty="key"
+            source="{{_viewSource}}"
+            itemActions="{{_itemActions}}"
+            itemActionVisibilityCallback="{{_itemActionVisibilityCallback}}"/>
+</div>

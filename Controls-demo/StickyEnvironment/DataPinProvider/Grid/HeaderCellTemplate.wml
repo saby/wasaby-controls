@@ -1,0 +1,9 @@
+<ws:partial template="Controls/grid:HeaderContent" scope="{{_options}}">
+   <ws:contentTemplate>
+      <Controls.stickyEnvironment:DataPinConsumer>
+         <ws:content>
+            <span>{{ (content.pinnedData ? content.pinnedData.get(field)) || defaultCaption }}</span>
+         </ws:content>
+      </Controls.stickyEnvironment:DataPinConsumer>
+   </ws:contentTemplate>
+</ws:partial>

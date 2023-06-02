@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls/Container/Async Асинхронная провальная загрузка на клиенте без errorCallback 1`] = `
+"Ошибка загрузки контрола \\"ControlsUnit/Async/FailCallback/TestControlAsync\\"
+Возможны следующие причины:
+	                   • Ошибка в самом контроле
+	                   • Долго отвечал БЛ метод в _beforeUpdate
+	                   • Контрола не существует"
+`;

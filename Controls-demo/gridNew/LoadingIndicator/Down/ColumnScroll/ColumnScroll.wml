@@ -1,0 +1,37 @@
+<div class="controlsDemo__wrapper controlsDemo__width800px">
+    <Controls.browser:Browser source="{{_viewSource}}"
+                              keyProperty="key"
+                              bind:filter="_filter"
+                              searchParam="title"
+                              minSearchLength="{{3}}" >
+        <ws:navigation source="position" view="infinity">
+            <ws:sourceConfig field="key" position="{{_position}}" direction="forward" limit="{{15}}"/>
+        </ws:navigation>
+
+        <ws:content>
+            <div class="ws-fragment">
+                <Controls.search:InputContainer>
+                    <Controls.search:Input/>
+                </Controls.search:InputContainer>
+                <Controls.filter:ViewContainer>
+                    <Controls.filter:View source="{{_fastFilterData}}"
+                                          alignment="right"
+                                          viewMode="frequent"
+                                          panelTemplateName="Controls/filterPopup:SimplePanel"/>
+                </Controls.filter:ViewContainer>
+                <Controls.scroll:Container attr:class="controlsDemo__inline-flex"
+                                           attr:style="width: 700px; height: 500px;">
+                    <Controls.list:Container>
+                        <Controls.grid:View
+                                name="list"
+                                header="{{_header}}"
+                                columns="{{_columns}}"
+                                rowSeparatorSize="s"
+                                columnScroll="{{true}}"/>
+                    </Controls.list:Container>
+                </Controls.scroll:Container>
+            </div>
+        </ws:content>
+    </Controls.browser:Browser>
+    <Controls.buttons:Button attr:data-qa="continue-scenario" caption="Продолжить сценарий" on:click="_continueScenario()"/><br/>
+</div>

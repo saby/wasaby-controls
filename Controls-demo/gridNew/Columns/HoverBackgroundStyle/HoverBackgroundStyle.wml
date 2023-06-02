@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper controlsDemo__flex">
+    <Controls.grid:View
+            useTableInOldBrowsers="{{ true }}"
+            keyProperty="key"
+            source="{{ _viewSource }}"
+            itemActions="{{_itemActions}}"
+            hoverBackgroundStyle="info"
+            columns="{{ _columns }}">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/grid:ItemTemplate"
+                        hoverBackgroundStyle="{{ itemTemplate.item.contents.get('population') > 1000000000 ? 'success' : undefined }}"/>
+        </ws:itemTemplate>
+    </Controls.grid:View>
+</div>

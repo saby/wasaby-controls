@@ -1,0 +1,66 @@
+<Controls.dragnDrop:Container name="dragNDrop">
+    <Controls.calendar:MonthList
+            position="{{ _options.position }}"
+            on:positionChanged="_proxyEvent()"
+            shadowStyle="shortDatePicker"
+            shouldPositionBelow="{{ _options.shouldPositionBelow }}"
+            topShadowVisibility="{{ _options.shadowVisibility }}"
+            bottomShadowVisibility="{{ _options.shadowVisibility }}"
+            attachLoadTopTriggerToNull="{{ false }}"
+            attachLoadDownTriggerToNull="{{ false }}"
+            displayedRanges="{{_options.displayedRanges}}"
+            stubTemplate="{{_options.stubTemplate}}"
+            source="{{_options.source}}">
+        <ws:yearHeaderTemplate>
+            <ws:if data="{{_options.getYearHeaderVisible(yearHeaderTemplate.date.getFullYear())}}">
+                <div
+                        on:mouseenter="_options.onYearMouseEnter(yearHeaderTemplate.date.getFullYear())"
+                        on:touchstart="_options.onYearMouseEnter(yearHeaderTemplate.date.getFullYear())"
+                        on:mouseleave="_options.onYearMouseLeave()"
+                        on:touchmove="_options.onYearMouseLeave()"
+                        on:click="_options.onYearClick(yearHeaderTemplate.date.getFullYear())"
+                        on:keyup="_keyUpYearHandler(yearHeaderTemplate.date.getFullYear())"
+                        class="controls-PeriodLiteDialog__fullYear-listElement
+                           controls-PeriodLiteDialog__fullYear-listElement{{_options.isAdaptive && !!_options.slidingPanelOptions ? '_adaptiveOffset' : '_offset'}}
+                           {{_options.isAdaptive && !!_options.slidingPanelOptions ? 'controls-padding_top-s controls-padding_bottom-s'}}
+                           {{_options.chooseYears ? 'controls-PeriodLiteDialog__fullYear-listElement__clickable'}}
+                           {{ _options.isCurrentYear(yearHeaderTemplate.date.getFullYear()) ? 'controls-PeriodLiteDialog__fullYear-listElement__currentYear' }}
+                           controls-PeriodLiteDialog__vLayoutItem-caption
+                           controls-PeriodLiteDialog__text-align-left
+                        {{ _options.chooseMonths && _options.chooseQuarters ? 'controls-PeriodLiteDialog__fullPicker'}}" data-qa="controls-PeriodLiteDialog__item-caption">
+                    <div tabindex="{{_options.tabPressed ? 0 : -1}}"
+                         on:blur="_onBlurYear()">
+                        {{ yearHeaderTemplate.date.getFullYear() }}
+                    </div>
+                </div>
+            </ws:if>
+            <ws:else>
+                <invisible-node/>
+            </ws:else>
+        </ws:yearHeaderTemplate>
+        <ws:yearTemplate>
+            <Controls._shortDatePicker.bodyItem
+                    on:itemMouseEnter="_proxyEvent()"
+                    on:itemClick="_itemClickHandler()"
+                    selectionProcessing="{{ _options.selectionProcessing }}"
+                    hoveredItem="{{ _options.hoveredItem }}"
+                    hovered="{{ _options.hovered }}"
+                    endValue="{{ _options.endValue }}"
+                    startValue="{{ _options.startValue }}"
+                    errorCallback="{{ _options.errorCallback }}"
+                    isSelectedPeriod="{{ _options.isSelectedPeriod  }}"
+                    multiselect="{{ _options.multiselect }}"
+                    attr:class="controls-PeriodLiteDialog_calendarBody
+                controls-PeriodLiteDialog_calendarBody{{_options.isAdaptive && !!_options.slidingPanelOptions ? '_adaptiveOffset' : '_offset'}}"
+                    attr:data-date="{{_options.dateToDataString(yearTemplate.date)}}"
+                    scope="{{_options}}"
+                    monthTemplate="{{_options.monthTemplate}}"
+                    _tabPressed="{{_options.tabPressed}}"
+                    _position="{{_options.position}}"
+                    _yearHovered="{{_options.yearHovered}}"
+                    formatDate="{{_options.formatDate}}"
+                    currentYear="{{yearTemplate.date.getFullYear()}}"
+            />
+        </ws:yearTemplate>
+    </Controls.calendar:MonthList>
+</Controls.dragnDrop:Container>

@@ -1,0 +1,7 @@
+<ws:partial template="Controls/grid:ColumnTemplate" scope="{{_options}}">
+   <ws:contentTemplate>
+      <ws:if data="{{item.contents.regulationName}}">
+         <div class="demo-Shipments__regulationName">{{item.contents.regulationName}}</div>
+      </ws:if>
+   </ws:contentTemplate>
+</ws:partial>

@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/LookupNew/SelectorButton/ValidationStatus/Index' }}">
+            <a href="{{content.href}}">ValidationStatus</a>
+        </Router.router:Reference>
+        <Controls-demo.LookupNew.SelectorButton.ValidationStatus.Index/>
+    </div>
+</div>

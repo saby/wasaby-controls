@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper">
+    <Controls.list:View
+            keyProperty="key"
+            source="{{_viewSource}}"
+            multiSelectVisibility="onhover"
+            itemsDragNDrop="{{true}}"
+            bind:selectedKeys="_selectedKeys"/>
+</div>

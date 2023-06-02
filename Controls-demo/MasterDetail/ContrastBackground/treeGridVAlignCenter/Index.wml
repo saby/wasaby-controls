@@ -1,0 +1,45 @@
+<div class="controlsDemo__wrapper controls-demo_MasterDetail-background">
+   <div class="controlsDemo__masterDetail-container">
+      <Controls.masterDetail:Base>
+         <ws:master>
+            <Controls.scroll:Container shadowMode="js">
+               <Controls.masterDetail:List>
+                  <Controls.treeGrid:View
+                          source="{{_masterSource}}"
+                          style="master"
+                          backgroundStyle="master"
+                          keyProperty="id"
+                          parentProperty="Раздел"
+                          nodeProperty="Раздел@"
+                          markerVisibility="visible"
+                          itemActions="{{_itemActions}}"
+                          columns="{{_gridColumns}}"
+                  >
+                  </Controls.treeGrid:View>
+               </Controls.masterDetail:List>
+            </Controls.scroll:Container>
+         </ws:master>
+         <ws:detail>
+            <Controls.scroll:Container attr:class="controlsDemo_fixedWidth500">
+               <Controls.list:View
+                       keyProperty="id"
+                       source="{{_detailSource}}"
+                       backgroundStyle="detail">
+                  <ws:filter myOpt="{{detail.selectedMasterValue || '0'}}">
+                  </ws:filter>
+                  <ws:itemTemplate>
+                     <ws:partial template="Controls/list:ItemTemplate">
+                        <ws:contentTemplate>
+                           <ws:partial
+                                   item="{{itemTemplate.item.contents}}"
+                                   template="wml!Controls-demo/MasterDetail/itemTemplates/TaskItemTemplate"
+                           />
+                        </ws:contentTemplate>
+                     </ws:partial>
+                  </ws:itemTemplate>
+               </Controls.list:View>
+            </Controls.scroll:Container>
+         </ws:detail>
+      </Controls.masterDetail:Base>
+   </div>
+</div>

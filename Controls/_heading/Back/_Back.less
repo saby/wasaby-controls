@@ -1,0 +1,386 @@
+.controls-Back {
+   min-width: 1px;
+   max-width: 100%;
+   display: inline-flex;
+}
+
+// region Icon "<" styles
+.controls-Back__icon {
+   height: 1em;
+}
+
+.ws-is-ie {
+   // ie не умеет автоматически сайзить ширину svg элемента относительно его высоты
+   .controls-Back__icon {
+      width: calc(1em / 2);
+   }
+}
+
+.controls-Back-icon_width-2xs {
+   width: var(--font-size_2xs);
+}
+
+.controls-Back-icon_width-s {
+   width: var(--font-size_s);
+}
+
+.controls-Back-icon_width-m {
+   width: var(--font-size_m);
+}
+
+.controls-Back-icon_width-l {
+   width: var(--font-size_l);
+}
+
+.controls-Back-icon_width-xl {
+   width: var(--font-size_xl);
+}
+
+.controls-Back-icon_width-2xl {
+   width: var(--font-size_2xl);
+}
+
+.controls-Back-icon_width-3xl {
+   width: var(--font-size_3xl);
+}
+
+.controls-Back-icon_width-4xl {
+   width: var(--font-size_4xl);
+}
+
+.controls-Back-icon_width-5xl {
+   width: var(--font-size_5xl);
+}
+
+.controls-Back__icon_style-default {
+   fill: var(--icon-color);
+}
+
+.controls-Back__icon_style-primary {
+   fill: var(--primary_icon-color);
+}
+
+.controls-Back__icon_style-secondary {
+   fill: var(--secondary_icon-color);
+}
+
+.controls-Back__icon_style-link {
+   fill: var(--link_icon-color);
+}
+
+.controls-Back__icon_style-label {
+   fill: var(--label_icon-color);
+}
+
+.controls-Back__icon_style-danger {
+   fill: var(--danger_icon-color);
+}
+
+.controls-Back__icon_style-success {
+   fill: var(--success_icon-color);
+}
+
+.controls-Back__icon_style-warning {
+   fill: var(--warning_icon-color);
+}
+
+.controls-Back__icon_style-unaccented {
+   fill: var(--unaccented_icon-color);
+}
+
+.controls-Back__icon_style-info {
+   fill: var(--info_icon-color);
+}
+
+.controls-Back__icon_style-readonly {
+   fill: var(--readonly_icon-color);
+}
+
+.controls-Back__icon_style-contrast {
+   fill: var(--contrast_icon-color);
+}
+//endregion
+
+//region icon size
+.controls-Back__icon_view-default {
+   font-family: cbuc-icons;
+}
+
+.controls-Back__icon_size-s {
+   font-size: var(--icon-size_s);
+}
+
+.controls-Back__icon_size-m {
+   font-size: var(--icon-size_m);
+}
+
+.controls-Back__icon_size-l {
+   font-size: var(--icon-size_l);
+}
+//endregion
+
+//region icon view
+.controls-Back__icon_view-button {
+   // view
+   border-radius: 50%;
+   box-sizing: border-box;
+   background-color: var(--pale_contrast_background-color);
+   border: var(--border-thickness) solid var(--pale_border-color);
+
+   // inner align
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   .controls-Back__icon {
+      height: 50%;
+   }
+}
+
+.controls-Back__icon_view-button_size-xs {
+   width: var(--inline_height_xs);
+   height: var(--inline_height_xs);
+   font-size: var(--icon-size_2xs);
+}
+
+.controls-Back__icon_view-button_size-m {
+   width: var(--inline_height_m);
+   height: var(--inline_height_m);
+   font-size: var(--icon-size_xs);
+}
+
+.controls-Back__icon_view-button_size-xl {
+   width: var(--inline_height_xl);
+   height: var(--inline_height_xl);
+   font-size: var(--icon-size_st);
+}
+//endregion
+
+.controls-Back__wrapper {
+   cursor: pointer;
+   max-width: 100%;
+
+   // inner align
+   display: flex;
+   align-items: baseline;
+}
+
+.controls-Back__icon-wrapper,
+.controls-Back__middle-wrapper {
+   flex-shrink: 0;
+   box-sizing: border-box;
+
+   // inner align
+   display: flex;
+   align-items: center;
+
+   .baseline-fix();
+}
+
+.controls-Back__icon-wrapper_offset-2xs {
+   padding-right: var(--offset_2xs);
+}
+
+.controls-Back__icon-wrapper_offset-xs {
+   padding-right: var(--offset_xs);
+}
+
+//region beforeCaptionTemplate
+.controls-Back__middle-wrapper {
+   padding-right: var(--offset_3xs);
+}
+
+.controls-Back__middle {
+   display: flex;
+}
+
+.controls-Back__middle_size-xs {
+   max-width: var(--inline_height_xs);
+   max-height: var(--inline_height_xs);
+}
+
+.controls-Back__middle_size-m {
+   max-width: var(--inline_height_m);
+   max-height: var(--inline_height_m);
+}
+
+.controls-Back__middle_size-xl {
+   max-width: var(--inline_height_xl);
+   max-height: var(--inline_height_xl);
+}
+//endregion
+
+//region Caption styles
+.controls-Back__caption {
+   font-weight: var(--font-weight_heading);
+}
+
+.controls-Back__caption_overflow-ellipsis {
+   .text-overflow();
+}
+
+.controls-Back__caption_overflow-none {
+   word-break: break-word;
+}
+
+.controls-Back__caption_style-default {
+   color: var(--text-color);
+}
+
+.controls-Back__caption_style-primary {
+   color: var(--primary_text-color);
+}
+
+.controls-Back__caption_style-secondary {
+   color: var(--secondary_text-color_headingBack);
+}
+
+.controls-Back__caption_style-link {
+   color: var(--link_text-color);
+}
+
+.controls-Back__caption_style-label {
+   color: var(--label_text-color);
+}
+
+.controls-Back__caption_style-danger {
+   color: var(--danger_text-color);
+}
+
+.controls-Back__caption_style-success {
+   color: var(--success_text-color);
+}
+
+.controls-Back__caption_style-warning {
+   color: var(--warning_text-color);
+}
+
+.controls-Back__caption_style-unaccented {
+   color: var(--unaccented_text-color);
+}
+
+.controls-Back__caption_style-info {
+   color: var(--info_text-color);
+}
+
+.controls-Back__caption_style-readonly {
+   color: var(--readonly_color);
+}
+
+.controls-Back__caption_style-contrast {
+   color: var(--contrast_text-color);
+}
+//endregion
+
+.controls-Back__wrapper:active {
+   .controls-Back__icon_view-button {
+      background-color: var(--pale_active_contrast_background-color);
+   }
+}
+
+.ws-is-hover {
+   .controls-Header_all__clickable:hover {
+      cursor: pointer;
+   }
+
+   .controls-Back__wrapper:hover,
+   .controls-Header_all__clickable:hover{
+      //region caption
+      .controls-Back__caption_style-default {
+         color: var(--hover_text-color);
+      }
+
+      .controls-Back__caption_style-primary {
+         color: var(--primary_hover_text-color);
+      }
+
+      .controls-Back__caption_style-secondary {
+         color: var(--secondary_hover_text-color_headingBack);
+      }
+
+      .controls-Back__caption_style-link {
+         color: var(--link_hover_text-color);
+      }
+
+      .controls-Back__caption_style-label {
+         color: var(--label_hover_text-color);
+      }
+
+      .controls-Back__caption_style-danger {
+         color: var(--danger_hover_text-color);
+      }
+
+      .controls-Back__caption_style-success {
+         color: var(--success_hover_text-color);
+      }
+
+      .controls-Back__caption_style-warning {
+         color: var(--warning_hover_text-color);
+      }
+
+      .controls-Back__caption_style-unaccented {
+         color: var(--unaccented_hover_text-color);
+      }
+
+      .controls-Back__caption_style-info {
+         color: var(--info_hover_text-color);
+      }
+      //endregion
+
+      .controls-Back__icon_view-button {
+         background-color: var(--pale_hover_contrast_background-color);
+      }
+
+      //region icon
+      .controls-Back__icon_style-default {
+         fill: var(--hover_icon-color);
+         color: var(--hover_icon-color);
+      }
+
+      .controls-Back__icon_style-primary {
+         fill: var(--primary_hover_icon-color);
+         color: var(--primary_hover_icon-color);
+      }
+
+      .controls-Back__icon_style-secondary {
+         fill: var(--secondary_hover_icon-color);
+         color: var(--secondary_hover_icon-color);
+      }
+
+      .controls-Back__icon_style-link {
+         fill: var(--link_hover_icon-color);
+         color: var(--hover_icon-color);
+      }
+
+      .controls-Back__icon_style-label {
+         fill: var(--label_hover_icon-color);
+         color: var(--label_hover_icon-color);
+      }
+
+      .controls-Back__icon_style-danger {
+         fill: var(--danger_hover_icon-color);
+         color: var(--danger_hover_icon-color);
+      }
+
+      .controls-Back__icon_style-success {
+         fill: var(--success_hover_icon-color);
+         color: var(--success_hover_icon-color);
+      }
+
+      .controls-Back__icon_style-warning {
+         fill: var(--warning_hover_icon-color);
+         color: var(--warning_hover_icon-color);
+      }
+
+      .controls-Back__icon_style-unaccented {
+         fill: var(--unaccented_hover_icon-color);
+         color: var(--unaccented_hover_icon-color);
+      }
+
+      .controls-Back__icon_style-info {
+         fill: var(--info_hover_icon-color);
+         color: var(--info_hover_icon-color);
+      }
+      //endregion
+   }
+}

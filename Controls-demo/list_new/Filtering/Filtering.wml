@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300">
+    <div class="controlsDemo__icon_active controlsDemo__Grid_header-with-add-button__gridTitle"
+         on:click="_handleButtonClick()">
+        {{ _buttonText }}
+    </div>
+    <Controls.list:View storeId="gadgets" />
+</div>

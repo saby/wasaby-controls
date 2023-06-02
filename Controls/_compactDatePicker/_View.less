@@ -1,0 +1,585 @@
+@adaptiveSize: calc((100vw - 2 * (var(--offset_s) + var(--offset_2xs))) / 7);
+
+.controls-CompactDatePicker__container {
+   height: 100%;
+}
+
+.controls-CompactDatePicker_background {
+   &-unaccented {
+      background-color: var(--unaccented_background-color);
+   }
+
+   &-active {
+      background-color: var(--active_background-color);
+   }
+}
+
+.controls-MonthViewVDOM__item_style-CompactDatePickerItem {
+   user-select: none;
+   box-sizing: border-box;
+   font-size: var(--font-size_l);
+}
+
+.controls-CompactDatePicker {
+   display: flex;
+   max-height: inherit;
+   height: inherit;
+   flex-direction: column;
+   border-radius: var(--border-radius_s);
+   box-sizing: border-box;
+}
+
+.controls-CompactDatePicker__header__today__container_position {
+   right: var(--offset_st);
+   top: 0;
+   bottom: 0;
+}
+
+.controls-CompactDatePicker__header__close-button__container,
+.controls-CompactDatePicker__header__today__container_position {
+   display: flex;
+   justify-content: center;
+   position: absolute;
+}
+
+.controls-CompactDatePicker__popup {
+   .controls-CompactDatePicker__container {
+      padding-bottom: var(--offset_st);
+   }
+
+   .controls-CompactDatePicker__shadow {
+      box-shadow: var(--shadow_a);
+   }
+
+   .controls-CompactDatePicker__header__today__container_position {
+      right: var(--offset_3xl);
+   }
+}
+
+.controls-CompactDatePicker__header {
+   position: relative;
+   height: calc(
+      2 * var(--inline_height_m) + var(--offset_st) + var(--offset_2xs)
+   );
+   box-sizing: border-box;
+   flex-shrink: 0;
+}
+
+.controls-CompactDatePicker__header__border-visible {
+   border-bottom: var(--border-thickness) solid var(--shadow-color_c);
+}
+
+.controls-CompactDatePicker__header__top-layer {
+   margin-top: var(--offset_s);
+   margin-bottom: var(--offset_2xs);
+   height: var(--inline_height_m);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.controls-CompactDatePicker__month-list__item__header__size-m {
+   height: calc(
+      var(--calendar_item-size_m_compactDatePicker) - 2 * var(--offset_st)
+   );
+}
+
+.controls-CompactDatePicker__month-list__item__header__size-l {
+   height: calc(
+      var(--calendar_item-size_l_compactDatePicker) - 2 * var(--offset_st)
+   );
+}
+
+.controls-CompactDatePicker__month-list__item__header,
+.controls-CompactDatePicker__header__month {
+   margin-bottom: calc(-1 * var(--offset_2xs));
+   font-weight: bold;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   width: 100%;
+   font-size: var(--font-size_2xl);
+}
+
+.controls-CompactDatePicker__month-list__item__header {
+   margin-top: var(--offset_st);
+   margin-bottom: var(--offset_s);
+   font-size: var(--font-size_2xl);
+}
+
+.controls-CompactDatePicker__header__close-button__container {
+   right: var(--offset_s);
+}
+
+.controls-CompactDatePicker__header__today {
+   font-size: var(--font-size_l);
+   font-weight: normal;
+   padding: 0 var(--offset_2xs);
+   cursor: pointer;
+   color: var(--brand_color);
+   box-sizing: border-box;
+   border-top: var(--border-thickness) solid var(--brand_color);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.controls-CompactDatePicker__header__today_hidden {
+   visibility: hidden;
+}
+
+.controls-CompactDatePicker__header__weekdays {
+   height: var(--inline_height_m);
+   margin-left: var(--offset_l);
+   margin-right: var(--offset_l);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.controls-CompactDatePicker__header__weekdays__weekend {
+   color: var(--primary_text-color);
+}
+
+.controls-CompactDatePicker__header__weekdays__workday {
+   color: var(--unaccented_text-color);
+}
+
+.controls-CompactDatePicker__month-list {
+   width: 100%;
+   height: 100%;
+}
+
+.controls-CompactDatePicker__month-list_height__size-m {
+   max-height: calc(
+      8 *
+         (
+            var(--calendar_item-size_m_compactDatePicker) + 2 *
+               var(--border-thickness)
+         ) + var(--offset_st) + var(--offset_s) + 2 * var(--border-thickness)
+   );
+}
+
+.controls-CompactDatePicker__month-list_height__size-l {
+   max-height: calc(
+      8 *
+         (
+            var(--calendar_item-size_l_compactDatePicker) + 2 *
+               var(--border-thickness)
+         ) + var(--offset_st) + var(--offset_s) + 2 * var(--border-thickness)
+   );
+}
+
+.controls-CompactDatePicker__month-list__item {
+   padding-top: var(--border-thickness);
+   margin-left: var(--offset_2xs);
+   margin-bottom: var(--offset_3xs);
+}
+
+.controls-MonthView__textColor-currentMonthDay-weekend_style-CompactDatePickerItem {
+   color: var(--unaccented_text-color);
+}
+
+.controls-MonthView__backgroundColor-currentMonthDay-selected_style-CompactDatePickerItem,
+.controls-MonthView__item-border-start_style-CompactDatePickerItem,
+.controls-MonthView__item-border-end_style-CompactDatePickerItem,
+.controls-MonthView__item-border-start-end_style-CompactDatePickerItem {
+   margin-left: 0;
+   margin-right: 0;
+}
+
+.controls-MonthView__backgroundColor-currentMonthDay-selected-startend_style-CompactDatePickerItem,
+.controls-MonthView__backgroundColor-currentMonthDay-selected_style-CompactDatePickerItem,
+.controls-MonthView__backgroundColor-currentMonthDay-selected-base_style-CompactDatePickerItem,
+.controls-MonthView__backgroundColor-currentMonthDay-selected-end_style-CompactDatePickerItem,
+.controls-MonthView__backgroundColor-currentMonthDay-selected-start_style-CompactDatePickerItem,
+.controls-MonthView__backgroundColor-currentMonthDay-selected-end-unfinished_style-CompactDatePickerItem,
+.controls-MonthView__backgroundColor-currentMonthDay-selected-start-unfinished_style-CompactDatePickerItem {
+   background: var(--background-color);
+}
+
+.controls-MonthView__textColor-currentMonthDay-today_style-CompactDatePickerItem {
+   position: relative;
+   cursor: pointer;
+
+   &::before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      border-radius: 50%;
+      box-sizing: border-box;
+      border: 1.5px solid var(--brand_color);
+   }
+}
+
+.controls-CompactDatePicker__month-list__item_selected__container {
+   position: absolute;
+   width: var(--calendar_item-size_m_compactDatePicker);
+   height: var(--calendar_item-size_m_compactDatePicker);
+   overflow: hidden;
+   border-radius: var(--border-radius_xs);
+}
+
+.controls-CompactDatePicker__month-list__item_selected {
+   width: var(--calendar_item-size_m_compactDatePicker);
+   height: var(--calendar_item-size_m_compactDatePicker);
+}
+
+.controls-CompactDatePicker__month-list__item_selected-start {
+   box-shadow: calc( -1 * var(--calendar_item-size_m_compactDatePicker) / 2) 0 0 var(--icon-color);
+   border-top-left-radius: 50%;
+}
+
+.controls-CompactDatePicker__month-list__item_selected-end {
+   box-shadow: calc(var(--calendar_item-size_m_compactDatePicker) / 2) 0 0 var(--icon-color);
+   border-bottom-right-radius: 50%;
+}
+
+.controls-CompactDatePicker__month-list__item-edge-start {
+   border-top-left-radius: 50%;
+   border-bottom-left-radius: 50%;
+}
+
+.controls-CompactDatePicker__month-list__item-edge-end {
+   border-top-right-radius: 50%;
+   border-bottom-right-radius: 50%;
+}
+
+.controls-CompactDatePicker_item_border-start_rounded {
+   border-top-left-radius: 50%;
+   border-bottom-left-radius: 50%;
+}
+
+.controls-CompactDatePicker_item_border-start {
+   border-top-left-radius: 50%;
+}
+
+.controls-CompactDatePicker__multiHovered,
+.controls-MonthViewVDOM__item-selected {
+   &.controls-MonthView_item_border-top-left-radius__style-CompactDatePickerItem {
+      border-top-left-radius: 50%;
+   }
+
+   &.controls-MonthView_item_border-top-right-radius__style-CompactDatePickerItem {
+      border-top-right-radius: 50%;
+   }
+
+   &.controls-MonthView_item_border-bottom-left-radius__style-CompactDatePickerItem {
+      border-bottom-left-radius: 50%;
+   }
+
+   &.controls-MonthView_item_border-bottom-right-radius__style-CompactDatePickerItem {
+      border-bottom-right-radius: 50%;
+   }
+}
+
+.controls-CompactDatePicker_notHovered {
+   .controls-MonthViewVDOM__item-selected {
+      &.controls-MonthView_item_border-top__style-CompactDatePickerItem {
+         padding-bottom: var(--border-thickness);
+         border-top: var(--border-thickness) solid
+            var(--unaccented_hover_border-color);
+      }
+
+      &.controls-MonthView_item_border-bottom__style-CompactDatePickerItem {
+         padding-top: var(--border-thickness);
+         border-bottom: var(--border-thickness) solid
+            var(--unaccented_hover_border-color);
+      }
+
+      &.controls-MonthView_item_border-left__style-CompactDatePickerItem {
+         padding-right: var(--border-thickness);
+         border-left: var(--border-thickness) solid
+            var(--unaccented_hover_border-color);
+      }
+
+      &.controls-MonthView_item_border-right__style-CompactDatePickerItem {
+         padding-left: var(--border-thickness);
+         border-right: var(--border-thickness) solid
+            var(--unaccented_hover_border-color);
+      }
+   }
+}
+
+.controls-CompactDatePicker__multiHovered {
+   &.controls-MonthView_item_border-top__style-CompactDatePickerItem {
+      padding-bottom: var(--border-thickness);
+      border-top: var(--border-thickness) solid
+      var(--unaccented_hover_border-color);
+   }
+
+   &.controls-MonthView_item_border-bottom__style-CompactDatePickerItem {
+      padding-top: var(--border-thickness);
+      border-bottom: var(--border-thickness) solid
+      var(--unaccented_hover_border-color);
+   }
+
+   &.controls-MonthView_item_border-left__style-CompactDatePickerItem {
+      padding-right: var(--border-thickness);
+      border-left: var(--border-thickness) solid
+      var(--unaccented_hover_border-color);
+   }
+
+   &.controls-MonthView_item_border-right__style-CompactDatePickerItem {
+      padding-left: var(--border-thickness);
+      border-right: var(--border-thickness) solid
+      var(--unaccented_hover_border-color);
+   }
+}
+
+.controls-MonthView__item-border-start-end_style-CompactDatePickerItem {
+   background: var(--background-color);
+}
+
+.controls-MonthView__backgroundColor-currentMonthDay-selected-startend-unfinished_style-CompactDatePickerItem {
+   background: none;
+}
+
+.controls-MonthView__border-currentMonthDay-unselected_style-CompactDatePickerItem {
+   border-radius: 50%;
+}
+
+.controls-MonthView__textColor-currentMonthDay-today-readOnly-dayNotAvailable_style-CompactDatePickerItem,
+.controls-MonthView__textColor-currentMonthDay-weekend-readOnly-dayNotAvailable_style-CompactDatePickerItem,
+.controls-MonthView__textColor-currentMonthDay-workday-readOnly-dayNotAvailable_style-CompactDatePickerItem,
+.controls-MonthView__textColor-currentMonthDay-today-readOnly_style-CompactDatePickerItem,
+.controls-MonthView__textColor-currentMonthDay-weekend-readOnly_style-CompactDatePickerItem,
+.controls-MonthView__textColor-currentMonthDay-workday-readOnly_style-CompactDatePickerItem {
+   cursor: default;
+   color: var(--readonly_color);
+}
+
+.controls-Scroll__shadow_top_style-CompactDatePicker {
+   // Нам нужен градиент переходящий в прозрачный цвет, поэтому переменная не нужна
+   background: linear-gradient(
+      to bottom,
+      var(--shadow-color_c),
+      rgba(255, 255, 255, 0)
+   );
+}
+
+.controls-CompactDatePicker__selector-margin {
+   margin-top: calc(-1 * var(--offset_s));
+   margin-left: calc(
+      -1 * (
+            7 *
+               (
+                  var(--calendar_item-size_m_compactDatePicker) + 2 *
+                     var(--border-thickness)
+               ) + 2 * var(--offset_l)
+         ) / 3
+   );
+}
+
+.controls-CompactDatePicker__size-m {
+   .controls-MonthViewVDOM__item_style-CompactDatePickerItem {
+      width: var(--calendar_item-size_m_compactDatePicker);
+      height: var(--calendar_item-size_m_compactDatePicker);
+   }
+
+   .controls-MonthViewVDOM__item-border_style-CompactDatePickerItem:hover,
+   .controls-MonthView__border-currentMonthDay-unselected_style-CompactDatePickerItem:hover,
+   .controls-MonthView__backgroundColor-currentMonthDay-selected-base_style-CompactDatePickerItem,
+   .controls-MonthView__backgroundColor-currentMonthDay-selected-start_style-CompactDatePickerItem,
+   .controls-MonthView__backgroundColor-currentMonthDay-selected-end_style-CompactDatePickerItem,
+   .controls-MonthView__backgroundColor-currentMonthDay-selected-startend-unfinished_style-CompactDatePickerItem,
+   .controls-MonthView__backgroundColor-currentMonthDay-selected-startend_style-CompactDatePickerItem {
+      &::before {
+         position: absolute;
+         width: calc(var(--calendar_item-size_m_compactDatePicker) - 2 * var(--border-thickness));
+         height: calc(var(--calendar_item-size_m_compactDatePicker) - 2 * var(--border-thickness));
+      }
+   }
+
+   .controls-MonthView__textColor-currentMonthDay-today_style-CompactDatePickerItem {
+      &::before {
+         position: absolute;
+         width: var(--calendar_item-size_m_compactDatePicker);
+         height: var(--calendar_item-size_m_compactDatePicker);
+      }
+   }
+}
+
+.controls-CompactDatePicker__size-l {
+   .controls-MonthViewVDOM__item_style-CompactDatePickerItem {
+      width: var(--calendar_item-size_l_compactDatePicker);
+      height: var(--calendar_item-size_l_compactDatePicker);
+   }
+
+   .controls-MonthViewVDOM__item-border_style-CompactDatePickerItem:hover,
+   .controls-MonthView__border-currentMonthDay-unselected_style-CompactDatePickerItem:hover,
+   .controls-MonthView__backgroundColor-currentMonthDay-selected-base_style-CompactDatePickerItem,
+   .controls-MonthView__backgroundColor-currentMonthDay-selected-start_style-CompactDatePickerItem,
+   .controls-MonthView__backgroundColor-currentMonthDay-selected-end_style-CompactDatePickerItem,
+   .controls-MonthView__backgroundColor-currentMonthDay-selected-startend-unfinished_style-CompactDatePickerItem,
+   .controls-MonthView__backgroundColor-currentMonthDay-selected-startend_style-CompactDatePickerItem {
+      &::before {
+         position: absolute;
+         width: calc(var(--calendar_item-size_l_compactDatePicker) - 2 * var(--border-thickness));
+         height: calc(var(--calendar_item-size_l_compactDatePicker) - 2 * var(--border-thickness));
+      }
+   }
+
+   .controls-MonthView__textColor-currentMonthDay-today_style-CompactDatePickerItem {
+      &::before {
+         position: absolute;
+         width: var(--calendar_item-size_l_compactDatePicker);
+         height: var(--calendar_item-size_l_compactDatePicker);
+      }
+   }
+}
+
+.controls-CompactDatePicker_width_size-m {
+   width: calc(
+           7 * var(--calendar_item-size_m_compactDatePicker) + 2 * var(--offset_2xs)
+   );
+}
+
+.controls-CompactDatePicker_width_size-l {
+   width: calc(
+           7 * var(--calendar_item-size_l_compactDatePicker) + 2 * var(--offset_2xs)
+   );
+}
+
+.ws-is-hover {
+   .controls-CompactDatePicker__size-m {
+      .controls-MonthView__textColor-currentMonthDay-today_style-CompactDatePickerItem {
+         &:hover::before {
+            position: absolute;
+            width: var(--calendar_item-size_m_compactDatePicker);
+            height: var(--calendar_item-size_m_compactDatePicker);
+         }
+      }
+   }
+
+   .controls-CompactDatePicker__size-l {
+      .controls-MonthView__textColor-currentMonthDay-today_style-CompactDatePickerItem {
+         &:hover::before {
+            position: absolute;
+            width: var(--calendar_item-size_l_compactDatePicker);
+            height: var(--calendar_item-size_l_compactDatePicker);
+         }
+      }
+   }
+
+   .controls-MonthViewVDOM__item-border_style-CompactDatePickerItem:hover,
+   .controls-MonthView__border-currentMonthDay-unselected_style-CompactDatePickerItem:hover {
+      &::before {
+         position: absolute;
+         border-radius: 50%;
+         content: '';
+         border: var(--border-thickness) solid
+            var(--unaccented_hover_border-color);
+      }
+   }
+
+   .controls-MonthViewVDOM__today.controls-MonthView__border-currentMonthDay-unselected_style-CompactDatePickerItem:hover {
+      border-color: transparent;
+   }
+
+   .controls-CompactDatePicker__item__today {
+      .controls-MonthView__textColor-currentMonthDay-today_style-CompactDatePickerItem:hover {
+         &::before {
+            border: 1.5px solid var(--brand_color);
+         }
+      }
+   }
+
+   .controls-MonthView__backgroundColor-currentMonthDay-selected-start-unfinished_style-CompactDatePickerItem:hover,
+   .controls-MonthView__backgroundColor-currentMonthDay-selected-end-unfinished_style-CompactDatePickerItem:hover {
+      &::before {
+         content: '';
+         border: none;
+      }
+   }
+
+   .controls-CompactDatePicker__selection-processing {
+      .controls-MonthView__item-border-start_style-CompactDatePickerItem,
+      .controls-MonthView__item-border-end_style-CompactDatePickerItem {
+         &:hover::before {
+            border: none;
+         }
+      }
+
+      .controls-MonthViewVDOM__item-selected:hover {
+         &::before {
+            border: none;
+         }
+      }
+   }
+}
+
+.controls-CompactDatePicker_isAdaptive {
+   .controls-MonthViewVDOM__item_style-CompactDatePickerItem {
+      width: @adaptiveSize;
+      height: @adaptiveSize;
+      font-size: var(--font-size_4xl);
+   }
+
+   .controls-CompactDatePicker__month-list__item_selected__container {
+      width: @adaptiveSize;
+      height: @adaptiveSize;
+   }
+
+   .controls-CompactDatePicker__month-list__item_selected {
+      width: @adaptiveSize;
+      height: @adaptiveSize;
+   }
+
+   .controls-CompactDatePicker__header__today {
+      font-size: var(--font-size_3xl);
+   }
+
+   /* stylelint-disable-next-line no-descending-specificity */
+   .controls-MonthView__textColor-currentMonthDay-today_style-CompactDatePickerItem::before {
+      padding: var(--offset_s);
+   }
+
+   .controls-CompactDatePicker__header {
+      padding-bottom: var(--offset_st);
+   }
+
+   .controls-CompactDatePicker__header__top-layer {
+      margin-bottom: var(--offset_m);
+   }
+
+   .controls-CompactDatePicker__month-list__item__header,
+   .controls-CompactDatePicker__header__month {
+      font-size: var(--font-size_5xl);
+   }
+
+   .controls-CompactDatePicker__header__weekdays {
+      font-size: var(--font-size_4xl);
+      margin: calc(var(--offset_2xl) - var(--offset_3xs)) calc(var(--offset_3xl) - var(--offset_3xs)) 0 calc(var(--offset_3xl) - var(--offset_3xs));
+   }
+
+   .controls-CompactDatePicker__month-list__item__header {
+      font-size: var(--font-size_5xl);
+      height: auto;
+   }
+
+   .controls-CompactDatePicker__month-list__item {
+      margin: 0 auto;
+   }
+
+   .controls-CompactDatePicker__month-list_adaptiveHeight__size-m,
+   .controls-CompactDatePicker__month-list_adaptiveHeight__size-l {
+      max-height: calc(
+              8 *
+              (
+              @adaptiveSize + 2 *
+              var(--border-thickness)
+              ) + var(--offset_2xl) + var(--offset_s) + 2 * var(--border-thickness)
+      );
+      padding-top: var(--offset_3xs);
+   }
+
+   &.controls-CompactDatePicker__container {
+      padding: 0;
+   }
+
+   .controls-CompactDatePicker__header__today__container_position {
+      bottom: calc(-1 * var(--offset_2xs));
+   }
+}

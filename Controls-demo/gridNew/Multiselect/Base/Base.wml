@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper demo_GridMultiselect__base">
+    <Controls.RadioGroup:Control
+            bind:selectedKey="_selectedKey"
+            attr:style="padding-left:12px"
+            keyProperty="id"
+            direction="horizontal"
+            source="{{_radioSource}}"
+    />
+    <div class="controlsDemo__wrapper">
+        <Controls.grid:View
+                keyProperty="key"
+                multiSelectVisibility="{{_selectedKey}}"
+                source="{{_viewSource}}"
+                columns="{{_columns}}"/>
+    </div>
+</div>

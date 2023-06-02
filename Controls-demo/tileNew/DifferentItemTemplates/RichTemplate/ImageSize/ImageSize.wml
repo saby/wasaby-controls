@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper">
+   <Controls.scroll:Container class="controlsDemo__height500 controlsDemo__maxWidth1000">
+      <Controls.tile:View
+              tileMode="static"
+              keyProperty="key"
+              displayProperty="title"
+              imageProperty="image"
+              tileWidth="240"
+              source="{{_viewSource}}">
+         <ws:itemTemplate>
+            <ws:partial
+                    scope="{{ itemTemplate }}"
+                    template="Controls/tile:RichTemplate"
+                    imageSize="{{ itemTemplate.item.contents.imageSize }}"/>
+         </ws:itemTemplate>
+      </Controls.tile:View>
+   </Controls.scroll:Container>
+</div>

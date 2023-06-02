@@ -1,0 +1,22 @@
+<div class="controlsDemo__wrapper controlsDemo__width800px">
+    <Controls.browser:Browser source="{{_viewSource}}"
+                              searchParam="title"
+                              iterativeLoadPageSize="30">
+        <ws:navigation source="position" view="infinity">
+            <ws:sourceConfig field="key" position="{{0}}" direction="forward" limit="{{20}}"/>
+            <ws:viewConfig pagingMode="basic"/>
+        </ws:navigation>
+        <ws:content>
+            <div class="ws-fragment">
+                <Controls.search:InputContainer>
+                    <Controls.search:Input/>
+                </Controls.search:InputContainer>
+                <Controls.scroll:Container attr:class="controlsDemo__height300">
+                    <Controls.list:Container>
+                        <Controls.list:View/>
+                    </Controls.list:Container>
+                </Controls.scroll:Container>
+            </div>
+        </ws:content>
+    </Controls.browser:Browser>
+</div>

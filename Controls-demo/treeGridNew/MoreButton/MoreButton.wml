@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper controlsDemo_treeGrid__MoreButtonTemplate controlsDemo__maxWidth500">
+<Controls.treeGrid:View
+        keyProperty="key"
+        name="tree2"
+        source="{{_viewSource}}"
+        columns="{{_columns}}"
+        parentProperty="parent"
+        nodeProperty="type"
+        bind:expandedItems="_expandedItems"
+        navigation="{{_navigation}}"/>
+</div>

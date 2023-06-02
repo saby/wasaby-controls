@@ -1,0 +1,300 @@
+.controls-SwitchButton-circle {
+   border-radius: 50%;
+   width: var(--marker_size_switcher);
+   height: var(--marker_size_switcher);
+}
+
+.controls-SwitchButton-circle_size-s {
+   border: var(--border-thickness) solid;
+   box-sizing: border-box;
+}
+
+.controls-SwitchButton-circle_outlined-selected {
+   background-color: var(--primary_contrast_background-color);
+   border-color: var(--primary_contrast_background-color);
+}
+
+.controls-SwitchButton-circle_filled-selected {
+   background-color: var(--marker_contrast-color_switcher);
+   border-color: var(--primary_contrast_background-color);
+}
+
+.controls-SwitchButton-circle_filled-unselected {
+   background-color: var(--marker_contrast-color_switcher);
+   border-color: var(--unaccented_contrast_background-color);
+}
+
+.controls-SwitchButton-circle_outlined-unselected {
+   background-color: var(--unaccented_icon-color);
+   border-color: var(--unaccented_icon-color);
+}
+
+.controls-SwitchButton-circle_resetValue {
+   &.controls-SwitchButton-circle_outlined-selected,
+   &.controls-SwitchButton-circle_filled-selected {
+      background-color: var(--primary_active_background-color);
+      border-color: var(--primary_active_background-color);
+   }
+
+   &.controls-SwitchButton-circle_filled-unselected,
+   &.controls-SwitchButton-circle_outlined-unselected {
+      background-color: var(--pale_active_contrast_background-color);
+      border-color: var(--pale_active_contrast_background-color);
+   }
+}
+
+.controls-SwitchButton-circle_outlined-selected_disabled {
+   background-color: var(--readonly_background-color);
+   border-color: var(--readonly_background-color);
+}
+
+.controls-SwitchButton-circle_filled-unselected_disabled,
+.controls-SwitchButton-circle_outlined-unselected_disabled {
+   background-color: var(--background-color);
+   border-color: var(--readonly_border-color);
+   border-style: solid;
+   border-width: 1px;
+   box-sizing: border-box;
+}
+
+.controls-SwitchButton-circle_filled-selected_disabled {
+   background-color: var(--background-color);
+   border-color: var(--background-color);
+}
+
+.controls-SwitchButton-circle_size-l {
+   width: var(--marker_big-size_switcher);
+   height: var(--marker_big-size_switcher);
+}
+
+.controls-SwitchButton {
+   .inline-flexbox();
+   .align-items(center);
+   .baseline-fix();
+   border-style: solid;
+   user-select: none;
+   position: relative;
+   border-width: var(--border-thickness);
+   // В ie есть проблема с calc.
+   // Если передавать border-radius: calc(val / 2), то это воспринимается как невалидное значение.
+   // Поэтому явно указываем все значения
+   border-top-left-radius: var(--border-radius_switcher);
+   border-top-right-radius: var(--border-radius_switcher);
+   border-bottom-left-radius: var(--border-radius_switcher);
+   border-bottom-right-radius: var(--border-radius_switcher);
+}
+
+.controls-SwitchButton_filled_checked {
+   border-color: var(--primary_contrast_background-color);
+   background-color: var(--primary_contrast_background-color);
+}
+
+.controls-SwitchButton_filled_notChecked {
+   border-color: var(--unaccented_contrast_background-color);
+   background-color: var(--unaccented_contrast_background-color);
+}
+
+.controls-SwitchButton_filled_disabled_notChecked,
+.controls-SwitchButton_outlined_disabled_notChecked {
+   border-color: var(--readonly_border-color);
+   background-color: var(--background-color);
+}
+
+.controls-SwitchButton_filled_disabled_checked,
+.controls-SwitchButton_outlined_disabled_checked {
+   border-color: var(--primary_active_same_background-color);
+   background-color: var(--primary_active_same_background-color);
+}
+
+.controls-SwitchButton_outlined_checked,
+.controls-SwitchButton_outlined_notChecked,
+.controls-SwitchButton_outlined_disabled {
+   border-color: var(--border-color_switcher);
+}
+
+.controls-SwitchButton_disabled_checked,
+.controls-SwitchButton_disabled_notChecked {
+   border-color: var(--readonly_border-color);
+}
+
+.controls-SwitchButton_resetValue {
+   &.controls-SwitchButton_outlined_notChecked,
+   &.controls-SwitchButton_filled_notChecked {
+      border-color: var(--pale_active_contrast_background-color);
+      background-color: var(--background-color);
+   }
+
+   &.controls-SwitchButton_outlined_checked,
+   &.controls-SwitchButton_filled_checked {
+      border-color: var(--primary_active_same_background-color);
+      background-color: var(--background-color);
+   }
+}
+
+.controls-SwitchButton_horizontal__wrapper {
+   align-items: baseline;
+}
+
+.controls-SwitchButton_enabled {
+   cursor: pointer;
+}
+
+.controls-SwitchButton_horizontal {
+   width: var(--width_switcher);
+   min-width: var(--width_switcher);
+   height: var(--height_horizontal_switcher);
+
+   &::after {
+      content: '\200b';
+      width: 0;
+      display: inline-block;
+      visibility: hidden;
+   }
+}
+
+.controls-SwitchButton_size-s.controls-SwitchButton_horizontal {
+   width: var(--width_switcher-small);
+   min-width: var(--width_switcher-small);
+   height: var(--height_horizontal_switcher-small);
+}
+
+.controls-SwitchButton_size-l.controls-SwitchButton_horizontal {
+   width: var(--width_switcher-big);
+   min-width: var(--width_switcher-big);
+   height: var(--height_horizontal_switcher-big);
+}
+
+.controls-SwitchButton_vertical {
+   .flex-direction(column);
+   margin: 0;
+   width: var(--height_horizontal_switcher);
+   height: var(--height_vertical_switcher);
+
+   &::before {
+      height: 0;
+      line-height: var(--font-size_m);
+   }
+}
+
+.controls-SwitchButton_horizontal_checked {
+   flex-direction: row-reverse;
+}
+
+.controls-SwitchButton__fake-element {
+   height: calc(
+      var(--height_vertical_switcher) - var(--marker_size_switcher) -
+         var(--marker_border-offset_switcher)
+   );
+}
+
+.controls-SwitchButton__fake-element_active {
+   //Нельзя делать через column-reverse, т.к. иначе базовая линия начинает браться не с того элемента и всё едет
+   order: 1;
+}
+
+.controls-SwitchButton__fake-element_inactive {
+   order: 0;
+}
+
+.ws-is-hover .controls-Switch_hovered:hover .controls-SwitchButton-circle_outlined-selected,
+.ws-is-touch .controls-Switch_hovered:active .controls-SwitchButton-circle_outlined-selected {
+   background-color: var(--primary_hover_contrast_background-color);
+}
+
+.ws-is-hover .controls-Switch_hovered:hover .controls-SwitchButton-circle_outlined-unselected,
+.ws-is-touch .controls-Switch_hovered:active .controls-SwitchButton-circle_outlined-unselected {
+   background-color: var(--unaccented_hover_icon-color);
+   border-color: var(--unaccented_hover_icon-color);
+}
+
+.ws-is-hover .controls-Switch_hovered:hover .controls-SwitchButton-circle_filled-unselected,
+.ws-is-touch .controls-Switch_hovered:active .controls-SwitchButton-circle_filled-unselected {
+   border-color: var(--unaccented_hover_contrast_background-color);
+}
+
+.ws-is-hover .controls-Switch_hovered:hover .controls-SwitchButton-circle_outlined-selected,
+.ws-is-hover .controls-Switch_hovered:hover .controls-SwitchButton-circle_filled-selected,
+.ws-is-touch .controls-Switch_hovered:active .controls-SwitchButton-circle_outlined-selected,
+.ws-is-touch .controls-Switch_hovered:active .controls-SwitchButton-circle_filled-selected {
+   border-color: var(--primary_hover_contrast_background-color);
+}
+
+.ws-is-hover .controls-Switch_hovered:hover .controls-SwitchButton_filled_checked,
+.ws-is-touch .controls-Switch_hovered:active .controls-SwitchButton_filled_checked {
+   border-color: var(--primary_hover_contrast_background-color);
+   background-color: var(--primary_hover_contrast_background-color);
+}
+
+.ws-is-hover .controls-Switch_hovered:hover .controls-SwitchButton_filled_notChecked,
+.ws-is-touch .controls-Switch_hovered:active .controls-SwitchButton_filled_notChecked {
+   border-color: var(--unaccented_hover_contrast_background-color);
+   background-color: var(--unaccented_hover_contrast_background-color);
+}
+
+.ws-is-hover .controls-Switch_hovered:hover .controls-SwitchButton_resetValue .controls-SwitchButton-circle_filled-unselected,
+.ws-is-hover .controls-Switch_hovered:hover .controls-SwitchButton_resetValue .controls-SwitchButton-circle_outlined-unselected,
+.ws-is-touch .controls-Switch_hovered:active .controls-SwitchButton_resetValue .controls-SwitchButton-circle_filled-unselected,
+.ws-is-touch .controls-Switch_hovered:active .controls-SwitchButton_resetValue .controls-SwitchButton-circle_outlined-unselected {
+   border-color: var(--pale_active_contrast_background-color);
+   background-color: var(--pale_active_contrast_background-color);
+}
+
+.ws-is-hover .controls-Switch_hovered:hover .controls-SwitchButton_resetValue .controls-SwitchButton-circle_outlined-selected,
+.ws-is-hover .controls-Switch_hovered:hover .controls-SwitchButton_resetValue .controls-SwitchButton-circle_filled-selected,
+.ws-is-touch .controls-Switch_hovered:active .controls-SwitchButton_resetValue .controls-SwitchButton-circle_outlined-selected,
+.ws-is-touch .controls-Switch_hovered:active .controls-SwitchButton_resetValue .controls-SwitchButton-circle_filled-selected {
+   border-color: var(--primary_active_background-color);
+   background-color: var(--primary_active_background-color);
+}
+
+.ws-is-hover .controls-Switch_hovered:hover .controls-SwitchButton_resetValue.controls-SwitchButton_filled_notChecked,
+.ws-is-hover .controls-Switch_hovered:hover .controls-SwitchButton_resetValue.controls-SwitchButton_outlined_notChecked,
+.ws-is-touch .controls-Switch_hovered:active .controls-SwitchButton_resetValue.controls-SwitchButton_filled_notChecked,
+.ws-is-touch .controls-Switch_hovered:active .controls-SwitchButton_resetValue.controls-SwitchButton_outlined_notChecked {
+   border-color: var(--pale_active_contrast_background-color);
+   background-color: var(--hover_background-color);
+}
+
+.ws-is-hover .controls-Switch_hovered:hover .controls-SwitchButton_resetValue.controls-SwitchButton_outlined_checked,
+.ws-is-hover .controls-Switch_hovered:hover .controls-SwitchButton_resetValue.controls-SwitchButton_filled_checked,
+.ws-is-touch .controls-Switch_hovered:active .controls-SwitchButton_resetValue.controls-SwitchButton_outlined_checked,
+.ws-is-touch .controls-Switch_hovered:active .controls-SwitchButton_resetValue.controls-SwitchButton_filled_checked {
+   background-color: var(--primary_hover_background-color);
+   border-color: var(--primary_active_background-color);
+}
+
+.controls-SwitchButton-circle_orientation-vertical {
+   margin-top: calc(
+      var(--marker_border-offset_switcher) - var(--border-thickness)
+   );
+   margin-bottom: calc(
+      var(--marker_border-offset_switcher) - var(--border-thickness)
+   );
+}
+
+.controls-SwitchButton-circle_orientation-horizontal {
+   margin-right: calc(
+      var(--marker_border-offset_switcher) - var(--border-thickness)
+   );
+   margin-left: calc(
+      var(--marker_border-offset_switcher) - var(--border-thickness)
+   );
+}
+
+.controls-SwitchButton_size-s {
+   .controls-SwitchButton-circle_orientation-horizontal {
+      margin-right: calc(var(--border-thickness) * -1);
+      margin-left: calc(var(--border-thickness) * -1);
+   }
+}
+
+.controls-SwitchButton_size-l {
+   .controls-SwitchButton-circle_orientation-horizontal {
+      margin-right: calc(
+         var(--marker_border-offset_switcher) + var(--border-thickness)
+      );
+      margin-left: calc(
+         var(--marker_border-offset_switcher) + var(--border-thickness)
+      );
+   }
+}

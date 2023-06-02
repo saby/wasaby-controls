@@ -1,0 +1,153 @@
+import { register } from 'Types/di';
+import { RecordSet } from 'Types/collection';
+import { Serializer } from 'UI/State';
+import { DataSet } from 'Types/source';
+
+interface IHistorySourceDemoOptions {
+    recent: number;
+    historyId: string;
+}
+
+interface IResult {
+    items: string;
+}
+
+interface IRecentData {
+    d: unknown[];
+    s: object[];
+    _type: string;
+}
+const HISTORY_ITEMS_COUNT = 10;
+
+const pinnedData = {
+    _type: 'recordset',
+    d: [],
+    s: [
+        { n: 'ObjectId', t: 'Строка' },
+        { n: 'ObjectData', t: 'Строка' },
+        { n: 'HistoryId', t: 'Строка' },
+    ],
+};
+const frequentData = {
+    _type: 'recordset',
+    d: [],
+    s: [],
+};
+
+function createRecordSet(data: object): RecordSet {
+    return new RecordSet({
+        rawData: data,
+        keyProperty: 'ObjectId',
+        adapter: 'adapter.sbis',
+    });
+}
+
+export default class DemoHistorySource {
+    protected _$recent: number = null;
+    protected _historyItemsCount: number = 10;
+    protected _historyId: string = 'myHistoryId';
+    protected _counter: number = 1;
+    protected _recentData: IRecentData = {
+        _type: 'recordset',
+        d: [],
+        s: [
+            { n: 'ObjectId', t: 'Строка' },
+            { n: 'ObjectData', t: 'Строка' },
+            { n: 'HistoryId', t: 'Строка' },
+        ],
+    };
+
+    constructor(cfg: IHistorySourceDemoOptions) {
+        if (cfg.historyId === 'FILTER_HISTORY_WITH_ITEM') {
+            this._recentData.d.push(
+                [
+                    String(this._counter++),
+                    '[{"value":"2","textValue":"Очень длинное название для редактора выбора отдела","name":"department","viewMode":"basic"}]',
+                    cfg.historyId,
+                ],
+                [
+                    String(this._counter++),
+                    '[{"value":"1","textValue":"Разработка","name":"department","viewMode":"basic"}]',
+                    cfg.historyId,
+                ],
+                [
+                    String(this._counter++),
+                    '[{"value":"3","textValue":"Администрация","name":"department","viewMode":"basic"}]',
+                    cfg.historyId,
+                ],
+                [
+                    String(this._counter++),
+                    '[{"value":"4","textValue":"Тестирование","name":"department","viewMode":"basic"}]',
+                    cfg.historyId,
+                ],
+                [
+                    String(this._counter++),
+                    '[{"value":"5","textValue":"Учебный","name":"department","viewMode":"basic"}]',
+                    cfg.historyId,
+                ],
+                [
+                    String(this._counter++),
+                    '[{"value":"6","textValue":"Проектирование","name":"department","viewMode":"basic"}]',
+                    cfg.historyId,
+                ]
+            );
+        } else if (cfg.historyId === 'FILTER_HISTORY'){
+            this._recentData.d.push([
+                String(this._counter++),
+                '[{"value":"2","textValue":"Очень длинное название для редактора выбора отдела","name":"department","viewMode":"basic"}]',
+                cfg.historyId,
+            ]);
+        }
+        this._$recent = cfg.recent;
+        this._historyId = cfg.historyId;
+        this._historyItemsCount = HISTORY_ITEMS_COUNT;
+    }
+
+    query(): Promise<DataSet> {
+        return new Promise((resolve): void => {
+            resolve(this.getData(this._historyItemsCount));
+        });
+    }
+
+    saveHistory(): void {
+        // for demo
+    }
+
+    getHistoryId(): string {
+        return this._historyId;
+    }
+
+    getHistoryIds(): string[] {
+        return [];
+    }
+
+    update(result: IResult): object {
+        if (result.items) {
+            const data = JSON.parse(result.items)?.items;
+            if (data) {
+                this._recentData.d.push([
+                    String(this._counter++),
+                    JSON.stringify(data, new Serializer().serialize),
+                    'myHistoryId',
+                ]);
+            }
+        }
+        return {
+            addCallback: () => {
+                // for demo
+            },
+        };
+    }
+
+    private getData(historyItemsCount: number): DataSet {
+        return new DataSet({
+            rawData: {
+                frequent: createRecordSet(frequentData),
+                pinned: createRecordSet(pinnedData),
+                recent: createRecordSet(this._recentData),
+            },
+            keyProperty: 'ObjectId',
+        });
+    }
+}
+register('demoSourceHistory', DemoHistorySource);

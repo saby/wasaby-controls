@@ -1,0 +1,20 @@
+<div class="engine-demo__Widgets_filter-container">
+    <div class="engine-demo__widgets_masterWrapper">
+        <Controls.masterDetail:Base attr:class="engine-demo__widgets_master"
+                                    newDesign="{{true}}">
+            <ws:master>
+                 <Controls-ListEnv.filterPanel:View filterNames="['dateEditor', 'dateRangeEditor', 'department', 'isDevelopment',
+                                                                    'gender', 'city', 'salary', 'dateEditorFrom', 'owner']"
+                                                    storeId="viewData"
+                                                    attr:class="engine-demo__Widgets_filterPanel"
+                                                    editorsViewMode="cloud"/>
+            </ws:master>
+            <ws:detail>
+                <Controls.grid:View storeId="viewData"
+                                    columns="{{_columns}}"
+                                    header="{{_header}}"
+                                    attr:class="engine-demo__Widgets_filterList"/>
+            </ws:detail>
+        </Controls.masterDetail:Base>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth200">
+    <Controls.tree:View
+            keyProperty="key"
+            source="{{_viewSource}}"
+            parentProperty="parent"
+            nodeProperty="type"
+            bind:expandedItems="_expandedItems"
+            bind:collapsedItems="_collapsedItems"
+            expanderPosition="right"/>
+</div>

@@ -1,0 +1,25 @@
+<div class="controlsDemo__cell">
+    <Controls.browser:Browser source="{{_viewSource}}" keyProperty="key" bind:selectedKeys="_selectedKeys">
+            <div>
+                <Controls.listDeprecate:Mover name="listMover"/>
+                <Controls.list:Container>
+                    <Controls.grid:View
+                            keyProperty="key"
+                            on:customdragStart="_dragStart()"
+                            on:customdragEnd="_dragEnd()"
+                            itemsReadyCallback="{{_itemsReadyCallback}}"
+                            itemsDragNDrop="{{true}}"
+                            colspanCallback="{{_colspanCallback}}"
+                            columns="{{_columns}}">
+                        <ws:editingConfig editOnClick="{{true}}" sequentialEditing="{{true}}"
+                                          toolbarVisibility="{{true}}"/>
+                        <ws:draggingTemplate>
+                            <ws:partial template="Controls/dragnDrop:DraggingTemplate"
+                                        mainText="{{draggingTemplate.entity._options.title}}">
+                            </ws:partial>
+                        </ws:draggingTemplate>
+                    </Controls.grid:View>
+                </Controls.list:Container>
+            </div>
+    </Controls.browser:Browser>
+</div>

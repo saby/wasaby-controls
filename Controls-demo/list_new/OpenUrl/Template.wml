@@ -1,0 +1,19 @@
+<div class="controlsDemo__wrapper controlsDemo__maxWidth200 controlDemo_list-new_base">
+    <Controls.list:View source="{{_viewSource}}">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/list:ItemTemplate">
+                <ws:contentTemplate>
+                    <ws:if data="{{itemTemplate.item.contents.special}}">
+                        {{itemTemplate.item.contents.title}}
+                        <a attr:href="http://www.google.com">
+                            <span attr:class="ws-link">(www.google.com)</span>
+                        </a>
+                    </ws:if>
+                    <ws:else>
+                        <Controls.extendedDecorator:WrapURLs value="{{itemTemplate.item.contents.title}}"/>
+                    </ws:else>
+                </ws:contentTemplate>
+            </ws:partial>
+        </ws:itemTemplate>
+    </Controls.list:View>
+</div>

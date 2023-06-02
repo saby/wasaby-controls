@@ -1,0 +1,142 @@
+.ControlsDemo__grid__demoLayout__sidebar__toggleButtonWrapper {
+   position: absolute;
+   top: 50%;
+   margin-right: 10px;
+}
+
+.ControlsDemo__grid__demoLayout__sidebar {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   width: 40vw;
+   min-width: 300px;
+   height: 100%;
+   z-index: 99999;
+   box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+   background-color: #f3f3f3;
+
+   &_left {
+      left: 0;
+      transform: translateX(-100%);
+
+      .ControlsDemo__grid__demoLayout__sidebar__toggleButtonWrapper {
+         left: 100%;
+      }
+   }
+
+   &_right {
+      right: 0;
+      transform: translateX(100%);
+
+      .ControlsDemo__grid__demoLayout__sidebar__toggleButtonWrapper {
+         right: 100%;
+      }
+   }
+
+   &_opened {
+      transform: translateX(0);
+   }
+}
+
+.ControlsDemo__grid__demoLayout__sidebar__content {
+   padding: 20px;
+   max-height: 100%;
+   box-sizing: border-box;
+   overflow-y: auto;
+}
+
+.ControlsDemo__grid__demoLayout__sidebar__card {
+   border-radius: 4px;
+   display: inline-block;
+   margin: 7px;
+   padding: 10px;
+   background-color: var(--background-color);
+   box-shadow: 0 1px 0 0 #dce1e6, 0 0 0 1px #e7e8ec;
+}
+
+.ControlsDemo__grid__demoLayout__sidebar__toggleButton {
+   text-align: center;
+   position: relative;
+   margin: 20px auto;
+   cursor: pointer;
+
+   &__text {
+      font-size: 10px;
+      line-height: 40px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #c0c0c0;
+      transition: all 0.3s ease-in;
+      opacity: 0;
+      cursor: pointer;
+      font-family: Verdana, sans-serif;
+   }
+
+   &::before,
+   &::after {
+      position: absolute;
+      content: '';
+      height: 4px;
+      width: 60%;
+      background: #c0c0c0;
+      left: 0;
+      transition: all 0.3s ease-in;
+   }
+
+   &::before {
+      top: calc(50% - 4px);
+      transform: rotate(45deg);
+   }
+
+   &::after {
+      bottom: 50%;
+      transform: rotate(-45deg);
+   }
+
+   &:hover {
+      &::before,
+      &::after {
+         transform: rotate(0);
+         width: 100%;
+         background: var(--icon-color);
+      }
+
+      &::before {
+         top: 0;
+      }
+
+      &::after {
+         bottom: 0;
+      }
+
+      .ControlsDemo__grid__demoLayout__sidebar__toggleButton__text {
+         opacity: 1;
+         color: var(--text-color);
+      }
+   }
+
+   &_open {
+      &::before {
+         top: calc(0px - 1px);
+         transform: rotate(-45deg);
+      }
+
+      &::after {
+         top: 50%;
+         transform: rotate(45deg);
+      }
+
+      &:hover {
+         &::before {
+            top: 0;
+            transform: rotate(0deg);
+         }
+
+         &::after {
+            top: auto;
+            bottom: 0;
+            transform: rotate(0);
+         }
+      }
+   }
+}

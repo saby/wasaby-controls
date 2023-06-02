@@ -1,0 +1,58 @@
+.controls_operations_theme-@{themeName} {
+   // Переменные для кнопки вызова панели операций
+   //
+   // Размеры
+
+   --height_operationsButton: var(--inline_height_default);
+
+   // Иконка
+
+   --icon-color_operationsButton: var(--secondary_icon-color);
+   --icon-color_hover_operationsButton: var(--secondary_hover_icon-color);
+   --icon-size_operationsButton: 24px;
+   --text-shadow_operationsButton: none;
+   --icon-font-family_operationsButton: var(--icon_font-family_m);
+
+   //Обводка
+
+   --box-shadow_operationsButton: none;
+
+   // Цвет фона
+
+   --background-color_operationsButton: transparent;
+   --background-color_hover_operationsButton: var(
+      --background-color_operationsButton
+   );
+   --background-color_active_operationsButton: var(
+      --background-color_operationsButton
+   );
+
+   // Разделитель
+
+   --separator_thickness_operationsButton: 1px;
+   --separator_length_operationsButton: var(--height_operationsButton);
+
+   // Переменные для панели операций
+   //
+   // Размеры и отступы
+
+   --height_operationsPanel: 32px;
+   --toolbar_padding-left_operationsPanel: 0;
+   --toolbar_padding-right_operationsPanel: 0;
+   --padding-right_operationsPanel: var(--offset_m);
+
+   // Цвета фона
+
+   --background-color_operationsPanel: var(--secondary_background-color);
+
+   // Разделитель между элементом отметки и операциями
+
+   --separator_thickness_operationsPanel: 1px;
+   --separator_length_operationsPanel: 12px;
+   --separator_color_operationsPanel: var(--readonly_border-color);
+   --separator_offset-left_operationsPanel: var(--offset_xs);
+
+   //Временная переменная для цвета кнопки в панели действий
+   --link_text-color_operationsPanel: var(--secondary_text-color);
+   --link_hover_text-color_operationsPanel: var(--secondary_hover_text-color);
+}

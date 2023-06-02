@@ -1,0 +1,22 @@
+<Controls.scroll:IntersectionObserverContainer
+        observerName="monthList"
+        data="{{ itemData.item.getRawData() }}">
+    <ws:partial
+            attr:class="controls-MonthList__template"
+            template="{{ itemTemplate }}"
+            date="{{ itemData.item.date }}"
+            extData="{{ extData }}"
+            startValue="{{ startValue }}"
+            endValue="{{ endValue }}"
+            _extDataVersion="{{ extData._version }}"
+            monthTemplate="{{ monthTemplate }}"
+            dayTemplate="{{ dayTemplate }}"
+            dayHeaderTemplate="{{ dayHeaderTemplate }}"
+            theme="{{ theme }}"
+            newMode="{{ newMode }}"
+            _formatMonth="{{ _formatMonth }}"
+            _options="{{ viewMode !== 'month' ? _options }}"
+            _getMonth="{{ _getMonth}}"
+            _dateToDataString="{{ _dateToDataString }}"
+    />
+</Controls.scroll:IntersectionObserverContainer>

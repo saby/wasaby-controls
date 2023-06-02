@@ -1,0 +1,30 @@
+<div class="controlsDemo__wrapper">
+   <Controls.browser:Browser
+           bind:selectedKeys="_selectedKeys"
+           bind:excludedKeys="_excludedKeys"
+           multiSelectVisibility="visible"
+           navigation="{{null}}"
+           nodeProperty="Раздел@"
+           parentProperty="Раздел"
+           source="{{_source}}"
+           keyProperty="id">
+      <ws:filter
+              expanded="{{true}}"
+              Служебные="{{true}}"/>
+      <ws:content>
+         <div>
+            <Controls.operations:PanelContainer>
+               <Controls.actions:Container
+                       actions="{{_operationsItems}}" />
+            </Controls.operations:PanelContainer>
+            <Controls.list:Container>
+               <Controls.treeGrid:View
+                       name="list"
+                       attr:class="demo-Grid__control"
+                       columns="{{_gridColumns}}">
+               </Controls.treeGrid:View>
+            </Controls.list:Container>
+         </div>
+      </ws:content>
+   </Controls.browser:Browser>
+</div>

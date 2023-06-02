@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper controlsDemo__list_new-itemTepmlate-NoHighlightOnHover">
+    <Controls.list:View
+            keyProperty="key"
+            source="{{_viewSource}}"
+            multiSelectVisibility="visible"
+            multiSelectAccessibilityProperty="checkbox"
+            bind:selectedKeys="_selectedKeys"
+            bind:excludedKeys="_excludedKeys"/>
+</div>

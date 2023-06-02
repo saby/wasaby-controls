@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500 controlsDemo_wrapper-treeGrid-base-treeGridView">
+   <Controls.toggle:DoubleSwitch
+      bind:value="_hierarchyReload"
+      onCaption="{{'Hierarchy reload on'}}" offCaption="{{'Hierarchy reload off'}}"
+   />
+   <Controls.treeGrid:View
+      name="grid"
+      keyProperty="id"
+      nodeProperty="node"
+      parentProperty="parent"
+      resultsPosition="bottom"
+      columns="{{_columns}}"
+      source="{{_viewSource}}"
+      itemActions="{{_itemActions}}"
+      bind:expandedItems="_expandedItems"
+      on:actionClick="_onActionClick()"
+   />
+</div>

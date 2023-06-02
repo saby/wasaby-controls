@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo-toolbar-panel">Выполнили клик по {{_clickedItem}}; активировали {{_activeItem}}</div>
+    <Controls.list:View
+            attr:class="controlsDemo__margin-top"
+            keyProperty="key"
+            multiSelectVisibility="{{ _hasMultiSelect ? 'visible' : 'hidden'}}"
+            source="{{_viewSource}}"
+            itemActions="{{_itemActions}}"
+            bind:selectedKeys="_selectedKeys"
+            on:itemClick="_onItemClick()"
+            on:itemActivate="_onItemActivate()"
+    />
+</div>

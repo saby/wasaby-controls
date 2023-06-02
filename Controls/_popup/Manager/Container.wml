@@ -1,0 +1,43 @@
+<div class="controls-PopupContainer ws-float-area-stack-panel-overflow" id="popup"
+     on:registerPending="_registerPendingHandler()"
+     on:finishPendingOperations="_finishPendingHandler()"
+     on:cancelFinishingPending="_cancelFinishingPendingHandler()">
+    <ws:for data="index, item in _popupItems">
+        <ws:if data="{{index === _overlayIndex}}">
+            <div class="controls-Container__overlay"
+                 on:mousedown="_overlayClickHandler(item)"
+                 style="z-index: {{item.currentZIndex}};">
+            </div>
+        </ws:if>
+        <Controls._popup.Manager.Popup id="{{item.id}}" __key="{{item.id}}" attr:key="{{item.id}}"
+                                       name="{{item.id}}"
+                                       theme="{{_options.theme}}"
+                                       on:keydown="_keyDownHandler()"
+                                       on:activated="_popupActivated(item.id)"
+                                       onAfterMount="{{_onTemplateMounted.bind(null, item.id)}}"
+                                       attr:class="
+                   {{_overlayIndex > index ? 'controls-Popup__hidden-closeButton'}}
+                   {{_popupItems.getCount() - 1 === index ? 'controls-Scroll_webkitOverflowScrollingTouch'}}
+                   {{item.popupOptions.className}}
+                   {{getInvisibleClass(item, _mountedPopups)}}
+                   {{item.position.hidden ? 'controls-Popup__hidden'}}
+                    {{item.position.zoom !== undefined ? 'controls-Zoom'}}"
+                                           attr:style="z-index: {{item.currentZIndex}};
+                   position: {{item.position.position !== undefined ? item.position.position : 'absolute'}};
+                   left: {{item.position.left === undefined ? 'auto' : item.position.left + 'px'}};
+                   right: {{item.position.right === undefined ? 'auto' : item.position.right + 'px'}};
+                   top: {{item.position.top === undefined ? 'auto': item.position.top + 'px'}};
+                   bottom: {{item.position.bottom === undefined ? 'auto': item.position.bottom + 'px'}};
+                   width: {{item.position.width === undefined ? 'auto': item.position.width + 'px'}};
+                   max-width: {{item.position.maxWidth !== undefined ? item.position.maxWidth + 'px'}};
+                   min-width: {{item.position.minWidth !== undefined ? item.position.minWidth + 'px'}};
+                   max-height: {{item.position.maxHeight !== undefined ? item.position.maxHeight + 'px'}};
+                   min-height: {{item.position.minHeight !== undefined ? item.position.minHeight + 'px'}};
+                   height: {{_getHeight(item)}};
+                   margin: {{item.position.margin !== undefined ? item.position.margin + 'px'}};
+                   zoom: {{item.position.zoom}};"
+                                       scope="{{item.popupOptions}}"
+                                       position="{{item.position}}"
+        />
+    </ws:for>
+</div>

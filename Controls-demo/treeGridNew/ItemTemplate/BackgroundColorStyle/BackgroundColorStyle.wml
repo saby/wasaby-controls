@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper">
+    <Controls.treeGrid:View
+            keyProperty="key"
+            source="{{_viewSource}}"
+            columns="{{_columns}}"
+            parentProperty="parent"
+            nodeProperty="type">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/treeGrid:ItemTemplate"
+                        scope="{{ _options }}"
+                        backgroundColorStyle="{{itemTemplate.item.contents.get('rating') < 8 ? 'warning'}}"/>
+        </ws:itemTemplate>
+    </Controls.treeGrid:View>
+</div>

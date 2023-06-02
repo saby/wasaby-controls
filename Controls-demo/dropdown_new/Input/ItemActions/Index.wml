@@ -1,0 +1,27 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+   <div class="controlsDemo__ml2" data-qa="controlsDemo-NodeProperty__base">
+      <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys"
+                                  keyProperty="key"
+                                  displayProperty="title"
+                                  itemActions="{{_itemActions}}"
+                                  items="{{_items}}">
+      </Controls.dropdown:Selector>
+   </div>
+   <div class="controlsDemo__ml2" data-qa="controlsDemo-NodeProperty__base">
+      <Controls.dropdown:Selector bind:selectedKeys="_selectedKeysMultiLine"
+                                  attr:data-qa="input_itemAction__Subdivision"
+                                  keyProperty="key"
+                                  displayProperty="title"
+                                  itemActions="{{_itemActionsMultiLine}}"
+                                  items="{{_itemsMultiLine}}">
+         <ws:itemTemplate>
+            <ws:partial template="Controls/dropdown:ItemTemplate"
+                        multiLine="{{true}}">
+               <ws:additionalTextTemplate>
+                  <div>{{itemTemplate.item.contents.get('comment')}}</div>
+               </ws:additionalTextTemplate>
+            </ws:partial>
+         </ws:itemTemplate>
+      </Controls.dropdown:Selector>
+   </div>
+</div>

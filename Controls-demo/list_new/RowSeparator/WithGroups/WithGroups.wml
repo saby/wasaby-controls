@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <Controls.list:View
+            keyProperty="key"
+            source="{{_viewSource}}"
+            groupProperty="brand"
+            rowSeparatorSize="s"/>
+</div>

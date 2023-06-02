@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper">
+    <Controls.buttons:Button on:click="_onClickAdd()" caption="Добавить длинную запись" />
+    <Controls.scroll:Container attr:style="width: 600px; height: 400px">
+        <Controls.grid:View
+                keyProperty="key"
+                itemsReadyCallback="{{_itemsReadyCallback}}"
+                source="{{_viewSource}}"
+                columns="{{_columns}}"
+                header="{{_header}}"
+                columnScroll="{{true}}"
+                stickyColumnsCount="{{2}}"
+                columnScrollStartPosition="end"/>
+    </Controls.scroll:Container>
+</div>

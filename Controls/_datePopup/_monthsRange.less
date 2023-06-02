@@ -1,0 +1,470 @@
+.controls-PeriodDialog-MonthsRange {
+   flex-shrink: 1;
+   min-height: 1px;
+   border-radius: 0 0 var(--border-radius_dialog) var(--border-radius_dialog);
+   z-index: 1;
+}
+
+.controls-PeriodDialog-MonthsRange__month_selected__container {
+   pointer-events: none;
+   touch-action: none;
+   position: absolute;
+   width: var(--yearlist_month_size_datePicker);
+   height: var(--yearlist_month_size_datePicker);
+   overflow: hidden;
+   margin-top: calc(-1 * var(--border-thickness));
+   margin-left: calc(-1 * var(--border-thickness));
+   border-radius: var(--border-radius_2xs);
+}
+
+.controls-PeriodDialog-MonthsRange__month_selected {
+   width: var(--yearlist_month_size_datePicker);
+   height: var(--yearlist_month_size_datePicker);
+}
+
+.controls-PeriodDialog-MonthsRange__month_selected-start {
+   box-shadow: calc(-1 * var(--yearlist_month_size_datePicker) / 2) 0 0 var(--icon-color);
+   border-top-left-radius: var(--border-radius_m);
+}
+
+.controls-PeriodDialog-MonthsRange__month_selected-end {
+   box-shadow: calc(var(--yearlist_month_size_datePicker) / 2) 0 0 var(--icon-color);
+   border-bottom-right-radius: var(--border-radius_m);
+}
+
+.controls-PeriodDialog-MonthsRange__header {
+   text-align: center;
+   cursor: default;
+   color: var(--yearlist_heading_text-color_datePicker);
+   height: var(--yearlist_heading_height_datePicker);
+   line-height: var(--yearlist_heading_height_datePicker);
+   font-size: var(--font-size_2xl);
+   font-weight: bold;
+}
+
+.controls-PeriodDialog-MonthsRange__body {
+   display: flex;
+}
+
+.controls-PeriodDialog-MonthsRange__halfYears {
+   padding-top: var(--offset_3xs);
+}
+
+.controls-PeriodDialog-MonthsRange__halfYear {
+   display: flex;
+   position: relative;
+}
+
+.controls-PeriodDialog-MonthsRange__quarter {
+   position: relative;
+   flex-grow: 1;
+   display: flex;
+}
+
+.controls-PeriodDialog-MonthsRange__halfYearsPanel-button,
+.controls-PeriodDialog-MonthsRange__quarterButton {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.controls-PeriodDialog-MonthsRange__quarterButton {
+   position: relative;
+   width: calc(
+           var(--yearlist_quarters_width_datePicker) +
+           var(--yearlist_block-separator_thickness_datePicker)
+   );
+   border-top-left-radius: var(--border-radius_s);
+   border-bottom-left-radius: var(--border-radius_s);
+   font-size: var(--font-size_l);
+
+   &::before {
+      position: absolute;
+      content: '';
+      z-index: 1;
+      width: var(--yearlist_block-separator_thickness_datePicker);
+      background: var(--separator_color);
+      top: var(--offset_s);
+      border-radius: var(--border-radius_3xs);
+      bottom: var(--offset_s);
+      right: 0;
+   }
+}
+
+.controls-PeriodDialog-MonthsRange__quarter-hovered {
+   .controls-PeriodDialog-MonthsRange__quarterButton {
+      z-index: 3;
+
+      /* В IE на сайте слой обводки controls-PeriodDialog-MonthsRange__quarter-hovered (before) перекрывает кнопку, несмотря на одинаковые
+      -index-ы. position: relative у кнопки решает проблему */
+      position: relative;
+   }
+
+   &::before {
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 4;
+      border-radius: var(--border-radius_s);
+      top: 0;
+      left: var(--offset_2xs);
+      border: solid var(--border-thickness) var(--unaccented_hover_border-color);
+   }
+}
+
+.controls-PeriodDialog-MonthsRange__halfYearsPanel-button {
+   position: relative;
+   width: calc(
+           var(--yearlist_quarters_width_datePicker) +
+           var(--yearlist_block-separator_thickness_datePicker)
+   );
+   border-top-right-radius: var(--border-radius_s);
+   border-bottom-right-radius: var(--border-radius_s);
+   font-size: var(--font-size_3xl);
+
+   &::before {
+      position: absolute;
+      content: '';
+      z-index: 1;
+      width: var(--yearlist_block-separator_thickness_datePicker);
+      background: var(--separator_color);
+      top: var(--offset_s);
+      border-radius: var(--border-radius_3xs);
+      bottom: var(--offset_s);
+      left: 0;
+   }
+}
+
+.controls-PeriodDialog-MonthsRange__item-unselected,
+.controls-PeriodDialog-MonthsRange__item-selected {
+   .box-sizing(border-box);
+   .flex-shrink(0);
+   z-index: 2;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   width: var(--yearlist_month_size_datePicker);
+   height: var(--yearlist_month_size_datePicker);
+   padding: var(--border-thickness);
+}
+
+.controls-PeriodDialog-MonthsRange__hovered {
+   outline: var(--yearlist_item_hover_border-color_datePicker) solid var(--border-thickness);
+   background-color: var(--yearlist_item_hover_background-color_datePicker);
+}
+
+.controls-PeriodDialog-MonthsRange__month_title {
+   margin-bottom: var(--offset_3xs);
+   margin-top: var(--offset_3xs);
+   text-align: center;
+   font-weight: normal;
+   flex-shrink: 0;
+   font-size: var(--font-size_l);
+   height: var(--yearlist_monthview_heading_height_datePicker);
+}
+
+.controls-PeriodDialog-MonthsRange__quarterButton_selected {
+   &::after {
+      content: attr(quarter);
+      left: var(--offset_2xs);
+      position: absolute;
+      background: var(--background-color);
+      height: 100%;
+      right: calc(-1 * var(--offset_xs));
+      border-right: calc(var(--yearlist_block-separator_thickness_datePicker) + var(--offset_xs)) solid var(--background-color);
+      border-top-left-radius: var(--border-radius_s);
+      border-bottom-left-radius: var(--border-radius_s);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+}
+
+.controls-PeriodDialog-MonthsRange__halfYearsPanel-button_selected {
+   &::after {
+      content: attr(halfyear);
+      right: var(--offset_2xs);
+      position: absolute;
+      background: var(--background-color);
+      height: 100%;
+      left: calc(-1 * var(--offset_xs));
+      border-left: calc(var(--yearlist_block-separator_thickness_datePicker) + var(--offset_xs)) solid var(--background-color);
+      border-top-right-radius: var(--border-radius_s);
+      border-bottom-right-radius: var(--border-radius_s);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+}
+
+.controls-PeriodDialog-MonthsRange__quarterButton__corners_selected__container,
+.controls-PeriodDialog-MonthsRange__halfYearsPanel-button__corners_selected__container {
+   pointer-events: none;
+   touch-action: none;
+   z-index: 4;
+   position: absolute;
+   bottom: 0;
+   top: 0;
+   right: 0;
+   left: 0;
+   overflow: hidden;
+   border-radius: var(--border-radius_2xs);
+}
+
+.controls-PeriodDialog-MonthsRange__halfYearsPanel-button__corners_selected__container {
+   right: var(--offset_2xs);
+   left: calc(var(--yearlist_quarters_width_datePicker) + var(--yearlist_block-separator_thickness_datePicker));
+}
+
+.controls-PeriodDialog-MonthsRange__halfYearsPanel-button__corners_selected {
+   height: 100%;
+}
+
+.controls-PeriodDialog-MonthsRange__halfYearsPanel-button__corners_selected-start {
+   box-shadow: -20px 0 0 var(--icon-color);
+   border-top-left-radius: var(--border-radius_m);
+}
+
+.controls-PeriodDialog-MonthsRange__halfYearsPanel-button__corners_selected-end {
+   box-shadow: 20px 0 0 var(--icon-color);
+   border-bottom-right-radius: var(--border-radius_m);
+}
+
+.controls-PeriodDialog-MonthsRange__quarterButton__corners_selected__container {
+   left: var(--offset_2xs);
+}
+
+.controls-PeriodDialog-MonthsRange__quarterButton__corners_selected {
+   height: 100%;
+}
+
+.controls-PeriodDialog-MonthsRange__quarterButton__corners_selected-left {
+   box-shadow: -20px 0 0 var(--icon-color);
+   border-top-left-radius: var(--border-radius_m);
+}
+
+.controls-PeriodDialog-MonthsRange__quarterButton__corners_selected-right {
+   box-shadow: 20px 0 0 var(--icon-color);
+   border-bottom-right-radius: var(--border-radius_m);
+}
+
+.controls-PeriodDialog-MonthsRange__halfYear-hovered {
+   .controls-PeriodDialog-MonthsRange__halfYearsPanel-button {
+      border-left-color: transparent;
+      z-index: 3;
+      border-bottom-color: transparent;
+
+      /* В IE на сайте слой обводки controls-PeriodDialog-MonthsRange__halfYear-hovered (before) перекрывает кнопку, несмотря на одинаковые
+     -index-ы. position: relative у кнопки решает проблему */
+      position: relative;
+   }
+
+   &::before {
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      bottom: 0;
+      z-index: 4;
+      border-radius: var(--border-radius_s);
+      top: 0;
+      left: calc(
+              var(--yearlist_quarters_width_datePicker) +
+              var(--yearlist_block-separator_thickness_datePicker)
+      );
+      right: var(--offset_2xs);
+      border: solid var(--border-thickness) var(--unaccented_hover_border-color);
+   }
+}
+
+.controls-PeriodDialog-MonthsRange__monthWrapper {
+   position: relative;
+   cursor: pointer;
+   display: flex;
+   flex-grow: 1;
+   align-items: flex-start;
+   justify-content: center;
+   font-size: var(--yearlist_monthview_item_font-size_datePicker);
+   margin-bottom: var(--offset_3xs);
+   border: var(--border-thickness) solid transparent;
+}
+
+.controls-PeriodDialog-MonthsRange__monthWrapper_isAdaptive {
+   display: flex;
+   width: 100%;
+   height: 100%;
+   justify-content: center;
+   align-items: center;
+   font-size: var(--font-size_xl);
+}
+
+.controls-PeriodDialog-MonthsRange__month {
+   box-sizing: border-box;
+   font-weight: normal;
+}
+
+.controls-MonthView__backgroundColor-currentMonthDay-selected_style-monthRangeItem {
+   background: var(--background-color);
+}
+
+.controls-MonthView__textColor-currentMonthDay-workday-readOnly-dayNotAvailable_style-monthRangeItem,
+.controls-MonthView__textColor-currentMonthDay-weekend-readOnly-dayNotAvailable_style-monthRangeItem,
+.controls-MonthView__textColor-currentMonthDay-today-readOnly-dayNotAvailable_style-monthRangeItem {
+   color: var(--readonly_color);
+}
+
+.controls-MonthView__textColor-currentMonthDay-workday-readOnly_style-monthRangeItem,
+.controls-MonthView__textColor-currentMonthDay-workday_style-monthRangeItem {
+   color: var(--monthlist_monthview_item_text-color_datePicker);
+}
+
+.controls-MonthView__textColor-currentMonthDay-today-readOnly_style-monthRangeItem,
+.controls-MonthView__textColor-currentMonthDay-today_style-monthRangeItem {
+   border: var(--border-thickness) solid var(--brand_color);
+   border-radius: 50%;
+   z-index: 1;
+}
+
+.controls-MonthView__backgroundColor-currentMonthDay-selected-base_style-monthRangeItem::before,
+.controls-MonthView__backgroundColor-currentMonthDay-selected-start_style-monthRangeItem::before,
+.controls-MonthView__backgroundColor-currentMonthDay-selected-end_style-monthRangeItem::before,
+.controls-MonthView__backgroundColor-currentMonthDay-selected-startend-unfinished_style-monthRangeItem::before,
+.controls-MonthView__backgroundColor-currentMonthDay-selected-startend_style-monthRangeItem::before {
+   content: attr(date);
+   position: absolute;
+   width: var(--yearlist_monthview_item_size_datePicker);
+   height: var(--yearlist_monthview_item_size_datePicker);
+   border-radius: 50%;
+   color: var(--item_selected_text-color);
+   background: var(--item_selected_color);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.controls-MonthView__backgroundColor-currentMonthDay-selected-start_style-monthRangeItem::before {
+   right: 0;
+}
+
+.controls-MonthView__backgroundColor-currentMonthDay-selected-end_style-monthRangeItem::before {
+   left: 0;
+}
+
+.controls-MonthView__textColor-currentMonthDay-weekend-readOnly_style-monthRangeItem,
+.controls-MonthView__textColor-currentMonthDay-weekend_style-monthRangeItem {
+   color: var(--unaccented_text-color);
+}
+
+.controls-MonthViewVDOM__item_style-monthRangeItem {
+   box-sizing: border-box;
+   width: var(--yearlist_monthview_item_size_datePicker);
+   height: var(--yearlist_monthview_item_size_datePicker);
+}
+
+.controls-MonthView__item-border-start-end_style-monthRangeItem {
+   outline: var(--yearlist_monthview_selection-border_single_color_datePicker)
+   solid var(--yearlist_monthview_selection-border_thickness_datePicker);
+   outline-offset: calc(
+           var(--yearlist_monthview_selection-border_thickness_datePicker) -
+           var(--rangeSelection_border_single_thickness_datePicker)
+   );
+   z-index: 1; //При масштабе 150% соседние блоки наезжают на outline
+}
+
+.controls-PeriodDialog-MonthsRange__month_icon {
+   display: inline-block;
+   padding-right: var(--offset_2xs);
+}
+
+.controls-MonthView_item_notHovered {
+   .controls-MonthView_item_border-top__style-monthRangeItem {
+      border-top: var(--border-thickness) solid
+      var(--unaccented_hover_border-color);
+      padding-bottom: var(--border-thickness);
+   }
+
+   .controls-MonthView_item_border-bottom__style-monthRangeItem {
+      border-bottom: var(--border-thickness) solid
+      var(--unaccented_hover_border-color);
+      padding-top: var(--border-thickness);
+   }
+
+   .controls-MonthView_item_border-left__style-monthRangeItem {
+      border-left: var(--border-thickness) solid
+      var(--unaccented_hover_border-color);
+      padding-right: var(--border-thickness);
+   }
+
+   .controls-MonthView_item_border-right__style-monthRangeItem {
+      border-right: var(--border-thickness) solid
+      var(--unaccented_hover_border-color);
+      padding-left: var(--border-thickness);
+   }
+}
+
+.controls-MonthView_item_border-top-left-radius__style-monthRangeItem {
+   border-top-left-radius: 50%;
+}
+
+.controls-MonthView_item_border-top-right-radius__style-monthRangeItem {
+   border-top-right-radius: 50%;
+}
+
+.controls-MonthView_item_border-bottom-left-radius__style-monthRangeItem {
+   border-bottom-left-radius: 50%;
+}
+
+.controls-MonthView_item_border-bottom-right-radius__style-monthRangeItem {
+   border-bottom-right-radius: 50%;
+}
+
+.ws-is-hover {
+   .controls-PeriodDialog-MonthsRange__monthWrapper_clickable:hover {
+      &::before {
+         content: '';
+         position: absolute;
+         border-radius: var(--border-radius_s);
+         top: calc(-1 * var(--offset_3xs));
+         bottom: 0;
+         right: var(--offset_2xs);
+         left: var(--offset_2xs);
+         border: var(--border-thickness) solid var(--unaccented_hover_border-color);
+      }
+   }
+}
+
+.controls-PeriodDialog_isAdaptive {
+   .controls-PeriodDialog-MonthsRange__quarter__container {
+      width: 100%;
+   }
+
+   .controls-PeriodDialog-MonthsRange__halfYear-hovered {
+      &::before {
+         width: calc(83vw - var(--offset_xs));
+         left: unset;
+      }
+   }
+
+   .controls-PeriodDialog-MonthsRange__quarterButton,
+   .controls-PeriodDialog-MonthsRange__halfYearsPanel-button {
+      width: 20%;
+   }
+
+   .controls-PeriodDialog-MonthsRange__month_selected__container {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+   }
+
+   .controls-PeriodDialog-MonthsRange__month_selected {
+      width: 100%;
+      height: 100%;
+   }
+
+   .controls-PeriodDialog-MonthsRange__halfYearsPanel-button__corners_selected__container {
+      left: unset;
+      width: calc(83vw - var(--offset_xs));
+   }
+}

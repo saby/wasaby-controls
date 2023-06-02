@@ -1,0 +1,488 @@
+// размеры s, m, l тут не соответствуют глобальной линейке размеров изображений и
+// заданы для совместимости с каталогом.
+@_image_size_s_position_horizontal_rich_tile: var(--size_5xl_image);
+@_image_size_m_position_horizontal_rich_tile: var(--size_6xl_image);
+@_image_size_l_position_horizontal_rich_tile: var(--size_7xl_image);
+@_image_size_xl_position_horizontal_rich_tile: var(--size_xl_image);
+@_image_size_2xl_position_horizontal_rich_tile: var(--size_2xl_image);
+@_image_size_3xl_position_horizontal_rich_tile: var(--size_3xl_image);
+@_image_size_4xl_position_horizontal_rich_tile: var(--size_4xl_image);
+@_image_size_5xl_position_horizontal_rich_tile: var(--size_5xl_image);
+@_image_size_6xl_position_horizontal_rich_tile: var(--size_6xl_image);
+@_image_size_7xl_position_horizontal_rich_tile: var(--size_7xl_image);
+
+.controls-TileView__richTemplate_imagePosition_right {
+   flex-direction: row-reverse;
+}
+
+.controls-TileView__richTemplate_imagePosition_top {
+   flex-direction: column;
+}
+
+.controls-TileView__richTemplate_imagePosition_bottom {
+   flex-direction: column-reverse;
+}
+
+.controls-TileView__richTemplate_itemContent {
+   display: flex;
+   flex-direction: column;
+   flex-grow: 1;
+   box-sizing: border-box;
+   white-space: normal;
+}
+
+.controls-TileView__richTemplate_itemContent_fullHeight {
+   height: 100%;
+}
+
+.controls-TileView__richTemplate {
+   display: flex;
+   height: 100%;
+}
+
+// region content spacing
+
+.controls-TileView__richTemplate_itemContent_spacing_top_default {
+   padding-top: var(--offset_m);
+}
+
+.controls-TileView__richTemplate_itemContent_spacing_right_default {
+   padding-right: var(--offset_m);
+}
+
+.controls-TileView__richTemplate_itemContent_spacing_bottom_default {
+   padding-bottom: var(--offset_m);
+}
+
+.controls-TileView__richTemplate_itemContent_spacing_left_default {
+   padding-left: var(--offset_m);
+}
+
+.controls-TileView__richTemplate_itemContent_spacing_top_null {
+   padding-top: 0;
+}
+
+.controls-TileView__richTemplate_itemContent_spacing_right_null {
+   padding-right: 0;
+}
+
+.controls-TileView__richTemplate_itemContent_spacing_bottom_null {
+   padding-bottom: 0;
+}
+
+.controls-TileView__richTemplate_itemContent_spacing_left_null {
+   padding-left: 0;
+}
+
+.controls-TileView__richTemplate_itemContent_spacing {
+   /* stylelint-disable-next-line unit-no-unknown */
+   @variants: xs, s, m, l, xl, 2xl;
+   .for(@variants, {
+      &_top_@{_item} {
+         padding-top: ~'var(--offset_@{_item})';
+      }
+      &_right_@{_item} {
+         padding-right: ~'var(--offset_@{_item})';
+      }
+      &_bottom_@{_item} {
+         padding-bottom: ~'var(--offset_@{_item})';
+      }
+      &_left_@{_item} {
+         padding-left: ~'var(--offset_@{_item})';
+      }
+   });
+}
+
+// endregion content spacing
+
+.controls-TileView__richTemplate_image_viewMode_circle {
+   border-radius: 50%;
+}
+
+.controls-TileView__richTemplate_image_topGradient {
+   position: absolute;
+   pointer-events: none;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   top: 0;
+}
+
+.controls-TileView__richTemplate_image_effect_gradient {
+   position: absolute;
+   pointer-events: none;
+   height: calc(var(--gradient_height_rich_tile) + 1px);
+   width: 100%;
+   bottom: -1px;
+   left: 0;
+}
+// FIXME: Костыль, до выполнения задачи https://online.sbis.ru/opendoc.html?guid=7251d305-2779-4142-8683-cdadec29d917
+
+.controls-TileView__richTemplate_image_viewMode_ellipse {
+   clip-path: url('#NavigationPanels-Accordion__image_ellipse');
+}
+
+/* ie не поддерживает clip-path на html элементах
+   Согласованное исключение https://online.sbis.ru/doc/1adda6e0-2c93-465b-b5d4-e1be21788ff2
+ */
+.ws-is-ie .controls-TileView__richTemplate_image_viewMode_ellipse {
+   border-radius: 60px;
+}
+
+/*
+ overflow: hidden ломает clip-path в safari
+ Cделал как в ie, чтобы изображения хотя бы были видны.
+ https://online.sbis.ru/opendoc.html?guid=6a5a49c0-1274-46a4-a4d6-a514bac5838c
+ */
+.ws-is-desktop-safari,
+.ws-is-mobile-safari {
+   .controls-TileView__richTemplate_image_viewMode_ellipse {
+      border-radius: 60px;
+      clip-path: none;
+   }
+}
+
+.controls-TileView__richTemplate_image {
+   width: 100%;
+   height: 100%;
+}
+
+.controls-TileView__richTemplate_image_position_top_viewMode_rectangle {
+   .controls-TileView__richTemplate_image {
+      // При дробных размерах области, браузер криво отображает изображение, оставляя полоски просвечивающего фона
+      width: calc(100% + 2px);
+      height: 100%;
+   }
+}
+
+.controls-TileView__richTemplate_imageWrapper {
+   display: flex;
+   flex-shrink: 0;
+   max-width: 100%;
+   box-sizing: border-box;
+   justify-content: center;
+   position: relative;
+}
+
+// region image rounded borders
+
+.controls-TileView__richTemplate_image_roundBorder {
+   /* stylelint-disable-next-line unit-no-unknown */
+   @variants: 3xs, 2xs, xs, s, m, l, xl, 2xl, 3xl;
+   .for(@variants, {
+      &_bottomLeft_@{_item} {
+         border-bottom-left-radius: ~'var(--border-radius_@{_item})';
+      }
+      &_bottomRight_@{_item} {
+         border-bottom-right-radius: ~'var(--border-radius_@{_item})';
+      }
+      &_topLeft_@{_item} {
+         border-top-left-radius: ~'var(--border-radius_@{_item})';
+      }
+      &_topRight_@{_item} {
+         border-top-right-radius: ~'var(--border-radius_@{_item})';
+      }
+   });
+}
+
+// region image rounded borders
+
+// region image spacing
+
+// null
+.controls-TileView_richTemplate_image_viewMode_rectangle_spacing_top_null,
+.controls-TileView_richTemplate_image_viewMode_circle_spacing_top_null,
+.controls-TileView_richTemplate_image_viewMode_ellipse_spacing_top_null,
+.controls-TileView_richTemplate_image_viewMode_rectangle_spacing_top_default {
+   margin-top: 0;
+}
+
+.controls-TileView_richTemplate_image_viewMode_rectangle_spacing_right_null,
+.controls-TileView_richTemplate_image_viewMode_circle_spacing_right_null,
+.controls-TileView_richTemplate_image_viewMode_ellipse_spacing_right_null,
+.controls-TileView_richTemplate_image_viewMode_rectangle_spacing_right_default {
+   margin-right: 0;
+}
+
+.controls-TileView_richTemplate_image_viewMode_rectangle_spacing_bottom_null,
+.controls-TileView_richTemplate_image_viewMode_circle_spacing_bottom_null,
+.controls-TileView_richTemplate_image_viewMode_ellipse_spacing_bottom_null,
+.controls-TileView_richTemplate_image_viewMode_rectangle_spacing_bottom_default {
+   margin-bottom: 0;
+}
+
+.controls-TileView_richTemplate_image_viewMode_rectangle_spacing_left_null,
+.controls-TileView_richTemplate_image_viewMode_circle_spacing_left_null,
+.controls-TileView_richTemplate_image_viewMode_ellipse_spacing_left_null,
+.controls-TileView_richTemplate_image_viewMode_rectangle_spacing_left_default {
+   margin-left: 0;
+}
+
+.controls-TileView_richTemplate_image_viewMode_circle_spacing_top_default,
+.controls-TileView_richTemplate_image_viewMode_ellipse_spacing_top_default {
+   margin-top: var(--offset_m);
+}
+
+.controls-TileView_richTemplate_image_viewMode_circle_spacing_right_default,
+.controls-TileView_richTemplate_image_viewMode_ellipse_spacing_right_default {
+   margin-right: var(--offset_m);
+}
+
+.controls-TileView_richTemplate_image_viewMode_circle_spacing_bottom_default,
+.controls-TileView_richTemplate_image_viewMode_ellipse_spacing_bottom_default {
+   margin-bottom: var(--offset_m);
+}
+
+.controls-TileView_richTemplate_image_viewMode_circle_spacing_left_default,
+.controls-TileView_richTemplate_image_viewMode_ellipse_spacing_left_default {
+   margin-left: var(--offset_m);
+}
+
+.controls-TileView_richTemplate_image_viewMode_rectangle_spacing,
+.controls-TileView_richTemplate_image_viewMode_circle_spacing,
+.controls-TileView_richTemplate_image_viewMode_ellipse_spacing {
+   /* stylelint-disable-next-line unit-no-unknown */
+   @variants: xs, s, m, l, xl, 2xl;
+   .for(@variants, {
+      &_top_@{_item} {
+         margin-top: ~'var(--offset_@{_item})';
+      }
+      &_right_@{_item} {
+         margin-right: ~'var(--offset_@{_item})';
+      }
+      &_bottom_@{_item} {
+         margin-bottom: ~'var(--offset_@{_item})';
+      }
+      &_left_@{_item} {
+         margin-left: ~'var(--offset_@{_item})';
+      }
+   });
+}
+
+// endregion image spacing
+
+.controls-TileView__richTemplate_characteristics_spacing,
+.controls-TileView__richTemplate_description_spacing,
+.controls-TileView__richTemplate_footer_spacing {
+   margin-top: var(--offset_s);
+}
+
+.controls-TileView__richTemplate_title-onImage {
+   position: absolute;
+   top: var(--offset_m);
+   left: var(--offset_m);
+   right: var(--offset_m);
+}
+
+.controls-TileView__richTemplate_itemContent-onImageTop,
+.controls-TileView__richTemplate_itemContent-onImageBottom {
+   position: absolute;
+   left: 0;
+   right: 0;
+}
+
+.controls-TileView__richTemplate_itemContent-onImageTop {
+   top: 0;
+}
+
+.controls-TileView__richTemplate_itemContent-onImageBottom {
+   bottom: 0;
+}
+
+.controls-TileView__richTemplate_image_size_s_position_bottom_viewMode_rectangle,
+.controls-TileView__richTemplate_image_size_s_position_top_viewMode_rectangle {
+   height: var(--size_6xl_image);
+}
+
+.controls-TileView__richTemplate_image_size_m_position_bottom_viewMode_rectangle,
+.controls-TileView__richTemplate_image_size_m_position_top_viewMode_rectangle {
+   height: var(--image_height_m_position_top_rich_tile);
+}
+
+.controls-TileView__richTemplate_image_size_l_position_bottom_viewMode_rectangle,
+.controls-TileView__richTemplate_image_size_l_position_top_viewMode_rectangle {
+   height: var(--image_height_l_position_top_rich_tile);
+}
+
+.controls-TileView__richTemplate_image_position_top_viewMode_circle,
+.controls-TileView__richTemplate_image_position_top_viewMode_ellipse,
+.controls-TileView__richTemplate_image_size_s_position_top_viewMode_circle,
+.controls-TileView__richTemplate_image_size_s_position_top_viewMode_ellipse,
+.controls-TileView__richTemplate_image_size_m_position_top_viewMode_circle,
+.controls-TileView__richTemplate_image_size_m_position_top_viewMode_ellipse,
+.controls-TileView__richTemplate_image_size_l_position_top_viewMode_circle,
+.controls-TileView__richTemplate_image_size_l_position_top_viewMode_ellipse {
+   padding-top: calc(100% - 2 * var(--offset_m));
+}
+
+/* stylelint-disable-next-line unit-no-unknown */
+@variants: s, m, l, 2xl, 3xl, 4xl, 5xl, 6xl, 7xl;
+
+.for(@variants, {
+   .controls-TileView__richTemplate_image_size_@{_item}_position_horizontal {
+      width: ~'@{_image_size_@{_item}_position_horizontal_rich_tile}';
+      height: ~'@{_image_size_@{_item}_position_horizontal_rich_tile}';
+   }
+});
+
+// поддержка старой плитки
+.controls-TileView_old {
+   .controls-TileView__richTemplate_image_size_s_position_vertical {
+      height: var(--size_6xl_image);
+   }
+
+   .controls-TileView__richTemplate_image_size_m_position_vertical {
+      height: var(--image_height_m_position_top_rich_tile);
+   }
+
+   .controls-TileView__richTemplate_image_size_l_position_vertical {
+      height: var(--image_height_l_position_top_rich_tile);
+   }
+
+   .controls-TileView__richTemplate_image_size_s_position_top_viewMode_circle,
+   .controls-TileView__richTemplate_image_size_s_position_top_viewMode_ellipse {
+      width: @_image_size_s_position_horizontal_rich_tile;
+   }
+
+   .controls-TileView__richTemplate_image_size_m_position_top_viewMode_circle,
+   .controls-TileView__richTemplate_image_size_m_position_top_viewMode_ellipse {
+      width: var(--image_height_m_position_top_rich_tile);
+   }
+
+   .controls-TileView__richTemplate_image_size_l_position_top_viewMode_circle,
+   .controls-TileView__richTemplate_image_size_l_position_top_viewMode_ellipse {
+      width: var(--image_height_l_position_top_rich_tile);
+   }
+
+   .controls-TileView__richTemplate_image_size_s_position_horizontal {
+      height: @_image_size_s_position_horizontal_rich_tile;
+      width: @_image_size_s_position_horizontal_rich_tile;
+   }
+
+   .controls-TileView__richTemplate_image_size_m_position_horizontal {
+      height: @_image_size_m_position_horizontal_rich_tile;
+      width: @_image_size_m_position_horizontal_rich_tile;
+   }
+
+   .controls-TileView__richTemplate_image_size_l_position_horizontal {
+      height: @_image_size_l_position_horizontal_rich_tile;
+      width: @_image_size_l_position_horizontal_rich_tile;
+   }
+}
+
+.controls-TileView__richTemplate_item {
+   overflow: hidden;
+}
+
+.controls-TileView__richTemplate_item .controls-TileView__item_withoutBorder {
+   border: none;
+}
+
+.controls-TileView__richTemplate_item
+   .controls-TileView__richTemplate_itemActions {
+   background-color: var(--translucent_background-color_light);
+   box-shadow: var(--item_actions_shadow_size_rich_tile)
+      var(--item_actions_shadow_color_rich_tile);
+   height: var(--inline_height_l);
+   min-width: var(--inline_height_l);
+   padding: 0;
+   display: flex;
+   justify-content: center;
+
+   &.controls-itemActionsV_editingToolbarVisible {
+      height: var(--inline_height_l);
+   }
+}
+
+.ws-is-hover {
+   .controls-TileView__richTemplate_itemActions:hover {
+      background-color: var(--translucent_hover_background-color_light);
+   }
+}
+
+.controls-TileView__additionalPaneltemplate {
+   z-index: 1;
+}
+
+.controls-TileView__additionalPaneltemplate_absolute {
+   position: absolute;
+}
+
+.controls-TileView__additionalPaneltemplate_topRight {
+   top: 0;
+   right: 0;
+}
+
+.controls-TileView__additionalPaneltemplate_bottomLeft {
+   bottom: 0;
+   left: 0;
+}
+
+.controls-TileView__additionalPaneltemplate_topLeft {
+   top: 0;
+   left: 0;
+}
+
+.controls-TileView__additionalPaneltemplate_bottomRight {
+   bottom: 0;
+   right: 0;
+}
+
+.controls-TileView__afterTitleTemplate-wrapper {
+   position: absolute;
+   right: 0;
+   bottom: 0;
+   display: flex;
+   z-index: 0;
+   align-items: center;
+   height: var(--inline_height_s);
+}
+
+.controls-TileView__afterTitleTemplate-wrapper::before {
+   content: '\200b';
+   width: calc(var(--offset_m) + var(--offset_xs));
+}
+
+.controls-TileView__afterTitleTemplate-wrapper:empty {
+   display: none;
+}
+
+.controls-TileView__richTemplate_title_font-size {
+   font-size: var(--font-size_tile_rich-title);
+}
+
+.controls-TileView__richTemplate_node_title_font-size {
+   font-size: var(--font-size_tile_rich_node-title);
+}
+
+.controls-TileView__richTemplate_description {
+   line-height: calc(var(--font-size_tile_rich_node-title) + 1px);
+}
+
+.controls-TileView__richTemplate_title {
+   overflow: hidden;
+
+   // При равном значении font-size и line-height, подстрочные элементы букв обрезаются
+   // Пример ошибки https://online.sbis.ru/opendoc.html?guid=e9a7652b-f7cf-42a7-923c-9dee71f2cf42
+   line-height: calc(var(--font-size_tile_rich_node-title) + 1px);
+}
+
+.controls-TileView__richTemplate_title-one_line {
+   display: inline-flex;
+   align-items: center;
+   height: calc(var(--font-size_4xl) + 1px);
+}
+
+.controls-TileView__beforeTitleTemplate {
+   display: inline;
+   height: var(--icon-size_m);
+   margin-right: var(--offset_xs);
+
+   &:empty {
+      margin-right: 0;
+   }
+}
+
+.controls-TileView__richTemplate_title-underImage {
+   position: relative;
+}

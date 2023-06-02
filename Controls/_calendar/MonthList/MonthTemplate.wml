@@ -1,0 +1,36 @@
+<div class="controls-MonthList__month controls_calendar_theme-{{theme}}">
+   <div class="controls-MonthList__month-header">
+      <ws:if data="{{headerTemplate}}">
+         <ws:partial
+            template="{{headerTemplate}}"
+            date="{{date}}"
+            extData="{{extData}}"
+         />
+      </ws:if>
+   </div>
+   <div class="controls-MonthList__month-body">
+      <ws:if data="{{bodyTemplate}}">
+         <ws:partial
+            template="{{bodyTemplate}}"
+            startValue="{{ startValue }}"
+            endValue="{{ endValue }}"
+            date="{{date}}"
+            extData="{{extData}}"
+         />
+      </ws:if>
+      <ws:else>
+         <Controls._calendar.MonthView
+            newMode="{{newMode}}"
+            startValue="{{ startValue }}"
+            endValue="{{ endValue }}"
+            attr:class="controls-MonthList__month-body"
+            attr:data-date="{{dateId}}"
+            showWeekdays="{{false}}"
+            month="{{date}}"
+            daysData="{{extData}}"
+            dayTemplate="{{dayTemplate}}"
+            dayHeaderTemplate="{{ dayHeaderTemplate }}"
+         />
+      </ws:else>
+   </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <Controls.buttons:Button caption="Изменить source. Список будет перезагружен" viewMode="linkButton" on:click="_changeSource()"/>
+    <Controls.list:DataContainer source="{{_viewSource}}"
+                                 keyProperty="key"
+                                 parentProperty="parent"
+                                 deepReload="{{true}}"
+                                 bind:expandedItems="_expandedItems"
+                                 bind:collapsedItems="_collapsedItems">
+        <Controls.tree:View keyProperty="key" nodeProperty="type"/>
+    </Controls.list:DataContainer>
+</div>

@@ -1,0 +1,90 @@
+<ws:template name="defaultMonthTemplateHeader">
+    <ws:if data="{{ !_isLastMonth(monthTemplate.date) }}">
+        <div class="controls-CompactDatePicker__month-list__item__header
+                    controls-CompactDatePicker__month-list__item__header__size-{{ _options.size }}">
+            {{ caption }}
+        </div>
+    </ws:if>
+</ws:template>
+
+<ws:template name="defaultMonthTemplate">
+<div class="ws-flexbox ws-flex-column">
+    <Controls.calendar:MonthView
+            _date="{{ _options._date }}"
+            showCaption="{{ !!_options.captionTemplate }}"
+            monthViewModel="{{ _monthViewModel }}"
+            isDayAvailable="{{ _options.isDayAvailable }}"
+            dayTemplate="{{ _baseDayTemplate }}"
+            attr:class="controls-CompactDatePicker__month-list__item"
+            attr:data-qa="controls-CompactDatePicker__month-list__item"
+            ranges="{{_options.ranges}}"
+            showWeekdays="{{false}}"
+            month="{{ monthTemplate.date }}"
+            daysData="{{bodyTemplate.extData}}"
+            selectionType="{{ _options.selectionType }}"
+            newMode="{{true}}"
+            selectionProcessing="{{_options.selectionProcessing}}"
+            selectionBaseValue="{{_options.selectionBaseValue}}"
+            hoveredStartValue="{{ _options.hoveredStartValue }}"
+            hoveredEndValue="{{ _options.hoveredEndValue }}"
+            on:itemClick="_proxyEvent('itemClick')"
+            on:itemMouseEnter="_proxyEvent('itemMouseEnter')"
+            on:itemMouseLeave="_proxyEvent('itemMouseLeave')"
+            on:itemKeyDown="_proxyEvent('itemKeyDown')"
+    >
+        <ws:captionTemplate>
+            <ws:partial template="{{ _options.captionTemplate }}">
+                <ws:defaultMonthTemplateCaption>
+                    <ws:partial template="defaultMonthTemplateHeader" date="{{ captionTemplate.date }}" caption="{{ defaultMonthTemplateCaption.caption }}"/>
+                </ws:defaultMonthTemplateCaption>
+            </ws:partial>
+        </ws:captionTemplate>
+    </Controls.calendar:MonthView>
+    <ws:if data="{{ !_options.captionTemplate }}">
+        <ws:partial template="defaultMonthTemplateHeader" caption="{{ _getFormattedCaption(monthTemplate.date) }}"/>
+    </ws:if>
+</div>
+</ws:template>
+
+<Controls.calendar:MonthList attr:class="controls-CompactDatePicker__month-list
+                                        {{ _options.isPopup ? 'controls-CompactDatePicker__month-list_height
+                                        controls-CompactDatePicker__month-list_height__size-' + _options.size }}
+                                        {{_options.isAdaptive ?
+                                        'controls-CompactDatePicker__month-list_adaptiveHeight__size-' + _options.size}}"
+                             attr:data-qa="controls-CompactDatePicker__month-list"
+                             filter="{{ _options.filter }}"
+                             shouldPositionBelow="{{ _options.shouldPositionBelow }}"
+                             syncBeforeMount="{{ _options.syncBeforeMount }}"
+                             viewMode="month"
+                             virtualPageSize="{{ _options.virtualPageSize || 3 }}"
+                             order="{{ _options.order }}"
+                             source="{{ _options.source }}"
+                             startValue="{{ _options.rangeModel.startValue }}"
+                             endValue="{{ _options.rangeModel.endValue }}"
+                             hoveredStartValue="{{ null }}"
+                             hoveredEndValue="{{ null }}"
+                             displayedRanges="{{ _options.displayedRanges }}"
+                             position="{{ _options.position }}"
+                             bottomShadowVisibility="hidden"
+                             topShadowVisibility="{{ _options.topShadowVisibility }}"
+                             shadowStyle="{{ _options.shadowStyle || 'CompactDatePicker' }}"
+                             on:positionChanged="_positionChangedHandler()"
+                             on:itemClick="_monthViewItemClickHandler()"
+>
+<ws:monthTemplate>
+    <ws:partial template="Controls/calendar:MonthListMonthTemplate">
+        <ws:bodyTemplate>
+            <ws:if data="{{ _options.monthTemplate }}">
+                <ws:partial template="{{ _options.monthTemplate }}">
+                    <ws:defaultMonthTemplate>
+                        <ws:partial date="{{ bodyTemplate.date }}" template="defaultMonthTemplate"/>
+                    </ws:defaultMonthTemplate>
+                </ws:partial>
+            </ws:if>
+            <ws:else>
+                <ws:partial template="defaultMonthTemplate"/>
+            </ws:else>
+        </ws:bodyTemplate>
+    </ws:partial>
+</ws:monthTemplate>
+</Controls.calendar:MonthList>

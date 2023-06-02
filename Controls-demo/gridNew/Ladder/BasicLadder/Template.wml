@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper controlsDemo__maxWidth600">
+        <Controls.grid:View
+                keyProperty="key"
+                source="{{_viewSource}}"
+                columns="{{_columns}}"
+                header="{{_header}}"
+                ladderProperties="{{_ladderProperties}}"/>
+</div>

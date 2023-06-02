@@ -1,0 +1,11 @@
+<Controls.scroll:Container attr:class="controlsDemo_fixedWidth500 controlsDemo__height500">
+    <Controls.searchBreadcrumbsGrid:View
+       source="{{_viewSource}}"
+       keyProperty="key"
+       parentProperty="parent"
+       displayProperty="title"
+       nodeProperty="node"
+       columns="{{ _columns }}">
+        <ws:virtualScrollConfig pageSize="{{25}}"/>
+    </Controls.searchBreadcrumbsGrid:View>
+</Controls.scroll:Container>

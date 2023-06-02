@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container>
+        <Controls.list:View
+                name="list"
+                keyProperty="key"
+                source="{{_viewSource}}">
+            <ws:loadingIndicatorTemplate>
+                <ws:partial template="Controls/list:LoadingIndicatorTemplate"
+                            message="{{loadingIndicatorTemplate.position === 'global' ? 'Пожалуйста, подождите...'}}"
+                            scope="{{loadingIndicatorTemplate}}"/>
+            </ws:loadingIndicatorTemplate>
+        </Controls.list:View>
+    </Controls.scroll:Container>
+    <Controls.buttons:Button caption="Reload" on:click="_reloadList()"/>
+</div>

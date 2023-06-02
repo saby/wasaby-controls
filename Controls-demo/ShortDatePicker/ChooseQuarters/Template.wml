@@ -1,0 +1,26 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell controls-margin_right-2xl">
+            <Controls.shortDatePicker:View
+                attr:class="controlsDemo-ShortDatePicker__medium"
+                startValue="{{_startValue}}"
+                endValue="{{_endValue}}"
+                chooseHalfyears="{{false}}"
+                chooseMonths="{{false}}"
+                chooseQuarters="{{true}}"
+                chooseYears="{{true}}"
+            />
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.shortDatePicker:View
+                attr:class="controlsDemo-ShortDatePicker__medium"
+                startValue="{{_startValue}}"
+                endValue="{{_endValue}}"
+                chooseHalfyears="{{false}}"
+                chooseMonths="{{true}}"
+                chooseQuarters="{{false}}"
+                chooseYears="{{true}}"
+            />
+        </div>
+    </div>
+</div>

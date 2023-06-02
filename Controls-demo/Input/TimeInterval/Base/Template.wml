@@ -1,0 +1,22 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <Controls.input:TimeInterval bind:value="_value1"
+                                     mask="HH:MM"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:TimeInterval bind:value="_value2"
+                                     mask="HH:MM:SS"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:TimeInterval bind:value="_value3"
+                                     mask="HHH:MM"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:TimeInterval bind:value="_value4"
+                                     mask="HHH:MM:SS"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:TimeInterval bind:value="_value5"
+                                     mask="MM:SS"/>
+    </div>
+</div>

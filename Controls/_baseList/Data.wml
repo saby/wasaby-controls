@@ -1,0 +1,12 @@
+<ws:if data="{{_options.storeId}}">
+    <Controls._baseList.ContainerNew.ContextWrapper storeId="{{_options.storeId}}">
+        <ws:content>
+            <ws:partial template="{{_options.content}}" scope="{{_options}}" filter="{{content.filter}}"/>
+        </ws:content>
+    </Controls._baseList.ContainerNew.ContextWrapper>
+</ws:if>
+<ws:else>
+    <Controls._baseList.Data.DataInner scope="{{_options}}" name="data">
+        <ws:partial template="{{_options.content}}"/>
+    </Controls._baseList.Data.DataInner>
+</ws:else>

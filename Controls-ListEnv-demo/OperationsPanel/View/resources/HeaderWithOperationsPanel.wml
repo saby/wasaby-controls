@@ -1,0 +1,4 @@
+<ws:partial template="Controls/grid:HeaderContent"
+            scope="{{_options}}">
+    <Controls-ListEnv.operationsPanel:View actions="{{actions}}"/>
+</ws:partial>

@@ -1,0 +1,13 @@
+<!--<div class="controlsDemo__wrapper">-->
+<!--    <Controls.grid:View-->
+<!--            keyProperty="key"-->
+<!--            source="{{_viewSource}}"-->
+<!--            columns="{{_columns}}"/>-->
+<!--</div>-->
+
+<div class="controlsDemo__wrapper">
+    <Controls.grid:ItemsView
+            keyProperty="key"
+            items="{{_viewSource}}"
+            columns="{{_columns}}"/>
+</div>

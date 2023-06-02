@@ -1,0 +1,117 @@
+/*
+  Иерархия классов вьюхи. Избыточность нужна для уменьшения вложенности
+  в правилах, чтобы стили пересчитывались быстрее на мобильных устройствах.
+  .controls-GridReact__view_columnScroll & (_mobile | _desktop) > (
+    .controls-GridReact__view_columnScroll_scrollable & (
+      .controls-GridReact__view_columnScroll_desktop_scrollable ||
+      .controls-GridReact__view_columnScroll_mobile_scrollable
+    )
+    .controls-GridReact__view_columnScroll_fixed & (
+      .controls-GridReact__view_columnScroll_desktop_fixed ||
+      .controls-GridReact__view_columnScroll_mobile_fixed
+    )
+  )
+*/
+
+.js-controls-GridColumnScroll_fixed {
+   background-color: #fff;
+   z-index: 2;
+}
+
+.js-controls-GridColumnScroll_scrollable {
+   z-index: 1;
+}
+
+.controls-GridReact__cell.js-controls-GridColumnScroll_fixed,
+.controls-GridReact__cell.js-controls-GridColumnScroll_scrollable {
+   min-width: initial;
+}
+
+// region z-index ячеек
+
+// FIXME: Временный фикс, для быстрого внедрения.
+//  Будет реализован контекст zIndex'ов, который сможет сказать
+//  какой контекст у каждого типа ячейки.
+//  https://online.sbis.ru/opendoc.html?guid=cb33f39c-807a-4dee-934f-c384c750cf00&client=3
+.js-controls-GridColumnScroll_fixed.controls-GridReact__header-cell,
+.js-controls-GridColumnScroll_fixed.controls-GridReact__results-cell {
+   /* stylelint-disable-next-line declaration-no-important */
+   z-index: 4 !important;
+}
+
+.js-controls-GridColumnScroll_scrollable.controls-GridReact__header-cell,
+.js-controls-GridColumnScroll_scrollable.controls-GridReact__results-cell {
+   /* stylelint-disable-next-line declaration-no-important */
+   z-index: 3 !important;
+}
+
+.controls-GridReact__resizer-cell {
+   /* stylelint-disable-next-line declaration-no-important */
+   z-index: 6 !important;
+}
+// region z-index ячеек
+
+.controls-GridReact__view_columnScroll_scrollable {
+   transform: translate3d(0, 0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+   will-change: transform;
+}
+
+.controls-GridReact__view_columnScroll_mobile {
+   transform: translate3d(0, 0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+   will-change: transform;
+   position: relative;
+}
+
+.controls-GridReact__view_columnScroll_fixed {
+   position: absolute;
+   left: 0;
+   top: 0;
+   z-index: 1;
+}
+
+.controls-GridReact__view_columnScroll_mobile_scrollable {
+   .js-controls-GridColumnScroll_fixed {
+      transform: translate3d(var(--columnScrollTransform), 0, 0);
+   }
+}
+
+.controls-GridReact__view_columnScroll_hydrationPreRender_desktop {
+   .controls-GridReact__view_columnScroll_scrollable {
+      position: absolute;
+      right: 0;
+   }
+
+   .controls-GridReact__view_columnScroll_fixed
+   .controls-GridReact__cell:not(.js-controls-GridColumnScroll_fixed) {
+      visibility: hidden;
+      z-index: -1;
+      pointer-events: none;
+   }
+}
+
+.controls-GridReact__columnScroll__headerNavigation__minSizeWrapper_arrows {
+   min-height: var(--inline_height_m);
+}
+
+.controls-GridReact__columnScroll__headerNavigation {
+   box-sizing: border-box;
+}
+
+.controls-GridReact__columnScroll__headerNavigation-part_fixed {
+   position: absolute;
+   left: 100%;
+}
+
+.controls-GridReact__columnScroll__headerNavigation-mode_arrows {
+   display: flex;
+   justify-content: flex-end;
+   padding-right: var(--offset_xl);
+}
+
+.controls-GridReact__view_columnScroll_scrollable_scrollbarDragging {
+   pointer-events: none;
+}
+
+.controls-GridReact__view_columnScroll__shadowLeft_hideSeparator {
+   margin-left: calc(-1 * var(--item-separator_s_thickness_list));
+}

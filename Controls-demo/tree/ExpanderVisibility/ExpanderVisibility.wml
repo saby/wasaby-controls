@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300 controlsDemo_tree-reverseType-byItemClick">
+    <Controls.tree:View
+            source="{{_viewSource}}"
+            keyProperty="key"
+            parentProperty="parent"
+            nodeProperty="type"
+            hasChildrenProperty="hasChild"
+            expanderVisibility="hasChildren"
+            bind:expandedItems="_expandedItems">
+    </Controls.tree:View>
+</div>
