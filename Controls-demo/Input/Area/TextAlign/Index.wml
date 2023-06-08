@@ -1,0 +1,23 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <Controls.input:Area
+                attr:class="controlsDemo__input-area-alignLeft controlsDemo_fixedWidth300"
+                bind:value="_leftValue"
+                minLines="{{2}}"
+                textAlign="left"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Area
+                attr:class="controlsDemo__input-area-alignCenter controlsDemo_fixedWidth300"
+                bind:value="_centerValue"
+                minLines="{{2}}"
+                textAlign="center"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Area
+                attr:class="controlsDemo__input-area-alignRight controlsDemo_fixedWidth300"
+                bind:value="_rightValue"
+                minLines="{{2}}"
+                textAlign="right"/>
+    </div>
+</div>

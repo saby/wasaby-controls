@@ -1,0 +1,14 @@
+<div class="controls-margin-m ws-flexbox">
+    <ws:for data="style in _selectedStyles">
+        <Controls.Fingers
+                items="{{_items}}"
+                keyProperty="key"
+                displayProperty="caption"
+                selectedKey="1"
+                imageProperty="image"
+                imageViewMode="rectangle"
+                selectedStyle="{{ style }}"
+                alignment="left"
+                attr:style="width: 250px; height: 400px"/>
+    </ws:for>
+</div>

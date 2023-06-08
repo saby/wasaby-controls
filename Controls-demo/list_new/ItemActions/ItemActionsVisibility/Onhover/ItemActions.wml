@@ -1,0 +1,17 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500 controlsDemo__itemActions_list_onhover">
+    <Controls.list:View
+            storeId="listData1"
+            itemActions="{{_itemActions}}"
+            itemActionsVisibility="{{_itemActionsVisibility}}">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/list:ItemTemplate">
+                <ws:contentTemplate>
+                    <div style="padding: 3px;">
+                        <div>{{itemTemplate.item.contents.title}}</div>
+                        <div style="font-size: 11px; color: grey">{{itemTemplate.item.contents.description}}</div>
+                    </div>
+                </ws:contentTemplate>
+            </ws:partial>
+        </ws:itemTemplate>
+    </Controls.list:View>
+</div>

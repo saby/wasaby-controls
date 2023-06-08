@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/tileNew/DifferentItemTemplates/ToggleImageVisible/ImagePropertyValueChanged/Index' }}">
+            <a href="{{content.href}}">Для одной записей добавляется картинка</a>
+        </Router.router:Reference>
+        <Controls-demo.tileNew.DifferentItemTemplates.ToggleImageVisible.ImagePropertyValueChanged.Index/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/tileNew/DifferentItemTemplates/ToggleImageVisible/ScrollToDown/Index' }}">
+            <a href="{{content.href}}">При загрузке вниз появляется запись с картинкой</a>
+        </Router.router:Reference>
+        <Controls-demo.tileNew.DifferentItemTemplates.ToggleImageVisible.ScrollToDown.Index/>
+    </div>
+</div>

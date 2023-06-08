@@ -1,0 +1,22 @@
+<Controls.filter:View
+        name="filterView"
+        source="{{_filterSource}}"
+        detailPanelTemplateName="{{_getDetailPanelName()}}"
+        panelTemplateName="{{_options.panelTemplateName}}"
+        panelTemplateOptions="{{_options.panelTemplateOptions}}"
+        historyId="{{_widgetController.getHistoryId()}}"
+        alignment="{{_options.alignment}}"
+        emptyText="{{_options.emptyText}}"
+        resetButtonVisibility="{{_resetButtonVisibility}}"
+        editorsViewMode="{{_editorsViewMode}}"
+        on:itemsChanged="_filterSourceChangedInternal()"
+        on:detailPanelClose="_detailPanelClose()">
+        <ws:detailPanelTemplateOptions
+            orientation="{{_options.detailPanelOrientation}}"
+            historySaveMode="{{_options.detailPanelHistorySaveMode}}"
+            extendedItemsViewMode="{{_options.detailPanelExtendedItemsViewMode}}"
+            extendedTemplateName="{{_options.detailPanelExtendedTemplateName}}"
+            topTemplate="{{ _options.detailPanelTopTemplateName }}"
+            topTemplateOptions="{{ _options.detailPanelTopTemplateOptions }}"
+            width="{{_options.detailPanelWidth}}"/>
+</Controls.filter:View>

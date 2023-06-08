@@ -1,0 +1,90 @@
+.ControlsLists-dynamicGrid__dynamicCellsWrapper {
+   display: grid;
+   height: 100%;
+}
+
+.ControlsLists-dynamicGrid__dynamicCellsWrapper_columns-spacing {
+   @variants: ~'3xs', ~'2xs', xs, s, st, m, l, xl, ~'2xl', ~'3xl';
+   .for(@variants, {
+      &_@{_item} {
+         column-gap: ~'var(--offset_@{_item})';
+         margin-left: ~'var(--offset_@{_item})';
+      }
+   });
+}
+
+.ControlsLists-dynamicGrid__dynamicHeaderCell {
+   height: 40px;
+   align-items: center;
+   justify-content: center;
+   display: flex;
+}
+
+.ControlsLists-dynamicGrid__dynamicDataCell {
+   height: 100%;
+   position: relative;
+}
+
+.ControlsLists-dynamicGrid__selectionCheckbox__wrapper {
+   position: absolute;
+   bottom: 0;
+   justify-content: center;
+   width: 100%;
+   display: none;
+   z-index: 1;
+}
+
+.ws-is-hover{
+   .ControlsLists-dynamicGrid__dynamicDataCell:hover
+   .ControlsLists-dynamicGrid__selectionCheckbox__wrapper {
+      display: flex;
+   }
+
+   .controls-ListView__itemV:hover .ControlsLists-dynamicGrid__dynamicCellsWrapper::before {
+      content:'';
+      pointer-events: none;
+      position: absolute;
+      z-index:5;
+      left: -10000px;
+      right: -10000px;
+      border-top: var(--border-thickness) solid var(--unaccented_border-color);
+      border-bottom: var(--border-thickness) solid var(--unaccented_border-color);
+      box-sizing: border-box;
+   }
+
+   .controls-ListView__itemV:hover .ControlsLists-dynamicGrid__dynamicCellsWrapper_columns-spacing_2xs::before {
+      top: calc((-1) * var(--offset_2xs) / 2 - var(--border-thickness));
+      bottom: calc((-1) * var(--offset_2xs) / 2 - var(--border-thickness));
+   }
+
+   .controls-ListView__itemV:hover .ControlsLists-dynamicGrid__dynamicCellsWrapper_columns-spacing_3xs::before {
+      top: calc((-1) * var(--offset_3xs) / 2 - var(--border-thickness));
+      bottom: calc((-1) * var(--offset_3xs) / 2 - var(--border-thickness));
+   }
+
+
+   .ControlsLists-dynamicGrid__dynamicHeaderCell:hover::after,
+   .ControlsLists-dynamicGrid__dynamicHeaderCell:hover::before,
+   .ControlsLists-dynamicGrid__dynamicDataCell:hover::before,
+   .ControlsLists-dynamicGrid__dynamicDataCell:hover::after {
+      content: '';
+      pointer-events: none;
+      width: var(--border-thickness);
+      position: absolute;
+      z-index: 5;
+      top: -5000px;
+      bottom: 0;
+      box-shadow: var(--border-thickness) 2000px var(--unaccented_border-color);
+   }
+
+   .ControlsLists-dynamicGrid__dynamicHeaderCell:hover::after,
+   .ControlsLists-dynamicGrid__dynamicDataCell:hover::after {
+      right: calc((-1) * var(--offset_2xs) / 2 + var(--border-thickness));
+   }
+
+   .ControlsLists-dynamicGrid__dynamicHeaderCell:hover::before,
+   .ControlsLists-dynamicGrid__dynamicDataCell:hover::before {
+      left:calc((-1) * var(--offset_2xs) / 2 - var(--border-thickness));
+   }
+}
+

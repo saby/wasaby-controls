@@ -1,0 +1,89 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow controlsDemo__flexRow_noWrap controlsDemo__maxWidth800">
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell">
+        <h1>captionPosition="left"</h1>
+        <h2>with default multiSelectTemplate</h2>
+        <Controls.propertyGridEditor:PropertyGridEditor
+            bind:editingObject="_editingObject"
+            bind:selectedKeys="_selectedKeys"
+            typeDescription="{{_typeDescription}}"
+            multiSelectVisibility="visible"
+            multiSelectPosition="custom"
+            parentProperty="parent"
+            levelPadding="{{true}}">
+            <ws:itemTemplate>
+                <ws:partial template="Controls/propertyGridEditor:ItemTemplate" highlightOnHover="{{true}}">
+                    <ws:beforeItemTemplate>
+                        <ws:partial template="{{ beforeItemTemplate.multiSelectTemplate }}"/>
+                    </ws:beforeItemTemplate>
+                </ws:partial>
+            </ws:itemTemplate>
+        </Controls.propertyGridEditor:PropertyGridEditor>
+
+        <h2>with custom multiSelectTemplate</h2>
+        <Controls.propertyGridEditor:PropertyGridEditor
+            bind:editingObject="_editingObject"
+            bind:selectedKeys="_selectedKeys"
+            typeDescription="{{_typeDescription}}"
+            multiSelectVisibility="visible"
+            multiSelectPosition="custom"
+            nodeProperty="@parent"
+            parentProperty="parent"
+            levelPadding="{{true}}">
+            <ws:multiSelectTemplate>
+                <ws:partial template="Controls/list:MultiSelectCircleTemplate"/>
+            </ws:multiSelectTemplate>
+            <ws:itemTemplate>
+                <ws:partial template="Controls/propertyGridEditor:ItemTemplate" highlightOnHover="{{true}}">
+                    <ws:beforeItemTemplate>
+                        <ws:partial template="{{ beforeItemTemplate.multiSelectTemplate }}"/>
+                    </ws:beforeItemTemplate>
+                </ws:partial>
+            </ws:itemTemplate>
+        </Controls.propertyGridEditor:PropertyGridEditor>
+        <div style="padding-top: 10px;">Selected keys [{{ _selectedKeys.join(', ') }}]</div>
+    </div>
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell">
+        <h1>captionPosition="top"</h1>
+        <h2>with default multiSelectTemplate</h2>
+        <Controls.propertyGridEditor:PropertyGridEditor
+            bind:editingObject="_editingObject"
+            bind:selectedKeys="_selectedKeys"
+            typeDescription="{{_typeDescription}}"
+            multiSelectVisibility="visible"
+            multiSelectPosition="custom"
+            parentProperty="parent"
+            levelPadding="{{true}}"
+            captionPosition="top">
+            <ws:itemTemplate>
+                <ws:partial template="Controls/propertyGridEditor:ItemTemplate" highlightOnHover="{{true}}">
+                    <ws:beforeItemTemplate>
+                        <ws:partial template="{{ beforeItemTemplate.multiSelectTemplate }}"/>
+                    </ws:beforeItemTemplate>
+                </ws:partial>
+            </ws:itemTemplate>
+        </Controls.propertyGridEditor:PropertyGridEditor>
+
+        <h2>with custom multiSelectTemplate</h2>
+        <Controls.propertyGridEditor:PropertyGridEditor
+            bind:editingObject="_editingObject"
+            bind:selectedKeys="_selectedKeys"
+            typeDescription="{{_typeDescription}}"
+            multiSelectVisibility="visible"
+            multiSelectPosition="custom"
+            nodeProperty="@parent"
+            parentProperty="parent"
+            levelPadding="{{true}}"
+            captionPosition="top">
+            <ws:multiSelectTemplate>
+                <ws:partial template="Controls/list:MultiSelectCircleTemplate"/>
+            </ws:multiSelectTemplate>
+            <ws:itemTemplate>
+                <ws:partial template="Controls/propertyGridEditor:ItemTemplate" highlightOnHover="{{true}}">
+                    <ws:beforeItemTemplate>
+                        <ws:partial template="{{ beforeItemTemplate.multiSelectTemplate }}"/>
+                    </ws:beforeItemTemplate>
+                </ws:partial>
+            </ws:itemTemplate>
+        </Controls.propertyGridEditor:PropertyGridEditor>
+    </div>
+</div>

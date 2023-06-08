@@ -1,0 +1,37 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow demo-SearchSuggest__container controlsDemo__mb3">
+   <div class="controlsDemo__wrapper__horizontal controlsDemo__cell ControlsDemo-Suggest_padding-left controlsDemo_fixedWidth350">
+      <div class="controls-text-label">Постраничная навигация</div>
+      <Controls.SuggestSearch
+              attr:class="demo-SuggestNewSearch__pageNav controlsDemo__input"
+              bind:value="_suggestCustomValue"
+              displayProperty="title"
+              searchParam="title"
+              navigation="{{_navigation}}"
+              source="{{_source}}">
+          <ws:suggestTemplate templateName="wml!Controls-demo/Suggest_new/SearchInput/Navigation/resources/SuggestTemplate"/>
+      </Controls.SuggestSearch>
+  </div>
+   <div class="controlsDemo__wrapper__horizontal controlsDemo__cell ControlsDemo-Suggest_padding-left controlsDemo_fixedWidth350">
+      <div class="controls-text-label">Без указания настроек навигации</div>
+      <Controls.SuggestSearch
+              attr:class="demo-SuggestNewSearch__noSettingsNav controlsDemo__input"
+              bind:value="_suggestDefaultValue"
+              displayProperty="title"
+              searchParam="title"
+              source="{{_source}}">
+          <ws:suggestTemplate templateName="wml!Controls-demo/Suggest_new/SearchInput/Navigation/resources/SuggestTemplate"/>
+      </Controls.SuggestSearch>
+   </div>
+   <div class="controlsDemo__wrapper__horizontal controlsDemo__cell ControlsDemo-Suggest_padding-left">
+      <div class="controls-text-label">Подгружать данные, пока не будет достигут порог</div>
+      <Controls.SuggestSearch
+              attr:class="demo-SuggestNewSearch__autoLoadNav controlsDemo__input"
+              bind:value="_maxCountValue"
+              displayProperty="title"
+              searchParam="title"
+              navigation="{{_maxCountNavigation}}"
+              source="{{_source}}">
+          <ws:suggestTemplate templateName="wml!Controls-demo/Suggest_new/SearchInput/Navigation/resources/SuggestTemplate"/>
+      </Controls.SuggestSearch>
+   </div>
+</div>

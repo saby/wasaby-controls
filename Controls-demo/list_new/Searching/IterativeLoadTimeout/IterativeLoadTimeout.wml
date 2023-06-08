@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper controlsDemo__width800px">
+    <div class="ws-fragment">
+        <Controls.search:InputContainer>
+            <Controls.search:Input/>
+        </Controls.search:InputContainer>
+        <Controls.scroll:Container attr:class="controlsDemo__height300">
+            <Controls.list:Container>
+                <Controls.list:View storeId="listData"/>
+            </Controls.list:Container>
+        </Controls.scroll:Container>
+    </div>
+</div>

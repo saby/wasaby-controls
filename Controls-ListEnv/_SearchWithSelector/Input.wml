@@ -1,0 +1,20 @@
+<Controls.SuggestSearch name="searchInput"
+                              scope="{{_options}}"
+                              searchButtonVisible="{{false}}"
+                              borderVisibility="hidden"
+                              attr:class="controls_search_theme-{{_options.theme}}">
+    <ws:rightFieldTemplate>
+        <div class="search-Input__rightFieldTemplate">
+            <ws:if data="{{_options.rightFieldTemplate}}">
+                <ws:partial template="{{_options.rightFieldTemplate}}"/>
+            </ws:if>
+            <div class="search-Input__searchButton controls-inlineheight-{{_options.inlineHeight}}"
+                 data-qa="Search__searchButton"
+                 on:mousedown="_searchClick()">
+                <Controls.icon:Icon attr:class="search-Input__searchButton-icon icon-Search2"
+                                    icon="icon-Search2"
+                                    iconSize="s"/>
+            </div>
+        </div>
+    </ws:rightFieldTemplate>
+</Controls.SuggestSearch>

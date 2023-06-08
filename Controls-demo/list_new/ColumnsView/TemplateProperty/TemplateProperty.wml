@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper">
+   <Controls.scroll:Container attr:class="controlsDemo__height400 controlsDemo__minWidth600">
+      <Controls.columns:View
+         storeId="listData"
+         columnsMode="auto"
+         itemActions="{{_itemActions}}"
+         markerVisibility="visible"
+         itemTemplateProperty="itemTemplate"
+         name="view"/>
+   </Controls.scroll:Container>
+</div>

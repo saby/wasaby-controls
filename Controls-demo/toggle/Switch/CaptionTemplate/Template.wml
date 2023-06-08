@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell demo-switchBase__default controlsDemo_fixedWidth500">
+            <Controls.toggle:Switch bind:value="_value"
+                                    caption="caption"
+                                    attr:data-qa="Controls-demo_Switch__default"/>
+        </div>
+        <div class="controlsDemo__cell demo-switchBase__custom controlsDemo_fixedWidth500">
+            <Controls.toggle:Switch bind:value="_value2"
+                                    attr:data-qa="Controls-demo_Switch__custom">
+                <ws:caption>
+                    <ws:partial template="Controls/toggle:switchCaptionTemplate" scope="{{captionTemplate}}"
+                                caption="custom caption" additionalCaption="{{_captionTemplate}}"/>
+                </ws:caption>
+            </Controls.toggle:Switch>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="controlsDemo__wrapper">
+   <Controls.treeTile:View
+       storeId="listData"
+      multiSelectVisibility="visible"
+      bind:selectedKeys="_selectedKeys"
+      tileMode="static"
+      tileScalingMode="none"
+      actionMenuViewMode="menu"
+      itemActions="{{ _itemActions }}"
+      imageFit="none"
+      tileHeight="300"
+      imageProperty="image">
+      <ws:roundBorder tl="m" tr="m" br="m" bl="m"/>
+      <ws:itemTemplate>
+         <ws:partial
+                 template="Controls/tile:RichTemplate"
+                 gradientColor="{{itemTemplate.item.contents.gradientColor}}"
+                 titleLines="{{itemTemplate.item.contents.titleLines}}"
+                 descriptionLines="{{itemTemplate.item.contents.titleLines}}"
+                 imageSize="{{itemTemplate.item.contents.imageSize}}"
+                 imageViewMode="{{itemTemplate.item.contents.imageViewMode}}"
+                 imagePosition="{{itemTemplate.item.contents.imagePosition}}"
+                 description="{{itemTemplate.item.contents.description}}"
+                 imageCompressionCoefficient="{{itemTemplate.item.contents.imageCompressionCoefficient}}"
+                 itemActionsClass="controls-TileView__itemActions_topRight"
+                 imageEffect="gradient"
+                 scope="{{itemTemplate}}"/>
+      </ws:itemTemplate>
+   </Controls.treeTile:View>
+</div>

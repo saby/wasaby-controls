@@ -1,0 +1,29 @@
+<div class="controlsDemo__wrapper">
+<div class="controlsDemo__cell">
+  <Router.router:Reference app="{{ 'Controls-demo/list_new/EmptyList/Default/Index' }}"
+                           attr:class="controls-text-label"
+                           state="/Controls-demo/app/:app">
+    <a href="{{content.href}}">Шаблон отображения пустого списка</a>
+  </Router.router:Reference>
+  <Controls-demo.list_new.EmptyList.Default.Index/>
+</div>
+
+<div class="controlsDemo__cell">
+  <Router.router:Reference app="{{ 'Controls-demo/list_new/EmptyList/Spacing/Index' }}"
+                           attr:class="controls-text-label"
+                           state="/Controls-demo/app/:app">
+    <a href="{{content.href}}">Шаблон отображения пустого списка с отступом</a>
+  </Router.router:Reference>
+  <Controls-demo.list_new.EmptyList.Spacing.Index/>
+</div>
+
+
+<div class="controlsDemo__cell">
+  <Router.router:Reference app="{{ 'Controls-demo/list_new/EmptyList/EmptyListWithFooter/Index' }}"
+                           attr:class="controls-text-label"
+                           state="/Controls-demo/app/:app">
+    <a href="{{content.href}}">Шаблон отображения пустого списка с футером</a>
+  </Router.router:Reference>
+  <Controls-demo.list_new.EmptyList.EmptyListWithFooter.Index/>
+</div>
+</div>

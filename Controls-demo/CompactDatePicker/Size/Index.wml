@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center" data-qa="controlsDemo_capture">
+        <Controls.compactDatePicker:View
+            _date="{{ _date }}"
+            size="m"
+            datePopupType="compactDatePicker"
+            attr:class="controlsDemo-CompactDatePicker_height"
+            attr:data-qa="controlsDemo-CompactDatePicker__medium"
+            bind:startValue="_startValue"
+            bind:endValue="_endValue"/>
+        <Controls.compactDatePicker:View
+            _date="{{ _date }}"
+            size="l"
+            datePopupType="compactDatePicker"
+            attr:class="controlsDemo-CompactDatePicker_height__size-l controlsDemo__ml3"
+            attr:data-qa="controlsDemo-CompactDatePicker__large"
+            bind:startValue="_startValue"
+            bind:endValue="_endValue"/>
+    </div>
+</div>

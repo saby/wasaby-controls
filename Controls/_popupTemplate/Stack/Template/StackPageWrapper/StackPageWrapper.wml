@@ -1,0 +1,34 @@
+<div class="controls-PageTemplate controls_popupTemplate_theme-{{_options.theme}} {{_sizesClass ? _sizesClass}}"
+     attr:style="{{_getContentWidth()}}min-width: {{ _minWidth + _rightPanelWidth }}px; max-width: {{ _workspaceWidth }}px;"
+     on:register="_registerHandler()"
+     on:unregister="_unregisterHandler()">
+    <ws:if data="{{_canResize}}">
+        <Controls.dragnDrop:ResizingLine attr:class="controls-PageTemplate__resizingLine controls-PageTemplate__resizingLine-left"
+                                         direction="{{ _getResizeDirection('reverse') }}"
+                                         name="leftResizingLine"
+                                         minOffset="{{_minOffset}}"
+                                         maxOffset="{{_maxOffset}}"
+                                         on:dragMove="_dragMoveHandler('left')"
+                                         on:offset="_offsetHandler()"/>
+    </ws:if>
+
+    <ws:partial template="{{_options.content}}"
+                on:maximized="_maximizeHandler()"
+                scope="{{_options}}"
+                maximized="{{ _maximized }}"
+                stackWidth="{{_templateWorkSpaceWidth}}"
+                workspaceWidth="{{_templateWorkSpaceWidth}}" />
+
+    <ws:if data="{{!_options.isAdaptive}}">
+        <div class="controls-PageTemplate__shadow"></div>
+    </ws:if>
+    <ws:if data="{{_canResize}}">
+        <Controls.dragnDrop:ResizingLine attr:class="controls-PageTemplate__resizingLine controls-PageTemplate__resizingLine-right"
+                                         minOffset="{{_minOffset}}"
+                                         direction="{{ _getResizeDirection('direct') }}"
+                                         name="rightResizingLine"
+                                         maxOffset="{{_maxOffset}}"
+                                         on:dragMove="_dragMoveHandler('right')"
+                                         on:offset="_offsetHandler()"/>
+    </ws:if>
+</div>

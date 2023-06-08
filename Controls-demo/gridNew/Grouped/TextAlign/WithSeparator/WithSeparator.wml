@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow controlsDemo__childMinWidth400">
+    <div class="controlsDemo__cell ControlsDemo-grouped__textAlign-left">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/gridNew/Grouped/TextAlign/WithSeparator/Left/Index' }}">
+            <a href="{{content.href}}">С разделителями и текстом по левому краю</a>
+        </Router.router:Reference>
+        <Controls-demo.gridNew.Grouped.TextAlign.WithSeparator.Left.Index/>
+    </div>
+
+    <div class="controlsDemo__cell ControlsDemo-grouped__textAlign-left">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/gridNew/Grouped/TextAlign/WithSeparator/Right/Index' }}">
+            <a href="{{content.href}}">С разделителями и текстом по правому краю</a>
+        </Router.router:Reference>
+        <Controls-demo.gridNew.Grouped.TextAlign.WithSeparator.Right.Index/>
+    </div>
+
+</div>

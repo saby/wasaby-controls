@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/Lookup/MultipleInputNew/MultipleInputNew' }}">
+            <a href="{{content.href}}">Отображение поля связи с возможностью выбора значений из нескольких справочников.</a>
+        </Router.router:Reference>
+        <Controls-demo.Lookup.MultipleInputNew.MultipleInputNew/>
+    </div>
+    <div class="controlsDemo__cell">
+       <Router.router:Reference attr:class="controls-text-label"
+                                state="/Controls-demo/app/:app"
+                                app="{{ 'Controls-demo/Lookup/MultipleInputNew/ShowSelectButton/Index' }}">
+           <a href="{{content.href}}">Отображение кнопки выбора из справочника.</a>
+       </Router.router:Reference>
+       <Controls-demo.Lookup.MultipleInputNew.ShowSelectButton.Index/>
+   </div>
+</div>

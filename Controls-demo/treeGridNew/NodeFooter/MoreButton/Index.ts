@@ -1,0 +1,62 @@
+import { Control, TemplateFunction } from 'UI/Base';
+import { HierarchicalMemory } from 'Types/source';
+import { IColumn } from 'Controls/grid';
+import { View } from 'Controls/treeGrid';
+import { IDataConfig, IListDataFactoryArguments } from 'Controls/dataFactory';
+
+import { Flat } from 'Controls-demo/treeGridNew/DemoHelpers/Data/Flat';
+
+import * as Template from 'wml!Controls-demo/treeGridNew/NodeFooter/MoreButton/MoreButton';
+
+const { getData } = Flat;
+
+export default class extends Control {
+    protected _template: TemplateFunction = Template;
+    protected _columns: IColumn[] = Flat.getColumnsWithNodeFooters(true);
+
+    protected _afterMount(): void {
+        this._toggleNodes(this._children.tree2);
+    }
+
+    private _toggleNodes(tree: View): void {
+        tree.toggleExpanded(1)
+            .then(() => {
+                return tree.toggleExpanded(11);
+            })
+            .then(() => {
+                return tree.toggleExpanded(12);
+            });
+    }
+
+    static getLoadConfig(): Record<string, IDataConfig<IListDataFactoryArguments>> {
+        return {
+            listData: {
+                dataFactoryName: 'Controls/dataFactory:List',
+                dataFactoryArguments: {
+                    displayProperty: 'title',
+                    source: new HierarchicalMemory({
+                        keyProperty: 'key',
+                        parentProperty: 'parent',
+                        data: getData(),
+                    }),
+                    keyProperty: 'key',
+                    parentProperty: 'parent',
+                    nodeProperty: 'parent',
+                    navigation: {
+                        source: 'page',
+                        view: 'demand',
+                        sourceConfig: {
+                            pageSize: 3,
+                            page: 0,
+                            hasMore: false,
+                        },
+                        viewConfig: {
+                            pagingMode: 'basic',
+                            buttonView: 'separator',
+                        },
+                    },
+                },
+            },
+        };
+    }
+}

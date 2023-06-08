@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper controlsDemo__flex">
+    <Controls.treeGrid:View
+            keyProperty="key"
+            source="{{_viewSource}}"
+            columns="{{_columns}}"
+            parentProperty="parent"
+            nodeProperty="type"
+            hoverBackgroundStyle="primary">
+    </Controls.treeGrid:View>
+</div>

@@ -1,0 +1,7 @@
+<Controls.context:ContextOptionsConsumer>
+    <ws:contextOptionsInnerComponent>
+        <Controls-ListEnv._filterPanel.Widget
+            _dataOptionsValue="{{contextOptionsInnerComponent._dataOptionsValue}}"
+            scope="{{ _options }}"/>
+    </ws:contextOptionsInnerComponent>
+</Controls.context:ContextOptionsConsumer>

@@ -1,0 +1,77 @@
+<ws:template name="closeButton">
+    <Controls.buttons:Button
+            attr:tabindex="-1"
+            attr:data-qa="controls-stack-Button__close"
+            icon="icon-Close"
+            iconStyle="label"
+            buttonStyle="pale"
+            iconSize="m"
+            viewMode="filled"
+            inlineHeight="xl"
+            tooltip="{[Закрыть]}"
+            readOnly="{{false}}"
+            attr:class="controls-SlidingStackPanel__close-button"
+            on:click="_closePopup()"
+    />
+</ws:template>
+<ws:template name="ToolbarContent">
+    <ws:if data="{{_options.toolbarContentTemplate}}">
+        <div class="controls-SlidingStackPanel__toolbar">
+            <ws:partial
+                    template="{{_options.toolbarContentTemplate}}"
+                    direction="horizontal"
+                    scope="{{_options}}"/>
+        </div>
+    </ws:if>
+</ws:template>
+<div class="controls_popupSliding_theme-{{_options.theme}} controls-SlidingPanel">
+    <div class="controls-SlidingPanel__content {{_getBackgroundClass()}}">
+        <div
+                name="customContentWrapper"
+                class="controls-SlidingPanel__body">
+            <div
+                    name="customContent"
+                    attr:class="controls-SlidingPanel__customContent-wrapper">
+                <div class="controls-SlidingStackPanel__header {{!_options.headerBackgroundStyle ?
+                               'controls-StackTemplate_headerBackgroundColor' :
+                                                             'controls-background-' + _options.headerBackgroundStyle}}">
+                    <ws:if data="{{_options.headingCaption && !_options.headerContentTemplate}}">
+                        <Controls.heading:Title attr:class="ws-ellipsis controls-margin_left-s controls-margin_right-m"
+                                                caption="{{_options.headingCaption}}"
+                                                fontColorStyle="{{_options.headingFontColorStyle}}"
+                                                fontSize="{{_options.headingFontSize}}"
+                                                fontWeight="{{_options.headingFontWeight}}"
+                                                textTransform="{{_options.headingTextTransform}}"
+                                                readOnly="{{true}}"
+                                                tooltip="{{_options.headingCaption}}"/>
+                    </ws:if>
+                    <ws:if data="{{ _options.headerContentTemplate }}">
+                        <ws:partial
+                                template="{{ _options.headerContentTemplate }}"
+                                scope="{{ _options }}">
+                        </ws:partial>
+                    </ws:if>
+                    <ws:if data="{{ _options.toolbarContentTemplate }}">
+                        <ws:partial template="ToolbarContent"/>
+                    </ws:if>
+                    <ws:if data="{{_options.closeButtonVisible}}">
+                        <ws:partial template="closeButton"/>
+                    </ws:if>
+                </div>
+                <div class="controls-SlidingPanel__customContentWrapper">
+                    <ws:partial
+                            name="customContentContainer"
+                            attr:class="controls-SlidingPanel__customContent"
+                            template="{{ _options.bodyContentTemplate }}"
+                            scope="{{_options}}">
+                    </ws:partial>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ws:if data="{{ _options.actionContentTemplate }}">
+        <div class="controls-SlidingStackPanel__actionContentTemplate">
+            <ws:partial template="{{ _options.actionContentTemplate }}"/>
+        </div>
+    </ws:if>
+</div>

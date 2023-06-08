@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300">
+<Controls.scroll:Container attr:class="controlsDemo__height500">
+  <Controls.list:View
+      bind:markedKey="_markedKey"
+      itemsReadyCallback="{{_itemsReadyCallback}}"
+      storeId="listData"/>
+</Controls.scroll:Container>
+<div class="ws-link controlsDemo__mb1" on:click="_removeItem()">
+  Удалить запись в конце
+</div>
+</div>

@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <Controls.treeGrid:View
+            keyProperty="key"
+            source="{{_viewSource}}"
+            columns="{{_columns}}"
+            parentProperty="parent"
+            nodeProperty="type"
+            itemActions="{{_itemActions}}">
+        <ws:virtualScrollConfig pageSize="{{20}}"  mode="hide" segmentSize="{{10}}"/>
+    </Controls.treeGrid:View>
+</div>

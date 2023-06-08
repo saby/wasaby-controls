@@ -1,0 +1,19 @@
+<div class="controlsDemo__wrapper">
+    <Controls-ListEnv.frequentFilter:Chips storeId="persons"
+        filterNames="{{['city']}}"
+    />
+    <Controls.grid:View storeId="persons">
+        <ws:columns>
+            <ws:Array>
+                <ws:Object displayProperty="name"/>
+                <ws:Object displayProperty="city"/>
+            </ws:Array>
+        </ws:columns>
+        <ws:header>
+            <ws:Array>
+                <ws:Object title="Имя"/>
+                <ws:Object title="Город проживания"/>
+            </ws:Array>
+        </ws:header>
+    </Controls.grid:View>
+</div>

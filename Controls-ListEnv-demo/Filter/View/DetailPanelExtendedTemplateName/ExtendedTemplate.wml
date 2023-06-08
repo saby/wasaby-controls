@@ -1,0 +1,30 @@
+<Controls.filterPanel:DefaultExtendedTemplate headingCaption="{{_options.headingCaption}}">
+    <ws:headingContentTemplate>
+        <ws:if data="{{_dateItem}}">
+            <div class="controls-margin_left-m">
+                <span class="controls-fontsize-m controls-text-unaccented">{[за]}&nbsp;</span>
+                <Controls.buttons:Button viewMode="link"
+                                         buttonStyle="unaccented"
+                                         fontColorStyle="labelContrast"
+                                         caption="{{_dateItem.editorOptions.extendedCaption}}"
+                                         on:click="_dateHandler()" />
+            </div>
+        </ws:if>
+    </ws:headingContentTemplate>
+    <ws:bodyContentTemplate>
+        <div class="ws-flexbox">
+            <ws:if data="{{_listItem}}">
+                <Controls.grid:View scope="{{_listItem.editorOptions}}"
+                                    on:itemClick="_activityHandler()">
+                    <ws:roundBorder tr="l" tl="l" br="l" bl="l" />
+                    <ws:columns>
+                        <ws:Array>
+                            <ws:Object displayProperty="title" />
+                            <ws:Object displayProperty="count"/>
+                        </ws:Array>
+                    </ws:columns>
+                </Controls.grid:View>
+            </ws:if>
+        </div>
+    </ws:bodyContentTemplate>
+</Controls.filterPanel:DefaultExtendedTemplate>

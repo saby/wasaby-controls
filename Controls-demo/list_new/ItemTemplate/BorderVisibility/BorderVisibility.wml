@@ -1,0 +1,58 @@
+<div class="controlsDemo__wrapper controlsDemo__maxWidth800 controlDemo_list-new_base">
+    <Controls.list:View
+                        itemsSpacing="{{_itemsSpacing}}"
+                        roundBorder="{{_roundBorder}}"
+                        itemActions="{{_itemActions}}"
+                        storeId="listData">
+                <ws:itemTemplate>
+                    <ws:partial template="Controls/list:ItemTemplate"
+                                highlightOnHover="{{false}}"
+                                shadowVisibility="{{_shadowVisibility}}"
+                                borderVisibility="{{_borderVisibility}}"
+                                borderStyle="{{ _borderStyle }}">
+                        <ws:contentTemplate>
+                            <div>
+                                <div class="controls-fontsize-l">{{ contentTemplate.item.contents.description }}</div>
+                                <div class="controls-padding_top-2xs controls-padding_bottom-2xs
+                                            controls-padding_left-m controls-padding_right-m
+                                            controls_border-radius-s
+                                            controls-hover-background-default">
+                                    <div class="controls-fontsize-l">{{ contentTemplate.item.contents.title }}</div>
+                                </div>
+                            </div>
+                        </ws:contentTemplate>
+                    </ws:partial>
+                </ws:itemTemplate>
+    </Controls.list:View>
+
+    <div class="controlsDemo__cell">
+        <h4 class="controlsDemo__mb1">Видимость рамки вокруг записи. Сейчас={{_borderVisibility}}</h4>
+        <Controls.buttons:Button caption="hidden" on:click="_setBorderVisibility('hidden')"/>
+        <Controls.buttons:Button caption="visible" on:click="_setBorderVisibility('visible')"/>
+        <Controls.buttons:Button caption="onhover" on:click="_setBorderVisibility('onhover')"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <h4 class="controlsDemo__mb1">Видимость тени вокруг записи. Сейчас={{_shadowVisibility}}</h4>
+        <Controls.buttons:Button caption="hidden" on:click="_setShadowVisibility('hidden')"/>
+        <Controls.buttons:Button caption="visible" on:click="_setShadowVisibility('visible')"/>
+        <Controls.buttons:Button caption="onhover" on:click="_setShadowVisibility('onhover')"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <h4 class="controlsDemo__mb1">Переключатель опции roundBorder. Сейчас={{ _roundBorder ? _roundBorder.tl : 'null' }}</h4>
+        <ws:for data="index, variant in _roundBorderVariants">
+            <Controls.buttons:Button caption="{{variant}}" on:click="_setRoundBorder(variant)"/>
+        </ws:for>
+    </div>
+    <div class="controlsDemo__cell">
+       <h4 class="controlsDemo__mb1">Расстояние между записями. Сейчас={{ _itemsSpacing || 'null' }}</h4>
+       <ws:for data="index, variant in _itemsSpacingVariants">
+          <Controls.buttons:Button caption="{{variant}}" on:click="_setItemsSpacing(variant)"/>
+       </ws:for>
+    </div>
+    <div class="controlsDemo__cell">
+        <h4 class="controlsDemo__mb1">Цвет border. Сейчас={{ _borderStyle ? _borderStyle : 'default' }}</h4>
+        <ws:for data="index, variant in _borderStyleVariants">
+            <Controls.buttons:Button caption="{{variant}}" on:click="_setBorderStyle(variant)"/>
+        </ws:for>
+    </div>
+</div>

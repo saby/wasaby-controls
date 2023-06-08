@@ -1,0 +1,11 @@
+<!-- eslint-disable -->
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth800">
+    <Controls.scroll:Container attr:class="controlsDemo__height400">
+        <Controls.list:HotKeysContainer>
+            <Controls.list:View
+                    attr:class="controlsDemo_line-height18"
+                    moveMarkerOnScrollPaging="{{true}}"
+                    storeId="listData"/>
+        </Controls.list:HotKeysContainer>
+    </Controls.scroll:Container>
+</div>

@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <Controls.treeGrid:View
+            keyProperty="key"
+            source="{{_viewSource}}"
+            columns="{{_columns}}"
+            markerVisibility="hidden"
+            parentProperty="parent"
+            navigation="{{_navigation}}"
+            nodeMoreCaption="Показать еще ответы..."
+            nodeProperty="type">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/treeGrid:ItemTemplate" scope="{{itemTemplate}}"/>
+        </ws:itemTemplate>
+    </Controls.treeGrid:View>
+</div>

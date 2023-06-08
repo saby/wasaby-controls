@@ -1,0 +1,25 @@
+<div class="controlsDemo__flexRow {{_options.theme.indexOf('default')<0 ? 'controlsDemo_fixedWidth500' : 'controlsDemo_fixedWidth300'}}">
+   <div class="controlsDemo__wrapper">
+      <Controls.dropdown:Button
+              keyProperty="id"
+              caption="Create"
+              source="{{_source}}"
+              nodeProperty="@parent"
+              parentProperty="parent"
+              menuBorderRadius="xs"
+              attr:class="controlsDemo-menuButton">
+      </Controls.dropdown:Button>
+   </div>
+   <div class="controlsDemo__wrapper">
+      <Controls.dropdown:Button
+              keyProperty="id"
+              caption="Create"
+              source="{{_source}}"
+              nodeProperty="@parent"
+              parentProperty="parent"
+              menuBorderRadius="xl"
+              attr:class="controlsDemo-menuButton"
+              attr:data-qa="controlsDemo-menuButton__BorderRadius-xl">
+      </Controls.dropdown:Button>
+   </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth800">
+    <Controls.scroll:Container attr:class="controlsDemo__height300">
+        <Controls.list:View storeId="listData" itemsReadyCallback="{{_saveItems}}"/>
+    </Controls.scroll:Container>
+    <a href="#" class="controls-text-link" on:click="_removeTopItem()">Удалить верхнюю запись</a>
+    <a href="#" class="controls-text-link" on:click="_changeTopItem()">Изменить верхнюю запись</a>
+</div>

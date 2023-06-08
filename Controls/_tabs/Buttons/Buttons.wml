@@ -1,0 +1,76 @@
+<ws:template name="TobContentTemplate">
+    <div name="TabContent{{index}}{{isHidden ? '-hidden'}}"
+     class="controls-Tabs__itemClickableArea controls-Tabs__item-element{{isHidden ? '-hidden'}}
+                            controls-Tabs__itemClickableArea_inlineHeight-{{_options.inlineHeight}}
+                            {{_prepareItemMinWidthClass(item)}}
+                            {{_prepareItemMarkerClass(item)}}
+                            {{_prepareItemTypeClass(item)}}">
+    <ws:partial
+        attr:class="{{_prepareItemSelectedClass(item, isHidden)}}"
+        attr:data-qa="{{item[_options.keyProperty] === _options.selectedKey ? ('TabsItemSelected'+(isHidden ? 'Hidden' : '')) : ''}}"
+        template="{{ _getTemplate(_options.itemTemplate, item, _options.itemTemplateProperty) || _defaultItemTemplate}}"
+        selected="{{item[_options.keyProperty] === _options.selectedKey}}"
+        displayProperty="{{_options.displayProperty}}"
+        keyProperty="{{_options.keyProperty}}"
+        index="{{index}}"
+        item="{{_items.at(index)}}"
+        horizontalPadding="none"
+        iconAlign="{{_options.iconAlign}}"
+        inlineHeight="{{_options.inlineHeight}}"/>
+</div>
+</ws:template>
+
+<div class="controls-Tabs controls-Tabs__{{_options.direction}} {{_options.borderVisible ? 'controls-Tabs_border'}}
+            {{_options.direction === 'horizontal' ? 'controls-Tabs_inlineHeight-' + _options.inlineHeight}}"
+     name="container">
+<div class="controls-Tabs-wrapper controls-Tabs-wrapper__{{_options.direction}} {{!_getCanShrink() ? controls-Tabs__scrollWrapper}}
+                {{_options.direction === 'vertical' ? 'ws-flex-column'}}"
+     name="wrapper"
+     on:mouseenter="_mouseEnterHandler()"
+     on:mouseout="_mouseOutHandler()"
+     on:touchstart="_touchStartHandler()">
+    <ws:for data="index, item in _itemsArray">
+        <div name="tab{{item[_options.keyProperty]}}"
+             attr:class="{{_prepareItemClass(item, index)}}"
+             attr:style="{{_prepareItemStyles(item, index)}}"
+             attr:title="{{ _options.tooltipVisible ? item[_options.displayProperty]}}"
+             attr:data-name="{{item[_options.keyProperty]}}"
+             on:mousedown="_onItemClick(item[_options.keyProperty])">
+            <ws:if data="{{ _getTemplate(_options.itemLeftTemplate, item, _options.leftTemplateProperty) }}">
+                <ws:partial template="{{ _getTemplate(_options.itemLeftTemplate, item, _options.leftTemplateProperty) }}"
+                            selected="{{item[_options.keyProperty] === _options.selectedKey}}"
+                            index="{{index}}"
+                            item="{{_items.at(index)}}" />
+            </ws:if>
+            <div class="controls-Tabs__items_wrapper {{_options.direction === 'vertical' ? 'controls-Tabs__item_vertical' : ''}}">
+                <ws:partial template="TobContentTemplate" index="{{index}}" item="{{item}}" isHidden="{{false}}"/>
+                <ws:partial template="TobContentTemplate" index="{{index}}" item="{{item}}" isHidden="{{true}}"/>
+            </div>
+            <ws:if data="{{ _getTemplate(_options.itemRightTemplate, item, _options.rightTemplateProperty) }}">
+                <ws:partial template="{{ _getTemplate(_options.itemRightTemplate, item, _options.rightTemplateProperty) }}"
+                            selected="{{item[_options.keyProperty] === _options.selectedKey}}"
+                            index="{{index}}"
+                            item="{{_items.at(index)}}" />
+            </ws:if>
+            <!--            todo: https://online.sbis.ru/opendoc.html?guid=be4df8fc-5c9f-4cb0-b4aa-933bc3a326df-->
+            <!--            <ws:if data="{{item[_options.keyProperty] !== _options.selectedKey}}">-->
+            <!--                <div class="controls-Tabs__overlay" on:click="_onItemClick(item[_options.keyProperty])"></div>-->
+            <!--            </ws:if>-->
+        </div>
+    </ws:for>
+    <ws:if data="{{_options.direction === 'horizontal'}}">
+        <div class="controls-Tabs__space
+                    controls-Tabs__space_inlineHeight-{{_options.inlineHeight}}">
+            <ws:if data="{{ _options.tabSpaceTemplate }}">
+                <ws:partial template="{{_options.tabSpaceTemplate}}" scope="{{_options}}"/>
+            </ws:if>
+        </div>
+    </ws:if>
+</div>
+<div class="controls-Tabs__marker {{_markerCssClass}}
+                {{!(_marker.isInitialized() && _isBottomMarkerVisible() && _isAnimatedMakerVisible) ? 'ws-invisible'}}
+                {{_isAnimatedMakerVisible ? 'controls-Tabs__marker_animation'}}"
+     style="width:{{_marker.getWidth()}}px; {{_marker.getAlign()}}: {{_marker.getOffset()}}px;"
+     on:transitionend="_transitionEndHandler()"></div>
+
+</div>

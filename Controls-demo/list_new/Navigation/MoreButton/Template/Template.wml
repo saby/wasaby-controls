@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper controlsDemo_maxWidth800 Controls-list__navigation_MoreButton_buttonConfig controlsDemo_line-height18">
+    <Controls.scroll:Container attr:class="controlsDemo__height400">
+        <Controls.list:View storeId="listData">
+            <ws:moreButtonTemplate>
+                <div class="ControlsDemo__moreButton_wrapper">
+                    <ws:partial template="Controls/list:MoreButtonTemplate"/>
+                    <ws:if data="{{_moreButtonIndicator}}">
+                        <i class="ControlsDemo__moreButton_indicator"/>
+                    </ws:if>
+                </div>
+            </ws:moreButtonTemplate>
+        </Controls.list:View>
+    </Controls.scroll:Container>
+    <Controls.buttons:Button caption="{{ _moreButtonIndicator ? 'Убрать' : 'Добавить'}} индикатор у кнопки 'Ещё'" on:click="_toggleMoreButtonIndicator()"/>
+</div>

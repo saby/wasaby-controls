@@ -1,0 +1,26 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+       <Router.router:Reference attr:class="controls-text-label"
+                                state="/Controls-demo/app/:app"
+                                app="{{ 'Controls-demo/PopupTemplate/Sticky/FooterContentTemplate/Index' }}">
+           <a href="{{content.href}}">footerContentTemplate в шаблоне прилипающего блока</a>
+       </Router.router:Reference>
+       <Controls-demo.PopupTemplate.Sticky.FooterContentTemplate.Index/>
+   </div>
+   <div class="controlsDemo__cell">
+      <Router.router:Reference attr:class="controls-text-label"
+                               state="/Controls-demo/app/:app"
+                               app="{{ 'Controls-demo/PopupTemplate/Sticky/CloseButtonVisible/Index' }}">
+          <a href="{{content.href}}">Крестик закрытия прилипающего блока</a>
+      </Router.router:Reference>
+      <Controls-demo.PopupTemplate.Sticky.CloseButtonVisible.Index/>
+   </div>
+   <div class="controlsDemo__cell">
+      <Router.router:Reference attr:class="controls-text-label"
+                               state="/Controls-demo/app/:app"
+                               app="{{ 'Controls-demo/PopupTemplate/Sticky/HeaderContentTemplate/Index' }}">
+          <a href="{{content.href}}">headerContentTemplate в шаблоне прилипающего блока</a>
+      </Router.router:Reference>
+      <Controls-demo.PopupTemplate.Sticky.HeaderContentTemplate.Index/>
+   </div>
+</div>

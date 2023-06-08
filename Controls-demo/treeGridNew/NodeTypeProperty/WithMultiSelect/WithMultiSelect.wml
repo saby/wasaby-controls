@@ -1,0 +1,27 @@
+<div class="controlsDemo__wrapper controlsDemo_wrapper-treeGrid-base-treeGridView">
+<!--Сейчас есть некоторые проблемы с событиями и лишними перерисовками в ядре. Без скролл контейнера иногда не срабатывают-->
+<!--клики на стики блоке. Т.к кейсы с отсутствием скролл контейнера над списком есть только в демках - добавляю его.-->
+<Controls.scroll:Container>
+    <Controls.treeGrid:View
+            keyProperty="key"
+            source="{{ _viewSource }}"
+            parentProperty="parent"
+            nodeProperty="type"
+            nodeTypeProperty="nodeType"
+            rowSeparatorSize="s"
+            colspanCallback="{{ _colspanCallback }}"
+            columns="{{ _columns }}"
+            multiSelectVisibility="visible"
+            itemActions="{{ _itemActions }}"
+            itemActionVisibilityCallback="{{ _itemActionVisibilityCallback }}"
+            bind:expandedItems="_expandedItems"
+            bind:collapsedItems="_collapsedItems">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/treeGrid:ItemTemplate"
+                        highlightOnHover="{{ itemTemplate.item.contents.get('nodeType') === 'group' }}"
+                        fontSize="{{ itemTemplate.item.contents.get('nodeType') === 'group' ? 'm' }}"
+                        className="ControlsDemo-WithMultiSelect__item" />
+        </ws:itemTemplate>
+    </Controls.treeGrid:View>
+</Controls.scroll:Container>
+</div>

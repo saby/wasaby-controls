@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300">
+    <Controls.scroll:Container attr:class="controlsDemo__height400">
+        <Controls.list:View
+            storeId="listData"
+            keepScrollAfterReload="{{true}}"/>
+    </Controls.scroll:Container>
+    <Controls.buttons:Button caption="Изменить фильтр"
+                             on:click="_changeFilter()"
+    />
+</div>

@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper">
+<Controls.list:View
+    markerVisibility="visible"
+    storeId="listData">
+  <ws:itemTemplate>
+    <ws:partial attr:style="font-size: 16px;" template="Controls/list:ItemTemplate"/>
+  </ws:itemTemplate>
+</Controls.list:View>
+</div>

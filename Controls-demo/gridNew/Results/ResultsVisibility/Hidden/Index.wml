@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth1000">
+   <Controls.buttons:Button
+      caption="{{_resultsVisibility ? 'Hide results' : 'Show results'}}"
+      on:click="_toggleResultsVisibility()"
+   />
+
+   <Controls.grid:View
+      storeId="listData"
+      columns="{{_columns}}"
+      resultsPosition="bottom"
+      resultsVisibility="{{_resultsVisibility ? 'visible' : 'hidden'}}"
+   />
+</div>

@@ -1,0 +1,6 @@
+<Controls.list:DataContainer
+    storeId="{{_options.storeId}}"
+    processError="{{true}}"
+    scope="{{_options}}">
+    <Controls._explorer.View name="explorer" storeId="{{_options.storeId}}" loading="{{ null }}"/>
+</Controls.list:DataContainer>

@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper">
+    <Controls.grid:View
+            storeId="listData"
+            columns="{{_columns}}"
+            itemActions="{{_itemActions}}"
+            itemActionsPosition="outside">
+        <ws:footerTemplate>
+            <ws:partial template="Controls/grid:FooterTemplate">
+                <div class="controlsDemo__footer__FooterTemplate__content">Контент подвала таблицы</div>
+            </ws:partial>
+        </ws:footerTemplate>
+    </Controls.grid:View>
+</div>

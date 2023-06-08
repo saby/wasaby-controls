@@ -1,0 +1,27 @@
+<div class="controls-demo__search-container">
+    <Controls.browser:Browser source="{{_source}}" navigation="{{_navigation}}" keyProperty="id" bind:filter="_filter"
+                              searchParam="department">
+        <ws:content>
+            <div>
+                <Controls.search:InputContainer>
+                    <Controls.search:Input bind:value="_searchValue" attr:class="controls-demo__search"/>
+                </Controls.search:InputContainer>
+                <Controls.list:Container>
+                    <Controls.list:View emptyTemplate="Не найдено">
+                        <ws:itemTemplate>
+                            <ws:partial template="Controls/list:ItemTemplate">
+                                <ws:contentTemplate>
+                                    <div style="padding: 4px; display: flex; justify-content: space-between">
+                                        <div style="width: 300px">{{itemTemplate.item.contents.get('department')}}</div>
+                                        <div style="font-size: 13px; color: darkblue">{{itemTemplate.item.contents.get('owner')}}</div>
+                                        <div style="font-size: 13px; color: limegreen">{{itemTemplate.item.contents.get('id')}}</div>
+                                    </div>
+                                </ws:contentTemplate>
+                            </ws:partial>
+                        </ws:itemTemplate>
+                    </Controls.list:View>
+                </Controls.list:Container>
+            </div>
+        </ws:content>
+    </Controls.browser:Browser>
+</div>

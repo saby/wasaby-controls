@@ -1,0 +1,6 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500 controlsDemo_wrapper-treeGrid-base-treeGridView">
+    <Controls.treeGrid:View
+            storeId="listData1"
+            keyProperty="key"
+            columns="{{_columns}}"/>
+</div>

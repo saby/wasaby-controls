@@ -1,0 +1,10 @@
+<Controls.Container.Async templateName="Controls/Tumbler:Control">
+        <ws:partial template="{{content.resolvedTemplate}}"
+                    items="{{_editorOptions.items || _options.items}}"
+                    itemTemplate="{{_editorOptions.itemTemplate || _options.itemTemplate}}"
+                    keyProperty="{{_editorOptions.keyProperty || _options.keyProperty}}"
+                    displayProperty="{{_editorOptions.displayProperty || _options.displayProperty}}"
+                    bind:selectedKey="_selectedKey"
+                    on:selectedKeyChanged="_handleSelectionChanged()"
+                    disableAnimation="{{true}}"/>
+</Controls.Container.Async>

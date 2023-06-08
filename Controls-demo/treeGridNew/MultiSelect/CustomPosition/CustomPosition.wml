@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper controlsDemo__childWidth400">
+    <Controls.treeGrid:View
+            attr:class="controlsDemo__inline-flex"
+            storeId="listData6"
+            columns="{{ _columns }}"
+            multiSelectVisibility="onhover"
+            multiSelectPosition="custom"
+            bind:selectedKeys="_selectedKeys"
+    />
+    <div style="padding-top: 10px;">Selected keys [{{ _selectedKeys.join(', ') }}]</div>
+</div>

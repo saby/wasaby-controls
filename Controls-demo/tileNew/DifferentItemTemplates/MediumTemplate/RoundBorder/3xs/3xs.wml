@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper">
+   <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-mediumTemplate_roundBorder-3xs">
+      <Controls.treeTile:View
+              storeId="listData1"
+              multiSelectVisibility="visible"
+              bind:selectedKeys="_selectedKeys"
+              tileMode="static"
+              itemActions="{{_itemActions}}"
+              tileWidth="250"
+              imageProperty="image"
+              roundBorder="{{_roundBorder}}">
+      <ws:itemTemplate>
+         <ws:partial
+            template="Controls/tile:MediumTemplate"
+            titleSingleLine="{{true}}"
+            scope="{{itemTemplate}}"/>
+      </ws:itemTemplate>
+      </Controls.treeTile:View>
+   </div>
+</div>

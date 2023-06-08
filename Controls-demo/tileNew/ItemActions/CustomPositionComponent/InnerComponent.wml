@@ -1,0 +1,7 @@
+<div class="controlsDemo__customTileTpl controlsDemo__Tile_ItemActions_customPosition_contentTemplate">
+    <div class="controlsDemo__customTileTpl-img">
+        <ws:partial template="{{ _options.itemActionsTemplate }}" itemActionsClass="controlsDemo__Tile_ItemActions_customPosition-itemActionsClass" />
+        <img src="{{ _options.image }}" class="controlsDemo__customTileTpl-img"/>
+    </div>
+    <p class="controlsDemo__customTileTpl-title">{{ _options.title }}</p>
+</div>

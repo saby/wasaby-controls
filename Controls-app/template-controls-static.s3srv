@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<service id="7220fbf2-526b-45d0-a0d0-f4e366fc3d34" name="template-controls-ps">
+
+  <description>Шаблон сервиса статики Контролов</description>
+
+  <items>
+    <ui_module id="f6fdf353-3ab3-4dbb-8671-01c2b418bf0a" name="Controls" url="../../saby_wasaby-controls/Controls/Controls.s3mod"/>
+    <ui_module id="af50caf5-f84b-4b81-a19c-6f6618372dbd" name="Controls-default-theme" url="../../saby_wasaby-controls/Controls-default-theme/Controls-default-theme.s3mod"/>
+    <ui_module id="825f3706-0d79-4982-aa00-b07e4c471288" name="Controls-icons" url="../../saby_wasaby-controls/Controls-icons/Controls-icons.s3mod"/>
+    <ui_module id="6ae4f1d6-9ecf-4805-a98c-65e47906eedd" name="Tailwind" url="$(SBISPlatformSDK)/ui-modules/Tailwind/Tailwind.s3mod"/>
+    <ui_module id="50f80520-0983-4049-b17a-d893bce91d69" name="ErrorHandling" url="$(SBISPlatformSDK)/ui-modules/ErrorHandling/ErrorHandling.s3mod"/>
+    <ui_module id="1b17efbd-538b-4cfe-889f-24c60150c779" name="ErrorHandlingSimple" url="$(SBISPlatformSDK)/ui-modules/ErrorHandlingSimple/ErrorHandlingSimple.s3mod"/>
+    <ui_module id="7dafab78-3d12-49ab-920e-023e469d4069" name="Controls-Lists-default-theme" url="../../saby_wasaby-controls/Controls-Lists-default-theme/Controls-Lists-default-theme.s3mod"/>
+    <ui_module id="e78d8d8a-8464-4703-9353-f30ade2588e1" name="Controls-ListEnv-default-theme" url="../../saby_wasaby-controls/Controls-ListEnv-default-theme/Controls-ListEnv-default-theme.s3mod"/>
+    <ui_module id="3b705300-9d6c-4e98-a79f-079c05bf6f48" name="Controls-Lists" url="../../saby_wasaby-controls/Controls-Lists/Controls-Lists.s3mod"/>
+    <ui_module id="854b94fc-ff37-4cbf-9721-cd1f4607a227" name="Controls-ListEnv" url="../../saby_wasaby-controls/Controls-ListEnv/Controls-ListEnv.s3mod"/>
+    <ui_module id="8298f3a2-1964-11ed-861d-0242ac120002" name="Controls-DataEnv" url="../../saby_wasaby-controls/Controls-DataEnv/Controls-DataEnv.s3mod"/>
+  </items>
+
+  <parent path="$(SBISPlatformSDK)/components/presentation_service.s3srv"/>
+
+  <resources/>
+
+</service>

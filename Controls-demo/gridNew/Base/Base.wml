@@ -1,0 +1,6 @@
+<div class="controlsDemo__wrapper">
+    <Controls.grid:ItemsView
+            keyProperty="key"
+            items="{{_items}}"
+            columns="{{_columns}}"/>
+</div>

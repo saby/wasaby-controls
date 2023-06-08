@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper">
+   <Controls.buttons:Button on:click="_delete()"
+           caption="Удалить" viewMode="link" icon="icon-Erase" iconStyle="danger"/>
+   <div>
+         <Controls.list:View
+                 name="list"
+                 attr:class="demo-Grid__control"
+                 bind:selectedKeys="_selectedKeys"
+                 multiSelectVisibility="visible"
+                 source="{{_source}}">
+            <ws:itemTemplate>
+               <ws:partial template="Controls/list:ItemTemplate" displayProperty="title" />
+            </ws:itemTemplate>
+         </Controls.list:View>
+   </div>
+</div>

@@ -1,0 +1,7 @@
+<ws:partial
+        template="Controls/grid:ColumnTemplate"
+        scope="{{ _options }}">
+    <ws:contentTemplate>
+        <Controls.baseDecorator:Money value="{{item.contents[column.config.displayProperty]}}"/>
+    </ws:contentTemplate>
+</ws:partial>

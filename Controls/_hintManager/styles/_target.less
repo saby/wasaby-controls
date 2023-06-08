@@ -1,0 +1,18 @@
+@border-width_HintTarget_default: 2px;
+
+.controls-HintTargetsContainer {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.controls-HintTargetHighlighter {
+  border-radius: var(--border-radius_2xs);
+  box-sizing: border-box;
+  pointer-events: none;
+  position: absolute;
+
+  &_active {
+    border: @border-width_HintTarget_default solid var(--info_border-color);
+  }
+}

@@ -1,0 +1,24 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+   <Controls.masterDetail:Base propStorageId="master222"
+                               attr:class="controlsDemo__height300"
+                               masterWidth="27%"
+                               masterMinWidth="{{200}}"
+                               masterMaxWidth="50%">
+      <ws:master>
+         <Controls.list:View
+                 source="{{_masterSource}}"
+                 style="master"
+                 markerVisibility="visible"
+                 on:markedKeyChanged="_onMarkedKeyChanged()"
+         >
+         </Controls.list:View>
+      </ws:master>
+      <ws:detail>
+            <Controls.list:View
+                    source="{{_detailSource}}"
+                    filter="{{_filter}}"
+                    attr:class="controlsDemo_fixedWidth500">
+            </Controls.list:View>
+      </ws:detail>
+   </Controls.masterDetail:Base>
+</div>

@@ -1,0 +1,19 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+<div class="controlsDemo__cell controlsDemo__mr2 demo-ListGrouped__alignLeftCaption">
+  <Router.router:Reference app="{{ 'Controls-demo/list_new/Grouped/CaptionAlign/Left/Index' }}"
+                           attr:class="controls-text-label"
+                           state="/Controls-demo/app/:app">
+    <a href="{{content.href}}">Заголовок слева</a>
+  </Router.router:Reference>
+  <Controls-demo.list_new.Grouped.CaptionAlign.Left.Index/>
+</div>
+
+<div class="controlsDemo__cell controlsDemo__mr2 demo-ListGrouped__alignRightCaption">
+  <Router.router:Reference app="{{ 'Controls-demo/list_new/Grouped/CaptionAlign/Right/Index' }}"
+                           attr:class="controls-text-label"
+                           state="/Controls-demo/app/:app">
+    <a href="{{content.href}}">Заголовок справа</a>
+  </Router.router:Reference>
+  <Controls-demo.list_new.Grouped.CaptionAlign.Right.Index/>
+</div>
+</div>

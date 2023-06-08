@@ -1,0 +1,79 @@
+.controls-BigSeparator {
+   display: inline-block;
+   cursor: pointer;
+   line-height: unset;
+}
+
+.controls-BigSeparator-icon {
+   display: block;
+}
+
+.controls-BigSeparator-icon_style-default {
+   fill: var(--icon-color_BigSeparator);
+}
+
+.controls-BigSeparator_filled_contrast {
+   background-color: var(--icon_container_background_color_BigSeparator);
+}
+
+.controls-BigSeparator_filled_same {
+   background-color: var(--background-color);
+}
+
+.controls-BigSeparator_ghost {
+   background: transparent;
+}
+
+.controls-BigSeparator-readonly {
+   cursor: default;
+}
+
+.controls-BigSeparator-icon-readonly {
+   fill: var(--readonly_icon-color);
+}
+
+.controls-BigSeparator-size-s {
+   width: var(--width_s_BigSeparator);
+   font-size: 0;
+}
+
+.controls-BigSeparator-size-m {
+   width: var(--width_m_BigSeparator);
+   font-size: 0;
+}
+
+.controls-BigSeparator-size-l {
+   width: var(--width_l_BigSeparator);
+   font-size: 0;
+}
+
+.controls-BigSeparator-container-icon {
+   border-radius: var(--border-radius_BigSeparator);
+}
+
+.controls-BigSeparator-container-icon-size-s {
+   height: var(--height_s_BigSeparator);
+}
+
+.controls-BigSeparator-container-icon-size-m {
+   height: var(--height_m_BigSeparator);
+}
+
+.controls-BigSeparator-container-icon-size-l {
+   height: var(--height_l_BigSeparator);
+}
+
+.controls-BigSeparator-icon:active {
+   fill: var(--hover_icon-color_BigSeparator);
+}
+
+.ws-is-hover {
+   .controls-BigSeparator-icon_style-default:hover {
+      fill: var(--hover_icon-color_BigSeparator);
+   }
+
+   .controls-BigSeparator_ghost:hover,
+   .controls-BigSeparator_filled_contrast:hover {
+      background: var(--pale_hover_contrast_background-color);
+   }
+}

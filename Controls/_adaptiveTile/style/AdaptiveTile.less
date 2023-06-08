@@ -1,0 +1,80 @@
+.controls-AdaptiveTileView_itemsContainer {
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+}
+
+.controls-AdaptiveTileView__item {
+   flex-grow: 1;
+   box-sizing: border-box;
+}
+
+.controls-AdaptiveTileView__spacerItem {
+   visibility: hidden;
+}
+
+// Триггер загрузки в горизонтальной плитке, в силу особенностей CSS, позиционируется
+// с помощью transform. Нет гарантии, какой стиль прилетит первым, поэтому селектор усилен.
+.controls-BaseControl__loadingTrigger_horizontal.controls-AdaptiveTile__loadingTrigger_horizontal {
+   position: static;
+   height: 0;
+   width: 0;
+}
+
+.controls-BaseControl__loadingIndicator.controls-AdaptiveTile__loadingIndicator {
+   height: 100%;
+   width: 0;
+   min-width: 48px;
+}
+
+/* stylelint-disable-next-line unit-no-unknown */
+@sizes: 3xs, 2xs, xs, s, m, l, xl, 2xl, 3xl;
+
+.controls-AdaptiveTileView__item_padding_left {
+   .for(@sizes, {
+      &_@{_item} {
+         margin-left: ~'var(--offset_@{_item})';
+      }
+   });
+}
+
+.controls-AdaptiveTileView__item_padding_right {
+   .for(@sizes, {
+      &_@{_item} {
+         margin-right: ~'var(--offset_@{_item})';
+      }
+   });
+}
+
+.controls-AdaptiveTileView__item_padding_top {
+   .for(@sizes, {
+      &_@{_item} {
+         margin-top: ~'var(--offset_@{_item})';
+      }
+   });
+}
+
+.controls-AdaptiveTileView__item_padding_bottom {
+   .for(@sizes, {
+      &_@{_item} {
+         margin-bottom: ~'var(--offset_@{_item})';
+      }
+   });
+}
+
+.controls-AdaptiveTileView__item_padding_left_default {
+   margin-left: var(--offset_s);
+}
+
+.controls-AdaptiveTileView__item_padding_right_default {
+   margin-right: var(--offset_s);
+}
+
+.controls-AdaptiveTileView__item_padding_top_default {
+   margin-top: var(--offset_s);
+}
+
+.controls-AdaptiveTileView__item_padding_bottom_default {
+   margin-bottom: var(--offset_s);
+}

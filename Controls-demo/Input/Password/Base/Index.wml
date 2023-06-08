@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <Controls.input:Password
+                bind:value="_value1"
+                attr:style="width:200px"
+                attr:class="demo-Password__default"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Password
+                revealable="{{false}}"
+                bind:value="_value2"
+                attr:style="width:200px"
+                attr:class="demo-Password__revealableFalse"/>
+    </div>
+</div>
+

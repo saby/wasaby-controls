@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper controlsDemo__grid-header-default ">
+    <Controls.scroll:Container attr:class="controlsDemo__inline-flex">
+        <Controls.grid:View
+                storeId="listData0"
+                header="{{_header}}"
+                columns="{{_columns}}"/>
+    </Controls.scroll:Container>
+</div>

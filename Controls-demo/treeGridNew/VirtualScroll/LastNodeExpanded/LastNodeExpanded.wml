@@ -1,0 +1,26 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500 controlsDemo_line-height18">
+    <div>
+        <a href="#" class="controls-text-link controlsDemo-addButton-virtual-scroll_autotest" on:click="_beginAdd()">Добавить запись в конец</a>
+    </div>
+    <Controls.scroll:Container attr:class="controlsDemo__maxWidth500 controlsDemo__height400">
+        <Controls.treeGrid:View
+                name="list"
+                useTableInOldBrowsers="{{ true }}"
+                keyProperty="key"
+                source="{{ _viewSource }}"
+                columns="{{ _columns }}"
+                parentProperty="parent"
+                nodeProperty="type"
+                colspanCallback="{{ _colspanCallback }}">
+            <ws:virtualScrollConfig pageSize="{{ 20 }}"/>
+            <ws:navigation source="page" view="infinity">
+                <ws:sourceConfig pageSize="{{ 5 }}" page="{{ 0 }}" hasMore="{{ false }}"/>
+            </ws:navigation>
+           <ws:nodeFooterTemplate>
+              <ws:partial template="Controls/treeGrid:NodeFooterTemplate">
+                 This is custom node footer template
+              </ws:partial>
+           </ws:nodeFooterTemplate>
+        </Controls.treeGrid:View>
+    </Controls.scroll:Container>
+</div>

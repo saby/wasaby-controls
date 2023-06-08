@@ -1,0 +1,41 @@
+<div class="controlsDemo__wrapper">
+   <Controls.scroll:Container attr:class="controlsDemo__height400 controlsDemo__maxWidth1000">
+      <Controls.columns:View storeId="listData"
+                             bind:markedKey="_markedKey"
+                             columnsMode="auto"
+                             columnsCount="{{3}}"
+                             autoColumnsRecalculating="{{true}}"
+                             navigation="{{_navigation}}"
+                             itemActions="{{_itemActions}}"
+                             itemsReadyCallback="{{_itemsReadyCallback}}"
+                             virtualScrollConfig="{{_virtualScrollConfig}}"
+                             disableVirtualScroll="{{false}}"
+                             itemsDragNDrop="{{true}}"
+      >
+         <ws:itemTemplate>
+            <ws:partial template="Controls/columns:ItemTemplate"
+                        highlightOnHover="{{false}}"
+                        shadowVisibility="hidden">
+               <ws:contentTemplate>
+                  <div class="controlsDemo_ColumnsView_itemTemplate-wrapper controlsDemo_ColumnsView_itemTemplate-border">
+                     <div class="controlsDemo_ColumnsView_itemTemplate-title">{{itemTemplate.item.getContents().get('title')}}</div>
+                     <div class="controlsDemo_ColumnsView_itemTemplate-description">{{itemTemplate.item.getContents().get('description')}}</div>
+                  </div>
+               </ws:contentTemplate>
+            </ws:partial>
+         </ws:itemTemplate>
+
+         <ws:emptyTemplate>
+            <ws:partial template="Controls/list:EmptyTemplate">
+               <ws:contentTemplate>No data available!</ws:contentTemplate>
+            </ws:partial>
+         </ws:emptyTemplate>
+      </Controls.columns:View>
+   </Controls.scroll:Container>
+   <div class="controlsDemo__cell">
+      <Controls.buttons:Button caption="Reload" on:click="_onReload()"/>
+      <Controls.buttons:Button caption="Reload with empty list" on:click="_onReload('empty')"/>
+      <Controls.buttons:Button caption="Reload with small list" on:click="_onReload('small')"/>
+      <Controls.buttons:Button caption="Add item after marker" on:click="_onAddItemAfterMarker()"/>
+   </div>
+</div>

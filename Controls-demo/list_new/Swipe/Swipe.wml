@@ -1,0 +1,6 @@
+<div class="controlsDemo__wrapper">
+<Controls.list:View
+    bind:selectedKeys="_selectedKeys"
+    itemActions="{{_itemActions}}"
+    storeId="listData"/>
+</div>

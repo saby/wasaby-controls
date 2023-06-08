@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__flexRow">
+        <Controls-ListEnv.filterPanel:View filterNames="['department']"
+                                           storeId="itemActionsData"/>
+        <Controls.list:View storeId="itemActionsData"/>
+    </div>
+</div>

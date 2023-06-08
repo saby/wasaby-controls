@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper">
+   <div>
+      <Controls-ListEnv.search:Input storeId="nomenclature" />
+      <Controls-ListEnv.search:Misspell storeId="nomenclature" />
+   </div>
+   <Controls.list:View storeId="nomenclature" />
+</div>

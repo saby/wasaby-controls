@@ -1,0 +1,6 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <Controls.treeGrid:View
+            storeId="listData"
+            columns="{{_columns}}"
+            allowEmptySelection="{{false}}"/>
+</div>

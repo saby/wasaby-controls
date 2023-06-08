@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500 controlsDemo_wrapper-treeGrid-base-treeGridView">
+    <Controls.scroll:Container class="controlsDemo__height200">
+    <Controls.treeGrid:View
+            keyProperty="key"
+            source="{{ _viewSource }}"
+            navigation="{{_navigation}}"
+            deepReload="{{true}}"
+            parentProperty="parent"
+            nodeProperty="type"
+            expanderIcon="none"
+            ladderProperties="{{_ladderProperties}}"
+            columns="{{ _columns }}"
+            expandedItems="{{ _expandedItems }}"/>
+    </Controls.scroll:Container>
+</div>

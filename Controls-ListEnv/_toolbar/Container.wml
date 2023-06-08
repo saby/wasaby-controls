@@ -1,0 +1,9 @@
+<Controls.actions:Container
+   prefetchData="{{_options._dataOptionsValue}}"
+   operationsController="{{_options._dataOptionsValue[_options.storeId].operationsController}}"
+   filterController="{{_options._dataOptionsValue[_options.storeId].filterController}}"
+   sourceController="{{_options._dataOptionsValue[_options.storeId].sourceController}}"
+   slice="{{_options._dataOptionsValue[_options.storeId]}}"
+   actions="{{_actions}}">
+   <ws:partial template="{{_options.content}}"/>
+</Controls.actions:Container>

@@ -1,0 +1,7 @@
+<div class="engine-demo__Widgets_filter-container">
+    <Controls-ListEnv.filterPanel:View filterNames="['city']"
+                                         storeId="lookupData"
+                                         editorsViewMode="cloud"
+                                         attr:class="engine-demo__Widgets_filterPanel"/>
+    <Controls.list:View storeId="lookupData"/>
+</div>

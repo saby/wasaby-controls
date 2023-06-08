@@ -1,0 +1,24 @@
+<div class="controlsDemo__wrapper">
+   <Controls.scroll:Container attr:class="controlsDemo__height400 controlsDemo__minWidth600">
+      <Controls.columns:View
+         storeId="nestedListData"
+         columnsMode="auto"
+         bind:selectedKeys="_selectedKeys"
+         itemActionsClass="ColumnsDemo__itemActions_custom"
+         itemActionsPosition="custom"
+         itemActions="{{_itemActions}}"
+         name="view">
+         <ws:itemTemplate>
+            <ws:partial template="Controls/columns:ItemTemplate" highlightOnHover="{{false}}" shadowVisibility="hidden">
+               <ws:contentTemplate>
+                  <ws:partial template="{{ contentTemplate.itemActionsTemplate }}"/>
+                  <div class="controlsDemo_ColumnsView_itemTemplate-wrapper controlsDemo_ColumnsView_itemTemplate-border">
+                     <div class="controlsDemo_ColumnsView_itemTemplate-title">{{itemTemplate.item.getContents().get('title')}}   {{itemTemplate.item._contentsIndex}}</div>
+                     <div class="controlsDemo_ColumnsView_itemTemplate-description">{{itemTemplate.item.getContents().get('description')}}</div>
+                  </div>
+               </ws:contentTemplate>
+            </ws:partial>
+         </ws:itemTemplate>
+      </Controls.columns:View>
+   </Controls.scroll:Container>
+</div>

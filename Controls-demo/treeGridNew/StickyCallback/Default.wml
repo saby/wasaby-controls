@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper controlsDemo__grid-header-default ">
+    <Controls.scroll:Container attr:class="controlsDemo__inline-flex controlsDemo__height200" stickyCallback="{{_stickyCallback}}">
+        <Controls.treeGrid:View
+                keyProperty="key"
+                source="{{_viewSource}}"
+                header="{{_header}}"
+                parentProperty="parent"
+                nodeProperty="type"
+                columns="{{_columns}}"/>
+    </Controls.scroll:Container>
+</div>

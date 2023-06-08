@@ -1,0 +1,25 @@
+  <div attr:style="width: 600px">
+     <Controls-ListEnv.breadcrumbs:View additionalTextProperty="description"
+                                          backButtonIconViewMode="functionalButton"
+                                          backButtonFontColorStyle="default"
+                                          backButtonFontSize="6xl"
+                                          storeId="viewData">
+        <ws:imageTemplate>
+           <img src="{{imageTemplate.item.image}}" style="max-width: 100%; max-height: 100%;"/>
+        </ws:imageTemplate>
+     </Controls-ListEnv.breadcrumbs:View>
+
+        <Controls.treeGrid:View name="tree"
+            storeId="viewData"
+            root="{{_root}}"
+            nodeProperty="node"
+            parentProperty="parent"
+            on:itemClick="_onItemClick()"
+        >
+           <ws:columns>
+              <ws:Array>
+                 <ws:Object displayProperty="title"/>
+              </ws:Array>
+           </ws:columns>
+        </Controls.treeGrid:View>
+  </div>

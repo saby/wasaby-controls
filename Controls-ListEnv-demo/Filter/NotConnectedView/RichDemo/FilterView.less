@@ -1,0 +1,73 @@
+.controls-demo-FilterView {
+   display: flex;
+   align-items: flex-start;
+   max-width: 100%;
+   margin: 0 auto;
+}
+
+// auto margin в старом ie не работает
+.ws-is-ie11 .controls-demo-FilterView {
+   margin: 0 487px;
+}
+
+.controls-demo-FilterView__column {
+   display: flex;
+   flex-direction: column;
+   max-width: 60%;
+}
+
+.controls-demo-FilterView__item {
+   margin: 0 20px 20px;
+   max-width: 100%;
+}
+
+.controls-demo-FilterView__itemWrapper {
+   min-height: 32px;
+}
+
+.controls-demo-FilterView__itemButton {
+   margin-top: 5px;
+   max-width: 100%;
+}
+
+.controls-demo-FilterView__item-onlyFast {
+   display: inline-flex;
+   flex-direction: column;
+   align-items: baseline;
+   margin-right: 35px;
+}
+
+.controls-demo-FilterView-operationTemplateItem {
+   font-weight: bold;
+}
+
+.controls-demo-FilterView-TemplateItem {
+   display: flex;
+   width: 100%;
+   overflow: hidden;
+   padding: 6px 0;
+}
+
+.controls-demo-FilterView-template-photo {
+   width: 40px;
+   margin-right: 10px;
+}
+
+.controls-demo-FilterView-template-content {
+   overflow: hidden;
+}
+
+.controls-demo-FilterView-template-comment {
+   font-size: 12px;
+   color: var(--readonly_text-color);
+}
+
+.controls-demo-FilterView-template-text {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+
+.controls-demo-FilterView__lookupTemplate {
+   width: 100%;
+}

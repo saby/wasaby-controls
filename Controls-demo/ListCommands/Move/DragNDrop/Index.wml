@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper">
+   <div>
+      <Controls.list:DataContainer name="dataContainer"
+                                   source="{{_source}}"
+                                   parentProperty="Раздел"
+                                   nodeProperty="Раздел@"
+                                   keyProperty="id">
+         <Controls.list:Container>
+            <Controls.treeGrid:View
+                    name="treeGrid"
+                    on:customdragStart="_dragStart()"
+                    on:customdragEnd="_dragEnd()"
+                    attr:class="demo-Grid__control"
+                    columns="{{_gridColumns}}"
+                    itemsDragNDrop="{{true}}">
+            </Controls.treeGrid:View>
+         </Controls.list:Container>
+      </Controls.list:DataContainer>
+   </div>
+</div>

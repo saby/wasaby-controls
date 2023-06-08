@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth1700">
+    <Controls.treeGrid:View
+        attr:class="demoTreeWithProto__treeGridTwoLevels"
+        storeId="listData5"
+        columns="{{_twoLvlColumnsNoPhoto}}"
+        bind:expandedItems="_expandedItems">
+        <ws:footerTemplate>
+            <ws:partial template="Controls/grid:FooterTemplate">
+                <div class="controlsDemo__hor-padding__list__footerContent">Подвал списка</div>
+            </ws:partial>
+        </ws:footerTemplate>
+    </Controls.treeGrid:View>
+</div>

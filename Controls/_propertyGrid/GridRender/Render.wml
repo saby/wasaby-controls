@@ -1,0 +1,30 @@
+<div>
+    <div class="controls-PropertyGrid__gridLayout__itemsContainer" style="{{_getColumnsWidth(_options.captionColumnOptions, _options.editorColumnOptions, _options.multiSelectVisibility)}}">
+        <ws:partial template="wml!Controls/_propertyGrid/Render/resources/for"
+                    levelPadding="{{_options.levelPadding}}"
+                    listModel="{{_options.listModel}}"
+                    getItemStyles="{{_getItemStyles}}"
+                    getCheckboxStyles="{{_getCheckboxStyles}}"
+                    getEditorStyles="{{_getEditorStyles}}"
+                    getCaptionStyles="{{_getCaptionStyles}}"
+                    isGridLayout="{{true}}"
+                    groupTemplate="{{_options.groupTemplate}}"
+                    collapsedGroups="{{_options.collapsedGroups}}"
+                    toggleEditorsTemplate="{{_toggleEditorsTemplate}}"
+                    captionPosition="{{_options.captionPosition}}"
+                    captionFontColorStyle="{{_options.captionFontColorStyle}}"
+                    captionFontSize="{{_options.captionFontSize}}"
+                    captionFontWeight="{{_options.captionFontWeight}}"
+                    multiSelectVisibility="{{_options.multiSelectVisibility}}"
+                    multiSelectPosition="{{_options.multiSelectPosition}}">
+            <ws:itemTemplate>
+                <ws:partial template="{{_options.itemTemplate}}">
+                    <ws:editorTemplate>
+                        <ws:partial template="wml!Controls/_propertyGrid/Render/resources/editorTemplate" 
+                                    on:validateFinished="_validateFinished(collectionItem.contents.name)"/>
+                    </ws:editorTemplate>
+                </ws:partial>
+            </ws:itemTemplate>
+        </ws:partial>
+    </div>
+</div>
