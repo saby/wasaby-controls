@@ -1,0 +1,26 @@
+import * as rk from 'i18n!Controls';
+import { BooleanType, StringType, ObjectType } from 'Types/meta';
+import { IFlagVisibleOptions } from 'Controls-Input/interface';
+
+const options = {
+    flagPosition: [
+        {value: 'start', caption: rk('Слева')},
+        {value: 'end', caption: rk('Справа')},
+    ],
+};
+
+export const IFlagType = ObjectType.id('Controls-Input-meta/inputConnected:IFlagType')
+    .title(rk('Флаг страны'))
+    .description(rk('Поле определяющее расположение и видимость флага'))
+    .attributes<IFlagVisibleOptions>({
+        flagVisible: BooleanType.optional(),
+        flagPosition: StringType.optional().oneOf(['start', 'end']),
+    })
+    .editor(
+        () => {
+            return import('Controls-editors/properties').then(({FlagEditor}) => {
+                return FlagEditor;
+            });
+        },
+        {options}
+    );

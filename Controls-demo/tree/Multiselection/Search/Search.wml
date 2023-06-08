@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <Controls.search:InputContainer storeId="MultiselectionSearch">
+        <Controls.search:Input/>
+    </Controls.search:InputContainer>
+    <Controls.scroll:Container attr:class="controlsDemo__height300">
+        <Controls.tree:View storeId="MultiselectionSearch"
+                            multiSelectVisibility="visible"
+                            feature1188089336="{{true}}"/>
+    </Controls.scroll:Container>
+</div>

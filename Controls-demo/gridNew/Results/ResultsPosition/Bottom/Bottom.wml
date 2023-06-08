@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper controlsDemo__maxWidth800">
+    <Controls.grid:View
+                        storeId="listData"
+                        columns="{{_columns}}"
+                        itemActions="{{_itemActions}}"
+                        itemActionsPosition="outside"
+                        resultsPosition="bottom"/>
+</div>

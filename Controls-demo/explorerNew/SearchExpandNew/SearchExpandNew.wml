@@ -1,0 +1,21 @@
+<div>
+    <div>Demo Controls/Explorer</div>
+    <Controls.search:InputContainer storeId="listData">
+      <Controls.search:Input
+          attr:class="demo-Search__searchinput"/>
+    </Controls.search:InputContainer>
+    <Controls.explorer:View
+        storeId="listData"
+        attr:class="demo-Explorer ControlsDemo-Explorer"
+        searchNavigationMode="expand"
+        multiSelectVisibility="{{_multiselectVisibility}}"
+        columns="{{_viewColumns}}"
+        bind:selectedKeys="_selectedKeys"
+        bind:excludedKeys="_excludedKeys">
+      <ws:emptyTemplate>
+        <ws:partial template="Controls/grid:EmptyTemplate" topSpacing="xl" bottomSpacing="l">
+          <ws:contentTemplate>Не найдено</ws:contentTemplate>
+        </ws:partial>
+      </ws:emptyTemplate>
+    </Controls.explorer:View>
+</div>

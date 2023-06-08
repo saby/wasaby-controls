@@ -1,0 +1,76 @@
+<div class="controlsDemo-Input-DateTime">
+    <h1>Controls.date:BaseInput</h1>
+    <div class="controlsDemo-Input-DateTime__content">
+        <ws:for data="masksGroup in _masks">
+            <h3>{{masksGroup.title}}</h3>
+            <ws:for data="mask in masksGroup.masks">
+                <div class="controlsDemo-Input-DateTime__row">
+                    <div class="controlsDemo-Input-DateTime__row-item">
+                        {{mask}}
+                    </div>
+                    <div class="controlsDemo-Input-DateTime__row-item">
+                        <Controls.date:BaseInput
+                                value="{{null}}"
+                                mask="{{mask}}"
+                                readOnly="{{_inputReadOnly}}"
+                                attr:data-qa="Controls-Demo-Input-DateTime__{{mask}}"/>
+                    </div>
+                    <div class="controlsDemo-Input-DateTime__row-item">
+                        <Controls.date:BaseInput
+                                bind:value="_date"
+                                mask="{{mask}}"
+                                readOnly="{{_inputReadOnly}}"
+                                attr:data-qa="Controls-Demo-Input-DateTime__{{mask}}-readOnly"/>
+                    </div>
+                </div>
+            </ws:for>
+        </ws:for>
+
+        <h3>Two time fields</h3>
+        <div class="controlsDemo-Input-DateTime__row">
+            <div class="controlsDemo-Input-DateTime__row-item">
+                Two time fields
+            </div>
+            <div class="controlsDemo-Input-DateTime__row-item controlsDemo-Input-DateTime__row-item_grow">
+                <Controls.date:BaseInput
+                        bind:value="_startTime"
+                        mask="HH:mm"
+                        readOnly="{{_inputReadOnly}}"/>
+                -
+                <Controls.date:BaseInput
+                        bind:value="_endTime"
+                        mask="HH:mm"
+                        readOnly="{{_inputReadOnly}}"/>
+            </div>
+        </div>
+
+        <h3>Baseline with inline blocks</h3>
+        <div class="controlsDemo-Input-DateTime__row">
+            <div class="controlsDemo-Input-DateTime__row-item">
+                Text:
+            </div>
+            <div class="controlsDemo-Input-DateTime__row-item controlsDemo-Input-DateTime__row-item_grow">
+                <Controls.date:BaseInput
+                        value="{{_date}}"
+                        mask="{{mask}}"
+                        tagStyle="{{'primary'}}"
+                        readOnly="{{_inputReadOnly}}"/>
+            </div>
+        </div>
+        <div class="controlsDemo-Input-DateTime__toggleButton" attr:style="padding:15px 0">
+            <Controls.toggle:DoubleSwitch bind:value="_inputReadOnly" onCaption="{{'readOnly=true'}}" offCaption="{{'readOnly=false'}}"/>
+        </div>
+        <div class="controlsDemo-Input-DateTime__row-item controlsDemo-Input-DateTime__row-item_grow">
+            <div style="width: 100px">
+                <Controls.input:Area attr:class="controlsDemo-Input-DateTime__Area" minLines="{{5}}"/>
+            </div>
+        </div>
+        <Controls.date:BaseInput
+                extendedTimeFormat="{{ true }}"
+                value="{{_extendedTimeFormatValue}}"
+                on:inputCompleted="_extendedTimeFormatInputCompleted()"
+                mask="HH:mm"
+                attr:data-qa="Controls-Demo-Input-DateTime__last"/>
+        <div>{{ _extendedTimeFormatValue }}</div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+<Controls-ListEnv.toolbarConnected:Container
+    permissionsResolver="{{_options.permissionsResolver}}"
+    actions="{{_options.actions}}"
+    storeId="{{_options.storeId}}">
+    <Controls-ListEnv._operationsPanelConnected.Panel scope="{{_options}}"/>
+</Controls-ListEnv.toolbarConnected:Container>

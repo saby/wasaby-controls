@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:class="controlsDemo__maxWidth500 controlsDemo__height400"
+                               initialScrollPosition="{{_initialScrollPosition}}">
+        <Controls.list:View storeId="listData">
+            <ws:virtualScrollConfig pageSize="{{20}}"/>
+        </Controls.list:View>
+    </Controls.scroll:Container>
+</div>

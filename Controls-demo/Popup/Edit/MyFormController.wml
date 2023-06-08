@@ -1,0 +1,87 @@
+<Controls.popupTemplate:Stack headingCaption="Диалог редактирования" attr:style="width:{{_options.width || _options.stackWidth || 900}}px" on:close="_closeHandler()">
+   <ws:headerContentTemplate>
+      <div style="display: flex;justify-content: flex-end;flex-grow: 1;">
+         <Controls.buttons:Button iconSize="m" iconStyle="danger" icon="icon-Erase" on:click="_delete()" viewMode="linkButton" fontColorStyle="link"
+                          attr:style="margin-right: 15px;" attr:class="demo-MyFormController__delete"/>
+         <Controls.buttons:Button caption="Сохранить" on:click="_update()" attr:class="demo-MyFormController__save"/>
+      </div>
+   </ws:headerContentTemplate>
+   <ws:bodyContentTemplate>
+      <div>
+         <Controls.form:Controller name="formControllerInst" source="{{ _dataSource }}"
+                                        record="{{ _record }}" entityKey="{{ _options.entityKey }}"
+                                        initializingWay="{{_options.initializingWay}}"
+                                        on:updateFailed="_errorHandler()"
+                                        on:createFailed="_errorHandler()"
+                                        on:readFailed="_errorHandler()"
+                                        on:deleteFailed="_errorHandler()"
+                                        on:createSuccessed="_createSuccessedHandler()"
+                                        on:readSuccessed="_readSuccessedHandler()"
+                                        on:updateSuccessed="_updateSuccessedHandler()"
+                                        on:deleteSuccessed="_deleteSuccessedHandler()">
+            <div>
+                <div class="controls-MyFormController__block">
+                    <div class="controls-MyFormController__row controls-MyFormController__title">Название:</div>
+                    <div class="controls-MyFormController__row">
+                        <Controls.input:Text bind:value="content.record.name" class="demo-MyFormController__name"/>
+                    </div>
+                </div>
+
+                <div class="controls-MyFormController__block">
+                    <div class="controls-MyFormController__row controls-MyFormController__title">Цена:</div>
+                    <div class="controls-MyFormController__row">
+                        <Controls.input:Number bind:value="content.record.price" class="demo-MyFormController__price"/>
+                    </div>
+                </div>
+
+                <div class="controls-MyFormController__block">
+                    <div class="controls-MyFormController__row controls-MyFormController__title">Остаток:</div>
+                    <div class="controls-MyFormController__row">
+                        <Controls.input:Number bind:value="content.record.balance" class="demo-MyFormController__balance"/>
+                    </div>
+                </div>
+
+                <div class="controls-MyFormController__block">
+                    <div class="controls-MyFormController__row controls-MyFormController__title">Себестоимость:</div>
+                    <div class="controls-MyFormController__row">
+                        <Controls.input:Number bind:value="content.record.costPrice" class="demo-MyFormController__costPrice"/>
+                    </div>
+                </div>
+
+                <div if="{{content.record.balanceCostSumm}}" class="controls-MyFormController__block">
+                    <div class="controls-MyFormController__row controls-MyFormController__title">Сумма остатка:</div>
+                    <div class="controls-MyFormController__row">
+                        <Controls.editableArea:View
+                                editingObject="{{content.record}}">
+                            <Controls.editableArea:Base bind:value="content.editingObject.balanceCostSumm">
+                                <ws:editorTemplate>
+                                    <Controls.input:Number contrastBackground="{{true}}" attr:class="controls-Input_negativeOffset"/>
+                                </ws:editorTemplate>
+                            </Controls.editableArea:Base>
+                        </Controls.editableArea:View>
+                    </div>
+                </div>
+            </div>
+         </Controls.form:Controller>
+
+         <div class="controls-MyFormController__block">
+            <Controls.buttons:Button caption="Отправить данные в опенер" on:click="_sendResult()" class="demo-PopupEditOpener__sendResult"/>
+         </div>
+
+
+         <Controls.popup:Confirmation name="popupOpener" />
+          <div attr:style="padding:10px 5px;" class="controls-MyFormController__text">
+              Состояние: {{ _savedState }}
+          </div>
+         <ws:if data="{{!_options.isFormControllerDemo}}">
+            <div>
+               <Controls.buttons:Button name="testStack" caption="testStack" on:click="openTestStack()" attr:class="ControlsDemo-PopupPage__testStackFC"/>
+            </div>
+            <Controls.popup:Stack name="stack" closeByOutsideClick="{{false}}" template="Controls-demo/Popup/TestStack">
+               <ws:templateOptions type="stack" width="600px"/>
+            </Controls.popup:Stack>
+         </ws:if>
+
+      </div>
+   </ws:bodyContentTemplate>
+</Controls.popupTemplate:Stack>

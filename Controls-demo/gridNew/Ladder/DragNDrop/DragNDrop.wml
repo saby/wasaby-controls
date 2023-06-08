@@ -1,0 +1,22 @@
+<div class="controlsDemo__wrapper controlsDemo__user-select-none">
+    <Controls.scroll:Container attr:style="height: 550px">
+                <Controls.grid:View
+                        storeId="listData"
+                        on:customdragStart="_dragStart()"
+                        on:customdragEnd="_dragEnd()"
+                        name="list"
+                        itemActions="{{_itemActions}}"
+                        itemsReadyCallback="{{_itemsReadyCallback}}"
+                        itemsDragNDrop="{{true}}"
+                        multiSelectVisibility="visible"
+                        bind:selectedKeys="_selectedKeys"
+                        columns="{{_columns}}"
+                        ladderProperties="{{_ladderProperties}}">
+                    <ws:draggingTemplate>
+                        <ws:partial template="Controls/dragnDrop:DraggingTemplate"
+                                    mainText="{{draggingTemplate.entity._options.title}}">
+                        </ws:partial>
+                    </ws:draggingTemplate>
+                </Controls.grid:View>
+    </Controls.scroll:Container>
+</div>

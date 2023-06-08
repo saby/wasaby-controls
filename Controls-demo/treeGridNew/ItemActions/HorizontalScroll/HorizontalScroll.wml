@@ -1,0 +1,60 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <div class="controlsDemo__wrapper" data-qa="controlsDemo-horizontalScroll__inside">
+        <h3>Inside</h3>
+        <Controls.scroll:Container
+                scrollOrientation="verticalHorizontal"
+                attr:style="width: 360px; max-height: 300px;">
+            <Controls.treeGrid:View
+                    keyProperty="key"
+                    source="{{_viewSource}}"
+                    parentProperty="parent"
+                    nodeProperty="type"
+                    stickyItemActions="{{ true }}"
+                    itemActions="{{_itemActions}}">
+                <ws:columns>
+                    <ws:Array>
+                        <ws:Object width="max-content">
+                            <ws:template>
+                                <ws:partial template="Controls/grid:ColumnTemplate">
+                                    <ws:contentTemplate>
+                                        <div class="ws-flex-shrink-0 ws-flex-grow-1">{{contentTemplate.item.contents.get('title')}}</div>
+                                    </ws:contentTemplate>
+                                </ws:partial>
+                            </ws:template>
+                        </ws:Object>
+                    </ws:Array>
+                </ws:columns>
+            </Controls.treeGrid:View>
+        </Controls.scroll:Container>
+    </div>
+    <div class="controlsDemo__wrapper" data-qa="controlsDemo-horizontalScroll__outside">
+        <h3>Outside</h3>
+        <Controls.scroll:Container
+                scrollOrientation="verticalHorizontal"
+                attr:style="width: 360px; max-height: 300px;">
+            <Controls.treeGrid:View
+                    keyProperty="key"
+                    source="{{_viewSource}}"
+                    parentProperty="parent"
+                    nodeProperty="type"
+                    itemActions="{{_itemActions}}"
+                    stickyItemActions="{{ true }}"
+                    itemActionsPosition="outside">
+                <ws:columns>
+                    <ws:Array>
+                        <ws:Object width="max-content">
+                            <ws:template>
+                                <ws:partial template="Controls/grid:ColumnTemplate">
+                                    <ws:contentTemplate>
+                                        <div class="ws-flex-shrink-0 ws-flex-grow-1">{{contentTemplate.item.contents.get('title')}}</div>
+                                    </ws:contentTemplate>
+                                </ws:partial>
+                            </ws:template>
+                        </ws:Object>
+                    </ws:Array>
+                </ws:columns>
+            </Controls.treeGrid:View>
+        </Controls.scroll:Container>
+    </div>
+</div>
+

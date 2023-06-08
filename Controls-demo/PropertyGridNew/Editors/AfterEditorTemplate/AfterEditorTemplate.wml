@@ -1,0 +1,21 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__flexRow">
+        <div class="controlsDemo__cell controlsDemo__mr4">
+            <Router.router:Reference attr:class="controls-text-label"
+                                     state="/Controls-demo/app/:app"
+                                     app="{{ 'Controls-demo/PropertyGridNew/Editors/AfterEditorTemplate/Render/Index' }}">
+                <a href="{{content.href}}">Render</a>
+            </Router.router:Reference>
+            <Controls-demo.PropertyGridNew.Editors.AfterEditorTemplate.Render.Index/>
+        </div>
+
+        <div class="controlsDemo__cell controlsDemo__mr4">
+            <Router.router:Reference attr:class="controls-text-label"
+                                     state="/Controls-demo/app/:app"
+                                     app="{{ 'Controls-demo/PropertyGridNew/Editors/AfterEditorTemplate/GridRender/Index' }}">
+                <a href="{{content.href}}">Grid Render</a>
+            </Router.router:Reference>
+            <Controls-demo.PropertyGridNew.Editors.AfterEditorTemplate.GridRender.Index/>
+        </div>
+    </div>
+</div>

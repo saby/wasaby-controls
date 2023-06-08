@@ -1,0 +1,4 @@
+<Controls.Container.Async templateName="Controls/baseDecorator:Highlight">
+   <ws:templateOptions highlightedValue="{{searchValue}}"
+                       value="{{item.get(displayProperty || 'title') || ''}}" />
+</Controls.Container.Async>

@@ -1,0 +1,25 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:style="width: 600px; height: 400px">
+        <Controls.grid:View
+                name="grid"
+                storeId="listData"
+                multiSelectVisibility="visible"
+                on:afterBeginEdit="_onAfterBeginEnd()"
+                on:beforeEndEdit="_onBeforeEndEdit()"
+                columns="{{_columns}}"
+                columnScroll="{{true}}"
+                header="{{_header}}"
+                headerVisibility="visible"
+                stickyColumnsCount="{{2}}"
+                editingConfig="{{_editingConfig}}">
+            <ws:footerTemplate>
+                <Controls.list:AddButton if="{{ _isMounted && !_isEditing }}" caption="Запись" on:click="_beginAdd()" class="test_add_record_1"/>
+            </ws:footerTemplate>
+            <ws:emptyTemplate>
+                <ws:partial template="Controls/grid:EmptyTemplate">
+                    Нет данных
+                </ws:partial>
+            </ws:emptyTemplate>
+        </Controls.grid:View>
+    </Controls.scroll:Container>
+</div>

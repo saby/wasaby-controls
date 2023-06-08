@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ui_module name="Controls-rating" kaizen_zone="711a1e90-e32a-4501-9a88-99d88531ecd2" 
+           id="bc439e5c-7ac9-4029-bafd-6ab17f28dace"
+           package="Wasaby"
+           responsible="Кондратьев И.Н." responsible_uuid="3b44d193-8649-4a65-af51-e5a5596d16c6"
+           version="1.00">
+  <description>Модуль, содержащий компоненты с разным видом оценок.</description>
+  <depends>
+        <module id="f27abe12-19df-4c9f-b886-634bd20a0011" name="UI"/>
+        <module id="f6fdf353-3ab3-4dbb-8671-01c2b418bf0a" name="Controls"/>
+        <module id="af50caf5-f84b-4b81-a19c-6f6618372dbd" name="Controls-default-theme"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <resources/>
+  <preload/>
+</ui_module>

@@ -1,0 +1,156 @@
+<div class="controls_datePicker_theme-{{_options.theme}}
+            controls-PeriodDialog-MonthsRange__halfYears
+            {{ !_hovered ? 'controls-MonthView_item_notHovered' }}"
+     on:mouseenter="_mouseEnterHandler()"
+     on:mouseleave="_mouseLeaveHandler()">
+   <div
+           for="halfYearIndex as halfYear in _yearStructure"
+           class="controls-PeriodDialog-MonthsRange__halfYear{{
+               _halfYearHovered === halfYearIndex || (_isSelected(halfYearIndex, 'halfyear') && !_options.hovered) ? ' controls-PeriodDialog-MonthsRange__halfYear-hovered'}}">
+
+      <div class="controls-PeriodDialog-MonthsRange__quarter__container">
+         <div
+                 for="quarterIndex as quarter in halfYear.quarters"
+                 class="controls-PeriodDialog-MonthsRange__quarter
+                  {{_quarterHovered === halfYearIndex*2 + quarterIndex || (_isSelected(halfYearIndex*2 + quarterIndex, 'quarter') && !_options.hovered) ? ' controls-PeriodDialog-MonthsRange__quarter-hovered'}}">
+            <ws:if data="{{ _isSelected(halfYearIndex*2 + quarterIndex, 'quarter') }}">
+               <div class="controls-PeriodDialog-MonthsRange__quarterButton__corners_selected__container">
+                  <div class="controls-PeriodDialog-MonthsRange__quarterButton__corners_selected
+                  controls-PeriodDialog-MonthsRange__quarterButton__corners_selected-left">
+
+                  </div>
+               </div>
+               <div class="controls-PeriodDialog-MonthsRange__quarterButton__corners_selected__container">
+                  <div class="controls-PeriodDialog-MonthsRange__quarterButton__corners_selected
+                  controls-PeriodDialog-MonthsRange__quarterButton__corners_selected-right">
+
+                  </div>
+               </div>
+            </ws:if>
+            <div data-qa="controls-PeriodDialog-MonthsRange__quarterButton"
+                 attr:quarter="{{ quarter.name }}"
+                 class="controls-PeriodDialog-MonthsRange__quarterButton
+                        {{ _isSelected(halfYearIndex*2 + quarterIndex, 'quarter') ? 'controls-PeriodDialog-MonthsRange__quarterButton_selected'}}
+                        {{_isQuarterEnabled(_months[quarter.startMonth]) ? ' controls-PeriodDialog__cursor-pointer' }}"
+                 title="{{_formatDate(_months[quarter.startMonth], _FULL_QUARTER)}}"
+                 on:click="_onQuarterClick(_months[quarter.startMonth])"
+                 on:mouseenter="_onQuarterMouseEnter(halfYearIndex*2 + quarterIndex)"
+                 on:mouseover="_onQuarterMouseOver(halfYearIndex*2 + quarterIndex)"
+                 on:mouseleave="_onQuarterMouseLeave()">
+               {{ quarter.name }}
+            </div>
+            <div
+                    for="monthIndex as month in _months.slice(quarter.startMonth, quarter.startMonth + 3)"
+                    class="{{_prepareItemClass(month)}} controls-PeriodDialog-MonthsRange__item controls-MonthList__custom-position"
+                    data-qa="{{ _getItemDataQA(month) }}"
+                    tabindex="0"
+                    data-date="{{ _dateToDataString(month) }}"
+                    on:click="_onMonthClick(month)"
+                    on:keyDown="_onMonthKeyDown(month)"
+                    on:mouseenter="_onMonthMouseEnter(month)"
+                    on:mouseover="_onMonthMouseOver(month)"
+                    on:mouseleave="_onMonthMouseLeave(month)">
+
+               <ws:if data="{{ !_options.isAdaptive }}">
+                  <div
+                          data-qa="controls-PeriodDialog-MonthsRange__month_title"
+                          class="controls-PeriodDialog-MonthsRange__month_title
+                         {{_monthsSelectionEnabled && _isMonthEnabled(month) ? ' controls-PeriodDialog__cursor-pointer' }}"
+                          on:mouseenter="_onMonthTitleMouseEnter(month)"
+                          on:mouseover="_onMonthMouseOver(month)"
+                          on:mouseleave="_onMonthTitleMouseLeave(month)">
+                     <ws:if data="{{!!_options.monthCaptionTemplate}}">
+                        <ws:partial template="{{_options.monthCaptionTemplate}}" date="{{month}}" caption="{{_formatDate(month, 'MMMM')}}"/>
+                     </ws:if>
+                     <ws:else>
+                        {{ _formatDate(month, 'MMMM') }}
+                     </ws:else>
+                  </div>
+                  <ws:if data="{{ _isSelectedStart(month) && _selectionViewType === 'months' }}">
+                     <div class="controls-PeriodDialog-MonthsRange__month_selected__container">
+                        <div class="controls-PeriodDialog-MonthsRange__month_selected controls-PeriodDialog-MonthsRange__month_selected-start">
+
+                        </div>
+                     </div>
+                  </ws:if>
+                  <ws:if data="{{ _isSelectedEnd(month) && _selectionViewType === 'months' }}">
+                     <div class="controls-PeriodDialog-MonthsRange__month_selected__container">
+                        <div class="controls-PeriodDialog-MonthsRange__month_selected controls-PeriodDialog-MonthsRange__month_selected-end">
+
+                        </div>
+                     </div>
+                  </ws:if>
+                  <div class="controls-PeriodDialog-MonthsRange__monthWrapper
+                           {{_options.monthClickable && !_options.selectionProcessing ? ' controls-PeriodDialog-MonthsRange__monthWrapper_clickable controls-PeriodDialog-MonthsRange__monthWrapper_clickable'}}"
+                       on:click="_onMonthBodyClick(month)">
+                     <Controls.calendar:MonthView
+                             attr:data-qa="controls-PeriodDialog-MonthsRange__month"
+                             attr:class="controls-PeriodDialog-MonthsRange__month controls-CompactDatePicker_notHovered "
+                             monthViewModel="{{_monthViewModel}}"
+                             holidaysData="{{ _options.holidaysData[monthIndex + 3 * quarterIndex + 6 * halfYearIndex] }}"
+
+                             _date="{{ _options._date }}"
+                             hoveredStartValue="{{ null }}"
+                             hoveredEndValue="{{ null }}"
+                             startValue="{{ !_isYearSelected() && _selectionViewType === _SELECTION_VIEW_TYPES.days ? _options.startValue }}"
+                             endValue="{{ !_isYearSelected() && _selectionViewType === _SELECTION_VIEW_TYPES.days ? _options.endValue }}"
+                             dayTemplate="{{_dayTemplate}}"
+                             showWeekdays="{{false}}"
+                             month="{{month}}"
+                             captionFormat="%B"
+                             isDayAvailable="{{_options.isDayAvailable}}"
+
+                             newMode="{{true}}"
+                     >
+                     </Controls.calendar:MonthView>
+                  </div>
+               </ws:if>
+               <ws:else>
+                  <div class="controls-PeriodDialog-MonthsRange__monthWrapper_isAdaptive">
+                     {{ _formatAdaptiveMonth(month) }}
+                  </div>
+                  <ws:if data="{{ _isSelectedStart(month) && _selectionViewType === 'months' }}">
+                     <div class="controls-PeriodDialog-MonthsRange__month_selected__container">
+                        <div class="controls-PeriodDialog-MonthsRange__month_selected controls-PeriodDialog-MonthsRange__month_selected-start">
+
+                        </div>
+                     </div>
+                  </ws:if>
+                  <ws:if data="{{ _isSelectedEnd(month) && _selectionViewType === 'months' }}">
+                     <div class="controls-PeriodDialog-MonthsRange__month_selected__container">
+                        <div class="controls-PeriodDialog-MonthsRange__month_selected controls-PeriodDialog-MonthsRange__month_selected-end">
+
+                        </div>
+                     </div>
+                  </ws:if>
+               </ws:else>
+            </div>
+         </div>
+      </div>
+      <ws:if data="{{ _isSelected(halfYearIndex, 'halfyear')}}">
+         <div class="controls-PeriodDialog-MonthsRange__halfYearsPanel-button__corners_selected__container">
+            <div class="controls-PeriodDialog-MonthsRange__halfYearsPanel-button__corners_selected
+                     controls-PeriodDialog-MonthsRange__halfYearsPanel-button__corners_selected-start">
+
+            </div>
+         </div>
+         <div class="controls-PeriodDialog-MonthsRange__halfYearsPanel-button__corners_selected__container">
+            <div class="controls-PeriodDialog-MonthsRange__halfYearsPanel-button__corners_selected
+                     controls-PeriodDialog-MonthsRange__halfYearsPanel-button__corners_selected-end">
+
+            </div>
+         </div>
+      </ws:if>
+      <div data-qa="controls-PeriodDialog-MonthsRange__halfYearsPanel-button"
+           attr:halfyear="{{ halfYear.name }}"
+           class="controls-PeriodDialog-MonthsRange__halfYearsPanel-button
+                  {{ _isSelected(halfYearIndex, 'halfyear') ? 'controls-PeriodDialog-MonthsRange__halfYearsPanel-button_selected'}}
+                  {{_isHalfYearEnabled(_months[halfYear.startMonth]) ? ' controls-PeriodDialog__cursor-pointer' }}"
+           title="{{_formatDate(_months[halfYear.startMonth], _FULL_HALF_YEAR)}}"
+           on:click="_onHalfYearClick(_months[halfYear.startMonth])"
+           on:mouseenter="_onHalfYearMouseEnter(halfYearIndex)"
+           on:mouseleave="_onHalfYearMouseLeave()">
+         {{ halfYear.name }}
+      </div>
+   </div>
+</div>

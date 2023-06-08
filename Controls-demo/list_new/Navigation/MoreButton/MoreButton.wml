@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper  controlsDemo__flexRow">
+    <div class="controlsDemo__cell controlsDemo__maxWidth500 moreFontColorStyle">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/Navigation/MoreButton/Base/Index' }}">
+            <a href="{{content.href}}">Кнопка "Ещё" отображена в виде кнопки "Развернуть"</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.Navigation.MoreButton.Base.Index/>
+    </div>
+    <div class="controlsDemo__cell controlsDemo__maxWidth500 moreFontColorStyleLink">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/Navigation/MoreButton/ButtonConfig/Index' }}">
+            <a href="{{content.href}}">Кнопка "Ещё" отображена в виде кнопки "Развернуть" и выровнена слева</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.Navigation.MoreButton.ButtonConfig.Index/>
+    </div>
+</div>

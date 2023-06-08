@@ -1,0 +1,18 @@
+<Controls.context:ContextOptionsConsumer scope="{{_options}}">
+    <ws:contextOptionsInnerComponent>
+        <Controls._browser.ContextResolver
+            _dataOptionsValue="{{contextOptionsInnerComponent._dataOptionsValue}}"
+            scope="{{contextOptionsInnerComponent}}">
+            <ws:innerTemplate>
+                <ws:if data="{{_options.dataStoreId}}">
+                    <Controls._browser.BrowserConnected scope="{{contextOptionsInnerComponent}}"/>
+                </ws:if>
+                <ws:else>
+                    <Controls._browser.Browser
+                        name="browser"
+                        scope="{{contextOptionsInnerComponent}}"/>
+                </ws:else>
+            </ws:innerTemplate>
+        </Controls._browser.ContextResolver>
+    </ws:contextOptionsInnerComponent>
+</Controls.context:ContextOptionsConsumer>

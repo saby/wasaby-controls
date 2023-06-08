@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module id="2e7a4134-96d9-41fd-ac53-1dfaaf9f71b5" name="Controls-DataEnvUnit" version="1.00">
+  <description/>
+  <depends>
+      <module id="8298f3a2-1964-11ed-861d-0242ac120002" name="Controls-DataEnv"/>
+      <module id="a10cb1cb-b23d-4ef6-a757-4f7382e0e8d1" name="SbisEnvUI"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <test environment="NodeJS" framework="Jest" />
+  <resources/>
+</ui_module>

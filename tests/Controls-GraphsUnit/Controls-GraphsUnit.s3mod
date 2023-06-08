@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module id="8a84b7b3-21bb-4f22-a8f2-5f0362ff6851" name="Controls-GraphsUnit" version="1.00">
+  <description/>
+  <depends>
+      <module id="347506b0-7e7d-441f-963f-6b97034fcc0c" name="Controls-Graphs"/>
+      <module id="bdd07856-3a06-4d5f-87f3-a27234b48f51" name="Controls-Graphs-default-theme"/>
+      <module id="a10cb1cb-b23d-4ef6-a757-4f7382e0e8d1" name="SbisEnvUI"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <test environment="NodeJS" framework="Jest" />
+  <resources/>
+</ui_module>

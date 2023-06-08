@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper controlsDemo__dropdown-button__openUpColumn">
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/dropdown_new/Button/HeaderTemplate/IconSize/Index' }}">
+            <a href="{{content.href}}">Пункты с направлением влево</a>
+        </Router.router:Reference>
+        <Controls-demo.dropdown_new.Button.ItemAlign.Left.Index/>
+    </div>
+</div>

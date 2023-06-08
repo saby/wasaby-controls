@@ -1,0 +1,25 @@
+<div class="controlsDemo__wrapper controlDemo_Tile_custom-tpl">
+    <Controls.treeTile:View
+            storeId="listData0"
+            tileMode="dynamic"
+            imageProperty="image"
+            multiSelectVisibility="visible"
+            multiSelectPosition="custom">
+        <ws:itemTemplate>
+            <ws:partial
+                    itemWidth="{{itemTemplate.item.contents.width}}"
+                    template="Controls/tile:ItemTemplate"
+                    hasTitle="{{itemTemplate.item.contents.isDocument}}"
+                    attr:class="controlsDemo__customClass"
+            >
+                <ws:contentTemplate>
+                    <div class="controlsDemo__customTileTpl">
+                        <img src="{{itemTemplate.item.contents.image}}" class="controlsDemo__customTileTpl-img"/>
+                        <ws:partial attr:class="controlsDemo__customTileTpl-checkbox" template="{{ contentTemplate.multiSelectTemplate }}"/>
+                        <p class="controlsDemo__customTileTpl-title">{{itemTemplate.item.contents.title}}</p>
+                    </div>
+                </ws:contentTemplate>
+            </ws:partial>
+        </ws:itemTemplate>
+    </Controls.treeTile:View>
+</div>

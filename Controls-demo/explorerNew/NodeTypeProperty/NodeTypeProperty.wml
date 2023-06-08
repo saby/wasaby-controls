@@ -1,0 +1,21 @@
+<div class="controlsDemo__wrapper">
+<Controls.search:InputContainer storeId="listData">
+  <Controls.search:Input/>
+</Controls.search:InputContainer>
+<Controls.scroll:Container attr:class="controlsDemo__height150">
+  <Controls.explorer:View
+      storeId="listData"
+      nodeTypeProperty="nodeType"
+      searchNavigationMode="expand"
+      deepReload="{{true}}"
+      name="explorerView"
+      attr:class="demo-Explorer ControlsDemo-Explorer"
+      keyProperty="key"
+      stickyGroup="{{ false }}"
+      displayProperty="title"
+      itemActions="{{_itemActions}}"
+      colspanCallback="{{_colspanCallback}}"
+      columns="{{_columns}}"/>
+</Controls.scroll:Container>
+</div>
+

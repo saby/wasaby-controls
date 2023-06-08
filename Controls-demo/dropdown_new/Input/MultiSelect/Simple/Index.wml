@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo_m2">
+        <div class="controls-text-label">Simple</div>
+        <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys"
+                                 keyProperty="id"
+                                 displayProperty="title"
+                                 multiSelect="{{true}}"
+                                 emptyText="All operations"
+                                 source="{{_source}}">
+        </Controls.dropdown:Selector>
+    </div>
+</div>

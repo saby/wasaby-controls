@@ -1,0 +1,30 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container class="controlsDemo__height500 controlsDemo__width800px">
+      <Controls.listTemplates:WrappedImageDisplayContainer
+          storeId="listData2"
+          imageProperty="image"
+          imageViewMode="rectangle"
+          imagePosition="left">
+        <ws:content>
+          <Controls.tile:View
+              storeId="listData2"
+              multiSelectVisibility="hidden"
+              tileMode="static"
+              tileWidth="350"/>
+        </ws:content>
+        <ws:itemTemplate>
+          <ws:partial
+              template="Controls/tile:RichTemplate"
+              fallbackImage="{{_fallbackImage}}"
+              gradientColor="{{itemTemplate.item.contents.gradientColor}}"
+              titleLines="1"
+              descriptionLines="4"
+              imageSize="s"
+              description="{{itemTemplate.item.contents.description}}"
+              imageEffect="gradient"
+              scope="{{itemTemplate}}">
+          </ws:partial>
+        </ws:itemTemplate>
+      </Controls.listTemplates:WrappedImageDisplayContainer>
+    </Controls.scroll:Container>
+</div>

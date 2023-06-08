@@ -1,0 +1,497 @@
+@import 'Controls/_scroll/Scroll/_contentEnvironmentZIndex';
+
+.controls-BaseControl__fakeFocusElem {
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   width: 1px;
+   height: 1px;
+   // Chrome с выключенным аппаратным ускорением отображает различные артефакты при ховере на списках.
+   // Предположительно, они возникают из-за большого количество стилей/слоёв рендера.
+   // https://online.sbis.ru/opendoc.html?guid=ef46e66d-25cb-415d-8693-b37e5fa9306b
+   // https://online.sbis.ru/opendoc.html?guid=498d117a-479e-4e15-b8f9-cb7ea8ea4e84
+   // https://online.sbis.ru/opendoc.html?guid=d851c234-6bd0-475a-a480-40ce2ab73000
+   // https://online.sbis.ru/opendoc.html?guid=4f8c80ac-8d5c-4f24-b078-495f5fe18b37
+   // https://online.sbis.ru/opendoc.html?guid=cc17df0e-6514-455d-a660-4f82769d2e90
+   // https://online.sbis.ru/opendoc.html?guid=c35989ad-81c9-4b94-9ed1-790019504c44
+   // https://online.sbis.ru/opendoc.html?guid=37f81d08-2cb8-40b4-b987-c14bbb128d39
+   //
+   // Использование "backface-visibility: hidden" приводит к лагам при скроле. Пример ошибки:
+   // https://online.sbis.ru/opendoc.html?guid=7c95e76d-432b-41c9-94c3-42e92c8b11d6
+   //
+   // Использование "transform: translate3d(0,0,0)" и аналогичных хаков с трансформацией - ломает анимацию
+   // (например, увеличение плитки).
+   //
+   //
+   // Методом "деления пополам", обнаружено что элемент с "position: fixed" приводит к данным артефактам. Установка
+   // данному элементу "tabindex: 1." исправляет артефакты, а "pointer-events: none" - предотвращает клик по нему.
+   z-index: 1;
+   pointer-events: none;
+}
+
+.controls-BaseControl__viewContainer {
+   position: relative;
+}
+
+.controls-BaseControl__viewContainer_empty {
+   height: 100%;
+}
+
+/*
+https://online.sbis.ru/opendoc.html?guid=16c81a19-f2a0-4b3f-a7e8-56d154b68e4c
+*/
+.ws-is-desktop-safari,
+.ws-is-sbis-desktop,
+.ws-is-mobile-safari {
+   .controls-BaseControl__fakeFocusElem {
+      left: 0;
+      // https://online.sbis.ru/opendoc.html?guid=f2f20941-df95-400d-ad89-2503c000f31a
+      transform: translateZ(0);
+   }
+}
+
+.controls-BaseControl__loadMore {
+   height: var(--more_height_list);
+}
+
+.controls-text-listMore {
+   color: var(--more_text-color_list);
+}
+
+.controls-BaseButton:active .controls-text-listMore {
+   color: var(--more_hover_text-color_list);
+}
+
+.ws-is-hover {
+   .controls-BaseButton:hover .controls-text-listMore {
+      color: var(--more_hover_text-color_list);
+   }
+}
+
+.controls-BaseControl__pagingContainer_stickyBlock {
+   bottom: 0;
+   display: flex;
+   pointer-events: none;
+}
+
+.controls-BaseControl__pagingContainer {
+   position: relative;
+   width: 100%;
+}
+
+.ws-is-ie .controls-BaseControl__pagingContainer {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+
+   // Должен отображаться выше элементов скрол контейнера
+   z-index: @z-index_Scroll-contentEnvironment + 1;
+}
+
+.controls-BaseControl__pagingWrapper {
+   display: flex;
+   flex-direction: row;
+   position: absolute;
+   bottom: var(--scrollpaging_offset-vertical_list);
+   pointer-events: auto;
+
+   &_position-right {
+      right: var(--scrollpaging_offset-horizontal_list);
+      justify-content: flex-end;
+   }
+
+   &_position-left {
+      left: var(--scrollpaging_offset-horizontal_list);
+      justify-content: flex-start;
+   }
+}
+
+.controls-BaseControl_paging-Padding {
+   height: calc(var(--inline_height_l) + 2 * var(--scrollpaging_offset-vertical_list));
+}
+
+// region Indicators
+
+.controls-BaseControl__loadingTrigger {
+   position: absolute;
+   left: 0;
+   right: 0;
+   width: 100%;
+   grid-column-start: 1;
+   grid-column-end: -1;
+}
+
+.controls-BaseControl__loadingTrigger_horizontal {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   height: 100%;
+   z-index: 1;
+
+   &-left {
+      left: 0;
+   }
+
+   &-right {
+      right: 0;
+   }
+}
+
+.controls-BaseControl__loadingIndicator {
+   width: 100%;
+   background-color: transparent;
+   display: flex;
+   justify-content: center;
+   min-height: 48px;
+}
+
+.controls-BaseControl__loadingIndicator__state-loading {
+   animation: 2s displayLoadingIndicator;
+   animation-fill-mode: forwards;
+}
+
+@keyframes displayLoadingIndicator {
+   99% {
+      visibility: hidden;
+   }
+
+   100% {
+      visibility: visible;
+   }
+}
+
+.controls-BaseControl__loadingIndicator__position-top,
+.controls-BaseControl__loadingIndicator__position-bottom {
+   visibility: hidden;
+}
+
+.controls-BaseControl__loadingIndicator__position-global {
+   position: absolute;
+   align-items: center;
+   left: 0;
+   right: 0;
+
+   // Локальный индикатор загрузки на весь экран должен блокировать список, перекрывая кнопки навигации и скроллбар.
+   z-index: 17;
+}
+
+.controls-BaseControl__loadingIndicator-content {
+   padding: var(--content_l_border_radius_loadingIndicator);
+   background-color: var(--content_background-color_loadingIndicator);
+   border-radius: var(--content_l_border_radius_loadingIndicator);
+   z-index: 1;
+   display: inline-flex;
+   align-items: center;
+   pointer-events: auto;
+}
+
+.controls-BaseControl__loadingIndicator-message {
+   padding-left: var(--offset_s);
+}
+
+.controls-BaseControl__loadingIndicatorImage {
+   background: var(--spinner_l_background-image_loadingIndicator) 0 0 no-repeat;
+   width: var(--spinner_l_size_loadingIndicator);
+   height: var(--spinner_l_size_loadingIndicator);
+   background-size: var(--spinner_l_size_loadingIndicator);
+}
+
+// В Яндекс браузере для win-XP css переменные поддерживаются не в полном объеме, из-за чего браузер ожидает
+// полный путь с указанием домена, поэтому каскадом задаем корректный путь
+.ws-is-chrome.ws-is-windows-xp {
+   .controls-BaseControl__loadingIndicatorImage {
+      background: url('/cdn/LoaderIndicator/1.0.0/ajax-loader-indicator.gif') 0 0 no-repeat;
+   }
+}
+
+.controls-BaseControl__portionedSearch {
+   position: sticky;
+   // чтобы порционный поиск был выше записей
+   // согласно статье https://wi.sbis.ru/doc/platform/developmentapl/interface-development/pattern-and-practice/zindex/
+   // раньше был 17, он наследовался от стиля глобальной ромашки
+   z-index: 16;
+   pointer-events: none;
+}
+
+.controls-BaseControl__portionedSearch__state-top {
+   top: 0;
+   padding-top: var(--scrollpaging_offset-vertical_list);
+   padding-bottom: var(--offset_s);
+}
+
+.controls-BaseControl__portionedSearch__state-bottom {
+   bottom: 0;
+   padding-bottom: var(--scrollpaging_offset-vertical_list);
+   padding-top: var(--offset_s);
+}
+
+.controls-BaseControl__portionedSearch-content {
+   box-shadow: var(--loadingIndicator_iterativeSearch_box-shadow_list);
+   pointer-events: auto;
+}
+
+.controls-BaseControl__portionedSearch-footerTemplate {
+   margin-left: var(--content_l_padding_loadingIndicator);
+   color: var(--text-color);
+   font-size: var(--font-size_xs);
+}
+
+.controls-BaseControl__abortSearch {
+   display: inline-block;
+   color: var(--link_text-color);
+   margin-left: var(--content_l_padding_loadingIndicator);
+   font-size: var(--font-size_default);
+}
+
+.controls-BaseControl__abortSearch:active {
+   text-decoration: underline;
+   color: var(--link_hover_text-color);
+}
+
+.ws-is-no-touch .controls-BaseControl__abortSearch:hover {
+   text-decoration: underline;
+   color: var(--link_hover_text-color);
+   cursor: pointer;
+}
+
+.controls-BaseControl__continueSearch {
+   display: inline-flex;
+   width: 100%;
+   pointer-events: auto;
+}
+
+.controls-BaseControl__continueSearch__state-top {
+   padding-top: var(--scrollpaging_offset-vertical_list);
+   padding-bottom: var(--offset_s);
+}
+
+.controls-BaseControl__continueSearch__state-bottom {
+   padding-top: var(--offset_s);
+   padding-bottom: var(--scrollpaging_offset-vertical_list);
+}
+
+.controls-BaseControl__continueSearch_caption {
+   color: var(--link_text-color);
+   cursor: pointer;
+}
+
+.controls-BaseControl__continueSearch_caption:active {
+   color: var(--link_hover_text-color);
+   text-decoration: underline;
+}
+
+.ws-is-no-touch .controls-BaseControl__continueSearch_caption:hover {
+   color: var(--link_hover_text-color);
+   cursor: pointer;
+   text-decoration: underline;
+}
+
+.controls-BaseControl__continueSearch_icon {
+   margin-right: var(--offset_s);
+   color: var(--secondary_icon-color);
+}
+
+.controls-BaseControl__continueSearch_content {
+   background-color: transparent;
+}
+
+.controls-BaseControl__continueSearch_content:active .controls-BaseControl__continueSearch_icon {
+   color: var(--secondary_hover_icon-color);
+}
+
+.ws-is-no-touch
+   .controls-BaseControl__continueSearch_content:hover
+   .controls-BaseControl__continueSearch_icon {
+   color: var(--secondary_hover_icon-color);
+}
+
+.controls-BaseControl__continueSearch_footerTemplate {
+   font-size: var(--font-size_xs);
+}
+
+// endregion Indicators
+
+.controls-BaseControl__emptyTemplate {
+   height: 100%;
+   width: 100%;
+   display: flex;
+   align-items: center;
+}
+
+.controls-BaseControl__emptyTemplate__contentWrapper {
+   // Пустое представление обязано и расширяться и сжиматья, подстраиваясь под список
+   flex-grow: 1;
+   max-width: 100%;
+}
+
+.ws-is-ie .controls-BaseControl__emptyTemplate__contentWrapper {
+   // Стандартный хак для IE, flex-ребенок тянется по вложенному контенту за пределы родителя,
+   // для предотвращения устанавливается ширина 0 и разрешается растягивание.
+   // flex-grow уже висит на классе .controls-BaseControl__emptyTemplate__contentWrapper
+   width: 0;
+}
+
+.controls-BaseButton__emptyTemplate__wrapper {
+   // Для позиционирования пустого представления по середине необходимо растягиваение контента по всей высоте
+   height: 100%;
+}
+
+.controls__BaseControl__footer-default__paddingLeft_withCheckboxes {
+   padding-left: calc(var(--checkbox_offset-left_list) + var(--click-area_width_checkbox));
+}
+
+.controls__BaseControl__footer-default__paddingLeft_default {
+   padding-left: var(--item_padding-left_default_list);
+}
+
+.controls__BaseControl__footer-master__paddingLeft_default,
+.controls__BaseControl__footer-master__paddingLeft_withCheckboxes {
+   padding-left: var(--item_padding-left_l_list);
+}
+
+.controls-master-template-newDesign .controls__BaseControl__footer-master__paddingLeft_default {
+   padding-left: calc(
+      var(--item_padding-left_default_list) + var(--master_item_horizontal-offset_list)
+   );
+}
+
+.controls__BaseControl__footer-default__paddingLeft_null,
+.controls__BaseControl__footer-master__paddingLeft_null {
+   padding-left: 0;
+}
+
+.controls__BaseControl__footer-default__paddingLeft_xs,
+.controls__BaseControl__footer-master__paddingLeft_xs {
+   padding-left: var(--item_padding-left_xs_list);
+}
+
+.controls__BaseControl__footer-default__paddingLeft_s,
+.controls__BaseControl__footer-master__paddingLeft_s {
+   padding-left: var(--item_padding-left_s_list);
+}
+
+.controls__BaseControl__footer-default__paddingLeft_m,
+.controls__BaseControl__footer-master__paddingLeft_m {
+   padding-left: var(--item_padding-left_m_list);
+}
+
+.controls__BaseControl__footer-default__paddingLeft_l,
+.controls__BaseControl__footer-master__paddingLeft_l {
+   padding-left: var(--item_padding-left_l_list);
+}
+
+.controls__BaseControl__footer-default__paddingLeft_xl,
+.controls__BaseControl__footer-master__paddingLeft_xl {
+   padding-left: var(--item_padding-left_xl_list);
+}
+
+.controls__BaseControl__footer-default__paddingLeft_xxl,
+.controls__BaseControl__footer-master__paddingLeft_xxl {
+   padding-left: var(--item_padding-left_2xl_list);
+}
+
+.controls-BaseControl__footerPaging_wrapper {
+   display: flex;
+   justify-content: flex-end;
+   position: relative;
+   align-items: center;
+   width: 100%;
+}
+
+.controls-BaseControl_paging-wrapper {
+   position: sticky;
+   right: 0;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+}
+
+.controls-BaseControl_paging-label {
+   display: flex;
+   align-items: baseline;
+   color: var(--label_text-color);
+   font-size: var(--font-size_s);
+
+   &::before {
+      content: '\200b';
+      line-height: var(--inline_height_l);
+      font-size: var(--item_font-size-color_paging);
+   }
+}
+
+.controls-BaseControl_paging-pageSizeChooser {
+   margin-left: var(--offset_2xs);
+}
+
+.controls-BaseControl__cut-container_s {
+   margin-top: var(--offset_3xs);
+   margin-bottom: var(--offset_2xs);
+}
+
+.controls-BaseControl__cut-container_m {
+   margin-top: var(--offset_3xs);
+   margin-bottom: var(--offset_xs);
+}
+
+.controls-BaseControl__cut-container_l {
+   margin-top: var(--offset_xs);
+   margin-bottom: var(--offset_m);
+}
+
+.controls-BaseControl__cut-container_s_position_start {
+   padding-left: var(--offset_2xs);
+}
+
+.controls-BaseControl__cut-container_m_position_start {
+   padding-left: var(--offset_xs);
+}
+
+.controls-BaseControl__cut-container_l_position_start {
+   padding-left: var(--offset_s);
+}
+
+//region items spacing
+.controls-list__vertical-spacing_3xs {
+   height: var(--offset_3xs);
+}
+
+.controls-list__vertical-spacing_2xs {
+   height: var(--offset_2xs);
+}
+
+.controls-list__vertical-spacing_xs {
+   height: var(--offset_xs);
+}
+
+.controls-list__vertical-spacing_s {
+   height: var(--offset_s);
+}
+
+.controls-list__vertical-spacing_st {
+   height: var(--offset_st);
+}
+
+.controls-list__vertical-spacing_m {
+   height: var(--offset_m);
+}
+
+.controls-list__vertical-spacing_l {
+   height: var(--offset_l);
+}
+
+.controls-list__vertical-spacing_xl {
+   height: var(--offset_xl);
+}
+
+.controls-list__vertical-spacing_2xl {
+   height: var(--offset_2xl);
+}
+
+.controls-list__vertical-spacing_3xl {
+   height: var(--offset_3xl);
+}
+
+.controls-list__vertical-spacing_timeline_s {
+   height: calc(var(--offset_2xs) - var(--border-thickness));
+}
+//endregion

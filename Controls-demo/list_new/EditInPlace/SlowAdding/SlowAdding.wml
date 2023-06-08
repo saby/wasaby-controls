@@ -1,0 +1,24 @@
+<div class="controlsDemo__wrapper">
+    <Controls.list:View
+            storeId="listData"
+            name="list"
+            on:beforeBeginEdit="_beforeBeginEdit()">
+        <ws:editingConfig editOnClick="{{true}}"/>
+        <ws:itemTemplate>
+            <ws:partial template="Controls/list:ItemTemplate">
+                <ws:contentTemplate>
+                    <ws:partial template="Controls/list:EditingTemplate" value="{{ itemTemplate.item.contents.beforeBeginEditTitle }}">
+                        <ws:editorTemplate>
+                            <Controls.input:Text contrastBackground="{{true}}" bind:value="itemTemplate.item.contents.beforeBeginEditTitle"/>
+                        </ws:editorTemplate>
+                    </ws:partial>
+                </ws:contentTemplate>
+            </ws:partial>
+        </ws:itemTemplate>
+        <ws:footerTemplate>
+            <ws:if data="{{ !_isAdded }}">
+                <Controls.list:AddButton caption="Add record" on:click="_addItem()"/>
+            </ws:if>
+        </ws:footerTemplate>
+    </Controls.list:View>
+</div>

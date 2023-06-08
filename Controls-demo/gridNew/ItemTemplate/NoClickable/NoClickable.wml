@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+    <Controls.grid:View
+            useTableInOldBrowsers="{{true}}"
+            storeId="listData"
+            columns="{{_columns}}">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/grid:ItemTemplate" cursor="default"/>
+        </ws:itemTemplate>
+    </Controls.grid:View>
+</div>

@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper controls-MasterDetail_details-newDesign">
+    <Controls.grid:View
+            attr:class="controlsDemo__inline-flex"
+            storeId="listData"
+            rowSeparatorSize="s"
+            columns="{{_columns}}"
+            newDesign="{{true}}"/>
+</div>

@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper controlsDemo__treeGrid__configuration controlsDemo_Configuration__grid-four controlsDemo__maxWidth500">
+    <Controls.buttons:Button attr:data-qa="reset-button" caption="Reset callbacks" on:click="_resetCallbacks()"/>
+    <Controls.treeGrid:View
+            keyProperty="key"
+            name="tree4"
+            source="{{_viewSource}}"
+            columns="{{_columns}}"
+            parentProperty="parent"
+            nodeProperty="type"
+            navigation="{{_navigation}}"
+            multiSelectVisibility="visible"
+            rowSeparatorSize="s"
+            columnSeparatorSize="s"
+            itemActions="{{_itemActions}}"
+            nodeFooterVisibilityCallback="{{_nodeFooterVisibilityCallback}}"
+            itemActionVisibilityCallback="{{_itemActionVisibilityCallback}}">
+    </Controls.treeGrid:View>
+</div>

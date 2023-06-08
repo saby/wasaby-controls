@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper">
+   <div class="controlsDemo__cell">
+      <Router.router:Reference attr:class="controls-text-label"
+                               state="/Controls-demo/app/:app"
+                               app="{{ 'Controls-demo/dropdown_new/Search/SearchParam/HierarchyList/FlatResult/Index' }}">
+         <a href="{{content.href}}">FlatResult</a>
+      </Router.router:Reference>
+      <Controls-demo.dropdown_new.Search.SearchParam.HierarchyList.FlatResult.Index/>
+   </div>
+   <div class="controlsDemo__cell">
+      <Router.router:Reference attr:class="controls-text-label"
+                               state="/Controls-demo/app/:app"
+                               app="{{ 'Controls-demo/dropdown_new/Search/SearchParam/HierarchyList/Hierarchy/Index' }}">
+         <a href="{{content.href}}">HierarchyResult</a>
+      </Router.router:Reference>
+      <Controls-demo.dropdown_new.Search.SearchParam.HierarchyList.Hierarchy.Index/>
+   </div>
+</div>

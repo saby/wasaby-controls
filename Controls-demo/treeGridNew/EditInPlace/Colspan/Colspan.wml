@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth800">
+    <Controls.treeGrid:View
+            storeId="listData"
+            columns="{{_columns}}"
+            colspanCallback="{{_colspanCallback}}"
+            parentProperty="parent"
+            nodeProperty="type">
+        <ws:editingConfig editOnClick="{{true}}" enabled="{{true}}" sequentialEditing="{{true}}"
+                          toolbarVisibility="{{true}}"/>
+    </Controls.treeGrid:View>
+</div>

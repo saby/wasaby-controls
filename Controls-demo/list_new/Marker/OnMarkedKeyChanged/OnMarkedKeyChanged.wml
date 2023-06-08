@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300">
+<Controls.list:View
+    itemsReadyCallback="{{_boundItemsReadyCallback}}"
+    markedKey="{{_markedKey}}"
+    on:markedKeyChanged="_onMarkedKeyChanged()"
+    storeId="listData5"/>
+</div>

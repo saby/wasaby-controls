@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper">
+<Controls.buttons:Button caption="Toggle multiselectVisibility" on:click="_onToggle()"/>
+<Controls.buttons:Button caption="{{_slowMoveMethod ? 'Speed' : 'Slow'}} move method" on:click="_onSlowMoveMethod()"/>
+<Controls.list:View
+    itemsDragNDrop="{{true}}"
+    itemsReadyCallback="{{_itemsReadyCallback}}"
+    multiSelectVisibility="{{_multiselectVisibility}}"
+    name="list"
+    on:customdragEnd="_dragEnd()"
+    on:customdragStart="_dragStart()"
+    storeId="listData">
+  <ws:draggingTemplate>
+    <ws:partial mainText="{{draggingTemplate.entity._options.title}}"
+                template="Controls/dragnDrop:DraggingTemplate">
+    </ws:partial>
+  </ws:draggingTemplate>
+</Controls.list:View>
+</div>

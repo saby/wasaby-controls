@@ -1,0 +1,94 @@
+<div class="controlsDemo__wrapper  controlsDemo__flex controlsDemo__flex-flow_wrap">
+    <div class="controlsDemo__cell demo-checkboxIndex__base {{_widthClass}} controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/toggle/Checkbox/Value/Index' }}">
+            <a href="{{content.href}}">Настройка value</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Checkbox.Value.Index/>
+    </div>
+
+    <div class="controlsDemo__cell demo-checkboxIndex__base {{_widthClass}} controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/toggle/Checkbox/Caption/Index' }}">
+            <a href="{{content.href}}">Настройка caption</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Checkbox.Caption.Index/>
+    </div>
+
+    <div class="controlsDemo__cell demo-checkboxIndex__base {{_widthClass}} controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/toggle/Checkbox/CaptionPosition/Index' }}">
+            <a href="{{content.href}}">Настройка расположения caption</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Checkbox.CaptionPosition.Index/>
+    </div>
+
+    <div class="controlsDemo__cell demo-checkboxIndex__triState {{_widthClass}} controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/toggle/Checkbox/Tristate/Index' }}">
+            <a href="{{content.href}}">Чекбокс с третьим состоянием</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Checkbox.Tristate.Index/>
+    </div>
+
+    <div class="controlsDemo__cell demo-checkboxIndex__withIcon {{_widthClass}} controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/toggle/Checkbox/Size/Index' }}">
+            <a href="{{content.href}}">Размеры чекбокса</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Checkbox.Size.Index/>
+    </div>
+
+    <div class="controlsDemo__cell demo-checkboxIndex__withIcon {{_widthClass}} controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/toggle/Checkbox/ResetValue/Index' }}">
+            <a href="{{content.href}}">Настройка предустановленного значения чекбокса</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Checkbox.ResetValue.Index/>
+    </div>
+
+    <div class="controlsDemo__cell demo-checkboxIndex__withIcon {{_widthClass}} controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/toggle/Checkbox/ViewMode/Index' }}">
+            <a href="{{content.href}}">Настройка внешнего вида чекбокса</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Checkbox.ViewMode.Index/>
+    </div>
+
+    <div class="controlsDemo__cell demo-checkboxIndex__withIcon {{_widthClass}} controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/toggle/Checkbox/Multiline/Index' }}">
+            <a href="{{content.href}}">Настройка с обрезанием текста чекбокса</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Checkbox.Multiline.Index/>
+    </div>
+
+    <div class="controlsDemo__cell demo-checkboxIndex__fontColor {{_widthClass}} controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/toggle/Checkbox/FontColorStyle/Index' }}">
+            <a href="{{content.href}}">Настройка цвета текста</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Checkbox.FontColorStyle.Index/>
+    </div>
+
+    <div class="controlsDemo__cell demo-checkboxIndex__triState {{_widthClass}} controls-margin_right-l">
+        <div class="controls-text-label">Для тестов: triState</div>
+        <div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+            <div data-qa="controlsDemo-checkboxContrastBackground__triStateTrue" class="controlsDemo__cell demo-checkboxTriState__triState-filled">
+                <Controls.checkbox:Checkbox bind:value="_trueStateValue" triState="{{true}}" viewMode="filled"/>
+            </div>
+            <div data-qa="controlsDemo-checkboxBackground__triStateTrue" class="controlsDemo__cell demo-checkboxTriState__triState-ghost">
+                <Controls.checkbox:Checkbox bind:value="_trueStateValue" triState="{{true}}" viewMode="ghost"/>
+            </div>
+        </div>
+    </div>
+</div>

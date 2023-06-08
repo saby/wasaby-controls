@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper controlsDemo__maxWidth500">
+    <Controls.list:View
+            storeId="listData"
+            itemActions="{{_itemActions}}"
+            contextMenuConfig="{{_contextMenuConfig}}"
+    />
+</div>

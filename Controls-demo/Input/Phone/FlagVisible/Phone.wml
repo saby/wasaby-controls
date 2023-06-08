@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+<div class="controlsDemo__cell">
+    <div class="controls-text-label">flagVisible = true</div>
+    <Controls.input:Phone attr:class="ControlsDemo-PhoneInput_phoneField"
+                          onlyMobile="{{true}}"
+                          placeholder="+7 Телефон"
+                          fontSize="xl"
+                          inlineHeight="2xl"
+                          flagVisible="{{true}}"/>
+</div>
+<div class="controlsDemo__cell">
+    <div class="controls-text-label">flagVisible = false</div>
+    <Controls.input:Phone attr:class="ControlsDemo-PhoneInput_phoneField"
+                          onlyMobile="{{true}}"
+                          placeholder="+7 Телефон"
+                          fontSize="xl"
+                          inlineHeight="2xl"
+                          flagVisible="{{false}}"/>
+</div>
+</div>

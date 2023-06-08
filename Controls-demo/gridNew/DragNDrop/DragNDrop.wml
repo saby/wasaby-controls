@@ -1,0 +1,24 @@
+<div class="controlsDemo__wrapper">
+    <Controls.buttons:Button caption="Toggle multiselectVisibility" on:click="_onToggle()"/>
+    <div>
+        <div class="controlsDemo__inline-flex">
+            <Controls.grid:View
+                storeId="listData"
+                name="grid"
+                bind:selectedKeys="_selectedKeys"
+                on:customdragStart="_dragStart()"
+                on:customdragEnd="_dragEnd()"
+                displayProperty="title"
+                multiSelectVisibility="{{_multiselect}}"
+                itemsReadyCallback="{{_itemsReadyCallback}}"
+                itemsDragNDrop="{{true}}"
+                columns="{{_columns}}">
+              <ws:draggingTemplate>
+                <ws:partial template="Controls/dragnDrop:DraggingTemplate"
+                            mainText="{{draggingTemplate.entity._options.title}}">
+                </ws:partial>
+              </ws:draggingTemplate>
+            </Controls.grid:View>
+        </div>
+    </div>
+</div>

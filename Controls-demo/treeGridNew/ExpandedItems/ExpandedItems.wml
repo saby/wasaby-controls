@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300 controlsDemo_treeGrid-expandedItems">
+    <Controls.treeGrid:View
+            storeId="listData"
+            columns="{{_columns}}"
+            bind:expandedItems="_expandedItems"/>
+</div>
+

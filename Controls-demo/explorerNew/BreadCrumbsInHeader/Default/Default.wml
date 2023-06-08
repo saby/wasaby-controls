@@ -1,0 +1,45 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth800">
+   <div class="tw-flex tw-flex-row tw-items-baseline">
+      <div style="margin-right: 10px">breadcrumbsVisibility: </div>
+      <Controls.dropdown:Combobox
+         source="{{_breadcrumbsVisibilitySource}}"
+         keyProperty="id"
+         displayProperty="id"
+         bind:selectedKey="_breadcrumbsVisibility"
+      />
+   </div>
+   <div class="tw-flex tw-flex-row">
+      <Controls.checkbox:Checkbox
+         caption="Display results"
+         bind:value="_resultsVisible"
+         attr:style="margin-right: 10px"
+      />
+      <Controls.checkbox:Checkbox
+         caption="Display header"
+         bind:value="_headerVisible"
+      />
+   </div>
+   <Controls.explorer:View
+      name="explorer"
+      source="{{_viewSource}}"
+      bind:root="_root"
+      attr:class="demo-Explorer ControlsDemo-Explorer"
+      itemActions="{{_itemActions}}"
+      itemActionsPosition="outside"
+      keyProperty="id"
+      displayProperty="title"
+      parentProperty="parent"
+      nodeProperty="parent@"
+      viewMode="{{_viewMode}}"
+      rowSeparatorSize="s"
+      header="{{_header}}"
+      columns="{{_columns}}"
+      stickyHeader="{{false}}"
+      multiSelectVisibility="onhover"
+      dataLoadCallback="{{ _dataLoadCallback }}"
+      breadcrumbsVisibility="{{_breadcrumbsVisibility}}"
+      resultsVisibility="{{_resultsVisible ? 'hasdata' : 'hidden'}}"
+      resultsPosition="top"
+      backButtonIconViewMode="functionalButton"
+   />
+</div>

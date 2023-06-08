@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module id="a1496936-b298-46ec-b007-7d247e4adf25" name="Controls-InputUnit" version="1.00">
+  <description/>
+  <depends>
+      <module id="30f3262d-748e-4f05-ad19-ffde30da8711" name="Controls-Input"/>
+      <module id="ccec9629-93ab-4385-94d9-aa2d0903bae2" name="Controls-Input-default-theme"/>
+      <module id="a10cb1cb-b23d-4ef6-a757-4f7382e0e8d1" name="SbisEnvUI"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <test environment="NodeJS" framework="Jest" />
+  <resources/>
+</ui_module>

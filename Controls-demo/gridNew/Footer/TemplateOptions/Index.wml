@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper">
+   <Controls.grid:View
+      storeId="listData"
+      columns="{{_columns}}"
+      footer="{{_footerCfg}}"
+   />
+</div>

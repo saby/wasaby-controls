@@ -1,0 +1,83 @@
+.controls-Toolbar {
+   display: inline-block;
+   max-width: 100%;
+}
+
+.controls-Toolbar__item_horizontal-spacing_small {
+   margin-left: var(--offset_xs);
+}
+
+.controls-Toolbar__item_horizontal-spacing_medium {
+   margin-left: var(--offset_m);
+}
+
+.controls-Toolbar__item_horizontal-spacing_big {
+   margin-left: var(--offset_l);
+}
+
+.controls-Toolbar__item_vertical-spacing_medium {
+   margin-top: var(--offset_xs);
+}
+
+.controls-Toolbar__item_vertical-spacing_big {
+   margin-top: var(--offset_xs);
+}
+
+.controls-Toolbar__item {
+   max-width: 100%;
+   cursor: pointer;
+   display: inline-block;
+
+   &:last-child {
+      margin-right: 0;
+   }
+}
+
+.controls-Toolbar__item::before,
+.controls-Toolbar__item_readOnly::before {
+   content: '\200b';
+}
+
+.controls-Toolbar__item_readOnly {
+   cursor: auto;
+}
+
+.controls-Toolbar_content {
+   width: 100%;
+   display: inline-flex;
+   align-items: center;
+
+   &-horizontal::before {
+      content: '\200b';
+   }
+}
+
+.controls-Toolbar_content-vertical {
+   flex-direction: column;
+}
+
+.controls-Toolbar__button {
+   max-width: 100%;
+}
+
+.controls-Toolbar__menu {
+   align-self: baseline;
+}
+
+.controls-Toolbar__menu_horizontal-spacing-big {
+   margin-left: var(--offset_l);
+}
+
+.controls-Toolbar__menu_horizontal-spacing-medium {
+   margin-left: var(--offset_m);
+}
+
+.controls-Toolbar__menu_horizontal-spacing-small {
+   margin-left: var(--offset_xs);
+}
+
+.controls-Toolbar__menu_vertical-spacing-big,
+.controls-Toolbar__menu_vertical-spacing-medium,
+.controls-Toolbar__menu_vertical-spacing-small {
+   margin-top: var(--offset_xs);
+}

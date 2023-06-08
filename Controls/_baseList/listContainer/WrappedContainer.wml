@@ -1,0 +1,6 @@
+<Controls.context:DataContextCompatibleConsumer>
+    <ws:innerComponent>
+        <Controls.context:ContextOptionsConsumer scope="{{ _options }}"
+                                                 contextOptionsInnerComponent="{{ _innerTemplate }}" />
+    </ws:innerComponent>
+</Controls.context:DataContextCompatibleConsumer>

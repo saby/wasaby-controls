@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper">
+    <Controls.tree:View
+            storeId="listdata"
+            bind:expandedItems="_expandedItems">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/tree:ItemTemplate" expanderSize="l"/>
+        </ws:itemTemplate>
+    </Controls.tree:View>
+</div>

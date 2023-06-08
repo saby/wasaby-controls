@@ -1,0 +1,68 @@
+<div class="controlsDemo__wrapper controlDemo_Tile_default">
+itemTemplate <Controls.RadioGroup:Control
+    bind:selectedKey="_itemTemplate"
+    source="{{_itemTemplateSource}}"
+    keyProperty="id"
+    displayProperty="id"
+    direction="horizontal"/><br/>
+beforeItemsTemplate <Controls.RadioGroup:Control
+    bind:selectedKey="_beforeItemsTpl"
+    source="{{_additionalTemplateSource}}"
+    keyProperty="id"
+    displayProperty="title"
+    direction="horizontal"/><br/>
+afterItemsTemplate <Controls.RadioGroup:Control
+    bind:selectedKey="_afterItemsTpl"
+    source="{{_additionalTemplateSource}}"
+    keyProperty="id"
+    displayProperty="title"
+    direction="horizontal"/>
+<Controls.treeTile:View
+    tileMode="static"
+    displayProperty="title"
+    imageProperty="image"
+    keyProperty="id"
+    itemsReadyCallback="{{_itemsReadyCallbackHor}}"
+    roundBorder="{{ {tr: 'm', br: 'm', tl: 'm', bl: 'm'} }}"
+    tileHeight="200"
+    tileWidth="300"
+    beforeItemsTemplate="{{_resolveAdditionalItemTemplate(_beforeItemsTpl)}}"
+    afterItemsTemplate="{{_resolveAdditionalItemTemplate(_afterItemsTpl)}}"
+    source="{{_viewSource}}">
+  <ws:itemTemplate>
+    <ws:partial
+        template="{{_itemTemplate}}"
+        imageSize="m"
+        border="{{false}}"
+        scope="{{itemTemplate}}"/>
+  </ws:itemTemplate>
+</Controls.treeTile:View>
+<Controls.scroll:Container
+    scrollOrientation="horizontal"
+    attr:class="controlsDemo_fixedWidth800"
+>
+  <Controls.treeTile:View
+      tileMode="static"
+      displayProperty="title"
+      imageProperty="image"
+      keyProperty="id"
+      itemsReadyCallback="{{_itemsReadyCallback}}"
+      roundBorder="{{ {tr: 'm', br: 'm', tl: 'm', bl: 'm'} }}"
+      tileHeight="200"
+      tileWidth="300"
+      beforeItemsTemplate="{{_resolveAdditionalItemTemplate(_beforeItemsTpl)}}"
+      afterItemsTemplate="{{_resolveAdditionalItemTemplate(_afterItemsTpl)}}"
+      source="{{_viewSource}}"
+      orientation="horizontal"
+  >
+    <ws:itemsContainerPadding left="s" right="s"/>
+    <ws:itemTemplate>
+      <ws:partial
+          template="{{_itemTemplate}}"
+          imageSize="m"
+          border="{{false}}"
+          scope="{{itemTemplate}}"/>
+    </ws:itemTemplate>
+  </Controls.treeTile:View>
+</Controls.scroll:Container>
+</div>

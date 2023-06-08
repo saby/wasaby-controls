@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth350">
+    <Controls.list:View storeId="listData"
+                        multiSelectVisibility="visible"
+                        markerVisibility="hidden">
+        <ws:multiSelectTemplate>
+            <ws:partial template="Controls/list:MultiSelectCircleTemplate"/>
+        </ws:multiSelectTemplate>
+    </Controls.list:View>
+</div>

@@ -1,0 +1,93 @@
+<div class="{{ _getViewClasses() }}" style="{{ _getViewStyles()}}">
+    <div class="{{_getItemsContainerClasses()}} {{_options.itemsContainerClass}}"
+         name="itemsContainer" attr:data-qa="tile-container">
+        <ws:if data="{{_listModel}}">
+            <!--Top loading indicator-->
+            <ws:partial if="{{ _listModel.getTopIndicator() }}"
+                        template="{{_listModel.getTopIndicator().getTemplate()}}"
+                        className="{{_getLoadingIndicatorClasses()}}"
+                        item="{{_listModel.getTopIndicator()}}"/>
+            <!--Backward loading trigger-->
+            <ws:partial template="{{ _listModel.getTopTrigger().getTemplate() }}"
+                        className="{{_getTriggerClasses()}}"
+                        trigger="{{ _listModel.getTopTrigger() }}"
+                        orientation="{{_orientation || _options.orientation}}"/>
+
+            <ws:partial
+                    template="{{_forTemplate}}"
+                    collection="{{_listModel}}"
+                    itemActionsTemplate="{{_options.itemActionsTemplate}}"
+                    itemActionsPosition="{{ _options.itemActionsPosition }}"
+                    itemActionsClass="{{_options.itemActionsClass}}"
+                    swipeTemplate="{{_options.swipeTemplate}}"
+                    backgroundStyle="{{ _options.backgroundStyle || _options.style }}"
+                    subPixelArtifactFix="{{_options.subPixelArtifactFix}}"
+                    pixelRatioBugFix="{{_options.pixelRatioBugFix}}"
+                    itemTemplate="{{_itemTemplate}}"
+
+                    onItemMouseEnterCallback="{{_onItemMouseEnter}}"
+                    onItemMouseLeaveCallback="{{_onItemMouseLeave}}"
+                    onItemMouseMoveCallback="{{_onItemMouseMove}}"
+                    onItemMouseDownCallback="{{_onItemMouseDown}}"
+                    onItemMouseUpCallback="{{_onItemMouseUp}}"
+                    onItemClickCallback="{{_onItemClick}}"
+                    onItemContextMenuCallback="{{_onItemContextMenu}}"
+                    onItemSwipeCallback="{{_onItemSwipe}}"
+                    onItemLongTapCallback="{{_onItemLongTap}}"
+                    onItemTouchMoveCallback="{{_onItemTouchMove}}"
+                    onItemTouchStartCallback="{{_onItemTouchStart}}"
+                    onItemTouchEndCallback="{{_onItemTouchEnd}}"
+                    onItemWheelCallback="{{_onItemWheel}}"
+                    onItemDeactivatedCallback="{{_options.onItemDeactivated}}"
+
+                    onActionsMouseEnter="{{_options.onActionsMouseEnter}}"
+                    onActionMouseDown="{{_options.onActionMouseDown}}"
+                    onActionMouseUp="{{_options.onActionMouseUp}}"
+                    onActionClick="{{_options.onActionClick}}"
+                    onActionMouseEnter="{{_options.onActionMouseEnter}}"
+                    onActionMouseLeave="{{_options.onActionMouseLeave}}"
+                    itemActionsTemplateMountedCallback="{{_options.itemActionsTemplateMountedCallback}}"
+                    itemActionsTemplateUnmountedCallback="{{_options.itemActionsTemplateUnmountedCallback}}"
+
+                    _onBreadcrumbItemClick="{{_onBreadcrumbItemClick}}">
+                <ws:groupTemplate>
+                    <ws:partial
+                            template="{{_groupTemplate}}"
+                            attr:class="controls-TileView__group"
+                            scope="{{groupTemplate}}"/>
+                </ws:groupTemplate>
+            </ws:partial>
+
+            <ws:if data="{{ _isEmpty() && _listModel.getEmptyTemplateItem() }}">
+                <Controls.baseList:EmptyWrapper template="{{ _listModel.getEmptyTemplateItem().getTemplate(_options.emptyTemplate) }}"
+                                                className="ws-flex-grow-1"
+                                                item="{{ _listModel.getEmptyTemplateItem() }}"
+                                                items="{{ _listModel.getSourceCollection() }}"
+                                                filter="{{ _options.filter }}"/>
+            </ws:if>
+
+            <!--Forward loading trigger-->
+            <ws:partial template="{{ _listModel.getBottomTrigger().getTemplate() }}"
+                        className="{{_getTriggerClasses()}}"
+                        trigger="{{ _listModel.getBottomTrigger() }}"
+                        orientation="{{_orientation || _options.orientation}}"/>
+
+            <!--Bottom loading indicator-->
+            <ws:partial if="{{ _listModel.getBottomIndicator() }}"
+                        template="{{_listModel.getBottomIndicator().getTemplate()}}"
+                        className="{{_getLoadingIndicatorClasses()}}"
+                        item="{{_listModel.getBottomIndicator()}}"/>
+
+            <ws:if data="{{_options.footerTemplate}}">
+                <div class="controls-TileView__footer">
+                    <ws:partial template="{{_options.footerTemplate}}" scope="{{_options.footerTemplateOptions}}" />
+                </div>
+            </ws:if>
+
+            <!--Global loading indicator-->
+            <ws:partial if="{{ _listModel.getGlobalIndicator() }}"
+                        template="{{_listModel.getGlobalIndicator().getTemplate()}}"
+                        item="{{_listModel.getGlobalIndicator()}}"/>
+        </ws:if>
+    </div>
+</div>

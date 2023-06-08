@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <Controls.skeleton:Text></Controls.skeleton:Text>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.skeleton:Text rows="{{3}}" fontSize="l"></Controls.skeleton:Text>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.skeleton:Text rows="{{5}}" active="{{true}}"></Controls.skeleton:Text>
+    </div>
+</div>

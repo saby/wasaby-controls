@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper controlsDemo__maxWidth600 controls-background-unaccented">
+    <Controls.searchBreadcrumbsGrid:View
+       source="{{_viewSource}}"
+       keyProperty="id"
+       parentProperty="parent"
+       displayProperty="title"
+       nodeProperty="parent@"
+       backgroundStyle="unaccented"
+       columns="{{ _columns }}"
+       header="{{ _header }}"
+       multiSelectVisibility="visible"
+    />
+</div>

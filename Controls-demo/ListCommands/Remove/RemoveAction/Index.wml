@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper">
+<Controls-ListEnv.operationsPanel:View storeId="listData"/>
+<!--listMarkedKey="{{ content._options.listMarkedKey }}"-->
+  <Controls.treeGrid:View
+      storeId="listData"
+      name="list"
+      attr:class="demo-Grid__control"
+      columns="{{_gridColumns}}">
+    <ws:emptyTemplate>
+      <ws:partial template="Controls/list:EmptyTemplate" topSpacing="xl" bottomSpacing="m">
+        <ws:contentTemplate>No data available!</ws:contentTemplate>
+      </ws:partial>
+    </ws:emptyTemplate>
+  </Controls.treeGrid:View>
+</div>

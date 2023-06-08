@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth350">
+<Controls.scroll:Container attr:style="max-height: 200px" shadowMode="js">
+  <Controls.list:View
+      groupProperty="brand"
+      stickyHeader="{{true}}"
+      storeId="listData1"/>
+</Controls.scroll:Container>
+</div>

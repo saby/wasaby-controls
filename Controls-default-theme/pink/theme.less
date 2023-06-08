@@ -1,0 +1,47 @@
+@themeName: default__pink;
+
+@import '../_variables';
+
+.controls_theme-@{themeName} {
+   // палитра
+   --brand_color: #e44766;
+   --text-color: #000;
+   --icon-color: #000;
+   --link_text-color: #000;
+   --link_hover_text-color: #666;
+   --link_icon-color: #000;
+   --link_hover_icon-color: #666;
+   --primary_color: #e44766;
+   --primary_text-color: var(--primary_color);
+   --primary_hover_text-color: #d1002a;
+   --primary_icon-color: var(--primary_color);
+   --primary_hover_icon-color: var(--primary_hover_text-color);
+   --primary_border-color: var(--primary_color);
+   --primary_hover_border-color: var(--primary_color);
+   --primary_background-color: #fff5f7;
+   --primary_hover_background-color: #ffebef;
+   --primary_active_background-color: #ffdbe2;
+   --primary_same_background-color: #ffebef;
+   --primary_hover_same_background-color: #ffdbe2;
+   --primary_active_same_background-color: #ffccd6;
+   --primary_contrast_background-color: var(--primary_color); //todo не по формуле
+   --primary_hover_contrast_background-color: #dd2044; //todo не по формуле делаю как раньше
+   --primary_active_contrast_background-color: var(
+      --primary_hover_contrast_background-color
+   ); //todo не по формуле делаю как раньше
+   --secondary_border-color: #8991a9;
+   --secondary_hover_border-color: #8991a9;
+   --secondary_icon-color: #999;
+   --secondary_hover_icon-color: #474747;
+
+   // other
+   --marker_color: var(--primary_color);
+}
+
+.controls_datePicker_theme-@{themeName} {
+   --monthlist_monthview_today_background-color_datePicker: #e44766;
+}
+
+.controls_calendar_theme-@{themeName} {
+   --monthview_today_background-color_monthSlider: #e44766;
+}

@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper controlsDemo__grid-tagStyleProperty controlsDemo__maxWidth800">
+    <Controls.grid:View
+            storeId="listData3"
+            columns="{{_columns}}"
+            multiSelectVisibility="hidden"
+            on:tagHover="_onTagHoverCustomHandler()"/>
+</div>

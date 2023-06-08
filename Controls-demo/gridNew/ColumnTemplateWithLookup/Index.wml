@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__inline-flex">
+        <Controls.grid:View
+                storeId="listData"
+                columns="{{_columns}}">
+        </Controls.grid:View>
+    </div>
+</div>

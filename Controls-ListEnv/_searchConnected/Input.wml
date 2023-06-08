@@ -1,0 +1,24 @@
+<Controls.search:InputContainer storeId="{{_options.storeId}}">
+  <Controls.search:Input
+      inlineWidth="{{_options.inlineWidth}}"
+      contrastBackground="{{_options.contrastBackground}}"
+      leftFieldTemplate="{{_options.leftFieldTemplate}}"
+      rightFieldTemplate="{{_options.rightFieldTemplate}}"
+      horizontalPadding="{{_options.horizontalPadding}}"
+      convertPunycode="{{_options.convertPunycode}}"
+      transliterate="{{_options.transliterate}}"
+      trim="{{_options.trim}}"
+      inputCallback="{{_options.inputCallback}}"
+      maxLength="{{_options.maxLength}}"
+      fontColorStyle="{{_options.fontColorStyle}}"
+      fontSize="{{_options.fontSize}}"
+      fontWeight="{{_options.fontWeight}}"
+      inlineHeight="{{_options.inlineHeight}}"
+      placeholder="{{_options.placeholder}}"
+      placeholderVisibility="{{_options.placeholderVisibility}}"
+      searchButtonIconStyle="{{_options.searchButtonIconStyle}}"
+      searchButtonAlign="{{_options.searchButtonAlign}}"
+      searchButtonVisible="{{_options.searchButtonVisible}}"
+      name="input"
+  />
+</Controls.search:InputContainer>

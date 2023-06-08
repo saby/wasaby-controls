@@ -1,0 +1,31 @@
+<div class="controlsDemo__cell">
+	<Controls.grid:View
+		attr:class="controlsDemo__inline-flex controlsDemo__maxWidth800"
+		storeId="listData">
+		<ws:columns>
+			<ws:Array>
+				<ws:Object displayProperty="title" width="450px">
+					<ws:editorTemplate>
+						<Controls.input:Text attr:style="width: 100%"
+											 bind:value="editorTemplate.item.contents['title']"
+											 inlineHeight="l"
+											 contrastBackground="{{true}}"/>
+					</ws:editorTemplate>
+					<ws:templateOptions className="Controls-demo_EditInPlace_custom-height"/>
+				</ws:Object>
+				<ws:Object displayProperty="description" width="100px">
+					<ws:editorTemplate>
+						<Controls.input:Text attr:style="width: 100%"
+											 bind:value="editorTemplate.item.contents['description']"
+											 inlineHeight="l"
+											 contrastBackground="{{true}}"/>
+					</ws:editorTemplate>
+					<ws:templateOptions className="Controls-demo_EditInPlace_custom-height"/>
+				</ws:Object>
+			</ws:Array>
+		</ws:columns>
+		<ws:editingConfig>
+			<ws:Object editOnClick="{{true}}" autoAdd="{{true}}"/>
+		</ws:editingConfig>
+	</Controls.grid:View>
+</div>

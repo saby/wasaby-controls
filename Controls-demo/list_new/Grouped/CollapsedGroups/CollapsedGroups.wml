@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper">
+<Controls.scroll:Container>
+  <Controls.list:View
+      collapsedGroups="{{_collapsedGroups}}"
+      groupProperty="brand"
+      storeId="listData"/>
+</Controls.scroll:Container>
+</div>

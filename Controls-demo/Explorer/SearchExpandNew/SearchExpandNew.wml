@@ -1,0 +1,17 @@
+<div>
+    <Controls.search:InputContainer storeId="listData">
+      <Controls.search:Input
+          attr:class="demo-Search__searchinput"/>
+    </Controls.search:InputContainer>
+    <Controls.explorer:View
+        storeId="listData"
+        searchNavigationMode="expand"
+        attr:class="demo-Explorer ControlsDemo-Explorer"
+        columns="{{_viewColumns}}">
+      <ws:emptyTemplate>
+        <ws:partial template="Controls/list:EmptyTemplate" topSpacing="xl" bottomSpacing="l">
+          <ws:contentTemplate>Не найдено</ws:contentTemplate>
+        </ws:partial>
+      </ws:emptyTemplate>
+    </Controls.explorer:View>
+</div>

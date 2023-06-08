@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:class="controlsDemo__height400" shadowMode="js">
+            <Controls.grid:View
+                    storeId="listData1"
+                    columns="{{_columns}}"
+                    ladderProperties="{{_ladderProperties}}"/>
+    </Controls.scroll:Container>
+</div>

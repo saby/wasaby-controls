@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper controls-MasterDetail_details-newDesign">
+    <Controls.grid:View
+            attr:class="controlsDemo__inline-flex"
+            storeId="listData"
+            header="{{_header}}"
+            rowSeparatorSize="s"
+            columns="{{_columns}}"
+            newDesign="{{true}}"
+            resultsPosition="top"/>
+</div>

@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper">
+    <Controls.grid:View
+            storeId="listData"
+            columns="{{_columns}}">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/grid:ItemTemplate" highlightOnHover="{{false}}"/>
+        </ws:itemTemplate>
+    </Controls.grid:View>
+</div>

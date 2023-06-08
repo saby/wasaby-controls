@@ -1,0 +1,58 @@
+<ws:template name="FIO">
+   <Controls.input:Text bind:value="item.value"/>
+</ws:template>
+
+<ws:template name="firstName">
+<Controls.input:Text bind:value="item.value"/>
+</ws:template>
+
+<ws:template name="id">
+<Controls.filterPopup:Dropdown
+        bind:selectedKeys="item.value"
+        bind:textValue="item.textValue"
+        displayProperty="title"
+        keyProperty="key"
+        source="{{item.source}}"/>
+</ws:template>
+
+<ws:template name="checked">
+<Controls.checkbox:Checkbox bind:value="item.value" caption="checked"/>
+</ws:template>
+
+<ws:template name="Test1">
+<Controls.filterPopup:Dropdown
+        source="{{item.source}}"
+        keyProperty="key"
+        bind:textValue="item.textValue"
+        bind:selectedKeys="item.value"/>
+</ws:template>
+
+<ws:template name="Test2">
+<Controls.checkbox:Checkbox bind:value="item.value" caption="{{item.textValue}}"/>
+</ws:template>
+
+<ws:template name="Test3">
+<Controls.checkbox:Checkbox bind:value="item.value" caption="{{item.textValue}}"/>
+</ws:template>
+
+<ws:template name="Test4">
+<Controls.checkbox:Checkbox bind:value="item.value" caption="{{item.textValue}}"/>
+</ws:template>
+
+<ws:template name="Test5">
+<Controls.filterPopup:Text bind:value="item.value" caption="{{item.textValue}}"/>
+</ws:template>
+
+<ws:template name="Test6">
+<Controls.checkbox:Checkbox bind:value="item.value" caption="{{item.textValue}}"/>
+</ws:template>
+
+<ws:template name="Test7">
+<Controls.checkbox:Checkbox bind:value="item.value" caption="{{item.textValue}}"/>
+</ws:template>
+
+<ws:template name="Test8">
+<Controls.checkbox:Checkbox bind:value="item.value" caption="{{item.textValue}}"/>
+</ws:template>
+
+<ws:partial template="{{item.name}}" item="{{item}}"/>

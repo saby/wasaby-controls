@@ -1,0 +1,39 @@
+.controls-MoveDialog__content {
+   display: flex;
+   flex-direction: column;
+   flex-grow: 1;
+   height: 100%; // max-height: 100% в IE не работает
+   // https://online.sbis.ru/opendoc.html?guid=78122f1f-9d8e-47c7-961d-47fd91c750ea
+   overflow: hidden;
+}
+
+.controls-MoveDialog__search {
+   width: var(--search_width_MoveDialog);
+   margin: var(--header_padding-vertical_MoveDialog) var(--offset_m);
+   flex-shrink: 0;
+}
+
+.controls-MoveDialog__scroll {
+   height: 100%;
+   flex-grow: 1;
+   min-height: var(--scroll_min-height_MoveDialog);
+}
+
+.controls-MoveDialog__root {
+   font-size: var(--font-size_2xl);
+}
+
+.controls-MoveDialog__label {
+   display: inline-block;
+   color: var(--unaccented_text-color);
+   font-size: var(--font-size_xs);
+}
+
+.controls-MoveDialog__title {
+   display: inline-block;
+   margin-right: 5px;
+}
+
+.controls-MoveDialog__explorer {
+   flex-grow: 1;
+}

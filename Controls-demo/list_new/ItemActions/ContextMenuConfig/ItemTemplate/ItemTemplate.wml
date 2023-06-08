@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500 controlsDemo__itemActions_list_ItemTemplate">
+    <Controls.list:View
+            storeId="listData2"
+            itemActions="{{_itemActions}}">
+        <ws:contextMenuConfig>
+            <ws:itemTemplate>
+                <ws:if data="{{itemTemplate.item.contents.menuItemTemplate}}">
+                    <ws:partial template="{{itemTemplate.item.contents.menuItemTemplate}}"/>
+                </ws:if>
+                <ws:else>
+                    <ws:partial template="Controls/menu:ItemTemplate"/>
+                </ws:else>
+            </ws:itemTemplate>
+        </ws:contextMenuConfig>
+    </Controls.list:View>
+</div>

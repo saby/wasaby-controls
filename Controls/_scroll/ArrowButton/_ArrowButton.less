@@ -1,0 +1,64 @@
+.controls_Scroll__ArrowButton {
+   z-index: 3;
+   position: absolute;
+   border-radius: var(--border-radius_l);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: var(--translucent_background-color_button);
+}
+
+.controls_Scroll__ArrowButton__horizontal {
+   margin: 0 var(--offset_s);
+   height: var(--inline_height_2xl);
+   width: var(--arrow-button_width_scroll);
+   top: calc(50% - (var(--inline_height_2xl) / 2));
+}
+
+.controls_Scroll__ArrowButton__vertical {
+   width: var(--inline_height_2xl);
+   height: var(--arrow-button_width_scroll);
+   left: calc(50% - (var(--inline_height_2xl) / 2));
+}
+
+.controls_Scroll__ArrowButton_direction_next {
+   right: 0;
+}
+
+.controls_Scroll__ArrowButton_direction_prev {
+   left: 0;
+}
+
+.controls_Scroll__ArrowButton_icon {
+   height: 100%;
+   fill: var(--contrast_icon-color);
+}
+
+.controls_Scroll__ArrowButton_icon_direction-prev {
+   transform: rotate(270deg);
+}
+
+.controls_Scroll__ArrowButton_icon_direction-next {
+   transform: rotate(90deg);
+}
+
+.controls_Scroll__ArrowButton_direction_up {
+   top: var(--offset_s);
+}
+
+.controls_Scroll__ArrowButton_direction_down {
+   bottom: var(--offset_s);
+   transform: rotate(180deg);
+}
+
+.ws-is-hover .controls_Scroll__ArrowButton:hover {
+   background-color: var(--translucent_hover_background-color_button);
+   cursor: pointer;
+}
+
+.ws-is-touch,
+.ws-is-no-touch {
+   .controls_Scroll__ArrowButton:active {
+      background-color: var(--translucent_active_background-color_button);
+   }
+}

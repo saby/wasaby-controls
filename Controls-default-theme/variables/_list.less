@@ -1,0 +1,162 @@
+.controls_theme-@{themeName} {
+   // Переменные для списков
+   //
+   // Базовая линия списков
+   // Для нового размера шрифта размер базовой линии по умолчанию должен быть 18px
+   // Разбираться с базовыми линиями будем по задаче
+   // https://online.sbis.ru/opendoc.html?guid=00d1506b-f713-415b-b282-505110d38257&client=3
+   --baseline_list: var(--font-size_3xl);
+
+   // Пэйджинг при подгрузке по скроллу
+
+   --scrollpaging_offset-vertical_list: var(--offset_xs);
+   --scrollpaging_offset-horizontal_list: var(--offset_s);
+
+   // Футер
+   --more_height_list: var(--inline_height_default);
+   --more_text-color_list: var(--link_text-color);
+   --more_hover_text-color_list: var(--link_hover_text-color);
+
+   // Индикатор загрузки
+   --loadingIndicator_iterativeSearch_box-shadow_list: 0 0 8px rgba(0, 0, 0, 0.12);
+
+   // Переменные для плоского списка
+   //
+   // Фон элемента списка
+
+   --item_hover_background-color_list: var(--hover_background-color);
+   --item_active_background-color_list: var(--hover_background-color);
+
+   // Перемещение записей
+   --item_dragging_shadow-height_list: 3px;
+   --item_dragging_shadow-top_height_list: calc(-1 * var(--item_dragging_shadow-height_list));
+   --item_dragging_shadow-spread_list: 4px;
+   --item_dragging_counter_height_list: 20px;
+   --item_dragging_counter_offset_list: 4px;
+   --item_dragging_counter_font-size_list: 14px;
+   --faded-text-color: rgba(0, 0, 0, 0.6);
+
+   // Маркер
+
+   --marker_thickness_list: 3px;
+   --marker_image_padding: 1px;
+   --marker_thickness_content-xs_list: var(--marker_thickness_list);
+   --marker_thickness_content-xl_list: 4px;
+   --marker_thickness_image-s_list: 4px;
+   --marker_thickness_image-m_list: 4px;
+   --marker_thickness_image-mt_list: 4px;
+   --marker_thickness_image-l_list: 4px;
+   --marker_size_content-xs_list: 16px;
+   --marker_size_content-xl_list: 24px;
+   --marker_size_image-s_list: 22px;
+   --marker_size_image-m_list: 30px;
+   --marker_size_image-mt_list: 34px;
+   --marker_size_image-l_list: 38px;
+
+   // Чебоксы мультивыбора
+
+   --checkbox_offset-top_list: 4px;
+   --checkbox_offset-left_list: 0px;
+   --checkbox_height_list: var(--height_checkbox);
+
+   // Отступы в элементах списка
+   --item_padding-top_s_list: 3px;
+   --item_padding-top_l_list: 6px;
+   --item_padding-bottom_s_list: 3px;
+   --item_padding-bottom_l_list: 6px;
+   --item_padding-left_xs_list: 0;
+   --item_padding-right_xs_list: 0;
+   --item_padding-left_s_list: var(--offset_s);
+   --item_padding-right_s_list: var(--offset_s);
+   --item_padding-left_m_list: var(--offset_m);
+   --item_padding-right_m_list: var(--offset_m);
+   --item_padding-left_l_list: var(--offset_l);
+   --item_padding-right_l_list: var(--offset_l);
+   --item_padding-left_xl_list: var(--offset_xl);
+   --item_padding-right_xl_list: var(--offset_xl);
+   --item_padding-left_2xl_list: var(--offset_2xl);
+   --item_padding-right_2xl_list: var(--offset_2xl);
+   --item_padding-left_3xl_list: var(--offset_3xl);
+   --item_padding-right_3xl_list: var(--offset_3xl);
+   --item_padding-left_default_list: var(--item_padding-left_m_list);
+   --item_padding-right_default_list: var(--item_padding-right_m_list);
+
+   // Группировка
+
+   --grouping_height_list: 18px;
+   --grouping_separator_thickness_list: 1px;
+   --grouping_separator_color_list: #eaeaea;
+   --grouping_expander_padding-left_list: var(--offset_m);
+   --grouping_expander_padding-right_list: var(--offset_m);
+   --grouping_expander_font-size_list: var(--font-size_xs);
+   --grouping_expander_text-color_list: var(--unaccented_text-color);
+   --grouping_expander_hover_text-color_list: var(--unaccented_hover_text-color);
+   --grouping_expander_icon-size_list: var(--icon-size_s);
+   --grouping_expander_icon_offset_list: var(--offset_xs);
+
+   // Заглушка "нет данных"
+
+   --placeholder_text-color_list: #aab0c1;
+   --placeholder_font-size_list: var(--font-size_m);
+   --placeholder_padding-top_xs_list: 0;
+   --placeholder_padding-top_2xl_list: 44px;
+   --placeholder_padding-bottom_xs_list: 0;
+   --placeholder_padding-bottom_2xl_list: 44px;
+
+   // Список в стиле Мастер - деталь
+
+   // Разделитель
+   --master_separator_thickness_list: 0;
+   --master_separator_contrast-color_list: transparent;
+   --master_separator_color_list: #f0f0f0;
+   --master-same_separator_thickness_list: 3px;
+
+   // Цвет фона элемента
+   --master_item_background-color_list: var(--unaccented_background-color);
+   --master_item_background-color_list_rgb: 248, 248, 248;
+   --master_item_separator_thickness_list: 2px;
+   --master_item_hover_background-color_list: var(--unaccented_hover_background-color);
+   --master_item_hover_background-color_list_rgb: 243, 244, 248;
+   --master_item_selected_background-color_list: var(--unaccented_active_background-color);
+   --master_item_selected_background-color_list_rgb: 237, 238, 242;
+
+   // Текст
+   --master_item_selected_text-color_list: var(--text-color);
+
+   // Отступы
+   --master_item_padding-top_list: 4px;
+   --master_item_horizontal-offset_list: var(--offset_2xs);
+   --master_item_padding-bottom_list: 3px;
+   --master_item_border-radius_list: var(--border-radius_xs);
+
+   // Размеры
+   --master_item_min-height: var(--inline_height_m);
+
+   // Цвет фона списка detail
+   --detail_contrast_background-color_masterDetail: var(--background-color);
+   --detail_background-color_masterDetail: #f8f8f8;
+   --detail-new_background_masterDetail: transparent;
+
+   // Изменение размера
+   --resizingLine_mobile_offset-left_masterDetail: 7px;
+   --resizingLine_mobile_thickness_masterDetail: 17px;
+
+   // Разделители между элементами
+
+   --item-separator_s_thickness_list: 1px;
+   --item-separator_l_thickness_list: 3px;
+   --item_edge_separator_s_color_list: #eaeaea;
+   --item_edge_separator_l_color_list: #f3f3f3;
+   --item_separator_s_color_list: #f5f5f5;
+   --item_separator_l_color_list: #f3f3f3;
+
+   // Переменные для декоратора денег
+
+   --group-text-color_decoratorMoney: var(--readonly_color);
+   --results-text-color_decoratorMoney: var(--secondary_text-color);
+   --list-text-color_decoratorMoney: var(--secondary_text-color);
+   --height_checkbox: var(--inline_height_m);
+   --tracked_properties_height: 26px;
+   --tracked_properties_border-radius: 6px;
+   --tracked_properties_background: #f4f4f4d9;
+}

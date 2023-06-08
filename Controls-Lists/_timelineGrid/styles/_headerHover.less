@@ -1,0 +1,79 @@
+.ws-is-hover {
+   .ControlsLists-timelineGrid__headerCellHover:hover .ControlsLists-timelineGrid__headerCell__hoverElement {
+      content: '\200b';
+      position: absolute;
+      height: 100%;
+      background: var(--unaccented_hover_background-color);
+      z-index: 1;
+   }
+
+   .ControlsLists-timelineGrid__headerCellHover_day-0 {
+      @variants: ~'3xs', ~'2xs', xs, s, st, m, l, xl, ~'2xl', ~'3xl';
+      .for(@variants, {
+         &_@{_item}:hover .ControlsLists-timelineGrid__headerCell__hoverElement {
+            left: calc((var(--dynamic-column_width) + ~'var(--offset_@{_item})') * 0);
+            width: calc((var(--dynamic-column_width) + ~'var(--offset_@{_item})') * 7 - ~'var(--offset_@{_item})');
+         }
+      });
+   }
+
+   .ControlsLists-timelineGrid__headerCellHover_day-1 {
+      @variants: ~'3xs', ~'2xs', xs, s, st, m, l, xl, ~'2xl', ~'3xl';
+      .for(@variants, {
+         &_@{_item}:hover .ControlsLists-timelineGrid__headerCell__hoverElement {
+            left: calc((var(--dynamic-column_width) + ~'var(--offset_@{_item})') * -1);
+            width: calc((var(--dynamic-column_width) + ~'var(--offset_@{_item})') * 7 - ~'var(--offset_@{_item})');
+         }
+      });
+   }
+
+   .ControlsLists-timelineGrid__headerCellHover_day-2 {
+      @variants: ~'3xs', ~'2xs', xs, s, st, m, l, xl, ~'2xl', ~'3xl';
+      .for(@variants, {
+         &_@{_item}:hover .ControlsLists-timelineGrid__headerCell__hoverElement {
+            left: calc((var(--dynamic-column_width) + ~'var(--offset_@{_item})') * -2);
+            width: calc((var(--dynamic-column_width) + ~'var(--offset_@{_item})') * 7 - ~'var(--offset_@{_item})');
+         }
+      });
+   }
+
+   .ControlsLists-timelineGrid__headerCellHover_day-3 {
+      @variants: ~'3xs', ~'2xs', xs, s, st, m, l, xl, ~'2xl', ~'3xl';
+      .for(@variants, {
+         &_@{_item}:hover .ControlsLists-timelineGrid__headerCell__hoverElement {
+            left: calc((var(--dynamic-column_width) + ~'var(--offset_@{_item})') * -3);
+            width: calc((var(--dynamic-column_width) + ~'var(--offset_@{_item})') * 7 - ~'var(--offset_@{_item})');
+         }
+      });
+   }
+
+   .ControlsLists-timelineGrid__headerCellHover_day-4 {
+      @variants: ~'3xs', ~'2xs', xs, s, st, m, l, xl, ~'2xl', ~'3xl';
+      .for(@variants, {
+         &_@{_item}:hover .ControlsLists-timelineGrid__headerCell__hoverElement {
+            left: calc((var(--dynamic-column_width) + ~'var(--offset_@{_item})') * -4);
+            width: calc((var(--dynamic-column_width) + ~'var(--offset_@{_item})') * 7 - ~'var(--offset_@{_item})');
+         }
+      });
+   }
+
+   .ControlsLists-timelineGrid__headerCellHover_day-5 {
+      @variants: ~'3xs', ~'2xs', xs, s, st, m, l, xl, ~'2xl', ~'3xl';
+      .for(@variants, {
+         &_@{_item}:hover .ControlsLists-timelineGrid__headerCell__hoverElement {
+            left: calc((var(--dynamic-column_width) + ~'var(--offset_@{_item})') * -5);
+            width: calc((var(--dynamic-column_width) + ~'var(--offset_@{_item})') * 7 - ~'var(--offset_@{_item})');
+         }
+      });
+   }
+
+   .ControlsLists-timelineGrid__headerCellHover_day-6 {
+      @variants: ~'3xs', ~'2xs', xs, s, st, m, l, xl, ~'2xl', ~'3xl';
+      .for(@variants, {
+         &_@{_item}:hover .ControlsLists-timelineGrid__headerCell__hoverElement {
+            left: calc((var(--dynamic-column_width) + ~'var(--offset_@{_item})') * -6);
+            width: calc((var(--dynamic-column_width) + ~'var(--offset_@{_item})') * 7 - ~'var(--offset_@{_item})');
+         }
+      });
+   }
+}

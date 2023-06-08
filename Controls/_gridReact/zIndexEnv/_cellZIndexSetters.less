@@ -1,0 +1,115 @@
+.setAnyCellIndex(@selector, @zIndex) {
+   .controls-GridReact__cell {
+      &@{selector} {
+         z-index: @zIndex;
+      }
+   }
+}
+
+.setDataCellIndex(@zIndex, @extraSelector: none) {
+   .controls-Grid__itemsContainer {
+      & when not (@extraSelector = none) {
+         .controls-GridReact__cell {
+            &@{extraSelector} {
+               z-index: @zIndex;
+            }
+         }
+      }
+
+      & when (@extraSelector = none) {
+         .controls-GridReact__cell {
+            z-index: @zIndex;
+         }
+      }
+   }
+}
+
+.setStickiedDataCellIndex(@zIndex, @extraSelector: none) {
+   .controls-Grid__itemsContainer {
+      & when not (@extraSelector = none) {
+         .controls-GridReact__cell.controls-StickyBlock {
+            &@{extraSelector} {
+               z-index: @zIndex;
+            }
+         }
+      }
+
+      & when (@extraSelector = none) {
+         .controls-GridReact__cell.controls-StickyBlock {
+            z-index: @zIndex;
+         }
+      }
+   }
+}
+
+.setHeaderCellIndex(@zIndex, @extraSelector: none) {
+   .controls-GridReact__header-cell {
+      & when not (@extraSelector = none) {
+         &@{extraSelector} {
+            z-index: @zIndex;
+         }
+      }
+
+      & when (@extraSelector = none) {
+         z-index: @zIndex;
+      }
+   }
+}
+
+.setStickiedHeaderCellIndex(@zIndex, @extraSelector: none) {
+   & when not (@extraSelector = none) {
+      .setHeaderCellIndex(@zIndex, ~'.controls-StickyBlock@{extraSelector}');
+   }
+
+   & when (@extraSelector = none) {
+      .setHeaderCellIndex(@zIndex, ~'.controls-StickyBlock');
+   }
+}
+
+.setResultCellIndex(@zIndex, @extraSelector: none) {
+   .controls-GridReact__results-cell {
+      & when not (@extraSelector = none) {
+         &@{extraSelector} {
+            z-index: @zIndex;
+         }
+      }
+
+      & when (@extraSelector = none) {
+         z-index: @zIndex;
+      }
+   }
+}
+
+.setStickiedResultCellIndex(@zIndex, @extraSelector: none) {
+   & when not (@extraSelector = none) {
+      .setResultCellIndex(@zIndex, ~'.controls-StickyBlock@{extraSelector}');
+   }
+
+   & when (@extraSelector = none) {
+      .setResultCellIndex(@zIndex, ~'.controls-StickyBlock');
+   }
+}
+
+.setFooterCellIndex(@zIndex, @extraSelector: none) {
+   .controls-GridReact__footer-cell {
+      & when not (@extraSelector = none) {
+         &@{extraSelector} {
+            z-index: @zIndex;
+         }
+      }
+
+      & when (@extraSelector = none) {
+         z-index: @zIndex;
+      }
+   }
+}
+
+.setStickiedFooterCellIndex(@zIndex, @extraSelector: none) {
+   & when not (@extraSelector = none) {
+      .setFooterCellIndex(@zIndex, ~'.controls-StickyBlock@{extraSelector}');
+   }
+
+   & when (@extraSelector = none) {
+      .setFooterCellIndex(@zIndex, ~'.controls-StickyBlock');
+   }
+}

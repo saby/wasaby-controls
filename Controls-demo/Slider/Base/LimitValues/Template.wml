@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <div class="controlsDemo__margin-top controls-text-label">minValue=0 - maxValue=50</div>
+    <Controls.slider:Base
+            maxValue="{{25}}"
+            minValue="{{0}}"
+            bind:value="_value"
+    />
+</div>

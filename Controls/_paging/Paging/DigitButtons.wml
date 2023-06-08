@@ -1,0 +1,15 @@
+<div class="controls_paging_theme-{{_options.theme}} controls-DigitButtons">
+<ws:for data="digit in _digits">
+   <ws:if data="{{digit == '…'}}">
+      <span class="controls-Paging__btn controls-DigitButtons__digit
+            controls-DigitButtons__ellipsis " attr:data-qa="DigitButtons__digit">{{digit}}</span>
+   </ws:if>
+   <ws:else>
+      <span on:click="_digitClick(digit)" class="controls-Paging__btn controls-DigitButtons__digit_btn
+                  controls-DigitButtons__digit
+                  {{digit == _options.selectedKey ? ' controls-DigitButtons__digit__selected '}}"
+                  attr:data-qa="DigitButtons__digit"
+      >{{digit}}</span>
+   </ws:else>
+</ws:for>
+</div>

@@ -1,0 +1,19 @@
+<div class="controlsDemo__wrapper">
+  <Controls.operations:PanelContainer>
+    <Controls.operations:Panel source="{{_panelSource}}"
+                               on:itemClick="_itemClick()"/>
+  </Controls.operations:PanelContainer>
+  <Controls.treeGrid:View
+      storeId="listData"
+      name="treeGrid"
+      columns="{{_columns}}"
+      on:selectedKeysChanged="_onSelectedKeysChanged()">
+    <ws:moveDialogTemplate templateName="Controls/moverDialog:Template">
+      <ws:templateOptions
+          parentProperty="parent"
+          nodeProperty="type"
+          searchParam="title"
+          columns="{{_columns}}"/>
+    </ws:moveDialogTemplate>
+  </Controls.treeGrid:View>
+</div>

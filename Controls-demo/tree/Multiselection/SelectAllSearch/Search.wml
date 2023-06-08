@@ -1,0 +1,19 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <div class="tw-break-words">
+        selectedKeys: {{_toStringArray(_selectedKeys)}}<br/>
+        excludedKeys: {{_toStringArray(_excludedKeys)}}
+    </div>
+    <div>
+        <Controls.search:InputContainer storeId="MultiselectionSelectAllSearch">
+            <Controls.search:Input/>
+        </Controls.search:InputContainer>
+        <Controls.operations:Panel selectedCountConfig="{{_selectedCountConfig}}"
+                                   source="{{ null }}"
+                                   items="{{ null }}"/>
+
+        <Controls.scroll:Container attr:class="controlsDemo__height500">
+            <Controls.tree:View storeId="MultiselectionSelectAllSearch"
+                                multiSelectVisibility="visible"/>
+        </Controls.scroll:Container>
+    </div>
+</div>

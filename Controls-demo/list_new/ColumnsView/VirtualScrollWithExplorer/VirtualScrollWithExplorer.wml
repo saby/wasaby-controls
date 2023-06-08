@@ -1,0 +1,32 @@
+<div class="controlsDemo__wrapper">
+   <Controls.buttons:Button caption="Change view mode" on:click="_changeViewMode()"/>
+   <Controls.scroll:Container attr:class="controlsDemo__height400 controlsDemo__maxWidth1000">
+      <Controls.explorer:View storeId="listData"
+                              useColumns="{{_useColumns}}"
+                              viewMode="list"
+                              columnsMode="auto"
+                              columnsCount="{{3}}"
+                              navigation="{{_navigation}}"
+                              displayProperty="title"
+                              virtualScrollConfig="{{_virtualScrollConfig}}"
+                              disableVirtualScroll="{{false}}">
+         <ws:itemTemplate>
+            <ws:if data="{{_useColumns}}">
+               <ws:partial template="Controls/columns:ItemTemplate"
+                           highlightOnHover="{{false}}"
+                           shadowVisibility="hidden">
+                  <ws:contentTemplate>
+                     <div class="controlsDemo_ColumnsView_itemTemplate-wrapper controlsDemo_ColumnsView_itemTemplate-border">
+                        <div class="controlsDemo_ColumnsView_itemTemplate-title">{{itemTemplate.item.getContents().get('title')}}</div>
+                        <div class="controlsDemo_ColumnsView_itemTemplate-description">{{itemTemplate.item.getContents().get('description')}}</div>
+                     </div>
+                  </ws:contentTemplate>
+               </ws:partial>
+            </ws:if>
+            <ws:else>
+               <ws:partial template="Controls/list:ItemTemplate" />
+            </ws:else>
+         </ws:itemTemplate>
+      </Controls.explorer:View>
+   </Controls.scroll:Container>
+</div>

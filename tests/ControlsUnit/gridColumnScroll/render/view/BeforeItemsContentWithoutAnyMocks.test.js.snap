@@ -1,0 +1,823 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContentWithoutAnyMocks Тесты без моков для проверки стыка логики gridColumnScroll, columnScrollReact и gridReact. 
+Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=fixed, columnScrollViewMode=arrows, hasResizer=false, columnScrollNavigationPosition=custom. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  />
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContentWithoutAnyMocks Тесты без моков для проверки стыка логики gridColumnScroll, columnScrollReact и gridReact. 
+Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=fixed, columnScrollViewMode=arrows, hasResizer=false, columnScrollNavigationPosition=undefined. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      class="tw-contents"
+      data-qa="GridColumnScroll__navigationRow"
+    >
+      <div
+        class="controls-StickyBlock  controls-background-default-sticky controls-GridReact__navigation-cell js-controls-GridColumnScroll__cell_scrollable"
+        style="bottom: 0px; grid-column-start: 1; grid-column-end: -1;"
+      >
+        <div
+          class="controls-StickyBlock__content"
+          style="min-height: var(--inline_height_m);"
+        >
+          <div
+            class="controls-GridReact__columnScroll__headerNavigation controls-GridReact__columnScroll__headerNavigation-part_fixed controls-GridReact__columnScroll__headerNavigation-mode_arrows"
+          >
+            <div
+              class="js-controls-ColumnScrollReact_notDragScrollable js-controls-ColumnScrollReact_fixed tw-invisible"
+            >
+              <span
+                class="controls-BaseButton controls-Button_filled controls-Button_radius-filled controls-Button_hoverIcon controls-Button_readonly controls-Button_filled_style-readonly controls-Button_bg-contrast controls-Button_circle_height-ArrowButton controls-fontsize-m controls-Button_button__wrapper-fontsize-m controls-Button_filled_shadow-none controls-notFocusOnEnter controls-ArrowButton controls-ArrowButton_left controls-margin_right-xs controls-inlineheight-ArrowButton controls-Button-inlineheight-ArrowButton controls-Button_filled_ArrowButton"
+                data-qa="ColumnScroll__scrollToButton-left"
+                tabindex="0"
+              >
+                <span
+                  class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-filled controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center controls-Button__wrapper_filled_ArrowButton"
+                >
+                  <svg
+                    class="controls-ArrowButton_icon controls-ArrowButton_icon_direction-left controls-BaseButton__icon controls-icon controls-icon_size-s controls-icon_style-readonly"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M11 8L7 14L6 14L10 8L6 2L7 2L11 8Z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <span
+                class="controls-BaseButton controls-Button_filled controls-Button_radius-filled controls-Button_hoverIcon controls-Button_readonly controls-Button_filled_style-readonly controls-Button_bg-contrast controls-Button_circle_height-ArrowButton controls-fontsize-m controls-Button_button__wrapper-fontsize-m controls-Button_filled_shadow-none controls-notFocusOnEnter controls-ArrowButton controls-ArrowButton_right undefined controls-inlineheight-ArrowButton controls-Button-inlineheight-ArrowButton controls-Button_filled_ArrowButton"
+                data-qa="ColumnScroll__scrollToButton-right"
+                tabindex="0"
+              >
+                <span
+                  class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-filled controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center controls-Button__wrapper_filled_ArrowButton"
+                >
+                  <svg
+                    class="controls-ArrowButton_icon controls-ArrowButton_icon_direction-right controls-BaseButton__icon controls-icon controls-icon_size-s controls-icon_style-readonly"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M11 8L7 14L6 14L10 8L6 2L7 2L11 8Z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContentWithoutAnyMocks Тесты без моков для проверки стыка логики gridColumnScroll, columnScrollReact и gridReact. 
+Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=fixed, columnScrollViewMode=arrows, hasResizer=true, columnScrollNavigationPosition=custom. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  />
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContentWithoutAnyMocks Тесты без моков для проверки стыка логики gridColumnScroll, columnScrollReact и gridReact. 
+Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=fixed, columnScrollViewMode=arrows, hasResizer=true, columnScrollNavigationPosition=undefined. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      class="tw-contents"
+      data-qa="GridColumnScroll__navigationRow"
+    >
+      <div
+        class="controls-StickyBlock  controls-background-default-sticky controls-GridReact__navigation-cell js-controls-GridColumnScroll__cell_scrollable"
+        style="bottom: 0px; grid-column-start: 1; grid-column-end: -1;"
+      >
+        <div
+          class="controls-StickyBlock__content"
+          style="min-height: var(--inline_height_m);"
+        >
+          <div
+            class="controls-GridReact__columnScroll__headerNavigation controls-GridReact__columnScroll__headerNavigation-part_fixed controls-GridReact__columnScroll__headerNavigation-mode_arrows"
+          >
+            <div
+              class="js-controls-ColumnScrollReact_notDragScrollable js-controls-ColumnScrollReact_fixed tw-invisible"
+            >
+              <span
+                class="controls-BaseButton controls-Button_filled controls-Button_radius-filled controls-Button_hoverIcon controls-Button_readonly controls-Button_filled_style-readonly controls-Button_bg-contrast controls-Button_circle_height-ArrowButton controls-fontsize-m controls-Button_button__wrapper-fontsize-m controls-Button_filled_shadow-none controls-notFocusOnEnter controls-ArrowButton controls-ArrowButton_left controls-margin_right-xs controls-inlineheight-ArrowButton controls-Button-inlineheight-ArrowButton controls-Button_filled_ArrowButton"
+                data-qa="ColumnScroll__scrollToButton-left"
+                tabindex="0"
+              >
+                <span
+                  class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-filled controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center controls-Button__wrapper_filled_ArrowButton"
+                >
+                  <svg
+                    class="controls-ArrowButton_icon controls-ArrowButton_icon_direction-left controls-BaseButton__icon controls-icon controls-icon_size-s controls-icon_style-readonly"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M11 8L7 14L6 14L10 8L6 2L7 2L11 8Z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <span
+                class="controls-BaseButton controls-Button_filled controls-Button_radius-filled controls-Button_hoverIcon controls-Button_readonly controls-Button_filled_style-readonly controls-Button_bg-contrast controls-Button_circle_height-ArrowButton controls-fontsize-m controls-Button_button__wrapper-fontsize-m controls-Button_filled_shadow-none controls-notFocusOnEnter controls-ArrowButton controls-ArrowButton_right undefined controls-inlineheight-ArrowButton controls-Button-inlineheight-ArrowButton controls-Button_filled_ArrowButton"
+                data-qa="ColumnScroll__scrollToButton-right"
+                tabindex="0"
+              >
+                <span
+                  class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-filled controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center controls-Button__wrapper_filled_ArrowButton"
+                >
+                  <svg
+                    class="controls-ArrowButton_icon controls-ArrowButton_icon_direction-right controls-BaseButton__icon controls-icon controls-icon_size-s controls-icon_style-readonly"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M11 8L7 14L6 14L10 8L6 2L7 2L11 8Z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContentWithoutAnyMocks Тесты без моков для проверки стыка логики gridColumnScroll, columnScrollReact и gridReact. 
+Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=fixed, columnScrollViewMode=scrollbar, hasResizer=false, columnScrollNavigationPosition=custom. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  />
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContentWithoutAnyMocks Тесты без моков для проверки стыка логики gridColumnScroll, columnScrollReact и gridReact. 
+Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=fixed, columnScrollViewMode=scrollbar, hasResizer=false, columnScrollNavigationPosition=undefined. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      class="tw-contents"
+      data-qa="GridColumnScroll__navigationRow"
+    >
+      <div
+        class="controls-StickyBlock  controls-background-transparent controls-GridReact__navigation-cell js-controls-GridColumnScroll__cell_scrollable"
+        style="bottom: 0px; grid-column-start: 1; grid-column-end: -1;"
+      >
+        <div
+          class="controls-StickyBlock__content"
+        >
+          <div
+            class="controls-GridReact__columnScroll__headerNavigation controls-GridReact__columnScroll__headerNavigation-part_fixed controls-GridReact__columnScroll__headerNavigation-mode_scrollbar"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContentWithoutAnyMocks Тесты без моков для проверки стыка логики gridColumnScroll, columnScrollReact и gridReact. 
+Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=fixed, columnScrollViewMode=scrollbar, hasResizer=true, columnScrollNavigationPosition=custom. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  />
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContentWithoutAnyMocks Тесты без моков для проверки стыка логики gridColumnScroll, columnScrollReact и gridReact. 
+Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=fixed, columnScrollViewMode=scrollbar, hasResizer=true, columnScrollNavigationPosition=undefined. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      class="tw-contents"
+      data-qa="GridColumnScroll__navigationRow"
+    >
+      <div
+        class="controls-StickyBlock  controls-background-transparent controls-GridReact__navigation-cell js-controls-GridColumnScroll__cell_scrollable"
+        style="bottom: 0px; grid-column-start: 1; grid-column-end: -1;"
+      >
+        <div
+          class="controls-StickyBlock__content"
+        >
+          <div
+            class="controls-GridReact__columnScroll__headerNavigation controls-GridReact__columnScroll__headerNavigation-part_fixed controls-GridReact__columnScroll__headerNavigation-mode_scrollbar"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContentWithoutAnyMocks Тесты без моков для проверки стыка логики gridColumnScroll, columnScrollReact и gridReact. 
+Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=fixed, columnScrollViewMode=unaccented, hasResizer=false, columnScrollNavigationPosition=custom. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  />
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContentWithoutAnyMocks Тесты без моков для проверки стыка логики gridColumnScroll, columnScrollReact и gridReact. 
+Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=fixed, columnScrollViewMode=unaccented, hasResizer=false, columnScrollNavigationPosition=undefined. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  />
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContentWithoutAnyMocks Тесты без моков для проверки стыка логики gridColumnScroll, columnScrollReact и gridReact. 
+Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=fixed, columnScrollViewMode=unaccented, hasResizer=true, columnScrollNavigationPosition=custom. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  />
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContentWithoutAnyMocks Тесты без моков для проверки стыка логики gridColumnScroll, columnScrollReact и gridReact. 
+Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=fixed, columnScrollViewMode=unaccented, hasResizer=true, columnScrollNavigationPosition=undefined. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  />
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContentWithoutAnyMocks Тесты без моков для проверки стыка логики gridColumnScroll, columnScrollReact и gridReact. 
+Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=scrollable, columnScrollViewMode=arrows, hasResizer=false, columnScrollNavigationPosition=custom. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      class="tw-contents"
+      data-qa="GridColumnScroll__contentObserver"
+    >
+      <div
+        style="grid-column-start: 1; grid-column-end: 3;"
+      >
+        <div
+          data-qa="ColumnScrollReact__contentObserver__fixedPart"
+        />
+      </div>
+      <div
+        style="grid-column-start: 3; grid-column-end: -1;"
+      >
+        <div
+          data-qa="ColumnScrollReact__contentObserver__scrollablePart"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContentWithoutAnyMocks Тесты без моков для проверки стыка логики gridColumnScroll, columnScrollReact и gridReact. 
+Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=scrollable, columnScrollViewMode=arrows, hasResizer=false, columnScrollNavigationPosition=undefined. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      class="tw-contents"
+      data-qa="GridColumnScroll__contentObserver"
+    >
+      <div
+        style="grid-column-start: 1; grid-column-end: 3;"
+      >
+        <div
+          data-qa="ColumnScrollReact__contentObserver__fixedPart"
+        />
+      </div>
+      <div
+        style="grid-column-start: 3; grid-column-end: -1;"
+      >
+        <div
+          data-qa="ColumnScrollReact__contentObserver__scrollablePart"
+        />
+      </div>
+    </div>
+    <div
+      class="tw-contents"
+      data-qa="GridColumnScroll__navigationRow"
+    >
+      <div
+        class="controls-StickyBlock  controls-background-default-sticky controls-GridReact__navigation-cell js-controls-GridColumnScroll__cell_fixed js-controls-ColumnScrollReact_fixed"
+        style="bottom: 0px; grid-column-start: 1; grid-column-end: 3;"
+      >
+        <div
+          class="controls-StickyBlock__content"
+          style="min-height: var(--inline_height_m);"
+        />
+      </div>
+      <div
+        class="controls-StickyBlock  controls-background-default-sticky controls-GridReact__navigation-cell js-controls-GridColumnScroll__cell_scrollable"
+        style="bottom: 0px; grid-column-start: 3; grid-column-end: -1;"
+      >
+        <div
+          class="controls-StickyBlock__content"
+          style="min-height: var(--inline_height_m);"
+        >
+          <div
+            class="controls-GridReact__columnScroll__headerNavigation controls-GridReact__columnScroll__headerNavigation-part_scrollable controls-GridReact__columnScroll__headerNavigation-mode_arrows"
+          >
+            <div
+              class="js-controls-ColumnScrollReact_notDragScrollable js-controls-ColumnScrollReact_fixed tw-invisible"
+            >
+              <span
+                class="controls-BaseButton controls-Button_filled controls-Button_radius-filled controls-Button_hoverIcon controls-Button_readonly controls-Button_filled_style-readonly controls-Button_bg-contrast controls-Button_circle_height-ArrowButton controls-fontsize-m controls-Button_button__wrapper-fontsize-m controls-Button_filled_shadow-none controls-notFocusOnEnter controls-ArrowButton controls-ArrowButton_left controls-margin_right-xs controls-inlineheight-ArrowButton controls-Button-inlineheight-ArrowButton controls-Button_filled_ArrowButton"
+                data-qa="ColumnScroll__scrollToButton-left"
+                tabindex="0"
+              >
+                <span
+                  class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-filled controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center controls-Button__wrapper_filled_ArrowButton"
+                >
+                  <svg
+                    class="controls-ArrowButton_icon controls-ArrowButton_icon_direction-left controls-BaseButton__icon controls-icon controls-icon_size-s controls-icon_style-readonly"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M11 8L7 14L6 14L10 8L6 2L7 2L11 8Z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <span
+                class="controls-BaseButton controls-Button_filled controls-Button_radius-filled controls-Button_hoverIcon controls-Button_readonly controls-Button_filled_style-readonly controls-Button_bg-contrast controls-Button_circle_height-ArrowButton controls-fontsize-m controls-Button_button__wrapper-fontsize-m controls-Button_filled_shadow-none controls-notFocusOnEnter controls-ArrowButton controls-ArrowButton_right undefined controls-inlineheight-ArrowButton controls-Button-inlineheight-ArrowButton controls-Button_filled_ArrowButton"
+                data-qa="ColumnScroll__scrollToButton-right"
+                tabindex="0"
+              >
+                <span
+                  class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-filled controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center controls-Button__wrapper_filled_ArrowButton"
+                >
+                  <svg
+                    class="controls-ArrowButton_icon controls-ArrowButton_icon_direction-right controls-BaseButton__icon controls-icon controls-icon_size-s controls-icon_style-readonly"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M11 8L7 14L6 14L10 8L6 2L7 2L11 8Z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContentWithoutAnyMocks Тесты без моков для проверки стыка логики gridColumnScroll, columnScrollReact и gridReact. 
+Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=scrollable, columnScrollViewMode=arrows, hasResizer=true, columnScrollNavigationPosition=custom. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      class="tw-contents"
+      data-qa="GridColumnScroll__contentObserver"
+    >
+      <div
+        style="grid-column-start: 1; grid-column-end: 3;"
+      >
+        <div
+          data-qa="ColumnScrollReact__contentObserver__fixedPart"
+        />
+      </div>
+      <div
+        style="grid-column-start: 4; grid-column-end: -1;"
+      >
+        <div
+          data-qa="ColumnScrollReact__contentObserver__scrollablePart"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContentWithoutAnyMocks Тесты без моков для проверки стыка логики gridColumnScroll, columnScrollReact и gridReact. 
+Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=scrollable, columnScrollViewMode=arrows, hasResizer=true, columnScrollNavigationPosition=undefined. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      class="tw-contents"
+      data-qa="GridColumnScroll__contentObserver"
+    >
+      <div
+        style="grid-column-start: 1; grid-column-end: 3;"
+      >
+        <div
+          data-qa="ColumnScrollReact__contentObserver__fixedPart"
+        />
+      </div>
+      <div
+        style="grid-column-start: 4; grid-column-end: -1;"
+      >
+        <div
+          data-qa="ColumnScrollReact__contentObserver__scrollablePart"
+        />
+      </div>
+    </div>
+    <div
+      class="tw-contents"
+      data-qa="GridColumnScroll__navigationRow"
+    >
+      <div
+        class="controls-StickyBlock  controls-background-default-sticky controls-GridReact__navigation-cell js-controls-GridColumnScroll__cell_fixed js-controls-ColumnScrollReact_fixed"
+        style="bottom: 0px; grid-column-start: 1; grid-column-end: 3;"
+      >
+        <div
+          class="controls-StickyBlock__content"
+          style="min-height: var(--inline_height_m);"
+        />
+      </div>
+      <div
+        class="controls-StickyBlock  controls-background-default-sticky controls-GridReact__navigation-cell js-controls-GridColumnScroll__cell_scrollable"
+        style="bottom: 0px; grid-column-start: 4; grid-column-end: -1;"
+      >
+        <div
+          class="controls-StickyBlock__content"
+          style="min-height: var(--inline_height_m);"
+        >
+          <div
+            class="controls-GridReact__columnScroll__headerNavigation controls-GridReact__columnScroll__headerNavigation-part_scrollable controls-GridReact__columnScroll__headerNavigation-mode_arrows"
+          >
+            <div
+              class="js-controls-ColumnScrollReact_notDragScrollable js-controls-ColumnScrollReact_fixed tw-invisible"
+            >
+              <span
+                class="controls-BaseButton controls-Button_filled controls-Button_radius-filled controls-Button_hoverIcon controls-Button_readonly controls-Button_filled_style-readonly controls-Button_bg-contrast controls-Button_circle_height-ArrowButton controls-fontsize-m controls-Button_button__wrapper-fontsize-m controls-Button_filled_shadow-none controls-notFocusOnEnter controls-ArrowButton controls-ArrowButton_left controls-margin_right-xs controls-inlineheight-ArrowButton controls-Button-inlineheight-ArrowButton controls-Button_filled_ArrowButton"
+                data-qa="ColumnScroll__scrollToButton-left"
+                tabindex="0"
+              >
+                <span
+                  class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-filled controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center controls-Button__wrapper_filled_ArrowButton"
+                >
+                  <svg
+                    class="controls-ArrowButton_icon controls-ArrowButton_icon_direction-left controls-BaseButton__icon controls-icon controls-icon_size-s controls-icon_style-readonly"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M11 8L7 14L6 14L10 8L6 2L7 2L11 8Z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <span
+                class="controls-BaseButton controls-Button_filled controls-Button_radius-filled controls-Button_hoverIcon controls-Button_readonly controls-Button_filled_style-readonly controls-Button_bg-contrast controls-Button_circle_height-ArrowButton controls-fontsize-m controls-Button_button__wrapper-fontsize-m controls-Button_filled_shadow-none controls-notFocusOnEnter controls-ArrowButton controls-ArrowButton_right undefined controls-inlineheight-ArrowButton controls-Button-inlineheight-ArrowButton controls-Button_filled_ArrowButton"
+                data-qa="ColumnScroll__scrollToButton-right"
+                tabindex="0"
+              >
+                <span
+                  class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-filled controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center controls-Button__wrapper_filled_ArrowButton"
+                >
+                  <svg
+                    class="controls-ArrowButton_icon controls-ArrowButton_icon_direction-right controls-BaseButton__icon controls-icon controls-icon_size-s controls-icon_style-readonly"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M11 8L7 14L6 14L10 8L6 2L7 2L11 8Z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContentWithoutAnyMocks Тесты без моков для проверки стыка логики gridColumnScroll, columnScrollReact и gridReact. 
+Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=scrollable, columnScrollViewMode=scrollbar, hasResizer=false, columnScrollNavigationPosition=custom. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      class="tw-contents"
+      data-qa="GridColumnScroll__contentObserver"
+    >
+      <div
+        style="grid-column-start: 1; grid-column-end: 3;"
+      >
+        <div
+          data-qa="ColumnScrollReact__contentObserver__fixedPart"
+        />
+      </div>
+      <div
+        style="grid-column-start: 3; grid-column-end: -1;"
+      >
+        <div
+          data-qa="ColumnScrollReact__contentObserver__scrollablePart"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContentWithoutAnyMocks Тесты без моков для проверки стыка логики gridColumnScroll, columnScrollReact и gridReact. 
+Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=scrollable, columnScrollViewMode=scrollbar, hasResizer=false, columnScrollNavigationPosition=undefined. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      class="tw-contents"
+      data-qa="GridColumnScroll__contentObserver"
+    >
+      <div
+        style="grid-column-start: 1; grid-column-end: 3;"
+      >
+        <div
+          data-qa="ColumnScrollReact__contentObserver__fixedPart"
+        />
+      </div>
+      <div
+        style="grid-column-start: 3; grid-column-end: -1;"
+      >
+        <div
+          data-qa="ColumnScrollReact__contentObserver__scrollablePart"
+        />
+      </div>
+    </div>
+    <div
+      class="tw-contents"
+      data-qa="GridColumnScroll__navigationRow"
+    >
+      <div
+        class="controls-StickyBlock  controls-background-transparent controls-GridReact__navigation-cell js-controls-GridColumnScroll__cell_fixed js-controls-ColumnScrollReact_fixed"
+        style="bottom: 0px; grid-column-start: 1; grid-column-end: 3;"
+      >
+        <div
+          class="controls-StickyBlock__content"
+        />
+      </div>
+      <div
+        class="controls-StickyBlock  controls-background-transparent controls-GridReact__navigation-cell js-controls-GridColumnScroll__cell_scrollable"
+        style="bottom: 0px; grid-column-start: 3; grid-column-end: -1;"
+      >
+        <div
+          class="controls-StickyBlock__content"
+        >
+          <div
+            class="controls-GridReact__columnScroll__headerNavigation controls-GridReact__columnScroll__headerNavigation-part_scrollable controls-GridReact__columnScroll__headerNavigation-mode_scrollbar"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContentWithoutAnyMocks Тесты без моков для проверки стыка логики gridColumnScroll, columnScrollReact и gridReact. 
+Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=scrollable, columnScrollViewMode=scrollbar, hasResizer=true, columnScrollNavigationPosition=custom. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      class="tw-contents"
+      data-qa="GridColumnScroll__contentObserver"
+    >
+      <div
+        style="grid-column-start: 1; grid-column-end: 3;"
+      >
+        <div
+          data-qa="ColumnScrollReact__contentObserver__fixedPart"
+        />
+      </div>
+      <div
+        style="grid-column-start: 4; grid-column-end: -1;"
+      >
+        <div
+          data-qa="ColumnScrollReact__contentObserver__scrollablePart"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContentWithoutAnyMocks Тесты без моков для проверки стыка логики gridColumnScroll, columnScrollReact и gridReact. 
+Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=scrollable, columnScrollViewMode=scrollbar, hasResizer=true, columnScrollNavigationPosition=undefined. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      class="tw-contents"
+      data-qa="GridColumnScroll__contentObserver"
+    >
+      <div
+        style="grid-column-start: 1; grid-column-end: 3;"
+      >
+        <div
+          data-qa="ColumnScrollReact__contentObserver__fixedPart"
+        />
+      </div>
+      <div
+        style="grid-column-start: 4; grid-column-end: -1;"
+      >
+        <div
+          data-qa="ColumnScrollReact__contentObserver__scrollablePart"
+        />
+      </div>
+    </div>
+    <div
+      class="tw-contents"
+      data-qa="GridColumnScroll__navigationRow"
+    >
+      <div
+        class="controls-StickyBlock  controls-background-transparent controls-GridReact__navigation-cell js-controls-GridColumnScroll__cell_fixed js-controls-ColumnScrollReact_fixed"
+        style="bottom: 0px; grid-column-start: 1; grid-column-end: 3;"
+      >
+        <div
+          class="controls-StickyBlock__content"
+        />
+      </div>
+      <div
+        class="controls-StickyBlock  controls-background-transparent controls-GridReact__navigation-cell js-controls-GridColumnScroll__cell_scrollable"
+        style="bottom: 0px; grid-column-start: 4; grid-column-end: -1;"
+      >
+        <div
+          class="controls-StickyBlock__content"
+        >
+          <div
+            class="controls-GridReact__columnScroll__headerNavigation controls-GridReact__columnScroll__headerNavigation-part_scrollable controls-GridReact__columnScroll__headerNavigation-mode_scrollbar"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContentWithoutAnyMocks Тесты без моков для проверки стыка логики gridColumnScroll, columnScrollReact и gridReact. 
+Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=scrollable, columnScrollViewMode=unaccented, hasResizer=false, columnScrollNavigationPosition=custom. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      class="tw-contents"
+      data-qa="GridColumnScroll__contentObserver"
+    >
+      <div
+        style="grid-column-start: 1; grid-column-end: 3;"
+      >
+        <div
+          data-qa="ColumnScrollReact__contentObserver__fixedPart"
+        />
+      </div>
+      <div
+        style="grid-column-start: 3; grid-column-end: -1;"
+      >
+        <div
+          data-qa="ColumnScrollReact__contentObserver__scrollablePart"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContentWithoutAnyMocks Тесты без моков для проверки стыка логики gridColumnScroll, columnScrollReact и gridReact. 
+Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=scrollable, columnScrollViewMode=unaccented, hasResizer=false, columnScrollNavigationPosition=undefined. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      class="tw-contents"
+      data-qa="GridColumnScroll__contentObserver"
+    >
+      <div
+        style="grid-column-start: 1; grid-column-end: 3;"
+      >
+        <div
+          data-qa="ColumnScrollReact__contentObserver__fixedPart"
+        />
+      </div>
+      <div
+        style="grid-column-start: 3; grid-column-end: -1;"
+      >
+        <div
+          data-qa="ColumnScrollReact__contentObserver__scrollablePart"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContentWithoutAnyMocks Тесты без моков для проверки стыка логики gridColumnScroll, columnScrollReact и gridReact. 
+Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=scrollable, columnScrollViewMode=unaccented, hasResizer=true, columnScrollNavigationPosition=custom. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      class="tw-contents"
+      data-qa="GridColumnScroll__contentObserver"
+    >
+      <div
+        style="grid-column-start: 1; grid-column-end: 3;"
+      >
+        <div
+          data-qa="ColumnScrollReact__contentObserver__fixedPart"
+        />
+      </div>
+      <div
+        style="grid-column-start: 4; grid-column-end: -1;"
+      >
+        <div
+          data-qa="ColumnScrollReact__contentObserver__scrollablePart"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContentWithoutAnyMocks Тесты без моков для проверки стыка логики gridColumnScroll, columnScrollReact и gridReact. 
+Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=scrollable, columnScrollViewMode=unaccented, hasResizer=true, columnScrollNavigationPosition=undefined. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      class="tw-contents"
+      data-qa="GridColumnScroll__contentObserver"
+    >
+      <div
+        style="grid-column-start: 1; grid-column-end: 3;"
+      >
+        <div
+          data-qa="ColumnScrollReact__contentObserver__fixedPart"
+        />
+      </div>
+      <div
+        style="grid-column-start: 4; grid-column-end: -1;"
+      >
+        <div
+          data-qa="ColumnScrollReact__contentObserver__scrollablePart"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

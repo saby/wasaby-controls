@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300">
+    <Controls.tree:View
+            storeId="listData"
+            bind:expandedItems="_expandedItems">
+        <ws:nodeFooterTemplate>
+            <Controls.tree:NodeFooterTemplate>
+                <b>footer template</b>
+            </Controls.tree:NodeFooterTemplate>
+        </ws:nodeFooterTemplate>
+    </Controls.tree:View>
+</div>

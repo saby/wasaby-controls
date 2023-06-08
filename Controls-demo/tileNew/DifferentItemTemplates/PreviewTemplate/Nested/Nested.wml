@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container>
+        <Controls.list:View
+                storeId="listData"
+                source="{{_rootSource}}"
+                itemActions="{{_listItemActions}}"
+                on:groupClick="_groupClick()">
+            <ws:itemTemplate>
+                <ws:partial template="Controls/list:ItemTemplate">
+                    <ws:contentTemplate>
+                        <div>
+                            {{ contentTemplate.item.contents.get('title') }}
+                        </div>
+                        <Controls-demo.tileNew.DifferentItemTemplates.PreviewTemplate.Nested.Tile.Tile/>
+                    </ws:contentTemplate>
+                </ws:partial>
+            </ws:itemTemplate>
+        </Controls.list:View>
+    </Controls.scroll:Container>
+</div>

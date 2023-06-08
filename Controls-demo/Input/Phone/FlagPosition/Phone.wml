@@ -1,0 +1,22 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+<div class="controlsDemo__cell">
+    <div class="controls-text-label">flagPosition = start</div>
+    <Controls.input:Phone attr:class="ControlsDemo-PhoneInput_phoneField"
+                          onlyMobile="{{true}}"
+                          flagVisible="{{true}}"
+                          fontSize="xl"
+                          inlineHeight="2xl"
+                          placeholder="+7 Телефон"
+                          flagPosition="start"/>
+</div>
+<div class="controlsDemo__cell">
+    <div class="controls-text-label">flagPosition = end</div>
+    <Controls.input:Phone attr:class="ControlsDemo-PhoneInput_phoneField"
+                          onlyMobile="{{true}}"
+                          flagVisible="{{true}}"
+                          fontSize="xl"
+                          inlineHeight="2xl"
+                          placeholder="+7 Телефон"
+                          flagPosition="end"/>
+</div>
+</div>

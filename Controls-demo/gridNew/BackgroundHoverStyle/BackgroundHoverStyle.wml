@@ -1,0 +1,150 @@
+<div class="controlsDemo__wrapper controlsDemo__flex">
+    <Controls-demo.gridNew.DemoLayout.Index>
+        <ws:content>
+            <Controls.grid:View
+                    useTableInOldBrowsers="{{ true }}"
+                    storeId="listData"
+                    rowSeparatorSize="{{ _horizontalSeparator }}"
+                    roundBorder="{{ _roundBorder }}"
+                    itemActions="{{ _itemActions }}"
+                    itemActionsPosition="{{ _itemActionsPosition }}"
+					editingConfig="{{ _editingConfig }}"
+					itemEditorTemplate="{{ _itemEditorTemplate }}"
+                    multiSelectVisibility="{{ _multiSelectVisibility }}">
+                <ws:itemTemplate>
+                    <ws:partial template="Controls/grid:ItemTemplate"
+                                scope="{{ _options }}"
+                                borderVisibility="{{ _borderVisibility }}"
+                                shadowVisibility="{{ _shadowVisibility }}"
+                                borderStyle="{{ _borderStyle }}"
+                                hoverBackgroundStyle="{{itemTemplate.item.contents.get('population') > 1000000000 ? 'default' : _hoverBackground}}"/>
+                </ws:itemTemplate>
+                <ws:columns>
+                    <ws:Array>
+                        <ws:Object displayProperty="number" width="30px"/>
+                        <ws:Object displayProperty="country" width="200px">
+                            <ws:columnSeparatorSize left="{{ _verticalSeparator }}"/>
+                        </ws:Object>
+                        <ws:Object displayProperty="capital" width="100px">
+                            <ws:columnSeparatorSize left="{{ _verticalSeparator }}"/>
+                        </ws:Object>
+                        <ws:Object displayProperty="population" width="150px">
+                            <ws:columnSeparatorSize left="{{ _verticalSeparator }}"/>
+                        </ws:Object>
+                        <ws:Object displayProperty="square" width="100px">
+                            <ws:columnSeparatorSize left="{{ _verticalSeparator }}"/>
+                        </ws:Object>
+                        <ws:Object displayProperty="populationDensity" width="120px">
+                            <ws:columnSeparatorSize left="{{ _verticalSeparator }}"/>
+                        </ws:Object>
+                    </ws:Array>
+                </ws:columns>
+            </Controls.grid:View>
+        </ws:content>
+        <ws:rightSidebar isExpanded="{{ true }}">
+            <ws:items>
+                <ws:Array>
+                    <ws:Object>
+                        <ws:template>
+                            <h4 class="controlsDemo__mb1">Переключатель основного фона при ховере. Сейчас={{ _hoverBackground }}</h4>
+                            <ws:for data="variant in _hoverBackgroundVariants">
+                                <Controls.buttons:Button attr:class="controls-margin_top-3xs controls-margin_right-s controls-Demo__BackgroundHoverStyle_button_background-{{variant}}"
+                                                         on:click="_setHoverBackground(variant)"
+                                                         buttonStyle="transparent"
+                                                         caption="{{variant}}"/>
+                            </ws:for>
+                        </ws:template>
+                    </ws:Object>
+                    <ws:Object>
+                        <ws:template>
+                            <h4 class="controlsDemo__mb1">Тень вокруг записи. Сейчас={{ _shadowVisibility }}</h4>
+                            <button on:click="_setShadowVisibility('hidden')" class="controlsDemo__mr1" style="padding: 3px;">hidden</button>
+                            <button on:click="_setShadowVisibility('visible')" class="controlsDemo__mr1" style="padding: 3px;">visible</button>
+                            <button on:click="_setShadowVisibility('onhover')" style="padding: 3px;">onhover</button>
+                        </ws:template>
+                    </ws:Object>
+                    <ws:Object>
+                        <ws:template>
+                            <h4 class="controlsDemo__mb1">Рамка вокруг записи. Сейчас={{ _borderVisibility }}</h4>
+                            <button on:click="_setBorderVisibility('hidden')" class="controlsDemo__mr1" style="padding: 3px;">hidden</button>
+                            <button on:click="_setBorderVisibility('visible')" class="controlsDemo__mr1" style="padding: 3px;">visible</button>
+                            <button on:click="_setBorderVisibility('onhover')" style="padding: 3px;">onhover</button>
+                        </ws:template>
+                    </ws:Object>
+                    <ws:Object>
+                        <ws:template>
+                            <h4 class="controlsDemo__mb1">Переключатель опции roundBorder. Сейчас={{ _roundBorder ? _roundBorder.tl : 'null' }}</h4>
+                            <ws:for data="index, variant in _roundBorderVariants">
+                                <button on:click="_setRoundBorder(variant)"
+                                        class="{{ index !== _roundBorderVariants.length - 1 ? 'controlsDemo__mr1' }}"
+                                        style="padding: 3px;">{{variant}}</button>
+                            </ws:for>
+                        </ws:template>
+                    </ws:Object>
+                    <ws:Object>
+                        <ws:template>
+                            <h4 class="controlsDemo__mb1">Цвет border. Сейчас={{ _borderStyle ? _borderStyle : 'default' }}</h4>
+                            <ws:for data="index, variant in _borderStyleVariants">
+                                <button on:click="_setBorderStyle(variant)"
+                                        class="{{ index !== _borderStyleVariants.length - 1 ? 'controlsDemo__mr1' }}"
+                                        style="padding: 3px;">{{variant}}</button>
+                            </ws:for>
+                        </ws:template>
+                    </ws:Object>
+                    <ws:Object>
+                        <ws:template>
+                            <h4 class="controlsDemo__mb1">Переключатель горизонтальных разделителей. Сейчас={{ _horizontalSeparator ? _horizontalSeparator : 'null' }}</h4>
+                            <ws:for data="index, variant in _horizontalSeparatorVariants">
+                                <button on:click="_setHorizontalSeparator(variant)"
+                                        class="{{ index !== _horizontalSeparatorVariants.length - 1 ? 'controlsDemo__mr1' }}"
+                                        style="padding: 3px;">{{variant || 'null'}}</button>
+                            </ws:for>
+                        </ws:template>
+                    </ws:Object>
+					<ws:Object>
+						<ws:template>
+							<h4 class="controlsDemo__mb1">Переключатель вертикальных разделителей. Сейчас={{ _verticalSeparator ? _verticalSeparator : 'null' }}</h4>
+							<ws:for data="index, variant in _verticalSeparatorVariants">
+								<button on:click="_setVerticalSeparator(variant)"
+										class="{{ index !== _verticalSeparatorVariants.length - 1 ? 'controlsDemo__mr1' }}"
+										style="padding: 3px;">{{variant || 'null'}}</button>
+							</ws:for>
+						</ws:template>
+					</ws:Object>
+					<ws:Object>
+						<ws:template>
+							<h4 class="controlsDemo__mb1">Переключатель редактирования по месту. Сейчас={{ _editingTemplateType ? _editingTemplateType : 'null' }}</h4>
+							<ws:for data="index, variant in _editingTemplateTypeVariants">
+								<button on:click="_setEditingTemplateType(variant)"
+										class="{{ index !== _editingTemplateTypeVariants.length - 1 ? 'controlsDemo__mr1' }}"
+										style="padding: 3px;">{{variant || 'null'}}</button>
+							</ws:for>
+						</ws:template>
+					</ws:Object>
+                    <ws:Object>
+                        <ws:template>
+                            <h4 class="controlsDemo__mb1">Переключатель позиции операций над записью. Сейчас={{ _itemActionsPosition }}</h4>
+                            <button on:click="_setItemActionsPosition('inside')"
+                                    class="controlsDemo__mr1"
+                                    attr:data-qa="button-actions-position-inside"
+                                    style="padding: 3px;">inside</button>
+                            <button on:click="_setItemActionsPosition('outside')"
+                                    attr:data-qa="button-actions-position-outside"
+                                    style="padding: 3px;">outside</button>
+                        </ws:template>
+                    </ws:Object>
+                    <ws:Object>
+                        <ws:template>
+                            <h4 class="controlsDemo__mb1">Переключатель отображения чекбоксов множественного выбора. Сейчас={{ _multiSelectVisibility }}</h4>
+                            <ws:for data="index, variant in _multiSelectVisibilityVariants">
+                                <button on:click="_setMultiSelectVisibility(variant)"
+                                        class="{{ index !== _multiSelectVisibilityVariants.length - 1 ? 'controlsDemo__mr1' }}"
+                                        style="padding: 3px;">{{variant || 'null'}}</button>
+                            </ws:for>
+                        </ws:template>
+                    </ws:Object>
+                </ws:Array>
+            </ws:items>
+        </ws:rightSidebar>
+    </Controls-demo.gridNew.DemoLayout.Index>
+</div>
