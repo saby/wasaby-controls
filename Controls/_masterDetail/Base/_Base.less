@@ -1,0 +1,247 @@
+.controls-MasterDetail {
+   display: flex;
+   //--list-content_air: var(--content_air);
+}
+
+.controls-MasterDetail_master-contrast,
+.controls-MasterDetail_details-contrast {
+   background-color: var(--master_item_background-color_list);
+}
+
+.controls-MasterDetail_master_adaptive,
+.controls-MasterDetail_details-contrast-adaptive {
+   background-color: var(--unaccented_adaptive_background-color);
+}
+
+.controls-MasterDetail-restricted {
+   overflow: hidden;
+   padding-top: var(--offset_xs);
+   margin-top: calc(var(--offset_xs) * -1);
+}
+
+.controls-MasterDetail_master {
+   position: relative;
+   flex-shrink: 0;
+
+   // Выносим в отдельный стек, чтобы элементы detail не прятались под элементы master
+   // пример ошибки https://online.sbis.ru/doc/d7fc00b0-3d32-4445-8249-fbe49e31a067
+   z-index: 1;
+}
+
+.controls-MasterDetail_master_width {
+   width: 27%;
+}
+
+.controls-MasterDetail_master-template {
+   box-sizing: border-box;
+   border-right-style: solid;
+   border-right-width: var(--master_separator_thickness_list);
+   border-color: var(--master_separator_contrast-color_list);
+   padding-left: var(--master_item_horizontal-offset_list);
+   max-height: 100%;
+}
+
+.controls-master-template-default {
+   border-color: var(--master_separator_color_list);
+   box-sizing: border-box;
+}
+
+.controls-master-template-default-right {
+   border-left-style: solid;
+   border-left-width: var(--master-same_separator_thickness_list);
+}
+
+.controls-master-template-default-left {
+   border-right-style: solid;
+   border-right-width: var(--master-same_separator_thickness_list);
+}
+
+.controls-MasterDetail_detailsContent,
+.controls-MasterDetail_details {
+   min-width: 1px;
+}
+
+//Z-index нужен, чтобы тень от ScrollContainer'a в master'e перекрывалась тенью от detail'a
+.controls-MasterDetail_details {
+   z-index: 1;
+   height: 100%;
+   min-height: 1px;
+}
+
+.controls-MasterDetail_master-content {
+   height: 100%;
+   z-index: 1;
+}
+
+.controls-MasterDetail_details_bg-same {
+   background-color: var(--detail-new_background_masterDetail);
+}
+
+.controls-MasterDetail_details-bg-contrast {
+   background-color: var(--detail_contrast_background-color_masterDetail);
+}
+
+.controls-MasterDetail_details-newDesign {
+   box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+   overflow: hidden;
+}
+
+// В firefox (В chrome, edge, ie11 всё ок) элементы с position: fixed начинают позиционироваться относительно элемента с will-change: transform.
+.ws-is-webkit {
+   .controls-MasterDetail_details-newDesign {
+      // Из-за ошибки в движке рендеринга в safari WebKit тень торчит из элемента с border-radius.
+      // Устанавливаем значение will-change: transform для корректного отображения в сафари версиях 14.4
+      // https://bugs.webkit.org/show_bug.cgi?id=98538
+      perspective: 1000;
+      backface-visibility: hidden;
+      // см. коммент выше, с safari 16 такой хак не работает, но работает transform
+      // в webkit'e баг так и не поправлен
+      transform: translateZ(0);
+   }
+}
+
+.controls-MasterDetail_details-newDesign.tlr {
+   border-radius: var(--border-radius_default_block)
+      var(--border-radius_default_block) 0 0;
+}
+
+.controls-MasterDetail_details-newDesign.tr {
+   border-radius: 0 var(--border-radius_default_block) 0 0;
+}
+
+.controls-MasterDetail_details-newDesign.tl {
+   border-radius: var(--border-radius_default_block) 0 0 0;
+}
+
+.controls-MasterDetail_details-newDesign.none {
+   border-radius: 0;
+}
+
+.controls-MasterDetail_resizing-line_wrapper {
+   position: relative;
+}
+
+.controls-MasterDetail_resizing-line {
+   position: absolute;
+   top: 0;
+   height: 100%;
+   // Почему 30:
+   // Движение границ всегда должно быть выше любого прикладного элемента в контроле.
+   // Прикладной диапазон z-index'ов 0-15
+   // При этом движение границ не должно перекрывать попапы на странице,
+   // у попапов диапазон 31+
+   z-index: 30;
+}
+
+.controls-MasterDetail_resizing-line_position-right {
+   left: 0;
+}
+
+.controls-MasterDetail_resizing-line_position-left {
+   right: 0;
+}
+
+.controls-MasterDetail_resizing-line-newDesign {
+   &.controls-MasterDetail_resizing-line-left {
+      .controls-ResizingLine__area {
+         border-radius: var(--border-radius_default_block) 0 0 0;
+      }
+   }
+
+   &.controls-MasterDetail_resizing-line-right {
+      .controls-ResizingLine__area {
+         border-radius: 0 var(--border-radius_default_block) 0 0;
+      }
+   }
+}
+
+.controls-background-master {
+   background-color: var(--master_item_background-color_list);
+}
+
+// данный стиль применяется к выбранной строке мастера, когда она застикана
+// он нужен потому, что в случае мастера строка прозрачная, а в застиканном виде надо проставить фон
+// В случае мастерКлассик фон задается у самой строки.
+// При изменении требований к внешнему виду класс может стать ненужным
+.controls-background-master-sticky {
+   background-color: var(--master_item_selected_background-color_list);
+}
+
+.controls-MasterDetail_master-transparent .controls-background-master-sticky {
+   background-color: var(--unaccented_background-color);
+}
+
+.controls-MasterDetail_master-transparent .controls-background-master {
+   background-color: var(--background-color);
+}
+
+// Класс для установки фона контрола через backgroundStyle (detail)
+.controls-background-detail {
+   background-color: var(--detail_background-color_masterDetail);
+}
+
+// Класс для установки фона контрола через backgroundStyle (detailContrast)
+.controls-background-detailContrast {
+   background-color: var(--detail_contrast_background-color_masterDetail);
+}
+
+// Набор классов для установки градиента горизонтального скролла через backgroundStyle (master, detail)
+.controls-ColumnScroll__shadow-master {
+   background: linear-gradient(
+      to right,
+      var(--columnscroll_shadow-start-color_grid),
+      var(--columnscroll_shadow-end-color_grid)
+   );
+   border-left: var(--columnscroll_separator_thickness_grid) solid
+      var(--columnscroll_separator_color_grid);
+}
+
+.controls-ColumnScroll__shadow-detail {
+   background: linear-gradient(
+      to right,
+      var(--columnscroll_shadow-start-color_grid),
+      var(--columnscroll_shadow-end-color_grid)
+   );
+   border-left: var(--columnscroll_separator_thickness_grid) solid
+      var(--columnscroll_separator_color_grid);
+}
+
+.controls-ColumnScroll__shadow-detailContrast {
+   background: linear-gradient(
+      to right,
+      var(--columnscroll_shadow-start-color_grid),
+      var(--columnscroll_shadow-end-color_grid)
+   );
+   border-left: var(--columnscroll_separator_thickness_grid) solid
+      var(--columnscroll_separator_color_grid);
+}
+
+.ws-is-mobile-platform .controls-MasterDetail_resizing-line {
+   right: calc(-1 * var(--resizingLine_mobile_offset-left_masterDetail));
+   width: var(--resizingLine_mobile_thickness_masterDetail);
+
+   .controls-ResizingLine_mobile__areaWrapper_horizontal {
+      width: calc(
+         var(--resizingLine_mobile_thickness_masterDetail) -
+            var(--resizingLine_mobile_offset-left_masterDetail)
+      );
+   }
+}
+
+.controls-MasterDetail_isAdaptive {
+   flex-direction: column;
+}
+
+.controls-MasterDetail_master_adaptive {
+   max-height: 50%;
+   display: flex;
+   flex-direction: column;
+}
+
+.controls-MasterDetail_isAdaptive_masterExpander {
+   padding: var(--offset_s) var(--offset_s) var(--offset_s) var(--offset_m);
+}
+
+.controls-MasterDetail_masterPosition-right {
+   flex-direction: row-reverse;
+}

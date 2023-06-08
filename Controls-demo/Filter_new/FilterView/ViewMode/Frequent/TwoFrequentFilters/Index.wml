@@ -1,0 +1,22 @@
+<div class="controlsDemo__wrapper demo-EmptyText__withDetailPanel">
+   <div class="controlsDemo__wrapper">
+      <Controls.browser:Browser filterButtonSource="{{_filterSource}}"
+                                keyProperty="id"
+                                displayProperty="title"
+                                source="{{_viewSource}}">
+         <div>
+            <Controls.filter:ViewContainer>
+               <div>
+                  <Controls.filter:View source="{{[_filterSource[0]]}}"
+                                        detailPanelTemplateName="Controls/filterPanelPopup:Sticky">
+                  </Controls.filter:View>
+                  <Controls.filter:View source="{{[_filterSource[1]]}}"/>
+               </div>
+            </Controls.filter:ViewContainer>
+            <Controls.list:Container>
+               <Controls.list:View />
+            </Controls.list:Container>
+         </div>
+      </Controls.browser:Browser>
+   </div>
+</div>

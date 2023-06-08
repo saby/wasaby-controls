@@ -1,0 +1,9 @@
+<Controls.Container.Async templateName="Controls/menu:Control">
+   <ws:partial template="{{ content.resolvedTemplate }}"
+      scope="{{ _options }}"
+      selectedKeys="{{ _selectedKeys }}"
+      markerVisibility="onactivated"
+      source="{{ _source }}"
+      on:itemClick="_itemClick()"
+   />
+</Controls.Container.Async>

@@ -1,0 +1,45 @@
+<div class="controls-StickyTemplate__top-area
+            {{_options.roundBorder ? 'controls-PopupTemplate__roundBorder_top controls_border-radius-s'}}
+            {{_options.headerBackgroundStyle === 'default' ? 'controls-StickyTemplate-backgroundColor' :
+                                                             'controls-background-' + _options.headerBackgroundStyle}}
+     controls-StickyTemplate__top-area-{{_options.closeButtonVisible ? 'withClose' : 'withoutClose'}}{{_options.closeButtonVisible ? '_' + _options.closeButtonViewMode}}">
+   <div class="controls-StickyTemplate__top-area-content">
+      <ws:if data="{{_options.headingIcon}}">
+         <div class="controls-StickyTemplate__top-area-icon">
+            <Controls.icon:Icon icon="{{_options.headingIcon}}"
+                              iconSize="{{_options.headingIconSize}}"
+                              iconStyle="{{_options.headingIconStyle}}"/>
+         </div>
+      </ws:if>
+      <ws:if data="{{_options.headingCaption}}">
+         <div class="controls-StickyTemplate__caption">
+            <Controls.heading:Title attr:class="ws-ellipsis"
+                                    caption="{{_options.headingCaption}}"
+                                    fontColorStyle="{{_options.headingFontColorStyle}}"
+                                    fontSize="{{_options.headingFontSize}}"
+                                    textTransform="{{_options.headingTextTransform}}"
+                                    readOnly="{{true}}"
+                                    fontWeight="{{_options.headingFontWeight}}"
+                                    tooltip="{{_options.headingCaption}}"/>
+         </div>
+      </ws:if>
+      <ws:if data="{{_options.headerContentTemplate}}">
+         <ws:partial template="{{_options.headerContentTemplate}}"
+                     scope="{{_options.stickyOptions}}"
+                     borderStyle="{{null}}"
+                     theme="{{_options.theme}}"/>
+      </ws:if>
+      <ws:if data="{{ _options.closeButtonVisible}}">
+            <Controls.buttons:CloseButton attr:class="controls-StickyTemplate__close_button
+                controls-StickyTemplate__close_button_position-{{_options.closeBtnPosition}}
+                controls-StickyTemplate__close_button-{{_options.closeButtonViewMode}}
+            {{_options.verticalDirection === 'top' ?
+             'controls-StickyTemplate__close_button-' + (_options.closeButtonViewMode !== 'link' ? 'external' : 'default') + '-without-header_top-spacing-' + (_options.closeButtonTopSpacing === 'none' ? 'none' : 'default') :
+              'controls-StickyTemplate__close_button-' + (_options.closeButtonViewMode !== 'link' ? 'external' : 'default') + '-with-header'}}"
+                                                 viewMode="{{_options.closeButtonViewMode}}"
+                                                 offset="{{_options.closeButtonOffset}}"
+                                                 name="closeButton"
+                                                 on:click="close()"/>
+      </ws:if>
+   </div>
+</div>

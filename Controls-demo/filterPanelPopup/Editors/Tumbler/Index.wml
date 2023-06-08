@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper">
+    <Controls.browser:Browser filterButtonSource="{{filterButtonSource}}"
+                              keyProperty="id"
+                              displayProperty="title"
+                              source="{{_source}}">
+        <div class="controlsDemo__flexRow">
+            <Controls.filter:ViewContainer>
+                <Controls.filter:View detailPanelTemplateName="Controls/filterPanelPopup:Sticky"/>
+            </Controls.filter:ViewContainer>
+            <Controls.list:Container>
+                <Controls.list:View/>
+            </Controls.list:Container>
+        </div>
+    </Controls.browser:Browser>
+</div>

@@ -1,0 +1,32 @@
+<ws:template name="editor">
+   <div class="controls-PropertyGrid__editor_chips_control ws-flexbox {{_multiSelect}}" >
+        <Controls.Container.Async templateName="Controls/Chips:Control">
+            <ws:if data="{{_options.multiSelect}}">
+                <ws:partial template="{{ content.resolvedTemplate }}"
+                            scope="{{_options}}"
+                            selectedKeys="{{_options.propertyValue}}"
+                            on:selectedKeysChanged="_handleSelectedKeysChanged()"/>
+            </ws:if>
+            <ws:else>
+                <Controls.source:SelectedKey selectedKey="{{_options.propertyValue}}">
+                    <ws:partial template="{{ content.resolvedTemplate }}"
+                                scope="{{_options}}"
+                                on:selectedKeyChanged="_handleSelectedKeysChanged()"/>
+                </Controls.source:SelectedKey>
+            </ws:else>
+       </Controls.Container.Async>
+   </div>
+</ws:template>
+
+<ws:if data="{{_options.jumpingLabel}}">
+    <Controls.Container.Async templateName="wml!Controls/_propertyGrid/JumpingLabelContainer">
+        <ws:partial template="{{content.resolvedTemplate}}"
+                    caption="{{_options.caption}}"
+                    required="{{_options.required}}">
+            <ws:partial template="editor" />
+        </ws:partial>
+    </Controls.Container.Async>
+</ws:if>
+<ws:else>
+    <ws:partial template="editor" />
+</ws:else>

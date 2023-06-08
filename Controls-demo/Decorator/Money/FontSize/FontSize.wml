@@ -1,0 +1,38 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontSize=xs</div>
+        <Controls.baseDecorator:Money value="{{_value}}" fontSize="xs" />
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontSize=m</div>
+        <Controls.baseDecorator:Money value="{{_value}}" fontSize="m" />
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontSize=l</div>
+        <Controls.baseDecorator:Money value="{{_value}}" fontSize="l" />
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontSize=xl</div>
+        <Controls.baseDecorator:Money value="{{_value}}" fontSize="xl" />
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontSize=3xl</div>
+        <Controls.baseDecorator:Money value="{{_value}}" fontSize="3xl" />
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontSize=5xl</div>
+        <Controls.baseDecorator:Money value="{{_value}}" fontSize="5xl" />
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontSize=6xl</div>
+        <Controls.baseDecorator:Money value="{{_value}}" fontSize="6xl" />
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontSize=7xl</div>
+        <Controls.baseDecorator:Money value="{{_value}}" fontSize="7xl" />
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontSize=8xl</div>
+        <Controls.baseDecorator:Money value="{{_value}}" fontSize="8xl" />
+    </div>
+</div>

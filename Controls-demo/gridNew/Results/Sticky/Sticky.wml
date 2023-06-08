@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth800">
+    <Controls.scroll:Container attr:class="controlsDemo__height400">
+        <Controls.grid:View
+                backgroundStyle="default"
+                keyProperty="key"
+                source="{{_viewSource}}"
+                header="{{_header}}"
+                resultsPosition="top"
+                columns="{{_columns}}"/>
+    </Controls.scroll:Container>
+</div>

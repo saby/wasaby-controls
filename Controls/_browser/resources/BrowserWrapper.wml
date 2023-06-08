@@ -1,0 +1,13 @@
+<Controls.context:ContextOptionsConsumer scope="{{_options}}">
+  <ws:contextOptionsInnerComponent>
+    <Controls._browser.ContextResolver
+        _dataOptionsValue="{{contextOptionsInnerComponent._dataOptionsValue}}"
+        scope="{{contextOptionsInnerComponent}}">
+      <ws:innerTemplate>
+        <Controls._browser.Browser
+            name="browser"
+            scope="{{contextOptionsInnerComponent}}"/>
+      </ws:innerTemplate>
+    </Controls._browser.ContextResolver>
+  </ws:contextOptionsInnerComponent>
+</Controls.context:ContextOptionsConsumer>

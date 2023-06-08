@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth350">
+    <Controls.list:View
+            keyProperty="key"
+            source="{{_viewSource}}"
+            multiSelectVisibility="visible"
+            markerVisibility="hidden"
+            bind:selectedKeys="_selectedKeys"
+            bind:excludedKeys="_excludedKeys">
+        <ws:multiSelectTemplate>
+            <ws:partial template="Controls/list:MultiSelectCircleTemplate"/>
+        </ws:multiSelectTemplate>
+    </Controls.list:View>
+</div>

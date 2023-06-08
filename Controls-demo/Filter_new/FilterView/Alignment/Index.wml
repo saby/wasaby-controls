@@ -1,0 +1,21 @@
+<div class="controlsDemo__wrapper demo-EmptyText__withDetailPanel">
+   <div class="controlsDemo__wrapper">
+      <Controls.filter:View
+              source="{{_source}}"
+              alignment="left"
+              detailPanelTemplateName="Controls-demo/Filter_new/resources/Panel">
+         <ws:detailPanelTemplateOptions
+                 additionalTemplateProperty="additionalTemplate"/>
+      </Controls.filter:View>
+   </div>
+
+   <div class="controlsDemo__wrapper">
+      <Controls.filter:View
+              source="{{_source}}"
+              alignment="right"
+              detailPanelTemplateName="Controls-demo/Filter_new/resources/Panel">
+         <ws:detailPanelTemplateOptions
+                 additionalTemplateProperty="additionalTemplate"/>
+      </Controls.filter:View>
+   </div>
+</div>

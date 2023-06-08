@@ -1,0 +1,29 @@
+<div class="controls_filterPopup_theme-{{_options.theme}} controls-FilterPanel__Lookup">
+   <ws:if data="{{_caption}}">
+      <Controls._filterPopup.Panel.Link
+            attr:class="controls-FilterPanel__Lookup_link
+                        {{_passed || _options.selectedKeys.length ? 'controls-margin_right-s'}}
+                        controls-FilterPanel__Lookup_link_{{_passed || _options.selectedKeys.length  ? 'label' : 'default'}}"
+            caption="{{_caption}}"
+            on:click="showSelector()"/>
+   </ws:if>
+   <Controls.event:Register name="controlResize" register="controlResize"
+                            attr:class="{{_passed || _options.selectedKeys.length  ? '' : 'ws-hidden'}}">
+      <Controls.Container.Async templateName="{{_options.lookupTemplateName}}">
+         <ws:partial
+                 template="{{ content.resolvedTemplate }}"
+                 name="lookup"
+                 class="controls-FilterPanel__LookupSelector {{_options.lookupClassName}}"
+                 contrastBackground="{{_options.contrastBackground}}"
+                 on:selectedKeysChanged="_selectedKeysChanged()"
+                 on:inputCompleted="_notifyHandler('inputCompleted')"
+                 on:itemsChanged="_notifyHandler('itemsChanged')"
+                 on:valueChanged="_notifyHandler('valueChanged')"
+                 on:textValueChanged="_textValueChanged()"
+                 on:itemClick="_notifyHandler('itemClick')"
+                 on:openInfoBox="_notifyHandler('openInfoBox')"
+                 scope="{{_options}}"
+         />
+      </Controls.Container.Async>
+   </Controls.event:Register>
+</div>

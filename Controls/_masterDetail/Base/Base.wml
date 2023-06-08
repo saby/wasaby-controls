@@ -1,0 +1,86 @@
+<ws:template name="masterContentTemplate">
+   <ws:if data="{{_options.isAdaptive && !_options.adaptiveContent}}">
+       <div class="controls-MasterDetail_isAdaptive_masterExpander">
+           <Controls.Container.Async templateName="Controls/ToggleButton">
+                <ws:partial template="{{ content.resolvedTemplate }}"
+                            icons="{{['icon-TFFolder2Opened', 'icon-TFFolder2']}}"
+                            viewMode="link"
+                            bind:value="_adaptiveMasterVisible"/>
+           </Controls.Container.Async>
+       </div>
+   </ws:if>
+   <ws:if data="{{!_options.isAdaptive || _options.adaptiveContent || _adaptiveMasterVisible}}">
+       <ws:partial
+               backgroundStyle="master"
+               masterWidth="{{_currentWidth}}"
+               template="{{_options.master}}"
+               shadowMode="js"
+               pixelRatioBugFix="{{!_options.isAdaptive}}"
+               attr:class="controls-MasterDetail_master-template controls-master-template-{{_newDesign ? 'newDesign' : 'default'}}
+                           controls-master-template-{{_newDesign ? 'newDesign' : 'default'}}-{{_options.masterPosition}}"
+               on:selectedMasterValueChanged="_selectedMasterValueChangedHandler()"/>
+   </ws:if>
+</ws:template>
+
+<div class="controls-MasterDetail
+            controls-MasterDetail_masterPosition-{{_options.masterPosition}}
+            {{_options.isAdaptive ? 'controls-MasterDetail_isAdaptive'}}
+            ws-flexbox controls_list_theme-{{_options.theme}} {{_options.restricted ? 'controls-MasterDetail-restricted'}}">
+   <ws:if data="{{_options.masterVisibility !== 'hidden'}}">
+       <div class="controls-MasterDetail_master
+                   {{_options.isAdaptive ? 'controls-MasterDetail_master_adaptive' : 'controls-MasterDetail_master-' + (_options.masterContrastBackground ? 'contrast' : 'transparent')}}
+                   {{!_options.isAdaptive ? 'controls-MasterDetail_master_width'}}"
+            style="{{ _masterFixed ? 'position: sticky; top: ' + _options.masterOffsetTop + 'px;' + _getMasterStyle(_options.scrollTop, _options.scrollOffsetTop, _options.masterOffsetTop, _options.containerHeightWithOffsetTop) }} {{!_options.isAdaptive ? 'width: ' + _currentWidth + '; max-width: ' + _currentMaxWidth + '; min-width: ' + _currentMinWidth}}"
+            on:touchmove="_touchMoveHandler()"
+            on:touchend="_touchendHandler()">
+           <Controls.event:Register name="resizeDetectMaster" register="controlResize" attr:fixCompatible="1">
+               <ws:if data="{{_masterFixed}}">
+                   <Controls.scroll:Container attr:class="controls-MasterDetail_master-content"
+                                              backgroundStyle="master"
+                                              scrollbarVisible="{{_options.masterScrollbarVisible}}"
+                                              bottomShadowVisibility="{{_options.masterScrollBottomShadowVisibility}}"
+                                              attr:style="{{_getMasterStyle(_options.scrollTop, _options.scrollOffsetTop, _options.masterOffsetTop, _options.containerHeightWithOffsetTop)}}">
+                       <ws:partial template="masterContentTemplate" />
+                   </Controls.scroll:Container>
+               </ws:if>
+               <ws:else>
+                   <ws:partial template="masterContentTemplate" attr:class="controls-MasterDetail_master-template"/>
+               </ws:else>
+           </Controls.event:Register>
+       </div>
+   </ws:if>
+   <ws:if data="{{_canResizing}}">
+       <div class="controls-MasterDetail_resizing-line_wrapper controls-MasterDetail_resizingLine_masterPosition-{{_options.masterPosition}}">
+           <Controls.dragnDrop:ResizingLine name="resizingLine"
+                                            attr:class="controls-MasterDetail_resizing-line {{_newDesign ? 'controls-MasterDetail_resizing-line-newDesign'}}
+                                                   controls-MasterDetail_resizing-line_position-{{_options.masterPosition}}"
+                                            attr:data-qa="controls-MasterDetail_resizing-line"
+                                            minOffset="{{_minOffset}}"
+                                            maxOffset="{{_maxOffset}}"
+                                            direction="{{ _options.masterPosition === 'left' ? 'direct' : 'reverse' }}"
+                                            on:customdragStart="_dragStartHandler()"
+                                            on:offset="_offsetHandler()"
+                                            on:touchstart="_touchstartHandler()"/>
+       </div>
+   </ws:if>
+   <Controls.event:Register name="resizeDetectDetail" register="controlResize" attr:fixCompatible="1">
+      <div class="controls-MasterDetail_details controls-MasterDetail_details-{{_options.detailContrastBackground ? 'contrast' : 'transparent'}}{{_options.isAdaptive ? '-adaptive'}}
+                  ws-flexbox ws-flex-grow-1 {{_options.detailHeaderTemplate ? 'ws-flex-column' : ''}}">
+         <ws:if data="{{_options.detailHeaderTemplate}}">
+            <ws:partial template="{{_options.detailHeaderTemplate}}"/>
+         </ws:if>
+         <ws:partial
+                 attr:class="controls-MasterDetail_detailsContent
+                             {{_options.masterPosition === 'right' ? 'ws-flex-grow-1'}}
+                            {{_options.contrastBackground && _options.detailContrastBackground ?
+                               ('controls-MasterDetail_details-bg-contrast ' + (_newDesign && !_options.isAdaptive ? 'controls-MasterDetail_details-newDesign') + (_options.masterVisibility === 'visible' && _options.masterPosition === 'left' ? ' tlr' : ' tr')) :
+                               'controls-MasterDetail_details_bg-same'}}"
+               template="{{_options.detail}}"
+               shadowMode="js"
+               masterWidth="{{_currentWidth}}"
+               availableWidth="{{_detailWidth}}"
+               selectedMasterValue="{{_selected}}"/>
+       </div>
+   </Controls.event:Register>
+   <Controls.event:Listener event="controlResize" on:controlResize="_resizeHandler()"/>
+</div>

@@ -1,0 +1,109 @@
+<div class="controlsDemo__flex">
+   <div class="controlsDemo__wrapper">
+      <span> Включение/Отлкючение фиксации</span>
+      <Controls.scroll:Container attr:class="controlsDemo_fixedWidth350 controlsDemo__height300" attr:data-qa="controlsDemo_scrollmode__fix_off">
+         <Controls.stickyBlock:StickyBlock key="0" mode="{{_mode}}">
+            <h2 class="controlsDemo__wrapper">Header</h2>
+         </Controls.stickyBlock:StickyBlock>
+
+         <div class="controlsDemo-StickyHeader-MultiHeader__content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+            qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+            in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+         </div>
+      </Controls.scroll:Container>
+      <div class="controlsDemo__wrapper">
+         <span class="controlsDemo__button" on:click="_updateEnabled()">{{_mode === 'notsticky' ? 'Включить' : 'Отключить'}} фиксацию</span>
+      </div>
+   </div>
+   <div class="controlsDemo__wrapper">
+      <span>Смена режима</span>
+      <Controls.scroll:Container attr:class="controlsDemo_fixedWidth350 controlsDemo__height300" attr:data-qa="controlsDemo_scrollmode__change_mode">
+         <Controls.stickyBlock:StickyBlock key="1" mode="{{_stickyMode}}">
+            <h2 class="controlsDemo__wrapper">Header1</h2>
+         </Controls.stickyBlock:StickyBlock>
+         <Controls.stickyBlock:StickyBlock key="2" mode="{{_stickyMode}}">
+            <h2 class="controlsDemo__wrapper">Header2</h2>
+         </Controls.stickyBlock:StickyBlock>
+
+         <div class="controlsDemo-StickyHeader-MultiHeader__content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+            qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+            in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+         </div>
+      </Controls.scroll:Container>
+      <div class="controlsDemo__wrapper">
+         <span class="controlsDemo__button" on:click="_toggleStickyMode('_stickyMode')">Сменить на режим "{{ _stickyMode === 'replaceable' ? 'stackable' : 'replaceable'}}"</span>
+      </div>
+   </div>
+
+   <div class="controlsDemo__wrapper">
+      <span>Смена режима у группы</span>
+         <Controls.scroll:Container attr:class="controlsDemo_fixedWidth350 controlsDemo__height300" attr:data-qa="controlsDemo_scrollmode__change_mode_group">
+            <div class="controlsDemo-StickyHeader-Mode__headers">
+               <Controls.stickyBlock:StickyGroup position="top">
+                  <div class="controlsDemo-StickyHeader-Mode__headers-wrapper">
+                     <Controls.stickyBlock:StickyGroupedBlock key="3" mode="{{ _groupMode }}">
+                        <div class="controlsDemo__wrapper">Header 1</div>
+                     </Controls.stickyBlock:StickyGroupedBlock>
+                     <Controls.stickyBlock:StickyGroupedBlock key="4" mode="{{ _groupMode }}">
+                        <div class="controlsDemo__wrapper">Header 2</div>
+                     </Controls.stickyBlock:StickyGroupedBlock>
+                  </div>
+               </Controls.stickyBlock:StickyGroup>
+               <Controls.stickyBlock:StickyGroup position="top">
+                  <div class="controlsDemo-StickyHeader-Mode__headers-wrapper">
+                     <Controls.stickyBlock:StickyGroupedBlock key="5" mode="{{ _groupMode }}">
+                        <div class="controlsDemo__wrapper">Header 3</div>
+                     </Controls.stickyBlock:StickyGroupedBlock>
+                     <Controls.stickyBlock:StickyGroupedBlock key="6" mode="{{ _groupMode }}">
+                        <div class="controlsDemo__wrapper">Header 4</div>
+                     </Controls.stickyBlock:StickyGroupedBlock>
+                  </div>
+               </Controls.stickyBlock:StickyGroup>
+
+               <div class="controlsDemo-StickyHeader-Mode__content">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                  ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                  nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                  anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                  esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                  qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                  in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+               </div>
+            </div>
+         </Controls.scroll:Container>
+      <div class="controlsDemo__wrapper">
+         <span class="controlsDemo__button" on:click="_toggleStickyMode('_groupMode')">Сменить режим на "{{ _groupMode === 'replaceable' ? 'stackable' : 'replaceable'}}"</span>
+      </div>
+   </div>
+</div>

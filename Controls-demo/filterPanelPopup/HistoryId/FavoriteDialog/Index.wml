@@ -1,0 +1,21 @@
+<div class="controlsDemo__wrapper controlsDemo__ml2">
+    <Controls.browser:Browser filterButtonSource="{{_filterButtonData}}"
+                              keyProperty="id"
+                              historySaveMode="favorite"
+                              displayProperty="title"
+                              source="{{_source}}"
+                              historyId="myHistoryId">
+        <div>
+            <Controls.filter:ViewContainer>
+                <Controls.filter:View
+                        alignment="left"
+                        detailPanelTemplateName="Controls/filterPanelPopup:Sticky">
+                    <ws:detailPanelTemplateOptions historySaveMode="favorite" />
+                </Controls.filter:View>
+            </Controls.filter:ViewContainer>
+            <Controls.list:Container>
+                <Controls.list:View />
+            </Controls.list:Container>
+        </div>
+    </Controls.browser:Browser>
+</div>

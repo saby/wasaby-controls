@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <Controls.buttons:Button caption="Reload" on:click="_onReload()"/>
+        <Controls.buttons:Button caption="Reload with more data" on:click="_onReloadWithMoreData()"/>
+    </div>
+    <Controls.scroll:Container attr:class="controlsDemo__height400" attr:style="max-width: 700px">
+        <Controls.grid:View
+                name="list"
+                keyProperty="key"
+                columns="{{_columns}}"
+                source="{{_viewSource}}"
+                navigation="{{_navigation}}"
+                keepScrollAfterReload="{{true}}"/>
+    </Controls.scroll:Container>
+</div>

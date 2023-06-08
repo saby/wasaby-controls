@@ -1,0 +1,43 @@
+<ws:for data="index, item in listModel.getViewIterator()">
+    <ws:if data="{{!item.isVisible || item.isVisible()}}">
+        <ws:partial
+                template="{{item.getTemplate(itemTemplateProperty, itemTemplate, groupTemplate, toggleEditorsTemplate)}}"
+                isGridLayout="{{isGridLayout}}"
+                getItemStyles="{{getItemStyles}}"
+                getCheckboxStyles="{{getCheckboxStyles}}"
+                getEditorStyles="{{getEditorStyles}}"
+                getCaptionStyles="{{getCaptionStyles}}"
+                collectionItem="{{item}}"
+                item="{{item.getContents()}}"
+                levelPadding="{{levelPadding}}"
+                toggledEditors="{{listModel.getToggledEditors()}}"
+                keyProperty="{{listModel.getKeyProperty()}}"
+                collapsedGroups="{{collapsedGroups}}"
+                captionPosition="{{item.getCaptionPosition()}}"
+                captionFontColorStyle="{{captionFontColorStyle}}"
+                captionFontSize="{{captionFontSize}}"
+                captionFontWeight="{{captionFontWeight}}"
+                multiSelectVisibility="{{_options.multiSelectVisibility}}"
+                multiSelectPosition="{{_options.multiSelectPosition}}"
+                jumpingLabel="{{_options.jumpingLabel}}"
+                on:mouseenter="_mouseEnterHandler(item)"
+                on:mousemove="_mouseMoveHandler(item)"
+                on:mouseleave="_mouseLeaveHandler(item)"
+                on:click="_itemClick(item)"
+                on:contextmenu="_itemContextMenu(item)"
+                on:mousedown="_itemMouseDown(item)"
+                on:mouseup="_itemMouseUp(item)"
+                on:propertyValueChanged="_propertyValueChanged(item.getContents())"
+                attr:tabindex="{{_options.readOnly ? '-1' : index}}"
+                attr:item-key="{{item.getUid()}}"
+                attr:key="{{item.getItemKey()}}">
+            <ws:itemActionsTemplate>
+                <Controls.Container.Async templateName="Controls/itemActions:ItemActionsTemplateWasaby">
+                    <ws:partial template="{{content.resolvedTemplate}}"
+                                itemData="{{item}}"
+                                scope="{{listModel.getActionsTemplateConfig()}}" />
+                </Controls.Container.Async>
+            </ws:itemActionsTemplate>
+        </ws:partial>
+    </ws:if>
+</ws:for>

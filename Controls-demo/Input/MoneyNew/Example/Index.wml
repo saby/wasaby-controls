@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <Controls.input:MoneyNew bind:value="_value"
+                                 precision="{{_precision}}"
+                                 on:valueChanged="_onValueChanged()"
+                                 attr:style="min-width:50px; max-width: calc(13ch + 1px)"/>
+    </div>
+</div>

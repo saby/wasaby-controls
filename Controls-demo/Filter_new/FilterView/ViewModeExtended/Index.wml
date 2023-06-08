@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper">
+    <Controls.filter:View source="{{_filterSource}}"
+                          detailPanelTemplateName="Controls/filterPopup:DetailPanel">
+        <ws:detailPanelTemplateOptions itemTemplateProperty="itemTemplate"
+                                       additionalTemplateProperty="additionalTemplate"/>
+    </Controls.filter:View>
+</div>

@@ -1,0 +1,39 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo_m">
+        <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys"
+                                    readOnly="{{true}}"
+                                    keyProperty="key"
+                                    displayProperty="title"
+                                    source="{{_source}}">
+        </Controls.dropdown:Selector>
+    </div>
+    <div class="controlsDemo_m">
+        <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys2"
+                                    readOnly="{{true}}"
+                                    emptyText="Не выбрано"
+                                    keyProperty="key"
+                                    displayProperty="title"
+                                    source="{{_source}}">
+        </Controls.dropdown:Selector>
+    </div>
+    <div class="controlsDemo_m">
+        <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys3"
+                                    maxVisibleItems="{{2}}"
+                                    readOnly="{{true}}"
+                                    fontColorStyle="primary"
+                                    multiSelect="{{true}}"
+                                    keyProperty="key"
+                                    displayProperty="title"
+                                    source="{{_source}}">
+        </Controls.dropdown:Selector>
+    </div>
+    <div class="controlsDemo_m">
+        <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys4"
+                                    readOnly="{{true}}"
+                                    multiSelect="{{true}}"
+                                    keyProperty="key"
+                                    displayProperty="title"
+                                    source="{{_source}}">
+        </Controls.dropdown:Selector>
+    </div>
+</div>

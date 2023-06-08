@@ -1,0 +1,29 @@
+<div class="controlsDemo__wrapper">
+   <Controls.buttons:Button on:click="_move()"
+                            caption="Переместить" viewMode="link" icon="icon-Move"/>
+   <div>
+      <Controls.treeGrid:View
+              name="treeGrid"
+              attr:class="demo-Grid__control"
+              bind:selectedKeys="_selectedKeys"
+              bind:excludedKeys="_excludedKeys"
+              multiSelectVisibility="visible"
+              navigation="{{null}}"
+              nodeProperty="Раздел@"
+              parentProperty="Раздел"
+              keyProperty="id"
+              source="{{_source}}"
+              columns="{{_gridColumns}}">
+         <ws:moveDialogTemplate templateName="Controls/moverDialog:Template">
+            <ws:templateOptions
+                    root="{{null}}"
+                    rootVisible="{{true}}"
+                    keyProperty="id"
+                    parentProperty="Раздел"
+                    nodeProperty="Раздел@"
+                    source="{{_source}}"
+                    columns="{{_columns}}"/>
+         </ws:moveDialogTemplate>
+      </Controls.treeGrid:View>
+   </div>
+</div>

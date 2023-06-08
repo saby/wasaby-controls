@@ -1,0 +1,23 @@
+<ws:template name="editor">
+    <Controls.Container.Async templateName="Controls/lookup:Input">
+        <ws:partial template="{{content.resolvedTemplate}}"
+                    scope="{{_options}}"
+                    bind:selectedKeys="_selectedKeys"
+                    on:selectedKeysChanged="_handleSelectedKeysChanged()"/>
+    </Controls.Container.Async>
+</ws:template>
+
+<ws:if data="{{_options.jumpingLabel}}">
+    <Controls.Container.Async templateName="Controls/jumpingLabel:SelectionContainer">
+        <ws:partial template="{{content.resolvedTemplate}}"
+                    caption="{{_options.caption}}"
+                    required="{{_options.required}}"
+                    selectedKeys="{{_selectedKeys}}"
+                    contrastBackground="{{true}}">
+            <ws:partial template="editor" />
+        </ws:partial>
+    </Controls.Container.Async>
+</ws:if>
+<ws:else>
+    <ws:partial template="editor" />
+</ws:else>

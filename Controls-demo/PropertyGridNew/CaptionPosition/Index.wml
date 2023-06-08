@@ -1,0 +1,28 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/PropertyGridNew/CaptionPosition/Left/Index' }}">
+            <a href="{{content.href}}">captionPosition = left</a>
+        </Router.router:Reference>
+        <Controls-demo.PropertyGridNew.CaptionPosition.Left.Index />
+    </div>
+
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/PropertyGridNew/CaptionPosition/Top/Index' }}">
+            <a href="{{content.href}}">captionPosition = top</a>
+        </Router.router:Reference>
+        <Controls-demo.PropertyGridNew.CaptionPosition.Top.Index />
+    </div>
+
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/PropertyGridNew/CaptionPosition/None/Index' }}">
+            <a href="{{content.href}}">captionPosition = none</a>
+        </Router.router:Reference>
+        <Controls-demo.PropertyGridNew.CaptionPosition.None.Index />
+    </div>
+</div>

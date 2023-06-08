@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper">
+   <Controls.tile:View
+           tileMode="static"
+           tileScalingMode="none"
+           tileWidth="250"
+           imageProperty="image"
+           keyProperty="key"
+           displayProperty="title"
+           source="{{_viewSource}}">
+      <ws:itemTemplate>
+         <ws:partial
+                 template="Controls/tile:PreviewTemplate"
+                 scope="{{itemTemplate}}"
+                 gradientType="{{itemTemplate.item.contents.gradientType}}"
+                 titleStyle="{{itemTemplate.item.contents.titleStyle}}"
+                 gradientColor="{{itemTemplate.item.contents.gradientColor}}">
+         </ws:partial>
+      </ws:itemTemplate>
+   </Controls.tile:View>
+</div>

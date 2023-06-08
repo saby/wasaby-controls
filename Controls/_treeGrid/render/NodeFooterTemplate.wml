@@ -1,0 +1,28 @@
+<div class="{{ (gridColumn || itemData).getContentClasses({
+    'hasContent': !!content || !!contentTemplate
+}) }}">
+    <ws:if data="{{ item.shouldDisplayExtraItem(!!content || !!contentTemplate) }}">
+        <ws:partial if="{{ beforeContentTemplate }}" template="{{ beforeContentTemplate }}"/>
+
+        <ws:if data="{{ gridColumn.shouldRenderHasMoreButton() }}">
+            <ws:partial template="Controls/list:MoreButtonTemplate"
+                        buttonView="{{navigationButtonView}}"
+                        buttonConfig="{{navigationButtonConfig}}"
+                        loadMoreCaption="{{ item.getMoreCaption() }}"
+                        linkFontColorStyle="{{ item.getMoreFontColorStyle() }}"
+                        linkFontSize="xs"
+                        linkClass="{{ item.getMoreClasses() }}"/>
+        </ws:if>
+        <ws:else data="{{ !gridColumn.isMoreButton() }}">
+            <div class="controls-TreeGrid__nodeFooter-cell__customContent">
+                <!-- Прикладной контент -->
+                <ws:partial template="{{ content || contentTemplate }}"
+                            if="{{ !!content || !!contentTemplate }}"
+                            node="{{ (gridColumn || itemData).getOwner().getNode() }}"
+                            item="{{ (gridColumn || itemData).getOwner() }}"
+                            column="{{ (gridColumn || itemData) }}"/>
+            </div>
+        </ws:else>
+    </ws:if>
+</div>
+

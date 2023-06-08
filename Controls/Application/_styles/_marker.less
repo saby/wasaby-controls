@@ -1,0 +1,62 @@
+@marker_thickness: 3px;
+
+.controls-marker,
+.controls-marker_main {
+   &::after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      pointer-events: none;
+      border-radius: var(--border-radius_2xs);
+      background-color: var(--marker_color);
+   }
+
+   &_horizontal {
+      &::after {
+         bottom: 0;
+         left: 0;
+         width: 100%;
+         height: @marker_thickness;
+      }
+   }
+
+   &_vertical {
+      &::after {
+         bottom: 0.5em;
+         left: calc(-1 * var(--offset_m));
+         height: var(--offset_xl);
+      }
+   }
+}
+
+.controls-marker_main::after {
+   width: 42px;
+   bottom: 0;
+   left: 0;
+   height: @marker_thickness;
+}
+
+.controls-marker_style-default::after {
+   background-color: var(--text-color);
+}
+
+.controls-marker_style-unaccented::after {
+   background-color: var(--item_selected_color);
+}
+
+.controls-marker_style- {
+   @variants: secondary, link, label, danger, warning, success, info, readonly;
+   .for(@variants, { &@{_item} {
+      &::after {
+         background-color: ~'var(--@{_item}_text-color)';
+      }
+   } });
+}
+
+.controls-marker_state-default::after {
+   background: transparent;
+}
+
+.ws-is-hover .controls-marker_state-default:hover::after {
+   background: var(--pale_border-color);
+}

@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container scrollOrientation="verticalHorizontal" attr:style="width: 600px; height: 400px">
+        <Controls.grid:View
+                keyProperty="key"
+                source="{{_viewSource}}"
+                header="{{_header}}"
+                columns="{{_columns}}"
+                newColumnScroll="{{true}}"
+                backgroundStyle="default"
+                multiSelectVisibility="visible"
+                bind:selectedKeys="_selectedKeys"
+                stickyColumnsCount="{{2}}">
+        </Controls.grid:View>
+    </Controls.scroll:Container>
+</div>

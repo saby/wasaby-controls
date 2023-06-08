@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <Controls.treeGrid:View
+            keyProperty="key"
+            source="{{ _viewSource }}"
+            navigation="{{ _navigation }}"
+            childrenLoadMode="always"
+            columns="{{ _columns }}"
+            parentProperty="parent"
+            allowEmptySelection="{{ false }}"
+            nodeProperty="type"/>
+</div>

@@ -1,0 +1,176 @@
+.controls_theme-@{themeName} {
+   // отступ между иконкой и надписью в кнопке.
+   --icon-offset_button: var(--offset_2xs);
+   --text-decoration_hover_button_link: underline;
+
+   // Горизонтальные отступы до текста в кнопке
+   --padding-horizontal_xs_button: var(--offset_s);
+   --padding-horizontal_s_button: var(--offset_s);
+   --padding-horizontal_m_button: var(--offset_m);
+   --padding-horizontal_l_button: var(--offset_m);
+   --padding-horizontal_xl_button: var(--offset_l);
+   --padding-horizontal_2xl_button: var(--offset_l);
+   --padding-horizontal_3xl_button: var(--offset_l);
+   --padding-horizontal_4xl_button: var(--offset_xl);
+   --padding-horizontal_5xl_button: var(--offset_2xl);
+   --padding-horizontal_default_button: var(--offset_m);
+
+   // Размеры шрифта
+   //
+   // Общие размеры шрифта кнопок
+   --font-size_3xs_button: var(--font-size_3xs);
+   --font-size_2xs_button: var(--font-size_2xs);
+   --font-size_xs_button: var(--font-size_xs);
+   --font-size_s_button: var(--font-size_s);
+   --font-size_m_button: var(--font-size_m);
+   --font-size_l_button: var(--font-size_l);
+
+   // Размеры шрифта кнопок в режиме отображения ссылки
+   --font-size_3xs_button_link: var(--font-size_3xs_button);
+   --font-size_2xs_button_link: var(--font-size_2xs_button);
+   --font-size_xs_button_link: var(--font-size_xs_button);
+   --font-size_s_button_link: var(--font-size_s_button);
+   --font-size_m_button_link: var(--font-size_m_button);
+   --font-size_l_button_link: var(--font-size_l_button);
+
+   // Радиус скругления обводки
+   //
+   // Общий радиус скругления обводки
+   // border-radius работает по разному с пикселями и процентами.
+   // Ставим большое значение, чтобы получить максимальное закругление на всех размерах
+   --border-radius_button: 100px;
+
+   // Радиус скругления обводки кнопки-иконки для тулбара.
+   --border-radius_button_toolButton: 50%;
+
+   // Радиус скругления обводки функциональной кнопки
+   --border-radius_button_functionalButton: 50%;
+
+   // Цвета текста кнопок
+   //
+   // Общие цвета текста кнопок
+   --text-color_button: var(--text-color);
+   --text-contrast-color_button: var(--contrast_text-color);
+   --readonly_text-color_button: var(--readonly_color);
+
+   // Цвета текста кнопок в режиме отображения "по умолчанию" в режиме "только для чтения"
+   --readonly_text-color_button_button: var(--readonly_text-color_button);
+
+   // Фон кнопок
+   //
+   // Общие цвета фона кнопок
+   --background-color_button: var(--background-color);
+   --primary_background-color_button: var(--background-color);
+   --primary_contrast_background-color_button: var(
+      --primary_contrast_background-color
+   );
+   --primary_hover_background-color_button: var(--primary_background-color);
+   --primary_active_background-color_button: var(
+      --primary_hover_background-color
+   );
+   --warning_hover_background-color_button: var(--warning_background-color);
+   --warning_active_background-color_button: var(
+      --warning_hover_background-color
+   );
+   --secondary_background-color_button: var(--background-color);
+   --secondary_contrast_background-color_button: var(
+      --secondary_contrast_background-color
+   );
+   --secondary_hover_background-color_button: var(--secondary_background-color);
+   --secondary_active_background-color_button: var(
+      --secondary_hover_background-color
+   );
+   --success_background-color_button: var(--background-color);
+   --success_hover_background-color_button: var(--success_background-color);
+   --success_active_background-color_button: var(
+      --success_hover_background-color
+   );
+   --danger_background-color_button: var(--background-color);
+   --danger_hover_background-color_button: var(--danger_background-color);
+   --danger_active_background-color_button: var(
+      --danger_hover_background-color
+   );
+   --warning_background-color_button: var(--background-color_button);
+   --readonly_background-color_button: var(--background-color);
+   --default_contrast_background-color_button: var(--background-color);
+   --default_border-color_button: var(--unaccented_border-color);
+   --default_hover_border-color_button: var(--unaccented_hover_border-color);
+   --default_active_border-color_button: var(--unaccented_border-color);
+   --default_active_background-color_button: var(--active_background-color);
+   --navigation_background-color_button: #2c3e50;
+   --navigation_hover_background-color_button: #3e5266;
+   --navigation_active_background-color_button: #2c3e50;
+   --translucent_background-color_button: rgba(0, 0, 0, 0.2);
+   --translucent_hover_background-color_button: rgba(0, 0, 0, 0.25);
+   --translucent_active_background-color_button: rgba(0, 0, 0, 0.3);
+
+   // Цвет фона кнопок в режиме отображения тулбара
+   --background-color_button_toolButton: transparent;
+   --background-color_contrast_button_toolButton: #ebedf0;
+   --background-color_hover_button_toolButton: var(
+      --pale_contrast_background-color
+   );
+   --background-color_contrast_hover_button_toolButton: var(
+      --background-color_contrast_button_toolButton
+   );
+   --background-color_active_button_toolButton: var(
+      --pale_active_contrast_background-color
+   );
+   --background-color_contrast_active_button_toolButton: var(
+      --background-color_contrast_button_toolButton
+   );
+
+   // Цвет фона кнопок в режиме отображения функциональной кнопки
+   --readonly_background-color_button_functionalButton: transparent;
+
+   // Обводка кнопок
+   //
+   // Толщина обводки кнопки.
+   --border-thickness_button: var(--border-thickness);
+
+   // Цвета обводки кнопок
+   --primary_border-color_button: var(--primary_border-color);
+   --secondary_border-color_button: var(--secondary_border-color);
+   --success_border-color_button: var(--success_border-color);
+   --danger_border-color_button: var(--danger_border-color);
+   --readonly_border-color_button: var(--readonly_color);
+   --border-color_button_toolButton: var(--background-color_button_toolButton);
+   --border-color_hover_button_toolButton: transparent;
+   --readonly_border-color_button_toolButton: rgba(0, 0, 0, 0.08);
+   --readonly_border-color_button_functionalButton: rgba(0, 0, 0, 0.08);
+   --success_border-color_button_functionalButton: var(
+      --success_contrast_background-color
+   );
+   --success_hover_border-color_button_functionalButton: var(
+      --success_hover_contrast_background-color
+   );
+
+   // Тени
+   //
+   // Тень текста кнопки
+   // Примечание: в режиме "только для чтения" тень текста всегда отключена
+   --text-shadow_button: none;
+
+   // Тень контейнера кнопки
+   --box-shadow_button: none;
+   --box-shadow_pale-button: none;
+   --box-shadow_contrast-button: var(--shadow_d);
+   --box-shadow_contrast_big_button: 0 4px var(--shadow-blur_b)
+      var(--shadow-color_b);
+   --box-shadow_button_toolButton: none;
+
+   //Стили кнопки-стрелки
+   --box-shadow_ArrowButton: none;
+   --border-color_ArrowButton: var(--pale_border-color);
+   --readonly_border-color_ArrowButton: rgba(0, 0, 0, 0.08);
+   --background-color_ArrowButton: var(--pale_contrast_background-color);
+   --background-color_hover_ArrowButton: var(
+      --pale_hover_contrast_background-color
+   );
+   --border-color_hover_ArrowButton: var(--pale_border-color);
+   --icon-color_ArrowButton: #999;
+   --hover_icon-color_ArrowButton: var(--text-color_button);
+   --readonly_icon-color_ArrowButton: #ccc;
+   --inline_height_ArrowButton: var(--inline_height_m);
+   --inline_height_closeButton: var(--inline_height_m);
+}

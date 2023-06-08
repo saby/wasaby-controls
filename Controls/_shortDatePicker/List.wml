@@ -1,0 +1,55 @@
+<Controls.calendar:MonthList
+        bind:position="_position"
+        shadowStyle="shortDatePicker"
+        shouldPositionBelow="{{ shouldPositionBelow }}"
+        topShadowVisibility="{{ _shadowVisibility }}"
+        bottomShadowVisibility="{{ _shadowVisibility }}"
+        attachLoadTopTriggerToNull="{{ false }}"
+        attachLoadDownTriggerToNull="{{ false }}"
+        displayedRanges="{{_displayedRanges}}"
+        stubTemplate="{{stubTemplate}}"
+        source="{{_options.source}}"
+        on:keyup="_keyUpHandler()">
+    <ws:yearHeaderTemplate>
+        <ws:if data="{{_getYearHeaderVisible(yearHeaderTemplate.date.getFullYear())}}">
+            <div
+                    on:mouseenter="_onYearMouseEnter(yearHeaderTemplate.date.getFullYear())"
+                    on:touchstart="_onYearMouseEnter(yearHeaderTemplate.date.getFullYear())"
+                    on:mouseleave="_onYearMouseLeave()"
+                    on:touchmove="_onYearMouseLeave()"
+                    on:click="_onYearClick(yearHeaderTemplate.date.getFullYear())"
+                    on:keyup="_keyUpYearHandler(yearHeaderTemplate.date.getFullYear())"
+                    class="controls-PeriodLiteDialog__fullYear-listElement
+                           {{_options.chooseYears ? 'controls-PeriodLiteDialog__fullYear-listElement__clickable'}}
+                           {{ isCurrentYear(yearHeaderTemplate.date.getFullYear()) ? 'controls-PeriodLiteDialog__fullYear-listElement__currentYear' }}
+                           controls-PeriodLiteDialog__vLayoutItem-caption controls-PeriodLiteDialog__text-align-left
+                        {{ _options.chooseMonths && _options.chooseQuarters ? 'controls-PeriodLiteDialog__fullPicker'}}" data-qa="controls-PeriodLiteDialog__item-caption">
+                <div tabindex="{{_tabPressed ? 0 : -1}}"
+                     on:blur="_onBlurYear()">
+                    {{ yearHeaderTemplate.date.getFullYear() }}
+                </div>
+            </div>
+        </ws:if>
+        <ws:else>
+            <invisible-node/>
+        </ws:else>
+    </ws:yearHeaderTemplate>
+    <ws:yearTemplate>
+        <Controls._shortDatePicker.bodyItem
+                hovered="{{ _hovered }}"
+                endValue="{{ endValue }}"
+                startValue="{{ startValue }}"
+                errorCallback="{{ errorCallback }}"
+                isSelectedPeriod="{{ isSelectedPeriod  }}"
+                attr:class="controls-PeriodLiteDialog_calendarBody {{ isSelectedPeriod(yearTemplate.date, 'year') ? 'controls-PeriodLiteDialog__item-selected' }}"
+                attr:data-date="{{_dateToDataString(yearTemplate.date)}}"
+                scope="{{_options}}"
+                monthTemplate="{{monthTemplate}}"
+                _tabPressed="{{_tabPressed}}"
+                _position="{{_position}}"
+                _yearHovered="{{_yearHovered}}"
+                formatDate="{{formatDate}}"
+                currentYear="{{yearTemplate.date.getFullYear()}}"
+        />
+    </ws:yearTemplate>
+</Controls.calendar:MonthList>

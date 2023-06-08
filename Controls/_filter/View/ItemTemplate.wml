@@ -1,0 +1,26 @@
+<ws:template name="defaultBeforeTpl">
+   <div class="icon-DayForward controls-FilterView__iconArrow
+               controls-FilterView-{{alignment}}__iconArrow
+               controls-FilterView__iconArrow_state_{{_options.readOnly ? 'readOnly' : 'enabled'}}"></div>
+</ws:template>
+
+<div class="controls_filter_theme-{{_options.theme}} controls-FilterView__block
+   {{beforeContentTemplate === null ? 'controls-FilterView__block-withoutArrow' :
+    'controls-FilterView__block-withArrow'}}" data-qa="FilterView__block">
+
+   <ws:partial template="{{beforeContentTemplate !== undefined ? beforeContentTemplate : 'defaultBeforeTpl'}}" />
+
+   <ws:if data="{{contentTemplate}}">
+      <ws:partial template="{{contentTemplate}}" scope="{{_options}}" attr:class="js-controls-FilterView__target"/>
+   </ws:if>
+   <ws:else>
+      <div class="controls-FilterView__text-wrapper
+                  js-controls-FilterView__target
+                  controls-FilterView__text_state_{{_options.readOnly ? 'readOnly' : 'enabled'}}"
+           title="{{title}}"
+           name="{{itemName}}">  <!--  for tests  -->
+         <div class="controls-FilterView__text">{{text}}</div>
+         <span if="{{moreText}}" class="controls-FilterView__hasMoreText">{{moreText}}</span>
+      </div>
+   </ws:else>
+</div>

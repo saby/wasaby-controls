@@ -1,0 +1,17 @@
+<div class="controls-margin_left-2xl ws-flexbox ws-justify-content-center">
+    <div class="controlsDemo_fixedWidth500">
+        <Controls.tabs:Buttons
+                bind:selectedKey='_selectedKey1'
+                keyProperty="id"
+                itemTemplate="Controls/tabs:IconCounterTabTemplate"
+                source="{{_source}}"
+                direction="vertical"
+        />
+        <Controls.tabs:Buttons
+                bind:selectedKey='_selectedKey2'
+                keyProperty="id"
+                itemTemplate="Controls/tabs:IconCounterTabTemplate"
+                source="{{_source}}"
+        />
+    </div>
+</div>

@@ -1,0 +1,86 @@
+<ws:if data="{{ _isAdaptive }}">
+    <Controls.Container.Async templateName="Controls/popupSliding:Template">
+        <ws:partial template="{{ content.resolvedTemplate }}"
+                    closeButtonVisible="{{ false }}"
+                    slidingPanelOptions="{{ _slidingPanelOptions }}"
+                    scope="{{ _options }}"/>
+    </Controls.Container.Async>
+</ws:if>
+<ws:else>
+<Controls.dragnDrop:Container name="dragNDrop" on:dragmove="_onDragMove()" on:documentdragend="_onDragEnd()">
+    <div class="controls_popupTemplate_theme-{{_options.theme}}
+                controls-StickyTemplate
+                {{ _options.borderVisible ? 'controls-StickyTemplate__border' }}
+                {{_options.roundBorder ? ('controls-PopupTemplate__roundBorder controls_border-radius-' + _options.borderRadius)}}
+                controls-StickyTemplate-borderStyle-{{_options.borderStyle}}
+                controls-StickyTemplate-hoverBorderStyle-{{_options.hoverBorderStyle}}
+                controls-StickyTemplate-borderSize-{{_options.borderSize}}
+                {{_options.shadowVisible ? 'controls-StickyTemplate-shadow'}}
+                {{_options.draggable ? 'ws-window-draggable'}}
+                {{_getBackgroundColor()}}"
+         on:mousedown="_onMouseDown()"
+         on:touchstart="_onMouseDown()"
+         on:mouseout="_mouseOut()"
+         on:click="_click()"
+         ws-tab-cycling="true">
+        <ws:if data="{{_options.headingCaption || _options.headerContentTemplate}}">
+            <ws:partial template="Controls/_popupTemplate/Sticky/Template/Header"
+                        scope="{{_options}}"
+                        close="{{close}}"
+                        verticalDirection="{{_options.verticalDirection || _verticalDirection}}"
+                        closeBtnPosition="{{_closeBtnPosition}}"
+                        closeButtonVisible="{{_options.closeButtonVisible}}"
+                        stickyOptions="{{_options}}"
+                        attr:class="{{_getRoundedClass(_options, 'header')}}"
+                        on:mouseenter="_proxyEvent('headerMouseEnter')"
+                        on:click="_proxyEvent('headerClick')"/>
+        </ws:if>
+        <ws:else>
+            <ws:if data="{{_options.closeButtonVisible}}">
+                <Controls.buttons:CloseButton attr:class="controls-StickyTemplate__close_button
+                {{_options.roundBorder !== false && _closeBtnPosition === 'default' ? 'controls-StickyTemplate_roundBorder__close_button_position-' :
+                'controls-StickyTemplate__close_button_position-'}}{{_closeBtnPosition}}
+                controls-StickyTemplate__close_button-{{_options.closeButtonViewMode}}
+                controls-StickyTemplate__close_button-{{_options.closeButtonViewMode !== 'link' ? 'external' : 'default'}}-without-header_top-spacing-{{ _options.closeButtonTopSpacing === 'none' ? 'none' : 'default' }} "
+                                                     viewMode="{{_options.closeButtonViewMode}}"
+                                                     offset="{{_options.closeButtonOffset}}"
+                                                     name="closeButton"
+                                                     on:click="close()"/>
+            </ws:if>
+        </ws:else>
+        <ws:if data="{{_options.bodyContentTemplate}}">
+            <div class="controls-StickyTemplate__content-area {{_getRoundedClass(_options, 'body')}} {{_getBackgroundColor()}}">
+                <ws:partial template="{{_options.bodyContentTemplate}}"
+                            headerContentTemplate="{{null}}"
+                            footerContentTemplate="{{null}}"
+                            borderStyle="{{undefined}}"
+                            isDragging="{{_dragging}}"
+                            scope="{{_options}}"/>
+            </div>
+        </ws:if>
+        <ws:if data="{{_options.footerContentTemplate}}">
+            <ws:partial template="{{_options.footerContentTemplate}}"
+                        headerContentTemplate="{{null}}"
+                        footerContentTemplate="{{null}}"
+                        scope="{{_options}}"
+                        attr:data-qa="controls-StickyTemplate__footer"
+                        attr:class="controls-StickyTemplate__footer
+                                    controls-PopupTemplate__roundBorder_bottom controls_border-radius-s
+                                    {{_getBackgroundColor()}}"
+                        on:click="_proxyEvent('footerClick')"/>
+        </ws:if>
+        <ws:if data="{{_options.resizable}}">
+            <Controls._popupTemplate.ResizingArrow
+                    attr:class="controls-StickyTemplate__resizingLine"
+                    minWidthOffset="{{_minWidthOffset}}"
+                    maxWidthOffset="{{_maxWidthOffset}}"
+                    minHeightOffset="{{_minHeightOffset}}"
+                    maxHeightOffset="{{_maxHeightOffset}}"
+                    borderRadius="{{_options.borderRadius}}"
+                    position="{{_options.resizingOptions.position}}"
+                    step="{{_options.resizingOptions.step}}"
+                    on:offset="_onResizingOffset()"/>
+        </ws:if>
+    </div>
+</Controls.dragnDrop:Container>
+</ws:else>

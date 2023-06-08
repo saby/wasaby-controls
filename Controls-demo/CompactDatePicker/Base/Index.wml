@@ -1,0 +1,19 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__flex ws-justify-content-center ws-align-items-center ws-flex-column">
+            <div class="controlsDemo__flex ws-align-items-baseline">
+                <div class="controls-text-label controlsDemo_fixedWidth200">Выбор даты:</div>
+                <Controls.date:Selector attr:class="controlsDemo_fixedWidth200"
+                                        bind:value="_value"
+                                        datePopupType="compactDatePicker"/>
+            </div>
+            <div class="controlsDemo__flex ws-align-items-baseline controls-margin_top-m">
+                <div class="controls-text-label controlsDemo_fixedWidth200">Выбор периода:</div>
+                <Controls.dateRange:Selector attr:class="controlsDemo_fixedWidth200"
+                                             datePopupType="compactDatePicker"
+                                             bind:startValue="_startValue"
+                                             bind:endValue="_endValue"/>
+            </div>
+        </div>
+    </div>
+</div>

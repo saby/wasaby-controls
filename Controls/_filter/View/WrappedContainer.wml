@@ -1,0 +1,7 @@
+<Controls.context:ContextOptionsConsumer scope="{{ _options }}">
+  <ws:contextOptionsInnerComponent>
+    <Controls._filter.View.Container scope="{{ contextOptionsInnerComponent }}"
+                                     _dataOptionsValue="{{contextOptionsInnerComponent._dataOptionsValue}}"
+                                     useStore="{{_options.filterTemplateName !== 'Controls-widgets/filter:View' && _options.useStore}}"/>
+  </ws:contextOptionsInnerComponent>
+</Controls.context:ContextOptionsConsumer>

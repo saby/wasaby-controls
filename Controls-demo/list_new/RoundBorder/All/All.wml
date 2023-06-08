@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper controlsDemo__maxWidth800 controlsDemo__list_RoundBorder_All">
+    <ws:for data="index, radius in _roundBorderVariants">
+        <Controls.list:View keyProperty="key"
+                            itemActions="{{_itemActions}}"
+                            itemActionsVisibility="visible"
+                            source="{{_viewSource}}"
+                            attr:data-qa="list_roundBorder_{{index}}"
+                            attr:class="controls-padding_bottom-m">
+            <ws:roundBorder tl="{{radius}}" tr="{{radius}}" br="{{radius}}" bl="{{radius}}"/>
+            <ws:itemTemplate>
+                <ws:partial template="Controls/list:ItemTemplate" backgroundColorStyle="readonly"/>
+            </ws:itemTemplate>
+        </Controls.list:View>
+    </ws:for>
+</div>

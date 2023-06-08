@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper">
+    <Controls.list:View
+            name="list"
+            keyProperty="key"
+            source="{{_viewSource}}"
+            markerVisibility="onactivated"/>
+
+    <a href="#" class="controls-text-link" on:click="_reloadList()">Reload list</a>
+    <ws:if data="{{_listReloaded}}">
+        <p>list reloaded</p>
+    </ws:if>
+</div>

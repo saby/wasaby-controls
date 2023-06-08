@@ -1,0 +1,33 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <Controls.buttons:Button caption="Reload" on:click="_onReload()"/>
+    </div>
+    <Controls.scroll:Container attr:class="controlsDemo__height400" attr:style="max-width: 700px">
+        <Controls.grid:View
+                name="list"
+                keyProperty="key"
+                columns="{{_columns}}"
+                header="{{_header}}"
+                source="{{_viewSource}}"
+                resultsPosition="top"
+                stickyFooter="{{true}}">
+            <ws:navigation source="page" view="infinity">
+                <ws:sourceConfig pageSize="{{20}}" page="{{5}}" hasMore="{{false}}"/>
+            </ws:navigation>
+            <ws:resultsTemplate>
+                <ws:partial template="Controls/grid:ResultsTemplate" scope="{{resultsTemplate}}">
+                    <ws:contentTemplate>
+                        <div style="color: #313E78; font-size: 13px; font-weight: 600">
+                            Результат: очень много одинаковых записей
+                        </div>
+                    </ws:contentTemplate>
+                </ws:partial>
+            </ws:resultsTemplate>
+            <ws:footerTemplate>
+                <ws:partial template="Controls/grid:FooterTemplate">
+                    <i>Подвал таблицы</i>
+                </ws:partial>
+            </ws:footerTemplate>
+        </Controls.grid:View>
+    </Controls.scroll:Container>
+</div>

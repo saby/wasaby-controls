@@ -1,0 +1,6 @@
+<ws:template name="owner">
+    <Controls.dropdown:Selector bind:selectedKeys="item.value" keyProperty='lastName' displayProperty='title' source='{{item.source}}'/>
+</ws:template>
+
+
+<ws:partial template="{{item.name}}" item="{{item}}"/>

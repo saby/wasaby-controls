@@ -1,0 +1,58 @@
+<Controls.calendar:MonthList
+   shouldPositionBelow="{{ _options.shouldPositionBelow }}"
+   attachLoadTopTriggerToNull="{{ false }}"
+   attachLoadDownTriggerToNull="{{ false }}"
+   attr:class="controls_datePicker_theme-{{_options.theme}} controls-PeriodDialog-MonthsRange"
+   segmentSize="3"
+   virtualPageSize="{{3}}"
+   position="{{_options.position}}"
+   shadowStyle="datePopup"
+   bottomShadowVisibility="hidden"
+   _limit="{{3}}"
+   on:itemClick="_onItemClick()"
+>
+   <ws:yearHeaderTemplate>
+      <div class="controls-PeriodDialog-MonthsRange__header">
+         {{ _formatDate(yearHeaderTemplate.date, 'YYYY') }}
+      </div>
+   </ws:yearHeaderTemplate>
+   <ws:yearTemplate>
+      <ws:partial template="Controls/calendar:MonthListYearTemplate">
+         <ws:headerTemplate>
+            <invisible-node />
+         </ws:headerTemplate>
+         <ws:bodyTemplate>
+            <Controls._datePopup.MonthsRangeItem
+               _date="{{ _options._date }}"
+               rangeSelectedCallback="{{_options.rangeSelectedCallback}}"
+               monthClickable="{{_options.monthClickable}}"
+               ranges="{{_options.ranges}}"
+               selectionType="{{_options.selectionType}}"
+               bind:startValue="_rangeModel.startValue"
+               bind:endValue="_rangeModel.endValue"
+               dayTemplate="{{_options.dayTemplate}}"
+               monthCaptionTemplate="{{_options.monthCaptionTemplate}}"
+               isDayAvailable="{{_options.isDayAvailable}}"
+
+               selectionProcessing="{{_options.selectionProcessing}}"
+               on:selectionProcessingChanged="_proxyEvent('selectionProcessingChanged')"
+               selectionBaseValue="{{_options.selectionBaseValue}}"
+               selectionHoveredValue="{{_options.selectionHoveredValue}}"
+
+               hoveredStartValue="{{_getHoveredStartValue(bodyTemplate.date)}}"
+               hoveredEndValue="{{_getHoveredEndValue(bodyTemplate.date)}}"
+
+               bind:selectionViewType="_selectionViewType"
+               dateConstructor="{{_options.dateConstructor}}"
+
+               on:monthClick="_proxyEvent('monthClick')"
+               on:fixedPeriodClick="_proxyEvent('fixedPeriodClick')"
+               on:itemClick="_proxyEvent('itemClick')"
+               on:itemMouseEnter="_proxyEvent('itemMouseEnter')"
+               on:itemMouseLeave="_proxyEvent('itemMouseLeave')"
+               on:itemKeyDown="_proxyEvent('itemKeyDown')"
+            />
+         </ws:bodyTemplate>
+      </ws:partial>
+   </ws:yearTemplate>
+</Controls.calendar:MonthList>

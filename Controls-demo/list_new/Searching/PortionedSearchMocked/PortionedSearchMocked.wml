@@ -1,0 +1,62 @@
+<div class="controlsDemo__wrapper controlsDemo__width800px">
+    <Controls.browser:Browser source="{{_viewSource}}"
+                              keyProperty="key"
+                              bind:filter="_filter"
+                              searchParam="title"
+                              filterButtonSource="{{_fastFilterData}}"
+                              minSearchLength="{{3}}" >
+        <ws:navigation source="position" view="infinity">
+            <ws:sourceConfig field="key" position="{{_position}}" direction="forward" limit="{{15}}"/>
+            <ws:viewConfig pagingMode="basic"/>
+        </ws:navigation>
+        <ws:content>
+            <div class="ws-fragment">
+                <Controls.search:InputContainer>
+                    <Controls.search:Input/>
+                </Controls.search:InputContainer>
+                <Controls.filter:ViewContainer>
+                    <Controls.filter:View source="{{_fastFilterData}}"
+                                          alignment="right"
+                                          viewMode="frequent"
+                                          panelTemplateName="Controls/filterPopup:SimplePanel"/>
+                </Controls.filter:ViewContainer>
+                <Controls.scroll:Container attr:class="controlsDemo__height300">
+                    <Controls.list:Container>
+                        <Controls.list:View>
+                        <ws:iterativeLoadingTemplate>
+                            <ws:partial template="Controls/list:IterativeLoadingTemplate"
+                                        scope="{{iterativeLoadingTemplate}}">
+                                <ws:footerTemplate>
+                                    <div>Дополнительная информация при итеративном поиске</div>
+                                </ws:footerTemplate>
+                            </ws:partial>
+                        </ws:iterativeLoadingTemplate>
+                        <ws:continueSearchTemplate>
+                            <ws:partial template="Controls/list:ContinueSearchTemplate"
+                                        scope="{{continueSearchTemplate}}">
+                                <ws:footerTemplate>
+                                    <div>Дополнительная информация при итеративном поиске</div>
+                                </ws:footerTemplate>
+                            </ws:partial>
+                        </ws:continueSearchTemplate>
+                        <ws:virtualScrollConfig pageSize="{{15}}"/>
+                            </Controls.list:View>
+                    </Controls.list:Container>
+                </Controls.scroll:Container>
+            </div>
+        </ws:content>
+    </Controls.browser:Browser>
+
+    <div>
+        <br/>
+        <Controls.checkbox:Checkbox value="{{_iterativeValue}}" caption="Флаг iterative в metaData" on:valueChanged="_iterativeValueChanged()"/>
+        <br/>
+        <h2>Ручное управление порционным поиском</h2>
+        <h5>(Только во время поиска)</h5>
+        <br/>
+        <Controls.buttons:Button attr:data-qa="return-same-and-continue" caption="Продолжить сценарий с текущими параметрами" on:click="_returnNRecordsAndContinueScenario()"/><br/>
+        <Controls.buttons:Button attr:data-qa="return-five-and-continue" caption="Продолжить сценарий. Возвращать далее по 5 записей" on:click="_returnNRecordsAndContinueScenario(5)"/><br/>
+        <Controls.buttons:Button attr:data-qa="return-five-and-continue" caption="Продолжить сценарий. Вернуть существующую запись" on:click="_returnAlreadyExistedRecord()"/><br/>
+        <Controls.buttons:Button attr:data-qa="return-all-and-continue" caption="Продолжить сценарий. Возвращать далее максимальное кол-во записей" on:click="_returnNRecordsAndContinueScenario(100)"/>
+    </div>
+</div>

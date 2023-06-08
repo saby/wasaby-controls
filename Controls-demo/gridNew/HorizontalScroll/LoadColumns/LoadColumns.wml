@@ -1,0 +1,17 @@
+<div class="controlsDemo__wrapper">
+		<Controls.scroll:Container attr:style="width: 900px; height: 400px"
+								   canScrollByWheel="{{ { 'horizontal': false } }}"
+								   scrollOrientation="verticalHorizontal">
+			<Controls.grid:View
+				name="grid"
+				keyProperty="key"
+				columnKeyProperty="{{ _columnKeyProperty }}"
+				source="{{_viewSource}}"
+				header="{{_header}}"
+				on:mouseup="_onViewMouseUp()"
+				columns="{{_columns}}"
+				newColumnScroll="{{ true }}"
+				on:columnsEnded="_onColumnsEnded()"
+				stickyColumnsCount="{{ 1 }}"/>
+		</Controls.scroll:Container>
+</div>

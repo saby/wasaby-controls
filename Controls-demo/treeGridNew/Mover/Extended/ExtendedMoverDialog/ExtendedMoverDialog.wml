@@ -1,0 +1,48 @@
+<Controls.moverDialog:BaseTemplate headingCaption="{{_options.headingCaption}}">
+    <ws:bodyContentTemplate>
+        <Controls.browser:Browser source="{{_options.source}}"
+                                  bind:filter="_filter"
+                                  root="{{_root}}"
+                                  bind:expandedItems="_expandedItems"
+                                  bind:searchValue="_searchValue"
+                                  navigation="{{_options.navigation}}"
+                                  keyProperty="{{_options.keyProperty}}"
+                                  searchParam="{{_options.searchParam}}"
+                                  dataLoadCallback="{{ _dataLoadCallback }}"
+                                  dedicatedItemProperty="{{_options.dedicatedItemProperty}}"
+                                  parentProperty="{{_options.parentProperty}}"
+                                  displayProperty="{{_options.displayProperty}}">
+            <div class="controls-MoveDialog__content">
+                <ws:if data="{{_options.searchParam}}">
+                    <Controls.search:InputContainer attr:class="controls-MoveDialog__search">
+                        <Controls.search:Input/>
+                    </Controls.search:InputContainer>
+                </ws:if>
+                <Controls.scroll:Container attr:class="controls-MoveDialog__scroll">
+                    <Controls.list:Container>
+                        <Controls.explorer:View
+                                name="explorer"
+                                showActionButton="{{false}}"
+                                on:markedKeyChanged="_onMarkedKeyChanged()"
+                                on:beforeMarkedKeyChanged="_onBeforeMarkedKeyChanged()"
+                                on:itemClick="_onItemClick()"
+                                nodeProperty="{{_options.nodeProperty}}"
+                                hasChildrenProperty="{{_options.hasChildrenProperty}}"
+                                itemsFilterMethod="{{_itemsFilterMethod}}"
+                                expanderDisplayMode="adaptive"
+                                expanderVisibility="{{_options.expanderVisibility}}"
+                                emptyTemplate="{{ _getEmptyTemplate() }}"
+                                containerWidth="{{containerWidth}}"
+                                columns="{{columns}}"
+                                markedKey="{{_options.markedKey}}"/>
+                    </Controls.list:Container>
+                </Controls.scroll:Container>
+            </div>
+        </Controls.browser:Browser>
+    </ws:bodyContentTemplate>
+    <ws:headerContentTemplate>
+        <div class="ControlsDemo-ExtendedMoveDialog__createFolder">
+            <Controls.buttons:Button icon="icon-CreateFolder" on:click="_createFolderButtonClick()" viewMode="linkButton"/>
+        </div>
+    </ws:headerContentTemplate>
+</Controls.moverDialog:BaseTemplate>

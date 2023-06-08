@@ -1,0 +1,36 @@
+.controls-FilterPanel__PropertyGrid__item {
+   display: flex;
+   align-items: center;
+   min-height: var(--item_height_filterPanel);
+   margin-left: var(--offset_m);
+}
+
+.controls-FilterPanel__PropertyGrid__item::before {
+   content: '\200b';
+   height: var(--item_height_filterPanel);
+}
+
+.controls-FilterPanel__PropertyGrid__item:empty {
+   min-height: 0;
+   max-height: 0;
+   margin-bottom: 0;
+}
+
+.controls-FilterPanel__PropertyGrid__notLastItem {
+   margin-bottom: var(--basic_item_padding-bottom_filterPanel);
+}
+
+.controls-FilterPanel__PropertyGrid__lastItem {
+   margin-bottom: 0;
+}
+
+.controls-FilterPanel__PropertyGrid__item .controls-FilterLink__text-default {
+   color: var(--label_text-color);
+}
+
+.ws-is-hover {
+   .controls-FilterPanel__PropertyGrid__item
+      .controls-FilterLink__text-default:hover {
+      color: var(--label_hover_text-color);
+   }
+}

@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper">
+    <ws:for data="key, value in _data">
+        <div class="controlsDemo__cell">
+            <div class="controls-text-label">fontSize={{value}}</div>
+            <Controls.baseDecorator:Number value="1234567" fontSize='{{value}}'/>
+        </div>
+    </ws:for>
+</div>

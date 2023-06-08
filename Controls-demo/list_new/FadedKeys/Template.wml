@@ -1,0 +1,25 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth550">
+	<Controls.RadioGroup:Control
+			selectedKey="{{_viewName}}"
+			on:selectedKeyChanged="_switchView()"
+			source="{{_viewNameSource}}"
+			keyProperty="key"
+			displayProperty="key"
+			direction="horizontal"/>
+	<Controls.Container.Async templateName="{{_viewName}}">
+		<ws:partial
+				template="{{content.resolvedTemplate}}"
+				keyProperty="key"
+				imageProperty="image"
+				displayProperty="title"
+				columns="{{_columns}}"
+				viewMode="{{ _viewName === 'Controls/explorer:View' ? _viewMode }}"
+				itemActions="{{_itemActions}}"
+				fadedKeys="{{_fadedKeys}}"
+				itemTemplate="{{_itemTemplate}}"
+				source="{{_viewSource}}"/>
+	</Controls.Container.Async>
+	<ws:if data="{{ _viewName === 'Controls/explorer:View' }}">
+		<button on:click="_changeViewMode()">Изменить viewMode и fadedKeys</button>
+	</ws:if>
+</div>

@@ -1,0 +1,12 @@
+<div class="controls_search_theme-{{_options.theme}} controls-Search__button
+                    controls-Search__button_{{options.readOnly ? 'readOnly' : 'enabled'}}
+                    controls-Search__searchButton
+                    controls-Search__searchButton_iconSize-{{iconSize}}
+                    controls-Search__searchButton-{{searchButtonAlign}}_inlineheight-{{inlineHeight}}
+                    controls-Search__searchButton_position-{{searchButtonAlign}}
+                    {{searchButtonIconStyle ? 'controls-icon_style-' + searchButtonIconStyle :
+                    'controls-Search__searchButton_color' + (_options.readOnly ? '_readOnly')}}
+                    {{searchButtonAlign === 'right' ? 'icon-Search2' : 'icon-Search3'}}"
+     on:mousedown="_searchClick()"
+     attr:ws-no-focus="true"
+     data-qa="Search__searchButton"></div>

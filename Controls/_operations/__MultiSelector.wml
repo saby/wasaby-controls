@@ -1,0 +1,33 @@
+<div class="controls_operations_theme-{{_options.theme}} controls-operationsPanelV__container">
+    <ws:if data="{{_options.viewMode === 'link'}}">
+        <div class="controls-MultiSelector__caption
+                    controls-fontsize-{{_options.fontSize}}
+                    controls-text-{{_options.fontColorStyle}}"
+             title="{{_menuCaption}}">{{_menuCaption}}
+        </div>
+    </ws:if>
+    <ws:else>
+        <Controls.dropdown:Button
+                keyProperty="id"
+                viewMode="link"
+                buttonStyle="secondary"
+                fontColorStyle="{{_options.fontColorStyle}}"
+                menuBackgroundStyle="{{_options.menuBackgroundStyle}}"
+                menuHoverBackgroundStyle="{{_options.menuHoverBackgroundStyle}}"
+                caption="{{_menuCaption}}"
+                fontSize="{{_options.fontSize}}"
+                on:menuItemActivate="_onMenuItemActivate()"
+                closeButtonVisibility="{{_options.closeButtonVisibility}}"
+                items="{{_menuItems}}"
+                attr:class="controls-MultiSelector__button">
+        </Controls.dropdown:Button>
+    </ws:else>
+    <Controls.LoadingIndicator
+            name="countIndicator"
+            isGlobal="{{false}}"
+            small="{{true}}"
+            overlay="none"
+            attr:class="controls-operationsPanelV__loadingIndicatorImg-wrapper">
+        <div></div>
+    </Controls.LoadingIndicator>
+</div>

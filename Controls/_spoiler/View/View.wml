@@ -1,0 +1,26 @@
+<div class="controls_spoiler_theme-{{_options.theme}} controls-SpoilerView">
+    <div class="controls-SpoilerView__header ws-flexbox ws-align-items-baseline">
+        <ws:if data="{{_options.captions}}">
+            <Controls._spoiler.Heading attr:class="controls-SpoilerView__heading ws-flex-row"
+                                       expanded="{{_expanded}}"
+                                       captions="{{_options.captions}}"
+                                       captionPosition="{{_options.captionPosition}}"
+                                       fontSize="{{_options.headingFontSize || _options.fontSize}}"
+                                       fontWeight="{{_options.headingFontWeight}}"
+                                       fontColorStyle="{{_options.headingFontColorStyle}}"
+                                       tooltip="{{_options.tooltip}}"
+                                       on:expandedChanged="_expandedHandler()"/>
+        </ws:if>
+        <ws:if data="{{_options.headerContentTemplate}}">
+            <div class="controls-SpoilerView__header__headerContentTemplate">
+                <ws:partial template="{{_options.headerContentTemplate}}"
+                            on:expandedChanged="_expandedHandler()">
+                </ws:partial>
+            </div>
+        </ws:if>
+    </div>
+
+    <ws:if data="{{_expanded}}">
+        <ws:partial attr:class="controls-SpoilerView__area" template="{{_options.content}}"/>
+    </ws:if>
+</div>

@@ -1,0 +1,19 @@
+<Controls-ListEnv.toolbar:Container actions="{{_actions}}" storeId="{{_options.storeId}}" permissionsResolverModule="{{_options.permissionsResolver}}">
+    <ws:if data="{{_panelExpanded}}">
+            <Controls.operations:Panel
+                    on:selectedTypeChanged="_selectedTypeChanged()"
+                    on:expandedChanged="_expandedChanged()"
+                    excludedKeys="{{_compatibleMode ? _excludedKeys : _options.slice.excludedKeys}}"
+                    selectedKeys="{{_compatibleMode ? _selectedKeys : _options.slice.selectedKeys}}"
+                    selectedKeysCount="{{_compatibleMode ? _counterConfig.count : _options.slice.count}}"
+                    isAllSelected="{{_compatibleMode ? _counterConfig.isAllSelected : _options.slice.isAllSelected}}"
+                    countLoading="{{_options.slice.countLoading}}"
+                    multiSelectSize="{{_options.multiSelectSize}}"
+                    selectionViewMode="{{ _options.selectionViewMode }}"
+                    selectedCountConfig="{{_compatibleMode ? _options.selectedCountConfig}}"
+                    operationsController="{{_operationsController}}"/>
+    </ws:if>
+    <ws:else>
+      <div></div>
+    </ws:else>
+</Controls-ListEnv.toolbar:Container>

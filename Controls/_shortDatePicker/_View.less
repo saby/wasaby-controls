@@ -1,0 +1,459 @@
+.controls-PeriodLiteDialog__container () {
+   position: relative;
+   height: auto;
+}
+
+// TODO https://online.sbis.ru/opendoc.html?guid=bf944c40-805f-456a-b70f-686f9c3e3aa5
+.controls-PeriodLiteDialog__popup_with-closeButton {
+   padding: 0 calc(var(--width_closeButton_functionalButton) / 2);
+}
+
+.controls-PeriodLiteDialog__container-caption () {
+   box-sizing: border-box;
+   cursor: pointer;
+   display: none;
+   height: 100%;
+   padding: 0;
+   position: absolute;
+   top: 0;
+}
+
+.controls-PeriodLiteDialog__container-month-caption () {
+   .controls-PeriodLiteDialog__container-caption();
+}
+
+.controls-PeriodLiteDialog__shadow {
+   box-shadow: var(--shadow_a);
+}
+
+.controls-PeriodLiteDialog {
+   position: relative;
+   box-sizing: border-box;
+   user-select: none;
+   padding: 0;
+   display: flex;
+   flex-direction: column;
+   background-color: var(--unaccented_background-color);
+   color: var(--text-color);
+   overflow: hidden;
+}
+
+.controls-PeriodLiteDialog__footer {
+   box-sizing: border-box;
+   border-top: var(--border-thickness) solid var(--separator_color);
+   background-color: var(
+      --unaccented_background-color
+   ); //такой же как цвет шапки
+   display: flex;
+   flex-shrink: 0;
+   height: var(--inline_height_m);
+   justify-content: center;
+   align-items: center;
+}
+
+.controls-PeriodLiteDialog__body {
+   font-size: var(--font-size_l);
+}
+
+.controls-PeriodLiteDialog__vLayout {
+   background-color: var(--unaccented_background-color);
+}
+
+.controls-PeriodLiteDialog__vLayoutItem {
+   cursor: pointer;
+   position: relative;
+   box-sizing: border-box;
+   border-radius: var(--border-radius_s);
+   border: var(--border-thickness) solid transparent;
+   padding-left: var(--offset_m);
+   padding-right: var(--offset_m);
+}
+
+.controls-PeriodLiteDialog__vLayoutItem-caption {
+   height: var(--item_height_menu);
+   line-height: var(--item_height_menu);
+}
+
+.controls-PeriodLiteDialog__item-background-hovered {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   height: 100%;
+   box-sizing: border-box;
+   z-index: 1;
+   pointer-events: none;
+   border: var(--border-thickness) solid var(--unaccented_hover_border-color);
+   border-radius: var(--border-radius_s);
+}
+
+.controls-PeriodLiteDialog-item-yearList {
+   text-align: center;
+   height: calc(
+      var(--item_height_menu) + var(--border-thickness) * 2 - var(--offset_3xs)
+   );
+   line-height: calc(
+      var(--item_height_menu) + var(--border-thickness) * 2 - var(--offset_3xs)
+   );
+   padding-top: var(--offset_3xs);
+}
+
+.controls-PeriodLiteDialog__text-align-left {
+   text-align: left;
+}
+
+.controls-PeriodLiteDialog__header {
+   display: flex;
+   background-color: var(--background-color);
+   align-items: center;
+   flex-shrink: 0;
+   position: relative;
+}
+
+.controls-PeriodLiteDialog__currentValue {
+   word-break: break-word;
+   width: 100%;
+   justify-content: center;
+   border-bottom: none;
+   margin-bottom: 0;
+   cursor: pointer;
+   flex: 1;
+   display: flex;
+   align-items: baseline;
+   font-size: var(--header_font-size_sticky);
+   font-weight: bold;
+   color: var(--header_color_sticky);
+   min-height: var(--header_min-height_sticky);
+   line-height: var(--header_min-height_sticky);
+   padding: 0 var(--header_padding-horizontal_sticky);
+}
+
+.controls-PeriodLiteDialog__yearWrapper {
+   box-sizing: border-box;
+   border-bottom: var(--border-thickness) solid var(--separator_color);
+   padding-bottom: var(--border-thickness);
+   background-color: var(--unaccented_background-color);
+   height: calc(var(--inline_height_ArrowButton) + var(--offset_xl));
+   position: relative;
+   display: flex;
+   align-items: center;
+   flex-shrink: 0;
+}
+
+.controls-PeriodLiteDialog__year-next {
+   margin-right: var(--offset_xl);
+}
+
+.controls-PeriodLiteDialog__year-prev {
+   margin-right: var(--offset_2xs);
+   margin-left: var(--offset_3xs);
+}
+
+.controls-PeriodLiteDialog__year__container {
+   display: flex;
+   vertical-align: middle;
+   flex-grow: 1;
+   flex-shrink: 0;
+   font-size: var(--font-size_l);
+   font-weight: bold;
+   height: calc(var(--inline_height_ArrowButton) + var(--offset_xl));
+   line-height: calc(var(--inline_height_ArrowButton) + var(--offset_xl));
+   padding-left: var(--offset_l);
+   margin-right: var(--offset_m);
+   align-self: stretch;
+}
+
+.controls-PeriodLiteDialog__year__currentYear {
+   color: var(--primary_text-color);
+}
+
+.controls-PeriodLiteDialog__year-center-lite {
+   display: flex;
+   align-items: center;
+}
+
+.controls-PeriodLiteDialog__year-clickable {
+   cursor: pointer;
+}
+
+.controls-PeriodLiteDialog-item {
+   margin-top: 0;
+}
+
+.controls-PeriodLiteDialog-item-yearList-years {
+   cursor: pointer;
+   position: relative;
+   box-sizing: border-box;
+   border-left: var(--offset_2xs) solid transparent;
+   border-right: var(--offset_2xs) solid transparent;
+}
+
+.controls-PeriodLiteDialog__yearList-year {
+   height: calc(var(--item_height_menu) + 2 * var(--border-thickness));
+   line-height: calc(var(--item_height_menu) + 2 * var(--border-thickness));
+   padding-left: var(--offset_2xl);
+   padding-right: var(--offset_2xl);
+   position: relative;
+   border-radius: var(--border-radius_s);
+}
+
+.controls-PeriodLiteDialog__bodyWrapper {
+   position: relative;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+}
+
+.controls-PeriodLiteDialog-item__halfYear {
+   .controls-PeriodLiteDialog__container();
+   border-radius: var(--border-radius_s);
+
+   &:last-child {
+      margin-bottom: 0;
+   }
+}
+
+.controls-PeriodLiteDialog-item__halfYear-caption {
+   .controls-PeriodLiteDialog__container-caption();
+   color: var(--text-color);
+   width: calc(
+      var(--inline_height_ArrowButton) + 2 *
+         (var(--offset_s) - var(--border-thickness))
+   ); // равен ширине кварталов
+   display: flex;
+   right: 0;
+   justify-content: center;
+   align-items: center;
+}
+
+.controls-PeriodLiteDialog-item__quarter {
+   .controls-PeriodLiteDialog__container();
+   border-radius: var(--border-radius_s);
+   margin-right: calc(
+      var(--inline_height_ArrowButton) + 2 *
+         (var(--offset_s) - var(--border-thickness)) + var(--offset_3xs)
+   );
+}
+
+.controls-PeriodLiteDialog-lastItem__quarter {
+   margin-bottom: 0;
+}
+
+.controls-PeriodLiteDialog-item__quarter-caption {
+   .controls-PeriodLiteDialog__container-caption();
+   color: var(--quarterly_quarters_text-color_shortDatePicker);
+   width: calc(
+      var(--inline_height_ArrowButton) + 2 *
+         (var(--offset_s) - var(--border-thickness))
+   );
+   display: flex;
+   right: 0;
+   position: absolute;
+   justify-content: center;
+   align-items: center;
+}
+
+.controls-PeriodLiteDialog-item__halfYear__border,
+.controls-PeriodLiteDialog-item__quarter__border {
+   &::after {
+      content: '';
+      pointer-events: none;
+      width: var(--offset_3xs);
+      top: var(--offset_s);
+      bottom: var(--offset_s);
+      left: calc(-1 * var(--offset_3xs));
+      background: var(--separator_color);
+      position: absolute;
+      border-radius: var(--offset_3xs);
+   }
+}
+
+.controls-PeriodLiteDialog-item__checkBox {
+   display: flex;
+   position: absolute;
+   top: 0;
+   right: calc(var(--offset_m) - var(--border-thickness));
+   align-items: center;
+   height: 100%;
+}
+
+.controls-PeriodLiteDialog-item__month {
+   border-radius: var(--border-radius_s);
+}
+
+.controls-PeriodLiteDialog-item__onlyQuarters-quarter,
+.controls-PeriodLiteDialog-item__month,
+.controls-PeriodLiteDialog-item__month-caption {
+   position: relative;
+}
+
+.controls-PeriodLiteDialog-item__month-wrapper {
+   margin: 0
+      calc(
+         var(--inline_height_ArrowButton) + 2 *
+            (var(--offset_s) - var(--border-thickness)) + var(--offset_3xs)
+      )
+      0 0;
+}
+
+.controls-PeriodLiteDialog_monthsAndQuarters-item__month-wrapper {
+   margin: 0
+      calc(
+         var(--inline_height_ArrowButton) + 2 *
+            (var(--offset_s) - var(--border-thickness)) + var(--offset_3xs)
+      )
+      0 0;
+}
+
+.controls-PeriodLiteDialog__years-bold {
+   font-weight: bold;
+   color: var(--link_text-color);
+}
+
+.controls-PeriodLiteDialog__years-prev,
+.controls-PeriodLiteDialog__years-next {
+   box-sizing: border-box;
+   justify-content: center;
+   align-items: center;
+   display: flex;
+   background-color: var(--unaccented_background-color);
+}
+
+.controls-PeriodLiteDialog__years-next {
+   border-bottom: var(--border-thickness) solid var(--separator_color);
+   min-height: calc(var(--inline_height_ArrowButton) + 2 * var(--offset_st));
+}
+
+.controls-PeriodLiteDialog__years-prev {
+   border-top: var(--border-thickness) solid var(--separator_color);
+   min-height: calc(var(--inline_height_ArrowButton) + 2 * var(--offset_2xs));
+}
+
+.controls-PeriodLiteDialog__selectedYear {
+   background: var(--background-color_dialog);
+}
+
+.controls-PeriodLiteDialog__year {
+   font-weight: bold;
+   color: var(--primary_text-color);
+}
+
+.controls-PeriodLiteDialog__fullYear-listElement {
+   color: var(--primary_text-color);
+   height: var(--item_height_menu);
+   margin-left: var(--offset_2xs);
+   background-color: var(--unaccented_background-color);
+   padding-left: calc(
+      var(--offset_m) - var(--border-thickness)
+   ); //отступ равен отступу внутри элементов, чтоб они были на одной линии
+   border-left: var(--border-thickness) solid transparent;
+   border-right: var(--border-thickness) solid transparent;
+   position: relative;
+   font-weight: bold;
+
+   &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+   }
+}
+
+.controls-PeriodLiteDialog__fullYear-listElement__clickable {
+   cursor: pointer;
+}
+
+.controls-PeriodLiteDialog__vLayoutItem-caption__selected {
+   background: var(--background-color);
+}
+
+.controls-PeriodLiteDialog__item-selected {
+   background: var(--background-color_dialog);
+}
+
+.controls-PeriodLiteDialog__fullPicker {
+   height: calc(var(--item_height_menu));
+}
+
+.controls-PeriodLiteDialog__yearHeader-background-hovered::after {
+   border: none;
+}
+
+.controls-PeriodLiteDialog__year-list {
+   max-height: calc(
+      (var(--item_height_menu) + 2 * var(--border-thickness)) * 6 +
+         var(--offset_3xs)
+   );
+   height: 100%;
+}
+
+.controls-PeriodLiteDialog_calendarBody {
+   position: relative;
+   border-radius: var(--border-radius_s);
+   margin: 0 var(--offset_2xs);
+   padding-top: var(--offset_3xs);
+}
+
+.controls-PeriodLiteDialog_monthsAndQuarters-item__quarter {
+   position: relative;
+}
+
+.controls-PeriodLiteDialog_monthsAndQuarters-lastItem__quarter {
+   margin-bottom: 0;
+}
+
+.ws-is-mobile-android {
+   // На android на самом маленьком масштабе элементы списка не отображаются, пока мы не поскроллим.
+   // Используем аппаратное ускорение https://www.smashingmagazine.com/2012/06/play-with-hardware-accelerated-css/
+   .controls-PeriodLiteDialog_calendarBody {
+      transform: translate3d(0, 0, 0);
+   }
+}
+
+.ws-is-hover {
+   .controls-PeriodLiteDialog__year-clickable:hover {
+      background-color: inherit;
+   }
+}
+
+.ws-is-touch {
+   .controls-PeriodLiteDialog__vLayoutItem-clickable:active {
+      border-color: var(--unaccented_hover_border-color);
+      background-color: var(--unaccented_background-color);
+   }
+}
+
+.controls-PeriodLiteDialog-MonthList-medium {
+   max-height: calc(
+      (var(--item_height_menu) + 2 * var(--border-thickness)) * 14 +
+         var(--offset_3xs)
+   );
+}
+
+.controls-PeriodLiteDialog-MonthList-large {
+   max-height: calc(
+      (var(--item_height_menu) + 2 * var(--border-thickness)) * 15 +
+         var(--offset_3xs)
+   );
+}
+
+.controls-PeriodLiteDialog-MonthList_expanded {
+   max-height: inherit;
+}
+
+.controls-Scroll__shadow_top_style-shortDatePicker {
+   background: linear-gradient(
+      to bottom,
+      var(--shadow-color_c),
+      var(--shadow_end-color_scroll)
+   );
+}
+
+.controls-Scroll__shadow_bottom_style-shortDatePicker {
+   background: linear-gradient(
+      to top,
+      var(--shadow-color_c),
+      var(--shadow_end-color_scroll)
+   );
+}

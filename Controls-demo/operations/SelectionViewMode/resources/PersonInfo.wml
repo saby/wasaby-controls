@@ -1,0 +1,26 @@
+<ws:partial template="Controls/grid:ColumnTemplate" scope="{{ _options }}">
+    <ws:contentTemplate>
+        <div class="demo-PersonInfo">
+            <ws:if data="{{item.isNode()}}">
+                <span class="demo-PersonInfo__department">{{item.contents.department}}</span>
+                <span class="demo-PersonInfo__head">{{item.contents.name}} ({{item.contents.count}})</span>
+            </ws:if>
+            <ws:else>
+                <img class="demo-PersonInfo__photo" src="{{item.contents['photo']}}"/>
+                <div class="demo-PersonInfo__row">
+                    <div>
+                        <span class="demo-PersonInfo__name">{{item.contents.name}}</span>
+                        <span class="demo-PersonInfo__phone">{{item.contents.phone}}</span>
+                    </div>
+                    <div>
+                        <span class="demo-PersonInfo__position">{{item.contents.position}}</span>
+                    </div>
+                </div>
+                <div class="demo-PersonInfo__badges">
+                    <i class="demo-PersonInfo__likesIcon demo-PersonInfo__icon icon-ThumbUp2"/>
+                    <span class="demo-PersonInfo__likes"> {{item.contents.likes}}</span>
+                </div>
+            </ws:else>
+        </div>
+    </ws:contentTemplate>
+</ws:partial>

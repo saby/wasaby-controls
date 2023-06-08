@@ -1,0 +1,22 @@
+.controls-Suggest__suggestionsContainer_popup {
+   margin-left: calc(-1 * var(--offset_m));
+}
+
+.controls-Suggest__suggestionsContainer_popup-contrastBackground {
+   margin-left: calc(-1 * var(--offset_s));
+}
+
+.controls-Suggest__suggestionsContainer_popup_shadow_top {
+   .box-shadow(0 calc(-1 * var(--offset_2xs)) var(--shadow-blur_a) var(--shadow-color_a));
+}
+
+.controls-Suggest__suggestionsContainer_popup_shadow_bottom {
+   .box-shadow(0 var(--offset_2xs) var(--shadow-blur_a) var(--shadow-color_a));
+}
+
+// в edge не работает box-shadow с calc
+.ws-is-ie {
+   .controls-Suggest__suggestionsContainer_popup_shadow_top {
+      .box-shadow(0 -4px 18px rgba(0, 0, 0, 0.2));
+   }
+}

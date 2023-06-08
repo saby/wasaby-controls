@@ -1,0 +1,63 @@
+<ws:if data="{{collectionItem.getValidateTemplateName()}}">
+   <Controls.Container.Async
+      templateName="{{collectionItem.getValidateTemplateName()}}">
+      <ws:content>
+         <ws:partial
+            template="{{content.resolvedTemplate}}"
+            scope="{{collectionItem.getValidateTemplateOptions()}}"
+            value="{{collectionItem.getPropertyValue()}}"
+            attr:key="{{collectionItem.getUid()}}">
+            <ws:validators>
+               <ws:Function
+                  item="{{collectionItem.contents}}"
+                  collectionItem="{{collectionItem}}"
+                  validators="{{collectionItem.getEditorValidators()}}"
+                  value="{{collectionItem.getPropertyValue()}}"
+               >
+                  Controls/propertyGrid:PropertyGrid.prototype.startValidation
+               </ws:Function>
+            </ws:validators>
+            <ws:content>
+               <Controls.Container.Async
+                  templateName="{{collectionItem.getEditorTemplateName()}}"
+                  attr:data-qa="controls-PropertyGrid__editor_{{item[keyProperty]}}"
+                  attr:class="{{collectionItem.getEditorClasses()}}">
+                  <ws:templateOptions
+                     validationStatus="{{content.validationStatus}}"
+                     propertyValue="{{collectionItem.getPropertyValue()}}"/>
+                  <ws:content>
+                     <ws:partial template="{{content.resolvedTemplate}}"
+                                 readOnly="{{collectionItem.getEditorReadOnly(readOnly)}}"
+                                 validationStatus="{{content.validationStatus}}"
+                                 jumpingLabel="{{jumpingLabel}}"
+                                 caption="{{caption}}"
+                                 required="{{collectionItem.contents.required || collectionItem.getEditorOptions().required}}"
+                                 attr:ws-autofocus="{{collectionItem.isFocused()}}"
+                                 scope="{{collectionItem.getEditorOptions()}}"/>
+                  </ws:content>
+               </Controls.Container.Async>
+            </ws:content>
+         </ws:partial>
+      </ws:content>
+   </Controls.Container.Async>
+</ws:if>
+<ws:else>
+   <ws:if data="{{collectionItem.getEditorTemplateName()}}">
+      <Controls.Container.Async templateName="{{collectionItem.getEditorTemplateName()}}"
+                                attr:class="{{collectionItem.getEditorClasses()}}">
+         <ws:templateOptions
+            propertyValue="{{collectionItem.getPropertyValue()}}"/>
+         <ws:content>
+            <ws:partial
+               attr:data-qa="controls-PropertyGrid__editor_{{item[keyProperty]}}"
+               attr:key="{{collectionItem.getUid()}}"
+               template="{{content.resolvedTemplate}}"
+               caption="{{caption}}"
+               jumpingLabel="{{jumpingLabel}}"
+               required="{{collectionItem.contents.required || collectionItem.getEditorOptions().required}}"
+               attr:ws-autofocus="{{collectionItem.isFocused()}}"
+               scope="{{collectionItem.getEditorOptions()}}"/>
+         </ws:content>
+      </Controls.Container.Async>
+   </ws:if>
+</ws:else>

@@ -1,0 +1,49 @@
+<Controls._filterPanel.BaseEditor scope="{{_options}}"
+                                  on:extendedCaptionClick="_extendedCaptionClickHandler()"
+                                  on:resetClick="_resetClick()"
+                                  extendedCaption="{{_options.extendedCaption}}"
+                                  closeButtonVisible="{{false}}"
+>
+   <ws:editorTemplate>
+      <Controls._filterPanel.Editors.SelectionContainer propertyValue="{{_options.propertyValue}}"
+                                                        multiSelect="{{_options.multiSelect}}">
+         <Controls.Container.Async templateName="Controls/lookup:Input">
+            <ws:templateOptions selectedKeys="{{content.selectedKeys}}" />
+            <ws:content>
+               <ws:partial template="{{content.resolvedTemplate}}"
+                           name="lookupEditor"
+                           scope="{{_options}}"
+                           suggestTemplate="{{_suggestTemplate}}"
+                           items="{{_items}}"
+                           fontColorStyle="{{_options.fontColorStyle || 'default'}}"
+                           style="filterPanel"
+                           on:itemsChanged="_itemsChangedHandler()"
+                           attr:class="controls-LookupInputEditor" >
+                  <ws:itemTemplate>
+                     <ws:if data="{{_options.itemTemplate}}">
+                        <ws:partial template="{{_options.itemTemplate}}"
+                                    size="{{_options.fontSize}}"
+                                    scope="{{itemTemplate}}"/>
+                     </ws:if>
+                     <ws:else>
+                        <Controls.Container.Async templateName="Controls/lookup:ItemTemplate">
+                           <ws:partial template="{{content.resolvedTemplate}}"
+                                       size="{{_options.fontSize}}"
+                                       scope="{{itemTemplate}}"/>
+                        </Controls.Container.Async>
+                     </ws:else>
+                  </ws:itemTemplate>
+               </ws:partial>
+            </ws:content>
+         </Controls.Container.Async>
+      </Controls._filterPanel.Editors.SelectionContainer>
+   </ws:editorTemplate>
+   <ws:extendedTemplate>
+      <Controls._filterPanel.Editors.resources.FrequentItem
+              on:extendedCaptionClick="_extendedCaptionClickHandler()"
+              extendedCaltion="{{_options.extendedCaption}}"
+              frequentItemText="{{_options.frequentItemText}}"
+              frequentItemKey="{{_options.frequentItemKey}}"
+      />
+   </ws:extendedTemplate>
+</Controls._filterPanel.BaseEditor>

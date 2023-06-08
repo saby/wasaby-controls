@@ -1,0 +1,17 @@
+<Controls.context:ContextOptionsConsumer>
+   <ws:contextOptionsInnerComponent>
+      <Controls-ListEnv._breadcrumbs.Back
+         storeId="{{ _options.storeId }}"
+         iconStyle="{{ _options.iconStyle }}"
+         fontColorStyle="{{ _options.fontColorStyle }}"
+         fontSize="{{ _options.fontSize }}"
+         iconViewMode="{{ _options.iconViewMode }}"
+         beforeCaptionTemplate="{{ _options.beforeCaptionTemplate }}"
+         beforeCaptionTemplateOptions="{{ _options.beforeCaptionTemplateOptions }}"
+         textOverflow="{{ _options.textOverflow }}"
+         textTransform="{{ _options.textTransform }}"
+         _dataOptionsValue="{{ contextOptionsInnerComponent._dataOptionsValue }}"
+      />
+   </ws:contextOptionsInnerComponent>
+</Controls.context:ContextOptionsConsumer>
+

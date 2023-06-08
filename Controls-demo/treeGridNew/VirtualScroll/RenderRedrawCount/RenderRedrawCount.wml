@@ -1,0 +1,54 @@
+<ws:template name="counter">
+    <div attr:style="width: 50%; display: flex; flex-wrap: wrap; font-size: 12px">
+        <ws:for data="cnt in _counters[currentViewName]">
+            <div attr:key="counter-{{ cnt.key }}"
+                 attr:class="counter-{{ cnt.key }} {{ cnt.updated ? 'counter-updated' }}"
+                 attr:style="margin: 0 14px; {{ cnt.updated ? 'color: red;' }}">
+                <span class="itemName">item {{ cnt.key }}</span> -&nbsp;
+                <span class="columnCounter">{{ cnt.columnCount }}</span>
+            </div>
+        </ws:for>
+    </div>
+</ws:template>
+
+<div>
+    <div attr:style="display: flex; justify-content: space-around; height: 350px;">
+        <Controls.scroll:Container scn="1" attr:style="width: 50%;">
+            <Controls.grid:View
+                    keyProperty="key"
+                    displayProperty="title"
+                    source="{{ _gridViewSource }}"
+                    navigation="{{ _navigation }}"
+                    name="gridView"
+                    columns="{{ _columns }}"
+                    attr:class="controlsDemo_line-height18">
+                <ws:virtualScrollConfig pageSize="{{60}}"/>
+                <ws:itemTemplate>
+                    <ws:partial template="Controls/grid:ItemTemplate"/>
+                </ws:itemTemplate>
+            </Controls.grid:View>
+        </Controls.scroll:Container>
+        <ws:partial template="counter" currentViewName="gridView"/>
+    </div>
+    <div attr:style="display: flex; justify-content: space-around; height: 350px; margin-top:40px">
+        <Controls.scroll:Container scn="1" attr:style="width: 50%;">
+            <Controls.treeGrid:View
+                    keyProperty="key"
+                    displayProperty="title"
+                    source="{{ _treeGridViewSource }}"
+                    navigation="{{ _navigation }}"
+                    name="treeGridView"
+                    columns="{{_columns}}"
+                    deepReload="{{true}}"
+                    parentProperty="parent"
+                    nodeProperty="type"
+                    bind:expandedItems="_expandedItems">
+                <ws:virtualScrollConfig pageSize="{{60}}"/>
+                <ws:itemTemplate>
+                    <ws:partial template="Controls/treeGrid:ItemTemplate"/>
+                </ws:itemTemplate>
+            </Controls.treeGrid:View>
+        </Controls.scroll:Container>
+        <ws:partial template="counter" currentViewName="treeGridView"/>
+    </div>
+</div>

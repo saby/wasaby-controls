@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container>
+        <Controls.list:View
+                keyProperty="key"
+                source="{{_viewSource}}"
+                groupProperty="brand">
+            <ws:groupTemplate>
+                <ws:partial
+                        template="Controls/list:GroupTemplate"
+                        scope="{{ _options }}"
+                        fontSize="m"
+                        fontWeight="bold"
+                        fontColorStyle="secondary"
+                        iconStyle="secondary"/>
+            </ws:groupTemplate>
+        </Controls.list:View>
+    </Controls.scroll:Container>
+</div>

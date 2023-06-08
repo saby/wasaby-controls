@@ -1,0 +1,18 @@
+<div class="controls_shortDatePicker_theme-{{_options.theme}} controls-PeriodLiteDialog__vLayoutItem
+            controls-PeriodLiteDialog__vLayoutItem-clickable
+            {{selected ? 'controls-PeriodLiteDialog__vLayoutItem-caption__selected'}}"
+     title="{{ month.tooltip }}">
+    <div class="controls-PeriodLiteDialog__vLayoutItem-caption"
+         data-qa="controls-PeriodLiteDialog__item-caption"
+         tabindex="0">
+        <ws:if data="{{!!contentTemplate}}">
+            <ws:partial template="{{contentTemplate}}" value="{{month.date}}"/>
+        </ws:if>
+        <ws:else>
+            {{ formatDate(month.date, "MMMM") }}
+        </ws:else>
+        <ws:if data="{{!!iconTemplate}}">
+            <ws:partial template="{{iconTemplate}}" value="{{month.date}}" extData="{{extData}}"/>
+        </ws:if>
+    </div>
+</div>

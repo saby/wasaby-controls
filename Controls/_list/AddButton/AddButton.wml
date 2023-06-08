@@ -1,0 +1,11 @@
+<Controls.buttons:Button
+   attr:data-qa="controls-AddButton"
+   on:click="clickHandler()"
+   viewMode="link"
+   iconStyle="unaccented"
+   iconSize="2xs"
+   icon="icon-RoundPlus"
+   fontSize="xs"
+   fontColorStyle="unaccented"
+   caption="{{_options.caption}}"
+   tooltip="{{_options.tooltip}}"/>

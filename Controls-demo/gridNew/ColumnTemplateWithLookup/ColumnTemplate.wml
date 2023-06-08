@@ -1,0 +1,13 @@
+<ws:partial template="Controls/grid:ColumnTemplate" scope="{{ _options }}">
+    <ws:contentTemplate>
+        <Controls.lookup:Input
+                         items="{{item.contents.lookupItems}}"
+                         displayProperty="title"
+                         keyProperty="id"
+                         multiSelect="{{true}}"
+                         multiLine="{{false}}"
+                         readOnly="{{true}}"
+                         selectedKeys="{{item.contents.lookupSelectedKeys}}"
+                         attr:style="width: 300px"/>
+    </ws:contentTemplate>
+</ws:partial>

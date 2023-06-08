@@ -1,0 +1,35 @@
+<div class="controlsDemo__wrapper controlsDemo__maxWidth200  controlsDemo_list-new_EmptyTemplate">
+<Controls.list:View name="list"
+                    keyProperty="key"
+                    source="{{_viewSource}}">
+  <ws:itemTemplate>
+    <ws:partial template="Controls/list:ItemTemplate">
+      <ws:contentTemplate>
+        <ws:partial template="Controls/list:EditingTemplate"
+                    value="{{ itemTemplate.item.contents.title }}"
+                    enabled="{{true}}">
+          <ws:editorTemplate>
+            <Controls.input:Text contrastBackground="{{true}}" bind:value="itemTemplate.item.contents.title"/>
+          </ws:editorTemplate>
+        </ws:partial>
+      </ws:contentTemplate>
+    </ws:partial>
+  </ws:itemTemplate>
+
+  <ws:emptyTemplate>
+    <ws:partial template="Controls/list:EmptyTemplate"
+                isEditing="{{ true }}"
+                align="left"
+                topSpacing="s"
+                bottomSpacing="s">
+      <ws:contentTemplate>
+        <ws:partial template="Controls/list:EditingTemplate" enabled="{{ true }}">
+          <ws:viewTemplate>
+            <div on:click="_beginAdd()">Нажми...</div>
+          </ws:viewTemplate>
+        </ws:partial>
+      </ws:contentTemplate>
+    </ws:partial>
+  </ws:emptyTemplate>
+</Controls.list:View>
+</div>

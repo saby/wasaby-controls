@@ -1,0 +1,45 @@
+<div class="controlsDemo__wrapper">
+    <Controls.buttons:Button caption="Установить {{ _isEmptySource ? 'источник с данными' : 'пустой источник' }}" attr:data-qa="toggle-source" on:click="_toggleSource()"/>
+    <Controls.scroll:Container class="controlsDemo__height500 controlsDemo__width800px">
+        <Controls.list:DataContainer
+                displayProperty="title"
+                keyProperty="key"
+                root="{{null}}"
+                parentProperty="parent"
+                nodeProperty="type"
+                navigation="{{_navigation}}"
+                itemsReadyCallback="{{_itemsReadyCallback}}"
+                source="{{_viewSource}}">
+            <Controls.listTemplates:ImageDisplayContainer
+                    imageProperty="image"
+                    imageViewMode="rectangle"
+                    imageCheckMode="leaf"
+                    imagePosition="left">
+                <ws:content>
+                    <Controls.treeTile:View
+                            name="tile"
+                            multiSelectVisibility="hidden"
+                            tileMode="static"
+                            tileWidth="350"/>
+                </ws:content>
+                <ws:itemTemplate>
+                    <ws:partial
+                        template="Controls/tile:RichTemplate"
+                        fallbackImage="{{ _fallbackImage }}"
+                        titleLines="1"
+                        descriptionLines="4"
+                        imageSize="s"
+                        imagePosition="{{ itemTemplate.item.contents.type === true ? 'top' : 'left' }}"
+                        description="{{ itemTemplate.item.contents.description }}"
+                        imageEffect="gradient"
+                        gradientColor="{{ itemTemplate.item.contents.gradientColor }}"
+                        gradientDirection="toBottom"
+                        gradientStartColor="#fff"
+                        gradientStopColor="#fff"
+                        gradientType="dark"
+                        scope="{{itemTemplate}}"/>
+                </ws:itemTemplate>
+            </Controls.listTemplates:ImageDisplayContainer>
+        </Controls.list:DataContainer>
+    </Controls.scroll:Container>
+</div>

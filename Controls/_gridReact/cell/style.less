@@ -1,0 +1,182 @@
+.controls-GridReact__minHeight-data {
+   min-height: var(--cell_min-height_grid);
+}
+
+.controls-GridReact__cell {
+   box-sizing: border-box;
+}
+
+.controls-GridReact__cell-baseline::before {
+   content: '\200b';
+   font-size: var(--baseline_list);
+   width: 0;
+}
+
+.ws-is-hover
+   .controls-BaseControl_hover_enabled
+   .controls-ListView__itemV:hover
+   > {
+   .controls-hover-background-list_default {
+      background-color: var(--item_hover_background-color_list);
+   }
+
+   @variants: primary, secondary, danger, success, warning, unaccented, readonly,
+      info;
+   .for(@variants, {
+      .controls-hover-background-@{_item} {
+         background-color: ~'var(--@{_item}_hover_background-color)';
+      }
+   });
+}
+
+// region Padding
+// Приходится писать свои классы, т.к. в стандартной линейке нет таких размеров
+
+// region VerticalPadding
+
+.controls-padding_top-grid_s {
+   padding-top: var(--item_padding-top_s_grid);
+}
+
+.controls-padding_top-grid_l {
+   padding-top: var(--item_padding-top_l_grid);
+}
+
+.controls-GridReact-cell_rowSeparator-s {
+   .controls-padding_top-grid_s {
+      padding-top: calc(
+         var(--item_padding-top_s_grid) - var(--item-separator_s_thickness_list)
+      );
+   }
+
+   .controls-padding_top-grid_l {
+      padding-top: calc(
+         var(--item_padding-top_l_grid) - var(--item-separator_s_thickness_list)
+      );
+   }
+}
+
+.controls-GridReact-cell_rowSeparator-l {
+   .controls-padding_top-grid_s {
+      padding-top: calc(
+         var(--item_padding-top_s_grid) - var(--item-separator_l_thickness_list)
+      );
+   }
+
+   .controls-padding_top-grid_l {
+      padding-top: calc(
+         var(--item_padding-top_l_grid) - var(--item-separator_l_thickness_list)
+      );
+   }
+}
+
+.controls-padding_bottom-grid_s {
+   padding-bottom: var(--cell_padding-left_s_grid);
+}
+
+.controls-padding_bottom-grid_l {
+   padding-bottom: var(--item_padding-bottom_l_grid);
+}
+
+// endregion VerticalPadding
+
+// region HorizontalPadding
+
+.controls-padding_left-grid_s {
+   padding-left: var(--cell_padding-left_s_grid);
+}
+
+.controls-padding_left-grid_m {
+   padding-left: var(--cell_padding-left_m_grid);
+}
+
+.controls-padding_right-grid_s {
+   padding-right: var(--cell_padding-right_s_grid);
+}
+
+.controls-padding_right-grid_m {
+   padding-right: var(--cell_padding-right_m_grid);
+}
+
+// endregion HorizontalPadding
+
+// endregion Padding
+
+/* region ItemActions display */
+
+.controls-BaseControl_showActions_visible {
+   .controls-itemActionsV {
+      visibility: visible;
+      opacity: 1;
+   }
+}
+
+.ws-is-hover .controls-BaseControl_showActions_delayed {
+   .controls-ListView__item_showActions:hover {
+      .controls-itemActionsV_custom,
+      > .controls-GridReact__cell > .controls-itemActionsV {
+         /* stylelint-disable no-unknown-animations */
+         animation: timeout 0.5s;
+      }
+   }
+}
+
+.ws-is-hover .controls-BaseControl_showActions_delayed,
+.ws-is-hover .controls-BaseControl_showActions_onhover {
+   .controls-ListView__item_showActions:hover {
+      .controls-itemActionsV_custom,
+      > .controls-GridReact__cell > .controls-itemActionsV {
+         visibility: visible;
+         opacity: 1;
+      }
+   }
+}
+
+/* endregion ItemActions display */
+
+// region Shadows
+// С помощью clip-path скрываем тень между ячейками https://codepen.io/stormkirill98/pen/xxaGpvY
+.controls-GridReact__first-cell_shadow-mask::after {
+   clip-path: polygon(
+      calc(100% + var(--shadow-blur_b)) calc(100% + var(--shadow-blur_b)),
+      calc(-1 * var(--shadow-blur_b)) calc(100% + var(--shadow-blur_b)),
+      calc(-1 * var(--shadow-blur_b)) calc(-1 * var(--shadow-blur_b)),
+      calc(100% + var(--shadow-blur_b)) calc(-1 * var(--shadow-blur_b)),
+      calc(100% + var(--shadow-blur_b)) 0,
+      100% 0,
+      100% 100%,
+      calc(100% + var(--shadow-blur_b)) 100%
+   );
+}
+
+.controls-GridReact__last-cell_shadow-mask::after {
+   clip-path: polygon(
+      calc(100% + var(--shadow-blur_b)) calc(100% + var(--shadow-blur_b)),
+      calc(-1 * var(--shadow-blur_b)) calc(100% + var(--shadow-blur_b)),
+      calc(-1 * var(--shadow-blur_b)) 100%,
+      0 100%,
+      0 0,
+      calc(-1 * var(--shadow-blur_b)) 0,
+      calc(-1 * var(--shadow-blur_b)) calc(-1 * var(--shadow-blur_b)),
+      calc(100% + var(--shadow-blur_b)) calc(-1 * var(--shadow-blur_b))
+   );
+}
+
+.controls-GridReact__cell_shadow-mask::after {
+   clip-path: polygon(
+      calc(100% + var(--shadow-blur_b)) calc(100% + var(--shadow-blur_b)),
+      calc(-1 * var(--shadow-blur_b)) calc(100% + var(--shadow-blur_b)),
+      calc(-1 * var(--shadow-blur_b)) 100%,
+      0 100%,
+      0 0,
+      calc(-1 * var(--shadow-blur_b)) 0,
+      calc(-1 * var(--shadow-blur_b)) calc(-1 * var(--shadow-blur_b)),
+      calc(100% + var(--shadow-blur_b)) calc(-1 * var(--shadow-blur_b)),
+      calc(100% + var(--shadow-blur_b)) 0,
+      100% 0,
+      100% 100%,
+      calc(100% + var(--shadow-blur_b)) 100%
+   );
+}
+
+// endregion Shadows

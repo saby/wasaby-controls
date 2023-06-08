@@ -1,0 +1,34 @@
+<ws:template name="editor">
+    <div class="controls-PropertyGrid__editor_booleanGroup_control ws-flexbox">
+        <ws:for data="index, button in _buttons">
+            <Controls.Container.Async templateName="Controls/ToggleButton">
+                <ws:partial template="{{content.resolvedTemplate}}"
+                            bind:value="_stateOfButtons[index]"
+                            attr:data-qa="controls-PropertyGrid__booleanGroupEditor_{{button.id}}"
+                            attr:class="controls-PropertyGrid__editor_booleanGroup_item{{index === _buttons.length - 1 ? '-last' : ''}}"
+                            fontSize="m"
+                            inlineHeight="default"
+                            viewMode="pushButton"
+                            contrastBackground="{{true}}"
+                            icons="{{[button.icon + ' icon-small']}}"
+                            iconStyle="secondary"
+                            tooltip="{{button.tooltip}}"
+                            validationStatus="{{_options.validationStatus}}"
+                            on:valueChanged="_valueChangedHandler(index)"/>
+            </Controls.Container.Async>
+        </ws:for>
+    </div>
+</ws:template>
+
+<ws:if data="{{_options.jumpingLabel}}">
+    <Controls.Container.Async templateName="wml!Controls/_propertyGrid/JumpingLabelContainer">
+        <ws:partial template="{{content.resolvedTemplate}}"
+                    caption="{{_options.caption}}"
+                    required="{{_options.required}}">
+            <ws:partial template="editor" />
+        </ws:partial>
+    </Controls.Container.Async>
+</ws:if>
+<ws:else>
+    <ws:partial template="editor" />
+</ws:else>

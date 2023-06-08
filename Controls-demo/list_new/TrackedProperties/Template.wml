@@ -1,0 +1,28 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth350">
+    <div attr:class="controlsDemo__cell">
+        <Controls.scroll:Container attr:style="max-height: 200px">
+            <Controls.list:View
+                    keyProperty="key"
+                    source="{{_viewSource}}"
+                    trackedProperties="{{_trackedProperties}}"
+                    navigation="{{_navigation}}">
+            </Controls.list:View>
+        </Controls.scroll:Container>
+    </div>
+    <div attr:class="controlsDemo__cell">
+        <Controls.scroll:Container attr:style="max-height: 200px">
+            <Controls.grid:View
+                    keyProperty="key"
+                    source="{{_viewSource}}"
+                    trackedProperties="{{_trackedProperties}}"
+                    navigation="{{_navigation}}">
+                <ws:columns>
+                    <ws:Array>
+                        <ws:Object displayProperty="key" width="50px"/>
+                        <ws:Object displayProperty="title" width="1fr"/>
+                    </ws:Array>
+                </ws:columns>
+            </Controls.grid:View>
+        </Controls.scroll:Container>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<service anonymous_access="1" blocking_is_forbidden="1" db_template="" direct_node_access="0" id="7b3cc827-0e6f-4e4c-a591-c0d27bfdfafb" initial_db_count="0" initial_node_count="2" initial_replica_count="0" kaizen_zone="634f6539-14db-4e85-9ec2-ad09cd55dae1" name="controls-compatibility-static" need_authentication="0" node_tempalte="Бизнес-логика/web-service - XS" postgresql_version="" requires_get_requests_cache="0" requires_internet_access="0" responsible="Крайнов Д.О." responsible_uuid="0a464b92-3129-49f2-8a5e-7ce6ecfa37b0" rest_service="0" sbis_platform="1" service_type="multiversion" standby_service="" system_name="controls-static" ui-service-path="/controls/" use_replica="0" version="1.03" version_context="1">
+
+  <description>Сервис совместимости статики Контролов</description>
+
+  <items/>
+
+  <parent path="./template-controls-static.s3srv"/>
+
+  <resources/>
+
+  <directory url="/controls/"/>
+
+</service>

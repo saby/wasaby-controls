@@ -1,0 +1,6 @@
+<Controls._expandedCompositeTree.CompositeItemWrapper
+        attr:class="{{ _options.item.getPaddingClasses() }}"
+        renderTemplate="{{ item.getRenderTemplate() }}"
+        onClickCallback="{{ _options.onClickCallback }}"
+        item="{{ _options.item }}"
+        renderScope="{{ item.getRenderParams(itemTemplate) }}" />

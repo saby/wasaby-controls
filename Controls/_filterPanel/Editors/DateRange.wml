@@ -1,0 +1,53 @@
+<ws:template name="date">
+    <div on:click="_handleOpenClick()">
+        <Controls.Container.Async templateName="Controls/dateRange:Selector">
+            <ws:partial template="{{content.resolvedTemplate}}"
+                        name="dateRange"
+                        startValue="{{_options.propertyValue[0] || null}}"
+                        endValue="{{_options.propertyValue[1] || null}}"
+                        fontColorStyle="{{_options.fontColorStyle || 'default'}}"
+                        emptyCaption="{{_options.extendedCaption}}"
+                        fontWeight="{{_options.fontWeight}}"
+                        on:rangeChanged="_handleRangeChanged()"
+                        captionFormatter="{{_options.captionFormatter}}"
+                        calendarSource="{{_options.calendarSource}}"
+                        ranges="{{_options.ranges}}"
+                        datePopupType="{{_options.datePopupType}}"
+                        minRange="{{_options.minRange}}"
+                        rangeSelectedCallback="{{_options.rangeSelectedCallback}}"
+                        selectionType="{{_options.selectionType}}"
+                        dateConstructor="{{_options.dateConstructor}}"
+                        displayedRanges="{{_options.displayedRanges}}"
+                        headerContentTemplate="{{_options.headerContentTemplate}}"
+                        stubTemplate="{{_options.stubTemplate}}"
+                        fontSize="{{_options.fontSize}}"
+                        dayTemplate="{{_options.dayTemplate}}"
+                        monthTemplate="{{_options.monthTemplate}}"
+                        chooseHalfyears="{{_options.chooseHalfyears}}"
+                        chooseQuarters="{{_options.chooseQuarters}}"
+                        chooseMonths="{{_options.chooseMonths}}"
+                        chooseYears="{{_options.chooseYears}}"
+                        attr:class="controls-FilterViewPanel__dateRangeEditor"/>
+        </Controls.Container.Async>
+    </div>
+</ws:template>
+
+<Controls._filterPanel.BaseEditor scope="{{_options}}"
+                                  extendedCaption="{{_options.extendedCaption}}"
+                                  on:extendedCaptionClick="_openDatePopup()">
+    <ws:editorTemplate>
+        <ws:if data="{{_options.validators}}">
+            <Controls.validate:DateRangeContainer validators="{{_options.validators}}"
+                                                  value="{{_options.propertyValue}}">
+                <ws:content>
+                    <ws:partial template="date" attr:class="controls-FilterViewPanel__basicEditor-cloud
+                                                            controls-FilterViewPanel__basicEditor-cloud-{{_options.filterViewMode}}"/>
+                </ws:content>
+            </Controls.validate:DateRangeContainer>
+        </ws:if>
+        <ws:else>
+            <ws:partial template="date" attr:class="controls-FilterViewPanel__basicEditor-cloud
+                                                    controls-FilterViewPanel__basicEditor-cloud-{{_options.filterViewMode}}"/>
+        </ws:else>
+    </ws:editorTemplate>
+</Controls._filterPanel.BaseEditor>

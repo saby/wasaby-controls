@@ -1,0 +1,12 @@
+<Controls.buttons:Button
+   attr:class="controls_operations_theme-{{ _options.theme }} controls-OperationsButton controls-OperationsButton_button"
+   icon="{{ (_options.useStore ? _expanded : _options.expanded) ? 'icon-CloseCheck' : 'icon-Check2' }}"
+   inlineHeight="{{ _options.inlineHeight }}"
+   iconSize="{{ _options.iconSize }}"
+   viewMode="{{ _options.viewMode }}"
+   tooltip="{{ (_options.useStore ? _expanded : _options.expanded) ? rk('Завершить выделение') : rk('Отметить') }}"
+   readOnly="{{ _options.readOnly }}"
+   on:mousedown="_handleMouseDown()"
+   on:mouseenter="_handleMouseEnter()"
+   on:mouseleave="_handleMouseLeave()"
+/>

@@ -1,0 +1,11 @@
+<ws:if data="{{_caption}}">
+    <Controls.search:Misspell>
+    	<ws:caption>
+            <span on:click="_onMisspellClicked()" title="{{_caption}}">{{_caption}}</span>
+        </ws:caption>
+    </Controls.search:Misspell>
+</ws:if>
+<ws:else>
+    <invisble-node/>
+</ws:else>
+

@@ -1,0 +1,69 @@
+<div class="controls_lookup_theme-{{_options.theme}} controls-Selectorbutton{{_items.getCount() === 0 ? ' controls-Selectorbutton_empty'}}
+            {{_options.validationStatus!== 'valid' ? ' controls-invalid-container'}}">
+    <ws:if data="{{_items.getCount()}}">
+        <Controls._lookup.SelectedCollection
+                items="{{_items}}"
+                maxVisibleItems="{{_options.maxVisibleItems}}"
+                itemsCount="{{_getSelectedItemsCount(_options)}}"
+                inlineHeight="{{_options.inlineHeight}}"
+                collectionClass="{{_options.collectionClass}}"
+                counterVisibility="{{_options.counterVisibility}}"
+                displayProperty="{{_options.displayProperty}}"
+                multiLine="{{_options.multiSelect}}"
+                clickable="{{true}}"
+                fontSize="{{_options.fontSize}}"
+                on:itemClick="_itemClickHandler()"
+                on:crossClick="_removeItemHandler()"
+                on:openInfoBox="_openInfoBox()"
+                on:closeInfobox="_notifyHandler('closeInfoBox')"
+                attr:class="{{!_options.readOnly && _options.multiSelect ? 'controls-Selectorbutton_selectedCollection_multiSelect'}}">
+            <ws:itemTemplate>
+                <ws:partial template="{{_options.itemTemplate}}"
+                            inlineHeight="{{_options.inlineHeight}}"
+                            collectionClass="{{_options.collectionClass}}"
+                            clickable="{{!_options.multiSelect && !_options.readOnly}}"
+                            style="{{!_options.readOnly && !_options.multiSelect || _options.fontColorStyle !== 'link' ? _options.fontColorStyle : 'default'}}"
+                            attr:class="{{!_options.readOnly && !_options.multiSelect ? ('controls-Selectorbutton_selectedItem_single_fontColorStyle-' + _options.fontColorStyle)}}"
+                />
+            </ws:itemTemplate>
+        </Controls._lookup.SelectedCollection>
+        <ws:if data="{{_options.multiSelect && !_options.readOnly && _options.showSelectorCaption}}">
+            <span on:click="_showSelectorHandler()" attr:class="controls-Selectorbutton_button-more
+                    controls-Selectorbutton_button-more_fontsize-{{_options.selectorCaptionFontSize}}" attr:data-qa="Selectorbutton_button-more">
+                {{_options.showSelectorCaption}}
+            </span>
+        </ws:if>
+        <ws:if data="{{(_items.getCount() > 1 || _options.clearButtonTemplate) && !_options.readOnly && _options.showClearButton}}">
+            <ws:if data="{{_options.clearButtonTemplate}}">
+                <ws:partial template="{{_options.clearButtonTemplate}}"/>
+            </ws:if>
+            <ws:else>
+                <span on:click="_reset()" attr:class="controls-Selectorbutton__button-reset" attr:data-qa="Selectorbutton__button-reset">{[Очистить]}</span>
+            </ws:else>
+        </ws:if>
+    </ws:if>
+    <ws:else>
+        <ws:if data="{{_options.readOnly}}">
+            <span class="{{_options.fontColorStyle === 'link' ? 'controls-Selectorbutton_button-select_readOnly' : 'controls-text-' + _options.fontColorStyle}}
+                           controls-fontsize-{{_options.fontSize}}
+                           ws-ellipsis">
+                {{_options.caption}}
+            </span>
+        </ws:if>
+        <ws:else>
+            <Controls.buttons:Button name="link"
+                                     attr:class="controls-Selectorbutton_link"
+                                     viewMode="link"
+                                     caption="{{_options.caption}}"
+                                     fontColorStyle="{{_options.fontColorStyle}}"
+                                     fontSize="{{_options.fontSize}}"
+                                     buttonStyle="{{_options.buttonStyle}}"
+                                     style="{{_options.style}}"
+                                     on:click="_showSelectorHandler()"
+                                     attr:data-qa="Selectorbutton_link"/>
+        </ws:else>
+    </ws:else>
+    <ws:if data="{{_options.validationStatus!== 'valid'}}">
+        <div class="{{'controls-invalid-border controls-' + _options.validationStatus + '-border'}}"></div>
+    </ws:if>
+</div>

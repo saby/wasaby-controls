@@ -1,0 +1,8 @@
+<ws:partial template="Controls/list:ItemTemplate" scope="{{ _options }}">
+    <ws:contentTemplate>
+        <div>
+            <div>{{item.contents.get('description')}}</div>
+            <div style="font-size: 11px; color: grey">{{item.contents.get('title')}}</div>
+        </div>
+    </ws:contentTemplate>
+</ws:partial>

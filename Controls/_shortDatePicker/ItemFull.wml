@@ -1,0 +1,91 @@
+<ws:template name="itemTemplate">
+   <div on:keyup="_keyUpHandler()">
+      <ws:if data="{{_options._yearHovered === _options.currentYear || (_options.isSelectedPeriod(_yearModel[0].date, 'year') && !_options.hovered) }}">
+         <div class="controls-PeriodLiteDialog__item-background-hovered"></div>
+      </ws:if>
+      <ws:for data="halfYearIndex as halfYear in _yearModel">
+         <div class="controls-PeriodLiteDialog-item__halfYear {{ _options.isSelectedPeriod(halfYear.date, 'halfyear') ? 'controls-PeriodLiteDialog__item-selected' }}" tabindex="-1">
+            <div if="{{(_halfYearHovered === halfYear.number || (_options.isSelectedPeriod(halfYear.date, 'halfyear') && !_options.hovered))}}"
+                 class="controls-PeriodLiteDialog__item-background-hovered">
+            </div>
+            <ws:for data="quarter in halfYear.quarters">
+               <div class="controls-PeriodLiteDialog{{ !_options.chooseHalfyears ? '_monthsAndQuarters'}}-item__quarter
+                     {{ _options.isSelectedPeriod(quarter.date, 'quarter') ? 'controls-PeriodLiteDialog__item-selected' }}
+                   {{ quarter.number === 3 ? 'controls-PeriodLiteDialog' + ( !_options.chooseHalfyears ? '_monthsAndQuarters') + '-lastItem__quarter' }}"
+                 title="{{ quarter.tooltip }}"
+                  tabindex="-1">
+                  <div if="{{(_quarterHovered === quarter.number || (_options.isSelectedPeriod(quarter.date, 'quarter')  && !_options.hovered))}}"
+                       class="controls-PeriodLiteDialog__item-background-hovered"></div>
+                  <div class="controls-PeriodLiteDialog{{ !_options.chooseHalfyears ? '_monthsAndQuarters'}}-item__month-wrapper" tabindex="-1">
+                     <ws:for data="month in quarter.months">
+                        <div class="controls-PeriodLiteDialog-item__month {{ _options.isSelectedPeriod(month.date, 'month') ? 'controls-PeriodLiteDialog__item-selected' }}">
+                           <div if="{{(_monthHovered === month.number || (_options.isSelectedPeriod(month.date, 'month')  && !_options.hovered))}}"
+                                class="controls-PeriodLiteDialog__item-background-hovered"></div>
+                           <ws:partial
+                                   attr:data-date="{{ _formatDate(month.date, 'YYYY-MM-DD') }}"
+                                   on:keyup="_keyUpMonthHandler(month.date)"
+                                   on:click="_onMonthClick(month.date)"
+                                   attr:class="controls-PeriodLiteDialog-item__month-caption controls-PeriodLiteDialog-item__caption controls-MonthList__custom-position"
+                                   attr:data-qa="controls-PeriodLiteDialog-item__month-caption"
+                                   on:touchmove="_onMonthBlur()"
+                                   on:mouseleave="_onMonthBlur()"
+                                   on:touchstart="_onMonthMouseEnter(month.number)"
+                                   on:mouseover="_onMonthMouseOver(month.number)"
+                                   on:mouseenter="_onMonthMouseEnter(month.number)"
+                                   template="{{monthTemplate}}"
+                                   month="{{month}}"
+                                   formatDate="{{_formatDate}}"
+                                   attr:tabindex="{{_getTabindex()}}"
+                                   attr:name="month-{{month.number}}"
+                                   extData="{{_options.extData && _options.extData[month.date.getMonth()]}}"
+                           />
+                        </div>
+                     </ws:for>
+                  </div>
+                  <div class="controls-PeriodLiteDialog-item__quarter-caption controls-PeriodLiteDialog-item__quarter__border"
+                       data-qa="controls-PeriodLiteDialog-item__quarter-caption"
+                       on:click="_onQuarterClick(quarter.number, _options.currentYear)"
+                       on:mouseover="_onQuarterMouseOver(quarter.number, _options.currentYear)"
+                       on:mouseenter="_onQuarterMouseEnter(quarter.number, _options.currentYear)"
+                       on:touchstart="_onQuarterMouseEnter(quarter.number, _options.currentYear)"
+                       on:mouseleave="_onQuarterMouseLeave(quarter.number)"
+                       on:touchmove="_onQuarterMouseLeave(quarter.number)"
+                       on:blur="_onQuarterBlur()"
+                       tabindex="{{_getTabindex()}}"
+                       name="quarter-{{quarter.number}}"
+                  >
+                     {{ quarter.name }}
+                  </div>
+               </div>
+            </ws:for>
+            <ws:if data="{{ _options.chooseHalfyears }}">
+            <div class="controls-PeriodLiteDialog-item__halfYear-caption controls-PeriodLiteDialog-item__halfYear__border"
+                 data-qa="controls-PeriodLiteDialog-item__halfYear-caption"
+                 on:click="_onHalfYearClick(halfYear.number, _options.currentYear)"
+                 on:mouseenter="_onHalfYearMouseEnter(halfYear.number)"
+                 on:touchstart="_onHalfYearMouseEnter(halfYear.number)"
+                 on:mouseleave="_onHalfYearMouseLeave()"
+                 on:touchmove="_onHalfYearMouseLeave()"
+                 on:blur="_onHalfYearBlur()"
+                 title="{{ halfYear.tooltip }}"
+                 tabindex="{{_getTabindex()}}"
+                 name="halfYear-{{halfYear.number}}"
+            >
+               {{ halfYear.name }}
+            </div>
+         </ws:if>
+      </div>
+      </ws:for>
+   </div>
+</ws:template>
+
+<ws:if data="{{ _isMonthsTemplateString }}">
+<Controls.Container.Async templateName="{{ _options.monthTemplate }}" errorCallback="{{ _options.errorCallback }}">
+   <ws:partial template="itemTemplate"
+               monthTemplate="{{ content.resolvedTemplate }}"/>
+</Controls.Container.Async>
+</ws:if>
+<ws:else>
+   <ws:partial template="itemTemplate"
+            monthTemplate="{{ _options.monthTemplate }}"/>
+</ws:else>

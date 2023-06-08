@@ -1,0 +1,30 @@
+<ws:template name="date">
+    <Controls.Container.Async templateName="{{dateTemplate}}">
+        <ws:partial template="{{content.resolvedTemplate}}"
+                    value="{{_options.propertyValue}}"
+                    emptyCaption="{{_options.extendedCaption}}"
+                    fontWeight="default"
+                    fontColorStyle="{{_options.fontColorStyle || 'default'}}"
+                    fontSize="{{_options.fontSize}}"
+                    datePopupType="{{_options.datePopupType}}"
+                    on:valueChanged="_valueChangedHandler()"
+                    attr:class="controls-FilterViewPanel__dateEditor"/>
+    </Controls.Container.Async>
+</ws:template>
+
+
+<Controls._filterPanel.BaseEditor scope="{{_options}}"
+                                  on:extendedCaptionClick="_extendedCaptionClickHandler()"
+                                  extendedCaption="{{_options.extendedCaption}}">
+   <ws:editorTemplate>
+       <ws:partial template="date"
+                   dateTemplate="Controls/date:Input"
+                   attr:class="controls-FilterViewPanel__basicEditor-cloud
+                               controls-FilterViewPanel__basicEditor-cloud-{{_options.filterViewMode}}"/>
+   </ws:editorTemplate>
+
+   <ws:extendedTemplate>
+       <ws:partial template="date"
+                   dateTemplate="Controls/date:Selector"/>
+   </ws:extendedTemplate>
+</Controls._filterPanel.BaseEditor>

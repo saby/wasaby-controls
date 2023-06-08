@@ -1,0 +1,14 @@
+<div class="root">
+    <div class="separator">SelectedStyle="default", with space template</div>
+    <div class="demo-TabButtons ControlsDemo-Tabs__withSpace controlsDemo_fixedWidth550">
+        <Controls.tabs:Buttons
+                bind:selectedKey='SelectedKey'
+                keyProperty="id"
+                selectedStyle="default"
+                source="{{_source}}">
+            <ws:tabSpaceTemplate>
+                <ws:partial template="{{_spaceTemplate}}" dropDownSource="{{_source1}}"/>
+            </ws:tabSpaceTemplate>
+        </Controls.tabs:Buttons>
+    </div>
+</div>

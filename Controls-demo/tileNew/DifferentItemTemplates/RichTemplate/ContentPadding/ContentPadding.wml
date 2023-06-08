@@ -1,0 +1,27 @@
+<div class="controlsDemo__wrapper">
+   <Controls.treeTile:View
+      displayProperty="title"
+      parentProperty="parent"
+      nodeProperty="parent@"
+      tileMode="static"
+      itemActions="{{_itemActions}}"
+      tileWidth="410"
+      imageProperty="image"
+      keyProperty="id"
+      source="{{_viewSource}}">
+      <ws:roundBorder tl="m" tr="m" br="m" bl="m"/>
+      <ws:itemTemplate>
+         <ws:partial
+            template="Controls/tile:RichTemplate"
+            titleLines="2"
+            descriptionLines="6"
+            description="{{itemTemplate.item.contents.description}}"
+            imagePosition="{{itemTemplate.item.contents.imagePosition}}"
+            imageViewMode="rectangle"
+            imageEffect="gradient"
+            contentPadding="s"
+            scope="{{itemTemplate}}">
+         </ws:partial>
+      </ws:itemTemplate>
+   </Controls.treeTile:View>
+</div>

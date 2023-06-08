@@ -1,0 +1,57 @@
+.controls-Explorer {
+   // Контрол как и все остальные таблицы должен занимать всю доступную ширину.
+   // Нельзя использовать просто width, т.к. это ломает вёрстку горизонтального скрола.
+   // https://online.sbis.ru/opendoc.html?guid=8826a0e4-cfd4-4e83-95fa-d2999665864c
+   min-width: 100%;
+}
+
+.controls-Explorer__view {
+   height: 100%;
+   width: 100%;
+}
+
+.controls-Explorer__wrapper {
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+}
+
+.controls-Explorer__Path {
+   padding-right: var(--offset_m);
+   min-height: var(--breadcrumbs_min-height_explorer);
+}
+
+.controls-Explorer__HeadingPath-master {
+   margin-right: var(--master_separator_thickness_list);
+}
+
+.controls-Explorer__HeadingPathWrapper {
+   display: contents;
+}
+
+// Контейнер над списком, который выводит хлебные крошки с кнопкой "Назад"
+// и прикладной шаблон справа от них
+.controls-Explorer__PathWrapper {
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: space-between;
+   margin-left: var(--offset_m);
+}
+
+.controls-Explorer__afterBreadCrumbsTemplate {
+   min-height: var(--breadcrumbs_min-height_explorer);
+   max-width: 25%;
+   flex-shrink: 0;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   .baseline-fix();
+
+   &::before {
+      font-size: var(--line-height_breadcrumbsView);
+   }
+
+   &_width_full {
+      max-width: 100%;
+   }
+}

@@ -1,0 +1,29 @@
+<div class="controlsDemo__wrapper">
+    <Controls.browser:Browser name="dataContainer"
+                                 source="{{_viewSource}}"
+                                 keyProperty="key"
+                                 parentProperty="parent"
+                                 multiSelectVisibility="visible"
+                                 nodeProperty="type"
+                                 bind:selectedKeys="_selectedKeys" bind:excludedKeys="_excludedKeys">
+        <div>
+            <Controls.operations:PanelContainer>
+               <Controls.operations:Panel source="{{_panelSource}}"
+                                          on:itemClick="_itemClick()"/>
+            </Controls.operations:PanelContainer>
+                <Controls.list:Container>
+                    <Controls.treeGrid:View
+                            name="treeGrid"
+                            columns="{{_columns}}">
+                        <ws:moveDialogTemplate templateName="Controls/moverDialog:Template">
+                            <ws:templateOptions
+                                    parentProperty="parent"
+                                    nodeProperty="type"
+                                    searchParam="title"
+                                    columns="{{_columns}}"/>
+                        </ws:moveDialogTemplate>
+                    </Controls.treeGrid:View>
+                </Controls.list:Container>
+        </div>
+    </Controls.browser:Browser>
+</div>

@@ -1,0 +1,39 @@
+<div class="controlsDemo__flexColumn">
+   <div class="controlsDemo__wrapper">
+      <Controls.dropdown:Button
+              keyProperty="key"
+              caption="Create"
+              viewMode="outlined"
+              source="{{_source}}"
+              groupProperty="group"
+              attr:data-qa="ControlsDemo_MenuButton__custom-group">
+         <ws:groupTemplate>
+            <ws:partial template="Controls/dropdown:GroupTemplate" showText="{{true}}"/>
+         </ws:groupTemplate>
+      </Controls.dropdown:Button>
+   </div>
+   <div class="controlsDemo__wrapper">
+      <Controls.dropdown:Button
+              keyProperty="key"
+              caption="Create"
+              viewMode="outlined"
+              source="{{_source}}"
+              groupProperty="group">
+         <ws:groupTemplate>
+            <ws:partial template="Controls/dropdown:GroupTemplate" showText="{{true}}" textAlign="left"/>
+         </ws:groupTemplate>
+      </Controls.dropdown:Button>
+   </div>
+   <div class="controlsDemo__wrapper">
+      <Controls.dropdown:Button
+              keyProperty="key"
+              caption="Create"
+              viewMode="outlined"
+              source="{{_source}}"
+              groupProperty="group">
+         <ws:groupTemplate>
+            <ws:partial template="Controls/dropdown:GroupTemplate" showText="{{true}}" textAlign="right"/>
+         </ws:groupTemplate>
+      </Controls.dropdown:Button>
+   </div>
+</div>

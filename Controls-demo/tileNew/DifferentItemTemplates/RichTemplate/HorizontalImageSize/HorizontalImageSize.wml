@@ -1,0 +1,52 @@
+<div class="controlsDemo__wrapper">
+
+    <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-richTemplate_roundBorder-null">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/tileNew/DifferentItemTemplates/RichTemplate/HorizontalImageSize/2xl/Index' }}">
+            <a href="{{content.href}}">Изображение размера 2xl</a>
+        </Router.router:Reference>
+        <Controls-demo.tileNew.DifferentItemTemplates.RichTemplate.HorizontalImageSize.2xl.Index />
+    </div>
+    <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-richTemplate_roundBorder-null">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/tileNew/DifferentItemTemplates/RichTemplate/HorizontalImageSize/3xl/Index' }}">
+            <a href="{{content.href}}">Изображение размера 3xl</a>
+        </Router.router:Reference>
+        <Controls-demo.tileNew.DifferentItemTemplates.RichTemplate.HorizontalImageSize.3xl.Index />
+    </div>
+    <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-richTemplate_roundBorder-null">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/tileNew/DifferentItemTemplates/RichTemplate/HorizontalImageSize/4xl/Index' }}">
+            <a href="{{content.href}}">Изображение размера 4xl</a>
+        </Router.router:Reference>
+        <Controls-demo.tileNew.DifferentItemTemplates.RichTemplate.HorizontalImageSize.4xl.Index />
+    </div>
+    <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-richTemplate_roundBorder-null">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/tileNew/DifferentItemTemplates/RichTemplate/HorizontalImageSize/5xl/Index' }}">
+            <a href="{{content.href}}">Изображение размера 5xl</a>
+        </Router.router:Reference>
+        <Controls-demo.tileNew.DifferentItemTemplates.RichTemplate.HorizontalImageSize.5xl.Index />
+    </div>
+    <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-richTemplate_roundBorder-null">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/tileNew/DifferentItemTemplates/RichTemplate/HorizontalImageSize/6xl/Index' }}">
+            <a href="{{content.href}}">Изображение размера 6xl</a>
+        </Router.router:Reference>
+        <Controls-demo.tileNew.DifferentItemTemplates.RichTemplate.HorizontalImageSize.6xl.Index />
+    </div>
+    <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-richTemplate_roundBorder-null">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/tileNew/DifferentItemTemplates/RichTemplate/HorizontalImageSize/7xl/Index' }}">
+            <a href="{{content.href}}">Изображение размера 7xl</a>
+        </Router.router:Reference>
+        <Controls-demo.tileNew.DifferentItemTemplates.RichTemplate.HorizontalImageSize.7xl.Index />
+    </div>
+
+</div>

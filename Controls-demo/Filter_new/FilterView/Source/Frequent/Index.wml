@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper">
+    <Controls.browser:Browser filterButtonSource="{{_filterSource}}">
+        <div>
+            <Controls.filter:ViewContainer>
+                <Controls.filter:View/>
+            </Controls.filter:ViewContainer>
+        </div>
+    </Controls.browser:Browser>
+</div>

@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper">
+    <Controls.browser:Browser filterButtonSource="{{_filterSource}}"
+                              source="{{_viewSource}}" keyProperty="department">
+        <div class="controlsDemo__flexRow">
+            <Controls.filterPanel:Container attr:class="controlsDemo_fixedWidth300">
+                <Controls.filterPanel:View/>
+            </Controls.filterPanel:Container>
+            <Controls.list:Container attr:class="controlsDemo__ml1">
+                <Controls.list:View/>
+            </Controls.list:Container>
+        </div>
+    </Controls.browser:Browser>
+</div>

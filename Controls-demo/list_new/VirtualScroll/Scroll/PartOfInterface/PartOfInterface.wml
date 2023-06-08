@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper ws-flexbox ws-flex-column ws-align-items-center controlsDemo_fixedWidth800">
+    <Controls.scroll:Container
+            attr:class="controlsDemo_fixedWidth500 controlsDemo__maxWidth500 controlsDemo__height500 controlsDemo__mb1">
+        <div class="controlsDemo__height500">
+            Заглушка
+        </div>
+        <Controls.list:View
+                name="list"
+                source="{{_source}}"
+                keyProperty="key">
+            <ws:virtualScrollConfig pageSize="{{25}}"></ws:virtualScrollConfig>
+        </Controls.list:View>
+    </Controls.scroll:Container>
+</div>

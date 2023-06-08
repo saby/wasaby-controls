@@ -1,0 +1,42 @@
+<div class="wrapper controlsDemo__ml1 controlsDemo__flex controlsDemo__flex-flow_wrap">
+    <div class="controlsDemo__margin-top controls-margin_right-xl">
+        <Controls.popupTemplate:ConfirmationDialog message="Сохранить изменения?"
+                                                   details="Чтобы продолжить предактирование, нажмите Отмена"
+                                                   type="yesnocancel"/>
+    </div>
+    <div class="controlsDemo__margin-top controls-margin_right-xl">
+        <Controls.popupTemplate:ConfirmationDialog  markerStyle="success" message="Окно успеха" type="ok"/>
+    </div>
+    <div class="controlsDemo__margin-top controls-margin_right-xl">
+        <Controls.popupTemplate:ConfirmationDialog  markerStyle="danger" message="Окно ошибки" type="ok"/>
+    </div>
+    <div class="controlsDemo__margin-top controls-margin_right-xl">
+        <Controls.popupTemplate:ConfirmationDialog  markerStyle="warning" message="Окно предупреждения" type="ok"/>
+    </div>
+    <div class="controlsDemo__margin-top controls-margin_right-xl">
+        <Controls.popupTemplate:Confirmation markerStyle="none">
+            <ws:bodyContentTemplate>
+                <div style="text-align: center">
+                    <div>
+                        <Controls.heading:Title caption="Пользовательский шаблон"/>
+                    </div>
+                    <div>
+                        <Controls.buttons:Button caption="Нажмите для ознакомления"/>
+                    </div>
+                </div>
+            </ws:bodyContentTemplate>
+            <ws:footerContentTemplate>
+                <Controls.popupConfirmation:Footer/>
+            </ws:footerContentTemplate>
+        </Controls.popupTemplate:Confirmation>
+    </div>
+    <div class="controlsDemo__margin-top controls-margin_right-xl">
+        <Controls.popupTemplate:ConfirmationDialog  message="Информационное окно с пользовательскими кнопками" buttons="{{ _buttons }}"/>
+    </div>
+    <div class="controlsDemo__margin-top controls-margin_right-xl">
+        <Controls.popupTemplate:ConfirmationDialog  message="Информационное окно без кнопок"
+                                                   details="С крестиком закрытия"
+                                                   closeButtonVisible="{{ true }}"
+                                                   buttons="{{ [] }}"/>
+    </div>
+</div>

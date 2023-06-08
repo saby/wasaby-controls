@@ -1,0 +1,10 @@
+<ws:partial template="Controls/dropdown:ItemTemplate"
+            scope="{{ _options }}"
+            marker="{{false}}"
+            multiLine="{{true}}">
+   <ws:contentTemplate>
+      <div class="ControlsDemo-ComboboxVDOM__myTempalteMultiline">
+         {{itemData.getPropValue(item.contents, 'title')}}
+      </div>
+   </ws:contentTemplate>
+</ws:partial>

@@ -1,0 +1,46 @@
+<div class="controlsDemo__wrapper">
+    <Controls.buttons:Button caption="{{ _imageAdded ? 'Убрать' : 'Добавить' }} картинку на записи 15" attr:data-qa="toggle-image" on:click="_toggleImage()"/>
+    <Controls.buttons:Button caption="{{ _gradientEnabled ? 'Убрать' : 'Добавить'}} градиент" attr:data-qa="toggle-gradient" on:click="_toggleGradient()"/>
+    <Controls.scroll:Container class="controlsDemo__height500 controlsDemo__width800px">
+        <Controls.list:DataContainer
+                displayProperty="title"
+                keyProperty="key"
+                root="{{null}}"
+                parentProperty="parent"
+                nodeProperty="type"
+                navigation="{{_navigation}}"
+                itemsReadyCallback="{{_itemsReadyCallback}}"
+                source="{{_viewSource}}">
+            <Controls.listTemplates:ImageDisplayContainer
+                    imageProperty="image"
+                    imageViewMode="rectangle"
+                    imageCheckMode="leaf"
+                    imagePosition="{{_imagePosition}}">
+                <ws:content>
+                    <Controls.treeTile:View
+                            multiSelectVisibility="hidden"
+                            tileMode="static"
+                            tileWidth="350"/>
+                </ws:content>
+                <ws:itemTemplate>
+                    <ws:partial
+                        template="Controls/tile:RichTemplate"
+                        fallbackImage="{{ _gradientEnabled ? undefined : _fallbackImage }}"
+                        titleLines="1"
+                        descriptionLines="4"
+                        imageSize="s"
+                        imagePosition="{{ itemTemplate.item.contents.type === true ? 'top' : 'left' }}"
+                        titlePosition="{{ _gradientEnabled ? 'underImage' : undefined }}"
+                        description="{{ _gradientEnabled && _imageAdded ? undefined : itemTemplate.item.contents.description }}"
+                        imageEffect="gradient"
+                        gradientColor="{{ itemTemplate.item.contents.gradientColor }}"
+                        gradientDirection="{{ _gradientEnabled ? 'to top left' : 'toBottom' }}"
+                        gradientStartColor="{{ _gradientEnabled ? itemTemplate.item.contents.gradientStartColor : '#fff' }}"
+                        gradientStopColor="{{ _gradientEnabled ? itemTemplate.item.contents.gradientStopColor : '#fff' }}"
+                        gradientType="dark"
+                        scope="{{itemTemplate}}"/>
+                </ws:itemTemplate>
+            </Controls.listTemplates:ImageDisplayContainer>
+        </Controls.list:DataContainer>
+    </Controls.scroll:Container>
+</div>

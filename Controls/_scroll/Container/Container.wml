@@ -1,0 +1,148 @@
+<ws:template name="horizontalArrowButton">
+    <ws:partial template="wml!Controls/_scroll/ArrowButton/Horizontal/ArrowButton"
+                direction="{{ direction }}"
+                on:click="_arrowButtonHandler(direction, 'horizontal')"/>
+</ws:template>
+
+<ws:template name="verticalArrowButton">
+    <ws:partial template="wml!Controls/_scroll/ArrowButton/Vertical/ArrowButton"
+                direction="{{direction}}"
+                on:click="_arrowButtonHandler(direction === 'up' ? 'prev' : 'next', 'vertical')"/>
+</ws:template>
+
+<ws:template name="scrollTpl">
+<div class="controls-Scroll-Container controls-Scroll controls_scroll_theme-{{ _options.theme }}">
+<Controls._scroll.Contexts.ListScrollContextProvider setHorizontalScrollMode="{{ _setHorizontalScrollMode }}"
+                                                     horizontalScrollMode="{{ _horizontalScrollMode }}"
+                                                     setArrowButtonClickCallback="{{ _setArrowButtonClickCallback }}"
+                                                     canHorizontalScroll="{{ _canHorizontalScroll() }}">
+        <Controls._scroll.ContainerReact.ContainerReact stickyModels="{{_stickyModelsContext}}"
+                                                        stickyGroupModels="{{_stickyGroupModelsContext}}"
+                                                        setStickyContextUpdater="{{_setStickyContextUpdaterCallback}}"
+                                                        horizontalScrollMode="{{_horizontalScrollMode}}"
+                                                        getContextValue="{{_setPagingVisibleCallback}}">
+        <ws:partial template="{{_baseTemplate}}"
+                    scope="{{_options}}"
+                    topShadowVisibility="{{undefined}}"
+                    bottomShadowVisibility="{{undefined}}"
+                    _scrollCssClass="{{_scrollCssClass}}"
+                    _contentWrapperCssClass="{{_contentWrapperCssClass}}"
+                    _initialScrollPositionCssClass="{{_initialScrollPositionCssClass}}"
+                    _horizontalScrollMode="{{ _horizontalScrollMode }}"
+                    _overscrollBehavior="{{_overscrollBehavior}}"
+                    _getContentDirectionClass="{{_getContentDirectionClass}}"
+                    attr:class="controls-Scroll-Container__base controls-BlockLayout__blockGroup
+                                {{_getBlurClasses()}} {{_optimizeShadowClass}}"
+                    attr:style="{{_initialScrollPositionStyle}} {{_getStyleForCorrectWorkBlur()}}"
+                    on:intersectionObserverRegister="_intersectionObserverRegisterHandler()"
+                    on:intersectionObserverUnregister="_intersectionObserverUnregisterHandler()"
+                    on:keydown="_keydownHandler()"
+                    on:updateShadowMode="_updateShadowVisibility()"
+        />
+        </Controls._scroll.ContainerReact.ContainerReact>
+
+        <ws:if data="{{_shadows.top.isEnabled && !_isOptimizeShadowEnabled }}">
+          <div name="topShadow"
+               class="controls-Scroll__shadow {{_getShadowClasses('horizontal', 'top')}}
+                     {{!_shadows.top.isVisible ? ' ws-invisible'}}"
+               data-qa="Scroll__shadow_top">
+          </div>
+        </ws:if>
+        <ws:if data="{{_shadows.bottom.isEnabled && !_isOptimizeShadowEnabled }}">
+          <div class="controls-Scroll__shadow {{_getShadowClasses('horizontal', 'bottom')}}
+				 	 {{!_shadows.bottom.isVisible ? ' ws-invisible'}}"
+               data-qa="Scroll__shadow_bottom">
+          </div>
+        </ws:if>
+        <ws:if data="{{_shadows.left.isEnabled && _options.shadowMode !== 'blur'}}">
+          <div class="controls-Scroll__shadow {{_getShadowClasses('vertical', 'left')}}
+				 	 {{!_shadows.left.isVisible ? ' ws-invisible'}}"
+               data-qa="Scroll__shadow_left">
+          </div>
+        </ws:if>
+        <ws:if data="{{_shadows.right.isEnabled && _options.shadowMode !== 'blur'}}">
+          <div class="controls-Scroll__shadow {{_getShadowClasses('vertical', 'right')}}
+          			 {{!_shadows.right.isVisible ? ' ws-invisible'}}"
+               data-qa="Scroll__shadow_right">
+          </div>
+        </ws:if>
+
+        <ws:if data="{{_arrowButtons && _arrowButtons.isTopVisible}}">
+            <ws:partial template="verticalArrowButton"
+                        direction="up"/>
+        </ws:if>
+
+        <ws:if data="{{_arrowButtons && _arrowButtons.isBottomVisible}}">
+            <ws:partial template="verticalArrowButton"
+                        direction="down"/>
+        </ws:if>
+
+        <ws:if data="{{_arrowButtons && _arrowButtons.isLeftVisible}}">
+            <ws:partial template="horizontalArrowButton"
+                        direction="prev"/>
+        </ws:if>
+
+        <ws:if data="{{_arrowButtons && _arrowButtons.isRightVisible}}">
+            <ws:partial template="horizontalArrowButton"
+                        direction="next"/>
+        </ws:if>
+
+        <ws:if data="{{_scrollbars.isVisible}}">
+          <ws:if data="{{_scrollbars.vertical.isVisible}}">
+              <Controls.Container.Async templateName="Controls/scrollbar:Scrollbar">
+                  <ws:partial template="{{content.resolvedTemplate}}"
+                              attr:class="controls-Scroll__scrollbar {{!_dragging ? 'controls-Scroll__scrollbar_hidden'}}"
+                              attr:style="{{_scrollbars.vertical.style}}"
+                              name="scrollBar"
+                              position="{{_scrollbars.vertical.position}}"
+                              contentSize="{{_scrollbars.vertical.contentSize}}"
+                              paddings="{{_verticalScrollbarPadding}}"
+                              on:positionChanged="_positionChangedHandler('vertical')"
+                              on:draggingChanged="_draggingChangedHandler('vertical')"/>
+              </Controls.Container.Async>
+          </ws:if>
+
+          <ws:if data="{{_scrollbars.horizontal.isVisible}}">
+              <Controls.Container.Async templateName="Controls/scrollbar:Scrollbar">
+                  <ws:partial template="{{content.resolvedTemplate}}"
+                              attr:class="controls-Scroll__scrollbar {{!_dragging ? 'controls-Scroll__scrollbar_hidden'}}"
+                              attr:style="{{_scrollbars.horizontal.style}}"
+                              name="horizontalScrollBar"
+                              position="{{_scrollbars.horizontal.position}}"
+                              direction="horizontal"
+                              contentSize="{{_scrollbars.horizontal.contentSize}}"
+                              paddings="{{_horizontalScrollbarPadding}}"
+                              hasOppositeScrollbar="{{_scrollbars.vertical.isVisible}}"
+                              on:positionChanged="_positionChangedHandler('horizontal')"
+                              on:draggingChanged="_draggingChangedHandler('horizontal')"/>
+              </Controls.Container.Async>
+          </ws:if>
+        </ws:if>
+
+        <ws:if data="{{_paging.isVisible}}">
+          <Controls.Container.Async templateName="Controls/paging:Paging">
+            <ws:partial template="{{content.resolvedTemplate}}"
+                        class="controls-Scroll__paging controls-Scroll__paging_position-{{_options.pagingPosition === 'left' ? 'left' : 'right'}}"
+                        pagingMode="{{_paging.pagingMode}}"
+                        contentTemplate="{{_options.pagingContentTemplate}}"
+                        contrastBackground="{{true}}"
+                        arrowState="{{_paging.arrowState}}"
+                        on:onArrowClick="_arrowClickHandler()"/>
+          </Controls.Container.Async>
+        </ws:if>
+</Controls._scroll.Contexts.ListScrollContextProvider>
+</div>
+</ws:template>
+
+<ws:if data="{{_useNativeScrollbar}}">
+<ws:partial template="scrollTpl"/>
+</ws:if>
+<ws:else>
+<ws:partial template="scrollTpl"
+            on:wheel="_onWheelHandler()"
+            on:mouseenter="_mouseenterHandler()"
+            on:mouseover="_mouseoverHandler()"
+            on:mouseleave="_mouseleaveHandler()"
+            on:scrollbarTaken="_scrollbarTakenHandler()"
+            on:scrollbarReleased="_scrollbarReleasedHandler()"/>
+</ws:else>

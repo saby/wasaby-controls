@@ -1,0 +1,26 @@
+<div class="controlsDemo__wrapper controlsDemo__maxWidth800">
+      <div class="controlsDemo__inline-flex">
+         <Controls.scroll:Container attr:class="controlsDemo__height400 controlsDemo__minWidth600 controlsDemo__maxWidth800">
+            <Controls.browser:Browser name="dataContainer" source="{{_viewSource}}" keyProperty="key">
+                  <div>
+                     <Controls.listDeprecate:Mover name="listMover"/>
+                     <Controls.list:Container>
+                        <Controls.columns:View
+                                keyProperty="key"
+                                source="{{ _viewSource }}"
+                                itemActions="{{_itemActions}}"
+                                columnsCount="{{5}}"
+                                markerVisibility="visible"
+                                itemsDragNDrop="{{true}}"
+                                on:customdragStart="_dragStart()"
+                                on:customdragEnd="_dragEnd()">
+                           <ws:itemTemplate>
+                              <ws:partial template="Controls/columns:ItemTemplate" attr:class="controlsDemo__height36_item"></ws:partial>
+                           </ws:itemTemplate>
+                        </Controls.columns:View>
+                     </Controls.list:Container>
+                  </div>
+         </Controls.browser:Browser>
+         </Controls.scroll:Container>
+      </div>
+</div>

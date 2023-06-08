@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container>
+        <Controls.tree:View
+                keyProperty="key"
+                parentProperty="parent"
+                nodeProperty="type"
+                source="{{_viewSource}}"
+                itemsReadyCallback="{{_onItemsReady}}"
+                itemActions="{{_itemActions}}"
+                importantItemProperties="{{['group']}}"
+                groupProperty="group"/>
+    </Controls.scroll:Container>
+</div>

@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:class="controlsDemo__height400"
+                               initialScrollPosition="{{_initialScrollPosition}}">
+        <Controls.list:View
+                keyProperty="key"
+                source="{{_viewSource}}">
+            <ws:virtualScrollConfig pageSize="{{20}}"/>
+            <ws:navigation source="page" view="infinity">
+                <ws:sourceConfig pageSize="{{20}}" page="{{4}}" hasMore="{{false}}"/>
+                <ws:viewConfig showEndButton="{{true}}" pagingMode="edges" pagingPadding="{{null}}"/>
+            </ws:navigation>
+        </Controls.list:View>
+    </Controls.scroll:Container>
+</div>

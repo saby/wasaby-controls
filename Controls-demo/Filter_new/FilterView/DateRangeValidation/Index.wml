@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper demo-EmptyText__withDetailPanel">
+   <div class="controlsDemo__wrapper">
+      <div class="controls-margin_bottom-xs">Фильтр выбора периода с валидацией. Выбранный период не должен быть больше пяти дней</div>
+      <Controls.filter:View
+         source="{{ _source }}"
+         detailPanelTemplateName="Controls-demo/Filter_new/resources/Panel">
+         <ws:detailPanelTemplateOptions additionalTemplateProperty="additionalTemplate" />
+      </Controls.filter:View>
+   </div>
+</div>
+

@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell demo-NumberBase__onlyPositive-false">
+        <Controls.input:MoneyNew onlyPositive="{{false}}"
+                                 bind:value="_value1"
+                                 readOnly="{{false}}"
+                                 attr:style="width:200px"/>
+    </div>
+    <div class="controlsDemo__cell demo-NumberBase__onlyPositive-true">
+        <Controls.input:MoneyNew onlyPositive="{{true}}"
+                                 bind:value="_value2"
+                                 readOnly="{{true}}"
+                                 attr:style="width:200px"/>
+    </div>
+</div>
+

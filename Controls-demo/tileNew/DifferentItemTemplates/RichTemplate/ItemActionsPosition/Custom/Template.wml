@@ -1,0 +1,43 @@
+<div class="controlsDemo__wrapper">
+   <Controls.treeTile:View
+      displayProperty="title"
+      parentProperty="parent"
+      nodeProperty="parent@"
+      multiSelectVisibility="visible"
+      bind:selectedKeys="_selectedKeys"
+      contextMenuConfig="{{ _contextMenuConfig }}"
+      tileMode="static"
+      tileScalingMode="none"
+      actionMenuViewMode="menu"
+      itemActionsPosition="custom"
+      itemActions="{{ _itemActions }}"
+      itemActionVisibilityCallback="{{ _itemActionVisibilityCallback }}"
+      imageFit="none"
+      tileHeight="300"
+      imageProperty="image"
+      keyProperty="id"
+      source="{{ _viewSource }}">
+      <ws:itemTemplate>
+         <ws:partial
+                 template="Controls/tile:RichTemplate"
+                 gradientColor="{{itemTemplate.item.contents.gradientColor}}"
+                 titleLines="{{itemTemplate.item.contents.titleLines}}"
+                 descriptionLines="{{itemTemplate.item.contents.titleLines}}"
+                 imageSize="{{itemTemplate.item.contents.imageSize}}"
+                 imageViewMode="{{itemTemplate.item.contents.imageViewMode}}"
+                 imagePosition="{{itemTemplate.item.contents.imagePosition}}"
+                 description="{{itemTemplate.item.contents.description}}"
+                 imageCompressionCoefficient="{{itemTemplate.item.contents.imageCompressionCoefficient}}"
+                 itemActionsClass="controlsDemo__Tile_ItemActionsPosition_custom"
+                 imageEffect="gradient"
+                 scope="{{itemTemplate}}">
+            <ws:contentTemplate>
+               <div class="controls-TileView__imageWrapper" attr:style="height: 300px">
+                  <img src="{{ itemTemplate.item.contents.image }}" class="controls-TileView__image controls-TileView__image_align_center  controls-TileView__image-cover controls-TileView__image_fullHeight"/>
+                  <ws:partial template="{{ contentTemplate.itemActionsTemplate }}"/>
+               </div>
+            </ws:contentTemplate>
+         </ws:partial>
+      </ws:itemTemplate>
+   </Controls.treeTile:View>
+</div>

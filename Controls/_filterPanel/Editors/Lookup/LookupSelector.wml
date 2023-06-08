@@ -1,0 +1,59 @@
+<ws:template name="lookup">
+    <Controls.Container.Async templateName="Controls/lookup:Selector">
+        <ws:content>
+            <ws:partial template="{{content.resolvedTemplate}}"
+                        name="lookupEditor"
+                        scope="{{_options}}"
+                        textValue="{{_textValue}}"
+                        items="{{_items}}"
+                        dataLoadCallback="{{_dataLoadCallback}}"
+                        counterVisibility="hidden"
+                        fontColorStyle="{{_options.fontColorStyle || 'default'}}"
+                        fontSize="{{_options.fontSize}}"
+                        maxVisibleItems="20"
+                        style="filterPanel"
+                        readOnly="{{true}}"
+                        selectedKeys="{{selectedKeys}}"
+                        inlineHeight="s"
+                        on:itemsChanged="_itemsChangedHandler()"
+                        on:textValueChanged="_handleTextValueChanged()"
+                        on:itemClick="_handleLookupClick()"
+                        on:click="_handleLookupClick()"
+                        collectionClass="ws-line-clamp ws-line-clamp_3 controls-LookupEditor__collection"
+                        attr:class="controls-FilterViewPanel__basicEditor-cloud
+                                        controls-FilterViewPanel__basicEditor-cloud-{{_options.filterViewMode}}
+                                        controls-LookupEditor">
+                <ws:itemTemplate>
+                    <div class="controls-LookupEditor__item controls-fontsize-{{ _options.fontSize }}" title="{{_options.textValue}}">
+                        {{itemTemplate.caption || itemTemplate.item.get(_options.displayProperty || 'title')}}{{!itemTemplate.isLastItem ? ', '}}
+                    </div>
+                </ws:itemTemplate>
+            </ws:partial>
+        </ws:content>
+    </Controls.Container.Async>
+</ws:template>
+
+<Controls._filterPanel.Editors.EditorChooser scope="{{_options}}">
+    <Controls._filterPanel.BaseEditor on:resetClick="_resetClick()"
+                                      extendedCaption="{{_options.extendedCaption}}"
+                                      attr:class="{{_options.viewMode === 'basic' ? 'controls-LookupEditor-container'}}">
+        <ws:editorTemplate>
+            <Controls._filterPanel.Editors.SelectionContainer propertyValue="{{_options.propertyValue}}"
+                                                              multiSelect="{{_options.multiSelect}}">
+                <ws:content>
+                    <ws:partial template="lookup"
+                                selectedKeys="{{content.selectedKeys}}" />
+                </ws:content>
+            </Controls._filterPanel.Editors.SelectionContainer>
+        </ws:editorTemplate>
+        <ws:extendedTemplate>
+            <Controls._filterPanel.Editors.resources.FrequentItem
+                    on:extendedCaptionClick="_extendedCaptionClickHandler()"
+                    on:propertyValueChanged="_frequentItemClickHandler()"
+                    extendedCaltion="{{_options.extendedCaption}}"
+                    frequentItemText="{{_options.frequentItemText}}"
+                    frequentItemKey="{{_options.frequentItemKey}}"
+            />
+        </ws:extendedTemplate>
+    </Controls._filterPanel.BaseEditor>
+</Controls._filterPanel.Editors.EditorChooser>

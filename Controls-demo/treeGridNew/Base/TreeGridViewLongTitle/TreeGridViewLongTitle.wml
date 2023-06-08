@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500 controlsDemo_wrapper-treeGrid-base-treeGridView">
+    <div class="controlsDemo__cell">
+        <h3>Длинный заголовок переносится</h3>
+        <Controls.treeGrid:View
+                keyProperty="key"
+                source="{{_viewSource}}"
+                columns="{{_columns}}"
+                parentProperty="parent"
+                nodeProperty="type"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <h3>Длинный заголовок обрезается</h3>
+        <Controls.treeGrid:View
+                keyProperty="key"
+                source="{{_viewSourceOverflow}}"
+                columns="{{_columnsOverflow}}"
+                parentProperty="parent"
+                nodeProperty="type"/>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<ws:template name="editor">
+    <Controls.Container.Async templateName="Controls/input:Phone">
+        <ws:partial template="{{content.resolvedTemplate}}"
+                    scope="{{_options}}"
+                    bind:value="_value"
+                    on:inputCompleted="_handleInputCompleted()"/>
+    </Controls.Container.Async>
+</ws:template>
+
+<ws:if data="{{_options.jumpingLabel}}">
+    <Controls.Container.Async templateName="wml!Controls/_propertyGrid/JumpingLabelContainer">
+        <ws:partial template="{{content.resolvedTemplate}}"
+                    caption="{{_options.caption}}"
+                    required="{{_options.required}}">
+            <ws:partial template="editor" />
+        </ws:partial>
+    </Controls.Container.Async>
+</ws:if>
+<ws:else>
+    <ws:partial template="editor" />
+</ws:else>

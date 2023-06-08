@@ -1,0 +1,25 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:style="height: 250px; width: 530px;">
+        <Controls.list:Container>
+            <Controls.grid:View
+                    attr:class=""
+                    keyProperty="key"
+                    source="{{_viewSource}}"
+                    dataLoadCallback="{{_dataLoadCallback}}"
+                    rowSeparatorSize="s"
+                    columns="{{_columns}}"
+                    groupProperty="fullName">
+                <ws:groupTemplate>
+                    <ws:partial template="Controls/grid:GroupTemplate"
+                                scope="{{ _options }}"
+                                separatorVisibility="{{false}}"
+                                textAlign="left">
+                        <ws:rightTemplate>
+                            <Controls.baseDecorator:Money value="{{rightTemplate.item.metaData.groupResults[rightTemplate.item.contents]}}" fontColorStyle="group" useGrouping="{{false}}"/>
+                        </ws:rightTemplate>
+                    </ws:partial>
+                </ws:groupTemplate>
+            </Controls.grid:View>
+        </Controls.list:Container>
+    </Controls.scroll:Container>
+</div>

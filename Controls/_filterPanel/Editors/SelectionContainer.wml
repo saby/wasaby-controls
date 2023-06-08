@@ -1,0 +1,15 @@
+<ws:if data="{{_options.multiSelect}}">
+    <ws:partial template="{{_options.content}}"
+                selectedKeys="{{_selectedKeys}}"
+                on:selectedKeysChanged="_selectedKeysChanged()"/>
+</ws:if>
+<ws:else>
+    <Controls.Container.Async templateName="Controls/multiselection:SingleSelection">
+        <ws:partial template="{{content.resolvedTemplate}}"
+                    on:selectedKeyChanged="_selectedKeyChanged()">
+            <ws:partial template="{{_options.content}}"
+                        selectedKeys="{{_selectedKeys}}"
+            />
+        </ws:partial>
+    </Controls.Container.Async>
+</ws:else>

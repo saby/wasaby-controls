@@ -1,0 +1,21 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500 controlsDemo_wrapper-treeGrid-base-treeGridView">
+    <Controls.treeGrid:View
+            keyProperty="key"
+            source="{{ _viewSource }}"
+            parentProperty="parent"
+            nodeProperty="type"
+            nodeTypeProperty="nodeType"
+            rowSeparatorSize="s"
+            colspanCallback="{{ _colspanCallback }}"
+            columns="{{ _columns }}"
+            bind:expandedItems="_expandedItems"
+            bind:collapsedItems="_collapsedItems">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/treeGrid:ItemTemplate"
+                        highlightOnHover="{{ itemTemplate.item.contents.get('nodeType') !== 'group' }}"
+                        fontColorStyle="{{ itemTemplate.item.contents.get('nodeType') === 'group' ? 'secondary' }}"
+                        fontSize="{{ itemTemplate.item.contents.get('nodeType') === 'group' ? 'xl' }}"
+                        fontWeight="{{ itemTemplate.item.contents.get('nodeType') === 'group' ? 'bold' }}"/>
+        </ws:itemTemplate>
+    </Controls.treeGrid:View>
+</div>

@@ -1,0 +1,30 @@
+<div class="controlsDemo__wrapper">
+   <h4>Current root: {{'' + _root}}</h4>
+
+   <Controls.buttons:Button
+      caption="Change Root to {{_root === null ? 1 : null}}"
+      on:click="_onToggleRoot()"
+      attr:data-qa="ControlsDemo_ChangeRoot__change"
+   />
+
+   <Controls.buttons:Button
+      caption="Change root and additional options"
+      on:click="_changeRootAndAdditionalOptions()"
+      attr:data-qa="ControlsDemo_ChangeRoot__change_with_additional_options"
+   />
+
+   <Controls.explorer:View
+      source="{{_viewSource}}"
+      bind:root="_root"
+      attr:class="demo-Explorer ControlsDemo-Explorer"
+      keyProperty="id"
+      displayProperty="title"
+      parentProperty="parent"
+      nodeProperty="parent@"
+      viewMode="{{_viewMode}}"
+      header="{{_gridHeader}}"
+      columns="{{_columns}}"
+   >
+      <ws:itemPadding top="{{_itemPaddingSize}}" bottom="{{_itemPaddingSize}}"/>
+   </Controls.explorer:View>
+</div>

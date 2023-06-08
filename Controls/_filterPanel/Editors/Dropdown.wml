@@ -1,0 +1,47 @@
+<Controls._filterPanel.Editors.EditorChooser scope="{{_options}}">
+    <Controls._filterPanel.BaseEditor extendedCaption="{{_options.extendedCaption}}"
+                                      attr:class="controls-FilterViewPanel__dropdownEditor_cross">
+        <ws:editorTemplate>
+            <div class="ws-ellipsis controls-FilterViewPanel__basicEditor-cloud
+                            controls-FilterViewPanel__basicEditor-cloud-{{_options.filterViewMode}}">
+                <Controls._filterPanel.Editors.SelectionContainer
+                    on:selectedKeysChanged="_handleSelectedKeysChanged()"
+                    multiSelect="{{_options.multiSelect}}">
+                    <Controls.Container.Async templateName="Controls/dropdown:Selector">
+                        <ws:templateOptions selectedKeys="{{content.selectedKeys}}"
+                                            source="{{_options.source}}"
+                                            filter="{{_options.filter}}"/>
+                        <ws:content>
+                            <!-- опция maxVisibleItems для dropdown:Selector нужна, чтобы после текста не выводилось 'Ещё n'
+                                 Выпадающий список в фильтре не предназназначен для выбора из большого кол-ва элементов,
+                                 считаем, что небольшое кол-во это не больше 20 -->
+                            <ws:partial template="{{content.resolvedTemplate}}"
+                                        scope="{{_options}}"
+                                        fontColorStyle="{{_options.fontColorStyle || 'default'}}"
+                                        style="filterPanel"
+                                        caption="{{_options.extendedCaption}}"
+                                        fontSize="{{_options.fontSize}}"
+                                        maxVisibleItems="{{20}}"
+                                        underline="none"
+                                        sourceController="{{_hasHistory() ? null : _options.sourceController}}"
+                                        items="{{_hasHistory() ? null : _options.items}}"
+                                        on:textValueChanged="_handleTextValueChanged()"
+                                        attr:class="controls-FilterViewPanel__dropdownEditor"/>
+                        </ws:content>
+                    </Controls.Container.Async>
+                </Controls._filterPanel.Editors.SelectionContainer>
+            </div>
+        </ws:editorTemplate>
+        <ws:extendedTemplate>
+            <Controls._filterPanel.Editors.resources.FrequentItem
+                    on:deactivated="_deactivated()"
+                    name="opener"
+                    on:extendedCaptionClick="_openMenu()"
+                    on:propertyValueChanged="_frequentItemClickHandler()"
+                    extendedCaltion="{{_options.extendedCaption}}"
+                    frequentItemText="{{_options.frequentItemText}}"
+                    frequentItemKey="{{_options.frequentItemKey}}"
+            />
+        </ws:extendedTemplate>
+    </Controls._filterPanel.BaseEditor>
+</Controls._filterPanel.Editors.EditorChooser>

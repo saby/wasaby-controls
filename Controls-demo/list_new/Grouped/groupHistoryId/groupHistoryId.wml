@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper" attr:style="max-width: 400px;">
+    <Controls.scroll:Container>
+        <Controls.list:View
+                keyProperty="key"
+                source="{{_viewSource}}"
+                groupHistoryId="MY_BRAND"
+                groupProperty="brand"/>
+    </Controls.scroll:Container>
+</div>
+

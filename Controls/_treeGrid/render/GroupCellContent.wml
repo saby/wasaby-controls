@@ -1,0 +1,31 @@
+<ws:template name="groupCellContent">
+    <div class="{{ (gridColumn || itemData).getContentClasses() }}">
+        <ws:if data="{{ (gridColumn || itemData).shouldDisplayLeftSeparator(groupNodeConfig.separatorVisibility, groupNodeConfig.textVisible, groupNodeConfig.textAlign) }}">
+            <div class="controls-ListView__groupSeparator controls-ListView__groupSeparator-left">&nbsp;</div>
+        </ws:if>
+        <ws:if data="{{ groupNodeConfig.textVisible !== false }}">
+            <div class="{{ (gridColumn || itemData).getContentTextWrapperClasses(fontColorStyle, fontSize, fontWeight, textTransform, groupNodeConfig.separatorVisibility) }}
+                        {{ (gridColumn || itemData).getBaseLineClasses(fontSize) }}">
+                <div class="{{ (gridColumn || itemData).getContentTextClasses(groupNodeConfig.textAlign) }}
+                            {{ (gridColumn || itemData).getExpanderClasses(groupNodeConfig.expanderVisible, groupNodeConfig.expanderAlign, groupNodeConfig.iconSize, groupNodeConfig.iconStyle) }}"
+                     attr:data-qa="{{ item.listElementName }}-expander">
+                    <ws:if data="{{ groupNodeConfig.contentTemplate }}">
+                        <ws:partial template="{{ groupNodeConfig.contentTemplate }}"
+                                    item="{{ item || itemData }}"
+                                    itemData="{{ item || itemData }}"
+                                    column="{{ gridColumn || itemData }}"/>
+                    </ws:if>
+                    <ws:else>
+                        {{ (gridColumn || itemData).getDefaultDisplayValue() }}
+                    </ws:else>
+                </div>
+            </div>
+        </ws:if>
+        <ws:if data="{{ (gridColumn || itemData).shouldDisplayRightSeparator(groupNodeConfig.separatorVisibility, groupNodeConfig.textVisible, groupNodeConfig.textAlign) }}">
+            <div class="controls-ListView__groupSeparator
+                    {{ groupNodeConfig.textVisible !== false ? 'controls-ListView__groupSeparator-right' }}">&nbsp;</div>
+        </ws:if>
+    </div>
+</ws:template>
+
+<ws:partial template="groupCellContent" groupNodeConfig="{{ (gridColumn || itemData).column.groupNodeConfig }}"/>

@@ -1,0 +1,102 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__flex ws-flex-column ws-align-items-center"
+             data-qa="controlsDemo-ButtonStyle__ContrastBackgroundFalse">
+            <ws:for data="buttonStyle in _buttonStyles">
+                <div class="controls-inlineheight-l controls-margin_bottom-m controls-margin_right-m controlsDemo__flex ws-align-items-center">
+                    <Controls.buttons:Button viewMode="outlined"
+                                             caption="Кнопка"
+                                             buttonStyle="{{buttonStyle}}"
+                                             attr:data-qa="controlsDemo-ButtonStyle__ContrastBackgroundFalse-{{buttonStyle}}"/>
+                </div>
+            </ws:for>
+            <div class="controls-inlineheight-l controls-margin_bottom-m controls-margin_right-m"></div>
+            <div class="controls-inlineheight-l controls-margin_bottom-m controls-margin_right-m"></div>
+        </div>
+        <div class="controlsDemo__flex ws-flex-column ws-align-items-center"
+             data-qa="controlsDemo-ButtonStyle__ContrastBackgroundTrue">
+            <ws:for data="buttonStyle in _buttonStyles">
+                <div class="controls-inlineheight-l controls-margin_bottom-m controls-margin_right-m controlsDemo__flex ws-align-items-center">
+                    <Controls.buttons:Button viewMode="filled"
+                                             caption="Кнопка"
+                                             buttonStyle="{{buttonStyle}}"
+                                             attr:data-qa="controlsDemo-ButtonStyle__ContrastBackgroundTrue-{{buttonStyle}}"/>
+                </div>
+            </ws:for>
+            <div class="controls-inlineheight-l controls-margin_bottom-m controls-margin_right-m controlsDemo__flex ws-align-items-center">
+                <Controls.buttons:Button viewMode="filled"
+                                         caption="Кнопка"
+                                         buttonStyle="navigation"
+                                         fontColorStyle="contrast"
+                                         attr:data-qa="controlsDemo-ButtonStyle__ContrastBackgroundTrue-navigation"/>
+            </div>
+            <div class="controls-inlineheight-l controls-margin_bottom-m controls-margin_right-m"></div>
+        </div>
+        <div class="controlsDemo__flex ws-flex-column ws-align-items-center"
+             data-qa="controlsDemo-ButtonStyle__ViewModeFunctionalButton">
+            <ws:for data="functionalButton in _functionalButtons">
+                <div class="controls-inlineheight-l controls-margin_bottom-m controls-margin_right-xl controlsDemo__flex ws-align-items-center">
+                    <Controls.buttons:Button viewMode="filled"
+                                             buttonStyle="{{functionalButton.buttonStyle}}"
+                                             icon="icon-SabyBird"
+                                             iconStyle="{{functionalButton.iconStyle}}"
+                                             attr:data-qa="controlsDemo-ButtonStyle__ViewModeFunctionalButton-{{functionalButton.buttonStyle}}"/>
+                </div>
+            </ws:for>
+            <div class="controls-inlineheight-l controls-margin_bottom-m controls-margin_right-xl controlsDemo__flex ws-align-items-center">
+                <Controls.buttons:Button viewMode="filled"
+                                         buttonStyle="navigation"
+                                         icon="icon-SabyBird"
+                                         iconStyle="contrast"
+                                         attr:data-qa="controlsDemo-ButtonStyle__ViewModeFunctionalButton-navigation"/>
+            </div>
+            <div class="controls-inlineheight-l controls-margin_bottom-m controls-margin_right-xl"></div>
+        </div>
+        <div class="controlsDemo__flex ws-flex-column ws-align-items-center"
+             data-qa="controlsDemo-ButtonStyle__ViewModeLinkText">
+            <ws:for data="fontColorStyle in _fontColorStyles">
+                <div class="controls-inlineheight-l controls-margin_bottom-m controls-margin_right-m controlsDemo__flex ws-align-items-center">
+                    <Controls.buttons:Button viewMode="link" caption="Подробнее" fontColorStyle="{{fontColorStyle}}"/>
+                </div>
+            </ws:for>
+        </div>
+
+        <div class="controlsDemo__flex ws-flex-column ws-align-items-center"
+             data-qa="controlsDemo-ButtonStyle__ViewModeLinkIcon">
+            <ws:for data="fontColorStyle in _fontColorStyles">
+                <div class="controls-inlineheight-l controls-margin_bottom-m controls-margin_right-l controlsDemo__flex ws-align-items-center">
+                    <Controls.buttons:Button viewMode="link" icon="icon-SabyBird" iconStyle="{{fontColorStyle}}"/>
+                </div>
+            </ws:for>
+        </div>
+
+        <div class="controlsDemo__flex ws-flex-column ws-align-items-center"
+             data-qa="controlsDemo-ButtonStyle__ViewModeToolButton">
+            <ws:for data="buttonStyle in _buttonStyles">
+                <div class="controls-inlineheight-l controls-margin_bottom-m controlsDemo__flex ws-align-items-center">
+                    <Controls.buttons:Button viewMode="ghost"
+                                             caption="Подробнее"
+                                             fontColorStyle="{{buttonStyle}}"
+                                             buttonStyle="{{buttonStyle}}"/>
+                </div>
+            </ws:for>
+            <div class="controls-inlineheight-l controls-margin_bottom-m"></div>
+            <div class="controls-inlineheight-l controls-margin_bottom-m"></div>
+        </div>
+
+        <div class="controlsDemo__flex ws-flex-column ws-align-items-center"
+             data-qa="controlsDemo-ButtonStyle__ViewModeToolButton">
+            <ws:for data="buttonStyle in _buttonStyles">
+                <div class="controls-inlineheight-l controls-margin_bottom-m controlsDemo__flex ws-align-items-center">
+                    <Controls.buttons:Button viewMode="ghost"
+                                             icon="icon-SabyBird"
+                                             iconStyle="{{buttonStyle}}"
+                                             iconSize="s"
+                                             buttonStyle="{{buttonStyle}}"/>
+                </div>
+            </ws:for>
+            <div class="controls-inlineheight-l controls-margin_bottom-m"></div>
+            <div class="controls-inlineheight-l controls-margin_bottom-m"></div>
+        </div>
+    </div>
+</div>

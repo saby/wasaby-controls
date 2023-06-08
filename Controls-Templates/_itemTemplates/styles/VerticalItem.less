@@ -1,0 +1,131 @@
+@gradient_height_rich_tile: 48px;
+
+.Controls-Templates-VerticalItem__content {
+   width: 100%;
+}
+
+.Controls-Templates-VerticalItem__image_wrapper {
+   display: flex;
+   flex-shrink: 0;
+   max-width: 100%;
+   overflow: hidden;
+   box-sizing: border-box;
+   justify-content: center;
+   position: relative;
+}
+
+.Controls-Templates-TileItem__wrapper_background-custom {
+   background: var(--dominant-color_zen);
+}
+
+.Controls-Templates-VerticalItem__description,
+.Controls-Templates-VerticalItem__caption {
+   position: relative;
+   width: 100%;
+   box-sizing: border-box;
+}
+
+.Controls-Templates-VerticalItem__image_position_bottom {
+   order: 2;
+}
+
+.Controls-Templates-VerticalItem__caption_position_auto {
+   order: 0;
+}
+
+.Controls-Templates-VerticalItem__caption_position_top {
+   order: -1;
+}
+
+.Controls-Templates-VerticalItem__caption_position_on-image {
+   order: -1;
+   position: absolute;
+   top: 0;
+}
+
+.Controls-Templates-VerticalItem__image_proportion_1_1 {
+   padding-top: 100%;
+}
+
+.Controls-Templates-VerticalItem__image_proportion_4_3 {
+   padding-top: 100% * 0.75;
+}
+
+.Controls-Templates-VerticalItem__image_proportion_3_4 {
+   padding-top: 100% * 1.33;
+}
+
+.Controls-Templates-VerticalItem__image_proportion_16_9 {
+   padding-top: 100% * 0.5625;
+}
+
+.Controls-Templates-VerticalItem__image_wrapper_align_left {
+   align-self: start;
+}
+
+.Controls-Templates-VerticalItem__image_wrapper_align_middle {
+   align-self: center;
+}
+
+.Controls-Templates-VerticalItem__image_wrapper_align_right {
+   align-self: end;
+}
+
+.Controls-Templates-VerticalItem__image_wrapper_viewMode_circle {
+   padding-top: calc(100% - 2 * var(--offset_m));
+}
+
+.Controls-Templates-VerticalItem__image_viewMode_circle {
+   border-radius: 50%;
+}
+
+.Controls-Templates-VerticalItem__content-overlay_gradient::after {
+   position: absolute;
+   content: '';
+   height: @gradient_height_rich_tile + 1px;
+   left: 0;
+   right: 0;
+   pointer-events: none;
+}
+
+.Controls-Templates-VerticalItem__content-overlay_top-gradient::after {
+   top: -@gradient_height_rich_tile;
+}
+
+.Controls-Templates-VerticalItem__content-overlay_bottom-gradient::after {
+   bottom: -@gradient_height_rich_tile;
+}
+
+.Controls-Templates-VerticalItem__content-overlay_top-gradient_light::after {
+   background: linear-gradient(to top, #fff, #fff0);
+}
+
+.Controls-Templates-VerticalItem__content-overlay_top-gradient_custom::after {
+   background: linear-gradient(
+      to top,
+      var(--dominant-color_zen),
+      rgba(var(--dominant_zen_rgb), 0)
+   );
+}
+
+.Controls-Templates-VerticalItem__content-overlay_bottom-gradient_light::after {
+   background: linear-gradient(to bottom, #fff, #fff0);
+}
+
+.Controls-Templates-VerticalItem__content-overlay_bottom-gradient_custom::after {
+   background: linear-gradient(
+      to bottom,
+      var(--dominant-color_zen),
+      rgba(var(--dominant_zen_rgb), 0)
+   );
+}
+
+.Controls-Templates-VerticalItem__image_gradientOverlay_to-bottom::after {
+   content: '';
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background: linear-gradient(rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 100%);
+}

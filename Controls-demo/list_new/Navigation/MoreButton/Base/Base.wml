@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper controlsDemo_maxWidth800 Controls-list__navigation_MoreButton controlsDemo_line-height18">
+    <Controls.scroll:Container attr:class="controlsDemo__height400">
+        <Controls.list:View
+                keyProperty="key"
+                source="{{_viewSource}}"
+                navigation="{{_navigation}}"/>
+    </Controls.scroll:Container>
+</div>

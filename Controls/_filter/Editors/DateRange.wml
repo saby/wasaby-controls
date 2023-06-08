@@ -1,0 +1,81 @@
+<ws:template name="arrow">
+   <Controls.Container.Async templateName="Controls/date:ArrowButtonConsumer">
+      <ws:partial template="{{ content.resolvedTemplate }}"
+                  direction="{{direction}}"
+                  attr:class="controls-margin_{{alignment === 'left' ? 'right' : 'left'}}-m ws-align-self-center"
+      />
+   </Controls.Container.Async>
+</ws:template>
+
+<ws:template name="baseSelector">
+   <Controls.Container.Async templateName="{{templateName}}">
+      <ws:partial template="{{content.resolvedTemplate}}"
+                  scope="{{_options}}"
+                  startValue="{{_options.value[0] || null}}"
+                  endValue="{{_options.value[1] || null}}"
+                  datePopupType="{{ _datePopupType }}"
+                  emptyCaption="{{_emptyCaption}}"
+                  fontWeight="{{_options.fontWeight}}"
+                  fontColorStyle="{{_options.fontColorStyle}}"
+                  resetStartValue="{{ _options.resetStartValue }}"
+                  resetEndValue="{{ _options.resetEndValue }}"
+                  attr:class="controls_filter_theme-{{_options.theme}} controls-FilterEditor-DateRange"
+                  on:rangeChanged="_rangeChanged()"
+                  on:valueChanged="_valueChanged()" />
+   </Controls.Container.Async>
+</ws:template>
+
+<ws:template name="baseSelectorContainer">
+   <ws:if data="{{_options.validators}}">
+      <Controls.Container.Async templateName="Controls/validate:Controller">
+         <ws:partial template="{{ content.resolvedTemplate }}" scope="{{ _options }}" name="dateRangeController">
+            <ws:content>
+               <Controls.Container.Async templateName="Controls/validate:DateRangeContainer">
+                  <ws:partial template="{{ content.resolvedTemplate }}" scope="{{ _options }}">
+                     <ws:content>
+                        <ws:partial template="baseSelector" templateName="{{templateName}}" />
+                     </ws:content>
+                     <ws:validators>
+                        <ws:Array>
+                           <ws:Function value="{{_value}}" validators="{{_options.validators}}">
+                              Controls/filter:DateRangeEditor.prototype.startValidation
+                           </ws:Function>
+                        </ws:Array>
+                     </ws:validators>
+                  </ws:partial>
+               </Controls.Container.Async>
+            </ws:content>
+         </ws:partial>
+      </Controls.Container.Async>
+   </ws:if>
+   <ws:else>
+      <ws:partial template="baseSelector" templateName="{{templateName}}" />
+   </ws:else>
+</ws:template>
+
+<ws:if data="{{ _options.prevArrowVisible || _options.nextArrowVisible }}">
+   <Controls.Container.Async templateName="Controls/date:ContextProvider">
+      <ws:partial template="{{ content.resolvedTemplate }}" scope="{{ _options }}">
+         <ws:content>
+            <div class="ws-flexbox ws-align-items-baseline">
+               <ws:if data="{{_options.prevArrowVisible && _options.prevArrowAlignment === 'left'}}">
+                  <ws:partial template="arrow" direction="left" alignment="left" />
+               </ws:if>
+               <ws:if data="{{_options.nextArrowVisible && _options.nextArrowAlignment === 'left' }}">
+                  <ws:partial template="arrow" direction="right" alignment="left" />
+               </ws:if>
+               <ws:partial template="baseSelectorContainer" templateName="Controls/{{_dateModule}}:SelectorConsumer"/>
+               <ws:if data="{{_options.prevArrowVisible && _options.prevArrowAlignment === 'right'}}">
+                  <ws:partial template="arrow" direction="left" alignment="right" />
+               </ws:if>
+               <ws:if data="{{_options.nextArrowVisible && _options.nextArrowAlignment === 'right'}}">
+                  <ws:partial template="arrow" direction="right" alignment="right" />
+               </ws:if>
+            </div>
+         </ws:content>
+      </ws:partial>
+   </Controls.Container.Async>
+</ws:if>
+<ws:else>
+   <ws:partial template="baseSelectorContainer" templateName="Controls/{{_dateModule}}:Selector"/>
+</ws:else>

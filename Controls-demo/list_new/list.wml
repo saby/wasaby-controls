@@ -1,0 +1,182 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/Base/Index' }}">
+            <a href="{{content.href}}">Базовая настройка списка</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.Base.Index/>
+    </div>
+
+    <div class="controlsDemo__cell">
+    <Router.router:Reference attr:class="controls-text-label"
+                             state="/Controls-demo/app/:app"
+                             app="{{ 'Controls-demo/list_new/EmptyList/Index' }}">
+        <a href="{{content.href}}">Шаблон отображения пустого списка</a>
+    </Router.router:Reference>
+    <Controls-demo.list_new.EmptyList.Index/>
+</div>
+
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/FooterTemplate/Index' }}">
+            <a href="{{content.href}}">Шаблон подвала списка</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.FooterTemplate.Index/>
+    </div>
+
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/ItemPadding/Index' }}">
+            <a href="{{content.href}}">Отступы в списке</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.ItemPadding.Index/>
+    </div>
+
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/ItemTemplate/Index' }}">
+            <a href="{{content.href}}">Шаблон строки</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.ItemTemplate.Index/>
+    </div>
+
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/Marker/Index' }}">
+            <a href="{{content.href}}">Маркер активной строки</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.Marker.Index/>
+    </div>
+
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/Filtering/Index' }}">
+            <a href="{{content.href}}">Фильтрация</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.Filtering.Index/>
+    </div>
+
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/MultiSelect/Index' }}">
+            <a href="{{content.href}}">Множественный выбор</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.MultiSelect.Index/>
+    </div>
+
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/Grouped/Index' }}">
+            <a href="{{content.href}}">Группировка</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.Grouped.Index/>
+    </div>
+
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/EditInPlace/Index' }}">
+            <a href="{{content.href}}">Редактирование по месту</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.EditInPlace.Index/>
+    </div>
+
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/VirtualScroll/Index' }}">
+            <a href="{{content.href}}">Виртуальный скролл</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.VirtualScroll.Index/>
+    </div>
+
+<!--    <div class="controlsDemo__cell">-->
+<!--        <Router.router:Reference attr:class="controls-text-label"-->
+<!--                                 state="/Controls-demo/app/:app"-->
+<!--                                 app="{{ 'Controls-demo/list_new/Navigation/Index' }}">-->
+<!--            <a href="{{content.href}}">Навигация</a>-->
+<!--        </Router.router:Reference>-->
+<!--        <Controls-demo.list_new.Navigation.Index/>-->
+<!--    </div>-->
+
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/ItemActions/Index' }}">
+            <a href="{{content.href}}">Операции над записью</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.ItemActions.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controlsDemo__maxWidth500">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/Sorting/Index' }}">
+            <a href="{{content.href}}">Сортировка</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.Sorting.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controlsDemo__maxWidth500">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/Swipe/Index' }}">
+            <a href="{{content.href}}">Swipe</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.Swipe.Index/>
+    </div>
+
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/LoadingIndicator/Index' }}">
+            <a href="{{content.href}}">Индикатор загрузки</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.LoadingIndicator.Index/>
+    </div>
+
+
+    <!--<div class="controlsDemo__cell controlsDemo__maxWidth500">-->
+        <!--<Router.router:Reference attr:class="controls-text-label"-->
+                                 <!--state="/Controls-demo/app/:app"-->
+                                 <!--app="{{ 'Controls-demo/list_new/Searching/Index' }}">-->
+            <!--<a href="{{content.href}}">Режим поиска в списке</a>-->
+        <!--</Router.router:Reference>-->
+        <!--<Controls-demo.list_new.Searching.Index/>-->
+    <!--</div>-->
+
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/DragNDrop/Index' }}">
+            <a href="{{content.href}}">DragNDrop</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.DragNDrop.Index/>
+    </div>
+
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/ColumnsView/Index' }}">
+            <a href="{{content.href}}">ColumnsView</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.ColumnsView.Index/>
+    </div>
+
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/Nested/Index' }}">
+            <a href="{{content.href}}">Список в списке</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.Nested.Index/>
+    </div>
+</div>

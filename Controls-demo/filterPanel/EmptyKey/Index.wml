@@ -1,0 +1,24 @@
+<div class="controlsDemo__wrapper">
+    <Controls.browser:Browser filterButtonSource="{{_filterDescription}}"
+                              source="{{_source}}" navigation="{{_navigation}}" keyProperty="id">
+        <div class="controlsDemo__flexRow">
+            <Controls.filterPanel:Container>
+                <Controls.filterPanel:View attr:class="controls-demo__filterButton controls-demo__filterPanel"/>
+            </Controls.filterPanel:Container>
+            <Controls.list:Container>
+                <Controls.list:View emptyTemplate="Не найдено">
+                    <ws:itemTemplate>
+                        <ws:partial template="Controls/list:ItemTemplate">
+                            <ws:contentTemplate>
+                                <div class="demo-FilterSearch__listItem-wrapper">
+                                    <span class="demo-FilterSearch__department"> {{itemTemplate.item.contents.get('department')}} </span>
+                                    <span class="demo-FilterSearch__title">{{itemTemplate.item.contents.get('owner')}}<span class="icon-16 icon-Company icon-disabled"></span> ({{itemTemplate.item.contents.get('amount')}})</span>
+                                </div>
+                            </ws:contentTemplate>
+                        </ws:partial>
+                    </ws:itemTemplate>
+                </Controls.list:View>
+            </Controls.list:Container>
+        </div>
+    </Controls.browser:Browser>
+</div>

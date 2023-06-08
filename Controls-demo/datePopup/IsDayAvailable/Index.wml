@@ -1,0 +1,7 @@
+<div class="controlsDemo__flex">
+    <Controls.datePopup
+            bind:startValue="_startValue"
+            bind:endValue="_endValue"
+            _date="{{ _date }}"
+            isDayAvailable="{{ _isDayAvailable }}"/>
+</div>

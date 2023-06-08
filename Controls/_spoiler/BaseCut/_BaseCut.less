@@ -1,0 +1,79 @@
+.controls-BaseCut__ellipsis {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+}
+
+.controls-BaseCut__shadow {
+   z-index: 2;
+   width: 100%;
+   position: absolute;
+   height: 5px;
+}
+
+.controls-BaseCut__shadow_background-default {
+   background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      var(--background-color) 100%
+   );
+}
+
+.controls-BaseCut__shadow_background-unaccented {
+   background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      var(--unaccented_background-color) 100%
+   );
+}
+
+& {
+   /* stylelint-disable-next-line unit-no-unknown */
+   @sizes: xs, s, m, l, xl, 2xl, 3xl, 4xl, 5xl, richEditor;
+
+   .for(@sizes, {
+      @lineHeight: @{_item};
+      @lineHeightVariable: '--line-height_@{lineHeight}_inputArea';
+      .controls-BaseCut__shadow_lineHeight-@{lineHeight} {
+         bottom: ~'var(@{lineHeightVariable})';
+      }
+   });
+}
+
+.controls-BaseCut__notExpandedButtonWrapper {
+   width: 100%;
+   flex-wrap: wrap-reverse;
+   flex-shrink: 1;
+   min-height: 1px;
+   margin-left: 100%;
+}
+
+.controls-BaseCut__notExpandedButtonWrapBlock {
+   height: 1px;
+   width: 100%;
+   flex-shrink: 0;
+}
+
+.controls-BaseCut__notExpandedButtonContainer {
+   width: 100%;
+   height: 1px;
+   flex-shrink: 0;
+}
+
+.controls-BaseCut__notExpandedButton {
+   height: var(--line-height_m_inputArea);
+   position: absolute;
+   width: 100%;
+   bottom: 0;
+}
+
+// На мобильных устройствах есть проблема с субпиксельным рендеригом,
+// а именно при увеличении страницы, отображается часть содержимое под катом.
+// Поэтому спускаем кат на 1px вниз, а также увеличиваем его высоту, чтобы отображение соответствовало стандарту
+// https://online.sbis.ru/opendoc.html?guid=dba11741-69ce-4fe0-b0f9-e38379619b61&client=3
+.ws-is-mobile-platform {
+   .controls-BaseCut__notExpandedButton {
+      height: calc(var(--line-height_m_inputArea) + 1px);
+      bottom: -1px;
+   }
+}

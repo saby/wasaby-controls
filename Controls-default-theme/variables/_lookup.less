@@ -1,0 +1,48 @@
+.controls_lookup_theme-@{themeName} {
+   // Переменные для полей выбора из справочника
+   //
+   // Минимальная высота
+
+   --min-height_multiline_lookupInput: var(--inline_height_default);
+
+   // Текстовые элементы
+
+   --label_font-size_lookupInput: var(--font-size_m);
+
+   // Иконка вызова окна выбора
+
+   --trigger_width_lookupInput: 24px;
+   --trigger_offset_lookupInput: var(--offset_2xs);
+   --trigger_padding_lookupInput: var(--offset_2xs);
+   --trigger_icon-size_lookupInput: var(--icon-size_s);
+   --trigger_icon-color_lookupInput: var(--unaccented_icon-color);
+   --trigger_hover_icon-color_lookupInput: var(--unaccented_hover_icon-color);
+
+   // Кнопка сброса всех выбранных значений
+
+   --reset-button_icon-size_lookupInput: var(--icon-size_s);
+   --reset-button_offset_lookupSelector: var(--offset_2xs);
+   --reset-button_icon-color_lookupInput: var(--label_text-color);
+   --reset-button_hover_icon-color_lookupInput: var(
+      --reset-button_icon-color_lookupInput
+   );
+   --reset-button_size_lookupInput: 24px;
+
+   //Дополнительная команда
+   --toolbar_vertical-padding_lookupInput: 0;
+
+   // Переменные для кнопки выбора из справочника
+   //
+   // Минимальная высота
+
+   --min-height_lookupSelector: var(--inline_height_default);
+   // Переменные для отображения выбранных значений
+   //
+   // Размеры и отступы
+   --item_height_lookupSelectedCollection: var(--inline_height_default);
+
+   // Счетчик выбранных записей
+   --counter_height_lookupSelectedCollection: var(--inline_height_m);
+   --counter_background-color_lookupSelectedCollection: var(--background-color);
+   --counter_shadow-blur_lookupSelectedCollection: 24px;
+}

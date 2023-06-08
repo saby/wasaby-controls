@@ -1,0 +1,6 @@
+<ws:if data="{{_options.editorsViewMode === 'cloud'}}">
+    <ws:partial template="{{_options.content}}" scope="{{_options}}" />
+</ws:if>
+<ws:else>
+    <Controls._filterPanel.Editors._List scope="{{_options}}" />
+</ws:else>

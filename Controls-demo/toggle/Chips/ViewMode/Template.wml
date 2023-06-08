@@ -1,0 +1,29 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center controlsDemo_fixedWidth500"
+         data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell">
+            <Controls.Chips:Control items="{{_items}}"
+                                    viewMode="filled"
+                                    contrastBackground="{{true}}"
+                                    bind:selectedKeys="_selectedKeys1"/>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.Chips:Control items="{{_items}}"
+                                    viewMode="ghost"
+                                    contrastBackground="{{true}}"
+                                    bind:selectedKeys="_selectedKeys2"/>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.Chips:Control items="{{_items}}"
+                                    viewMode="filled"
+                                    contrastBackground="{{false}}"
+                                    bind:selectedKeys="_selectedKeys3"/>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.Chips:Control items="{{_items}}"
+                                    viewMode="ghost"
+                                    contrastBackground="{{false}}"
+                                    bind:selectedKeys="_selectedKeys4"/>
+        </div>
+    </div>
+</div>

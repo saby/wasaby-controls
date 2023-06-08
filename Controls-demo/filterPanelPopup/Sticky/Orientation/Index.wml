@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper">
+    <Controls.filterPanelPopup:Sticky detailPanelTemplateName="Controls/filterPanelPopup:Sticky"
+                                      items="{{_filterButtonData}}"
+                                      historyId="DEMO_HISTORY_ID"
+                                      orientation="horizontal">
+    </Controls.filterPanelPopup:Sticky>
+</div>

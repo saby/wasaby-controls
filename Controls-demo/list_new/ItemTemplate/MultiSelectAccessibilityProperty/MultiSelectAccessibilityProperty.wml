@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper controlsDemo__list_new-itemTepmlate-NoHighlightOnHover controlsDemo_fixedWidth500">
+    <Controls.list:View
+            keyProperty="key"
+            source="{{_viewSource}}"
+            multiSelectVisibility="visible"
+            multiSelectAccessibilityProperty="checkboxState"
+            bind:selectedKeys="_selectedKeys"
+            bind:excludedKeys="_excludedKeys">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/list:ItemTemplate"/>
+        </ws:itemTemplate>
+    </Controls.list:View>
+</div>

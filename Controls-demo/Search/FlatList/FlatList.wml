@@ -1,0 +1,30 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <div class="controlsDemo__default">
+            <div class="controls-text-label">Поиск в плоском списке внутри Browser</div>
+
+          <Controls.browser:Browser
+              source="{{_source}}"
+              searchParam="title"
+              minSearchLength="{{3}}"
+              searchDelay="700"
+              keyProperty="id"
+              bind:filter="_filter">
+            <div>
+              <Controls.search:InputContainer>
+                <Controls.search:Input attr:class="controlsDemo__searchBase_field"/>
+              </Controls.search:InputContainer>
+
+              <Controls.list:Container>
+                <Controls.list:View emptyTemplate="Не найдено">
+                  <ws:itemTemplate>
+                    <ws:partial template="Controls/list:ItemTemplate"/>
+                  </ws:itemTemplate>
+                </Controls.list:View>
+              </Controls.list:Container>
+            </div>
+          </Controls.browser:Browser>
+        </div>
+    </div>
+
+</div>

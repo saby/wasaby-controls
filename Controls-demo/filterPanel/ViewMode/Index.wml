@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper">
+    <Controls.browser:Browser filterButtonSource="{{_filterButtonData}}">
+        <Controls.filter:ViewContainer>
+            <Controls.filter:View source="{{_filterSource}}"
+                                  alignment="left"/>
+        </Controls.filter:ViewContainer>
+    </Controls.browser:Browser>
+</div>

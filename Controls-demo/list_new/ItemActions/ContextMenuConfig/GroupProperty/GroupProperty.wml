@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500 controlsDemo__itemActions_list_GroupProperty">
+    <Controls.list:View
+            keyProperty="key"
+            source="{{_viewSource}}"
+            itemActions="{{_itemActions}}">
+        <ws:contextMenuConfig groupProperty="group"/>
+    </Controls.list:View>
+</div>

@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper demo-Mover controlsDemo_fixedWidth300">
+   <Controls.list:DataContainer source="{{_viewSource}}" keyProperty="key" parentProperty="parent">
+      <Controls.list:Container>
+         <Controls.treeGrid:View
+                 name="treeGrid"
+                 multiSelectVisibility="visible"
+                 parentProperty="{{_parentProperty}}"
+                 nodeProperty="{{_nodeProperty}}"
+                 itemsReadyCallback="{{_itemsReadyCallback}}"
+                 itemActions="{{_itemActions}}"
+                 itemActionVisibilityCallback="{{_itemActionVisibilityCallback}}"
+                 columns="{{_columns}}"/>
+      </Controls.list:Container>
+   </Controls.list:DataContainer>
+</div>

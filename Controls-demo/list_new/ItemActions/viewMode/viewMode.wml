@@ -1,0 +1,29 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo-toolbar-panel">
+        <ws:if data="{{_clickedAction}}">
+            Кликнули на {{_clickedAction}}
+        </ws:if>
+    </div>
+    <div class="controlsDemo__cell controlsDemo__list_itemActions_position_inside controlsDemo__maxWidth600">
+        <h3>Inside</h3>
+        <Controls.list:View
+                keyProperty="key"
+                source="{{_viewSource}}"
+                feature1183020440="{{true}}"
+                readOnly="{{ true }}"
+                itemActionsProperty="itemActions"
+                on:actionClick="_onActionClick()"/>
+    </div>
+
+    <div class="controlsDemo__cell controlsDemo__list_itemActions_position_outside controlsDemo__maxWidth600">
+        <h3>Outside</h3>
+        <Controls.list:View
+                keyProperty="key"
+                source="{{_viewSource}}"
+                feature1183020440="{{true}}"
+                readOnly="{{ true }}"
+                itemActionsProperty="itemActions"
+                itemActionsPosition="outside"
+                on:actionClick="_onActionClick()"/>
+    </div>
+</div>

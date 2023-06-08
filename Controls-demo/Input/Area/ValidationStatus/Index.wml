@@ -1,0 +1,74 @@
+<div class="controlsDemo__wrapper controlsDemo__flex controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center controlsDemo__mr3">
+        <div class="controlsDemo__cell">
+            <Controls.input:Area attr:class="controlsDemo_fixedWidth300"
+                                 validationStatus="valid"
+                                 borderVisibility="partial"
+                                 minLines="{{4}}"
+                                 maxLines="{{4}}"/>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.input:Area attr:class="controlsDemo_fixedWidth300"
+                                 validationStatus="valid"
+                                 borderVisibility="bottom"
+                                 minLines="{{4}}"
+                                 maxLines="{{4}}"/>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.input:Area attr:class="controlsDemo_fixedWidth300"
+                                 validationStatus="valid"
+                                 borderVisibility="hidden"
+                                 minLines="{{4}}"
+                                 maxLines="{{4}}"/>
+        </div>
+    </div>
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center controlsDemo__mr3">
+        <div class="controlsDemo__cell">
+            <Controls.input:Area attr:class="controlsDemo_fixedWidth300"
+                                 validationStatus="invalid"
+                                 borderVisibility="partial"
+                                 minLines="{{4}}"
+                                 maxLines="{{4}}"/>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.input:Area attr:class="controlsDemo_fixedWidth300"
+                                 validationStatus="invalid"
+                                 borderVisibility="bottom"
+                                 minLines="{{4}}"
+                                 maxLines="{{4}}"/>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.input:Area attr:class="controlsDemo_fixedWidth300"
+                                 validationStatus="invalid"
+                                 borderVisibility="hidden"
+                                 minLines="{{4}}"
+                                 maxLines="{{4}}"/>
+        </div>
+    </div>
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center">
+        <div class="controlsDemo__cell">
+            <Controls.input:Area attr:class="controlsDemo_fixedWidth300"
+                                 validationStatus="invalidAccent"
+                                 borderVisibility="partial"
+                                 contrastBackground="{{true}}"
+                                 minLines="{{4}}"
+                                 maxLines="{{4}}"/>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.input:Area attr:class="controlsDemo_fixedWidth300"
+                                 validationStatus="invalidAccent"
+                                 borderVisibility="bottom"
+                                 contrastBackground="{{true}}"
+                                 minLines="{{4}}"
+                                 maxLines="{{4}}"/>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.input:Area attr:class="controlsDemo_fixedWidth300"
+                                 validationStatus="invalidAccent"
+                                 borderVisibility="hidden"
+                                 contrastBackground="{{true}}"
+                                 minLines="{{4}}"
+                                 maxLines="{{4}}"/>
+        </div>
+    </div>
+</div>

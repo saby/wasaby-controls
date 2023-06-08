@@ -1,0 +1,31 @@
+<div class="controlsDemo__flex controlsDemo__wrapper">
+    <div calss="controlsDemo_fixedWidth350" attr:data-qa="controlsDemo__readOnly_false">
+        <div>readOnly={{ _readOnly ? 'true' : 'false' }}</div>
+        <div class="controlsDemo__flex">
+            <div class="controlsDemo__margin-top">
+                <Controls.spoiler:AreaCut lines="{{ 4 }}" readOnly="{{ _readOnly1 }}">
+                    <Controls.input:Area attr:class="controlsDemo__input" bind:value="_areaValue1" placeholder="Enter your name"/>
+                </Controls.spoiler:AreaCut>
+            </div>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.buttons:Button attr:ws-no-focus="true" caption="Toggle readonly" on:click="_toggleReadOnly('_readOnly1')" attr:data-qa="controlsButton__empty_field"/>
+        </div>
+    </div>
+
+    <div class="controlsDemo_fixedWidth350 controlsDemo__ml3" attr:data-qa="controlsDemo__not_empty_readOnly_false">
+        <div>Кат появится сразу, если при инициализации передать в него непустой value</div>
+        <div>readOnly={{ _readOnly ? 'true' : 'false' }}</div>
+        <div class="controlsDemo__flex">
+            <div class="controlsDemo__margin-top">
+                <Controls.spoiler:AreaCut lines="{{ 4 }}" bind:value="_areaValue2" readOnly="{{ _readOnly2 }}">
+                    <Controls.input:Area attr:class="controlsDemo__input" placeholder="Enter your name" attr:data-qa="controlsInputArea__not_empty_field"/>
+                </Controls.spoiler:AreaCut>
+            </div>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.buttons:Button attr:ws-no-focus="true" caption="Toggle readonly" on:click="_toggleReadOnly('_readOnly2')" attr:data-qa="controlsButton__not_empty_field"/>
+        </div>
+    </div>
+
+</div>

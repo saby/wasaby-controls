@@ -1,0 +1,29 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <Controls.buttons:Button caption="Reload" on:click="_onReload()"/>
+        <Controls.buttons:Button
+                caption="Reload with new navigation"
+                tooltip="После перезагрузки высота элементов чуть больше размера вьюпорта"
+                on:click="_onReloadWithNewNavigation()"
+        />
+        <Controls.buttons:Button caption="{{ _gridVisible ? 'Hide' : 'Show' }} grid"
+                                 on:click="_onToggleGridVisibility()"
+                                 data-qa="button-toggle-grid-visibility"
+        />
+    </div>
+    <Controls.scroll:Container attr:class="controlsDemo__height400" attr:style="max-width: 700px">
+        <Controls.list:DataContainer name="dataContainer"
+                                     source="{{_viewSource}}"
+                                     navigation="{{_navigation}}"
+                                     keyProperty="key"
+        >
+            <ws:virtualScrollConfig pageSize="{{15}}"/>
+            <ws:content>
+                <Controls.grid:View name="list"
+                                    columns="{{_columns}}"
+                                    attr:style="{{ !_gridVisible ? 'display: none' }}"
+                />
+            </ws:content>
+        </Controls.list:DataContainer>
+    </Controls.scroll:Container>
+</div>

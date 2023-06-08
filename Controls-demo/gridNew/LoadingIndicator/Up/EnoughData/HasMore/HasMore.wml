@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <Controls.buttons:Button caption="Reload" on:click="_onReload()"/>
+    </div>
+    <Controls.scroll:Container attr:class="controlsDemo__height400"
+                               attr:style="max-width: 700px"
+                               initialScrollPosition="{{_initialScrollPosition}}">
+        <Controls.grid:View
+                name="list"
+                keyProperty="key"
+                columns="{{_columns}}"
+                source="{{_viewSource}}">
+            <ws:navigation source="page" view="infinity">
+                <ws:sourceConfig pageSize="{{20}}" page="{{2}}" hasMore="{{false}}" direction="backward"/>
+            </ws:navigation>
+        </Controls.grid:View>
+    </Controls.scroll:Container>
+</div>

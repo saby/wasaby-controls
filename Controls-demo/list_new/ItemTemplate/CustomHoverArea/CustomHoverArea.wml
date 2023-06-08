@@ -1,0 +1,33 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth800">
+    <Controls.list:View
+            keyProperty="key"
+            source="{{_viewSource}}"
+            itemActions="{{_itemActions}}"
+            itemActionsPosition="custom"
+            backgroundStyle="default"
+            name="listView">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/list:ItemTemplate"
+                        highlightOnHover="{{ false }}"
+                        showItemActionsOnHover="{{ false }}"
+                        itemActionsClass="my-super-class">
+                <ws:contentTemplate>
+                    <div class="item-area">
+                        <div class="item-area-content ws-flexbox ws-align-items-baseline
+                                                controls-hover-background-default">
+                            <div class="ws-ellipsis controls-fontsize-l">title:&nbsp;{{ contentTemplate.item.getContents().get('title') }}</div>
+                        </div>
+                        <div class="item-area-content ws-flexbox ws-align-items-baseline
+                                                controls-ListView__item_showActions
+                                                controls-hover-background-default">
+                            <div class="ws-ellipsis controls-fontsize-l">description:&nbsp;{{ contentTemplate.item.getContents().get('description') }}</div>
+                            <ws:partial template="{{ contentTemplate.itemActionsTemplate }}"
+                                        itemActionsClass="{{contentTemplate.itemActionsClass}}"
+                                        itemActionsBackgroundStyle="default"/>
+                        </div>
+                    </div>
+                </ws:contentTemplate>
+            </ws:partial>
+        </ws:itemTemplate>
+    </Controls.list:View>
+</div>

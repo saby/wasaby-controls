@@ -1,0 +1,27 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <Controls.input:MoneyNew attr:class="demo-money__empty"
+                                 bind:value="_value"
+                                 attr:style="width:200px"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:MoneyNew attr:class="controlsDemo__input__money"
+                                 bind:value="_value1"
+                                 attr:style="width:200px"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">integersLength=4, precision=0</div>
+        <Controls.input:MoneyNew attr:class="demo-money__integersLength"
+                                 integersLength="{{4}}"
+                                 precision="{{0}}"
+                                 bind:value="_value2"
+                                 attr:style="width:200px"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:MoneyNew attr:class="demo-money__readOnly"
+                                 bind:value="_value3"
+                                 attr:style="width:200px"
+                                 readOnly="{{true}}"/>
+    </div>
+</div>
+

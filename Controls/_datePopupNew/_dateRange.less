@@ -1,0 +1,144 @@
+.controls-PeriodDialog-DateRange {
+   display: flex;
+   flex-direction: column;
+   flex-shrink: 1;
+   min-height: 1px;
+   position: relative;
+   user-select: none;
+}
+
+.controls-PeriodDialog-DateRange__header {
+   display: flex;
+   flex-shrink: 0;
+   align-items: center;
+   height: var(--calendar-header_height_datePicker);
+   border-bottom: var(--calendar-header_border-bottom-thickness_datePicker)
+      solid transparent;
+}
+
+.controls-PeriodDialog-DateRange__body {
+   display: flex;
+   flex-shrink: 1;
+   min-height: 1px;
+   align-items: stretch;
+
+   .controls-PeriodDialog-DateRangeItem__monthList {
+      height: 455px;
+
+      // TODO: ПЕРЕДЕЛАТЬ
+      width: calc(
+         7 * var(--calendar_item-size_m_compactDatePicker) + 2 *
+            var(--offset_2xs) + 2 * var(--offset_l)
+      );
+   }
+}
+
+.controls-PeriodDialog-DateRange__year {
+   flex-shrink: 0;
+   box-sizing: border-box;
+   width: var(--monthnav_width_datePicker);
+   padding-left: var(--calendar-header_padding-left_datePicker);
+   font-size: var(--current-year_font-size_datePicker);
+   font-weight: bold;
+}
+
+.controls-PeriodDialog-DateRange__year_currentYear {
+   color: var(--primary_text-color);
+}
+
+.controls-PeriodDialog-DateRange-header-weekdays {
+   display: flex;
+   flex-shrink: 1;
+   flex-grow: 1;
+   font-size: var(--font-size_xl);
+   padding: 0 var(--offset_l);
+}
+
+.controls-PeriodDialog-DateRange-header-weekdays-workday,
+.controls-PeriodDialog-DateRange-header-weekdays-weekend {
+   flex-grow: 1;
+   text-align: center;
+}
+
+.controls-PeriodDialog-DateRange-header-weekdays-workday {
+   color: var(--weekdays_text-color_datePicker);
+}
+
+.controls-PeriodDialog-DateRange-header-weekdays-weekend {
+   color: var(--weekend_weekdays_text-color_datePicker);
+}
+
+.controls-PeriodDialog-DateRange-dates-wrapper {
+   min-height: 0;
+   flex-shrink: 1;
+   flex-grow: 1;
+   border-bottom-right-radius: var(--border-radius_dialog);
+   z-index: 1;
+}
+
+.controls-PeriodDialog-DateRangeItem__months {
+   flex-shrink: 1;
+   position: sticky;
+   top: 0;
+   border-bottom-left-radius: var(--border-radius_dialog);
+   z-index: 1;
+}
+
+.controls-PeriodDialog-DateRangeItem__months-btn {
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+   box-sizing: border-box;
+   color: var(--monthnav_item_text-color_datePicker);
+   font-size: var(--monthnav_item_font-size_datePicker);
+   padding-left: calc(
+      var(--monthnav_item_padding-left_datePicker) - var(--border-thickness)
+   );
+   width: var(--monthnav_width_datePicker);
+   height: var(--monthnav_item_height_datePicker);
+   border: var(--border-thickness) solid transparent;
+   border-right-color: var(--monthnav_item_border-color_datePicker);
+   border-bottom-color: var(--monthnav_item_border-color_datePicker);
+   background-color: var(--monthnav_item_background-color_datePicker);
+}
+
+.controls-PeriodDialog-DateRangeItem__months-btn:active,
+.ws-is-hover .controls-PeriodDialog-DateRangeItem__months-btn:hover {
+   border-color: var(--monthnav_item_hover_border-color_datePicker);
+   background-color: var(--monthnav_item_hover_background-color_datePicker);
+}
+
+.controls-PeriodDialog-DateRangeItem__months-nextyearBtn {
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+   box-sizing: border-box;
+   height: var(--monthnav_year_height_datePicker);
+   padding-left: calc(
+      var(--monthnav_item_padding-left_datePicker) - var(--border-thickness)
+   );
+   font-weight: bold;
+   font-size: var(--monthnav_year_font-size_datePicker);
+   border: var(--border-thickness) solid transparent;
+   border-right-color: var(--monthnav_year_border-color_datePicker);
+   border-bottom-color: var(--monthnav_year_border-color_datePicker);
+   background-color: var(--monthnav_year_background-color_datePicker);
+
+   &:hover {
+      border-color: var(--monthnav_item_hover_border-color_datePicker);
+   }
+}
+
+.controls-PeriodDialog-DateRangeItem__months-nextyearBtn__currentYear {
+   color: var(--primary_text-color);
+}
+
+.controls-PeriodDialog-DateRangeItem__monthList__item {
+   margin: 0 var(--offset_l);
+}
+
+.ar {
+   .controls-PeriodDialog-DateRange-header-weekdays {
+      font-size: var(--font-size_m);
+   }
+}

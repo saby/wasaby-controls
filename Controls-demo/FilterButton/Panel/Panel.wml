@@ -1,0 +1,58 @@
+<div style="margin-left: 15px">
+
+   Шаблон для блока "Отбирается" задается через опцию itemTemplate
+   <div style="margin: 20px">
+      <Controls.filter:View attr:style="max-width: 200px;"
+                              attr:id="filter1"
+                              alignment="left"
+                              on:filterChanged="_filterChangedHandler()"
+                              detailPanelTemplateName="wml!Controls-demo/Layouts/SearchLayout/FilterButtonTemplate/vdomFilterButtonTemplate">
+         <ws:source>
+            <ws:Array>
+               <ws:Object name="FIO" value="Name" resetValue="" visibility="{{false}}"/>
+               <ws:Object name="firstName" value="123" resetValue="" visibility="{{false}}"/>
+               <ws:Object name="id" value="{{[1]}}" resetValue="{{[1]}}"
+                          source="{{sourceDropdown}}" visibility="{{false}}"/>
+               <ws:Object name="checked" value="{{true}}" resetValue="{{false}}" textValue="checked" visibility="{{false}}"/>
+               <ws:Object name="Test1" value="{{[1]}}" resetValue="{{[1]}}" textValue="Test 1" source="{{sourceDropdown}}"
+                          visibility="{{false}}"/>
+               <ws:Object name="Test2" value="" resetValue="{{true}}" textValue="Test 2" visibility="{{false}}"/>
+               <ws:Object name="Test3" value="" resetValue="{{true}}" textValue="Test 3" visibility="{{false}}"/>
+               <ws:Object name="Test4" value="" resetValue="{{true}}" textValue="Test 4" visibility="{{false}}"/>
+               <ws:Object name="Test5" value="" resetValue="{{true}}" textValue="Test 5" visibility="{{false}}"/>
+               <ws:Object name="Test6" value="123" resetValue="" textValue="Test 6" visibility="{{false}}"/>
+               <ws:Object name="Test7" value="{{_value}}" resetValue="{{1}}" textValue="Test 7" visibility="{{false}}"/>
+               <ws:Object name="Test8" value="{{true}}" resetValue="{{false}}" textValue="Test 8"/>
+            </ws:Array>
+         </ws:source>
+      </Controls.filter:View>
+   </div>
+
+   Шаблон для блока "Отбирается" задается через опцию template для каждого фильтра
+   <div style="margin: 20px">
+      <Controls.filter:View attr:style="max-width: 200px;"
+                              attr:id="filter2"
+                              alignment="left"
+                              on:filterChanged="_filterChangedHandler()"
+                              detailPanelTemplateName="wml!Controls-demo/FilterButton/Panel/resources/vdomFilterTemplate">
+         <ws:source>
+            <ws:Array>
+               <ws:Object name="genreKey" value="" textValue="key" resetValue="" visibility="{{false}}"
+                          template="wml!Controls-demo/FilterButton/Panel/resources/FIO"/>
+               <ws:Object name="FIO" value="Lala" textValue="fio" resetValue="reset" visibility="{{true}}"
+                          template="wml!Controls-demo/FilterButton/Panel/resources/FIO"/>
+               <ws:Object name="country" value="" textValue="country" resetValue="" visibility="{{false}}" source="{{sourceDropdown}}"
+                          template="wml!Controls-demo/FilterButton/Panel/resources/country"/>
+               <ws:Object name="genreTip" value="" textValue="tip" resetValue="" visibility="{{false}}"
+                          template="wml!Controls-demo/FilterButton/Panel/resources/FIO"/>
+            </ws:Array>
+         </ws:source>
+      </Controls.filter:View>
+   </div>
+
+   <div>
+      <Controls.input:Area
+              attr:id="area"
+              bind:value="_text"/>
+   </div>
+</div>

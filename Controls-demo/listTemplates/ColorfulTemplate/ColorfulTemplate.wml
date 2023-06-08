@@ -1,0 +1,32 @@
+<Controls.columns:View
+   attr:style="width: 908px;"
+   keyProperty="title" markerVisibility="hidden"
+   source="{{_source}}" roundBorder="{{_roundBorder}}"
+   initialWidth="{{908}}" minWidth="{{454}}" maxWidth="{{454}}">
+   <ws:itemTemplate>
+      <ws:partial
+         template="Controls/listTemplates:ColorfulTemplate"
+         imageProperty="photoUrl"
+         descriptionLines="{{2}}"
+         dominantColorProperty="dominant"
+         complementaryColorProperty="complementary"
+         dominantThemeColorProperty="dominantTheme"
+         title="{{itemTemplate.item.contents.title}}"
+         description="{{itemTemplate.item.contents.description}}">
+         <ws:afterImageTemplate>
+            <div>Шаблон, отображаемый после изображения и до заголовка</div>
+         </ws:afterImageTemplate>
+         <ws:afterTitleTemplate>
+            <div class="ws-flex-shrink-0">Дополнительный текст</div>
+         </ws:afterTitleTemplate>
+         <ws:additionalPanelTemplate>
+            <div class="controls-icon icon-Edit controls-icon_style-secondary controls-icon_size-m"></div>
+         </ws:additionalPanelTemplate>
+         <ws:footerTemplate>
+            <div class="controls-padding_left-m controls-padding_right-m controls-padding_bottom-m">
+               Шаблон подвала
+            </div>
+         </ws:footerTemplate>
+      </ws:partial>
+   </ws:itemTemplate>
+</Controls.columns:View>

@@ -1,0 +1,99 @@
+<Controls.dataSource:error.Container
+        attr:class="controls_calendar_theme-{{_options.theme}}"
+        name="errorContainer" viewConfig="{{_errorViewConfig}}">
+   <Controls.scroll:IntersectionObserverController
+         threshold="{{_threshold}}"
+         observerName="monthList"
+         on:intersect="_intersectHandler()">
+      <Controls.scroll:Container
+         name="scroll"
+         attr:class="MonthList-ScrollContainer"
+         scrollbarVisible="{{false}}"
+         attachLoadTopTriggerToNull="{{_options.attachLoadTopTriggerToNull}}"
+         attachLoadDownTriggerToNull="{{_options.attachLoadDownTriggerToNull}}"
+         topShadowVisibility="{{ _topShadowVisibility }}"
+         bottomShadowVisibility="{{ _bottomShadowVisibility }}"
+         shadowStyle="{{ _options.shadowStyle }}"
+         shadowMode="js"
+         on:scrollStateChanged="_scrollStateChangedHandler()"
+         on:customscroll="_scrollHandler()">
+         <Controls.list:View
+            sourceController="{{ _sourceController }}"
+            source="{{_viewSource}}"
+            sourceExt="{{_options.source}}"
+            viewMode="{{_options.viewMode}}"
+            name="months"
+            keyProperty="id"
+            markerVisibility="{{ _options.markerVisibility }}"
+            on:drawItems="_drawItemsHandler()"
+            markedKey="{{ _options.markedKey }}"
+            on:markedKeyChanged="_onMarkedKeyChanged()"
+            ws-tab-cycling="true"
+         >
+            <ws:virtualScrollConfig pageSize="{{_virtualPageSize}}" segmentSize="{{ _options.segmentSize }}"/>
+            <ws:itemPadding left="null" right="null" bottom="null" top="null"/>
+            <ws:navigation source="position" view="infinity">
+               <ws:sourceConfig limit="{{_options._limit}}" position="{{_startPositionId}}" direction="bothways" field="id"></ws:sourceConfig>
+            </ws:navigation>
+
+            <ws:itemTemplate>
+               <ws:if data="{{ _hasStartOrEndValue }}">
+                  <ws:partial template="Controls/list:ItemTemplate"
+                              scope="{{itemTemplate}}"
+                              highlightOnHover="{{ false }}"
+                              attr:class="controls-MonthList__item">
+                     <ws:contentTemplate>
+                        <Controls._calendar.MonthList.MonthListItem
+                                itemHeaderTemplate="{{ _itemHeaderTemplate }}"
+                                stubTemplate="{{ _options.stubTemplate }}"
+                                startValue="{{ _options.startValue }}"
+                                endValue="{{ _options.endValue }}"
+                                itemTemplate="{{ _itemTemplate }}"
+                                itemData="{{ itemTemplate.itemData }}"
+                                extData="{{ _extData }}"
+                                monthTemplate="{{ _options.monthTemplate }}"
+                                dayTemplate="{{ _options.dayTemplate }}"
+                                dayHeaderTemplate="{{ _options.dayHeaderTemplate }}"
+                                newMode="{{ _options.newMode }}"
+                                viewMode="{{ _options.viewMode }}"
+                        />
+                     </ws:contentTemplate>
+                  </ws:partial>
+               </ws:if>
+               <ws:else>
+                  <ws:partial template="Controls/list:ItemTemplate"
+                              marker="{{false}}"
+                              scope="{{itemTemplate}}"
+                              highlightOnHover="{{ false }}"
+                              attr:class="controls-MonthList__item">
+                     <ws:contentTemplate>
+                        <ws:if data="{{contentTemplate.item.isMarked()}}">
+                           <ws:partial template="Controls/markerComponent"
+                                       markerSize="content-xs"
+                                       className="controls-MonthList__marker"/>
+                        </ws:if>
+                        <ws:partial template="wml!Controls/_calendar/MonthList/MonthListItemTemplate"
+                                    itemTemplateScope="{{ itemTemplate }}"
+                                    itemData="{{ itemTemplate.itemData }}"
+                                    itemTemplate="{{_getTemplate(itemTemplate.itemData.item)}}"
+                                    extData="{{ _extData.getData(itemTemplate.itemData.item.id) }}"
+                                    startValue="{{_options.startValue}}"
+                                    endValue="{{_options.endValue}}"
+                                    monthTemplate="{{_options.monthTemplate}}"
+                                    dayTemplate="{{_options.dayTemplate}}"
+                                    dayHeaderTemplate="{{ _options.dayHeaderTemplate }}"
+                                    theme="{{ _options.theme }}"
+                                    newMode="{{ _options.newMode }}"
+                                    _formatMonth="{{_formatMonth}}"
+                                    _options="{{ _options.viewMode !== 'month' ? _options}}"
+                                    _getMonth="{{_getMonth}}"
+                                    _dateToDataString="{{ _dateToDataString }}"
+                        />
+                     </ws:contentTemplate>
+                  </ws:partial>
+               </ws:else>
+            </ws:itemTemplate>
+         </Controls.list:View>
+      </Controls.scroll:Container>
+   </Controls.scroll:IntersectionObserverController>
+</Controls.dataSource:error.Container>

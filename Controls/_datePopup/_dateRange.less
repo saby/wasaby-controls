@@ -1,0 +1,308 @@
+.controls-PeriodDialog-DateRange {
+   display: flex;
+   flex-direction: column;
+   flex-shrink: 1;
+   min-height: 1px;
+   position: relative;
+   user-select: none;
+}
+
+.controls-PeriodDialog-DateRange__header {
+   display: flex;
+   flex-shrink: 0;
+   align-items: center;
+   height: var(--calendar-header_height_datePicker);
+   border-bottom: var(--calendar-header_border-bottom-thickness_datePicker)
+      solid transparent;
+}
+
+.controls-PeriodDialog-DateRange__body {
+   display: flex;
+   flex-shrink: 1;
+   min-height: 1px;
+   align-items: stretch;
+}
+
+.controls-PeriodDialog-DateRange__year {
+   flex-shrink: 0;
+   box-sizing: border-box;
+   width: var(--monthnav_width_datePicker);
+   padding-left: var(--calendar-header_padding-left_datePicker);
+   color: var(--primary_text-color);
+   font-size: var(--current-year_font-size_datePicker);
+   font-weight: bold;
+}
+
+.controls-PeriodDialog-DateRange-header-weekdays {
+   display: flex;
+   flex-shrink: 1;
+   flex-grow: 1;
+   font-size: var(--font-size_xl);
+   padding-right: var(--monthlist_monthview_padding-right_datePicker);
+}
+
+.controls-PeriodDialog-DateRange-header-weekdays-workday,
+.controls-PeriodDialog-DateRange-header-weekdays-weekend {
+   flex-grow: 1;
+   text-align: center;
+}
+
+.controls-PeriodDialog-DateRange-header-weekdays-workday {
+   color: var(--weekdays_text-color_datePicker);
+}
+
+.controls-PeriodDialog-DateRange-header-weekdays-weekend {
+   color: var(--weekend_weekdays_text-color_datePicker);
+}
+
+.controls-PeriodDialog-DateRange-dates-wrapper {
+   min-height: 0;
+   flex-shrink: 1;
+   flex-grow: 1;
+   border-bottom-right-radius: var(--border-radius_dialog);
+   z-index: 1;
+}
+
+.controls-PeriodDialog-DateRangeItem {
+   display: flex;
+   align-items: flex-start;
+}
+
+.controls-PeriodDialog-DateRangeItem__separator {
+   position: relative;
+   height: var(--monthnav_year_height_datePicker);
+
+   &::after {
+      content: '';
+      position: absolute;
+      bottom: calc(var(--monthnav_year_height_datePicker) / 2);
+      right: calc(var(--monthview_width_monthSlider) / 14);
+      border-top: 1px solid var(--monthnav_year_separator_color_datePicker);
+   }
+}
+
+.controls-PeriodDialog-DateRangeItem__separator-sticky-support::after {
+   left: calc(
+      var(--monthnav_width_datePicker) + var(--monthview_width_monthSlider) / 14
+   );
+}
+
+.controls-PeriodDialog-DateRangeItem__separator-not-sticky-support::after {
+   left: calc(var(--monthview_width_monthSlider) / 14);
+}
+
+.controls-PeriodDialog-DateRangeItem__months {
+   flex-shrink: 1;
+   position: sticky;
+   top: 0;
+   border-bottom-left-radius: var(--border-radius_dialog);
+   z-index: 1;
+}
+
+.controls-PeriodDialog-DateRangeItem__months-btn {
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+   box-sizing: border-box;
+   color: var(--monthnav_item_text-color_datePicker);
+   font-size: var(--monthnav_item_font-size_datePicker);
+   padding-left: calc(
+      var(--monthnav_item_padding-left_datePicker) - var(--border-thickness)
+   );
+   width: var(--monthnav_width_datePicker);
+   height: var(--monthnav_item_height_datePicker);
+   border: var(--border-thickness) solid transparent;
+   border-right-color: var(--monthnav_item_border-color_datePicker);
+   border-bottom-color: var(--monthnav_item_border-color_datePicker);
+   background-color: var(--monthnav_item_background-color_datePicker);
+}
+
+.controls-PeriodDialog-DateRangeItem__months-btn:active,
+.ws-is-hover .controls-PeriodDialog-DateRangeItem__months-btn:hover {
+   border-color: var(--monthnav_item_hover_border-color_datePicker);
+   background-color: var(--monthnav_item_hover_background-color_datePicker);
+}
+
+.controls-PeriodDialog-DateRangeItem__months-nextyearBtn {
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+   box-sizing: border-box;
+   height: var(--monthnav_year_height_datePicker);
+   padding-left: calc(
+      var(--monthnav_item_padding-left_datePicker) - var(--border-thickness)
+   );
+   color: var(--primary_text-color);
+   font-size: var(--monthnav_year_font-size_datePicker);
+   border: var(--border-thickness) solid transparent;
+   border-right-color: var(--monthnav_year_border-color_datePicker);
+   border-bottom-color: var(--monthnav_year_border-color_datePicker);
+   background-color: var(--monthnav_year_background-color_datePicker);
+
+   &:hover {
+      border-color: var(--monthnav_item_hover_border-color_datePicker);
+   }
+}
+
+.controls-PeriodDialog-DateRangeItem__monthList {
+   padding-right: var(--monthlist_monthview_padding-right_datePicker);
+   padding-left: var(--monthlist_monthview_item_border-thickness_datePicker);
+}
+
+.controls-PeriodDialog-DateRangeItem__monthList_monthWrapper {
+   margin-bottom: var(--monthlist_monthview_item_border-thickness_datePicker);
+}
+
+.controls-PeriodDialog-DateRangeItem__monthList_title {
+   box-sizing: border-box;
+   text-align: center;
+   height: var(--monthlist_heading_height_datePicker);
+   line-height: var(--monthlist_heading_height_datePicker);
+   font-size: var(--monthlist_heading_font-size_datePicker);
+   font-weight: bold;
+   color: var(--monthlist_heading_text-color_datePicker);
+   border: var(--border-thickness) solid
+      var(--monthlist_heading_border-color_datePicker);
+   background-color: var(--monthlist_heading_background-color_datePicker);
+}
+
+.controls-PeriodDialog-DateRangeItem__monthList_title_selectable {
+   cursor: pointer;
+}
+
+.ws-is-hover {
+   .controls-PeriodDialog-DateRangeItem__monthList_title_selectable:hover {
+      border: var(--border-thickness) solid
+         var(--monthlist_heading_hover_border-color_datePicker);
+      background-color: var(
+         --monthlist_heading_hover_background-color_datePicker
+      );
+   }
+}
+
+.controls-PeriodDialog-DateRangeItem__item {
+   transform: translateZ(0);
+   will-change: transform;
+}
+
+.controls-DatePicker__item {
+   // Если в феврале будет ровно 4 недели, будет полностью видно сразу 2 месяца: Ферваль и Март. Из-за этого ломается
+   // логика работы маркера. Устанавливаем минимальную высоту равную 5 неделям.
+   min-height: calc(
+      var(--monthlist_monthview_item_height_datePicker) * 5 +
+         var(--monthlist_heading_height_datePicker)
+   );
+   width: var(--monthlist_monthview_width_datePicker);
+   height: auto;
+   margin-bottom: var(--border-thickness);
+}
+
+.controls-MonthViewVDOM__item_style-DateRangeItem {
+   font-size: var(--monthlist_monthview_item_font-size_datePicker);
+   min-width: var(--monthlist_monthview_item_width_datePicker);
+   min-height: var(--monthlist_monthview_item_height_datePicker);
+   margin-top: var(--monthlist_monthview_item_border-thickness_datePicker);
+   margin-left: var(--monthlist_monthview_item_border-thickness_datePicker);
+}
+
+.controls-MonthView__backgroundColor-currentMonthDay-selected-start_style-DateRangeItem,
+.controls-MonthView__backgroundColor-currentMonthDay-selected-end_style-DateRangeItem,
+.controls-MonthView__backgroundColor-currentMonthDay-selected-startend_style-DateRangeItem,
+.controls-MonthView__backgroundColor-currentMonthDay-selected-base_style-DateRangeItem,
+.controls-MonthView__backgroundColor-currentMonthDay-selected_style-DateRangeItem {
+   background: var(--rangeSelection_item_background-color_datePicker);
+}
+
+.ws-is-no-touch {
+   .controls-MonthView__border-currentMonthDay-unselected_style-DateRangeItem:hover {
+      outline: var(--monthlist_monthview_item_border-thickness_datePicker) solid
+         var(--monthlist_monthview_item_hover_border-color_datePicker);
+   }
+
+   .controls-MonthView__border-hover_style-DateRangeItem {
+      outline: var(--monthlist_monthview_item_border-thickness_datePicker) solid
+         var(--monthlist_monthview_item_hover_border-color_datePicker);
+   }
+
+   .controls-MonthView__backgroundColor-currentMonthDay-selected-start_style-DateRangeItem:hover,
+   .controls-MonthView__backgroundColor-currentMonthDay-selected-end_style-DateRangeItem:hover,
+   .controls-MonthView__backgroundColor-currentMonthDay-selected-startend_style-DateRangeItem:hover,
+   .controls-MonthView__backgroundColor-currentMonthDay-selected_style-DateRangeItem:hover {
+      background: var(--rangeSelection_item_hover_background-color_datePicker);
+   }
+
+   .controls-MonthView__backgroundColor-currentMonthDay-selected-hovered_style-DateRangeItem {
+      background: var(--rangeSelection_item_hover_background-color_datePicker);
+   }
+
+   .controls-MonthViewVDOM__item-selectedStartEnd.controls-MonthView__backgroundColor-currentMonthDay-selected_style-DateRangeItem:hover {
+      outline: var(
+            --monthlist_monthview_selection-border_single_thickness_datePicker
+         )
+         solid
+         var(--monthlist_monthview_selection-border_single_color_datePicker);
+   }
+}
+
+.controls-MonthView__textColor-currentMonthDay-workday-readOnly-dayNotAvailable_style-DateRangeItem,
+.controls-MonthView__textColor-currentMonthDay-weekend-readOnly-dayNotAvailable_style-DateRangeItem {
+   color: var(--readonly_color);
+}
+
+.controls-MonthView__textColor-currentMonthDay-weekend-readOnly_style-DateRangeItem,
+.controls-MonthView__textColor-currentMonthDay-weekend_style-DateRangeItem {
+   color: var(--monthlist_monthview_weekend_text-color_datePicker);
+}
+
+.controls-MonthView__textColor-currentMonthDay-workday-readOnly_style-DateRangeItem,
+.controls-MonthView__textColor-currentMonthDay-workday_style-DateRangeItem {
+   color: var(--monthlist_monthview_item_text-color_datePicker);
+}
+
+.controls-MonthView__backgroundColor-currentMonthDay-unselected_style-DateRangeItem {
+   background: var(--monthlist_monthview_item_background-color_datePicker);
+}
+
+.controls-MonthViewVDOM__item-today-background_style-DateRangeItem {
+   top: var(--monthlist_monthview_today_offset_datePicker);
+   bottom: var(--monthlist_monthview_today_offset_datePicker);
+   left: var(--monthlist_monthview_today_offset_datePicker);
+   right: var(--monthlist_monthview_today_offset_datePicker);
+   border-radius: var(--monthlist_monthview_today_border-radius_datePicker);
+   background-color: var(
+      --monthlist_monthview_today_background-color_datePicker
+   );
+   border: var(--monthlist_monthview_today_border-thickness_datePicker) solid
+      var(--monthlist_monthview_today_border-color_datePicker);
+}
+
+.controls-MonthView__textColor-currentMonthDay-today-readOnly_style-DateRangeItem,
+.controls-MonthView__textColor-currentMonthDay-today_style-DateRangeItem {
+   color: var(--monthlist_monthview_today_text-color_datePicker);
+}
+
+.controls-MonthView__item-border-start.controls-MonthView__backgroundColor-currentMonthDay-selected-base_style-DateRangeItem,
+.controls-MonthView__item-border-end.controls-MonthView__backgroundColor-currentMonthDay-selected-base_style-DateRangeItem,
+.controls-MonthView__backgroundColor-currentMonthDay-selected-end-unfinished_style-DateRangeItem,
+.controls-MonthView__backgroundColor-currentMonthDay-selected-start-unfinished_style-DateRangeItem,
+.controls-MonthView__backgroundColor-currentMonthDay-selected-startend-unfinished_style-DateRangeItem {
+   background: var(--rangeSelection_item_hover_background-color_datePicker);
+}
+
+// В safari есть проблема с корректным отображением ячеек, а именно длина получается дробная, из-за чего рамка немного обрезается
+// проблема повторяется на на всех устройствах. Причем эффект сильнее заметен при зуме
+// https://online.sbis.ru/opendoc.html?guid=e554382f-a1b5-47e7-971e-c8a358220802
+.ws-is-desktop-safari,
+.ws-is-mobile-safari {
+   .controls-DatePicker__item {
+      width: calc(
+         var(--monthlist_monthview_width_datePicker) + var(--border-thickness)
+      );
+   }
+}
+
+.ar {
+   .controls-PeriodDialog-DateRange-header-weekdays {
+      font-size: var(--font-size_m);
+   }
+}

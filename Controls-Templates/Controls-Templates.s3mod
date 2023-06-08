@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-Templates"
+           id="bfd15aec-af0f-40c9-b151-94601c5a0f71"
+           package="Wasaby"
+           responsible="Крайнов Д.О."
+           required="1"
+           version="1.00">
+  <description>Модуль содержит контролы шаблонов.</description>
+    <depends>
+      <module id="f6fdf353-3ab3-4dbb-8671-01c2b418bf0a" name="Controls"/>
+      <module id="af50caf5-f84b-4b81-a19c-6f6618372dbd" name="Controls-default-theme"/>
+    </depends>
+  <load_after/>
+  <parameters/>
+  <resources/>
+  <preload/>
+</ui_module>

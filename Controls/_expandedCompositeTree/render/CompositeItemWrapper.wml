@@ -1,0 +1,41 @@
+<ws:template name="tileView">
+    <ws:partial
+            attr:class="{{_getViewItemActionsClasses()}}"
+            template="{{ _options.renderTemplate }}"
+            scope="{{ _options.renderScope }}"
+            onActionsMouseEnter="{{_onItemActionsMouseEnter}}"
+            onActionMouseDown="{{_onItemActionMouseDown}}"
+            onActionMouseUp="{{_onItemActionMouseUp}}"
+            onActionMouseEnter="{{_onItemActionMouseEnter}}"
+            onActionMouseLeave="{{_onItemActionMouseLeave}}"
+            onActionClick="{{_onItemActionClick}}"
+            itemActionsTemplateMountedCallback="{{ _getItemActionsTemplateMountedCallback() }}"
+            itemActionsTemplateUnmountedCallback="{{ _getItemActionsTemplateUnmountedCallback() }}"
+            on:click="_onCompositeItemClick(_options.item)"
+            on:itemMouseEnter="_onItemMouseEnter()"
+            on:itemClick="_onItemClick()"
+            on:itemContextMenu="_onItemContextMenu()"
+            on:itemMouseDown="_onItemMouseDown()"
+            on:itemMouseUp="_onItemMouseUp()"
+            on:itemLongTap="_onItemLongTap()"
+            on:itemSwipe="_onItemSwipe()"/>
+</ws:template>
+
+<ws:if data="{{_options.renderScope.orientation === 'horizontal'}}">
+    <div attr:class="controls-ListView__itemV">
+        <Controls.scroll:Container
+                attr:style="z-index: 1"
+                scrollOrientation="horizontal"
+                smoothScrolling="{{true}}"
+                shadowMode="blur"
+                horizontalScrollMode="buttons"
+        >
+            <Controls.tile:Scroller>
+                <ws:partial template="tileView"/>
+            </Controls.tile:Scroller>
+        </Controls.scroll:Container>
+    </div>
+</ws:if>
+<ws:else>
+    <ws:partial template="tileView" attr:class="controls-ListView__itemV"/>
+</ws:else>

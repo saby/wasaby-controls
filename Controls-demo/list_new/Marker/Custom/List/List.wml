@@ -1,0 +1,25 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <Controls.list:View source="{{ _source }}">
+            <ws:itemTemplate>
+               <ws:partial template="Controls/list:ItemTemplate" scope="{{ itemTemplate }}" marker="{{false}}">
+                    <ws:contentTemplate>
+                        <div class="controlsDemo__flexColumn controlsDemo__list-item">
+                            <div class="controls-text-label controlsDemo__list-item__title">2 Jun th</div>
+                            <div>
+                                <p>5% премия</p>
+                                <p>Уровень 1</p>
+                                <p>Рабочие 39</p>
+                            </div>
+                            <ws:if data="{{contentTemplate.item.isMarked() }}">
+                                <ws:partial template="Controls/markerComponent"
+                                            markerSize="content-xs"
+                                            className="controlsDemo__list-item__marker-pt-m"/>
+                            </ws:if>
+                        </div>
+                    </ws:contentTemplate>
+                </ws:partial>
+            </ws:itemTemplate>
+        </Controls.list:View>
+    </div>
+</div>

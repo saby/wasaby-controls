@@ -1,0 +1,18 @@
+<div class="controls_spoiler_theme-{{_options.theme}} controls_toggle_theme-{{_options.theme}} controls-background-{{_options.backgroundStyle}}
+            controls-CutButton__container_background-{{ _options.backgroundStyle }}
+            controls-CutButton__container controls-CutButton__container_{{ _options.expanded ? 'extended' : 'notExtended'}}_size-{{ _options.iconSize }}
+            controls-CutButton__container_{{ _options.expanded ? 'extended' : 'notExtended'}} controls-CutButton__container_lineHeight-{{ _options.lineHeight }}
+            controls-CutButton__container_position-{{ _options.buttonPosition }}">
+    <div class="controls-CutButton controls-CutButton_background-{{ _options.backgroundStyle }} controls-CutButton_size-{{ _options.iconSize }}">
+        <Controls.ShowMoreButton
+                attr:class="controls-CutButton__separator"
+                iconSize="{{ _options.iconSize }}"
+                value="{{ _options.expanded }}"
+                readOnly="{{ _options.readOnly }}"
+                contrastBackground="{{ _options.contrastBackground }}"
+                on:click="_clickHandler()"
+                attr:tabIndex="-1"
+                on:valueChanged="_onValueHandler()"
+        />
+    </div>
+</div>

@@ -1,0 +1,61 @@
+@max-width_Markup_img_decorator: 538px;
+@min-width_Markup_img_decorator: 350px;
+@height_Markup_linkWrap_decorator: 50px;
+@LinkDecorator__gradient-startColor: rgba(246, 246, 246, 0);
+@LinkDecorator__gradient-endColor: rgba(246, 246, 246, 1);
+@padding-right_decoratedLink: 2px;
+@padding-bottom_decoratedLink: 4px;
+
+.LinkDecorator__wrap {
+   display: flex;
+   overflow: hidden;
+   max-width: 100%;
+   padding-right: @padding-right_decoratedLink;
+   padding-bottom: @padding-bottom_decoratedLink;
+}
+
+.LinkDecorator__linkWrap {
+   border: 1px solid #eaeaea;
+   border-left: 0;
+   display: inline-block;
+   line-height: 0;
+   position: relative;
+   min-height: @height_Markup_linkWrap_decorator;
+   max-width: 100%;
+   min-width: @min-width_Markup_img_decorator;
+   overflow: hidden;
+
+   &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 30px;
+      background: linear-gradient(
+         to right,
+         @LinkDecorator__gradient-startColor 0,
+         @LinkDecorator__gradient-endColor 100%
+      );
+   }
+
+   .LinkDecorator__image {
+      max-width: @max-width_Markup_img_decorator;
+      pointer-events: none;
+      margin: 0;
+   }
+}
+
+.LinkDecorator__emoji {
+   // Некоторые эмодзи определяются, как простые символы, из-за этого
+   // отрисовываются, как простые символы. Поэтому нужно явно указать все дефольные шрифты эмодзи.
+   // Подробнее: https://nolanlawson.com/2022/04/08/the-struggle-of-using-native-emoji-on-the-web/
+   // В будущем возможен переход на универсальные SVG для консистентного отображения на всех ОС.
+   font-family: 'Twemoji Mozilla', 'Apple Color Emoji', 'Segoe UI Emoji',
+      'Segoe UI Symbol', 'Noto Color Emoji', 'EmojiOne Color', 'Android Emoji',
+      sans-serif;
+   // При наследованном или стандартном значении
+   // высота эмодзи на одном из вышеуказанных шрифтов выходит больше, чем основной шрифт на сайте.
+   // Поэтому установим нулевую высоту для эмодзи.
+   line-height: 0;
+}

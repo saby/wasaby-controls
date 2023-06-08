@@ -1,0 +1,59 @@
+/*
+  Иерархия классов вьюхи. Избыточность нужна для уменьшения вложенности
+  в правилах, чтобы стили пересчитывались быстрее на мобильных устройствах.
+  .controls-GridReact__view_columnScroll & (_mobile | _desktop) > (
+    .controls-GridReact__view_columnScroll_scrollable & (
+      .controls-GridReact__view_columnScroll_desktop_scrollable ||
+      .controls-GridReact__view_columnScroll_mobile_scrollable
+    )
+    .controls-GridReact__view_columnScroll_fixed & (
+      .controls-GridReact__view_columnScroll_desktop_fixed ||
+      .controls-GridReact__view_columnScroll_mobile_fixed
+    )
+  )
+*/
+
+.js-controls-GridColumnScroll_fixed {
+   background-color: #fff;
+   z-index: 1;
+}
+
+.controls-GridReact__view_columnScroll_scrollable {
+   transform: translate3d(0, 0, 0) rotate(0) skewX(0) skewY(0) scaleX(1)
+      scaleY(1);
+   will-change: transform;
+}
+
+.controls-GridReact__view_columnScroll_mobile {
+   transform: translate3d(0, 0, 0) rotate(0) skewX(0) skewY(0) scaleX(1)
+      scaleY(1);
+   will-change: transform;
+   position: relative;
+}
+
+.controls-GridReact__view_columnScroll_fixed {
+   position: absolute;
+   left: 0;
+   top: 0;
+   z-index: 1;
+}
+
+.controls-GridReact__view_columnScroll_mobile_scrollable {
+   .js-controls-GridColumnScroll_fixed {
+      transform: translate3d(var(--columnScrollTransform), 0, 0);
+   }
+}
+
+.controls-GridReact__view_columnScroll_hydrationPreRender_desktop {
+   .controls-GridReact__view_columnScroll_scrollable {
+      position: absolute;
+      right: 0;
+   }
+
+   .controls-GridReact__view_columnScroll_fixed
+      .controls-GridReact__cell:not(.js-controls-GridColumnScroll_fixed) {
+      visibility: hidden;
+      z-index: -1;
+      pointer-events: none;
+   }
+}

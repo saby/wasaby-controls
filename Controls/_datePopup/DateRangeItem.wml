@@ -1,0 +1,40 @@
+<Controls.calendar:MonthView
+        attr:class="controls-DatePicker__item"
+        monthViewModel="{{_monthViewModel}}"
+        showCaption="{{true}}"
+        selectionType="{{_options.selectionType}}"
+        ranges="{{_options.ranges}}"
+        showWeekdays="{{false}}"
+        month="{{ _options.monthDate }}"
+        daysData="{{_options.extData[_options.monthDate.getMonth()]}}"
+        dateConstructor="{{_options.dateConstructor}}"
+        _date="{{ _options._date }}"
+        isDayAvailable="{{_options.isDayAvailable}}"
+
+        startValue="{{ _options.startValue }}"
+        endValue="{{ _options.endValue }}"
+
+        newMode="{{true}}"
+
+        selectionProcessing="{{_options.selectionProcessing}}"
+        selectionBaseValue="{{_options.selectionBaseValue}}"
+
+        hoveredStartValue="{{ _options.hoveredStartValue }}"
+        hoveredEndValue="{{ _options.hoveredEndValue }}"
+>
+    <ws:captionTemplate>
+        <div class="controls-PeriodDialog-DateRangeItem__monthList_title
+                     {{_options.monthSelectionEnabled && _isMonthEnabled(_options.monthDate)? ' controls-PeriodDialog-DateRangeItem__monthList_title_selectable
+                     controls-PeriodDialog-DateRangeItem__monthList_title_selectable'}}"
+             on:click="_monthCaptionClick(_options.monthDate, _options.monthDate.getMonth())">
+            {{ _options.formatMonth(_options.monthDate.getMonth()) }}
+        </div>
+    </ws:captionTemplate>
+    <ws:dayTemplate>
+        <ws:partial template="{{_options.dayTemplate}}"
+                    sizeStyle="DateRangeItem"
+                    fontColorStyle="DateRangeItem"
+                    backgroundStyle="DateRangeItem">
+        </ws:partial>
+    </ws:dayTemplate>
+</Controls.calendar:MonthView>

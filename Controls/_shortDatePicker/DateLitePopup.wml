@@ -1,0 +1,190 @@
+<ws:template name="headerContentTemplate">
+   <ws:partial template="{{ contentTemplate }}"
+               caption="{{ _caption }}"
+               startValue="{{ _options.startValue }}"
+               endValue="{{ _options.endValue }}"/>
+</ws:template>
+
+<div class="{{ !!_options.stickyPosition ? 'controls-PeriodLiteDialog__popup_with-closeButton'}}">
+ <Controls.popupTemplate:Sticky closeButtonVisible="{{ !!_options.stickyPosition }}"
+                                borderVisible="{{ false }}"
+                                stickyPosition="{{ _options.stickyPosition }}"
+                                closeButtonViewMode="external"
+                                allowAdaptive="{{ false }}"
+                                attr:class="controls-PeriodLiteDialog__shadow{{!!_options.stickyPosition ? ' controls-Popup__template'}}">
+<ws:bodyContentTemplate>
+   <Controls.dataSource:error.Container
+           name="errorContainer" viewConfig="{{_errorViewConfig}}">
+      <div class="controls_shortDatePicker_theme-{{_options.theme}}
+            controls_popupTemplate_theme-{{_options.theme}}
+            controls-PeriodLiteDialog
+            {{_getSizeCssClass('width')}} {{_options.popupClassName}}
+            {{!_isExpandedPopup ? _getSizeCssClass('height')}}">
+         <ws:if data="{{_options.chooseMonths || _options.chooseQuarters || _options.chooseHalfyears}}">
+            <ws:if data="{{ _options.headerContentTemplate }}">
+               <div class="controls-PeriodLiteDialog__header">
+                  <div class="controls-PeriodLiteDialog__currentValue"
+                       data-qa="controls-PeriodLiteDialog__currentValue"
+                       title="{[Текущий период]}"
+                       on:click="_onHeaderClick()">
+                     <ws:if data="{{ _isHeaderContentTemplateString }}">
+                        <Controls.Container.Async templateName="{{ _options.headerContentTemplate }}" errorCallback="{{_errorCallback}}">
+                           <ws:partial template="headerContentTemplate"
+                                       contentTemplate="{{ content.resolvedTemplate }}"
+                           />
+                        </Controls.Container.Async>
+                     </ws:if>
+                     <ws:else>
+                        <ws:partial template="headerContentTemplate"
+                                    contentTemplate="{{ _options.headerContentTemplate }}"
+                        />
+                     </ws:else>
+                  </div>
+               </div>
+            </ws:if>
+            <div class="controls-PeriodLiteDialog__bodyWrapper">
+               <div class="controls-PeriodLiteDialog__yearWrapper {{_getYearWrapperCssClasses()}}">
+                  <div
+                          class="controls-PeriodLiteDialog__year__container"
+                  >
+                     <div class="controls-PeriodLiteDialog__year {{ _isCurrentYear(_position.getFullYear()) ? 'controls-PeriodLiteDialog__year__currentYear' }}
+                           {{ _getYearCssClasses() }}"
+                          title="{{ _hovered ? _headerTitle }}"
+                          data-qa="controls-PeriodLiteDialog__year"
+                          on:mouseLeave="_mouseLeaveHandler()"
+                          on:mousemove="_onHeaderMouseEnter(_position.getFullYear())"
+                          on:touchstart="_onHeaderMouseEnter(_position.getFullYear())"
+                          on:mouseleave="_onHeaderMouseLeave()"
+                          on:touchmove="_onHeaderMouseLeave()"
+                          on:click="_onYearClick(_position.getFullYear())">
+                        {{ _position.getFullYear() }}
+                     </div>
+                  </div>
+                   <ws:if data="{{_options.arrowVisible}}">
+                       <Controls.buttons:ArrowButton viewMode="ghost" direction="left" attr:title="{[Предыдущий год]}"
+                                                     on:click="_changeYear (-1)"
+                                                     iconSize="st"
+                                                     readOnly="{{ _prevArrowButtonReadOnly }}"
+                                                     attr:class="controls-PeriodLiteDialog__arrowUp
+                                                      controls-PeriodLiteDialog__year-prev"
+                                                     attr:data-qa="controls-PeriodLiteDialog__arrowUp"/>
+                       <Controls.buttons:ArrowButton viewMode="ghost" direction="right" attr:title="{[Следующий год]}"
+                                                     on:click="_changeYear (1)"
+                                                     iconSize="st"
+                                                     readOnly="{{ _nextArrowButtonReadOnly }}"
+                                                     attr:class="controls-PeriodLiteDialog__arrowDown
+                                                      controls-PeriodLiteDialog__year-next"
+                                                     attr:data-qa="controls-PeriodLiteDialog__arrowDown"/>
+                   </ws:if>
+               </div>
+               <ws:partial
+                       shouldPositionBelow="{{ _options.shouldPositionBelow }}"
+                       on:wheel="_onWheelHandler()"
+                       on:mouseEnter="_mouseEnterHandler()"
+                       on:mouseLeave="_mouseLeaveHandler()"
+                       class="controls-PeriodLiteDialog__body
+                        {{_getListCssClasses()}} {{_getMonthListClasses()}}"
+                       isSelectedPeriod="{{ _isSelectedPeriod }}"
+                       startValue="{{ _options.startValue }}"
+                       endValue="{{ _options.endValue }}"
+                       errorCallback="{{ _errorCallback }}"
+                       _dateToDataString="{{_dateToDataString}}"
+                       _hovered="{{ _hovered }}"
+                       template="{{_defaultListTemplate}}"
+                       isCurrentYear="{{ _isCurrentYear }}"
+                       _options="{{_options}}"
+                       _shadowVisibility="{{ _shadowVisibility }}"
+                       stubTemplate="{{_options.stubTemplate}}"
+                       _displayedRanges="{{_displayedRanges}}"
+                       _position="{{_position}}"
+                       monthTemplate="{{_options.monthTemplate}}"
+                       _yearHovered="{{_yearHovered}}"
+                       _tabPressed="{{_tabPressed}}"
+                       formatDate="{{_formatDate}}"
+                       isExpandedPopup="{{ _isExpandedPopup }}"
+                       _getYearHeaderVisible="{{_getYearHeaderVisible}}"
+               />
+            </div>
+            <div class="controls-PeriodLiteDialog__footer controls-PeriodLiteDialog__{{_isExpandedPopup ? 'collapseButton' : 'expandButton'}}" data-qa="controls-PeriodLiteDialog__{{_isExpandedPopup ? 'collapseButton' : 'expandButton'}}">
+               <ws:if data="{{_isExpandButtonVisible && _options.stickyPosition }}">
+                  <Controls.ShowMoreButton attr:class="controls-PeriodLiteDialog__footer-points_wrapper"
+                                                caption="{{_isExpandedPopup ? rk('Свернуть') : rk('Развернуть')}}"
+                                                iconSize="l"
+                                                iconStyle="default"
+                                                viewMode="ghost"
+                                                contrastBackground="{{false}}"
+                                                value="{{_isExpandedPopup}}"
+                                                on:valueChanged="_expandPopup()"
+                                                iconMode="arrow"/>
+               </ws:if>
+            </div>
+         </ws:if>
+         <ws:if data="{{!_options.chooseMonths && !_options.chooseQuarters && !_options.chooseHalfyears}}">
+            <div class="controls-PeriodLiteDialog__years-next" data-qa="controls-PeriodLiteDialog__years-next">
+               <Controls.buttons:ArrowButton viewMode="ghost" direction="up" attr:title="{[Следующий год]}"
+                                             on:click="_changeYear(1)"
+                                             iconSize="st"
+                                             readOnly="{{ _nextArrowButtonReadOnly }}"
+                                             contrastBackground="{{ false }}"
+                                             attr:class="controls-PeriodLiteDialog__arrowUp"/>
+            </div>
+            <Controls.calendar:MonthList
+                    on:wheel="_onWheelHandler()"
+                    topShadowVisibility="{{ _shadowVisibility }}"
+                    bottomShadowVisibility="{{ _shadowVisibility }}"
+                    on:mouseEnter="_mouseEnterHandler()"
+                    on:mouseLeave="_mouseLeaveHandler()"
+                    attr:class="{{_getYearListClasses()}}"
+                    attr:data-qa="controls-PeriodLiteDialog__year-list"
+                    bind:position="_position"
+                    shadowStyle="shortDatePicker"
+                    order="desc"
+                    virtualPageSize="{{24}}"
+                    displayedRanges="{{_displayedRanges}}"
+                    attachLoadTopTriggerToNull="{{ false }}"
+                    attachLoadDownTriggerToNull="{{ false }}"
+                    _limit="{{_limit}}">
+               <ws:yearTemplate>
+                  <ws:partial template="Controls/calendar:MonthListYearTemplate">
+                     <ws:bodyTemplate>
+                        <div class="controls-PeriodLiteDialog__body controls-PeriodLiteDialog-item-yearList">
+                           <div  class="controls-PeriodLiteDialog-item-yearList-years"
+                                 on:mouseenter="_onYearMouseEnter(yearTemplate.date.getFullYear())"
+                                 on:mouseleave="_onYearMouseLeave()"
+                                 on:blur="_onBlurYear()"
+                                 on:click="_onYearClick(yearTemplate.date.getFullYear())">
+                              <!--                           controls-PeriodLiteDialog__tabPressed-{{_tabPressed}} - если использовать переменную на шаблоне
+                                                             и использовать её в tabindex, то реактивности не будет, поэтому используем эту переменную в классе-->
+                              <ws:if data="{{ (yearTemplate.date.getFullYear() === _yearHovered || (_isSelectedPeriod(yearTemplate.date, 'year') && !_hovered))
+                                    && !_options.readOnly }}">
+                                 <div class="controls-PeriodLiteDialog__item-background-hovered"></div>
+                              </ws:if>
+                              <div class="controls-PeriodLiteDialog__tabPressed-{{_tabPressed}} controls-PeriodLiteDialog__vLayoutItem-caption
+                                 {{_getYearItemCssClasses(yearTemplate.date.getFullYear())}}
+                                 controls-PeriodLiteDialog__yearList-year"
+                                 data-qa="controls-PeriodLiteDialog__item-caption"
+                                   tabindex="{{_getTabindex(yearTemplate.date.getFullYear())}}"
+                                   on:keyup="_keyUpYearHandler(yearTemplate.date.getFullYear())">
+                                 {{ yearTemplate.date.getFullYear() }}
+                              </div>
+                           </div>
+                        </div>
+                     </ws:bodyTemplate>
+                  </ws:partial>
+               </ws:yearTemplate>
+            </Controls.calendar:MonthList>
+            <div class="controls-PeriodLiteDialog__years-prev" data-qa="controls-PeriodLiteDialog__years-prev">
+               <Controls.buttons:ArrowButton viewMode="ghost" direction="down" attr:title="{[Предыдущий год]}"
+                                             on:click="_changeYear(-1)"
+                                             iconSize="st"
+                                             readOnly="{{ _prevArrowButtonReadOnly }}"
+                                             contrastBackground="{{ false }}"
+                                             attr:class="controls-PeriodLiteDialog__arrowDown"
+                                             attr:data-qa="controls-PeriodLiteDialog__arrowDown"/>
+            </div>
+         </ws:if>
+      </div>
+   </Controls.dataSource:error.Container>
+</ws:bodyContentTemplate>
+</Controls.popupTemplate:Sticky>
+</div>

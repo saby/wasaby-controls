@@ -1,0 +1,17 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <Controls.browser:Browser source="{{_viewSource}}"
+                              parentProperty="parent"
+                              nodeProperty="type"
+                              searchParam="title">
+        <div class="ws-fragment">
+            <Controls.search:InputContainer>
+                <Controls.search:Input/>
+            </Controls.search:InputContainer>
+            <Controls.scroll:Container attr:class="controlsDemo__height300">
+                <Controls.list:Container>
+                    <Controls.tree:View multiSelectVisibility="visible" feature1188089336="{{true}}"/>
+                </Controls.list:Container>
+            </Controls.scroll:Container>
+        </div>
+    </Controls.browser:Browser>
+</div>

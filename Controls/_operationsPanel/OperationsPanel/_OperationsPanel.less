@@ -1,0 +1,77 @@
+.controls-operationsPanelV {
+   display: flex;
+   align-items: baseline;
+   width: 100%;
+   user-select: none;
+   overflow: hidden;
+   white-space: nowrap;
+   position: relative;
+   flex-shrink: 0;
+}
+
+.controls-operationsPanelV_contrast {
+   border-radius: var(--border-radius_s);
+   box-shadow: var(--shadow_c);
+}
+
+.controls-operationsPanelV_notInitialized {
+   /*
+   We have to set height: 0 on the parent, because we set the height of the actions on the first render but don't actually want to show them yet (because they're not ready).
+   See comment to .controls-operationsPanelV__actions_notInitialized to understand why the height is set on the actions on the first render.
+   */
+   height: 0;
+}
+
+.controls-operationsPanelV_initialized {
+   background-color: var(--background-color_operationsPanel);
+   height: var(--height_operationsPanel);
+}
+
+.controls-operationsPanelV__toolbar {
+   width: 100%;
+}
+
+.controls-operationsPanelV__rightTemplate {
+   flex-shrink: 0;
+   margin: 0 var(--padding-right_operationsPanel) 0 0;
+}
+
+.controls-operationsPanelV__actions {
+   display: inline-flex;
+   align-items: baseline;
+   width: 100%;
+   height: var(--height_operationsPanel);
+   line-height: var(--height_operationsPanel);
+   flex-shrink: 1;
+   overflow: hidden;
+   padding-left: var(--offset_xs);
+   margin: 0 var(--toolbar_padding-right_operationsPanel) 0
+      var(--toolbar_padding-left_operationsPanel);
+}
+
+// баг сафари, после перерисовок кнопок тулбара в ПМО остаются артефакты или дублируются иконки
+.ws-is-mobile-safari .controls-operationsPanelV__actions {
+   transform: translateX(0);
+}
+
+.controls-operationsPanelV__actions_notInitialized {
+   /*
+   In IE calculated width of the flex element is 0 if the calculated height of the element is 0.
+   But if we set the height on the element it works as expected
+   http://jsfiddle.net/bnycf4a9/
+   */
+   height: 1px;
+}
+
+.controls-operationsPanelNew__closeButton {
+   margin-right: var(--offset_xs);
+   align-self: center;
+}
+
+.ws-is-hover .controls-operationsPanelNew__closeButton:hover {
+   cursor: pointer;
+}
+
+.controls-operationsPanelV__multiSelector_separator_right {
+   margin: 0 var(--offset_xs) 0 var(--offset_xs);
+}

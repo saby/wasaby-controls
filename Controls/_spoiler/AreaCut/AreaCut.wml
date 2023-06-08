@@ -1,0 +1,45 @@
+<ws:partial template="{{ _baseCutTemplate }}" attr:class="controls-AreaCut__container">
+    <ws:content>
+        <div class="controls-AreaCut controls-AreaCut_{{ _options.readOnly ? 'readOnly' : 'active' }} {{ _options.borderVisible ? 'controls-AreaCut__border' }}
+            controls-AreaCut_{{ _expanded ? 'expanded' : 'notExpanded'}}
+            controls-AreaCut_lineHeight-{{ _options.lineHeight }}
+            {{ _isPaddingVisible ? ('controls-AreaCut_lineHeight-' + _options.lineHeight + '_'+ (_expanded ? 'expanded' : 'notExpanded')) : ''}}
+            controls-AreaCut_lineHeight-{{_options.lineHeight}}_lines-{{_lines}}_maxHeight"
+             name="wrapper">
+            <div name="content" attr:class="controls-Cut__content">
+                <ws:partial template="{{ _options.content }}"
+                            scope="{{ _options }}"
+                            value="{{ _value }}"
+                            on:valueChanged="_valueChangedHandler()"
+                />
+            </div>
+            <ws:if data="{{_options.lines !== null && (_firstEditPassed || _options.readOnly) }}">
+                <ws:if data="{{ !_expanded }}">
+                    <ws:partial template="{{ content.notExpandedButtonTemplate }}"
+                                cutVisible="{{ _cutVisible }}"
+                                isIE="{{ _isIE }}"
+                                scope="{{ _options }}"
+                                readOnly="{{ false }}"
+                                expanded="{{ false }}"
+                    />
+                </ws:if>
+                <ws:else>
+                    <div class="controls-AreaCut__ellipsisWrapper{{ _expanded ? '_expanded' }}
+            controls-AreaCut__ellipsisWrapper_lineHeight-{{ _options.lineHeight }}
+            controls-AreaCut__ellipsisWrapper_lineHeight-{{ _options.lineHeight }}_lines-{{ _options.lines }}
+            controls-AreaCut__ellipsisWrapper_{{_expanded ? 'expanded' : 'notExpanded'}}_{{ _options.readOnly ? 'readOnly' : 'active' }}
+            controls-AreaCut__ellipsisWrapper_{{ _expanded ? 'expanded' : 'notExpanded' }}_lineHeight-{{ _options.lineHeight }}
+            controls-AreaCut__ellipsisWrapper{{ _expanded ? '_expanded_lineHeight-' +  _options.lineHeight + '_lines-' + _options.lines}}
+               controls-AreaCut_lineHeight-{{_options.lineHeight}}_lines-{{_lines}}_height"
+                         on:mousedown="_mousedownHandler()">
+                        <ws:partial template="{{ content.expandedButtonTemplate }}"
+                                    scope="{{ _options }}"
+                                    readOnly="{{ false }}"
+                                    expanded="{{ true }}"
+                        />
+                    </div>
+                </ws:else>
+            </ws:if>
+        </div>
+    </ws:content>
+</ws:partial>

@@ -1,0 +1,188 @@
+/* stylelint-disable saby/theme-colors */
+.controls-background-dominant {
+   background-color: var(--dominant-color_zen);
+}
+
+.controls-background-complementary {
+   background-color: var(--complementary-color_zen);
+}
+
+.controls-Scroll__background-Shadow_style-dominant {
+   background-image: linear-gradient(
+         var(--dominant-color_zen) 25%,
+         rgba(255, 255, 255, 0)
+      ),
+      linear-gradient(rgba(255, 255, 255, 0), var(--dominant-color_zen) 75%),
+      linear-gradient(
+         to bottom,
+         var(--shadow_start-color_scroll),
+         var(--shadow_end-color_scroll)
+      ),
+      linear-gradient(
+         to top,
+         var(--shadow_start-color_scroll),
+         var(--shadow_end-color_scroll)
+      );
+}
+
+.controls-BaseCut__shadow_background-dominant {
+   background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      var(--dominant-color_zen) 100%
+   );
+}
+
+.controls-CutButton__container_background-dominant {
+   background: var(--dominant-color_zen);
+}
+
+// При использовании старой страницы, может возникнуть ситуация, когда zen переменные загрузятся раньше основных.
+// Из-за чего тема не будет работать, поэтому увеличиваем вес селектора
+// https://online.sbis.ru/opendoc.html?guid=0d5ee84b-9eb9-4760-8a32-5d76af2bd754
+.controls-ZenWrapper.controls_themes__wrapper {
+   --text-color: rgba(var(--mono_zen_rgb));
+   --hover_text-color: rgba(var(--mono_zen_rgb), 0.8);
+   --unaccented_background-color: rgba(var(--mono_zen_rgb), 0.1);
+   --icon-color: rgba(var(--mono_zen_rgb));
+   --label_text-color: rgba(var(--mono_zen_rgb), 0.8);
+   --link_text-color: rgb(var(--mono_zen_rgb));
+   --unaccented_text-color: rgba(var(--mono_zen_rgb), 0.8);
+   --unaccented_icon-color: rgba(var(--mono_zen_rgb), 0.8);
+   --unaccented_border-color: rgba(var(--mono_zen_rgb), 0.1);
+   --unaccented_hover_border-color: rgba(var(--mono_zen_rgb), 0.3);
+   --unaccented_hover_text-color: rgba(var(--mono_zen_rgb), 0.8);
+   --unaccented_hover_icon-color: rgba(var(--mono_zen_rgb), 0.8);
+   --readonly_color: rgba(var(--mono_zen_rgb), 0.3);
+   --readonly_icon-color: rgba(var(--mono_zen_rgb), 0.3);
+   --separator_color: rgba(var(--mono_zen_rgb), 0.1);
+   --secondary_text-color: rgb(var(--mono_zen_rgb));
+   --secondary_hover_text-color: rgb(var(--mono_zen_rgb));
+   --secondary_icon-color: rgb(var(--mono_zen_rgb));
+   --secondary_hover_icon-color: rgb(var(--mono_zen_rgb));
+   --link_text-color_inline: rgb(var(--mono_zen_rgb));
+   --link_hover_text-color: rgba(var(--mono_zen_rgb), 0.8);
+   --link_hover_text-color_inline: rgba(var(--mono_zen_rgb), 0.8);
+   --label_hover_text-color: rgba(var(--mono_zen_rgb), 0.8);
+   --label_hover_icon-color: rgba(var(--mono_zen_rgb), 0.8);
+   --pale_contrast_background-color: rgba(var(--mono_zen_rgb), 0.2);
+   --pale_border-color: transparent;
+   --pale_hover_contrast_background-color: rgba(var(--dominant_zen_rgb), 0.8);
+   --pale_active_contrast_background-color: rgba(var(--dominant_zen_rgb), 1);
+   --text-color_button: rgb(var(--mono_zen_rgb));
+   --primary_background-color_button: transparent;
+   --primary_hover_background-color_button: transparent;
+   --readonly_background-color_button: transparent;
+   --border-color_hover_button_toolButton: transparent;
+   --readonly_border-color_button_functionalButton: rgba(
+      var(--mono_zen_rgb),
+      0.3
+   );
+   --background-color_button_toolButton: rgb(var(--dominant_zen_rgb));
+   --readonly_border-color_button_toolButton: rgba(var(--mono_zen_rgb), 0.3);
+   --readOnly_text-color_decorator_fraction: rgba(var(--mono_zen_rgb), 0.3);
+   --node_expander_icon-color_treeGrid: rgb(var(--mono_zen_rgb));
+   --item_shadow-color_columns: rgba(var(--mono_zen_rgb), 0.15);
+   --item_hover_shadow-color_columns: rgba(var(--mono_zen_rgb), 0.45);
+   --secondary_hover_text-color_heading: rgba(var(--mono_zen_rgb), 0.8);
+   --icon-color_BigSeparator: rgba(var(--mono_zen_rgb), 0.5);
+   --secondary_contrast_hover_background-color_toggleButton_pushButton: rgba(
+      var(--mono_zen_rgb),
+      0.3
+   );
+   --secondary_contrast_toggled_background-color_toggleButton_pushButton: rgba(
+      var(--mono_zen_rgb),
+      0.2
+   );
+   --hover_icon-color_BigSeparator: rgba(var(--mono_zen_rgb), 0.8);
+   --border-color: rgba(var(--mono_zen_rgb), 0.1);
+   --placeholder-color_inputText: rgba(var(--mono_zen_rgb), 0.4);
+   --marker_hover_color_tabs: rgb(var(--mono_zen_rgb));
+   --unread_text-color: #cc3d00;
+
+   .controls-search {
+      --background-color_searchInput: transparent;
+      --border-color_searchInput: var(--unaccented_border-color);
+      --border-color_hover_searchInput: rgba(var(--mono_zen_rgb), 0.3);
+      --border-color_focus_searchInput: rgba(var(--mono_zen_rgb), 0.3);
+      --background-color_contrast_searchInput: rgba(var(--mono_zen_rgb), 0.1);
+      --border-color_contrast_searchInput: var(--border-color_searchInput);
+      --border-color_contrast_hover_searchInput: var(
+         --border-color_hover_searchInput
+      );
+      --border-color_contrast_focus_searchInput: var(
+         --border-color_focus_searchInput
+      );
+   }
+}
+
+.controls-ZenWrapper.controls-ZenWrapper_complementary {
+   --primary_text-color: rgb(var(--complementary_zen_rgb));
+   --primary_hover_text-color: rgba(var(--complementary_zen_rgb), 0.8);
+   --primary_icon-color: rgb(var(--complementary_zen_rgb));
+   --primary_hover_icon-color: rgba(var(--complementary_zen_rgb), 0.8);
+   --primary_border-color: rgb(var(--complementary_zen_rgb));
+   --primary_hover_border-color: rgba(var(--complementary_zen_rgb), 0.3);
+   --primary_hover_same_background-color: rgba(
+      var(--complementary_zen_rgb),
+      0.3
+   );
+   --primary_hover_background-color: rgba(var(--complementary_zen_rgb), 0.3);
+   --primary_active_same_background-color: rgba(
+      var(--complementary_zen_rgb),
+      0.6
+   );
+   --primary_contrast_background-color: rgb(var(--complementary_zen_rgb));
+   --primary_hover_contrast_background-color: rgba(
+      var(--complementary_zen_rgb),
+      0.8
+   );
+   --primary_active_contrast_background-color: rgba(
+      var(--complementary_zen_rgb),
+      0.6
+   );
+   --background-color_hover_button_toolButton: rgb(
+      var(--complementary_zen_rgb)
+   );
+   --text_background-color_decoratorHighlight: rgb(
+      var(--complementary_zen_rgb)
+   );
+   --primary_hover_text-color_heading: rgba(var(--complementary_zen_rgb), 0.8);
+}
+
+.controls-ZenWrapper.controls-ZenWrapper__light {
+   --contrast_text-color: #fff;
+   --contrast_icon-color: #fff;
+   --hover_background-color: rgba(var(--mono_zen_rgb), 0.05);
+   --icon_container_background_color_BigSeparator: rgba(
+      var(--mono_zen_rgb),
+      0.1
+   );
+   --readonly_border-color: rgba(var(--mono_zen_rgb), 0.2);
+   --translucent_background-color: rgba(0, 0, 0, 0.2);
+   --translucent_hover_background-color: rgba(0, 0, 0, 0.25);
+   --translucent_active_background-color: rgba(0, 0, 0, 0.3);
+   --translucent_background-color_light: rgba(255, 255, 255, 0.35);
+   --translucent_hover_background-color_light: rgba(255, 255, 255, 0.5);
+   --translucent_active_background-color_light: rgba(255, 255, 255, 0.7);
+}
+
+.controls-ZenWrapper.controls-ZenWrapper__dark {
+   --contrast_text-color: #000;
+   --contrast_icon-color: #000;
+   --hover_background-color: rgba(var(--mono_zen_rgb), 0.1);
+   --icon_container_background_color_BigSeparator: rgba(
+      var(--mono_zen_rgb),
+      0.2
+   );
+   --readonly_border-color: rgba(var(--mono_zen_rgb), 0.4);
+   --translucent_background-color_light: rgba(205, 205, 205, 0.9);
+   --translucent_hover_background-color_light: rgba(196, 196, 196, 0.9);
+   --translucent_active_background-color_light: rgba(205, 205, 205, 0.9);
+   --translucent_background-color: rgba(255, 255, 255, 0.35);
+   --translucent_hover_background-color: rgba(255, 255, 255, 0.5);
+   --translucent_active_background-color: rgba(255, 255, 255, 0.7);
+   --translucent_background-color_button: var(--translucent_background-color);
+   --translucent_hover_background-color_button: var(--translucent_hover_background-color);
+   --translucent_active_background-color_button: var(--translucent_active_background-color);
+}

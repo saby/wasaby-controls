@@ -1,0 +1,25 @@
+<div class="controlsDemo_fixedWidth300">
+    <Controls.checkbox:Checkbox bind:value="_unaccentedBackground" caption="Неакцентный фон"/>
+    <Controls.list:View
+            keyProperty="id"
+            source="{{_source}}">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/list:ItemTemplate" backgroundColorStyle="{{ _unaccentedBackground ? 'unaccented' : 'default' }}">
+                <ws:contentTemplate>
+                    <Controls.spoiler:Cut backgroundStyle="{{ _unaccentedBackground ? 'unaccented' : 'default' }}" attr:data-qa="controls-spoilerCut__exceed_maxHeight" attr:style="width: 200px;" maxHeight="65">
+                        <ws:content>
+                            <Controls.buttons:Button caption="Кнопка"/>
+                            <Controls.buttons:Button caption="Кнопка"/>
+                            <Controls.buttons:Button caption="Кнопка"/>
+                            <Controls.buttons:Button caption="Кнопка"/>
+                            <Controls.buttons:Button caption="Кнопка"/>
+                            <Controls.buttons:Button caption="Кнопка"/>
+                            <Controls.buttons:Button caption="Кнопка"/>
+                            <Controls.buttons:Button caption="Кнопка"/>
+                        </ws:content>
+                    </Controls.spoiler:Cut>
+                </ws:contentTemplate>
+            </ws:partial>
+        </ws:itemTemplate>
+    </Controls.list:View>
+</div>

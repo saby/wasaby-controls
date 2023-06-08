@@ -1,0 +1,58 @@
+<ws:template name="SCROLLBAR_CONTENT">
+	<ws:if data="{{ !_options.mode || _options.mode === 'scrollbar' }}">
+		<Controls.scrollbar:Scrollbar name="scrollBar"
+									attr:style="position: absolute; top: 0; left: 0; right: 0; z-index: 6; {{_options.stickyHeader ? 'width: inherit;'}}"
+									attr:class="{{ !_options.canHorizontalScroll ? 'ws-hidden' }} js-controls-DragScroll__notDraggable js-controls-ColumnScroll__thumb"
+									bind:position="_position"
+									contentSize="{{ _options.contentWidth - (_options.stickyHeader ? _options.fixedWidth : 0) }}"
+									direction="horizontal"
+                                    thumbThickness="s"
+                                    paddings="{{_scrollbarPadding}}"
+                                    thumbStyle="unaccented"
+									shouldSetMarginTop="{{ shouldSetMarginTop }}"
+									trackVisible="{{ true }}"
+									on:positionChanged="_onPositionChanged()"/>
+	</ws:if>
+	<ws:else data="{{ _options.mode === 'arrows' && _options.contentWidth > _options.viewportWidth}}">
+		<div class="controls-ColumnScroll__scrollToButtons">
+			<Controls.buttons:ArrowButton direction="left"
+										  contrastBackground="{{ true }}"
+										  attr:class="controls-ColumnScroll__scrollToButton_left"
+										  on:click="_onArrowClick('left')"
+										  readOnly="{{ !_isArrowActive('left') }}"/>
+
+			<Controls.buttons:ArrowButton direction="right"
+										  contrastBackground="{{ true }}"
+										  on:click="_onArrowClick('right')"
+										  readOnly="{{ !_isArrowActive('right') }}"/>
+		</div>
+	</ws:else>
+</ws:template>
+
+<ws:if data="{{ _options.stickyHeader }}">
+	<Controls.stickyBlock:StickyGroup position="top">
+		<div style="display: contents;">
+			<Controls.stickyBlock:StickyGroupedBlock mode="stackable"
+										 if="{{ _options.stickyColumnsCount }}"
+										 attr:style="{{ _getStickiedPartStyles(_options) }}"
+										 backgroundStyle="{{ _options.backgroundStyle }}"
+										 position="left"
+										 shadowVisibility="hidden">
+				<div class="ws-hidden"></div>
+			</Controls.stickyBlock:StickyGroupedBlock>
+
+			<Controls.stickyBlock:StickyGroupedBlock mode="stackable"
+										 attr:style="{{ _getScrollablePartStyles(_options) }}"
+										 backgroundStyle="{{ _options.backgroundStyle }}"
+										 position="left"
+										 shadowVisibility="hidden">
+				<div style="width: {{_options.scrollableWidth}}px; position: absolute;">
+					<ws:partial template="SCROLLBAR_CONTENT" shouldSetMarginTop="{{ true }}"/>
+				</div>
+			</Controls.stickyBlock:StickyGroupedBlock>
+		</div>
+	</Controls.stickyBlock:StickyGroup>
+</ws:if>
+<ws:else>
+	<ws:partial template="SCROLLBAR_CONTENT" shouldSetMarginTop="{{ false }}"/>
+</ws:else>

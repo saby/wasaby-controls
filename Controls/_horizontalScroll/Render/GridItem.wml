@@ -1,0 +1,110 @@
+<ws:template name="COLUMN">
+	<div if="{{ gridColumn.Markable && gridColumn.shouldDisplayMarker(marker) }}"
+		 class="{{ gridColumn.getMarkerClasses(markerSize, itemPadding) }}"
+		 attr:data-qa="marker"></div>
+	<!-- TODO избавиться от прокидывания _onBreadcrumbClick https://online.sbis.ru/doc/0649e69a-d507-4024-9f99-c70205f535ef-->
+	<ws:partial template="{{ gridColumn.getTemplate() }}"
+				scope="{{ gridColumn.config.templateOptions }}"
+				attr:key="{{ gridColumn.getInstanceId() }}"
+				itemContents="{{ (item || itemData).contents }}"
+				column="{{ gridColumn }}"
+				item="{{ item || itemData }}"
+				itemData="{{ gridColumn }}"
+				gridColumn="{{ gridColumn }}"
+				colData="{{ gridColumn }}"
+				theme="{{ theme }}"
+				style="{{ style }}"
+				cursor="{{ cursor }}"
+				containerSize="{{ containerSize }}"
+				backgroundColorStyle="{{ backgroundColorStyle }}"
+				backgroundStyle="{{ backgroundStyle }}"
+				contrastBackground="{{ (item || itemData).isMultiSelectContrastBackground() }}"
+				highlightOnHover="{{ highlightOnHover }}"
+				itemActionsClass="{{ itemActionsClass }}"
+				templateHighlightOnHover="{{ templateHighlightOnHover }}"
+				hoverBackgroundStyle="{{ hoverBackgroundStyle }}"
+				fontColorStyle="{{ fontColorStyle }}"
+				fontSize="{{ fontSize }}"
+				fontWeight="{{ fontWeight }}"
+				horizontalPadding="{{style === 'master' ? '3xs' : horizontalPadding}}"
+				tagTemplate="{{ gridColumn.TagCell ? tagTemplate : undefined }}"
+				tagStyle="{{ gridColumn.TagCell ? tagStyle : undefined }}"
+				_onBreadcrumbClick="{{_onBreadcrumbClick}}"
+				_onBreadcrumbItemClick="{{_onBreadcrumbItemClick}}"
+
+				_isVisibleCheckbox="{{ (item || itemData).isVisibleCheckbox() }}"
+				_itemMultiSelectClasses="{{ (item || itemData).getMultiSelectClasses(backgroundColorStyle, cursor, highlightOnHover, itemPadding, baseline) }}"
+				_isReadonlyCheckbox="{{ (item || itemData).isReadonlyCheckbox() }}"
+				_isSelected="{{ (item || itemData).isSelected() }}"
+				_multiSelectContrastBackground="{{ (item || itemData).isMultiSelectContrastBackground() }}">
+		<ws:multiSelectTemplate>
+			<ws:partial template="{{ (item || itemData).getMultiSelectTemplate() }}"
+						contrastBackground="{{ (item || itemData).isMultiSelectContrastBackground() }}"
+
+						_isVisibleCheckbox="{{ (item || itemData).isVisibleCheckbox() }}"
+						_itemMultiSelectClasses="{{ (item || itemData).getMultiSelectClasses(backgroundColorStyle, cursor, highlightOnHover, itemPadding, baseline) }}"
+						_isReadonlyCheckbox="{{ (item || itemData).isReadonlyCheckbox() }}"
+						_isSelected="{{ (item || itemData).isSelected() }}"
+			/>
+		</ws:multiSelectTemplate>
+	</ws:partial>
+
+	<ws:if data="{{ gridColumn.SupportItemActions && gridColumn.shouldDisplayItemActions() }}">
+		<ws:if data="{{ (item || itemData).isSwiped() && itemActionsPosition !== 'outside' }}">
+			<ws:partial template="{{ swipeTemplate }}"
+						highlightOnHover="{{ highlightOnHover }}"/>
+		</ws:if>
+		<ws:else data="{{ itemActionsPosition !== 'custom' }}">
+			<ws:partial template="{{ itemActionsTemplate }}"
+						itemData="{{ item || itemData }}"
+						itemActionsClass="{{ itemActionsClass }}"
+						highlightOnHover="{{ highlightOnHover }}"/>
+		</ws:else>
+	</ws:if>
+
+	<ws:if data="{{ (gridColumn || itemData).Draggable && (gridColumn || itemData).shouldDisplayDraggingCounter() }}">
+		<span class="controls-ListView__item-dragging-counter">{{ (item || itemData).getDraggedItemsCountString() }}</span>
+	</ws:if>
+</ws:template>
+
+<ws:if data="{{ (item || itemData).isFullGridSupport() }}">
+	<Controls.stickyBlock:StickyGroup position="{{(item || itemData).getStickyGroupPosition(stickyCallback)}}">
+		<div attr:data-qa="{{ (item || itemData).listElementName }}"
+			 attr:class="{{ (item || itemData).getItemClasses({
+					'highlightOnHover': highlightOnHover,
+					'cursor': cursor,
+					'clickable': clickable,
+					'showItemActionsOnHover': showItemActionsOnHover
+				}) }}">
+			<ws:for data="columnIndex, column in (item || itemData).getColumnsFromEnumerator()">
+				<ws:if data="{{ column.isStickied(isSticked) }}">
+					<Controls.stickyBlock:StickyGroupedBlock position="{{ column.getStickyHeaderPosition(stickyCallback) }}"
+												 mode="{{ column.getStickyHeaderMode(stickyCallback) }}"
+												 backgroundStyle="{{ column.getStickyBackgroundStyle() }}"
+												 shadowVisibility="{{column.shadowVisibility}}"
+												 _isIosZIndexOptimized="{{ (item || itemData).isIosZIndexOptimized() }}"
+												 fixedZIndex="{{ column.getZIndex()}}"
+												 subPixelArtifactFix="{{ column.isNeedSubPixelArtifactFix(subPixelArtifactFix) }}"
+												 pixelRatioBugFix="{{pixelRatioBugFix}}"
+												 attr:key="sticky_{{ column.getInstanceId() }}"
+												 attr:class="{{ column.getWrapperClasses(backgroundColorStyle, highlightOnHover, hoverBackgroundStyle, shadowVisibility, borderVisibility, borderStyle) }} {{ column.isHidden() ? 'ws-hidden' }}"
+												 attr:style="{{ column.getWrapperStyles(containerSize) }}"
+												 attr:data-qa="{{ column.listElementName }}">
+						<ws:partial template="COLUMN" gridColumn="{{ column }}"/>
+					</Controls.stickyBlock:StickyGroupedBlock>
+				</ws:if>
+				<ws:else>
+					<div class="{{ column.getWrapperClasses(backgroundColorStyle, highlightOnHover, hoverBackgroundStyle, shadowVisibility, borderVisibility, borderStyle) }} {{ column.isHidden() ? 'ws-hidden' }}"
+						 style="{{ column.getWrapperStyles(containerSize) }}"
+						 attr:key="{{ column.getInstanceId() }}_wrapper"
+						 attr:data-qa="{{ column.listElementName }}">
+						<ws:partial template="COLUMN" gridColumn="{{ column }}"/>
+					</div>
+				</ws:else>
+			</ws:for>
+		</div>
+	</Controls.stickyBlock:StickyGroup>
+</ws:if>
+<ws:else>
+	<ws:partial template="{{ 'Controls/grid:ItemTemplate' }}" scope="{{ _options }}"/>
+</ws:else>

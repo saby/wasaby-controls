@@ -1,0 +1,42 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__wrapper controlsDemo_fixedWidth250">
+        <div class="controls-text-label"> Область "Отбираются". </div>
+        <Controls.filterPanel:View source="{{_basicItems}}"
+                                     editorsViewMode="default"
+                                     attr:class="controlsDemo__height300"/>
+    </div>
+
+    <div class="controlsDemo__wrapper controlsDemo_fixedWidth250">
+        <div class="controls-text-label"> Области "Отбираются" и "Можно отобрать" в режиме облачков. </div>
+        <div class="controlsDemo__wrapper__padding-bottom" attr:style="background: #f8f8f8;">
+            <Controls.list:View source="{{_viewSource}}" />
+            <Controls.filterPanel:View bind:source="_extendedCloudItems"
+                                         editorsViewMode="cloud"
+                                         attr:class="controls-FilterPanel__air"/>
+         </div>
+    </div>
+    <div class="controlsDemo__wrapper controlsDemo_fixedWidth250">
+        <div class="controls-text-label"> Области "Отбираются" и "Можно отобрать". </div>
+            <div class="controlsDemo__height300" attr:style="background: #f8f8f8;">
+                <Controls.list:View source="{{_viewSource}}" />
+                <Controls.filterPanel:View source="{{_mixedItems}}"
+                                           editorsViewMode="popupCloudPanelDefault"
+                                           attr:class="controlsDemo__height300"/>
+            </div>
+        </div>
+
+    <div class="controlsDemo__wrapper controlsDemo_fixedWidth250">
+        <div class="controls-text-label"> Область "Отбираются" со скроллом. </div>
+        <Controls.scroll:Container attr:style="height: 300px;">
+            <Controls.filterPanel:View bind:source="_mixedItemsWithScroll"/>
+        </Controls.scroll:Container>
+    </div>
+
+    <div class="controlsDemo__wrapper controlsDemo_fixedWidth250">
+        <div class="controls-text-label">Счетчики пункта "Все"</div>
+        <Controls.scroll:Container attr:style="height: 300px;">
+            <Controls.filterPanel:View source="{{_emptyTextItems}}"
+                                         editorsViewMode="default"/>
+        </Controls.scroll:Container>
+    </div>
+</div>

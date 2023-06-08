@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper controlDemo_Tile_default">
+    <Controls.scroll:Container class="controlsDemo__height500 controlsDemo__maxWidth1000">
+        <Controls.tile:View tileMode="dynamic"
+                            displayProperty="title"
+                            imageProperty="image"
+                            source="{{_viewSource}}"
+                            navigation="{{_navigation}}"
+                            virtualScrollConfig="{{_virtualScrollConfig}}"
+                            itemPadding="{{_itemPadding}}"/>
+    </Controls.scroll:Container>
+</div>

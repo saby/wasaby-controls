@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper">
+   <Controls.tile:View
+           tileMode="static"
+           tileScalingMode="none"
+           tileWidth="250"
+           imageProperty="image"
+           keyProperty="key"
+           displayProperty="title"
+           source="{{_viewSource}}">
+      <ws:itemTemplate>
+         <ws:partial
+                 template="Controls/tile:PreviewTemplate"
+                 scope="{{itemTemplate}}">
+            <ws:bottomRightTemplate>
+               <div>{{itemTemplate.item.contents.counter}}</div>
+            </ws:bottomRightTemplate>
+         </ws:partial>
+      </ws:itemTemplate>
+   </Controls.tile:View>
+</div>

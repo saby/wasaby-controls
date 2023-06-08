@@ -1,0 +1,62 @@
+<ws:template name="grid">
+<Controls.scroll:Container attr:style="width: 600px; height: 400px"
+						   scrollOrientation="verticalHorizontal">
+	<Controls.grid:View
+		keyProperty="key"
+		source="{{_viewSource}}"
+		header="{{_header}}"
+		columns="{{_columns}}"
+		backgroundStyle="default"
+		multiSelectVisibility="{{ multiSelectVisibility }}"
+		newColumnScroll="{{ true }}"
+		virtualColumnScrollConfig="{{ virtualColumnScrollConfig }}"
+		stickyColumnsCount="{{ 1 }}">
+		<ws:itemTemplate>
+			<ws:partial template="Controls/horizontalScroll:GridItemTemplate" scope="{{ itemTemplate }}"/>
+		</ws:itemTemplate>
+	</Controls.grid:View>
+</Controls.scroll:Container>
+</ws:template>
+
+<div class="controlsDemo__wrapper">
+	<ws:if data="{{ SHOWED_DEMOS.VIRTUALIZATION_OFF_CHECKBOX_OFF || SHOWED_DEMOS.VIRTUALIZATION_OFF_CHECKBOX_ON }}">
+		<div class="controls-text-label">Без виртуализации</div>
+		<div class="controlsDemo__flexRow">
+			<div if="{{ SHOWED_DEMOS.VIRTUALIZATION_OFF_CHECKBOX_OFF }}">
+				<div class="controls-text-label">Без чекбоксов</div>
+				<ws:partial template="grid"
+							attr:class="controlsDemo__mr4" />
+			</div>
+
+			<div if="{{ SHOWED_DEMOS.VIRTUALIZATION_OFF_CHECKBOX_ON }}">
+				<div class="controls-text-label">С чекбоксами</div>
+				<ws:partial template="grid"
+							multiSelectVisibility="visible"
+							attr:class="controlsDemo__mr4" />
+			</div>
+		</div>
+	</ws:if>
+
+	<ws:if data="{{ SHOWED_DEMOS.VIRTUALIZATION_ON_CHECKBOX_OFF || SHOWED_DEMOS.VIRTUALIZATION_ON_CHECKBOX_ON }}">
+		<div class="controls-text-label">С виртуализацией</div>
+		<div class="controlsDemo__flexRow">
+			<div if="{{ SHOWED_DEMOS.VIRTUALIZATION_ON_CHECKBOX_OFF }}">
+				<div class="controls-text-label">Без чекбоксов</div>
+				<ws:partial template="grid"
+							virtualColumnScrollConfig="{{ {'pageSize': 30} }}" />
+			</div>
+
+			<div if="{{ SHOWED_DEMOS.VIRTUALIZATION_ON_CHECKBOX_ON }}">
+				<div class="controls-text-label">С чекбоксами</div>
+				<ws:partial template="grid"
+							multiSelectVisibility="visible"
+							virtualColumnScrollConfig="{{ {'pageSize': 30} }}" />
+			</div>
+		</div>
+	</ws:if>
+
+	<ws:if data="{{ SHOWED_DEMOS.LOAD }}">
+		<div class="controls-text-label">Загрузка колонок</div>
+		<Controls-demo.gridNew.HorizontalScroll.LoadColumns.Index/>
+	</ws:if>
+</div>

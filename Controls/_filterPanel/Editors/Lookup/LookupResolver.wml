@@ -1,0 +1,8 @@
+<ws:if data="{{_options.searchParam}}">
+    <ws:partial template="Controls/_filterPanel/Editors/LookupInput"
+                scope="{{_options}}" />
+</ws:if>
+<ws:else>
+    <ws:partial template="Controls/_filterPanel/Editors/LookupSelector"
+                scope="{{_options}}" />
+</ws:else>

@@ -1,0 +1,66 @@
+<div class="controls-FilterButton__demo">
+    <div class="controls-FilterButton__demo-row_right">
+        <div class="controls-FilterButton__demo-row">
+            <Controls.buttons:Button readOnly="{{false}}" caption="Тест базовой линии" fontColorStyle="link" viewMode="linkButton"/>
+            Тест базовой линии
+            <Controls.filter:View attr:style="max-width: 200px;" detailPanelTemplateName="Controls-demo/FilterButton/Panel/resources/FBPanel">
+                <ws:source>
+                    <ws:Array>
+                        <ws:Object name="genreKey" caption="genreTxt"/>
+                        <ws:Object name="authorText"/>
+                        <ws:Object name="authorNameText"/>
+                        <ws:Object name="genreTip"/>
+                        <ws:Object name="countryPlusName" caption="countryPlusVisible"/>
+                    </ws:Array>
+                </ws:source>
+            </Controls.filter:View>
+        </div>
+        <div class="controls-FilterButton__demo-row">
+            <Controls.buttons:Button readOnly="{{true}}" caption="Тест базовой линии"/>
+            Тест базовой линии
+            <Controls.filter:View attr:style="max-width: 200px;" detailPanelTemplateName="Controls-demo/FilterButton/Panel/resources/FBPanel">
+                <ws:source>
+                    <ws:Array>
+                        <ws:Object name="genreKey" caption="genreTxt"/>
+                        <ws:Object name="authorText"/>
+                        <ws:Object name="authorNameText"/>
+                        <ws:Object name="genreTip"/>
+                        <ws:Object name="countryPlusName" caption="countryPlusVisible"/>
+                    </ws:Array>
+                </ws:source>
+            </Controls.filter:View>
+        </div>
+    </div>
+    <div class="controls-FilterButton__demo-row_left">
+    <div class="controls-FilterButton__demo-row">
+        <Controls.filter:View attr:style="max-width: 200px;" filterAlign="left" detailPanelTemplateName="Controls-demo/FilterButton/Panel/resources/FBPanel">
+            <ws:source>
+                <ws:Array>
+                    <ws:Object name="genreKey" caption="genreTxt"/>
+                    <ws:Object name="authorText"/>
+                    <ws:Object name="authorNameText"/>
+                    <ws:Object name="genreTip"/>
+                    <ws:Object name="countryPlusName" caption="countryPlusVisible"/>
+                </ws:Array>
+            </ws:source>
+        </Controls.filter:View>
+        Тест базовой линии
+        <Controls.buttons:Button readOnly="{{false}}" caption="Тест базовой линии" fontColorStyle="link" viewMode="linkButton"/>
+    </div>
+    <div class="controls-FilterButton__demo-row">
+        <Controls.filter:View attr:style="max-width: 200px;" filterAlign="left" detailPanelTemplateName="Controls-demo/FilterButton/Panel/resources/FBPanel">
+            <ws:source>
+                <ws:Array>
+                    <ws:Object name="genreKey" caption="genreTxt"/>
+                    <ws:Object name="authorText"/>
+                    <ws:Object name="authorNameText"/>
+                    <ws:Object name="genreTip"/>
+                    <ws:Object name="countryPlusName" caption="countryPlusVisible"/>
+                </ws:Array>
+            </ws:source>
+        </Controls.filter:View>
+        Тест базовой линии
+        <Controls.buttons:Button readOnly="{{true}}" caption="Тест базовой линии"/>
+    </div>
+    </div>
+</div>

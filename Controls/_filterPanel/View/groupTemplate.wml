@@ -1,0 +1,45 @@
+<ws:template name="separator">
+   <ws:if data="{{groupItem.caption}}">
+      <div class="controls-FilterViewPanel__group-content
+                  {{_options.filterViewMode === 'popup' ? 'controls-FilterViewPanel__group-content_small'}}
+                  {{groupItem.expanderVisible ? 'controls-FilterViewPanel__group-content-expandable'}}
+                  controls-FilterViewPanel__group-content-align-{{groupItem.groupTextAlign}}"
+           title="{{groupItem.caption}}">
+         {{groupItem.caption}}
+      </div>
+   </ws:if>
+   <ws:if data="{{groupItem.expanderVisible}}">
+      <div attr:title="{{!collapsedGroups[item] ? 'Свернуть' : 'Развернуть'}}"
+           attr:class="controls-FilterViewPanel__groupExpander controls-icon controls-icon_size-s
+                       {{_options.editorsViewMode !== 'popupCloudPanelDefault' ? 'controls-PropertyGrid__groupExpander'}}
+                       controls-FilterViewPanel__groupExpander-align-{{groupItem.groupExpanderAlign}}
+               {{!collapsedGroups[item] ? 'icon-CollapseLight' : 'icon-ExpandLight'}}"
+           attr:data-qa="FilterViewPanel__groupExpander">
+      </div>
+   </ws:if>
+</ws:template>
+
+<ws:template name="separatorWrapper">
+   <ws:partial template="wml!Controls/_filterPanel/View/FilterSeparator"
+               resetButtonVisible="{{!collapsedGroups[item] && _options.groupItems[item].resetButtonVisible && _options.editorsViewMode === 'default'}}"
+               separatorVisible="{{_options.editorsViewMode !== 'cloud' && _options.groupItems[item].separatorVisibility !== 'hidden'}}"
+               beforeSeparatorTemplate="{{beforeSeparatorTemplate}}"
+               filterViewMode="{{_options.filterViewMode}}"
+               afterSeparatorTemplate="{{afterSeparatorTemplate}}"
+               groupItem="{{_options.groupItems[item]}}"
+               attr:class="controls-FilterViewPanel__group controls-FilterViewPanel__group_height_viewMode-{{_options.filterViewMode}}"
+               attr:data-qa="FilterViewPanel__group" />
+</ws:template>
+
+<ws:if data="{{item && _options.groupItems[item].groupVisible}}">
+   <div class="controls-FilterViewPanel__group-wrapper controls-FilterViewPanel__group-wrapper_style-{{style}}
+            {{collapsedGroups[item] ? 'controls-FilterViewPanel__group-wrapper-collapsed'}}"
+            data-qa="FilterViewPanel__group-wrapper">
+         <ws:partial template="separatorWrapper">
+            <ws:beforeSeparatorTemplate>
+               <ws:partial template="separator"
+                           groupItem="{{_options.groupItems[item]}}"/>
+            </ws:beforeSeparatorTemplate>
+         </ws:partial>
+   </div>
+</ws:if>

@@ -1,0 +1,111 @@
+<ws:template name="propertyGrid">
+    <ws:if data="{{_viewModel.hasBasicItems()}}">
+        <div class="controls-FilterViewPanel_viewMode-{{_options.viewMode}}
+                    {{!_options.isAdaptive ? 'controls-FilterViewPanel-' + _options.backgroundStyle}}"
+             data-qa="controls-FilterViewPanel__basic-editors">
+            <Controls.propertyGrid:PropertyGrid
+                    editingObject="{{_viewModel.getEditingObject()}}"
+                    typeDescription="{{_viewModel.getBasicFilterItems()}}"
+                    collapsedGroups="{{_viewModel.getCollapsedGroups()}}"
+                    itemPadding="{{_itemPadding}}"
+                    groupProperty="name"
+                    on:editingObjectChanged="_editingObjectChanged()"
+                    on:groupClick="_groupClick()"
+                    attr:class="controls-FilterViewPanel__propertyGrid"
+                    attr:data-qa="FilterViewPanel__propertyGrid">
+                <ws:itemsContainerPadding
+                   top="{{ _options.itemsContainerPadding.top }}"
+                   left="{{ _options.itemsContainerPadding.left }}"
+                   right="{{ _options.itemsContainerPadding.right }}"
+                   bottom="{{ _options.itemsContainerPadding.bottom }}"
+                />
+                <ws:itemTemplate>
+                    <ws:partial template="Controls/propertyGrid:ItemTemplate"
+                                attr:class="{{_viewModel.getItemClasses(itemTemplate.collectionItem, _options.viewMode, _options.isAdaptive)}}"/>
+                </ws:itemTemplate>
+                <ws:groupTemplate>
+                    <ws:partial template="wml!Controls/_filterPanel/View/groupTemplate"
+                                scope="{{groupTemplate}}"
+                                filterViewMode="{{_options.viewMode}}"
+                                editorsViewMode="{{_options.editorsViewMode}}"
+                                style="master"
+                                groupItems="{{_viewModel.getGroupItems()}}"/>
+                </ws:groupTemplate>
+            </Controls.propertyGrid:PropertyGrid>
+        </div>
+    </ws:if>
+</ws:template>
+
+<ws:template name="extendedItems">
+    <ws:if data="{{_viewModel.hasExtendedItems()}}">
+        <div class="{{_options.editorsViewMode === 'popupCloudPanelDefault' ? 'controls-FilterPanel__extendedItems_bottom'}}">
+            <Controls._filterPanel.ExtendedItems
+                    viewModel="{{_viewModel}}"
+                    viewMode="{{_options.viewMode}}"
+                    extendedItemsViewMode="{{_options.extendedItemsViewMode}}"
+                    on:extendedItemsChanged="_handleExtendedItemsChanged()"
+                    attr:class="controls-FilterViewPanel__horizontal-padding-{{_options.viewMode}}
+                                controls-FilterViewPanel__vertical-padding-{{_options.viewMode}}
+                                {{_options.editorsViewMode === 'popupCloudPanelDefault' ? 'controls-FilterPanel__extendedItems_width'}}
+                                {{_options.viewMode === 'default' ? 'controls-FilterViewPanel__horizontal-padding_viewMode-' + _options.editorsViewMode}}
+                                {{_options.orientation === 'vertical' ? 'controls-FilterPanel__vertical-padding-' + _options.viewMode +
+                                (!_viewModel.hasBasicItems() && _options.viewMode === 'popup' ? ' controls-FilterPanel__extendedItems-padding-top')}}"/>
+        </div>
+    </ws:if>
+</ws:template>
+
+<ws:template name="historyItems">
+    <ws:if data="{{_options.historyId}}">
+        <Controls.Container.Async templateName="Controls/filterPanelPopup:History">
+            <ws:partial template="{{content.resolvedTemplate}}"
+                        viewMode="{{_options.viewMode}}"
+                        historyId="{{_options.historyId}}"
+                        source="{{_viewModel.getSource()}}"
+                        saveMode="{{_options.historySaveMode}}"
+                        on:historyItemClick="_historyItemClick()"
+                        attr:class="controls-FilterViewPanel__horizontal-padding-{{_options.viewMode}}
+                                           {{!_viewModel.hasExtendedItems() && _options.orientation === 'vertical' ?
+                                            'controls-FilterPanel__vertical-padding-' + _options.viewMode}}"/>
+        </Controls.Container.Async>
+    </ws:if>
+</ws:template>
+
+<ws:template name="verticalPanel">
+    <ws:if data="{{_options.viewMode === 'default' && _viewModel.needShowSeparator() && _options.resetButtonVisible}}">
+        <ws:partial template="wml!Controls/_filterPanel/View/FilterSeparator"
+                    resetButtonVisible="{{_viewModel.hasBasicItems()}}"
+                    filterViewMode="{{_options.viewMode}}"
+                    separatorVisible="{{true}}"
+                    attr:class="controls_filterPanel-horizontal__separator-container"
+                    attr:ws-no-focus="true"
+                    attr:tabindex="-1"
+                    attr:data-qa="FilterViewPanel__filterSeparator"
+                    on:click="_handleResetButtonClick()"/>
+    </ws:if>
+    <ws:partial template="propertyGrid"/>
+    <ws:partial template="extendedItems"/>
+    <ws:partial template="historyItems"/>
+</ws:template>
+
+<div class="controls_filterPanel_theme-{{_options.theme}}
+            {{!_options.isAdaptive ? 'controls-FilterViewPanel-' + _options.backgroundStyle}}
+            {{_options.editorsViewMode === 'popupCloudPanelDefault' ? 'controls-FilterViewPanel-height'}}
+            controls_filter_theme-{{_options.theme}} controls-FilterViewPanel">
+    <ws:if data="{{_options.orientation === 'vertical' || _options.isAdaptive}}">
+        <ws:partial template="verticalPanel"/>
+    </ws:if>
+    <ws:else>
+        <div class="controls_filterPanel-horizontal">
+            <div class="controls_filterPanel-horizontal__column-left">
+                <ws:partial template="propertyGrid"/>
+                <ws:partial template="extendedItems"/>
+            </div>
+            <ws:if data="{{_options.historyId}}">
+                <div class="controls_filterPanel-vertical__separator"></div>
+            </ws:if>
+            <div class="controls_filterPanel-horizontal__column-right">
+                <ws:partial template="historyItems"/>
+            </div>
+        </div>
+    </ws:else>
+</div>

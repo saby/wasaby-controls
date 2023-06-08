@@ -1,0 +1,24 @@
+<div class="{{ gridColumn.getContentClasses() }}">
+    <Controls.Container.Async templateName="Controls/breadcrumbs:Path">
+        <ws:partial template="{{ content.resolvedTemplate }}"
+                    attr:class="controls-Grid__breadCrumbs"
+                    readOnly="{{ item.isReadonly() }}"
+                    items="{{gridColumn.getContents()}}"
+                    backgroundStyle="{{ item.getBackgroundStyle() }}"
+                    breadCrumbsItemClickCallback="{{ _onBreadcrumbItemClick }}"
+                    keyProperty="{{gridColumn.getKeyProperty()}}"
+                    displayProperty="{{gridColumn.getDisplayProperty()}}"
+        >
+            <ws:itemTemplate>
+                <ws:partial template="{{item.getBreadcrumbsItemTemplate()}}">
+                    <ws:contentTemplate>
+                        <Controls.baseDecorator:Highlight
+                                attr:class="controls-Grid__breadCrumbs_highlight"
+                                highlightedValue="{{gridColumn.getSearchValue()}}"
+                                value="{{contentTemplate.itemData.item.get(gridColumn.getDisplayProperty()) || ''}}" />
+                    </ws:contentTemplate>
+                </ws:partial>
+            </ws:itemTemplate>
+        </ws:partial>
+    </Controls.Container.Async>
+</div>

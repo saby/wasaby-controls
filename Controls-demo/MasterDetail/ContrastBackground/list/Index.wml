@@ -1,0 +1,49 @@
+<div class="controlsDemo__wrapper controls-demo_MasterDetail-background">
+   <div class="controlsDemo__masterDetail-container">
+      <Controls.masterDetail:Base>
+         <ws:master>
+            <Controls.scroll:Container shadowMode="js">
+               <Controls.masterDetail:List bind:markedKey="_markedKey1">
+                  <Controls.list:View
+                          source="{{_masterSource}}"
+                          style="master"
+                          backgroundStyle="master"
+                          keyProperty="id"
+                          markerVisibility="visible"
+                          itemActions="{{_itemActions}}"
+                          columns="{{_gridColumns}}">
+                     <ws:itemTemplate>
+                        <ws:partial template="Controls/list:ItemTemplate">
+                           <ws:contentTemplate>
+                              <div class="controls-demo_MasterDetail-item-list">{{itemTemplate.item.contents.name}}</div>
+                           </ws:contentTemplate>
+                        </ws:partial>
+                     </ws:itemTemplate>
+                  </Controls.list:View>
+               </Controls.masterDetail:List>
+            </Controls.scroll:Container>
+         </ws:master>
+         <ws:detail>
+            <Controls.scroll:Container attr:class="controlsDemo_fixedWidth500">
+               <Controls.list:View
+                       keyProperty="id"
+                       source="{{_detailSource}}"
+                       backgroundStyle="detail">
+                  <ws:filter myOpt="{{detail.selectedMasterValue || '0'}}">
+                  </ws:filter>
+                  <ws:itemTemplate>
+                     <ws:partial template="Controls/list:ItemTemplate">
+                        <ws:contentTemplate>
+                           <ws:partial
+                                   item="{{itemTemplate.item.contents}}"
+                                   template="wml!Controls-demo/MasterDetail/itemTemplates/TaskItemTemplate"
+                           />
+                        </ws:contentTemplate>
+                     </ws:partial>
+                  </ws:itemTemplate>
+               </Controls.list:View>
+            </Controls.scroll:Container>
+         </ws:detail>
+      </Controls.masterDetail:Base>
+   </div>
+</div>

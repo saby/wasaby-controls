@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300">
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label"></div>
+      <Controls.spoiler:TextCut attr:style="width: 200px;" lines="{{2}}">
+         <ws:content>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam cupiditate delectus, eaque laboriosam
+            maiores mollitia praesentium quo ratione vel. At cum cumque earum ipsam non quis soluta ullam veritatis.
+         </ws:content>
+      </Controls.spoiler:TextCut>
+   </div>
+   <div class="controlsDemo__cell ControlsDemo-Cut-BackgroundStyle_background" attr:style="display: inline-block">
+      <div class="controls-text-label">backgroundStyle=cut-custom</div>
+      <Controls.spoiler:TextCut attr:style="width: 200px;" lines="{{2}}" backgroundStyle="cut-custom">
+         <ws:content>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam cupiditate delectus, eaque laboriosam
+            maiores mollitia praesentium quo ratione vel. At cum cumque earum ipsam non quis soluta ullam veritatis.
+         </ws:content>
+      </Controls.spoiler:TextCut>
+   </div>
+</div>

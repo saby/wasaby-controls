@@ -1,0 +1,12 @@
+<div class="controls-SelectedCollection__counterItems
+            controls-SelectedCollection__counterItems_{{_options.multiLine ? 'multiLine' : 'singleLine'}}-{{_options.counterAlignment}}
+            controls-SelectedCollection__counterItems_{{_options.multiLine ? 'multiLine' : 'singleLine'}}_backgroundStyle-{{_options.backgroundStyle}}
+            {{!_options.multiLine ? 'controls-background-' + _options.backgroundStyle }}
+            controls-SelectedCollection__counterItems-size-{{_options.fontSize || 'default'}}
+            controls-SelectedCollection__counterItems" attr:data-qa="SelectedCollection__counterItems">
+    <span class="controls-SelectedCollection__counter">({{_options.itemsCount}})</span>
+    <ws:if data="{{_options.counterAlignment === 'left'}}">
+        &nbsp;
+        <span class="controls-SelectedCollection__counter-ellipsis">...</span>
+    </ws:if>
+</div>

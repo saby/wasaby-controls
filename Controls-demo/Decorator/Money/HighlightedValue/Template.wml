@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth200">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">highlightedValue="1 23"</div>
+        <Controls.baseDecorator:Money value="{{1234567.22}}" highlightedValue="1 23"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">highlightedValue="5.11"</div>
+        <Controls.baseDecorator:Money value="{{98765.11}}" highlightedValue="{{5.11}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">highlightedValue="12"</div>
+        <Controls.baseDecorator:Money value="{{10000.12}}" highlightedValue="12"/>
+    </div>
+</div>

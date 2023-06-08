@@ -1,0 +1,24 @@
+<div class="removeDemo controlsDemo__wrapper controlsDemo__grid-tagStyleProperty controlsDemo__maxWidth800">
+    <div class="controlsDemo-toolbar-panel">
+        &nbsp;&nbsp;{{_currentMessage}}
+    </div>
+    <Controls.browser:Browser source="{{_viewSource}}" keyProperty="key"
+                              bind:selectedKeys="_selectedKeys"
+                              bind:excludedKeys="_excludedKeys">
+            <Controls.list:Container>
+                <Controls.list:View
+                        class="removeDemo__list test_list_1"
+                        name="list"
+                        itemActionVisibilityCallback="{{_itemActionsVisibilityCallback}}"
+                        itemActions="{{_itemActions}}"
+                        itemActionsPosition="outside"
+                        multiSelectVisibility="visible"
+                        bind:markedKey="_markedKey"/>
+            </Controls.list:Container>
+    </Controls.browser:Browser>
+    <Controls.buttons:Button on:click="_removeOnButtonClick()"
+                             caption="Удалить выбранные"
+                             viewMode="link"
+                             icon="icon-Erase"
+                             iconStyle="danger"/>
+</div>

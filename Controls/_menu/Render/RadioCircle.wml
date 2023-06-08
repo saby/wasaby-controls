@@ -1,0 +1,13 @@
+<svg attr:xmlns="http://www.w3.org/2000/svg" attr:id="Слой_1" attr:data-name="Слой 1"
+     attr:class="controls_toggle_theme-{{_options.theme}}
+      controls-Menu__row-radioCircle
+      controls-icon_size-2xs
+      controls-Menu__row-radioCircle_{{selected ? 'selected' : 'unselected'}}"
+     attr:viewBox="0 0 12 12">
+
+    <circle class="controls-Menu__row-radioCircle__borderCircle"
+            cx="6" cy="6" r="3.5" />
+    <circle class="controls-Menu__row-radioCircle__innerCircle
+                   controls-Menu__row-radioCircle__innerCircle_{{selected ? 'selected' : 'unselected'}}"
+            cx="6" cy="6" r="3"/>
+</svg>

@@ -1,0 +1,5 @@
+<ws:partial template="Controls/grid:ColumnTemplate" scope="{{ _options }}">
+    <ws:contentTemplate>
+        {{ column.config.pseudo }}
+    </ws:contentTemplate>
+</ws:partial>

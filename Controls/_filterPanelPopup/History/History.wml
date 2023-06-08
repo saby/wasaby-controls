@@ -1,0 +1,89 @@
+<ws:template name="favorite_pin_icon">
+    <Controls.icon:Icon icon="{{icon}}"
+                        iconSize="s"
+                        iconStyle="label"
+                        attr:data-qa="FilterViewPanel__history-pin"/>
+</ws:template>
+
+<ws:template name="favorite_pin">
+    <div class="controls-FilterViewPanel__history-icon">
+        <ws:if data="{{icon === 'icon-Favorite'}}">
+            <ws:partial template="favorite_pin_icon" icon="{{icon}}" item="{{item}}"
+                        on:click="_onFavoriteClick(item)"/>
+        </ws:if>
+        <ws:else>
+            <ws:partial template="favorite_pin_icon" icon="{{icon}}" item="{{item}}"
+                        on:click="_onPinClick(item)"/>
+        </ws:else>
+    </div>
+</ws:template>
+
+<ws:if data="{{_options.historyId && (_historyItems.getCount() || _options.emptyHistoryTemplate)}}">
+   <div class="controls-FilterViewPanel__editors-container
+               controls-FilterViewPanel__editors-container-{{_options.viewMode}}
+               controls-FilterViewPanel__editors-container-{{!_expandButtonVisible ? 'withoutButton'}}">
+      <div class="controls-FilterViewPanel__heading-wrapper">
+         <Controls.heading:Title caption="{{rk('Ранее отбирались')}}"
+                                 fontColorStyle="labelContrast"
+                                 fontSize="xs"
+                                 fontWeight="normal"
+                                 readOnly="{{true}}"
+                                 attr:class="controls-FilterViewPanel__heading"/>
+      </div>
+      <div class="controls-FilterViewPanel__history-editors"
+           data-qa="controls-FilterViewPanel__history-editors">
+        <Controls.list:ItemsView items="{{_historyItems}}"
+                                 hoverBackgroundStyle="transparent"
+                                 itemActions="{{_itemActions}}"
+                                 itemPadding="{{_itemPadding}}"
+                                 itemActionsPosition="custom"
+                                 itemActionVisibilityCallback="{{_itemActionVisibilityCallback}}">
+            <ws:itemTemplate>
+                <ws:partial template="Controls/list:ItemTemplate"
+                            marker="{{false}}"
+                            scope="{{itemTemplate}}"
+                            attr:class="controls-FilterViewPanel__history-editor-template">
+                     <ws:contentTemplate>
+                        <div attr:class="controls-FilterViewPanel__history-editor-container" attr:data-qa="FilterViewPanel__history-editor-container">
+                           <div attr:class="controls-FilterViewPanel__history-editor" attr:data-qa="FilterViewPanel__history-editor">
+                              <div class="controls-FilterViewPanel__history-editor_caption
+                               {{contentTemplate.item.contents.get('pinned') || contentTemplate.item.contents.get('client') ?
+                                 'controls-FilterViewPanel__history-editor_caption-pinned'}} ws-ellipsis"
+                                    data-qa="controls-FilterViewPanel__history-editor"
+                                    title="{{_getItemText(contentTemplate.item.contents)}}"
+                                    on:click="_handleHistoryItemClick(contentTemplate.item.contents)">
+                                 {{_getItemText(contentTemplate.item.contents)}}
+                              </div>
+                           </div>
+                           <ws:if data="{{contentTemplate.item.contents.get('pinned') || contentTemplate.item.contents.get('client')}}">
+                                <ws:partial template="favorite_pin"
+                                            icon="{{_isFavoriteSaveMode ? 'icon-Favorite' : 'icon-PinOff'}}"
+                                            item="{{contentTemplate.item.contents}}"
+                                            attr:class="controls-FilterViewPanel__history-itemActions"/>
+                           </ws:if>
+                           <ws:else>
+                                <ws:partial template="{{contentTemplate.itemActionsTemplate}}" actionPadding="null"
+                                            attr:class="controls-FilterViewPanel__history-itemActions"/>
+                           </ws:else>
+                        </div>
+                     </ws:contentTemplate>
+              </ws:partial>
+           </ws:itemTemplate>
+        </Controls.list:ItemsView>
+         <ws:if data="{{_expandButtonVisible}}">
+            <div class="controls-FilterViewPanel__expanderButton">
+                <Controls.Container.Async templateName="Controls/ShowMoreButton">
+                    <ws:partial template="{{content.resolvedTemplate}}"
+                                iconSize="l"
+                                value="{{_historyListExpanded}}"
+                                on:click="_handleExpanderClick()"
+                                attr:data-qa="FilterViewPanel-history__more"/>
+                </Controls.Container.Async>
+            </div>
+         </ws:if>
+      </div>
+   </div>
+</ws:if>
+<ws:else>
+   <invisible-node />
+</ws:else>

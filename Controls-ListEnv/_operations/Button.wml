@@ -1,0 +1,3 @@
+<Controls.operations:Button
+  expanded="{{_options._dataOptionsValue[_options.storeId].operationsPanelVisible}}"
+  on:expandedChanged="_expandedChanged()"/>

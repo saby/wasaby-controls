@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container>
+        <Controls.list:View
+                keyProperty="key"
+                source="{{_viewSource}}"
+                groupProperty="byDemand">
+            <ws:groupTemplate>
+                <ws:partial template="Controls/list:GroupTemplate" scope="{{ _options }}" separatorVisibility="{{ false }}" textAlign="right"/>
+            </ws:groupTemplate>
+        </Controls.list:View>
+    </Controls.scroll:Container>
+</div>

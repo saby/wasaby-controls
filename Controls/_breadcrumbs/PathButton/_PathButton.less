@@ -1,0 +1,128 @@
+.controls-breadcrumbsPathButton {
+   cursor: pointer;
+
+   // inner align
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+
+   // view set up
+   border-radius: 50%;
+   box-sizing: border-box;
+   background-color: var(--pale_contrast_background-color);
+   border: 1px solid var(--pale_hover_contrast_background-color);
+}
+
+.controls-breadcrumbsPathButton_size-xs {
+   width: var(--inline_height_xs);
+   height: var(--inline_height_xs);
+}
+
+.controls-breadcrumbsPathButton_size-m {
+   width: var(--inline_height_m);
+   height: var(--inline_height_m);
+}
+
+.controls-breadcrumbsPathButton_size-xl {
+   width: var(--inline_height_xl);
+   height: var(--inline_height_xl);
+}
+
+.controls-breadcrumbsPathButton__icon {
+   width: 70%;
+   fill: var(--label_icon-color);
+}
+
+.controls-breadcrumbsPathButton__menu {
+   height: 100%;
+   display: flex;
+   border-radius: inherit;
+   flex-flow: column nowrap;
+   justify-content: flex-start;
+}
+
+// Обрабатывать события мультиселекта не нужно, т.к. он в NavigationMenu лишь для визуализации
+// https://online.sbis.ru/opendoc.html?guid=a9cea1d6-c1cd-46e0-acc6-bae3f487ade5
+.controls-breadcrumbsPathButton__menu__multiselect {
+   pointer-events: none;
+}
+
+.controls-breadcrumbsPathButton__menu-header {
+   display: flex;
+   flex-flow: row nowrap;
+   align-items: baseline;
+   justify-content: space-between;
+   flex-shrink: 0;
+   padding: var(--offset_s) var(--offset_m) var(--offset_s) var(--offset_3xl);
+   border-top-right-radius: var(--border-radius_default_block);
+   border-top-left-radius: var(--border-radius_default_block);
+   background-color: var(--unaccented_background-color);
+}
+
+//region home button
+.controls-breadcrumbsPathButton__home-button {
+   cursor: pointer;
+   display: inline-flex;
+   align-items: baseline;
+}
+
+.controls-breadcrumbsPathButton__home-button_readonly {
+   cursor: default;
+}
+
+.controls-breadcrumbsPathButton__home-button__icon {
+   width: var(--icon-size_2xs);
+   height: var(--icon-size_2xs);
+   fill: var(--primary_icon-color);
+}
+
+.controls-breadcrumbsPathButton__home-button__caption {
+   margin-left: var(--offset_xs);
+   color: var(--primary_text-color);
+}
+//endregion
+
+.controls-breadcrumbsPathButton__menu-body {
+   height: 100%;
+   flex-grow: 1;
+   border-radius: inherit;
+}
+
+.controls-breadcrumbsPathButton__menu-body__content {
+   padding: var(--offset_xs);
+}
+
+.controls-breadcrumbsPathButton__menu-body__content_withHeader {
+   padding-top: var(--offset_3xs);
+}
+
+// Не нужно скруглять уголки тела, если оно находится под шапкой,
+// т.к. в этом случае скругляются верхние уголки шапки
+.controls-breadcrumbsPathButton__menu-header
+   + .controls-breadcrumbsPathButton__menu-body {
+   border-top-left-radius: 0;
+   border-top-right-radius: 0;
+}
+
+.ws-is-hover {
+   .controls-breadcrumbsPathButton:hover {
+      background-color: var(--pale_contrast_background-color);
+
+      .controls-breadcrumbsPathButton__icon {
+         fill: var(--label_hover_icon-color);
+      }
+   }
+
+   .controls-breadcrumbsPathButton__home-button:not(
+         .controls-breadcrumbsPathButton__home-button_readonly
+      ):hover {
+      .controls-breadcrumbsPathButton__home-button__icon {
+         fill: var(--primary_hover_icon-color);
+      }
+
+      .controls-breadcrumbsPathButton__home-button__caption {
+         text-decoration: underline;
+         color: var(--primary_hover_text-color);
+      }
+   }
+}

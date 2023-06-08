@@ -1,0 +1,45 @@
+<div class="ControlsDemo-FilterButton-PanelVDom">
+   <div class="ControlsDemo-FilterButton-PanelVDom__items">
+      <h4>Without the block "Possible to select"</h4>
+      <div>
+         <Controls.filter:View attr:class="ControlsDemo-FilterButton-PanelVDom__component_1"
+                                 detailPanelTemplateName="wml!Controls-demo/Filter/Button/resources/withoutAdditional/filterPanelTemplateSimple"
+                                 bind:source="_itemsSimple">
+         </Controls.filter:View>
+      </div>
+   </div>
+
+   <div class="panel-demo-item">
+      <h4>The template for the block "Selected" is specified using the option "template" for each filter.</h4>
+      <div>
+         <Controls.filter:View attr:class="ControlsDemo-FilterButton-PanelVDom__component_2"
+                                 bind:source="_itemsTemplate"
+                                 detailPanelTemplateName="wml!Controls-demo/Filter/Button/resources/itemTemplate/filterPanelTemplateItemProperty">
+         </Controls.filter:View>
+      </div>
+   </div>
+
+   <div class="panel-demo-item">
+      <h4>The template for the block "Selected" is specified using the option "itemTemplate".</h4>
+      <div>
+         <Controls.filter:View attr:class="ControlsDemo-FilterButton-PanelVDom__component_3"
+                                 on:filterChanged="_filterChangedHandler()"
+                                 alignment="left"
+                                 detailPanelTemplateName="wml!Controls-demo/Filter/Button/resources/withAdditional/filterPanelTemplateAdditional"
+                                 bind:source="_items">
+         </Controls.filter:View>
+      </div>
+   </div>
+
+   <div class="panel-demo-item">
+      <h4>With history</h4>
+      <div>
+         <Controls.filter:View attr:class="ControlsDemo-FilterButton-PanelVDom__component_4 ControlsDemo-FilterButton-PanelVDom__withHistory"
+                                 detailPanelTemplateName="wml!Controls-demo/Filter/Button/resources/withAdditional/filterPanelTemplateAdditional"
+                                 bind:source="_itemsHistory"
+                                 alignment="left"
+                                 historyId="DEMO_HISTORY_ID">
+         </Controls.filter:View>
+      </div>
+   </div>
+</div>

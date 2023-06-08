@@ -1,0 +1,75 @@
+<div data-qa="controls-PeriodDialog-DateRange" class="controls_datePickerNew_theme-{{_options.theme}} controls-PeriodDialog-DateRange">
+   <div class="controls-PeriodDialog-DateRange__header">
+      <div data-qa="controls-PeriodDialog-DateRange__year"
+           class="controls-PeriodDialog-DateRange__year {{ _isCurrentYear(_monthsPosition.getFullYear()) ? 'controls-PeriodDialog-DateRange__year_currentYear' }}">
+         {{_monthsPosition.getFullYear()}}
+      </div>
+      <div class="controls-PeriodDialog-DateRange-header-weekdays">
+         <ws:for data="weekday in _weekdaysCaptions">
+            <span class="controls-PeriodDialog-DateRange-header-weekdays-{{ weekday.weekend ? 'weekend' : 'workday'}}">
+               {{ weekday.caption }}
+            </span>
+         </ws:for>
+      </div>
+   </div>
+   <div class="controls-PeriodDialog-DateRange__body">
+      <Controls.calendar:MonthList shadowStyle="datePopup"
+                                   bottomShadowVisibility="hidden"
+                                   attachLoadTopTriggerToNull="{{ false }}"
+                                   attachLoadDownTriggerToNull="{{ false }}"
+                                   bind:markedKey="_markedKey"
+                                   markerVisibility="visible"
+                                   bind:position="_monthsPosition"
+                                   _limit="13"
+                                   segmentSize="13"
+                                   virtualPageSize="13"
+                                   viewMode="month"
+                                   attr:class="controls-PeriodDialog-DateRangeItem__months"
+                                   on:positionChanged="_onMonthsPositionChanged()">
+         <ws:monthHeaderTemplate>
+            <ws:partial
+                    template="{{ _monthHeaderTmpl }}"
+                    isCurrentYear="{{ _isCurrentYear }}"
+                    date="{{ monthHeaderTemplate.date }}"
+                    on:click="_scrollToMonth(monthHeaderTemplate.date.getFullYear(), 0)"
+            />
+         </ws:monthHeaderTemplate>
+         <ws:monthTemplate>
+            <ws:partial template="Controls/calendar:MonthListMonthTemplate">
+               <ws:bodyTemplate>
+                  <div data-qa="controls-PeriodDialog-DateRangeItem__months-btn"
+                       class="controls-PeriodDialog-DateRangeItem__months-btn"
+                       on:click="_scrollToMonth(monthTemplate.date.getFullYear(), monthTemplate.date.getMonth())" data-date="{{ _dateToId(monthTemplate.date) }}">
+                     {{ _formatMonth(bodyTemplate.date.getMonth()) }}
+                  </div>
+               </ws:bodyTemplate>
+            </ws:partial>
+         </ws:monthTemplate>
+      </Controls.calendar:MonthList>
+      <!-- virtualPageSize="{{4}}" - with a value of 4, scrolling the mouse wheel over the years panel works faster. -->
+      <Controls.compactDatePicker:View
+              shouldPositionBelow="{{ _options.shouldPositionBelow }}"
+              attr:class="controls-PeriodDialog-DateRangeItem__monthList"
+              topShadowVisibility="visible"
+              selectionType="{{ _options.selectionType }}"
+              ranges="{{ _options.ranges }}"
+              roundBorder="{{ false }}"
+              position="{{ _position }}"
+              headerVisible="{{ false }}"
+              startValue="{{ _options.startValue }}"
+              endValue="{{ _options.endValue }}"
+              on:startValueChanged="_proxyEvent()"
+              on:endValueChanged="_proxyEvent()"
+              on:rangeChanged="_proxyEvent()"
+              on:itemClick="_proxyEvent()"
+              on:positionChanged="_onPositionChanged()"
+      >
+         <ws:captionTemplate>
+            <ws:partial template="{{ captionTemplate.defaultMonthTemplateCaption }}" caption="{{ _formatCaption(captionTemplate.date) }}"/>
+         </ws:captionTemplate>
+         <ws:monthTemplate>
+            <ws:partial template="{{ monthTemplate.defaultMonthTemplate}}" attr:class="controls-PeriodDialog-DateRangeItem__monthList__item"/>
+         </ws:monthTemplate>
+      </Controls.compactDatePicker:View>
+      </div>
+</div>

@@ -1,0 +1,94 @@
+.controls-CutButton__container {
+   // Ставим z-index: 2, этого достаточно, чтобы кнопка находилась выше контента в БТР. Если ставить z-index больше,
+   // кнопка может быть выше, чем контент за пределами ката
+   z-index: 2;
+   display: flex;
+   justify-content: center;
+   pointer-events: all;
+}
+
+.controls-CutButton {
+   display: flex;
+   align-items: flex-start;
+   z-index: 1;
+}
+
+.controls-CutButton_size-s {
+   margin-top: var(--offset_3xs);
+   line-height: var(--height_s_BigSeparator);
+}
+
+.controls-CutButton_size-m {
+   margin-top: var(--offset_3xs);
+   line-height: var(--height_m_BigSeparator);
+}
+
+.controls-CutButton_size-l {
+   margin-top: var(--offset_xs);
+   line-height: var(--height_l_BigSeparator);
+}
+
+.controls-CutButton__container_background-unaccented {
+   background: var(--unaccented_background-color);
+}
+
+.controls-CutButton__container_position-center {
+   justify-content: center;
+}
+
+.controls-CutButton__container_position-start {
+   justify-content: flex-start;
+
+   .controls-CutButton_size-s {
+      margin-left: var(--offset_2xs);
+   }
+
+   .controls-CutButton_size-m {
+      margin-left: var(--offset_xs);
+   }
+
+   .controls-CutButton_size-l {
+      margin-left: var(--offset_s);
+   }
+}
+
+.controls-CutButton__container_lineHeight-xs {
+   height: var(--line-height_xs_inputArea);
+}
+
+.controls-CutButton__container_lineHeight-s {
+   height: var(--line-height_s_inputArea);
+}
+
+.controls-CutButton__container_lineHeight-m {
+   height: var(--line-height_m_inputArea);
+}
+
+.controls-CutButton__container_lineHeight-l {
+   height: var(--line-height_l_inputArea);
+}
+
+.controls-CutButton__container_lineHeight-xl {
+   height: var(--line-height_xl_inputArea);
+}
+
+.controls-CutButton__container_lineHeight-2xl {
+   height: var(--line-height_2xl_inputArea);
+}
+
+.controls-CutButton__container_lineHeight-3xl {
+   height: var(--line-height_3xl_inputArea);
+}
+
+.controls-CutButton__container_lineHeight-4xl {
+   height: var(--line-height_4xl_inputArea);
+}
+
+.controls-CutButton__container_lineHeight-5xl {
+   height: var(--line-height_5xl_inputArea);
+}
+
+// TODO: https://online.sbis.ru/opendoc.html?guid=694c7b40-d1cd-4223-a31d-18ad667fffaf
+.controls-CutButton__container_lineHeight-richEditor {
+   height: var(--line-height_richEditor_inputArea);
+}

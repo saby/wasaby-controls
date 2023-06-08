@@ -1,0 +1,18 @@
+<Controls.popup:Sticky name="suggestPopup"
+                       scope="{{_popupOptions}}"
+                       showIndicator="{{false}}"
+                       on:result="_onResult()">
+   <ws:template>
+      <ws:partial template="Controls/_suggestPopup/Layer/__PopupContent"
+                  name="popupContent"
+                  target="{{_options.target}}"
+                  filter="{{_options.filter}}"
+                  searchValue="{{_options.searchValue}}"
+                  content="{{_options.content}}"
+                  suggestPopupOptions="{{_options.suggestPopupOptions}}"
+                  contrastBackground="{{_options.contrastBackground}}"
+                  showContent="{{_options.showContent}}"
+                  addButtonClickCallback="{{_options.addButtonClickCallback}}"
+      />
+   </ws:template>
+</Controls.popup:Sticky>

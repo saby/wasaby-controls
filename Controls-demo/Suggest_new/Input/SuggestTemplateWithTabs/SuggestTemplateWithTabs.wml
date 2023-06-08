@@ -1,0 +1,62 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell">
+       <div class="controls-text-label">Вкладки в шаблоне автодополнения</div>
+       <Controls.SuggestInput
+               attr:class="controlsDemo__input demo-SuggestNew__withTabs"
+               bind:value="_suggestCustomValueOld"
+               displayProperty="title"
+               searchParam="title"
+               minSearchLength="{{1}}"
+               navigation="{{_navigation}}"
+               source="{{_source}}"
+               >
+           <ws:suggestTemplate templateName="Controls-demo/Suggest_new/Input/SuggestTemplateWithTabs/resources/SuggestTabTemplate">
+               <ws:templateOptions demoClass="demo-SuggestInputList"/>
+           </ws:suggestTemplate>
+       </Controls.SuggestInput>
+   </div>
+   <div class="controlsDemo__wrapper__horizontal controlsDemo__cell">
+       <div class="controls-text-label">Одна вкладка в шаблоне автодополнения</div>
+       <Controls.SuggestInput
+           attr:class="controlsDemo__input demo-SuggestNew__withTabs"
+           displayProperty="title"
+           searchParam="title"
+           minSearchLength="{{1}}"
+           navigation="{{_navigation}}"
+           source="{{_source}}">
+           <ws:suggestTemplate templateName="Controls-demo/Suggest_new/Input/SuggestTemplateWithTabs/resources/SuggestWithOneTab">
+               <ws:templateOptions demoClass="demo-SuggestInputList"/>
+           </ws:suggestTemplate>
+       </Controls.SuggestInput>
+   </div>
+
+   <div class="controlsDemo__wrapper__horizontal controlsDemo__cell">
+       <div class="controls-text-label">Вкладки в шаблоне автодополнения (по нескольким загрузчикам)</div>
+       <Controls.SuggestInput
+               attr:class="controlsDemo__input demo-SuggestNew__withTabs"
+               bind:value="_suggestCustomValue"
+               displayProperty="title"
+               searchParam="title"
+               minSearchLength="{{1}}"
+               suggestListsOptions="{{_suggestListsOptions}}"
+               >
+           <ws:suggestTemplate templateName="Controls-demo/Suggest_new/Input/SuggestTemplateWithTabs/resources/SuggestTabTemplateByLoadersArray">
+               <ws:templateOptions demoClass="demo-SuggestInputList"/>
+           </ws:suggestTemplate>
+       </Controls.SuggestInput>
+   </div>
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell">
+        <div class="controls-text-label">Одна вкладка в шаблоне автодополнения (по нескольким загрузчикам)</div>
+        <Controls.SuggestInput
+                attr:class="controlsDemo__input demo-SuggestNew__withTabs"
+                displayProperty="title"
+                searchParam="title"
+                minSearchLength="{{1}}"
+                suggestListsOptions="{{_suggestListsOptionsOneTab}}"
+                >
+            <ws:suggestTemplate templateName="Controls-demo/Suggest_new/Input/SuggestTemplateWithTabs/resources/SuggestWithOneTabByLoadersArray">
+                <ws:templateOptions demoClass="demo-SuggestInputList"/>
+            </ws:suggestTemplate>
+        </Controls.SuggestInput>
+    </div>
+</div>

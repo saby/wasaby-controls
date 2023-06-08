@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-Wizard-default-theme"
+           id="140b9c75-19ae-4a1e-aa3c-ee08a3584c44"
+           package="Wasaby"
+           responsible="Крайнов Д.О."
+           required="1"
+           version="1.00">
+  <description/>
+  <depends>
+    <module id="af50caf5-f84b-4b81-a19c-6f6618372dbd" name="Controls-default-theme"/>
+    <module id="d6e84b3b-e56f-44a0-837b-594bc0db212c" name="Controls-Wizard"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <cluster_endpoints/>
+  <resources/>
+  <preload/>
+</ui_module>

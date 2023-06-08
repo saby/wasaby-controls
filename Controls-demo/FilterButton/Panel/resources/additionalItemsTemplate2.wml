@@ -1,0 +1,26 @@
+<ws:template name="genreKey">
+   <Controls.filterPopup:Link caption="genreKey"/>
+</ws:template>
+
+<ws:template name="FIO">
+   <Controls.filterPopup:Link caption="FIO"/>
+</ws:template>
+
+<ws:template name="country">
+   <Controls.filterPopup:Select
+           keyProperty="key">
+      <ws:items>
+         <ws:Array>
+            <ws:Object key="{{2}}" title="Россия"/>
+            <ws:Object key="{{3}}" title="США"/>
+            <ws:Object key="{{4}}" title="UK"/>
+         </ws:Array>
+      </ws:items>
+   </Controls.filterPopup:Select>
+</ws:template>
+
+<ws:template name="genreTip">
+   <Controls.filterPopup:Link caption="Test1"/>
+</ws:template>
+
+<ws:partial template="{{item.name}}" item="{{item}}"/>

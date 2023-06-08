@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:class="controlsDemo__height200" shadowMode="js">
+        <Controls.grid:View
+                keyProperty="key"
+                source="{{_viewSource}}"
+                groupProperty="name"
+                columns="{{_columns}}"
+                header="{{_header}}"
+                ladderProperties="{{_ladderProperties}}"/>
+    </Controls.scroll:Container>
+</div>

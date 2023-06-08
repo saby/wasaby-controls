@@ -1,0 +1,50 @@
+<div class="controlsDemo__wrapper ws-flexbox ws-justify-content-between ws-flex-wrap">
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/filterPanel/ListEditor/AdditionalTextProperty/Index' }}">
+            <a href="{{content.href}}">additionalTextProperty</a>
+        </Router.router:Reference>
+        <Controls-demo.filterPanel.ListEditor.AdditionalTextProperty.Index/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/filterPanel/ListEditor/MultiSelect/Index' }}">
+            <a href="{{content.href}}">multiSelect</a>
+        </Router.router:Reference>
+        <Controls-demo.filterPanel.ListEditor.MultiSelect.Index/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/filterPanel/ListEditor/SelectorMode/Index' }}">
+            <a href="{{content.href}}">selectorMode</a>
+        </Router.router:Reference>
+        <Controls-demo.filterPanel.ListEditor.SelectorMode.Index/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/filterPanel/ListEditor/ShowSelectorCaption/Index' }}">
+            <a href="{{content.href}}">showSelectorCaption</a>
+        </Router.router:Reference>
+        <Controls-demo.filterPanel.ListEditor.ShowSelectorCaption.Index/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/filterPanel/ListEditor/MarkerStyle/Index' }}">
+            <a href="{{content.href}}">markerStyle</a>
+        </Router.router:Reference>
+        <Controls-demo.filterPanel.ListEditor.MarkerStyle.Index/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/filterPanel/ListEditor/titleTemplate/Index' }}">
+            <a href="{{content.href}}">titleTemplate</a>
+        </Router.router:Reference>
+        <Controls-demo.filterPanel.ListEditor.TitleTemplate.Index/>
+    </div>
+</div>

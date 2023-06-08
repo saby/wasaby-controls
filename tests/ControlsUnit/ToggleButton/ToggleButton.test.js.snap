@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls/ToggleButton captions and value false 1`] = `
+<div>
+  <span
+    class="controls-BaseButton controls-Button_outlined controls-Button_radius-outlined controls-Button_hoverIcon controls-Button_clickable controls-Button_outlined_style-secondary controls-Button_bg-same controls-fontsize-m controls-Button_button__wrapper-fontsize-m controls-Button_outlined_shadow-none controls_toggle_theme-default  controls-inlineheight-default controls-Button-inlineheight-default controls-Button_outlined_default"
+  >
+    <span
+      class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-outlined controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center controls-Button__wrapper_padding-default controls-Button__wrapper_mode-button controls-Button__wrapper_inline-height_default"
+    >
+      <span
+        class="controls-BaseButton__text controls-Button__text_clickable_bg-same controls-Button__text_viewMode-outlined"
+        tabindex="0"
+      >
+        Save
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/ToggleButton captions and value true 1`] = `
+<div>
+  <span
+    class="controls-BaseButton controls-Button_outlined controls-Button_radius-outlined controls-Button_hoverIcon controls-Button_clickable controls-Button_toggled controls-Button_outlined_style-secondary_toggled controls-Button_bg-same controls-fontsize-m controls-Button_button__wrapper-fontsize-m controls-Button_outlined_shadow-none controls_toggle_theme-default  controls-inlineheight-default controls-Button-inlineheight-default controls-Button_outlined_default"
+  >
+    <span
+      class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-outlined controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center controls-Button__wrapper_padding-default controls-Button__wrapper_mode-button controls-Button__wrapper_inline-height_default"
+    >
+      <span
+        class="controls-BaseButton__text controls-Button__text_clickable_bg-same controls-Button__text_viewMode-outlined"
+        tabindex="0"
+      >
+        Change
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/ToggleButton iconStyles and value false 1`] = `
+<div>
+  <span
+    class="controls-BaseButton controls-Button_ghost controls-Button_radius-ghost controls-Button_hoverIcon controls-Button_clickable controls-Button_ghost_style-default controls-Button_bg-same controls-Button_circle_height-l controls-fontsize-m controls-Button_button__wrapper-fontsize-m controls-Button_ghost_shadow-none controls_toggle_theme-default  controls-inlineheight-l controls-Button-inlineheight-l controls-Button_ghost_l"
+  >
+    <span
+      class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-ghost controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center controls-Button__wrapper_ghost_l"
+    />
+  </span>
+</div>
+`;
+
+exports[`Controls/ToggleButton iconStyles and value true 1`] = `
+<div>
+  <span
+    class="controls-BaseButton controls-Button_ghost controls-Button_radius-ghost controls-Button_clickable controls-Button_toggled controls-Button_ghost_style-default_toggled controls-Button_bg-same controls-Button_circle_height-l controls-fontsize-m controls-Button_button__wrapper-fontsize-m controls-Button_ghost_shadow-none controls_toggle_theme-default  controls-inlineheight-l controls-Button-inlineheight-l controls-Button_ghost_l"
+  >
+    <span
+      class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-ghost controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center controls-Button__wrapper_ghost_l"
+    />
+  </span>
+</div>
+`;
+
+exports[`Controls/ToggleButton icons and value false 1`] = `
+<div>
+  <span
+    class="controls-BaseButton controls-Button_ghost controls-Button_radius-ghost controls-Button_hoverIcon controls-Button_clickable controls-Button_ghost_style-default controls-Button_bg-same controls-Button_circle_height-l controls-fontsize-m controls-Button_button__wrapper-fontsize-m controls-Button_ghost_shadow-none controls_toggle_theme-default  controls-inlineheight-l controls-Button-inlineheight-l controls-Button_ghost_l"
+  >
+    <span
+      class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-ghost controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center controls-Button__wrapper_ghost_l"
+    >
+      <i
+        class="controls-Button__icon controls-BaseButton__icon controls-icon_size-m controls-icon_style-secondary controls-icon icon-ArrangeList04"
+        tabindex="0"
+      />
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/ToggleButton icons and value true 1`] = `
+<div>
+  <span
+    class="controls-BaseButton controls-Button_ghost controls-Button_radius-ghost controls-Button_clickable controls-Button_toggled controls-Button_ghost_style-default_toggled controls-Button_bg-same controls-Button_circle_height-l controls-fontsize-m controls-Button_button__wrapper-fontsize-m controls-Button_ghost_shadow-none controls_toggle_theme-default  controls-inlineheight-l controls-Button-inlineheight-l controls-Button_ghost_l"
+  >
+    <span
+      class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-ghost controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center controls-Button__wrapper_ghost_l"
+    >
+      <i
+        class="controls-Button__icon controls-BaseButton__icon controls-icon_size-m controls-icon_style-secondary controls-icon icon-ArrangeList03"
+        tabindex="0"
+      />
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/ToggleButton viewMode=pushButton and inlineHeight=l 1`] = `
+<div>
+  <span
+    class="controls-BaseButton controls-Button_pushButton controls-Button_radius-pushButton controls-Button_hoverIcon controls-Button_clickable controls-Button_pushButton_style-secondary controls-Button_bg-same controls-fontsize-m controls-Button_pushButton__wrapper-fontsize-m controls-Button_pushButton_shadow-none controls_toggle_theme-default  controls-inlineheight-l controls-Button-inlineheight-l controls-Button_pushButton_l"
+  >
+    <span
+      class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-pushButton controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center controls-Button__wrapper_pushButton_l"
+    />
+  </span>
+</div>
+`;

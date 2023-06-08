@@ -1,0 +1,65 @@
+.controls-Selectorbutton {
+   max-width: 100%;
+   min-height: var(--min-height_lookupSelector);
+   display: inline-block;
+   align-items: center;
+}
+
+.controls-Selectorbutton_empty {
+   display: inline-flex;
+   height: var(--min-height_lookupSelector);
+}
+
+.controls-Selectorbutton__button-reset {
+   font-size: var(--font-size_xs);
+   color: var(--label_text-color);
+   cursor: pointer;
+}
+
+.controls-Selectorbutton_button-more {
+   font-size: var(--font-size_xs);
+   color: var(--label_text-color);
+   margin-right: var(--offset_s);
+   cursor: pointer;
+}
+
+.controls-Selectorbutton_button-more_fontsize-s {
+   font-size: var(--font-size_s);
+}
+
+.controls-Selectorbutton_button-more::after,
+.controls-Selectorbutton__button-reset::after {
+   content: '\200b';
+   font-size: var(--font-size_default_label);
+   line-height: var(--inline_height_default_label);
+}
+
+.controls-Selectorbutton__button-reset:active,
+.controls-Selectorbutton_button-more:active {
+   text-decoration: underline;
+}
+
+.ws-is-hover {
+   .controls-Selectorbutton__button-reset:hover,
+   .controls-Selectorbutton_button-more:hover {
+      text-decoration: underline;
+   }
+
+   .controls-Selectorbutton_selectedItem_single_fontColorStyle-link:hover
+      .controls-text-link {
+      /* stylelint-disable-next-line declaration-no-important */
+      color: var(--link_hover_text-color) !important;
+   }
+}
+
+.controls-Selectorbutton_button-select_readOnly {
+   color: var(--text-color);
+}
+
+.controls-Selectorbutton_selectedCollection_multiSelect {
+   padding-right: var(--offset_2xs);
+}
+
+.controls-Selectorbutton_link {
+   max-width: 100%;
+}

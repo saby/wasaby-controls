@@ -1,0 +1,110 @@
+<div class="controls_filter_theme-{{_options.theme}} controls-FilterView controls-FilterView-{{_options.alignment}}
+            controls-FilterView_{{_needShowDetailPanelTarget(_source) && (!_options.emptyText || _options.detailPanelTemplateName) ? 'withButton' : 'withoutButton'}}
+            {{_options.readOnly ? 'controls-FilterView_readOnly'}}"
+     on:mouseenter="_mouseEnterHandler()">
+   <ws:if data="{{_options.resetButtonVisibility === 'hidden' ||
+                  _options.resetButtonVisibility === 'withoutTextValue' &&
+                              (_filterText || _allChangedFilterTextValueInvisible() || !_isFastReseted())}}">
+      <div class="controls-FilterView__wrapper">
+      <ws:if data="{{_dateRangeItem && _dateRangeItem.viewMode !== 'extended'}}">
+         <ws:partial template="Controls/_filter/Editors/DateRange"
+                     scope="{{_dateRangeItem.editorOptions}}"
+                     validators="{{_dateRangeItem.validators}}"
+                     value="{{_dateRangeItem.value}}"
+                     resetValue="{{_dateRangeItem.resetValue}}"
+                     type="{{_dateRangeItem.type}}"
+                     editorTemplateName="{{_dateRangeItem.editorTemplateName}}"
+                     fontColorStyle="filterItem"
+                     fontWeight="{{_dateRangeItem.editorOptions['fontWeight'] || _getDateItemFontWeight()}}"
+                     validateValueBeforeChange="{{true}}"
+                     attr:class="{{!_needShowDetailPanelTarget(_source) && !_options.readOnly ? 'controls-FilterView-' + _options.alignment + '-offset__dateRangeEditor'}}"
+                     on:textValueChanged="_rangeTextChangedHandler()"
+                     on:rangeChanged="_rangeValueChangedHandler()"/>
+      </ws:if>
+      <ws:if data="{{_needShowFastFilter(_source)}}">
+         <ws:if data="{{_options.detailPanelTemplateName &&
+                      (_options.emptyText && _options.emptyText !== rk('Все') && _isFastReseted() || _isFiltersReseted())}}">
+            <ws:partial template="{{_options.itemTemplate}}"
+                        name="all_frequent"
+                        itemName="all_frequent"
+                        text="{{_options.emptyText || rk('Все')}}"
+                        attr:class="controls-FilterView__frequentFilter
+                                    {{_options.detailPanelTemplateName ? 'controls-FilterView-' + _options.alignment + '__block'}}"
+                        on:mousedown="_openPanel('all_frequent')"/>
+         </ws:if>
+         <ws:for data="index, item in _source">
+            <ws:if data="{{_configs[item.name].items &&
+                           _configs[item.name].items.getCount() &&
+                           _displayText[item.name].text !== undefined ||
+                           _displayText[item.name].text}}">
+               <ws:partial template="{{_options.itemTemplate}}"
+                           text="{{_displayText[item.name].text}}"
+                           title="{{_displayText[item.name].title}}"
+                           moreText="{{_displayText[item.name].hasMoreText}}"
+                           on:mousedown="_openPanel(item.name)"
+                           name="{{item.name}}"
+                           item="{{item}}"
+                           itemName="{{item.name}}"
+                           attr:class="controls-FilterView__frequentFilter {{_options.detailPanelTemplateName ? 'controls-FilterView-' + _options.alignment + '__block'}}"
+               />
+               <ws:if data="{{item.hasOwnProperty('resetValue')}}">
+                  <ws:if data="{{!_options.readOnly}}">
+                     <span class="controls-FilterView__iconReset icon-CloseNew"
+                           ws-no-focus="{{true}}"
+                           on:mousedown="_reset(item)"
+                           title="{[Сбросить]}"
+                           data-qa="FilterView__iconReset">
+                     </span>
+                  </ws:if>
+               </ws:if>
+            </ws:if>
+         </ws:for>
+      </ws:if>
+      <ws:if data="{{_filterText}}">
+         <ws:partial template="{{_options.itemTemplate}}"
+                     text="{{_filterText}}"
+                     title="{{_filterText}}"
+                     on:mousedown="_openDetailPanel()"
+                     attr:class="controls-FilterView__filterTextLine {{_options.detailPanelTemplateName ? 'controls-FilterView-' + _options.alignment + '__block'}}"/>
+         <ws:if data="{{_hasResetValues}}">
+            <ws:if data="{{!_options.readOnly}}">
+                     <span class="controls-FilterView__iconReset icon-CloseNew"
+                           ws-no-focus="{{true}}"
+                           on:mousedown="_resetFilterText()"
+                           title="{[Сбросить]}"
+                           data-qa="FilterView__iconReset">
+                     </span>
+            </ws:if>
+         </ws:if>
+      </ws:if>
+      <ws:if data="{{_needShowDetailPanelTarget(_source) && _options.emptyText && !_options.detailPanelTemplateName}}">
+         <ws:partial template="{{_options.itemTemplate}}"
+                     name="emptyTextTarget"
+                     itemName="emptyTextTarget"
+                     text="{{_options.emptyText}}"
+                     title="{{_options.emptyText}}"
+                     attr:class="controls-FilterView__emptyText
+                              {{_options.detailPanelTemplateName ? 'controls-FilterView-' + _options.alignment + '__block'}}"
+                     on:mousedown="_openDetailPanel('emptyTextTarget')"/>
+      </ws:if>
+   </div>
+   </ws:if>
+   <ws:else>
+      <Controls.buttons:Button caption="{[Сбросить]}"
+                               viewMode="link"
+                               fontColorStyle="label"
+                               fontSize="m"
+                               on:click="reset()"
+                               attr:data-qa="FilterView__Reset"/>
+   </ws:else>
+   <ws:if data="{{_needShowDetailPanelTarget(_source) && (!_options.emptyText || _options.detailPanelTemplateName)}}">
+      <div name="detailPanelTarget" class="controls-FilterView__icon
+                                           {{!_options.resetFilterButtonCaption ? 'controls-FilterView-button-' + _options.alignment}}
+                                           controls-FilterView__icon_state_{{_options.readOnly ? 'disabled' : 'enabled' }}
+                                           icon-FilterNew"
+           on:mousedown="_openDetailPanel()"
+           data-qa="FilterView__icon"
+           data-name="FilterView__icon">
+      </div>
+   </ws:if>
+</div>

@@ -1,0 +1,24 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__ml3">
+      <div class="controls-text-label">Поиск без задержки</div>
+      <Controls.dropdown:Selector
+              source="{{_source}}"
+              keyProperty="key"
+              bind:selectedKeys="_selectedKeys"
+              displayProperty="title"
+              searchParam="title"
+              searchDelay="{{0}}"
+      />
+   </div>
+   <div class="controlsDemo__ml3">
+      <div class="controls-text-label">Поиск c задержкой 1.5 секунды</div>
+      <Controls.dropdown:Selector
+              source="{{_source}}"
+              keyProperty="key"
+              bind:selectedKeys="_selectedKeys"
+              displayProperty="title"
+              searchParam="title"
+              searchDelay="{{1500}}"
+      />
+   </div>
+</div>

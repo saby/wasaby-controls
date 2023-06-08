@@ -1,0 +1,27 @@
+<div class="controls-demo__filter-container">
+    <Controls.browser:Browser bind:filter="_filter" filterButtonItems="{{_filterButtonData}}"
+                              source="{{_source}}" navigation="{{_navigation}}" keyProperty="id">
+        <div>
+            <div class="controls-demo__filter-filtersWrapper">
+                <Controls.filter:ViewContainer>
+                    <Controls.filter:View attr:class="controls-demo__filterButton" detailPanelTemplateName="Controls-demo/Filter/Panel"/>
+                </Controls.filter:ViewContainer>
+            </div>
+            <Controls.list:Container>
+                <Controls.list:View emptyTemplate="Не найдено">
+                    <ws:itemTemplate>
+                        <ws:partial template="Controls/list:ItemTemplate">
+                            <ws:contentTemplate>
+                                <div style="padding: 4px; display: flex; justify-content: space-between">
+                                    <div style="width: 300px">{{itemTemplate.item.contents.get('department')}}</div>
+                                    <div style="font-size: 13px; color: darkblue">{{itemTemplate.item.contents.get('owner')}}(78)</div>
+                                    <div style="font-size: 13px; color: limegreen">{{itemTemplate.item.contents.get('id')}}</div>
+                                </div>
+                            </ws:contentTemplate>
+                        </ws:partial>
+                    </ws:itemTemplate>
+                </Controls.list:View>
+            </Controls.list:Container>
+        </div>
+    </Controls.browser:Browser>
+</div>

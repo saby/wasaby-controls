@@ -1,0 +1,42 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+<div class="controlsDemo__wrapper controlsDemo__flex">
+    <div class="controlsDemo__cell ws-flex-column controlsDemo_fixedWidth250">
+        <div class="controls-text-label controls-margin_bottom-xs">Ввод любого номера телефона</div>
+        <div class="controlsDemo__cell controls-padding_left-m">
+            <Controls.input:Phone attr:class="controlsDemo__input"
+                                  inlineHeight="xl"
+                                  fontSize="l"/>
+        </div>
+        <div class="controls-text-label controls-margin_bottom-xs">Ввод мобильного номера телефона</div>
+        <div class="controlsDemo__cell controls-padding_left-m">
+            <Controls.input:Phone attr:class="controlsDemo__input"
+                                  inlineHeight="xl"
+                                  fontSize="l"
+                                  onlyMobile="{{true}}"
+                                  placeholder="+7 Телефон"/>
+        </div>
+    </div>
+    <div class="controlsDemo__cell ws-flex-column controlsDemo_fixedWidth250 controls-padding_left-m">
+        <div class="controls-text-label controls-margin_bottom-xs">Поле ввода с флагом</div>
+        <div class="controlsDemo__cell controls-padding_left-m">
+            <Controls.input:Phone attr:class="controlsDemo__input"
+                                  inlineHeight="xl"
+                                  fontSize="l"
+                                  placeholder="+7 Телефон"
+                                  onlyMobile="{{true}}"
+                                  flagVisible="{{true}}"/>
+        </div>
+        <div class="controls-text-label controls-margin_bottom-xs">Отображение флага справа</div>
+        <div class="controlsDemo__cell controls-padding_left-m">
+            <Controls.input:Phone attr:class="controlsDemo__input"
+                                  inlineHeight="xl"
+                                  fontSize="l"
+                                  placeholder="+7 Телефон"
+                                  onlyMobile="{{true}}"
+                                  flagVisible="{{true}}"
+                                  flagPosition="right"/>
+        </div>
+    </div>
+</div>
+</div>
+

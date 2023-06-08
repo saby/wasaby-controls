@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container scrollOrientation="verticalHorizontal"
+							   attr:style="width: 600px; height: 400px">
+        <Controls.grid:View
+                keyProperty="key"
+                source="{{_viewSource}}"
+                columns="{{_columns}}"
+                newColumnScroll="{{true}}"
+                header="{{_header}}"
+                stickyColumnsCount="{{2}}">
+        <ws:editingConfig>
+            <ws:Object editOnClick="{{true}}" autoAdd="{{true}}"/>
+        </ws:editingConfig>
+        </Controls.grid:View>
+    </Controls.scroll:Container>
+</div>

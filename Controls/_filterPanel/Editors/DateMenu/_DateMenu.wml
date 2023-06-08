@@ -1,0 +1,58 @@
+<ws:template name="dropdown">
+    <Controls.Container.Async templateName="Controls/dropdown:Selector">
+        <ws:content>
+            <ws:partial template="{{content.resolvedTemplate}}"
+                        items="{{_items}}"
+                        source="{{null}}"
+                        filter="{{null}}"
+                        keyProperty="{{_options.keyProperty}}"
+                        displayProperty="{{_options.displayProperty}}"
+                        fontColorStyle="{{_options.fontColorStyle || 'default'}}"
+                        caption="{{caption}}"
+                        fontSize="{{_options.fontSize}}"
+                        inlineHeight="m"
+                        underline="hidden"
+                        selectedKeys="{{_selectedKeys}}"
+                        headerTemplate="{{null}}"
+                        sourceController="{{null}}"
+                        on:menuItemClick="_onItemClick()"
+                        attr:class="controls-FilterViewPanel__dropdownEditor">
+                <ws:menuPopupOptions>
+                    <ws:templateOptions markerVisibility="onactivated" />
+                </ws:menuPopupOptions>
+                <ws:contentTemplate>
+                    <ws:partial template="Controls/dropdown:inputDefaultContentTemplate"
+                                text="{{caption}}"
+                    />
+                </ws:contentTemplate>
+            </ws:partial>
+        </ws:content>
+    </Controls.Container.Async>
+</ws:template>
+
+<Controls._filterPanel.BaseEditor scope="{{_options}}">
+    <ws:editorTemplate>
+        <div class="ws-ellipsis controls-FilterViewPanel__basicEditor-cloud
+                            controls-FilterViewPanel__basicEditor-cloud-{{_options.filterViewMode}}">
+            <ws:partial template="dropdown"
+                        caption="{{_caption}}" />
+        </div>
+    </ws:editorTemplate>
+
+    <ws:extendedTemplate>
+        <Controls._filterPanel.Editors.resources.FrequentItem
+                on:extendedCaptionClick="_openMenu()"
+                on:propertyValueChanged="_itemClick(_fastItem)"
+                frequentItemText="{{_fastItem && _fastItem.get(_options.displayProperty)}}"
+                frequentItemKey="{{_fastItem && _fastItem.get(_options.keyProperty)}}"
+                fastDataQa="controls-FilterViewPanel__dateMenuEditor-fastItem">
+            <ws:beforeContentTemplate>
+                <ws:partial template="dropdown"
+                            caption="{{_options.extendedCaption}}"
+                            attr:class="{{_fastItem ? 'controls-FilterViewPanel__editor_underline ws-flex-shrink-0'}}"
+                            attr:data-qa="controls-FilterViewPanel__dateMenuEditor-dropdown">
+                </ws:partial>
+            </ws:beforeContentTemplate>
+        </Controls._filterPanel.Editors.resources.FrequentItem>
+    </ws:extendedTemplate>
+</Controls._filterPanel.BaseEditor>

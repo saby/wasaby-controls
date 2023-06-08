@@ -1,0 +1,99 @@
+<div class="controlsDemo__flexRow">
+<div class="controlsDemo__cell controlsDemo__mb2 controlsDemo__ml2 controlsDemo__maxWidth500">
+    <div class="controls-text-label">backgroundStyle and headerBackgroundStyle is empty</div>
+    <Controls.popupSliding:Template
+        slidingPanelOptions="{{ _slidingPanelOptions }}">
+        <ws:bodyContentTemplate>
+            <ws:partial template="Controls-demo/Popup/BaseTemplate"></ws:partial>
+        </ws:bodyContentTemplate>
+    </Controls.popupSliding:Template>
+</div>
+<div class="controlsDemo__cell controlsDemo__mb2 controlsDemo__ml2 controlsDemo__maxWidth500">
+    <div class="controls-text-label">backgroundStyle="default", headerBackgroundStyle="default"</div>
+    <Controls.popupSliding:Template
+        backgroundStyle="default"
+        headerBackgroundStyle="default"
+        slidingPanelOptions="{{ _slidingPanelOptions }}">
+        <ws:bodyContentTemplate>
+            <ws:partial template="Controls-demo/Popup/BaseTemplate"></ws:partial>
+        </ws:bodyContentTemplate>
+    </Controls.popupSliding:Template>
+</div>
+<div class="controlsDemo__cell controlsDemo__mb2 controlsDemo__ml2 controlsDemo__maxWidth500">
+    <div class="controls-text-label">backgroundStyle="unaccented", headerBackgroundStyle="unaccented"</div>
+    <Controls.popupSliding:Template
+        backgroundStyle="unaccented"
+        headerBackgroundStyle="unaccented"
+        slidingPanelOptions="{{ _slidingPanelOptions }}">
+        <ws:bodyContentTemplate>
+            <ws:partial template="Controls-demo/Popup/BaseTemplate"></ws:partial>
+        </ws:bodyContentTemplate>
+    </Controls.popupSliding:Template>
+</div>
+<div class="controlsDemo__cell controlsDemo__mb2 controlsDemo__ml2 controlsDemo__maxWidth500">
+    <div class="controls-text-label">backgroundStyle="secondary", headerBackgroundStyle="secondary"</div>
+    <Controls.popupSliding:Template
+        backgroundStyle="secondary"
+        headerBackgroundStyle="secondary"
+        slidingPanelOptions="{{ _slidingPanelOptions }}">
+        <ws:bodyContentTemplate>
+            <ws:partial template="Controls-demo/Popup/BaseTemplate"></ws:partial>
+        </ws:bodyContentTemplate>
+    </Controls.popupSliding:Template>
+</div>
+<div class="controlsDemo__cell controlsDemo__mb2 controlsDemo__ml2 controlsDemo__maxWidth500">
+    <div class="controls-text-label">backgroundStyle="primary", headerBackgroundStyle="primary"</div>
+    <Controls.popupSliding:Template
+        backgroundStyle="primary"
+        headerBackgroundStyle="primary"
+        slidingPanelOptions="{{ _slidingPanelOptions }}">
+        <ws:bodyContentTemplate>
+            <ws:partial template="Controls-demo/Popup/BaseTemplate"></ws:partial>
+        </ws:bodyContentTemplate>
+    </Controls.popupSliding:Template>
+</div>
+<div class="controlsDemo__cell controlsDemo__mb2 controlsDemo__ml2 controlsDemo__maxWidth500">
+    <div class="controls-text-label">backgroundStyle="danger", headerBackgroundStyle="danger"</div>
+    <Controls.popupSliding:Template
+        backgroundStyle="danger"
+        headerBackgroundStyle="danger"
+        slidingPanelOptions="{{ _slidingPanelOptions }}">
+        <ws:bodyContentTemplate>
+            <ws:partial template="Controls-demo/Popup/BaseTemplate"></ws:partial>
+        </ws:bodyContentTemplate>
+    </Controls.popupSliding:Template>
+</div>
+<div class="controlsDemo__cell controlsDemo__mb2 controlsDemo__ml2 controlsDemo__maxWidth500">
+    <div class="controls-text-label">backgroundStyle="warning", headerBackgroundStyle="warning"</div>
+    <Controls.popupSliding:Template
+        backgroundStyle="warning"
+        headerBackgroundStyle="warning"
+        slidingPanelOptions="{{ _slidingPanelOptions }}">
+        <ws:bodyContentTemplate>
+            <ws:partial template="Controls-demo/Popup/BaseTemplate"></ws:partial>
+        </ws:bodyContentTemplate>
+    </Controls.popupSliding:Template>
+</div>
+<div class="controlsDemo__cell controlsDemo__mb2 controlsDemo__ml2 controlsDemo__maxWidth500">
+    <div class="controls-text-label">backgroundStyle="info", headerBackgroundStyle="info"</div>
+    <Controls.popupSliding:Template
+        backgroundStyle="info"
+        headerBackgroundStyle="info"
+        slidingPanelOptions="{{ _slidingPanelOptions }}">
+        <ws:bodyContentTemplate>
+            <ws:partial template="Controls-demo/Popup/BaseTemplate"></ws:partial>
+        </ws:bodyContentTemplate>
+    </Controls.popupSliding:Template>
+</div>
+<div class="controlsDemo__cell controlsDemo__mb2 controlsDemo__ml2 controlsDemo__maxWidth500">
+    <div class="controls-text-label">backgroundStyle="success", headerBackgroundStyle="success"</div>
+    <Controls.popupSliding:Template
+        backgroundStyle="success"
+        headerBackgroundStyle="success"
+        slidingPanelOptions="{{ _slidingPanelOptions }}">
+        <ws:bodyContentTemplate>
+            <ws:partial template="Controls-demo/Popup/BaseTemplate"></ws:partial>
+        </ws:bodyContentTemplate>
+    </Controls.popupSliding:Template>
+</div>
+</div>

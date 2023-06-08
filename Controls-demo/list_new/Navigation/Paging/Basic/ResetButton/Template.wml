@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth800">
+    <Controls.scroll:Container
+            attr:class="controlsDemo_fixedWidth500 controlsDemo__maxWidth500 controlsDemo__height500 controlsDemo__mb1">
+        <Controls.list:View
+                name="list"
+                source="{{_source}}"
+                keyProperty="key">
+            <ws:navigation source="position" view="infinity">
+                <ws:sourceConfig field="key" position="{{_position}}" direction="bothways" limit="{{25}}"/>
+                <ws:viewConfig pagingMode="basic" showEndButton="true" resetButtonMode="home"/>
+            </ws:navigation>
+            <ws:virtualScrollConfig pageSize="{{40}}"/>
+        </Controls.list:View>
+    </Controls.scroll:Container>
+</div>

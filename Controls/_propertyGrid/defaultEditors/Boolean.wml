@@ -1,0 +1,22 @@
+<ws:template name="editor">
+    <Controls.Container.Async templateName="Controls/checkbox:Checkbox">
+        <ws:partial template="{{content.resolvedTemplate}}"
+                    attr:class="controls-Input_negativeOffset controls-PropertyGrid__editor_boolean_control"
+                    on:valueChanged="_valueChanged()"
+                    value="{{value}}"
+                    validationStatus="{{_options.validationStatus}}"/>
+    </Controls.Container.Async>
+</ws:template>
+
+<ws:if data="{{_options.jumpingLabel}}">
+    <Controls.Container.Async templateName="wml!Controls/_propertyGrid/JumpingLabelContainer">
+        <ws:partial template="{{content.resolvedTemplate}}"
+                    caption="{{_options.caption}}"
+                    required="{{_options.required}}">
+            <ws:partial template="editor" />
+        </ws:partial>
+    </Controls.Container.Async>
+</ws:if>
+<ws:else>
+    <ws:partial template="editor" />
+</ws:else>

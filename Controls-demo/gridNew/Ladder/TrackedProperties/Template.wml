@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth400">
+    <Controls.scroll:Container attr:class="controlsDemo__height300" shadowMode="js">
+        <Controls.grid:View
+                keyProperty="key"
+                source="{{_viewSource}}"
+                columns="{{_columns}}"
+                trackedProperties="{{_trackedProperties}}"
+                itemPadding="{{_itemPadding}}"
+                ladderProperties="{{_ladderProperties}}">
+        </Controls.grid:View>
+    </Controls.scroll:Container>
+</div>

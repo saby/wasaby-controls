@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:class="controlsDemo__height300">
+        <Controls.listDeprecate:Mover name="listMover"/>
+        <Controls.grid:View
+                keyProperty="key"
+                source="{{_viewSource}}"
+                columns="{{_columns}}"
+                header="{{_header}}"
+                resultsPosition="top"
+                ladderProperties="{{_ladderProperties}}"/>
+    </Controls.scroll:Container>
+</div>

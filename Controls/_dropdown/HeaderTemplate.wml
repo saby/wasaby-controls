@@ -1,0 +1,5 @@
+<Controls.Container.Async templateName="Controls/menu:HeaderTemplate"
+                          templateOptions="{{_options}}"
+                          attr:class="controls-MenuButton__popup-header
+                                      {{_options.markerVisibility && _options.markerVisibility !== 'hidden' ?
+                                      'controls-MenuButton__popup-header-paddingLeft_marker' : 'controls-MenuButton__popup-header-paddingLeft_default'}}" />

@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls-ListsUnit/Lists/Expander/ExpanderPosition expander is displayed left if expanderPosition=default 1`] = `
+<div
+  class="controls-GridReact__cell tw-flex tw-relative js-controls-Grid__row-cell controls-GridReact__minHeight-data controls-fontsize-2xl tw-cursor-pointer controls-padding_top-grid_s controls-padding_bottom-grid_s controls-padding_left-m controls-padding_right-grid_m controls-hover-background-list_default tw-items-baseline controls-GridReact__cell-baseline tw-break-words"
+>
+  <div
+    class="tw-flex tw-items-baseline "
+  >
+    <div
+      class="js-controls-Tree__row-expander controls-TreeGrid__row-expander controls-cursor_pointer js-controls-ListView__notEditable controls-TreeGrid__row_default-expander_size_default tw-inline-flex tw-justify-center tw-items-center tw-flex-shrink-0 controls-TreeGrid__row-expander_node_default_position_default controls-TreeGrid__row-expander_node_default controls-TreeGrid__row-expander_node_iconSize_default controls-TreeGrid__row-expander_node_iconStyle_default controls-TreeGrid__row-expander_collapsed controls-TreeGrid__row-expander_node_default_collapsed"
+      data-qa="row-expander"
+      tabindex="-1"
+    />
+  </div>
+  Apple
+</div>
+`;
+
+exports[`Controls-ListsUnit/Lists/Expander/ExpanderPosition expander is displayed right if expanderPosition=right 1`] = `
+<div
+  class="controls-GridReact__cell tw-flex tw-relative js-controls-Grid__row-cell controls-GridReact__minHeight-data controls-fontsize-2xl tw-cursor-pointer controls-padding_top-grid_s controls-padding_bottom-grid_s controls-padding_left-m controls-padding_right-grid_m controls-hover-background-list_default tw-items-baseline controls-GridReact__cell-baseline tw-break-words"
+>
+  <div
+    class="tw-flex tw-items-baseline "
+  />
+  Apple
+  <div
+    class="js-controls-Tree__row-expander controls-TreeGrid__row-expander controls-cursor_pointer js-controls-ListView__notEditable tw-inline-block controls-padding_left-xs controls-TreeGrid__row-expander_node_default_position_right controls-TreeGrid__row-expander_node_default controls-TreeGrid__row-expander_node_iconSize_default controls-TreeGrid__row-expander_node_iconStyle_default controls-TreeGrid__row-expander_collapsed controls-TreeGrid__row-expander_node_default_collapsed"
+    data-qa="row-expander"
+    tabindex="-1"
+  />
+</div>
+`;
+
+exports[`Controls-ListsUnit/Lists/Expander/ExpanderPosition should rerender if change expanderPosition 1`] = `
+<div
+  class="controls-GridReact__cell tw-flex tw-relative js-controls-Grid__row-cell controls-GridReact__minHeight-data controls-fontsize-2xl tw-cursor-pointer controls-padding_top-grid_s controls-padding_bottom-grid_s controls-padding_left-m controls-padding_right-grid_m controls-hover-background-list_default tw-items-baseline controls-GridReact__cell-baseline tw-break-words"
+>
+  <div
+    class="tw-flex tw-items-baseline "
+  />
+  Apple
+  <div
+    class="js-controls-Tree__row-expander controls-TreeGrid__row-expander controls-cursor_pointer js-controls-ListView__notEditable tw-inline-block controls-padding_left-xs controls-TreeGrid__row-expander_node_default_position_right controls-TreeGrid__row-expander_node_default controls-TreeGrid__row-expander_node_iconSize_default controls-TreeGrid__row-expander_node_iconStyle_default controls-TreeGrid__row-expander_collapsed controls-TreeGrid__row-expander_node_default_collapsed"
+    data-qa="row-expander"
+    tabindex="-1"
+  />
+</div>
+`;

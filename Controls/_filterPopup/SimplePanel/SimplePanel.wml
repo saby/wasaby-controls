@@ -1,0 +1,41 @@
+<div class="controls-SimplePanel {{!_options.isAdaptive ? ' controls-SimplePanel_close-padding'}}">
+   <Controls.popupTemplate:Sticky attr:class="controls_filter_theme-{{_options.theme}}
+                                             controls_filterPopup_theme-{{_options.theme}}
+                                             controls_dropdownPopup_theme-{{_options.theme}}
+                                             controls-Popup__isolatedFocusingContext
+                                             controls-SimplePanel_content
+                                             {{!_options.isAdaptive ? 'controls-SimplePanel_background'}}"
+                                 closeButtonVisible="{{true}}"
+                                 closeButtonViewMode="{{_applyButtonVisible ? 'externalWide' : 'external'}}"
+                                 borderVisible="{{false}}">
+      <ws:bodyContentTemplate>
+         <Controls.scroll:Container attr:class="controls-ScrollContainer__flex controls-SimplePanel__scroll"
+                                    topShadowVisibility="hidden"
+                                    bottomShadowVisibility="hidden"
+                                    scrollbarVisible="{{false}}">
+               <ws:for data="index, item in _items">
+                  <ws:partial template="{{_options.itemTemplate}}"
+                              scope="{{item}}"
+                              hasApplyButton="{{!index && _hasApplyButton}}"
+                              on:itemClick="_itemClickHandler(item)"
+                              on:checkBoxClick="_checkBoxClickHandler(index)"
+                              on:moreButtonClick="_moreButtonClick(item)"/>
+                  <ws:if data="{{_items.length !== index + 1}}">
+                     <div class="controls-SimplePanel__block_separator"></div>
+                  </ws:if>
+               </ws:for>
+         </Controls.scroll:Container>
+         <ws:if data="{{_applyButtonVisible}}">
+            <div class="controls-SimplePanel__applyButton" data-qa="SimplePanel__applyButton">
+               <Controls.buttons:Button viewMode="filled"
+                                          icon="icon-Yes"
+                                          iconSize="s"
+                                          iconStyle="contrast"
+                                          buttonStyle="success"
+                                          inlineHeight="menuapply"
+                                          on:click="_applySelection()"/>
+            </div>
+         </ws:if>
+      </ws:bodyContentTemplate>
+   </Controls.popupTemplate:Sticky>
+</div>

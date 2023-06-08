@@ -1,0 +1,28 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">Контент не превышает максимальную высоту</div>
+        <Controls.spoiler:Cut attr:data-qa="controls-spoilerCut__not_exceed_maxHeight" attr:style="width: 200px;" maxHeight="65">
+            <ws:content>
+                <Controls.buttons:Button caption="Кнопка"/>
+                <Controls.buttons:Button caption="Кнопка"/>
+                <Controls.buttons:Button caption="Кнопка"/>
+                <Controls.buttons:Button caption="Кнопка"/>
+            </ws:content>
+        </Controls.spoiler:Cut>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">Контент превышает максимальную высоту</div>
+        <Controls.spoiler:Cut attr:data-qa="controls-spoilerCut__exceed_maxHeight" attr:style="width: 200px;" maxHeight="65">
+            <ws:content>
+                <Controls.buttons:Button caption="Кнопка"/>
+                <Controls.buttons:Button caption="Кнопка"/>
+                <Controls.buttons:Button caption="Кнопка"/>
+                <Controls.buttons:Button caption="Кнопка"/>
+                <Controls.buttons:Button caption="Кнопка"/>
+                <Controls.buttons:Button caption="Кнопка"/>
+                <Controls.buttons:Button caption="Кнопка"/>
+                <Controls.buttons:Button caption="Кнопка"/>
+            </ws:content>
+        </Controls.spoiler:Cut>
+    </div>
+</div>

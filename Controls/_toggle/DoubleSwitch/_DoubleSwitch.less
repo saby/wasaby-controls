@@ -1,0 +1,57 @@
+.controls-DoubleSwitch {
+   font-size: var(--font-size_m);
+}
+
+.controls-DoubleSwitch__wrapper {
+   display: inline-flex;
+   width: 100%;
+}
+
+.controls-DoubleSwitch__toggle_horizontal__wrapper {
+   align-items: baseline;
+}
+
+.controls-DoubleSwitch__textBlock {
+   .inline-flexbox();
+   .flex-direction(column);
+   justify-content: space-between;
+   flex: 1;
+   overflow: hidden;
+   margin-left: var(--offset_xs);
+   flex-basis: auto;
+}
+
+.controls-DoubleSwitch__line_horizontal {
+   position: relative;
+}
+
+.controls-DoubleSwitch__line_vertical {
+   position: relative;
+}
+
+.controls-DoubleSwitch__text_vertical {
+   .text-overflow();
+   //If border is in height text block base line between text and toggle circle deviates to switch border height.
+   //In vertical state width = height, height = width.
+   height: calc(var(--height_vertical_switcher) / 2 - var(--border-thickness));
+   line-height: calc(var(--height_vertical_switcher) / 2);
+   display: block;
+}
+
+.controls-DoubleSwitch__text_enabled_unselected {
+   color: var(--text-color_switcher);
+   cursor: pointer;
+}
+
+.controls-DoubleSwitch__text_disabled_unselected {
+   color: var(--readonly_color);
+}
+
+.controls-DoubleSwitch__text_enabled_selected {
+   cursor: pointer;
+   color: var(--selected_text-color_switcher);
+}
+
+.controls-DoubleSwitch__text_disabled_selected {
+   color: var(--selected_text-color_switcher);
+}

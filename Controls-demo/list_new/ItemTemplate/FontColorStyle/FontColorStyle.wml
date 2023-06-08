@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper">
+    <Controls.buttons:Button caption="Change fontColorStyle" on:click="_changeFontColorStyle()"/>
+    <Controls.list:View
+            keyProperty="key"
+            source="{{_viewSource}}"
+            displayProperty="backgroundStyle">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/list:ItemTemplate" fontColorStyle="{{_fontColorStyle}}"/>
+        </ws:itemTemplate>
+    </Controls.list:View>
+</div>

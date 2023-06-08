@@ -1,0 +1,32 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">default</div>
+        <Controls.input:Area
+                attr:class="controlsDemo_fixedWidth300"
+                bind:value="_value"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">minLines=2, maxLines=3</div>
+        <Controls.input:Area
+                attr:class="controlsDemo_fixedWidth300"
+                bind:value="_value1"
+                minLines="{{2}}"
+                maxLines="{{3}}"
+        />
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">footerTemplate</div>
+        <Controls.input:Area
+                attr:class="controlsDemo_fixedWidth300"
+                bind:value="_value2"
+                maxLines="{{3}}"
+                horizontalPadding="null">
+            <ws:footerTemplate>
+                <Controls.buttons:Button caption="Прикрепить" viewMode="link"
+                                         icon="icon-TFAttach"
+                                         iconSize="s"
+                                         iconStyle="secondary"/>
+            </ws:footerTemplate>
+        </Controls.input:Area>
+    </div>
+</div>

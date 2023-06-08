@@ -1,0 +1,22 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/VirtualScroll/ConstantHeights/Index' }}">
+            <a href="{{content.href}}">Одинаковая высота записей</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.VirtualScroll.ConstantHeights.Index/>
+    </div>
+
+
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/VirtualScroll/DifferentHeights/Index' }}">
+            <a href="{{content.href}}">Разные высоты записей</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.VirtualScroll.DifferentHeights.Index/>
+    </div>
+
+
+</div>

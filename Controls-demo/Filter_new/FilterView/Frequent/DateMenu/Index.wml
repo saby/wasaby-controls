@@ -1,0 +1,26 @@
+<div class="controlsDemo__wrapper">
+    <Controls.browser:Browser filterButtonSource="{{_filterSource}}"
+                              keyProperty="id"
+                              displayProperty="title"
+                              source="{{_viewSource}}">
+        <div>
+            <Controls.filter:ViewContainer>
+                <Controls.filter:View source="{{_filterSource}}"/>
+            </Controls.filter:ViewContainer>
+            <Controls.list:Container>
+                <Controls.list:View>
+                    <ws:itemTemplate>
+                        <ws:partial template="Controls/list:ItemTemplate">
+                            <ws:contentTemplate>
+                                <div>
+                                    <span class="controls-padding_right-m">{{itemTemplate.item.contents.get('title')}}</span>
+                                    <span>{{itemTemplate.item.contents.get('date').toLocaleDateString()}}</span>
+                                </div>
+                            </ws:contentTemplate>
+                        </ws:partial>
+                    </ws:itemTemplate>
+                </Controls.list:View>
+            </Controls.list:Container>
+        </div>
+    </Controls.browser:Browser>
+</div>
