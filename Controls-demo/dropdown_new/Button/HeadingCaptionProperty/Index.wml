@@ -1,0 +1,14 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper">
+      <div class="demo-ButtonMenu__label controls-text-label">Меню с шапкой в подменю</div>
+      <Controls.dropdown:Button
+              keyProperty="key"
+              caption="Create"
+              source="{{_source}}"
+              parentProperty="parent"
+              nodeProperty="@parent"
+              headingCaptionProperty="headingCaption"
+              attr:class="controlsDemo-menuButton">
+      </Controls.dropdown:Button>
+   </div>
+</div>

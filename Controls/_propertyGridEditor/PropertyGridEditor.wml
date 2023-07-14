@@ -1,0 +1,38 @@
+<Controls._propertyGridEditor.render.ListRender
+    attr:class="controls-PropertyGridEditor"
+    name="listRender"
+    scope="{{_options}}"
+    items="{{_items}}"
+    columns="{{_columns}}"
+    root="{{null}}"
+    expandedItems="{{[null]}}"
+    captionPosition="{{_captionPosition}}"
+    colspanCallback="{{_colspanCallback}}"
+    markerVisibility="hidden"
+    on:selectedKeysChanged="_notifyHandler('selectedKeysChanged')"
+    on:excludedKeysChanged="_notifyHandler('excludedKeysChanged')"
+    on:itemClick="_notifyHandler('itemClick')"
+    on:actionClick="_notifyHandler('actionClick')"
+    on:customdragEnter="_notifyHandler('customdragEnter')"
+    on:customdragStart="_onDragStart()"
+    on:customdragEnd="_onDragEnd()"
+    on:dragMove="_notifyHandler('dragMove')"
+    on:beforeBeginEdit="_notifyHandler('beforeBeginEdit')"
+    on:afterBeginEdit="_notifyHandler('afterBeginEdit')"
+    on:beforeEndEdit="_notifyHandler('beforeEndEdit')"
+    on:afterEndEdit="_notifyHandler('afterEndEdit')"
+    on:itemMouseDown="_notifyHandler('itemMouseDown')"
+    on:itemMouseEnter="_notifyHandler('itemMouseEnter')"
+    on:itemMouseLeave="_notifyHandler('itemMouseLeave')"
+    on:itemMouseMove="_notifyHandler('itemMouseMove')">
+    <ws:groupTemplate>
+        <ws:partial template="wml!Controls/_propertyGridEditor/render/groupTemplate" groupTemplate="{{groupTemplate}}"/>
+    </ws:groupTemplate>
+    <ws:itemTemplate>
+        <ws:partial template="{{_options.itemTemplate ? _options.itemTemplate : 'Controls/propertyGridEditor:ItemTemplate'}}"
+                    levelPadding="{{_options.levelPadding}}"
+                    item="{{itemTemplate.item.contents || itemTemplate.item}}"
+                    itemCollection="{{itemTemplate.item}}"
+                    />
+    </ws:itemTemplate>
+</Controls._propertyGridEditor.render.ListRender>

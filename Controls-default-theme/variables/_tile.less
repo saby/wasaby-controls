@@ -1,0 +1,77 @@
+.controls_list_theme-@{themeName} {
+   // Переменные для плитки
+   //
+   // Оступы внутри плитки
+
+   --padding-left_default_tile: 0px;
+   --padding-right_default_tile: 0px;
+   // Отступы между плитками
+
+   --item_offset_tile: var(--offset_m);
+
+   // Цвет фона элементов
+
+   --item_background-color_tile: var(--background-color);
+   --item_hover_background-color_tile: var(--hover_background-color);
+
+   // Обводка элементов
+
+   --item_border-thickness_tile: var(--border-thickness);
+   --item_border-color_tile: var(--border-color);
+
+   // Операции над записью
+
+   --itemActions_offset-right_tile: 0;
+   --itemActions_offset-bottom_tile: 0;
+
+   // Переменные для текстовой подписи в плитках
+   //
+   // Размеры и отступы
+
+   --unaccented_item_caption_min-height_tile: 18px;
+   --unaccented_item_caption_max-height_tile: calc(
+      var(--unaccented_item_caption_min-height_tile) * 2
+   );
+   --item_caption_min-height_tile: var(--inline_height_m);
+   --item_caption_max-height_tile: var(--item_caption_min-height_tile);
+
+   // Разделитель
+
+   --item_caption_separator-color_tile: #ccc;
+
+   // Цвет фона
+
+   --item_caption_background-color_tile: var(--hover_background-color);
+   --itemActions_gradient_width_tile: 24px;
+
+   // Текст
+   --node_height_tile: 40px;
+   --node_hover_background-color_tile: var(--hover_background-color);
+   --node_caption_padding-right_tile: var(--offset_2xs);
+   --node_font-size_tile: var(--font-size_l);
+   --node_icon_offset_tile: var(--offset_2xs);
+
+   //Простой шаблон с картинкой и однострочным текстом (smallTemplate)
+   --title_offset_right_small_tile: 11px;
+
+   //Богатый настраиваемый шаблон элемента
+   --font-size_tile_rich-title: var(--font-size_xl);
+   --font-size_tile_rich_node-title: var(--font-size_4xl);
+   --image_height_m_position_top_rich_tile: 240px;
+   --gradient_height_rich_tile: 48px;
+
+   //Средний шаблон с картинкой и многострочным текстом
+   --height_medium_tile: 158px;
+
+   //Плитка-превью
+
+   // Не ссылаемся на глобальные переменные, так как они не должны темизироваться.
+   // Использовать явные значения цветов запрещено СТАНом.
+   --text_light_color_preview_tile: #fff;
+   --icon_style_color_tile_light_preview_tile: #fff;
+   --text_dark_color_preview_tile: #333;
+   --icon_style_color_tile_dark_preview_tile: #666;
+   --title_multi_line_height_preview_tile: 48px;
+   --item_actions_shadow_size_rich_tile: 0 2px 6px 0;
+   --item_actions_shadow_color_rich_tile: rgba(0, 0, 0, 0.15);
+}

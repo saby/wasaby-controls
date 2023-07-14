@@ -1,0 +1,18 @@
+<ws:partial
+        template="{{_options.content}}"
+        name="toolbar"
+        scope="{{_options}}"
+        items="{{_toolbarItems}}"
+        menuSource="{{_menuSource}}"
+        keyProperty="id"
+        parentProperty="parent"
+        itemTemplateProperty="template"
+        additionalProperty="additional"
+        hintTextProperty="hintText"
+        hintBackgroundStyleProperty="hintBackgroundStyle"
+        hintBorderStyleProperty="hintBorderStyle"
+        groupProperty="group"
+        nodeProperty="parent@"
+        on:applyClick="_applyClick()"
+        on:itemClick="_toolbarItemClick()"/>
+

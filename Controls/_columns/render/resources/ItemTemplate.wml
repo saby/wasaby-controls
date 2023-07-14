@@ -1,0 +1,56 @@
+<div class="{{ item.getWrapperClasses(highlightOnHover, cursor || clickable, backgroundColorStyle, hoverBackgroundStyle, showItemActionsOnHover, contentPadding, isAdaptive) }}"
+      attr:data-qa="{{item.listElementName}}">
+   <ws:if data="{{item.shouldDisplayMarker(marker)}}">
+      <div data-qa="marker" class="{{item.getMarkerClasses(markerSize) + ' ' + (markerClassName || '')}}"></div>
+   </ws:if>
+   <ws:if data="{{ multiSelectVisibility && multiSelectVisibility !== 'hidden' && multiSelectPosition !== 'custom' }}">
+      <ws:partial template="{{ item.getMultiSelectTemplate() }}"
+                  item="{{ item }}"
+                  viewMode="outlined"/>
+   </ws:if>
+   <div class="{{ item.getContentClasses(shadowVisibility) }}">
+      <ws:if data="{{ contentTemplate }}">
+         <ws:partial
+                 template="{{ contentTemplate }}"
+                 item="{{ item }}"
+                 searchValue="{{ searchValue }}"
+                 swipeTemplate="{{ swipeTemplate }}">
+            <ws:itemActionsTemplate>
+               <ws:if data="{{ item.shouldDisplayItemActions() }}">
+                  <ws:partial template="{{ itemActionsTemplate.itemActionsTemplate }}"/>
+               </ws:if>
+               <ws:else>
+                  <span tabIndex="-1" class="ws-hidden"></span>
+               </ws:else>
+            </ws:itemActionsTemplate>
+            <ws:multiSelectTemplate>
+               <ws:partial template="{{ item.getMultiSelectTemplate() }}"
+                           viewMode="outlined"
+                           item="{{ item }}" />
+            </ws:multiSelectTemplate>
+         </ws:partial>
+      </ws:if>
+      <ws:else>
+         {{ item.getContents()[item.getDisplayProperty() || 'title'] }}
+      </ws:else>
+   </div>
+   <ws:if data="{{ item.shouldDisplayItemActions() }}">
+      <ws:if data="{{ item.isSwiped() }}">
+         <ws:partial
+            template="{{ swipeTemplate }}"
+            item="{{ item }}"
+            itemActionsTemplate="{{ itemActionsTemplate }}">
+         </ws:partial>
+      </ws:if>
+      <ws:else data="{{ itemActionsPosition !== 'custom' }}">
+         <ws:partial
+            template="{{ itemActionsTemplate }}"
+            itemActionsClass="{{ itemActionsClass }}"
+            item="{{ item }}" />
+      </ws:else>
+   </ws:if>
+   <!-- Тэг -->
+   <div if="{{ item.getTagStyle(tagStyle) }}" class="controls-ColumnsView__item_tag">
+      <ws:partial template="{{tagTemplate}}" tagStyle="{{tagStyle}}"/>
+   </div>
+</div>

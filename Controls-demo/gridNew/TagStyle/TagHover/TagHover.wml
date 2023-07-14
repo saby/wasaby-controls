@@ -1,0 +1,6 @@
+<div class="controlsDemo__wrapper controlsDemo__grid-tagStyleProperty controlsDemo__maxWidth800">
+    <Controls.grid:View
+            storeId="TagHover3"
+            columns="{{_columns}}"
+            on:tagHover="_onTagHoverCustomHandler()"/>
+</div>

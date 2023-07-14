@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlsUnit/columnScrollReact/Mirror/MirrorView Рендер с разными наборами ширин. 1`] = `
+<DocumentFragment>
+  <div
+    class="controls-ColumnScrollReact__Mirror"
+    data-qa="ColumnScrollReact__mirror"
+    style="left: 200px; width: calc(100% - 200px);"
+    tabindex="-1"
+  >
+    <div
+      class="controls-ColumnScrollReact__Mirror__scroll"
+      style="width: calc(800px);"
+      tabindex="-1"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/columnScrollReact/Mirror/MirrorView Рендер с разными наборами ширин. 2`] = `
+<DocumentFragment>
+  <div
+    class="controls-ColumnScrollReact__Mirror"
+    data-qa="ColumnScrollReact__mirror"
+    style="left: 111px; width: calc(100% - 111px);"
+    tabindex="-1"
+  >
+    <div
+      class="controls-ColumnScrollReact__Mirror__scroll"
+      style="width: calc(875px);"
+      tabindex="-1"
+    />
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,206 @@
+/* stylelint сильно ломается на этом файле по непонятным причинам, так что отключаю его здесь */
+/* stylelint-disable */
+//шрифты надо подключать в темизированном файле, который подключен в _theme чтоб прилетало только при ините Application
+@import 'Controls-default-theme/fonts/TensorFont';
+@import 'Controls-default-theme/fonts/TensorInter';
+@import 'Controls-default-theme/fonts/MaisonNeue';
+@import 'Controls-default-theme/fonts/cbus-icons';
+
+// сброс стилей. copy normilize.less
+* {
+   margin: 0;
+   padding: 0;
+   outline: none;
+}
+
+html,
+body {
+   height: 100%; // С ApplicationWrapper'a. Без этого разъезжаются страницы с нативным скроллом.
+}
+
+html {
+   min-width: 100%;
+   min-height: 100%;
+   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+   -webkit-print-color-adjust: exact;
+
+   // В мобильных браузерах для удобства чтения бразуер увеличивает размер шрифта, необходимо это блокировать
+   text-size-adjust: none;
+   -webkit-text-size-adjust: none;
+   -moz-text-size-adjust: none;
+   -ms-text-size-adjust: none;
+}
+
+body {
+   text-decoration-skip: none;
+   text-decoration-skip-ink: none;
+   position: relative; // Для окон, им нужен релативный контейнер относительно которого будут позиционирование
+
+   /* Better Font Rendering =========== */
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+table {
+   border-spacing: 0;
+}
+
+img {
+   border: none;
+}
+
+.clearfix {
+   display: inline-block;
+
+   &::after {
+      content: '';
+      display: block;
+      height: 0;
+      line-height: 0;
+      clear: both;
+      visibility: hidden;
+   }
+}
+
+html > body .clearfix {
+   display: block;
+}
+// На iPad, в сафари и хроме, в пустой textarea, курсор встает на 3px правее, чем нужно,
+// и при наличии в поле плейсхолдера (кастомного или нативного) он оказывается по центру его первого символа
+// Поэтому для пустого поля добавляем text-indent: -3px
+// https://stackoverflow.com/questions/6890149/remove-3-pixels-in-ios-webkit-textarea
+// :empty не получается использовать, т.к. он работает только если area пуста/не пуста изначально. Динамически не меняется
+// На всех area у нас есть атрибут required (для показа placeholder), соответственно можем использовать :invalid для проверки на пустоту
+.ws-is-mobile-safari,
+.ws-is-mobile-chrome-ios {
+   textarea:invalid {
+      text-indent: -3px;
+   }
+}
+
+// 1)в Safari на macOS и yandex на XP выделяется страница при dnd
+// 2)в Safari в input'ах по умолчанию user-select='text', поэтому для них задаем стиль отдельно
+.ws-is-desktop-safari.ws-is-drag,
+.ws-is-chrome-xp.ws-is-drag,
+.ws-is-desktop-safari.ws-is-drag input {
+   user-select: none;
+}
+
+//Скрытие иконки автозаполнения в полях ввода в браузере Safari на MacOS
+input::-webkit-contacts-auto-fill-button {
+   visibility: hidden;
+   display: none !important;
+   pointer-events: none;
+   position: absolute;
+   right: 0;
+}
+
+button::-moz-focus-inner,
+input[type='button']::-moz-focus-inner,
+input[type='submit']::-moz-focus-inner,
+input[type='reset']::-moz-focus-inner {
+   padding: 0 !important;
+   border: 0 none !important;
+}
+
+.Application-body {
+   font-family: var(--font-family);
+   font-size: var(--font-size_default);
+   color: var(--text-color);
+   background-color: var(--background-color);
+   font-variant-numeric: tabular-nums;
+   letter-spacing: var(--letter-spacing);
+
+   &.ws-fix-emoji {
+      font-family: var(--font-family), 'EmojiFont';
+   }
+}
+
+.Application-body.ws-is-mac {
+   font-family: var(--font-family-mac);
+}
+
+.bodyContent {
+   height: 100%;
+   width: 100%;
+}
+
+//TODO временный класс для сабигета, пока не выберут единый шрифт. Использование этого класса не гарантирует корректную работу шрифта, т.к. его надо предзагрузить
+.Application-maison {
+   --font-family: 'Maison Neue', sans-serif;
+   font-family: 'Maison Neue', sans-serif; //for ie
+   --letter-spacing: normal;
+}
+
+.Application-body.Application-tensorFont {
+   --font-family: TensorFont, sans-serif;
+   font-family: TensorFont, sans-serif; //for ie
+   font-variant-numeric: normal;
+   --letter-spacing: normal;
+   letter-spacing: normal;
+}
+
+// 3 класса чтоб интер перебить на мобилах
+.Application-body.ws-is-phone.ws-is-adaptive {
+   font-family: -apple-system, San Francisco, BlinkMacSystemFont, Roboto, 'Segoe UI', 'Segoe WP',
+      'Helvetica Neue', 'Lucida Grande', Verdana, Tahoma, Arial, sans-serif;
+   font-size: var(--font-size_ad_default);
+   font-variant-numeric: normal;
+   --letter-spacing: normal;
+   letter-spacing: normal;
+}
+
+// 4 класса чтоб интер вернуть на мобилах под фичей
+.Application-body.ws-is-phone.ws-is-adaptive.Application-mobileInterFont {
+   font-family: var(--font-family);
+   font-variant-numeric: tabular-nums;
+   letter-spacing: var(--letter-spacing);
+
+   &.ws-fix-emoji {
+      font-family: var(--font-family), 'EmojiFont';
+   }
+}
+
+.controls-roundedCorner_size_s {
+   border-radius: var(--border-radius_s_image);
+}
+
+.controls-roundedCorner_size_m {
+   border-radius: var(--border-radius_m_image);
+}
+
+.preload-overlay {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;
+   z-index: 1;
+}
+
+.theme-changing {
+   //transition: opacity .25s ease-in-out;
+   //-moz-transition: opacity .25s ease-in-out;
+   //-webkit-transition: opacity .25s ease-in-out;
+   opacity: 0.2;
+   pointer-events: none;
+}
+
+#theme-changing-overlay {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   transition: background-color 0.25s ease-in-out;
+   -moz-transition: background-color 0.25s ease-in-out;
+   -webkit-transition: background-color 0.25s ease-in-out;
+   background-color: rgb(255, 255, 255); /* Black background with opacity */
+   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+   cursor: pointer; /* Add a pointer on hover */
+}
+
+.bodyContent__zIndex-context {
+   z-index: 1;
+   position: relative;
+}

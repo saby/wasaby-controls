@@ -1,0 +1,38 @@
+<div class="controlsDemo__wrapper controls-demo_MasterDetail-background controlsDemo__flexRow">
+   <div class="controlsDemo__masterDetail-container">
+      <div class="controls-text-label">masterPosition = right</div>
+      <Controls.masterDetail:Base newDesign="{{true}}" masterPosition="right"
+                                  attr:class="controlsDemo_fixedWidth800 controlsDemo__masterDetail">
+         <ws:master>
+            <Controls.masterDetail:List bind:markedKey="_markedKey">
+               <Controls.grid:View
+                       storeId="master"
+                       style="master"
+                       backgroundStyle="master"
+                       itemActions="{{_itemActions}}"
+                       columns="{{_gridColumns}}"
+                       on:markedKeyChanged="_onMarkedKeyChanged()"
+               >
+               </Controls.grid:View>
+            </Controls.masterDetail:List>
+         </ws:master>
+         <ws:detail>
+            <Controls.list:View
+                    keyProperty="id"
+                    storeId="detail"
+                    backgroundStyle="detail">
+               <ws:itemTemplate>
+                  <ws:partial template="Controls/list:ItemTemplate">
+                     <ws:contentTemplate>
+                        <ws:partial
+                                item="{{itemTemplate.itemData.item}}"
+                                template="wml!Controls-demo/MasterDetail/itemTemplates/TaskItemTemplate"
+                        />
+                     </ws:contentTemplate>
+                  </ws:partial>
+               </ws:itemTemplate>
+            </Controls.list:View>
+         </ws:detail>
+      </Controls.masterDetail:Base>
+   </div>
+</div>

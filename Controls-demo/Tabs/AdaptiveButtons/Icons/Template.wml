@@ -1,0 +1,14 @@
+<div>
+    <div class="controlsDemo__cell">
+        <div class="demo-TabButtons" style="width: {{_containerWidth}}px;">
+            <Controls.tabs:AdaptiveButtons
+                    bind:selectedKey="SelectedKeyIcon"
+                    keyProperty="id"
+                    containerWidth="{{_containerWidth}}"
+                    displayProperty="caption"
+                    items="{{_itemsIcons}}"
+                    attr:data-qa="AdaptiveButtons__icons"
+            />
+        </div>
+    </div>
+</div>

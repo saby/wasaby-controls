@@ -1,0 +1,43 @@
+<div class="controlsDemo__wrapper controls-demo_MasterDetail-Grouped">
+    <Controls.masterDetail:Base newDesign="{{true}}">
+        <ws:master>
+            <Controls.scroll:Container shadowMode="js" attr:class="demo-Explorer__scrollContainer controlsDemo__height300">
+                <Controls.masterDetail:List bind:markedKey="_markedKey">
+                    <Controls.explorer:View
+                        storeId="master"
+                        attr:class="demo-Explorer"
+                        header="{{_header}}"
+                        style="master"
+                        groupProperty="group"
+                        columns="{{_columns}}"
+                        on:markedKeyChanged="_onMarkedKeyChanged()">
+                        <ws:groupTemplate>
+                            <ws:partial template="Controls/grid:GroupTemplate"
+                                        textAlign="left" expanderAlign="right"
+                                        scope="{{groupTemplate}}"/>
+                         </ws:groupTemplate>
+                    </Controls.explorer:View>
+                </Controls.masterDetail:List>
+            </Controls.scroll:Container>
+        </ws:master>
+        <ws:detail>
+            <Controls.scroll:Container attr:class="controlsDemo_fixedWidth500">
+                <Controls.list:View
+                        keyProperty="id"
+                        storeId="detail"
+                        backgroundStyle="detail">
+                    <ws:itemTemplate>
+                        <ws:partial template="Controls/list:ItemTemplate">
+                            <ws:contentTemplate>
+                                <ws:partial
+                                        item="{{itemTemplate.itemData.item}}"
+                                        template="wml!Controls-demo/MasterDetail/itemTemplates/TaskItemTemplate"
+                                />
+                            </ws:contentTemplate>
+                        </ws:partial>
+                    </ws:itemTemplate>
+                </Controls.list:View>
+            </Controls.scroll:Container>
+        </ws:detail>
+    </Controls.masterDetail:Base>
+</div>

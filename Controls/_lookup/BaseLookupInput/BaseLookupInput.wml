@@ -1,0 +1,173 @@
+<ws:template name="showSelectorButton">
+   <ws:partial template="{{_showSelectorTemplate}}"
+               name="showSelector"
+               horizontalPadding="{{_horizontalPadding}}"
+               attr:class="controls-Lookup__showSelector_{{_multiLineState ? 'multiLine' : 'singleLine'}}"
+               on:mousedown="_onMouseDownShowSelector()"
+               on:mouseleave="_linkMouseLeaveHandler()"
+               on:mouseenter="_linkMouseEnterHandler()"
+   />
+</ws:template>
+
+<Controls.WorkByKeyboard.Consumer getContextValue="{{_setWorkByKeyboard}}">
+    <div class="controls_lookup_theme-{{_options.theme}}
+            {{_rootContainerClasses}}">
+        <Controls.suggest:_InputController
+            name="layout"
+            on:choose="_choose()"
+            on:activated="_activated()"
+            on:deactivated="_deactivated()"
+            on:showSelector="_showSelector()"
+            on:suggestStateChanged="_suggestStateChanged()"
+            on:valueChanged="_changeValueHandler()"
+            on:suggestDirectionChanged="_suggestDirectionChanged()"
+            bind:suggestState="_suggestState"
+            suggestTemplate="{{_options.suggestTemplate}}"
+            suggestItemTemplate="{{_options.suggestItemTemplate}}"
+            footerTemplate="{{_options.footerTemplate || _options.suggestFooterTemplate}}"
+            emptyTemplate="{{_options.emptyTemplate}}"
+            minSearchLength="{{_options.minSearchLength}}"
+            source="{{_options.suggestSource || _options.source}}"
+            suggestTarget="{{_options.suggestTarget}}"
+            keyProperty="{{_options.suggestKeyProperty || _options.keyProperty}}"
+            parentProperty="{{_options.parentProperty}}"
+            historyId="{{_options.historyId}}"
+            searchParam="{{_options.searchParam}}"
+            searchDelay="{{_options.searchDelay}}"
+            searchValueTrim="{{_options.searchValueTrim}}"
+            trim="{{_options.trim}}"
+            navigation="{{_options.suggestNavigation || _options.navigation}}"
+            filter="{{_options.suggestFilter || _options.filter}}"
+            sorting="{{_options.sorting}}"
+            suggestPopupOptions="{{_options.suggestPopupOptions}}"
+            autoDropDown="{{_determineAutoDropDown()}}"
+            layerName="Controls/suggestPopup:__PopupLayer"
+            value="{{_getInputValue(_options)}}"
+            validationStatus="{{_options.validationStatus}}"
+            contrastBackground="{{_options.contrastBackground}}"
+            dataLoadCallback="{{_options.suggestDataLoadCallback}}"
+            addButtonClickCallback="{{_options.addButtonClickCallback}}"
+            closeButtonVisible="{{_options.closeButtonVisible}}"
+            attr:class="controls-Lookup__suggest">
+            <ws:content>
+                <Controls._lookup.BaseLookupView.InputRender
+                    name="inputRender"
+                    inputWidth="{{_inputWidth}}"
+                    isInputVisible="{{_isInputVisible(_options)}}"
+                    multiline="{{_multiLineState}}"
+                    multiLineOption="{{_options.multiLine}}"
+                    multiSelect="{{_options.multiSelect}}"
+                    forComment="{{_options.comment && !_options.multiSelect && _isShowCollection()}}"
+                    size="{{_options.size}}"
+                    trim="{{_options.trim}}"
+                    style="{{ _options.style }}"
+                    tooltip="{{_options.tooltip}}"
+                    borderVisibility="{{_suggestState && _suggestDirection === 'down' ? 'hidden' : _options.borderVisibility}}"
+                    validationStatus="{{_options.validationStatus}}"
+                    fontSize="{{_options.fontSize}}"
+                    inlineHeight="{{_options.inlineHeight}}"
+                    fontColorStyle="{{_options.fontColorStyle}}"
+                    borderStyle="{{_options.borderStyle}}"
+                    selectOnClick="{{_options.selectOnClick}}"
+                    commentVisibility="{{_options.commentVisibility}}"
+                    constraint="{{_options.constraint}}"
+                    autoComplete="{{_options.autoComplete}}"
+                    fontStyle="{{_options.fontStyle}}"
+                    fontWeight="{{_options.fontWeight}}"
+                    textAlign="{{_options.textAlign}}"
+                    maxLength="{{_options.maxLength}}"
+                    value="{{_getInputValue(_options)}}"
+                    tagStyle="{{_options.tagStyle}}"
+                    placeholderVisibility="{{_options.placeholderVisibility}}"
+                    contrastBackground="{{_options.contrastBackground}}"
+                    placeholder="{{_getPlaceholder(_options)}}"
+                    on:valueChanged="_changeValueHandler()"
+                    on:inputCompleted="_notifyHandler('inputCompleted')"
+                    on:tagClick="_notifyHandler('tagClick')"
+                    on:tagHover="_notifyHandler('tagHover')"
+                    on:keyDown="_keyDown()"
+                    attr:class="controls-Lookup__inputRender
+                         controls-Lookup__inputRender_horizontalPadding-{{_horizontalPadding}}
+                         controls-Lookup__inputRender_{{_multiLineState ? 'multiLine' : 'singleLine'}}">
+
+                    <ws:leftFieldWrapper>
+                        <ws:if data="{{_isShowCollection()}}">
+                            <Controls._lookup.SelectedCollection
+                                name="collection"
+                                counterClassName="controls-Lookup__counter"
+                                collectionClass="{{_options.collectionClass}}"
+                                displayProperty="{{_options.displayProperty}}"
+                                multiLine="{{_options.multiLine}}"
+                                itemsLayout="{{_multiLineState ? 'default' : 'oneRow'}}"
+                                items="{{_items}}"
+                                _counterWidth="{{_counterWidth}}"
+                                counterVisibility="{{_options.counterVisibility}}"
+                                maxVisibleItems="{{_maxVisibleItems}}"
+                                itemsCount="{{_getSelectedItemsCount(_options)}}"
+                                readOnly="{{_options.readOnly}}"
+                                fontSize="{{_options.fontSize}}"
+                                fontColorStyle="{{_options.fontColorStyle}}"
+                                backgroundStyle="{{_options.backgroundStyle}}"
+                                counterAlignment="{{_options.multiLine ? 'left' : 'right'}}"
+                                on:itemClick="_itemClick()"
+                                on:crossClick="_crossClick()"
+                                on:openInfoBox="_openInfoBox()"
+                                on:closeInfoBox="_closeInfoBox()"
+                                tabindex="{{_isInputVisible(_options) ? '-1' : '0'}}"
+                                attr:class="controls-Lookup__collection
+                                            {{!_options.multiSelect ? 'controls-Lookup__collection-singleSelect'}}
+                                            {{_highlightedOnFocus ? 'controls-focused-item_background'}}
+                                            {{!_options.multiSelect && !_options.comment && _items.getCount() === 1 ? 'controls-Lookup__collection__selectedSingle'}}
+                                            {{_isInputVisible(_options) ? 'controls-Lookup__collection_with_input' + (_options.readOnly ? '_readOnly') }}
+                                            {{_options.comment ? 'controls-Lookup__collection_with_commentInput'}}
+                                            {{_suggestState && _options.borderVisibility === 'partial' && _suggestDirection === 'down' ? 'controls-Lookup__collection_borderFix'}}"
+
+                                attr:style="max-width:{{_isInputVisible(_options) && _options.multiLine ? _availableWidthCollection}}px;">
+                                <ws:itemTemplate>
+                                    <ws:partial template="{{_options.itemTemplate}}"
+                                                attr:class="{{_itemTemplateClasses + (_options.comment && _options.readOnly ? ' controls-Lookup__collection_item_with_commentInput')}}
+                                                            {{_options.contrastBackground ? ' controls-Lookup__collection_item-contrastBackground'}}"/>
+                                </ws:itemTemplate>
+                            </Controls._lookup.SelectedCollection>
+                        </ws:if>
+                        <ws:if data="{{_options.leftFieldTemplate}}">
+                            <ws:partial template="{{_options.leftFieldTemplate}}" attr:ws-no-focus="true"/>
+                        </ws:if>
+                    </ws:leftFieldWrapper>
+
+                    <ws:rightFieldWrapper>
+                        <ws:if data="{{!_options.readOnly || _options.rightFieldTemplate}}">
+                            <div
+                                class="controls-Lookup__rightFieldWrapper controls-Lookup__rightFieldWrapper_{{_multiLineState ? 'multiLine' : 'singleLine'}}">
+                                <ws:if
+                                    data="{{_options.showClearButton !== false && !_options.readOnly && _items.getCount() > 1}}">
+                                    <ws:partial template="{{_clearRecordsTemplate}}"
+                                                name="clearRecords"
+                                                on:click="_onClickClearRecords()"
+                                                attr:class="controls-Lookup__clearRecords_{{_multiLineState ? 'multiLine' : 'singleLine'}}"/>
+                                </ws:if>
+                                <ws:if data="{{_options.rightFieldTemplate}}">
+                                    <ws:partial template="{{_options.rightFieldTemplate}}"/>
+                                </ws:if>
+                                <ws:if data="{{_options.toolbarItems && !_options.readOnly}}">
+                                    <Controls.toolbars:View items="{{_options.toolbarItems}}"
+                                                            keyProperty="{{_options.toolbarKeyProperty}}"
+                                                            parentProperty="{{_options.toolbarParentProperty}}"
+                                                            nodeProperty="{{_options.toolbarNodeProperty}}"
+                                                            iconSize="s"
+                                                            on:itemClick="_toolbarItemClickHandler()"
+                                                            on:menuClosed="_toolbarMenuClosedHandler()"
+                                                            on:menuOpened="_toolbarMenuOpenedHandler()"
+                                                            attr:class="controls-Lookup__toolbar"/>
+                                </ws:if>
+                                <ws:if data="{{_options.showSelectButton !== false && !_options.readOnly}}">
+                                    <ws:partial template="showSelectorButton"/>
+                                </ws:if>
+                            </div>
+                        </ws:if>
+                    </ws:rightFieldWrapper>
+                </Controls._lookup.BaseLookupView.InputRender>
+            </ws:content>
+        </Controls.suggest:_InputController>
+    </div>
+</Controls.WorkByKeyboard.Consumer>

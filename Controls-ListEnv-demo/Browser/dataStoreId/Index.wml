@@ -1,0 +1,21 @@
+<div class="controls-ListEnv-demo__browserDemo">
+    <div class="controls-ListEnv-demo__browserDemo_header">
+        <Controls-ListEnv.searchConnected:Input storeId="browserDemo"/>
+        <Controls-ListEnv.operationsConnected:Button storeId="browserDemo" attr:class="controls-ListEnv-demo__browserDemo_operationsButton"/>
+        <Controls-ListEnv.filterConnected:View storeId="browserDemo" attr:class="controls-ListEnv-demo__browserDemo_filter"/>
+    </div>
+    <Controls-ListEnv.operationsPanelConnected:View storeId="browserDemo"/>
+    <Controls.browser:Browser
+        dataStoreId="browserDemo"
+        displayProperty="title"
+        source="{{_options._dataOptionsValue.browserDemo.source}}"
+        filterButtonSource="{{_options._dataOptionsValue.browserDemo.filterDescription}}"
+        sorting="{{_options._dataOptionsValue.browserDemo.sorting}}"
+        bind:filter="_filter">
+        <div>
+            <Controls.list:Container>
+                <Controls.explorer:View columns="{{_columns}}"/>
+            </Controls.list:Container>
+        </div>
+    </Controls.browser:Browser>
+</div>

@@ -1,0 +1,71 @@
+<Controls._input.Render attr:title="{{_tooltip}}"
+                        attr:class="controls-{{ _controlName }} controls_{{ _controlName }}_theme-{{_options.theme}}"
+                        borderVisibility="{{_options.borderVisibility}}"
+                        stretcherContentTemplate="{{ _options.stretcherContentTemplate }}"
+                        state="{{_renderStyle()}}"
+                        viewModel="{{_viewModel}}"
+                        multiline="{{_multiline}}"
+                        roundBorder="{{_roundBorder}}"
+                        tagStyle="{{_options.tagStyle}}"
+                        textAlign="{{_options.textAlign}}"
+                        placeholder="{{_options.placeholder}}"
+                        fontSize="{{_fontSize || _options.fontSize}}"
+                        fontWeight="{{_options.fontWeight}}"
+                        inlineHeight="{{_inlineHeight || _options.inlineHeight}}"
+                        fontColorStyle="{{_fontColorStyle || _options.fontColorStyle}}"
+                        borderStyle="{{_options.borderStyle}}"
+                        validationStatus="{{_options.validationStatus}}"
+                        wasActionByUser="{{_wasActionUser}}"
+                        contrastBackground="{{ _options.contrastBackground }}"
+                        horizontalPadding="{{_options.horizontalPadding}}"
+                        transliterate="{{_options.transliterate}}"
+                        autoFocus="{{ _options.autoFocus }}"
+                        on:mouseenter="_mouseEnterHandler()"
+                        on:tagClick="_notifyHandler('tagClick')"
+                        on:tagHover="_notifyHandler('tagHover')"
+                        on:deactivated="_deactivatedHandler()">
+   <ws:leftFieldWrapper>
+      <ws:if data="{{_leftFieldWrapper.template}}">
+         <ws:partial options="{{_options}}"
+                     scope="{{_leftFieldWrapper.scope}}"
+                     value="{{_viewModel.value}}"
+                     template="{{_leftFieldWrapper.template}}"/>
+      </ws:if>
+   </ws:leftFieldWrapper>
+   <ws:content>
+      <ws:if data="{{_options.readOnly}}">
+         <ws:partial options="{{_options}}"
+                     scope="{{_readOnlyField.scope}}"
+                     placeholderVisibility="{{_placeholderVisibility}}"
+                     value="{{_viewModel.displayValue}}"
+                     template="{{_readOnlyField.template}}"/>
+      </ws:if>
+      <ws:else>
+         <ws:partial type="{{_type}}"
+                     model="{{_viewModel}}"
+                     options="{{_options}}"
+                     scope="{{_field.scope}}"
+                     autoWidth="{{_autoWidth}}"
+                     fieldName="{{_fieldName}}"
+                     template="{{_field.template}}"
+                     wasActionUser="{{_wasActionUser}}"
+                     value="{{_viewModel.displayValue}}"
+                     placeholderVisibility="{{_placeholderVisibility}}"
+                     placeholderDisplay="{{_placeholderDisplay}}"
+                     hidePlaceholderUsingCSS="{{_hidePlaceholderUsingCSS}}"
+                     isBrowserPlatform="{{_isBrowserPlatform}}"
+                     inputKey="{{ _inputKey }}"
+                     ieVersion="{{_ieVersion}}"
+                     isEdge="{{_isEdge}}"/>
+      </ws:else>
+   </ws:content>
+   <ws:rightFieldWrapper>
+      <ws:if data="{{_rightFieldWrapper.template}}">
+         <ws:partial options="{{_options}}"
+                     scope="{{_rightFieldWrapper.scope}}"
+                     value="{{_viewModel.value}}"
+                     passwordVisible="{{_passwordVisible}}"
+                     template="{{_rightFieldWrapper.template}}"/>
+      </ws:if>
+   </ws:rightFieldWrapper>
+</Controls._input.Render>

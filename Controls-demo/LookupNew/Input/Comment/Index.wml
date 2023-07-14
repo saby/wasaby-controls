@@ -1,0 +1,32 @@
+<div class="controlsDemo__wrapper controlsDemo__flexColumn">
+    <div class="controlsDemo__mb1 controlsDemo__wrapper__horizontal controlsDemo__cell controlsDemo__childWidth400">
+        <div class="controls-text-label">with comment</div>
+        <Controls.lookup:Input
+            bind:value="_value"
+            source="{{_source}}"
+            displayProperty="title"
+            keyProperty="id"
+            searchParam="title"
+            comment="Enter comment"
+            commentVisibility="always"
+            bind:selectedKeys="_selectedKeys"
+            selectorTemplate="{{_selectorTemplate}}"/>
+    </div>
+
+    <div class="controlsDemo__mb1 controlsDemo__wrapper__horizontal controlsDemo__cell controlsDemo__childWidth400">
+            <div class="controls-text-label">with comment in readOnly</div>
+            <Controls.lookup:Input
+                bind:value="_valueReadOnly"
+                source="{{_source}}"
+                readOnly="{{true}}"
+                displayProperty="title"
+                keyProperty="id"
+                searchParam="title"
+                comment="Enter comment"
+                commentVisibility="always"
+                placeholderVisibility="empty"
+                bind:selectedKeys="_selectedKeysReadOnly"
+                selectorTemplate="{{_selectorTemplate}}"/>
+        </div>
+</div>
+

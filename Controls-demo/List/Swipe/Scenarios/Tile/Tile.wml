@@ -1,0 +1,14 @@
+<Controls.explorer:View
+   parentProperty="parent"
+   nodeProperty="type"
+   displayProperty="title"
+   imageProperty="image"
+   viewMode="tile"
+   keyProperty="id"
+   source="{{_source}}"
+   actionAlignment="vertical"
+   itemActions="{{_itemActions}}">
+   <ws:tileItemTemplate>
+      <ws:partial template="Controls/tile:ItemTemplate" hasTitle="{{tileItemTemplate.item.contents.isDocument}}"/>
+   </ws:tileItemTemplate>
+</Controls.explorer:View>

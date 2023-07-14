@@ -1,0 +1,97 @@
+<div class="controls-CompactDatePicker__container controls_compactDatePicker_theme-{{ _options.theme }}
+            controls_popupTemplate_theme-{{_options.theme}} controls-CompactDatePicker__size-{{ _options.size }}
+            {{ _selectionProcessing ? 'controls-CompactDatePicker__selection-processing' }}
+            {{ _options.isAdaptive && !!_options.slidingPanelOptions ? 'controls-CompactDatePicker_isAdaptive' }}
+            controls-CompactDatePicker_width_size-{{ !(!!_options.slidingPanelOptions) && _options.width !== 'none' ? _options.size }}
+            {{ !!_options.stickyPosition ? 'controls-CompactDatePicker__popup' }}
+            {{ (!_hovered && !_options.hovered) || _selectionProcessing ? 'controls-CompactDatePicker_notHovered' }}">
+    <div class="controls-CompactDatePicker
+    controls-CompactDatePicker__shadow controls-CompactDatePicker_background-{{_options.backgroundStyle}}">
+        <Controls.popupTemplate:Sticky allowAdaptive="{{ !!_options.slidingPanelOptions }}"
+                                       backgroundStyle="none"
+                                       headerBackgroundStyle="unaccented"
+                                       borderVisible="{{ false }}"
+                                       closeButtonVisible="{{ !!_options.stickyPosition }}"
+                                       closeButtonViewMode="external"
+                                       roundBorder="{{ _options.roundBorder }}">
+            <ws:bodyContentTemplate>
+                <ws:if data="{{ _options.headerVisible }}">
+                    <div class="controls-CompactDatePicker__header controls-CompactDatePicker__header__border-visible">
+                        <div class="controls-CompactDatePicker__header__top-layer">
+                            <div class="controls-CompactDatePicker__header__month">
+                                <span data-qa="controls-CompactDatePicker__headerMonth">
+                                    {{ _headerCaption }}
+                                </span>
+                                <div data-qa="controls-CompactDatePicker__headerToday" class="controls-CompactDatePicker__header__today__container controls-CompactDatePicker__header__today__container_position">
+                                    <div class="controls-CompactDatePicker__header__today controls-CompactDatePicker__header__today_{{ _todayIconVisible ? 'visible' : 'hidden'}}"
+                                         on:click="_scrollToCurrentDate()">
+                                        {{ _today }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="controls-CompactDatePicker__header__weekdays">
+                            <ws:for data="weekday in _weekdaysCaptions">
+                                <span data-qa="controls-CompactDatePicker__headerWeekDays"
+                                      class="controls-CompactDatePicker__header__weekdays__{{ weekday.weekend ? 'weekend' : 'workday'}}">
+                                    {{ weekday.caption }}
+                                </span>
+                            </ws:for>
+                        </div>
+                    </div>
+                </ws:if>
+                <Controls.dateRange:DateRangeSelectionController
+                        attr:class="controls_calendar_theme-{{_options.theme}}"
+                        name="selectionController"
+
+                        selectionType="{{_options.selectionType}}"
+                        quantum="{{_options.ranges}}"
+
+                        startValue="{{ _rangeModel.startValue }}"
+                        endValue="{{ _rangeModel.endValue }}"
+
+                        rangeSelectedCallback="{{ _options.rangeSelectedCallback }}"
+                        bind:selectionProcessing="_selectionProcessing"
+                        on:selectionProcessingChanged="_proxyEvent()"
+                        on:onBeforeSelectionStarted="_proxyEvent()"
+                        on:rangeChanged="_rangeChangedHandler()"
+                        on:startValueChanged="_proxyEvent()"
+                        on:endValueChanged="_proxyEvent()"
+                        on:itemClick="_itemClickHandler()"
+                        on:selectionEnded="_dateRangeSelectionEndedHandler()"
+                >
+                    <Controls._compactDatePicker.List
+                            holidaysGetter="{{ _options.holidaysGetter }}"
+                            shouldPositionBelow="{{ _options.shouldPositionBelow }}"
+                            shadowStyle="{{ _options.shadowStyle }}"
+                            syncBeforeMount="{{ _options.syncBeforeMount }}"
+                            virtualPageSize="{{ _options.virtualPageSize }}"
+                            filter="{{ _options.filter }}"
+                            isPopup="{{ !!_options.stickyPosition }}"
+                            isDayAvailable="{{ _options.isDayAvailable }}"
+                            rangeModel="{{ _rangeModel }}"
+                            displayedRanges="{{ _options.displayedRanges }}"
+                            selectionType="{{ _options.selectionType }}"
+                            size="{{ _options.size }}"
+                            ranges="{{ _options.ranges }}"
+                            _date="{{ _options._date }}"
+                            order="{{ _options.order }}"
+                            source="{{ _options.source }}"
+                            dayTemplate="{{ _options.dayTemplate }}"
+                            dayTemplateOptions="{{ _options.dayTemplateOptions }}"
+                            bind:topShadowVisibility="_topShadowVisibility"
+                            monthTemplate="{{ _options.monthTemplate }}"
+                            captionTemplate="{{ _options.captionTemplate }}"
+                            bind:position="_position"
+                            on:wheel="_scrollHandler()"
+                            on:touchmove="_scrollHandler()"
+                            on:mouseEnter="_mouseEnterHandler()"
+                            on:mouseLeave="_mouseLeaveHandler()"
+                            on:positionChanged="_positionChangedHandler()"
+                            on:todayIconVisibleChanged="_todayIconVisibleChangedHandler()"
+                    />
+                </Controls.dateRange:DateRangeSelectionController>
+            </ws:bodyContentTemplate>
+        </Controls.popupTemplate:Sticky>
+    </div>
+</div>

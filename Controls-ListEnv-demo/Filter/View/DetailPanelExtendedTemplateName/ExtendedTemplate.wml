@@ -1,0 +1,48 @@
+<Controls.filterPanel:DefaultExtendedTemplate headingCaption="{{_options.headingCaption}}">
+    <ws:headingContentTemplate>
+        <ws:if data="{{_dateItem}}">
+            <div class="{{_options.headingCaption ? 'DetailPanel_dateEditor_marginLeft' : ''}} ws-align-self-baseline">
+                <span class="controls-fontsize-m controls-text-unaccented">{[за]}&nbsp;</span>
+                <Controls.buttons:Button viewMode="link"
+                                         buttonStyle="unaccented"
+                                         fontColorStyle="labelContrast"
+                                         caption="{{_dateItem.editorOptions.extendedCaption}}"
+                                         on:click="_dateHandler()" />
+            </div>
+        </ws:if>
+    </ws:headingContentTemplate>
+    <ws:bodyContentTemplate>
+        <div class="ws-flexbox DetailPanel_listEditor_marginLeft">
+            <ws:if data="{{_listItem}}">
+                <Controls.grid:View scope="{{_listItem.editorOptions}}"
+                                    items="{{_listItems}}"
+                                    sourceController="{{null}}"
+                                    on:itemClick="_activityHandler()">
+                    <ws:roundBorder tr="l" tl="l" br="l" bl="l" />
+                    <ws:columns>
+                        <ws:Array>
+                            <ws:Object displayProperty="icon">
+                                <ws:template>
+                                    <ws:partial template="Controls/grid:ColumnTemplate">
+                                        <ws:contentTemplate>
+                                            <div class="controls-icon controls-icon_size-s
+                                                controls-icon_style-{{contentTemplate.item.contents['iconStyle']}}
+                                                {{contentTemplate.item.contents['icon']}}"></div>
+                                        </ws:contentTemplate>
+                                    </ws:partial>
+                                </ws:template>
+                            </ws:Object>
+                            <ws:Object displayProperty="title"/>
+                            <ws:Object displayProperty="count"/>
+                        </ws:Array>
+                    </ws:columns>
+                    <ws:itemTemplate>
+                        <ws:partial template="Controls/grid:ItemTemplate"
+                                    class="controls-fontweight-{{itemTemplate.item.contents['fontWeight']}}">
+                        </ws:partial>
+                    </ws:itemTemplate>
+                </Controls.grid:View>
+            </ws:if>
+        </div>
+    </ws:bodyContentTemplate>
+</Controls.filterPanel:DefaultExtendedTemplate>

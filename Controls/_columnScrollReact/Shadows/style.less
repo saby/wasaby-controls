@@ -1,0 +1,28 @@
+@import 'Controls/_scroll/Scroll/_contentEnvironmentZIndex';
+
+.controls-ColumnScrollReact__shadow {
+   background: linear-gradient(
+      to right,
+      var(--columnscroll_shadow-start-color_grid),
+      var(--columnscroll_shadow-end-color_grid)
+   );
+   border-left: var(--columnscroll_separator_thickness_grid) solid
+      var(--columnscroll_separator_color_grid);
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   z-index: @z-index_Scroll-shadow;
+   pointer-events: none;
+   width: var(--columnscroll_shadow-blur_grid);
+   box-sizing: border-box;
+   visibility: hidden;
+}
+
+.controls-ColumnScrollReact__shadow_visible {
+   visibility: visible;
+}
+
+.controls-ColumnScrollReact__shadow_right {
+   right: 0;
+   transform: scaleX(-1);
+}

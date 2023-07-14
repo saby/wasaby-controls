@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper controlsDemo__treeGrid__configuration controlsDemo_Configuration__grid-four controlsDemo__maxWidth500">
+    <Controls.buttons:Button attr:data-qa="change-node-footer" caption="Change node footer"
+                             on:click="_changeNodeFooter()"/>
+    <Controls.treeGrid:View
+            storeId="NodeFooterChangeFooter"
+            columns="{{ _columns }}"
+            nodeFooterTemplate="{{ _nodeFooterTemplate }}"/>
+</div>

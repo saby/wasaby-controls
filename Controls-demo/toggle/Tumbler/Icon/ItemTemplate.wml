@@ -1,0 +1,41 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center ws-justify-content-center"
+         data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell controls-margin_bottom-s">
+            <Controls.Tumbler:Control attr:data-qa="controlsDemo-Tumbler__counterPropertyNull"
+                                     items="{{_items}}"
+                                     bind:selectedKey="_selectedKey">
+                <ws:itemTemplate>
+                    <ws:partial template="Controls/Tumbler:ItemTemplate"
+                                scope="{{itemTemplate}}">
+                        <ws:contentTemplate>
+                            <div>
+                                <i class="controls-icon-warning controls-icon controls-icon_size-s {{itemTemplate.item.icon}}"></i>
+                            </div>
+                        </ws:contentTemplate>
+                    </ws:partial>
+                </ws:itemTemplate>
+            </Controls.Tumbler:Control>
+        </div>
+        <div class="controlsDemo__cell controls-margin_bottom-s">
+            <Controls.Tumbler:Control attr:data-qa="controlsDemo-Tumbler__counterPropertyNull"
+                                     items="{{_items1}}"
+                                     bind:selectedKey="_selectedKey1">
+                <ws:itemTemplate>
+                    <ws:partial template="Controls/Tumbler:tumblerItemCounterTemplate"
+                                scope="{{itemTemplate}}"/>
+                </ws:itemTemplate>
+            </Controls.Tumbler:Control>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.Tumbler:Control attr:data-qa="controlsDemo-Tumbler__counterPropertyNull"
+                                     items="{{_items2}}"
+                                     bind:selectedKey="_selectedKey2">
+                <ws:itemTemplate>
+                    <ws:partial template="Controls/Tumbler:tumblerItemIconTemplate"
+                                scope="{{itemTemplate}}"/>
+                </ws:itemTemplate>
+            </Controls.Tumbler:Control>
+        </div>
+    </div>
+</div>

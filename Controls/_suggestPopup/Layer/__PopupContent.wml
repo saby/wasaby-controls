@@ -1,0 +1,28 @@
+<div class="controls-suggestPopup {{_options.contrastBackground ? 'controls-suggestPopup-contrastBackground'}}" data-qa="{{_showContent ? 'controls-suggestPopup'}}">
+    <div attr:class="controls_suggestPopup_theme-{{_options.theme}}
+                     controls_popupTemplate_theme-{{_options.theme}}
+                     controls-Suggest__suggestionsContainer
+                     controls-background-suggestPopup
+                     controls-Suggest__suggestionsContainer_popup
+                     {{_options.stickyPosition.direction.vertical === 'bottom' ? 'controls-margin_top-3xs' : 'controls-margin_bottom-3xs'}}
+                     controls-Suggest__suggestionsContainer_popup_shadow_{{_options.stickyPosition.direction.vertical}}
+                     {{!_showContent ? 'controls-Suggest__suggestionsContainer_hidden'}}">
+        <Controls.scroll:Container attr:class="controls-Suggest__scrollContainer" name="scrollContainer">
+            <ws:content>
+                <ws:partial template="{{_options.content}}"
+                            attr:class="controls-Suggest-offset-top"
+                            suggestWidth="{{_suggestWidth}}"
+                            reverseList="{{_reverseList}}"
+                            stickyPosition="{{_options.stickyPosition}}"
+                            on:controlResize="resize()"/>
+            </ws:content>
+        </Controls.scroll:Container>
+    </div>
+    <ws:if data="{{_options.closeButtonVisible}}">
+        <Controls.buttons:CloseButton
+            attr:class="controls-SuggestCloseButton"
+            viewMode="external"
+            on:click="_notifyHandler('close')"
+        />
+    </ws:if>
+</div>

@@ -1,0 +1,9 @@
+<Controls.popupTemplate:Stack headingCaption="Notify Stack Test">
+   <ws:bodyContentTemplate>
+      <div style="width: 700px">
+         <Controls.input:Text bind:value="_textValue1" attr:class="ControlsDemo-NotifyStack__input1" />
+         <Controls.input:Text bind:value="_textValue2" attr:class="ControlsDemo-NotifyStack__input2" />
+         <Controls.buttons:Button caption="Отправить текст в опенер" on:click="_sendResult()" attr:class="ControlsDemo-NotifyStack__input" />
+      </div>
+   </ws:bodyContentTemplate>
+</Controls.popupTemplate:Stack>

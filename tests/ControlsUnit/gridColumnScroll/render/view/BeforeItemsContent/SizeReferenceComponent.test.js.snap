@@ -1,0 +1,193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent/ContentObserverRow Рендер при различных значениях опций stickyColumnsCount и hasMultiSelectColumn. stickyColumnsCount=0, hasMultiSelectColumn=false, hasResizer=false, 1`] = `
+<DocumentFragment>
+  <div
+    class="tw-contents"
+    data-qa="GridColumnScroll__contentObserver"
+  >
+    <div
+      style="grid-column-start: 1; grid-column-end: 1;"
+    />
+    <div
+      style="grid-column-start: 1; grid-column-end: -1;"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent/ContentObserverRow Рендер при различных значениях опций stickyColumnsCount и hasMultiSelectColumn. stickyColumnsCount=0, hasMultiSelectColumn=false, hasResizer=true, 1`] = `
+<DocumentFragment>
+  <div
+    class="tw-contents"
+    data-qa="GridColumnScroll__contentObserver"
+  >
+    <div
+      style="grid-column-start: 1; grid-column-end: 1;"
+    />
+    <div
+      style="grid-column-start: 2; grid-column-end: -1;"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent/ContentObserverRow Рендер при различных значениях опций stickyColumnsCount и hasMultiSelectColumn. stickyColumnsCount=0, hasMultiSelectColumn=true, hasResizer=false, 1`] = `
+<DocumentFragment>
+  <div
+    class="tw-contents"
+    data-qa="GridColumnScroll__contentObserver"
+  >
+    <div
+      style="grid-column-start: 1; grid-column-end: 2;"
+    />
+    <div
+      style="grid-column-start: 2; grid-column-end: -1;"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent/ContentObserverRow Рендер при различных значениях опций stickyColumnsCount и hasMultiSelectColumn. stickyColumnsCount=0, hasMultiSelectColumn=true, hasResizer=true, 1`] = `
+<DocumentFragment>
+  <div
+    class="tw-contents"
+    data-qa="GridColumnScroll__contentObserver"
+  >
+    <div
+      style="grid-column-start: 1; grid-column-end: 2;"
+    />
+    <div
+      style="grid-column-start: 3; grid-column-end: -1;"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent/ContentObserverRow Рендер при различных значениях опций stickyColumnsCount и hasMultiSelectColumn. stickyColumnsCount=1, hasMultiSelectColumn=false, hasResizer=false, 1`] = `
+<DocumentFragment>
+  <div
+    class="tw-contents"
+    data-qa="GridColumnScroll__contentObserver"
+  >
+    <div
+      style="grid-column-start: 1; grid-column-end: 2;"
+    />
+    <div
+      style="grid-column-start: 2; grid-column-end: -1;"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent/ContentObserverRow Рендер при различных значениях опций stickyColumnsCount и hasMultiSelectColumn. stickyColumnsCount=1, hasMultiSelectColumn=false, hasResizer=true, 1`] = `
+<DocumentFragment>
+  <div
+    class="tw-contents"
+    data-qa="GridColumnScroll__contentObserver"
+  >
+    <div
+      style="grid-column-start: 1; grid-column-end: 2;"
+    />
+    <div
+      style="grid-column-start: 3; grid-column-end: -1;"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent/ContentObserverRow Рендер при различных значениях опций stickyColumnsCount и hasMultiSelectColumn. stickyColumnsCount=1, hasMultiSelectColumn=true, hasResizer=false, 1`] = `
+<DocumentFragment>
+  <div
+    class="tw-contents"
+    data-qa="GridColumnScroll__contentObserver"
+  >
+    <div
+      style="grid-column-start: 1; grid-column-end: 3;"
+    />
+    <div
+      style="grid-column-start: 3; grid-column-end: -1;"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent/ContentObserverRow Рендер при различных значениях опций stickyColumnsCount и hasMultiSelectColumn. stickyColumnsCount=1, hasMultiSelectColumn=true, hasResizer=true, 1`] = `
+<DocumentFragment>
+  <div
+    class="tw-contents"
+    data-qa="GridColumnScroll__contentObserver"
+  >
+    <div
+      style="grid-column-start: 1; grid-column-end: 3;"
+    />
+    <div
+      style="grid-column-start: 4; grid-column-end: -1;"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent/ContentObserverRow Рендер при различных значениях опций stickyColumnsCount и hasMultiSelectColumn. stickyColumnsCount=3, hasMultiSelectColumn=false, hasResizer=false, 1`] = `
+<DocumentFragment>
+  <div
+    class="tw-contents"
+    data-qa="GridColumnScroll__contentObserver"
+  >
+    <div
+      style="grid-column-start: 1; grid-column-end: 4;"
+    />
+    <div
+      style="grid-column-start: 4; grid-column-end: -1;"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent/ContentObserverRow Рендер при различных значениях опций stickyColumnsCount и hasMultiSelectColumn. stickyColumnsCount=3, hasMultiSelectColumn=false, hasResizer=true, 1`] = `
+<DocumentFragment>
+  <div
+    class="tw-contents"
+    data-qa="GridColumnScroll__contentObserver"
+  >
+    <div
+      style="grid-column-start: 1; grid-column-end: 4;"
+    />
+    <div
+      style="grid-column-start: 5; grid-column-end: -1;"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent/ContentObserverRow Рендер при различных значениях опций stickyColumnsCount и hasMultiSelectColumn. stickyColumnsCount=3, hasMultiSelectColumn=true, hasResizer=false, 1`] = `
+<DocumentFragment>
+  <div
+    class="tw-contents"
+    data-qa="GridColumnScroll__contentObserver"
+  >
+    <div
+      style="grid-column-start: 1; grid-column-end: 5;"
+    />
+    <div
+      style="grid-column-start: 5; grid-column-end: -1;"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent/ContentObserverRow Рендер при различных значениях опций stickyColumnsCount и hasMultiSelectColumn. stickyColumnsCount=3, hasMultiSelectColumn=true, hasResizer=true, 1`] = `
+<DocumentFragment>
+  <div
+    class="tw-contents"
+    data-qa="GridColumnScroll__contentObserver"
+  >
+    <div
+      style="grid-column-start: 1; grid-column-end: 5;"
+    />
+    <div
+      style="grid-column-start: 6; grid-column-end: -1;"
+    />
+  </div>
+</DocumentFragment>
+`;

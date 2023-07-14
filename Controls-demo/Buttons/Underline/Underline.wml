@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo_fixedWidth100">
+            <Controls.buttons:Button caption="Caption"
+                                     fontColorStyle="secondary"
+                                     viewMode="link"
+                                     underlineVisible="{{false}}"/>
+        </div>
+        <div class="controlsDemo_fixedWidth100">
+            <Controls.buttons:Button caption="Caption"
+                                     fontColorStyle="secondary"
+                                     viewMode="link"
+                                     underlineVisible="{{true}}"/>
+        </div>
+    </div>
+</div>

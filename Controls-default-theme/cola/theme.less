@@ -1,0 +1,57 @@
+@themeName: default__cola;
+
+@import '../_variables';
+
+.controls_theme-@{themeName} {
+   // common
+
+   --link_text-color: #000;
+   --link_hover_text-color: #666;
+   --label_hover_icon-color: #666;
+   --label_hover_text-color: #666;
+   --link_icon-color: #000;
+   --link_hover_icon-color: #666;
+
+   // палитра
+
+   --brand_color: #f00;
+   --primary_color: #df1c33;
+   --primary_text-color: var(--primary_color);
+   --primary_hover_text-color: #ad0014;
+   --primary_icon-color: var(--primary_color);
+   --primary_hover_icon-color: var(--primary_hover_text-color);
+   --primary_border-color: var(--primary_color);
+   --primary_background-color: #fff5f6;
+   --primary_hover_background-color: #ffebed;
+   --primary_active_background-color: #ffdbdf;
+   --primary_same_background-color: #ffebed;
+   --primary_hover_same_background-color: #ffdbdf;
+   --primary_active_same_background-color: #ffccd2;
+   --primary_contrast_background-color: #ff384f;
+   --primary_hover_contrast_background-color: #ff243d;
+   --primary_active_contrast_background-color: #d6551f;
+   --secondary_color: #999;
+   --secondary_text-color: #666;
+   --secondary_hover_text-color: #474747;
+   --secondary_icon-color: var(--secondary_color);
+   --secondary_hover_icon-color: var(--secondary_hover_text-color);
+   --secondary_border-color: var(--secondary_color);
+   --secondary_contrast_background-color: #808080;
+   --secondary_hover_contrast_background-color: #757575;
+   --secondary_active_contrast_background-color: #878787;
+
+   //tabs
+   --marker_color: var(--primary_color);
+}
+
+.controls_dropdownPopup_theme-@{themeName} {
+   //menu
+   --item_hover_background-color_menu: #f8f8f8;
+}
+
+.controls_filter_theme-@{themeName} {
+   //filter
+   --icon-color_filterButton_filterView: #999;
+}
+
+@import '../_adaptiveFonts';

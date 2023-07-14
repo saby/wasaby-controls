@@ -1,0 +1,18 @@
+<Controls.browser:Browser source="{{_viewSource}}"
+                          filterButtonSource="{{_filterSource}}"
+                          root="{{null}}"
+                          historyId="DetailPanelExtendedTemplateName__HistoryId"
+                          keyProperty="department">
+    <div>
+        <Controls-ListEnv.filterConnected:View
+                storeId="0"
+                alignment="left"
+                detailPanelExtendedTemplateName="Controls-ListEnv-demo/Filter/View/DetailPanelExtendedTemplateName/ExtendedTemplate"
+        />
+        <Controls.list:Container>
+            <Controls.grid:View columns="{{_columns}}"
+                                header="{{_header}}"
+                                attr:class="engine-demo__Widgets_filterList"/>
+        </Controls.list:Container>
+    </div>
+</Controls.browser:Browser>

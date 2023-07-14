@@ -1,0 +1,24 @@
+<div class="controlsDemo__wrapper ">
+    <Controls.scroll:Container attr:class="controlsDemo__maxWidth500 controlsDemo__height200">
+        <Controls.list:View storeId="EditInPlaceAddItemInBegin"
+                            name="list"
+                            scrollToAddedItem="{{false}}">
+            <ws:virtualScrollConfig pageSize="{{20}}"/>
+            <ws:editingConfig editOnClick="{{true}}" addPosition="top"/>
+            <ws:itemTemplate>
+                <ws:partial template="Controls/list:ItemTemplate">
+                    <ws:contentTemplate>
+                        <ws:partial template="Controls/list:EditingTemplate" value="{{ itemTemplate.item.contents.title }}">
+                            <ws:editorTemplate>
+                                <Controls.input:Text contrastBackground="{{true}}" bind:value="itemTemplate.item.contents.title"/>
+                            </ws:editorTemplate>
+                        </ws:partial>
+                    </ws:contentTemplate>
+                </ws:partial>
+            </ws:itemTemplate>
+        </Controls.list:View>
+    </Controls.scroll:Container>
+    <a href="#" class="controls-text-link controlsDemo-addButton-virtual-scroll_autotest"
+       on:click="_addItem()">Добавить запись в начало</a>
+
+</div>

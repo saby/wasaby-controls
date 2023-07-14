@@ -1,0 +1,14 @@
+<div class="example-Text ws-inline-flexbox ws-flex-column" on:labelClick="_labelClickHandler()">
+   <Controls-demo.Example.resource.BaseDemoInput class="ControlsDemo-ExampleInput_simpleTextFieldBlock" title="Simple text field" blocker="{{true}}">
+      <ws:contents>
+         <ws:Array>
+            <ws:Object>
+               <ws:template>
+                  <Controls.input:Text placeholder="Tooltip" class="ControlsDemo-ExampleInput_simpleTextField"
+                                       bind:value="_defaultValue"/>
+               </ws:template>
+            </ws:Object>
+         </ws:Array>
+      </ws:contents>
+   </Controls-demo.Example.resource.BaseDemoInput>
+</div>

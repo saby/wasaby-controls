@@ -1,0 +1,24 @@
+<div class="controlsDemo__wrapper controlsDemo__flexColumn">
+    <div class="controlsDemo__mb1 controlsDemo__wrapper__horizontal controlsDemo__cell controlsDemo__childWidth400 controlsDemo-Lookup-simple">
+        <div class="controls-text-label controlsDemo__cell">clear button is visible</div>
+        <Controls.lookup:Selector
+            bind:selectedKeys="_selectedKeys"
+            source="{{_source}}"
+            keyProperty="id"
+            multiSelect="{{true}}"
+            displayProperty="title">
+        </Controls.lookup:Selector>
+    </div>
+
+    <div class="controlsDemo__mb1 controlsDemo__wrapper__horizontal controlsDemo__cell controlsDemo__childWidth400 controlsDemo-Lookup-simple">
+        <div class="controls-text-label controlsDemo__cell">clear button is hidden</div>
+        <Controls.lookup:Selector
+            bind:selectedKeys="_selectedKeys"
+            source="{{_source}}"
+            keyProperty="id"
+            multiSelect="{{true}}"
+            displayProperty="title"
+            showClearButton="{{false}}">
+        </Controls.lookup:Selector>
+    </div>
+</div>

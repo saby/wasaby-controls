@@ -1,0 +1,292 @@
+<ws:template name="SCROLLBAR_IN_POSITION">
+	<ws:if data="{{ useNew }}">
+		<ws:if data="{{ renderPosition === 'beforeTable' && _options.columnScrollViewMode !== 'arrows' }}">
+			<ws:partial template="{{ 'Controls/horizontalScroll:ScrollBar' }}"
+						name="horizontalScrollbar"
+						stickyHeader="{{ false }}"
+						mode="{{ _options.columnScrollViewMode || 'scrollbar' }}"
+						backgroundStyle="{{ (_options.backgroundStyle || _options.style) === 'default' ? 'transparent' : (_options.backgroundStyle || _options.style) }}"
+						viewportWidth="{{ _options.viewportWidth }}"
+						fixedWidth="{{ _options.fixedColumnsWidth }}"
+						scrollableWidth="{{ _options.viewportWidth - _options.fixedColumnsWidth }}"
+						contentWidth="{{ _options.contentWidth }}"
+						canHorizontalScroll="{{ _options.canHorizontalScroll }}"
+						stickyColumnsCount="{{ _options.stickyColumnsCount }}"
+						hasMultiSelect="{{ _options.multiSelectVisibility !== 'hidden' && _options.multiSelectPosition !== 'custom' }}"
+						hasItemActionsCell="{{ _listModel.hasItemActionsSeparatedCell() }}"
+						hasResizerCell="{{ !!_listModel.hasResizer() }}"
+						columnsLength="{{ _listModel.getGridColumnsConfig().length }}"
+						scrollPositionChangedCallback="{{ _options.scrollPositionChangedCallback }}"
+						scrollBarReadyCallback="{{ _options.scrollBarReadyCallback }}"
+						attr:class="{{ (_listModel.getEmptyGridRow() && _isEmpty()) ? 'ws-hidden' }}"
+			/>
+		</ws:if>
+		<ws:else data="{{ renderPosition === 'beforeTableBody' && _options.columnScrollViewMode === 'arrows' }}">
+			<thead>
+				<td colspan="{{ _getViewColumns(_options).length }}">
+					<div style="{{ _getTableColumnScrollThumbWrapperStyles(_$columnScrollEmptyViewMaxWidth) }}"
+						 class="{{ _getTableColumnScrollThumbWrapperClasses() }}">
+						<ws:partial template="{{ 'Controls/horizontalScroll:ScrollBar' }}"
+									name="horizontalScrollbar"
+									stickyHeader="{{ false }}"
+									mode="{{ _options.columnScrollViewMode || 'scrollbar' }}"
+									backgroundStyle="{{ (_options.backgroundStyle || _options.style) === 'default' ? 'transparent' : (_options.backgroundStyle || _options.style) }}"
+									viewportWidth="{{ _options.viewportWidth }}"
+									fixedWidth="{{ _options.fixedColumnsWidth }}"
+									scrollableWidth="{{ _options.viewportWidth - _options.fixedColumnsWidth }}"
+									contentWidth="{{ _options.contentWidth }}"
+									canHorizontalScroll="{{ _options.canHorizontalScroll }}"
+									stickyColumnsCount="{{ _options.stickyColumnsCount }}"
+									hasMultiSelect="{{ _options.multiSelectVisibility !== 'hidden' && _options.multiSelectPosition !== 'custom' }}"
+									hasItemActionsCell="{{ _listModel.hasItemActionsSeparatedCell() }}"
+									hasResizerCell="{{ !!_listModel.hasResizer() }}"
+									columnsLength="{{ _listModel.getGridColumnsConfig().length }}"
+									scrollPositionChangedCallback="{{ _options.scrollPositionChangedCallback }}"
+									scrollBarReadyCallback="{{ _options.scrollBarReadyCallback }}"
+									attr:class="{{ (_listModel.getEmptyGridRow() && _isEmpty()) ? 'ws-hidden' }}"
+						/>
+					</div>
+				</td>
+			</thead>
+		</ws:else>
+	</ws:if>
+	<ws:else>
+		<ws:if data="{{ renderPosition === 'beforeTable' && _options.columnScrollViewMode !== 'arrows' }}">
+			<Controls.columnScroll:ScrollBar
+				name="horizontalScrollBar"
+				attr:style="{{ _getColumnScrollThumbStyles(_options) }}"
+				mode="{{ _options.columnScrollViewMode || 'scrollbar' }}"
+				readOnly="{{ _options.columnScrollViewMode === 'arrows' && (_$pendingMouseEnterForActivate || !_$columnScrollController) }}"
+				stickyHeader="{{ false }}"
+				backgroundStyle="{{ _options.backgroundStyle || _options.style }}"
+				on:positionChanged="_onColumnScrollThumbPositionChanged()"
+				on:customdragEnd="_onColumnScrollThumbDragEnd()"/>
+		</ws:if>
+		<ws:else data="{{ renderPosition === 'beforeTableBody' && _options.columnScrollViewMode === 'arrows' }}">
+			<thead>
+			<td colspan="{{ _getViewColumns(_options).length }}">
+				<div style="{{ _getTableColumnScrollThumbWrapperStyles(_$columnScrollEmptyViewMaxWidth) }}"
+					 class="{{ _getTableColumnScrollThumbWrapperClasses() }}">
+					<Controls.columnScroll:ScrollBar
+						name="horizontalScrollBar"
+						attr:style="{{ _getColumnScrollThumbStyles(_options) }}"
+						mode="{{ _options.columnScrollViewMode || 'scrollbar' }}"
+						readOnly="{{ _options.columnScrollViewMode === 'arrows' && (_$pendingMouseEnterForActivate || !_$columnScrollController) }}"
+						stickyHeader="{{ false }}"
+						backgroundStyle="{{ _options.backgroundStyle || _options.style }}"
+						on:positionChanged="_onColumnScrollThumbPositionChanged()"
+						on:customdragEnd="_onColumnScrollThumbDragEnd()"/>
+				</div>
+			</td>
+			</thead>
+		</ws:else>
+	</ws:else>
+</ws:template>
+
+<ws:template name="gridView">
+    <table class="{{ _getGridViewClasses(_options) }}"
+           style="{{ _getGridViewStyles(_options) }}">
+        <!-- Colgroup. Describes columns widths -->
+        <Controls._gridIE.GridView.ColgroupComponent colgroup="{{ _listModel.getColgroup() }}"/>
+
+        <!-- Контрол строит наиболее полный набор колонок таблицы. Подробное описание в контроле. -->
+        <Controls.columnScroll:RelativeColumns
+                if="{{ _options.columnScroll }}"
+                isFullGridSupport="{{ false }}"
+                containersUpdatedCallback="{{ _relativeCellContainersUpdateCallback }}"
+                viewColumns="{{ _getViewColumns(_options, false) }}"/>
+
+        <!-- Header -->
+        <ws:if data="{{ _listModel.getHeader() }}">
+            <thead attr:name="header" class="{{ _listModel.getHeader().getBodyClasses() }}">
+                <ws:for data="headerRow in _listModel.getHeader().getRows()">
+                    <ws:partial template="{{ headerRow.getTemplate() }}"
+                                item="{{ headerRow }}"
+                                style="{{ _options.style }}"
+								itemVersion="{{ headerRow.getVersion() }}"
+                                backgroundStyle="{{ _options.backgroundStyle || _options.style }}"/>
+                </ws:for>
+            </thead>
+        </ws:if>
+
+		<!-- Скроллбар горизонтального скролла. -->
+		<ws:if data="{{ _options.columnScroll }}">
+			<ws:partial template="SCROLLBAR_IN_POSITION"
+						renderPosition="beforeTableBody"
+						useNew="{{ false }}"
+			/>
+		</ws:if>
+
+        <!-- Results (top) -->
+        <ws:if data="{{ _listModel.getResults() && _listModel.getResultsPosition() === 'top' }}">
+            <thead>
+                <ws:partial template="{{ _listModel.getResults().getTemplate() }}"
+                            attr:name="results"
+                            item="{{ _listModel.getResults() }}"
+							itemVersion="{{ _listModel.getResults().getVersion() }}"
+                            style="{{ _options.style }}"
+                            backgroundStyle="{{ _options.backgroundStyle || _options.style }}"/>
+            </thead>
+        </ws:if>
+
+        <tbody>
+            <!--Top loading indicator-->
+            <ws:partial if="{{ _listModel.getTopIndicator() }}"
+                        template="{{_listModel.getTopIndicator().getTemplate()}}"
+                        item="{{_listModel.getTopIndicator()}}"/>
+
+            <!--Top loading trigger-->
+            <ws:partial template="{{ _listModel.getTopTrigger().getTemplate() }}"
+                        trigger="{{ _listModel.getTopTrigger() }}"/>
+        </tbody>
+		<ws:if data="{{_listModel.isTrackedValuesVisible()}}">
+			<Controls.baseList:TrackedPropertiesComponentWrapper
+					trackedPropertiesTemplate="{{_options.trackedPropertiesTemplate}}"
+					paddingSize="{{_listModel.getLeftPadding()}}"
+					trackedProperties="{{_listModel.getTrackedProperties()}}"
+					className="{{_listModel.hasMultiSelectColumn() ? 'controls-padding_left-l'}}"
+			/>
+		</ws:if>
+        <!-- Items -->
+        <tbody name="itemsContainer" class="controls-GridViewV__itemsContainer {{_options.itemsContainerClass}}" attr:data-qa="items-container">
+            <!-- TODO избавиться от прокидывания _onBreadcrumbClick https://online.sbis.ru/doc/0649e69a-d507-4024-9f99-c70205f535ef-->
+            <ws:partial
+				template="{{_forTemplate}}"
+                itemTemplate="{{ _itemTemplate }}"
+                collection="{{ _listModel }}"
+                keyPrefix="gridView-item"
+
+                style="{{ _options.style }}"
+                theme="{{ _options.theme }}"
+                itemTemplateProperty="{{ _options.itemTemplateProperty }}"
+                groupTemplate="{{ _groupTemplate }}"
+                itemActionsPosition="{{ _options.itemActionsPosition }}"
+                itemActionsTemplate="{{ _options.itemActionsTemplate }}"
+                itemActionsClass="{{ _options.itemActionsClass }}"
+                swipeTemplate="{{ _options.swipeTemplate }}"
+                backgroundStyle="{{ _options.backgroundStyle || _options.style }}"
+                subPixelArtifactFix="{{_options.subPixelArtifactFix}}"
+                pixelRatioBugFix="{{_options.pixelRatioBugFix}}"
+                fixedPositionInitial="{{_options.headerFixedPositionInitial}}"
+
+                _onBreadcrumbClick="{{_onBreadcrumbClick}}"
+                _onBreadcrumbItemClick="{{_onBreadcrumbItemClick}}"
+
+				onItemMouseEnterCallback="{{_onItemMouseEnter}}"
+				onItemMouseLeaveCallback="{{_onItemMouseLeave}}"
+				onItemMouseMoveCallback="{{_onItemMouseMove}}"
+				onItemMouseDownCallback="{{_onItemMouseDown}}"
+				onItemMouseUpCallback="{{_onItemMouseUp}}"
+				onItemClickCallback="{{_onItemClick}}"
+				onItemDeactivatedCallback="{{_options.onItemDeactivated}}"
+				onItemContextMenuCallback="{{_onItemContextMenu}}"
+				onItemSwipeCallback="{{_onItemSwipe}}"
+				onItemLongTapCallback="{{_onItemLongTap}}"
+				onItemTouchMoveCallback="{{_onItemTouchMove}}"
+				onItemWheelCallback="{{_onItemWheel}}"
+				onTagClick="{{_onTagClickHandler}}"
+				onTagHover="{{_onTagHoverHandler}}"
+
+				onActionsMouseEnter="{{_options.onActionsMouseEnter}}"
+				onActionMouseDown="{{_options.onActionMouseDown}}"
+				onActionMouseUp="{{_options.onActionMouseUp}}"
+				onActionMouseEnter="{{_options.onActionMouseEnter}}"
+				onActionMouseLeave="{{_options.onActionMouseLeave}}"
+				onActionClick="{{_options.onActionClick}}"
+				itemActionsTemplateMountedCallback="{{_options.itemActionsTemplateMountedCallback}}"
+				itemActionsTemplateUnmountedCallback="{{_options.itemActionsTemplateUnmountedCallback}}"
+			/>
+        </tbody>
+
+        <!-- emptyTemplate -->
+        <ws:if data="{{ _listModel.getEmptyGridRow() && _isEmpty() }}">
+            <ws:partial template="{{ _listModel.getEmptyGridRow().getTemplate() }}"
+                        attr:name="emptyView"
+                        item="{{ _listModel.getEmptyGridRow() }}"
+                        style="{{ _options.style }}"
+						itemVersion="{{ _listModel.getEmptyGridRow().getVersion() }}"
+                        containerSize="{{ _$columnScrollEmptyViewMaxWidth }}"
+                        backgroundStyle="{{ _options.backgroundStyle || _options.style }}"/>
+        </ws:if>
+
+        <tbody>
+            <!--Bottom loading trigger-->
+            <ws:partial template="{{ _listModel.getBottomTrigger().getTemplate() }}"
+                        trigger="{{ _listModel.getBottomTrigger() }}"/>
+
+            <!--Bottom loading indicator-->
+            <ws:partial if="{{ _listModel.getBottomIndicator() }}"
+                        template="{{_listModel.getBottomIndicator().getTemplate()}}"
+                        item="{{_listModel.getBottomIndicator()}}"/>
+        </tbody>
+
+        <!-- Results (bottom) -->
+        <Controls.scroll:VirtualScrollContainer if="{{ _listModel.getResults() && _listModel.getResultsPosition() === 'bottom' }}" position="top">
+            <ws:partial template="{{ _listModel.getResults().getTemplate() }}"
+                        attr:name="results"
+                        item="{{ _listModel.getResults() }}"
+						itemVersion="{{ _listModel.getResults().getVersion() }}"
+                        style="{{ _options.style }}"
+                        backgroundStyle="{{ _options.backgroundStyle || _options.style }}"/>
+        </Controls.scroll:VirtualScrollContainer>
+
+        <!-- Footer -->
+        <ws:if data="{{ _listModel.getFooter() }}">
+            <ws:partial template="{{ _listModel.getFooter().getTemplate() }}"
+                        attr:name="footer"
+                        item="{{ _listModel.getFooter() }}"
+						itemVersion="{{ _listModel.getFooter().getVersion() }}"
+                        containerSize="{{ _$columnScrollEmptyViewMaxWidth }}"
+                        style="{{ _options.style }}"
+						needItemActionsSpacing="{{ _options.itemActionsPosition === 'outside' && _listModel.getCount() }}"
+						backgroundStyle="{{ _options.backgroundStyle || _options.style }}"/>
+        </ws:if>
+
+        <!--Global loading indicator-->
+        <ws:partial if="{{ _listModel.getGlobalIndicator() }}"
+                    template="{{_listModel.getGlobalIndicator().getTemplate()}}"
+                    item="{{_listModel.getGlobalIndicator()}}"/>
+    </table>
+</ws:template>
+
+<div name="gridWrapper"
+     on:wheel="_onColumnScrollViewWheel()"
+     on:mouseenter="_onColumnScrollViewMouseEnter()"
+     on:focusIn="_onFocusIn()"
+     class="{{ _getGridViewWrapperClasses(_options) }}">
+
+    <style attr:name="redrawWrapperStyles" data-vdom-ignore="true"></style>
+
+    <ws:if data="{{ _options.columnScroll }}">
+        <Controls.columnScroll:StyleContainers name="columnScrollStyleContainers"/>
+        <Controls.columnScroll:Shadows backgroundStyle="{{ _options.backgroundStyle }}"
+                                       needBottomPadding="{{ _options.needBottomPadding }}"/>
+        <Controls.columnScroll:DragScrollOverlay if="{{ _isDragScrollEnabledByOptions(_options) }}"
+												 on:mousemove="_onColumnScrollDragScrolling()"
+												 on:touchmove="_onColumnScrollDragScrolling()"
+												 on:mouseup="_onColumnScrollStopDragScrolling()"
+												 on:touchend="_onColumnScrollStopDragScrolling()"
+												 on:mouseleave="_onColumnScrollStopDragScrolling()"/>
+        <Controls.event:Listener event="controlResize" on:controlResize="_onColumnScrollViewResized()"/>
+    </ws:if>
+
+    <!-- Скроллбар горизонтального скролла. -->
+	<ws:if data="{{ _options.columnScroll }}">
+		<ws:partial template="SCROLLBAR_IN_POSITION"
+					renderPosition="beforeTable"
+					useNew="{{ false }}"
+		/>
+	</ws:if>
+
+	<Controls.event:Register name="scrollDetect" register="horizontalScroll">
+		<!-- Контент таблицы -->
+		<ws:partial template="gridView"
+					attr:name="grid"
+					on:mousedown="_onColumnScrollStartDragScrolling('mouse')"
+					on:touchstart="_onColumnScrollStartDragScrolling('touch')"
+					on:mousemove="_onColumnScrollDragScrolling('mouse')"
+					on:touchmove="_onColumnScrollDragScrolling('touch')"
+					on:mouseup="_onColumnScrollStopDragScrolling('mouse')"
+					on:touchend="_onColumnScrollStopDragScrolling('touch')"/>
+	</Controls.event:Register>
+</div>

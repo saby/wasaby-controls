@@ -1,0 +1,11 @@
+<div class="controls-ListView__itemV controls-SearchBreadcrumbsTile__breadcrumbsItem">
+   <Controls.breadcrumbs:Path
+      items="{{item.getContents()}}"
+      keyProperty="{{item.getKeyProperty()}}"
+      displayProperty="{{item.getDisplayProperty()}}"
+      readOnly="{{ item.isReadonly() }}"
+      containerWidth="{{ item.getContainerWidth() }}"
+      backgroundStyle="{{_options.backgroundStyle}}"
+      breadCrumbsItemClickCallback="{{ _onBreadcrumbItemClick }}"
+   />
+</div>

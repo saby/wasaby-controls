@@ -1,0 +1,63 @@
+<div class="controls-TileView__itemActions_menu controls_list_theme-{{_options.theme}}" data-qa="controls-TileView__itemActions_menu_popup">
+   <Controls.Container.Async
+      templateName="Controls/popupTemplate:Sticky">
+      <ws:partial
+        template="{{content.resolvedTemplate}}"
+        attr:class="controls-TileView__itemActions_menu_template"
+        closeButtonViewMode="external"
+        stickyPosition="{{_options.stickyPosition}}"
+        roundBorder="{{_options.roundBorder}}"
+        shadowVisible="{{true}}"
+        borderVisible="{{ false }}"
+      >
+         <ws:bodyContentTemplate>
+            <div
+                class="controls-TileView__itemActions__menu_content"
+                data-qa="controls-TileView__itemActions__menu_content"
+            >
+               <!--Используем максимальную доступную высоту и пропорцию для вычисления ширины изображения-->
+               <style>
+                  {{_options.getStyles(_options.stickyPosition.sizes.height, _options.previewHeight, _options.imageProportion)}}
+               </style>
+               <div class="controls-TileView__itemActions__menu_leftContent">
+                  <div class="controls-TileView__itemActions__menu_imageWrapper"
+                       on:click="_itemClick()">
+                        <img class="controls-TileView__itemActions_menu_image {{_options.imageClasses}}"
+                             src="{{_options.image}}"/>
+                  </div>
+                  <div
+                     class="controls-TileView__itemActions__menu_header"
+                     data-qa="controls-TileView__itemActions__menu_header"
+                  >
+                     <div
+                         class="controls-TileView__itemActions__menu_header_title"
+                         title="{{_options.title}}"
+                     >
+                         {{_options.title}}
+                     </div>
+                     <div
+                         class="controls-TileView__itemActions__menu_header_additionalTitle"
+                         title="{{_options.additionalTitle}}"
+                     >
+                        {{_options.additionalText}}
+                     </div>
+                  </div>
+               </div>
+               <Controls.Container.Async templateName="Controls/menu:Control">
+                  <ws:partial
+                     template="{{content.resolvedTemplate}}"
+                     additionalProperty="{{null}}"
+                     attr:class="controls-TileView__itemActions__menu"
+                     source="{{_options.source}}"
+                     parentProperty="{{_options.parentProperty}}"
+                     on:itemClick="_sendResult('itemClick')"
+                     keyProperty="id"
+                     displayProperty="title"
+                     scope="{{_options}}"
+                  />
+               </Controls.Container.Async>
+            </div>
+         </ws:bodyContentTemplate>
+      </ws:partial>
+   </Controls.Container.Async>
+</div>

@@ -1,0 +1,7 @@
+<Controls.suggestPopup:ListContainer attr:class="{{ _options.demoClass }}">
+    <Controls.list:View
+       attr:class="{{ _options.demoClass }}"
+       displayProperty="title"
+       keyProperty="id"
+    />
+</Controls.suggestPopup:ListContainer>
