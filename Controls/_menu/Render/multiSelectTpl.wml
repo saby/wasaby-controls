@@ -1,0 +1,12 @@
+<Controls.Container.Async templateName="Controls/checkbox:CheckboxMarker"
+                          on:click="_checkBoxClick(treeItem)"
+                          attr:class="controls-Menu__row-checkbox
+                                      controls-Menu__row-checkbox-{{checkBoxAlign === 'right' ? 'right' : 'left'}}
+                                      controls-Menu__row-checkbox_{{!treeItem.isVisibleCheckbox() ? 'invisible' : treeItem.isSelected() !== false ?
+                                       'active' : 'default'}}">
+   <ws:templateOptions value="{{treeItem.isSelected()}}"
+                       viewMode="outlined"
+                       triState="{{true}}"
+                       readOnly="{{treeItem.isReadonlyCheckbox() || false}}"
+                       horizontalPadding="null"/>
+</Controls.Container.Async>

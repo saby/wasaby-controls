@@ -1,0 +1,139 @@
+<div class="popup-page">
+   <Controls.popup:Dialog name="dialog" template="Controls-demo/Popup/TestDialog">
+      <ws:templateOptions type="dialog"/>
+   </Controls.popup:Dialog>
+   <Controls.popup:Dialog name="modalDialog" modal="{{true}}" template="Controls-demo/Popup/TestDialog" zIndex="1000">
+      <ws:templateOptions type="dialog"/>
+   </Controls.popup:Dialog>
+   <Controls.popup:Sticky name="sticky"
+                          actionOnScroll="close"
+                                 onResult="{{_onResult}}"
+                                 template="Controls-demo/Popup/TestDialog"
+                                 autoHide="{{true}}"
+   >
+         <ws:direction vertical="bottom" horizontal="left"/>
+         <ws:targetPoint vertical="bottom" horizontal="left"/>
+   </Controls.popup:Sticky>
+   <Controls.popup:Notification name="notification" template="Controls-demo/Popup/TestDialog">
+      <ws:templateOptions type="notification" fromNotification="{{true}}"/>
+   </Controls.popup:Notification>
+   <Controls.popup:Stack name="stack" template="Controls-demo/Popup/TestStack" closeOnOutsideClick="{{true}}">
+      <ws:templateOptions type="stack"/>
+   </Controls.popup:Stack>
+
+   <Controls.popup:Stack name="stack2" template="Controls-demo/Popup/TestStack" closeOnOutsideClick="{{true}}">
+      <ws:templateOptions type="stack"/>
+   </Controls.popup:Stack>
+
+   <Controls.popup:Stack name="executingStack" template="Controls-demo/Popup/TestExecutingStack" closeOnOutsideClick="{{false}}" minWidth="500" maxWidth="700">
+   </Controls.popup:Stack>
+   <Controls.popup:Stack name="executingIndicatorStack" template="Controls-demo/Popup/TestExecutingStack" closeOnOutsideClick="{{false}}" minWidth="500" maxWidth="700">
+      <ws:templateOptions delay="{{3000}}"/>
+   </Controls.popup:Stack>
+
+   <Controls.popup:Stack name="notifyStack"
+                                on:close="_notifyCloseHandler()"
+                                on:open="_notifyOpenHandler()"
+                                on:result="_notifyResultHandler()"
+                                template="Controls-demo/Popup/NotifyStack"
+                                closeOnOutsideClick="{{true}}">
+   </Controls.popup:Stack>
+
+   <Controls.popup:Stack name="maximizedStack" template="Controls-demo/Popup/TestMaximizedStack" closeOnOutsideClick="{{true}}" propStorageId="123">
+      <ws:templateOptions type="stack"/>
+   </Controls.popup:Stack>
+
+   <Controls.popup:Stack name="ignoreActivationStack" template="Controls-demo/Popup/TestIgnoreActivationStack" closeOnOutsideClick="{{true}}">
+   </Controls.popup:Stack>
+
+   <Controls.popup:Stack name="openOldTemplate" template="Controls-demo/Popup/TestFormController/TestFormController" closeOnOutsideClick="{{true}}">
+      <ws:templateOptions type="stack"/>
+   </Controls.popup:Stack>
+
+   <Controls.popup:Stack name="openStackWithPending" template="Controls-demo/Popup/PopupWithPending" closeOnOutsideClick="{{true}}">
+      <ws:templateOptions type="stack"/>
+   </Controls.popup:Stack>
+
+   <Controls.popup:Stack name="childStack" template="Controls-demo/Popup/TestStack" closeOnOutsideClick="{{true}}">
+      <ws:templateOptions type="stack" />
+   </Controls.popup:Stack>
+
+   <Controls.popup:Stack name="openStackWithFormController" template="Controls-demo/FormController/FormController" closeOnOutsideClick="{{true}}">
+      <ws:templateOptions type="stack"/>
+   </Controls.popup:Stack>
+   <div>
+      <Controls.buttons:Button name="dialogButton" caption="dialog" on:click="openDialog()" attr:class="ControlsDemo-PopupPage__dialogButton"/>
+   </div>
+   <div>
+      <Controls.buttons:Button name="modalDialogButton" caption="modal dialog" on:click="openModalDialog()" attr:class="ControlsDemo-PopupPage__modalDialogButton"/>
+   </div>
+   <div>
+      <Controls.buttons:Button name="stickyButton" caption="sticky" on:click="openSticky()" attr:class="ControlsDemo-PopupPage__stickyButton"/>
+   </div>
+   <div>
+      <Controls.buttons:Button name="notificationButton" caption="notification" on:click="openNotification()" attr:class="ControlsDemo-PopupPage__notificationButton"/>
+   </div>
+   <div>
+      <Controls.buttons:Button name="stackButton" caption="stack" on:click="openStack()" attr:class="ControlsDemo-PopupPage__stackButton"/>
+   </div>
+   <div>
+      <Controls.buttons:Button name="openStackWithTemplateSizes" caption="openStackWithTemplateSizes" on:click="openStackWithTemplateSizes()" attr:class="ControlsDemo-PopupPage__stackWithTemplateSizesButton"/>
+   </div>
+   <div>
+      <Controls.buttons:Button name="stackExecutingButton" caption="openExecutingPopup" on:click="openExecutingPopup()" attr:class="ControlsDemo-PopupPage__openExecutingPopupButton"/>
+   </div>
+   <div>
+      <Controls.buttons:Button name="maxButton" caption="maximizedStack" on:click="openMaximizedStack()" attr:class="ControlsDemo-PopupPage__maximizedStackButton"/>
+   </div>
+   <div>
+      <Controls.buttons:Button name="notifyButton" caption="notifyStack" on:click="openNotifyStack()" attr:class="ControlsDemo-PopupPage__notifyStackButton"/>
+      <span class="ControlsDemo-PopupPage__notifyStackText">{{ _notifyStackText }}</span>
+   </div>
+   <div>
+      <Controls.buttons:Button name="childButton" caption="childStack" on:click="openChildStack()" attr:class="ControlsDemo-PopupPage__childStackButton"/>
+   </div>
+   <div>
+      <Controls.buttons:Button name="stackIgnoreButton" caption="ignoreActivationStack" on:click="openIgnoreActivationStack()" attr:class="ControlsDemo-PopupPage__stackIgnoreButton"/>
+   </div>
+   <div>
+      <Controls.buttons:Button name="stackIndicatorButton" caption="openIndicatorPopup" on:click="openIndicatorPopup()" attr:class="ControlsDemo-PopupPage__openIndicatorPopupButton"/>
+   </div>
+   <div>
+      <Controls.buttons:Button name="stackButton2" caption="open old template" on:click="openOldTemplate()" attr:class="ControlsDemo-PopupPage__stackOldTemplateButton"/>
+   </div>
+   <div>
+      <Controls.buttons:Button name="stackButton3" caption="open stack with Controls-demo/Popup/PopupWithPending" on:click="openStackWithPending()" attr:class="ControlsDemo-PopupPage__withPendingButton"/>
+   </div>
+   <div>
+      <Controls.buttons:Button name="stackButton4" caption="open stack with Controls-demo/FormController/FormController" on:click="openStackWithFormController()" attr:class="ControlsDemo-PopupPage__withFCButton"/>
+   </div>
+   <div>
+      <Controls.buttons:Button name="helperButton1" caption="open InfoBox by popupHelper" on:click="openInfoBoxByHelper()" attr:class="ControlsDemo-PopupPage__helperInfoBoxButton"/>
+   </div>
+   <div>
+      <Controls.buttons:Button name="helperButton2" caption="open Notification by popupHelper" on:click="openNotificationByHelper()" attr:class="ControlsDemo-PopupPage__helperNotificationButton"/>
+   </div>
+   <div>
+      <Controls.buttons:Button name="helperButton3" caption="open Confirmation by popupHelper" on:click="openConfirmationByHelper()" attr:class="ControlsDemo-PopupPage__helperConfirmationButton"/>
+      <ws:if data="{{_helperConfirmationResult !== undefined}}">
+         <span style="margin-left: 10px;">Пользователь выбрал {{_helperConfirmationResult ? 'да' : 'нет'}}</span>
+      </ws:if>
+   </div>
+   <div>
+      <Controls.buttons:Button name="helperButton4" caption="open Sticky by popupHelper" on:click="openStickyByHelper()" attr:class="ControlsDemo-PopupPage__helperStickyButton"/>
+   </div>
+   <div>
+      <Controls.buttons:Button name="helperButton5" caption="open Stack by popupHelper" on:click="openStackByHelper()" attr:class="ControlsDemo-PopupPage__helperStackButton"/>
+   </div>
+   <div>
+      <Controls.buttons:Button name="helperButton6" caption="open Dialog by popupHelper" on:click="openDialogByHelper()" attr:class="ControlsDemo-PopupPage__helperDialogButton"/>
+   </div>
+   <Controls.scroll:Container attr:class="ControlsDemo-PopupPage__external-scroll-container">
+      <Controls.scroll:Container attr:class="ControlsDemo-PopupPage__internal-scroll-container" name="scrollContainer">
+         <Controls.buttons:Button name="stickyInScrollButton" caption="stickyInScroll" on:click="openStickyInScroll()" attr:class="ControlsDemo-PopupPage__stickyButton"/>
+      </Controls.scroll:Container>
+   </Controls.scroll:Container>
+   <div style="margin-top: 10px;">
+      <Controls.input:Text placeholder="for focusing" attr:class="ControlsDemo-PopupPage__forFocusing"/>
+   </div>
+</div>

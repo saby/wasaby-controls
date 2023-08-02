@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__flexRow">
+        <Controls-ListEnv.filterPanel:View filterNames="['owners']"
+                                             storeId="counterData"
+                                             attr:class="engine-demo__Widgets_filterPanel"/>
+        <Controls.list:View storeId="counterData"/>
+    </div>
+</div>

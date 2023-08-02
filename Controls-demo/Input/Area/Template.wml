@@ -1,0 +1,34 @@
+<div class="controlsDemo__wrapper  controlsDemo__flex controlsDemo__flex-flow_wrap">
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/Input/Area/BorderVisibility/Index' }}">
+            <a href="{{content.href}}">Настройка рамки</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.Area.BorderVisibility.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/Input/Area/MinMaxLines/Index' }}">
+            <a href="{{content.href}}">Настройка минимальной и максимальной высоты</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.Area.MinMaxLines.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/Input/Area/TextAlign/Index' }}">
+            <a href="{{content.href}}">Настройка выравнивание текста</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.Area.TextAlign.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/Input/Area/FooterTemplate/Index' }}">
+            <a href="{{content.href}}">Настройка содержимого, которое будет отображаться в подвале поля ввода</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.Area.FooterTemplate.Index/>
+    </div>
+</div>

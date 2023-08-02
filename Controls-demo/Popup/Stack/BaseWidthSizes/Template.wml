@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper popup-page-target-container">
+    <Controls.popup:Stack name="stack"/>
+    <div>
+        <div class="controls-text-label">Открытие стековой панели с шириной из стандартной линейки</div>
+        <ws:for data="size in _sizes">
+            <div class="controlsDemo__wrapper">
+                <Controls.buttons:Button name="button1" caption="{{'Size:' + size}}" on:click="openStack(size)"/>
+            </div>
+        </ws:for>
+    </div>
+</div>

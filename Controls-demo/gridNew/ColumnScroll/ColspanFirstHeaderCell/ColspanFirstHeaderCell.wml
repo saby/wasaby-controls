@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:style="width: 600px; height: 400px">
+        <Controls.grid:View
+                storeId="listData"
+                header="{{_header}}"
+                columns="{{_columns}}"
+                columnScroll="{{true}}"
+                backgroundStyle="default"
+                bind:selectedKeys="_selectedKeys"
+                stickyColumnsCount="{{2}}">
+        </Controls.grid:View>
+    </Controls.scroll:Container>
+</div>

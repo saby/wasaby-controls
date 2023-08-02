@@ -1,0 +1,60 @@
+<Controls.WorkByKeyboard.Consumer getContextValue="{{_setWorkByKeyboard}}">
+    <div class="controls-Render {{ _jsSelector }} {{_getBorderClass()}}
+            controls-Render_background-{{ _options.contrastBackground ? 'contrast' : 'same' }}
+            controls-Render_textAlign-{{_options.textAlign}}
+            controls-Render{{_statePrefix}}_borderRadius
+            controls-Render_state-{{_state}} controls-fontsize-{{_options.fontSize}} controls-fontweight-{{_fontWeight}}
+            controls-fontsize-{{_options.fontSize}}
+            controls-fontweight-{{_fontWeight}}
+            {{_options.fontSize !== 'inherit' ? 'controls-Render-fontsize-' + _options.fontSize}}
+            controls-text-{{_options.fontColorStyle}}
+            {{_highlightedOnFocus ? 'controls-Render-focused-item'}}
+            controls-Render_state-{{_state}}_{{_options.wasActionByUser ? 'caretFilled' : 'caretEmpty'}}
+            {{_options.multiline ? 'controls-Render_multiline' : ' controls-inlineheight-' + _options.inlineHeight +
+            ' controls-Render-inlineheight-' + _options.inlineHeight}}"
+         ws-autofocus="{{ _options.autoFocus }}"
+    >
+        <div class="controls-Render__wrapper {{_options.footerTemplate ? 'controls-Render__wrapper_footer'}}">
+            <ws:if data="{{!_options.multiline}}">
+                <span class="controls-Render__baseline">&#65279;</span>
+            </ws:if>
+            <ws:if data="{{_options.leftFieldWrapper}}">
+                <ws:partial attr:class="controls-Render__beforeField" template="{{_options.leftFieldWrapper}}"/>
+            </ws:if>
+            <ws:partial template="{{_options.content}}"
+                        horizontalPadding="{{_horizontalPadding}}"
+                        transliterate="{{_options.transliterate}}"
+                        highlightedOnFocus="{{_highlightedOnFocus}}"
+                        on:focusin="_setContentActive(true)"
+                        on:focusout="_setContentActive(false)"
+                        attr:data-qa="controls-Render__field"
+                        attr:class="controls-Render__field controls-Render__field_textAlign_{{_options.textAlign}}
+                                 {{!_options.multiline ? 'ws-ellipsis'}}
+                                {{_isFieldZIndex ? 'controls-Render__field_zIndex'}}
+                                {{!_options.footerTemplate && _options.minLines > 1 ? 'controls-Render__fullHeight'}}">
+                <ws:placeholderTemplate>
+                    <ws:if data="{{_options.placeholder}}">
+                        <div class="controls-Render__placeholder
+                           {{_options.multiline ? '' : 'controls-Render__placeholder_overflow'}}">
+                            <ws:partial template="{{_options.placeholder}}"/>
+                        </div>
+                    </ws:if>
+                </ws:placeholderTemplate>
+            </ws:partial>
+            <ws:if data="{{_options.rightFieldWrapper}}">
+                <ws:partial attr:class="controls-Render__afterField" template="{{_options.rightFieldWrapper}}"
+                            inlineHeight="{{_options.inlineHeight}}"/>
+            </ws:if>
+            <ws:if data="{{_options.footerTemplate}}">
+                <ws:partial template="{{_options.footerTemplate}}"/>
+            </ws:if>
+        </div>
+        <ws:if data="{{_options.tagStyle}}">
+            <ws:partial template="wml!Controls/Application/TagTemplate/TagTemplate"
+                        attr:class="controls-Render_tag_padding-right{{_horizontalPadding !== 'null' ? '-empty'}}"
+                        tagStyle="{{_options.tagStyle}}"
+                        on:click="_tagClickHandler()"
+                        on:mouseenter="_tagHoverHandler()"/>
+        </ws:if>
+    </div>
+</Controls.WorkByKeyboard.Consumer>

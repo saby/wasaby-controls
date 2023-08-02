@@ -1,0 +1,22 @@
+<div class="controlsDemo__wrapper ws-flexbox ws-flex-column ws-align-items-center controlsDemo_fixedWidth550">
+<div class="demo-VirtualScroll__title controls-text-label controls-fontsize-l controlsDemo__mb1">
+  Перезагрузка по курсору, загрузка данных в обе стороны
+</div>
+<Controls.scroll:Container
+    attr:class="controlsDemo_fixedWidth500 controlsDemo__maxWidth500 controlsDemo__height500 controlsDemo__mb1">
+  <Controls.list:View
+      storeId="listData"
+      name="list">
+    <ws:virtualScrollConfig pageSize="{{20}}"/>
+  </Controls.list:View>
+</Controls.scroll:Container>
+<div data-qa="demo-VirtualScroll__changePosition" class="demo-VirtualScroll__changePosition ws-link controlsDemo__mb1" on:click="_changePosition()">
+  Перезагрузить по позиции
+</div>
+<div data-qa="demo-VirtualScroll__slowSource" class="demo-VirtualScroll__changePosition ws-link controlsDemo__mb1" on:click="_slowDownSource()">
+  Замедлить источник
+</div>
+<div data-qa="demo-VirtualScroll__changePositionLess" class="demo-VirtualScroll__changePosition ws-link controlsDemo__mb1" on:click="_changePosition(-10)">
+  Перезагрузить по позиции на 10 меньше
+</div>
+</div>

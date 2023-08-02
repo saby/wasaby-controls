@@ -1,0 +1,73 @@
+<div class="demo-Suggest">
+   <div class="demo-block-suggest">
+      <div class="demo-SearchSuggestWrapper demo-Suggest__search">
+         <h3>Search suggest</h3>
+         <Controls.SuggestSearch
+               attr:class="ControlsDemo-Suggest__wideSearch ControlsDemo-Suggest__search"
+               bind:value="_suggestValue"
+               bind:suggestState="_suggestState"
+               displayProperty="title"
+               searchParam="title"
+               source="{{_suggestSourceLong}}">
+            <ws:navigation source="page" view="page">
+               <ws:sourceConfig pageSize="{{2}}" page="{{0}}" hasMore="{{false}}"/>
+            </ws:navigation>
+            <ws:suggestTemplate templateName="Controls-demo/Suggest/resources/SuggestTemplate">
+               <ws:templateOptions demoClass="demo-SuggestSearchListWide"/>
+            </ws:suggestTemplate>
+            <ws:minSearchLength>
+               <ws:Number>3</ws:Number>
+            </ws:minSearchLength>
+         </Controls.SuggestSearch>
+      </div>
+   </div>
+   <div class="demo-block-suggest">
+      <div class="demo-SearchSuggestWrapper demo-Suggest__searchTabs">
+         <h3>Search suggest with tabs</h3>
+         <Controls.SuggestSearch
+               attr:class="ControlsDemo-Suggest__wideSearch ControlsDemo-Suggest__searchTabs"
+               bind:value="_suggestTabsValue"
+               bind:suggestState="_suggestTabsState"
+               displayProperty="title"
+               searchParam="title"
+               source="{{_suggestTabSource}}">
+            <ws:filter currentTab="{{1}}"/>
+            <ws:navigation source="page" view="page">
+               <ws:sourceConfig pageSize="{{2}}" page="{{0}}" hasMore="{{false}}"/>
+            </ws:navigation>
+            <ws:suggestTemplate templateName="Controls-demo/Suggest/resources/SuggestTabTemplate">
+               <ws:templateOptions demoClass="demo-SuggestSearchListWide"/>
+            </ws:suggestTemplate>
+            <ws:minSearchLength>
+               <ws:Number>3</ws:Number>
+            </ws:minSearchLength>
+         </Controls.SuggestSearch>
+      </div>
+   </div>
+   <div class="demo-block-suggest">
+      <div class="demo-SearchSuggestWrapper demo-Suggest__wideSearch">
+         <h3>Search suggest with button</h3>
+         <Controls.SuggestSearch
+               name="searhSuggestWithButton"
+               attr:class="ControlsDemo-Suggest__wideSearch"
+               bind:value="_suggestWithButtonValue"
+               bind:suggestState="_suggestWithButtonState"
+               displayProperty="title"
+               searchParam="title"
+               searchButtonVisible="{{false}}"
+               source="{{_suggestTabSource}}">
+            <ws:filter currentTab="{{1}}"/>
+            <ws:navigation source="page" view="page">
+               <ws:sourceConfig pageSize="{{2}}" page="{{0}}" hasMore="{{false}}"/>
+            </ws:navigation>
+            <ws:suggestTemplate templateName="Controls-demo/Suggest/resources/SuggestTabTemplate">
+               <ws:templateOptions demoClass="demo-SuggestSearchListWide"/>
+            </ws:suggestTemplate>
+            <ws:minSearchLength>
+               <ws:Number>3</ws:Number>
+            </ws:minSearchLength>
+         </Controls.SuggestSearch>
+         <Controls.buttons:Button caption="{[Найти]}" viewMode="outlined" buttonStyle="primary" attr:class="ControlsDemo-Suggest_searchButton" on:click="_clickSearchButton()"/>
+      </div>
+   </div>
+</div>

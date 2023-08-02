@@ -1,0 +1,6 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <Controls.tree:View
+            storeId="ItemActions"
+            multiSelectVisibility="visible"
+            itemActions="{{ _itemActions }}"/>
+</div>

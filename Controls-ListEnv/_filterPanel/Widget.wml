@@ -1,0 +1,7 @@
+<Controls.filterPanel:View scope="{{_options}}"
+                           propStorageId="{{_widgetController.getPropStorageId()}}"
+                           bind:editorsViewMode="_editorsViewMode"
+                           resetButtonVisible="{{_resetButtonVisible}}"
+                           source="{{_filterPanelSource}}"
+                           style="master"
+                           on:sourceChanged="_filterPanelSourceChanged()"/>

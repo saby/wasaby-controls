@@ -1,0 +1,6 @@
+<div class="controlsDemo__wrapper">
+    <Controls.treeGrid:View
+            storeId="listData"
+            columns="{{_columns}}"
+            markItemByExpanderClick="{{false}}"/>
+</div>

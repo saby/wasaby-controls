@@ -1,0 +1,30 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow controlsDemo__childMinWidth400">
+
+    <div class="controlsDemo__cell controlsDemo__mr4 controlsDemo__maxWidth500 demo-ContextMenuConfig__footerTemplate">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/ItemActions/ContextMenuConfig/FooterTemplate/Index' }}">
+            <a href="{{content.href}}">Указан footerTemplate. Кнопка меню отображается</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.ItemActions.ContextMenuConfig.FooterTemplate.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controlsDemo__mr4 controlsDemo__maxWidth500 demo-ContextMenuConfig__headerTemplate">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/ItemActions/ContextMenuConfig/HeaderTemplate/Index' }}">
+            <a href="{{content.href}}">Указан headerTemplate. Кнопка меню отображается</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.ItemActions.ContextMenuConfig.HeaderTemplate.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controlsDemo__mr4 controlsDemo__maxWidth500 demo-ContextMenuConfig__itemTemplate">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/ItemActions/ContextMenuConfig/ItemTemplate/Index' }}">
+            <a href="{{content.href}}">Настройка шаблона пункта меню</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.ItemActions.ContextMenuConfig.ItemTemplate.Index/>
+    </div>
+
+</div>

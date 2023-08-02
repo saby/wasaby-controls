@@ -1,0 +1,99 @@
+<div class="controlsDemo__wrapper">
+    <Controls-demo.gridNew.DemoLayout.Index>
+        <ws:content>
+            <Controls.grid:View
+                    name="grid"
+                    storeId="listData"
+                    attr:class="controlsDemo__inline-flex controlsDemo__maxWidth800"
+                    columns="{{_columns}}"
+                    rowSeparatorSize="s"
+                    columnSeparatorSize="s"
+                    multiSelectVisibility="{{ _multiSelectVisibility }}"
+                    bind:selectedKeys="_selectedKeys"
+                    on:beforeBeginEdit="_onBeforeBeginEdit()"
+                    showEditArrow="{{true}}"
+                    itemActions="{{_itemActions}}"
+                    itemActionsPosition="custom">
+                <ws:itemTemplate>
+                    <ws:partial template="Controls/grid:ItemTemplate" highlightOnHover="{{ _highlightOnHover }}" />
+                </ws:itemTemplate>
+                <ws:editingConfig>
+                    <ws:Object mode="cell" toolbar="{{true}}" editOnClick="{{true}}" autoAdd="{{true}}"/>
+                </ws:editingConfig>
+                <ws:emptyTemplateColumns>
+                    <ws:Array>
+                        <ws:Object startColumn="{{ 1 }}" endColumn="{{ 2 }}">
+                            <ws:template>
+                                <ws:partial template="Controls/grid:EmptyColumnTemplate">
+                                    <ws:partial template="Controls/list:EditingTemplate" enabled="{{ true }}">
+                                        <ws:viewTemplate>
+                                            <div on:click="_beginAdd()">Введите значение</div>
+                                        </ws:viewTemplate>
+                                    </ws:partial>
+                                </ws:partial>
+                            </ws:template>
+                        </ws:Object>
+                        <ws:Object startColumn="{{ 2 }}" endColumn="{{ 3 }}"/>
+                        <ws:Object startColumn="{{ 3 }}" endColumn="{{ 4 }}"/>
+                        <ws:Object startColumn="{{ 4 }}" endColumn="{{ 5 }}"/>
+                        <ws:Object startColumn="{{ 5 }}" endColumn="{{ 6 }}"/>
+                        <ws:Object startColumn="{{ 6 }}" endColumn="{{ 7 }}"/>
+                    </ws:Array>
+                </ws:emptyTemplateColumns>
+            </Controls.grid:View>
+        </ws:content>
+        <ws:rightSidebar isExpanded="{{ true }}">
+            <ws:items>
+                <ws:Array>
+                    <ws:Object>
+                        <ws:template>
+                            <div class="controlsDemo__SingleCellEditable__multiSelectVisibility">
+                                <h4 class="controlsDemo__mb1">Множественный выбор</h4>
+                                <button attr:class="controlsDemo__SingleCellEditable__multiSelectVisibility_hidden controlsDemo__mr1"
+                                        attr:data-qa="controlsDemo__SingleCellEditable__multiSelectHidden"
+                                        on:click="_toggleMultiSelectVisibility('hidden')">hidden</button>
+                                <button attr:class="controlsDemo__SingleCellEditable__multiSelectVisibility_visible controlsDemo__mr1"
+                                        attr:data-qa="controlsDemo__SingleCellEditable__multiSelectVisible"
+                                        on:click="_toggleMultiSelectVisibility('visible')">visible</button>
+                                <button attr:class="controlsDemo__SingleCellEditable__multiSelectVisibility_onhover"
+                                        attr:data-qa="controlsDemo__SingleCellEditable__multiSelectOnHover"
+                                        on:click="_toggleMultiSelectVisibility('onhover')">onhover</button>
+                            </div>
+                        </ws:template>
+                    </ws:Object>
+
+                    <ws:Object>
+                        <ws:template>
+                            <div class="controlsDemo__SingleCellEditable__viewSource">
+                                <h4 class="controlsDemo__mb1">Данные</h4>
+                                <button attr:class="controlsDemo__SingleCellEditable__viewSource_empty controlsDemo__mr1"
+                                        attr:data-qa="controlsDemo__SingleCellEditable__dataNo"
+                                        on:click="_toggleSource(true)">Нет</button>
+                                <button attr:class="controlsDemo__SingleCellEditable__viewSource_data"
+                                        attr:data-qa="controlsDemo__SingleCellEditable__dataYes"
+                                        on:click="_toggleSource(false)">Есть</button>
+                            </div>
+                        </ws:template>
+                    </ws:Object>
+
+                    <ws:Object>
+                        <ws:template>
+                            <div class="controlsDemo__SingleCellEditable__highlightOnHover">
+                                <h4 class="controlsDemo__mb1">Подсветка строки</h4>
+                                <button attr:class="controlsDemo__SingleCellEditable__highlightOnHover_undefined controlsDemo__mr1"
+                                        attr:data-qa="controlsDemo__SingleCellEditable__highlightUndefined"
+                                        on:click="_toggleHighlightOnHover()">undefined</button>
+                                <button attr:class="controlsDemo__SingleCellEditable__highlightOnHover_false controlsDemo__mr1"
+                                        attr:data-qa="controlsDemo__SingleCellEditable__highlightFalse"
+                                        on:click="_toggleHighlightOnHover(false)">false</button>
+                                <button attr:class="controlsDemo__SingleCellEditable__highlightOnHover_true"
+                                        attr:data-qa="controlsDemo__SingleCellEditable__highlightTrue"
+                                        on:click="_toggleHighlightOnHover(true)">true</button>
+                            </div>
+                        </ws:template>
+                    </ws:Object>
+                </ws:Array>
+            </ws:items>
+        </ws:rightSidebar>
+    </Controls-demo.gridNew.DemoLayout.Index>
+</div>

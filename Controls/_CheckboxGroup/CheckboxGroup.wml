@@ -1,0 +1,17 @@
+<div class="controls_toggle_theme-{{_options.theme}} controls-CheckboxGroup">
+   <ws:partial template="{{_groupTemplate}}"
+               groupTemplate="{{_groupTemplate}}"
+               itemTemplate="{{_options.itemTemplate}}"
+               itemTemplateProperty="{{_options.itemTemplateProperty}}"
+               groups="{{_groups}}"
+               parent="{{null}}"
+               direction="{{_options.direction}}"
+               selectedKeys="{{_selectedKeys}}"
+               triStateKeys="{{_triStateKeys}}"
+               isSelected="{{_isSelected}}"
+               displayProperty="{{_options.displayProperty}}"
+               keyProperty="{{_options.keyProperty}}"
+               parentProperty="{{_options.parentProperty}}"
+               validationStatus="{{_options.validationStatus}}"
+               nodeProperty="{{_options.nodeProperty}}" />
+</div>

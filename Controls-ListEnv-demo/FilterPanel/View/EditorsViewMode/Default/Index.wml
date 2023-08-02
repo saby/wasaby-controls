@@ -1,0 +1,8 @@
+<div class="engine-demo__Widgets_filter-container">
+    <Controls.scroll:Container attr:style="height: 500px;">
+        <Controls-ListEnv.filterPanel:View storeId="scrollFilters"
+                                             editorsViewMode="default"
+                                             filterNames="['department', 'owner', 'city', 'gender']"/>
+        </Controls.scroll:Container>
+    <Controls.grid:View storeId="scrollFilters" columns="{{_columns}}" header="{{_header}}"/>
+</div>

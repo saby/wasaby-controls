@@ -1,0 +1,32 @@
+<div class="controlsDemo__flexRow {{_options.theme.indexOf('default')<0 ? 'controlsDemo_fixedWidth500' : 'controlsDemo_fixedWidth300'}}">
+   <div class="controlsDemo__wrapper">
+      <div class="demo-ButtonMenu__label controls-text-label">Меню с дополнительными пунктами и шаблоном showMoreRightTemplate</div>
+      <Controls.dropdown:Button
+              keyProperty="key"
+              caption="Create"
+              source="{{_source}}"
+              additionalProperty="additional"
+              dropdownClassName="controlsDemo-Dropdown_button_menu-width"
+              showMoreRightTemplate="wml!Controls-demo/dropdown_new/Button/ShowMoreRightTemplate/moreRightTemplate"
+              attr:class="controlsDemo-menuButton"
+              attr:data-qa="ControlsDemo_MenuButton__extra-items">
+      </Controls.dropdown:Button>
+   </div>
+   <div class="controlsDemo__wrapper">
+      <div class="demo-ButtonMenu__label controls-text-label">Меню с дополнительными пунктами и шаблоном showMoreRightTemplate, кнопка доп пунктов скрыта</div>
+      <Controls.dropdown:Button
+              keyProperty="key"
+              caption="Create"
+              source="{{_source}}"
+              additionalProperty="noAdditional"
+              dropdownClassName="controlsDemo-Dropdown_button_menu-width"
+              attr:class="controlsDemo-menuButton"
+              attr:data-qa="ControlsDemo_MenuButton__extra-items">
+         <ws:showMoreRightTemplate>
+            <div>
+               <Controls.buttons:Button class="ws-align-self-end" viewMode="link" fontColorStyle="label" caption="Настроить" />
+            </div>
+         </ws:showMoreRightTemplate>
+      </Controls.dropdown:Button>
+   </div>
+</div>

@@ -1,0 +1,5 @@
+<div class="controlsDemo__wrapper">
+   <Controls.scroll:Container attr:class="controlsDemo__height400 controlsDemo__minWidth600 controlsDemo__maxWidth1200">
+      <Controls.columns:View storeId="listData" backgroundStyle="unaccented"/>
+   </Controls.scroll:Container>
+</div>

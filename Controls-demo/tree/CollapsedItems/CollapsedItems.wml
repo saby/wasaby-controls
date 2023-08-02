@@ -1,0 +1,6 @@
+<div class="controlsDemo__wrapper">
+    <Controls.tree:View
+            storeId="listData"
+            bind:expandedItems="_expandedItems"
+            bind:collapsedItems="_collapsedItems"/>
+</div>

@@ -1,0 +1,19 @@
+<Controls.context:ContextOptionsProvider value="{{_prefetchResults}}">
+    <Controls.browser:Browser
+        keyProperty="id"
+        parentProperty="parent"
+        nodeProperty="parent@"
+        source="{{_viewSource}}"
+        multiSelectVisibility="visible"
+        operationsController="{{_prefetchResults[0].operationsController}}"
+        bind:selectedKeys="_selectedKeys"
+        bind:excludedKeys="_excludedKeys">
+        <div>
+            <Controls.list:Container>
+                <Controls.treeGrid:View
+                    columns="{{_columns}}"
+                    header="{{_header}}"/>
+            </Controls.list:Container>
+        </div>
+    </Controls.browser:Browser>
+</Controls.context:ContextOptionsProvider>

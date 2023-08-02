@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper">
+   <Controls.treeTile:View
+      storeId="listData3"
+      tileMode="static"
+      multiSelectVisibility="visible"
+      bind:selectedKeys="_selectedKeys"
+      itemActions="{{_itemActions}}"
+      imageFit="none"
+      tileHeight="300"
+      imageProperty="image">
+      <ws:itemTemplate>
+         <ws:partial
+            template="Controls/tile:MediumTemplate"
+            titleSingleLine="{{true}}"
+            scope="{{itemTemplate}}"/>
+      </ws:itemTemplate>
+   </Controls.treeTile:View>
+</div>

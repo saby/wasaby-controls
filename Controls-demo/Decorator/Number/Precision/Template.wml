@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper">
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">Не определен precision</div>
+      <Controls.baseDecorator:Number value="{{_value}}"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">precision = 0</div>
+      <Controls.baseDecorator:Number value="{{_value}}" precision="{{0}}"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">precision = 3</div>
+      <Controls.baseDecorator:Number value="{{_value}}" precision="{{3}}"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">precision = 10</div>
+      <Controls.baseDecorator:Number value="{{_value}}" precision="{{10}}"/>
+   </div>
+</div>

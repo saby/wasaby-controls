@@ -1,0 +1,28 @@
+<div class="controlsDemo__wrapper">
+    <span class="controls-text-label controlsDemo__mb1">pageSize 20, остальные опции не заданы, показ с первой страницы</span>
+    <Controls-demo.list_new.VirtualScroll.NavigationSwitcher.Index storeId="listData" totalCount="{{300}}">
+        <ws:content>
+            <Controls.scroll:Container attr:class="controlsDemo__maxWidth500 controlsDemo_line-height18" attr:style="max-height: 250px">
+                <Controls.list:View storeId="listData">
+                    <ws:editingConfig editOnClick="{{ true }}"/>
+                    <ws:virtualScrollConfig pageSize="{{20}}"/>
+                    <ws:itemTemplate>
+                        <ws:partial template="Controls/list:ItemTemplate">
+                            <ws:contentTemplate>
+                                <ws:partial template="Controls/list:EditingTemplate"
+                                            attr:class="controls-EditingTemplateDemo"
+                                            value="{{ itemTemplate.item.contents.title }}"
+                                            enabled="{{true}}">
+                                    <ws:editorTemplate>
+                                        <Controls.input:Text contrastBackground="{{true}}" bind:value="itemTemplate.item.contents.title"
+                                                             selectOnClick="{{ false }}" />
+                                    </ws:editorTemplate>
+                                </ws:partial>
+                            </ws:contentTemplate>
+                        </ws:partial>
+                    </ws:itemTemplate>
+                </Controls.list:View>
+            </Controls.scroll:Container>
+        </ws:content>
+    </Controls-demo.list_new.VirtualScroll.NavigationSwitcher.Index>
+</div>

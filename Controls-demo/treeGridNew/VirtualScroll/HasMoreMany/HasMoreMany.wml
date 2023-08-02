@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:class="controlsDemo__maxWidth500 controlsDemo__height500">
+        <Controls.treeGrid:View
+                useTableInOldBrowsers="{{true}}"
+                keyProperty="key"
+                source="{{_viewSource}}"
+                columns="{{_columns}}"
+                parentProperty="parent"
+                nodeProperty="type">
+            <ws:virtualScrollConfig pageSize="{{100}}"/>
+            <ws:navigation source="page" view="demand">
+                <ws:sourceConfig pageSize="{{40}}" page="{{0}}" hasMore="{{false}}"/>
+            </ws:navigation>
+        </Controls.treeGrid:View>
+    </Controls.scroll:Container>
+</div>

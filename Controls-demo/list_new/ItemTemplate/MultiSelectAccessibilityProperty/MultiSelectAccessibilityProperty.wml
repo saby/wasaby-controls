@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper controlsDemo__list_new-itemTepmlate-NoHighlightOnHover controlsDemo_fixedWidth500">
+    <Controls.list:View
+            storeId="listData"
+            multiSelectVisibility="visible"
+            multiSelectAccessibilityProperty="checkboxState">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/list:ItemTemplate"/>
+        </ws:itemTemplate>
+    </Controls.list:View>
+</div>

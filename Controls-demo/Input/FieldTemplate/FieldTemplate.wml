@@ -1,0 +1,32 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <Controls.input:Text bind:value="_value2"
+                             attr:class="controlsDemo-FieldTemplate__inputLower">
+            <ws:leftFieldTemplate>
+                <div class="controls-icon icon-TFAttach controlsDemo__icon_active controlsDemo-FieldTemplate__icon
+                        controls-icon_style-secondary controls-icon_size-default"></div>
+            </ws:leftFieldTemplate>
+        </Controls.input:Text>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Text bind:value="_value1">
+            <ws:rightFieldTemplate>
+                <div class="controls-icon icon-NewSmile controlsDemo__icon_active controlsDemo-FieldTemplate__icon
+                        controls-icon_style-secondary controls-icon_size-default"></div>
+            </ws:rightFieldTemplate>
+        </Controls.input:Text>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Text bind:value="_value3"
+                             attr:class="controlsDemo-FieldTemplate__input">
+            <ws:leftFieldTemplate>
+                <div class="controls-icon icon-TFAttach controlsDemo__icon_active controlsDemo-FieldTemplate__icon
+                        controls-icon_style-secondary controls-icon_size-default"></div>
+            </ws:leftFieldTemplate>
+            <ws:rightFieldTemplate>
+                <div class="controls-icon icon-NewSmile controlsDemo__icon_active controlsDemo-FieldTemplate__icon
+                        controls-icon_style-secondary controls-icon_size-default"></div>
+            </ws:rightFieldTemplate>
+        </Controls.input:Text>
+    </div>
+</div>

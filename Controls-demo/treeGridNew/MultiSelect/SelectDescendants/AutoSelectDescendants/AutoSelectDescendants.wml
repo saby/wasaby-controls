@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper">
+    <Controls.treeGrid:View
+            storeId="listData4"
+            columns="{{_columns}}"
+            multiSelectVisibility="visible"
+            selectDescendants="{{true}}"/>
+</div>

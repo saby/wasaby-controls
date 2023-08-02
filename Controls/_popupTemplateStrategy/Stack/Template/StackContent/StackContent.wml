@@ -1,0 +1,27 @@
+<div class="controls_popupTemplate_theme-{{_options.theme}}
+            controls-Stack__content-wrapper
+            ws-workspace-width-{{_options.workspaceWidth}}">
+   <ws:if data="{{_canResize(_options.propStorageId, _options.workspaceWidth, _options.minWidth, _options.maxWidth)}}">
+      <Controls.dragnDrop:ResizingLine attr:class="controls-Stack__resizingLine"
+                                       direction="{{ _resizeDirection }}"
+                                       minOffset="{{_minOffset}}"
+                                       maxOffset="{{_maxOffset}}"
+                                       on:offset="_tmplNotify('popupMovingSize')"/>
+   </ws:if>
+   <ws:partial template="{{_options.template}}"
+               isAdaptive="{{ !!_options.allowAdaptive && _options.isAdaptive }}"
+               scope="{{_options.templateOptions}}"
+               prefetchPromise="{{_options._prefetchPromise}}"
+               prefetchData="{{_options._prefetchData}}"
+               isPrefetchDataMode="{{_options._isPrefetchDataMode}}"
+               attr:class="controls-Stack__content"
+               stackPosition="{{ _options.stackPosition }}"
+               width="{{ _options.width }}"
+               maxWidth="{{ _options.maxWidth }}"
+               minWidth="{{ _options.minWidth }}"
+               stackMinimizedWidth="{{_options.stackMinimizedWidth}}"
+               workspaceWidth="{{_options.workspaceWidth}}"
+               stackWidth="{{(_options.currentMaxWidth && _options.currentMaxWidth < _options.width) ? _options.currentMaxWidth :_options.width}}"
+               stackMinWidth="{{_options.minWidth}}"
+               stackMaxWidth="{{_options.maxWidth}}"/>
+</div>

@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper ws-flexbox ws-flex-column ws-align-items-center controlsDemo_fixedWidth550">
+    <div class="demo-VirtualScroll__title controls-text-label controls-fontsize-l controlsDemo__mb1">
+        Сохранение активного элемента при ресайзе записей
+    </div>
+    <Controls.scroll:Container
+            attr:class="controlsDemo_fixedWidth500 controlsDemo__maxWidth500 controlsDemo__height500 controlsDemo__mb1">
+        <Controls.list:View
+                storeId="listData"
+                bind:activeElement="_activeElement"
+                itemTemplateProperty="template">
+            <ws:virtualScrollConfig pageSize="{{3}}"/>
+            <ws:itemTemplate>
+                <ws:partial template="Controls/list:ItemTemplate" attr:style="height: 200px"/>
+            </ws:itemTemplate>
+        </Controls.list:View>
+    </Controls.scroll:Container>
+    <div class="controls-text-label">Активный элемент - {{_activeElement}}</div>
+</div>

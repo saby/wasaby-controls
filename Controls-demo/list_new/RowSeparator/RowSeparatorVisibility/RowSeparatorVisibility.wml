@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper">
+    <Controls.list:View
+            storeId="listData"
+            rowSeparatorVisibility="{{_rowSeparatorVisibility}}"
+            rowSeparatorSize="s"/>
+    <div class="controlsDemo__flexColumn controlsDemo__wrapper__padding-top" style="width: 200px;">
+        <Controls.buttons:Button caption="По умолчанию" on:click="_setRowSeparatorVisibility()"></Controls.buttons:Button>
+        <Controls.buttons:Button caption="Только у элементов" on:click="_setRowSeparatorVisibility('items')"></Controls.buttons:Button>
+        <Controls.buttons:Button caption="Только по краям" on:click="_setRowSeparatorVisibility('edges')"></Controls.buttons:Button>
+    </div>
+</div>

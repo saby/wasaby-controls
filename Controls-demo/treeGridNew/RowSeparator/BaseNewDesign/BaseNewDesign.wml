@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper controlsDemo_wrapper-treeGrid-base-treeGridView controls-MasterDetail_details-newDesign">
+    <Controls.treeGrid:View
+            keyProperty="key"
+            attr:class="controlsDemo__inline-flex"
+            source="{{_viewSource}}"
+            columns="{{_columns}}"
+            parentProperty="parent"
+            nodeProperty="type"
+            rowSeparatorSize="s"
+            newDesign="{{true}}"/>
+</div>

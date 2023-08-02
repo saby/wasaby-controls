@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper">
+    <Controls.treeGrid:View
+            storeId="listData"
+            columns="{{_columns}}"
+            bind:expandedItems="_expandedItems"
+            bind:collapsedItems="_collapsedItems"
+            expanderPosition="right"/>
+</div>

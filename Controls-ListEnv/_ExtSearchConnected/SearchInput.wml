@@ -1,0 +1,17 @@
+<Controls.search:InputContainer storeId="{{ _options.storeId }}">
+    <Controls-ListEnv.ExtSearch
+       searchParam="{{_options.searchParam}}"
+       source="{{_options.source}}"
+       navigation="{{_options.navigation}}"
+       multiSelect="{{true}}"
+       filterDescription="{{_filterSource}}"
+       filter="{{_options.filter}}"
+       placeholder="{{_options.placeholder}}"
+       footerTemplate="{{_options.footerTemplate}}"
+       maxLength="{{_options.maxLength}}"
+       contrastBackground="{{_options.contrastBackground}}"
+       suggestWidth="{{_options.suggestWidth}}"
+       searchDelay="{{_options.searchDelay}}"
+       on:filterDescriptionChanged="_filterSourceChangedInternal()"
+    />
+</Controls.search:InputContainer>

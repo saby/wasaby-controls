@@ -1,0 +1,29 @@
+<Controls.browser:Browser source="{{_listSource}}"
+                          filterButtonSource="{{_filterSource}}"
+                          root="{{null}}">
+    <Controls.masterDetail:Base newDesign="{{true}}">
+        <ws:master>
+            <Controls-ListEnv.filterPanel:View storeId="0" filterNames="['name', 'city']"/>
+        </ws:master>
+        <ws:detail>
+            <div>
+                <Controls.list:Container>
+                    <Controls.grid:View keyProperty="id">
+                        <ws:columns>
+                            <ws:Array>
+                                <ws:Object displayProperty="name"/>
+                                <ws:Object displayProperty="city"/>
+                            </ws:Array>
+                        </ws:columns>
+                        <ws:header>
+                            <ws:Array>
+                                <ws:Object title="Имя"/>
+                                <ws:Object title="Город проживания"/>
+                            </ws:Array>
+                        </ws:header>
+                    </Controls.grid:View>
+                </Controls.list:Container>
+            </div>
+        </ws:detail>
+    </Controls.masterDetail:Base>
+</Controls.browser:Browser>

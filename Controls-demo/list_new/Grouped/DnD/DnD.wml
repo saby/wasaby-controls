@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper">
+<Controls.listDeprecate:Mover name="listMover"/>
+<Controls.list:Container>
+  <Controls.list:View
+      bind:selectedKeys="_selectedKeys"
+      groupProperty="brand"
+      itemsDragNDrop="{{true}}"
+      on:customdragEnd="_dragEnd()"
+      storeId="listData"
+  />
+</Controls.list:Container>
+</div>

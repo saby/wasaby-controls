@@ -1,0 +1,23 @@
+@import '_theme.less';
+@import '_variables';
+
+// перебития шрифтов для адартива
+.ws-is-phone.ws-is-adaptive .controls_theme-@{themeName},
+.ws-is-phone.ws-is-adaptive.controls_theme-@{themeName} {
+   --font-size_3xs: var(--font-size_ad_3xs);
+   --font-size_2xs: var(--font-size_ad_2xs);
+   --font-size_xs: var(--font-size_ad_xs);
+   --font-size_s: var(--font-size_ad_s);
+   --font-size_m: var(--font-size_ad_m);
+   --font-size_l: var(--font-size_ad_l);
+   --font-size_xl: var(--font-size_ad_xl);
+   --font-size_2xl: var(--font-size_ad_2xl);
+   --font-size_3xl: var(--font-size_ad_3xl);
+   --font-size_4xl: var(--font-size_ad_4xl);
+   --font-size_5xl: var(--font-size_ad_5xl);
+   --font-size_default: var(--font-size_ad_default);
+   --item_height_menu: var(--item_height_ad_menu);
+
+   // Базовая линия списков в адаптиве
+   --baseline_list: var(--font-size_ad_xl);
+}

@@ -1,0 +1,6 @@
+<div class="controlsDemo__wrapper">
+    <Controls.list:View
+            storeId="listData"
+            bind:selectedKeys="_selectedKeys"
+            bind:excludedKeys="_excludedKeys"/>
+</div>

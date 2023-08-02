@@ -1,0 +1,9 @@
+<div class="controlsDemo__cell">
+    <Controls.grid:View
+            attr:class="controlsDemo__inline-flex controlsDemo__maxWidth800"
+            storeId="listData"
+            itemActions="{{_itemActions}}"
+            columns="{{_columns}}">
+        <ws:editingConfig editOnClick="{{true}}" backgroundStyle="primary"/>
+    </Controls.grid:View>
+</div>

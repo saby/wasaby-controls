@@ -1,0 +1,15 @@
+<Controls.dataSource:error.Container viewConfig="{{_errorConfig}}">
+    <ws:partial template="{{_options.content}}"
+                scope="{{_viewOptions}}"
+                storeId="{{_options.storeId}}"
+                onRootChanged="{{_rootChanged}}"
+                onBeforeRootChanged="{{_beforeRootChanged}}"
+                onExpandedItemsChanged="{{_expandedItemsChanged}}"
+                onListSelectedKeysCountChanged="{{_selectedKeysCountChanged}}"
+                onSelectedKeysChanged="{{_selectedKeysChanged}}"
+                onExcludedKeysChanged="{{_excludedKeysChanged}}"
+                onMarkedKeyChanged="{{_markedKeyChanged}}"
+                onSortingChanged="{{_sortingChanged}}"
+                onRegister="{{_registerHandler}}"
+    />
+</Controls.dataSource:error.Container>

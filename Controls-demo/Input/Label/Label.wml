@@ -1,0 +1,42 @@
+<div class="controlsDemo__wrapper  controlsDemo__flex controlsDemo__flex-flow_wrap">
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/Input/Label/Base/Index' }}">
+            <a href="{{content.href}}">Базовая настройка</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.Label.Base.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/Input/Label/FontColorStyle/Index' }}">
+            <a href="{{content.href}}">Настройка fontColorStyle</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.Label.FontColorStyle.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/Input/Label/FontSize/Index' }}">
+            <a href="{{content.href}}">Настройка fontSize</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.Label.FontSize.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/Input/Label/Href/Index' }}">
+            <a href="{{content.href}}">Настройка href</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.Label.Href.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/Input/Label/Underline/Index' }}">
+            <a href="{{content.href}}">Настройка underline</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.Label.Underline.Index/>
+    </div>
+</div>

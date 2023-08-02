@@ -1,0 +1,17 @@
+<ws:if data="{{collectionItem && collectionItem.isNode()}}">
+	<div class="controls-PropertyGrid__editor_nodeCaption_wrapper">
+		<Controls.heading:Title scope="{{_options}}"
+								readOnly="{{true}}"
+								fontSize="m"
+								fontColorStyle="{{_options.fontColorStyle ? _options.fontColorStyle : 'secondary'}}"
+								fontWeight="{{_options.fontWeight ? _options.fontWeight : 'default'}}"
+								tooltip="{{_options.caption}}"
+								attr:class="controls-PropertyGrid__editor_nodeCaption"/>
+	</div>
+</ws:if>
+<ws:else>
+	<Controls.input:Label scope="{{_options}}"
+							attr:title="{{_options.caption}}"
+							attr:class="controls-fontweight-{{_options.fontWeight ? _options.fontWeight : 'default'}}"/>
+</ws:else>
+

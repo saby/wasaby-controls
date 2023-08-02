@@ -1,0 +1,14 @@
+<div class="controlsDemo-LayoutListWithFilter">
+  <div class="controlsDemo-LayoutListWithFilter__header ws-flexbox ws-justify-content-between">
+    <Controls.search:InputContainer storeId="{{ ['employees', 'nomenclature'] }}">
+      <Controls.search:Input/>
+    </Controls.search:InputContainer>
+    <Controls.filter:ViewContainer storeId="{{ ['employees', 'nomenclature'] }}">
+      <Controls.filter:View/>
+    </Controls.filter:ViewContainer>
+  </div>
+  <div class="controlsDemo-LayoutListWithFilter__content ws-flexbox">
+    <Controls.treeGrid:View columns="{{ _columns }}" multiSelectVisibility="onhover" storeId="nomenclature"/>
+    <Controls.treeGrid:View  columns="{{ [{displayProperty: 'title'}] }}" multiSelectVisibility="onhover" storeId="employees"/>
+  </div>
+</div>

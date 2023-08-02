@@ -1,0 +1,4 @@
+<div class="ws-flexbox ws-flex-column">
+    <Controls-ListEnv.ExpandableSearchInput storeId="{{ ['list'] }}"/>
+    <Controls.list:View storeId="list" displayProperty="name"/>
+</div>

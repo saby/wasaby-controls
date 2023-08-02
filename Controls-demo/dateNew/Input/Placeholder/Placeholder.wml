@@ -1,0 +1,22 @@
+<div class="controlsDemo__wrapper controlsDemo__ml3">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label"> placeholder = 'Когда?', calendarButtonVisible = false</div>
+        <Controls.date:Input
+                calendarButtonVisible="{{ false }}"
+                placeholder="Когда?"
+                _date="{{ _date }}"
+                _displayDate="{{ _date }}"
+                bind:value="_value2">
+        </Controls.date:Input>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label"> placeholder = 'Когда?', calendarButtonVisible = true</div>
+        <Controls.date:Input
+                calendarButtonVisible="{{ true }}"
+                placeholder="Когда?"
+                _date="{{ _date }}"
+                _displayDate="{{ _date }}"
+                bind:value="_value">
+        </Controls.date:Input>
+    </div>
+</div>

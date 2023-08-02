@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper">
+<Controls-ListEnv.operationsPanel:View storeId="listData"/>
+<Controls.treeGrid:View
+    storeId="listData"
+    multiSelectVisibility="visible"
+    name="list"
+    attr:class="demo-Grid__control"
+    columns="{{_gridColumns}}"/>
+</div>

@@ -1,0 +1,28 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell controlsDemo__mr4">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/MultiSelect/MultiSelectVisibility/Index' }}">
+            <a href="{{content.href}}">Режим отображения чекбоксов</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.MultiSelect.MultiSelectVisibility.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controlsDemo__mr4">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/MultiSelect/AllSelected/Index' }}">
+            <a href="{{content.href}}">Выбор сразу всех записей</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.MultiSelect.AllSelected.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controlsDemo__mr4">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/list_new/MultiSelect/CustomPosition/Index' }}">
+            <a href="{{content.href}}">Нестандартное расположение чекбоксов</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.MultiSelect.CustomPosition.Index/>
+    </div>
+</div>

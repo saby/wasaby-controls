@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper">
+<div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-smallTemplate_roundBorder-xs">
+  <Controls.treeTile:View
+      storeId="listData0"
+      multiSelectVisibility="visible"
+      bind:selectedKeys="_selectedKeys"
+      tileMode="static"
+      itemActions="{{_itemActions}}"
+      tileWidth="250"
+      imageProperty="image"
+      roundBorder="{{_roundBorder}}">
+    <ws:itemTemplate>
+      <ws:partial
+          template="Controls/tile:SmallItemTemplate"
+          imageSize="m"
+          scope="{{itemTemplate}}"/>
+    </ws:itemTemplate>
+  </Controls.treeTile:View>
+</div>
+</div>

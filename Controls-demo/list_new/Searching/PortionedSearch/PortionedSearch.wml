@@ -1,0 +1,50 @@
+<div class="controlsDemo__wrapper controlsDemo__width800px">
+
+    <div class="ws-fragment">
+      <Controls.search:InputContainer>
+        <Controls.search:Input/>
+      </Controls.search:InputContainer>
+      <Controls.filter:ViewContainer>
+        <Controls.filter:View source="{{_fastFilterData}}"
+                              alignment="right"
+                              viewMode="frequent"
+                              panelTemplateName="Controls/filterPopup:SimplePanel"/>
+      </Controls.filter:ViewContainer>
+      <Controls.scroll:Container attr:class="controlsDemo__height300">
+        <Controls.list:Container>
+          <Controls.list:View storeId="listData"
+                              dataLoadCallback="{{_dataLoadCallback}}">
+            <ws:iterativeLoadingTemplate>
+              <ws:partial template="Controls/list:IterativeLoadingTemplate"
+                          scope="{{iterativeLoadingTemplate}}">
+                <ws:footerTemplate>
+                  <div>Дополнительная информация при итеративном поиске ({{_itemsCounter}})</div>
+                </ws:footerTemplate>
+              </ws:partial>
+            </ws:iterativeLoadingTemplate>
+            <ws:continueSearchTemplate>
+              <ws:partial template="Controls/list:ContinueSearchTemplate"
+                          scope="{{continueSearchTemplate}}">
+                <ws:footerTemplate>
+                  <div>Дополнительная информация при итеративном поиске</div>
+                </ws:footerTemplate>
+              </ws:partial>
+            </ws:continueSearchTemplate>
+            <ws:virtualScrollConfig pageSize="{{15}}"/>
+          </Controls.list:View>
+        </Controls.list:Container>
+      </Controls.scroll:Container>
+    </div>
+
+    <div class="controlsDemo__flexColumn">
+        <Controls.checkbox:Checkbox caption="Страница не успеет загрузиться за 30с(запрос 10с)"
+                                  bind:value="_longLoad"
+                                  on:valueChanged="_longLoadChangedHandler()"/>
+        <Controls.checkbox:Checkbox caption="Индикатор не успеет показаться(запрос 1с)"
+                                  bind:value="_fastLoad"
+                                  on:valueChanged="_fastLoadChangedHandler()"/>
+        <Controls.checkbox:Checkbox caption="Много данных при поиске"
+                                  bind:value="_moreDataOnLoad"
+                                  on:valueChanged="_moreDataOnLoadChangedHandler()"/>
+    </div>
+</div>

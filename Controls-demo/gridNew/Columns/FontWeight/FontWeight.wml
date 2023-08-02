@@ -1,0 +1,17 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__cell">
+        <Controls.grid:View
+                attr:class="controlsDemo__inline-flex"
+                storeId="listData">
+            <ws:columns>
+                <ws:Array>
+                    <ws:Object displayProperty="country"/>
+                    <ws:Object displayProperty="population"
+                               fontWeight="normal"/>
+                    <ws:Object displayProperty="populationDensity"
+                               fontWeight="bold"/>
+                </ws:Array>
+            </ws:columns>
+        </Controls.grid:View>
+    </div>
+</div>

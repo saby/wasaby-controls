@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper">
+    <Controls.list:View
+            storeId="listData0"
+            multiSelectVisibility="onhover"
+            itemsDragNDrop="{{true}}"
+            bind:selectedKeys="_selectedKeys"/>
+</div>

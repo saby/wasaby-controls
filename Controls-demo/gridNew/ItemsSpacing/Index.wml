@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper">
+   <Controls.Tumbler:Control
+      displayProperty="id"
+      items="{{_itemsSpacingSource}}"
+      bind:selectedKey="_itemsSpacing"
+   />
+   <Controls.grid:View
+      keyProperty="key"
+      columns="{{_columns}}"
+      storeId="listData"
+      itemsSpacing="{{_itemsSpacing}}"
+      multiSelectVisibility="visible"
+   />
+</div>

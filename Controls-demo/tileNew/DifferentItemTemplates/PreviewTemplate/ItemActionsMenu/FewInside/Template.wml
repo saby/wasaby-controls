@@ -1,0 +1,35 @@
+<ws:template name="tile">
+   <div class="controlsDemo__wrapper" style="width: 900px;">
+      <Controls.scroll:Container attr:class="controls-demo-Tile__scalingMode_scroll">
+         <Controls.treeTile:View
+                 storeId="listData0"
+                 displayProperty="title"
+                 parentProperty="parent"
+                 nodeProperty="type"
+                 tileMode="dynamic"
+                 tileScalingMode="{{scalingMode}}"
+                 actionMenuViewMode="preview"
+                 actionMode="adaptive"
+                 itemActions="{{actions}}"
+                 imageHeightProperty="imageHeight"
+                 imageWidthProperty="imageWidth"
+                 tileHeight="200"
+                 tileWidth="50"
+                 imageProperty="image"
+                 imageUrlResolver="{{_imageUrlResolver}}"
+                 imageFit="cover"
+                 itemTemplate="Controls/tile:PreviewTemplate"
+                 source="{{_viewSource}}"
+                 on:actionClick="_onActionClick()"/>
+      </Controls.scroll:Container>
+   </div>
+</ws:template>
+
+<div class="controlsDemo__wrapper">
+   <div class="controlsDemo-toolbar-panel">
+      <ws:if data="{{ _clickedAction }}">
+         Кликнули на {{ _clickedAction }}
+      </ws:if>
+   </div>
+   <ws:partial template="tile" attr:data-qa="controls-Tile_fewActions_scale" actions="{{_fewActions}}" scalingMode="{{'inside'}}"/>
+</div>

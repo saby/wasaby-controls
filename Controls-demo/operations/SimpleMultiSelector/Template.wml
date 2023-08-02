@@ -1,0 +1,14 @@
+<Controls.browser:Browser source="{{_viewSource}}" filter="{{_filter}}" bind:selectedKeys="_selectedKeys"
+                                                                                    bind:excludedKeys="_excludedKeys">
+        <div>
+            <Controls.operations:SimpleMultiSelector attr:class="controlsDemo__inline-block"/>
+            <Controls.list:Container>
+                <Controls.treeGrid:View
+                        keyProperty="key"
+                        columns="{{_gridColumns}}"
+                        parentProperty="Раздел"
+                        nodeProperty="Раздел@"
+                        multiSelectVisibility="visible"/>
+            </Controls.list:Container>
+        </div>
+</Controls.browser:Browser>

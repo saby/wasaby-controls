@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper">
+    <Controls.grid:View
+            storeId="listData"
+            columns="{{_columns}}"
+            itemActions="{{_itemActions}}"
+            attr:style="max-width: 700px">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/grid:ItemTemplate"
+                        scope="{{ _options }}"
+                        backgroundColorStyle="{{_backgroundStyleMap[itemTemplate.item.key]}}"
+                        hoverBackgroundStyle="{{_backgroundStyleMap[itemTemplate.item.key]}}"/>
+        </ws:itemTemplate>
+    </Controls.grid:View>
+</div>

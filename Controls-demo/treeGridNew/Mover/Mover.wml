@@ -1,0 +1,34 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow controlsDemo__childMinWidth400">
+    <div class="controlsDemo__cell controlsDemo__mr4">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/treeGridNew/Mover/Base/Index' }}">
+            <a href="{{content.href}}">Базовая конфигурация перемещения</a>
+        </Router.router:Reference>
+        <Controls-demo.treeGridNew.Mover.Base.Index/>
+    </div>
+    <div class="controlsDemo__cell controlsDemo__mr4">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/treeGridNew/Mover/Extended/Index' }}">
+            <a href="{{content.href}}">Конфигурация перемещения с добавлением нового узла</a>
+        </Router.router:Reference>
+        <Controls-demo.treeGridNew.Mover.Extended.Index/>
+    </div>
+    <div class="controlsDemo__cell controlsDemo__mr4">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/treeGridNew/Mover/RootLabelVisible/Index' }}">
+            <a href="{{content.href}}">Конфигурация перемещения со скрытой пометкой "(в корень)"</a>
+        </Router.router:Reference>
+        <Controls-demo.treeGridNew.Mover.RootLabelVisible.Index/>
+    </div>
+    <div class="controlsDemo__cell controlsDemo__mr4">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-demo/app/:app"
+                                 app="{{ 'Controls-demo/treeGridNew/Mover/NoRootTitle/Index' }}">
+            <a href="{{content.href}}">Конфигурация перемещения без указания опции rootTitle</a>
+        </Router.router:Reference>
+        <Controls-demo.treeGridNew.Mover.NoRootTitle.Index/>
+    </div>
+</div>

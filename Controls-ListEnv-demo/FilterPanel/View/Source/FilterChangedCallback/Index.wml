@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__flexRow">
+        <Controls-ListEnv.filterPanel:View filterNames="['department', 'owner']"
+                                                 storeId="callbackData"
+                                                 attr:class="controlsDemo_fixedWidth200"/>
+        <Controls.list:View storeId="callbackData"/>
+    </div>
+</div>

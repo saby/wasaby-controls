@@ -1,0 +1,23 @@
+<ws:partial template="Controls/grid:ColumnTemplate"
+            attr:class="controls-Grid__row-cell__content_baseline_L"
+            scope="{{ _options }}"
+>
+   <ws:contentTemplate>
+      <ws:if data="{{column.getColumnIndex() > 0}}">
+         <Controls.baseDecorator:Money value="{{item.contents.get(column.config.displayProperty)}}"
+                                   useGrouping="{{true}}"/>
+         <span if="{{column.getColumnIndex() === 2}}">шт</span>
+      </ws:if>
+      <ws:else>
+            <div style="display:inline-flex; width:100%">
+               <div style="overflow:hidden; white-space:nowrap; text-overflow:ellipsis;">
+                  <div>{{item.contents.get('title')}}</div>
+                  <div style="font-size: 11px; color: grey">{{item.contents.get('description')}}</div>
+               </div>
+               <ws:if data="{{ item.isNode() }}">
+                  <ws:partial template="{{ contentTemplate.editArrowTemplate }}"/>
+               </ws:if>
+            </div>
+      </ws:else>
+   </ws:contentTemplate>
+</ws:partial>

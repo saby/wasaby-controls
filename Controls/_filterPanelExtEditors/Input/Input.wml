@@ -1,0 +1,19 @@
+<Controls.filterPanel:BaseEditor scope="{{_options}}"
+                                  on:extendedCaptionClick="_extendedCaptionClickHandler()"
+                                  extendedCaption="{{_options.extendedCaption}}">
+   <ws:editorTemplate>
+       <Controls.Container.Async templateName="Controls/input:Text">
+           <ws:partial template="{{content.resolvedTemplate}}"
+                       bind:value="_value"
+                       on:valueChanged="_valueChangedHandler()"
+                       fontColorStyle="{{_options.fontColorStyle}}"
+                       fontSize="{{_options.fontSize}}"
+                       maxLength="{{_options.maxLength}}"
+                       fontWeight="{{_options.fontWeight}}"
+                       constraint="{{_options.constraint}}"
+                       placeholder="{{_options.placeholder}}"
+                       placeholderVisibility="{{_options.placeholderVisibility}}"
+                       attr:class="controls-FilterEditors__input controls-FilterEditors__input_{{_options.inputWidth}}"/>
+       </Controls.Container.Async>
+   </ws:editorTemplate>
+</Controls.filterPanel:BaseEditor>

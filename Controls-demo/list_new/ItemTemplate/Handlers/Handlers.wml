@@ -1,0 +1,25 @@
+<div class="controlsDemo__wrapper controlsDemo__list_new-itemTepmlate-NoHighlightOnHover">
+    <Controls.list:View
+                        storeId="listData">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/list:ItemTemplate"
+                        on:mouseup="_itemEventHandler('Mouse up', itemTemplate.item.contents)"
+                        on:mousedown="_itemEventHandler('Mouse down', itemTemplate.item.contents)"
+                        on:click="_itemEventHandler('Click', itemTemplate.item.contents)"
+                        on:doubleclick="_itemEventHandler('Double click', itemTemplate.item.contents)"
+                        on:mouseenter="_itemEventHandler('Mouse enter', itemTemplate.item.contents)"
+                        on:mouseleave="_itemEventHandler('Mouse leave', itemTemplate.item.contents)"
+                        on:mousemove="_itemEventHandler('Mouse move', itemTemplate.item.contents)"
+                        on:wheel="_itemEventHandler('Wheel', itemTemplate.item.contents)"
+                        on:contextmenu="_itemEventHandler('Context menu', itemTemplate.item.contents)"
+            />
+        </ws:itemTemplate>
+    </Controls.list:View>
+
+    <div>
+        <Controls.buttons:Button caption="Clear output" on:click="_clearOutput()"/>
+        <ws:for data="index, event in _events">
+            <div>{{event}}</div>
+        </ws:for>
+    </div>
+</div>

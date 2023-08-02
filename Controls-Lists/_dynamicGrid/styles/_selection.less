@@ -1,0 +1,31 @@
+.ControlsLists-dynamicGrid__selection__indicator {
+   height: 100%;
+   border: 1px solid rgb(137, 145, 169);
+   background-color: rgba(137, 145, 169, 0.1);
+   box-sizing: border-box;
+   grid-row-start: 1;
+   grid-row-end: 2;
+   pointer-events: none;
+   z-index: 1;
+   position: relative;
+}
+
+.ControlsLists-dynamicGrid__selection__indicator_colspanTop {
+   border-top-width: 0;
+   position: relative;
+   top: 0;
+   height: 100%;
+
+   /* stylelint-disable-next-line unit-no-unknown */
+   @variants: ~'3xs', ~'2xs', xs, s, st, m, l, xl, ~'2xl', ~'3xl';
+   .for(@variants, {
+      &_@{_item} {
+         top: ~'calc(-1 * var(--offset_@{_item}))';
+         height: ~'calc(100% + var(--offset_@{_item}))';
+      }
+   });
+}
+
+.ControlsLists-dynamicGrid__selection__indicator_colspanBottom {
+   border-bottom-width: 0;
+}

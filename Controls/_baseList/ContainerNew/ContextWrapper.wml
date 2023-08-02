@@ -1,0 +1,8 @@
+<Controls.context:ContextOptionsConsumer scope="{{_options}}">
+    <ws:contextOptionsInnerComponent>
+        <Controls._baseList.ContainerNew.Container scope="{{contextOptionsInnerComponent}}">
+            <ws:partial template="{{_options.content}}"
+                        scope="{{contextOptionsInnerComponent}}" _dataOptionsValue="{{contextOptionsInnerComponent._dataOptionsValue}}"/>
+        </Controls._baseList.ContainerNew.Container>
+    </ws:contextOptionsInnerComponent>
+</Controls.context:ContextOptionsConsumer>

@@ -1,0 +1,99 @@
+.controls-StateBar {
+   display: flex;
+   border-radius: var(--border-radius_2xs);
+}
+
+.controls-StateBar_size-s {
+   height: calc(var(--inline_height_m) / 8);
+}
+
+.controls-StateBar_size-m {
+   height: calc(var(--inline_height_m) / 4);
+}
+
+.controls-StateBar__sector {
+   max-width: 100%;
+   transition: width 0.2s;
+   height: 100%;
+}
+
+.controls-StateBar__sector_aligned-left {
+   &:first-child {
+      border-top-left-radius: var(--border-radius_2xs);
+      border-bottom-left-radius: var(--border-radius_2xs);
+   }
+
+   &:last-child {
+      border-top-right-radius: var(--border-radius_2xs);
+      border-bottom-right-radius: var(--border-radius_2xs);
+   }
+}
+
+.controls-StateBar__sector_aligned-right {
+   &:first-child {
+      border-top-right-radius: var(--border-radius_2xs);
+      border-bottom-right-radius: var(--border-radius_2xs);
+   }
+
+   &:last-child {
+      border-top-left-radius: var(--border-radius_2xs);
+      border-bottom-left-radius: var(--border-radius_2xs);
+   }
+}
+
+.controls-StateBar_align-right {
+   flex-direction: row-reverse;
+   justify-content: end;
+}
+
+.controls-StateBar_style-readonly {
+   background-color: var(--unaccented_contrast_background-color);
+}
+
+.controls-StateBar_style-primary {
+   background-color: var(--primary_same_background-color);
+}
+
+.controls-StateBar_style-success {
+   background-color: var(--success_same_background-color);
+}
+
+.controls-StateBar_style-warning {
+   background-color: var(--warning_same_background-color);
+}
+
+.controls-StateBar_style-danger {
+   background-color: var(--danger_same_background-color);
+}
+
+.controls-StateBar_style-secondary {
+   background-color: var(--secondary_same_background-color);
+}
+
+.controls-StateBar_style-info {
+   background-color: var(--info_same_background-color);
+}
+
+.controls-StateBar__sector_style-primary {
+   background-color: var(--primary_contrast_background-color);
+}
+
+.controls-StateBar__sector_style-success {
+   background-color: var(--success_contrast_background-color);
+}
+
+.controls-StateBar__sector_style-warning {
+   background-color: var(--warning_contrast_background-color);
+}
+
+.controls-StateBar__sector_style-danger {
+   background-color: var(--danger_contrast_background-color);
+}
+
+.controls-StateBar__sector_style-secondary {
+   background-color: var(--secondary_contrast_background-color);
+}
+
+.controls-StateBar__sector_style-info {
+   background-color: var(--info_contrast_background-color);
+}

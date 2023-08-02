@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:class="controlsDemo__height400" attr:style="max-width: 1500px">
+        <Controls.grid:View
+                name="list"
+                header="{{_header}}"
+                columns="{{_columns}}"
+                storeId="listData"
+                groupProperty="group"
+                resultsPosition="top"
+                stickyHeader="{{true}}"/>
+    </Controls.scroll:Container>
+</div>

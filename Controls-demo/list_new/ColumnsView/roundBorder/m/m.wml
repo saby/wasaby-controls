@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper controlsDemo__width800px">
+    <div class="controls-text-label">Размер скруглений m</div>
+    <Controls.columns:View
+            storeId="listData3"
+            itemActions="{{_itemActions}}">
+        <ws:roundBorder tl="m" tr="m" bl="m" br="m"/>
+        <ws:itemTemplate>
+            <ws:partial template="Controls/columns:ItemTemplate"
+                        highlightOnHover="{{false}}"
+                        itemActionsClass="controls-itemActionsV_position_topRight" attr:class="controlsDemo__height36_item"/>
+        </ws:itemTemplate>
+    </Controls.columns:View>
+</div>

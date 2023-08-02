@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module id="6cbb9f4d-d1b5-444e-9d50-0543c72d83f5" name="Controls-CalculatorUnit" version="1.00">
+  <description/>
+  <depends>
+      <module id="8242f6d9-ff68-4b07-b2ad-04b9900f3b31" name="Controls-Calculator"/>
+      <module id="0db508a8-0160-439b-860c-32ca21fd1d8d" name="Controls-Calculator-default-theme"/>
+      <module id="a10cb1cb-b23d-4ef6-a757-4f7382e0e8d1" name="SbisEnvUI"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <test environment="NodeJS" framework="Jest" />
+  <resources/>
+</ui_module>

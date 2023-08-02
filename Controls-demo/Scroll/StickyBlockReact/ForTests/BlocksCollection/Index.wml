@@ -1,0 +1,55 @@
+<div class="controlsDemo__wrapper controlsDemo-StickyBlockDemo__wrapper">
+    <div style="width: 340px;">
+        <Controls.scroll:Container name="container" attr:class="controlsDemo__height300 controlsDemo_fixedWidth300" attr:data-qa="controlsScrollContainer__left">
+            <ws:if data="{{_isHeaderVisible1}}">
+                <Controls.stickyBlock:StickyBlock key="1" mode="stackable" attr:style="top: -1px;">
+                    <h3 class="controls-padding_bottom-3xs controls-padding_top-3xs controls-fontweight-bold">StickyBlock #1</h3>
+                </Controls.stickyBlock:StickyBlock>
+            </ws:if>
+            <ws:if data="{{_isHeaderVisible2}}">
+                <Controls.stickyBlock:StickyBlock key="2" mode="stackable">
+                    <h3 class="controls-padding_bottom-3xs controls-padding_top-3xs controls-fontweight-bold">StickyBlock #2</h3>
+                </Controls.stickyBlock:StickyBlock>
+            </ws:if>
+            <Controls.stickyBlock:StickyBlock key="3" mode="stackable" >
+                <h3 class="controls-padding_bottom-3xs controls-padding_top-3xs controls-fontweight-bold">StickyBlock #3</h3>
+            </Controls.stickyBlock:StickyBlock>
+            <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+            </div>
+            <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+            </div>
+            <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+            </div>
+        </Controls.scroll:Container>
+        <Controls.buttons:Button attr:class="controls-margin_top-m" data-qa="hider-button1" caption="{{_isHeaderVisible1 ? 'Скрыть' : 'Показать'}} заголовок #1" on:click="_onClick1()"></Controls.buttons:Button>
+        <Controls.buttons:Button attr:class="controls-margin_left-xs" data-qa="hider-button2" caption="{{_isHeaderVisible2 ? 'Скрыть' : 'Показать'}} заголовок #2" on:click="_onClick2()"></Controls.buttons:Button>
+    </div>
+
+    <div>
+        <Controls.scroll:Container name="container2" attr:class="controlsDemo__height300 controlsDemo_fixedWidth300" attr:data-qa="controlsScrollContainer__right">
+            <Controls.stickyBlock:StickyBlock attr:class="{{!_isHeaderVisible4 ? 'ws-hidden'}}" key="1" mode="stackable" attr:style="top: -1px;">
+                <h3 class="controls-padding_bottom-3xs controls-padding_top-3xs controls-fontweight-bold">StickyBlock #4</h3>
+            </Controls.stickyBlock:StickyBlock>
+            <Controls.stickyBlock:StickyBlock attr:class="{{!_isHeaderVisible5 ? 'ws-hidden'}}" key="2" mode="stackable">
+                <h3 class="controls-padding_bottom-3xs controls-padding_top-3xs controls-fontweight-bold">StickyBlock #5</h3>
+            </Controls.stickyBlock:StickyBlock>
+            <Controls.stickyBlock:StickyBlock key="3" mode="stackable" >
+                <h3 class="controls-padding_bottom-3xs controls-padding_top-3xs controls-fontweight-bold">StickyBlock #6</h3>
+            </Controls.stickyBlock:StickyBlock>
+            <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+            </div>
+            <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+            </div>
+            <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+            </div>
+        </Controls.scroll:Container>
+        <Controls.buttons:Button attr:class="controls-margin_top-m" data-qa="hider-button1" caption="{{_isHeaderVisible4 ? 'Скрыть' : 'Показать'}} заголовок #4" on:click="_onClick3()"></Controls.buttons:Button>
+        <Controls.buttons:Button attr:class="controls-margin_left-xs" data-qa="hider-button2" caption="{{_isHeaderVisible5 ? 'Скрыть' : 'Показать'}} заголовок #5" on:click="_onClick4()"></Controls.buttons:Button>
+    </div>
+</div>

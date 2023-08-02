@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper">
+<Controls.search:InputContainer storeId="listData">
+  <Controls.search:Input/>
+</Controls.search:InputContainer>
+<div class="tw-flex">
+  <Controls.list:Container>
+    <Controls.grid:View
+        storeId="listData"
+        columns="{{_columns}}"/>
+  </Controls.list:Container>
+</div>
+</div>

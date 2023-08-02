@@ -1,0 +1,21 @@
+<div class="controlsDemo__cell">
+  <div class="controlsDemo__default">
+    <div class="ws-fragment">
+      <Controls.search:InputContainer storeId="listData">
+        <Controls.search:Input/>
+      </Controls.search:InputContainer>
+      <Controls.scroll:Container attr:class="controlsDemo__height400" attr:style="max-width: 700px">
+        <Controls.grid:View storeId="listData" columns="{{_columns}}"/>
+      </Controls.scroll:Container>
+    </div>
+  </div>
+
+  <div class="controlsDemo__flexColumn">
+    <Controls.checkbox:Checkbox caption="Загрузить мало данных вниз при поиске"
+                              bind:value="_littleData"
+                              on:valueChanged="_littleDataChangedHandler()"/>
+    <Controls.checkbox:Checkbox caption="Вернуть вверх more: true, но при подгрузке не загрузить данные"
+                              bind:value="_moreUpTrueAndWithoutData"
+                              on:valueChanged="_moreUpTrueAndWithoutDataChangedHandler()"/>
+  </div>
+</div>

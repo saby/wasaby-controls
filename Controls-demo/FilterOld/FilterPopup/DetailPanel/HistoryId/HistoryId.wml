@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper">
+   <div class="controlsDemo__cell">
+      <Router.router:Reference attr:class="controls-text-label"
+                               state="/Controls-demo/app/:app"
+                               app="{{ 'Controls-demo/FilterOld/FilterPopup/DetailPanel/HistoryId/Default/Index' }}">
+         <a href="{{content.href}}">Панель с "Ранее отбирались"</a>
+      </Router.router:Reference>
+      <Controls-demo.FilterOld.FilterPopup.DetailPanel.HistoryId.Default.Index/>
+   </div>
+   <div class="controlsDemo__cell">
+      <Router.router:Reference attr:class="controls-text-label"
+                               state="/Controls-demo/app/:app"
+                               app="{{ 'Controls-demo/FilterOld/FilterPopup/DetailPanel/HistoryId/ManyItems/Index' }}">
+         <a href="{{content.href}}">Панель c большим количеством айтемов в "Ранее отбирались</a>
+      </Router.router:Reference>
+      <Controls-demo.FilterOld.FilterPopup.DetailPanel.HistoryId.ManyItems.Index/>
+   </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="controlsDemo__wrapper">
+<span class="controls-text-label controlsDemo__mb1">Добавление записи в список с маленькими записями, pageSize 100, virtualPageSize не задан, показ с конца</span>
+<Controls-demo.list_new.VirtualScroll.NavigationSwitcher.Index totalCount="{{1000}}" pageSize="{{100}}" page="{{9}}" direction="backward">
+  <ws:content>
+    <Controls.scroll:Container attr:class="controlsDemo__maxWidth500 controlsDemo__height500"
+                               name="scroll"
+                               initialScrollPosition="{{_initialScrollPosition}}">
+      <Controls.list:View source="{{_viewSource}}"
+                          name="list"
+                          keyProperty="key"
+                          itemActions="{{_itemActions}}"
+                          itemActionVisibilityCallback="{{_itemActionVisibilityCallback}}"
+                          on:drawItems="_onDrawItems()"
+                          itemsReadyCallback="{{_itemsReady}}"
+                          navigation="{{_options.navigation}}">
+        <ws:virtualScrollConfig pageSize="{{100}}" mode="{{_virtualScrollMode}}"/>
+      </Controls.list:View>
+    </Controls.scroll:Container>
+  </ws:content>
+</Controls-demo.list_new.VirtualScroll.NavigationSwitcher.Index>
+<a href="#" class="controls-text-link controlsDemo-addButton-virtual-scroll_autotest" on:click="_addItem()">Добавить запись в конец</a><br/>
+<a href="#" class="controls-text-link controlsDemo-addButton-virtual-scroll_autotest" on:click="_toggleVirtualScrollMode()">Включить режим виртуального скролла {{_virtualScrollMode === 'hide' ? 'remove' : 'hide'}}</a>
+</div>

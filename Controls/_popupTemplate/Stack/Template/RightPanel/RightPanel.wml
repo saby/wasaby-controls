@@ -1,0 +1,44 @@
+<div class="controls-StackTemplate__rightPanel {{ _isOutsidePanel ? 'controls-StackTemplate__rightPanel-outside' }}
+            controls-StackTemplate__rightBorder{{_options.rightBorderVisible ? '_visible' : '_hided'}}">
+   <div class="ws-flexbox ws-flex-column ws-justify-content-between ws-flex-grow-0 ws-flex-shrink-0 controls-StackTemplate__rightPanel-wrapper">
+      <div class="ws-flexbox ws-flex-column ws-flex-shrink-0 ws-align-items-center">
+         <ws:if data="{{ !(_options.closeButtonVisible === false) }}">
+            <Controls.buttons:Button
+                    attr:tabindex="-1"
+                  attr:data-qa="controls-stack-Button__close"
+                  icon="icon-Close"
+                  iconStyle="label"
+                  buttonStyle="pale"
+                  iconSize="m"
+                  viewMode="filled"
+                  inlineHeight="xl"
+                  tooltip="{[Закрыть]}"
+                  readOnly="{{false}}"
+                  attr:class="controls-StackTemplate__close_button controls-stack-Button__rightPanel__close
+                      ws-flex-shrink-0"
+                    on:click="_close()"
+            />
+         </ws:if>
+
+         <ws:if data="{{_options.maximizeButtonVisibility}}">
+            <div class="controls-StackTemplate__maximized_button controls-StackTemplate__rightPanel__maximized"
+                 data-qa="controls-StackTemplate__maximized_button"
+                 on:click="_maximizeButtonClickHandler()"
+                 attr:title="{{_options.maximizeButtonTitle}}"></div>
+         </ws:if>
+
+         <ws:if data="{{_options.toolbarContentTemplate}}">
+            <ws:partial template="{{_options.toolbarContentTemplate}}"
+                        direction="vertical"
+                        scope="{{_options}}"
+                        attr:class="controls-margin_top-xs"/>
+         </ws:if>
+      </div>
+
+      <ws:if data="{{_rightBottomTemplate}}">
+         <Controls.Container.Async templateName="{{_rightBottomTemplate}}" templateOptions="{{_options.rightPanelOptions}}" attr:class="controls-padding_bottom-xs">
+               <ws:partial template="{{content.resolvedTemplate}}" isCompatiblePopup="{{_options.isCompatiblePopup}}" getTemplateName="{{_getTemplateName}}" stack="{{true}}"/>
+         </Controls.Container.Async>
+      </ws:if>
+   </div>
+</div>

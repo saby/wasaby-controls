@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper">
+<Controls.list:View
+    storeId="listData">
+  <ws:itemTemplate>
+    <ws:partial markerPosition="outside" scope="{{ itemTemplate }}" template="Controls/list:ItemTemplate"/>
+  </ws:itemTemplate>
+</Controls.list:View>
+</div>
+
