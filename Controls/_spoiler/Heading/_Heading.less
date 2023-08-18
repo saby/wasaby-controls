@@ -1,0 +1,80 @@
+.controls-SpoilerHeading__wrapper {
+   width: 100%;
+   cursor: pointer;
+   align-items: center;
+   display: inline-flex;
+   height: var(--inline_height_m);
+}
+
+.controls-SpoilerHeading__icon {
+   padding: 0 var(--offset_3xs);
+   width: var(--icon-size_s);
+   height: var(--icon-size_s);
+}
+
+.controls-SpoilerHeading__iconWrapper {
+   display: flex;
+   order: 1;
+   flex-shrink: 0;
+   align-items: center;
+   height: 100%;
+   user-select: none;
+}
+
+.controls-SpoilerHeading__caption_captionPosition-left {
+   order: 0;
+}
+
+.controls-SpoilerHeading__caption_captionPosition-right {
+   order: 2;
+}
+
+.controls-SpoilerHeading__icon_fontColorStyle-secondary {
+   fill: var(--secondary_text-color);
+}
+
+.controls-SpoilerHeading__icon_fontColorStyle-default {
+   fill: var(--label_icon-color);
+}
+
+.controls-SpoilerHeading__icon_fontColorStyle-label {
+   fill: var(--label_text-color);
+}
+
+.controls-SpoilerHeading__caption_fontColorStyle-secondary {
+   color: var(--secondary_text-color);
+}
+
+.controls-SpoilerHeading__caption_fontColorStyle-default {
+   color: var(--text-color);
+}
+
+.controls-SpoilerHeading__caption_fontColorStyle-label {
+   color: var(--label_text-color);
+}
+
+.ws-is-hover .controls-SpoilerHeading__wrapper:hover {
+   .controls-SpoilerHeading__icon_fontColorStyle-secondary {
+      fill: var(--secondary_text-color);
+   }
+
+   .controls-SpoilerHeading__icon_fontColorStyle-default {
+      fill: var(--label_icon-color);
+   }
+
+   .controls-SpoilerHeading__icon_fontColorStyle-label {
+      fill: var(--secondary_text-color);
+   }
+
+   .controls-SpoilerHeading__caption_fontColorStyle-secondary {
+      color: var(--secondary_text-color);
+   }
+
+   .controls-SpoilerHeading__caption_fontColorStyle-default {
+      color: var(--text-color);
+   }
+
+   .controls-SpoilerHeading__caption_fontColorStyle-label {
+      color: var(--secondary_text-color);
+   }
+}

@@ -1,0 +1,207 @@
+<ws:template name="pagingTpl">
+    <ws:if data="{{_pagingLabelData}}">
+        <ws:if data="{{_options.navigation.viewConfig.totalInfo === 'extended'}}">
+            <div class="controls-BaseControl_paging-label controls_paging_theme-{{_options.theme}}">
+                <div>{{ _pagingLabelData.firstItemNumber }} - {{ _pagingLabelData.lastItemNumber }} {{ rk('из') }}
+                    {{ _pagingLabelData.totalItemsCount }}, {{ rk('по') }}
+                </div>
+                <ws:partial template="{{ 'Controls/dropdown:Selector' }}"
+                            attr:class="controls-BaseControl_paging-pageSizeChooser controls-BaseControl_paging-pageSizeChooser"
+                            keyProperty="id"
+                            style="secondary"
+                            displayProperty="title"
+                            fontSize="s"
+                            selectedKeys="{{_selectedPageSizeKey}}"
+                            on:selectedKeysChanged="_changePageSize()"
+                            source="{{_pageSizeSource}}"
+                />
+            </div>
+        </ws:if>
+        <ws:else>
+            <div class="controls-BaseControl_paging-label controls_paging_theme-{{_options.theme}}">{{ rk('Всего') }}
+                {{ _pagingLabelData.totalItemsCount }}
+            </div>
+        </ws:else>
+    </ws:if>
+    <ws:partial template="{{ 'Controls/paging:Paging' }}"
+                attr:class="controls-BaseControl__footerPaging"
+                showDigits="{{!_options.navigation.sourceConfig.hasMore}}"
+                pagesCount="{{_knownPagesCount}}"
+                selectedPage="{{_currentPage}}"
+                arrowState="{{_pagingCfg.arrowState}}"
+                on:selectedPageChanged="__pagingChangePage()"
+    />
+</ws:template>
+
+<!--
+ Внутренний футер, содержащий:
+   * контрол для пейджинации
+   * кнопку "Ещё"
+   * cut-кнопку "(•••)"
+-->
+<ws:template name="sysFooterTemplate">
+<div class="{{ _getSystemFooterClasses() }}" style="{{ _getSystemFooterStyles() }}">
+    <ws:if data="{{_pagingNavigation && _pagingNavigationVisible}}">
+        <div class="controls-BaseControl__footerPaging_wrapper">
+            <ws:if data="{{_options.columnScroll}}">
+                <div class="controls-BaseControl_paging-wrapper">
+                    <ws:partial template="pagingTpl"/>
+                </div>
+            </ws:if>
+            <ws:else>
+                <ws:partial template="pagingTpl"/>
+            </ws:else>
+        </div>
+    </ws:if>
+    <ws:if data="{{_shouldDrawNavigationButton}}">
+        <div attr:class="{{ _getNavigationButtonClasses(_options, _options.navigation.viewConfig.buttonConfig) }}">
+            <ws:partial template="{{ _getMoreButtonTemplate() }}"
+                        value="{{_cutExpanded}}"
+                        buttonConfig="{{_options.navigation.viewConfig.buttonConfig}}"
+                        buttonView="{{_resolveNavigationButtonView()}}"
+                        linkFontColorStyle="{{_options.moreFontColorStyle}}"
+                        linkClass="controls-BaseControl__loadMore"
+                        linkLabel="{{_loadMoreCaption}}"
+                        onClick="{{_onNavigationButtonClick}}"/>
+        </div>
+    </ws:if>
+</div>
+</ws:template>
+
+<ws:template name="viewTpl">
+    <div class="{{ _getViewClasses() }}" name="viewContainer">
+        <!-- render _viewName -->
+        <Controls._baseList.CollectionContext collection="{{_listViewModel}}">
+            <ws:partial
+                attr:class="controls-itemActionsV_menu-{{_isActionsMenuOpened ? 'shown' : 'hidden'}}"
+                name="{{name}}"
+                template="{{ _options.viewName }}"
+                itemsContainerClass="{{_getItemsContainerClasses()}}"
+                scope="{{_options}}"
+                _needBottomPadding="{{_needBottomPadding}}"
+                needShowEmptyTemplate="{{ __needShowEmptyTemplate() }}"
+                listModel="{{_listViewModel}}"
+                collection="{{_listViewModel}}"
+                collectionVersion="{{_listViewModel.getVersion()}}"
+                itemHandlers="{{_itemHandlers}}"
+                actionHandlers="{{_actionHandlers}}"
+				storedColumnsWidths="{{ _storedColumnsWidths }}"
+				startDragNDropCallback="{{ _options.itemsDragNDrop ? _startDragNDropCallback }}"
+                preventServerSideColumnScroll="{{ !_useServerSideColumnScroll }}"
+                uniqueId="{{ _uniqueId }}"
+                onItemDeactivated="{{ _onItemDeactivated }}"
+                onActionsMouseEnter="{{_onItemActionsMouseEnter}}"
+                onActionMouseDown="{{_onItemActionMouseDown}}"
+                onActionMouseUp="{{_onItemActionMouseUp}}"
+                onActionMouseEnter="{{_onItemActionMouseEnter}}"
+                onActionMouseLeave="{{_onItemActionMouseLeave}}"
+                onActionClick="{{_onItemActionClick}}"
+                onItemActionSwipeAnimationEnd="{{_onActionsSwipeAnimationEnd}}"
+                _commitEditActionHandler="{{_commitEditActionHandler }}"
+                _cancelEditActionHandler="{{_cancelEditActionHandler }}"
+                itemActionsTemplateMountedCallback="{{_getItemActionsController() && _getItemActionsController().getItemActionsTemplateMountedCallback()}}"
+                itemActionsTemplateUnmountedCallback="{{_getItemActionsController() && _getItemActionsController().getItemActionsTemplateUnmountedCallback()}}"
+                itemsContainerReadyCallback="{{ _itemsContainerReadyHandler }}"
+                viewResized="{{ _viewResize }}"
+                itemsSize="{{ _itemsSize }}"
+                onTagClick="{{ _onTagClickHandler }}"
+                onTagHover="{{ _onTagHoverHandler }}"
+                on:arrowClick="_notifyHandler('arrowClick')"
+                on:closeSwipe="_onCloseSwipe()"
+                on:validateCreated="_onValidateCreated()"
+                on:validateDestroyed="_onValidateDestroyed()"
+                on:animationend="_onItemSwipeAnimationEnd()"
+                on:deactivated="_onListDeactivated()"
+                on:markedKeyChanged="_notifyHandler('markedKeyChanged')"
+                on:beforeMarkedKeyChanged="_notifyHandler('beforeMarkedKeyChanged')"
+                on:beforeSelectionChanged="_notifyHandler('beforeSelectionChanged')"
+                on:itemClick="_onItemClick()"
+                on:groupClick="_onGroupClick()"
+                on:checkBoxClick="_onCheckBoxClick()"
+                on:itemContextMenu="_onItemContextMenu()"
+                on:itemLongTap="_onItemLongTap()"
+                on:itemMouseDown="_itemMouseDown()"
+                on:itemMouseUp="_itemMouseUp()"
+                on:touchstart="_touchStartHandler()"
+                on:itemMouseEnter="_itemMouseEnter()"
+                on:itemMouseMove="_itemMouseMove()"
+                on:itemMouseLeave="_itemMouseLeave()"
+                on:hoveredItemChanged="_notifyHandler('hoveredItemChanged')"
+                on:updateItemActionsOnItem="_updateItemActionsOnItem()"
+                on:itemSwipe="_onItemSwipe()"
+                on:controlResize="_viewResize()"
+				on:doScroll="_stopBubblingEvent()"
+                on:updatePlaceholdersSize="_stopBubblingEvent()"
+                on:enableVirtualNavigation="_stopBubblingEvent()"
+                on:disableVirtualNavigation="_stopBubblingEvent()"
+                on:toggleHorizontalScroll="_onToggleHorizontalScroll()"
+                on:updateShadowMode="_stopInnerUpdateShadowMode()"
+            />
+        </Controls._baseList.CollectionContext>
+        <ws:partial template="sysFooterTemplate"/>
+
+        <Controls._baseList.BaseControl.Scroll.Emitter on:emitListScroll="_observeScrollHandler()" name="scrollObserver"/>
+    </div>
+</ws:template>
+
+<Controls.WorkByKeyboard.Consumer getContextValue="{{_setWorkByKeyboardCallback}}">
+    <Controls.animation:Consumer getContextValue="{{_getAnimationContextValueCallback}}">
+    <Controls.scroll:_ListScrollContextConsumer getContextValue="{{_getListScrollContextValueCallback}}">
+    <div class="{{ _getBaseControlClasses(_options) }}"
+         data-qa="list"
+         on:mouseenter="_mouseEnter()"
+         on:mouseover="_mouseOver()"
+         on:mouseleave="_mouseLeave()"
+         on:mouseMove="_onListMouseMove()"
+         on:keyDown="_onViewKeyDown()"
+
+         on:click="_onBaseControlClick()"
+
+    >
+        <div name="fakeFocusElem" tabindex="0" class="controls-BaseControl__fakeFocusElem"></div>
+
+        <style name="itemActionsOutsideStyle" data-vdom-ignore="true"></style>
+
+		<ws:partial template="viewTpl" name="listView"/>
+
+        <ws:if data="{{_pagingVisible}}">
+            <!-- Не отображаем разделитель для ipad, так как из-за разделителя появляется пустая строка после последней записи.
+            Вместо этого, задаем пэйджингу высоту как у разделителя.
+            https://online.sbis.ru/opendoc.html?guid=aafcd848-43e0-4ac3-a4b8-cffff9f04be0 -->
+            <div name="pagingPaddingContainer" if="{{ _isPagingPadding() }}"
+                 class="controls_paging_theme-{{_options.theme}} controls-BaseControl_paging-Padding">
+            </div>
+            <Controls.stickyBlock:StickyBlock
+                    backgroundStyle="transparent"
+                    mode="stackable"
+                    shadowVisibility="hidden"
+                    zIndex="{{30}}"
+                    fixedZIndex="{{30}}"
+                    attr:class="controls-BaseControl__pagingContainer_stickyBlock"
+                    position="bottom">
+                <div attr:class="controls-BaseControl__pagingContainer">
+                    <div class="controls-BaseControl__pagingWrapper
+    controls-BaseControl__pagingWrapper_position-{{_options.navigation.viewConfig.pagingPosition === 'left' ? 'left' : 'right'}}">
+                        <ws:if data="{{_options.pagingLeftTemplate}}">
+                            <ws:partial template="{{_options.pagingLeftTemplate}}"/>
+                        </ws:if>
+                        <ws:partial template="{{ 'Controls/paging:Paging' }}"
+                                    attr:class="controls-BaseControl__scrollPaging"
+                                    contrastBackground="{{true}}"
+                                    pagingMode="{{_options.navigation.viewConfig.pagingMode}}"
+                                    _date="{{_options.navigation.viewConfig._date}}"
+                                    scope="{{_pagingCfg}}"
+                                    contentTemplate="{{_options.pagingContentTemplate}}"
+                                    on:onArrowClick="__onPagingArrowClick()"
+                                    on:selectedPageChanged="__selectedPageChanged()"/>
+                        <ws:if data="{{_options.pagingRightTemplate}}">
+                            <ws:partial template="{{_options.pagingRightTemplate}}"/>
+                        </ws:if>
+                    </div>
+                </div>
+            </Controls.stickyBlock:StickyBlock>
+        </ws:if>
+    </div>
+    </Controls.scroll:_ListScrollContextConsumer>
+    </Controls.animation:Consumer>
+</Controls.WorkByKeyboard.Consumer>

@@ -1,0 +1,116 @@
+.ControlsLists-timelineGrid__EventBlockRender {
+   white-space: nowrap;
+   box-sizing: border-box;
+   min-width: 100%;
+   max-width: 100%;
+   height: 100%;
+   padding-top: 3px;
+   display: flex;
+   align-items: baseline;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_bg {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   z-index: 1;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_overflow-ellipsis,
+.ControlsLists-timelineGrid__EventBlockRender_overflow-hidden {
+   overflow: hidden;
+   width: 100%;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_align-left {
+   justify-content: flex-start;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_intersection {
+   background-image: repeating-linear-gradient(
+      -45deg,
+      var(--timeline-event-hatch_color) 0,
+      var(--timeline-event-hatch_color) var(--border-thickness),
+      transparent var(--offset_3xs),
+      transparent calc(var(--offset_3xs) + var(--border-thickness))
+   );
+   position: absolute;
+   height: 100%;
+   top: 0;
+   z-index: 1;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_align-center {
+   justify-content: center;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_align-right {
+   justify-content: flex-end;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_overflow-ellipsis {
+   text-overflow: ellipsis;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_leftTopBevel {
+   clip-path: polygon(var(--offset_m) 0%, 100% 0%, 100% 100%, 0 100%, 0 100%);
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_rightTopBevel {
+   clip-path: polygon(0% 0%, calc(100% - var(--offset_m)) 0%, 100% 100%, 0 100%, 0 100%);
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_leftBottomBevel {
+   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0 100%, var(--offset_m) 100%);
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_rightBottomBevel {
+   clip-path: polygon(0% 0%, 100% 0%, calc(100% - var(--offset_m)) 100%, 0 100%, 0 100%);
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_icon,
+.ControlsLists-timelineGrid__EventBlockRender_text {
+   pointer-events: auto;
+   z-index: 1;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_text {
+   margin-left: var(--offset_3xs);
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_icon {
+   margin-right: var(--offset_3xs);
+}
+
+.ws-is-hover {
+   .ControlsLists-timelineGrid__EventBlockRender:hover
+      > .ControlsLists-timelineGrid__EventBlockRender_text {
+      text-decoration: underline;
+   }
+}
+
+.ControlsLists-timelineGrid__EventLineRender {
+   height: 8px;
+   margin-top: 30px;
+   margin-bottom: 3px;
+   border-radius: 2px;
+   pointer-events: auto;
+   position: relative;
+   width: 100%;
+   z-index: 1;
+}
+
+.ControlsLists-timelineGrid__RangeSelectorComponent_buttons-gap {
+   gap: var(--offset_m);
+}
+
+.ControlsLists-timelineGrid__GoToTodayButton {
+   border-top: var(--border-thickness) solid var(--secondary_text-color);
+}
+
+// 7 дней в неделе и нужно, чтобы каждый день был выше чем ховер
+.ControlsLists-timelineGrid__headerCellContent {
+   z-index: 7;
+}

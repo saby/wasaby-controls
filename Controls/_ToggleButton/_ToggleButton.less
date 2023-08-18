@@ -1,0 +1,164 @@
+.controls-Button__wrapper_viewMode-pushButton {
+   justify-content: center;
+}
+//button
+.controls-Button_outlined_style-secondary_toggled {
+   border-color: var(--secondary_toggled_border-color_toggleButton_button);
+   border-width: var(--toggled_border-thickness_toggleButton_button);
+}
+
+.controls-Button_outlined_style-primary_toggled {
+   border-color: var(--primary_color);
+   border-width: var(--primary_toggled_border-thickness_toggleButton_button);
+}
+
+//ghost
+.controls-Button_ghost_style-default_toggled {
+   background-color: var(--secondary_toggled_background-color_toggleButton_toolButton);
+   border-color: var(--secondary_toggled_border-color_toggleButton_toolButton);
+}
+
+.controls-Button_ghost_style-readonly_toggled {
+   background-color: var(--secondary_toggled_background-color_toggleButton_toolButton);
+   border-color: var(--readonly_border-color_button_toolButton);
+}
+
+.controls-Button_pushButton {
+   border-width: var(--border-thickness_button);
+   border-radius: var(--border-radius_toggleButton_pushButton);
+   box-shadow: none;
+   border-style: solid;
+}
+
+.controls-Button_pushButton_style-secondary {
+   border-color: transparent;
+}
+
+.controls-Button_pushButton_style-primary {
+   border-color: transparent;
+}
+
+.controls-Button_pushButton_style-danger {
+   border-color: transparent;
+}
+
+.controls-Button_pushButton_style-success {
+   border-color: transparent;
+}
+
+.controls-Button_pushButton_style-readonly {
+   border-color: transparent;
+}
+
+.controls-Button_pushButton_style-secondary_toggled {
+   border-color: var(--secondary_toggled_border-color_toggleButton_pushButton);
+}
+
+.controls-Button_pushButton_style-primary_toggled {
+   border-color: var(--secondary_toggled_border-color_toggleButton_pushButton);
+}
+
+.controls-Button_pushButton_style-danger_toggled {
+   border-color: var(--danger_color);
+}
+
+.controls-Button_pushButton_style-success_toggled {
+   border-color: var(--success_color);
+}
+
+.controls-Button_pushButton_style-readonly_toggled {
+   border-color: var(--readonly_color);
+}
+
+//background
+.controls-Button_pushButton_style-secondary.controls-Button_bg-contrast {
+   background-color: transparent;
+}
+
+.controls-Button_pushButton_style-secondary.controls-Button_bg-same {
+   background-color: transparent;
+}
+
+.controls-Button_pushButton_style-secondary_toggled.controls-Button_bg-contrast {
+   background-color: var(--secondary_contrast_toggled_background-color_toggleButton_pushButton);
+}
+
+.controls-Button_pushButton_style-readonly.controls-Button_bg-contrast {
+   background-color: var(--readonly_contrast_toggled_background-color_toggleButton_pushButton);
+}
+
+.controls-Button_pushButton_style-readonly.controls-Button_bg-same {
+   background-color: transparent;
+}
+
+.ws-is-hover {
+   .controls-Button_pushButton_style-secondary:hover.controls-Button_bg-contrast {
+      background-color: var(--secondary_contrast_hover_background-color_toggleButton_pushButton);
+   }
+
+   .controls-Button_pushButton_style-secondary:hover.controls-Button_bg-same {
+      background-color: transparent;
+      border-color: var(--secondary_toggled_border-color_toggleButton_pushButton);
+   }
+
+   .controls-Button_ghost_style-default_toggled:hover {
+      border-color: var(--secondary_toggled_border-color_toggleButton_toolButton);
+   }
+
+   .controls-Button_ghost_style-readonly_toggled:hover {
+      border-color: var(--readonly_border-color_button_toolButton);
+   }
+}
+
+.ws-is-no-touch,
+.ws-is-touch {
+   .controls-Button_pushButton_style-secondary:active.controls-Button_bg-contrast {
+      background-color: var(--secondary_contrast_hover_background-color_toggleButton_pushButton);
+   }
+
+   .controls-Button_pushButton_style-secondary:active.controls-Button_bg-same {
+      background-color: transparent;
+      border-color: var(--secondary_toggled_border-color_toggleButton_pushButton);
+   }
+
+   .controls-Button_ghost_style-default_toggled:active {
+      border-color: var(--secondary_toggled_border-color_toggleButton_toolButton);
+   }
+
+   .controls-Button_ghost_style-readonly_toggled:active {
+      border-color: var(--readonly_border-color_button_toolButton);
+   }
+}
+
+//this is square buttons, that's why width is equal to height
+.controls-Button_pushButton_xs {
+   min-width: var(--inline_height_xs);
+}
+
+.controls-Button_pushButton_s {
+   min-width: var(--inline_height_s);
+}
+
+.controls-Button_pushButton_m {
+   min-width: var(--inline_height_m);
+}
+
+.controls-Button_pushButton_l {
+   min-width: var(--inline_height_l);
+}
+
+.controls-Button_pushButton_xl {
+   min-width: var(--inline_height_xl);
+}
+
+.controls-Button_pushButton_2xl {
+   min-width: var(--inline_height_2xl);
+}
+
+.controls-Button_pushButton_default {
+   min-width: var(--inline_height_default);
+}
+
+.controls-Button_pushButton:active {
+   box-shadow: none;
+}

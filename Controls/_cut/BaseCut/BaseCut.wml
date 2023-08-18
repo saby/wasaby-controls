@@ -1,0 +1,41 @@
+<div class="controls_spoiler_theme-{{_options.theme}}">
+    <ws:partial template="{{ content }}">
+        <ws:notExpandedButtonTemplate>
+            <ws:if data="{{ !notExpandedButtonTemplate.isIE }}">
+                <div class="controls-BaseCut__notExpandedButtonWrapper ws-flexbox ws-flex-column ws-justify-content-center">
+                    <div class="controls-BaseCut__notExpandedButtonWrapBlock"></div>
+                    <div class="controls-BaseCut__notExpandedButtonContainer ws-flexbox ws-justify-content-center">
+                        <div class="controls-BaseCut__notExpandedButton ws-flexbox ws-justify-content-center">
+                            <div class="controls-BaseCut__shadow
+                                controls-BaseCut__shadow_lineHeight-{{ notExpandedButtonTemplate.lineHeight }}
+                                controls-BaseCut__shadow_background-{{ notExpandedButtonTemplate.backgroundStyle }}"></div>
+                            <Controls._cut.CutButton
+                                    tabIndex="{{ notExpandedButtonTemplate.tabIndex }}"
+                                    attr:class="controls-BaseCut__ellipsis"
+                                    scope="{{ notExpandedButtonTemplate }}"
+                                    on:expandedChanged="_onExpandedChangedHandler()"
+                                    expanded="{{ notExpandedButtonTemplate.expanded }}"/>
+                        </div>
+                    </div>
+                </div>
+            </ws:if>
+            <ws:else>
+                <ws:if data="{{ notExpandedButtonTemplate.cutVisible }}">
+                    <Controls._cut.CutButton
+                            attr:class="controls-BaseCut__ellipsis"
+                            scope="{{ notExpandedButtonTemplate }}"
+                            on:expandedChanged="_onExpandedChangedHandler()"
+                            expanded="{{ notExpandedButtonTemplate.expanded }}"/>
+                </ws:if>
+            </ws:else>
+        </ws:notExpandedButtonTemplate>
+        <ws:expandedButtonTemplate>
+            <Controls._cut.CutButton
+                    attr:class="controls-BaseCut__ellipsis"
+                    scope="{{ expandedButtonTemplate }}"
+                    tabIndex="{{ expandedButtonTemplate.tabIndex }}"
+                    on:expandedChanged="_onExpandedChangedHandler()"
+                    expanded="{{ expandedButtonTemplate.expanded }}"/>
+        </ws:expandedButtonTemplate>
+    </ws:partial>
+</div>

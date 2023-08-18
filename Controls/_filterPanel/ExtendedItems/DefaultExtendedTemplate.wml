@@ -1,0 +1,23 @@
+<div class="controls-FilterViewPanel__editors-container
+            controls-padding_bottom-{{_options.bottomSpacing || 'l'}}"
+     data-qa="controls-FilterViewPanel__additional-editors">
+    <ws:if data="{{_options.headingCaption || _options.headingContentTemplate}}">
+        <div class="controls-FilterViewPanel__heading-wrapper">
+            <ws:if data="{{_options.headingCaption}}">
+                <Controls.heading:Title caption="{{_options.headingCaption}}"
+                                        fontColorStyle="labelContrast"
+                                        fontSize="xs"
+                                        fontWeight="normal"
+                                        readOnly="{{true}}"
+                                        attr:class="controls-FilterViewPanel__heading controls-inlineheight-xs"/>
+            </ws:if>
+            <ws:if data="{{_options.headingContentTemplate}}">
+                <ws:partial template="{{_options.headingContentTemplate}}" />
+            </ws:if>
+        </div>
+    </ws:if>
+    <ws:if data="{{_options.bodyContentTemplate}}">
+        <ws:partial template="{{_options.bodyContentTemplate}}"
+                    scope="{{_options}}" />
+    </ws:if>
+</div>

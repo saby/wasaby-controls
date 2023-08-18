@@ -1,0 +1,21 @@
+<ws:partial template="{{_options.content}}"
+            scope="{{_options}}"
+            hasItemWithImage="{{_hasItemWithImage}}"
+            columns="{{ _patchedColumns }}">
+   <ws:itemTemplate>
+      <ws:partial scope="{{itemTemplate}}"
+                  template="{{_itemTemplate}}"
+                  hasItemWithImage="{{_hasItemWithImage}}"
+                  imageViewMode="{{_getImageViewMode(itemTemplate.item, _options.imageCheckMode)}}"
+                  imagePosition="{{_options.imagePosition}}"
+                  markerSize="{{_getMarkerSize(itemTemplate.item, itemTemplate.markerSize, _options.imageCheckMode)}}"
+      />
+   </ws:itemTemplate>
+   <ws:tileItemTemplate>
+      <ws:partial scope="{{tileItemTemplate}}"
+                  template="{{_tileItemTemplate}}"
+                  hasItemWithImage="{{_hasItemWithImage}}"
+                  imageViewMode="{{_getImageViewMode(tileItemTemplate.item, _options.imageCheckMode)}}"
+                  imagePosition="{{_options.imagePosition}}"/>
+   </ws:tileItemTemplate>
+</ws:partial>

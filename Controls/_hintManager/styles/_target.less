@@ -1,0 +1,49 @@
+@border-width_HintTarget_default: 2px;
+
+.controls-HintTargetsContainer {
+   position: absolute;
+   left: 0;
+   top: 0;
+}
+
+.controls-HintTargetHighlighter {
+   border-radius: var(--border-radius_2xs);
+   box-sizing: border-box;
+   pointer-events: none;
+   position: absolute;
+
+   &_active {
+      &_danger {
+         border: @border-width_HintTarget_default solid var(--danger_border-color);
+      }
+
+      &_warning {
+         border: @border-width_HintTarget_default solid var(--warning_border-color);
+      }
+
+      &_secondary {
+         border: @border-width_HintTarget_default solid var(--secondary_border-color);
+      }
+
+      &_success {
+         border: @border-width_HintTarget_default solid var(--success_border-color);
+      }
+
+      &_info {
+         border: @border-width_HintTarget_default solid var(--info_border-color);
+      }
+
+      &_primary {
+         border: @border-width_HintTarget_default solid var(--primary_border-color);
+      }
+
+      &_unaccented {
+         border: @border-width_HintTarget_default solid var(--unaccented_border-color);
+      }
+
+      &_invalid,
+      &_invalidAccent {
+         border: @border-width_HintTarget_default solid var(--invalid_border-color);
+      }
+   }
+}

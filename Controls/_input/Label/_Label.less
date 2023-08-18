@@ -1,0 +1,76 @@
+.controls-Label {
+   display: inline-block;
+   text-decoration: none;
+}
+
+.controls-Label_underline_none {
+   height: var(--inline_height_default_label);
+   padding-right: var(--offset-horizontal_label);
+}
+
+.controls-Label_multiline {
+   height: unset;
+}
+
+.controls-Label__wrapper {
+   width: 100%;
+   height: 100%;
+   position: relative;
+   align-items: center;
+   display: inline-flex;
+}
+
+.controls-Label__caption {
+   // https://github.com/philipwalton/flexbugs#flexbug-6
+   flex-shrink: 1;
+}
+
+.controls-Label__caption_fontsize-default {
+   font-size: var(--font-size_default_label);
+}
+
+.controls-Label__caption_fontColorStyle-label {
+   color: var(--label_text-color);
+}
+
+.controls-Label__caption_fontColorStyle-readonly {
+   color: var(--readonly_color);
+}
+
+.controls-Label__caption_fontColorStyle-unaccented {
+   color: var(--unaccented_color);
+}
+
+.ws-is-hover .controls-Label__caption_underline_hovered_edit {
+   cursor: pointer;
+}
+
+.controls-Label__caption_underline_hovered_edit:active,
+.ws-is-hover .controls-Label__caption_underline_hovered_edit:hover {
+   text-decoration: underline;
+}
+
+.controls-Label__caption_underline_fixed {
+   text-decoration: underline;
+}
+
+.ws-is-hover .controls-Label__caption_underline_fixed_edit {
+   cursor: pointer;
+}
+
+.controls-Label__caption_underline_fixed_edit:active,
+.ws-is-hover .controls-Label__caption_underline_fixed_edit:hover {
+   color: var(--link_hover_text-color);
+}
+
+.controls-Label__asterisk {
+   color: var(--danger_text-color);
+}
+
+.controls-Label__fakeLink {
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   position: absolute;
+}

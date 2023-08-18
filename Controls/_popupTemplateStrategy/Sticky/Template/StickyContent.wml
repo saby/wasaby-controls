@@ -1,0 +1,7 @@
+<ws:partial
+        template="{{template}}"
+        scope="{{templateOptions}}"
+        prefetchPromise="{{ _options._prefetchPromise }}"
+        prefetchData="{{_options._prefetchData}}"
+        isPrefetchDataMode="{{_options._isPrefetchDataMode}}"
+        stickyPosition="{{stickyPosition}}" />

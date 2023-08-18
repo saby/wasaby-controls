@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-TabsLayout-default-theme"
+           id="0ec5f772-fea6-4103-8af4-cf77ecc545ee"
+           package="Wasaby"
+           responsible="Крайнов Д.О."
+           required="1"
+           version="1.00">
+  <description/>
+  <depends>
+    <module id="af50caf5-f84b-4b81-a19c-6f6618372dbd" name="Controls-default-theme"/>
+    <module id="e72e465e-fb9a-4f11-968d-8acc1e2225ed" name="Controls-TabsLayout"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <cluster_endpoints/>
+  <resources/>
+  <preload/>
+</ui_module>

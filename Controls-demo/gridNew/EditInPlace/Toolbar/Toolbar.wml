@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper">
+  <div class="controlsDemo__inline-flex">
+    <Controls.listDeprecate:Remover storeId="EditInPlaceToolbar" name="remover" on:afterItemsRemove="_afterItemsRemove()"/>
+    <Controls.grid:View
+        storeId="EditInPlaceToolbar"
+        name="grid"
+        columns="{{_columns}}"
+        itemActions="{{_itemActions}}"
+        on:beforeBeginEdit="_beforeBeginEdit()">
+      <ws:editingConfig>
+        <ws:Object editOnClick="{{true}}" autoAdd="{{true}}" toolbarVisibility="{{true}}"/>
+      </ws:editingConfig>
+      <ws:footerTemplate>
+        <Controls.list:AddButton caption="Add record" on:click="_beginAdd()"/>
+      </ws:footerTemplate>
+    </Controls.grid:View>
+  </div>
+</div>

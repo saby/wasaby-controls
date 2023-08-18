@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+    <div>
+        <Controls-ListEnv.filterConnected:View detailPanelTemplateName="Controls/filterPanelPopup:Sticky"
+                                      storeId="filtersData"
+                                      filterNames="['city']"/>
+        <Controls-ListEnv.filterConnected:View storeId="filtersData"
+                                      filterNames="['resp']"/>
+        <Controls.list:View storeId="filtersData"/>
+    </div>
+</div>

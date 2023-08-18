@@ -1,0 +1,19 @@
+.controls-ActionEditor-wrapper {
+   border-radius: var(--border-radius_2xs);
+   padding: var(--offset_2xs);
+}
+
+.controls-ActionEditor-buttons {
+   visibility: hidden;
+   display: flex;
+}
+
+.ws-is-hover {
+   .controls-ActionEditor-wrapper:hover {
+      background-color: var(--hover_background-color);
+
+      .controls-ActionEditor-buttons {
+         visibility: visible;
+      }
+   }
+}

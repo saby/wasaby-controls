@@ -1,0 +1,6 @@
+<div class="controlsDemo__wrapper">
+    <Controls.grid:View
+            storeId="ItemTemplateFromFile"
+            columns="{{_columns}}"
+            itemTemplate="{{_itemTemplate}}"/>
+</div>

@@ -1,0 +1,8 @@
+<div class="controlsDemo__flexRow">
+     <ws:for data="iconClass in _iconClasses">
+        <Controls.icon:Icon icon="{{iconClass}}"
+                            iconSize="m"
+                            iconStyle="secondary"
+                            attr:class="controlsDemo__mr1_control"/>
+    </ws:for>
+</div>

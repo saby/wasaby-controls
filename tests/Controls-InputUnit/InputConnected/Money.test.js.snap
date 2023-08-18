@@ -1,0 +1,925 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls-Input/InputConnected:Money IntegersLength 1`] = `
+<div>
+  <div
+    class="controlsDemo__wrapper controlsDemo_fixedWidth400 tw-flex tw-flex-col"
+  >
+    <div
+      class="tw-flex controls-max-w-full tw-flex-col undefined controls-Input-connected_filled"
+    >
+      <a
+        class="controls-Label controls-Label_underline_none tw-min-w-0"
+      >
+        <div
+          class="controls-Label__wrapper"
+        >
+          <div
+            class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+          >
+            integersLength = 2
+          </div>
+          
+        </div>
+      </a>
+      <div
+        class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontweight-default controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default  controls-Render_state-valid_caretFilled  controls-inlineheight-default controls-Render-inlineheight-default controls-Money controls_Money_theme-default tw-w-full"
+        tabindex="0"
+      >
+        <div
+          class="controls-Render__wrapper"
+        >
+          <span
+            class="controls-Render__baseline"
+          >
+            ﻿
+          </span>
+          <div
+            class="controls-InputBase__field  controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+            data-qa="controls-Render__field"
+            tabindex="0"
+          >
+            <span
+              autocapitalize="off"
+              autocomplete="off"
+              autocorrect="off"
+              class="controls-Field js-controls-Field controls-Field_money controls-Field_moneyNew controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default controls-DecoratorMoney controls-text-default controls-Field js-controls-Field controls-Field_money controls-Field_moneyNew controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default"
+              contenteditable="true"
+              inputmode="decimal"
+              name="ws-input_1996-06-20"
+              spellcheck="true"
+              title="22.00"
+              type="text"
+            >
+              <span
+                class=""
+              >
+                <span
+                  class="controls-fontsize-m controls-text-default controls-fontweight-default"
+                >
+                  22
+                </span>
+                <span
+                  class="controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs"
+                >
+                  .00
+                </span>
+              </span>
+            </span>
+            <div
+              class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+              tabindex="0"
+            >
+              <div
+                class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                tabindex="0"
+              >
+                Введите сумму
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="tw-flex controls-max-w-full tw-flex-col undefined controls-Input-connected_filled"
+    >
+      <a
+        class="controls-Label controls-Label_underline_none tw-min-w-0"
+      >
+        <div
+          class="controls-Label__wrapper"
+        >
+          <div
+            class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+          >
+            integersLength is empty
+          </div>
+          
+        </div>
+      </a>
+      <div
+        class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontweight-default controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default  controls-Render_state-valid_caretFilled  controls-inlineheight-default controls-Render-inlineheight-default controls-Money controls_Money_theme-default tw-w-full"
+        tabindex="0"
+      >
+        <div
+          class="controls-Render__wrapper"
+        >
+          <span
+            class="controls-Render__baseline"
+          >
+            ﻿
+          </span>
+          <div
+            class="controls-InputBase__field  controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+            data-qa="controls-Render__field"
+            tabindex="0"
+          >
+            <span
+              autocapitalize="off"
+              autocomplete="off"
+              autocorrect="off"
+              class="controls-Field js-controls-Field controls-Field_money controls-Field_moneyNew controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default controls-DecoratorMoney controls-text-default controls-Field js-controls-Field controls-Field_money controls-Field_moneyNew controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default"
+              contenteditable="true"
+              inputmode="decimal"
+              name="ws-input_1996-06-20"
+              spellcheck="true"
+              title="22.00"
+              type="text"
+            >
+              <span
+                class=""
+              >
+                <span
+                  class="controls-fontsize-m controls-text-default controls-fontweight-default"
+                >
+                  22
+                </span>
+                <span
+                  class="controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs"
+                >
+                  .00
+                </span>
+              </span>
+            </span>
+            <div
+              class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+              tabindex="0"
+            >
+              <div
+                class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                tabindex="0"
+              >
+                Введите сумму
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls-Input/InputConnected:Money OnlyPositive 1`] = `
+<div>
+  <div
+    class="controlsDemo__wrapper controlsDemo_fixedWidth400 tw-flex tw-flex-col"
+  >
+    <div
+      class="tw-flex controls-max-w-full tw-flex-col undefined controls-Input-connected_filled"
+    >
+      <a
+        class="controls-Label controls-Label_underline_none tw-min-w-0"
+      >
+        <div
+          class="controls-Label__wrapper"
+        >
+          <div
+            class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+          >
+            onlyPositive = false
+          </div>
+          
+        </div>
+      </a>
+      <div
+        class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontweight-default controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default  controls-Render_state-valid_caretFilled  controls-inlineheight-default controls-Render-inlineheight-default controls-Money controls_Money_theme-default tw-w-full"
+        tabindex="0"
+      >
+        <div
+          class="controls-Render__wrapper"
+        >
+          <span
+            class="controls-Render__baseline"
+          >
+            ﻿
+          </span>
+          <div
+            class="controls-InputBase__field  controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+            data-qa="controls-Render__field"
+            tabindex="0"
+          >
+            <span
+              autocapitalize="off"
+              autocomplete="off"
+              autocorrect="off"
+              class="controls-Field js-controls-Field controls-Field_money controls-Field_moneyNew controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default controls-DecoratorMoney controls-text-default controls-Field js-controls-Field controls-Field_money controls-Field_moneyNew controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default"
+              contenteditable="true"
+              inputmode="decimal"
+              name="ws-input_1996-06-20"
+              spellcheck="true"
+              title="22.00"
+              type="text"
+            >
+              <span
+                class=""
+              >
+                <span
+                  class="controls-fontsize-m controls-text-default controls-fontweight-default"
+                >
+                  22
+                </span>
+                <span
+                  class="controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs"
+                >
+                  .00
+                </span>
+              </span>
+            </span>
+            <div
+              class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+              tabindex="0"
+            >
+              <div
+                class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                tabindex="0"
+              >
+                Введите сумму
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="tw-flex controls-max-w-full tw-flex-col undefined controls-Input-connected_filled"
+    >
+      <a
+        class="controls-Label controls-Label_underline_none tw-min-w-0"
+      >
+        <div
+          class="controls-Label__wrapper"
+        >
+          <div
+            class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+          >
+            onlyPositive = true
+          </div>
+          
+        </div>
+      </a>
+      <div
+        class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontweight-default controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default  controls-Render_state-valid_caretFilled  controls-inlineheight-default controls-Render-inlineheight-default controls-Money controls_Money_theme-default tw-w-full"
+        tabindex="0"
+      >
+        <div
+          class="controls-Render__wrapper"
+        >
+          <span
+            class="controls-Render__baseline"
+          >
+            ﻿
+          </span>
+          <div
+            class="controls-InputBase__field  controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+            data-qa="controls-Render__field"
+            tabindex="0"
+          >
+            <span
+              autocapitalize="off"
+              autocomplete="off"
+              autocorrect="off"
+              class="controls-Field js-controls-Field controls-Field_money controls-Field_moneyNew controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default controls-DecoratorMoney controls-text-default controls-Field js-controls-Field controls-Field_money controls-Field_moneyNew controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default"
+              contenteditable="true"
+              inputmode="decimal"
+              name="ws-input_1996-06-20"
+              spellcheck="true"
+              title="22.00"
+              type="text"
+            >
+              <span
+                class=""
+              >
+                <span
+                  class="controls-fontsize-m controls-text-default controls-fontweight-default"
+                >
+                  22
+                </span>
+                <span
+                  class="controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs"
+                >
+                  .00
+                </span>
+              </span>
+            </span>
+            <div
+              class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+              tabindex="0"
+            >
+              <div
+                class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                tabindex="0"
+              >
+                Введите сумму
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls-Input/InputConnected:Money UseGrouping 1`] = `
+<div>
+  <div
+    class="controlsDemo__wrapper controlsDemo_fixedWidth400 tw-flex tw-flex-col"
+  >
+    <div
+      class="tw-flex controls-max-w-full tw-flex-col undefined controls-Input-connected_filled"
+    >
+      <a
+        class="controls-Label controls-Label_underline_none tw-min-w-0"
+      >
+        <div
+          class="controls-Label__wrapper"
+        >
+          <div
+            class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+          >
+            useGrouping = false
+          </div>
+          
+        </div>
+      </a>
+      <div
+        class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontweight-default controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default  controls-Render_state-valid_caretFilled  controls-inlineheight-default controls-Render-inlineheight-default controls-Money controls_Money_theme-default tw-w-full"
+        tabindex="0"
+      >
+        <div
+          class="controls-Render__wrapper"
+        >
+          <span
+            class="controls-Render__baseline"
+          >
+            ﻿
+          </span>
+          <div
+            class="controls-InputBase__field  controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+            data-qa="controls-Render__field"
+            tabindex="0"
+          >
+            <span
+              autocapitalize="off"
+              autocomplete="off"
+              autocorrect="off"
+              class="controls-Field js-controls-Field controls-Field_money controls-Field_moneyNew controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default controls-DecoratorMoney controls-text-default controls-Field js-controls-Field controls-Field_money controls-Field_moneyNew controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default"
+              contenteditable="true"
+              inputmode="decimal"
+              name="ws-input_1996-06-20"
+              spellcheck="true"
+              title="22.00"
+              type="text"
+            >
+              <span
+                class=""
+              >
+                <span
+                  class="controls-fontsize-m controls-text-default controls-fontweight-default"
+                >
+                  22
+                </span>
+                <span
+                  class="controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs"
+                >
+                  .00
+                </span>
+              </span>
+            </span>
+            <div
+              class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+              tabindex="0"
+            >
+              <div
+                class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                tabindex="0"
+              >
+                Введите сумму
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="tw-flex controls-max-w-full tw-flex-col undefined controls-Input-connected_filled"
+    >
+      <a
+        class="controls-Label controls-Label_underline_none tw-min-w-0"
+      >
+        <div
+          class="controls-Label__wrapper"
+        >
+          <div
+            class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+          >
+            useGrouping = true
+          </div>
+          
+        </div>
+      </a>
+      <div
+        class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontweight-default controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default  controls-Render_state-valid_caretFilled  controls-inlineheight-default controls-Render-inlineheight-default controls-Money controls_Money_theme-default tw-w-full"
+        tabindex="0"
+      >
+        <div
+          class="controls-Render__wrapper"
+        >
+          <span
+            class="controls-Render__baseline"
+          >
+            ﻿
+          </span>
+          <div
+            class="controls-InputBase__field  controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+            data-qa="controls-Render__field"
+            tabindex="0"
+          >
+            <span
+              autocapitalize="off"
+              autocomplete="off"
+              autocorrect="off"
+              class="controls-Field js-controls-Field controls-Field_money controls-Field_moneyNew controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default controls-DecoratorMoney controls-text-default controls-Field js-controls-Field controls-Field_money controls-Field_moneyNew controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default"
+              contenteditable="true"
+              inputmode="decimal"
+              name="ws-input_1996-06-20"
+              spellcheck="true"
+              title="22.00"
+              type="text"
+            >
+              <span
+                class=""
+              >
+                <span
+                  class="controls-fontsize-m controls-text-default controls-fontweight-default"
+                >
+                  22
+                </span>
+                <span
+                  class="controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs"
+                >
+                  .00
+                </span>
+              </span>
+            </span>
+            <div
+              class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+              tabindex="0"
+            >
+              <div
+                class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                tabindex="0"
+              >
+                Введите сумму
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls-Input/InputConnected:Money defaultValue 1`] = `
+<div>
+  <div
+    class="controlsDemo__wrapper controlsDemo_fixedWidth400 tw-flex tw-flex-col"
+  >
+    <div
+      class="tw-flex controls-max-w-full tw-flex-col undefined controls-Input-connected_filled"
+    >
+      <a
+        class="controls-Label controls-Label_underline_none tw-min-w-0"
+      >
+        <div
+          class="controls-Label__wrapper"
+        >
+          <div
+            class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+          >
+            defaultValue = 2
+          </div>
+          
+        </div>
+      </a>
+      <div
+        class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontweight-default controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default  controls-Render_state-valid_caretFilled  controls-inlineheight-default controls-Render-inlineheight-default controls-Money controls_Money_theme-default tw-w-full"
+        tabindex="0"
+      >
+        <div
+          class="controls-Render__wrapper"
+        >
+          <span
+            class="controls-Render__baseline"
+          >
+            ﻿
+          </span>
+          <div
+            class="controls-InputBase__field  controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+            data-qa="controls-Render__field"
+            tabindex="0"
+          >
+            <span
+              autocapitalize="off"
+              autocomplete="off"
+              autocorrect="off"
+              class="controls-Field js-controls-Field controls-Field_money controls-Field_moneyNew controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default controls-DecoratorMoney controls-text-default controls-Field js-controls-Field controls-Field_money controls-Field_moneyNew controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default"
+              contenteditable="true"
+              inputmode="decimal"
+              name="ws-input_1996-06-20"
+              spellcheck="true"
+              title="2.00"
+              type="text"
+            >
+              <span
+                class=""
+              >
+                <span
+                  class="controls-fontsize-m controls-text-default controls-fontweight-default"
+                >
+                  2
+                </span>
+                <span
+                  class="controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs"
+                >
+                  .00
+                </span>
+              </span>
+            </span>
+            <div
+              class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+              tabindex="0"
+            >
+              <div
+                class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                tabindex="0"
+              >
+                Введите сумму
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="tw-flex controls-max-w-full tw-flex-col undefined "
+    >
+      <a
+        class="controls-Label controls-Label_underline_none tw-min-w-0"
+      >
+        <div
+          class="controls-Label__wrapper"
+        >
+          <div
+            class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+          >
+            defaultValue is empty
+          </div>
+          
+        </div>
+      </a>
+      <div
+        class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontweight-default controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default  controls-Render_state-valid_caretFilled  controls-inlineheight-default controls-Render-inlineheight-default controls-Money controls_Money_theme-default tw-w-full"
+        tabindex="0"
+      >
+        <div
+          class="controls-Render__wrapper"
+        >
+          <span
+            class="controls-Render__baseline"
+          >
+            ﻿
+          </span>
+          <div
+            class="controls-InputBase__field  controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+            data-qa="controls-Render__field"
+            tabindex="0"
+          >
+            <span
+              autocapitalize="off"
+              autocomplete="off"
+              autocorrect="off"
+              class="controls-Field js-controls-Field controls-Field_money controls-Field_moneyNew controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default controls-DecoratorMoney controls-text-default controls-Field js-controls-Field controls-Field_money controls-Field_moneyNew controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default"
+              contenteditable="true"
+              inputmode="decimal"
+              name="ws-input_1996-06-20"
+              spellcheck="true"
+              title=""
+              type="text"
+            >
+              <span
+                class=""
+              >
+                <span
+                  class="controls-fontsize-m controls-text-default controls-fontweight-default"
+                />
+                <span
+                  class="controls-DecoratorMoney__fraction__colorStyle-label controls-text-label controls-fontsize-xs"
+                />
+              </span>
+            </span>
+            <div
+              class="controls-InputBase__placeholder  controls-InputBase__placeholder_displayed-under-caret"
+              tabindex="0"
+            >
+              <div
+                class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                tabindex="0"
+              >
+                Введите сумму
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls-Input/InputConnected:Money label 1`] = `
+<div>
+  <div
+    class="controlsDemo__wrapper controlsDemo_fixedWidth300 tw-flex tw-flex-col"
+  >
+    <div
+      class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontweight-default controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default  controls-Render_state-valid_caretFilled  controls-inlineheight-default controls-Render-inlineheight-default controls-Money controls_Money_theme-default tw-w-full controls-margin_top-m controls-Input-connected_filled"
+      tabindex="0"
+    >
+      <div
+        class="controls-Render__wrapper"
+      >
+        <span
+          class="controls-Render__baseline"
+        >
+          ﻿
+        </span>
+        <div
+          class="controls-InputBase__field  controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+          data-qa="controls-Render__field"
+          tabindex="0"
+        >
+          <span
+            autocapitalize="off"
+            autocomplete="off"
+            autocorrect="off"
+            class="controls-Field js-controls-Field controls-Field_money controls-Field_moneyNew controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default controls-DecoratorMoney controls-text-default controls-Field js-controls-Field controls-Field_money controls-Field_moneyNew controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default"
+            contenteditable="true"
+            inputmode="decimal"
+            name="ws-input_1996-06-20"
+            spellcheck="true"
+            title="22.00"
+            type="text"
+          >
+            <span
+              class=""
+            >
+              <span
+                class="controls-fontsize-m controls-text-default controls-fontweight-default"
+              >
+                22
+              </span>
+              <span
+                class="controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs"
+              >
+                .00
+              </span>
+            </span>
+          </span>
+          <div
+            class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+            tabindex="0"
+          >
+            <div
+              class="controls-Render__placeholder controls-Render__placeholder_overflow"
+              tabindex="0"
+            >
+              Введите сумму
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="tw-flex controls-max-w-full tw-flex-col controls-margin_top-m controls-Input-connected_filled"
+    >
+      <a
+        class="controls-Label controls-Label_underline_none tw-min-w-0"
+      >
+        <div
+          class="controls-Label__wrapper"
+        >
+          <div
+            class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+          >
+            label top
+          </div>
+          
+        </div>
+      </a>
+      <div
+        class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontweight-default controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default  controls-Render_state-valid_caretFilled  controls-inlineheight-default controls-Render-inlineheight-default controls-Money controls_Money_theme-default tw-w-full"
+        tabindex="0"
+      >
+        <div
+          class="controls-Render__wrapper"
+        >
+          <span
+            class="controls-Render__baseline"
+          >
+            ﻿
+          </span>
+          <div
+            class="controls-InputBase__field  controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+            data-qa="controls-Render__field"
+            tabindex="0"
+          >
+            <span
+              autocapitalize="off"
+              autocomplete="off"
+              autocorrect="off"
+              class="controls-Field js-controls-Field controls-Field_money controls-Field_moneyNew controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default controls-DecoratorMoney controls-text-default controls-Field js-controls-Field controls-Field_money controls-Field_moneyNew controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default"
+              contenteditable="true"
+              inputmode="decimal"
+              name="ws-input_1996-06-20"
+              spellcheck="true"
+              title="22.00"
+              type="text"
+            >
+              <span
+                class=""
+              >
+                <span
+                  class="controls-fontsize-m controls-text-default controls-fontweight-default"
+                >
+                  22
+                </span>
+                <span
+                  class="controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs"
+                >
+                  .00
+                </span>
+              </span>
+            </span>
+            <div
+              class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+              tabindex="0"
+            >
+              <div
+                class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                tabindex="0"
+              >
+                Введите сумму
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="tw-flex controls-max-w-full tw-flex-row tw-items-baseline controls-margin_top-m controls-Input-connected_filled"
+    >
+      <a
+        class="controls-Label controls-Label_underline_none tw-min-w-0 tw-flex-shrink"
+      >
+        <div
+          class="controls-Label__wrapper"
+        >
+          <div
+            class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+          >
+            label start
+          </div>
+          
+        </div>
+      </a>
+      <div
+        class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontweight-default controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default  controls-Render_state-valid_caretFilled  controls-inlineheight-default controls-Render-inlineheight-default controls-Money controls_Money_theme-default controls-input_label_min-input-content tw-w-full"
+        tabindex="0"
+      >
+        <div
+          class="controls-Render__wrapper"
+        >
+          <span
+            class="controls-Render__baseline"
+          >
+            ﻿
+          </span>
+          <div
+            class="controls-InputBase__field  controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+            data-qa="controls-Render__field"
+            tabindex="0"
+          >
+            <span
+              autocapitalize="off"
+              autocomplete="off"
+              autocorrect="off"
+              class="controls-Field js-controls-Field controls-Field_money controls-Field_moneyNew controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default controls-DecoratorMoney controls-text-default controls-Field js-controls-Field controls-Field_money controls-Field_moneyNew controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default"
+              contenteditable="true"
+              inputmode="decimal"
+              name="ws-input_1996-06-20"
+              spellcheck="true"
+              title="22.00"
+              type="text"
+            >
+              <span
+                class=""
+              >
+                <span
+                  class="controls-fontsize-m controls-text-default controls-fontweight-default"
+                >
+                  22
+                </span>
+                <span
+                  class="controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs"
+                >
+                  .00
+                </span>
+              </span>
+            </span>
+            <div
+              class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+              tabindex="0"
+            >
+              <div
+                class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                tabindex="0"
+              >
+                Введите сумму
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="tw-flex controls-max-w-full tw-flex-row tw-items-baseline controls-margin_top-m controls-Input-connected_filled"
+    >
+      <div
+        class="controls-icon_size-s controls-icon_style-secondary icon-SabyBird controls-icon controls-margin_right-s"
+      />
+      <div
+        class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontweight-default controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default  controls-Render_state-valid_caretFilled  controls-inlineheight-default controls-Render-inlineheight-default controls-Money controls_Money_theme-default tw-w-full"
+        tabindex="0"
+      >
+        <div
+          class="controls-Render__wrapper"
+        >
+          <span
+            class="controls-Render__baseline"
+          >
+            ﻿
+          </span>
+          <div
+            class="controls-InputBase__field  controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+            data-qa="controls-Render__field"
+            tabindex="0"
+          >
+            <span
+              autocapitalize="off"
+              autocomplete="off"
+              autocorrect="off"
+              class="controls-Field js-controls-Field controls-Field_money controls-Field_moneyNew controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default controls-DecoratorMoney controls-text-default controls-Field js-controls-Field controls-Field_money controls-Field_moneyNew controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default"
+              contenteditable="true"
+              inputmode="decimal"
+              name="ws-input_1996-06-20"
+              spellcheck="true"
+              title="22.00"
+              type="text"
+            >
+              <span
+                class=""
+              >
+                <span
+                  class="controls-fontsize-m controls-text-default controls-fontweight-default"
+                >
+                  22
+                </span>
+                <span
+                  class="controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs"
+                >
+                  .00
+                </span>
+              </span>
+            </span>
+            <div
+              class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+              tabindex="0"
+            >
+              <div
+                class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                tabindex="0"
+              >
+                Введите сумму
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

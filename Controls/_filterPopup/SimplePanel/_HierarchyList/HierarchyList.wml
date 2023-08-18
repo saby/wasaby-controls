@@ -1,0 +1,56 @@
+<ws:template name="list">
+   <Controls._filterPopup.SimplePanel._List
+           keyProperty="{{_options.keyProperty}}"
+           opener="{{_options.opener}}"
+           selectorDialogResult="{{_options.selectorDialogResult}}"
+           displayProperty="{{_options.displayProperty}}"
+           nodeProperty="{{nodeProperty}}"
+           parentProperty="{{_options.parentProperty}}"
+           itemTemplate="{{_options.itemTemplate}}"
+           itemTemplateProperty="{{_options.itemTemplateProperty}}"
+           hasMoreButton="{{hasMoreButton}}"
+           selectorTemplate="{{_options.selectorTemplate}}"
+           selectorOpener="{{_options.selectorOpener}}"
+           isCompoundTemplate="{{_options.isCompoundTemplate}}"
+           selectedKeys="{{selectedKeys}}"
+           resetValue="{{_options.resetValue}}"
+           multiSelect="{{_options.multiSelect}}"
+           items="{{items}}"
+           selectorItems="{{_options.selectorItems}}"
+           selectorSelectedKeys="{{_flatSelectedKeys}}"
+           selectionChanged="{{_selectionChanged}}"
+           levelPadding="{{levelPadding}}"
+           on:itemClick="_itemClickHandler(index)"
+           on:checkBoxClick="_checkBoxClickHandler(index)"
+           on:moreButtonClick="_moreButtonClick(item)"
+   />
+</ws:template>
+
+<div>
+   <ws:if data="{{_listModel.getEmptyItem()}}">
+      <ws:partial template="{{_emptyItemTemplate}}"
+                  itemData="{{_listModel.getEmptyItem()}}"
+                  displayProperty="{{_options.displayProperty}}"
+                  hasApplyButton="{{_options.hasApplyButton}}"
+                  attr:class="controls-Menu__defaultItem controls-Menu__row_state_default"
+                  on:click="_emptyItemClickHandler()"/>
+   </ws:if>
+
+   <ws:if data="{{_hasFolders}}">
+      <ws:for data="index, item in _folders">
+         <ws:partial template="list"
+                     nodeProperty="{{_options.nodeProperty}}"
+                     hasMoreButton="{{_hasMoreButton(item)}}"
+                     items="{{_nodeItems[index]}}"
+                     selectedKeys="{{_selectedKeys[index] || []}}"
+                     levelPadding="m"
+         />
+      </ws:for>
+   </ws:if>
+   <ws:else>
+      <ws:partial template="list"
+                  selectedKeys="{{_selectedKeys || []}}"
+                  items="{{_options.items}}"
+      />
+   </ws:else>
+</div>

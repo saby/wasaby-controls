@@ -1,0 +1,22 @@
+<div class="controlsDemo__wrapper">
+    <Controls.browser:Browser
+        source="{{_source}}"
+        keyProperty="id"
+        searchParam="title"
+        navigation="{{_navigation}}"
+        minSearchLength="{{3}}"
+        searchDelay="{{50}}"
+        filterOnSearchCallback="{{_filterOnSearchCallback}}">
+        <div>
+            <Controls.search:InputContainer>
+                <Controls.search:Input attr:class="controlsDemo__searchBase_field"/>
+            </Controls.search:InputContainer>
+
+            <Controls.scroll:Container attr:class="controlsDemo__height500">
+                <Controls.list:Container>
+                    <Controls.list:View emptyTemplate="Не найдено"/>
+                </Controls.list:Container>
+            </Controls.scroll:Container>
+        </div>
+    </Controls.browser:Browser>
+</div>

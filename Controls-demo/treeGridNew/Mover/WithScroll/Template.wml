@@ -1,0 +1,38 @@
+<div class="controlsDemo__wrapper">
+    <Controls.browser:Browser name="dataContainer"
+                              source="{{_viewSource}}"
+                              keyProperty="key"
+                              parentProperty="parent"
+                              bind:selectedKeys="_selectedKeys" bind:excludedKeys="_excludedKeys">
+        <div>
+            <Controls.buttons:Button icon="icon-Move" caption="Переместить" on:click="_moveButtonClick()"
+                                     viewMode="linkButton"/>
+            <Controls.scroll:Container attr:class="controlsDemo__maxWidth500 controlsDemo__height400">
+                <Controls.list:Container>
+                    <Controls.treeGrid:View
+                            name="treeGrid"
+                            multiSelectVisibility="visible"
+                            nodeProperty="type"
+                            navigation="{{_navigation}}"
+                            columns="{{_columns}}">
+                        <ws:moveDialogTemplate templateName="Controls/moverDialog:Template">
+                            <ws:templateOptions
+                                    root="{{null}}"
+                                    rootVisible="{{true}}"
+                                    rootTitle="Каталог"
+                                    keyProperty="key"
+                                    parentProperty="parent"
+                                    displayProperty="title"
+                                    hasChildrenProperty="hasChild"
+                                    searchParam="title"
+                                    nodeProperty="type"
+                                    source="{{_viewSource}}"
+                                    navigation="{{_navigation}}"
+                                    columns="{{_columns}}"/>
+                        </ws:moveDialogTemplate>
+                    </Controls.treeGrid:View>
+                </Controls.list:Container>
+            </Controls.scroll:Container>
+        </div>
+    </Controls.browser:Browser>
+</div>

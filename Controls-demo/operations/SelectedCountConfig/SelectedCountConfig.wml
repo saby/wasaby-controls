@@ -1,0 +1,16 @@
+<Controls.browser:Browser source="{{_viewSource}}" filter="{{_filter}}" bind:selectedKeys="_selectedKeys"
+                                                                                    bind:excludedKeys="_excludedKeys">
+        <div>
+            <Controls.operations:Panel selectedCountConfig="{{_selectedCountConfig}}" source="{{null}}" items="{{null}}"/>
+                <Controls.list:Container>
+                    <Controls.treeGrid:View
+                            keyProperty="key"
+                            columns="{{_gridColumns}}"
+                            parentProperty="parent"
+                            nodeProperty="type"
+                            resultsPosition="top"
+                            multiSelectVisibility="onhover"/>
+                </Controls.list:Container>
+
+        </div>
+</Controls.browser:Browser>

@@ -1,0 +1,16 @@
+<div class="engine-demo__Widgets_filter-container">
+    <Controls.masterDetail:Base newDesign="{{true}}" masterMinWidth="{{200}}">
+        <ws:master>
+            <Controls.scroll:Container attr:style="height: 500px;">
+                <Controls-ListEnv.filterPanelConnected:View storeId="scrollFilters"
+                                                     editorsViewMode="default"
+                                                     filterNames="['department', 'owner', 'city', 'gender']"/>
+            </Controls.scroll:Container>
+        </ws:master>
+        <ws:detail>
+            <div class="engine-demo__Widgets_filterList ws-flexbox ws-flex-column">
+                <Controls.grid:View storeId="scrollFilters" columns="{{_columns}}" header="{{_header}}"/>
+            </div>
+        </ws:detail>
+    </Controls.masterDetail:Base>
+</div>

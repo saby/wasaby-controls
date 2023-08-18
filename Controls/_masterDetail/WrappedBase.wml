@@ -1,0 +1,5 @@
+<Controls.design:DesignOptionsConsumer scope="{{ _options }}">
+    <ws:designOptionsInnerComponent>
+        <Controls._masterDetail.Base scope="{{ designOptionsInnerComponent }}" filter="{{_options.filter}}" designContextValue="{{designOptionsInnerComponent.designContextValue}}" />
+    </ws:designOptionsInnerComponent>
+</Controls.design:DesignOptionsConsumer>

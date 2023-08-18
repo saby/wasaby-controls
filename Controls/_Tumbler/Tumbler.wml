@@ -1,0 +1,42 @@
+<Controls.WorkByKeyboard.Consumer getContextValue="{{_setWorkByKeyboard}}">
+    <div class="controls_toggle_theme-{{_options.theme}} controls-Tumbler controls-Tumbler__wrapper_radius
+            {{_highlightedOnFocus ? 'controls-focused-item_shadow'}}
+            {{_getShadowClass()}}">
+        <div class="controls-Tumbler__wrapper{{ _options.readOnly ? '-readOnly' }} controls-Tumbler__wrapper_radius
+    controls-Tumbler__wrapper_{{_options.contrastBackground ?  'contrast' : ('same' + _getBackgroundStyle())}}{{ _options.readOnly ? '_readOnly' : ''}}
+    controls-Tumbler__wrapper_{{_options.direction}}
+    controls-Tumbler__wrapper_{{_options.direction}}{{ _options.readOnly ? '_readOnly' : '_active'}}
+     {{_options.direction === 'horizontal' ? 'controls-inlineheight-'+_options.inlineHeight}}"
+             on:mouseenter="_mouseEnterHandler()" on:touchstart="_touchStartHandler()"
+             on:keypress="_keyUpHandler()"
+             style="{{_options.workspaceWidth ? ('width:' + _options.workspaceWidth+'px')}}"
+             tabindex="0">
+            <ws:for data="index, itemData in _options.items">
+                <div class="controls-Tumbler__button {{!_options.disableAnimation ? 'controls-Tumbler__button-animation'}} controls-Tumbler__button-{{_options.inlineHeight}}
+                        controls-Tumbler__button-{{_options.readOnly? 'disabled' : 'enabled'}}
+                        {{
+                            itemData[_options.keyProperty] === _selectedKey ?
+                                'controls-Tumbler__button-selected controls-Tumbler__button-selected'
+                                        + (_options.contrastBackground ? '_contrast' : '_same')
+                                        + (_backgroundPosition.isEmpty ? ' controls-Tumbler__button-selected_background' + (_options.contrastBackground ? ('_contrast' + _getBackgroundStyle()) : '_same'))
+                                        + ((_options.backgroundStyle && _options.contrastBackground) ? (' controls-background-contrast-' + _options.backgroundStyle) : ''):
+                                'controls-Tumbler__button-unselected controls-Tumbler__button-unselected'
+                                        + (_options.contrastBackground ? '_contrast' : '_same')
+                                        + ' controls-Tumbler__button-underline' + (_options.contrastBackground ? '_contrast' : '_same') + (_getBackgroundStyle())
+                        }} ws-ellipsis"
+                     data-qa="controls-Tumbler__button"
+                     on:click="_onItemClick(itemData)"
+                     name="TumblerButton{{index}}">
+                    <ws:partial
+                        template="{{_getTemplate(_options.itemTemplate, itemData, _options.itemTemplateProperty)}}"
+                        item="{{itemData}}"
+                        fontSize="{{_options.inlineHeight === 'default' ? 'm' : _options.inlineHeight}}"
+                        displayProperty="{{_options.displayProperty}}"/>
+                </div>
+            </ws:for>
+            <div class="controls-Tumbler__button-background {{!_options.disableAnimation ? 'controls-Tumbler__button-background-animation'}}
+        controls-Tumbler__button-background{{_options.contrastBackground ? ('_contrast' + _getBackgroundStyle() + (_options.backgroundStyle ? (' controls-background-contrast-' + _options.backgroundStyle) : '')) : '_same'}} controls-Tumbler__button-{{_options.inlineHeight}}"
+                 style="{{_getButtonBackgroundStyle()}}"></div>
+        </div>
+    </div>
+</Controls.WorkByKeyboard.Consumer>

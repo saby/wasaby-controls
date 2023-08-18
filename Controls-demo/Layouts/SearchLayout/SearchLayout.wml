@@ -1,0 +1,39 @@
+<Controls.browser:Controller filter="{{_filter}}"
+                             filterButtonItems="{{_filterSource}}"
+                             attr:class="controls-demo__FilterLayout"
+                             source="{{_dataSource}}" navigation="{{_navigation}}" keyProperty="id"
+                             searchParam="firstName">
+   <div class="controls-demo__LayoutInner">
+      <div class="controls-demo__Layouts_filterComponents">
+         <Controls.search:InputContainer>
+            <Controls.search:Input bind:value="_searchValue"/>
+         </Controls.search:InputContainer>
+         <div class="controls-demo__Layouts_filter">
+            <Controls.filter:ViewContainer>
+               <Controls.filter:View detailPanelTemplateName="wml!Controls-demo/Layouts/SearchLayout/FilterButtonTemplate/vdomFilterButtonTemplate"/>
+            </Controls.filter:ViewContainer>
+         </div>
+      </div>
+      <Controls.list:Container>
+         <Controls.list:View emptyTemplate="Не найдено">
+            <ws:itemTemplate>
+               <ws:partial template="Controls/list:ItemTemplate">
+                  <ws:contentTemplate>
+                     <div style="padding: 4px; display: flex; justify-content: space-between">
+                        <div style="width: 200px">
+                           {{itemTemplate.item.contents.get('firstName')}}
+                        </div>
+                        <div style="font-size: 13px; color: darkblue">
+                           {{itemTemplate.item.contents.get('lastName')}}
+                        </div>
+                        <div style="font-size: 13px; color: limegreen">
+                           {{itemTemplate.item.contents.get('id')}}
+                        </div>
+                     </div>
+                  </ws:contentTemplate>
+               </ws:partial>
+            </ws:itemTemplate>
+         </Controls.list:View>
+      </Controls.list:Container>
+   </div>
+</Controls.browser:Controller>

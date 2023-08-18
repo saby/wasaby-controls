@@ -1,0 +1,26 @@
+<div class="controlsDemo__wrapper ws-flexbox">
+    <Controls.browser:Browser
+        keyProperty="id"
+        source="{{_viewSource}}"
+        parentProperty="parent"
+        nodeProperty="parent@"
+        searchParam="title"
+        displayProperty="title"
+        searchNavigationMode="readonly"
+        columns="{{_columns}}"
+        attr:class="controlsDemo__minWidth600"
+        bind:root="_root"
+        bind:expandedItems="_expandedItems"
+    >
+      <div>
+        <Controls.search:InputContainer>
+          <Controls.search:Input/>
+        </Controls.search:InputContainer>
+        <Controls.list:Container>
+          <Controls.explorer:View on:itemClick="_itemClickHandler()">
+          </Controls.explorer:View>
+        </Controls.list:Container>
+      </div>
+    </Controls.browser:Browser>
+    <div class="controls-padding_left-l controlsDemo__maxWidth200" attr:data-qa="click-logger">{{_lastClickedItem ? 'Клик по ' + _lastClickedItem : 'Ещё нигде не кликнули'}}</div>
+</div>
