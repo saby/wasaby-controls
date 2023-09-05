@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlsUnit/columnScrollReact/Navigation/Scrollbar Платформенному скроллбару должны проксироваться опции. case #0. 1`] = `
+<DocumentFragment>
+  <div
+    class="tw-w-full controls-ColumnScrollReact__acceleration "
+    data-qa="ColumnScrollReact__navigation__scrollbar"
+  >
+    <div
+      data-qa="mocked_ScrollbarComponent"
+    >
+      <div
+        data-qa="mocked_ScrollbarComponent_props"
+      >
+        {
+    "style": {
+        "top": 0
+    },
+    "position": 0,
+    "contentSize": 900,
+    "direction": "horizontal",
+    "thumbThickness": "s",
+    "thumbStyle": "unaccented",
+    "trackVisible": true,
+    "paddings": {
+        "start": true,
+        "end": true
+    },
+    "shouldSetMarginTop": true,
+    "shouldNotUpdateBodyClass": false
+}
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/columnScrollReact/Navigation/Scrollbar Платформенному скроллбару должны проксироваться опции. case #1. 1`] = `
+<DocumentFragment>
+  <div
+    class="tw-w-full controls-ColumnScrollReact__acceleration testClassName__1__scrollBar"
+    data-qa="ColumnScrollReact__navigation__scrollbar"
+  >
+    <div
+      data-qa="mocked_ScrollbarComponent"
+    >
+      <div
+        data-qa="mocked_ScrollbarComponent_props"
+      >
+        {
+    "style": {
+        "top": 0
+    },
+    "readOnly": true,
+    "position": 20,
+    "contentSize": 700,
+    "direction": "horizontal",
+    "thumbThickness": "s",
+    "thumbStyle": "unaccented",
+    "trackVisible": true,
+    "paddings": {
+        "start": true,
+        "end": true
+    },
+    "shouldSetMarginTop": false,
+    "shouldNotUpdateBodyClass": true
+}
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

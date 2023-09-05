@@ -1,0 +1,195 @@
+<!-- stan-disable deprecated-anywhere -->
+<!--
+   Внутренний шаблон отображения итема списка в том числе и итема группы
+   @param {CollectionItem} item - модель итема коллекции который нужно отрендерить
+-->
+<ws:template name="localItemTemplate">
+   <ws:partial
+      scope="{{ _options.itemTemplateOptions }}"
+      item="{{ item }}"
+      itemData="{{ item }}"
+      template="{{ item.getTemplate(_options.itemTemplateProperty, _options.itemTemplate, _options.groupTemplate) }}"
+
+      isAdd="{{ _options.isAdd }}"
+      style="{{_options.style}}"
+      searchValue="{{ _options.listModel.getSearchValue() }}"
+      multiSelectVisibility="{{ _options.listModel.getMultiSelectVisibility() }}"
+      multiSelectPosition="{{ _options.listModel.getMultiSelectPosition() }}"
+      itemActionsPosition="{{ _options.itemActionsPosition }}"
+
+      caption="{{item.getDisplayValue()}}"
+      imageSrc="{{item.getImageUrl && item.getImageUrl()}}"
+      roundAngleBL="{{_options.listModel.getRoundAngleBL()}}"
+      roundAngleBR="{{_options.listModel.getRoundAngleBR()}}"
+      roundAngleTL="{{_options.listModel.getRoundAngleTL()}}"
+      roundAngleTR="{{_options.listModel.getRoundAngleTR()}}"
+
+      checkboxVisibility="{{ _options.listModel.getMultiSelectVisibility() }}"
+      checkboxValue="{{ item.isSelected() }}"
+      markerVisible="{{ item.isMarked() }}"
+      actions="{{item.getActions() ? item.getActions().showed : null}}"
+      actionsPosition="{{ _options.itemActionsPosition }}"
+      actionsVisibility="{{ _options.listModel.getActionsVisibility() }}"
+      actionsDisplayDelay="{{ _options.listModel.getActionsDisplayDelay() }}"
+
+      checkboxClassName="{{ item.getMultiSelectClasses ? item.getMultiSelectClasses() : undefined }}"
+
+      attr:item-key="{{ item.key }}"
+      attr:key="{{ _templateKeyPrefix }}-{{ item.getUid() }}"
+      attr:data-qa="{{ item.listElementName }}"
+      attr:class="controls-ColumnsView__itemV {{ item.getItemPaddingClasses && item.getItemPaddingClasses() }} {{ _options.listModel.getViewIterator().isItemAtIndexHidden(index) ? 'ws-hidden' }}"
+
+      on:click="_onItemClick(item)"
+      on:contextmenu="_onItemContextMenu(item)"
+      on:swipe="_onItemSwipe(item)"
+      on:longtap="_onItemLongTap(item)"
+      on:mouseenter="_onItemMouseEnter(item)"
+      on:mousedown="_onItemMouseDown(item)"
+      on:mouseup="_onItemMouseUp(item)"
+      on:mousemove="_onItemMouseMove(item)"
+      on:mouseleave="_onItemMouseLeave(item)"
+      on:touchMove="_onTouchMove()"
+      on:wheel="_onItemWheel(item)"
+      onMouseEnterCallback="{{_onItemMouseEnter}}"
+      onMouseLeaveCallback="{{_onItemMouseLeave}}"
+      onMouseMoveCallback="{{_onItemMouseMove}}"
+      onMouseDownCallback="{{_onItemMouseDown}}"
+      onMouseUpCallback="{{_onItemMouseUp}}"
+      onClickCallback="{{_onItemClick}}"
+      onContextMenuCallback="{{_onItemContextMenu}}"
+      onSwipeCallback="{{_onItemSwipe}}"
+      onLongTapCallback="{{_onItemLongTap}}"
+      onTouchMoveCallback="{{_onItemTouchMove}}"
+      onWheelCallback="{{_onItemWheel}}"
+      onActionsMouseEnter="{{_options.onActionsMouseEnter}}"
+      onActionMouseDown="{{_options.onActionMouseDown}}"
+      onActionMouseUp="{{_options.onActionMouseUp}}"
+      onActionMouseEnter="{{_options.onActionMouseEnter}}"
+      onActionMouseLeave="{{_options.onActionMouseLeave}}"
+      onActionClick="{{_options.onActionClick}}"
+   >
+      <ws:tagTemplate>
+         <Controls.Application.TagTemplate.TagTemplateReact tagStyle="{{ item.getTagStyle(tagTemplate.tagStyle) }}"
+                                                            on:click="_onTagClick(item, item.getColumn())"
+                                                            on:mouseEnter="_onTagHover(item, item.getColumn())"/>
+      </ws:tagTemplate>
+      <ws:itemActionsTemplate>
+         <!-- We have to support setting of "itemActionsClass" option in BaseControl and while using Controls/list:ItemTemplate -->
+         <ws:partial
+            itemData="{{ item }}"
+            scope="{{ _options.listModel.getActionsTemplateConfig() }}"
+            template="{{ _options.itemActionsTemplate || 'Controls/deprecatedItemActions:ItemActionsTemplateWasaby' }}"
+            itemActionsClass="{{ itemActionsClass }}"
+         />
+      </ws:itemActionsTemplate>
+      <ws:swipeTemplate>
+         <ws:partial
+            itemData="{{ item }}"
+            swipeConfig="{{ _options.listModel.getSwipeConfig() }}"
+            scope="{{ _options.listModel.getActionsTemplateConfig() }}"
+            template="{{ _options.swipeTemplate || 'Controls/deprecatedItemActions:SwipeActionsTemplateWasaby' }}"
+         />
+      </ws:swipeTemplate>
+   </ws:partial>
+</ws:template>
+
+<!--
+   Внутренний шаблон, отвечающий за вывод колонок с итемами
+   @param {GroupItem} [groupItem] - данные группы для которой идет рендер содержимого
+-->
+<ws:template name="localColumnsTemplate">
+   <ws:for data="columnIndex in _options.listModel.getColumnsCount()">
+      <div
+         style="{{_getColumnStyle(columnIndex, groupIndex)}}"
+         class="controls-ColumnsView_column controls-ColumnsView_column_{{columnIndex}} {{_getColumnPaddingClasses()}}"
+         item-key="{{columnIndex}}"
+      >
+         <ws:if data="{{!_options.disableVirtualScroll && _listModel.isFirstGroup(groupItem)}}">
+            <div class="controls-ColumnsView_column-placeholder js-controls-ListView__beforeItemsPlaceholder" style="{{_getPlaceholderStyle(columnIndex)}}"></div>
+            <!--Top loading trigger-->
+            <ws:partial template="{{ _listModel.getTopTrigger().getTemplate() }}" trigger="{{ _listModel.getTopTrigger() }}"/>
+         </ws:if>
+
+         <ws:for data="index, item in _options.listModel.getViewIterator(columnIndex, groupItem)">
+            <ws:partial template="localItemTemplate"/>
+         </ws:for>
+
+         <!--Bottom loading trigger-->
+         <ws:if data="{{!_options.disableVirtualScroll && _listModel.isLastGroup(groupItem)}}">
+            <ws:partial template="{{ _listModel.getBottomTrigger().getTemplate() }}" trigger="{{ _listModel.getBottomTrigger() }}"/>
+         </ws:if>
+      </div>
+   </ws:for>
+</ws:template>
+
+
+<div class="
+   controls-ListViewV
+   controls-ColumnsView
+   controls_columns_theme-{{_options.theme}}
+   {{_getItemsPaddingContainerClasses()}}
+">
+   <ws:if data="{{ _options.listModel }}">
+      <!--Top loading indicator-->
+      <ws:partial if="{{ _listModel.getTopIndicator() }}"
+                  template="{{_listModel.getTopIndicator().getTemplate()}}"
+                  item="{{_listModel.getTopIndicator()}}"/>
+      <ws:if data="{{_options.disableVirtualScroll}}">
+         <ws:partial template="{{ _listModel.getTopTrigger().getTemplate() }}" trigger="{{ _listModel.getTopTrigger() }}"/>
+      </ws:if>
+
+      <!-- Items (CSS Grid) -->
+      <div
+         name="itemsContainer"
+         data-qa="items-container"
+         style="{{_getItemsContainerStyle()}}"
+         class="{{_getItemsContainerClasses()}} {{_options.itemsContainerClass}}"
+      >
+         <!-- Если задана группировка, то начинаем с рендера групп внутри которого рендерим колонки -->
+         <ws:if data="{{_listModel.getGroup()}}">
+            <ws:for data="groupIndex, groupItem in _options.listModel.getGroupsIterator()">
+               <!-- Заголовок группы -->
+               <div class="controls-ColumnsView_column controls-ColumnsView_column-group {{ !_listModel.shouldRenderGroup(groupItem) ? 'ws-hidden' }}"
+                    style="-ms-grid-row: {{groupIndex * 2 + 1 }}; -ms-grid-column-span: {{_options.listModel.getColumnsCount()}};">
+                  <ws:partial template="localItemTemplate" item="{{groupItem}}"/>
+               </div>
+
+               <!-- Рендер колонок группы -->
+               <ws:partial template="localColumnsTemplate" groupItem="{{groupItem}}" groupIndex="{{groupIndex}}"/>
+            </ws:for>
+         </ws:if>
+         <!-- Без группировки просто рендерим колонки -->
+         <ws:else>
+            <ws:partial template="localColumnsTemplate"/>
+         </ws:else>
+      </div>
+
+      <ws:if data="{{_options.disableVirtualScroll}}">
+         <ws:partial template="{{ _listModel.getBottomTrigger().getTemplate() }}" trigger="{{ _listModel.getBottomTrigger() }}"/>
+      </ws:if>
+      <!--Bottom loading indicator-->
+      <ws:partial if="{{ _listModel.getBottomIndicator() }}"
+                  template="{{_listModel.getBottomIndicator().getTemplate()}}"
+                  item="{{_listModel.getBottomIndicator()}}"/>
+   </ws:if>
+
+   <ws:if data="{{ _isEmpty() && _listModel.getEmptyTemplateItem() }}">
+      <Controls.baseList:EmptyWrapper template="{{ _listModel.getEmptyTemplateItem().getTemplate(_options.emptyTemplate) }}"
+                                      item="{{ _listModel.getEmptyTemplateItem() }}"
+                                      items="{{ _listModel.getSourceCollection() }}"
+                                      filter="{{ _options.filter }}"/>
+   </ws:if>
+
+   <ws:if data="{{ _options.footerTemplate }}">
+      <div attr:class="{{_getFooterClasses()}}">
+         <ws:partial template="{{ _options.footerTemplate }}" />
+      </div>
+   </ws:if>
+
+   <!--Global loading indicator-->
+   <ws:partial if="{{ _listModel.getGlobalIndicator() }}"
+               template="{{_listModel.getGlobalIndicator().getTemplate()}}"
+               item="{{_listModel.getGlobalIndicator()}}"/>
+
+   <Controls.event:Listener event="controlResize" on:controlResize="_resizeHandler()"/>
+</div>

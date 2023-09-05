@@ -1,0 +1,22 @@
+<ws:if data="{{_isNewEnvironment()}}">
+    <ws:partial template="{{_options.content}}"
+                on:mousedown="_contentMousedownHandler()"
+                on:mousemove="_contentMousemoveHandler()"
+                on:mouseleave="_contentMouseleaveHandler()"
+                on:touchstart="_contentTouchStartHandler()"
+                on:click="_contentClickHandler()"
+    />
+</ws:if>
+<ws:else>
+   <div>
+      <ws:partial template="{{_options.content}}"
+                on:mousedown="_contentMousedownHandler()"
+                on:mousemove="_contentMousemoveHandler()"
+                on:mouseleave="_contentMouseleaveHandler()"
+                on:touchstart="_contentTouchStartHandler()"
+                on:click="_contentClickHandler()"
+      />
+
+      <Controls._popup.Opener.InfoBox name="infoBoxOpener"/>
+   </div>
+</ws:else>

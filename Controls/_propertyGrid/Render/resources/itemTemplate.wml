@@ -1,0 +1,75 @@
+<ws:template name="checkbox">
+    <ws:if data="{{collectionItem.getMultiSelectTemplate().charAt}}">
+        <Controls.Container.Async templateName="{{collectionItem.getMultiSelectTemplate()}}">
+            <ws:partial template="{{content.resolvedTemplate}}" item="{{collectionItem}}"/>
+        </Controls.Container.Async>
+    </ws:if>
+    <ws:else>
+        <ws:partial template="{{collectionItem.getMultiSelectTemplate()}}" item="{{collectionItem}}"/>
+    </ws:else>
+</ws:template>
+
+<ws:template name="itemTemplate">
+    <ws:if data="{{ multiSelectVisibility && multiSelectVisibility !== 'hidden' && multiSelectPosition !== 'custom' && captionPosition !== 'top'}}">
+        <ws:partial template="checkbox" collectionItem="{{collectionItem}}"/>
+    </ws:if>
+    <ws:if data="{{item.captionTemplate && captionPosition !== 'none'}}">
+        <ws:partial template="{{item.captionTemplate}}" item="{{item}}">
+            <ws:multiSelectTemplate>
+                    <ws:partial template="checkbox" collectionItem="{{collectionItem}}"/>
+            </ws:multiSelectTemplate>
+        </ws:partial>
+    </ws:if>
+    <ws:else data="{{item.caption !== '' && captionPosition !== 'none' && !jumpingLabel && !item.editorOptions.jumpingLabel}}">
+        <ws:partial template="wml!Controls/_propertyGrid/Render/resources/captionTemplate"
+                    item="{{collectionItem}}"
+                    attr:data-qa="controls-PropertyGrid__editor-caption"
+                    attr:class="controls-PropertyGrid__editor-caption
+                             {{'controls-PropertyGrid__editor-caption_' + (collectionItem.getEditorTemplateName() ? 'withEditor' : 'withoutEditor')}}
+                             {{captionPosition === 'top' ? 'controls-PropertyGrid__editor-caption_position-top'}}"
+                    attr:tabindex="-1"
+                    caption="{{item.caption || item.name}}"
+                    collectionItem="{{collectionItem}}"
+                    fontColorStyle="{{item.captionOptions && item.captionOptions.fontColorStyle || captionFontColorStyle}}"
+                    fontSize="{{item.captionOptions && item.captionOptions.fontSize || captionFontSize}}"
+                    fontWeight="{{item.captionOptions && item.captionOptions.fontWeight || captionFontWeight}}"
+                    scope="{{item.captionOptions}}"/>
+    </ws:else>
+    <ws:if data="{{ multiSelectVisibility && multiSelectVisibility !== 'hidden' && multiSelectPosition !== 'custom' && captionPosition === 'top'}}">
+        <ws:partial template="checkbox" collectionItem="{{collectionItem}}"/>
+    </ws:if>
+    <!-- Прикладники передают caption в editorOptions, чтобы нарисовать lookup с меткой, которая откроет окно, костыль, иначе перебиваем scope
+         TODO: https://online.sbis.ru/opendoc.html?guid=89e73e15-8f85-427e-b49c-16c6f8df5c34-->
+    <ws:partial template="{{editorTemplate}}"
+                caption="{{item.editorOptions.caption || item.caption || item.name}}"
+                jumpingLabel="{{jumpingLabel || item.editorOptions.jumpingLabel}}"
+                scope="{{_options}}"
+                attr:class="{{captionPosition === 'left' ? 'controls-PropertyGrid__editor_captionPosition-left'}}"/>
+</ws:template>
+
+
+<ws:if data="{{isGridLayout}}">
+    <ws:partial scope="{{_options}}" template="wml!Controls/_propertyGrid/GridRender/resources/itemTemplate"/>
+</ws:if>
+<ws:else>
+    <div class="controls-PropertyGrid__editor
+                {{collectionItem.isDragged() ? 'controls-PropertyGrid__item_dragging'}}
+                {{highlightOnHover ? 'controls-PropertyGrid__row_highlightOnHover'}}
+                {{!!captionPosition  ? ('controls-PropertyGrid__flex-row controls-PropertyGrid__row_captionPosition-' + captionPosition)}}
+                {{collectionItem.getItemPaddingClasses()}}"
+         attr:data-qa="controls-PropertyGrid__editor">
+        <ws:partial template="itemTemplate"/>
+        <ws:if data="{{ collectionItem.shouldDisplayItemActions() }}">
+            <ws:if data="{{ !collectionItem.isSwiped() }}">
+                <ws:partial template="{{ itemActionsTemplate }}" />
+            </ws:if>
+        </ws:if>
+        <ws:if data="{{ afterEditorTemplate }}">
+            <ws:partial template="{{ afterEditorTemplate }}">
+                <ws:multiSelectTemplate>
+                    <ws:partial template="checkbox" collectionItem="{{collectionItem}}"/>
+                </ws:multiSelectTemplate>
+            </ws:partial>
+        </ws:if>
+    </div>
+</ws:else>

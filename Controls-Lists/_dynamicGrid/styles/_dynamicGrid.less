@@ -1,0 +1,58 @@
+.ControlsLists-dynamicGrid__dynamicCellsWrapper {
+   display: grid;
+   height: 100%;
+}
+
+.ControlsLists-dynamicGrid__dynamicCellsWrapper_columns-spacing {
+   .for(@TOffsetSizeVariants, {
+      &_@{_item} {
+         column-gap: ~'calc(var(--offset_@{_item}) - var(--border-thickness))';
+         margin-left: ~'calc(var(--offset_@{_item}) - var(--border-thickness))';
+      }
+   });
+}
+
+.ControlsLists-dynamicGrid__dynamicHeaderCell {
+   height: 40px;
+   align-items: center;
+   justify-content: center;
+   display: flex;
+}
+
+.ControlsLists-dynamicGrid__dynamicDataCell {
+   height: 100%;
+   position: relative;
+}
+
+.ControlsLists-dynamicGrid__selectionCheckbox.controls-CheckboxMarker {
+   position: absolute;
+   bottom: 0;
+   justify-content: center;
+   width: 100%;
+   display: none;
+   min-height: var(--icon-size_s);
+   z-index: 1;
+}
+
+.ws-is-hover{
+   .ControlsLists-dynamicGrid__dynamicDataCell:hover .ControlsLists-dynamicGrid__selectionCheckbox {
+      display: flex;
+   }
+
+   .ControlsLists-dynamicGrid__dynamicHeaderCell:hover::after,
+   .ControlsLists-dynamicGrid__dynamicDataCell:hover::after {
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      z-index: 5;
+      top: -4000px;
+      bottom: 0;
+      box-sizing: border-box;
+      border-left: var(--border-thickness) solid var(--unaccented_border-color);
+      border-right: var(--border-thickness) solid var(--unaccented_border-color);
+      left: calc((-1) * var(--offset_2xs) / 2);
+      right: calc((-1) * var(--offset_2xs) / 2);
+      filter: drop-shadow(0 4000px 0 var(--unaccented_border-color));
+   }
+}
+

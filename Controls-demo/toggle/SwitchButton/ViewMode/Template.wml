@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell controls-margin_right-l">
+            <Controls.toggle:SwitchButton value="{{true}}"
+                                          viewMode="filled"/>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.toggle:SwitchButton value="{{true}}"
+                                          viewMode="outlined"/>
+        </div>
+    </div>
+</div>

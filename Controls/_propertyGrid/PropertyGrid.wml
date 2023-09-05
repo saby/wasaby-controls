@@ -1,0 +1,78 @@
+<ws:template name="propertyGridTemplate">
+    <ws:partial
+        attr:class="controls-PropertyGrid
+                    controls_propertyGrid_theme-{{_options.theme}}
+                    controls_list_theme-{{_options.theme}}
+                    controls_toggle_theme-{{_options.theme}}
+                    controls-PropertyGrid__itemsContainer_paddingTop-{{_options.itemsContainerPadding.top || 'm'}}
+                    controls-PropertyGrid__itemsContainer_paddingBottom-{{_options.itemsContainerPadding.bottom || 'm'}}
+                    controls-PropertyGrid__itemsContainer_paddingLeft-{{_options.itemsContainerPadding.left || 'm'}}
+                    controls-PropertyGrid__itemsContainer_paddingRight-{{_options.itemsContainerPadding.right || 'm'}}"
+        name="propertyGrid"
+        template="{{_options.render || _render}}"
+        groupTemplate="{{_options.groupTemplate}}"
+        captionColumnOptions="{{_options.captionColumnOptions}}"
+        editorColumnOptions="{{_options.editorColumnOptions}}"
+        itemTemplate="{{_options.itemTemplate}}"
+        levelPadding="{{_options.levelPadding}}"
+        listModel="{{_listModel}}"
+        collapsedGroups="{{_collapsedGroups}}"
+        editingObject="{{_options.editingObject}}"
+        captionPosition="{{_options.captionPosition}}"
+        captionFontColorStyle="{{_options.captionFontColorStyle}}"
+        captionFontSize="{{_options.captionFontSize}}"
+        captionFontWeight="{{_options.captionFontWeight}}"
+        multiSelectVisibility="{{_options.multiSelectVisibility}}"
+        multiSelectPosition="{{_options.multiSelectPosition}}"
+        jumpingLabel="{{_options.jumpingLabel}}"
+        on:itemMouseDown="_itemMouseDown()"
+        on:itemContextMenu="_itemContextMenu()"
+        on:itemMouseUp="_itemMouseUp()"
+        on:groupClick="_groupClick()"
+        on:propertyValueChanged="_propertyValueChanged()"
+        on:toggleEditor="_toggleEditor()"
+        on:itemMouseEnter="_itemMouseEnter()"
+        on:itemMouseMove="_itemMouseMove()"
+        on:itemMouseLeave="_itemMouseLeave()"
+        on:propertyItemClick="_itemClick()"
+        on:mouseenter="_mouseEnterHandler()"
+        on:itemActionMouseDown="_itemActionMouseDown()"
+        on:commitEdit="_commitEditActionHandler()"
+        on:cancelEdit="_cancelEditActionHandler()"
+        on:checkBoxClick="_checkboxClick()"
+
+        on:keyDown="_onKeyDown()"
+    />
+</ws:template>
+
+<ws:template name="expanderTemplate">
+    <div class="controls-PropertyGrid__expanderButton controls-PropertyGrid__expanderButton-center">
+        <Controls.Container.Async templateName="Controls/ShowMoreButton">
+            <ws:partial template="{{content.resolvedTemplate}}"
+                        iconSize="l"
+                        iconMode="arrow"
+                        readOnly="{{false}}"
+                        value="{{_editorsExpanded}}"
+                        on:click="_handleExpanderClick()"/>
+        </Controls.Container.Async>
+    </div>
+</ws:template>
+
+<ws:if data="{{_limitMode}}">
+    <Controls.validate:Controller name="validateController"
+                                  on:validateCreated="_onValidateCreated()"
+                                  on:validateDestroyed="_onValidateDestroyed()"
+    >
+        <div>
+            <ws:partial template="propertyGridTemplate" />
+            <ws:partial template="expanderTemplate"/>
+        </div>
+   </Controls.validate:Controller>
+</ws:if>
+<ws:else>
+    <ws:partial template="propertyGridTemplate"
+                on:validateCreated="_onValidateCreated()"
+                on:validateDestroyed="_onValidateDestroyed()"
+    />
+</ws:else>
+

@@ -1,0 +1,23 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center ws-align-items-center">
+            <div class="controls-margin_right-m">
+                <Controls.buttons:MoreButton count="17" fontSize="s"/>
+            </div>
+            <div class="controls-margin_right-m">
+                <Controls.buttons:MoreButton count="17" fontSize="m"/>
+            </div>
+            <div>
+                <Controls.buttons:MoreButton count="17" fontSize="l"/>
+            </div>
+        </div>
+        <div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center ws-align-items-center">
+            <div class="demo-BigSeparator__contrastBackgroundTrue controls-margin_right-m">
+                <Controls.buttons:MoreButton count="17" contrastBackground="{{true}}"/>
+            </div>
+            <div class="controlsDemo__background demo-BigSeparator__contrastBackgroundFalse">
+                <Controls.buttons:MoreButton count="17" contrastBackground="{{false}}"/>
+            </div>
+        </div>
+    </div>
+</div>

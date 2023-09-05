@@ -1,0 +1,78 @@
+/* stylelint-disable no-descending-specificity */
+.baseAfterWithoutBorder() {
+   content: '\200b';
+   position: absolute;
+   box-sizing: border-box;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   pointer-events: none;
+   z-index: 1;
+   border-radius: inherit;
+}
+
+// Строка
+.controls-GridReact__row-border_visible > .controls-GridReact__cell,
+.ws-is-hover
+   .controls-BaseControl_hover_enabled
+   .controls-GridReact__row-border_onhover:hover
+   > .controls-GridReact__cell {
+   &::after {
+      .baseAfterWithoutBorder();
+
+      // Стили пишутся раздельно, т.к. "border:" перебьет правила для цвета.
+      // Для цвета селектор в разы проще.
+      border-top-width: var(--border-thickness);
+      border-top-style: solid;
+      border-bottom-width: var(--border-thickness);
+      border-bottom-style: solid;
+   }
+
+   &.controls-GridReact__cell_first::after {
+      border-left-width: var(--border-thickness);
+      border-left-style: solid;
+      left: 0;
+   }
+
+   &.controls-GridReact__cell_last::after {
+      border-right-width: var(--border-thickness);
+      border-right-style: solid;
+      right: 0;
+   }
+}
+
+// Выделение отдельных ячеек
+.controls-GridReact__cell-border_visible,
+.ws-is-hover .controls-GridReact__cell-border_onhover:hover {
+   &::after {
+      .baseAfterWithoutBorder();
+      border-width: var(--border-thickness);
+      border-style: solid;
+   }
+}
+
+// Стили
+.controls-GridReact__row-borderStyle_default > .controls-GridReact__cell::after,
+.controls-GridReact__cell-borderStyle_default::after {
+   border-color: var(--border-color);
+}
+
+.controls-GridReact__row-borderStyle_danger > .controls-GridReact__cell::after,
+.controls-GridReact__cell-borderStyle_danger::after {
+   border-color: var(--danger_border-color);
+}
+
+// hover
+.controls-GridReact__row-borderStyle_singleCellEditable > .controls-GridReact__cell::after,
+.controls-GridReact__cell-borderStyle_singleCellEditable::after {
+   border-color: var(--single-editable-cell_hover_border-color_grid);
+}
+
+// редактирование
+.controls-GridReact__row-borderStyle_singleCellEditing > .controls-GridReact__cell::after,
+.controls-GridReact__cell-borderStyle_singleCellEditing::after {
+   border-color: var(--single-editable-cell_editing_border-color_grid);
+   // Толстой границы в переменных тем оформления больше нет
+   border-width: var(--single-editable-cell_editing_border-width_grid);
+}

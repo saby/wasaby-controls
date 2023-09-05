@@ -1,0 +1,38 @@
+.controls-DecoratorMoney {
+   white-space: nowrap;
+   align-items: baseline;
+}
+
+.controls-DecoratorMoney__fraction__colorStyle-readonly {
+   color: var(--readOnly_text-color_decorator_fraction);
+}
+
+.controls-DecoratorMoney__fraction__colorStyle-contrast {
+   color: var(--contrast_text-color);
+}
+
+.controls-DecoratorMoney__fraction__colorStyle-semi_contrast {
+   color: var(--contrast_text-color);
+   opacity: 0.6;
+}
+
+.controls-DecoratorMoney__stroked {
+   position: relative;
+   display: inline-flex;
+   align-items: baseline;
+}
+
+.controls-DecoratorMoney__stroked::before {
+   content: '';
+   height: 1px;
+   background-color: var(--stroked_line-color_decorator);
+   left: 0;
+   top: 50%;
+   width: 100%;
+   position: absolute;
+}
+
+.ws-is-hover .controls-DecoratorMoney__underline:hover {
+   text-decoration: underline;
+   text-decoration-thickness: from-font;
+}

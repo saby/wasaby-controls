@@ -1,0 +1,13 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper controlsDemo__flexColumn">
+      <div class="controls-text-label">С closeButtonVisibility = true</div>
+      <Controls.menu:Popup
+              emptyText="Все регионы"
+              source="{{_source}}"
+              keyProperty="key"
+              displayProperty="title"
+              closeButtonVisibility="{{true}}"
+              multiSelect="{{true}}"
+              attr:data-qa="controls-Menu__popup-MultiSelect" />
+   </div>
+</div>

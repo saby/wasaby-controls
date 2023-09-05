@@ -1,0 +1,24 @@
+<div class="controlsDemo__wrapper">
+    <Controls.browser:Browser
+            source="{{_viewSource}}"
+            keyProperty="key"
+            parentProperty="parent"
+            nodeProperty="type"
+            multiSelectVisibility="visible"
+            selectionCountMode="leaf"
+            bind:selectedKeys="_selectedKeys"
+            bind:excludedKeys="_excludedKeys">
+        <ws:content>
+            <div>
+                <Controls.operations:PanelContainer selectedKeys="{{ content._selectedKeys }}">
+                    <Controls.operations:Panel/>
+                </Controls.operations:PanelContainer>
+                <Controls.list:Container>
+                    <Controls.treeGrid:View columns="{{_columns}}"/>
+                </Controls.list:Container>
+            </div>
+        </ws:content>
+    </Controls.browser:Browser>
+</div>
+
+

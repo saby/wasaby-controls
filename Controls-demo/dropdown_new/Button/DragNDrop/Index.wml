@@ -1,0 +1,15 @@
+<div class="controlsDemo__flexRow {{_options.theme.indexOf('default')<0 ? 'controlsDemo_fixedWidth500' : 'controlsDemo_fixedWidth300'}}">
+   <div class="controlsDemo__wrapper">
+      <div class="demo-ButtonMenu__label controls-text-label">Меню с возможностью drag-n-drop'a</div>
+      <Controls.dropdown:Button
+              keyProperty="id"
+              caption="Create"
+              source="{{_source}}"
+              nodeProperty="@parent"
+              parentProperty="parent"
+              menuDraggable="{{true}}"
+              closeMenuOnOutsideClick="{{false}}"
+              attr:class="controlsDemo-menuButton">
+      </Controls.dropdown:Button>
+   </div>
+</div>

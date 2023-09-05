@@ -1,0 +1,85 @@
+@import "Controls/_gridColumnScroll/zIndexEnv/_cellZIndexSetters";
+
+// region Верхние строки грида, до записей данных.
+
+// region Строки данных грида.
+
+// Чтобы  item actions в позиции outside были выше следующей записи.
+// Любой другой zIndex будет рождать свой контекст, внутри которого экшены будут позиционироваться относительно него.
+// Тогда ячейки следующей строки будут перекрывать экшены предыдущей записи, т.к. у ячеек обеих записей хоть и один zIndex,
+// но следующая запись идет после в DOM, а значит и выше по порядку.
+// Иначе, zIndex нужно будет повышать на hover записи.
+//  https://online.sbis.ru/opendoc.html?guid=cb33f39c-807a-4dee-934f-c384c750cf00&client=3
+@scrollableDataCell: auto;
+// Ячейки скроллируемой части Sticky записи должны быть выше, чем фиксированная часть не Sticky записи (auto + 1 = 1).
+@scrollableStickiedDataCell: 1;
+// Должна перекрыть тень скроллируемой части Sticky заголовка/результата/подвала/навигации.
+// Поэтому ее индекс ДОЛЖЕН БЫТЬ РАВЕН индексу скроллируемой части Sticky заголовка/результата/подвала/навигации
+// Перекрытие будет обеспечено за счет порядки в DOM ячеек с одинаковым индексом.
+@fixedDataCell: @scrollableStickiedDataCell + 1;
+// Ячейки фиксированной части Sticky записи должны быть выше, чем фиксированная часть Sticky записи (1 + 1 = 2).
+@fixedStickiedDataCell: @fixedDataCell + 1;
+
+// endregion Строки данных грида.
+
+@scrollableHeaderCell: 1;
+@fixedHeaderCell: @fixedDataCell + 1;
+@scrollableResultCell: @scrollableHeaderCell;
+@fixedResultCell: @fixedHeaderCell;
+
+// Должен быть выше ячейки данных.
+@scrollableStickiedHeaderCell: @fixedDataCell;
+// Должен быть выше скроллируемой части шапки.
+@fixedStickiedHeaderCell: @fixedStickiedDataCell + 1;
+
+// Аналогичная логика у всех строк до данных.
+@scrollableStickiedResultCell: @scrollableStickiedHeaderCell;
+@fixedStickiedResultCell: @fixedStickiedHeaderCell;
+
+@scrollableNavigationCell: @scrollableStickiedHeaderCell;
+@fixedNavigationCell: @fixedStickiedHeaderCell;
+
+// Должен быть выше И скроллируемой И фиксированной части шапки, т.к. ресайзер рисуется в обе
+// стороны (на скроллируемую наезжает при увеличении ширины, на фиксированную - при уменьшении)
+@resizerCell: max(@scrollableStickiedHeaderCell, @fixedStickiedHeaderCell) + 1;
+
+// endregion Верхние строки грида, до записей данных.
+
+// region Нижние строки грида, после записей с данными.
+
+@scrollableStickiedFooterCellIndex: @scrollableDataCell;
+@fixedStickiedFooterCellIndex: @fixedDataCell;
+
+// endregion Нижние строки грида, после записей с данными.
+
+.setScrollableDataCellIndex(@scrollableDataCell);
+.setFixedDataCellIndex(@fixedDataCell);
+
+.setFixedDataCellIndex(auto, ~'.controls-GridReact__cell_fullColspan_columnScroll');
+
+.setScrollableStickiedDataCellIndex(@scrollableStickiedDataCell);
+.setFixedStickiedDataCellIndex(@fixedStickiedDataCell);
+
+.setScrollableHeaderCellIndex(@scrollableHeaderCell);
+.setFixedHeaderCellIndex(@fixedHeaderCell);
+
+.setScrollableStickiedHeaderCellIndex(@scrollableStickiedHeaderCell);
+.setFixedStickiedHeaderCellIndex(@fixedStickiedHeaderCell);
+
+.setScrollableResultCellIndex(@scrollableResultCell);
+.setFixedResultCellIndex(@fixedResultCell);
+
+.setScrollableStickiedResultCellIndex(@scrollableStickiedResultCell);
+.setFixedStickiedResultCellIndex(@fixedStickiedResultCell);
+
+.setScrollableNavigationCellIndex(@scrollableNavigationCell);
+.setFixedNavigationCellIndex(@fixedNavigationCell);
+
+.controls-GridReact__view_columnScroll_fixed {
+   .setScrollableNavigationCellIndex(@fixedNavigationCell);
+}
+
+.setScrollableStickiedFooterCellIndex(@scrollableStickiedFooterCellIndex);
+.setFixedStickiedFooterCellIndex(@fixedStickiedFooterCellIndex);
+
+.setResizerCellIndex(@resizerCell);

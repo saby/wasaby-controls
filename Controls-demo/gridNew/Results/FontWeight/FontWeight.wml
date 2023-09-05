@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper">
+    <Controls.grid:View
+            storeId="ResultsFontWeight"
+            columns="{{_columns}}"
+            dataLoadCallback="{{ _dataLoadCallback }}"
+            resultsPosition="top">
+    </Controls.grid:View>
+</div>

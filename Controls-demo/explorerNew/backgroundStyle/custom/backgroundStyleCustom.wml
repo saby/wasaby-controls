@@ -1,0 +1,38 @@
+<div class="controlsDemo__wrapper__padding-left controls-background-custom">
+    <div class="controlsDemo__cell controlsDemo__inline-block demo-ItemPaddingAll__vertical">
+        <div class="ws-flexbox ws-flex-wrap">
+            <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo_treeGrid-iP-all-vertical-m controlsDemo_backgroundStyle-first" style="width: 485px">
+                <Controls.explorer:View
+                        storeId="headerListData"
+                        attr:class="demo-Explorer ControlsDemo-Explorer"
+                        backgroundStyle="custom"
+                        header="{{_header}}"
+                        showEditArrow="{{true}}"
+                        showActionButton="{{true}}"
+                        markedKey="1"
+                        columns="{{_columns}}">
+                </Controls.explorer:View>
+            </div>
+            <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo_treeGrid-iP-all-vertical-m controlsDemo_backgroundStyle-second" style="width: 475px">
+                <Controls.explorer:View
+                        storeId="backgroundStylecustom"
+                        attr:class="demo-Explorer ControlsDemo-Explorer"
+                        backgroundStyle="custom"
+                        showEditArrow="{{true}}"
+                        showActionButton="{{true}}"
+                        columns="{{_columns}}">
+                </Controls.explorer:View>
+            </div>
+            <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo_treeGrid-iP-all-vertical-m controlsDemo_fixedWidth800">
+              <Controls.explorer:View
+                  storeId="viewSearchListData"
+                  attr:class="demo-Explorer ControlsDemo-Explorer"
+                  backgroundStyle="custom"
+                  showEditArrow="{{true}}"
+                  showActionButton="{{true}}"
+                  columns="{{_columns}}">
+              </Controls.explorer:View>
+            </div>
+        </div>
+    </div>
+</div>

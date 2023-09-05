@@ -1,0 +1,264 @@
+.controls-PeriodDialog-DateRange {
+   display: flex;
+   flex-direction: column;
+   flex-shrink: 1;
+   min-height: 1px;
+   position: relative;
+   user-select: none;
+}
+
+.controls-PeriodDialog-DateRange__header {
+   display: flex;
+   flex-shrink: 0;
+   align-items: center;
+   height: var(--calendar-header_height_datePicker);
+   border-bottom: var(--calendar-header_border-bottom-thickness_datePicker) solid transparent;
+}
+
+.controls-PeriodDialog-DateRange__body {
+   display: flex;
+   flex-shrink: 1;
+   min-height: 1px;
+   align-items: stretch;
+   position: relative;
+
+   .controls-PeriodDialog-DateRangeItem__monthList {
+      height: calc(
+         var(--item_height_menu) * 14 + var(--calendar-header_height_datePicker) +
+            var(--calendar-header_border-bottom-thickness_datePicker)
+      );
+      width: calc(
+         7 * var(--calendar_item-size_m_compactDatePicker) + 2 * var(--offset_2xs) + 2 *
+            var(--offset_xl) + var(--offset_3xs)
+      );
+   }
+}
+
+.controls-PeriodDialog-DateRange__separator {
+   position: absolute;
+   top: var(--offset_m);
+   left: var(--monthnav_width_datePicker);
+   bottom: var(--offset_m);
+   background: var(--separator_color);
+   width: var(--yearlist_block-separator_thickness_datePicker);
+   border-radius: var(--border-radius_2xs);
+}
+
+.controls-PeriodDialog-DateRange__year {
+   color: var(--primary_text-color);
+   flex-shrink: 0;
+   box-sizing: border-box;
+   width: var(--monthnav_width_datePicker);
+   padding-left: var(--calendar-header_padding-left_datePicker);
+   font-size: var(--current-year_font-size_datePicker);
+   font-weight: var(--font-weight-bold);
+}
+
+.controls-PeriodDialog-DateRange__year_currentYear {
+   color: var(--primary_text-color);
+}
+
+.controls-PeriodDialog-DateRange-header-weekdays {
+   display: flex;
+   flex-shrink: 1;
+   flex-grow: 1;
+   font-size: var(--font-size_xl);
+   padding: 0 calc(var(--offset_xl) + var(--border-thickness)) 0
+      calc(
+         var(--offset_xl) + var(--yearlist_block-separator_thickness_datePicker) +
+            var(--border-thickness) + var(--offset_2xs)
+      );
+}
+
+.controls-PeriodDialog-DateRange-header-weekdays-workday,
+.controls-PeriodDialog-DateRange-header-weekdays-weekend {
+   flex-grow: 1;
+   flex-basis: 0;
+   text-align: center;
+}
+
+.controls-PeriodDialog-DateRange-header-weekdays-workday {
+   color: var(--weekdays_text-color_datePicker);
+}
+
+.controls-PeriodDialog-DateRange-header-weekdays-weekend {
+   color: var(--primary_text-color);
+}
+
+.controls-PeriodDialog-DateRange-dates-wrapper {
+   min-height: 0;
+   flex-shrink: 1;
+   flex-grow: 1;
+   border-bottom-right-radius: var(--border-radius_dialog);
+   z-index: 1;
+}
+
+.controls-PeriodDialog-DateRangeItem__months {
+   flex-shrink: 1;
+   position: sticky;
+   top: 0;
+   border-bottom-left-radius: var(--border-radius_dialog);
+   z-index: 1;
+}
+
+.controls-PeriodDialog-DateRangeItem__months-btn {
+   border-radius: var(--border-radius_m);
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+   box-sizing: border-box;
+   color: var(--text-color);
+   font-size: var(--monthnav_item_font-size_datePicker);
+   padding-left: calc(var(--monthnav_item_padding-left_datePicker) - var(--border-thickness));
+   width: var(--monthnav_width_datePicker);
+   height: var(--item_height_menu);
+   border-left: var(--border-thickness) solid transparent;
+   border-right: var(--border-thickness) solid transparent;
+   background-color: transparent;
+}
+
+.controls-PeriodDialog-DateRangeItem__months-btn_hover:active,
+.ws-is-hover .controls-PeriodDialog-DateRangeItem__months-btn_hover:hover {
+   &::before {
+      content: '';
+      position: absolute;
+      box-sizing: border-box;
+      border-radius: var(--border-radius_m);
+      left: 0;
+      width: var(--monthnav_width_datePicker);
+      height: var(--item_height_menu);
+      border: var(--border-thickness) solid var(--unaccented_hover_border-color);
+   }
+}
+
+.ws-is-ie11 {
+   .controls-PeriodDialog-DateRangeItem__months-btn_hover:hover {
+      &::before {
+         top: 0;
+      }
+   }
+}
+
+.controls-PeriodDialog-DateRangeItem__months-nextyearBtn {
+   color: var(--primary_text-color);
+   display: flex;
+   align-items: center;
+   box-sizing: border-box;
+   height: var(--monthnav_year_height_datePicker);
+   padding-left: calc(var(--monthnav_item_padding-left_datePicker) - var(--border-thickness));
+   font-weight: var(--font-weight-bold);
+   font-size: var(--font-size_xl);
+   border: var(--border-thickness) solid transparent;
+}
+
+.controls-PeriodDialog-DateRangeItem__monthList__item {
+   margin-left: calc(
+      var(--offset_xl) + var(--yearlist_block-separator_thickness_datePicker) +
+         var(--border-thickness)
+   );
+   margin-right: calc(var(--offset_xl) + var(--border-thickness));
+}
+
+.controls-PeriodDialog-DateRangeItem__months-btn__corners_selected__container {
+   pointer-events: none;
+   position: absolute;
+   width: var(--item_height_menu);
+   height: var(--item_height_menu);
+   overflow: hidden;
+   top: 0;
+   border-radius: var(--border-radius_2xs);
+}
+
+.controls-PeriodDialog-DateRangeItem__months-btn__corners_selected__container-start {
+   left: 0;
+}
+
+.controls-PeriodDialog-DateRangeItem__months-btn__corners_selected__container-end {
+   right: 0;
+}
+
+.controls-PeriodDialog-DateRangeItem__months-btn__corners_selected {
+   width: var(--item_height_menu);
+   height: var(--item_height_menu);
+}
+
+.controls-PeriodDialog-DateRangeItem__months-btn__corners_selected-start {
+   box-shadow: calc(-1 * var(--item_height_menu) / 2) 0 0 var(--icon-color);
+   border-top-left-radius: 40%;
+}
+
+.controls-PeriodDialog-DateRangeItem__months-btn__corners_selected-end {
+   box-shadow: calc(1 * var(--item_height_menu) / 2) 0 0 var(--icon-color);
+   border-bottom-right-radius: 40%;
+}
+
+.controls-PeriodDialog-DateRangeItem__months-btn_selected {
+   background: var(--background-color);
+   border-radius: 0;
+}
+
+.controls-PeriodDialog-DateRangeItem__months-btn_selected-start-end {
+   border-radius: var(--border-radius_m);
+}
+
+.controls-PeriodDialog-DateRangeItem__months-btn_selected-start {
+   border-top-left-radius: var(--border-radius_xs);
+   border-top-right-radius: var(--border-radius_m);
+}
+
+.controls-PeriodDialog-DateRangeItem__months-btn_selected-end {
+   border-bottom-left-radius: var(--border-radius_m);
+   border-bottom-right-radius: var(--border-radius_xs);
+}
+
+.controls-PeriodDialog-DateRangeItem__months_notHovered {
+   .controls-PeriodDialog-DateRangeItem__months-btn_selected {
+      border-left: var(--border-thickness) solid var(--unaccented_hover_border-color);
+      border-right: var(--border-thickness) solid var(--unaccented_hover_border-color);
+   }
+
+   .controls-PeriodDialog-DateRangeItem__months-btn_selected-start-end {
+      border: var(--border-thickness) solid var(--unaccented_hover_border-color);
+   }
+
+   .controls-PeriodDialog-DateRangeItem__months-btn_selected-start {
+      border-top: var(--border-thickness) solid var(--unaccented_hover_border-color);
+      padding-bottom: var(--border-thickness);
+   }
+
+   .controls-PeriodDialog-DateRangeItem__months-btn_selected-end {
+      border-bottom: var(--border-thickness) solid var(--unaccented_hover_border-color);
+      padding-top: var(--border-thickness);
+   }
+}
+
+.controls-PeriodDialog_isAdaptive {
+   .controls-PeriodDialog-DateRangeItem__monthList__item {
+      margin-left: var(--offset_s);
+      margin-right: var(--offset_s);
+   }
+
+   .controls-CompactDatePicker__header__today {
+      font-size: var(--font-size_xl);
+   }
+
+   .controls-PeriodDialog-DateRange__body {
+      .controls-PeriodDialog-DateRangeItem__monthList {
+         width: 100%;
+         height: calc(8 * (calc((100vw - 2 * (var(--offset_s)))/ 7) + 2 * var(--border-thickness)) + var(--offset_2xl) + var(--offset_s) + 2 * var(--border-thickness));
+      }
+   }
+}
+
+.en,
+.ar {
+   .controls-PeriodDialog-DateRange-header-weekdays {
+      font-size: var(--font-size_m);
+   }
+}
+
+.kk {
+   .controls-PeriodDialog-DateRange-header-weekdays {
+      font-size: var(--font-size_2xs);
+   }
+}

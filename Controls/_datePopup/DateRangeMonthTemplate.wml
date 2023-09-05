@@ -1,0 +1,31 @@
+<ws:partial template="Controls/calendar:MonthListMonthTemplate">
+    <ws:bodyTemplate>
+        <div data-qa="controls-PeriodDialog-DateRangeItem__months-btn"
+             class="controls-PeriodDialog-DateRangeItem__months-btn
+                    {{ !_options.monthSelectionProcessing ? 'controls-PeriodDialog-DateRangeItem__months-btn_hover' }}
+                    {{ _options._getMonthSelectionClass(_options.date) }}"
+             on:mouseenter="_monthMouseEnterHandler(_options.date)"
+             on:mouseleave="_monthMouseLeaveHandler(_options.date)"
+             on:click="_options.scrollToMonth(_options.date.getFullYear(), _options.date.getMonth())" data-date="{{ _dateToId(_options.date) }}">
+            {{ _formatMonth(_options.date.getMonth()) }}
+        </div>
+        <ws:if data="{{ _isMonthSelectedStart(_options.date) }}">
+            <div class="controls-PeriodDialog-DateRangeItem__months-btn__corners_selected__container
+            controls-PeriodDialog-DateRangeItem__months-btn__corners_selected__container-start">
+                <div class="controls-PeriodDialog-DateRangeItem__months-btn__corners_selected
+                        controls-PeriodDialog-DateRangeItem__months-btn__corners_selected-start">
+
+                </div>
+            </div>
+        </ws:if>
+        <ws:if data="{{ _isMonthSelectedEnd(_options.date) }}">
+            <div class="controls-PeriodDialog-DateRangeItem__months-btn__corners_selected__container
+                        controls-PeriodDialog-DateRangeItem__months-btn__corners_selected__container-end">
+                <div class="controls-PeriodDialog-DateRangeItem__months-btn__corners_selected
+                        controls-PeriodDialog-DateRangeItem__months-btn__corners_selected-end">
+
+                </div>
+            </div>
+        </ws:if>
+    </ws:bodyTemplate>
+</ws:partial>

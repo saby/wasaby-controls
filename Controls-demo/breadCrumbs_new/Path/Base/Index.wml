@@ -1,0 +1,28 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+   <div class="custom-line-height">
+      <div class="custom-line-height__text">Text</div>
+      <div class="custom-line-height__breadcrumbs">
+         <Controls.breadcrumbs:Path
+            fontSize="m"
+            keyPropery="id"
+            parentProperty="parent"
+            items="{{_breadcrumbs}}"
+            attr:data-qa="ControlsDemo__breadcrumbs_common"
+         />
+      </div>
+   </div>
+
+   <div class="ws-flexbox ws-align-items-baseline">
+      <div class="controls-text-label">Readonly:&nbsp;</div>
+      <div style="width: 250px">
+         <Controls.breadcrumbs:Path
+            fontSize="m"
+            keyPropery="id"
+            readOnly="{{true}}"
+            parentProperty="parent"
+            items="{{_breadcrumbs}}"
+            attr:data-qa="ControlsDemo__breadcrumbs_readonly"
+         />
+      </div>
+   </div>
+</div>

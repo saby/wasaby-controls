@@ -1,0 +1,514 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent Нужно всегда рендерить переданный в опциях beforeItemsContent. Горизонтальный скролл расширяет функционал, а не перебивает его. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      data-qa="mocked_ContentObserverRow"
+    >
+      <div
+        data-qa="mocked_ContentObserverRow"
+      >
+        {
+    "hasResizer": false,
+    "stickyColumnsCount": 2,
+    "hasMultiSelectColumn": false
+}
+      </div>
+    </div>
+    <div
+      data-qa="mocked_NavigationRow"
+    >
+      <div
+        data-qa="mocked_NavigationRow_props"
+      >
+        {
+    "part": "scrollable",
+    "hasResizer": false,
+    "columnScrollViewMode": "scrollbar",
+    "stickyColumnsCount": 2,
+    "hasMultiSelectColumn": false,
+    "hasGridStickyHeader": true
+}
+      </div>
+    </div>
+    <div>
+      Какой то базовый контент
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=fixed, columnScrollViewMode=arrows, columnScrollNavigationPosition=custom. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  />
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=fixed, columnScrollViewMode=arrows, columnScrollNavigationPosition=custom. 2`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  />
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=fixed, columnScrollViewMode=arrows, columnScrollNavigationPosition=undefined. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      data-qa="mocked_NavigationRow"
+    >
+      <div
+        data-qa="mocked_NavigationRow_props"
+      >
+        {
+    "part": "fixed",
+    "columnScrollViewMode": "arrows",
+    "stickyColumnsCount": 2,
+    "hasMultiSelectColumn": false,
+    "hasGridStickyHeader": true
+}
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=fixed, columnScrollViewMode=arrows, columnScrollNavigationPosition=undefined. 2`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      data-qa="mocked_NavigationRow"
+    >
+      <div
+        data-qa="mocked_NavigationRow_props"
+      >
+        {
+    "part": "fixed",
+    "columnScrollViewMode": "arrows",
+    "stickyColumnsCount": 2,
+    "hasMultiSelectColumn": false,
+    "hasGridStickyHeader": true
+}
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=fixed, columnScrollViewMode=scrollbar, columnScrollNavigationPosition=custom. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  />
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=fixed, columnScrollViewMode=scrollbar, columnScrollNavigationPosition=custom. 2`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  />
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=fixed, columnScrollViewMode=scrollbar, columnScrollNavigationPosition=undefined. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      data-qa="mocked_NavigationRow"
+    >
+      <div
+        data-qa="mocked_NavigationRow_props"
+      >
+        {
+    "part": "fixed",
+    "columnScrollViewMode": "scrollbar",
+    "stickyColumnsCount": 2,
+    "hasMultiSelectColumn": false,
+    "hasGridStickyHeader": true
+}
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=fixed, columnScrollViewMode=scrollbar, columnScrollNavigationPosition=undefined. 2`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      data-qa="mocked_NavigationRow"
+    >
+      <div
+        data-qa="mocked_NavigationRow_props"
+      >
+        {
+    "part": "fixed",
+    "columnScrollViewMode": "scrollbar",
+    "stickyColumnsCount": 2,
+    "hasMultiSelectColumn": false,
+    "hasGridStickyHeader": true
+}
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=fixed, columnScrollViewMode=unaccented, columnScrollNavigationPosition=custom. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  />
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=fixed, columnScrollViewMode=unaccented, columnScrollNavigationPosition=custom. 2`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  />
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=fixed, columnScrollViewMode=unaccented, columnScrollNavigationPosition=undefined. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  />
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=fixed, columnScrollViewMode=unaccented, columnScrollNavigationPosition=undefined. 2`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  />
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=scrollable, columnScrollViewMode=arrows, columnScrollNavigationPosition=custom. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      data-qa="mocked_ContentObserverRow"
+    >
+      <div
+        data-qa="mocked_ContentObserverRow"
+      >
+        {
+    "stickyColumnsCount": 2,
+    "hasMultiSelectColumn": false
+}
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=scrollable, columnScrollViewMode=arrows, columnScrollNavigationPosition=custom. 2`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      data-qa="mocked_ContentObserverRow"
+    >
+      <div
+        data-qa="mocked_ContentObserverRow"
+      >
+        {
+    "stickyColumnsCount": 2,
+    "hasMultiSelectColumn": false
+}
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=scrollable, columnScrollViewMode=arrows, columnScrollNavigationPosition=undefined. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      data-qa="mocked_ContentObserverRow"
+    >
+      <div
+        data-qa="mocked_ContentObserverRow"
+      >
+        {
+    "stickyColumnsCount": 2,
+    "hasMultiSelectColumn": false
+}
+      </div>
+    </div>
+    <div
+      data-qa="mocked_NavigationRow"
+    >
+      <div
+        data-qa="mocked_NavigationRow_props"
+      >
+        {
+    "part": "scrollable",
+    "columnScrollViewMode": "arrows",
+    "stickyColumnsCount": 2,
+    "hasMultiSelectColumn": false,
+    "hasGridStickyHeader": true
+}
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=scrollable, columnScrollViewMode=arrows, columnScrollNavigationPosition=undefined. 2`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      data-qa="mocked_ContentObserverRow"
+    >
+      <div
+        data-qa="mocked_ContentObserverRow"
+      >
+        {
+    "stickyColumnsCount": 2,
+    "hasMultiSelectColumn": false
+}
+      </div>
+    </div>
+    <div
+      data-qa="mocked_NavigationRow"
+    >
+      <div
+        data-qa="mocked_NavigationRow_props"
+      >
+        {
+    "part": "scrollable",
+    "columnScrollViewMode": "arrows",
+    "stickyColumnsCount": 2,
+    "hasMultiSelectColumn": false,
+    "hasGridStickyHeader": true
+}
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=scrollable, columnScrollViewMode=scrollbar, columnScrollNavigationPosition=custom. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      data-qa="mocked_ContentObserverRow"
+    >
+      <div
+        data-qa="mocked_ContentObserverRow"
+      >
+        {
+    "stickyColumnsCount": 2,
+    "hasMultiSelectColumn": false
+}
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=scrollable, columnScrollViewMode=scrollbar, columnScrollNavigationPosition=custom. 2`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      data-qa="mocked_ContentObserverRow"
+    >
+      <div
+        data-qa="mocked_ContentObserverRow"
+      >
+        {
+    "stickyColumnsCount": 2,
+    "hasMultiSelectColumn": false
+}
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=scrollable, columnScrollViewMode=scrollbar, columnScrollNavigationPosition=undefined. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      data-qa="mocked_ContentObserverRow"
+    >
+      <div
+        data-qa="mocked_ContentObserverRow"
+      >
+        {
+    "stickyColumnsCount": 2,
+    "hasMultiSelectColumn": false
+}
+      </div>
+    </div>
+    <div
+      data-qa="mocked_NavigationRow"
+    >
+      <div
+        data-qa="mocked_NavigationRow_props"
+      >
+        {
+    "part": "scrollable",
+    "columnScrollViewMode": "scrollbar",
+    "stickyColumnsCount": 2,
+    "hasMultiSelectColumn": false,
+    "hasGridStickyHeader": true
+}
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=scrollable, columnScrollViewMode=scrollbar, columnScrollNavigationPosition=undefined. 2`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      data-qa="mocked_ContentObserverRow"
+    >
+      <div
+        data-qa="mocked_ContentObserverRow"
+      >
+        {
+    "stickyColumnsCount": 2,
+    "hasMultiSelectColumn": false
+}
+      </div>
+    </div>
+    <div
+      data-qa="mocked_NavigationRow"
+    >
+      <div
+        data-qa="mocked_NavigationRow_props"
+      >
+        {
+    "part": "scrollable",
+    "columnScrollViewMode": "scrollbar",
+    "stickyColumnsCount": 2,
+    "hasMultiSelectColumn": false,
+    "hasGridStickyHeader": true
+}
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=scrollable, columnScrollViewMode=unaccented, columnScrollNavigationPosition=custom. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      data-qa="mocked_ContentObserverRow"
+    >
+      <div
+        data-qa="mocked_ContentObserverRow"
+      >
+        {
+    "stickyColumnsCount": 2,
+    "hasMultiSelectColumn": false
+}
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=scrollable, columnScrollViewMode=unaccented, columnScrollNavigationPosition=custom. 2`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      data-qa="mocked_ContentObserverRow"
+    >
+      <div
+        data-qa="mocked_ContentObserverRow"
+      >
+        {
+    "stickyColumnsCount": 2,
+    "hasMultiSelectColumn": false
+}
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=scrollable, columnScrollViewMode=unaccented, columnScrollNavigationPosition=undefined. 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      data-qa="mocked_ContentObserverRow"
+    >
+      <div
+        data-qa="mocked_ContentObserverRow"
+      >
+        {
+    "stickyColumnsCount": 2,
+    "hasMultiSelectColumn": false
+}
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/gridColumnScroll/render/view/BeforeItemsContent Рендер при различных значениях опций part, columnScrollViewMode и columnScrollNavigationPosition. part=scrollable, columnScrollViewMode=unaccented, columnScrollNavigationPosition=undefined. 2`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      data-qa="mocked_ContentObserverRow"
+    >
+      <div
+        data-qa="mocked_ContentObserverRow"
+      >
+        {
+    "stickyColumnsCount": 2,
+    "hasMultiSelectColumn": false
+}
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,59 @@
+<ws:template name="FIO">
+   <Controls.filterPopup:Link  caption="FIO"/>
+</ws:template>
+
+<ws:template name="firstName">
+   <Controls.filterPopup:Link  caption="firstName"/>
+</ws:template>
+
+<ws:template name="Test1">
+   <Controls.filterPopup:Select
+           keyProperty="key">
+      <ws:items>
+         <ws:Array>
+            <ws:Object key="{{2}}" title="Россия"/>
+            <ws:Object key="{{3}}" title="США"/>
+            <ws:Object key="{{4}}" title="UK"/>
+         </ws:Array>
+      </ws:items>
+   </Controls.filterPopup:Select>
+</ws:template>
+
+<ws:template name="checked">
+   <Controls.filterPopup:Link  caption="checked"/>
+</ws:template>
+
+<ws:template name="id">
+   <Controls.filterPopup:Dropdown
+           source="{{item.source}}"
+           displayProperty="title"
+           keyProperty="key"
+           selectedKeys="{{item.value}}"/>
+</ws:template>
+
+<ws:template name="Test2">
+   <Controls.filterPopup:Link  caption="Test2"/>
+</ws:template>
+
+<ws:template name="Test3">
+   <Controls.filterPopup:Link  caption="Test3"/>
+</ws:template>
+
+<ws:template name="Test4">
+   <Controls.filterPopup:Link  caption="Test4"/>
+</ws:template>
+
+<ws:template name="Test5">
+   <Controls.filterPopup:Link  caption="FilterText"/>
+</ws:template>
+
+<ws:template name="Test6">
+   <Controls.filterPopup:Link  caption="Test6"/>
+</ws:template>
+
+<ws:template name="Test7">
+   <Controls.filterPopup:Link  caption="Test7"/>
+</ws:template>
+
+<ws:partial template="{{item.id}}" item="{{item}}"/>
+

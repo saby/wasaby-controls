@@ -1,0 +1,31 @@
+<div class="controlsDemo__flexRow {{_options.theme.indexOf('default')<0 ? 'controlsDemo_fixedWidth500' : 'controlsDemo_fixedWidth300'}}">
+   <div class="controlsDemo__wrapper">
+      <div class="demo-ButtonMenu__label controls-text-label">Подменю на втором уровне в виде дерева</div>
+      <Controls.dropdown:Button
+              keyProperty="id"
+              caption="Create"
+              source="{{_source}}"
+              nodeProperty="@parent"
+              parentProperty="parent"
+              hierarchyViewMode="tree"
+              on:menuItemActivate="_menuItemActivate()"
+              attr:class="controlsDemo-menuButton"
+              attr:data-qa="controlsDemo_MenuButton_HierarchyViewMode__basic">
+      </Controls.dropdown:Button>
+   </div>
+   <div class="controlsDemo__wrapper">
+      <div class="demo-ButtonMenu__label controls-text-label">Подменю на втором уровне в виде дерева, открывается с развернутой папкой в подменю</div>
+      <Controls.dropdown:Button
+              keyProperty="id"
+              caption="Create"
+              source="{{_source}}"
+              nodeProperty="@parent"
+              parentProperty="parent"
+              hierarchyViewMode="tree"
+              openedSubMenuKey="{{4}}"
+              on:menuItemActivate="_menuItemActivate()"
+              attr:class="controlsDemo-menuButton"
+              attr:data-qa="controlsDemo_MenuButton_HierarchyViewMode__openedSubMenuKey">
+      </Controls.dropdown:Button>
+   </div>
+</div>

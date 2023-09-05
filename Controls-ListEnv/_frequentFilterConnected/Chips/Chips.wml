@@ -1,0 +1,12 @@
+<Controls.Container.Async templateName="Controls/Chips:Control">
+        <ws:partial template="{{content.resolvedTemplate}}"
+                    items="{{_editorOptions.items}}"
+                    itemTemplate="{{_editorOptions.itemTemplate}}"
+                    keyProperty="{{_editorOptions.keyProperty}}"
+                    displayProperty="{{_editorOptions.displayProperty}}"
+                    allowEmptySelection="{{_editorOptions.allowEmptySelection}}"
+                    direction="{{_editorOptions.direction}}"
+                    multiline="{{_editorOptions.multiline}}"
+                    bind:selectedKeys="_selectedKeys"
+                    on:selectedKeysChanged="_handleSelectionChanged()" />
+</Controls.Container.Async>

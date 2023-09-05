@@ -1,0 +1,99 @@
+<ws:template name="item">
+    <div class="controls-PeriodLiteDialog-item__month
+                {{ _isSelectedPeriod(item.date, 'month') ? 'controls-PeriodLiteDialog__item-selected' }}
+                {{ _isSelectedStart(item.date, 'month') ? 'controls-PeriodLiteDialog__item_border-radius-top' }}
+                {{ _isSelectedEnd(item.date, 'month') ? 'controls-PeriodLiteDialog__item_border-radius-bottom' }}">
+        <ws:if data="{{_monthHovered === month.number && !_options.selectionProcessing}}">
+            <div class="controls-PeriodLiteDialog__item-background-hovered"></div>
+        </ws:if>
+        <ws:if data="{{ !_options.selectionProcessing && _options.multiselect}}">
+            <div class="controls-PeriodLiteDialog__item__selection-corners__container"
+                 on:touchmove="_onMonthBlur()"
+                 on:mouseleave="_onMonthBlur()"
+                 on:touchstart="_onMonthMouseEnter(month.number, month.date)"
+                 on:mouseover="_onMonthMouseOver(month.number, month.date)"
+                 on:mouseenter="_onMonthMouseEnter(month.number, month.date)"
+                 on:click="_onMonthCornerClick(month.date, 'month')">
+                <div class="controls-PeriodLiteDialog__item__selection-corners"></div>
+            </div>
+        </ws:if>
+        <ws:if data="{{ _isSelectedStart(month.date, 'month') }}">
+            <div class="controls-PeriodLiteDialog__item-corners__container">
+                <div class="controls-PeriodLiteDialog__item-corners controls-PeriodLiteDialog__item-corners-start">
+
+                </div>
+            </div>
+        </ws:if>
+        <ws:if data="{{ _isSelectedEnd(month.date, 'month') }}">
+            <div class="controls-PeriodLiteDialog__item-corners__container">
+                <div class="controls-PeriodLiteDialog__item-corners controls-PeriodLiteDialog__item-corners-end">
+
+                </div>
+            </div>
+        </ws:if>
+        <ws:partial template="{{monthTemplate}}"
+                    attr:data-date="{{ _formatDate(item.date, 'YYYY-MM-DD') }}"
+                    attr:class="controls-PeriodLiteDialog-item__month-caption controls-PeriodLiteDialog-item__caption controls-MonthList__custom-position {{ _getSelectionClassName(month.date, 'month') }}"
+                    attr:data-qa="controls-PeriodLiteDialog-item__month-caption"
+                    attr:name="month-{{item.number}}"
+                    attr:tabindex="{{_getTabindex()}}"
+                    on:click="_onMonthClick(item.date, item.endValue)"
+                    on:keyup="_keyUpMonthHandler(item.date)"
+                    on:touchmove="_onMonthBlur()"
+                    on:mouseleave="_onMonthBlur()"
+                    on:touchstart="_onMonthMouseEnter(month.number, month.date)"
+                    on:mouseover="_onMonthMouseOver(month.number, month.date)"
+                    on:mouseenter="_onMonthMouseEnter(month.number, month.date)"
+                    month="{{item}}"
+                    formatDate="{{_formatDate}}"
+                    extData="{{_options.extData && _options.extData[item.date.getMonth()]}}"
+                    contentTemplate="{{contentTemplate}}"
+                    slidingPanelOptions="{{_options.slidingPanelOptions}}"
+                    selected="{{item.selected}}"/>
+    </div>
+</ws:template>
+
+<ws:template name="itemTemplate">
+    <div on:keyup="_keyUpHandler()">
+        <ws:if data="{{_options._yearHovered === _options.currentYear && !_options.selectionProcessing }}">
+            <div class="controls-PeriodLiteDialog__item-background-hovered controls-PeriodLiteDialog__item-background-hovered__year"></div>
+        </ws:if>
+        <ws:if data="{{ _isSelectedPeriod(_yearModel[0].date, 'year') }}">
+            <div class="controls-PeriodLiteDialog__item-corners__container">
+                <div class="controls-PeriodLiteDialog__item-corners">
+
+                </div>
+            </div>
+        </ws:if>
+
+        <ws:if data="{{_options.yearItemsCallback}}">
+            <ws:for data="item in _yearItems">
+                <ws:partial template="item" item="{{item}}">
+                    <ws:contentTemplate>
+                        <div>{{item.tooltip}}</div>
+                    </ws:contentTemplate>
+                </ws:partial>
+            </ws:for>
+        </ws:if>
+        <ws:else>
+            <ws:for data="halfYear in _yearModel">
+                <ws:for data="quarter in halfYear.quarters">
+                    <ws:for data="month in quarter.months">
+                        <ws:if data="{{_hitsDisplayedRanges(month.date)}}">
+                            <ws:partial template="item" item="{{month}}"/>
+                        </ws:if>
+                    </ws:for>
+                </ws:for>
+            </ws:for>
+        </ws:else>
+    </div>
+</ws:template>
+
+<ws:if data="{{ _isMonthsTemplateString }}">
+    <Controls.Container.Async templateName="{{ _options.monthTemplate }}" errorCallback="{{ _options.errorCallback }}">
+        <ws:partial template="itemTemplate" monthTemplate="{{ content.resolvedTemplate }}"/>
+    </Controls.Container.Async>
+</ws:if>
+<ws:else>
+    <ws:partial template="itemTemplate" monthTemplate="{{ _options.monthTemplate }}"/>
+</ws:else>

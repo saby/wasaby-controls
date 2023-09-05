@@ -1,0 +1,26 @@
+<div class="controlsDemo__wrapper">
+  <Controls.browser:Browser
+          source="{{_source}}"
+          searchParam="title"
+          keyProperty="id">
+    <div>
+      <Controls.search:InputContainer>
+        <Controls.search:Input/>
+      </Controls.search:InputContainer>
+      <Controls.search:MisspellContainer>
+        <Controls.list:View>
+          <ws:itemTemplate>
+            <ws:partial template="Controls/list:ItemTemplate">
+              <ws:contentTemplate>
+                  <Controls.baseDecorator:Highlight
+                          highlightedValue="{{itemTemplate.item.searchValue}}"
+                          value="{{itemTemplate.item.contents.title}}"/>
+              </ws:contentTemplate>
+            </ws:partial>
+          </ws:itemTemplate>
+        </Controls.list:View>
+      </Controls.search:MisspellContainer>
+    </div>
+  </Controls.browser:Browser>
+
+</div>

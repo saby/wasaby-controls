@@ -1,0 +1,131 @@
+<div class="controls-PeriodDialog__header controls_datePicker_theme-{{_options.theme}} controls_theme-{{_options.theme}}">
+    <div
+         on:click="_toggleStateClick()"
+         on:keyDown="_stateButtonKeyDownHandler()"
+         tabindex="0"
+         data-qa="controls-PeriodDialog__stateButton"
+         class="controls-PeriodDialog__stateButton controls-PeriodDialog__stateButton-{{ monthStateEnabled ? 'enabled' : 'disabled' }}"
+         title="{{state === 'year' ? rk('Месячный режим') : rk('Годовой режим')}}">
+            <span class="{{ state === 'year' ? 'icon-ArrangeList' : 'icon-ArrangePreview' }}
+                controls-PeriodDialog_stateButton_icon {{ keyboardActive? 'controls-PeriodDialog_stateButton_icon_focus'}}">
+            </span>
+    </div>
+    <ws:if data="{{ selectionType === 'quantum' || selectionType === 'workdays' || isDayAvailable }}">
+        <div class="controls-PeriodDialog__header-period_link">
+            <Controls.dateRange:LinkView
+                    startValue="{{headerRangeModel.startValue}}"
+                    endValue="{{headerRangeModel.endValue}}"
+                    emptyCaption="{{_options.emptyCaption}}"
+                    captionFormatter="{{_options.captionFormatter}}"
+                    showNextArrow="{{false}}"
+                    showPrevArrow="{{false}}"
+                    showUndefined="{{true}}"
+                    clickable="{{_options.selectionType !== 'quantum'}}"
+                    tooltip="{[Показать поля ввода]}"
+                    on:linkClick="_headerLinkClick()"
+                    on:rangeChanged="_onHeaderLinkRangeChanged()"
+            />
+        </div>
+    </ws:if>
+    <ws:else>
+        <div name="inputs"
+             class="controls-PeriodDialog__header-period"
+             on:focusout="_inputFocusOutHandler()">
+            <div class="controls-PeriodDialog__header_inputs">
+                <Controls.date:BaseInput
+                        fontSize="{{ _options.isAdaptive ? 'xl' : 'm' }}"
+                        horizontalPadding="null"
+                        contrastBackground="{{ false }}"
+                        borderVisibility="partial"
+                        name="startValueField"
+                        mask="{{mask}}"
+                        autocompleteMode="start"
+                        value="{{rangeModel.startValue}}"
+                        dateConstructor="{{_options.dateConstructor}}"
+                        valueValidators="{{startValueValidators}}"
+                        validateByFocusOut="{{false}}"
+                        attr:data-qa="controls-PeriodDialog__header-datePickerStart"
+                        attr:ws-autofocus="true"
+                        attr:class="controls-PeriodDialog__header-datePickerStart"
+                        on:keydown="_startKeyDownHandler()"
+                        on:valueChanged="_startValuePickerValueChangedHandler()"
+                        on:inputCompleted="_startValuePickerInputCompleted()"
+                        on:inputControl="_inputControlHandler()"
+                />
+                <ws:if data="{{ rightFieldTemplate }}">
+                    <ws:partial
+                            template="{{ rightFieldTemplate }}"
+                            value="{{ rangeModel.startValue }}"
+                            datePopupHeader="{{ true }}"
+                            inputPosition="left"
+                    />
+                </ws:if>
+            </div>
+            <ws:if data="{{_options.selectionType !== 'single'}}">
+                <div class="controls-PeriodDialog__header-rangeDash"></div>
+                <div class="controls-PeriodDialog__header_inputs">
+                    <Controls.date:BaseInput
+                            fontSize="{{ _options.isAdaptive ? 'xl' : 'm' }}"
+                            horizontalPadding="null"
+                            contrastBackground="{{ false }}"
+                            borderVisibility="partial"
+                            name="endValueField"
+                            mask="{{mask}}"
+                            autocompleteMode="start"
+                            value="{{rangeModel.endValue}}"
+                            _yearSeparatesCenturies="{{rangeModel.startValue}}"
+                            dateConstructor="{{_options.dateConstructor}}"
+                            valueValidators="{{endValueValidators}}"
+                            validateByFocusOut="{{false}}"
+                            attr:data-qa="controls-PeriodDialog__header-datePickerEnd"
+                            attr:class="controls-PeriodDialog__header-datePickerEnd"
+                            on:valueChanged="_endValuePickerValueChangedHandler()"
+                            on:inputCompleted="_endValuePickerInputCompleted()"
+                    />
+                    <ws:if data="{{ rightFieldTemplate }}">
+                        <ws:partial
+                                template="{{ rightFieldTemplate }}"
+                                value="{{ rangeModel.endValue }}"
+                                datePopupHeader="{{ true }}"
+                                inputPosition="right"
+                        />
+                    </ws:if>
+                </div>
+            </ws:if>
+            <ws:if data="{{ resetButtonVisible }}">
+                <span tabindex="0" class="controls-DateLinkView__resetButton
+                        controls-icon icon-Close"
+                      on:click="_resetButtonClickHandler()"
+                      on:keyDown="_resetButtonKeyDownHandler()" ></span>
+            </ws:if>
+        </div>
+    </ws:else>
+    <div class="controls-CompactDatePicker__header__today__container">
+        <div class="controls-CompactDatePicker__header__today controls-CompactDatePicker__header__today_visible"
+             data-qa="controls-PeriodDialog__header_calendar"
+             title="{[Текущий период]}"
+             on:click="_todayCalendarClick()">
+            {{ today }}
+        </div>
+    </div>
+
+   <!--<div class="controls-DateRangeBigChoose__header-date-pickers">-->
+    <Controls.buttons:Button
+            viewMode="ghost"
+            buttonStyle="pale"
+            icon="icon-Yes"
+            iconStyle="success"
+            iconSize="m"
+            inlineHeight="l"
+            tooltip="{[Подтвердить]}"
+            attr:data-qa="controls-PeriodDialog__applyButton"
+            attr:class="controls-PeriodDialog__applyButton"
+            on:click="_applyClick()"
+    />
+
+    <ws:if data="{{ !_options.isAdaptive }}">
+        <Controls.buttons:CloseButton attr:title="{[Закрыть]}" on:click="_closeClick()" viewMode="toolButton"
+                                      attr:data-qa="controls-PeriodDialog__closeButton"
+                                      attr:class="controls-PeriodDialog__closeButton"/>
+    </ws:if>
+</div>

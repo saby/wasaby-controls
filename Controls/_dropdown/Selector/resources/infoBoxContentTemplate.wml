@@ -1,0 +1,17 @@
+<div class="ws-flexbox ws-flex-column">
+    <Controls.Container.Async templateName="Controls/heading:Title">
+        <ws:partial template="{{content.resolvedTemplate}}"
+                    attr:class="controls-padding_left-m controls-padding_right-m controls-InfoBox__message_margin"
+                    caption="{[Выбрано]}"
+                    fontColorStyle="secondary"
+                    fontSize="m"
+                    readOnly="{{true}}" />
+    </Controls.Container.Async>
+    <Controls.scroll:Container>
+        <div class="controls-padding_left-m controls-padding_right-m">
+            <ws:for data="item in selectedItems">
+                <div>{{item.get(displayProperty)}}</div>
+            </ws:for>
+        </div>
+    </Controls.scroll:Container>
+</div>
