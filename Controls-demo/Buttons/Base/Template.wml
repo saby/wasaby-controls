@@ -1,0 +1,200 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__flex">
+            <div class="ws-flex-column controls-margin_right-2xl">
+                <div>
+                    <div class="controls-text-label controls-margin_bottom-s">Виды кнопок</div>
+                    <div class="controlsDemo__flex ws-flex-column ws-align-items-center controls-margin_left-m">
+                        <div data-qa="controlsDemo_Buttons__capture"
+                             class="controlsDemo__flex ws-flex-column ws-align-items-start">
+                            <div class="controlsDemo__flex ws-justify-content-center ws-align-items-center">
+                                <div class="controls-text-label controlsDemo_fixedWidth200">Контурная кнопка:</div>
+                                <div class="controlsDemo__flex ws-align-items-center">
+                                    <div class="controls-margin_right-m">
+                                        <Controls.buttons:Button viewMode="outlined"
+                                                                 caption="Кнопка"
+                                                                 attr:data-qa="controlsDemo_Buttons__outlined"/>
+                                    </div>
+                                    <div class="controls-margin_right-m">
+                                        <Controls.buttons:Button viewMode="outlined"
+                                                                 icon="icon-Send"
+                                                                 attr:data-qa="controlsDemo_Buttons__outlinedIcon"/>
+                                    </div>
+                                    <div>
+                                        <Controls.buttons:Button viewMode="outlined"
+                                                                 caption="Кнопка"
+                                                                 readOnly="{{true}}"
+                                                                 attr:data-qa="controlsDemo_Buttons__outlined-readOnly"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="controlsDemo__flex ws-justify-content-center ws-align-items-center controls-margin_top-m">
+                                <div class="controls-text-label controlsDemo_fixedWidth200">Кнопка с заливкой:</div>
+                                <div class="controlsDemo__flex ws-align-items-center">
+                                    <div class="controls-margin_right-m">
+                                        <Controls.buttons:Button viewMode="filled"
+                                                                 caption="Кнопка"
+                                                                 attr:data-qa="controlsDemo_Buttons__filled"/>
+                                    </div>
+                                    <div class="controls-margin_right-m">
+                                        <Controls.buttons:Button viewMode="filled"
+                                                                 iconStyle="contrast"
+                                                                 icon="icon-Send"
+                                                                 attr:data-qa="controlsDemo_Buttons__filledIcon"/>
+                                    </div>
+                                    <div>
+                                        <Controls.buttons:Button viewMode="filled"
+                                                                 caption="Кнопка"
+                                                                 readOnly="{{true}}"
+                                                                 attr:data-qa="controlsDemo_Buttons__filled-readOnly"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="controlsDemo__flex ws-justify-content-center ws-align-items-center controls-margin_top-m">
+                                <div class="controls-text-label controlsDemo_fixedWidth200">Кнопка в виде ссылки:</div>
+                                <div class="controlsDemo__flex ws-align-items-center">
+                                    <div class="controls-margin_right-m">
+                                        <Controls.buttons:Button viewMode="link"
+                                                                 caption="Кнопка"
+                                                                 attr:data-qa="controlsDemo_Buttons__link"/>
+                                    </div>
+                                    <div class="controls-margin_right-m">
+                                        <Controls.buttons:Button viewMode="link"
+                                                                 icon="icon-Send"
+                                                                 attr:data-qa="controlsDemo_Buttons__linkIcon"/>
+                                    </div>
+                                    <div>
+                                        <Controls.buttons:Button viewMode="link"
+                                                                 caption="Кнопка"
+                                                                 readOnly="{{true}}"
+                                                                 attr:data-qa="controlsDemo_Buttons__link-readOnly"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="controlsDemo__flex ws-justify-content-center ws-align-items-center controls-margin_top-m">
+                                <div class="controls-text-label controlsDemo_fixedWidth200">Кнопка с заливкой по ховеру:
+                                </div>
+                                <div class="controlsDemo__flex ws-align-items-center">
+                                    <div class="controls-margin_right-m">
+                                        <Controls.buttons:Button viewMode="ghost"
+                                                                 icon="icon-Send"
+                                                                 attr:data-qa="controlsDemo_Buttons__ghost"/>
+                                    </div>
+                                    <div>
+                                        <Controls.buttons:Button viewMode="ghost"
+                                                                 icon="icon-Send"
+                                                                 readOnly="{{true}}"
+                                                                 attr:data-qa="controlsDemo_Buttons__ghost-readOnly"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="controls-text-label controls-margin_top-2xl">Размеры кнопок</div>
+                    <div class="controlsDemo__flex ws-align-items-center ">
+                        <Controls.buttons:Button caption="Кнопка"
+                                                 inlineHeight="m"
+                                                 fontSize="m"
+                                                 icon="icon-SabyBird"
+                                                 iconSize="s"
+                                                 attr:class="controls-margin_right-m"/>
+
+                        <Controls.buttons:Button caption="Кнопка"
+                                                 inlineHeight="xl"
+                                                 fontSize="xl"
+                                                 icon="icon-SabyBird"
+                                                 iconSize="m"
+                                                 attr:class="controls-margin_right-m"/>
+
+                        <Controls.buttons:Button caption="Кнопка"
+                                                 inlineHeight="5xl"
+                                                 fontSize="3xl"
+                                                 icon="icon-SabyBird"
+                                                 iconSize="l"/>
+                    </div>
+                </div>
+            </div>
+            <div class="ws-flex-column controls-margin_left-2xl">
+                <div>
+                    <div class="controls-text-label controls-margin_bottom-xs">Цвета кнопок</div>
+                    <div data-qa="controlsDemo_Buttons__capture"
+                         class="controlsDemo__flex ws-justify-content-center ws-align-items-center">
+                        <div class="controlsDemo__flex ws-flex-column ws-align-items-center"
+                             data-qa="controlsDemo-ButtonStyle__ContrastBackgroundFalse">
+                            <ws:for data="buttonStyle in _buttonStyles">
+                                <div class="controls-inlineheight-l controls-margin_bottom-m controls-margin_right-s controlsDemo__flex ws-align-items-center">
+                                    <Controls.buttons:Button viewMode="outlined"
+                                                             caption="Кнопка"
+                                                             buttonStyle="{{buttonStyle}}"
+                                                             attr:data-qa="controlsDemo-ButtonStyle__ContrastBackgroundFalse-{{buttonStyle}}"/>
+                                </div>
+                            </ws:for>
+                            <div class="controls-inlineheight-l controls-margin_bottom-m"></div>
+                        </div>
+                        <div class="controlsDemo__flex ws-flex-column ws-align-items-center"
+                             data-qa="controlsDemo-ButtonStyle__ContrastBackgroundTrue">
+                            <ws:for data="buttonStyle in _buttonStyles">
+                                <div class="controls-inlineheight-l controls-margin_bottom-m controls-margin_right-s controlsDemo__flex ws-align-items-center">
+                                    <Controls.buttons:Button viewMode="filled"
+                                                             caption="Кнопка"
+                                                             buttonStyle="{{buttonStyle}}"
+                                                             attr:data-qa="controlsDemo-ButtonStyle__ContrastBackgroundTrue-{{buttonStyle}}"/>
+                                </div>
+                            </ws:for>
+                            <div class="controls-inlineheight-l controls-margin_bottom-m controls-margin_right-s controlsDemo__flex ws-align-items-center">
+                                <Controls.buttons:Button viewMode="filled"
+                                                         caption="Кнопка"
+                                                         buttonStyle="brand"
+                                                         attr:data-qa="controlsDemo-ButtonStyle__ContrastBackgroundTrue-{{buttonStyle}}"/>
+                            </div>
+                        </div>
+                        <div class="controlsDemo__flex ws-flex-column ws-align-items-center"
+                             data-qa="controlsDemo-ButtonStyle__ViewModeLinkText">
+                            <ws:for data="fontColorStyle in _buttonStyles">
+                                <div class="controls-inlineheight-l controls-margin_bottom-m controls-margin_right-s controlsDemo__flex ws-align-items-center">
+                                    <Controls.buttons:Button viewMode="link" caption="Подробнее"
+                                                             fontColorStyle="{{fontColorStyle}}"/>
+                                </div>
+                            </ws:for>
+                            <div class="controls-inlineheight-l controls-margin_bottom-m"></div>
+                        </div>
+
+                        <div class="controlsDemo__flex ws-flex-column ws-align-items-center"
+                             data-qa="controlsDemo-ButtonStyle__ViewModeLinkIcon">
+                            <ws:for data="fontColorStyle in _buttonStyles">
+                                <div class="controls-inlineheight-l controls-margin_bottom-m controls-margin_right-s controlsDemo__flex ws-align-items-center">
+                                    <Controls.buttons:Button viewMode="link" icon="icon-SabyBird"
+                                                             iconStyle="{{fontColorStyle}}"/>
+                                </div>
+                            </ws:for>
+                            <div class="controls-inlineheight-l controls-margin_bottom-m controls-margin_right-s controlsDemo__flex ws-align-items-center">
+                                <Controls.buttons:Button viewMode="link" icon="icon-SabyBird"
+                                                         iconStyle="brand"/>
+                            </div>
+                        </div>
+
+                        <div class="controlsDemo__flex ws-flex-column ws-align-items-center"
+                             data-qa="controlsDemo-ButtonStyle__ViewModeToolButton">
+                            <ws:for data="buttonStyle in _buttonStyles">
+                                <div class="controls-inlineheight-l controls-margin_bottom-m controlsDemo__flex ws-align-items-center">
+                                    <Controls.buttons:Button viewMode="ghost"
+                                                             icon="icon-SabyBird"
+                                                             iconStyle="{{buttonStyle}}"
+                                                             iconSize="s"/>
+                                </div>
+                            </ws:for>
+                            <div class="controls-inlineheight-l controls-margin_bottom-m controlsDemo__flex ws-align-items-center">
+                                <Controls.buttons:Button viewMode="ghost"
+                                                         icon="icon-SabyBird"
+                                                         iconStyle="brand"
+                                                         iconSize="s"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

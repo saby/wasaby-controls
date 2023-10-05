@@ -1,0 +1,106 @@
+.controls-loading-indicator {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: default;
+   user-select: none;
+   background-color: var(--overlay_background-color_loadingIndicator);
+}
+
+// По правилам работы с z-index-ами платформенные решения находятся в диапазоне 16-30.
+// https://docs.google.com/document/d/1jKYv2go53aYc-zjOhUERS0CzvfihVJ5ZdRrbN-WL9WA/edit
+// Так как индикатор должен перекрывать layout-Browser__hint , навешиваем ему z-index 17, а layout-Browser__hint - 16.
+// Добавляем z-index на область с overlay
+
+.controls-loading-indicator_local {
+   z-index: 17;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+}
+
+.controls-loading-indicator_global {
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 1000000; /* 16777271 2147483647 */
+}
+
+.controls-loading-indicator_overlay-none {
+   background-color: transparent;
+   pointer-events: none;
+   cursor: auto;
+}
+
+.controls-loading-indicator_overlay-dark {
+   background-color: var(--contrast_overlay_background-color_loadingIndicator);
+}
+
+.controls-loading-indicator_sided {
+   .justify-content(flex-start);
+}
+
+.controls-loading-indicator_sided-left {
+   .flex-direction(row);
+}
+
+.controls-loading-indicator_sided-right {
+   .flex-direction(row-reverse);
+}
+
+.controls-loading-indicator_sided-top {
+   .flex-direction(column);
+}
+
+.controls-loading-indicator_sided-bottom {
+   .flex-direction(column-reverse);
+}
+
+.controls-loading-indicator-in {
+   box-sizing: border-box;
+   overflow: hidden;
+   /* stylelint-disable-next-line declaration-no-important */
+   cursor: default !important;
+   pointer-events: auto;
+   width: calc(
+      var(--spinner_l_size_loadingIndicator) + 2 * var(--content_l_padding_loadingIndicator)
+   );
+   height: calc(
+      var(--spinner_l_size_loadingIndicator) + 2 * var(--content_l_padding_loadingIndicator)
+   );
+   border-radius: var(--content_l_border_radius_loadingIndicator);
+   background: var(--content_background-color_loadingIndicator)
+      var(--spinner_l_background-image_loadingIndicator) 50% 50% no-repeat;
+   background-size: var(--spinner_l_size_loadingIndicator);
+   font-size: var(--font-size_loadingIndicator);
+   color: var(--text-color);
+   box-shadow: var(--shadow_b);
+}
+
+.controls-loading-indicator_text .controls-loading-indicator-in {
+   width: auto;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   display: flex;
+   align-items: center;
+   min-width: calc(
+      var(--spinner_l_size_loadingIndicator) + 3 * var(--content_l_padding_loadingIndicator)
+   );
+   padding: 0 var(--content_l_padding_loadingIndicator) 0
+      calc(var(--spinner_l_size_loadingIndicator) + 2 * var(--content_l_padding_loadingIndicator));
+   background-position: left var(--content_l_padding_loadingIndicator) top 50%;
+}
+
+.controls-loading-indicator_small .controls-loading-indicator-in {
+   background-color: transparent;
+   min-width: calc(var(--spinner_s_size_loadingIndicator) + 2 * var(--offset_3xs));
+   height: calc(var(--spinner_s_size_loadingIndicator) + 2 * var(--offset_3xs));
+   border-radius: calc(var(--spinner_s_size_loadingIndicator) + 2 * var(--offset_3xs) / 4);
+   background-image: var(--spinner_s_background-image_loadingIndicator);
+   background-size: var(--spinner_s_size_loadingIndicator);
+   box-shadow: none;
+}

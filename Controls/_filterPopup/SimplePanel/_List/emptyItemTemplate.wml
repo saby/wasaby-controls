@@ -1,0 +1,14 @@
+<Controls.stickyBlock:StickyBlock
+        mode="replaceable"
+        shadowVisibility="visible"
+        backgroundStyle="menuPopup"
+        attr:class="controls-SimplePanel-dropdown__emptyItem"
+        attr:data-qa="SimplePanel-dropdown__emptyItem">
+   <ws:partial template="Controls/dropdown:ItemTemplate"
+               itemData="{{itemData}}"
+               displayProperty="{{displayProperty}}"
+               multiSelect="{{false}}"
+               attr:class="controls-SimplePanel-dropdown__emptyItem_content"
+   >
+   </ws:partial>
+</Controls.stickyBlock:StickyBlock>

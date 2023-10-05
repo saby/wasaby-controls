@@ -1,0 +1,292 @@
+.controls-itemActionsV {
+   align-items: center;
+   display: inline-flex;
+   opacity: 0;
+   position: absolute;
+   visibility: hidden;
+}
+
+.controls-itemActionsV__wrapper {
+   height: 100%;
+   min-width: 100%;
+   justify-content: center;
+   display: inline-flex;
+   align-items: center;
+}
+
+.controls-itemActionsV__wrapper-isEditing {
+   padding-left: var(--offset_xs);
+}
+
+.controls-itemActionsV_inside {
+   padding-right: var(--offset-right_itemActions);
+   min-height: var(--height_itemActions);
+   overflow: hidden;
+
+   &.controls-itemActionsV_editingToolbarVisible {
+      height: var(--height_editing_itemActions);
+   }
+}
+
+// 1. Когда иконки размера s, они должны выравниваться по центру по вертикали и горизонтали внутри блока с размером строки m.
+// 2. ItemAction без иконки должен выравниваться по вертикали по центру блока.
+// 3. ItemAction без иконки не должны выделяться при выделении текста записи. (в buttons это работает только для button, tool, functional)
+// 4. В плитке иконки должны выравниваться по центру
+.controls-itemActionsV__action {
+   min-width: var(--icon-size_m);
+   height: var(--icon-size_m);
+   justify-content: center;
+   user-select: none;
+   display: flex;
+   align-items: center;
+}
+
+/**
+ * Для случая, когда отключена подсветка по ховеру,
+ * но операции над записью всё равно нужно красить в цвет ховера
+ * добавил controls-background-hovered. Надо сводить стандарты операций над записью
+ * для разных типов плиток и подсветок и тогда сможем избавиться от этого.
+ */
+.controls-background-hovered,
+.controls-itemActionsV_style_default {
+   background-color: var(--item_hover_background-color_list);
+}
+
+.controls-itemActionsV_style {
+   @variants: primary, secondary, danger, success, warning, info, unaccented;
+   .for(@variants, {
+    &_@{_item} {
+      background-color: ~'var(--@{_item}_hover_background-color)';
+    }
+  });
+}
+
+.controls-itemActionsV_style_master {
+   background-color: var(--master_item_hover_background-color_list);
+
+   &.controls-itemActionsV_inside,
+   &.controls-itemActionsV_custom {
+      border-radius: var(--master_item_border-radius_list);
+   }
+
+   &.controls-itemActionsV_outside {
+      border-bottom-right-radius: var(--master_item_border-radius_list);
+   }
+}
+
+.ws-is-hover
+   .controls-BaseControl_hover_enabled:not(.controls-BaseControl_showActions_delayed)
+   .controls-Grid__row:hover
+   .controls-Grid__row-cell__last-outsideActions-master {
+   border-bottom-right-radius: 0;
+
+   .controls-Grid__row-cell__content {
+      border-bottom-right-radius: 0;
+   }
+}
+
+.controls-itemActionsV_outside {
+   right: 0;
+   height: var(--height_outside_itemActions);
+   padding-top: var(--offset-top_outside_itemActions);
+   padding-right: var(--offset-right_outside_itemActions);
+   padding-bottom: var(--offset-bottom_outside_itemActions);
+   padding-left: 0;
+   box-sizing: border-box;
+
+   &::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 0;
+      border-top: var(--height_outside_itemActions) solid var(--item_hover_background-color_list);
+      border-left: var(--corner_width_outside_itemActions) solid transparent;
+      left: calc(-1 * var(--corner_width_outside_itemActions));
+   }
+
+   &.controls-itemActionsV_editingToolbarVisible {
+      height: var(--height_editing_outside_itemActions);
+   }
+
+   // region стили для уголка вынесенных действий над записью
+   &.controls-itemActionsV_style_default::before {
+      border-top-color: var(--item_hover_background-color_list);
+   }
+
+   &.controls-itemActionsV_style_master::before {
+      border-top-color: var(--master_item_hover_background-color_list);
+   }
+
+   &.controls-itemActionsV_style {
+      @variants: primary, secondary, danger, success, warning, info, unaccented;
+      .for(@variants, {
+      &_@{_item}::before {
+        border-top-color: ~'var(--@{_item}_hover_background-color)';
+      }
+    });
+   }
+
+   // endregion стили для уголка вынесенных действий над записью
+
+   &.controls-itemActionsV_editing::before {
+      border-top-color: var(--active_background-color);
+   }
+
+   & .controls-itemActionsV__action_iconSize_s {
+      min-width: var(--item_area-size_outside_itemActions);
+      height: var(--item_area-size_outside_itemActions);
+   }
+}
+
+.controls-itemActionsV__outside_bottom_size-default {
+   bottom: calc(-1 * var(--height_outside_itemActions));
+}
+
+.controls-itemActionsV__outside_bottom_size-s {
+   bottom: calc(var(--item-separator_s_thickness_list) - var(--height_outside_itemActions));
+}
+
+.controls-itemActionsV__outside_bottom_size-l {
+   bottom: calc(var(--item-separator_l_thickness_list) - var(--height_outside_itemActions));
+}
+
+.controls-itemActionsV_outside-spacing {
+   height: var(--height_outside_itemActions);
+}
+
+.controls-itemActionsV_position_bottomRight {
+   bottom: 0;
+   right: 0;
+}
+
+.controls-itemActionsV_position_topRight {
+   top: 0;
+   right: 0;
+}
+
+.controls-itemActionsV_padding-bottom_default {
+   padding-bottom: var(--offset-bottom_itemActions);
+}
+
+.controls-itemActionsV_padding-bottom_null {
+   padding-bottom: 0;
+}
+
+.controls-itemActionsV_padding-top_default {
+   padding-top: var(--offset-top_itemActions);
+}
+
+.controls-itemActionsV_padding-top_null {
+   padding-top: 0;
+}
+
+.controls-itemActionsV_editing {
+   background-color: var(--active_background-color);
+}
+
+.controls-itemActionsV_editingToolbarVisible {
+   padding-right: 0;
+}
+
+.controls-itemActionsV_action_padding_null {
+   padding: 0;
+}
+
+.ws-is-hover {
+   .controls-itemActionsV__action:hover .controls-icon_style-secondary {
+      fill: var(--secondary_hover_icon-color);
+      color: var(--secondary_hover_icon-color);
+   }
+}
+
+.controls-itemActionsV_swiped {
+   display: inline-flex;
+   visibility: visible;
+   opacity: 1;
+}
+
+// убрать после https://online.sbis.ru/opendoc.html?guid=c558bf80-4cd1-4854-a963-4af211246111
+.controls-ItemActions__popup__list {
+   margin-top: calc(
+      0px - var(--close-button_offset-top_sticky) - var(--content_padding-top_sticky)
+   );
+   margin-left: var(--close-button_offset-right_sticky);
+}
+
+@keyframes timeout {
+   0%,
+   80% {
+      opacity: 0;
+   }
+
+   100% {
+      opacity: 1;
+   }
+}
+
+.controls-itemActionsV_adaptive,
+.controls-itemActionsV__wrapper_adaptive {
+   width: 100%;
+   padding: 0;
+}
+
+.controls-itemActionsV_action_adaptive {
+   width: 100%;
+   flex-shrink: 1;
+   flex-grow: 1;
+   justify-content: center;
+}
+
+// region roundBorders
+
+.controls-itemActionsV_roundBorder_bottomLeft {
+   /* stylelint-disable-next-line unit-no-unknown */
+   @variants: 3 xs, 2 xs, xs, s, m, l, xl, 2 xl, 3 xl;
+
+   .for(@variants, {
+    &_@{_item} {
+      border-bottom-left-radius: ~'var(--border-radius_@{_item})';
+    }
+  });
+}
+
+.controls-itemActionsV_roundBorder_bottomRight {
+   /* stylelint-disable-next-line unit-no-unknown */
+   @variants: 3 xs, 2 xs, xs, s, m, l, xl, 2 xl, 3 xl;
+
+   .for(@variants, {
+    &_@{_item} {
+      border-bottom-right-radius: ~'var(--border-radius_@{_item})';
+    }
+  });
+}
+
+.controls-itemActionsV_roundBorder_topLeft {
+   /* stylelint-disable-next-line unit-no-unknown */
+   @variants: 3 xs, 2 xs, xs, s, m, l, xl, 2 xl, 3 xl;
+
+   .for(@variants, {
+    &_@{_item} {
+      border-top-left-radius: ~'var(--border-radius_@{_item})';
+    }
+  });
+}
+
+.controls-itemActionsV_roundBorder_topRight {
+   /* stylelint-disable-next-line unit-no-unknown */
+   @variants: 3 xs, 2 xs, xs, s, m, l, xl, 2 xl, 3 xl;
+
+   .for(@variants, {
+    &_@{_item} {
+      border-top-right-radius: ~'var(--border-radius_@{_item})';
+    }
+  });
+}
+
+// endregion roundBorders
+
+.controls-background-translucent-active-light {
+   background-color: var(--translucent_active_background-color_light);
+}
+

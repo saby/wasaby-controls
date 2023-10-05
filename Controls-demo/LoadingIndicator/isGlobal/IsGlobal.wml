@@ -1,0 +1,37 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell ws-flexbox ws-flex-column controlsDemo__mb2">
+        <div class="controlsDemo__mb1">
+            <div class="controls-text-label">isGlobal=true, delay=2000</div>
+        </div>
+        <div>
+            <a attr:class="ws-link controls-Demo__indicator_global_delay" on:click="_firstOpen()">Open (Closes after 3 seconds.)</a>
+        </div>
+    </div>
+    <div class="controlsDemo__cell ws-flexbox ws-flex-column">
+        <div class="controlsDemo__mb1">
+            <div class="controls-text-label">isGlobal=false, delay=0</div>
+        </div>
+        <div attr:class="controls-demo__indicator_container">
+            <div attr:class="controls-demo__indicator_buttons" style="margin-bottom: 10px;">
+                <a attr:class="ws-link controls-Demo__indicator_local" on:click="_secondOpen(3000)">Open (Closes after 3 seconds.)</a>
+            </div>
+
+            <Controls.LoadingIndicator
+                    name="loadingIndicator"
+                    attr:class="controls-demo__indicator_inst"
+                    isGlobal="{{false}}"
+                    overlay="dark"
+                    delay="{{0}}"
+                    message="local indicator"
+            >
+                <div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+            </Controls.LoadingIndicator>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper">
+    <span class="controls-text-label controlsDemo__mb1">Эмуляция диалога с маленькими сообщениями, virtualPageSize 40, pageSize 20</span>
+    <Controls-demo.list_new.VirtualScroll.NavigationSwitcher.Index storeId="ConstantHeightsSmallDialog" totalCount="{{1000}}" pageSize="{{20}}" page="{{49}}" direction="backward">
+        <ws:content>
+            <Controls.scroll:Container attr:class="controlsDemo__maxWidth500 controlsDemo__height500 controlsDemo_line-height18"
+                                       initialScrollPosition="{{_initialScrollPosition}}">
+                <Controls.list:View storeId="ConstantHeightsSmallDialog">
+                    <ws:virtualScrollConfig pageSize="{{40}}"/>
+                </Controls.list:View>
+            </Controls.scroll:Container>
+        </ws:content>
+    </Controls-demo.list_new.VirtualScroll.NavigationSwitcher.Index>
+</div>

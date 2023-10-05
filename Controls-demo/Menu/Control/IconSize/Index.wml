@@ -1,0 +1,20 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper">
+      <div class="controls-text-label">iconSize = s</div>
+      <Controls.menu:Control
+              items="{{_items}}"
+              keyProperty="key"
+              displayProperty="title"
+              iconSize="s"
+      />
+   </div>
+   <div class="controlsDemo__wrapper">
+      <div class="controls-text-label">iconSize = m</div>
+      <Controls.menu:Control
+              items="{{_items}}"
+              keyProperty="key"
+              displayProperty="title"
+              iconSize="m"
+      />
+   </div>
+</div>

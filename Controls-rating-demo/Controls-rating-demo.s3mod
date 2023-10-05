@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ui_module name="Controls-rating-demo"
+           id="8be939ce-b823-4fe2-bd67-b89d12aee53d"
+           package="Wasaby"
+           responsible="Кондратьев И.Н."
+           version="1.00">
+  <depends>
+      <module id="f27abe12-19df-4c9f-b886-634bd20a0011" name="UI"/>
+      <module id="bc439e5c-7ac9-4029-bafd-6ab17f28dace" name="Controls-rating"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <resources/>
+  <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

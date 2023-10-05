@@ -1,0 +1,9 @@
+<Controls.context:ContextOptionsConsumer scope="{{ _options }}">
+    <ws:contextOptionsInnerComponent>
+        <Controls._baseList.Data.CompatibleContainerConnected
+            name="containerConnected"
+            scope="{{ contextOptionsInnerComponent }}"
+            _dataOptionsValue="{{contextOptionsInnerComponent._dataOptionsValue}}"
+        />
+    </ws:contextOptionsInnerComponent>
+</Controls.context:ContextOptionsConsumer>

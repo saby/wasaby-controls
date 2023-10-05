@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls/Separator bold=true 1`] = `
+<div>
+  <span
+    class="controls_toggle_theme-default controls-Separator__icon  "
+    data-qa="controls-Separator"
+  >
+    <span
+      class="controls-Separator__wrapper controls-Separator__wrapper"
+    >
+      <i
+        class="controls-icon controls-Separator__icon_style-secondary icon-MarkExpandBold  controls-icon controls-Separator__icon_size"
+        data-qa="controls-Separator__expand"
+      />
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/Separator default 1`] = `
+<div>
+  <span
+    class="controls_toggle_theme-default controls-Separator__icon  "
+    data-qa="controls-Separator"
+  >
+    <span
+      class="controls-Separator__wrapper controls-Separator__wrapper"
+    >
+      <i
+        class="controls-icon controls-Separator__icon_style-secondary icon-ExpandLight  controls-icon controls-Separator__icon_size"
+        data-qa="controls-Separator__expand"
+      />
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/Separator style=primary 1`] = `
+<div>
+  <span
+    class="controls_toggle_theme-default controls-Separator__icon  "
+    data-qa="controls-Separator"
+  >
+    <span
+      class="controls-Separator__wrapper controls-Separator__wrapper"
+    >
+      <i
+        class="controls-icon controls-Separator__icon_style-primary icon-ExpandLight  controls-icon controls-Separator__icon_size"
+        data-qa="controls-Separator__expand"
+      />
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/Separator value=true 1`] = `
+<div>
+  <span
+    class="controls_toggle_theme-default controls-Separator__icon  "
+    data-qa="controls-Separator"
+  >
+    <span
+      class="controls-Separator__wrapper controls-Separator__wrapper"
+    >
+      <i
+        class="controls-icon controls-Separator__icon_style-secondary icon-CollapseLight  controls-icon controls-Separator__icon_size"
+        data-qa="controls-Separator__collapse"
+      />
+    </span>
+  </span>
+</div>
+`;

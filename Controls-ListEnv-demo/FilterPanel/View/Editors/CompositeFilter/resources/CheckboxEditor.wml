@@ -1,0 +1,3 @@
+<Controls.checkbox:Checkbox scope="{{_options}}"
+                          bind:value="_value"
+                          on:valueChanged="_handleValueChanged()"/>

@@ -1,0 +1,114 @@
+.Colormark__List {
+  &__insideOffset {
+    padding: var(--offset_2xs);
+  }
+
+  &_item {
+    height: var(--inline_height_m);
+
+    &_disabled {
+      pointer-events: none;
+    }
+
+    &_customCheckbox {
+      min-width: var(--inline_height_s);
+    }
+  }
+
+  &_editorTemplate {
+    margin-bottom: var(--border-thickness);
+
+    &_customActionsContainer {
+      position: relative;
+    }
+
+    &_styleSettings {
+      margin-top: var(--offset_2xs);
+    }
+  }
+
+  &_container {
+    background-color: var(--background-color);
+
+    &_blackout {
+      background-color: var(--unaccented_background-color);
+    }
+  }
+
+  &_inputOffset {
+    margin-right: calc(2 * var(--offset_3xl));
+  }
+
+  &__panelOffset {
+    margin-top: calc(-1 * var(--offset_s));
+    margin-left: calc(-1 * var(--offset_s));
+  }
+
+  &_Bubble {
+    width: var(--offset_m);
+    height: var(--offset_m);
+    border-radius: 50%;
+
+    &_disabled {
+      pointer-events: none;
+    }
+  }
+
+  &_itemActionsPosition {
+    right: var(--offset_xs);;
+    bottom: var(--offset_2xs);
+  }
+
+  &_styleSettings {
+    &_style {
+      &_bold {
+        font-weight: bold;
+      }
+
+      &_italic {
+        font-style: italic;
+      }
+      /* stylelint-disable selector-max-type */
+      &_underline,
+      &_underline input {
+        text-decoration: underline;
+      }
+
+      &_stroked,
+      &_stroked input {
+        text-decoration: line-through;
+      }
+
+      &_underline&_stroked,
+      &_underline&_stroked input {
+        text-decoration: underline line-through;
+      }
+      /* stylelint-enable selector-max-type */
+    }
+  }
+}
+
+.controls-itemActionsV_editing_colormark_list,
+.controls-background-editing_colormark_list {
+  background-color: var(--background-color);
+}
+
+.controls-background-editing_colormark_list {
+  border-radius: var(--border-radius_s);
+}
+
+.controls-itemActionsV__action_padding_colormark {
+  margin: 0 var(--offset_2xs);
+}
+
+.ws-is-hover {
+  .Colormark__List_styleSettings_container {
+    .controls-icon_style-secondary:hover {
+      color: var(--secondary_hover_icon-color);
+    }
+
+    .controls-icon_style-unaccented:hover {
+      color: var(--unaccented_hover_icon-color);
+    }
+  }
+}

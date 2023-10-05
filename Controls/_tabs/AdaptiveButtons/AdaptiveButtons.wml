@@ -1,0 +1,95 @@
+<div class="controls-AdaptiveButtons"
+     attr:style="max-width: {{_options.containerWidth}}px">
+    <ws:template name="templateMore">
+        <div class="controls-AdaptiveButtons__more controls-AdaptiveButtons__more_align_{{_options.align}}">
+            <div class="controls-AdaptiveButtons__more__text controls-AdaptiveButtons__more__text_align_{{_options.align}}">
+                <Controls.Container.Async templateName="Controls/dropdown:Selector" attr:data-qa="AdaptiveButtons__more">
+                    <Controls.source:SelectedKey selectedKey="{{_options.selectedKey}}">
+                        <ws:partial template="{{content.resolvedTemplate}}"
+                                name="menuButton"
+                                keyProperty="{{_options.keyProperty}}"
+                                parentProperty="parent"
+                                nodeProperty="@parent"
+                                source="{{_menuSource}}"
+                                displayProperty="{{_options.displayProperty}}"
+                                filter="{{_filter}}"
+                                on:selectedKeysChanged="_menuItemClickHandler()"
+                                on:mousedown="_onMouseDownHandler()">
+                            <ws:footerTemplate>
+                                <ws:if data="{{_options.menuFooterTemplate}}">
+                                    <ws:partial template="{{_options.menuFooterTemplate}}"/>
+                                </ws:if>
+                                <ws:else>
+                                    <invisible-node />
+                                </ws:else>
+                            </ws:footerTemplate>
+                            <ws:contentTemplate>
+                                <ws:if data="{{_options.moreButtonView === 'separator'}}">
+                                    <Controls.ShowMoreButton iconSize="l"
+                                                             value="{{false}}"
+                                    />
+                                </ws:if>
+                                <ws:else>
+                                    <Controls.Container.Async templateName="Controls/dropdown:inputDefaultContentTemplate">
+                                        <ws:partial template="{{content.resolvedTemplate}}"
+                                                    icon=""
+                                                    text=""
+                                                    hasMoreText="{[Ещё]}..."/>
+                                    </Controls.Container.Async>
+                                </ws:else>
+                            </ws:contentTemplate>
+                        </ws:partial>
+                    </Controls.source:SelectedKey>
+                </Controls.Container.Async>
+            </div>
+        </div>
+    </ws:template>
+    <div class="controls-AdaptiveButtons__wrapper {{_lastIndex < _items.getCount() - 1 ? 'controls-AdaptiveButtons__wrapper_incomplete'}} controls-AdaptiveButtons__wrapper_align_{{_options.align}}">
+        <Controls._tabs.Buttons selectedKey="{{_options.selectedKey}}"
+                                keyProperty="{{_options.keyProperty}}"
+                                items="{{_visibleItems}}"
+                                style="{{_options.style}}"
+                                selectedStyle="{{_options.selectedStyle}}"
+                                borderVisible="{{_options.borderVisible}}"
+                                inlineHeight="{{_options.inlineHeight}}"
+                                displayProperty="{{_options.displayProperty}}"
+                                align="{{_options.align}}"
+                                tooltipVisible="{{false}}"
+                                on:selectedKeyChanged="_selectedKeyHandler()">
+            <ws:itemTemplate>
+                <ws:partial template="{{_itemTemplate}}"
+                            item="{{itemTemplate.item}}"
+                            iconStyle="secondary"
+                            attr:class="controls-AdaptiveButtons__item"
+                            attr:title="{{itemTemplate.item[_options.displayProperty]}}"
+                            displayProperty="{{_options.displayProperty}}" />
+            </ws:itemTemplate>
+            <ws:itemRightTemplate>
+                <ws:if data="{{itemRightTemplate.item.icon}}">
+                    <ws:partial template="wml!Controls/_tabs/Buttons/templates/IconTemplate"
+                                tooltip="{{itemRightTemplate.item.iconTooltip}}"
+                                icon="{{itemRightTemplate.item.icon}}"
+                                iconStyle="{{itemRightTemplate.item.iconStyle}}"
+                    />
+                </ws:if>
+                <ws:if data="{{itemRightTemplate.item.icons}}">
+                    <ws:for data="_icon in itemRightTemplate.item.icons">
+                        <ws:partial template="wml!Controls/_tabs/Buttons/templates/IconTemplate"
+                                    tooltip="{{_icon.iconTooltip}}"
+                                    icon="{{_icon.icon}}"
+                                    iconStyle="{{_icon.iconStyle}}"
+                        />
+                    </ws:for>
+                </ws:if>
+                <ws:if data="{{_lastIndex < _items.getCount() - 1 && itemRightTemplate.index === _visibleItems.getCount() - 1 && _options.align === 'left'}}">
+                    <ws:partial template="templateMore" />
+                </ws:if>
+            </ws:itemRightTemplate>
+            <ws:itemLeftTemplate>
+                <ws:if data="{{_lastIndex < _items.getCount() - 1 && itemLeftTemplate.index === 0 && _options.align === 'right'}}">
+                    <ws:partial template="templateMore" />
+                </ws:if>
+            </ws:itemLeftTemplate>
+        </Controls._tabs.Buttons>
+    </div>
+</div>

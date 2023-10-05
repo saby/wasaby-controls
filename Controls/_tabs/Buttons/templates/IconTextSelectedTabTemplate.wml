@@ -1,0 +1,14 @@
+<div class="ws-flexbox ws-align-self-baseline">
+    <ws:if data="{{item.icon}}">
+        <Controls.icon:Icon
+                icon="{{item.icon}}"
+                iconSize="{{item.iconSize || 's'}}"
+                iconStyle="{{item.iconStyle || 'secondary'}}"
+                attr:class="ws-align-self-center controls-fontweight-default"
+                attr:title="{{item.iconTooltip}}"
+        />
+    </ws:if>
+    <ws:if data="{{item.caption && selected}}">
+        <div class="controls-Tabs_margin-left controls-Tabs__item_overflow">{{item.caption}}</div>
+    </ws:if>
+</div>

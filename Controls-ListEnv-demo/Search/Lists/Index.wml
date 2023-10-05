@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper">
+   <Controls-ListEnv.searchConnected:Input storeId="{{['list1', 'list2']}}" />
+   <div class="ws-flexbox">
+      <Controls.list:View storeId="list1" />
+      <Controls.list:View storeId="list2" />
+   </div>
+</div>

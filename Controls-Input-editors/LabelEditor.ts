@@ -1,0 +1,1 @@
+export { LabelEditor, ILabelEditorProps } from './LabelEditor/LabelEditor';

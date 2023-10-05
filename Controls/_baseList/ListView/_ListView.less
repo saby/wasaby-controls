@@ -1,0 +1,1254 @@
+.controls-ListViewV {
+   height: 100%;
+   position: relative;
+}
+
+.controls-ListView__itemV-relative {
+   position: relative;
+}
+
+// region Marker
+
+.controls-ListView__itemV_marker {
+   display: inline-flex;
+   // 2 - чтобы маркер не скрывался лесенкой
+   z-index: 2;
+}
+
+.controls-ListView__itemV_marker_with_image::after {
+   margin-top: var(--marker_image_padding);
+   margin-bottom: var(--marker_image_padding);
+}
+
+.controls-ListView__itemV_marker::before {
+   content: '\200b';
+}
+
+.controls-ListView__itemV_marker-baselineWithEditingTemplate::before {
+   font-size: var(--baseline_list);
+}
+
+.controls-ListView__itemV_marker::after {
+   content: '';
+   background-color: var(--marker_color);
+   border-radius: var(--border-radius_2xs);
+}
+
+.controls-ListView__itemV_marker_size_content-xs {
+   align-items: center;
+}
+
+.controls-ListView__itemContent {
+   z-index: 1;
+}
+
+.ws-is-ie .controls-ListView__itemV_marker_size_content-xs {
+   top: 0;
+   bottom: 0;
+}
+
+.controls-ListView__item_master .controls-ListView__itemContent {
+   min-height: calc(
+      var(--master_item_min-height) - var(--master_item_padding-top_list) -
+         var(--master_item_padding-bottom_list)
+   );
+}
+
+// Если запись оборачивают в StickyBlock то у нее position=sticky, в ie из-за этого маркер неправильно позиционриуется
+.ws-is-ie .controls-StickyBlock .controls-ListView__itemContent {
+   position: relative;
+}
+
+.controls-ListView__itemV_marker_default {
+   position: absolute;
+   left: 0;
+}
+
+.controls-ListView__itemV_marker_outside {
+   @variants: image-s, image-m, image-mt, image-l, content-xl, content-xs;
+   .for(@variants, {
+      &_@{_item} {
+         left: calc(-1 * ~'var(--marker_thickness_@{_item}_list)');
+         position: absolute;
+      }
+   });
+}
+
+.controls-ListView__itemV_marker_size {
+   @variants: image-s, image-m, image-mt, image-l, content-xl, content-xs;
+   .for(@variants, {
+      &_@{_item}::after {
+         height: ~'var(--marker_size_@{_item}_list)';
+         width: ~'var(--marker_thickness_@{_item}_list)';
+      }
+   });
+}
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+.controls-ListViewV {
+   .controls-ListView__itemV_marker-default_topPadding-null,
+   .controls-ListView__itemV_marker-master_topPadding-null {
+      padding-top: 0;
+   }
+
+   .controls-ListView__itemV_marker-default_topPadding-s,
+   .controls-ListView__itemV_marker-master_topPadding-s {
+      padding-top: calc(var(--item_padding-top_s_list) + var(--item-separator_s_thickness_list));
+
+      &.controls-ListView__rowSeparator_size-s {
+         padding-top: var(--item_padding-top_s_list);
+      }
+
+      &.controls-ListView__rowSeparator_size-l {
+         padding-top: calc(
+            var(--item_padding-top_s_list) + var(--item-separator_s_thickness_list) -
+               var(--item-separator_l_thickness_list)
+         );
+      }
+   }
+
+   .controls-ListView__itemV_marker-default_topPadding-l,
+   .controls-ListView__itemV_marker-default_topPadding-default,
+   .controls-ListView__itemV_marker-master_topPadding-l {
+      padding-top: calc(var(--item_padding-top_l_list) + var(--item-separator_s_thickness_list));
+
+      &.controls-ListView__rowSeparator_size-s {
+         padding-top: var(--item_padding-top_l_list);
+      }
+
+      &.controls-ListView__rowSeparator_size-l {
+         padding-top: calc(
+            var(--item_padding-top_l_list) + var(--item-separator_s_thickness_list) -
+               var(--item-separator_l_thickness_list)
+         );
+      }
+   }
+
+   .controls-ListView__itemV_marker-master_topPadding-default {
+      padding-top: var(--master_item_padding-top_list);
+   }
+}
+
+.controls-ListView__itemV_marker-default_topPadding,
+.controls-ListView__itemV_marker-master_topPadding {
+   /* stylelint-disable-next-line unit-no-unknown */
+   @variants: 3xs, 2xs, xs, m, xl, 2xl, 3xl;
+   .for(@variants, {
+      &-@{_item} {
+         padding-top: ~'var(--offset_@{_item})';
+      }
+   });
+}
+
+// TODO удалить, для совместимости
+// Высота маркера
+// Выравнивание по изображению или по тексту делается в соответствии со стандартом маркера в списке.
+// Маркер по изображению должен быть высотой с изображение, маркер по тексту должен быть высотой первой строки + верхний отступ.
+.controls-ListView__itemV_marker_default_height,
+.controls-ListView__itemV_marker_master_height {
+   @variants: text-2xs, text-xs, text-m, text-l, text-xl, text-2xl;
+   .for(@variants, {
+      &_@{_item}-padding-default,
+      &_@{_item}-padding-l {
+         height: ~'var(--marker_height_padding-l_@{_item}_list)';
+      }
+      &_@{_item}-padding-s,
+      &_@{_item}-padding-null {
+         height: ~'var(--marker_height_padding-s_@{_item}_list)';
+      }
+   });
+}
+
+.controls-ListView__itemV_marker-left {
+   left: 0;
+}
+
+.controls-ListView__itemV_marker-right {
+   right: 0;
+}
+
+.controls-ListView__itemV .controls-ListView__checkbox_marginTop_default,
+.controls-ListView__itemV .controls-ListView__checkbox_marginTop_l {
+   margin-top: calc(var(--item_padding-top_l_list) + var(--item-separator_s_thickness_list));
+}
+
+.controls-ListView__itemV .controls-ListView__checkbox_marginTop_s {
+   margin-top: calc(var(--item_padding-top_s_list) + var(--item-separator_s_thickness_list));
+}
+
+.controls-ListView__itemV .controls-ListView__checkbox_marginTop_null {
+   margin-top: var(--item-separator_s_thickness_list);
+}
+
+.controls-ListView__itemV .controls-ListView__checkbox_position-default {
+   float: left;
+   position: absolute;
+}
+
+.controls-ListView__itemV .controls-ListView__checkbox_position-custom {
+   display: inline-block;
+}
+
+.controls-ListView__checkbox-onhover {
+   visibility: hidden;
+}
+
+// В ie контент записи с z-index=1 перекрывает чекбокс и из-за этого клик по чекбоксу не происходит
+.ws-is-ie .controls-ListView__checkbox {
+   z-index: 2;
+}
+
+.ws-is-hover .controls-ListView__item_showCheckbox:hover .controls-ListView__checkbox-onhover {
+   visibility: visible;
+}
+
+/* region circle multiselect */
+
+.controls-ListView__multiSelect__circle {
+   display: inline-block;
+   flex-shrink: 0;
+   top: 0;
+}
+
+.controls-ListView__multiSelect__circle_style-default {
+   padding-left: calc((var(--offset_xl) - var(--icon-size_2xs)) / 2);
+}
+
+.controls-ListView__multiSelect__circle_style-master {
+   padding-left: calc(
+      (calc(var(--offset_xl) - var(--master_item_horizontal-offset_list)) - var(--icon-size_2xs)) /
+         2
+   );
+}
+
+.controls-ListView__multiSelect__innerCircle_selected-default {
+   fill: var(--marker_color);
+}
+
+.controls-ListView__multiSelect__innerCircle_unselected {
+   fill: none;
+}
+
+.controls-ListView__multiSelect__borderCircle {
+   fill: var(--unaccented_background-color);
+}
+
+.ws-is-hover .controls-ListView__itemV:hover {
+   .controls-ListView__multiSelect__borderCircle {
+      stroke: var(--border-color);
+   }
+}
+
+/* endregion circle multiselect */
+
+.controls-ListView__footer {
+   display: flex;
+   align-items: baseline;
+}
+
+.controls-ListView__footer__itemActionsV_outside {
+   min-height: var(--height_outside_itemActions);
+}
+
+.controls-ListView__footer__content {
+   width: 100%;
+}
+
+.controls-ListView__footer__user-content:not(.controls-ListView__footer__user-content-height_auto) {
+   min-height: var(--inline_height_m);
+
+   &::before {
+      content: '\200b';
+      font-size: var(--font-size_xl);
+   }
+}
+
+.controls-ListView__footer__paddingLeft_withCheckboxes {
+   padding-left: calc(var(--checkbox_offset-left_list) + var(--click-area_width_checkbox));
+}
+
+.controls-ListView__footer__paddingLeft_default {
+   padding-left: var(--item_padding-left_m_list);
+}
+
+.controls-ListView__item_default-topPadding_null,
+.controls-ListView__item_master-topPadding_null {
+   padding-top: 0;
+}
+
+.controls-ListView__item_default-topPadding_s,
+.controls-ListView__item_master-topPadding_s {
+   padding-top: calc(var(--item_padding-top_s_list) + var(--item-separator_s_thickness_list));
+
+   &.controls-ListView__rowSeparator_size-s {
+      padding-top: var(--item_padding-top_s_list);
+   }
+
+   &.controls-ListView__rowSeparator_size-l {
+      padding-top: calc(
+         var(--item_padding-top_s_list) + var(--item-separator_s_thickness_list) -
+            var(--item-separator_l_thickness_list)
+      );
+   }
+}
+
+.controls-ListView__item_default-topPadding_l,
+.controls-ListView__item_master-topPadding_l,
+.controls-ListView__item_default-topPadding_default {
+   padding-top: calc(var(--item_padding-top_l_list) + var(--item-separator_s_thickness_list));
+
+   &.controls-ListView__rowSeparator_size-s {
+      padding-top: var(--item_padding-top_l_list);
+   }
+
+   &.controls-ListView__rowSeparator_size-l {
+      padding-top: calc(
+         var(--item_padding-top_l_list) + var(--item-separator_s_thickness_list) -
+            var(--item-separator_l_thickness_list)
+      );
+   }
+}
+
+.controls-ListView__item_master-topPadding_default {
+   padding-top: var(--master_item_padding-top_list);
+}
+
+.controls-ListView__item_default-bottomPadding_null,
+.controls-ListView__item_master-bottomPadding_null {
+   padding-bottom: 0;
+}
+
+.controls-ListView__item_default-bottomPadding_s,
+.controls-ListView__item_master-bottomPadding_s {
+   padding-bottom: var(--item_padding-bottom_s_list);
+}
+
+.controls-ListView__item_default-bottomPadding_l,
+.controls-ListView__item_master-bottomPadding_l {
+   padding-bottom: var(--item_padding-bottom_l_list);
+}
+
+.controls-ListView__item_default-bottomPadding_default {
+   padding-bottom: var(--item_padding-bottom_l_list);
+}
+
+.controls-ListView__item_master-bottomPadding_default {
+   padding-bottom: var(--master_item_padding-bottom_list);
+}
+
+.controls-ListView__groupContent_master {
+   padding-top: var(--offset_s);
+}
+
+.controls-ListView__itemContent_withCheckboxes,
+.controls-ListView__groupContent__leftPadding_withCheckboxes,
+.controls-ListView__footer__paddingLeft_withCheckboxes {
+   // var(--click-area_width_checkbox). Nested calc() do not work in ie 11
+   padding-left: calc(
+      var(--checkbox_offset-left_list) + (var(--marker-box_size_checkbox) + var(--offset_2xs) * 2)
+   );
+}
+
+.controls-ListView__itemContent_withCheckboxes.controls-ListView__itemContent_withCheckboxes_master {
+   padding-left: calc(
+      var(--checkbox_offset-left_list) + (var(--marker-box_size_checkbox) + var(--offset_2xs))
+   );
+}
+
+.controls-ListView__item-leftPadding_default,
+.controls-ListView__groupContent__leftPadding_default,
+.controls-ListView__footer__paddingLeft_default {
+   padding-left: var(--outer_padding, var(--item_padding-left_default_list));
+}
+
+.controls-ListView__item-leftPadding_null,
+.controls-ListView__groupContent__leftPadding_null,
+.controls-ListView__footer__paddingLeft_null {
+   padding-left: 0;
+}
+
+.controls-ListView__item-leftPadding_xs,
+.controls-ListView__groupContent__leftPadding_xs,
+.controls-ListView__footer__paddingLeft_xs {
+   padding-left: var(--outer_padding, var(--item_padding-left_xs_list));
+}
+
+.controls-ListView__item-leftPadding_s,
+.controls-ListView__groupContent__leftPadding_s,
+.controls-ListView__footer__paddingLeft_s {
+   padding-left: var(--outer_padding, var(--item_padding-left_s_list));
+}
+
+.controls-ListView__item-leftPadding_m,
+.controls-ListView__groupContent__leftPadding_m,
+.controls-ListView__footer__paddingLeft_m {
+   padding-left: var(--outer_padding, var(--item_padding-left_m_list));
+}
+
+.controls-ListView__item-leftPadding_l,
+.controls-ListView__groupContent__leftPadding_l,
+.controls-ListView__footer__paddingLeft_l {
+   padding-left: var(--outer_padding, var(--item_padding-left_l_list));
+}
+
+.controls-ListView__item-leftPadding_xl,
+.controls-ListView__groupContent__leftPadding_xl,
+.controls-ListView__footer__paddingLeft_xl {
+   padding-left: var(--outer_padding, var(--item_padding-left_xl_list));
+}
+
+.controls-ListView__item-leftPadding_xxl,
+.controls-ListView__groupContent__leftPadding_xxl,
+.controls-ListView__footer__paddingLeft_xxl,
+.controls-ListView__item-leftPadding_2xl,
+.controls-ListView__groupContent__leftPadding_2xl,
+.controls-ListView__footer__paddingLeft_2xl {
+   padding-left: var(--outer_padding, var(--item_padding-left_2xl_list));
+}
+
+.controls-ListView__item-leftPadding_xxxl,
+.controls-ListView__groupContent__leftPadding_xxxl,
+.controls-ListView__footer__paddingLeft_xxxl,
+.controls-ListView__item-leftPadding_3xl,
+.controls-ListView__groupContent__leftPadding_3xl,
+.controls-ListView__footer__paddingLeft_3xl {
+   padding-left: var(--outer_padding, var(--item_padding-left_3xl_list));
+}
+
+.controls-ListView__item-rightPadding_default,
+.controls-ListView__groupContent__rightPadding_default {
+   padding-right: var(--item_padding-right_default_list);
+}
+
+.controls-ListView__item-rightPadding_null,
+.controls-ListView__groupContent__rightPadding_null {
+   padding-right: 0;
+}
+
+.controls-ListView__item-rightPadding_xs,
+.controls-ListView__groupContent__rightPadding_xs {
+   padding-right: var(--item_padding-right_xs_list);
+}
+
+.controls-ListView__item-rightPadding_s,
+.controls-ListView__groupContent__rightPadding_s {
+   padding-right: var(--item_padding-right_s_list);
+}
+
+.controls-ListView__item-rightPadding_m,
+.controls-ListView__groupContent__rightPadding_m {
+   padding-right: var(--item_padding-right_m_list);
+}
+
+.controls-ListView__item-rightPadding_l,
+.controls-ListView__groupContent__rightPadding_l {
+   padding-right: var(--item_padding-right_l_list);
+}
+
+.controls-ListView__item-rightPadding_xl,
+.controls-ListView__groupContent__rightPadding_xl {
+   padding-right: var(--item_padding-right_xl_list);
+}
+
+.controls-ListView__item-rightPadding_xxl,
+.controls-ListView__groupContent__rightPadding_xxl,
+.controls-ListView__item-rightPadding_2xl,
+.controls-ListView__groupContent__rightPadding_2xl {
+   padding-right: var(--item_padding-right_2xl_list);
+}
+
+.controls-ListView__item-rightPadding_xxxl,
+.controls-ListView__groupContent__rightPadding_xxxl,
+.controls-ListView__item-rightPadding_3xl,
+.controls-ListView__groupContent__rightPadding_3xl {
+   padding-right: var(--item_padding-right_3xl_list);
+}
+
+.controls-itemActionsV {
+   z-index: 1;
+}
+
+.controls-ListView__item_active {
+   background-color: var(--item_active_background-color_list);
+}
+
+.controls-ListView__item_editing {
+   > .controls-itemActionsV,
+   .controls-itemActionsV_custom {
+      opacity: 1;
+      visibility: visible;
+   }
+}
+
+.controls-background-editing_default,
+.controls-ListView__empty_background-editing {
+   background-color: var(--active_background-color);
+}
+
+// opacity можно вешать только на дочерние элементы.
+// Если непосредственно на itemContent повесить, то в гриде возникнут проблемы с тенями(не скроются тени между ячейками)
+// Поэтому для дефолтных темплэйтов элементов еще вешаем opacity только на текст с помощью color
+.controls-ListView__itemContent_faded {
+   color: var(--faded-text-color);
+}
+
+/* stylelint-disable-next-line selector-max-universal */
+.controls-ListView__itemContent_faded > * {
+   opacity: 0.6;
+}
+
+.controls-ListView__item-dragging-counter {
+   position: absolute;
+   display: flex;
+   align-items: center;
+   right: var(--item_dragging_counter_offset_list);
+   top: var(--item_dragging_counter_offset_list);
+   height: var(--item_dragging_counter_height_list);
+   font-size: var(--item_dragging_counter_font-size_list);
+   color: var(--contrast_text-color);
+   background-color: var(--primary_contrast_background-color);
+   border-radius: 100px; //круг
+   padding: 0 var(--offset_xs);
+   z-index: 4;
+}
+
+/* region ItemActions display */
+
+.controls-BaseControl_showActions_visible {
+   .controls-ListView__item_showActions {
+      .controls-itemActionsV_custom,
+      > .controls-itemActionsV {
+         visibility: visible;
+         opacity: 1;
+      }
+   }
+}
+
+.ws-is-hover .controls-BaseControl_showActions_delayed {
+   .controls-ListView__item_showActions:hover {
+      .controls-itemActionsV_custom,
+      > .controls-itemActionsV {
+         /* stylelint-disable-next-line no-unknown-animations */
+         animation: timeout .8s ease-out;
+      }
+   }
+}
+
+.ws-is-hover .controls-BaseControl_showActions_delayed,
+.ws-is-hover .controls-BaseControl_showActions_onhover {
+   .controls-ListView__item_showActions:hover {
+      .controls-itemActionsV_custom,
+      > .controls-itemActionsV {
+         visibility: visible;
+         opacity: 1;
+      }
+   }
+
+   .controls-hover-background-editing:hover {
+      background-color: var(--active_background-color);
+   }
+}
+
+/* endregion ItemActions display */
+
+.controls-ListView__groupContent_baseline {
+   &::before {
+      content: '\200b';
+   }
+
+   &_default::before {
+      font-size: var(--font-size_m);
+   }
+
+   /* stylelint-disable-next-line unit-no-unknown */
+   @variants: m, l, xl, 2xl, 3xl, 4xl;
+   .for(@variants, { &_@{_item} {
+      &::before {
+         font-size: ~'var(--font-size_@{_item})';
+      }
+   }});
+}
+
+.controls-ListView__groupContent_height {
+   min-height: var(--grouping_height_list);
+}
+
+.controls-ListView__groupContent_height_withItemActions {
+   min-height: var(--height_itemActions);
+}
+
+.controls-ListView__groupContent {
+   display: flex;
+   align-items: center;
+   min-width: 0;
+   flex-grow: 1;
+}
+
+.controls-ListView__groupSeparator {
+   height: var(--grouping_separator_thickness_list);
+   background-color: var(--separator_color);
+   min-width: 10%;
+   flex-grow: 1;
+   flex-shrink: 1;
+}
+
+.controls-ListView__groupSeparator-left {
+   margin-right: var(--grouping_expander_padding-left_list);
+}
+
+.controls-ListView__groupSeparator-right {
+   margin-left: var(--grouping_expander_padding-right_list);
+}
+
+.controls-ListView__groupContent-text_default {
+   font-size: var(--grouping_expander_font-size_list);
+}
+
+.controls-ListView__groupContent-text_color_default {
+   color: var(--grouping_expander_text-color_list);
+}
+
+.controls-ListView__groupContent-text_wrapper {
+   display: inline-flex;
+   align-items: baseline;
+   flex-shrink: 1;
+   overflow: hidden;
+}
+
+.controls-ListView__groupContent-text {
+   white-space: nowrap;
+   flex-shrink: 1;
+   flex-grow: 1;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+.controls-ListView__groupContent_textTransform_uppercase {
+   text-transform: uppercase;
+
+   /* stylelint-disable-next-line unit-no-unknown */
+   @variants: xs 1.25px, s 1.25px, m 1.25px, l 1.5px, xl 1.5px, 2xl 1.75px, 3xl 1.75px;
+   .for(@variants, {
+      @letter-spacing-value: extract(@_item, 1);
+      &_@{letter-spacing-value} {
+         letter-spacing: extract(@_item, 2);
+      }
+   });
+}
+
+.controls-ListView__groupContent_left {
+   text-align: left;
+}
+
+.controls-ListView__groupContent_right {
+   text-align: right;
+}
+
+.controls-ListView__groupContent_center {
+   text-align: center;
+}
+
+/* В safari на iPad так отрисовывается Tensor-font, что у блоков с текстом сверху на ~1 пиксель больше отступ, чем
+    у тех же блоков в любых других браузерах, в том числе на macOS. Это приводит к тому, что разделители у групп визуально
+    задраны на ~1px */
+.ws-is-mobile-safari {
+   .controls-ListView__groupContent-text {
+      position: relative;
+      top: -1px;
+   }
+}
+
+.controls-ListView__groupExpander {
+   user-select: none;
+   cursor: pointer;
+}
+
+// @TODO Пока не сделают новую иконку https://online.sbis.ru/opendoc.html?guid=916a90f1-97e9-4d38-a37b-b265a4aa5416
+.controls-ListView__groupExpander::before,
+.controls-ListView__groupExpander::after {
+   /* @TODO Перейти на иконки/переменную --font-family */
+   font-family: TensorFont, sans-serif;
+   line-height: 1;
+}
+
+.controls-ListView__groupExpander_left::before {
+   padding-right: var(--grouping_expander_icon_offset_list);
+   content: '\e000';
+}
+
+.controls-ListView__groupExpander_right::after {
+   padding-left: var(--grouping_expander_icon_offset_list);
+   content: '\e000';
+}
+
+.controls-ListView__groupExpander-iconSize_default {
+   &::before,
+   &::after {
+      width: var(--grouping_expander_icon-size_list);
+      font-size: var(--grouping_expander_icon-size_list);
+   }
+}
+
+.controls-ListView__groupExpander-iconSize_ {
+   /* stylelint-disable-next-line unit-no-unknown */
+   @variants: 2xs, xs, s, m, l;
+   .for(@variants, { &@{_item} {
+      &::before,
+      &::after {
+         width: ~'var(--grouping_expander_icon-size-@{_item}_list)';
+         font-size: ~'var(--grouping_expander_icon-size-@{_item}_list)';
+      }
+   }});
+}
+
+.controls-ListView__groupExpander:active,
+.controls-ListView__groupExpander:active::before,
+.controls-ListView__groupExpander:active::after {
+   color: var(--grouping_expander_hover_text-color_list);
+}
+
+.ws-is-hover .controls-ListView__groupExpander:hover,
+.ws-is-hover .controls-ListView__groupExpander:hover::before,
+.ws-is-hover .controls-ListView__groupExpander:hover::after {
+   color: var(--grouping_expander_hover_text-color_list);
+}
+
+.controls-ListView__groupExpander-iconStyle_default {
+   &::before,
+   &::after {
+      color: var(--grouping_expander_text-color_list);
+   }
+}
+
+.controls-ListView__groupExpander-iconStyle_ {
+   @variants: primary, secondary, success, warning, danger, info, label, contrast, unaccented;
+   .for(@variants, { &@{_item}, &@{_item}:hover {
+      &::before,
+      &::after {
+         color: ~'var(--controls-icon_style-@{_item})';
+         fill: ~'var(--controls-icon_style-@{_item})';
+      }
+   }});
+}
+
+.controls-ListView__groupExpander_collapsed_right::after,
+.controls-ListView__groupExpander_collapsed_left::before {
+   content: '\e013';
+}
+
+.controls-ListView__groupExpander_reverse::after,
+.controls-ListView__groupExpander_reverse::before {
+   display: inline-block;
+   transform: rotateY(180deg);
+}
+
+// Нужно повысить приоритет, чтобы другие классы не перебивали display
+// Например, если стиль columns загрузится раньше, то он перебьет этот стиль
+// Использовать ws-hidden не получается из-за кейса hiddenGroup + virtualScrollMode=hide
+.controls-BaseControl .controls-ListView__groupHidden {
+   display: none;
+}
+
+.controls-ListView__groupContent-rightTemplate {
+   padding-left: var(--offset_m);
+   flex-shrink: 0;
+}
+
+.controls-ListView__empty {
+   color: var(--placeholder_text-color_list);
+   font-size: var(--placeholder_font-size_list);
+}
+
+.controls-ListView__empty-textAlign_center {
+   text-align: center;
+}
+
+.controls-ListView__empty-textAlign_end {
+   text-align: right;
+}
+
+.controls-ListView__empty-textAlign_start {
+   text-align: left;
+}
+
+.controls-ListView__empty_topSpacing_null {
+   padding-top: 0;
+}
+
+.controls-ListView__empty_topSpacing_xs {
+   padding-top: var(--placeholder_padding-top_xs_list);
+}
+
+.controls-ListView__empty_topSpacing_s {
+   padding-top: var(--offset_xs);
+}
+
+.controls-ListView__empty_topSpacing_m {
+   padding-top: var(--offset_m);
+}
+
+.controls-ListView__empty_topSpacing_l {
+   padding-top: var(--offset_l);
+}
+
+.controls-ListView__empty_topSpacing_xl {
+   padding-top: var(--offset_2xl);
+}
+
+.controls-ListView__empty_topSpacing_xxl {
+   padding-top: var(--placeholder_padding-top_2xl_list);
+}
+
+.controls-ListView__empty_bottomSpacing_null {
+   padding-bottom: 0;
+}
+
+.controls-ListView__empty_bottomSpacing_xs {
+   padding-bottom: var(--placeholder_padding-bottom_xs_list);
+}
+
+.controls-ListView__empty_bottomSpacing_s {
+   padding-bottom: var(--offset_xs);
+}
+
+.controls-ListView__empty_bottomSpacing_m {
+   padding-bottom: var(--offset_m);
+}
+
+.controls-ListView__empty_bottomSpacing_l {
+   padding-bottom: var(--offset_l);
+}
+
+.controls-ListView__empty_bottomSpacing_xl {
+   padding-bottom: var(--offset_2xl);
+}
+
+.controls-ListView__empty_bottomSpacing_xxl {
+   padding-bottom: var(--placeholder_padding-bottom_2xl_list);
+}
+
+//MasterList styles
+
+.controls-MasterDetail_master-template .controls-ListView_master {
+   box-sizing: border-box;
+   padding-right: var(--master_item_horizontal-offset_list);
+}
+
+.controls-master-template-default {
+   .controls-ListView__item-leftPadding_default {
+      padding-left: var(--item_padding-left_l_list);
+   }
+}
+
+//Классы совместимости для перехода со старого дизайна masterDetail на новый
+.controls-master-template-newDesign {
+   .controls-ListView__item-leftPadding_default {
+      padding-left: var(--item_padding-left_l_list);
+   }
+}
+
+.controls-master-template-newDesign .controls-ListView_master {
+   border-radius: var(--master_item_border-radius_list);
+}
+
+.controls-ListView__item__marked_master {
+   font-size: var(--font-size_l);
+   color: var(--master_item_selected_text-color_list);
+   font-weight: var(--font-weight-bold);
+}
+
+.controls-ListView__item__unmarked_master {
+   font-size: var(--font-size_l);
+}
+
+.controls-ListView__baseline {
+   display: flex;
+   align-items: baseline;
+   min-width: 1px;
+}
+
+.controls-ListView__baseline_font-size::before {
+   content: '\200b';
+   font-size: var(--baseline_list);
+}
+
+.ws-is-ie .controls-ListView__item__marked_master {
+   background-color: var(--master_item_selected_background-color_list);
+}
+
+.controls-ListView__itemV_cursor-default {
+   cursor: default;
+}
+
+.controls-ListView__itemV_cursor-pointer {
+   cursor: pointer;
+}
+
+.controls-ListView__item_master {
+   border-bottom: var(--master_item_separator_thickness_list) solid
+      var(--master_item_background-color_list);
+   border-radius: var(--master_item_border-radius_list);
+}
+
+.controls-MasterDetail_master-transparent .controls-ListView__item_master {
+   border-bottom: var(--master_item_separator_thickness_list) solid var(--background-color);
+}
+
+.controls-ListView__item_master-adaptive {
+   border-color: var(--unaccented_adaptive_background-color);
+}
+
+.controls-ListView__item__marked_master.controls-background-master {
+   background-color: var(--master_item_selected_background-color_list);
+}
+
+//Пока страница не ожила, мы не знаем тач устройство или нет, так что на мобильных устройствах нужно скрыть операции над записью
+//TODO: после этой задачи нужно убрать not https://online.sbis.ru/opendoc.html?guid=87ddbeeb-fa7e-4462-b69b-c15188df61da
+.ws-is-hover:not(.ws-is-mobile-platform) {
+   .controls-ListView__item_master.controls-ListView__item_highlightOnHover:hover {
+      background-color: var(--master_item_hover_background-color_list);
+   }
+
+   .controls-MasterDetail_master-transparent
+      .controls-ListView__item_master.controls-ListView__item_highlightOnHover:hover {
+      background-color: var(--unaccented_background-color);
+   }
+}
+
+.ws-is-hover .controls-BaseControl_hover_enabled {
+   .controls-hover-background-default {
+      &:hover {
+         background-color: var(--item_hover_background-color_list);
+      }
+
+      &:hover .controls-background-default-sticky,
+      &:hover .controls-background-default,
+      &:hover .controls-background-unaccented {
+         background-color: var(--item_hover_background-color_list);
+      }
+
+      &:hover .controls-BaseCut__shadow_background-default {
+         background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0) 0,
+            var(--item_hover_background-color_list) 100%
+         );
+      }
+   }
+
+   // region hovered area
+
+   // Это должно быть внутри .controls-BaseControl_hover_enabled, иначе мы не можем управлять залипанием ховера
+   .controls-hover-background {
+      @variants: primary, secondary, danger, success, warning, info, unaccented;
+      .for(@variants, {
+         &-@{_item}:hover {
+            background-color: ~'var(--@{_item}_hover_background-color)';
+
+            .controls-background-default-sticky,
+            .controls-background-default,
+            .controls-background-unaccented {
+               background-color: ~'var(--@{_item}_hover_background-color)';
+            }
+
+            .controls-BaseCut__shadow_background-default {
+               background: ~'linear-gradient(180deg, rgba(255, 255, 255, 0) 0, var(--@{_item}_hover_background-color) 100%)';
+            }
+         }
+      });
+   }
+
+   // endregion hovered area
+}
+
+// region shadow & border
+
+.controls-ListView__itemV > .controls-ListView__item_shadow_dragging::after,
+.controls-ListView__itemV > .controls-ListView__item_shadow_visible::after,
+.controls-ListView__itemV > .controls-ListView__itemContent_border_visible::after,
+.ws-is-hover
+   .controls-BaseControl_hover_enabled
+   .controls-ListView__itemV:hover
+   > .controls-ListView__item_shadow_onhover::after,
+.ws-is-hover
+   .controls-BaseControl_hover_enabled
+   .controls-ListView__itemV:hover
+   > .controls-ListView__itemContent_border_onhover::after {
+   content: '\200b';
+   height: 100%;
+   width: 100%;
+   position: absolute;
+   box-sizing: border-box;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   pointer-events: none;
+   z-index: 1;
+   border-radius: inherit;
+}
+
+.controls-ListView__itemV > .controls-ListView__itemContent_border_visible::after,
+.ws-is-hover
+   .controls-BaseControl_hover_enabled
+   .controls-ListView__itemV:hover
+   > .controls-ListView__itemContent_border_onhover::after {
+   border-top-width: 1px;
+   border-top-style: solid;
+   border-bottom-width: 1px;
+   border-bottom-style: solid;
+}
+
+.controls-ListView__itemV > .controls-ListView__itemContent_border_left_visible,
+.ws-is-hover
+   .controls-BaseControl_hover_enabled
+   .controls-ListView__itemV:hover
+   > .controls-ListView__itemContent_border_left_onhover {
+   &::after {
+      border-left-width: 1px;
+      border-left-style: solid;
+   }
+}
+
+.controls-ListView__itemV > .controls-ListView__itemContent_border_right_visible,
+.ws-is-hover
+   .controls-BaseControl_hover_enabled
+   .controls-ListView__itemV:hover
+   > .controls-ListView__itemContent_border_right_onhover {
+   &::after {
+      border-right-width: 1px;
+      border-right-style: solid;
+   }
+}
+
+/* stylelint-disable no-descending-specificity */
+.controls-ListView__itemV > .controls-ListView__item_shadow_dragging::after,
+.controls-ListView__itemV > .controls-ListView__item_shadow_visible::after,
+.controls-ListView__itemV > .controls-ListView__item_shadow_onhover::after {
+   /* stylelint-enable no-descending-specificity */
+   // Чтобы тень отображалась на застиканных записях
+   z-index: 2;
+}
+
+.controls-ListView__itemV > .controls-ListView__item_shadow_visible::after {
+   box-shadow: var(--shadow_c);
+}
+
+.controls-ListView__itemV > .controls-ListView__item_shadow_dragging::after,
+.ws-is-hover
+   .controls-BaseControl_hover_enabled
+   .controls-ListView__itemV:hover
+   > .controls-ListView__item_shadow_visible::after,
+.ws-is-hover
+   .controls-BaseControl_hover_enabled
+   .controls-ListView__itemV:hover
+   > .controls-ListView__item_shadow_onhover::after {
+   box-shadow: var(--shadow_b);
+}
+
+.controls-ListView__itemContent_border_default::after {
+   border-color: var(--border-color);
+}
+
+.controls-ListView__itemContent_border_danger::after {
+   border-color: var(--danger_border-color);
+}
+
+// endregion shadow & border
+
+//TODO это должно уехать в BaseControl после задачи https://online.sbis.ru/opendoc.html?guid=92bedbf7-6038-4c1f-826e-b096b4cddd6d
+.controls-CheckboxMarker_inList {
+   height: var(--checkbox_height_list);
+
+   &::before {
+      content: '\200b';
+      font-size: var(--baseline_list);
+      width: 0;
+   }
+}
+
+/// decorator:money in list, grid
+.controls-text-group {
+   color: var(--group-text-color_decoratorMoney);
+}
+
+.controls-text-list {
+   color: var(--list-text-color_decoratorMoney);
+}
+
+.controls-ListView__rowSeparator_size-s {
+   border: 0 solid transparent;
+   border-top-width: var(--item-separator_s_thickness_list);
+   border-top-color: var(--separator_color);
+}
+
+.controls-ListView__rowSeparator_size-l {
+   border: 0 solid transparent;
+   border-top-width: var(--item-separator_l_thickness_list);
+   border-top-color: var(--separator_color);
+}
+
+// Верхнюю границу лучше задавать в зависимости от наличия заголовков/итогов
+/* stylelint-disable no-descending-specificity */
+.controls-ListView__itemV:first-child,
+.controls-ListView__groupHidden + .controls-ListView__itemV {
+   /* stylelint-enable no-descending-specificity */
+   .controls-ListView__rowSeparator_size-s {
+      border-top-color: var(--unaccented_separator_color);
+   }
+
+   .controls-ListView__rowSeparator_size-l {
+      border-top-color: var(--separator_color);
+   }
+}
+
+.controls-ListView__group + .controls-ListView__itemV .controls-ListView__itemContent {
+   border-top-color: transparent;
+}
+
+.controls-ListView__rowSeparator_bottom_size-s {
+   border-bottom: var(--item-separator_s_thickness_list) solid var(--unaccented_separator_color);
+}
+
+.controls-ListView__rowSeparator_bottom_size-l {
+   border-bottom: var(--item-separator_l_thickness_list) solid var(--separator_color);
+}
+
+.controls-ListView__item_roundBorder_bottomLeft {
+   /* stylelint-disable-next-line unit-no-unknown */
+   @variants: 3xs, 2xs, xs, s, m, l, xl, 2xl, 3xl;
+
+   .for(@variants, {
+      &_@{_item},
+      &_@{_item}:before,
+      &_@{_item} > .controls-ListView__itemContent {
+         border-bottom-left-radius: ~'var(--border-radius_@{_item})';
+      }
+   });
+}
+
+.controls-ListView__item_roundBorder_bottomRight {
+   /* stylelint-disable-next-line unit-no-unknown */
+   @variants: 3xs, 2xs, xs, s, m, l, xl, 2xl, 3xl;
+
+   .for(@variants, {
+      &_@{_item},
+      &_@{_item}:before,
+      &_@{_item} > .controls-ListView__itemContent {
+         border-bottom-right-radius: ~'var(--border-radius_@{_item})';
+      }
+   });
+}
+
+.controls-ListView__item_roundBorder_topLeft {
+   /* stylelint-disable-next-line unit-no-unknown */
+   @variants: 3xs, 2xs, xs, s, m, l, xl, 2xl, 3xl;
+
+   .for(@variants, {
+      &_@{_item},
+      &_@{_item}:before,
+      &_@{_item} > .controls-ListView__itemContent {
+         border-top-left-radius: ~'var(--border-radius_@{_item})';
+      }
+   });
+}
+
+.controls-ListView__item_roundBorder_topRight {
+   /* stylelint-disable-next-line unit-no-unknown */
+   @variants: 3xs, 2xs, xs, s, m, l, xl, 2xl, 3xl;
+
+   .for(@variants, {
+      &_@{_item},
+      &_@{_item}:before,
+      &_@{_item} > .controls-ListView__itemContent {
+         border-top-right-radius: ~'var(--border-radius_@{_item})';
+      }
+   });
+}
+
+.controls-ListView__TrackedPropertiesTemplate {
+   height: 0;
+   z-index: 1;
+   pointer-events: none;
+   display: flex;
+   grid-column-start: 1;
+   grid-column-end: -1;
+}
+
+.controls-ListView__TrackedPropertiesTemplate_left {
+   justify-content: flex-start;
+}
+
+.controls-ListView__TrackedPropertiesTemplate_right {
+   justify-content: flex-end;
+}
+
+.controls-ListView__TrackedPropertiesTemplate_content {
+   position: relative;
+   display: inline-flex;
+   align-items: baseline;
+   background-color: var(--tracked_properties_background);
+   font-size: var(--font-size_l);
+   pointer-events: auto;
+   z-index: 1;
+   height: fit-content;
+   padding-top: var(--offset_2xs);
+   padding-bottom: var(--offset_2xs);
+   clip-path: polygon(0 0, 100% 0, calc(100% - var(--offset_s)) 100%, var(--offset_s) 100%);
+
+   &::before {
+      content: '\200b';
+      font-size: var(--font-size_2xl);
+      width: 0;
+   }
+}
+
+.controls-ListView__item_animated_a {
+   max-height: unset;
+   opacity: 1;
+   animation: add 500ms;
+}
+
+.controls-ListView__item_animated_rm {
+   max-height: 0;
+   opacity: 0;
+   animation: remove 500ms;
+}
+
+@keyframes add {
+   0% {
+      min-height: 0;
+      max-height: 0;
+      opacity: 0;
+   }
+
+   99% {
+      min-height: 0;
+      max-height: 100px;
+      opacity: 0;
+   }
+
+   100% {
+      max-height: unset;
+      opacity: 1;
+   }
+}
+
+@keyframes remove {
+   0% {
+      min-height: 0;
+      max-height: unset;
+      opacity: 1;
+   }
+
+   1% {
+      min-height: 0;
+      max-height: 100px;
+      opacity: 0;
+   }
+
+   100% {
+      max-height: 0;
+      opacity: 0;
+   }
+}

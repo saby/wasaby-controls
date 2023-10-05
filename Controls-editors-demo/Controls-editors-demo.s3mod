@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ui_module name="Controls-editors-demo" id="c0acd028-6e73-4072-b7e5-3080a101fbd9" kaizen_zone="2e763abb-d8f9-415d-ad58-71bf18ae6d62" responsible="Парамонов В.С." responsible_uuid="ecbe1007-b1fd-461c-85e9-719d58e06d65">
+  <depends>
+    <module id="4e412d92-ef24-4300-ba29-35eb7a76107c" name="Controls-meta"/>
+    <module id="7c6ae293-7359-4a54-8a33-74ce96945d57" name="Controls-editors"/>
+  </depends>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

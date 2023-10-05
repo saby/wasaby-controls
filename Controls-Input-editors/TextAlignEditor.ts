@@ -1,0 +1,1 @@
+export { TextAlignEditor } from './TextAlignEditor/TextAlignEditor';

@@ -1,0 +1,33 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:class="demo-Explorer__scrollContainer">
+        <Controls.browser:Browser attr:class="controlsDemo_fixedWidth550"
+                                  source="{{_viewSource}}"
+                                  keyProperty="id"
+                                  parentProperty="parent"
+                                  nodeProperty="parent@"
+                                  searchParam="title"
+                                  minSearchLength="{{3}}"
+                                  searchStartingWith="root"
+                                  bind:viewMode="_viewMode">
+            <div class="ws-fragment">
+                <Controls.search:InputContainer>
+                    <Controls.search:Input/>
+                </Controls.search:InputContainer>
+                <Controls.scroll:Container attr:class="controlsDemo__height300">
+                    <Controls.list:Container stickyHeader="{{ false }}">
+                        <Controls.explorer:View
+                                bind:root="_root"
+                                attr:class="demo-Explorer ControlsDemo-Explorer"
+                                displayProperty="title"
+                                multiSelectVisibility="visible"
+                                columns="{{_viewColumns}}"/>
+                    </Controls.list:Container>
+                </Controls.scroll:Container>
+            </div>
+        </Controls.browser:Browser>
+    </Controls.scroll:Container>
+
+    <div class="controlsDemo__cell">
+        <Controls.buttons:Button caption="Toggle viewMode" on:click="_toggleViewMode()"/>
+    </div>
+</div>

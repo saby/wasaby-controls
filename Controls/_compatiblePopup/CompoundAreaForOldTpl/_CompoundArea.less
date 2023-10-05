@@ -1,0 +1,283 @@
+// В Престо все стили окон уже есть, слой совместимости не должен их перебивать
+.controls-CompoundArea {
+   width: 100%;
+   height: 100%;
+
+   &.controls-CompoundArea_type-dialog-minimized {
+      border-radius: var(--border-radius_dialog);
+   }
+
+   &.controls-CompoundArea_type-sticky {
+      border-radius: var(--border-radius_dialog);
+   }
+
+   //в слое совместимости рисуем свою тень в стеке
+   .controls-StackTemplate .controls-StackTemplate-shadow {
+      /* stylelint-disable-next-line declaration-no-important */
+      display: none !important;
+   }
+
+   // Заголовок ws3browserTabs не должен показываться внутри окна.
+   // он предназначен для отображения в реестре при свернутом аккордеоне
+   .browserTabs__page-title {
+      /* stylelint-disable-next-line declaration-no-important */
+      display: none !important;
+   }
+
+   // maximizedButton and closeButton in CompoundArea must be above the content.
+   // for example core/switchablearea has z-index 100
+   .controls-DialogTemplate__close_button,
+   .controls-StackTemplate__close_button {
+      /* stylelint-disable-next-line declaration-no-important */
+      z-index: 500 !important;
+   }
+
+   &.ws-float-area-has-maximized-button .controls-StackTemplate__maximized_button {
+      /* stylelint-disable-next-line declaration-no-important */
+      z-index: 500 !important;
+   }
+
+   .controls-StackTemplate .controls-StackTemplate__content-area .ws-window-titlebar-custom,
+   &.ws-float-area .ws-window-titlebar {
+      z-index: 10;
+   }
+
+   .controls-DialogTemplate .controls-DialogTemplate__content-area .ws-window-titlebar-custom,
+   &.ws-window .ws-window-titlebar {
+      z-index: 10;
+      border-top-right-radius: var(--border-radius_dialog);
+      border-top-left-radius: var(--border-radius_dialog);
+   }
+
+   &.controls-CompoundArea-headerPadding .controls-StackTemplate {
+      height: 100%;
+      box-sizing: border-box;
+      padding-top: calc(
+         var(--header_min-height_stack) + var(--header_bottom-border-thickness_stack)
+      );
+   }
+
+   &.controls-CompoundArea-headerPadding .controls-DialogTemplate {
+      height: 100%;
+      min-height: inherit;
+      box-sizing: border-box;
+      padding-top: var(--spacing_DialogTemplate-between-header-border);
+   }
+}
+
+/* stylelint-disable selector-max-type, no-descending-specificity */
+body:not(.rtl-Body) .controls-CompoundArea {
+   background: #fff;
+
+   //TODO Поддержка стилей старой шапки
+   .controls-StackTemplate .controls-StackTemplate__content-area .ws-window-titlebar-custom,
+   &.ws-float-area .ws-window-titlebar {
+      height: 44px;
+      border-bottom: 1px solid #f0f0f0;
+      background-color: var(--unaccented_background-color);
+   }
+
+   .controls-DialogTemplate .controls-DialogTemplate__content-area .ws-window-titlebar-custom,
+   &.ws-window .ws-window-titlebar {
+      height: 40px;
+      background: #fff;
+      border-radius: var(--border-radius_dialog) var(--border-radius_dialog) 0 0;
+   }
+
+   &.ws-float-area {
+      // crossing with old styles
+      .controls-StackTemplate {
+         .ws-float-area-title {
+            // crossing with old styles
+            line-height: 38px;
+         }
+
+         .ws-window-titlebar-custom {
+            background: var(--unaccented_background-color);
+            border-bottom: 1px solid #f0f0f0;
+         }
+      }
+   }
+
+   .controls-DialogTemplate .ws-float-area-title {
+      line-height: 40px;
+   }
+
+   .ws-window-titlebar-custom {
+      position: relative;
+   }
+
+   &.controls-CompoundArea_type-stack:not(.ws-float-area-has-close-button) {
+      .ws-float-area-title {
+         max-width: 100%;
+      }
+   }
+
+   .ws-float-area-title {
+      /* stylelint-disable-next-line declaration-no-important */
+      font-size: 18px !important;
+      /* stylelint-disable-next-line declaration-no-important */
+      font-weight: var(--font-weight-bold) !important;
+      cursor: default;
+      color: var(--secondary_text-color_heading);
+      text-overflow: ellipsis;
+      display: inline-block;
+      overflow: hidden;
+      box-sizing: border-box;
+      white-space: nowrap;
+      padding-left: 12px;
+      max-width: calc(100% - 40px);
+   }
+
+   .ws-float-area-title-generated {
+      margin-left: 0;
+      margin-right: 60px;
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      line-height: 44px;
+      overflow: hidden;
+   }
+
+   .ws-caption {
+      font: var(--font-weight-bold) 18px 'TensorFont', sans-serif;
+      text-decoration: none;
+      color: var(--secondary_text-color_heading);
+   }
+
+   &.ws-window {
+      border: none; //перебиваю стили, затащившиеся с areaAbstract
+      max-height: 100vh;
+
+      .ws-window-titlebar {
+         left: 1px;
+         right: 1px;
+      }
+
+      .controls-DialogTemplate {
+         background: none;
+         border: none;
+         margin: 0;
+      }
+   }
+
+   .controls-CompoundArea__move-cursor {
+      cursor: move;
+   }
+
+   &.ws-float-area-has-maximized-button .controls-StackTemplate__maximized_button {
+      display: block;
+   }
+
+   .controls-StackTemplate__maximized_button {
+      display: none;
+   }
+
+   .controls-CompoundArea_toolbar,
+   .controls-CompoundArea_toolbar_adaptive {
+      .controls-ToolBar__itemsContainer {
+         margin-right: 0;
+
+         .controls-ToolBar__item {
+            width: var(--inline_height_xl);
+            height: var(--inline_height_xl);
+
+            &:hover {
+               background-color: var(--background-color_hover_button_toolButton);
+               border-radius: var(--border-radius_button_toolButton);
+            }
+         }
+      }
+
+      .controls-ToolBar__menuIcon {
+         margin: 0;
+         width: var(--inline_height_xl);
+         height: var(--inline_height_xl);
+
+         &:hover {
+            background-color: var(--background-color_hover_button_toolButton);
+            border-radius: var(--border-radius_button_toolButton);
+         }
+      }
+   }
+
+   .controls-CompoundArea_toolbar {
+      .controls-ToolBar__itemsContainer {
+         display: flex;
+         flex-direction: column;
+
+         .controls-ToolBar__item {
+            margin: 0 0 var(--offset_xs) 0;
+         }
+      }
+   }
+
+   .controls-CompoundArea_toolbar_adaptive {
+      .controls-ToolBar__itemsContainer {
+         .controls-ToolBar__item {
+            margin: 0;
+         }
+      }
+   }
+}
+/* stylelint-enable selector-max-type, no-descending-specificity */
+
+.controls-CompoundArea__dialog {
+   height: 100%;
+}
+
+.controls-CompoundArea__container {
+   height: 100%;
+}
+
+.controls-CompoundArea__container__adaptive {
+   overflow-x: auto;
+}
+
+.controls-CompoundArea-close_button
+   .controls-DialogTemplate__close_button:not(.controls-DialogTemplate__close_linkButton) {
+   margin-top: var(--close-button_offset-top_stack);
+}
+
+.controls-Stack__waiting,
+.controls-Stack__open,
+.controls-Stack__close {
+   .controls-CompoundArea__container {
+      contain: paint;
+   }
+}
+
+.controls-CompoundArea-custom-header {
+   /* stylelint-disable-next-line declaration-no-important */
+   position: absolute !important;
+   top: 0;
+   left: 0;
+   right: 0;
+   height: 40px;
+}
+
+.ws-float-area__block-layout .controls-Stack__content-wrapper {
+   background-color: var(--background-color_stack);
+}
+
+.controls-Popup.controls-Popup__border-radius {
+   border-radius: 8px;
+}
+
+.controls-CompoundArea-borderRadius_customHeader {
+   .controls-PopupTemplate__roundBorder {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+   }
+}
+
+/* stylelint-disable selector-max-type, no-descending-specificity */
+body:not(.rtl-Body).ws-is-adaptive {
+   .controls-SlidingPanel__popup {
+      .controls-CompoundArea .ws-window-titlebar-custom {
+         /* stylelint-disable-next-line declaration-no-important */
+         position: relative !important;
+      }
+   }
+}

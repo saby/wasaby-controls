@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls-Input/decoratorConnected:Date Index 1`] = `
+<div>
+  <div
+    class="controlsDemo__wrapper controlsDemo_fixedWidth400 tw-flex tw-flex-col"
+  >
+    <span
+      class="controls-DecoratorDate controls-fontsize-undefined
+                         controls-text-undefined
+                         controls-fontweight-undefined"
+      title="02.02.22"
+    >
+      02.02.22
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Controls-Input/decoratorConnected:Date Mask 1`] = `
+<div>
+  <div
+    class="controlsDemo__wrapper controlsDemo_fixedWidth400 tw-flex tw-flex-col"
+  >
+    <div
+      class="controls-margin_bottom-m"
+    >
+      <span
+        class="controls-DecoratorDate controls-fontsize-undefined
+                         controls-text-undefined
+                         controls-fontweight-undefined"
+        title="02.02.2022"
+      >
+        02.02.2022
+      </span>
+    </div>
+    <div
+      class="controls-margin_bottom-m"
+    >
+      <span
+        class="controls-DecoratorDate controls-fontsize-undefined
+                         controls-text-undefined
+                         controls-fontweight-undefined"
+        title="02.02.22"
+      >
+        02.02.22
+      </span>
+    </div>
+    <div
+      class="controls-margin_bottom-m"
+    >
+      <span
+        class="controls-DecoratorDate controls-fontsize-undefined
+                         controls-text-undefined
+                         controls-fontweight-undefined"
+        title="02.2022"
+      >
+        02.2022
+      </span>
+    </div>
+    <div
+      class="controls-margin_bottom-m"
+    >
+      <span
+        class="controls-DecoratorDate controls-fontsize-undefined
+                         controls-text-undefined
+                         controls-fontweight-undefined"
+        title="2022"
+      >
+        2022
+      </span>
+    </div>
+  </div>
+</div>
+`;

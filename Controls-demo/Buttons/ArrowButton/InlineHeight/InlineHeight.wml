@@ -1,0 +1,38 @@
+<div class="controlsDemo__flexColumn controlsDemo__ml2 controlsDemo_fixedWidth350">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label controlsDemo__maxWidth200">inlineHeight='default'</div>
+        <div class="controlDemo__input-row">
+            <Controls.buttons:ArrowButton direction="left"/>
+            <Controls.buttons:ArrowButton direction="right"/>
+            <Controls.buttons:ArrowButton direction="up"/>
+            <Controls.buttons:ArrowButton direction="down"/>
+        </div>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label controlsDemo__maxWidth200">inlineHeight='s'</div>
+        <div class="controlDemo__input-row">
+            <Controls.buttons:ArrowButton direction="left" inlineHeight="s"/>
+            <Controls.buttons:ArrowButton direction="right" inlineHeight="s"/>
+            <Controls.buttons:ArrowButton direction="up" inlineHeight="s"/>
+            <Controls.buttons:ArrowButton direction="down" inlineHeight="s"/>
+        </div>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label controlsDemo__maxWidth200">inlineHeight='m'</div>
+        <div class="controlDemo__input-row">
+            <Controls.buttons:ArrowButton direction="left"/>
+            <Controls.buttons:ArrowButton direction="right"/>
+            <Controls.buttons:ArrowButton direction="up"/>
+            <Controls.buttons:ArrowButton direction="down"/>
+        </div>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label controlsDemo__maxWidth200">inlineHeight='l'</div>
+        <div class="controlDemo__input-row">
+            <Controls.buttons:ArrowButton direction="left" inlineHeight="l"/>
+            <Controls.buttons:ArrowButton direction="right" inlineHeight="l"/>
+            <Controls.buttons:ArrowButton direction="up" inlineHeight="l"/>
+            <Controls.buttons:ArrowButton direction="down" inlineHeight="l"/>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+.controls-listTemplates__listItemTemplate {
+   width: 100%;
+   box-sizing: border-box;
+}
+
+.controls-listTemplates_listItemTemplate__footer {
+   display: flex;
+   width: 100%;
+   height: 100%;
+}
+//todo: Сделать нормально, когда будут известны размеры
+.controls-listTemplates__listItemTemplate-image {
+   width: 160px;
+   height: 160px;
+}
+
+.controls-listTemplates__listItemTemplate-image
+   .controls-listTemplates__imageTemplate_image_viewMode-circle,
+.controls-listTemplates__listItemTemplate-image
+   .controls-listTemplates__imageTemplate_image_viewMode-ellipse {
+   margin: var(--offset_m);
+}
+
+.controls-listTemplates__listItemTemplate-image_position-right {
+   flex-direction: row-reverse;
+}
+
+.controls-listTemplates__listItemTemplate-image-padding_position-left {
+   margin-right: var(--offset_m);
+}
+
+.controls-listTemplates__listItemTemplate-image-padding_position-right {
+   margin-left: var(--offset_m);
+}
+
+.controls-ListView__item-rightPadding_null
+   .controls-listTemplates__listItemTemplate-image_position-none {
+   padding-right: var(--offset_m);
+}
+
+.controls-ListView__item-leftPadding_null
+   .controls-listTemplates__listItemTemplate-image_position-none {
+   padding-left: var(--offset_m);
+}
+
+.controls-listTemplates__listItemTemplate__itemContent {
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+}
+// Временное решение до внедрения новых моделей в explorer для списка, чтобы не дорабатывать старые модели
+/* stylelint-disable-next-line no-duplicate-selectors */
+.controls-listTemplates__listItemTemplate .controls-CheckboxMarker_inList {
+   float: left;
+   margin-top: var(--checkbox_offset-top_list);
+   position: absolute;
+   z-index: 2;
+}
+
+.controls-listTemplates__listItemTemplate-checkboxPadding-left
+   .controls-ListView__itemContent_withCheckboxes {
+   padding-left: 0;
+}
+
+.controls-listTemplates__listItemTemplate-checkboxPadding-none
+   .controls-ListView__itemContent_withCheckboxes {
+   padding-left: var(--item_padding-left_m_list);
+}
+
+.controls-listTemplates__listItemTemplate-checkboxPadding-right
+   .controls-ListView__itemContent_withCheckboxes {
+   padding-left: var(--item_padding-left_m_list);
+}

@@ -1,0 +1,6 @@
+<Controls.propertyGrid:PropertyGrid
+    bind:editingObject="_editingObject"
+    typeDescription="{{_typeDescription}}"
+    toggledEditors="{{_toggledEditors}}"
+    on:toggledEditorsChanged="_toggledEditorsChangedHandler()">
+</Controls.propertyGrid:PropertyGrid>
