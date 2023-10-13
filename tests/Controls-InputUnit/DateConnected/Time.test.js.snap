@@ -1,0 +1,679 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls-Input/DateConnected:Time base 1`] = `
+<div>
+  <div
+    class="controlsDemo__wrapper controlsDemo_fixedWidth400 tw-flex tw-flex-col"
+  >
+    <div
+      class="undefined controls-Input-connected_filled"
+    >
+      <div
+        class="tw-flex controls-max-w-full tw-flex-col "
+      >
+        <a
+          class="controls-Label controls-Label_underline_none tw-min-w-0"
+        >
+          <div
+            class="controls-Label__wrapper"
+          >
+            <div
+              class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+            >
+              Mask HH:mm
+            </div>
+            
+          </div>
+        </a>
+        <div
+          class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default  controls-Render_state-valid_caretFilled  controls-inlineheight-default controls-Render-inlineheight-default controls-Mask controls_Mask_theme-default controls-Input-DatePicker__content controls-DateBase controls-ValidateContainer__validationStatus-valid"
+          data-qa="controls-BaseInput-Date"
+          tabindex="0"
+        >
+          <div
+            class="controls-Render__wrapper"
+          >
+            <span
+              class="controls-Render__baseline"
+            >
+              ﻿
+            </span>
+            <div
+              class="controls-InputBase__field controls-InputBase__field_autoWidth controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+              data-qa="controls-Render__field"
+              tabindex="0"
+            >
+              <div
+                class="controls-InputBase__stretcher"
+                tabindex="0"
+              >
+                <input
+                  autocapitalize="off"
+                  autocomplete="off"
+                  autocorrect="off"
+                  class="controls-Field js-controls-Field controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default  controls-InputBase__nativeField_stretcher controls-InputBase__stretcher-content"
+                  inputmode="text"
+                  name="ws-input_1996-06-20"
+                  spellcheck="false"
+                  tabindex="0"
+                  type="text"
+                  value="12:12"
+                />
+                <div
+                  class="controls-BaseInput__stretcher__container"
+                >
+                  <div
+                    class="controls-InputBase__stretcher-block"
+                  >
+                    00:00
+                  </div>
+                  <div
+                    class="controls-InputBase__stretcher-block controls-BaseInput__stretcher-block"
+                  >
+                    Начало
+                  </div>
+                </div>
+              </div>
+              <div
+                class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+                tabindex="0"
+              >
+                <div
+                  class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                  tabindex="0"
+                >
+                  Начало
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="undefined controls-Input-connected_filled"
+    >
+      <div
+        class="tw-flex controls-max-w-full tw-flex-col "
+      >
+        <a
+          class="controls-Label controls-Label_underline_none tw-min-w-0"
+        >
+          <div
+            class="controls-Label__wrapper"
+          >
+            <div
+              class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+            >
+              Mask HH:mm:ss
+            </div>
+            
+          </div>
+        </a>
+        <div
+          class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default  controls-Render_state-valid_caretFilled  controls-inlineheight-default controls-Render-inlineheight-default controls-Mask controls_Mask_theme-default controls-Input-DatePicker__content controls-DateBase controls-ValidateContainer__validationStatus-valid"
+          data-qa="controls-BaseInput-Date"
+          tabindex="0"
+        >
+          <div
+            class="controls-Render__wrapper"
+          >
+            <span
+              class="controls-Render__baseline"
+            >
+              ﻿
+            </span>
+            <div
+              class="controls-InputBase__field controls-InputBase__field_autoWidth controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+              data-qa="controls-Render__field"
+              tabindex="0"
+            >
+              <div
+                class="controls-InputBase__stretcher"
+                tabindex="0"
+              >
+                <input
+                  autocapitalize="off"
+                  autocomplete="off"
+                  autocorrect="off"
+                  class="controls-Field js-controls-Field controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default  controls-InputBase__nativeField_stretcher controls-InputBase__stretcher-content"
+                  inputmode="text"
+                  name="ws-input_1996-06-20"
+                  spellcheck="false"
+                  tabindex="0"
+                  type="text"
+                  value="12:12:12"
+                />
+                <div
+                  class="controls-BaseInput__stretcher__container"
+                >
+                  <div
+                    class="controls-InputBase__stretcher-block"
+                  >
+                    00:00:00
+                  </div>
+                  <div
+                    class="controls-InputBase__stretcher-block controls-BaseInput__stretcher-block"
+                  >
+                    Начало
+                  </div>
+                </div>
+              </div>
+              <div
+                class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+                tabindex="0"
+              >
+                <div
+                  class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                  tabindex="0"
+                >
+                  Начало
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls-Input/DateConnected:Time defaultValue 1`] = `
+<div>
+  <div
+    class="controlsDemo__wrapper controlsDemo_fixedWidth400 tw-flex tw-flex-col"
+  >
+    <div
+      class="undefined controls-Input-connected_filled"
+    >
+      <div
+        class="tw-flex controls-max-w-full tw-flex-col "
+      >
+        <a
+          class="controls-Label controls-Label_underline_none tw-min-w-0"
+        >
+          <div
+            class="controls-Label__wrapper"
+          >
+            <div
+              class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+            >
+              defaultValue
+            </div>
+            
+          </div>
+        </a>
+        <div
+          class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default  controls-Render_state-valid_caretFilled  controls-inlineheight-default controls-Render-inlineheight-default controls-Mask controls_Mask_theme-default controls-Input-DatePicker__content controls-DateBase controls-ValidateContainer__validationStatus-valid"
+          data-qa="controls-BaseInput-Date"
+          tabindex="0"
+        >
+          <div
+            class="controls-Render__wrapper"
+          >
+            <span
+              class="controls-Render__baseline"
+            >
+              ﻿
+            </span>
+            <div
+              class="controls-InputBase__field controls-InputBase__field_autoWidth controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+              data-qa="controls-Render__field"
+              tabindex="0"
+            >
+              <div
+                class="controls-InputBase__stretcher"
+                tabindex="0"
+              >
+                <input
+                  autocapitalize="off"
+                  autocomplete="off"
+                  autocorrect="off"
+                  class="controls-Field js-controls-Field controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default  controls-InputBase__nativeField_stretcher controls-InputBase__stretcher-content"
+                  inputmode="text"
+                  name="ws-input_1996-06-20"
+                  spellcheck="false"
+                  tabindex="0"
+                  type="text"
+                  value="00:00"
+                />
+                <div
+                  class="controls-BaseInput__stretcher__container"
+                >
+                  <div
+                    class="controls-InputBase__stretcher-block"
+                  >
+                    00:00
+                  </div>
+                  <div
+                    class="controls-InputBase__stretcher-block controls-BaseInput__stretcher-block"
+                  >
+                    Начало
+                  </div>
+                </div>
+              </div>
+              <div
+                class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+                tabindex="0"
+              >
+                <div
+                  class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                  tabindex="0"
+                >
+                  Начало
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="undefined "
+    >
+      <div
+        class="tw-flex controls-max-w-full tw-flex-col "
+      >
+        <a
+          class="controls-Label controls-Label_underline_none tw-min-w-0"
+        >
+          <div
+            class="controls-Label__wrapper"
+          >
+            <div
+              class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+            >
+              defaultValue is empty
+            </div>
+            
+          </div>
+        </a>
+        <div
+          class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-DateInput__placeholder  controls-Render_state-valid_caretFilled  controls-inlineheight-default controls-Render-inlineheight-default controls-Mask controls_Mask_theme-default controls-Input-DatePicker__content controls-DateBase controls-ValidateContainer__validationStatus-valid"
+          data-qa="controls-BaseInput-Date"
+          tabindex="0"
+        >
+          <div
+            class="controls-Render__wrapper"
+          >
+            <span
+              class="controls-Render__baseline"
+            >
+              ﻿
+            </span>
+            <div
+              class="controls-InputBase__field controls-InputBase__field_autoWidth controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+              data-qa="controls-Render__field"
+              tabindex="0"
+            >
+              <div
+                class="controls-InputBase__stretcher"
+                tabindex="0"
+              >
+                <input
+                  autocapitalize="off"
+                  autocomplete="off"
+                  autocorrect="off"
+                  class="controls-Field js-controls-Field controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default  controls-InputBase__nativeField_stretcher controls-InputBase__stretcher-content"
+                  inputmode="text"
+                  name="ws-input_1996-06-20"
+                  spellcheck="false"
+                  tabindex="0"
+                  type="text"
+                  value="Начало"
+                />
+                <div
+                  class="controls-BaseInput__stretcher__container"
+                >
+                  <div
+                    class="controls-InputBase__stretcher-block"
+                  >
+                    00:00
+                  </div>
+                  <div
+                    class="controls-InputBase__stretcher-block controls-BaseInput__stretcher-block"
+                  >
+                    Начало
+                  </div>
+                </div>
+              </div>
+              <div
+                class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+                tabindex="0"
+              >
+                <div
+                  class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                  tabindex="0"
+                >
+                  Начало
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls-Input/DateConnected:Time label 1`] = `
+<div>
+  <div
+    class="controlsDemo__wrapper controlsDemo_fixedWidth300 tw-flex tw-flex-col"
+  >
+    <div
+      class="controls-margin_top-m controls-Input-connected_filled"
+    >
+      <div
+        class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default  controls-Render_state-valid_caretFilled  controls-inlineheight-default controls-Render-inlineheight-default controls-Mask controls_Mask_theme-default controls-Input-DatePicker__content controls-DateBase controls-margin_top-m controls-ValidateContainer__validationStatus-valid"
+        data-qa="controls-BaseInput-Date"
+        tabindex="0"
+      >
+        <div
+          class="controls-Render__wrapper"
+        >
+          <span
+            class="controls-Render__baseline"
+          >
+            ﻿
+          </span>
+          <div
+            class="controls-InputBase__field controls-InputBase__field_autoWidth controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+            data-qa="controls-Render__field"
+            tabindex="0"
+          >
+            <div
+              class="controls-InputBase__stretcher"
+              tabindex="0"
+            >
+              <input
+                autocapitalize="off"
+                autocomplete="off"
+                autocorrect="off"
+                class="controls-Field js-controls-Field controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default  controls-InputBase__nativeField_stretcher controls-InputBase__stretcher-content"
+                inputmode="text"
+                name="ws-input_1996-06-20"
+                spellcheck="false"
+                tabindex="0"
+                type="text"
+                value="12:12"
+              />
+              <div
+                class="controls-BaseInput__stretcher__container"
+              >
+                <div
+                  class="controls-InputBase__stretcher-block"
+                >
+                  00:00
+                </div>
+                <div
+                  class="controls-InputBase__stretcher-block controls-BaseInput__stretcher-block"
+                >
+                  Начало
+                </div>
+              </div>
+            </div>
+            <div
+              class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+              tabindex="0"
+            >
+              <div
+                class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                tabindex="0"
+              >
+                Начало
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="controls-margin_top-m controls-Input-connected_filled"
+    >
+      <div
+        class="tw-flex controls-max-w-full tw-flex-col "
+      >
+        <a
+          class="controls-Label controls-Label_underline_none tw-min-w-0"
+        >
+          <div
+            class="controls-Label__wrapper"
+          >
+            <div
+              class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+            >
+              label top
+            </div>
+            
+          </div>
+        </a>
+        <div
+          class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default  controls-Render_state-valid_caretFilled  controls-inlineheight-default controls-Render-inlineheight-default controls-Mask controls_Mask_theme-default controls-Input-DatePicker__content controls-DateBase controls-margin_top-m controls-ValidateContainer__validationStatus-valid"
+          data-qa="controls-BaseInput-Date"
+          tabindex="0"
+        >
+          <div
+            class="controls-Render__wrapper"
+          >
+            <span
+              class="controls-Render__baseline"
+            >
+              ﻿
+            </span>
+            <div
+              class="controls-InputBase__field controls-InputBase__field_autoWidth controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+              data-qa="controls-Render__field"
+              tabindex="0"
+            >
+              <div
+                class="controls-InputBase__stretcher"
+                tabindex="0"
+              >
+                <input
+                  autocapitalize="off"
+                  autocomplete="off"
+                  autocorrect="off"
+                  class="controls-Field js-controls-Field controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default  controls-InputBase__nativeField_stretcher controls-InputBase__stretcher-content"
+                  inputmode="text"
+                  name="ws-input_1996-06-20"
+                  spellcheck="false"
+                  tabindex="0"
+                  type="text"
+                  value="12:12"
+                />
+                <div
+                  class="controls-BaseInput__stretcher__container"
+                >
+                  <div
+                    class="controls-InputBase__stretcher-block"
+                  >
+                    00:00
+                  </div>
+                  <div
+                    class="controls-InputBase__stretcher-block controls-BaseInput__stretcher-block"
+                  >
+                    Начало
+                  </div>
+                </div>
+              </div>
+              <div
+                class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+                tabindex="0"
+              >
+                <div
+                  class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                  tabindex="0"
+                >
+                  Начало
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="controls-margin_top-m controls-Input-connected_filled"
+    >
+      <div
+        class="tw-flex controls-max-w-full tw-flex-row tw-items-baseline "
+      >
+        <a
+          class="controls-Label controls-Label_underline_none tw-min-w-0 tw-flex-shrink"
+        >
+          <div
+            class="controls-Label__wrapper"
+          >
+            <div
+              class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+            >
+              label start
+            </div>
+            
+          </div>
+        </a>
+        <div
+          class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default  controls-Render_state-valid_caretFilled  controls-inlineheight-default controls-Render-inlineheight-default controls-Mask controls_Mask_theme-default controls-Input-DatePicker__content controls-DateBase controls-margin_top-m controls-ValidateContainer__validationStatus-valid"
+          data-qa="controls-BaseInput-Date"
+          tabindex="0"
+        >
+          <div
+            class="controls-Render__wrapper"
+          >
+            <span
+              class="controls-Render__baseline"
+            >
+              ﻿
+            </span>
+            <div
+              class="controls-InputBase__field controls-InputBase__field_autoWidth controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+              data-qa="controls-Render__field"
+              tabindex="0"
+            >
+              <div
+                class="controls-InputBase__stretcher"
+                tabindex="0"
+              >
+                <input
+                  autocapitalize="off"
+                  autocomplete="off"
+                  autocorrect="off"
+                  class="controls-Field js-controls-Field controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default  controls-InputBase__nativeField_stretcher controls-InputBase__stretcher-content"
+                  inputmode="text"
+                  name="ws-input_1996-06-20"
+                  spellcheck="false"
+                  tabindex="0"
+                  type="text"
+                  value="12:12"
+                />
+                <div
+                  class="controls-BaseInput__stretcher__container"
+                >
+                  <div
+                    class="controls-InputBase__stretcher-block"
+                  >
+                    00:00
+                  </div>
+                  <div
+                    class="controls-InputBase__stretcher-block controls-BaseInput__stretcher-block"
+                  >
+                    Начало
+                  </div>
+                </div>
+              </div>
+              <div
+                class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+                tabindex="0"
+              >
+                <div
+                  class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                  tabindex="0"
+                >
+                  Начало
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="controls-margin_top-m controls-Input-connected_filled"
+    >
+      <div
+        class="tw-flex controls-max-w-full tw-flex-row tw-items-baseline "
+      >
+        <span
+          class="controls-icon_size-s controls-icon_style-secondary icon-SabyBird controls-icon controls-margin_right-s"
+        />
+        <div
+          class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default  controls-Render_state-valid_caretFilled  controls-inlineheight-default controls-Render-inlineheight-default controls-Mask controls_Mask_theme-default controls-Input-DatePicker__content controls-DateBase controls-margin_top-m controls-ValidateContainer__validationStatus-valid"
+          data-qa="controls-BaseInput-Date"
+          tabindex="0"
+        >
+          <div
+            class="controls-Render__wrapper"
+          >
+            <span
+              class="controls-Render__baseline"
+            >
+              ﻿
+            </span>
+            <div
+              class="controls-InputBase__field controls-InputBase__field_autoWidth controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+              data-qa="controls-Render__field"
+              tabindex="0"
+            >
+              <div
+                class="controls-InputBase__stretcher"
+                tabindex="0"
+              >
+                <input
+                  autocapitalize="off"
+                  autocomplete="off"
+                  autocorrect="off"
+                  class="controls-Field js-controls-Field controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default  controls-InputBase__nativeField_stretcher controls-InputBase__stretcher-content"
+                  inputmode="text"
+                  name="ws-input_1996-06-20"
+                  spellcheck="false"
+                  tabindex="0"
+                  type="text"
+                  value="12:12"
+                />
+                <div
+                  class="controls-BaseInput__stretcher__container"
+                >
+                  <div
+                    class="controls-InputBase__stretcher-block"
+                  >
+                    00:00
+                  </div>
+                  <div
+                    class="controls-InputBase__stretcher-block controls-BaseInput__stretcher-block"
+                  >
+                    Начало
+                  </div>
+                </div>
+              </div>
+              <div
+                class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+                tabindex="0"
+              >
+                <div
+                  class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                  tabindex="0"
+                >
+                  Начало
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

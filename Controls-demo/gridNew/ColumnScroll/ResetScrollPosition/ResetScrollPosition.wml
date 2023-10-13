@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:style="width: 600px; height: 400px" shadowMode="js">
+        <Controls.grid:View
+                name="grid"
+                storeId="ColumnScrollResetScrollPosition"
+                columns="{{_columns}}"
+                columnScroll="{{true}}"
+                backgroundStyle="default"
+                header="{{_header}}"
+                stickyColumnsCount="{{2}}"/>
+    </Controls.scroll:Container>
+    <a href="#" class="controls-text-link" on:click="_setScrollPosition('start')" attr:data-qa="controlsDemo_scroll__reset_beginning">Сбросить позицию скрола в начало</a>
+    <br/>
+    <a href="#" class="controls-text-link" on:click="_setScrollPosition('end')" attr:data-qa="controlsDemo_scroll__reset_end">Сбросить позицию скрола в конец</a>
+</div>

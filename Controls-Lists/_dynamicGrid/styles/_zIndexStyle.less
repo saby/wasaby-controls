@@ -1,0 +1,54 @@
+@import "Controls-Lists/_dynamicGrid/styles/zIndexEnv/_cellZIndexSetters";
+
+// +==========================================================================================================================+
+// | МЕНЯЯ ЗДЕСЬ ТРЕБУЕТСЯ ПРОВЕРЯТЬ ГОРИЗОНТАЛЬНЫЙ СКРОЛЛ В DynamicGrid Controls-Lists/_dynamicGrid/styles/_zIndexStyle.less |
+// +==========================================================================================================================+
+
+@scrollableDataCell: auto;
+@scrollableStickiedDataCell: auto;
+@fixedDataCell: 2;
+@fixedStickiedDataCell: 2;
+
+
+@scrollableHeaderCell: @scrollableDataCell;
+@fixedHeaderCell: @fixedDataCell;
+
+@scrollableStickiedHeaderCell: @fixedDataCell + 1;
+@fixedStickiedHeaderCell: @scrollableStickiedHeaderCell + 1;
+
+
+@scrollableResultCell: @scrollableHeaderCell;
+@fixedResultCell: @fixedHeaderCell;
+
+@scrollableStickiedResultCell: @scrollableStickiedHeaderCell;
+@fixedStickiedResultCell: @fixedStickiedHeaderCell;
+
+
+@scrollableNavigationCell: @scrollableStickiedHeaderCell;
+@fixedNavigationCell: @fixedStickiedHeaderCell;
+@resizerCell: max(@scrollableStickiedHeaderCell, @fixedStickiedHeaderCell) + 1;
+@scrollableStickiedFooterCellIndex: @scrollableDataCell;
+@fixedStickiedFooterCellIndex: @fixedDataCell;
+
+.setDynamicScrollableDataCellIndex(@scrollableDataCell);
+.setDynamicFixedDataCellIndex(@fixedDataCell);
+
+.setDynamicFixedColspanDataCellIndex(auto);
+
+.setDynamicScrollableStickiedDataCellIndex(@scrollableStickiedDataCell);
+.setDynamicFixedStickiedDataCellIndex(@fixedStickiedDataCell);
+
+.setDynamicScrollableHeaderCellIndex(@scrollableHeaderCell);
+.setDynamicFixedHeaderCellIndex(@fixedHeaderCell);
+
+.setDynamicScrollableStickiedHeaderCellIndex(@scrollableStickiedHeaderCell);
+.setDynamicFixedStickiedHeaderCellIndex(@fixedStickiedHeaderCell);
+
+.setDynamicScrollableResultCellIndex(@scrollableResultCell);
+.setDynamicFixedResultCellIndex(@fixedResultCell);
+
+.setDynamicScrollableStickiedResultCellIndex(@scrollableStickiedResultCell);
+.setDynamicFixedStickiedResultCellIndex(@fixedStickiedResultCell);
+
+.setDynamicScrollableStickiedFooterCellIndex(@scrollableStickiedFooterCellIndex);
+.setDynamicFixedStickiedFooterCellIndex(@fixedStickiedFooterCellIndex);

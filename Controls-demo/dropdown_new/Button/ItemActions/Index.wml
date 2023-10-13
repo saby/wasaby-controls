@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+   <div class="controlsDemo__ml2" data-qa="controlsDemo-NodeProperty__base">
+      <Controls.dropdown:Button caption="State"
+                                keyProperty="key"
+                                displayProperty="title"
+                                itemActions="{{_itemActions}}"
+                                items="{{_items}}">
+      </Controls.dropdown:Button>
+   </div>
+</div>

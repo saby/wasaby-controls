@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">medium itemsSpacing</div>
+        <Controls.toolbars:View
+                items="{{_items}}"
+                keyProperty="id"
+                itemsSpacing="medium"
+        />
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">big itemsSpacing</div>
+        <Controls.toolbars:View
+                items="{{_items}}"
+                keyProperty="id"
+                itemsSpacing="big"
+        />
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="controlsDemo__flexRow {{_options.theme.indexOf('default')<0 ? 'controlsDemo_fixedWidth500' : 'controlsDemo_fixedWidth300'}}">
+   <div class="controlsDemo__wrapper">
+      <div class="controls-text-label">Меню с дополнительными пунктами</div>
+      <Controls.dropdown:Button
+              keyProperty="key"
+              caption="Create"
+              items="{{_items}}"
+              additionalProperty="additional"
+              attr:class="controlsDemo-menuButton"
+              attr:data-qa="ControlsDemo_MenuButton__extra-items">
+      </Controls.dropdown:Button>
+   </div>
+   <div class="controlsDemo__wrapper">
+      <div class="controls-text-label">Меню с дополнительными пунктами и футером</div>
+      <Controls.dropdown:Button
+              keyProperty="key"
+              caption="Create"
+              items="{{_items}}"
+              additionalProperty="additional"
+              attr:class="controlsDemo-menuButton"
+              attr:data-qa="ControlsDemo_MenuButton__extra-footer">
+         <ws:footerContentTemplate>
+            <div>Footer content template</div>
+         </ws:footerContentTemplate>
+      </Controls.dropdown:Button>
+   </div>
+   <div class="controlsDemo__wrapper">
+      <div class="controls-text-label">Меню с дополнительными пунктами и иерархией</div>
+      <Controls.dropdown:Button
+              keyProperty="id"
+              caption="Create"
+              items="{{_itemsHierarchy}}"
+              nodeProperty="@parent"
+              parentProperty="parent"
+              additionalProperty="additional"
+              attr:class="controlsDemo-menuButton"
+              attr:data-qa="ControlsDemo_MenuButton__extra-footer">
+      </Controls.dropdown:Button>
+   </div>
+</div>

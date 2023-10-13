@@ -1,0 +1,18 @@
+<div name="readOnlyField"
+     class="controls-Area__field_readOnly
+            controls-Area__field_margin-{{horizontalPadding}} controls-Area__fieldWrapper">
+   <ws:if data="{{value}}">
+      <div class="controls-Area__wrapURLs_container">
+         <Controls.Container.Async templateName="Controls/extendedDecorator:WrapURLs">
+            <ws:partial
+                    template="{{content.resolvedTemplate}}"
+                    value="{{value}}"
+                    attr:class="controls-Area__wrapURLs"
+            />
+         </Controls.Container.Async>
+      </div>
+      <span class="controls-Area__emptySymbol">{{emptySymbol}}</span>
+   </ws:if>
+   <ws:else data="{{placeholderVisibility === 'empty'}}"><ws:partial template="{{_options.placeholderTemplate}}"/></ws:else>
+   <ws:else>{{emptySymbol}}</ws:else>
+</div>

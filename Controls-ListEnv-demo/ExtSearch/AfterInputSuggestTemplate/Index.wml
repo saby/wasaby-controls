@@ -1,0 +1,14 @@
+<div class="search_Input-demo_wrapper">
+   <Controls-ListEnv.ExtSearch
+      attr:class="engineDemo-ExtSearch-suggest demo-SuggestNew__withTabs"
+      searchParam="title"
+      filterDescription="{{ _filterDescription }}"
+      on:filterDescriptionChanged="_filterDescriptionChanged()">
+      <ws:afterInputSuggestTemplate>
+         <div class="engineDemo-ExtSearch-suggest__rightTemplate">
+            <Controls.buttons:ArrowButton direction="down" attr:class="engineDemo-ExtSearch-suggest__rightButton"/>
+            <Controls.buttons:ArrowButton direction="up"/>
+         </div>
+      </ws:afterInputSuggestTemplate>
+   </Controls-ListEnv.ExtSearch>
+</div>

@@ -1,0 +1,10 @@
+<ws:if data="{{ _options.prefetchResult }}">
+    <div class="ControlDemo-PopupPage__scrollableWidget ws-flexbox ws-flex-column">
+        <div class="ControlDemo-PopupPage__scrollableWidget-line controls-margin_top-s">widget key - {{_options.prefetchResult.key}}</div>
+        <div class="ControlDemo-PopupPage__scrollableWidget-line controls-margin_top-s">widget title - {{_options.prefetchResult.title}}</div>
+        <div class="ControlDemo-PopupPage__scrollableWidget-line controls-margin_top-s">widget info - {{_options.prefetchResult.info}}</div>
+    </div>
+</ws:if>
+<ws:else>
+    <div></div>
+</ws:else>

@@ -1,0 +1,114 @@
+.controls-MultipleInputNew__separator {
+   width: var(--border-thickness);
+   margin: var(--offset_2xs) var(--offset_2xs) var(--offset_2xs) 0;
+   background-color: var(--separator_color);
+   user-select: none;
+}
+
+.controls-MultipleInputNew__separator-readOnly {
+   margin-left: var(--offset_2xs);
+}
+
+.controls-MultipleInputNew {
+   display: flex;
+   box-sizing: border-box;
+}
+
+.controls-MultipleInputNew::before {
+   content: '\200b';
+   line-height: var(--inline_height_m);
+}
+
+.controls-MultipleInputNew_border,
+.controls-MultipleInputNew_border_readOnly {
+   border-bottom: var(--border-thickness) var(--border-style_inputText)
+      var(--unaccented_border-color);
+}
+
+.controls-MultipleInputNew_invalid,
+.controls-MultipleInputNew_invalidAccent {
+   border-color: var(--invalid_border-color);
+}
+
+.controls-MultipleInputNew_contrast {
+   background-color: var(--background-color_inputText);
+}
+
+.controls-MultipleInputNew_contrast.controls-MultipleInputNew_invalidAccent {
+   background-color: var(--invalid_focus_background-color);
+}
+
+.controls-MultipleInputNew_border:focus-within,
+.ws-is-hover .controls-MultipleInputNew_border:hover {
+   border-color: var(--unaccented_hover_border-color);
+}
+
+.controls-MultipleInputNew_invalid:focus-within,
+.controls-MultipleInputNew_invalidAccent:focus-within,
+.ws-is-hover .controls-MultipleInputNew_invalid:hover,
+.ws-is-hover .controls-MultipleInputNew_invalidAccent:hover {
+   border-color: var(--invalid_border-color);
+}
+
+.controls-MultipleInputNew__lookup {
+   flex-shrink: 1;
+   min-width: 3ch;
+   max-width: 100%;
+   position: relative;
+   overflow: hidden;
+}
+
+.controls-MultipleInputNew__lookup_last {
+   flex-grow: 1;
+}
+
+.controls-MultipleInputNew__lookup-selected {
+   min-width: calc(3ch + var(--reset-button_icon-size) + var(--offset_2xs));
+}
+
+.controls-MultipleInputNew__lookup-notSelected {
+   flex-shrink: 0;
+}
+
+.controls-MultipleInputNew__lookup-withoutSize .controls-Field {
+   position: absolute;
+}
+
+.controls-MultipleInputNew__lookup-withoutSize .controls-InputBase__placeholder {
+   position: static;
+   z-index: 1;
+   transform: translateX(0);
+}
+
+.controls-MultipleInputNew__lookup_last.controls-MultipleInputNew__lookup-notSelected {
+   flex-shrink: 9999999;
+}
+
+.controls-MultipleInputNew__lookup_last.controls-MultipleInputNew__lookup {
+   min-width: calc(3ch + var(--trigger_icon-size_lookupInput) + var(--trigger_padding_lookupInput));
+}
+
+.controls-MultipleInputNew__lookup_last.controls-MultipleInputNew__lookup-selected {
+   min-width: calc(
+      3ch + var(--trigger_icon-size_lookupInput) + var(--trigger_padding_lookupInput) +
+         var(--reset-button_icon-size) + var(--offset_2xs)
+   );
+}
+
+.controls-MultipleInputNew__lookup-absolute {
+   position: absolute;
+   top: 0;
+   width: 100%;
+}
+
+.controls-MultipleInputNew__fakeField {
+   visibility: hidden;
+   user-select: none;
+   white-space: pre;
+   border-right: var(--trigger_offset_lookupInput) solid transparent;
+}
+
+.controls-MultipleInputNew__fakeField-contrast {
+   padding-left: var(--padding-horizontal_inputText);
+   background-color: var(--background-color_inputText);
+}

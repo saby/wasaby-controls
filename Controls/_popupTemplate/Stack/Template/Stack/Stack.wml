@@ -1,0 +1,106 @@
+<ws:template name="stackContent">
+<ws:if data="{{_options.leftContentTemplate }}">
+    <div class="controls-StackTemplate__leftArea">
+        <div class="controls-StackTemplate__leftArea-wrapper">
+            <ws:partial template="{{_options.leftContentTemplate}}"
+                        scope="{{_options}}"
+                        bodyContentTemplate="{{null}}"
+                        headerContentTemplate="{{null}}"
+                        footerContentTemplate="{{null}}"/>
+        </div>
+    </div>
+</ws:if>
+
+<div class="controls-StackTemplate-content_wrapper {{_getBackgroundColor(_options.backgroundStyle)}}"
+     style="width: {{ _adaptiveWidth }}px">
+    <ws:if data="{{_hasRightPanel}}">
+        <ws:partial template="Controls/_popupTemplate/Stack/Template/RightPanel"
+                    scope="{{_options}}"
+                    closeButtonVisble="{{_options.closeButtonVisible}}"
+                    rightBorderVisible="{{_options.rightBorderVisible}}"
+                    toolbarContentTemplate="{{_options.toolbarContentTemplate}}"
+                    maximizeButtonVisibility="{{_maximizeButtonVisibility}}"
+                    maximizeButtonTitle="{{_maximizeButtonTitle}}"
+                    maximizeButtonClickCallback="{{_maximizeButtonClickCallback}}"
+                    rightPanelOptions="{{_options.rightPanelOptions}}"
+                    isCompatiblePopup="{{_options.isCompatiblePopup}}"
+                    bodyContentTemplate="{{null}}"
+                    headerContentTemplate="{{null}}"
+                    footerContentTemplate="{{null}}"/>
+    </ws:if>
+    <div class="controls-StackTemplate-content">
+        <ws:if
+            data="{{_options.caption || _options.headingCaption || _options.topArea || _options.headerContentTemplate}}">
+            <ws:partial template="Controls/_popupTemplate/Stack/Template/Header" scope="{{_options}}"
+                        close="{{close}}"
+                        stackOptions="{{_options}}"
+                        _maximizeButtonTitle="{{_maximizeButtonTitle}}"
+                        changeMaximizedState="{{changeMaximizedState}}"
+                        hasRightPanel="{{_hasRightPanel}}"
+                        rightBorderVisible="{{_options.rightBorderVisible}}"
+                        _maximizeButtonVisibility="{{_maximizeButtonVisibility}}"/>
+        </ws:if>
+        <ws:else data="{{!_hasRightPanel}}">
+            <div class="controls-StackTemplate__command_buttons_without_head">
+                <ws:if data="{{_maximizeButtonVisibility}}">
+                    <div class="controls-StackTemplate__maximized_button"
+                         on:click="changeMaximizedState()"
+                         attr:title="{{_maximizeButtonTitle}}"></div>
+                </ws:if>
+                <ws:if data="{{_options.closeButtonVisible}}">
+                    <Controls.buttons:CloseButton
+                        offset="{{ _options.closeButtonViewMode !== 'toolButton' ? 'null' }}}}"
+                        attr:class="controls-StackTemplate__close_button"
+                        attr:data-qa="controls-stack-Button__close"
+                        viewMode="{{_options.closeButtonViewMode}}"
+                        on:click="close()"/>
+                </ws:if>
+            </div>
+        </ws:else>
+        
+        <ws:if data="{{ _options.bodyContentTemplate }}">
+            <div class="controls-StackTemplate__content-area {{_getBackgroundColor(_options.backgroundStyle)}}">
+                <ws:partial template="{{_options.bodyContentTemplate}}"
+                            scope="{{_options}}"
+                            hasRightTemplate="{{_hasRightPanel}}"
+                            bodyContentTemplate="{{null}}"
+                            headerContentTemplate="{{null}}"
+                            footerContentTemplate="{{null}}">  <!-- Опция с тем же названием есть на выпадающем списке.
+                                                                    Чтобы опция не пролетала до выпадающего списка, который лежит в стеке -->
+                </ws:partial>
+            </div>
+        </ws:if>
+        
+        <ws:if data="{{_options.footerContentTemplate }}">
+            <div
+                class="controls-StackTemplate__bottomArea {{_getFooterBackgroundColor(_options.footerBackgroundStyle)}}">
+                <ws:partial template="{{_options.footerContentTemplate}}"
+                            scope="{{_options}}"
+                            bodyContentTemplate="{{null}}"
+                            headerContentTemplate="{{null}}"
+                            footerContentTemplate="{{null}}"/>
+            </div>
+        </ws:if>
+    </div>
+</div>
+</ws:template>
+<ws:if data="{{ _allowAdaptive }}">
+    <Controls.Container.Async templateName="Controls/popupSliding:Template">
+        <ws:partial template="{{ content.resolvedTemplate }}"
+                    slidingPanelOptions="{{ _slidingPanelOptions }}"
+                    scope="{{ _options }}"/>
+    </Controls.Container.Async>
+</ws:if>
+<ws:else>
+    <Controls._popupTemplate.Stack.Template.BaseStack scope="{{ _options }}"
+                                                      attr:class="{{ _hasRightPanel ? 'controls-StackTemplate__with-right-panel'}}">
+        <ws:if data="{{ _isAdaptive }}">
+            <div class="controls-StackTemplate__wrapper">
+                <ws:partial template="stackContent"/>
+            </div>
+        </ws:if>
+        <ws:else>
+            <ws:partial template="stackContent"/>
+        </ws:else>
+    </Controls._popupTemplate.Stack.Template.BaseStack>
+</ws:else>

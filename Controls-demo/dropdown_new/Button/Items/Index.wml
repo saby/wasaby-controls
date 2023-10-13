@@ -1,0 +1,15 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper">
+      <div class="controls-margin_bottom-m controls-text-label">Controls.dropdown:Button с опцией items</div>
+      <Controls.dropdown:Button
+              keyProperty="key"
+              caption="Create"
+              viewMode="link"
+              items="{{_items}}"
+              on:menuItemActivate="_menuItemActivate()"
+              attr:class="controlsDemo-menuButton">
+      </Controls.dropdown:Button>
+
+      <div class="controls-margin_top-s controls-fontsize-s controls-text-label">Выбрана запись с текстом: {{_selectedTitle}}</div>
+   </div>
+</div>

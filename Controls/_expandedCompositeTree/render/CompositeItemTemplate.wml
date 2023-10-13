@@ -1,0 +1,8 @@
+<Controls._expandedCompositeTree.CompositeItemWrapper
+        attr:class="{{ _options.item.getPaddingClasses() }} {{ _options.item.getWrapperClasses() }}"
+        renderTemplate="{{ item.getRenderTemplate() }}"
+        onClickCallback="{{ _options.onClickCallback }}"
+        onActionClick="{{ _options.onActionClick }}"
+        onActionMouseDown ="{{ _options.onActionMouseDown }}"
+        item="{{ _options.item }}"
+        renderScope="{{ item.getRenderParams(itemTemplate) }}" />

@@ -1,0 +1,119 @@
+@import 'Controls/_scroll/Scroll/_contentEnvironmentZIndex';
+
+.controls-SuggestV {
+   max-width: 100%;
+   position: relative;
+   display: inline-block;
+   min-height: 1px;
+}
+
+.controls-Suggest__layout-input {
+   width: 100%;
+}
+
+.controls-Suggest__suggestionsContainer {
+   box-sizing: border-box;
+   border-radius: var(--border-radius_suggest);
+   // Строка поиска с автодополнением должна перекрывать тени скрола, скроллбар, стики заголовки внутри скрола
+   z-index: @z-index_Scroll-contentEnvironment + 1;
+}
+
+.controls-background-suggestPopup {
+   background-color: var(--background-color_sticky);
+}
+
+.controls-Suggest__wrapper {
+   display: inherit;
+   flex-direction: inherit;
+   margin-bottom: var(--offset_s);
+   box-sizing: border-box;
+}
+
+.controls-Suggest-offset-top {
+   margin-top: var(--offset_s);
+}
+
+.controls-Suggest-Text_style_overInput {
+   z-index: @z-index_Scroll-contentEnvironment + 2;
+}
+
+.controls-Suggest__showAllLink {
+   color: var(--link_text-color);
+   height: var(--footer_height_suggest);
+   font-size: var(--font-size_m);
+   cursor: pointer;
+   padding-left: var(--offset_2xs);
+   padding-right: var(--offset_m);
+}
+
+.controls-Suggest__showAllLink:active {
+   color: var(--link_hover_text-color);
+   text-decoration: underline;
+}
+
+.controls-Suggest__moreLink-content,
+.controls-Suggest__showAllLink-content {
+   display: inline-flex;
+   align-items: center;
+   height: 100%;
+}
+
+.controls-Suggest__moreLink {
+   color: var(--link_text-color);
+   height: var(--footer_height_suggest);
+   font-size: var(--font-size_m);
+   cursor: pointer;
+   padding: 0 var(--offset_m);
+}
+
+.controls-Suggest__moreLink:active {
+   color: var(--link_hover_text-color);
+   text-decoration: underline;
+}
+
+.ws-is-hover {
+   .controls-Suggest__showAllLink:hover {
+      color: var(--link_hover_text-color);
+      text-decoration: underline;
+   }
+
+   .controls-Suggest__moreLink:hover {
+      color: var(--link_hover_text-color);
+      text-decoration: underline;
+   }
+}
+
+.controls-Suggest__tabs {
+   width: 100%;
+   margin-bottom: var(--offset_s);
+}
+
+.controls-Suggest__empty {
+   color: var(--unaccented_text-color);
+   text-align: center;
+   padding: var(--offset_l) 0;
+}
+
+.controls-Suggest__scrollContainer {
+   height: 100%;
+   width: 100%;
+   //need to inherit max-height from popup on IOS, otherwise height 100% will not work
+   max-height: inherit;
+}
+
+.controls-Suggest__Misspell {
+   margin-bottom: var(--offset_s);
+   padding: 0 var(--misspell_padding-horizontal_suggest);
+   box-sizing: border-box;
+}
+
+.controls-Suggest__footer-wrapper {
+   padding: calc(var(--offset_xs) / 2) 0;
+   display: flex;
+   align-items: baseline;
+}
+
+.controls-Suggest__footer {
+   width: 100%;
+   display: flex;
+}

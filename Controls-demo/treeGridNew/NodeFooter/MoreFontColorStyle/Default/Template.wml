@@ -1,0 +1,9 @@
+<div attr:class="controlsDemo__cell"
+     data-qa="controlsDemo-MoreFontColor_default">
+    <div attr:class="controls-text-label">default</div>
+    <Controls.treeGrid:View
+            name="tree"
+            storeId="NodeFooterMoreFontColorStyleDefault"
+            columns="{{ _columns }}"
+            useNewNodeFooters="{{ true }}"/>
+</div>

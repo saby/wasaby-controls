@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell demo-NumberBase__showEmptyDecimals-false">
+        <Controls.input:Number showEmptyDecimals="{{false}}"
+                               bind:value="_value1"
+                               attr:style="width:200px"/>
+    </div>
+    <div class="controlsDemo__cell demo-NumberBase__showEmptyDecimals-true">
+        <Controls.input:Number showEmptyDecimals="{{true}}"
+                               bind:value="_value2"
+                               attr:style="width:200px"/>
+    </div>
+</div>
+

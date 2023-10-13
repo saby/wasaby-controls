@@ -1,0 +1,13 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper">
+      <Controls.dropdown:Button
+              keyProperty="key"
+              displayProperty="title"
+              caption="{[Выберите город]}"
+              source="{{_source}}"
+              menuHeadingCaption="{[Заголовок для меню]}"
+              attr:class="controlsDemo-menuButton"
+              attr:data-qa="controlsDemo-menuButton__long-caption">
+      </Controls.dropdown:Button>
+   </div>
+</div>

@@ -1,0 +1,35 @@
+.controls-DateLinkView {
+   z-index: 1;
+   position: relative;
+   display: inline-flex;
+   .user-select();
+   white-space: nowrap;
+   max-width: 100%;
+   min-width: 0;
+   height: var(--height_dateRangeSelector);
+   line-height: var(--height_dateRangeSelector);
+}
+
+.controls-DateLinkView__value_fontWeight-bold {
+   font-weight: var(--font-weight_dateRangeSelector);
+}
+
+.controls-DateLinkView__resetButton {
+   .icon-size-without-important(var(--reset-button_icon-size));
+   color: var(--reset-button_color);
+   font-family: var(--icon_font-family_s);
+   margin-left: var(--offset_2xs);
+   align-self: center;
+   cursor: pointer;
+}
+
+.controls-DateLinkView__button-value {
+   min-width: 0;
+}
+
+.ws-is-ie {
+   .controls-DateLinkView__button-value {
+      // В IE не ужимается в родительский контейнер со значением 0;
+      min-width: 1px;
+   }
+}

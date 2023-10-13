@@ -1,0 +1,57 @@
+<div class="controls_breadcrumbs_theme-{{_options.theme}} controls-BreadCrumbsPath__backButton__wrapper {{_options.backButtonClass}}"
+     attr:data-qa="controls-BreadCrumbsBackButton">
+    <div class="
+      controls-BreadCrumbsPath__backButton__container
+      {{( _options.showArrowOutsideOfBackButton || _options.displayMode === 'multiline' ) && _options.showActionButton
+       ? ' controls-BreadCrumbsPath__backButton__container__only__withArrow'}}
+   ">
+        <Controls.heading:Back attr:class="controls-BreadCrumbsPath__backButton"
+                               caption="{{ _options.backButtonCaption }}"
+                               tooltip="{{ _options.backButtonCaption }}"
+                               style="{{ _options.backButtonStyle }}"
+                               iconStyle="{{ _options.backButtonIconStyle }}"
+                               fontColorStyle="{{ _options.backButtonFontColorStyle }}"
+                               fontSize="{{_options.backButtonFontSize || 'headingPathBack'}}"
+                               theme="{{ _options.theme}}"
+                               beforeCaptionTemplate="{{_options.beforeCaptionTemplate}}"
+                               beforeCaptionTemplateOptions="{{_options.beforeCaptionTemplateOptions}}"
+                               textTransform="{{_options.backButtonTextTransform}}"
+                               iconViewMode="{{_options.iconViewMode}}"
+                               on:click="_onBackButtonClick()"
+        />
+
+        <ws:if data="{{ _options.afterBackButtonTemplate }}">
+            <ws:partial template="{{ _options.afterBackButtonTemplate }}"/>
+        </ws:if>
+
+        <ws:if data="{{ _options.counterCaption }}">
+            <Controls.heading:Counter attr:class="controls-BreadCrumbsPath__counter"
+                                      caption="{{ _options.counterCaption }}"
+                                      fontColorStyle="unaccented"/>
+        </ws:if>
+        <ws:if data="{{ _options.showActionButton }}">
+            <div
+               class="
+                  controls-BreadCrumbsPath__backButtonArrow-container
+                  controls-fontsize-{{_options.backButtonFontSize || '3xl'}}
+                  {{_options.showArrowOutsideOfBackButton || _options.displayMode === 'multiline' ? 'controls-BreadCrumbsPath__backButtonArrow-container__only'}}
+                  controls-background-{{_options.backgroundStyle || 'default'}}
+                  {{_options.readOnly ? ' controls-Path__backButtonArrow_readonly'}}
+                  js-BreadCrumbsPath__backButtonArrow
+               "
+               title="{[Подробнее]}"
+               on:click="_onArrowClick()"
+            >
+                <div class="controls-BreadCrumbsPath__backButtonArrow">
+                    <svg
+                       attr:class="controls-BreadCrumbsPath__backButtonArrow"
+                       xmlns="http://www.w3.org/2000/svg"
+                       viewBox="0 0 16 16"
+                    >
+                       <path transform="matrix(0.7,0,0,0.7,2,5){{_isReverse ? ' rotate(180, 8, 8)' : ''}}" d="M10,8l-8,8v-3l5-5-5-5v-3Zm6,0-8,8v-3l5-5-5-5v-3Z"/>
+                    </svg>
+                </div>
+            </div>
+        </ws:if>
+    </div>
+</div>

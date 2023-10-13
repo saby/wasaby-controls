@@ -1,0 +1,27 @@
+<div class="controlsDemo__wrapper controlDemo__grid-columnScroll-with-groups">
+    <Controls.scroll:Container attr:style="width: 600px; height: 400px">
+        <Controls.list:Container>
+            <Controls.grid:View
+                    attr:class=""
+                    storeId="ColumnScrollWithGroupsWithoutSeparator"
+                    rowSeparatorSize="s"
+                    header="{{ _header }}"
+                    columns="{{ _columns }}"
+                    columnScroll="{{ true }}"
+                    stickyColumnsCount="{{ 2 }}"
+                    groupProperty="fullName">
+                <ws:groupTemplate>
+                    <ws:partial
+                            template="Controls/grid:GroupTemplate"
+                            separatorVisibility="{{ false }}"
+                            expanderVisible="{{ true }}"
+                            columnAlignGroup="{{ 3 }}">
+                        <ws:contentTemplate>
+                            <span>{{contentTemplate.item.contents}}</span>
+                        </ws:contentTemplate>
+                    </ws:partial>
+                </ws:groupTemplate>
+            </Controls.grid:View>
+        </Controls.list:Container>
+    </Controls.scroll:Container>
+</div>

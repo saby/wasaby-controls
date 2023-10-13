@@ -1,0 +1,64 @@
+<div class="controlsDemo-dateRange-RelationController">
+<div class="controlsDemo-dateRange-RelationController__row">
+  <Controls.dateRange:RelationController
+      autoRangeChange="{{ true }}"
+      name="dateRelation1"
+      bindType="normal"
+      bind:startValue0="_startValue0"
+      bind:endValue0="_endValue0"
+      bind:startValue1="_startValue1"
+      bind:endValue1="_endValue1">
+    <div class="controlsDemo-dateRange-RelationController__row controlsDemo_fixedWidth350">
+      <Controls.dateRange:RelationWrapper
+          number="{{0}}"
+          ranges="{{content.ranges}}">
+        <Controls.dateRange:Selector
+            datePopupType="datePicker"
+            attr:class="demo-dateRange-RelationController__selector1"/>
+      </Controls.dateRange:RelationWrapper>
+      <Controls.dateRange:RelationButton
+          attr:class="controlsDemo-dateRange-RelationController__relationButton"
+          value="{{ content.bindType }}" />
+      <Controls.dateRange:RelationWrapper
+          number="{{1}}"
+          ranges="{{content.ranges}}"
+      >
+        <Controls.dateRange:Selector
+            datePopupType="datePicker"
+            emptyCaption="Сравнить с ..."
+            attr:class="demo-dateRange-RelationController__selector2"/>
+      </Controls.dateRange:RelationWrapper>
+    </div>
+  </Controls.dateRange:RelationController>
+</div>
+<Controls.dateRange:RelationController
+    name="dateRelation2"
+    bindType="byCapacity"
+    bind:startValue0="_startValue01"
+    bind:endValue0="_endValue01"
+    bind:startValue1="_startValue11"
+    bind:endValue1="_endValue11">
+  <div class="controlsDemo-dateRange-RelationController__row controlsDemo_fixedWidth350">
+    <Controls.dateRange:RelationWrapper
+        number="{{0}}"
+        ranges="{{content.ranges}}">
+      <Controls.dateRange:Selector
+          datePopupType="datePicker"
+          attr:class="demo-dateRange-RelationController__selector1"/>
+    </Controls.dateRange:RelationWrapper>
+    <Controls.dateRange:RelationButton
+        attr:class="controlsDemo-dateRange-RelationController__relationButton"
+        value="{{ content.bindType }}"
+        bind:value="_bindType2" />
+    <Controls.dateRange:RelationWrapper
+        number="{{1}}"
+        ranges="{{content.ranges}}"
+    >
+      <Controls.dateRange:Selector
+          datePopupType="datePicker"
+          emptyCaption="Сравнить с ..."
+          attr:class="demo-dateRange-RelationController__selector2"/>
+    </Controls.dateRange:RelationWrapper>
+  </div>
+</Controls.dateRange:RelationController>
+</div>

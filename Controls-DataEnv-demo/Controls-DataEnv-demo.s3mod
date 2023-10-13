@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-DataEnv-demo"
+           id="bec60844-6287-40bc-9640-52fbb1b22edc"
+           package="Wasaby"
+           responsible="Крайнов Д.О."
+           version="1.00">
+
+  <description/>
+  <depends>
+    <module id="8298f3a2-1964-11ed-861d-0242ac120002" name="Controls-DataEnv"/>
+    <module id="f6fdf353-3ab3-4dbb-8671-01c2b418bf0a" name="Controls"/>
+    <module id="30f3262d-748e-4f05-ad19-ffde30da8711" name="Controls-Input"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <resources/>
+  <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

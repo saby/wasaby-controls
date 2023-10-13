@@ -1,0 +1,6 @@
+<ws:partial template="{{_options.content}}"
+            filterController="{{_options.filterController || _filterController}}"
+            sourceController="{{_options.sourceController || _sourceController}}"
+            operationsController="{{_options.operationsController || _operationsController}}"
+            searchController="{{_options.searchController || _searchController}}">
+</ws:partial>

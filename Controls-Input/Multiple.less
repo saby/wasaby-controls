@@ -1,0 +1,39 @@
+.Controls-Input-Multiple__separator {
+   user-select: none;
+   padding: var(--offset_xs) var(--offset_st) var(--offset_xs) calc(var(--offset_st) - var(--offset_3xs));
+   display: inline-flex;
+   flex-shrink: 0;
+   justify-content: center;
+   box-sizing: border-box;
+
+   &_contrast {
+      background: var(--background-color);
+   }
+
+   &::after {
+      content: '';
+      display: block;
+      width: var(--border-thickness);
+      background-color: var(--separator_color);
+   }
+}
+
+.Controls-Input-Multiple {
+   position: relative;
+   display: flex;
+
+   &::after {
+      content: '\200b';
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      height: var(--border-thickness);
+      background: var(--unaccented_border-color);
+   }
+
+   &_enabled:focus-within::after,
+   .ws-is-hover &_enabled:hover::after {
+      background: var(--unaccented_hover_border-color);
+   }
+}

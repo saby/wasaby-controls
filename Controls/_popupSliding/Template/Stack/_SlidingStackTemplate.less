@@ -1,0 +1,69 @@
+.controls-SlidingPanel {
+   position: relative;
+}
+
+.controls-Popup .controls-SlidingPanel {
+   transform: translateZ(0);
+}
+
+// В мобильной версии отступ должен остаться 12px, решение проектирования
+// https://online.sbis.ru/opendoc.html?guid=640fd1d5-c032-4146-9802-a9286bd78728&client=3
+.controls-SlidingStackPanel {
+   --outer_padding: var(--offset_m);
+}
+
+.controls-SlidingPanel__content {
+   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+.controls-SlidingStackPanel__closeButton {
+   display: flex;
+   align-items: baseline;
+   flex-shrink: 0;
+   margin: var(--offset_m);
+}
+
+.controls-SlidingStackPanel__header {
+   width: 100%;
+   box-sizing: border-box;
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+   min-height: calc(var(--inline_height_xl) + var(--offset_st) * 2);
+   flex-shrink: 0;
+}
+
+.controls-SlidingStackPanel__headerBackgroundColor {
+   background: var(--unaccented_background-color);
+}
+
+.controls-SlidingStackPanel__toolbar {
+   align-self: flex-start;
+   margin-top: var(--offset_st);
+}
+
+.controls-SlidingStackPanel__close-button {
+   margin: var(--offset_st);
+   flex-shrink: 0;
+   z-index: 1;
+   align-self: flex-start;
+}
+
+.controls-SlidingStackPanel__actionContentTemplate {
+   z-index: 16;
+   position: fixed;
+   bottom: var(--offset_st);
+   right: var(--offset_st);
+   max-width: 100%;
+}
+
+.controls-SlidingPanel__customContentWrapper {
+   overflow-x: auto;
+   flex-grow: 1;
+   display: flex;
+   flex-direction: column;
+}
+
+.controls-SlidingStackPanel__header_margin-left-auto {
+   margin-left: auto;
+}

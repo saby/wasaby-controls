@@ -1,0 +1,64 @@
+.controls-ConfirmationDialog__message {
+   font-size: var(--message_font-size_confirmation);
+   line-height: var(--message_line-height_confirmation);
+   color: var(--message_text-color_confirmation);
+}
+
+.controls-ConfirmationDialog__message_withDetails {
+   margin-bottom: var(--details_offset_confirmation);
+}
+
+.controls-ConfirmationDialog__details {
+   font-size: var(--font-size_l);
+   line-height: normal;
+   color: var(--details_text-color_confirmation);
+}
+
+.controls-ConfirmationDialog__message,
+.controls-ConfirmationDialog__details {
+   white-space: pre-wrap;
+   word-wrap: break-word;
+}
+
+.controls-ConfirmationDialog__message-centered,
+.controls-ConfirmationDialog__details-centered {
+   text-align: center;
+}
+
+.controls-ConfirmationDialog__buttonContainer {
+   .flexbox();
+   .justify-content(center);
+   align-items: baseline;
+}
+
+.ws-is-adaptive {
+   .controls-ConfirmationDialog__buttonContainer_vertical {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin: 0 auto;
+      gap: var(--offset_m);
+
+      .controls-ConfirmationDialog__button-mini,
+      .controls-ConfirmationDialog__button-standard {
+         margin-left: 0;
+         width: 100%;
+      }
+   }
+}
+
+.controls-ConfirmationDialog__button-standard {
+   min-width: var(--min-width_button_l_confirmation);
+}
+
+.controls-ConfirmationDialog__button-mini {
+   min-width: var(--min-width_button_s_confirmation);
+}
+
+.controls-ConfirmationDialog__no-cancel-button {
+   margin-left: var(--offset_button_confirmation);
+}
+
+.controls-ConfirmationDialog__button {
+   width: 100%;
+}

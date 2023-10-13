@@ -1,0 +1,49 @@
+<div class="controlsDemo__wrapper">
+   <div class="ws-flexbox">
+      <div class="controlsDemo-HintManager__highlighterOffsetConfigPanel ws-flexbox">
+         <Controls.scroll:Container scrollbarVisible="{{false}}"
+                                    attr:class="controlsDemo-HintManager__highlighterOffsetConfigScrollContainer ws-flex-shrink-1">
+            <div class="ws-flexbox ws-flex-column controls-padding-xl">
+               <Controls.input:Label caption="Сверху"/>
+               <Controls.input:Number
+                       bind:value="_offsetTop"
+                       attr:data-qa="controlsDemo-HintManager__highlighterOffsetTop"
+                       attr:class="controls-margin_bottom-l"/>
+
+               <Controls.input:Label caption="Снизу"/>
+               <Controls.input:Number
+                       bind:value="_offsetBottom"
+                       attr:data-qa="controlsDemo-HintManager__highlighterOffsetBottom"
+                       attr:class="controls-margin_bottom-l"/>
+
+               <Controls.input:Label caption="Слева"/>
+               <Controls.input:Number
+                       bind:value="_offsetLeft"
+                       attr:data-qa="controlsDemo-HintManager__highlighterOffsetLeft"
+                       attr:class="controls-margin_bottom-l"/>
+
+               <Controls.input:Label caption="Справа"/>
+               <Controls.input:Number
+                       bind:value="_offsetRight"
+                       attr:data-qa="controlsDemo-HintManager__highlighterOffsetRight"
+                       attr:class="controls-margin_bottom-l"/>
+
+               <Controls.buttons:Button
+                       attr:data-qa="controlsDemo-HintManager__highlighterOffsetApply"
+                       viewMode="outlined"
+                       buttonStyle="primary"
+                       caption="Применить настройки к подсказке"
+                       on:click="_applyHighlighterOffsetToRoute()"/>
+            </div>
+         </Controls.scroll:Container>
+      </div>
+
+      <div class="controls-padding-3xl ws-flexbox ws-align-items-center ws-justify-content-center ws-flex-grow-1">
+         <Controls.buttons:Button
+                 attr:data-name="highlighterOffsetTarget"
+                 attr:data-qa="controlsDemo-HintManager__highlighterOffsetTarget"
+                 viewMode="outlined"
+                 caption="Таргет подсказки"/>
+      </div>
+   </div>
+</div>

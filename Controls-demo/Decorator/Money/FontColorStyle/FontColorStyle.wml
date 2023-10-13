@@ -1,0 +1,48 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontColorStyle=default, underline=hovered</div>
+        <Controls.baseDecorator:Money value="{{_value}}" fontColorStyle="default" underline="hovered"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontColorStyle=unaccented, underline=hovered</div>
+        <Controls.baseDecorator:Money value="{{_value}}" fontColorStyle="unaccented" underline="hovered"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontColorStyle=readonly, underline=hovered</div>
+        <Controls.baseDecorator:Money value="{{_value}}" fontColorStyle="readonly" underline="hovered"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontColorStyle=link, underline=hovered</div>
+        <Controls.baseDecorator:Money value="{{_value}}" fontColorStyle="link" underline="hovered"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontColorStyle=primary, underline=hovered</div>
+        <Controls.baseDecorator:Money value="{{_value}}" fontColorStyle="primary" underline="hovered"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontColorStyle=secondary</div>
+        <Controls.baseDecorator:Money value="{{_value}}" fontColorStyle="secondary"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontColorStyle=success</div>
+        <Controls.baseDecorator:Money value="{{_value}}" fontColorStyle="success" />
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontColorStyle=warning</div>
+        <Controls.baseDecorator:Money value="{{_value}}" fontColorStyle="warning" />
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontColorStyle=danger</div>
+        <Controls.baseDecorator:Money value="{{_value}}" fontColorStyle="danger" />
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontColorStyle=label</div>
+        <Controls.baseDecorator:Money value="{{_value}}" fontColorStyle="label" />
+    </div>
+    <div class="controlsDemo__cell controls-padding_left-s controlsDemo__backgroundContrast controlsDemo_fixedWidth200">
+        <div class="controls-text-label">fontColorStyle=contrast</div>
+        <Controls.baseDecorator:Money value="{{_value}}" fontColorStyle="contrast" />
+        <br/>
+        <Controls.baseDecorator:Money value="{{_value1}}" fontColorStyle="contrast" />
+    </div>
+</div>

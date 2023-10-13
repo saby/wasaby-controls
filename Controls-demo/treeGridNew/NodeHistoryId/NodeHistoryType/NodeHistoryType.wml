@@ -1,0 +1,28 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500 controlsDemo_wrapper-treeGrid-base-treeGridView">
+<!--Сейчас есть некоторые проблемы с событиями и лишними перерисовками в ядре. Без скролл контейнера иногда не срабатывают-->
+<!--клики на стики блоке. Т.к кейсы с отсутствием скролл контейнера над списком есть только в демках - добавляю его.-->
+<Controls.scroll:Container>
+  <Controls.list:DataContainer source="{{ _viewSource }}"
+                               root="{{null}}"
+                               keyProperty="key"
+                               parentProperty="parent"
+                               nodeProperty="type"
+                               nodeTypeProperty="nodeType"
+                               nodeHistoryId="NODE_HISTORY_GROUPS"
+                               nodeHistoryType="group"
+                               bind:expandedItems="_expandedItems"
+                               bind:collapsedItems="_collapsedItems">
+    <Controls.treeGrid:View
+        rowSeparatorSize="s"
+        colspanCallback="{{ _colspanCallback }}"
+        useNewNodeFooters="{{ true }}"
+        columns="{{ _columns }}">
+      <ws:nodeFooterTemplate>
+        <ws:partial template="Controls/treeGrid:NodeFooterTemplate">
+          <Controls.list:AddButton caption="Добавить товар"/>
+        </ws:partial>
+      </ws:nodeFooterTemplate>
+    </Controls.treeGrid:View>
+  </Controls.list:DataContainer>
+</Controls.scroll:Container>
+</div>

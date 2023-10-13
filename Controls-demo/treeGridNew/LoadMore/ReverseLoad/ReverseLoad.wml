@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <Controls.treeGrid:View
+            storeId="LoadMoreReverseLoad"
+            columns="{{_columns}}"
+            nodeMoreCaption="Показать еще ответы...">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/treeGrid:ItemTemplate" scope="{{itemTemplate}}"/>
+        </ws:itemTemplate>
+    </Controls.treeGrid:View>
+</div>
