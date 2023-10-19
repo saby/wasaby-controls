@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth800 controlsDemo_treeGrid-deepInside">
+    <Controls.treeGrid:View
+            useTableInOldBrowsers="{{true}}"
+            storeId="DeepInside"
+            columns="{{_columns}}"
+            bind:collapsedItems="_collapsedItems">
+        <ws:nodeFooterTemplate>
+            <ws:partial template="Controls/treeGrid:NodeFooterTemplate">
+                <Controls.list:AddButton caption="Добавить товар"/>
+            </ws:partial>
+        </ws:nodeFooterTemplate>
+    </Controls.treeGrid:View>
+</div>

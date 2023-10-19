@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module
+        id="7c6ae293-7359-4a54-8a33-74ce96945d57"
+        kaizen_zone="916d4071-6bb4-4800-b3ff-2ee6725c9fdc"
+        name="Controls-editors"
+        package="Wasaby"
+        responsible="Крайнов Д.О." responsible_uuid="0a464b92-3129-49f2-8a5e-7ce6ecfa37b0"
+        required="1"
+        version="1.00">
+  <description>Редакторы свойств контролов и виджетов.</description>
+  <depends>
+    <module id="686f183d-0bcc-4732-b4e4-6016c2a67a0f" name="Types"/>
+    <module id="f6fdf353-3ab3-4dbb-8671-01c2b418bf0a" name="Controls"/>
+    <module id="e86caf7c-156a-4858-8710-fcf3d8abcfbf" name="Carousel"/>
+    <module id="37e402f1-2fb0-4b73-81c5-113cf94dbf1c" name="WasabyLoader"/>
+    <module id="854b94fc-ff37-4cbf-9721-cd1f4607a227" name="Controls-ListEnv"/>
+    <module id="323fd54f-1fab-42a6-8aea-6726d6392d53" name="Application"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <resources/>
+  <preload/>
+</ui_module>

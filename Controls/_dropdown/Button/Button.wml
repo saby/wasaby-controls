@@ -1,0 +1,36 @@
+<ws:if data="{{!_options.lazyItemsLoading && !_hasItems && _options.viewMode === 'link'}}">
+    <div class="controls-MenuButton controls-MenuButton_link controls-MenuButton__Wrapper">
+        <div class="controls-text controls-MenuButton__text controls-text-default
+                     controls-fontsize-{{_options.fontSize}}"
+             title="{{_options.caption}}">{{_options.caption}}</div>
+    </div>
+</ws:if>
+<ws:else>
+    <Controls.buttons:Button
+            name="content"
+            attr:class="controls-MenuButton controls-MenuButton__Wrapper"
+            icon="{{_options.icon}}"
+            iconSize="{{_options.iconSize}}"
+            iconStyle="{{_options.iconStyle}}"
+            textAlign="{{_options.textAlign}}"
+            caption="{{_options.caption}}"
+            captionPosition="{{_options.captionPosition}}"
+            fontColorStyle="{{_options.fontColorStyle}}"
+            fontSize="{{_options.fontSize}}"
+            inlineHeight="{{_options.inlineHeight}}"
+            buttonStyle="{{_options.buttonStyle}}"
+            contrastBackground="{{_options.contrastBackground}}"
+            viewMode="{{_options.viewMode}}"
+            translucent="{{_options.translucent}}"
+            tooltip="{{_options.tooltip}}"
+            iconTemplate="{{_options.iconTemplate}}"
+            underlineVisible="{{_options.underlineVisible}}"
+            on:click="_handleClick()"
+            on:mousedown="_handleMouseDown()"
+            on:mouseenter="_handleMouseEnter()"
+            on:mouseleave="_handleMouseLeave()"
+            on:mousemove="_handleMouseMove()"
+            on:keydown="_handleKeyDown()"
+            on:deactivated="_deactivated()"
+    />
+</ws:else>

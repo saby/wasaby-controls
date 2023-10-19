@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module id="adbe8cb5-bae8-483b-a7b0-45b70c984dee" name="Controls-ListsUnit" version="1.00">
+  <description/>
+  <depends>
+      <module id="3b705300-9d6c-4e98-a79f-079c05bf6f48" name="Controls-Lists"/>
+      <module id="7dafab78-3d12-49ab-920e-023e469d4069" name="Controls-Lists-default-theme"/>
+      <module id="0641abed-e0fb-4f42-990c-4c24bdbd7bd0" name="Controls-demo"/>
+      <module id="a10cb1cb-b23d-4ef6-a757-4f7382e0e8d1" name="SbisEnvUI"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <test environment="NodeJS" framework="Jest" />
+  <resources/>
+</ui_module>

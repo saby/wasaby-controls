@@ -1,0 +1,14 @@
+<div class="controlsDemo__flexRow">
+    <div class="controlsDemo__wrapper">
+        <Controls.menu:Control
+                name="menuControl"
+                source="{{_source}}"
+                keyProperty="key"
+                displayProperty="title"
+                nodeProperty="node"
+                parentProperty="parent"
+                on:applyClick="_applyClick()"
+                bind:selectedKeys="_selectedKeys"
+        />
+    </div>
+</div>

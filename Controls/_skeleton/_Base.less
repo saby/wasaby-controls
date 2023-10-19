@@ -1,0 +1,37 @@
+.controls-skeleton {
+   overflow: hidden;
+   position: relative;
+}
+
+.controls-skeleton__bg {
+   width: 100%;
+   height: 100%;
+}
+
+@keyframes wasaby-skeleton-loading {
+   0% {
+      transform: translate(-37.5%);
+   }
+
+   to {
+      transform: translate(37.5%);
+   }
+}
+
+.controls-skeleton_inactive {
+   background-color: var(--pale_contrast_background-color);
+}
+
+.controls-skeleton_active::after {
+   position: absolute;
+   inset: 0 -150%;
+   background: linear-gradient(
+      270deg,
+      var(--pale_contrast_background-color) 24.48%,
+      var(--pale_active_contrast_background-color) 38.54%,
+      var(--pale_contrast_background-color) 61.98%
+   );
+   -webkit-animation: wasaby-skeleton-loading 1.4s ease infinite;
+   animation: wasaby-skeleton-loading 1.4s ease infinite;
+   content: '';
+}

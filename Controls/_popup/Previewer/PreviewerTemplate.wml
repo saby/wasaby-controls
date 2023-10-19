@@ -1,0 +1,8 @@
+<div template="{{_getTemplateName()}}">
+   <ws:partial
+      template="{{_options.template}}"
+      scope="{{_options.templateOptions}}"
+      on:mousedown="_sendResult()"
+      on:mouseenter="_sendResult()"
+      on:mouseleave="_sendResult()"/>
+</div>

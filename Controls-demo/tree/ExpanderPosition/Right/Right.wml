@@ -1,0 +1,6 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth200">
+    <Controls.tree:View
+            storeId="ExpanderPositionRight"
+            collapsedItems="{{_collapsedItems}}"
+            expanderPosition="right"/>
+</div>

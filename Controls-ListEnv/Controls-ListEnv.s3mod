@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-ListEnv"
+           id="854b94fc-ff37-4cbf-9721-cd1f4607a227"
+           package="Wasaby"
+           kaizen_zone="b9244594-2ac8-4db9-8c67-cd873d12a1c4"
+           responsible="Герасимов А.М." responsible_uuid="0c1a8c24-40ea-4a73-95f4-53e2b5ce615a"
+           required="1"
+           version="1.00">
+  <description>Модуль содержит контролы окружения списка.</description>
+    <depends>
+      <module id="f6fdf353-3ab3-4dbb-8671-01c2b418bf0a" name="Controls"/>
+      <module id="af50caf5-f84b-4b81-a19c-6f6618372dbd" name="Controls-default-theme"/>
+    </depends>
+  <load_after/>
+  <parameters/>
+  <resources/>
+  <preload/>
+</ui_module>

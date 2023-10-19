@@ -1,0 +1,66 @@
+<div class="validateDemo tw-flex tw-flex-col">
+<Controls.validate:Controller name="formController" validateController="{{_validateControllerClass}}">
+    <ws:content>
+        <div class="validateDemo_content">
+            <div class="validateDemo_form tw-flex tw-flex-col controlsDemo__maxWidth600 controls-margin_left-l">
+                Введите имя получателя:
+                <Controls.validate:Container
+                    attr:data-name="page-1"
+                    attr:class="ControlsDemo-ValidateInfobox_name validateDemo_element"
+                    name="ControllerValidate">
+                    <ws:validators>
+                        <ws:Function value="{{_value1}}">Controls/validate:isRequired</ws:Function>
+                    </ws:validators>
+                    <ws:content>
+                        <Controls.input:Text
+                            name="textBox1"
+                            attr:class="controls-Input_negativeOffset"
+                            bind:value="_value1"/>
+                    </ws:content>
+                </Controls.validate:Container>
+                Введите ваш email адрес:
+                <Controls.validate:Container
+                    attr:data-name="page-2"
+                    name="ControllerValidate2"
+                    attr:class="ControlsDemo-ValidateInfobox_infobox validateDemo_element">
+                    <ws:validators>
+                        <ws:Function value="{{_value2}}">Controls/validate:isEmail</ws:Function>
+                        <ws:Function value="{{_value2}}">Controls/validate:isRequired</ws:Function>
+                    </ws:validators>
+                    <ws:content>
+                        <Controls.input:Text
+                            name="textBox2"
+                            attr:class="controls-Input_negativeOffset"
+                            bind:value="_value2"
+                            placeholder="Email"/>
+                    </ws:content>
+                </Controls.validate:Container>
+                Подтвердите ваш email адрес:
+                <Controls.validate:Container
+                    attr:data-name="page-3"
+                    name="ControllerValidate3"
+                    attr:class="ControlsDemo-ValidateInfobox_confirm validateDemo_element">
+                    <ws:validators>
+                        <ws:Function value="{{_value3 }}">Controls/validate:isEmail</ws:Function>
+                        <ws:Function value="{{_value3}}">Controls/validate:isRequired</ws:Function>
+                    </ws:validators>
+                    <ws:content>
+                        <Controls.input:Text
+                            attr:class="controls-Input_negativeOffset"
+                            name="textBox3"
+                            bind:value="_value3"
+                            placeholder="Email"/>
+                    </ws:content>
+                </Controls.validate:Container>
+                <Controls.buttons:Button caption="Проверить данные" attr:style="margin: 10px 0 0 16px;"
+                                         name="updateButton" on:click="_clickHandler()"
+                                         attr:class="ControlsDemo-ValidateInfobox_submit demo-ValidateInfobox_checkData"/>
+                <Controls.buttons:Button caption="Очистить валидацию" attr:style="margin: 10px 0 0 16px;"
+                                         name="cleanValid" on:click="_cleanValid()"
+                                         attr:class="ControlsDemo-ValidateInfobox_submit demo-ValidateInfobox_clearValidate"/>
+            </div>
+        </div>
+    </ws:content>
+</Controls.validate:Controller>
+<Controls.popup:Confirmation name="Confirmation"/>
+</div>

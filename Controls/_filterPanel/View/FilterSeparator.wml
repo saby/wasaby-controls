@@ -1,0 +1,23 @@
+<div class="controls-FilterViewPanel__separator-content_container
+            controls-FilterViewPanel__separator-content_container_{{_options.filterViewMode === 'popup' ? 'popup': 'default'}} ws-flexbox">
+   <ws:if data="{{_options.groupItem.caption && _options.groupItem.expanderVisible && _options.groupItem.groupTextAlign === _options.groupItem.groupExpanderAlign}}">
+      <div class="controls-FilterViewPanel__separator-content_wrapper
+                  controls-FilterViewPanel__separator-content_wrapper__{{_options.groupItem.groupTextAlign}}">
+         <ws:partial template="{{_options.beforeSeparatorTemplate}}" />
+      </div>
+   </ws:if>
+   <ws:else>
+      <ws:partial template="{{_options.beforeSeparatorTemplate}}" if="{{_options.beforeSeparatorTemplate}}" />
+   </ws:else>
+   <ws:if data="{{_options.separatorVisible}}">
+      <div class="controls-FilterViewPanel__separator"></div>
+   </ws:if>
+   <ws:if data="{{_options.resetButtonVisible}}">
+      <Controls.buttons:Button caption="{{rk('Сбросить')}}"
+                               viewMode="link"
+                               fontColorStyle="resetButton"
+                               fontSize="xs"
+                               attr:class="controls_filterPanel__resetButton"
+                               attr:data-qa="FilterViewPanel__resetButton"/>
+   </ws:if>
+</div>

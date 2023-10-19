@@ -1,0 +1,60 @@
+.controls-RadioCircle__innerCircle_selected_enabled {
+   fill: var(--primary_contrast_background-color);
+}
+
+.controls-RadioCircle__innerCircle_selected_disabled {
+   fill: var(--readonly_marker-color);
+}
+
+.controls-RadioCircle__innerCircle_unselected {
+   fill: none;
+}
+
+.controls-RadioCircle__borderCircle {
+   stroke-width: var(--border-thickness);
+}
+
+.controls-RadioCircle__borderCircle_selected {
+   stroke: var(--primary_contrast_background-color);
+   fill: transparent;
+   stroke-width: var(--border-thickness);
+}
+
+.controls-RadioCircle__borderCircle_unselected {
+   stroke: var(--unselected_marker-box_border-color_radio);
+   fill: transparent;
+}
+
+.controls-RadioCircle__borderCircle_selected_disabled {
+   stroke: var(--readonly_marker-color);
+   fill: transparent;
+}
+
+.controls-RadioCircle__borderCircle_unselected_disabled {
+   stroke: var(--readonly_border-color);
+   fill: transparent;
+}
+
+.controls-RadioCircle__svg {
+   width: var(--marker-box_size_radio);
+   height: var(--marker-box_size_radio);
+   z-index: 2;
+   display: inline-block;
+   flex-shrink: 0;
+}
+
+.ws-is-ie {
+   .controls-RadioCircle__svg {
+      //в ie особая обработка кликов по svg: чтобы клик отработал, нужно соблюсти много условий
+      // подробнее тут: https://stackoverflow.com/questions/40984532/svg-clic.. или тут https://www.w3.org/TR/SVG/interact.html#PointerEvents..
+      pointer-events: none;
+   }
+}
+
+.ws-is-hover {
+   .controls-RadioCircle__svg:hover {
+      .controls-RadioCircle__borderCircle_enabled {
+         stroke: var(--primary_contrast_background-color);
+      }
+   }
+}

@@ -1,0 +1,35 @@
+<div class="controlsDemo__wrapper controlsDemo__width800px">
+<Controls.browser:Browser name="browser"
+                          source="{{_viewSource}}"
+                          navigation="{{_navigation}}"
+                          keyProperty="{{ _keyProperty }}"
+                          bind:filter="_filter"
+                          searchParam="title"
+                          minSearchLength="{{3}}"
+                          filterButtonSource="{{_fastFilterData}}">
+  <div class="ws-fragment">
+    <Controls.search:InputContainer>
+      <Controls.search:Input/>
+    </Controls.search:InputContainer>
+    <Controls.filter:ViewContainer>
+      <Controls.filter:View source="{{_fastFilterData}}"
+                            alignment="right"
+                            viewMode="frequent"
+                            panelTemplateName="Controls/filterPopup:SimplePanel"/>
+    </Controls.filter:ViewContainer>
+    <Controls.scroll:Container attr:class="controlsDemo__height300">
+        <Controls.list:View name="list" groupProperty="{{_groupProperty}}">
+          <ws:loadingIndicatorTemplate>
+            <ws:partial template="Controls/list:LoadingIndicatorTemplate"
+                        message="{{_indicatorsWithMsg ? 'Загрузка...'}}"
+                        scope="{{loadingIndicatorTemplate}}"/>
+          </ws:loadingIndicatorTemplate>
+        </Controls.list:View>
+    </Controls.scroll:Container>
+  </div>
+</Controls.browser:Browser>
+<div class="controlsDemo__cell">
+  <Controls.buttons:Button caption="Reload" on:click="_onReload()"/>
+  <Controls.buttons:Button caption="Add empty group" on:click="_addEmptyGroup()"/>
+</div>
+</div>

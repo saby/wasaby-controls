@@ -1,0 +1,28 @@
+<div>
+   <div class="controls-VDomSearch__row" test_name="area_1" >
+      <Controls.search:InputContainer on:search="_changeValueSearchHandler()">
+         <Controls.search:Input bind:value="_value" attr:test_name="search_dark"
+                                attr:class="test-input-search"
+                        on:valueChanged="_changeValuesHandler()"/>
+      </Controls.search:InputContainer>
+   </div>
+   <div class="controls-VDomSearch__row" test_name="area_2" >
+      <Controls.search:InputContainer on:search="_changeValueSearchHandler()">
+         <Controls.search:Input bind:value="_value2" attr:test_name="search_transparent"
+                                attr:class="test-input-search"
+                        on:valueChanged="_changeValuesHandler()"/>
+      </Controls.search:InputContainer>
+   </div>
+   <div class="controls-VDomSearch__row" test_name="area_3" >
+      <Controls.search:InputContainer on:search="_changeValueSearchHandler()">
+         <Controls.search:Input readOnly="{{true}}" attr:test_name="search_disabled"
+                                attr:class="test-input-search"/>
+      </Controls.search:InputContainer>
+   </div>
+<div>Стреляет valueChanged:
+   <Controls.input:Area value="{{textValue}}" attr:test_name="valueChanged"></Controls.input:Area>
+</div>
+   <div>Стреляет search:
+   <Controls.input:Area value="{{textSearchValue}}" attr:test_name="search"></Controls.input:Area>
+</div>
+</div>

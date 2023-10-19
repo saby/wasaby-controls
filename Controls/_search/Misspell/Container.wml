@@ -1,0 +1,12 @@
+<div>
+    <ws:if data="{{_options.misspellValue && !_options.task1187611584}}">
+        <Controls.Container.Async templateName="Controls/search:Misspell" attr:class="{{_options.misspellClass}}">
+            <ws:templateOptions misspellValue="{{_options.misspellValue}}">
+                <ws:caption>
+                    <span on:click="_misspellClick()">{{_options.misspellValue}}</span>
+                </ws:caption>
+            </ws:templateOptions>
+        </Controls.Container.Async>
+    </ws:if>
+    <ws:partial template="{{_options.content}}" scope="{{_options}}"/>
+</div>

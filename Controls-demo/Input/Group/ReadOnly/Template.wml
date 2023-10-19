@@ -1,0 +1,24 @@
+<div class="wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="ws-flexbox ws-align-items-baseline">
+        <Controls.toggle:Switch bind:value="_readOnlyField"
+                                class="controlsDemo__ml1 controlsDemo__mb2"
+                                caption="readOnly"/>
+    </div>
+    <div class="container controlsDemo__ml1">
+        <div class="cell">
+            <Controls.input:Area placeholder="Write text"
+                                 class="controlsDemo__input-default"
+                                 readOnly="{{ _readOnlyField }}"
+                                 minLines="{{4}}"
+                                 maxLines="{{4}}"
+                                 bind:value="_value2"/>
+        </div>
+        <div class="cell">
+            <Controls.input:Text placeholder="Write text"
+                                 bind:value="_value2"
+                                 readOnly="{{ _readOnlyField }}"
+                                 class="controlsDemo__input-default controlsDemo__mr1"/>
+            <Controls.input:Label caption="Label" underline="hovered"/>
+        </div>
+    </div>
+</div>

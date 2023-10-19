@@ -1,0 +1,75 @@
+.controls-ExpandedCompositeTree-footer {
+   display: flex;
+   justify-content: center;
+}
+
+// TODO https://online.sbis.ru/opendoc.html?guid=a8803540-082c-42ad-9c0e-96627d9eee77
+.controls-ExpandedCompositeTree-item {
+   /* stylelint-disable-next-line declaration-no-important */
+   margin-top: 0 !important;
+   /* stylelint-disable-next-line declaration-no-important */
+   margin-bottom: 0 !important;
+   user-select: none;
+}
+
+.controls-ExpandedCompositeTree-compositePaddingTop_null_itemPadding_default {
+   padding-top: calc(var(--item_offset_tile) / 2);
+}
+
+.controls-ExpandedCompositeTree-compositePaddingTop_null_itemPadding_null {
+   padding-top: 0;
+}
+
+.controls-ExpandedCompositeTree-compositePaddingTop_null_itemPadding {
+   @variants: ~'3xs', ~'2xs', xs, s, m, l, xl, ~'2xl';
+
+   .for(@variants, {
+    &_@{_item} {
+      padding-top: calc(~'var(--offset_@{_item})' / 2);
+    }
+  });
+}
+
+.controls-ExpandedCompositeTree-compositePaddingBottom_null_itemPadding_default {
+   padding-bottom: calc(var(--item_offset_tile) / 2);
+}
+
+.controls-ExpandedCompositeTree-compositePaddingBottom_null_itemPadding_null {
+   padding-bottom: 0;
+}
+
+.controls-ExpandedCompositeTree-compositePaddingBottom_null_itemPadding {
+   @variants: ~'3xs', ~'2xs', xs, s, m, l, xl, ~'2xl';
+
+   .for(@variants, {
+    &_@{_item} {
+      padding-bottom: calc(~'var(--offset_@{_item})' / 2);
+    }
+  });
+}
+
+.controls-ExpandedCompositeTree-compositePaddingBottom_xl_itemPadding_null {
+   padding-bottom: calc(var(--offset_xl) / 2);
+}
+
+.controls-ExpandedCompositeTree-compositePaddingTop_xl_itemPadding {
+   @variants: ~'3xs', ~'2xs', xs, s, m, l, xl;
+
+   .for(@variants, {
+    &_@{_item} {
+      padding-top: calc(var(--offset_xl) / 2 - ~'var(--offset_@{_item})' / 2);
+    }
+  });
+}
+
+// Специальный цвет заголовков второго уровня
+// Обычно ссылается на --label-text-color,
+// в brandBook принимает заданный в настройках цвет.
+.controls-Header__caption_style-composite-h2,
+.controls-Header__caption_style-composite-h2_hovered {
+   color: var(--text-color_composite-header-h2);
+}
+
+.ws-is-hover .controls-Header__caption_style-composite-h2_hovered:hover {
+   color: var(--default_hover_text-color_heading);
+}

@@ -1,0 +1,26 @@
+.controls-ListView__itemV_marker {
+   position: absolute;
+   display: inline-flex;
+   z-index: 2;
+   left: 0;
+}
+
+.controls-ListView__itemV_marker::before {
+   content: '\200b';
+}
+
+.controls-ListView__itemV_marker::after {
+   content: '';
+   background-color: var(--marker_color);
+   border-radius: var(--border-radius_2xs);
+}
+
+.controls-ListView__itemV_marker_size {
+   @variants: image-s, image-m, image-mt, image-l, content-xl, content-xs;
+   .for(@variants, {
+      &_@{_item}::after {
+         height: ~'var(--marker_size_@{_item}_list)';
+         width: ~'var(--marker_thickness_@{_item}_list)';
+      }
+   });
+}

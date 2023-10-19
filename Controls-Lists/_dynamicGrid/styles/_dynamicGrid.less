@@ -1,0 +1,74 @@
+.ControlsLists-dynamicGrid__dynamicCellsWrapper,
+.ControlsLists-dynamicGrid__autoScrollTargetsWrapper {
+   display: grid;
+}
+
+.ControlsLists-dynamicGrid__dynamicCellsWrapper {
+   height: 100%;
+}
+
+.for(@TOffsetSizeVariants, {
+   .ControlsLists-dynamicGrid__dynamicCellsWrapper_columns-spacing_@{_item} {
+      column-gap: ~'calc(var(--offset_@{_item}) - var(--border-thickness))';
+      margin-left: ~'calc(var(--offset_@{_item}) - var(--border-thickness))';
+   }
+   .ControlsLists-dynamicGrid__autoScrollTarget_columns-spacing_@{_item} {
+      width: ~'calc(100% + (var(--offset_@{_item}) - var(--border-thickness)))';
+   }
+});
+
+.ControlsLists-dynamicGrid__dynamicHeaderCell {
+   height: 40px;
+   align-items: center;
+   justify-content: center;
+   display: flex;
+}
+
+.ControlsLists-dynamicGrid__dynamicDataCell,
+.ControlsLists-dynamicGrid__eventCell {
+   height: 100%;
+   position: relative;
+}
+
+.ControlsLists-dynamicGrid__selectionCheckbox.controls-CheckboxMarker {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   display: none;
+   min-height: var(--icon-size_s);
+   z-index: 2;
+}
+
+.ws-is-hover {
+   .ControlsLists-dynamicGrid__dynamicDataCell:hover .ControlsLists-dynamicGrid__selectionCheckbox {
+      display: flex;
+   }
+
+   // Прицел - перекрестие
+   .ControlsLists-dynamicGrid__dynamicHeaderCell:hover::after,
+   .ControlsLists-dynamicGrid__dynamicDataCell:hover::after,
+   .ControlsLists-dynamicGrid__eventCell:hover::after {
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      z-index: 1;
+      top: -4000px;
+      bottom: 0;
+      box-sizing: border-box;
+      left: calc((-1) * var(--offset_2xs) / 2);
+      right: calc((-1) * var(--offset_2xs) / 2);
+   }
+
+   .ControlsLists-dynamicGrid__dynamicDataCell_cross::after,
+   .ControlsLists-dynamicGrid__dynamicHeaderCell_cross::after {
+      filter: drop-shadow(0 4000px 0 var(--border-color));
+      border-left: var(--border-thickness) solid var(--border-color);
+      border-right: var(--border-thickness) solid var(--border-color);
+   }
+
+   .ControlsLists-dynamicGrid__dynamicDataCell_filled-cross::after,
+   .ControlsLists-dynamicGrid__dynamicHeaderCell_filled-cross::after {
+      background-color: var(--pale_hover_contrast_background-color);
+      filter: drop-shadow(0 4000px 0 var(--item_selected_color));
+   }
+}

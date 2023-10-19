@@ -1,0 +1,23 @@
+<ws:if data="{{_options.storeId}}">
+    <ws:if data="{{_options.insideList}}">
+        <!-- Чистый список со storeId, строим контейнер работающий со слайсом -->
+        <Controls._baseList.Data.ListContainerConnected scope="{{_options}}"/>
+    </ws:if>
+    <ws:else>
+        <!-- DataContainer или Browser с опцией storeId, строим контейнер, который по опциям обновляет слайс. -->
+        <Controls._baseList.Data.WrappedCompatibleContainer scope="{{_options}}" name="data"/>
+    </ws:else>
+</ws:if>
+<!-- sendNullRootForMemory костыль. https://online.sbis.ru/opendoc.html?guid=b1349d43-357f-4881-8604-68793a8371fc&client=3 -->
+<ws:else data="{{_options.isSourceControllerFromContext || _options.doNotSendNullRootForMemory}}">
+    <!-- FIXME Старая схема через Browser, строим старый DataContainer -->
+    <Controls._baseList.Data.OldDataContainer scope="{{_options}}" name="data"/>
+</ws:else>
+<ws:else>
+    <!-- На чистых опциях, строим загрузчик и контейнер, который по опциям обновляет слайс. -->
+    <Controls._baseList.Data.Controller scope="{{_options}}">
+        <Controls._baseList.Data.WrappedCompatibleContainer scope="{{_options}}" storeId="_dataSyntheticStoreId" name="data">
+            <Controls._baseList.listContainer.Container content="{{_options.content}}" storeId="_dataSyntheticStoreId"/>
+        </Controls._baseList.Data.WrappedCompatibleContainer>
+    </Controls._baseList.Data.Controller>
+</ws:else>

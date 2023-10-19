@@ -1,0 +1,50 @@
+<div class="controlsDemo__wrapper">
+<div class="controlsDemo__cell">
+  <div class="controls-text-label">Browser</div>
+
+  <Controls.buttons:Button caption="{{'Установить searchValue в `Федерал`'}}"
+                           on:click="_setSearchValue()" attr:style="padding-left: 5px"/>
+  <Controls.buttons:Button caption="{{'Сбросить searchValue'}}"
+                           on:click="_resetSearchValue()" attr:style="padding-left: 5px"/>
+</div>
+<div class="controlsDemo__cell">
+  <div class="controlsDemo__default">
+
+    <Controls.browser:Browser
+        source="{{_source}}"
+        keyProperty="id"
+        searchParam="title"
+        minSearchLength="{{3}}"
+        bind:searchValue="_searchValue">
+      <div>
+        <Controls.search:InputContainer>
+          <Controls.search:Input attr:class="controlsDemo__searchBase_field"/>
+        </Controls.search:InputContainer>
+
+        <Controls.list:Container>
+          <Controls.list:View emptyTemplate="Не найдено">
+            <ws:itemTemplate>
+              <ws:partial template="Controls/list:ItemTemplate">
+                <ws:contentTemplate>
+                  <ws:if data="{{_searchValue}}">
+                    <span>
+                      <Controls.baseDecorator:Highlight
+                        value="{{itemTemplate.item.contents.title}}"
+                        highlightedValue="{{_searchValue}}"
+                      />
+                    </span>
+                  </ws:if>
+                  <ws:else>
+                    {{itemTemplate.item.contents.title}}
+                  </ws:else>
+                </ws:contentTemplate>
+              </ws:partial>
+            </ws:itemTemplate>
+          </Controls.list:View>
+        </Controls.list:Container>
+      </div>
+    </Controls.browser:Browser>
+  </div>
+</div>
+
+</div>

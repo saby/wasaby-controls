@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper">
+    <Controls.treeGrid:View
+            storeId="ItemTemplateColspanNodes"
+            columns="{{_columns}}">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/treeGrid:ItemTemplate" colspanNodes="{{true}}"/>
+        </ws:itemTemplate>
+    </Controls.treeGrid:View>
+</div>

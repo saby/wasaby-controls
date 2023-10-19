@@ -1,0 +1,115 @@
+.controls-AreaCut__container {
+   overflow: hidden;
+}
+
+.controls-AreaCut {
+   display: flex;
+   flex-direction: column;
+   overflow: visible;
+   position: relative;
+}
+
+.controls-AreaCut__content {
+   height: 100%;
+}
+
+.controls-AreaCut_active {
+   .controls-CutButton__container::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      height: var(
+         --border-thickness
+      ); // это выводится вместо бордера поля ввода, значит можно сослать на бордер
+      background: var(--border-color);
+   }
+
+   .controls-CutButton__container::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      height: var(
+         --border-thickness
+      ); // это выводится вместо бордера поля ввода, значит можно сослать на бордер
+      background: var(--border-color);
+   }
+
+   .controls-CutButton__container_size-s::before,
+   .controls-CutButton__container_size-s::after {
+      top: calc(var(--height_s_BigSeparator) / 2 + var(--border-thickness));
+      width: calc((100% - var(--width_s_BigSeparator)) / 2 - var(--offset_s));
+   }
+
+   .controls-CutButton__container_size-m::before,
+   .controls-CutButton__container_size-m::after {
+      top: calc(var(--height_m_BigSeparator) / 2 + var(--border-thickness));
+      width: calc((100% - var(--width_m_BigSeparator)) / 2 - var(--offset_st));
+   }
+
+   .controls-CutButton__container_size-l::before,
+   .controls-CutButton__container_size-l::after {
+      top: calc(var(--height_l_BigSeparator) / 2 + var(--border-thickness));
+      width: calc((100% - var(--width_l_BigSeparator)) / 2 - var(--offset_m));
+   }
+}
+
+.controls-AreaCut__ellipsisWrapper {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+}
+
+.controls-AreaCut__ellipsisWrapper_notExpanded_active {
+   cursor: pointer;
+   overflow: hidden;
+   z-index: 1;
+}
+
+.controls-AreaCut__ellipsisWrapper_expanded {
+   position: absolute;
+   left: 0;
+   width: 100%;
+   pointer-events: none;
+}
+
+.controls-AreaCut__ellipsis {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+}
+
+& {
+   /* stylelint-disable-next-line unit-no-unknown */
+   // По факту сейчас используется m и l возможно можно будет оставить только эти размеры
+   @sizes: s, m, l, xl, 2xl;
+   @countSupportLines: 10;
+
+   .for(@countSupportLines * length(@sizes), {
+      @lines: mod(@_i - 1, @countSupportLines) + 1;
+      @lineHeight: extract(@sizes, ceil(@_i / @countSupportLines));
+      @lineHeightVariable: '--line-height_@{lineHeight}_inputArea';
+      @cutButtonTop: calc((@lines + 2) * ~'var(@{lineHeightVariable})'  + var(--border-thickness) + var(--padding-vertical_inputArea));
+      .controls-AreaCut_lineHeight-@{lineHeight}_lines-@{lines}_maxHeight {
+         max-height: calc(var(--padding-vertical_inputArea) * 2 + (@lines + 1) * ~'var(@{lineHeightVariable})');
+      }
+      .controls-AreaCut_lineHeight-@{lineHeight}_lines-@{lines}_height {
+         height: calc((@lines + 1) * ~'var(@{lineHeightVariable})' + var(--padding-vertical_inputArea) + var(--border-thickness));;
+      }
+      .controls-AreaCut__ellipsisWrapper_expanded_lineHeight-@{lineHeight}_lines-@{lines} {
+         top: @cutButtonTop;
+      }
+   });
+
+   .for(@sizes, {
+      @lineHeight: @{_item};
+      @lineHeightVariable: '--line-height_@{lineHeight}_inputArea';
+      .controls-AreaCut__ellipsisWrapper_lineHeight-@{lineHeight} {
+         bottom: calc(-1 * ~'var(@{lineHeightVariable})' + var(--border-thickness));
+      }
+
+      .controls-AreaCut_lineHeight-@{lineHeight}_expanded {
+         margin-bottom: ~'var(@{lineHeightVariable})';
+      }
+   });
+}

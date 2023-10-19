@@ -1,0 +1,105 @@
+<div class="controlsDemo__wrapper">
+   <div class="controls-padding_bottom-3xl controls-margin_bottom-l">
+      <div class="ws-flexbox ws-flex-wrap ws-align-items-baseline">
+         <Controls.buttons:Button
+                 attr:class="controls-margin_right-m"
+                 caption="Запустить маршрут"
+                 on:click="_activateRoute()"/>
+         <Controls.buttons:Button
+                 attr:class="controls-margin_right-m"
+                 caption="Запустить циклический маршрут"
+                 on:click="_activateCycleRoute()"/>
+         <Controls.buttons:Button
+                 attr:class="controls-margin_right-m"
+                 caption="Запустить маршрут только с выделением таргетов"
+                 on:click="_activateOnlyHighlightRoute()"/>
+         <Controls.buttons:Button
+                 attr:class="controls-margin_right-m"
+                 caption="Запустить маршрут с колбэком"
+                 on:click="_activateRouteWithOnBeforeOpenCallback()"/>
+         <Controls.buttons:Button
+                 attr:class="controls-margin_right-m"
+                 caption="Запустить маршрут с путем до колбэка"
+                 on:click="_activateRouteWithOnBeforeOpenCallbackPath()"/>
+         <Controls.buttons:Button
+             attr:class="controls-margin_right-m"
+             caption="Запустить разноцветный маршрут"
+             on:click="_activateColoredRoute()"/>
+      </div>
+      <div class="ws-flexbox ws-flex-wrap ws-align-items-baseline controls-margin_top-m">
+         <Controls.buttons:Button
+                 attr:class="controls-margin_right-m"
+                 caption="Далее"
+                 on:click="_nextStep()"/>
+         <Controls.buttons:Button
+                 attr:class="controls-margin_right-m"
+                 caption="Назад"
+                 on:click="_prevStep()"/>
+         <Controls.buttons:Button
+                 attr:class="controls-margin_right-m"
+                 caption="Завершить маршрут"
+                 on:click="_destroy()"/>
+      </div>
+   </div>
+
+   <div id="customEntityContent">
+      <div class="controls-padding_top-3xl controls-padding_bottom-3xl ws-flexbox ws-flex-wrap ws-justify-content-between">
+         <div data-qa="controlsDemo-HintManager__page1"
+              data-name="page-1"
+              class="controls-padding-2xs">
+            <Controls.input:Label caption="Label"/>
+            <Controls.input:Text
+                    attr:data-qa="controlsDemo-HintManager__inputPage1"
+                    placeholder="Поле ввода"/>
+         </div>
+
+         <Controls.input:Text
+                 attr:data-qa="controlsDemo-HintManager__inputPage2"
+                 attr:data-name="page-2"
+                 placeholder="Поле ввода"
+                 fontSize="xl"/>
+
+         <div class="controls-padding-2xs ws-align-self-center">
+            <Controls.buttons:Button
+                    attr:data-name="page-3"
+                    attr:data-qa="controlsDemo-HintManager__buttonPage3"
+                    viewMode="outlined"
+                    caption="Кнопка"/>
+         </div>
+
+         <div class="controls-padding-2xs controls-margin_right-m ws-align-self-center">
+            <Controls.buttons:Button
+                    attr:data-name="page-4"
+                    attr:data-qa="controlsDemo-HintManager__buttonPage4"
+                    viewMode="link"
+                    caption="Ссылка"/>
+         </div>
+      </div>
+
+      <div class="controls-padding_top-3xl controls-padding_bottom-3xl ws-flexbox ws-flex-wrap ws-justify-content-between ws-align-items-center">
+         <div data-qa="controlsDemo-HintManager__page5"
+              data-name="page-5"
+              class="controlsDemo-HintManager__block controls-background-unaccented controls-padding-2xl
+                     ws-align-items-center ws-flex-shrink-1">
+            <a href="https://www.google.com/" target="_blank">Какой-то блок с фоном и текстом</a>
+         </div>
+
+         <div data-qa="controlsDemo-HintManager__page6"
+              data-name="page-6"
+              class="controlsDemo-HintManager__block controls-background-unaccented controls-padding-2xl
+                     ws-flexbox ws-justify-content-center ws-align-items-center ws-flex-shrink-1">
+            <div data-name="page-7"
+                 class="controlsDemo-HintManager__blockContent controls-padding-m controls-margin-m"></div>
+
+            <div class="controlsDemo-HintManager__stepTargetSearchArea controlsDemo-HintManager__blockContent
+                        ws-flexbox ws-justify-content-center ws-align-items-center ws-flex-shrink-1
+                        controls-padding-m controls-padding-m">
+               <div data-name="page-7"
+                    class="controlsDemo-HintManager__innerBlock controls-background-default">
+                  <div class="controlsDemo-HintManager__blockContent controls-padding-m controls-margin-m"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

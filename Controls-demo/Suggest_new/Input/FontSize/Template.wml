@@ -1,0 +1,38 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell">
+        <div class="controls-text-label">fontSize = s</div>
+        <Controls.SuggestInput
+                attr:class="controlsDemo__input demo-SuggestNew__noDelay"
+                bind:value="_suggestDefaultValue"
+                displayProperty="title"
+                searchParam="title"
+                fontSize="s"
+                navigation="{{_navigation}}"
+                source="{{_source}}">
+        </Controls.SuggestInput>
+    </div>
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell">
+        <div class="controls-text-label">fontSize = m</div>
+        <Controls.SuggestInput
+                attr:class="controlsDemo__input  demo-SuggestNew__withDelay"
+                bind:value="_suggestDefaultValue"
+                displayProperty="title"
+                searchParam="title"
+                fontSize="m"
+                navigation="{{_navigation}}"
+                source="{{_source}}">
+        </Controls.SuggestInput>
+    </div>
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell">
+        <div class="controls-text-label">fontSize = l</div>
+        <Controls.SuggestInput
+                attr:class="controlsDemo__input  demo-SuggestNew__withDelay"
+                bind:value="_suggestDefaultValue"
+                displayProperty="title"
+                searchParam="title"
+                fontSize="l"
+                navigation="{{_navigation}}"
+                source="{{_source}}">
+        </Controls.SuggestInput>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+.controls-StateIndicator_padding-xs {
+   margin: 0 var(--offset_xs);
+}
+
+.controls-StateIndicator_padding-null {
+   margin: 0;
+}
+
+.controls-StateIndicator__box {
+   display: inline-block;
+
+   &:last-child {
+      margin-right: 0;
+   }
+}
+
+.controls-StateIndicator__emptySector {
+   background: var(--unaccented_contrast_background-color);
+}
+
+.controls-StateIndicator__sector1 {
+   background: var(--success_contrast_background-color);
+}
+
+.controls-StateIndicator__sector2 {
+   background: var(--warning_contrast_background-color);
+}
+
+.controls-StateIndicator__sector3 {
+   background: var(--danger_contrast_background-color);
+}
+
+.controls-StateIndicator__box_sectorSize-l {
+   width: calc(var(--inline_height_m) / 4);
+   height: calc(var(--inline_height_m) / 3);
+   margin-right: var(--offset_3xs);
+}
+
+.controls-StateIndicator__box_sectorSize-m {
+   width: calc(var(--inline_height_m) / 4);
+   height: calc(var(--inline_height_m) / 4);
+   margin-right: var(--offset_3xs);
+}
+
+.controls-StateIndicator__box_sectorSize-s {
+   width: calc(var(--inline_height_m) / 8);
+   height: calc(var(--inline_height_m) / 3);
+   margin-right: var(--offset_3xs);
+}

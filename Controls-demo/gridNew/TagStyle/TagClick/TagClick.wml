@@ -1,0 +1,6 @@
+<div class="controlsDemo__wrapper controlsDemo__grid-tagStyleProperty controlsDemo__maxWidth800">
+    <Controls.grid:View
+            storeId="TagClick2"
+            columns="{{_columns}}"
+            on:tagClick="_onTagClickCustomHandler()"/>
+</div>

@@ -1,0 +1,10 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper">
+      <Controls.menu:Control
+              source="{{_source}}"
+              keyProperty="key"
+              displayProperty="title"
+              groupProperty="group"
+      />
+   </div>
+</div>

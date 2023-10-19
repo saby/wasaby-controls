@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module id="e205b2a9-52b5-453d-ac08-ca184b66b712" name="Controls-HeadersUnit" version="1.00">
+  <description/>
+  <depends>
+      <module id="35c6e694-736c-456d-8e33-e3d6477d1847" name="Controls-Headers"/>
+      <module id="3eb25408-666c-4619-b869-887c35cd4cf1" name="Controls-Headers-default-theme"/>
+      <module id="a10cb1cb-b23d-4ef6-a757-4f7382e0e8d1" name="SbisEnvUI"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <test environment="NodeJS" framework="Jest" />
+  <resources/>
+</ui_module>

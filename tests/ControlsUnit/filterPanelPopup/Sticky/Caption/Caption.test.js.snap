@@ -1,0 +1,221 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls/filterPanelPopup:Sticky caption tests Тест меток редакторов Метка в блоке "Еще можно отобрать" 1`] = `
+<div
+  class="controls_filterPanel_theme-default controls-FilterViewPanel-contrast  controls_filter_theme-default controls-FilterViewPanel controls-Scroll-containerBase_userContent"
+  data-qa="controls-FilterPanelPopup__sticky_filterPanel"
+  tabindex="0"
+>
+  <div
+    class=""
+    tabindex="0"
+  >
+    <div
+      class="controls-FilterViewPanel__editors-container controls-padding_bottom-l controls-FilterViewPanel__horizontal-padding-popup controls-FilterViewPanel__vertical-padding-popup controls-FilterViewPanel__editors-container-popup   controls-FilterPanel__vertical-padding-popup  controls-FilterPanel__extendedItems-padding-top"
+      data-qa="controls-FilterViewPanel__additional-editors"
+      tabindex="0"
+    >
+      <div
+        class="controls-FilterViewPanel__additional-editors controls-FilterViewPanel__additional-editors-popup controls-FilterViewPanel__additional-editors-in-column"
+        tabindex="0"
+      >
+        <div
+          class="controls-FilterViewPanel__additional_left-column"
+          data-qa="controls-FilterViewPanel__additional_left-column"
+        >
+          <div
+            class="controls-FilterViewPanel__additional-editor controls-fontsize-m controls-text-filterExtendedItem controls-FilterViewPanel__additional-editor-popup_last controls-FilterViewPanel__additional-editor-popup-in-column"
+            data-name="FilterViewPanel__additional-editor_withCaption"
+            data-qa="FilterViewPanel__additional-editor"
+            title="Метка"
+          >
+            Метка
+          </div>
+        </div>
+        <div
+          class="controls-FilterViewPanel__additional_right-column"
+          data-qa="controls-FilterViewPanel__additional_right-column"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls/filterPanelPopup:Sticky caption tests Тест меток редакторов Метки в блоке "Отбираются", редактор с меткой и редактор без метки 1`] = `
+<div
+  class="controls_filterPanel_theme-default controls-FilterViewPanel-contrast  controls_filter_theme-default controls-FilterViewPanel controls-Scroll-containerBase_userContent"
+  data-qa="controls-FilterPanelPopup__sticky_filterPanel"
+  tabindex="0"
+>
+  <div
+    class="controls-FilterViewPanel_viewMode-popup-vertical controls-FilterViewPanel-contrast controls-FilterViewPanel_basicItems_editorsViewMode-cloud"
+    data-qa="controls-FilterViewPanel__basic-editors"
+    tabindex="0"
+  >
+    <div
+      class="controls-PropertyGrid controls_propertyGrid_theme-default controls_list_theme-default controls_toggle_theme-default controls-PropertyGrid__itemsContainer_paddingTop-null controls-PropertyGrid__itemsContainer_paddingBottom-null controls-PropertyGrid__itemsContainer_paddingLeft-filterPanelPopup controls-PropertyGrid__itemsContainer_paddingRight-l controls-FilterViewPanel__propertyGrid"
+      data-qa="FilterViewPanel__propertyGrid"
+      tabindex="0"
+    >
+      <div
+        class="controls-PropertyGrid__editor    controls-PropertyGrid__editor_spacingTop_default
+                       controls-PropertyGrid__editor_spacingBottom_null controls-PropertyGrid__editor_spacingRight_default controls-PropertyGrid__editor_spacingLeft_default controls-FilterViewPanel__propertyGrid_itemTemplate
+                controls-FilterViewPanel__propertyGrid_itemTemplate_viewMode-popup"
+        data-qa="controls-PropertyGrid__editor"
+        item-key="property-grid-item-withoutCaption"
+        tabindex="1"
+      >
+        <div
+          class="controls-PropertyGrid__editor-withoutCaption controls-FilterViewPanel__baseEditor-container"
+          data-qa="controls-PropertyGrid__editor_withoutCaption"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        class="controls-FilterViewPanel__group-wrapper controls-FilterViewPanel__group-wrapper_style-master controls-FilterViewPanel__group-wrapper-margin-top"
+        data-qa="FilterViewPanel__group-wrapper"
+        item-key="group-withCaption"
+        tabindex="2"
+      >
+        <div
+          class="controls-FilterViewPanel__separator-content_container controls-FilterViewPanel__separator-content_container_popup ws-flexbox controls-FilterViewPanel__group controls-FilterViewPanel__group_height_viewMode-popup"
+          data-qa="FilterViewPanel__group"
+          tabindex="0"
+        >
+          <div
+            class="controls-FilterViewPanel__group-content controls-FilterViewPanel__group-content_popup  controls-FilterViewPanel__group-content-align-left"
+            tabindex="0"
+            title="Метка"
+          >
+            Метка
+          </div>
+        </div>
+      </div>
+      <div
+        class="controls-PropertyGrid__editor    controls-PropertyGrid__editor_spacingTop_default
+                       controls-PropertyGrid__editor_spacingBottom_null controls-PropertyGrid__editor_spacingRight_default controls-PropertyGrid__editor_spacingLeft_default controls-FilterViewPanel__propertyGrid_itemTemplate
+                controls-FilterViewPanel__propertyGrid_itemTemplate_viewMode-popup_last-without-extended-items controls-FilterViewPanel__propertyGrid_itemTemplate_viewMode-popup_with-editorCaption"
+        data-qa="controls-PropertyGrid__editor"
+        item-key="property-grid-item-withCaption"
+        tabindex="3"
+      >
+        <div
+          class="controls-PropertyGrid__editor-withoutCaption controls-FilterViewPanel__baseEditor-container"
+          data-qa="controls-PropertyGrid__editor_withCaption"
+        >
+          <span />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls/filterPanelPopup:Sticky caption tests Тест меток редакторов Разный текст метки при переходе из блока "Еще можно отобрать" в блок "Отбираются" Редактор в блоке "Ещё можно отобрать" 1`] = `
+<div
+  class="controls_filterPanel_theme-default controls-FilterViewPanel-contrast  controls_filter_theme-default controls-FilterViewPanel controls-Scroll-containerBase_userContent"
+  data-qa="controls-FilterPanelPopup__sticky_filterPanel"
+  tabindex="0"
+>
+  <div
+    class=""
+    tabindex="0"
+  >
+    <div
+      class="controls-FilterViewPanel__editors-container controls-padding_bottom-l controls-FilterViewPanel__horizontal-padding-popup controls-FilterViewPanel__vertical-padding-popup controls-FilterViewPanel__editors-container-popup   controls-FilterPanel__vertical-padding-popup  controls-FilterPanel__extendedItems-padding-top"
+      data-qa="controls-FilterViewPanel__additional-editors"
+      tabindex="0"
+    >
+      <div
+        class="controls-FilterViewPanel__additional-editors controls-FilterViewPanel__additional-editors-popup controls-FilterViewPanel__additional-editors-in-column"
+        tabindex="0"
+      >
+        <div
+          class="controls-FilterViewPanel__additional_left-column"
+          data-qa="controls-FilterViewPanel__additional_left-column"
+        >
+          <div
+            class="controls-FilterViewPanel__additional-editor controls-fontsize-m controls-text-filterExtendedItem controls-FilterViewPanel__additional-editor-popup_last controls-FilterViewPanel__additional-editor-popup-in-column"
+            data-name="FilterViewPanel__additional-editor_withCaption"
+            data-qa="FilterViewPanel__additional-editor"
+            title="Метка для блока \\"Ещё можно отобрать\\""
+          >
+            Метка для блока "Ещё можно отобрать"
+          </div>
+        </div>
+        <div
+          class="controls-FilterViewPanel__additional_right-column"
+          data-qa="controls-FilterViewPanel__additional_right-column"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls/filterPanelPopup:Sticky caption tests Тест меток редакторов Разный текст метки при переходе из блока "Еще можно отобрать" в блок "Отбираются" Редактор в блоке "Отбираются" 1`] = `
+<div
+  class="controls_filterPanel_theme-default controls-FilterViewPanel-contrast  controls_filter_theme-default controls-FilterViewPanel controls-Scroll-containerBase_userContent"
+  data-qa="controls-FilterPanelPopup__sticky_filterPanel"
+  tabindex="0"
+>
+  <div
+    class="controls-FilterViewPanel_viewMode-popup-vertical controls-FilterViewPanel-contrast controls-FilterViewPanel_basicItems_editorsViewMode-cloud"
+    data-qa="controls-FilterViewPanel__basic-editors"
+    tabindex="0"
+  >
+    <div
+      class="controls-PropertyGrid controls_propertyGrid_theme-default controls_list_theme-default controls_toggle_theme-default controls-PropertyGrid__itemsContainer_paddingTop-null controls-PropertyGrid__itemsContainer_paddingBottom-null controls-PropertyGrid__itemsContainer_paddingLeft-filterPanelPopup controls-PropertyGrid__itemsContainer_paddingRight-l controls-FilterViewPanel__propertyGrid"
+      data-qa="FilterViewPanel__propertyGrid"
+      tabindex="0"
+    >
+      <div
+        class="controls-FilterViewPanel__group-wrapper controls-FilterViewPanel__group-wrapper_style-master"
+        data-qa="FilterViewPanel__group-wrapper"
+        item-key="group-withCaption"
+        tabindex="0"
+      >
+        <div
+          class="controls-FilterViewPanel__separator-content_container controls-FilterViewPanel__separator-content_container_popup ws-flexbox controls-FilterViewPanel__group controls-FilterViewPanel__group_height_viewMode-popup"
+          data-qa="FilterViewPanel__group"
+          tabindex="0"
+        >
+          <div
+            class="controls-FilterViewPanel__group-content controls-FilterViewPanel__group-content_popup  controls-FilterViewPanel__group-content-align-left"
+            tabindex="0"
+            title="Метка для блока \\"Отбираются\\""
+          >
+            Метка для блока "Отбираются"
+          </div>
+        </div>
+      </div>
+      <div
+        class="controls-PropertyGrid__editor    controls-PropertyGrid__editor_spacingTop_default
+                       controls-PropertyGrid__editor_spacingBottom_null controls-PropertyGrid__editor_spacingRight_default controls-PropertyGrid__editor_spacingLeft_default controls-FilterViewPanel__propertyGrid_itemTemplate
+                controls-FilterViewPanel__propertyGrid_itemTemplate_viewMode-popup_last-without-extended-items"
+        data-qa="controls-PropertyGrid__editor"
+        item-key="property-grid-item-withCaption"
+        tabindex="1"
+      >
+        <div
+          class="controls-PropertyGrid__editor-withoutCaption controls-FilterViewPanel__baseEditor-container"
+          data-qa="controls-PropertyGrid__editor_withCaption"
+        >
+          <span />
+          <div
+            class="controls-FilterViewPanel__baseEditor-cross_container"
+          >
+            <span
+              class="  icon-CloseNew controls-icon controls-FilterViewPanel__groupReset-icon"
+              data-qa="FilterViewPanel__baseEditor-cross"
+              title="Сбросить"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

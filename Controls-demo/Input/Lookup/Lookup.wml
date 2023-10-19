@@ -1,0 +1,188 @@
+<div class="demo-Lookup">
+    <div class="demo-Lookup-enabled-col">
+        <div class="demo-Lookup-title"><h3>readOnly: false</h3></div>
+        <div class="demo-Lookup-centered">
+            <div class="control-Lookup-demo-block">
+                <div class="control-Lookup-demo-title">
+                    Lookup multi select
+                </div>
+                <div>
+                    base line test
+                    <Controls.lookup:Input
+                            bind:value="_value"
+                            bind:selectedKeys="_selectedKeys"
+                            source="{{_source}}"
+                            placeholder="Введите имя"
+                            searchParam="title"
+                            keyProperty="id"
+                            displayProperty="notTitle"
+                            multiSelect="{{true}}"
+                            multiLine="{{true}}"
+                            attr:class="control-Lookup-demo-Lookup ControlsDemo-Lookup__single">
+                        <ws:selectorTemplate templateName="Controls-demo/Input/Lookup/FlatListSelector/FlatListSelector"/>
+                        <ws:navigation source="page" view="page">
+                            <ws:sourceConfig pageSize="{{2}}" page="{{0}}" hasMore="{{false}}"/>
+                        </ws:navigation>
+                        <ws:suggestTemplate templateName="Controls-demo/Input/Lookup/Suggest/SuggestTemplate"/>
+                        <ws:itemTemplate>
+                            <ws:partial template="Controls/lookup:ItemTemplate" displayProperty="title"></ws:partial>
+                        </ws:itemTemplate>
+                    </Controls.lookup:Input>
+                </div>
+            </div>
+            <div class="control-Lookup-demo-block">
+                <div class="control-Lookup-demo-title">
+                    Lookup bold items
+                </div>
+                <div>
+                    base line test
+                    <Controls.lookup:Input
+                            bind:value="_value2"
+                            bind:selectedKeys="_selectedKeys2"
+                            source="{{_source}}"
+                            placeholder="Введите имя"
+                            searchParam="title"
+                            keyProperty="id"
+                            attr:class="control-Lookup-demo-Lookup ControlsDemo-Lookup__bolditems">
+                        <ws:selectorTemplate templateName="Controls-demo/Input/Lookup/FlatListSelector/FlatListSelector"/>
+                        <ws:navigation source="page" view="page">
+                            <ws:sourceConfig pageSize="{{2}}" page="{{0}}" hasMore="{{false}}"/>
+                        </ws:navigation>
+                        <ws:suggestTemplate templateName="Controls-demo/Input/Lookup/Suggest/SuggestTemplate"/>
+                        <ws:itemTemplate>
+                            <ws:partial template="Controls/lookup:ItemTemplate" style="bold"/>
+                        </ws:itemTemplate>
+                    </Controls.lookup:Input>
+                </div>
+            </div>
+            <div class="control-Lookup-demo-block">
+                <div class="control-Lookup-demo-title">
+                    Lookup accent items with link
+                    <Controls.buttons:Button caption="Names" viewMode="linkButton" fontColorStyle="link" on:click="showSelector2()"/>
+                </div>
+                <div>
+                    base line test
+                    <Controls.lookup:Input
+                            name="lookup2"
+                            bind:value="_value3"
+                            bind:selectedKeys="_selectedKeys3"
+                            source="{{_source}}"
+                            placeholder="Введите имя"
+                            searchParam="title"
+                            keyProperty="id"
+                            attr:class="control-Lookup-demo-Lookup ControlsDemo-Lookup__accentitems">
+                        <ws:selectorTemplate templateName="Controls-demo/Input/Lookup/FlatListSelector/FlatListSelector"/>
+                        <ws:navigation source="page" view="page">
+                            <ws:sourceConfig pageSize="{{2}}" page="{{0}}" hasMore="{{false}}"/>
+                        </ws:navigation>
+                        <ws:suggestTemplate templateName="Controls-demo/Input/Lookup/Suggest/SuggestTemplate"/>
+                        <ws:itemTemplate>
+                            <ws:partial template="Controls/lookup:ItemTemplate" style="accent" size="m"/>
+                        </ws:itemTemplate>
+                    </Controls.lookup:Input>
+                </div>
+            </div>
+            <div class="control-Lookup-demo-block">
+                <div class="control-Lookup-demo-title">
+                    Lookup primary items
+                </div>
+                <div>
+                    base line test
+                    <Controls.lookup:Input
+                            bind:value="_value4"
+                            bind:selectedKeys="_selectedKeys4"
+                            source="{{_source}}"
+                            placeholder="Введите имя"
+                            searchParam="title"
+                            keyProperty="id"
+                            attr:class="control-Lookup-demo-Lookup ControlsDemo-Lookup__primaryitems">
+                        <ws:selectorTemplate templateName="Controls-demo/Input/Lookup/FlatListSelector/FlatListSelector"/>
+                        <ws:navigation source="page" view="page">
+                            <ws:sourceConfig pageSize="{{2}}" page="{{0}}" hasMore="{{false}}"/>
+                        </ws:navigation>
+                        <ws:suggestTemplate templateName="Controls-demo/Input/Lookup/Suggest/SuggestTemplate"/>
+                        <ws:itemTemplate>
+                            <ws:partial template="Controls/lookup:ItemTemplate" style="primary" size="m"/>
+                        </ws:itemTemplate>
+                    </Controls.lookup:Input>
+                </div>
+            </div>
+            <div class="control-Lookup-demo-block">
+                <div class="control-Lookup-demo-title">
+                    Lookup items with link
+                </div>
+                <div>
+                    base line test
+                    <Controls.lookup:Input
+                            name="lookup"
+                            bind:value="_value2"
+                            bind:selectedKeys="_selectedKeys7"
+                            source="{{_source}}"
+                            searchParam="title"
+                            keyProperty="id"
+                            attr:class="control-Lookup-demo-Lookup ControlsDemo-Lookup__bolditems">
+                        <ws:selectorTemplate templateName="Controls-demo/Input/Lookup/FlatListSelector/FlatListSelector"/>
+                        <ws:placeholder>
+                            Выберите
+                            <Controls.lookup:Link caption="имя" on:linkClick="showSelector()"/>
+                        </ws:placeholder>
+                        <ws:navigation source="page" view="page">
+                            <ws:sourceConfig pageSize="{{2}}" page="{{0}}" hasMore="{{false}}"/>
+                        </ws:navigation>
+                        <ws:suggestTemplate templateName="Controls-demo/Input/Lookup/Suggest/SuggestTemplate"/>
+                    </Controls.lookup:Input>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="demo-Lookup-readonly-col">
+        <div class="demo-Lookup-title"><h3>readOnly: true</h3></div>
+        <div class="demo-Lookup-centered">
+            <div class="control-Lookup-demo-block">
+                <div class="control-Lookup-demo-title">
+                    Lookup select readOnly
+                </div>
+                <div>
+                    base line test
+                    <Controls.lookup:Input
+                            bind:value="_value1"
+                            bind:selectedKeys="_selectedKeys1"
+                            source="{{_source}}"
+                            placeholder="Введите имя"
+                            searchParam="title"
+                            readOnly="{{true}}"
+                            keyProperty="id"
+                            attr:class="control-Lookup-demo-Lookup ControlsDemo-Lookup__readonly">
+                        <ws:navigation source="page" view="page">
+                            <ws:sourceConfig pageSize="{{2}}" page="{{0}}" hasMore="{{false}}"/>
+                        </ws:navigation>
+                        <ws:suggestTemplate templateName="Controls-demo/Input/Lookup/Suggest/SuggestTemplate"/>
+                    </Controls.lookup:Input>
+                </div>
+            </div>
+            <div class="control-Lookup-demo-block">
+                <div class="control-Lookup-demo-title">
+                    Lookup multi select readOnly
+                </div>
+                <div>
+                    base line test
+                    <Controls.lookup:Input
+                            bind:value="_value1"
+                            bind:selectedKeys="_selectedKeys6"
+                            source="{{_source}}"
+                            placeholder="Введите имя"
+                            searchParam="title"
+                            multiSelect="{{true}}"
+                            readOnly="{{true}}"
+                            keyProperty="id"
+                            attr:class="control-Lookup-demo-Lookup ControlsDemo-Lookup__readonly">
+                        <ws:navigation source="page" view="page">
+                            <ws:sourceConfig pageSize="{{2}}" page="{{0}}" hasMore="{{false}}"/>
+                        </ws:navigation>
+                        <ws:suggestTemplate templateName="Controls-demo/Input/Lookup/Suggest/SuggestTemplate"/>
+                    </Controls.lookup:Input>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

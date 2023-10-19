@@ -1,0 +1,35 @@
+<div class="controlsDemo__wrapper">
+   <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-richTemplate_horizontalImageSize-2xl">
+      <Controls.treeTile:View
+              storeId="listData"
+              tileMode="static"
+              tileWidth="250"
+              tileHeight="50"
+              imageProperty="image"
+              roundBorder="{{_roundBorder}}">
+         <ws:itemTemplate>
+            <ws:partial
+                    template="Controls/tile:RichTemplate"
+                    border="{{ true }}"
+                    borderStyle="{{ _borderStyle }}"
+                    gradientColor="{{itemTemplate.item.contents.gradientColor}}"
+                    titleLines="{{itemTemplate.item.contents.titleLines}}"
+                    descriptionLines="{{itemTemplate.item.contents.titleLines}}"
+                    imageSize="{{itemTemplate.item.contents.imageSize}}"
+                    imageViewMode="{{itemTemplate.item.contents.imageViewMode}}"
+                    imagePosition="{{itemTemplate.item.contents.imagePosition}}"
+                    description="{{itemTemplate.item.contents.description}}"
+                    imageCompressionCoefficient="{{itemTemplate.item.contents.imageCompressionCoefficient}}"
+                    imageEffect="gradient"
+                    scope="{{itemTemplate}}">
+            </ws:partial>
+         </ws:itemTemplate>
+      </Controls.treeTile:View>
+      <div class="controlsDemo__cell">
+         <h4 class="controlsDemo__mb1">Цвет border. Сейчас={{ _borderStyle ? _borderStyle : 'default' }}</h4>
+         <ws:for data="index, variant in _borderStyleVariants">
+            <Controls.buttons:Button attr:data-qa="button_borderStyle_{{variant}}" caption="{{variant}}" on:click="_setBorderStyle(variant)"/>
+         </ws:for>
+      </div>
+   </div>
+</div>

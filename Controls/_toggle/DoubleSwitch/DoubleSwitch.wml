@@ -1,0 +1,56 @@
+<ws:template name="Text">
+    <ws:partial template="{{captionTemplate}}"
+                on:mouseover="_toggleSwitchHoverState(_options.value !== _nextValue)"
+                on:mouseout="_toggleSwitchHoverState(false)"
+                on:click="_clickTextHandler(_nextValue)"
+                enabled="{{!_options.readOnly}}"
+                orientation="{{_options.orientation}}"
+                value="{{_value}}"
+                caption="{{_caption}}"/>
+</ws:template>
+<ws:template name="Toggle">
+    <Controls._toggle.SwitchButton
+            on:mouseover="_toggleSwitchHoverState(_options.value !== _nextValue)"
+            on:mouseout="_toggleSwitchHoverState(false)"
+            on:click="_notifyChanged()"
+            attr:class="{{_options.orientation === 'horizontal' ? 'controls-margin_left-xs controls-margin_right-xs'}}"
+            value="{{true}}"
+            viewMode="{{_options.viewMode}}"
+            orientation="{{_options.orientation}}"
+            size="{{_options.size}}"
+            position="{{!_options.value ? 'end' : 'start'}}"
+            resetValue="{{_getResetValue()}}"/>
+</ws:template>
+
+<ws:template name="VerticalSwitcher">
+    <ws:partial template="Toggle"/>
+    <span class="controls-DoubleSwitch__textBlock">
+      <ws:partial template="Text" _nextValue="{{true}}" _caption="{{_options.onCaption}}"
+                  captionTemplate="{{_onCaptionTemplate}}"
+                  _value="{{_options.value}}"/>
+      <ws:partial template="Text" _nextValue="{{false}}" _caption="{{_options.offCaption}}"
+                  captionTemplate="{{_offCaptionTemplate}}"
+                  _value="{{!_options.value}}"/>
+   </span>
+</ws:template>
+<ws:template name="HorizontalSwitcher">
+    <ws:partial template="Text" _nextValue="{{true}}" _caption="{{_options.onCaption}}"
+                captionTemplate="{{_onCaptionTemplate}}" _value="{{_options.value}}"/>
+    <ws:partial template="Toggle"/>
+    <ws:partial template="Text" _nextValue="{{false}}" _caption="{{_options.offCaption}}"
+                captionTemplate="{{_offCaptionTemplate}}"
+                _value="{{!_options.value}}"/>
+</ws:template>
+
+<span class="controls_toggle_theme-{{_options.theme}} controls-DoubleSwitch" title="{{_options.tooltip}}">
+   <span class="controls-DoubleSwitch__wrapper controls-DoubleSwitch__toggle_{{_options.orientation}}__wrapper
+   {{_toggleHoverState ? 'controls-Switch_hovered controls-DoubleSwitcher__wrapper_hover'}}"
+         tabindex="0">
+       <ws:if data="{{_options.orientation === 'vertical'}}">
+          <ws:partial template="VerticalSwitcher"/>
+       </ws:if>
+       <ws:else>
+          <ws:partial template="HorizontalSwitcher"/>
+       </ws:else>
+   </span>
+</span>

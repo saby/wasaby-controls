@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper">
+    <Controls.treeGrid:View
+            storeId="ExpanderIconHiddenNode"
+            columns="{{_columns}}">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/treeGrid:ItemTemplate" expanderIcon="hiddenNode"/>
+        </ws:itemTemplate>
+    </Controls.treeGrid:View>
+</div>

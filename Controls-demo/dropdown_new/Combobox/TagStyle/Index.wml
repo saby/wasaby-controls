@@ -1,0 +1,23 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__mr4">
+        <Controls.dropdown:Combobox source="{{_source}}"
+                                    displayProperty="title"
+                                    keyProperty="key"
+                                    tagStyle="danger"
+                                    bind:selectedKey="_selectedKey"/>
+    </div>
+    <div class="controlsDemo__mr4">
+        <Controls.dropdown:Combobox source="{{_source}}"
+                                    displayProperty="title"
+                                    keyProperty="key"
+                                    tagStyle="warning"
+                                    bind:selectedKey="_selectedKey"/>
+    </div>
+    <div class="controlsDemo__mr4">
+        <Controls.dropdown:Combobox source="{{_source}}"
+                                    displayProperty="title"
+                                    keyProperty="key"
+                                    tagStyle="success"
+                                    bind:selectedKey="_selectedKey"/>
+    </div>
+</div>

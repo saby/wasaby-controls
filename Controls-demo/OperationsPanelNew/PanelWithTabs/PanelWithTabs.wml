@@ -1,0 +1,72 @@
+<div class="controlsDemo__wrapper controlsDemo__minWidth600 controlsDemo__maxWidth800">
+   <Controls.operations:Button
+      expanded="{{ _expandedOperationsPanel }}"
+      on:expandedChanged="_expandedChangedHandler()"
+   />
+   <Controls.tabs:Buttons
+      borderVisible="{{ false }}"
+      keyProperty="key"
+      items="{{ _tabs }}"
+      bind:selectedKey="_selectedTab"
+   />
+   <Controls.browser:Browser
+      nodeProperty="Раздел@"
+      parentProperty="Раздел"
+      displayProperty="title"
+      keyProperty="id"
+      source="{{ _selectedTab === 'tile' ? _viewSourceDynamic : _viewSource }}"
+      multiSelectVisibility="{{ _selectedTab === 'tile' ? 'onhover' : 'visible' }}"
+      bind:selectedKeys="_selectedKeys"
+      bind:excludedKeys="_excludedKeys"
+      on:selectedKeysCountChanged="_notifyHandler('selectedKeysCountChanged')">
+      <div>
+         <Controls.list:BaseAction name="baseAction" />
+         <ws:if data="{{ _expandedOperationsPanel }}">
+            <Controls.operations:PanelContainer
+               listMarkedKey="{{ content._options.listMarkedKey }}">
+               <Controls.operations:Panel
+                  parentProperty="parent"
+                  nodeProperty="@parent"
+                  source="{{ _panelSource }}"
+                  on:expandedChanged="_expandedChangedHandler()"
+                  on:itemClick="_panelItemClick()">
+               </Controls.operations:Panel>
+            </Controls.operations:PanelContainer>
+         </ws:if>
+         <ws:if data="{{ _selectedTab === 'tile' }}">
+            <Controls.list:Container>
+               <Controls.tile:View
+                  attr:class="demo-Tile__dynamic"
+                  tileMode="dynamic"
+                  imageProperty="image">
+                  <ws:itemTemplate>
+                     <ws:partial
+                        shadowVisibility="onhover"
+                        template="Controls/tile:ItemTemplate"
+                        hasTitle="{{ itemTemplate.item.contents.isDocument }}"
+                        itemWidth="{{ itemTemplate.item.contents.get('width') }}"
+                     />
+                  </ws:itemTemplate>
+               </Controls.tile:View>
+            </Controls.list:Container>
+         </ws:if>
+         <ws:else>
+            <Controls.list:Container>
+               <Controls.treeGrid:View name="list"
+                  attr:class="demo-Grid__control"
+                  markerVisibility="visible"
+                  columns="{{ _gridColumns }}">
+                  <ws:emptyTemplate>
+                     <ws:partial template="Controls/grid:EmptyTemplate"
+                        topSpacing="xl"
+                        bottomSpacing="m">
+                        <ws:contentTemplate>No data available!</ws:contentTemplate>
+                     </ws:partial>
+                  </ws:emptyTemplate>
+               </Controls.treeGrid:View>
+            </Controls.list:Container>
+         </ws:else>
+      </div>
+   </Controls.browser:Browser>
+   <Controls.popup:Confirmation name="popupOpener" />
+</div>
