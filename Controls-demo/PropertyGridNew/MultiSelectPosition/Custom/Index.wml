@@ -1,0 +1,22 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell controls-Demo__wide-propertyGrid">
+        <div class="controls-text-label">custom multiSelectPosition</div>
+        <Controls.propertyGrid:PropertyGrid
+            bind:editingObject="_editingObject"
+            bind:selectedKeys="_selectedKeys"
+            typeDescription="{{_typeDescription}}"
+            multiSelectVisibility="visible"
+            multiSelectPosition="custom">
+            <ws:itemTemplate>
+                <ws:partial template="Controls/propertyGrid:ItemTemplate" highlightOnHover="{{true}}">
+                    <ws:afterEditorTemplate>
+                        <ws:partial template="{{ afterEditorTemplate.multiSelectTemplate }}"/>
+                    </ws:afterEditorTemplate>
+                </ws:partial>
+            </ws:itemTemplate>
+            <ws:captionColumnOptions width="50%"/>
+            <ws:itemPadding top="s" bottom="s" left="s" right="m"/>
+        </Controls.propertyGrid:PropertyGrid>
+        <div style="padding-top: 10px;">Selected keys [{{ _selectedKeys.join(', ') }}]</div>
+    </div>
+</div>

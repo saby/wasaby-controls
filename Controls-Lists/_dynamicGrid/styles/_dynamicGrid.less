@@ -1,0 +1,87 @@
+@import 'Controls-Lists/_dynamicGrid/styles/zIndexEnv/_cellContentContext';
+
+@cross-line-color: rgb(var(--label_icon-color_rgb));
+@cross-line-color-rgba: rgba(var(--label_icon-color_rgb), 50%);
+@cross-line-size: 4000px;
+
+.ControlsLists-dynamicGrid__dynamicCellsWrapper {
+   display: grid;
+   height: 100%;
+   position: relative;
+}
+
+.ControlsLists-dynamicGrid__autoScrollTarget {
+   position: absolute;
+   bottom: 0;
+}
+
+.for(@TOffsetSizeVariants, {
+  .ControlsLists-dynamicGrid__dynamicCellsWrapper_columns-spacing_@{_item} {
+    column-gap: ~'calc(var(--offset_@{_item}) - var(--border-thickness))';
+    margin-left: ~'calc(var(--offset_@{_item}) - var(--border-thickness))';
+  }
+  .ControlsLists-dynamicGrid__autoScrollTarget_columns-spacing_@{_item} {
+    left: ~'calc(-1 * ( calc(var(--offset_@{_item}) - var(--border-thickness)) ))';
+    right: ~'calc(-1 * ( calc(var(--offset_@{_item}) - var(--border-thickness)) ))';
+  }
+});
+
+.ControlsLists-dynamicGrid__dynamicHeaderCell {
+   align-items: center;
+   justify-content: center;
+   display: flex;
+}
+
+.ControlsLists-dynamicGrid__dynamicDataCell,
+.ControlsLists-dynamicGrid__eventCell {
+   height: 100%;
+   position: relative;
+}
+
+.ControlsLists-dynamicGrid__selectionCheckbox.controls-CheckboxMarker {
+   position: absolute;
+   bottom: 0;
+   display: none;
+   min-height: var(--icon-size_s);
+   z-index: @selectionCheckboxIndex;
+}
+
+.ControlsLists-dynamicGrid__tag {
+   z-index: 2;
+}
+
+.ws-is-hover {
+   .ControlsLists-dynamicGrid__dynamicDataCell:hover .ControlsLists-dynamicGrid__selectionCheckbox {
+      display: flex;
+   }
+
+   .ControlsLists-dynamicGrid__cross-vertical-part:hover::after {
+      content: '';
+      position: absolute;
+      border-left: var(--border-thickness) solid @cross-line-color-rgba;
+      border-right: var(--border-thickness) solid @cross-line-color-rgba;
+      border-top: none;
+      border-bottom: none;
+      left: calc(-2 * var(--border-thickness));
+      right: calc(-2 * var(--border-thickness));
+      top: -(@cross-line-size);
+      height: @cross-line-size;
+      filter: drop-shadow(0 @cross-line-size 0 @cross-line-color);
+      pointer-events: none;
+      z-index: @crossLineVerticalZIndex;
+   }
+
+   .ControlsLists-dynamicGrid__cross-horizontal-part:hover::after {
+      content: '';
+      position: absolute;
+      border-top: var(--border-thickness) solid @cross-line-color-rgba;
+      border-bottom: var(--border-thickness) solid @cross-line-color-rgba;
+      filter: drop-shadow(@cross-line-size 0 0 @cross-line-color);
+      left: -(@cross-line-size);
+      width: @cross-line-size;
+      top: calc(2 * var(--border-thickness));
+      bottom: 0;
+      pointer-events: none;
+      z-index: @crossLineHorizontalZIndex;
+   }
+}

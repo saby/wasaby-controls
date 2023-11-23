@@ -1,0 +1,6 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth800">
+    <div class="controls-text-label controls-text-label">hasMore false</div>
+    <Controls.scroll:Container attr:class="controlsDemo__height400">
+        <Controls.list:View storeId="NavigationHasMorePaging"/>
+    </Controls.scroll:Container>
+</div>

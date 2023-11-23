@@ -1,0 +1,266 @@
+.controls-Lookup {
+   display: inline-block;
+}
+
+.controls-Lookup__suggest,
+.controls-Lookup__inputRender {
+   width: 100%;
+}
+
+.controls-Lookup__inputRender_horizontalPadding-xs {
+   padding-left: var(--padding-horizontal_inputText);
+   padding-right: 0;
+}
+
+.controls-Lookup__inputRender_horizontalPadding-null {
+   padding-left: 0;
+   padding-right: 0;
+}
+
+.controls-Lookup__inputRender .controls-Render__wrapper {
+   position: relative;
+}
+
+.controls-Lookup__inputRender_multiLine {
+   min-height: var(--min-height_multiline_lookupInput);
+}
+
+.controls-Lookup__inputRender_multiLine .controls-Render__wrapper {
+   display: block;
+   width: calc(100% - var(--trigger_width_lookupInput));
+}
+
+.controls-Lookup__inputRender_single-multiLine .controls-Render__wrapper {
+   display: flex;
+}
+
+/*
+  Border is used as an indent for the input field.
+  Padding is not suitable because a non-native placeholder is used, which is positioned through absolute.
+  Margin is not suitable, because in  mode multi line for input, we set the width, which is determined by before update, and do not know what left space will be, since it is not constant.
+*/
+.controls-Lookup__fieldWrapper.controls-InputBase__field {
+   margin: 0;
+   box-sizing: border-box;
+   border-right: var(--trigger_offset_lookupInput) solid transparent;
+   flex-shrink: 9999999;
+}
+
+// У всех ссылок внутри placeholder'a поля связи не должно быть line-height,
+// иначе они ломают выравнивание placeholder'a
+// При этом, если ссылка находится вне поля связи, у неё должен быть line-height,
+// чтобы работало выравнивание относительно других элементов.
+.controls-Lookup__fieldWrapper .controls-Lookup__link {
+   line-height: normal;
+}
+
+.controls-Lookup__fieldWrapper_multiSelect,
+.controls-Lookup__fieldWrapper_for_comment {
+   min-width: calc(
+      33% - (var(--reset-button_size_lookupInput) + 2 * var(--reset-button_offset_lookupSelector))
+   );
+   flex-shrink: 9999999;
+}
+
+.controls-Lookup__fieldWrapper-size-default {
+   height: var(--inline_height_m);
+   line-height: var(--inline_height_m);
+}
+
+.controls-Lookup__fieldWrapper-size-m {
+   height: var(--inline_height_m);
+   line-height: var(--inline_height_m);
+}
+
+.controls-Lookup__fieldWrapper-size-xs {
+   height: var(--inline_height_xs);
+   line-height: var(--inline_height_xs);
+}
+
+.controls-Lookup__fieldWrapper-size-s {
+   height: var(--inline_height_s);
+   line-height: var(--inline_height_s);
+}
+
+.controls-Lookup__fieldWrapper-size-l {
+   height: var(--inline_height_l);
+   line-height: var(--inline_height_l);
+}
+
+.controls-Lookup__fieldWrapper-size-xl {
+   height: var(--inline_height_xl);
+   line-height: var(--inline_height_xl);
+}
+
+.controls-Lookup__fieldWrapper-size-2xl {
+   height: var(--inline_height_2xl);
+   line-height: var(--inline_height_2xl);
+}
+
+.controls-Lookup__fieldWrapper_content_width_custom {
+   display: inline-flex;
+}
+
+/* toDO !KINGO В Safari выравнивание по базовой линии inline-flex элементов и
+   inline элементов в две строки не работает. Даже без наших стилей. Даже с line-height. */
+.ws-is-mobile-safari,
+.ws-is-desktop-safari {
+   .controls-Lookup__fieldWrapper_content_width_custom {
+      display: inline-block;
+      vertical-align: bottom;
+   }
+}
+
+.controls-Lookup__fieldWrapper_content_width_default {
+   width: auto;
+}
+
+.controls-Lookup__fieldWrapper_for_comment {
+   color: var(--unaccented_text-color);
+
+   //TODO danger перевести инпуты
+   .controls-InputBase__nativeField {
+      caret-color: var(--unaccented_text-color);
+   }
+}
+
+.controls-Lookup__collection_with_input_readOnly {
+   padding-right: var(--offset_2xs);
+}
+
+/* in multiline mode, placeholder is in one line */
+.controls-Lookup__placeholderWrapper {
+   .text-overflow();
+}
+
+.controls-Lookup__rightFieldWrapper {
+   flex-shrink: 0;
+   display: inline-flex;
+}
+
+.controls-Lookup__rightFieldWrapper_singleLine {
+   margin-left: auto;
+   align-items: center;
+   align-self: center;
+}
+
+.controls-Lookup__rightFieldWrapper_multiLine {
+   position: absolute;
+   top: 0;
+   right: calc(-1 * var(--trigger_width_lookupInput));
+   justify-content: space-between;
+   flex-flow: column;
+   height: 100%;
+}
+
+.controls-Lookup__rightFieldWrapper_single-multiLine {
+   align-self: flex-end;
+}
+
+.controls-Lookup__icon {
+   cursor: pointer;
+   display: inline-flex;
+   align-items: center;
+}
+
+.controls-Lookup__showSelector {
+   .icon(var(--trigger_icon-size_lookupInput));
+   fill: var(--trigger_icon-color_lookupInput);
+}
+
+.controls-Lookup__showSelector:hover,
+.controls-Lookup__showSelector:active {
+   fill: var(--trigger_hover_icon-color_lookupInput);
+}
+
+.controls-Lookup__showSelector_horizontalPadding-xs {
+   padding: 0 var(--trigger_padding_lookupInput);
+}
+
+.controls-Lookup__showSelector_horizontalPadding-null {
+   padding-left: var(--trigger_padding_lookupInput);
+}
+
+.controls-Lookup__showSelector:active {
+   color: var(--trigger_hover_icon-color_lookupInput);
+}
+
+.controls-Lookup__showSelector_multiLine {
+   height: calc(var(--inline_height_m) - 2 * var(--border-thickness));
+}
+
+.controls-Lookup__clearRecords {
+   .icon-size-without-important(var(--reset-button_icon-size));
+   padding: var(--reset-button_offset_lookupSelector);
+   color: var(--reset-button_color);
+   height: var(--reset-button_size_lookupInput);
+   width: var(--reset-button_size_lookupInput);
+   box-sizing: border-box;
+}
+
+.controls-Lookup__clearRecords:active {
+   color: var(--unaccented_hover_icon-color);
+}
+
+.ws-is-hover {
+   .controls-Lookup__clearRecords:hover {
+      color: var(--unaccented_hover_icon-color);
+   }
+}
+
+.controls-Lookup__clearRecords_multiLine {
+   order: 1;
+}
+
+// https://online.sbis.ru/opendoc.html?guid=731dbb95-6655-4ccd-ae34-e3b212e18bce
+.controls-Lookup__collection__selectedSingle {
+   width: 100%;
+   justify-content: flex-start;
+}
+
+.controls-SelectedCollection__collection-container.controls-Lookup__collection {
+   .flex-shrink(1);
+}
+
+.controls-SelectedCollection__collection-container.controls-Lookup__collection_with_commentInput {
+   max-width: calc(
+      100% - var(--trigger_offset_lookupInput) - 2 * var(--reset-button_offset_lookupSelector) -
+         var(--trigger_padding_lookupInput) - var(--trigger_icon-size_lookupInput)
+   );
+}
+
+.controls-Lookup__collection_item_with_commentInput {
+   padding-right: var(--offset_2xs);
+}
+
+.controls-Lookup-collection__measurer {
+   top: 0;
+   left: -9999px;
+   position: absolute;
+   backface-visibility: hidden;
+}
+
+.controls-Lookup__counter {
+   height: 100%;
+}
+
+// Метка внутри поля связи должна быть инлайновой, иначе она не троиточиться
+.ws-is-windows-xp .controls-Lookup .controls-Lookup__link {
+   display: inline;
+}
+
+.controls-Lookup__toolbar {
+   padding: var(--toolbar_vertical-padding_lookupInput) var(--offset_s);
+}
+
+.controls-Lookup__collection {
+   box-sizing: border-box;
+}
+
+.ws-is-ie {
+   // Из-за особенной работы flexbox'a в IE, построение выбранных записей происходит в обратном порядке,
+   // Поэтому необходимо инвертировать и порядок и прижатие элементов
+   .controls-SelectedCollection__collection.controls-Lookup__collection__selectedSingle {
+      justify-content: flex-end;
+   }
+}

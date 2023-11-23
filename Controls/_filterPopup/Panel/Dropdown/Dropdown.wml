@@ -1,0 +1,30 @@
+<div class="controls_filterPopup_theme-{{_options.theme}} controls-FilterDropdown">
+   <Controls.dropdown:Selector
+           name="selector"
+           scope="{{_options}}"
+           attr:class="controls-FilterDropdown__content"
+           on:selectedKeysChanged="_selectedKeysChangedHandler()"
+           on:textValueChanged="_textValueChangedHandler()"
+           on:selectorCallback="_selectorCallbackHandler()"
+           on:dropDownOpen="_dropDownOpen()"
+           on:dropDownClose="_dropDownClose()">
+      <ws:contentTemplate>
+         <ws:if data="{{_options.contentTemplate}}">
+            <ws:partial template="Controls/dropdown:inputDefaultContentTemplate" style="filter">
+               <ws:contentTemplate>
+                  <div class="controls-FilterDropdown__contentTemplate">
+                     <ws:partial template="{{_options.contentTemplate}}" class="controls-Dropdown__item_style-filter
+                      {{!contentTemplate.icon ? 'controls-FilterDropdown__content_text'}}"/>
+                  </div>
+               </ws:contentTemplate>
+            </ws:partial>
+         </ws:if>
+         <ws:else>
+            <ws:partial template="Controls/dropdown:inputDefaultContentTemplate" style="filter"/>
+         </ws:else>
+      </ws:contentTemplate>
+   </Controls.dropdown:Selector>
+   <ws:if data="{{_options.showCross}}">
+      <span class="controls-FilterDropdown__reset icon-CloseNew" on:click="_resetHandler()"></span>
+   </ws:if>
+</div>

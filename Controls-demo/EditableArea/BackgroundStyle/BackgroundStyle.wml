@@ -1,0 +1,31 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth650">
+   <div class="controlsDemo__cell">
+      <div class="ControlsDemo-EditableArea__title controls-text-label">backgroundStyle = editableView-custom</div>
+      <Controls.editableArea:View
+         autoEdit="{{true}}"
+         toolbarVisible="{{true}}"
+         backgroundStyle="editableView-custom"
+         editingObject="{{_editingObject}}">
+         <Controls.editableArea:Base bind:value="content.editingObject.text">
+            <ws:editorTemplate>
+               <Controls.input:Text contrastBackground="{{true}}" attr:class="controls-Input_negativeOffset"/>
+            </ws:editorTemplate>
+         </Controls.editableArea:Base>
+      </Controls.editableArea:View>
+   </div>
+
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">backgroundStyle = editableArea</div>
+      <Controls.editableArea:View
+              autoEdit="{{true}}"
+              toolbarVisible="{{true}}"
+              backgroundStyle="editableArea"
+              editingObject="{{_editingObject}}">
+         <Controls.editableArea:Base bind:value="content.editingObject.text">
+            <ws:editorTemplate>
+               <Controls.input:Text contrastBackground="{{true}}" attr:class="controls-Input_negativeOffset"/>
+            </ws:editorTemplate>
+         </Controls.editableArea:Base>
+      </Controls.editableArea:View>
+   </div>
+</div>

@@ -1,0 +1,144 @@
+<div class="controlsDemo__PopupTemplate__demoWrapper controlsDemo_fixedWidth800">
+    <div class="controlsDemo__flex">
+        <Controls.popupTemplate:Stack headingCaption="headerBackgroundStyle=default"
+                                      headerBackgroundStyle="default"
+                                      footerBackgroundStyle="default"
+                                      backgroundStyle="default"
+                                      attr:style="margin-bottom:20px;">
+            <ws:bodyContentTemplate>
+                <div>
+                    <div class="controlsDemo__ml1 controls-text-label">backgroundStyle="default"</div>
+                </div>
+            </ws:bodyContentTemplate>
+            <ws:footerContentTemplate>
+                <div>
+                    <div class="controlsDemo__ml1 controls-text-label">footerBackgroundStyle="default"</div>
+                </div>
+            </ws:footerContentTemplate>
+        </Controls.popupTemplate:Stack>
+    </div>
+    <div class="controlsDemo__flex">
+        <Controls.popupTemplate:Stack headingCaption="headerBackgroundStyle=unaccented"
+                                      footerBackgroundStyle="unaccented"
+                                      backgroundStyle="unaccented"
+                                      attr:style="margin-bottom:20px;">
+            <ws:bodyContentTemplate>
+                <div>
+                    <div class="controlsDemo__ml1 controls-text-label}">backgroundStyle="unaccented"</div>
+                </div>
+            </ws:bodyContentTemplate>
+            <ws:footerContentTemplate>
+                <div>
+                    <div class="controlsDemo__ml1 controls-text-label}">footerBackgroundStyle="unaccented"</div>
+                </div>
+            </ws:footerContentTemplate>
+        </Controls.popupTemplate:Stack>
+    </div>
+    <div class="controlsDemo__flex">
+        <Controls.popupTemplate:Stack headingCaption="headerBackgroundStyle=success"
+                                      headerBackgroundStyle="success"
+                                      footerBackgroundStyle="success"
+                                      backgroundStyle="success"
+                                      attr:style="margin-bottom:20px;">
+            <ws:bodyContentTemplate>
+                <div>
+                    <div class="controlsDemo__ml1 controls-text-label">backgroundStyle="success"</div>
+                </div>
+            </ws:bodyContentTemplate>
+            <ws:footerContentTemplate>
+                <div>
+                    <div class="controlsDemo__ml1 controls-text-label">footerBackgroundStyle="success"</div>
+                </div>
+            </ws:footerContentTemplate>
+        </Controls.popupTemplate:Stack>
+    </div>
+    <div class="controlsDemo__flex">
+        <Controls.popupTemplate:Stack headingCaption="headerBackgroundStyle=danger"
+                                      footerBackgroundStyle="danger"
+                                      backgroundStyle="danger"
+                                      headerBackgroundStyle="danger"
+                                      attr:style="margin-bottom:20px;">
+            <ws:bodyContentTemplate>
+                <div>
+                    <div class="controlsDemo__ml1 controls-text-label}">backgroundStyle="danger"</div>
+                </div>
+            </ws:bodyContentTemplate>
+            <ws:footerContentTemplate>
+                <div>
+                    <div class="controlsDemo__ml1 controls-text-label}">footerBackgroundStyle="danger"</div>
+                </div>
+            </ws:footerContentTemplate>
+        </Controls.popupTemplate:Stack>
+    </div>
+    <div class="controlsDemo__flex">
+        <Controls.popupTemplate:Stack headingCaption="headerBackgroundStyle=secondary"
+                                      footerBackgroundStyle="secondary"
+                                      backgroundStyle="secondary"
+                                      headerBackgroundStyle="secondary"
+                                      attr:style="margin-bottom:20px;">
+            <ws:bodyContentTemplate>
+                <div>
+                    <div class="controlsDemo__ml1 controls-text-label">backgroundStyle="secondary"</div>
+                </div>
+            </ws:bodyContentTemplate>
+            <ws:footerContentTemplate>
+                <div>
+                    <div class="controlsDemo__ml1 controls-text-label">footerBackgroundStyle="secondary"</div>
+                </div>
+            </ws:footerContentTemplate>
+        </Controls.popupTemplate:Stack>
+    </div>
+    <div class="controlsDemo__flex">
+        <Controls.popupTemplate:Stack headingCaption="headerBackgroundStyle=primary"
+                                      footerBackgroundStyle="primary"
+                                      backgroundStyle="primary"
+                                      headerBackgroundStyle="primary"
+                                      attr:style="margin-bottom:20px;">
+            <ws:bodyContentTemplate>
+                <div>
+                    <div class="controlsDemo__ml1 controls-text-label}">backgroundStyle="primary"</div>
+                </div>
+            </ws:bodyContentTemplate>
+            <ws:footerContentTemplate>
+                <div>
+                    <div class="controlsDemo__ml1 controls-text-label}">footerBackgroundStyle="primary"</div>
+                </div>
+            </ws:footerContentTemplate>
+        </Controls.popupTemplate:Stack>
+    </div>
+    <div class="controlsDemo__flex">
+        <Controls.popupTemplate:Stack headingCaption="headerBackgroundStyle=warning"
+                                      footerBackgroundStyle="warning"
+                                      backgroundStyle="warning"
+                                      headerBackgroundStyle="warning"
+                                      attr:style="margin-bottom:20px;">
+            <ws:bodyContentTemplate>
+                <div>
+                    <div class="controlsDemo__ml1 controls-text-label">backgroundStyle="warning"</div>
+                </div>
+            </ws:bodyContentTemplate>
+            <ws:footerContentTemplate>
+                <div>
+                    <div class="controlsDemo__ml1 controls-text-label">footerBackgroundStyle="warning"</div>
+                </div>
+            </ws:footerContentTemplate>
+        </Controls.popupTemplate:Stack>
+    </div>
+    <div class="controlsDemo__flex">
+        <Controls.popupTemplate:Stack headingCaption="headerBackgroundStyle=info"
+                                      footerBackgroundStyle="info"
+                                      backgroundStyle="info"
+                                      headerBackgroundStyle="info">
+            <ws:bodyContentTemplate>
+                <div>
+                    <div class="controlsDemo__ml1 controls-text-label">backgroundStyle="info"</div>
+                </div>
+            </ws:bodyContentTemplate>
+            <ws:footerContentTemplate>
+                <div>
+                    <div class="controlsDemo__ml1 controls-text-label">footerBackgroundStyle="info"</div>
+                </div>
+            </ws:footerContentTemplate>
+        </Controls.popupTemplate:Stack>
+    </div>
+</div>

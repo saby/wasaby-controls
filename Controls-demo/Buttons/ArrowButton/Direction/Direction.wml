@@ -1,0 +1,18 @@
+<div class="controlsDemo__flexColumn controlsDemo__ml2 controlsDemo_fixedWidth300">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label controlsDemo__maxWidth200">direction=left</div>
+        <Controls.extButtons:ArrowButton direction="left"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label controlsDemo__maxWidth200">direction=right</div>
+        <Controls.extButtons:ArrowButton direction="right"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label controlsDemo__maxWidth200">direction=up</div>
+        <Controls.extButtons:ArrowButton direction="up"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label controlsDemo__maxWidth200">direction=down</div>
+        <Controls.extButtons:ArrowButton direction="down"/>
+    </div>
+</div>

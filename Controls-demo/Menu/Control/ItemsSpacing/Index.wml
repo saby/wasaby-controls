@@ -1,0 +1,12 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper">
+      <div class="controls-text-label"></div>
+      <Controls.menu:Control
+              items="{{_items}}"
+              keyProperty="key"
+              displayProperty="title"
+              itemsSpacing="xs"
+              iconSize="s"
+      />
+   </div>
+</div>

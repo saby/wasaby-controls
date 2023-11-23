@@ -1,0 +1,62 @@
+<div class="controls_popupTemplate_theme-{{_options.theme}} controls-InfoBoxTemplate controls-InfoBoxTemplate__arrow-side-position-{{_arrowSide}}
+            controls-InfoBoxTemplate__arrow-side-{{_arrowPosition}}
+            controls-InfoBoxTemplate_horizontal-direction-{{_horizontalDirection}}">
+    <div class="{{_getBackgroundStyle()}}
+               controls-InfoBoxTemplate__content
+               controls_border-radius-{{_options.borderRadius}}
+               controls-InfoBoxTemplate_style_{{_borderStyle}}
+               controls-InfoBoxTemplate_style-{{_arrowSide}}_{{_borderStyle}}">
+        <ws:if data="{{_options.content}}">
+            <ws:partial template="{{_options.content}}"
+                        attr:class="controls-InfoBoxTemplate__content-area controls_border-radius-{{_options.borderRadius}}"/>
+        </ws:if>
+        <ws:if data="{{_options.closeButtonVisible}}">
+            <div ws-no-focus="true">
+                <Controls.Container.Async
+                    templateName="Controls/extButtons:CloseButton">
+                    <ws:partial
+                        template="{{content.resolvedTemplate}}"
+                        attr:class="controls-InfoBoxTemplate__closeButton"
+                        on:click="_close()"
+                        viewMode="link"
+                        offset="null"
+                    />
+                </Controls.Container.Async>
+            </div>
+        </ws:if>
+        <ws:if data="{{_options.resizable}}">
+            <ws:if
+                data="{{_options.resizingOptions.position === 'right' || _options.resizingOptions.position === 'left' || _options.resizingOptions.position === 'bottom'}}">
+                <Controls.dragnDrop:ResizingLine
+                    attr:class="controls-StickyTemplate__resizingLine-{{_options.resizingOptions.position}}"
+                    minOffset="{{_minWidthOffset}}"
+                    maxOffset="{{_maxWidthOffset}}"
+                    direction="{{_options.resizingOptions.position === 'left' ? 'reverse' : 'direct'}}"
+                    position="{{_options.resizingOptions.position}}"
+                    orientation="{{_options.resizingOptions.position === 'bottom' ? 'vertical' : 'horizontal'}}"
+                    step="{{_options.resizingOptions.step}}"
+                    on:offset="_onResizingOffset()"/>
+            </ws:if>
+            <ws:else>
+                <Controls._popupTemplate.ResizingArrow
+                    attr:class="controls-StickyTemplate__resizingLine"
+                    minWidthOffset="{{_minWidthOffset}}"
+                    maxWidthOffset="{{_maxWidthOffset}}"
+                    minHeightOffset="{{_minHeightOffset}}"
+                    maxHeightOffset="{{_maxHeightOffset}}"
+                    borderRadius="{{_options.borderRadius}}"
+                    position="{{_options.resizingOptions.position}}"
+                    step="{{_options.resizingOptions.step}}"
+                    on:offset="_onResizingOffset()"/>
+            </ws:else>
+        </ws:if>
+    </div>
+    <div class="controls-InfoBoxTemplate__arrow-wrapper controls-InfoBoxTemplate__arrow-wrapper-{{_arrowSide}}">
+        <div class="{{_getBackgroundStyle()}}
+                  controls-InfoBoxTemplate__arrow
+                  controls-InfoBoxTemplate__arrow-{{_borderStyle}}
+                  controls-InfoBoxTemplate__arrow-{{_arrowSide}}
+                  controls-InfoBoxTemplate__arrow-position-{{_arrowPosition}}">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,80 @@
+.ifExistsSelectorCallback(@selector, @trueCallback, @falseCallback) {
+   & when not (@extraSelector = none) {
+      @trueCallback();
+   }
+;
+
+   & when (@extraSelector = none) {
+      @falseCallback();
+   }
+;
+}
+
+.choosePostfix(@selector, @extraSelector, @zIndex) {
+   .ifExistsSelectorCallback(@extraSelector, {
+      @{selector}@{extraSelector} {
+         z-index: @zIndex;
+      }
+   }, {
+      @{selector} {
+         z-index: @zIndex;
+      }
+   });
+}
+
+.setAnyCellIndex(@selector, @zIndex) {
+   .controls-GridReact__cell@{selector} {
+      z-index: @zIndex;
+   }
+}
+
+.setDataCellIndex(@zIndex, @extraSelector: none) {
+   .choosePostfix(~'.controls-Grid__itemsContainer .controls-GridReact__cell', @extraSelector, @zIndex);
+}
+
+.setStickiedDataCellIndex(@zIndex, @extraSelector: none) {
+   .choosePostfix(~'.controls-Grid__itemsContainer .controls-GridReact__cell.controls-StickyBlock', @extraSelector, @zIndex);
+}
+
+.setHeaderCellIndex(@zIndex, @extraSelector: none) {
+   .choosePostfix(~'.controls-GridReact__header-cell', @extraSelector, @zIndex);
+}
+
+.setStickiedHeaderCellIndex(@zIndex, @extraSelector: none) {
+   .ifExistsSelectorCallback(@extraSelector, {
+      .setHeaderCellIndex(@zIndex, ~'.controls-StickyBlock@{extraSelector}');
+   }, {
+      .setHeaderCellIndex(@zIndex, ~'.controls-StickyBlock');
+   });
+}
+
+.setResultCellIndex(@zIndex, @extraSelector: none) {
+   .choosePostfix(~'.controls-GridReact__results-cell', @extraSelector, @zIndex);
+}
+
+.setStickiedResultCellIndex(@zIndex, @extraSelector: none) {
+   .ifExistsSelectorCallback(@extraSelector, {
+      .setResultCellIndex(@zIndex, ~'.controls-StickyBlock@{extraSelector}');
+   }, {
+      .setResultCellIndex(@zIndex, ~'.controls-StickyBlock');
+   });
+}
+
+.setFooterCellIndex(@zIndex, @extraSelector: none) {
+   .choosePostfix(~'.controls-GridReact__footer-cell', @extraSelector, @zIndex);
+}
+
+.setStickiedFooterCellIndex(@zIndex, @extraSelector: none) {
+   .ifExistsSelectorCallback(@extraSelector, {
+      .setFooterCellIndex(@zIndex, ~'.controls-StickyBlock@{extraSelector}');
+   }, {
+      .setFooterCellIndex(@zIndex, ~'.controls-StickyBlock');
+   });
+}
+
+
+.setStickiedHeaderCellIndex(2);
+.setStickiedResultCellIndex(2);
+.setDataCellIndex(auto);
+.setStickiedDataCellIndex(1);
+.setStickiedFooterCellIndex(auto);

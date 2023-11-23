@@ -1,0 +1,22 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell demo-JumpingLabel__requiredTrue controlsDemo_fixedWidth350">
+        <Controls.jumpingLabel:InputContainer attr:class="controlsDemo__input" value="{{_name}}"
+                                              required="{{true}}"
+                                              caption="Enter your name">
+            <Controls.input:Text bind:value="_name"/>
+        </Controls.jumpingLabel:InputContainer>
+    </div>
+    <div class="controlsDemo__cell demo-JumpingLabel__requiredTrueLongCaption controlsDemo_fixedWidth350">
+        <Controls.jumpingLabel:InputContainer attr:class="controlsDemo__input"
+                                              required="{{true}}"
+                                              caption="Long long long long long long long long long long long">
+            <Controls.input:Text/>
+        </Controls.jumpingLabel:InputContainer>
+    </div>
+    <div class="controlsDemo__cell demo-JumpingLabel__requiredFalse controlsDemo_fixedWidth350">
+        <Controls.jumpingLabel:InputContainer attr:class="controlsDemo__input"
+                                              caption="Enter your name">
+            <Controls.input:Text/>
+        </Controls.jumpingLabel:InputContainer>
+    </div>
+</div>

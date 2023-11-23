@@ -1,0 +1,44 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">MultilinePath</div>
+        <Controls.breadcrumbs:MultilinePath attr:id="double"
+                                            items="{{_items}}"
+                                            parentProperty="parent"
+                                            containerWidth="{{_containerWidth}}"
+                                            keyProperty="id"
+                                            on:itemClick="_onItemClick()"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">MultilinePath - 2 crumbs</div>
+        <Controls.breadcrumbs:MultilinePath items="{{_items2}}"
+                                            parentProperty="parent"
+                                            keyProperty="id"
+                                            containerWidth="{{_containerWidth}}"
+                                            on:itemClick="_onItemClick()"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">MultilinePath in miniCard</div>
+        <Controls.popup:PreviewerTarget trigger="click" >
+            <ws:content>
+                <span class="controls-text-label">Click me</span>
+            </ws:content>
+            <ws:template>
+                <Controls.popupTemplate:Dialog>
+                    <ws:bodyContentTemplate>
+                        <div class="ws-flexbox ws-flex-column" attr:style="padding: 50px; padding-top: 20px; width: 350px">
+                            <Controls.breadcrumbs:MultilinePath attr:id="double"
+                                                                items="{{_items}}"
+                                                                parentProperty="parent"
+                                                                keyProperty="id"
+                                                                containerWidth="{{_containerWidth2}}"
+                                                                on:itemClick="_onItemClick()"/>
+                        </div>
+                    </ws:bodyContentTemplate>
+                </Controls.popupTemplate:Dialog>
+            </ws:template>
+        </Controls.popup:PreviewerTarget>
+    </div>
+    <div class="controlsDemo__cell controlsDemo_MultilinePath__clicked">
+        <div class="controls-text-label">Нажали на элемент с id: {{_info}}</div>
+    </div>
+</div>

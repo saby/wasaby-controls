@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center {{_options.theme.indexOf('default') < 0 ? 'controlsDemo_fixedWidth500' : 'controlsDemo_fixedWidth300'}}"
+         data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell">
+            <Controls.Tumbler:Control
+                    items="{{_items}}"
+                    disableAnimation="{{ _getDisabledAnimation() }}"
+            />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,107 @@
+<div class="demo-BreadCrumbs__wrapper">
+    <Controls.scroll:Container attr:style="height: 800px;">
+        <div class="demo-BreadCrumbs__example controlsDemo-BreadCrumbs__multilineHeaders">
+            <Controls.heading:Title caption="Реестр с многострочными заголовками"
+                                    fontColorStyle="secondary"
+                                    fontSize="4xl"/>
+            <Controls.explorer:View
+                    keyProperty="id"
+                    bind:root="_root4"
+                    parentProperty="parent"
+                    showActionButton="{{true}}"
+                    nodeProperty="parent@"
+                    displayProperty="department"
+                    columns="{{_columns4}}"
+                    header="{{_header4}}"
+                    source="{{_viewSource4}}"
+                    resultsPosition="top">
+            </Controls.explorer:View>
+        </div>
+        <div class="demo-BreadCrumbs__example controlsDemo-BreadCrumbs__serviceBlock">
+            <Controls.heading:Title caption="Хлебные крошки вынесены в сервисный блок"
+                                    fontColorStyle="secondary"
+                                    fontSize="4xl"/>
+            <Controls.breadcrumbs:HeadingPath items="{{_breadCrumbs6}}"
+                                              backButtonFontColorStyle="primary"
+                                              backButtonIconStyle="secondary"
+                                              keyProperty="id" />
+        </div>
+        <div class="demo-BreadCrumbs__example controlsDemo-BreadCrumbs__headExitStack">
+            <Controls.heading:Title caption="Хлебные крошки в шапке выезжающей панели"
+                                    fontColorStyle="secondary"
+                                    fontSize="4xl"/>
+            <div>
+                <Controls.popupTemplate:Stack
+                        attr:class="demo-FourthExample"
+                        maximizeButtonVisibility="{{true}}">
+                    <ws:headerContentTemplate>
+                        <div class="demo-SeventhExample__headerWrapper">
+                            <div class="demo-SeventhExample__firstRow">
+                                <span class="demo-SeventhExample__header">Комиссионный товар НДС 18%</span>
+                                <Controls.toolbars:View
+                                        attr:class="demo-SeventhExample__toolbar"
+                                        parentProperty="parent"
+                                        nodeProperty="@parent"
+                                        keyProperty="id"
+                                        source="{{_toolbarSource7}}"
+                                />
+                            </div>
+                            <Controls.breadcrumbs:Path items="{{_breadCrumbs6}}"
+                                                       readOnly="{{true}}"
+                                                       keyProperty="id" />
+                        </div>
+                    </ws:headerContentTemplate>
+                    <ws:bodyContentTemplate>
+                        <div></div>
+                    </ws:bodyContentTemplate>
+                </Controls.popupTemplate:Stack>
+            </div>
+        </div>
+        <div class="demo-BreadCrumbs__example controlsDemo-BreadCrumbs__inSearch">
+            <Controls.heading:Title caption="Хлебные крошки в результатах поиска"
+                                    fontColorStyle="secondary"
+                                    fontSize="4xl"/>
+            <Controls.browser:Browser source="{{_viewSource8}}" keyProperty="id" bind:filter="_filter8" searchParam="name" minSearchLength="{{3}}">
+                <div class="ws-fragment">
+                    <Controls.searchDeprecated:InputContainer>
+                        <Controls.search:Input/>
+                    </Controls.searchDeprecated:InputContainer>
+                    <Controls.list:Container>
+                        <Controls.explorer:View
+                                displayProperty="department"
+                                parentProperty="parent"
+                                nodeProperty="@parent"
+                                showActionButton="{{true}}"
+                                columns="{{_columns}}">
+                        </Controls.explorer:View>
+                    </Controls.list:Container>
+                </div>
+            </Controls.browser:Browser>
+        </div>
+        <div class="demo-BreadCrumbs__example controlsDemo-BreadCrumbs__fillAllWidth">
+            <Controls.heading:Title caption="Заголовки занимают всю доступную ширину"
+                                    fontColorStyle="secondary"
+                                    fontSize="4xl"/>
+            <Controls.explorer:View
+                    keyProperty="id"
+                    parentProperty="parent"
+                    nodeProperty="parent@"
+                    displayProperty="title"
+                    columns="{{_columns1}}"
+                    header="{{_header5}}"
+                    bind:root="_root5"
+                    showActionButton="{{true}}"
+                    rowSeparatorSize="s"
+                    source="{{_viewSource1}}">
+            </Controls.explorer:View>
+        </div>
+        <div class="demo-BreadCrumbs__example demo-BreadCrumbs__example_narrow">
+            <Controls.breadcrumbs:Path items="{{_breadCrumbs7}}"
+                                       keyProperty="id" />
+        </div>
+        <div class="demo-BreadCrumbs__example demo-BreadCrumbs__example_narrow">
+            <Controls.breadcrumbs:Path items="{{_breadCrumbs8}}"
+                                       keyProperty="id" />
+        </div>
+    </Controls.scroll:Container>
+</div>

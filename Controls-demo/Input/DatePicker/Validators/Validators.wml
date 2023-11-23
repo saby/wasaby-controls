@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <Controls.date:Input bind:value="_value">
+            <ws:valueValidators>
+                <ws:Array>
+                    <ws:Function>Controls/validate:isRequired</ws:Function>
+                </ws:Array>
+            </ws:valueValidators>
+        </Controls.date:Input>
+    </div>
+</div>

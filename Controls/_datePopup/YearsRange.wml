@@ -1,0 +1,59 @@
+<div class="controls_datePicker_theme-{{_options.theme}} controls-PeriodDialog-Years">
+   <div class="controls-PeriodDialog-Years__prevNextBtn">
+      <Controls.extButtons:ArrowButton
+              iconSize="{{ _options.isAdaptive ? 'l' : 'm' }}"
+              viewMode="ghost"
+              direction="left"
+              attr:class="controls-PeriodDialog-Years__yearsRange__button controls-PeriodDialog-Years__yearsRange__button-left"
+              attr:title="{[Предыдущий год]}"
+              on:keyDown="_prevNextBtnKeyDownHandler(-1)"
+              on:click="_onPrevNextButtonClick(-1)"
+              attr:tabindex="0"
+              attr:data-qa="controls-PeriodDialog-Years__prevNextBtn__left"
+      />
+   </div>
+   <div class="controls-PeriodDialog-Years__yearsRange" data-qa="controls-PeriodDialog-Years__yearsRange">
+      <ws:for data="yearIndex, year in _model">
+         <div tabindex="0" class="controls-PeriodDialog-Years__rangeBtn
+         {{ year.isCurrent ? 'controls-PeriodDialog-Years__rangeBtn_current' }}
+         {{ _options.keyboardActive ? 'controls-PeriodDialog-Years__rangeBtn_focus' }}
+         {{ year.year === this._year ? 'controls-PeriodDialog-Years__item-displayed'}}
+         {{_prepareItemClass(year.year) }}"
+              data-qa="{{ year.year === this._year ? 'controls-PeriodDialog-Years__item-displayed'}}"
+              attr:title="{[Выбрать год]}"
+              attr:year="{{ year.year }}"
+              on:keyDown="_onItemKeyDown(year.date)"
+              on:click="_onItemClick(year.date)"
+              on:mouseenter="_onItemMouseEnter(year.date)"
+              on:mouseleave="_onItemMouseLeave(year.date)">
+            {{ year.caption }}
+            <ws:if data="{{ _isSelectedStart(year.date) }}">
+               <div class="controls-PeriodDialog-Years__rangeBtn_selected__container controls-PeriodDialog-Years__rangeBtn_selected__container-start">
+                  <div class="controls-PeriodDialog-Years__rangeBtn_selected controls-PeriodDialog-Years__rangeBtn_selected-start">
+
+                  </div>
+               </div>
+            </ws:if>
+            <ws:if data="{{ _isSelectedEnd(year.date) }}">
+               <div class="controls-PeriodDialog-Years__rangeBtn_selected__container controls-PeriodDialog-Years__rangeBtn_selected__container-end">
+                  <div class="controls-PeriodDialog-Years__rangeBtn_selected controls-PeriodDialog-Years__rangeBtn_selected-end">
+
+                  </div>
+               </div>
+            </ws:if>
+         </div>
+      </ws:for>
+   </div>
+   <div class="controls-PeriodDialog-Years__prevNextBtn">
+      <Controls.extButtons:ArrowButton
+              iconSize="{{ _options.isAdaptive ? 'l' : 'm' }}"
+              viewMode="ghost"
+              attr:class="controls-PeriodDialog-Years__yearsRange__button controls-PeriodDialog-Years__yearsRange__button-right"
+              attr:title="{[Следующий год]}"
+              on:keyDown="_prevNextBtnKeyDownHandler(1)"
+              on:click="_onPrevNextButtonClick(1)"
+              attr:tabindex="0"
+              attr:data-qa="controls-PeriodDialog-Years__prevNextBtn__right"
+      />
+   </div>
+</div>

@@ -1,0 +1,289 @@
+<ws:template name="menuControl">
+   <Controls.scroll:Container
+           attr:class="controls-ScrollContainer__flex
+                       controls-Menu__scroll
+                       {{_hasHeader && !_options.searchParam &&
+                        (_options.headerTemplate || _verticalDirection === 'top') ? 'controls-Menu__popup-list_margin-top'}}"
+           shadowMode="js"
+           scrollbarVisible="{{_options.scrollbarVisible}}"
+           topShadowVisibility="{{_options.searchParam || (_hasHeader &&  _verticalDirection === 'bottom') ? 'auto' : 'hidden'}}"
+           bottomShadowVisibility="{{footerContent || (_hasHeader && _verticalDirection === 'top') ? 'auto' : 'hidden'}}">
+      <Controls._menu.Control
+              name="menuControl"
+              focusable="{{_options.focusable}}"
+              attr:class="controls-Menu__popup-list
+                           controls-padding_left-xs controls-padding_right-xs"
+              attr:ws-autofocus="{{_options.focusable}}"
+              isDragging="{{_options.isDragging}}"
+              dropdownClassName="{{_options.dropdownClassName}}"
+              selectorOpenCallback="{{_options.selectorOpenCallback}}"
+              menuOpenedCallback="{{_options.menuOpenedCallback}}"
+              nodeFooterTemplate="{{_options.nodeFooterTemplate}}"
+              showMoreRightTemplate="{{_options.showMoreRightTemplate}}"
+              root="{{_options.root}}"
+              selectorOpener="{{_options.selectorOpener}}"
+              selectorTemplate="{{_options.selectorTemplate}}"
+              isCompoundTemplate="{{_options.isCompoundTemplate}}"
+              itemActions="{{_options.itemActions}}"
+              backgroundStyle="{{_options.backgroundStyle || 'menuPopup'}}"
+              hoverBackgroundStyle="{{_options.hoverBackgroundStyle}}"
+              borderStyle="{{_options.borderStyle}}"
+              hoverBorderStyle="{{_options.hoverBorderStyle}}"
+              borderSize="{{_options.borderSize}}"
+              borderRadius="{{_options.borderRadius}}"
+              itemActionVisibilityCallback="{{_options.itemActionVisibilityCallback}}"
+              itemActionsVisibility="{{_options.itemActionsVisibility}}"
+              itemActionsProperty="{{_options.itemActionsProperty}}"
+              itemActionsClass="{{_options.itemActionsClass}}"
+              hasHistory="{{_options.hasHistory}}"
+              historyId="{{_options.historyId}}"
+              keyProperty="{{_options.keyProperty}}"
+              displayProperty="{{_options.displayProperty}}"
+              selectedAllText="{{_options.selectedAllText}}"
+              selectedAllKey="{{_options.selectedAllKey}}"
+              emptyText="{{_options.emptyText}}"
+              emptyKey="{{_options.emptyKey}}"
+              searchParam="{{_options.searchParam}}"
+              viewMode="{{viewMode}}"
+              width="{{_options.width}}"
+              breadCrumbsItemTemplate="{{_options.breadCrumbsItemTemplate}}"
+              multiSelect="{{_options.multiSelect}}"
+              multiSelectPosition="{{_options.multiSelectPosition}}"
+              multiSelectAccessibilityProperty="{{_options.multiSelectAccessibilityProperty}}"
+              markerVisibility="{{_options.markerVisibility}}"
+              emptyTemplate="{{_options.emptyTemplate}}"
+              source="{{_options.source}}"
+              items="{{_options.items}}"
+              sourceController="{{_options.sourceController}}"
+              navigation="{{_options.navigation}}"
+              filter="{{filter || _options.filter}}"
+              parentProperty="{{_options.parentProperty}}"
+              nodeProperty="{{_options.nodeProperty}}"
+              historyRoot="{{_options.historyRoot}}"
+              maxHistoryVisibleItems="{{_options.maxHistoryVisibleItems}}"
+              sourceProperty="{{_options.sourceProperty}}"
+              selectedKeys="{{_options.selectedKeys}}"
+              excludedKeys="{{_options.excludedKeys}}"
+              beforeSelectionChangedCallback="{{_options.beforeSelectionChangedCallback}}"
+              itemTemplateProperty="{{_options.itemTemplateProperty}}"
+              itemTemplate="{{_options.itemTemplate}}"
+              groupTemplate="{{_options.groupTemplate}}"
+              groupProperty="{{_options.groupProperty}}"
+              allowPin="{{_options.allowPin}}"
+              additionalProperty="{{_options.additionalProperty}}"
+              groupingKeyCallback="{{_options.groupingKeyCallback}}"
+              selectorDialogResult="{{_options.selectorDialogResult}}"
+              itemPadding="{{_itemPadding}}"
+              dataLoadCallback="{{_dataLoadCallback}}"
+              dataLoadErrback="{{_dataLoadErrback}}"
+              headingIcon="{{_headingIcon}}"
+              headerTemplate="{{_headerTemplate || _options.headerTemplate || _headingCaption}}"
+              headingCaptionProperty="{{_options.headingCaptionProperty}}"
+              trigger="{{_options.trigger}}"
+              subMenuLevel="{{_options.subMenuLevel}}"
+              theme="{{_options.theme}}"
+              calmTimer="{{_calmTimer}}"
+              subMenuDirection ="{{_options.subMenuDirection}}"
+              itemAlign="{{_options.itemAlign}}"
+              dataName="{{_options.dataName}}"
+              openedSubMenuKey="{{_options.openedSubMenuKey}}"
+              openedSubMenuOptions="{{_options.openedSubMenuOptions}}"
+              closedSubMenuKey="{{_options.closedSubMenuKey}}"
+              itemsSpacing="{{_options.itemsSpacing}}"
+              footerContentTemplate="{{footerContent}}"
+              hierarchyViewMode="{{_options.hierarchyViewMode}}"
+              useListRender="{{_options.useListRender}}"
+              on:itemClick="_sendResult('itemClick')"
+              on:selectionChanged="_sendResult('selectionChanged')"
+              on:rightTemplateClick="_sendResult('rightTemplateClick')"
+              on:moreButtonClick="_sendResult('openSelectorDialog')"
+              on:applyClick="_sendResult('applyClick')"
+              on:pinClick="_sendResult('pinClick')"
+              on:menuOpened="_sendResult('menuOpened')"
+              on:beforeSubMenuOpen="_prepareSubMenuConfig()"
+              on:closeButtonVisibilityChanged="_updateCloseButtonState()"
+              on:selectedItemsChanged="_setSelectedItems()"
+              on:selectedKeysChanged="_updateSelectedKeys()"
+              on:excludedKeysChanged="_updateExcludedKeys()"
+              on:subMenuMouseenter="_sendResult('subMenuMouseenter')"
+              on:expanderClick="_expanderClick()"
+      />
+   </Controls.scroll:Container>
+</ws:template>
+
+<ws:template name="menuPopup" >
+   <div class="controls_dropdownPopup_theme-{{_options.theme}}
+               controls-Menu__popup
+               {{_paddingClassName}}"
+        on:mouseEnter="_mouseEvent()"
+        on:mouseMove="_mouseEvent()"
+        on:mouseLeave="_mouseEvent()">
+      <Controls.popupTemplate:Sticky
+              attr:data-name="{{_options.dataName ? _dataName}}"
+              attr:class="controls-Popup__isolatedFocusingContext
+                          controls-Menu__popup-template
+                          controls-Menu__popup-direction-vertical-{{_verticalDirection}}
+                          {{!_options.headerTemplate && _verticalDirection === 'top' ? 'controls-Menu__popup-reverse'}}
+                          {{!_options.headerTemplate && _hasHeader && _verticalDirection !== 'top' && !_options.searchParam ?
+                           'controls-Menu__popup-template-paddingInHeader' : 'controls-Menu__popup-template-padding'}}
+                          {{!_options.isAdaptive || _options.allowAdaptive === false ?
+                              (' controls-Menu__popup-offset controls-Menu__popup-shadow-default')}}
+                          {{_options.dropdownClassName}}"
+              attr:style="{{_options.width ?
+               'min-width: calc(' + _options.width + 'px + 2 * (var(--offset_xs) + var(--item_padding-horizontal_s_menu)))'}}"
+              icon="{{_headingIcon}}"
+              headingIconSize="{{_headingIconSize}}"
+              caption="{{_headingCaption}}"
+              searchHeaderTheme="{{_options.theme}}"
+              headingCaption="{{!_options.headerTemplate && !_headerTemplate ? _headingCaption : ''}}"
+              headingFontSize="m"
+              headingFontColorStyle="label"
+              headingTextTransform="uppercase"
+              headingFontWeight="normal"
+              iconSize="{{_options.iconSize}}"
+              iconStyle="{{_options.iconStyle}}"
+              footerContentTemplate="{{footerContent}}"
+              headerContentTemplate="{{headerContentTemplate || _headerTemplate}}"
+              footerVisibility="{{_options.footerVisibility}}"
+              footerItemData="{{_options.footerItemData}}"
+              closeButtonVisible="{{_closeButtonVisibility}}"
+              closeButtonViewMode="{{_applyButtonVisible && _options.closeButtonViewMode === 'external' ?
+               'externalWide' : _options.closeButtonViewMode}}"
+              stickyPosition="{{_options.stickyPosition}}"
+              draggable="{{_options.draggable}}"
+              backgroundStyle="{{_options.backgroundStyle}}"
+              borderStyle="{{_options.borderStyle}}"
+              hoverBorderStyle="{{_options.hoverBorderStyle}}"
+              borderSize="{{_options.borderSize}}"
+              borderRadius="{{_options.borderRadius}}"
+              borderVisible="{{(_options.borderStyle || _options.hoverBorderStyle) ? true : _options.borderVisible}}"
+              searchPlaceholder="{{_options.searchPlaceholder}}"
+              minSearchLength="{{_options.minSearchLength}}"
+              searchDelay="{{_options.searchDelay}}"
+              headerBackgroundStyle="{{_options.headerBackgroundStyle || _options.backgroundStyle}}"
+              markerVisibility="{{_options.markerVisibility}}"
+              verticalDirection="{{_verticalDirection}}"
+              allowAdaptive="{{_options.allowAdaptive}}"
+              on:mouseenter="_mouseEnterHandler()"
+              on:headerMouseEnter="_headerMouseEnter()"
+              on:headerClick="_headerClick()"
+              on:footerClick="_footerClick()">
+         <ws:bodyContentTemplate>
+            <ws:if data="{{_options.subMenuTemplate}}">
+               <ws:partial template="{{_options.subMenuTemplate}}"
+                           itemPadding="{{_itemPadding}}"
+                           scope="{{_options}}"/>
+            </ws:if>
+            <ws:else>
+               <div class="{{_options.headerTemplate && _verticalDirection === 'top' ? 'controls-Menu__popup-reverse'}}
+                           {{_options.isAdaptive && _options.allowAdaptive !== false ? 'controls-Menu__popup-minHeight'}}
+                           {{_options.searchParam ? 'controls-margin_top-2xs'}}
+                           controls-Menu__popup-content">
+                  <ws:if data="{{_applyButtonVisible}}">
+                     <div class="controls-Menu__popup_applyButton
+                           controls-Menu_{{_closeButtonVisibility ? ('withClose_' + _options.closeButtonViewMode) : 'withoutClose'}}__applyButton">
+                        <Controls.buttons:Button viewMode="filled"
+                                                 contrastBackground="{{_closeButtonVisibility ? false : true}}"
+                                                 icon="icon-Yes"
+                                                 iconSize="s"
+                                                 iconStyle="contrast"
+                                                 buttonStyle="success"
+                                                 caption="{{null}}"
+                                                 attr:class="controls-Menu__applyButton"
+                                                 inlineHeight="menuapply"
+                                                 on:click="_applyButtonClick()"/>
+                     </div>
+                  </ws:if>
+                  <ws:if data="{{_options.headerTemplate && _headerVisible}}">
+                     <ws:partial template="{{_options.headerTemplate}}"
+                                 attr:class="controls-margin_left-xs controls-margin_right-xs
+                                 {{_closeButtonVisibility ?
+                                  'controls-Menu__popup-header-close_' + _options.closeButtonViewMode : 'controls-Menu__popup-header-withoutClose'}}"
+                                 iconSize="{{_options.iconSize}}"
+                                 headingIconSize="{{_headingIconSize}}"
+                                 iconStyle="{{_options.iconStyle}}"
+                                 icon="{{_headingIcon}}"
+                                 caption="{{_headingCaption}}"
+                                 multiSelect="{{_options.multiSelect}}"
+                                 theme="{{ _options.theme }}"
+                                 on:mouseenter="_headerMouseEnter()"
+                                 on:click="_headerClick()"/>
+                  </ws:if>
+                  <ws:if data="{{_options.searchParam}}">
+                     <ws:partial template="{{'Controls/search:MisspellContainer'}}"
+                                 attr:class="{{_options.isAdaptive && _options.allowAdaptive !== false ? 'controls-padding_top-xs'}}
+                                  controls-Menu__popup-misspellContainer"
+                                 misspellClass="controls-Menu__misspell"
+                                 inputSearchValue="{{null}}"
+                                 operationsPanel="{{null}}">
+                        <ws:partial template="menuControl" />
+                     </ws:partial>
+                  </ws:if>
+                  <ws:else>
+                     <ws:partial template="menuControl" />
+                  </ws:else>
+               </div>
+            </ws:else>
+         </ws:bodyContentTemplate>
+      </Controls.popupTemplate:Sticky>
+   </div>
+</ws:template>
+
+<ws:template name="menuPopupWrapper">
+   <ws:if data="{{_options.footerContentTemplate || _options.footerTemplate}}">
+      <ws:partial template="menuPopup">
+         <ws:footerContent>
+            <div attr:class="controls-margin_left-xs controls-margin_right-xs">
+               <ws:partial template="{{_options.footerContentTemplate || _options.footerTemplate}}"
+                           on:mouseenter="_onFooterMouseEnter()"
+                           on:beforeSubMenuOpen="_prepareSubMenuConfig()"
+                           calmTimer="{{_calmTimer}}"></ws:partial>
+            </div>
+         </ws:footerContent>
+      </ws:partial>
+   </ws:if>
+   <ws:else>
+      <ws:partial template="menuPopup"/>
+   </ws:else>
+</ws:template>
+
+<ws:if data="{{_options.searchParam}}">
+   <ws:partial template="{{'Controls/browser:Browser'}}"
+               searchStartingWith="{{_options.searchStartingWith}}"
+               root="{{_options.root}}"
+               keyProperty="{{_options.keyProperty}}"
+               displayProperty="{{_options.displayProperty}}"
+               multiSelect="{{_options.multiSelect}}"
+               searchParam="{{_options.searchParam}}"
+               searchValue="{{_searchValue || ''}}"
+               minSearchLength="{{_options.minSearchLength}}"
+               searchDelay="{{_options.searchDelay}}"
+               emptyTemplate="{{_options.emptyTemplate}}"
+               source="{{_options.source}}"
+               sourceController="{{_options.sourceController}}"
+               navigation="{{_options.navigation}}"
+               filter="{{filter || _options.filter}}"
+               parentProperty="{{_options.parentProperty}}"
+               nodeProperty="{{_options.nodeProperty}}"
+               viewMode="{{_options.viewMode}}"
+               on:inputSearchValueChanged="_inputSearchValueChanged()"
+               on:searchValueChanged="_searchValueChanged()">
+      <ws:partial template="{{'Controls/list:Container'}}">
+         <ws:partial template="menuPopupWrapper"
+                     filter="{{content.filter}}"
+                     viewMode="{{content.viewMode}}"/>
+      </ws:partial>
+   </ws:partial>
+</ws:if>
+<ws:else data="{{_headerTemplate}}">
+   <ws:partial template="menuPopupWrapper">
+      <ws:headerContentTemplate>
+         <ws:partial template="{{_headerTemplate}}"
+                     on:mouseenter="_headerMouseEnter()"
+                     multiSelect="{{_options.multiSelect}}"/>
+      </ws:headerContentTemplate>
+   </ws:partial>
+</ws:else>
+<ws:else>
+   <ws:partial template="menuPopupWrapper" />
+</ws:else>

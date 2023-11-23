@@ -1,0 +1,73 @@
+.controls-Grid__groupViewMode_blocks {
+   .controls-ListView__group
+      + .controls-ListView__itemV:not(.controls-ListView__group)
+      > .controls-Grid__row-cell:first-child {
+      border-start-start-radius: var(--border-radius_s);
+   }
+
+   .controls-ListView__groupHidden
+      + .controls-ListView__itemV:not(.controls-ListView__group)
+      > .controls-Grid__row-cell:first-child {
+      border-start-start-radius: 10px;
+   }
+
+   .controls-ListView__group
+      + .controls-ListView__itemV:not(.controls-ListView__group)
+      > .controls-Grid__row-cell:last-child {
+      border-start-end-radius: var(--border-radius_s);
+   }
+
+   .controls-ListView__groupHidden
+      + .controls-ListView__itemV:not(.controls-ListView__group)
+      > .controls-Grid__row-cell:last-child {
+      border-start-end-radius: 10px;
+   }
+
+   .controls-ListView__itemV:not(.controls-ListView__group):last-child
+      > .controls-Grid__row-cell:first-child,
+   .controls-ListView__itemV:not(.controls-ListView__group):has(+ .controls-ListView__group)
+      > .controls-Grid__row-cell:first-child {
+      border-end-start-radius: var(--border-radius_s);
+   }
+
+   .controls-ListView__itemV:not(.controls-ListView__group):last-child
+      > .controls-Grid__row-cell:last-child,
+   .controls-ListView__itemV:not(.controls-ListView__group):has(+ .controls-ListView__group)
+      > .controls-Grid__row-cell:last-child {
+      border-end-end-radius: var(--border-radius_s);
+   }
+
+   .controls-ListView__itemV:not(.controls-ListView__group)
+      > .controls-Grid__row-cell:last-child::after,
+   .controls-ListView__itemV:not(.controls-ListView__group)
+      > .controls-Grid__row-cell:first-child::after,
+   .controls-ListView__itemV:not(.controls-ListView__group):last-child
+      > .controls-Grid__row-cell::after,
+   .controls-ListView__group
+      + .controls-ListView__itemV:not(.controls-ListView__group)
+      > .controls-Grid__row-cell::after,
+   .controls-ListView__groupHidden
+      + .controls-ListView__itemV:not(.controls-ListView__group)
+      > .controls-Grid__row-cell::after,
+   .controls-ListView__itemV:not(.controls-ListView__group):has(+ .controls-ListView__group)
+      > .controls-Grid__row-cell::after {
+      content: '\200b';
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      box-sizing: border-box;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 0;
+      border-radius: inherit;
+      box-shadow: var(--shadow_b);
+   }
+
+   .controls-GridView__checkbox_relative,
+   .controls-Grid__row-cell__content {
+      z-index: 1;
+   }
+}

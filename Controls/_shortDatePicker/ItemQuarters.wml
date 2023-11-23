@@ -1,0 +1,74 @@
+<div on:keyup="_keyUpHandler()">
+    <ws:if data="{{ _options._yearHovered === _options.currentYear && !_options.selectionProcessing }}">
+        <div class="controls-PeriodLiteDialog__item-background-hovered controls-PeriodLiteDialog__item-background-hovered__year"></div>
+    </ws:if>
+    <ws:if data="{{ _isSelectedPeriod(_yearModel[0].date, 'year') }}">
+        <div class="controls-PeriodLiteDialog__item-corners__container">
+            <div class="controls-PeriodLiteDialog__item-corners">
+
+            </div>
+        </div>
+    </ws:if>
+    <ws:for data="halfYearIndex as halfYear in _yearModel">
+        <ws:for data="quarterIndex as quarter in halfYear.quarters">
+            <ws:if data="{{_hitsDisplayedRanges(quarter.date)}}">
+                <div class="controls-PeriodLiteDialog-item__onlyQuarters-quarter">
+                    <div if="{{(_quarterHovered === quarter.number  && !_options.selectionProcessing)}}"
+                         class="controls-PeriodLiteDialog__item-background-hovered"></div>
+                <ws:if data="{{ _isSelectedPeriod(_yearModel[0].date, 'year') }}">
+                    <div class="controls-PeriodLiteDialog__item-corners__container">
+                        <div class="controls-PeriodLiteDialog__item-corners">
+
+                        </div>
+                    </div>
+                </ws:if>
+                    <div class="controls-PeriodLiteDialog__vLayoutItem controls-PeriodLiteDialog__vLayoutItem-clickable
+                            controls-PeriodLiteDialog-item__quarter
+                            {{ _getSelectionClassName(quarter.date, 'quarter') }}
+                            {{_options.isAdaptive && !!_options.slidingPanelOptions ?
+                             'controls-padding_top-s controls-padding_bottom-s controls-padding_left-xl' : 'controls-padding_left-m'}}
+                            {{ _isSelectedPeriod(quarter.date, 'quarter') ? 'controls-PeriodLiteDialog__item-selected' }}
+                            {{ _isSelectedStart(quarter.date, 'quarter') ? 'controls-PeriodLiteDialog__item_border-radius-top' }}
+                            {{ _isSelectedEnd(quarter.date, 'quarter') ? 'controls-PeriodLiteDialog__item_border-radius-bottom' }}"
+                         on:click="_onQuarterClick(quarter.number,  _options.currentYear)"
+                         on:mouseover="_onQuarterMouseOver(quarter.number)"
+                         on:mouseenter="_onQuarterMouseEnter(quarter.number)"
+                         on:mouseleave="_onQuarterMouseLeave(quarter.number)"
+                    >
+                    <ws:if data="{{ !_options.selectionProcessing && _options.multiselect}}">
+                        <div class="controls-PeriodLiteDialog__item__selection-corners__container"
+                             on:mouseover="_onQuarterMouseOver(quarter.number)"
+                             on:mouseenter="_onQuarterMouseEnter(quarter.number)"
+                             on:mouseleave="_onQuarterMouseLeave(quarter.number)"
+                             on:click="_onMonthCornerClick(quarter.date, 'quarter')">
+                            <div class="controls-PeriodLiteDialog__item__selection-corners"></div>
+                        </div>
+                    </ws:if>
+                    <ws:if data="{{ _startCornerVisible(quarter.date, 'quarter') }}">
+                        <div class="controls-PeriodLiteDialog__item-corners__container">
+                            <div class="controls-PeriodLiteDialog__item-corners controls-PeriodLiteDialog__item-corners-start">
+
+                            </div>
+                        </div>
+                    </ws:if>
+                    <ws:if data="{{ _endCornerVisible(quarter.date, 'quarter') }}">
+                        <div class="controls-PeriodLiteDialog__item-corners__container">
+                            <div class="controls-PeriodLiteDialog__item-corners controls-PeriodLiteDialog__item-corners-end">
+
+                            </div>
+                        </div>
+                    </ws:if>
+                        <div class="controls-PeriodLiteDialog__vLayoutItem-caption controls-PeriodLiteDialog-item__caption"
+                             data-qa="controls-PeriodLiteDialog__item-caption"
+                             tabindex="{{_getTabindex()}}"
+                             on:keyup="_keyUpQuarterHandler(quarter.number, _options.currentYear)"
+                             attr:name="quarter-{{quarter.number}}"
+                             title="{{ quarter.tooltip }}">
+                            {{ quarter.fullName }}
+                        </div>
+                    </div>
+                </div>
+            </ws:if>
+        </ws:for>
+    </ws:for>
+</div>

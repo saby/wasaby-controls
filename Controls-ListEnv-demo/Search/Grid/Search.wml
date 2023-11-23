@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+<Controls-ListEnv.searchConnected:Input storeId="Search" />
+<div class="tw-flex">
+  <Controls.list:Container>
+    <Controls.grid:View
+        storeId="Search"
+        columns="{{_columns}}"/>
+  </Controls.list:Container>
+</div>
+</div>

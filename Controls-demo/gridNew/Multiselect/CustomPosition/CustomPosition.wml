@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper">
+    <Controls.grid:View
+            attr:class="controlsDemo__inline-flex"
+            storeId="MultiselectCustomPosition1"
+            columns="{{_columns}}"
+            on:selectedKeysChanged="_onSelectedKeysChanged()"
+            multiSelectPosition="custom"/>
+    <div style="padding-top: 10px;">Selected keys [{{ _selectedKeys.join(', ') }}]</div>
+</div>

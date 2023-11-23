@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center ws-align-items-center" data-qa="controlsDemo_capture">
+        <Controls.dateRange:Selector
+            datePopupType="shortDatePicker"
+            bind:startValue="_startValue"
+            bind:endValue="_endValue"
+            monthTemplate="Controls-demo/ShortDatePicker/MonthTemplate/resources/MonthTemplate"/>
+    </div>
+</div>

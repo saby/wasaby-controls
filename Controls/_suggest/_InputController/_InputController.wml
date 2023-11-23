@@ -1,0 +1,134 @@
+<div class="controls_suggestPopup_theme-{{_options.theme}} controls-SuggestV">
+    <ws:template name="suggestTpl">
+        <ws:partial template="{{'Controls/suggestPopup:_ListWrapper'}}"
+                    on:itemClick="_select()"
+                    on:markedKeyChanged="_markedKeyChangedHandler()"
+                    suggestDirectionChangedCallback="{{_suggestDirectionChangedCallback}}"
+                    templateName="{{_suggestTemplate.templateName}}"
+                    templateOptions="{{_suggestTemplate.templateOptions}}"
+                    emptyTemplate="{{_emptyTemplate}}"
+                    source="{{_options.source}}"
+                    navigation="{{_options.navigation}}"
+                    sorting="{{_options.sorting}}"
+                    searchParam="{{_options.searchParam}}"
+                    tabsSelectedKey="{{_tabsSelectedKey}}"
+                    layerName="{{_options.layerName}}"
+                    errorConfig="{{_errorConfig}}"
+                    tabsSelectedKeyChangedCallback="{{_tabsSelectedKeyChanged}}"
+                    name="suggestListWrapper"
+                    searchValue="{{_searchValue}}"
+                    loadResult="{{_loadResult}}"
+                    markerVisibility="{{_markerVisibility}}"
+                    filter="{{_filter}}"
+                    allowAdaptive="{{_options.allowAdaptive}}"
+        />
+    </ws:template>
+
+    <ws:template name="suggestWrapperTpl">
+        <div class="controls-Suggest__wrapper
+                    controls-Suggest__wrapper_{{content.stickyPosition.direction.vertical}}">
+            <ws:if data="{{_misspellingCaption}}">
+                <ws:partial template="{{'Controls/search:Misspell'}}" attr:class="controls-Suggest__Misspell" attr:style="width:{{content.suggestWidth}}px">
+                    <ws:caption>
+                        <span on:click="_misspellClick()" title="{{_misspellingCaption}}">{{_misspellingCaption}}</span>
+                    </ws:caption>
+                </ws:partial>
+            </ws:if>
+            <ws:if data="{{_suggestTemplate}}">
+                <Controls.LoadingIndicator attr:class="controls-Suggest__indicator" isGlobal="{{false}}" useSpinner="{{true}}" name="indicator">
+                    <Controls.event:Register name="inputKeydown" register="inputKeydown">
+                        <ws:partial template="suggestTpl" attr:style="{{!(_options.isAdaptive && _options.allowAdaptive) ? _getSuggestPopupStyles(content.suggestWidth)}}"/>
+                    </Controls.event:Register>
+                </Controls.LoadingIndicator>
+            </ws:if>
+            <div class="controls-Suggest__footer-wrapper"
+                if="{{_footerTemplate || _options.afterFooterTemplate}}">
+
+              <ws:if data="{{_options.addButtonClickCallback}}">
+                <Controls.Container.Async templateName="Controls/suggestPopup:AddButton">
+                  <ws:partial
+                      template="{{content.resolvedTemplate}}"
+                      on:click="_options.addButtonClickCallback()"
+                  />
+                </Controls.Container.Async>
+              </ws:if>
+                <ws:if data="{{_footerTemplate && !_errorConfig && (_options.suggestListsOptions || _options.source)}}">
+                   <div class="controls-Suggest__footer {{ _isDefaultFooter() ? 'ws-justify-content-center' : 'ws-justify-content-end'}}">
+                       <ws:partial template="{{ _footerTemplate.templateName }}"
+                                   scope="{{_footerTemplate.templateOptions}}"
+                                   tabsSelectedKey="{{_tabsSelectedKey}}"
+                                   searchResult="{{_searchResult}}"
+                                   moreCount="{{_moreCount}}">
+                           <ws:showSelectorButtonTemplate>
+                               <ws:if data="{{_footerTemplate.templateOptions.showSelectorButtonTemplate !== null}}">
+                                   <span class="controls-Suggest__showAllLink" on:click="_showAllClick()">
+                                       <span class="controls-Suggest__showAllLink-content">
+                                           <ws:if data="{{_footerTemplate.templateOptions.showSelectorButtonTemplate}}">
+                                               <ws:partial template="{{_footerTemplate.templateOptions.showSelectorButtonTemplate}}"/>
+                                           </ws:if>
+                                           <ws:else data="{{_footerTemplate.templateOptions.showSelectorButtonTemplate !== null}}">
+                                               {[Показать все]}
+                                           </ws:else>
+                                       </span>
+                                   </span>
+                               </ws:if>
+                               <ws:else>
+                                   <invisible-node />
+                               </ws:else>
+                           </ws:showSelectorButtonTemplate>
+                           <ws:showMoreButtonTemplate>
+                               <span if="{{_moreCount}}" class="controls-Suggest__moreLink" on:click="_moreClick()">
+                                   <span class="controls-Suggest__moreLink-content">{[Ещё]} {{_moreCount}}</span>
+                               </span>
+                           </ws:showMoreButtonTemplate>
+                       </ws:partial>
+                   </div>
+                </ws:if>
+                <ws:partial
+                    if="{{_options.afterFooterTemplate}}"
+                    template="{{_options.afterFooterTemplate}}"
+                    attr:class="controls-margin_right-m"
+                />
+            </div>
+        </div>
+    </ws:template>
+
+    <!-- TODO Нужно перевести на name после https://online.sbis.ru/opendoc.html?guid=403837db-4075-4080-8317-5a37fa71b64a-->
+    <ws:partial on:inputReady="inputReadyHandler()"
+                template="{{_options.content}}"
+                loading="{{_loading}}"
+                on:keydown="_keydown()"
+                on:valueChanged="_changeValueHandler()"
+                on:activated="_inputActivatedHandler()"
+                on:deactivated="_inputDeactivated()"
+                on:mousedown="_inputClicked()"
+                on:mouseenter="_inputMouseEnterHandler()"
+                on:mouseleave="_inputMouseLeaveHandler()"
+                on:inputCompleted="_inputCompletedHandler()"
+                attr:class="{{_suggestOpened ? ('controls-Suggest-Text_style_' + _options.suggestStyle)}} controls-Suggest__layout-input"/>
+
+    <ws:if data="{{_suggestOpened && (!_dependenciesDeferred || _dependenciesDeferred.isReady())}}">
+        <ws:partial template="{{_options.layerName}}"
+                    name="layerOpener"
+                    target="{{_options.suggestTarget || _container}}"
+                    filter="{{_filter}}"
+                    searchValue="{{_searchValue}}"
+                    showContent="{{_showContent}}"
+                    showFooter="{{!!_footerTemplate}}"
+                    misspellingCaption="{{_misspellingCaption}}"
+                    suggestPopupOptions="{{_options.suggestPopupOptions}}"
+                    suggestListsOptions="{{_options.suggestListsOptions}}"
+                    suggestWidth="{{_options.suggestWidth}}"
+                    tabsSelectedKey="{{_tabsSelectedKey}}"
+                    contrastBackground="{{_options.contrastBackground}}"
+                    errorConfig="{{_errorConfig}}"
+                    layerOptions="{{_options.layerOptions}}"
+                    closeButtonVisible="{{_options.closeButtonVisible}}"
+                    allowAdaptive="{{_options.allowAdaptive}}"
+                    on:close="_closeHandler()">
+            <ws:content>
+                <ws:partial template="suggestWrapperTpl"/>
+            </ws:content>
+        </ws:partial>
+    </ws:if>
+</div>

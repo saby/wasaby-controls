@@ -1,0 +1,25 @@
+<Controls.popupTemplate:Dialog headingCaption="{{_options.headingCaption}}">
+    <ws:bodyContentTemplate>
+        <Controls.lookupPopup:Controller selectedItems="{{_options.selectedItems}}">
+            <Controls.browser:Browser
+                source="{{_source}}"
+                keyProperty="{{_keyProperty}}"
+                selectedKeys="{{_options.selectedKeys}}"
+                excludedKeys="{{_options.excludedKeys}}"
+                multiSelectVisibility="hidden">
+                <Controls.lookupPopup:Container>
+                        <Controls.list:Container>
+                            <Controls.lookupPopup:ListContainer>
+                              <Controls.scroll:Container>
+                                <Controls.list:View displayProperty="title"
+                                                    keyProperty="{{_keyProperty}}"/>
+                                </Controls.scroll:Container>
+                            </Controls.lookupPopup:ListContainer>
+                        </Controls.list:Container>
+                </Controls.lookupPopup:Container>
+            </Controls.browser:Browser>
+        </Controls.lookupPopup:Controller>
+    </ws:bodyContentTemplate>
+</Controls.popupTemplate:Dialog>
+
+

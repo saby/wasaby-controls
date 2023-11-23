@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper">
+    <div class="controls-padding-3xl ws-flexbox ws-align-items-center ws-justify-content-between ws-flex-grow-1">
+        <ws:for data="stepStyle in _stepStyles">
+            <div class="controls-fontweight-bold"
+                 data-name="{{stepStyle + 'HintTarget'}}"
+                 data-qa="{{'controlsDemo-HintManager__' + stepStyle + 'Target'}}">
+                {{stepStyle}} hint target
+            </div>
+        </ws:for>
+    </div>
+</div>
