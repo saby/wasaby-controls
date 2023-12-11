@@ -1,0 +1,60 @@
+<div class="controls_suggestPopup_theme-{{_options.theme}} controls-Suggest_list {{_isSuggestListEmpty ? 'controls-Suggest_list_empty'}}">
+    <ws:if data="{{_options.isAdaptive && _options.allowAdaptive}}">
+        <div class="controls-padding_left-m controls-padding_right-m">
+            <Controls.search:InputContainer on:search="_handleSearch()" on:searchReset="_handleResetSearch()">
+                <Controls.search:Input bind:value="_searchValue"
+                                       inlineHeight="l"
+                                       contrastBackground="{{true}}"
+                                       attr:ws-autofocus="true"
+                                       attr:class="controls-Suggest_list__search"/>
+             </Controls.search:InputContainer>
+        </div>
+    </ws:if>
+    <ws:if data="{{_needRenderTabs(_options)}}">
+        <Controls.Container.Async templateName="Controls/tabs:Buttons">
+            <ws:partial template="{{'Controls/tabs:Buttons'}}"
+                        attr:class="controls-Suggest__tabs controls-Suggest__tabs_{{_layerName}}"
+                        attr:ws-no-focus="true"
+                        on:selectedKeyChanged="_tabsSelectedKeyChanged()"
+                        style="{{_options.tabsOptions.style || 'primary'}}"
+                        displayProperty="{{_options.tabsOptions.displayProperty || 'caption'}}"
+                        keyProperty="{{_options.tabsOptions.keyProperty || 'id'}}"
+                        source="{{_options.tabsOptions ? _options.tabsOptions.source}}"
+                        items="{{_tabsItems}}"
+                        markerThickness="{{_options.tabsOptions ? _options.tabsOptions.markerThickness}}"
+                        horizontalPadding="{{_options.tabsOptions ? _options.tabsOptions.horizontalPadding}}"
+                        selectedStyle="default"
+                        fontColorStyle="{{_options.tabsOptions ? _options.tabsOptions.fontColorStyle}}"
+                        itemTemplate="{{_options.tabsOptions ? _options.tabsOptions.itemTemplate}}"
+                        separatorVisible="{{_options.tabsOptions ? _options.tabsOptions.separatorVisible}}"
+                        selectedKey="{{_suggestListOptions.tabsSelectedKey || _options.tabsOptions.selectedKey}}"/>
+        </Controls.Container.Async>
+    </ws:if>
+
+    <ws:if data="{{_suggestListOptions.dialogMode || _sourceController}}">
+        <Controls.dataSource:error.Container name="list" viewConfig="{{_suggestListOptions.errorConfig}}">
+            <ws:partial template="{{_options.content}}"
+                        scope="{{_suggestListOptions}}"
+                        markedKey="{{_markedKey}}"
+                        sourceController="{{_sourceController}}"
+                        isSourceControllerFromContext="{{true}}"
+                        navigation="{{_navigation}}"
+                        itemsReadyCallback="{{_itemsReadyCallback}}"
+                        searchNavigationMode="readonly"
+                        backgroundStyle="suggestPopup"
+                        on:markedKeyChanged="_markedKeyChanged()">
+                <ws:searchBreadCrumbsItemTemplate>
+                    <Controls.Container.Async templateName="Controls/searchBreadcrumbsGrid:SearchBreadcrumbsItemTemplate">
+                        <ws:partial template="{{ content.resolvedTemplate }}"
+                                attr:class="controls-Suggest_breadCrumbs"
+                                highlightOnHover="{{false}}"
+                                scope="{{searchBreadCrumbsItemTemplate}}"
+                                marker="{{false}}"/>
+                    </Controls.Container.Async>
+                </ws:searchBreadCrumbsItemTemplate>
+            </ws:partial>
+        </Controls.dataSource:error.Container>
+    </ws:if>
+
+    <Controls.event:Listener event="inputKeydown" on:inputKeydown="_inputKeydown()"/>
+</div>

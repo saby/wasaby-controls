@@ -1,0 +1,7 @@
+<Controls.Container.Async templateName="Controls/menu:ItemTemplate">
+   <ws:partial
+           template="{{content.resolvedTemplate}}"
+           scope="{{_options}}"
+           treeItem="{{itemData.treeItem}}"
+   />
+</Controls.Container.Async>

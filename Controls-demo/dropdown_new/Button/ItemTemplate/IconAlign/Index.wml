@@ -1,0 +1,16 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper">
+      <div class="controls-margin_bottom-m controls-text-label">Controls.dropdown:Button с иконками справа</div>
+      <Controls.dropdown:Button
+              keyProperty="key"
+              caption="Создать"
+              viewMode="link"
+              icon="icon-AddButtonNew"
+              items="{{_items}}"
+              attr:class="controlsDemo-menuButton">
+         <ws:itemTemplate>
+            <ws:partial template="Controls/dropdown:ItemTemplate" iconAlign="right"/>
+         </ws:itemTemplate>
+      </Controls.dropdown:Button>
+   </div>
+</div>

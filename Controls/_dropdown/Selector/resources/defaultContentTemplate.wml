@@ -1,0 +1,39 @@
+<div class="controls-Dropdown__wrapper
+            {{fontSize ? 'controls-fontsize-' + fontSize : 'controls-Dropdown-fontsize' }}">
+   <div tabindex="0" class="controls-Dropdown__content-wrapper
+               {{(validationStatus === 'invalid' || validationStatus === 'invalidAccent') ? ' controls-invalid-container'}}
+               {{!readOnly && needOpenMenuOnClick !== false ? 'controls-Dropdown__text_enabled controls-Dropdown__item_style-' + style}}
+               {{isEmptyItem && !fontColorStyle ? 'controls-Dropdown__emptyItem' :
+               !style ? 'controls-Dropdown__defaultItem controls-text-' + (fontColorStyle && fontColorStyle !== 'link' ? fontColorStyle : !readOnly && needOpenMenuOnClick !== false ? 'link')}}"
+        data-qa="{{icon || !text ? 'controls-Dropdown__content'}}"
+        name="popupTarget">
+
+      <ws:if data="{{contentTemplate}}">
+         <ws:partial template="{{contentTemplate}}"
+                     text="{{text}}"
+                     hasMoreText="{{hasMoreText}}"
+                     iconSize="{{iconSize}}"
+                     icon="{{icon}}"
+                     item="{{item}}"
+                     style="{{style}}"
+                     attr:tabindex="0" />
+      </ws:if>
+      <ws:else>
+         <div if="{{icon}}" class="controls-Dropdown__icon
+          controls-icon_style-{{item.get('iconStyle') || iconStyle || 'secondary'}}"
+              title="{{tooltip}}">
+            <Controls.icon:Icon iconSize="{{iconSize}}"
+                                icon="{{icon}}" />
+         </div>
+         <div class="controls-Dropdown__text-wrapper controls-Dropdown__text-wrapper-{{_options.underline}}" title="{{tooltip}}">
+            <div if="{{!icon && text}}" class="controls-Dropdown__text" data-qa="controls-Dropdown__content">{{text}}</div>
+            <span class="controls-Dropdown__hasMoreText">{{hasMoreText}}</span>
+         </div>
+      </ws:else>
+
+      <ws:if data="{{(validationStatus === 'invalid' || validationStatus === 'invalidAccent') && !_options.readOnly}}">
+         <div class="{{'controls-invalid-border controls-' + validationStatus + '-border'}}"></div>
+      </ws:if>
+
+   </div>
+</div>

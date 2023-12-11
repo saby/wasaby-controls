@@ -1,0 +1,38 @@
+<div style="height: {{ _height }}; max-height: {{ _maxHeight }}; width: {{ _options.suggestWidth || _width }}"
+     class="controls_suggestPopup_theme-{{ _options.theme }}
+            controls_popupTemplate_theme-{{ _options.theme }}
+            controls-Suggest__suggestionsContainer
+            controls-background-{{_options.suggestPopupOptions.backgroundStyle || 'suggestPopup'}}
+            controls-Suggest__suggestionsContainer-inInput
+            {{ !_showContent ? 'ws-invisible' }} controls-Suggest__suggestionsContainer_direction-{{ _openDirection }}{{_options.isAdaptive ? '-adaptive'}}"
+     data-qa="{{_showContent ? 'controls-suggestPopup'}}">
+   <Controls.buttons:CloseButton name="closeButton" offset="null"
+      viewMode="{{_options.isAdaptive ? 'external' : 'linkButton'}}"
+      attr:class="{{_options.isAdaptive ? 'controls-SuggestPopup__closeButton_adaptive' : 'controls-SuggestPopup__closeButton'}}"
+      on:click="close()"
+   />
+   <div class="controls-Suggest__suggestionsInnerContainer">
+      <div class="controls-SuggestPopup__headerWrapper ws-flexbox ws-align-items-end ws-justify-content-between">
+         <div class="controls-SuggestPopup__header {{ _openDirection === 'left' ? 'ws-flex-row-reverse' }}">
+            <div style="width: {{ _inputWidth }}" class="controls-SuggestPopup__inputSpacer"></div>
+            <ws:partial
+               if="{{ _options.layerOptions.afterInputSuggestTemplate }}"
+               template="{{ _options.layerOptions.afterInputSuggestTemplate }}"
+               attr:class="controls-margin_left-{{ _openDirection === 'right' ? 's' }} {{ _openDirection === 'left' ? 'ws-flex-row-reverse' }}
+                           controls-SuggestPopup__afterInputSuggestTemplate_{{ _openDirection }}"
+            />
+         </div>
+         <div class="controls-SuggestPopup__closeSpacer"></div>
+      </div>
+      <Controls.event:Register name="resize" register="controlResize">
+         <Controls.scroll:Container content="{{ _options.content }}"
+            attr:class="controls-Suggest__scrollContainer {{ !this._options.layerOptions || _options.suggestListsOptions ?
+                        'controls-Suggest-offset-top' : 'controls-margin_bottom-3xs' }}"
+            shadowMode="js"
+         />
+      </Controls.event:Register>
+      <Controls.event:Listener event="controlResize"
+         on:controlResize="_resize()"
+      />
+   </div>
+</div>

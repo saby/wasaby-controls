@@ -1,0 +1,17 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center controlsDemo_fixedWidth650"
+         data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell">
+            <Controls.Chips:Control items="{{_items}}"
+                                   direction="horizontal"
+                                   bind:selectedKeys="_selectedKeys1"
+                                   attr:class="ControlsDemo-ButtonGroup__horizontal"/>
+        </div>
+        <div class="controlsDemo__cell controls-margin_left-xl">
+            <Controls.Chips:Control items="{{_items}}"
+                                   direction="vertical"
+                                   bind:selectedKeys="_selectedKeys2"
+                                   attr:class="ControlsDemo-ButtonGroup__vertical"/>
+        </div>
+    </div>
+</div>

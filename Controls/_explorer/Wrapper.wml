@@ -1,0 +1,6 @@
+<Controls.list:DataContainer
+    storeId="{{_options.storeId}}"
+    insideList="{{true}}"
+    scope="{{_options}}">
+    <Controls._explorer.View name="explorer" storeId="{{_options.storeId}}"/>
+</Controls.list:DataContainer>

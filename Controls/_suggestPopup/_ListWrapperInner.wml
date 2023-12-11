@@ -1,0 +1,18 @@
+<ws:template name="listTemplate">
+   <ws:partial
+      template="{{ _options.templateName }}"
+      searchValue="{{_options.searchValue}}"
+      scope="{{ _options.templateOptions }}"
+      tabsSelectedKey="{{_options.tabsSelectedKey || _options.templateOptions.tabsSelectedKey}}"
+      dialogMode="{{ _options.dialogMode }}"
+   />
+</ws:template>
+
+<ws:if data="{{ _options.dialogMode || !_options.loadResult }}">
+   <ws:partial template="listTemplate"/>
+</ws:if>
+<ws:else>
+   <Controls.context:ContextOptionsProvider value="{{ _options.loadResult }}">
+      <ws:partial template="listTemplate"/>
+   </Controls.context:ContextOptionsProvider>
+</ws:else>

@@ -1,0 +1,66 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow controlsDemo__flexRow_noWrap">
+    <div class="controlsDemo__wrapper controlsDemo_fixedWidth350">
+        <div class="controls-text-label"> Область "Отбираются". </div>
+        <Controls.filterPanelPopup:Sticky historyId="FILTER_HISTORY_EMPTY"
+                                          attr:data-qa="Controls-ListEnv-demo_FilterPanelPopup-Sticky__basic"
+                                          items="{{_basicItems}}" attr:style="height: auto;" attr:style="height: auto;">
+          <ws:topTemplate>
+              <Controls.buttons:Button viewMode="link"
+                                       icon="icon-Send"
+                                       attr:data-qa="controlsDemo_Buttons__linkIcon"/>
+            </ws:topTemplate>
+          </Controls.filterPanelPopup:Sticky>
+    </div>
+    <div class="controlsDemo__flexRow">
+        <div class="controlsDemo__wrapper controlsDemo_fixedWidth350">
+            <div class="controls-text-label"> Область "Можно отобрать". </div>
+            <Controls.filterPanelPopup:Sticky historyId="FILTER_HISTORY_EMPTY"
+                                              attr:data-qa="Controls-ListEnv-demo_FilterPanelPopup-Sticky__additional"
+                                              items="{{_extendedItems}}" attr:style="height: auto;" />
+        </div>
+
+        <div class="controlsDemo__wrapper controlsDemo_fixedWidth350">
+            <div class="controls-text-label"> Области "Отбираются" и "Можно отобрать". </div>
+            <Controls.filterPanelPopup:Sticky historyId="FILTER_HISTORY_EMPTY"
+                                              attr:data-qa="Controls-ListEnv-demo_FilterPanelPopup-Sticky__mixed"
+                                              items="{{_mixedItems}}" attr:style="height: auto;" />
+        </div>
+
+        <div class="controlsDemo__wrapper controlsDemo_fixedWidth350">
+            <div class="controls-text-label"> Области "Отбираются" и "Ранее отбирались". </div>
+            <Controls.filterPanelPopup:Sticky historyId="FILTER_HISTORY_WITH_ITEM"
+                                              attr:data-qa="Controls-ListEnv-demo_FilterPanelPopup-Sticky__history"
+                                              items="{{_simpleBasicItems}}" attr:style="height: auto;" />
+        </div>
+
+        <div class="controlsDemo__wrapper controlsDemo_fixedWidth350">
+            <div class="controls-text-label"> Области "Отбираются", "Можно отобрать" и "Ранее отбирались". </div>
+            <Controls.filterPanelPopup:Sticky historyId="FILTER_HISTORY"
+                                              attr:data-qa="Controls-ListEnv-demo_FilterPanelPopup-Sticky__mixed-all"
+                                              items="{{_mixedItems}}" attr:style="height: auto;" />
+        </div>
+
+        <div class="controlsDemo__wrapper">
+            <div class="controls-text-label"> Отображение в две колонки. </div>
+            <Controls.filterPanelPopup:Sticky historyId="FILTER_HISTORY_EMPTY"
+                                              attr:data-qa="Controls-ListEnv-demo_FilterPanelPopup-Sticky__horizontal"
+                                              orientation="horizontal"
+                                              items="{{_mixedItems}}" attr:style="height: auto;" />
+        </div>
+
+        <div class="controlsDemo__wrapper">
+            <div class="controls-text-label"> Отображение в две колонки с историей. </div>
+            <Controls.filterPanelPopup:Sticky historyId="FILTER_HISTORY"
+                                              attr:data-qa="Controls-ListEnv-demo_FilterPanelPopup-Sticky__history-horizontal"
+                                              orientation="horizontal"
+                                              items="{{_mixedItems}}" attr:style="height: auto;" />
+        </div>
+
+        <div class="controlsDemo__wrapper">
+            <div class="controls-text-label"> Скролл. </div>
+            <Controls.filterPanelPopup:Sticky historyId="FILTER_HISTORY"
+                                              attr:data-qa="Controls-ListEnv-demo_FilterPanelPopup-Sticky__scroll"
+                                              items="{{_mixedScrollItems}}" attr:style="height: 350px;" />
+        </div>
+    </div>
+</div>

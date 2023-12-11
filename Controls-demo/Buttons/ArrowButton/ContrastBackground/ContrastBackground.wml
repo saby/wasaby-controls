@@ -1,0 +1,10 @@
+<div class="controlsDemo__flexColumn controlsDemo__ml2">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label controlsDemo__maxWidth200">contrastBackground=true</div>
+        <Controls.buttons:ArrowButton direction="left" contrastBackground="{{true}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label controlsDemo__maxWidth200">contrastBackground=false</div>
+        <Controls.buttons:ArrowButton direction="left" contrastBackground="{{false}}"/>
+    </div>
+</div>

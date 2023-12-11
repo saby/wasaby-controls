@@ -1,0 +1,28 @@
+<Controls.dateRange:DateRangeSelectionController
+   attr:class="controls_calendar_theme-{{_options.theme}}"
+   name="selectionController"
+
+   selectionType="{{_options.selectionType}}"
+   quantum="{{_options.ranges}}"
+
+   startValue="{{_options.startValue}}"
+   endValue="{{_options.endValue}}"
+
+   on:rangeChanged="_onRangeChangedHandler()"
+   on:itemClick="_itemClickHandler()"
+>
+   <Controls._calendar.MonthView
+      attr:class="controls_datePicker_theme-{{_options.theme}}"
+      newMode="{{ _options.newMode }}"
+      month="{{_options.month}}"
+      showCaption="{{_options.showCaption}}"
+      showWeekdays="{{_options.showWeekdays}}"
+      dayFormatter="{{ _options.dayFormatter }}"
+      dayTemplate="{{_options.dayTemplate}}"
+      dayHeaderTemplate="{{ _options.dayHeaderTemplate }}"
+      daysData="{{_options.daysData}}"
+      monthViewModel="{{_monthViewModel}}"
+      mode="{{_options.mode}}"
+      selectionType="{{_options.selectionType}}"
+   />
+</Controls.dateRange:DateRangeSelectionController>

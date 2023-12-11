@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-ListEnv-default-theme"
+           id="e78d8d8a-8464-4703-9353-f30ade2588e1"
+           package="Wasaby"
+           responsible="Крайнов Д.О."
+           required="1"
+           version="1.00">
+  <description/>
+  <depends>
+    <module id="af50caf5-f84b-4b81-a19c-6f6618372dbd" name="Controls-default-theme"/>
+    <module id="854b94fc-ff37-4cbf-9721-cd1f4607a227" name="Controls-ListEnv"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <cluster_endpoints/>
+  <resources/>
+  <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

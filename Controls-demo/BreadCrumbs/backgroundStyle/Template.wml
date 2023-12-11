@@ -1,0 +1,24 @@
+<div class="controlsDemo__wrapper"
+     attr:style="width: 400px">
+    <div class="controls-text-label">backgroundStyle</div>
+    <div class="controlsDemo__cell controls-background-danger">
+        <Controls.breadcrumbs:HeadingPath keyProperty="id"
+                                          backgroundStyle="danger"
+                                          items="{{_items}}"/>
+    </div>
+    <div class="controlsDemo__cell controls-background-success">
+        <Controls.breadcrumbs:HeadingPath keyProperty="id"
+                                          backgroundStyle="success"
+                                          items="{{_items}}"/>
+    </div>
+    <div class="controlsDemo__cell controls-background-warning">
+        <Controls.breadcrumbs:HeadingPath keyProperty="id"
+                                          backgroundStyle="warning"
+                                          items="{{_items}}"/>
+    </div>
+    <div class="controlsDemo__cell controls-background-info">
+        <Controls.breadcrumbs:HeadingPath keyProperty="id"
+                                          backgroundStyle="info"
+                                          items="{{_items}}"/>
+    </div>
+</div>

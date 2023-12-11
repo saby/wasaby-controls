@@ -1,0 +1,51 @@
+<Controls.list:DataContainer storeId="PopupEditSimple"
+                             source="{{_viewSource}}"
+                             attr:class="controlsDemo__wrapper__padding-left"
+                             keyProperty="id"
+                             displayProperty="title">
+<div>
+    <div class="controls-text-label">Демонстрационный пример функционала для добавления записей в список,
+                                                                                           нажмите + что-бы начать</div>
+    <div class="demo-Grid__container"
+         on:itemClick="_clickHandler()"
+         attr:style="margin-top: 20px;">
+        <div class="ws-flexbox ws-align-items-baseline controlsDemo__wrapper__padding-left">
+            <Controls.buttons:Button attr:class="demo-PopupEditOpener__addRecord controlsDemo__mb1"
+                                     on:click="_addRecord()"
+                                     viewMode="filled"
+                                     icon="icon-AddButtonNew"
+                                     iconStyle="label"
+                                     iconSize="s"
+                                     tooltip="Добавить запись"
+                                     buttonStyle="unaccented"/>
+        </div>
+        <Controls.scroll:Container attr:class="demo-Grid__wrapper"
+                                   attr:test_name="selected_record">
+            <Controls.list:Container>
+                <Controls.grid:View
+                        name="grid"
+                        attr:class="demo-Grid__control demo-PopupEditOpener__grid"
+                        itemTemplate="wml!Controls-demo/List/Grid/DemoItem"
+                        columns="{{_gridColumns}}"
+                        header="{{_gridHeader}}">
+                    <ws:emptyTemplate>
+                        <ws:partial template="Controls/list:EmptyTemplate" topSpacing="xl" bottomSpacing="l">
+                            <ws:contentTemplate>
+                                <div class="ws-flexbox ws-align-items-center ws-justify-content-center">
+                                    Нет данных...
+                                </div>
+                            </ws:contentTemplate>
+                        </ws:partial>
+                    </ws:emptyTemplate>
+                </Controls.grid:View>
+            </Controls.list:Container>
+        </Controls.scroll:Container>
+    </div>
+    <Controls.popup:EditContainer>
+        <Controls.popup:Edit name="EditOpener"
+                             template="Controls-demo/Popup/Edit/docs/resources/Index">
+        </Controls.popup:Edit>
+    </Controls.popup:EditContainer>
+    <Controls.popup:Confirmation name="confirmation"/>
+</div>
+</Controls.list:DataContainer>

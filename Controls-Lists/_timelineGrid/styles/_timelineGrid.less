@@ -1,0 +1,271 @@
+.ControlsLists-timelineGrid__dynamicHeaderCell {
+   height: 40px;
+}
+
+@variants: primary, secondary, danger, success, warning, info, unaccented;
+.for(@variants, {
+  .ControlsLists-timelineGrid__EventSquircleRender_border_left-color_@{_item} {
+    box-shadow: ~' calc(var(--offset_3xs) * (-1)) 0 0 0 var(--@{_item}_border-color)'
+  }
+  .ControlsLists-timelineGrid__EventSquircleRender_border_right-color_@{_item} {
+    box-shadow: ~' calc(var(--offset_3xs)) 0 0 0 var(--@{_item}_border-color)'
+  }
+});
+
+.ControlsLists-timelineGrid__EventSquircleRender {
+   box-sizing: border-box;
+   height: 100%;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.ControlsLists-timelineGrid__EventSquircleRender_border-radius {
+   border-radius: var(--border-radius_xs);
+}
+
+.ControlsLists-timelineGrid__EventSquircleRender_padding {
+   padding-left: var(--offset_s);
+   padding-right: calc(var(--offset_m) + var(--offset_3xs) + var(--border-thickness));
+   padding-bottom: var(--offset_s);
+}
+
+.ControlsLists-timelineGrid__EventSquircleRender_icon {
+   margin-right: var(--offset_xs);
+}
+
+.ControlsLists-timelineGrid__EventSquircleRender_footer-absolute {
+   position: absolute;
+   right: var(--offset_m);
+   bottom: var(--offset_s);
+}
+
+.ControlsLists-timelineGrid__EventSquircleRender_description {
+   z-index: 1;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_white-space {
+   white-space: nowrap;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender {
+   box-sizing: border-box;
+   min-width: 100%;
+   max-width: 100%;
+   height: 100%;
+   display: flex;
+   align-items: baseline;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_stripes::after {
+   position: absolute;
+   inset: 0;
+   content: '\200b';
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_bg {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 0;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_stripes- {
+   @variants: danger, secondary, success, primary, warning, info, unaccented, pale;
+   .for(@variants, {
+    &@{_item}::after {
+      background-image: repeating-linear-gradient(-45deg,
+      ~'var(--@{_item}_active_same_background-color)' 0,
+      ~'var(--@{_item}_active_same_background-color)' var(--border-thickness),
+      transparent var(--offset_3xs),
+      transparent calc(var(--offset_3xs) + var(--border-thickness)));
+    }
+  });
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_bg-right_null {
+   right: 0;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_bg-right_default {
+   right: calc(var(--offset_3xs) + var(--border-thickness));
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_icon {
+   margin-right: var(--offset_3xs);
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_text {
+   margin-left: var(--offset_3xs);
+   margin-right: var(--offset_3xs);
+}
+
+.ControlsLists-timelineGrid__EventSquircleRender_text,
+.ControlsLists-timelineGrid__EventBlockRender_icon,
+.ControlsLists-timelineGrid__EventBlockRender_text {
+   pointer-events: auto;
+   z-index: 1;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_readOnly {
+   pointer-events: none;
+   cursor: default;
+
+   .ControlsLists-timelineGrid__EventBlockRender_icon,
+   .ControlsLists-timelineGrid__EventBlockRender_text {
+      pointer-events: none;
+      cursor: default;
+   }
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_overflow-ellipsis {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   width: 100%;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_intersection {
+   background-image: repeating-linear-gradient(
+      -45deg,
+      var(--timeline-event-hatch_color) 0,
+      var(--timeline-event-hatch_color) var(--border-thickness),
+      transparent var(--offset_3xs),
+      transparent calc(var(--offset_3xs) + var(--border-thickness))
+   );
+   position: absolute;
+   height: 100%;
+   top: 0;
+   z-index: 1;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_bevel-left-top {
+   clip-path: polygon(var(--offset_m) 0%, 100% 0%, 100% 100%, 0 100%, 0 100%);
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_bevel-right-top {
+   clip-path: polygon(0% 0%, calc(100% - var(--offset_m)) 0%, 100% 100%, 0 100%, 0 100%);
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_bevel-left-bottom {
+   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0 100%, var(--offset_m) 100%);
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_bevel-right-bottom {
+   clip-path: polygon(0% 0%, 100% 0%, calc(100% - var(--offset_m)) 100%, 0 100%, 0 100%);
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_bevel-left-top-right-top {
+   clip-path: polygon(
+      var(--offset_m) 0%,
+      calc(100% - var(--offset_m)) 0%,
+      100% 100%,
+      0 100%,
+      0 100%
+   );
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_bevel-left-top-right-bottom {
+   clip-path: polygon(
+      var(--offset_m) 0%,
+      100% 0%,
+      calc(100% - var(--offset_m)) 100%,
+      0 100%,
+      0 100%
+   );
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_bevel-left-bottom-right-top {
+   clip-path: polygon(
+      0% 0%,
+      calc(100% - var(--offset_m)) 0%,
+      100% 100%,
+      0 100%,
+      var(--offset_m) 100%
+   );
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_bevel-left-bottom-right-bottom {
+   clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      calc(100% - var(--offset_m)) 100%,
+      0 100%,
+      var(--offset_m) 100%
+   );
+}
+
+.ws-is-hover {
+   .ControlsLists-timelineGrid__EventBlockRender:hover
+      > .ControlsLists-timelineGrid__EventBlockRender_text {
+      text-decoration: underline;
+   }
+
+   .ControlsLists-timelineGrid__GoToTodayButton:hover.controls-text-secondary {
+      color: var(--secondary_hover_text-color);
+      border-top-color: var(--secondary_hover_text-color);
+   }
+}
+
+.ControlsLists-timelineGrid__EventLineRender {
+   height: 8px;
+   margin-top: 30px;
+   margin-bottom: 3px;
+   margin-left: 1px;
+   border-radius: 3px;
+   pointer-events: auto;
+   position: relative;
+   box-sizing: border-box;
+   z-index: 1;
+}
+
+@variants: danger, secondary, success, primary, warning, info, unaccented, pale;
+.for(@variants, {
+   .ControlsLists-timelineGrid__EventLineRender-border-top {
+      &-@{_item} {
+         border-top: 2px solid ~'var(--@{_item}_border-color)';
+      }
+   }
+
+   .ControlsLists-timelineGrid__EventLineRender-border-bottom {
+      &-@{_item} {
+         border-bottom: 2px solid ~'var(--@{_item}_border-color)';
+      }
+   }
+
+   .ControlsLists-timelineGrid__EventLineRender-border-left {
+      &-@{_item} {
+         border-left: 2px solid ~'var(--@{_item}_border-color)';
+      }
+   }
+
+   .ControlsLists-timelineGrid__EventLineRender-border-right {
+      &-@{_item} {
+         border-right: 2px solid ~'var(--@{_item}_border-color)';
+      }
+   }
+});
+
+.ControlsLists-timelineGrid__RangeSelectorComponent_buttons-gap {
+   gap: var(--offset_m);
+}
+
+.ControlsLists-timelineGrid__GoToTodayButton {
+   border-top: var(--border-thickness) solid var(--secondary_text-color);
+}
+
+// 7 дней в неделе и нужно, чтобы каждый день был выше чем ховер
+.ControlsLists-timelineGrid__headerCellContent {
+   z-index: 7;
+}
+
+.ControlsLists-timelineGrid__verticalSeparatorsMode_lines {
+   background-size: var(--dynamic-column_width) 20px;
+   background-position-x: var(--dynamic-column_gap); // -1px
+   background-image: repeating-linear-gradient(
+      to right,
+      var(--border-color),
+      var(--border-color) 1px,
+      transparent 1px,
+      transparent
+   );
+}

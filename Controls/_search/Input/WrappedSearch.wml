@@ -1,0 +1,5 @@
+<Controls.design:DesignOptionsConsumer scope="{{ _options }}">
+    <ws:designOptionsInnerComponent>
+        <Controls._search.Input.Search scope="{{ designOptionsInnerComponent }}" attr:class="controls-notFocusOnEnter" name="search" designContextValue="{{designOptionsInnerComponent.designContextValue}}" />
+    </ws:designOptionsInnerComponent>
+</Controls.design:DesignOptionsConsumer>

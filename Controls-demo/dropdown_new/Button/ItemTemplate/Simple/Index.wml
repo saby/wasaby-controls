@@ -1,0 +1,22 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper">
+      <div class="controls-margin_bottom-m controls-text-label">Controls.dropdown:Button с прикладным шаблоном</div>
+      <Controls.dropdown:Button
+              keyProperty="key"
+              caption="Город"
+              viewMode="link"
+              items="{{_items}}"
+              attr:class="controlsDemo-menuButton">
+         <ws:itemTemplate>
+            <ws:partial template="Controls/dropdown:ItemTemplate">
+               <ws:contentTemplate>
+                  <div class="ws-flexbox">
+                     <div>{{itemTemplate.item.contents.get('title')}} city</div>
+                     <span class="controls-text-label controls-margin_left-xs">{{itemTemplate.item.contents.get('code')}}</span>
+                  </div>
+               </ws:contentTemplate>
+            </ws:partial>
+         </ws:itemTemplate>
+      </Controls.dropdown:Button>
+   </div>
+</div>

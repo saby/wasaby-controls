@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper controlDemo_Tile_scale-with-actions">
+<Controls.treeTile:View
+        attr:class="demo-ScaleOnHover__actions"
+        tileMode="dynamic"
+        imageProperty="image"
+        itemActions="{{_itemActions}}"
+        tileScalingMode="outside"
+        storeId="ScaleOnHoverWithActions">
+        <ws:itemTemplate>
+                <ws:partial
+                        template="Controls/tile:ItemTemplate"
+                        hasTitle="{{itemTemplate.item.contents.isDocument}}"/>
+        </ws:itemTemplate>
+</Controls.treeTile:View>
+</div>

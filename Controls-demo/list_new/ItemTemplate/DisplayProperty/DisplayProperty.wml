@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth1400">
+    <Controls.list:View storeId="ItemTemplateDisplayProperty">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/list:ItemTemplate" displayProperty="description"/>
+        </ws:itemTemplate>
+    </Controls.list:View>
+</div>

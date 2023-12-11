@@ -1,0 +1,22 @@
+<Controls.Container.Async templateName="Controls/RadioGroup:Control">
+   <ws:partial template="{{content.resolvedTemplate}}"
+               scope="{{_options}}"
+               selectedKey="{{_options.propertyValue}}"
+               on:selectedKeyChanged="_selectedKeyChangedHandler()"
+               attr:class="controls-FilterEditors__RadioGroup controls-FilterEditors__RadioGroup-{{_options.editorsViewMode}}">
+       <ws:itemTemplate>
+           <Controls.Container.Async templateName="Controls/RadioGroup:ItemTemplate">
+               <ws:partial template="{{content.resolvedTemplate}}"
+                           scope="{{itemTemplate}}">
+                   <ws:contentTemplate>
+                       <div>
+                           <span class="controls-fontsize-{{_options.fontSize}}">
+                            {{itemTemplate.item[this._options.displayProperty]}}
+                           </span>
+                       </div>
+                   </ws:contentTemplate>
+              </ws:partial>
+           </Controls.Container.Async>
+       </ws:itemTemplate>
+   </ws:partial>
+</Controls.Container.Async>

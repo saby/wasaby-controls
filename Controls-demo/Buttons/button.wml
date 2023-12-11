@@ -1,0 +1,66 @@
+<div class="controlsDemo__wrapper controlsDemo__flex controlsDemo__flex-flow_wrap">
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Buttons/ViewModes/Index' }}">
+            <a href="{{content.href}}">Виды кнопок</a>
+        </Router.router:Reference>
+        <Controls-demo.Buttons.ViewModes.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-m">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Buttons/ButtonStyle/Index' }}">
+            <a href="{{content.href}}">Стили кнопок</a>
+        </Router.router:Reference>
+        <Controls-demo.Buttons.ButtonStyle.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-m">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Buttons/SizesAndHeights/Index' }}">
+            <a href="{{content.href}}">Размеры кнопок</a>
+        </Router.router:Reference>
+        <Controls-demo.Buttons.SizesAndHeights.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-m">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Buttons/Href/Index' }}">
+            <a href="{{content.href}}">Кнопка ссылка</a>
+        </Router.router:Reference>
+        <Controls-demo.Buttons.Href.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-m">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Buttons/CaptionPosition/Index' }}">
+            <a href="{{content.href}}">Расположение текста относительно иконки</a>
+        </Router.router:Reference>
+        <Controls-demo.Buttons.CaptionPosition.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-m">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Buttons/Icon/Index' }}">
+            <a href="{{content.href}}">Отображение иконки</a>
+        </Router.router:Reference>
+        <Controls-demo.Buttons.Icon.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-m">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Buttons/LoadingButton/Index' }}">
+            <a href="{{content.href}}">LoadingButton</a>
+        </Router.router:Reference>
+        <Controls-demo.Buttons.LoadingButton.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-m">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Buttons/MoreButton/Index' }}">
+            <a href="{{content.href}}">MoreButton</a>
+        </Router.router:Reference>
+        <Controls-demo.Buttons.MoreButton.Index/>
+    </div>
+</div>

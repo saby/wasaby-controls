@@ -1,0 +1,63 @@
+.controls-PropertyGrid__gridLayout_editor-caption {
+   display: flex;
+   min-width: 0;
+   max-width: 100%;
+   position: relative;
+   font-size: var(--font-size_m);
+   color: var(--label_text-color);
+   box-sizing: border-box;
+   padding-right: 0;
+}
+
+.controls-PropertyGrid__gridLayout__itemsContainer {
+   display: grid;
+}
+
+.controls-PropertyGrid__gridLayout_group {
+   display: flex;
+   align-items: baseline;
+}
+
+.controls-PropertyGrid__gridLayout_editor {
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   min-width: 0;
+   max-width: 100%;
+}
+
+.controls-PropertyGrid__gridLayout_editor-caption_ellipsis {
+   min-width: 0;
+}
+
+.controls-PropertyGrid__cell_editing,
+.controls-PropertyGrid__cell_highlightOnHover {
+   background-color: var(--hover_background-color);
+   cursor: pointer;
+}
+
+.controls-PropertyGrid__caption_cell_editing {
+   padding-right: var(--offset_m);
+}
+
+.ws-is-hover {
+   .controls-PropertyGrid__gridLayout_showActions.controls-itemActionsV {
+      visibility: visible;
+      opacity: 1;
+   }
+
+   .controls-PropertyGrid__cell_highlightOnHover .controls-ListView__multiSelect__borderCircle {
+      stroke: var(--border-color);
+   }
+}
+
+.controls-PropertyGrid__cell_checkbox {
+   min-width: var(--click-area_width_checkbox);
+   max-width: var(--click-area_width_checkbox);
+   //https://online.sbis.ru/opendoc.html?guid=b8ddb93e-7d44-4ded-9ed4-89b3d7d0d13c
+   z-index: 1;
+}
+
+.controls-PropertyGrid__cell_checkbox .controls-ListView__checkbox_position-default {
+   margin-top: var(--checkbox_offset-top_list);
+}

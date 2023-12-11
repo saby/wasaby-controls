@@ -1,0 +1,10 @@
+<ws:partial template="Controls/grid:ResultColumnTemplate" scope="{{ _options }}">
+    <ws:contentTemplate>
+        <Controls.baseDecorator:Number value="{{ column.config.result }}"
+								   useGrouping="{{true}}"
+								   fontWeight="bold"
+								   fontColorStyle="secondary"
+								   fontSize="m"
+		/>
+    </ws:contentTemplate>
+</ws:partial>

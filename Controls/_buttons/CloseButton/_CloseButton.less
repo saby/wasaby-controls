@@ -1,0 +1,186 @@
+.controls-CloseButton__close {
+   display: inline-block;
+}
+
+.controls-CloseButton__close__wrapper {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+
+   &::before {
+      content: '\200b';
+   }
+}
+
+.controls-CloseButton__close_size-s {
+   width: var(--inline_height_closeButton);
+   height: var(--inline_height_closeButton);
+}
+
+.controls-CloseButton__close_size-m {
+   width: var(--inline_height_l);
+   height: var(--inline_height_l);
+}
+
+.controls-CloseButton__close_size-l {
+   width: var(--inline_height_xl);
+   height: var(--inline_height_xl);
+}
+
+.controls-CloseButton__close__icon_toolButton,
+.controls-CloseButton__close__icon_functionalButton,
+.controls-CloseButton__close__icon_external,
+.controls-CloseButton__close__icon_externalWide {
+   fill: var(--secondary_icon-color);
+   height: var(--icon-size_2xs);
+   width: var(--icon-size_2xs);
+   display: inline-block;
+}
+
+.controls-CloseButton__close__icon_external,
+.controls-CloseButton__close__icon_externalWide {
+   fill: var(--contrast_icon-color);
+}
+
+.controls-CloseButton__close__icon_link,
+.controls-CloseButton__close__icon_linkButton {
+   fill: var(--secondary_icon-color);
+   height: var(--icon-size_2xs);
+   width: var(--icon-size_2xs);
+}
+
+.controls-CloseButton__close_toolButton {
+   background-color: transparent;
+   border-color: var(--border-color);
+   border-width: 0;
+   border-radius: 50%;
+   box-shadow: none;
+}
+
+.controls-CloseButton__close_toolButton_offset {
+   margin-right: var(--offset_s);
+}
+
+.controls-CloseButton__close_functionalButton {
+   border-width: 0;
+   border-radius: 50%;
+   box-shadow: none;
+   background-color: var(--pale_contrast_background-color);
+}
+
+.controls-CloseButton__close_functionalButton_offset {
+   margin-right: var(--air_m);
+}
+
+.controls-CloseButton__close_external,
+.controls-CloseButton__close_externalWide {
+   border-width: 0;
+   background-color: var(--translucent_background-color);
+}
+
+.controls-CloseButton__close_external {
+   border-radius: 50%;
+}
+
+.controls-CloseButton__close_externalWide {
+   min-width: calc(var(--inline_height_l) * 2);
+   width: 100%;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   padding-right: calc((var(--inline_height_l) - var(--icon-size_2xs)) / 2);
+   border-radius: var(--border-radius_button);
+}
+
+.controls-CloseButton__close_toolButton,
+.controls-CloseButton__close_functionalButton,
+.controls-CloseButton__close_external,
+.controls-CloseButton__close_externalWide {
+   border-style: solid;
+   box-sizing: border-box;
+}
+
+.controls-CloseButton__close_link,
+.controls-CloseButton__close_linkButton {
+   font-family: var(--icon_font-family_m);
+}
+
+.controls-CloseButton__close_link_offset,
+.controls-CloseButton__close_linkButton_offset {
+   margin-right: var(--air_l);
+}
+
+.ws-is-hover {
+   .controls-CloseButton__close__icon_link:hover,
+   .controls-CloseButton__close__icon_linkButton:hover {
+      fill: var(--secondary_hover_icon-color);
+   }
+
+   .controls-CloseButton__close_link:hover,
+   .controls-CloseButton__close_linkButton:hover {
+      .controls-CloseButton__close__icon_link,
+      .controls-CloseButton__close__icon_linkButton {
+         fill: var(--secondary_hover_icon-color);
+      }
+   }
+
+   //button and icon must be hovered at the same time
+   .controls-CloseButton__close_toolButton:hover {
+      background-color: var(--background-color_contrast_hover_button_toolButton);
+
+      .controls-CloseButton__close__icon_toolButton {
+         fill: var(--secondary_hover_icon-color);
+      }
+   }
+
+   .controls-CloseButton__close_functionalButton:hover {
+      background-color: var(--pale_hover_contrast_background-color);
+
+      .controls-CloseButton__close__icon_functionalButton {
+         fill: var(--secondary_hover_icon-color);
+      }
+   }
+
+   .controls-CloseButton__close_external:hover,
+   .controls-CloseButton__close_externalWide:hover {
+      background-color: var(--translucent_hover_background-color);
+   }
+
+   .controls-CloseButton__close_toolButton_transparent:hover {
+      background-color: var(--translucent_hover_background-color_light);
+   }
+}
+
+.ws-is-no-touch,
+.ws-is-touch {
+   .controls-CloseButton__close_external:active,
+   .controls-CloseButton__close_externalWide:active {
+      background-color: var(--translucent_active_background-color);
+      fill: var(--contrast_icon-color);
+   }
+
+   .controls-CloseButton__close_functionalButton:active {
+      box-shadow: var(--box-shadow_button);
+      background-color: var(--pale_active_contrast_background-color);
+   }
+
+   /* stylelint-disable no-descending-specificity */
+   .controls-CloseButton__close__icon_toolButton:active,
+   .controls-CloseButton__close__icon_functionalButton:active {
+      /* stylelint-enable no-descending-specificity */
+      fill: var(--secondary_hover_icon-color);
+   }
+
+   /* stylelint-disable no-descending-specificity */
+   .controls-CloseButton__close__icon_link:active,
+   .controls-CloseButton__close__icon_linkButton:active {
+      /* stylelint-enable no-descending-specificity */
+      fill: var(--secondary_hover_icon-color);
+   }
+
+   .controls-CloseButton__close_toolButton:active {
+      background-color: var(--background-color_contrast_active_button_toolButton);
+      box-shadow: var(--box-shadow_button);
+   }
+}

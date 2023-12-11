@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-DataEnv" kaizen_zone="997e2040-c20b-4857-8580-c283c4b85f85" 
+           id="8298f3a2-1964-11ed-861d-0242ac120002"
+           package="Wasaby"
+           responsible="Михайлов С.Е." responsible_uuid="7d931920-ff90-48ff-96f6-636a5617869d"
+           required="1"
+           version="1.00">
+  <description>Модуль содержит контролы контекстов и контролы получения данных.</description>
+    <depends>
+      <module id="37e402f1-2fb0-4b73-81c5-113cf94dbf1c" name="WasabyLoader"/>
+      <module id="686f183d-0bcc-4732-b4e4-6016c2a67a0f" name="Types"/>
+      <module id="636177e5-4d75-44fa-9173-977dc90ff111" name="Env"/>
+      <module id="a857d050-c754-4d39-90ec-fca5e2ddf022" name="Router"/>
+    </depends>
+  <load_after/>
+  <parameters/>
+  <resources/>
+  <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

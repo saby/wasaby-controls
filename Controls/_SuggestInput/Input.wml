@@ -1,0 +1,59 @@
+<Controls.suggest:_InputController
+   on:choose="_choose()"
+   on:deactivated="_deactivated()"
+   on:suggestDirectionChanged="_suggestDirectionChanged()"
+   searchStartCallback="{{_searchStart}}"
+   searchEndCallback="{{_searchEnd}}"
+   searchErrorCallback="{{_searchError}}"
+   suggestTemplate="{{_options.suggestTemplate}}"
+   footerTemplate="{{_options.footerTemplate}}"
+   minSearchLength="{{_options.minSearchLength}}"
+   suggestListsOptions="{{_options.suggestListsOptions}}"
+   source="{{_options.source}}"
+   keyProperty="{{_options.keyProperty}}"
+   historyId="{{_options.historyId}}"
+   trim="{{_options.trim}}"
+   searchParam="{{_options.searchParam}}"
+   searchDelay="{{_options.searchDelay}}"
+   searchValueTrim="{{_options.searchValueTrim}}"
+   navigation="{{_options.navigation}}"
+   autoDropDown="{{(_options.isAdaptive && _options.allowAdaptive) || _options.autoDropDown}}"
+   emptyTemplate="{{_options.emptyTemplate}}"
+   layerName="Controls/suggestPopup:__PopupLayer"
+   filter="{{_options.filter}}"
+   sorting="{{_options.sorting}}"
+   value="{{_options.value}}"
+   dataLoadCallback="{{_options.dataLoadCallback}}"
+   selectorTemplate="{{_options.selectorTemplate}}"
+   suggestPopupOptions="{{_options.suggestPopupOptions}}"
+   closeButtonVisible="{{_options.closeButtonVisible}}"
+   bind:suggestState="_suggestState">
+   <Controls.input:Text
+      name="input"
+      scope="{{_options}}"
+      size="{{undefined}}"
+      fontStyle="{{undefined}}"
+      leftFieldTemplate="{{_options.leftFieldTemplate}}"
+      fontWeight="{{_options.fontWeight}}"
+      borderVisibility="{{_suggestState && _suggestDirection === 'down' && !_options.isAdaptive ? 'hidden' : _options.borderVisibility}}"
+      on:tagClick="_notifyHandler('tagClick')"
+      on:tagHover="_notifyHandler('tagHover')"
+      on:valueChanged="_changeValueHandler()">
+      <ws:rightFieldTemplate>
+         <ws:if data="{{!_options.readOnly && (_searchState || _options.value)}}">
+            <div if="{{_searchState}}"
+                  class="controls-SuggestV__loader" data-qa="controls-SuggestV__loader"></div>
+            <div if="{{_options.value}}"
+                  class="controls-SuggestV__clear controls-icon icon-CloseNew"
+                  on:click="_clearClick()"
+                  on:mousedown="_clearMousedown()"
+                  title="{[Очистить]}"
+                  attr:ws-no-focus="true"
+                  data-qa="Search__resetButton"></div>
+         </ws:if>
+         <ws:if data="{{_options.rightFieldTemplate}}">
+            <ws:partial template="{{_options.rightFieldTemplate}}"/>
+         </ws:if>
+      </ws:rightFieldTemplate>
+   </Controls.input:Text>
+</Controls.suggest:_InputController>

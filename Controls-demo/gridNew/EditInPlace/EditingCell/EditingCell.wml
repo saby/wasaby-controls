@@ -1,0 +1,25 @@
+<div class="controlsDemo__cell">
+    <Controls.scroll:Container>
+      <div class="controlsDemo__inline-flex">
+        <Controls.grid:View
+            name="list"
+            storeId="EditInPlaceEditingCell"
+            dataLoadCallback="{{_dataLoadCallback}}"
+            resultsPosition="top"
+            itemActionsType="outside"
+            itemActions="{{_itemActions}}"
+            attr:class="controlsDemo__inline-flex controlsDemo__maxWidth800"
+            on:afterEndEdit="_updateResults()"
+            columns="{{_columns}}">
+          <ws:editingConfig>
+            <ws:Object editOnClick="{{true}}" autoAdd="{{true}}"/>
+          </ws:editingConfig>
+          <ws:footerTemplate>
+            <ws:partial template="Controls/grid:FooterTemplate">
+              <Controls.list:AddButton caption="Add record" on:click="_beginAdd()" class="test_add_record_1"/>
+            </ws:partial>
+          </ws:footerTemplate>
+        </Controls.grid:View>
+      </div>
+    </Controls.scroll:Container>
+</div>

@@ -1,0 +1,67 @@
+<div>
+   <Controls.scroll:Container attr:style="height: 200px">
+      <div class="wrapper" attr:style="margin-bottom: 200px">
+         <div class="controls-InfoBoxDemo-rows">
+            <div class="controls-InfoBoxDemo-heading">Наведите на иконку</div>
+            <Controls.popup:InfoboxTarget trigger="hover">
+               <ws:content>
+                  <div attr:style="display:inline-block; vertical-align:bottom;" attr:class="ControlsDemo-InfoBox__hover">
+                     <Controls.buttons:Button
+                             viewMode="linkButton"
+                             fontColorStyle="link"
+                             icon="icon-EmptyMessage"
+                             iconSize="m"
+                             iconStyle="secondary" />
+                  </div>
+               </ws:content>
+               <ws:template>
+                  <div>Это всплывающая подсказка по ховеру.</div>
+               </ws:template>
+            </Controls.popup:InfoboxTarget>
+         </div>
+
+         <div class="controls-InfoBoxDemo-rows">
+            <div class="controls-InfoBoxDemo-heading">Нажмите на иконку</div>
+            <Controls.popup:InfoboxTarget trigger="click">
+               <ws:content>
+                  <div attr:class="ControlsDemo-InfoBox__click">
+                     <Controls.buttons:Button
+                             viewMode="linkButton"
+                             fontColorStyle="link"
+                             icon="icon-EmptyMessage"
+                             iconSize="m"
+                             iconStyle="secondary" />
+                  </div>
+               </ws:content>
+               <ws:template>
+                  <div>Это всплывающая подсказка по клику.</div>
+               </ws:template>
+            </Controls.popup:InfoboxTarget>
+         </div>
+
+         <div class="controls-InfoBoxDemo-rows">
+            <div class="controls-InfoBoxDemo-heading">Нажмите два раза на иконку</div>
+            <Controls.popup:InfoboxTarget horizontalPadding="null" trigger="demand" on:dblclick="_dblClickHandler()" name="demandInfobox">
+               <ws:content>
+                  <div attr:class="ControlsDemo-InfoBox__doubleClick">
+                     <Controls.buttons:Button
+                             viewMode="linkButton"
+                             fontColorStyle="link"
+                             icon="icon-EmptyMessage"
+                             iconSize="m"
+                             iconStyle="secondary"/>
+                  </div>
+               </ws:content>
+               <ws:template>
+                  <div class="ws-flexbox ws-flex-column">
+                     <span>Всплывающая подсказка</span>
+                     <span>Открыта вручную. Закроется через 5 секунд.</span>
+                     <span>У этого шаблона отсутствуют отступы.</span>
+                  </div>
+
+               </ws:template>
+            </Controls.popup:InfoboxTarget>
+         </div>
+      </div>
+   </Controls.scroll:Container>
+</div>

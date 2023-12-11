@@ -1,0 +1,13 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper">
+      <Controls.dropdown:Button
+              keyProperty="key"
+              caption="Create"
+              viewMode="link"
+              items="{{_items}}"
+              menuBackgroundStyle="secondary"
+              menuHoverBackgroundStyle="secondary"
+              attr:class="controlsDemo-menuButton_menuBackgroundStyle">
+      </Controls.dropdown:Button>
+   </div>
+</div>

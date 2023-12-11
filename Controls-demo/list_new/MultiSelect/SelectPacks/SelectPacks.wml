@@ -1,0 +1,17 @@
+<div class="controlsDemo__wrapper controlsDemo__maxWidth500">
+    <Controls.browser:Browser
+                              storeId="MultiSelectSelectPacks"
+                              selectionViewMode="partial"
+                              bind:selectedKeys="_selectedKeys"
+                              bind:excludedKeys="_excludedKeys">
+        <div>
+            <Controls.operations:Panel source="{{ null }}" items="{{ null }}"/>
+
+            <Controls.scroll:Container attr:class="controlsDemo__height500">
+                <Controls.list:Container>
+                    <Controls.list:View multiSelectVisibility="visible"/>
+                </Controls.list:Container>
+            </Controls.scroll:Container>
+        </div>
+    </Controls.browser:Browser>
+</div>

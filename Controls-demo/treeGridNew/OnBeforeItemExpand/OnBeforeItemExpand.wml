@@ -1,0 +1,6 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500 controlsDemo_wrapper-treeGrid-base-treeGridView">
+    <Controls.treeGrid:View
+            storeId="OnBeforeItemExpand"
+            columns="{{_columns}}"
+            on:beforeItemExpand="_onBeforeItemExpand()"/>
+</div>

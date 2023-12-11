@@ -1,0 +1,12 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__ml3">
+      <div class="controls-text-label">Поиск в плоском списке</div>
+      <Controls.dropdown:Button
+              caption="Site"
+              source="{{_source}}"
+              keyProperty="key"
+              displayProperty="title"
+              searchParam="title"
+      />
+   </div>
+</div>
