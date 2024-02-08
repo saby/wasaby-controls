@@ -1,0 +1,83 @@
+<div class="controlsDemo__wrapper  controlsDemo__flex controlsDemo__flex-flow_wrap">
+    <div class="controlsDemo__cell demo-chips__base controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/Chips/Base/Index' }}">
+            <a href="{{content.href}}">Базовая настройка чипсов</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Chips.Base.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-chips__horizontal controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/Chips/Direction/Index' }}">
+            <a href="{{content.href}}">Настройка ориентации</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Chips.Direction.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-chips__displayProperty controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/Chips/displayProperty/Index' }}">
+            <a href="{{content.href}}">Настройка поля, значение которого будет отображаться</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Chips.displayProperty.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-chips__ItemTemplate controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/Chips/ItemTemplate/Index' }}">
+            <a href="{{content.href}}">Настройка пользовательского шаблона для отображения счетчика</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Chips.ItemTemplate.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-chips__allowEmptySelection controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/Chips/AllowEmptySelection/Index' }}">
+            <a href="{{content.href}}">Запрет сброса значения при множественном выборе</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Chips.AllowEmptySelection.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-chips__Multiline controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/Chips/Multiline/Index' }}">
+            <a href="{{content.href}}">Отображение кнопок в несколько строк</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Chips.Multiline.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-chips__ContrastBackground controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/Chips/ContrastBackground/Index' }}">
+            <a href="{{content.href}}">Настройка фона</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Chips.ContrastBackground.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-chips__Icon controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/Chips/Icon/Index' }}">
+            <a href="{{content.href}}">Настройка отображения иконок</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Chips.Icon.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-chips__MultiSelect controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/Chips/MultiSelect/Index' }}">
+            <a href="{{content.href}}">Настройка одиночного/множественного выбора</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Chips.MultiSelect.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-chips__SelectedKey controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/Chips/SelectedKey/Index' }}">
+            <a href="{{content.href}}">Настройка выбранных элементов</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Chips.SelectedKey.Index/>
+    </div>
+</div>
+

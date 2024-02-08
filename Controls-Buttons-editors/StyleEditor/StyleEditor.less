@@ -1,0 +1,79 @@
+.controls-styleEditor {
+   display: flex;
+   flex-wrap: wrap;
+   gap: var(--offset_xs);
+   min-width: 1px;
+}
+
+.controls-styleEditor-item {
+   width: var(--inline_height_m);
+   height: var(--inline_height_m);
+   border-radius: 50%;
+   cursor: pointer;
+   position: relative;
+   box-sizing: border-box;
+}
+
+.controls-styleEditor-item_style-primary {
+   background: var(--primary_contrast_background-color);
+   border-color: var(--primary_border-color);
+}
+
+.controls-styleEditor-item_style-secondary {
+   background: var(--secondary_contrast_background-color);
+   border-color: var(--secondary_border-color);
+}
+
+.controls-styleEditor-item_style-danger {
+   background: var(--danger_contrast_background-color);
+   border-color: var(--danger_border-color);
+}
+
+.controls-styleEditor-item_style-warning {
+   background: var(--warning_contrast_background-color);
+   border-color: var(--warning_border-color);
+}
+
+.controls-styleEditor-item_style-success {
+   background: var(--success_contrast_background-color);
+   border-color: var(--success_border-color);
+}
+
+.controls-styleEditor-item_style-info {
+   background: var(--info_contrast_background-color);
+   border-color: var(--info_border-color);
+}
+
+.controls-styleEditor-item_style-unaccented {
+   background: var(--unaccented_contrast_background-color);
+   border-color: var(--unaccented_border-color);
+}
+
+.controls-styleEditor-item_style-pale {
+   background: var(--pale_contrast_background-color);
+   border-color: var(--pale_border-color);
+}
+
+.controls-styleEditor-item_style-default {
+   background: var(--background-color);
+   border: var(--border-thickness) solid var(--border-color);
+}
+
+.controls-styleEditor-item_selected::before {
+   content: '\200b';
+   position: absolute;
+   top: calc(var(--border-thickness) * -2);
+   left: calc(var(--border-thickness) * -2);
+   width: calc(var(--inline_height_m) + var(--border-thickness) * 4);
+   height: calc(var(--inline_height_m) + var(--border-thickness) * 4);
+   border-width: var(--border-thickness);
+   border-radius: inherit;
+   border-color: inherit;
+   border-style: solid;
+   box-sizing: border-box;
+}
+
+.controls-styleEditor-item_style-default.controls-styleEditor-item_selected::before {
+   top: calc(var(--border-thickness) * -3);
+   left: calc(var(--border-thickness) * -3);
+}

@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell controlsDemo_fixedWidth500 controls-margin_bottom-l">
+            <Controls.RadioGroup:Control items="{{_items}}"
+                                        multiline="{{true}}"
+                                        direction="horizontal"
+                                        bind:selectedKeys="_selectedKeys1"/>
+        </div>
+        <Controls.scroll:Container scrollOrientation="horizontal"
+                                   scrollbarVisible="{{false}}"
+                                   attr:class="controlsDemo_fixedWidth500">
+            <div class="controlsDemo__cell">
+                <Controls.RadioGroup:Control items="{{_items}}"
+                                            multiline="{{false}}"
+                                            direction="horizontal"
+                                            bind:selectedKeys="_selectedKeys2"/>
+            </div>
+        </Controls.scroll:Container>
+    </div>
+</div>

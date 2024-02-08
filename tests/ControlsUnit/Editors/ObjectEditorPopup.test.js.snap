@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls-editors/_propertyGridPopup/PropertyGridPopup PropertyGridPopup корректно рендерится 1`] = `
+<div>
+  <div
+    class="controls_popupTemplate_theme-default controls-DialogTemplate controls-DialogTemplate_backgroundStyle-default controls-PopupTemplate__margin-horizontal controls-PopupTemplate__roundBorder controls_border-radius-s ws-window-draggable controls_objectEditorPopup_WidgetPanel"
+    data-qa="controls_SiteEditorBase_panel"
+    tabindex="0"
+  >
+    <div
+      class="controls-DialogTemplate__top-area controls-background-unaccented controls-DialogTemplate__top-area_size-m controls-DialogTemplate__top-area-draggable  controls-PopupTemplate__roundBorder_top controls_border-radius-s undefined tw-cursor-move"
+      tabindex="0"
+    >
+      <div
+        class="controls-DialogTemplate__top-area-content"
+      >
+        <div
+          class="controls-DialogTemplate__headerContentTemplate controls-DialogTemplate__headerContentTemplate_margin-right-null"
+        >
+          <div
+            class="objectEditorPopupHeaderTitle"
+          >
+            <div
+              class="objectEditorPopupHeaderTitle__caption"
+            >
+              <span
+                class="controls-Header__caption  controls-Header__fontweight-default controls-fontsize-xl controls-Header-fontsize-xl controls-Header_readonly controls-Header__caption_style-default controls-DialogTemplate__caption_text"
+                title="Кнопка"
+              >
+                Кнопка
+              </span>
+            </div>
+          </div>
+          <span
+            class="controls-BaseButton controls-Button_link controls-Button_radius-link controls-Button_hoverIcon controls-Button_clickable controls-Button_link_style-secondary controls-Button_bg-same controls-fontsize-m controls-Button_link__wrapper-fontsize-m controls-Button_link_shadow-none controls-notFocusOnEnter controls_objectEditorPopup_WidgetPanelHeader__reset controls-inlineheight-l controls-Button-inlineheight-l controls-Button_link_l"
+            data-qa="controls_objectEditorPopup_WidgetPanelHeader__reset"
+            tabindex="0"
+            title="Сбросить"
+          >
+            <span
+              class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-link controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center controls-Button__wrapper_link_l"
+            >
+              <i
+                class="controls-Button__icon controls-BaseButton__icon controls-icon_size-s controls-icon_style-label controls-icon icon-Restore"
+                tabindex="0"
+              />
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        name="$$wasaby$async$loading"
+      />
+    </div>
+    <div
+      class="controls-DialogTemplate__content-area controls-DialogTemplate_backgroundStyle-default controls-PopupTemplate__roundBorder_bottom  controls_border-radius-s"
+    >
+      <span
+        class="controls-BaseButton controls-Button_filled controls-Button_radius-filled controls-Button_hoverIcon controls-Button_clickable controls-Button_filled_style-success controls-Button_bg-contrast controls-Button_circle_height-l controls-fontsize-m controls-Button_button__wrapper-fontsize-m controls-Button_filled_shadow-small controls-notFocusOnEnter controls_objectEditorPopup_WidgetPanel__apply controls-inlineheight-l controls-Button-inlineheight-l controls-Button_filled_l"
+        data-qa="siteEditorBase_WidgetPanelHeader__apply"
+        tabindex="0"
+        title="Применить"
+      >
+        <span
+          class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-filled controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center controls-Button__wrapper_filled_l"
+        >
+          <i
+            class="controls-Button__icon controls-BaseButton__icon controls-icon_size-m controls-icon_style-contrast controls-icon icon-Yes"
+            tabindex="0"
+          />
+        </span>
+      </span>
+      <div
+        class="controls-Scroll-Container controls-Scroll controls_scroll_theme-default controls-Scroll-Container_start-position ObjectEditorPopup_Widget__scrollContainer"
+        tabindex="0"
+      >
+        <div
+          class="controls-Scroll-ContainerBase controls_scroll_theme-default controls-Scroll__content  controls-Scroll__content_hideNativeScrollbar controls-Scroll__content_hideNativeScrollbar_ff-ie-edge controls-Scroll-ContainerBase__scroll_vertical controls-Scroll-ContainerBase__scrollPosition-regular controls-Scroll-Container__base controls-BlockLayout__blockGroup undefined controls-Scroll__backgroundShadow controls-Scroll__background-Shadow_style-default controls-Scroll__background-Shadow_top-auto_bottom-auto_style-default"
+          data-qa="controls-Scroll__content"
+          name="content"
+          tabindex="0"
+        >
+          <div
+            class="controls-Scroll-ContainerBase__content controls-Scroll-ContainerBase__content__vertical controls-Scroll-ContainerBase__content-direction_column"
+            name="userContent"
+          >
+            <div
+              class="controls_PropertyGrid_objectEditorGrid PropertyGridPopup__PropertyGridPopup"
+              data-qa="controls_objectEditorGrid"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

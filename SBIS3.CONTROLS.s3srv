@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<service db_template="" id="aef88aad-0641-45fc-97b1-9be2b61c8878" initial_db_count="0" initial_replica_count="0" name="SBIS3.CONTROLS" postgresql_version="" system_name="sbis3_controls" use_replica="0" version="1.01">
+
+  <description/>
+
+  <items>
+    <ui_module id="3735da8d-a287-4fc1-a22d-7d00a7732ce8" name="SBIS3.CONTROLS" url="./SBIS3.CONTROLS/SBIS3.CONTROLS.s3mod"/>
+    <ui_module id="f6fdf353-3ab3-4dbb-8671-01c2b418bf0a" name="Controls" url="./Controls/Controls.s3mod"/>
+    <ui_module id="6ae4f1d6-9ecf-4805-a98c-65e47906eedd" name="Tailwind" url="$(SBISPlatformSDK)/ui-modules/Tailwind/Tailwind.s3mod"/>
+    <ui_module id="50f80520-0983-4049-b17a-d893bce91d69" name="ErrorHandling" url="$(SBISPlatformSDK)/ui-modules/ErrorHandling/ErrorHandling.s3mod"/>
+    <ui_module id="1b17efbd-538b-4cfe-889f-24c60150c779" name="ErrorHandlingSimple" url="$(SBISPlatformSDK)/ui-modules/ErrorHandlingSimple/ErrorHandlingSimple.s3mod"/>
+    <ui_module id="7dafab78-3d12-49ab-920e-023e469d4069" name="Controls-Lists-default-theme" url="./Controls-Lists-default-theme/Controls-Lists-default-theme.s3mod"/>
+    <ui_module id="e78d8d8a-8464-4703-9353-f30ade2588e1" name="Controls-ListEnv-default-theme" url="./Controls-ListEnv-default-theme/Controls-ListEnv-default-theme.s3mod"/>
+    <ui_module id="3b705300-9d6c-4e98-a79f-079c05bf6f48" name="Controls-Lists" url="./Controls-Lists/Controls-Lists.s3mod"/>
+    <ui_module id="854b94fc-ff37-4cbf-9721-cd1f4607a227" name="Controls-ListEnv" url="./Controls-ListEnv/Controls-ListEnv.s3mod"/>
+    <ui_module id="8298f3a2-1964-11ed-861d-0242ac120002" name="Controls-DataEnv" url="./Controls-DataEnv/Controls-DataEnv.s3mod"/>
+  </items>
+  <directoryes/>
+
+  <templates/>
+
+</service>

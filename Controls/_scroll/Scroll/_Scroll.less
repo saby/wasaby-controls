@@ -1,0 +1,270 @@
+@import '_contentEnvironmentZIndex';
+
+.controls-Scroll__content-overflowScrolling {
+   // to fix flickering on IOS after opening popup's
+   // for example: https://online.sbis.ru/opendoc.html?guid=12dcb776-5968-4495-b800-34e153d90284
+   perspective: 1000;
+   backface-visibility: hidden;
+}
+
+// Use "regular" scrolling, where the content immediately ceases to scroll when you remove your finger from the touchscreen.
+.controls-Scroll_webkitOverflowScrollingAuto .controls-Scroll__content-overflowScrolling {
+   -webkit-overflow-scrolling: auto;
+}
+
+// Use momentum-based scrolling, where the content continues to scroll for a while after finishing the scroll gesture and removing your finger from the touchscreen.
+.controls-Scroll_webkitOverflowScrollingTouch
+   .controls-Scroll
+   .controls-Scroll__content-overflowScrolling {
+   -webkit-overflow-scrolling: touch;
+}
+
+.controls-VScrollbar_vertical {
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   z-index: @z-index_Scroll-contentEnvironment;
+}
+
+.controls-VScrollbar_horizontal {
+   position: absolute;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   z-index: @z-index_Scroll-contentEnvironment;
+}
+
+.controls-Scroll__scrollbar_hidden {
+   visibility: hidden;
+}
+
+.controls-Scroll__userContent {
+   flex-shrink: 0;
+}
+
+/**
+ * Данный модификатор предназначен для ускорения работы во время прокрутки.
+ * Вешать его следует только на контейнер, который по нашему предположению должен скролиться.
+ * В противном случае это вызовет тормоза вместо оптимизации.
+ * Подробнее https://developer.mozilla.org/ru/docs/Web/CSS/will-change.
+ */
+
+.controls-Scroll__content_possibleScroll:hover {
+   will-change: scroll-position;
+}
+
+.controls-Scroll__shadow {
+   z-index: @z-index_Scroll-contentEnvironment;
+   position: absolute;
+   pointer-events: none;
+}
+
+.ws-is-desktop-safari {
+   // На MacOS Safari если при подгрузке новых элементов списка поменяется ширина колонок в таблице, то появятся пробелы
+   // в тенях. Применяем аппаратное ускорение.
+   .controls-Scroll__shadow {
+      transform: translate3d(0, 0, 0);
+   }
+}
+
+.controls-Scroll__shadow_horizontal {
+   left: 0;
+   right: 0;
+   height: var(--shadow_thickness_scroll);
+
+   &-rounded {
+      left: var(--shadow-blur_a);
+      right: var(--shadow-blur_a);
+      height: var(--inline_height_xs);
+   }
+}
+
+.controls-Scroll__shadow_vertical {
+   top: 0;
+   bottom: 0;
+   width: var(--shadow_thickness_scroll);
+
+   &-rounded {
+      top: var(--shadow-blur_a);
+      bottom: var(--shadow-blur_a);
+      width: var(--inline_height_xs);
+   }
+}
+
+.controls-Scroll__shadow_top {
+   top: 0;
+
+   &-rounded {
+      top: calc(-1 * var(--inline_height_xs));
+   }
+}
+
+.controls-Scroll__shadow {
+   &_top,
+   &_bottom,
+   &_left,
+   &_right {
+      &_style-default-rounded {
+         box-shadow: 0 0 var(--shadow-blur_a) var(--shadow-color_a);
+         border-radius: calc(var(--inline_height_xs) / 2);
+      }
+   }
+}
+
+.controls-Scroll__shadow_top_style-default {
+   background: linear-gradient(
+      to bottom,
+      var(--shadow_start-color_scroll),
+      var(--shadow_end-color_scroll)
+   );
+}
+
+.controls-Scroll__shadow_bottom {
+   bottom: 0;
+
+   &-rounded {
+      bottom: calc(-1 * var(--inline_height_xs));
+   }
+}
+
+.controls-Scroll__shadow_bottom_style-default {
+   background: linear-gradient(
+      to top,
+      var(--shadow_start-color_scroll),
+      var(--shadow_end-color_scroll)
+   );
+}
+
+.controls-Scroll__shadow_left {
+   left: 0;
+
+   &-rounded {
+      left: calc(-1 * var(--inline_height_xs));
+   }
+}
+
+.controls-Scroll__shadow_right {
+   right: 0;
+
+   &-rounded {
+      right: calc(-1 * var(--inline_height_xs));
+   }
+}
+
+.controls-Scroll__shadow_left_style-default {
+   background: linear-gradient(
+      to right,
+      var(--shadow_start-color_scroll),
+      var(--shadow_end-color_scroll)
+   );
+}
+
+.controls-Scroll__shadow_right_style-default {
+   background: linear-gradient(
+      to left,
+      var(--shadow_start-color_scroll),
+      var(--shadow_end-color_scroll)
+   );
+}
+
+.controls-Scroll__shadow_left_style-custom,
+.controls-Scroll__shadow_right_style-custom {
+   box-sizing: border-box;
+   width: var(--shadow_l_thickness_scroll);
+}
+
+.controls-Scroll__shadow_left_style-custom {
+   background: linear-gradient(
+      to right,
+      var(--shadow_l_start-color_scroll),
+      var(--shadow_l_end-color_scroll)
+   );
+   border-left: var(--border-thickness) solid var(--shadow_l_border_color_scroll);
+}
+
+.controls-Scroll__shadow_right_style-custom {
+   background: linear-gradient(
+      to left,
+      var(--shadow_l_start-color_scroll),
+      var(--shadow_l_end-color_scroll)
+   );
+   border-right: var(--border-thickness) solid var(--shadow_l_border_color_scroll);
+}
+
+.controls-Scroll__content_hideNativeScrollbar::-webkit-scrollbar {
+   width: 0;
+   // It's Magic. Only these two styles together allows to hide the scroll on the iPad.
+   -webkit-appearance: none;
+   display: none;
+}
+
+.controls-Scroll__scroll_vertical {
+   overflow-y: scroll;
+   overflow-x: hidden;
+}
+
+// Chrome после обновления с 83 до 84 версии по умолчанию стал overflow-anchor: visible, из-за этого происходит
+// браузерный подскролл к низу вновь добавляемого контента.
+// https://online.sbis.ru/opendoc.html?guid=8673c14b-da6e-444b-86d1-d1a997555bfe
+// https://bugs.chromium.org/p/chromium/issues/detail?id=1105785
+.ws-is-firefox,
+.ws-is-chrome {
+   .controls-Scroll__scroll_vertical {
+      overflow-anchor: none;
+   }
+}
+
+.controls-Scroll__scroll_verticalHorizontal {
+   overflow-y: scroll;
+   overflow-x: scroll;
+}
+
+.controls-Scroll__content_hidden {
+   overflow: hidden;
+}
+
+.controls-Scroll__paging {
+   position: absolute;
+   z-index: @z-index_Scroll-contentEnvironment;
+   bottom: var(--scrollpaging_offset-vertical_list);
+
+   &-adaptive {
+      position: fixed;
+      // todo постараться найти менее костыльное решение
+      // Не получится просто указать bottom для паддинга, так как если есть навигация, то она перекроет paging.
+      // Поэтому добавляем переменную от навигации
+      bottom: calc(var(--horizontal_item_height_NavigationPanels-Accordion, -1) + var(--border-thickness) + var(--scrollpaging_offset-vertical_list));
+   }
+
+   &_position-right {
+      right: var(--scrollpaging_offset-horizontal_list);
+   }
+
+   &_position-left {
+      left: var(--scrollpaging_offset-horizontal_list);
+   }
+}
+
+.controls-Scroll__content_paging {
+   padding-bottom: calc(var(--inline_height_l) + var(--padding-vertical_paging) * 2);
+}
+
+// Класс для css теней скролл контейнера в мастере
+.controls-Scroll__background-Shadow_style-master {
+   background-image: linear-gradient(
+         var(--master_item_background-color_list) 25%,
+         rgba(255, 255, 255, 0)
+      ),
+      linear-gradient(rgba(255, 255, 255, 0), var(--master_item_background-color_list) 75%),
+      linear-gradient(to bottom, var(--shadow_start-color_scroll), var(--shadow_end-color_scroll)),
+      linear-gradient(to top, var(--shadow_start-color_scroll), var(--shadow_end-color_scroll));
+}
+
+// Класс для css теней скролл контейнера в блоке с контрастным фоном
+.controls-Scroll__background-Shadow_style-contrast {
+   background-image: linear-gradient(var(--contrast_background-color) 25%, rgba(255, 255, 255, 0)),
+      linear-gradient(rgba(255, 255, 255, 0), var(--contrast_background-color) 75%),
+      linear-gradient(to bottom, var(--shadow_start-color_scroll), var(--shadow_end-color_scroll)),
+      linear-gradient(to top, var(--shadow_start-color_scroll), var(--shadow_end-color_scroll));
+}

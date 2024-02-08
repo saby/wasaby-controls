@@ -1,0 +1,14 @@
+<ws:partial template="Controls/_popupTemplate/Notification/Template/Base"
+            closeButtonVisible="{{_options.closeButtonVisible}}"
+            closeButtonViewMode="{{ _options.closeButtonViewMode }}"
+            backgroundStyle="{{_options.style || _options.borderStyle || _options.backgroundStyle }}">
+    <ws:bodyContentTemplate>
+        <div class="controls-Notification__simpleTemplate" on:mousedown="_mousedownHandler()">
+            <div class="{{ _getIcon()}} controls-Notification__simpleTemplate-icon
+                            controls-Notification__simpleTemplate-icon-size
+                            controls-icon_style-{{_iconStyle}}">
+            </div>
+            <div class="controls-Notification__simpleTemplate-message">{{_options.text}}</div>
+        </div>
+    </ws:bodyContentTemplate>
+</ws:partial>

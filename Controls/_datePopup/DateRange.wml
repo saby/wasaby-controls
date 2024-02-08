@@ -1,0 +1,70 @@
+<div data-qa="controls-PeriodDialog-DateRange" class="controls_datePicker_theme-{{_options.theme}} controls-PeriodDialog-DateRange">
+   <div class="controls-PeriodDialog-DateRange__header">
+      <ws:if data="{{ !_options.isAdaptive }}">
+         <div data-qa="controls-PeriodDialog-DateRange__year"
+              class="controls-PeriodDialog-DateRange__year {{ _isCurrentYear(_monthsPosition.getFullYear()) ? 'controls-PeriodDialog-DateRange__year_currentYear' }}">
+            {{_monthsPosition.getFullYear()}}
+         </div>
+      </ws:if>
+      <div class="controls-PeriodDialog-DateRange-header-weekdays">
+         <ws:for data="weekday in _weekdaysCaptions">
+            <span class="controls-PeriodDialog-DateRange-header-weekdays-{{ weekday.weekend ? 'weekend' : 'workday'}}">
+               {{ weekday.caption }}
+            </span>
+         </ws:for>
+      </div>
+   </div>
+   <div class="controls-PeriodDialog-DateRange__body">
+      <ws:if data="{{ !_options.isAdaptive }}">
+         <Controls._datePopup.DateRangeMonthList
+                 startValue="{{ _monthStartValue }}"
+                 endValue="{{ _monthEndValue }}"
+                 selectionBaseValue="{{ _options.selectionBaseValue }}"
+                 monthSelectionProcessing="{{ _options.monthSelectionProcessing }}"
+                 dateRangeHovered="{{ _dateRangeHovered }}"
+                 monthsHovered="{{ _monthsHovered }}"
+                 on:scrollToMonth="_scrollToMonth()"
+                 on:mouseenter="_monthsMouseEnterHandler()"
+                 on:mouseleave="_monthsMouseLeaveHandler()"
+                 on:positionChanged="_onMonthsPositionChanged()"
+                 bind:position="_monthsPosition"/>
+         <div class="controls-PeriodDialog-DateRange__separator"></div>
+      </ws:if>
+      <!-- virtualPageSize="{{4}}" - with a value of 4, scrolling the mouse wheel over the years panel works faster. -->
+      <Controls.compactDatePicker:View
+              _date="{{ _options._date }}"
+              holidaysGetter="{{ _options.holidaysGetter }}"
+              width="none"
+              shouldPositionBelow="{{ _options.shouldPositionBelow }}"
+              attr:class="controls-PeriodDialog-DateRangeItem__monthList
+                          {{_options.isAdaptive && !!_options.slidingPanelOptions ? 'controls-CompactDatePicker_isAdaptive'}}"
+              topShadowVisibility="visible"
+              shadowStyle="datePopup"
+              selectionType="{{ _options.selectionType }}"
+              ranges="{{ _options.ranges }}"
+              roundBorder="{{ false }}"
+              hovered="{{ _monthsHovered }}"
+              position="{{ _position }}"
+              headerVisible="{{ false }}"
+              startValue="{{ _getDateRangeStartValue() }}"
+              endValue="{{ _getDateRangeEndValue() }}"
+              isDayAvailable="{{ _options.isDayAvailable }}"
+              dayTemplate="{{ _options.dayTemplate }}"
+              on:hoveredChanged="_onDateRangeHoveredChanged()"
+              on:startValueChanged="_proxyEvent()"
+              on:endValueChanged="_proxyEvent()"
+              bind:selectionProcessing="_dateRangeSelectionProcessing"
+              on:onBeforeSelectionStarted="_dateRangeSelectionStarted()"
+              on:rangeChanged="_rangeChangedHandler()"
+              on:itemClick="_proxyEvent()"
+              on:positionChanged="_onPositionChanged()"
+      >
+         <ws:captionTemplate>
+            <ws:partial template="{{ captionTemplate.defaultMonthTemplateCaption }}" caption="{{ _formatCaption(captionTemplate.date) }}"/>
+         </ws:captionTemplate>
+         <ws:monthTemplate>
+            <ws:partial template="{{ monthTemplate.defaultMonthTemplate}}" attr:class="controls-PeriodDialog-DateRangeItem__monthList__item"/>
+         </ws:monthTemplate>
+      </Controls.compactDatePicker:View>
+   </div>
+</div>

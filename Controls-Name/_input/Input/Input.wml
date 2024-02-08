@@ -1,0 +1,136 @@
+<Controls.dragnDrop:Container
+        name="dragNDrop"
+        on:deactivated="_deactivatedContainerHandler()"
+        on:activated="_activatedContainerHandler()"
+        on:customdragStart="_dragStartHandler()"
+        on:customdragEnd="_dragNDropHandler()"
+        on:dragMove="_dragNDropHandler()">
+    <Controls.validate:Container name="validator" attr:class="controls_Name_theme-{{_options.theme}}">
+        <ws:content>
+            <Controls.input:Render
+                    on:deactivated="_deactivatedHandler()"
+                    validationStatus="{{_options.validationStatus}}"
+                    size="{{_options.size}}"
+                    tagStyle="{{_options.tagStyle}}"
+                    multiline="{{false}}"
+                    fontStyle="{{_options.fontStyle}}"
+                    borderVisibility="{{_options.borderVisibility}}"
+                    fontColorStyle="{{_options.fontColorStyle}}"
+                    borderStyle="{{_options.borderStyle}}"
+                    fontSize="{{_options.fontSize}}"
+                    fontWeight="{{_options.fontWeight}}"
+                    inlineHeight="{{_options.inlineHeight}}"
+                    contrastBackground="{{_options.contrastBackground}}"
+                    on:valueChanged="_stoppedEvent()"
+                    on:inputCompleted="_stoppedEvent()"
+                    textAlign="{{_options.textAlign}}">
+                <ws:content>
+                    <div name="container"
+                         class="Name-Input__container ws-flexbox Name-Input__field_padding-{{_options.contrastBackground !== false ? 'xs' : 'null'}}">
+                        <ws:if data="{{ !_drawInputs }}">
+                            <div class="controls-BaseControl__fakeFocusElem" tabindex="0"></div>
+                        </ws:if>
+                        <ws:for data="index, inputId in _options.inputOrder">
+                            <ws:for data="input in _inputs">
+                                <ws:if data="{{ input.id === inputId }}">
+                                    <ws:if data="{{ !_drawInputs || _options.readOnly }}">
+                                        <ws:if data="{{!_options.readOnly || (_options.readOnly && (input.model.displayValue || _options.placeholderVisibility === 'empty'))}}">
+                                    <span class="Name-Input__field Name-Input__field_{{input.id}} Name-Input__text {{!input.model.displayValue? 'Name-Input__text-placeholder'}}
+                                             {{_options.readOnly ? 'Name-Input__text_offset-readOnly' : 'Name-Input__text_offset'}}
+                                             {{input.marked ? ' Name-Input__input_mark'}}"
+                                          title="{{input.model.displayValue || (!_options.readOnly ? input.placeholder)}}">
+                                    {{input.model.displayValue || ((!_options.readOnly || _options.placeholderVisibility === 'empty') ? input.placeholder)}}</span>
+                                        </ws:if>
+                                    </ws:if>
+                                    <ws:else>
+                                        <div class="Name-Input__inputWrapper ws-flex-shrink-{{ input.model.displayValue !== '' ? '1': '0'}}
+                                            {{(index === _options.inputOrder.length - 1) ? ' Name-Input__inputWrapper_last'}}"
+                                             name="{{input.id}}Wrapper">
+                                            <div class="Name-Input__fakeField Name-Input__text">
+                                                <ws:if data="{{(input.model.displayValue || '').trim()}}">
+                                                    <div name="{{input.id}}FakeField"
+                                                         class="{{_options.readOnly ? 'Name-Input__text_offset-readOnly' : 'Name-Input__text_offset'}}">
+                                                        {{input.model.displayValue}}
+                                                    </div>
+                                                </ws:if>
+                                                <ws:else data="{{input.placeholder}}">
+                                                    <div name="{{input.id}}FakeField"
+                                                         class="Name-Input__text {{_options.readOnly ? 'Name-Input__text_offset-readOnly' : 'Name-Input__text_offset'}}">
+                                                        {{!_options.readOnly ? input.placeholder}}
+                                                    </div>
+                                                </ws:else>
+                                            </div>
+                                            <Controls.input:Field
+                                                    name="ws-{{input.id}}"
+                                                    attr:name="ws-{{input.id}}"
+                                                    model="{{input.model}}"
+                                                    attr:autocomplete="{{_autocomplete}}"
+                                                    attr:title="{{input.model.displayValue}}"
+                                                    attr:class="Name-Input__field Name-Input__field_{{input.id}} Name-Input__input {{input.marked && input.model.displayValue ? 'Name-Input__input_mark'}}"
+                                                    on:input="_inputChangeHandler(input)"
+                                                    on:keydown="_keyPressHandler(input)"
+                                                    on:focus="_inputFocusHandler(input)"
+                                                    on:paste="_inputPasteHandler(input)"
+                                                    on:valueChanged="_stoppedEvent()"
+                                                    on:inputCompleted="_stoppedEvent()"
+                                            />
+                                            <ws:if data="{{!input.model.displayValue}}">
+                                                <div class="Name-Input__text
+                                         Name-Input__inputPlaceholder Name-Input__text-placeholder
+                                         {{input.marked ? 'Name-Input__input_mark'}}
+                                         {{_options.readOnly ? 'Name-Input__text_offset-readOnly' : 'Name-Input__text_offset'}}">
+                                                    {{!_options.readOnly ? input.placeholder}}
+                                                </div>
+                                            </ws:if>
+                                        </div>
+                                    </ws:else>
+                                    <ws:if data="{{ index < _options.inputOrder.length - 1 && !_options.readOnly}}">
+                                <span class="Name-Input__separator {{ !_options.readOnly ? 'Name-Input__separator_active' }}"
+                                      name="separator_{{input.id}}"
+                                      title="{{input.placeholder}}"
+                                      on:mouseenter="_separatorHoverHandler(input, true)"
+                                      on:mouseout="_separatorHoverHandler(input, false)"
+                                      on:mousedown="_startDragHandler(input)"
+                                      on:touchstart="_startDragHandler(input)"></span>
+                                    </ws:if>
+                                </ws:if>
+                            </ws:for>
+                        </ws:for>
+                        <div class="Name-Input__buffer Name-Input__text Name-Input__text_offset" name="buffer"></div>
+                    </div>
+                </ws:content>
+                <ws:rightFieldWrapper>
+                    <ws:if data="{{_options.showReorderButton}}">
+                        <Controls.popupTargets:InfoboxTarget
+                                attr:class="ws-align-self-center"
+                                alignment="end"
+                                targetSide="bottom">
+                            <ws:templateOptions order="{{_inputOrderString}}">
+                            </ws:templateOptions>
+                            <ws:template>
+                                <div class="Name-Input__hint controls_Name_theme-{{_options.theme}}">{[Данные введены в
+                                    свободном порядке. Исправить на общепринятый порядок "Фамилия Имя Отчество"?]}
+                                </div>
+                            </ws:template>
+                            <ws:content>
+                                <div>
+                                    <Controls.buttons:Button attr:class="Name-Input__reorder"
+                                                             viewMode="link"
+                                                             inlineHeight="{{_options.reorderButtonSize}}"
+                                                             icon="icon-Refresh Name-input__reorder_action-hover"
+                                                             iconSize="{{_options.reorderButtonSize}}"
+                                                             iconStyle="unaccented"
+                                                             on:click="_buttonReorderClickHandler()">
+                                    </Controls.buttons:Button>
+                                </div>
+                            </ws:content>
+                        </Controls.popupTargets:InfoboxTarget>
+                    </ws:if>
+                    <ws:if data="{{_options.rightFieldTemplate}}">
+                        <ws:partial template="{{_options.rightFieldTemplate}}" scope="{{_options}}"/>
+                    </ws:if>
+                </ws:rightFieldWrapper>
+            </Controls.input:Render>
+        </ws:content>
+    </Controls.validate:Container>
+</Controls.dragnDrop:Container>

@@ -1,0 +1,32 @@
+<div class="controlsDemo__wrapper">
+<div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-previewTemplate_roundBorder-null">
+  <Controls.treeTile:View
+      storeId="listData3"
+      tileMode="static"
+      tileScalingMode="none"
+      actionMenuViewMode="preview"
+      actionMode="adaptive"
+      itemActions="{{_itemActions}}"
+      tileWidth="250"
+      imageProperty="image"
+      roundBorder="{{_roundBorder}}">
+    <ws:itemTemplate>
+      <ws:partial
+          template="Controls/tile:PreviewTemplate"
+          titleStyle="{{itemTemplate.item.contents.titleStyle}}"
+          gradientType="{{itemTemplate.item.contents.gradientType}}"
+          gradientColor="{{itemTemplate.item.contents.gradientColor}}"
+          titleLines="{{itemTemplate.item.contents.titleLines}}"
+          hasTitle="{{itemTemplate.item.contents.isDocument}}"
+          scope="{{itemTemplate}}">
+        <ws:topTemplate>
+          <div>{{itemTemplate.item.contents.additionalText}}</div>
+        </ws:topTemplate>
+        <ws:bottomRightTemplate>
+          <div>{{itemTemplate.item.contents.counter}}</div>
+        </ws:bottomRightTemplate>
+      </ws:partial>
+    </ws:itemTemplate>
+  </Controls.treeTile:View>
+</div>
+</div>

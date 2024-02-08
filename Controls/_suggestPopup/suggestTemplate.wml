@@ -1,0 +1,7 @@
+<ws:partial template="wml!Controls/_suggestPopup/WrappedList">
+  <Controls.explorer:View scope="{{_options}}"
+                          columns="{{_options.columns || _defaultColumns}}"
+                          viewMode="search"
+                          on:itemClick="_itemClick()">
+  </Controls.explorer:View>
+</ws:partial>

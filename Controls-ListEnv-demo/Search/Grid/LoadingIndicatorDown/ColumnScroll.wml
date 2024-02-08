@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper controlsDemo__width800px">
+<Controls-ListEnv.searchConnected:Input storeId="IndicatorDownColumnScroll" />
+<Controls.scroll:Container attr:class="controlsDemo__inline-flex"
+                           attr:style="width: 700px; height: 500px;">
+  <Controls.grid:View
+      storeId="IndicatorDownColumnScroll"
+      name="list"
+      header="{{_header}}"
+      columns="{{_columns}}"
+      rowSeparatorSize="s"
+      columnScroll="{{true}}"/>
+</Controls.scroll:Container>
+<Controls.buttons:Button attr:data-qa="continue-scenario" caption="Продолжить сценарий" on:click="_continueScenario()"/>
+<br/>
+</div>

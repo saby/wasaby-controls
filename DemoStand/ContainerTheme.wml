@@ -1,0 +1,6 @@
+<Router.router:Route mask="theme/:theme">
+   <ws:partial template="{{_options.content}}" scope="{{_options}}"
+               theme="{{_convertTheme(content.theme || _options.theme)}}"
+               attr:class="controls-Zoom"
+               attr:style="zoom: {{_zoomValue}}"/>
+</Router.router:Route>

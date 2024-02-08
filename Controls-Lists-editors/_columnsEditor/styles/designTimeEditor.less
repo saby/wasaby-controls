@@ -1,0 +1,53 @@
+.ControlsListsEditors_columnsDesignTime-markup_container {
+   display: grid;
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   pointer-events: all;
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element {
+   position: relative;
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element-highlight {
+   position: absolute;
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element-close_button {
+   position: absolute;
+   top: 0;
+   right: 0;
+   cursor: pointer;
+   visibility: hidden;
+   z-index: 1;
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element-add_button {
+   position: absolute;
+   bottom: 50%;
+   z-index: 1;
+   visibility: hidden;
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element-add_button-right {
+   right: 0;
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element-add_button-left {
+   left: 0;
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element:hover {
+   .ControlsListsEditors_columnsDesignTime-markup_element-close_button,
+   .ControlsListsEditors_columnsDesignTime-markup_element-add_button {
+      visibility: visible;
+   }
+}
+
+.ControlsListsEditors_columnWidthEditor-wrapper {
+   display: flex;
+   white-space: nowrap;
+}

@@ -1,0 +1,44 @@
+.controls_theme-@{themeName} {
+   // переменные, которые должны переопределяться через wrapper должны быть опеределены на корневмо элементе темы
+   //Иконка папки
+
+   --node_expander_icon-color_treeGrid: #313e78;
+   --node_expander_hover_icon-color_treeGrid: #05b;
+
+   // expandedCompositeTree
+
+   --selected_text-color_navigationRadioGroup: var(--selected_text-color_switcher);
+   --text-color_composite-header-h2: var(--label_text-color);
+}
+
+.controls_list_theme-@{themeName} {
+   // Костыль для выравнивания в дереве expander'а ниже базовой линии на 1px.
+   // Будет удалено после исправления шрифта: https://online.sbis.ru/opendoc.html?guid=04c812e3-ba62-44f8-aa94-30fec6bdfe75
+   --expander_padding_icon-treeGrid: 1px;
+   --expander_padding_icon-hidden-node-treeGrid: 2px;
+
+   // размер отступа между изображением размера s и текстом
+   --image_s_padding-right_treeGrid: var(--offset_2xs);
+
+   //Иконка папки
+
+   //Иконка скрытого узла
+
+   --hidden-node_expander_icon-color_treeGrid: #8991a9;
+   --hidden-node_expander_hover_icon-color_treeGrid: #05b;
+
+   // Иконки узлов в мастере
+
+   --master_node_expander_icon-color_treeGrid: #8991a9;
+   --master_hidden-node_expander_icon-color_treeGrid: #8991a9;
+   --master_node_expander_hover_icon-color_treeGrid: #313e78;
+   --master_hidden-node_expander_hover_icon-color_treeGrid: #05b;
+
+   // Размеры шрифта текста
+
+   --node_font-size_treeGrid: var(--font-size_2xl);
+
+   // nodeFooter
+
+   --node-footer_height_treeGrid: var(--inline_height_m);
+}

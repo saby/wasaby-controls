@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center" data-qa="controlsDemo_capture">
+        <div data-qa="controlsDemo-checkboxResetValue__false"
+             class="controlsDemo__cell demo-checkboxTriState__default controls-margin_right-xl">
+            <Controls.checkbox:Checkbox bind:value="_value1" resetValue="{{false}}"/>
+        </div>
+        <div data-qa="controlsDemo-checkboxResetValue__false"
+             class="controlsDemo__cell demo-checkboxTriState__default controls-margin_right-xl">
+            <Controls.checkbox:Checkbox bind:value="_value1" resetValue="{{true}}"/>
+        </div>
+        <div data-qa="controlsDemo-checkboxResetValue__true"
+             class="controlsDemo__cell demo-checkboxTriState__triState controls-margin_right-xl">
+            <Controls.checkbox:Checkbox bind:value="_value2" resetValue="{{true}}"/>
+        </div>
+        <div data-qa="controlsDemo-checkboxResetValue__null"
+             class="controlsDemo__cell demo-checkboxTriState__triState">
+            <Controls.checkbox:Checkbox bind:value="_value2" resetValue="{{false}}"/>
+        </div>
+    </div>
+</div>

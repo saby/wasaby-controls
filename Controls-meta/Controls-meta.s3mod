@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module
+        id="4e412d92-ef24-4300-ba29-35eb7a76107c"
+        kaizen_zone="916d4071-6bb4-4800-b3ff-2ee6725c9fdc"
+        name="Controls-meta"
+        package="Wasaby"
+        responsible="Крайнов Д.О." responsible_uuid="0a464b92-3129-49f2-8a5e-7ce6ecfa37b0"
+        required="1"
+        version="1.00">
+  <description>Мета-описание виджетов и их свойств.</description>
+  <depends>
+    <module id="686f183d-0bcc-4732-b4e4-6016c2a67a0f" name="Types"/>
+    <module id="b7223918-657c-4e3d-ac98-f302a52f248c" name="Meta"/>
+    <module id="7c6ae293-7359-4a54-8a33-74ce96945d57" name="Editors"/>
+    <module id="f6fdf353-3ab3-4dbb-8671-01c2b418bf0a" name="Controls"/>
+    <module id="f27abe12-19df-4c9f-b886-634bd20a0011" name="UI"/>
+    <module id="7c6ae293-7359-4a54-8a33-74ce96945d57" name="Controls-editors"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <resources/>
+  <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

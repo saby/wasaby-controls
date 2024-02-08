@@ -1,0 +1,64 @@
+<ws:template name="checkboxTpl">
+   <ws:partial template="Controls/CheckboxGroup:defaultItemTemplate">
+      <ws:contentTemplate>
+         <span>
+            <ws:if data="{{itemTemplate.item.caption}}"><span class="controls-icon_style-label">{{itemTemplate.item.caption}}</span>&nbsp;</ws:if>
+            <span class="controls-FavoriteEditDialog__itemContent">{{itemTemplate.item.textValue}}</span>
+         </span>
+      </ws:contentTemplate>
+   </ws:partial>
+</ws:template>
+
+<Controls.form:PrimaryAction on:triggered="_apply()">
+   <Controls.popupTemplate:Dialog headingCaption="{[Параметры]}"
+                                  headingFontColorStyle="default"
+                                  attr:class="controls_filterPopup_theme-{{_options.theme}}
+                                              controls-FilterPanel__FavoriteEditDialog">
+
+      <ws:headerContentTemplate>
+         <Controls.source:SelectedKey bind:selectedKey="_isClient">
+            <Controls.dropdown:Selector
+                    displayProperty="title"
+                    keyProperty="key"
+                    source="{{_globalSource}}"
+                    itemTemplate="wml!Controls/_filterPopup/History/_Favorite/ddlItemTemplate"
+                    attr:class="controls-FavoriteEditDialog__selector">
+            </Controls.dropdown:Selector>
+         </Controls.source:SelectedKey>
+
+         <ws:if data="{{_options.isFavorite}}">
+            <Controls.buttons:Button viewMode="link" fontColorStyle="link"
+                                     icon="icon-Erase" iconStyle="danger"
+                                     on:click="_delete()"
+                                     attr:tabindex="-1"
+                                     attr:class="controls-FavoriteEditDialog__deleteButton"/>
+         </ws:if>
+
+         <Controls.buttons:Button viewMode="outlined" buttonStyle="primary" caption="{[Сохранить]}"
+                                  on:click="_apply()"
+                                  attr:tabindex="-1"/>
+      </ws:headerContentTemplate>
+
+      <ws:bodyContentTemplate>
+         <div class="controls-FavoriteEditDialog__content">
+            <Controls.input:Text bind:value="_textValue"
+                                 placeholder="{{_placeholder}}"
+                                 trim="{{true}}"
+                                 attr:class="controls-FavoriteEditDialog__textField"/>
+
+            <Controls.scroll:Container attr:class="controls-ScrollContainer__flex controls-FavoriteEditDialog__scroll">
+               <Controls.CheckboxGroup:Control bind:selectedKeys="_selectedFilters"
+                                              on:selectedKeysChanged="_selectedFiltersChanged()"
+                                              keyProperty="{{_keyProperty}}"
+                                              source="{{_source}}">
+                  <ws:itemTemplate>
+                     <ws:partial template="checkboxTpl" />
+                  </ws:itemTemplate>
+               </Controls.CheckboxGroup:Control>
+            </Controls.scroll:Container>
+
+         </div>
+      </ws:bodyContentTemplate>
+
+   </Controls.popupTemplate:Dialog>
+</Controls.form:PrimaryAction>

@@ -1,0 +1,129 @@
+<ws:template name="selectionTpl">
+   <div class="controls-Menu__row_selected">
+      <ws:if data="{{marker !== false && (!multiSelect && !itemData.multiSelect || itemData.isSingleSelectionItem || itemData.isFixedItem)}}">
+         <ws:partial template="wml!Controls/_menu/Render/RadioCircle"
+                     selected="{{treeItem.isMarked ? treeItem.isMarked() : treeItem.isSelected()}}"/>
+      </ws:if>
+      <ws:else data="{{_options.multiSelectPosition !== 'custom' && (multiSelectTpl || itemData.multiSelectTpl) &&
+          (itemData.multiSelect || multiSelect) && !itemData.isFixedItem && !itemData.isSingleSelectionItem}}">
+         <ws:partial template="{{multiSelectTpl || itemData.multiSelectTpl}}" scope="{{_options}}"/>
+      </ws:else>
+   </div>
+</ws:template>
+
+<ws:template name="menuRowTemplate">
+<div attr:class="controls-Menu__row controls-Menu__row_overflow
+                 {{roundBorder !== false ? 'controls-Menu__row_roundBorder'}}
+                 {{rightTemplate ? 'controls-Menu__row-rightPadding_menu-rightTemplate'}}
+                 {{additionalTextTemplate ? 'controls-Menu__row-additionalTextTemplate' : 'controls-Menu__row_align_center'}}
+                 controls-ListView__itemV js-controls-ListView__measurableContainer
+                 {{itemData.itemClassList}}
+                 controls-Menu__row_{{multiLine ? 'multiLine' : 'singleLine'}}">
+   <ws:if data="{{!!treeItem.getContents().forEach}}">
+      <div class="controls-Menu__row_breadcrumbs_state_default ws-flexbox ws-align-items-baseline">
+         <ws:if data="{{itemData.multiSelect}}">
+            <ws:partial template="selectionTpl"
+                        attr:class="controls-Menu__row_breadcrumbs_selected_align ws-flexbox ws-align-items-baseline"
+            />
+         </ws:if>
+         <ws:partial template="wml!Controls/_menu/Render/breadCrumbsTemplate"
+                     treeItem="{{treeItem}}"
+                     keyProperty="{{keyProperty}}"
+                     displayProperty="{{displayProperty}}"
+                     searchValue="{{searchValue}}"
+                     breadCrumbsItemTemplate="{{_options.breadCrumbsItemTemplate}}"
+                     attr:class=""
+         />
+      </div>
+   </ws:if>
+
+   <ws:else>
+      <ws:partial template="selectionTpl" attr:class="
+                  {{_options.multiLine ? 'controls-Menu__row_selected-multiLine'}}
+                  {{additionalTextTemplate ? 'controls-Menu__row_selected_padding' : 'controls-Menu__row_selected_align'}}"/>
+      <div class="controls-Menu__content_baseline
+                  {{additionalTextTemplate ? 'controls-Menu__content_padding'}}"
+           style="width: {{_options.roundBorder !== false && _options.width ?
+            'calc(' + _options.width + 'px - var(--combobox_item_content_padding)'}};
+                 max-width: {{_options.roundBorder !== false && _options.width ?
+                  'calc(' + _options.width + 'px - var(--combobox_item_content_padding))'}}">
+         <ws:if data="{{treeItem.getLevel && treeItem.getLevel() > 1}}">
+            <ws:for data="i in treeItem.getLevel() - 1">
+               <div class="controls-Menu__row_levelPadding_xl"></div>
+            </ws:for>
+         </ws:if>
+         <ws:else data="{{itemData.levelPadding}}">
+            <div class="controls-Menu__row_levelPadding_{{itemData.levelPadding}}"></div>
+         </ws:else>
+
+
+         <ws:partial template="wml!Controls/_menu/Render/contentTemplate"
+                     scope="{{_options}}"
+                     item="{{treeItem.getContents()}}"/>
+
+         </div>
+
+         <ws:if data="{{treeItem.getContents().get(itemData.nodeProperty) && (_options.viewMode !== 'list' || !_options.searchValue)}}">
+            <ws:partial template="wml!Controls/_menu/Render/expanderTemplate"
+                        attr:class="{{additionalTextTemplate ? 'controls-Menu__arrow_padding' : 'controls-Menu__arrow_align'}}"
+                        scope="{{_options}}"/>
+         </ws:if>
+         <ws:else data="{{rightTemplate}}">
+            <div class="controls-Menu__row__rightTemplate_separator"></div>
+            <div class="controls-Menu__row__rightTemplate_wrapper">
+               <ws:partial template="{{rightTemplate}}" scope="{{_options}}" item="{{treeItem.getContents()}}"/>
+            </div>
+         </ws:else>
+
+         <ws:if data="{{ treeItem.shouldDisplayItemActions() && !treeItem.getContents().get(itemData.nodeProperty) }}">
+            <ws:if data="{{ treeItem.isSwiped() }}">
+               <ws:partial template="{{ swipeTemplate }}" attr:class="controls-Menu__row_swipeTemplate"/>
+            </ws:if>
+            <ws:else>
+               <ws:partial template="{{ itemActionsTemplate }}"
+                           hoverBackgroundStyle="{{_options.hoverBackgroundStyle === 'default' ? 'menu-default' : _options.hoverBackgroundStyle}}"/>
+            </ws:else>
+         </ws:if>
+      </ws:else>
+   </div>
+</ws:template>
+
+<ws:if data="{{_options.useListRender}}">
+      <ws:partial template="{{_options.nodeProperty ? 'Controls/tree:ItemTemplate' : 'Controls/list:ItemTemplate'}}"
+                  fontSize="xl"
+                  scope="{{_options}}"
+                  marker="{{false}}"
+                  item="{{treeItem}}"
+                  keyProperty="{{_options.keyProperty}}"
+                  displayProperty="{{_options.displayProperty}}"
+                  hoverBackgroundStyle="menu-default"
+                  itemActionsClass="controls-Menu__itemActions_position_rightBottom
+                                  controls-Menu__itemActions_{{_options.itemActionsVisibility}}"
+                  attr:data-target="{{_options.dataName ? _options.dataName + '_item_' + treeItem.contents[_options.keyProperty]}}"
+                  attr:data-qa="{{treeItem.listElementName}}"
+                  attr:class="controls-Menu__row_overflow
+                              controls-Menu__row
+                              {{roundBorder !== false ? 'controls-Menu__row_roundBorder'}}
+                              {{itemData.itemClassList}}"
+                  attr:type-data-qa="{{treeItem.isNode && treeItem.isNode() !== null ? 'node' : 'leaf'}}" >
+      <ws:contentTemplate>
+         <div class="ws-flexbox ws-align-items-center controls-Menu__row_{{multiLine ? 'multiLine' : 'singleLine'}}">
+            <ws:partial template="{{ contentTemplate.multiSelectTemplate }}" attr:class="controls-TreeMenu__row-checkbox-left"/>
+            <ws:if data="{{!_options.multiSelect && _options.markerVisibility !== 'hidden'}}">
+               <ws:partial template="wml!Controls/_menu/Render/RadioCircle"
+                           selected="{{contentTemplate.item.isMarked ? contentTemplate.item.isMarked() : contentTemplate.item.isSelected()}}"/>
+            </ws:if>
+            <ws:partial template="wml!Controls/_menu/Render/contentTemplate"
+                        treeItem="{{treeItem}}"
+                        item="{{treeItem.getContents()}}"
+                        itemData="{{_options.itemData}}"
+                        displayProperty="{{_options.displayProperty}}"
+                        expanderTemplate="{{contentTemplate.expanderTemplate}}"
+            />
+         </div>
+      </ws:contentTemplate>
+   </ws:partial>
+</ws:if>
+<ws:else>
+   <ws:partial template="menuRowTemplate"/>
+</ws:else>

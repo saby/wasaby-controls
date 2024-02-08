@@ -1,0 +1,7 @@
+<div class="controls-Demo__wide-propertyGrid controls-margin_left-xl">
+    <div class="controls-text-label">Preload</div>
+    <Controls.propertyGrid:PropertyGrid
+       typeDescription="{{ _typeDescription }}"
+       bind:editingObject="_editingObject">
+    </Controls.propertyGrid:PropertyGrid>
+</div>

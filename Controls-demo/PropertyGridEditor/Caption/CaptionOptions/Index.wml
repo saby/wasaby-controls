@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell controls-Demo__wide-propertyGrid">
+        <div class="controls-text-label">captionOptions</div>
+        <Controls.propertyGridEditor:PropertyGridEditor
+                bind:editingObject="_editingObject"
+                captionFontColorStyle="unaccented"
+                captionFontSize="s"
+                typeDescription="{{_typeDescription}}" />
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="controls-Demo__propertyGrid">
+    <Controls.propertyGrid:PropertyGrid
+            bind:editingObject="_editingObject"
+            typeDescription="{{_typeDescription}}">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/propertyGrid:ItemTemplate"
+                        highlightOnHover="{{true}}"
+                        item="{{itemTemplate.item}}"
+            />
+        </ws:itemTemplate>
+        <ws:itemPadding top="l" bottom="l"/>
+    </Controls.propertyGrid:PropertyGrid>
+</div>

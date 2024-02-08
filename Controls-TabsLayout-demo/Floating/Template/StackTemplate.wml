@@ -1,0 +1,30 @@
+<div style="{{ !_options.isSinglePage ? 'width:' + (_options.stackWidth ? _options.stackWidth + 'px;' : '900px;') + 'flex-grow: 0;' : 'height: 100%;' }}">
+    <Controls.popupTemplate:Stack headingCaption="PopupManager" scope="{{ _options }}" backgroundStyle="unaccented">
+        <ws:leftContentTemplate>
+            <Controls-TabsLayout.floatingTabs:Buttons items="{{_items}}" />
+        </ws:leftContentTemplate>
+        <ws:bodyContentTemplate>
+            <div class="ControlsDemo__popupStack-body ws-flexbox ws-flex-grow-1 ws-flex-shrink-1">
+                <div class="controls__block-wrapper tr ws-flex-grow-1">
+                    <div class="controls__block">
+                        <div class="controls-margin-l">
+                            <div class="ws-flexbox">
+                                <Controls.input:Text attr:class="ws-flex-grow-1" placeholder="Введите название"/>
+                            </div>
+                            <div class="controls-padding_top-m">
+                                Контент
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="controls-padding_left-l">
+                    <Controls.toggle:Switch
+                            captionPosition="start"
+                            caption="Публикация"/>
+                    <div>БАННЕР</div>
+                    <div>ПОДРОБНАЯ ИНФОРМАЦИЯ</div>
+                </div>
+            </div>
+        </ws:bodyContentTemplate>
+    </Controls.popupTemplate:Stack>
+</div>

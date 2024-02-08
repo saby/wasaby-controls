@@ -1,0 +1,15 @@
+<Controls.scroll:Container name="scroll" scrollOrientation="verticalHorizontal" attr:style="height: 50vh;margin-top: 50px;">
+    <div class="popup-page-background" style="width: 300vw;height:200vh;">
+        <div class="popup-page-buttons" style="margin: 490px 2000px">
+            <div>
+                <Controls.buttons:Button attr:class="demo-StackDemo__stickyClose" caption="Open Sticky(close on scroll)"
+                                         name="stickyButton" on:click="openStickyScroll()"/>
+            </div>
+            <div>
+                <Controls.buttons:Button attr:class="demo-StackDemo__stickyTrack" caption="Open Sticky(track on scroll)"
+                                         name="stickyButton2" on:click="openSticky()"/>
+            </div>
+        </div>
+
+    </div>
+</Controls.scroll:Container>

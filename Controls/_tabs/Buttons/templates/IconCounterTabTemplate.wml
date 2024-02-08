@@ -1,0 +1,28 @@
+<div class="ws-flexbox ws-align-items-center ws-align-self-{{
+        (item.iconAlign || iconAlign) === 'baseline' ? 'baseline controls-margin_top-3xs' : 'center'
+    }}">
+    <ws:if data="{{item.icon}}">
+        <Controls.icon:Icon
+                icon="{{item.icon}}"
+                iconSize="{{item.iconSize || 's'}}"
+                iconStyle="{{item.iconStyle || 'secondary'}}"
+                attr:class="ws-align-self-center controls-fontweight-default"
+                attr:title="{{item.iconTooltip}}"
+        />
+    </ws:if>
+    <ws:if data="{{item[displayProperty] || item.mainCounter}}">
+        <div class="{{item.icon ? 'controls-margin_left-3xs' : 'controls-Tabs_margin-left'}}{{(item.iconAlign || iconAlign) === 'baseline' ? ' controls-margin_top-3xs'}}">
+            <Controls.heading:Counter class="controls-fontweight-default"
+                                      caption="{{item[displayProperty] || item.mainCounter}}"
+                                      fontColorStyle="{{item.mainCounterStyle || 'secondary'}}"/>
+        </div>
+    </ws:if>
+    <ws:if data="{{item.image}}">
+        <div class="ws-align-self-center controls-icon_size-{{item.imageSize || 's'}}">
+            <img src="{{item.image.src}}" srcset="{{item.image.srcSet}}" tooltip="{{item.image.tooltip}}" alt="{{item.image.tooltip}}" class="controls-Tabs_image"/>
+        </div>
+    </ws:if>
+    <ws:if data="{{item.caption}}">
+        <div class="controls-Tabs_margin-left controls-Tabs__item_overflow">{{item.caption}}</div>
+    </ws:if>
+</div>

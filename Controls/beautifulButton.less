@@ -1,0 +1,55 @@
+.controls-Button_beautiful {
+   position: relative;
+
+   &::after {
+      content: '\200b';
+      position: absolute;
+      bottom: calc(var(--offset_3xs) * -1);
+      left: 0;
+      width: 100%;
+      // Значение подобрано экспериментально, если устанавливать значение в 2px, то при масштабе,
+      // если кнопки расположены в ряд, у некоторых кнопок линия будет отличаться по высоте.
+      // https://online.sbis.ru/opendoc.html?guid=294730ad-844a-48f5-afb1-7c6929777443&client=3
+      height: 0.13rem;
+      opacity: 0.65;
+      transition: width .3s, opacity .3s;
+      border-radius: var(--border-radius_button);
+      background: linear-gradient(to right,
+      #FFC3A7,
+      #eb7841 calc(var(--button-cursor-position, 50%) - 23%),
+      #ec7c46 calc(var(--button-cursor-position, 50%) + 23%),
+      #ffc3a7);
+   }
+}
+
+.controls-Button__text_viewMode-beautiful {
+   font-weight: normal;
+   transition: text-shadow .3s;
+   padding: 0 var(--border-thickness);
+}
+
+.controls-Button__text_readonly_beautiful {
+   color: var(--readonly_text-color);
+}
+
+.controls-Button_clickable.controls-Button_beautiful:active {
+   &::after {
+      opacity: 1;
+   }
+
+   .controls-Button__text_viewMode-beautiful {
+      text-shadow: 0.5px 0 currentcolor, 0.3px -0.1px 0 currentcolor;
+   }
+}
+
+.ws-is-hover {
+   .controls-Button_clickable.controls-Button_beautiful:hover {
+      &::after {
+         opacity: 1;
+      }
+
+      .controls-Button__text_viewMode-beautiful {
+         text-shadow: 0.5px 0 currentcolor, 0.3px -0.1px 0 currentcolor;
+      }
+   }
+}

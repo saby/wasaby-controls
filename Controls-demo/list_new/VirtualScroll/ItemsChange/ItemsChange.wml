@@ -1,0 +1,33 @@
+<div class="controlsDemo__wrapper ws-flexbox ws-flex-column ws-align-items-center controlsDemo_fixedWidth550">
+<div class="demo-VirtualScroll__title controls-text-label controls-fontsize-l controlsDemo__mb1">
+  Сохранение позиции скролла при добавлении/удалении элементов списка
+</div>
+<Controls-demo.list_new.VirtualScroll.NavigationSwitcher.Index totalCount="{{100}}" pageSize="{{20}}">
+  <Controls.scroll:Container
+      attr:class="controlsDemo_fixedWidth500 controlsDemo__maxWidth500 controlsDemo__height500 controlsDemo__mb1">
+    <Controls.list:View
+        itemsReadyCallback="{{_itemsReadyCallback}}"
+        multiSelectVisibility="{{_multiSelectVisibility}}"
+        source="{{_source}}"
+        keyProperty="key"
+        navigation="{{_options.navigation}}">
+      <ws:virtualScrollConfig pageSize="{{20}}"/>
+    </Controls.list:View>
+  </Controls.scroll:Container>
+</Controls-demo.list_new.VirtualScroll.NavigationSwitcher.Index>
+<div class="ws-link controlsDemo__mb1" on:click="_addItem('start')" data-qa="demo-VirtualScroll__addItemStart">
+  Добавить запись в начало
+</div>
+<div class="ws-link controlsDemo__mb1" on:click="_addItem('end')" data-qa="demo-VirtualScroll__addItemEnd">
+  Добавить запись в конец
+</div>
+<div class="ws-link controlsDemo__mb1" on:click="_removeItem('start')" data-qa="demo-VirtualScroll__removeItemStart">
+  Удалить запись в начале
+</div>
+<div class="ws-link controlsDemo__mb1" on:click="_removeItem('end')" data-qa="demo-VirtualScroll__removeItemEnd">
+  Удалить запись в конце
+</div>
+<div class="demo-VirtualScroll__changeMultiSelect ws-link controlsDemo__mb1" on:click="_changeMultiSelect()">
+  Переключить чекбоксы
+</div>
+</div>

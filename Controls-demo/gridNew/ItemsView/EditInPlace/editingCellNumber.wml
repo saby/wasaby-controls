@@ -1,0 +1,19 @@
+<ws:partial template="Controls/grid:ColumnTemplate" scope="{{_options}}">
+   <ws:contentTemplate>
+      <ws:partial
+         template="Controls/list:EditingTemplate"
+         value="{{ item.contents[column.config.displayProperty] }}"
+         scope="{{ _options }}"
+         enabled="{{true}}"
+      >
+         <ws:editorTemplate>
+            <Controls.input:Number
+               contrastBackground="{{true}}"
+               attr:class="js-controls-Grid__editInPlace__input-1"
+               bind:value="item.contents[column.config.displayProperty]"
+               selectOnClick="{{ false }}"
+            />
+         </ws:editorTemplate>
+      </ws:partial>
+   </ws:contentTemplate>
+</ws:partial>

@@ -1,0 +1,38 @@
+.controls-navigation {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+// region Chips
+
+.controls-navigation-chips__menu,
+.controls-navigation-chips {
+   padding-top: var(--offset_m);
+   padding-bottom: var(--offset_m);
+}
+
+.controls-navigation-chips {
+   margin-right: var(--inline_height_2xl);
+}
+
+.controls-navigation-chips__menuWrapper {
+   width: 0;
+   position: relative;
+   margin-left: auto;
+}
+
+.controls-navigation-chips__menu {
+   position: absolute;
+   top: calc(-1 * var(--inline_height_2xl) - var(--offset_m) - var(--offset_m));
+   left: calc(-1 * var(--inline_height_2xl));
+}
+
+// endregion Chips
+
+// region RadioGroup
+
+.controls-navigation-radioGroup {
+   padding-bottom: var(--offset_s);
+}
+
+// endregion RadioGroup

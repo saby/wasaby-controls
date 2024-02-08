@@ -1,0 +1,189 @@
+<ws:template name="stickyBlock">
+   <Controls.stickyBlock:StickyBlock
+           mode="stackable"
+           shadowVisibility="visible"
+           backgroundStyle="menuPopup"
+           content="{{content}}"
+           position="bottom">
+   </Controls.stickyBlock:StickyBlock>
+</ws:template>
+
+<ws:template name="groupTemplate">
+   <ws:partial template="{{_options.groupTemplate}}"
+               itemData="{{groupTemplate.item}}"
+               item="{{groupTemplate.item}}"
+               on:mouseenter="_separatorMouseEnter()" />
+</ws:template>
+
+<ws:template name="itemTpl">
+   <ws:partial template="wml!Controls/_menu/Render/itemTemplateWrapper"
+               marker="{{_options.markerVisibility !== 'hidden' || _options.multiSelect === true}}"
+               itemData="{{_getItemData(item)}}"
+               treeItem="{{item}}"
+               emptyText="{{_options.emptyText}}"
+               nodeProperty="{{_options.nodeProperty}}"
+               hoverBackgroundStyle="{{_options.hoverBackgroundStyle}}"
+               keyProperty="{{_options.keyProperty}}"
+               displayProperty="{{_options.displayProperty}}"
+               searchValue="{{_options.searchValue}}"
+               itemTemplateProperty="{{_options.itemTemplateProperty}}"
+               itemTemplate="{{_options.itemTemplate}}"
+               breadCrumbsItemTemplate="{{_options.breadCrumbsItemTemplate}}"
+               iconSize="{{_options.iconSize}}"
+               iconStyle="{{_options.iconStyle}}"
+               iconPadding="{{_options.iconPadding}}"
+               multiLine="{{_options.multiLine}}"
+               multiSelectPosition="{{_options.multiSelectPosition}}"
+               allowPin="{{_options.allowPin}}"
+               itemAlign="{{_options.itemAlign}}"
+               historyRoot="{{_options.historyRoot}}"
+               width="{{_options.width}}"
+               viewMode="{{_options.viewMode}}"
+               directionality="{{_directionality}}"
+               useListRender="{{_options.useListRender}}"
+               hierarchyViewMode="{{_options.hierarchyViewMode}}"
+               subMenuLevel="{{_options.subMenuLevel}}"
+               markerVisibility="{{_options.multiSelect ? 'hidden' : _options.markerVisibility}}"
+               scope="{{item.contents['itemTemplateOptions']}}"
+               attr:data-target="{{_options.dataName ? _options.dataName + '_item_' + item.contents[_options.keyProperty]}}"
+               attr:data-qa="{{item.listElementName}}"
+               attr:type-data-qa="{{item.getContents()[_options.nodeProperty] ? 'node' : 'leaf'}}"
+               on:itemClick="_itemClick()"
+               item="{{_getItemData(item)}}" > <!-- https://online.sbis.ru/opendoc.html?guid=47950520-ef97-4302-8573-4b8495a3f0ee -->
+      <ws:multiSelectTpl>
+         <ws:partial template="wml!Controls/_menu/Render/multiSelectTpl"
+                     scope="{{multiSelectTpl}}"/>
+      </ws:multiSelectTpl>
+   </ws:partial>
+   <ws:if data="{{_isHistorySeparatorVisible(item)}}">
+      <ws:partial template="wml!Controls/_menu/Render/groupTemplate"
+                  attr:key="{{item.getUid()}} + '_separator'"
+                  on:mouseenter="_separatorMouseEnter()"/>
+   </ws:if>
+</ws:template>
+
+<ws:template name="menuRender">
+   <div class="ws-flexbox ws-flex-column {{'controls-Menu_showActions_' + _options.itemActionsVisibility}}">
+      <ws:if data="{{_options.emptyItem}}">
+         <ws:partial template="itemTpl"
+                     item="{{_options.emptyItem}}"
+                     on:mousemove="_emptyItemMouseMove(_options.emptyItem)"
+                     on:mouseenter="_emptyItemMouseEnter(_options.emptyItem)"
+                     on:swipe="_itemSwipe(_options.emptyItem)"
+                     on:click="_itemClick(_options.emptyItem.contents)"
+                     attr:class="ws-flex-shrink-0"
+         />
+      </ws:if>
+      <ws:if data="{{_options.hierarchyViewMode === 'tree' && _options.subMenuLevel || _options.useListRender}}">
+         <ws:partial template="{{_options.parentProperty ? 'Controls/tree:View' : 'Controls/list:View'}}"
+                     expanderPosition="custom"
+                     expanderIcon="hiddenNode"
+                     expandByItemClick="true"
+                     collection="{{_options.listModel}}"
+                     sourceController="{{_options.sourceController}}"
+                     itemActionsPosition="inside"
+                     actionAlignment="horizontal"
+                     actionCaptionPosition="none"
+                     markerVisibility="{{_options.multiSelect ? 'hidden' : _options.markerVisibility}}"
+                     multiSelectVisibility="{{_options.multiSelect ? 'onhover' : 'hidden'}}"
+                     multiSelectPosition="custom"
+                     searchValue="{{null}}"
+                     groupTemplate="{{groupTemplate}}"
+                     bind:expandedItems="_expandedItems"
+                     on:itemMouseMove="_stopEvent()"
+                     on:itemMouseEnter="_stopEvent()"
+                     on:itemSwipe="_itemSwipe()"
+                     on:itemActionMouseDown="_itemActionMouseDown()"
+                     on:itemClick="_itemClick()"
+                     on:checkBoxClick="_treeCheckBoxClick()"
+                     scope="{{_options}}">
+               <ws:virtualScrollConfig pageSize="{{70}}"/>
+               <ws:itemPadding left="s" right="null" top="null" bottom="null" />
+               <ws:itemTemplate>
+                  <ws:if data="{{_options.useListRender}}">
+                     <ws:partial template="itemTpl" item="{{itemTemplate.item}}"/>
+                  </ws:if>
+                  <ws:else>
+                     <ws:partial template="{{_options.parentProperty ? 'Controls/tree:ItemTemplate' : 'Controls/list:ItemTemplate'}}"
+                                 fontSize="l"
+                                 scope="{{itemTemplate}}"
+                                 marker="{{false}}"
+                                 keyProperty="{{_options.keyProperty}}"
+                                 displayProperty="{{_options.displayProperty}}"
+                                 hoverBackgroundStyle="menu-default"
+                                 itemActionsClass="controls-Menu__itemActions_position_rightBottom
+                               controls-Menu__itemActions_{{_options.itemActionsVisibility}}"
+                                 attr:data-target="{{_options.dataName ? _options.dataName + '_item_' + itemTemplate.item.contents[_options.keyProperty]}}"
+                                 attr:data-qa="{{itemTemplate.item.listElementName}}"
+                                 attr:class="controls-Menu__row_roundBorder
+                                          controls-Menu__row_overflow
+                                          controls-Menu__row
+                                          {{_getMenuClassList(itemTemplate.item)}}"
+                                 attr:type-data-qa="{{itemTemplate.item.isNode() !== null ? 'node' : 'leaf'}}" >
+                        <ws:contentTemplate>
+                           <div class="ws-flexbox ws-align-items-center">
+                              <ws:partial template="{{ contentTemplate.multiSelectTemplate }}" attr:class="controls-TreeMenu__row-checkbox-left"/>
+                              <ws:if data="{{!_options.multiSelect && _options.markerVisibility !== 'hidden'}}">
+                                 <ws:partial template="wml!Controls/_menu/Render/RadioCircle"
+                                             selected="{{itemTemplate.item.isMarked ? itemTemplate.item.isMarked() : itemTemplate.item.isSelected()}}"/>
+                              </ws:if>
+                              <ws:partial template="wml!Controls/_menu/Render/contentTemplate"
+                                          treeItem="{{contentTemplate.item}}"
+                                          item="{{contentTemplate.item.contents}}"
+                                          displayProperty="{{_options.displayProperty}}"
+                              />
+                           </div>
+                        </ws:contentTemplate>
+                     </ws:partial>
+                  </ws:else>
+               </ws:itemTemplate>
+         </ws:partial>
+      </ws:if>
+      <ws:else>
+         <Controls.listRender:Render
+                 attr:class="controls_dropdownPopup_theme-{{_options.theme}}"
+                 listModel="{{_options.listModel}}"
+                 multiselectVisibility="{{_options.multiSelect ? 'onhover' : 'hidden'}}"
+                 emptyTemplate="{{!_options.listModel.getCount() ? _options.emptyTemplate : null}}"
+                 groupTemplate="{{groupTemplate}}"
+                 on:itemMouseMove="_itemMouseMove()"
+                 on:itemMouseEnter="_itemMouseEnter()"
+                 on:itemSwipe="_itemSwipe()"
+                 on:itemActionMouseDown="_itemActionMouseDown()"
+                 on:itemClick="_itemClick()">
+            <ws:itemTemplate>
+               <ws:if data="{{_options.needStickyHistoryItems && itemTemplate.item.contents['doNotSaveToHistory']}}">
+                  <ws:partial template="stickyBlock">
+                     <div class="ws-flexbox">
+                        <ws:partial class="controls-Menu__row-stickyBlock" template="itemTpl" item="{{itemTemplate.item}}"/>
+                     </div>
+                  </ws:partial>
+               </ws:if>
+               <ws:else>
+                  <ws:partial template="itemTpl" item="{{itemTemplate.item}}"/>
+               </ws:else>
+            </ws:itemTemplate>
+         </Controls.listRender:Render>
+   </ws:else>
+   </div>
+</ws:template>
+
+<ws:if data="{{_options.groupTemplate && (_options.groupProperty || _options.groupingKeyCallback)}}">
+   <ws:partial template="menuRender">
+      <ws:groupTemplate>
+         <ws:if data="{{_isGroupVisible(groupTemplate.item)}}">
+            <ws:if data="{{_options.needStickyHistoryItems && _isGroupSticky(groupTemplate.item)}}">
+               <ws:partial template="stickyBlock">
+                  <ws:partial template="groupTemplate" />
+               </ws:partial>
+            </ws:if>
+            <ws:else>
+               <ws:partial template="groupTemplate" />
+            </ws:else>
+         </ws:if>
+      </ws:groupTemplate>
+   </ws:partial>
+</ws:if>
+<ws:else>
+   <ws:partial template="menuRender" />
+</ws:else>

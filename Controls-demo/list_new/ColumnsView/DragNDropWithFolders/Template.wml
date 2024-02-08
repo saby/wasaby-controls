@@ -1,0 +1,32 @@
+<ws:template name="list">
+   <Controls.scroll:Container attr:class="controlsDemo__height400 controlsDemo__minWidth600 controlsDemo__maxWidth800">
+     <Controls.explorer:View
+         name="explorer"
+         storeId="ColumnsViewDragNDropWithFolders"
+         itemsDragNDrop="{{true}}"
+         on:customdragEnd="_dragEnd()"
+         columnsCount="{{3}}"
+         useColumns="{{useColumnsProp}}">
+       <ws:itemTemplate>
+         <ws:if data="{{useColumnsProp}}">
+           <ws:partial template="Controls/columns:ItemTemplate" attr:class="controlsDemo__height36_item"></ws:partial>
+         </ws:if>
+         <ws:else>
+           <ws:partial template="Controls/list:ItemTemplate" attr:class="controlsDemo__height36_item"/>
+         </ws:else>
+       </ws:itemTemplate>
+     </Controls.explorer:View>
+   </Controls.scroll:Container>
+</ws:template>
+
+<div class="controlsDemo__wrapper controlsDemo__maxWidth800">
+   <div class="controlsDemo__inline-flex controlsDemo__flexColumn">
+      <Controls.checkbox:Checkbox bind:value="_useColumns" caption="useColumns" />
+      <ws:if data="{{_useColumns}}">
+         <ws:partial template="list" useColumnsProp="{{true}}"/>
+      </ws:if>
+      <ws:else>
+         <ws:partial template="list" useColumnsProp="{{false}}"/>
+      </ws:else>
+   </div>
+</div>
