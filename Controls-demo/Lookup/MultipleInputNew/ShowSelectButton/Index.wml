@@ -1,0 +1,9 @@
+<div>
+    <div class="controls-text-label">Без кнопки выбора из справочника</div>
+    <Controls.multipleLookup:Input
+        lookupsOptions="{{_lookupOptions}}"
+        bind:selectedKeys="_selectedKeys"
+        showSelectButton="{{false}}"
+        attr:class="controlsDemo_fixedWidth550">
+    </Controls.multipleLookup:Input>
+</div>

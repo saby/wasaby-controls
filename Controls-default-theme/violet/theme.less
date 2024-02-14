@@ -1,0 +1,35 @@
+@themeName: default__violet;
+
+@import '../_variables';
+
+.controls_theme-@{themeName} {
+   // common
+   --primary_color: #8715c2;
+   --primary_text-color: var(--primary_color);
+   --primary_hover_text-color: #609;
+   --primary_icon-color: var(--primary_color);
+   --primary_hover_icon-color: var(--primary_hover_text-color);
+   --primary_border-color: var(--primary_color);
+   --primary_background-color: #fcf5ff;
+   --primary_hover_background-color: #f8ebff;
+   --primary_active_background-color: #f8ebff;
+   --primary_same_background-color: #f8ebff;
+   --primary_hover_same_background-color: #f3dbff;
+   --primary_active_same_background-color: #ecf;
+   --primary_contrast_background-color: #af0fff;
+   --primary_hover_contrast_background-color: #a700fa;
+   --primary_active_contrast_background-color: #b31aff;
+
+   //tabs
+   --primary_marker_color_tabs: var(--primary_color);
+
+   // other
+   --marker_color: var(--primary_color);
+   --readonly_marker-color: #eeccff;
+}
+
+.controls_datePicker_theme-@{themeName} {
+   --monthlist_monthview_today_background-color_datePicker: var(--primary_color);
+}
+
+@import '../_adaptiveFonts';

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-Calculator-default-theme"
+           id="0db508a8-0160-439b-860c-32ca21fd1d8d"
+           kaizen_zone="6bae9493-19f8-4b8e-a80c-21c6398d9074"
+           package="Wasaby"
+           responsible="Крайнов Д.О."
+           required="1"
+           version="1.00">
+  <description>Дефолтная тема оформления для калькулятора.</description>
+  <depends>
+    <module id="af50caf5-f84b-4b81-a19c-6f6618372dbd" name="Controls-default-theme"/>
+    <module id="8242f6d9-ff68-4b07-b2ad-04b9900f3b31" name="Controls-Calculator"/>
+  </depends>
+
+  <load_after/>
+
+  <parameters/>
+
+  <cluster_endpoints/>
+
+  <resources/>
+
+  <preload/>
+
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

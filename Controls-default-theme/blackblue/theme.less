@@ -1,0 +1,33 @@
+@themeName: default__blackblue;
+
+@import '../_variables';
+
+.controls_theme-@{themeName} {
+   //цвета текста
+   --primary_text-color: #00282c;
+   --primary_hover_text-color: #405e61;
+   --label_text-color: #90a1a3;
+
+   //палитра
+   --brand_color: var(--primary_text-color);
+   --primary_contrast_background-color: var(--primary_text-color);
+   --primary_hover_contrast_background-color: var(--primary_hover_text-color);
+   --primary_active_contrast_background-color: var(--primary_hover_text-color);
+   --pale_border-color: #d4d4d4;
+   --pale_hover_border-color: #ccc;
+   --unaccented_contrast_background-color: #dbdbdb;
+   --unaccented_hover_contrast_background-color: var(--pale_border-color);
+   --unaccented_active_contrast_background-color: var(--pale_hover_border-color);
+   --unaccented_background-color: #ebeded;
+   --unaccented_hover_background-color: #f4f5f7;
+   --unaccented_active_background-color: #dfe3e4;
+   --unaccented_adaptive_background-color: var(--unaccented_background-color);
+   --unaccented_border-color: #dce1e2;
+   --unaccented_hover_border-color: #c4cbcc;
+
+   //иконки
+   --icon-color: var(--primary_hover_text-color);
+   --hover_icon-color: var(--primary_text-color);
+}
+
+@import '../_adaptiveFonts';

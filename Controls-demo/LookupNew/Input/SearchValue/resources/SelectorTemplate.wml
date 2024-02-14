@@ -1,0 +1,28 @@
+<Controls.popupTemplate:Stack headingCaption="{{_options.headingCaption}}">
+    <ws:bodyContentTemplate>
+        <Controls.lookupPopup:Controller selectedItems="{{_options.selectedItems}}">
+            <Controls.browser:Browser source="{{_source}}"
+                                      keyProperty="{{_keyProperty}}"
+                                      bind:searchValue="_searchValue"
+                                      selectedKeys="{{_options.selectedKeys}}"
+                                      excludedKeys="{{_options.excludedKeys}}"
+                                      searchParam="title">
+                <div>
+                    <Controls.searchDeprecated:InputContainer>
+                        <Controls.search:Input placeholder="Введите текст для поиска" attr:class="controlsDemo__browser_search"/>
+                    </Controls.searchDeprecated:InputContainer>
+                    <Controls.lookupPopup:Container>
+                            <Controls.list:Container>
+                                <Controls.lookupPopup:ListContainer>
+                                    <Controls.list:View displayProperty="title"
+                                                        keyProperty="{{_keyProperty}}"/>
+                                </Controls.lookupPopup:ListContainer>
+                            </Controls.list:Container>
+                    </Controls.lookupPopup:Container>
+                </div>
+            </Controls.browser:Browser>
+        </Controls.lookupPopup:Controller>
+    </ws:bodyContentTemplate>
+</Controls.popupTemplate:Stack>
+
+

@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500 controlsDemo_wrapper-treeGrid-base-treeGridView">
+    <Controls.buttons:Button caption="Перезагрузить список с двумя группами" on:click="_reloadWithTwoGroups()"/>
+    <Controls.treeGrid:View
+            name="treeGrid"
+            storeId="NodeTypePropertyHideTheOnlyGroup"
+            groupNodeVisibility="hasdata"
+            rowSeparatorSize="s"
+            colspanCallback="{{ _colspanCallback }}"
+            columns="{{ _columns }}"/>
+</div>

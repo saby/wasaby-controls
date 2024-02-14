@@ -1,0 +1,22 @@
+<ws:if data="{{options.value || options.value === 0}}">
+<Controls.baseDecorator:Money
+        attr:name="readOnlyField"
+        attr:class="controls-InputBase__field_readOnly controls-InputMoney__field_readOnly controls-InputBase__field_margin-{{horizontalPadding}}"
+        value="{{options.value}}"
+        precision="{{options.precision}}"
+        fontColorStyle="{{options.fontColorStyle}}"
+        fontSize="{{options.fontSize}}"
+        readOnly="{{false}}"
+        scope="{{options}}"
+/>
+</ws:if>
+<ws:else>
+<div class="controls-InputBase__field_readOnly controls-InputMoney__field_readOnly controls-InputBase__field_margin-{{horizontalPadding}}">
+    <Controls._input.Base.PlaceholderWrapper
+                attr:class="controls-InputBase__placeholder_readOnly"
+                placeholderTemplate="{{_options.placeholderTemplate}}"
+                value="{{value}}"
+                placeholderVisibility="{{placeholderVisibility}}"
+    />
+</div>
+</ws:else>

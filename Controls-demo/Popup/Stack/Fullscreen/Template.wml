@@ -1,0 +1,19 @@
+<Controls.popupTemplate:Stack
+    resizable="{{ _options.resizable }}"
+    headingCaption="Стэк с возможностью раскрытия на полный экран"
+    maximizeButtonVisibility="{{ true }}">
+<ws:bodyContentTemplate>
+  <div class="demo-Header__columns">
+    <div class="demo-Header__column">
+      <ws:partial template="Controls-demo/Popup/BaseTemplate"/>
+    </div>
+  </div>
+  <div class="controls-padding_left-2xl controls-margin_bottom-2xl">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+    magna aliqua
+  </div>
+  <div class="controls-padding_left-2xl">
+    <Controls.buttons:Button caption="Fullscreen" on:click="_clickHandlerFullscreen()"/>
+  </div>
+</ws:bodyContentTemplate>
+</Controls.popupTemplate:Stack>

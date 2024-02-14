@@ -1,0 +1,26 @@
+<div class="ws-flexbox">
+    <Controls.filterPanel:DropdownEditor class="{{_valueWork === '1' ? 'controls-margin_right-st 123' : ''}}"
+                                         displayProperty="title"
+                                         keyProperty="key"
+                                         resetValue="{{_options.resetValue}}"
+                                         viewMode="{{_options.viewMode}}"
+                                         propertyValue="{{_valueWork}}"
+                                         items="{{_itemsWork}}"
+                                         closeButtonVisible="{{false}}"
+                                         editorsViewMode="{{_options.editorsViewMode}}"
+                                         on:propertyValueChanged="_onWorkKeyChanged()"
+    />
+
+    <ws:if data="{{_valueWork === '1'}}">
+        <Controls.filterPanel:DropdownEditor displayProperty="title"
+                                             keyProperty="key"
+                                             resetValue="{{_options.resetValue}}"
+                                             viewMode="{{_options.viewMode}}"
+                                             propertyValue="{{_valueTime}}"
+                                             items="{{_itemsTime}}"
+                                             closeButtonVisible="{{false}}"
+                                             editorsViewMode="{{_options.editorsViewMode}}"
+                                             on:propertyValueChanged="_onTimeKeyChanged()"
+        />
+    </ws:if>
+</div>

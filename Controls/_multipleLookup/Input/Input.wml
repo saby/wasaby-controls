@@ -1,0 +1,74 @@
+<div class="controls_lookup_theme-{{_options.theme}}
+            controls-text-default_theme-{{_options.theme}}
+            controls-MultipleInputNew
+            controls-text-default
+            controls-inlineheight-m
+            {{!_suggestState && _options.borderVisibility !== 'hidden' ? 'controls-MultipleInputNew_border' + (_options.readOnly ? '_readOnly')}}
+            {{_options.contrastBackground ? 'controls-MultipleInputNew_contrast'}}
+            {{_options.validationStatus ? ('controls-MultipleInputNew_' + _options.validationStatus)}}">
+  <ws:for data="index,lookupOptions in _options.lookupsOptions">
+    <div class="controls-MultipleInputNew__lookup
+                {{index === (_options.lookupsOptions.length - 1) ? 'controls-MultipleInputNew__lookup_last'}}
+                {{index !== (_options.lookupsOptions.length - 1) && !(_value[lookupOptions.name] || '').trim() && !_selectedKeys[lookupOptions.name].length && !_lookupSizes[lookupOptions.name] ? 'controls-MultipleInputNew__lookup-withoutSize'}}
+                {{!_selectedKeys[lookupOptions.name].length && !(_value[lookupOptions.name] || '').trim() ? 'controls-MultipleInputNew__lookup-notSelected'}}
+                {{_selectedKeys[lookupOptions.name].length ? 'controls-MultipleInputNew__lookup-selected'}}"
+        style="width: {{(index !== _options.lookupsOptions.length - 1) && !(_value[lookupOptions.name] || '').trim() ? _lookupSizes[lookupOptions.name]}}px;
+               min-width: {{!(_value[lookupOptions.name] || '').trim() ? _lookupSizes[lookupOptions.name]}}px;"
+               data-qa="controls-MultipleInputNew__lookup">
+        <ws:if data="{{(_value[lookupOptions.name] || '').trim() && !_selectedKeys[lookupOptions.name].length}}">
+            <div class="controls-MultipleInputNew__fakeField controls-fontsize-{{lookupOptions.fontSize || 'm'}} {{_options.contrastBackground ? ' controls-MultipleInputNew__fakeField-contrast'}}">
+                <ws:if data="{{lookupOptions.leftFieldTemplate}}">
+                    <ws:partial template="{{lookupOptions.leftFieldTemplate}}" attr:ws-no-focus="true"/>
+                </ws:if>
+                <span class="controls-MultipleInputNew__fakeField_content" name="{{lookupOptions.name}}FakeField">
+                    {{_value[lookupOptions.name]}}
+                </span>
+            </div>
+        </ws:if>
+         <Controls.lookup:BaseLookupInput scope="{{lookupOptions}}"
+                                          contrastBackground="{{_options.contrastBackground}}"
+                                           on:activated="_lookupActivated()"
+                                           on:selectedKeysChanged="_selectedKeysChanged(lookupOptions.name)"
+                                           on:valueChanged="_valueChanged(lookupOptions.name)"
+                                           on:itemClick="_proxyEvent('itemClick', lookupOptions.name)"
+                                           on:choose="_proxyEvent('choose', lookupOptions.name)"
+                                           on:itemsChanged="_itemsChanged(lookupOptions.name)"
+                                           on:showSelector="_showSelector(lookupOptions.name)"
+                                           on:toolbarItemClick="_proxyEvent('toolbarItemClick', lookupOptions.name)"
+                                           on:textValueChanged="_proxyEvent('textValueChanged', lookupOptions.name)"
+                                           on:selectorCallback="_proxyEvent('selectorCallback', lookupOptions.name)"
+                                           on:inputCompleted="_proxyEvent('inputCompleted', lookupOptions.name)"
+                                           on:suggestStateChanged="suggestStateChanged()"
+                                           validationStatus="{{_options.validationStatus}}"
+                                           showSelectButton="{{_options.showSelectButton !== false && index === (_options.lookupsOptions.length - 1)}}"
+                                           selectedKeys="{{_selectedKeys[lookupOptions.name]}}"
+                                           value="{{_value[lookupOptions.name]}}"
+                                           items="{{_items[lookupOptions.name]}}"
+                                           multiSelect="{{false}}"
+                                           borderVisibility="hidden"
+                                           suggestTarget="{{_suggestTarget}}"
+                                           style="multipleInputNew"
+                                           attr:tabindex="{{_selectedKeys[lookupOptions.name].length ? 0 : index + 1}}"
+                                           attr:class="{{(_value[lookupOptions.name] || '').trim() && !_selectedKeys[lookupOptions.name].length ? 'controls-MultipleInputNew__lookup-absolute'}}">
+             <ws:placeholder>
+                 <ws:if data="{{lookupOptions.placeholder}}">
+                     <!-- name="{{null}}" нужно, т.к. если передаётся опция с названием name, то контрол/шаблон регистрируется в children-->
+                     <ws:partial template="{{lookupOptions.placeholder}}" scope="{{lookupOptions}}" name="{{null}}"/>
+                 </ws:if>
+             </ws:placeholder>
+             <ws:itemTemplate>
+                 <ws:if data="{{lookupOptions.itemTemplate || _options.itemTemplate}}">
+                     <!-- name="{{null}}" нужно, т.к. если передаётся опция с названием name, то контрол/шаблон регистрируется в children-->
+                     <ws:partial template="{{lookupOptions.itemTemplate || _options.itemTemplate}}" scope="{{lookupOptions}}" name="{{null}}"/>
+                 </ws:if>
+                 <ws:else>
+                     <ws:partial template="Controls/lookup:ItemTemplate"/>
+                 </ws:else>
+             </ws:itemTemplate>
+         </Controls.lookup:BaseLookupInput>
+    </div>
+    <ws:if data="{{_needShowSeparator(index, _options.lookupsOptions, _options.readOnly)}}">
+        <div class="controls-MultipleInputNew__separator {{_options.readOnly ? 'controls-MultipleInputNew__separator-readOnly'}}" data-qa="controls-MultipleInputNew__separator"></div>
+     </ws:if>
+  </ws:for>
+</div>

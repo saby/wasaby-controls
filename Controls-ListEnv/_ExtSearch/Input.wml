@@ -1,0 +1,78 @@
+<Controls-ListEnv.SuggestSearch name="layout"
+   attr:class="ExtSearch-suggest__input"
+   searchParam="{{ _options.searchParam || _searchParam }}"
+   suggestListsOptions="{{ _suggestListsOptions }}"
+   searchButtonVisible="{{ (_options.isAdaptive && _options.allowAdaptive) || !_isOpened }}"
+   autoDropDown="{{ !(_options.isAdaptive && _options.allowAdaptive) || _suggestListsOptions.length }}"
+   borderVisibility="hidden"
+   scope="{{ _options }}"
+   on:valueChanged="_valueChanged()"
+   on:searchClick="_searchClick()"
+   on:choose="_choose()"
+   on:showSelector="_onShowSelector()"
+   on:suggestOpen="_onSuggestOpen()"
+   on:suggestClose="_onSuggestClose()">
+   <ws:rightFieldTemplate>
+      <ws:if data="{{ _isSettingsButtonVisible }}">
+         <Controls.buttons:Button attr:class="controls-margin_right-s"
+            attr:data-qa="ExtSearch-suggest__settingsButton"
+            attr:ws-no-focus="true"
+            icon="icon-AlignmentWidth"
+            iconSize="m"
+            viewMode="link"
+            on:click="_settingsButtonClick()"
+         />
+      </ws:if>
+   </ws:rightFieldTemplate>
+   <ws:layerOptions>
+      <ws:afterInputSuggestTemplate>
+         <ws:if data="{{_options.afterInputSuggestTemplate}}">
+            <ws:partial template="{{_options.afterInputSuggestTemplate}}"/>
+         </ws:if>
+         <Controls.buttons:Button
+            attr:class="extSearch-Suggest__searchButton controls-margin_right-s"
+            attr:data-qa="Search__searchButton"
+            viewMode="filled"
+            buttonStyle="primary"
+            iconStyle="contrast"
+            icon="icon-Search2"
+            iconSize="2xs"
+            inlineHeight="m"
+            on:click="_searchButtonClick()"
+         />
+      </ws:afterInputSuggestTemplate>
+   </ws:layerOptions>
+   <ws:suggestTemplate templateName="Controls-ListEnv/_ExtSearch/SuggestTemplate">
+      <ws:templateOptions
+         suggestItemTemplate="{{ _options.suggestItemTemplate }}"
+         suggestSettingsOptions="{{ _suggestSettingsOptions }}"
+         suggestListsOptions="{{ _suggestListsOptions }}"
+         needShowSettings="{{ _needShowSettings }}"
+         settingsChangedCallback="{{ _updateFilterSource }}"
+      />
+   </ws:suggestTemplate>
+   <ws:leftFieldTemplate>
+      <ws:if data="{{ _isShowCollection() }}">
+         <Controls.lookup:Collection name="collection"
+            attr:class="ExtSearch-suggest__input_selectedCollection controls-Lookup__collection__selectedSingle"
+            attr:style="max-width:{{ _availableWidthCollection }}px;"
+            keyProperty="{{ _keyProperty }}"
+            itemsLayout="default"
+            items="{{ _items }}"
+            maxVisibleItems="{{ !_options.readOnly ? _maxVisibleItems : 0 }}"
+            readOnly="{{ _options.readOnly }}"
+            fontSize="{{ _options.fontSize }}"
+            on:itemClick="_itemClick()"
+            on:crossClick="_crossClick()"
+            on:openInfoBox="_openInfoBox()"
+            on:closeInfoBox="_closeInfoBox()">
+            <ws:itemTemplate>
+               <ws:partial template="{{ _getProperty(itemTemplate.item, 'searchSelectedItemTemplate') || _options.itemTemplate }}"
+                  attr:class="{{ _itemTemplateClasses }} ExtSearch-suggest__input_selectedCollection_item"
+                  displayProperty="{{ _getProperty(itemTemplate.item, 'displayProperty') }}"
+               />
+            </ws:itemTemplate>
+         </Controls.lookup:Collection>
+      </ws:if>
+   </ws:leftFieldTemplate>
+</Controls-ListEnv.SuggestSearch>

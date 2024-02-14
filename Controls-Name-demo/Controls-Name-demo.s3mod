@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-Name-demo"
+           kaizen_zone="7fa4b829-eb3a-4604-8b21-c8cb792c7316"
+           id="83d750ea-6c9f-49d0-bdc3-f2df1f98614d"
+           package="Wasaby"
+           responsible="Крайнов Д.О."
+           version="1.00">
+
+    <description/>
+    <depends>
+        <module id="5df1c35a-a447-4cc4-830f-9fa037be75c0" name="Controls-Name"/>
+        <module id="cf38ca3a-7fbb-4457-80b2-54f1bd316125" name="Controls-Name-default-theme"/>
+    </depends>
+    <load_after/>
+    <parameters/>
+    <resources/>
+    <preload/>
+    <typescript>
+        <arg key="typecheck" value="0"/>
+    </typescript>
+</ui_module>

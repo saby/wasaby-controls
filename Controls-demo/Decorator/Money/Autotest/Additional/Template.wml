@@ -1,0 +1,34 @@
+<div class="tw-flex tw-flex-wrap">
+<div class="controlsDemo__cell">
+  <Router.router:Reference attr:class="controls-text-label"
+                           state="app/:app"
+                           app="{{ 'Controls-demo/Decorator/Money/CurrencySize/Index' }}">
+    <a href="{{content.href}}">CurrencySize</a>
+  </Router.router:Reference>
+  <Controls-demo.Decorator.Money.CurrencySize.Index/>
+</div>
+<div class="controlsDemo__cell">
+  <Router.router:Reference attr:class="controls-text-label"
+                           state="app/:app"
+                           app="{{ 'Controls-demo/Decorator/Money/FontColorStyle/Index' }}">
+    <a href="{{content.href}}">FontColorStyle</a>
+  </Router.router:Reference>
+  <Controls-demo.Decorator.Money.FontColorStyle.Index/>
+</div>
+<div class="controlsDemo__cell">
+  <Router.router:Reference attr:class="controls-text-label"
+                           state="app/:app"
+                           app="{{ 'Controls-demo/Decorator/Money/FontSize/Index' }}">
+    <a href="{{content.href}}">FontSize</a>
+  </Router.router:Reference>
+  <Controls-demo.Decorator.Money.FontSize.Index/>
+</div>
+<div class="controlsDemo__cell">
+  <Router.router:Reference attr:class="controls-text-label"
+                           state="app/:app"
+                           app="{{ 'Controls-demo/Decorator/Money/ShowEmptyDecimals/Index' }}">
+    <a href="{{content.href}}">ShowEmptyDecimals</a>
+  </Router.router:Reference>
+  <Controls-demo.Decorator.Money.ShowEmptyDecimals.Index/>
+</div>
+</div>

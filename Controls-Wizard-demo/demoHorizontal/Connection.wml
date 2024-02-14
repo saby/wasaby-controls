@@ -1,0 +1,15 @@
+<div class="engineDemo_Wizard_block">
+
+
+<h1>Настройте кассу на ОФД СБИС</h1>
+
+    <br/>
+
+    <h2>Для настройки укажите данные в программе (драйвер)</h2><br/>
+
+    <Controls.buttons:Button viewMode="link" caption="Подробная инструкция"/><br/><br/>
+
+    <ws:if data="{{!_options.finished}}">
+        <Controls.buttons:Button caption="Далее" on:click="clickHandler()"/>
+    </ws:if>
+</div>

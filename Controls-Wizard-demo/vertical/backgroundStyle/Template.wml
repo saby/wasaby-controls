@@ -1,0 +1,45 @@
+<div style="display: flex; margin: 20px;">
+    <Controls-Wizard.vertical:Layout
+        bind:selectedStepIndex="_selectedStepIndex"
+        progressbarVisible="{{true}}">
+        <ws:itemBackgroundStyle active="contrast" completed="success" future="warning"/>
+        <ws:items>
+            <ws:Array>
+                <ws:Object title="Шаг 1">
+                    <ws:contentTemplate>
+                        <Controls.Container.Async
+                            templateName="wml! Controls-Wizard-demo/common/step/Simple">
+                            <ws:partial template="{{content.resolvedTemplate}}"/>
+                        </Controls.Container.Async>
+                    </ws:contentTemplate>
+                </ws:Object>
+                <ws:Object title="Шаг 2">
+                    <ws:contentTemplate>
+                        <Controls.Container.Async
+                            templateName=" Controls-Wizard-demo/common/step/Quiz">
+                            <ws:partial template="{{content.resolvedTemplate}}"
+                                on:finishStep="_finishStepHandler()"/>
+                        </Controls.Container.Async>
+                    </ws:contentTemplate>
+                </ws:Object>
+                <ws:Object title="Шаг 3">
+                    <ws:contentTemplate>
+                        <Controls.Container.Async
+                            templateName=" Controls-Wizard-demo/common/step/Quiz">
+                            <ws:partial template="{{content.resolvedTemplate}}"
+                                on:finishStep="_finishStepHandler()"/>
+                        </Controls.Container.Async>
+                    </ws:contentTemplate>
+                </ws:Object>
+                <ws:Object title="Шаг 4">
+                    <ws:contentTemplate>
+                        <Controls.Container.Async
+                            templateName="wml! Controls-Wizard-demo/common/step/Simple">
+                            <ws:partial template="{{content.resolvedTemplate}}"/>
+                        </Controls.Container.Async>
+                    </ws:contentTemplate>
+                </ws:Object>
+            </ws:Array>
+        </ws:items>
+    </Controls-Wizard.vertical:Layout>
+</div>

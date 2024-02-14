@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">value = Моя мама мыла раму</div>
+      <Controls.baseDecorator:Highlight attr:style="white-space: pre-line;" value="Моя мама мыла раму" highlightedValue="мама"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">value = Мой папа мыл раму</div>
+      <Controls.baseDecorator:Highlight attr:style="white-space: pre-line;" value="Моя папа мыл раму" highlightedValue="папа"/>
+   </div>
+</div>

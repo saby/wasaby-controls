@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-TabsLayout"
+           id="e72e465e-fb9a-4f11-968d-8acc1e2225ed"
+           package="Wasaby"
+           responsible="Крайнов Д.О."
+           required="1"
+           version="1.00">
+  <description>Модуль содержит контролы вкладок.</description>
+    <depends>
+      <module id="f6fdf353-3ab3-4dbb-8671-01c2b418bf0a" name="Controls"/>
+      <module name="Types" id="686f183d-0bcc-4732-b4e4-6016c2a67a0f"/>
+      <module name="Env" id="636177e5-4d75-44fa-9173-977dc90ff111"/>
+      <module name="UI" id="f27abe12-19df-4c9f-b886-634bd20a0011"/>
+    </depends>
+  <load_after/>
+  <parameters/>
+  <resources/>
+  <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

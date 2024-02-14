@@ -1,0 +1,8 @@
+<Controls._context.ContextOptionsConsumer sliceName="{{_sliceName}}">
+    <ws:contextOptionsInnerComponent>
+      <ws:partial
+          template="{{_innerTemplate}}"
+          scope="{{_options}}"
+          _dataOptionsValue="{{contextOptionsInnerComponent._dataOptionsValue}}"/>
+    </ws:contextOptionsInnerComponent>
+</Controls._context.ContextOptionsConsumer>

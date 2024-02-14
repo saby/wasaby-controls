@@ -1,0 +1,13 @@
+<Controls._lookupPopup.__ControllerContextConsumer scope="{{ _options }}">
+    <ws:controllerOptionsInnerComponent>
+        <Controls.context:ContextOptionsConsumer scope="{{ controllerOptionsInnerComponent }}">
+            <ws:contextOptionsInnerComponent>
+              <Controls.context:DataContextCompatibleConsumer scope="{{_options}}">
+                <ws:innerComponent>
+                  <Controls._lookupPopup.Container scope="{{ contextOptionsInnerComponent }}" _dataOptionsValue="{{contextOptionsInnerComponent._dataOptionsValue}}" />
+                </ws:innerComponent>
+              </Controls.context:DataContextCompatibleConsumer>
+            </ws:contextOptionsInnerComponent>
+        </Controls.context:ContextOptionsConsumer>
+    </ws:controllerOptionsInnerComponent>
+</Controls._lookupPopup.__ControllerContextConsumer>

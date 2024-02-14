@@ -1,0 +1,40 @@
+<ws:template name="list">
+	<Controls._baseList.Data scope="{{_options}}" insideList="{{true}}" name="data">
+		<ws:partial
+			name="listControl"
+			template="{{_viewTemplate}}"
+			viewName="{{_viewName}}"
+            _isReactView="{{ _isReactView }}"
+			on:activated="_onBaseControlActivated()"
+            task1187242805="{{ _task1187242805 }}"
+			itemsSelector="{{_itemsSelector}}"
+			markerStrategy="{{_markerStrategy}}"
+			viewModelConstructor="{{_viewModelConstructor}}"
+			listVirtualScrollControllerConstructor="{{_listVirtualScrollControllerConstructor}}"
+			notifyCallback="{{ _notifyCallback }}">
+		</ws:partial>
+	</Controls._baseList.Data>
+</ws:template>
+
+<ws:if data="{{ _useReactScrollContexts }}">
+    <!--  После переписывания таблиц на реакт это уйдет в Controls/_gridColumnScroll/GridControl.  -->
+    <!--  На васаби нельзя поймать контекст в контроле, нужно добавлять прослойки, а это трафик.   -->
+    <ws:partial template="{{ 'Controls/columnScrollReact:ColumnScrollContextProvider' }}"
+                GUID="{{ _uniqueId }}"
+                autoScrollMode="{{ _options.columnScrollAutoScrollMode || 'smooth' }}"
+                columnScrollStartPosition="{{ _options.columnScrollStartPosition }}"
+                onEdgesStateChanged="{{ _options.onEdgesStateChanged }}"
+                onPositionChanged="{{ _options.onPositionChanged }}"
+                selectors="{{ _getColumnScrollSelectors && _getColumnScrollSelectors() }}"
+    >
+        <ws:partial template="{{ 'Controls/columnScrollReact:DragScrollContextProvider' }}"
+					isEnabled="{{ _options.dragScrolling }}">
+            <ws:partial template="{{ 'Controls/gridColumnScroll:WasabyGridContextCompatibilityConsumer' }}">
+                <ws:partial template="list"/>
+            </ws:partial>
+        </ws:partial>
+    </ws:partial>
+</ws:if>
+<ws:else>
+	<ws:partial template="list"/>
+</ws:else>

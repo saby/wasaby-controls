@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500 controlsDemo_wrapper-treeGrid-base-treeGridView">
+    <Controls.scroll:Container class="controlsDemo__height200">
+        <Controls.treeGrid:View
+                storeId="NodeFooterMultiLadder"
+                deepReload="{{true}}"
+                expanderIcon="none"
+                ladderProperties="{{_ladderProperties}}"
+                columns="{{ _columns }}"/>
+    </Controls.scroll:Container>
+</div>

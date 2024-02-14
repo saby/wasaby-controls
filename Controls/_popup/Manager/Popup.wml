@@ -1,0 +1,50 @@
+<!-- todo переделать после перевода на реакт. Wrapper должен использоваться только когда есть эти значения. Если делать сейчас, то получим деградацию по трафику -->
+<Controls.themes:Wrapper variables="{{_options.themeVariables}}" attr:class="{{_options.themeClassName}}">
+    <Controls.Pending:ContextProvider registerPending="{{ _registerPendingHandler }}"
+                                      finishPendingOperations="{{ _finishPendingOperationsHandler }}"
+                                      cancelFinishingPending="{{ _cancelFinishingPendingHandler }}">
+        <Controls.LoadingIndicator:ContextProvider showIndicator="{{ _showIndicatorHandler }}">
+            <Controls._popup.Context.ContextProvider close="{{ _close }}"
+                                                     sendResult="{{ _sendResult }}">
+                <div class="controls-Popup ws-float-area-show-complete
+                {{_applyScrollOnBodyClasses ? 'controls-Popup__IosFix'}}"
+                     on:animationend="_animated()"
+                     on:transitionend="_animated()"
+                     on:keyup="_keyUp()"
+                     popupkey="{{ _options.__key }}"
+                     on:keydown="_keyDown()"
+                     templatename="{{ _options.templateOptions.pageTemplate || _compatibleTemplateName}}"
+                     template="{{ _stringTemplate ? _options.template}}">
+                    <ws:partial
+                            attr:class="controls_popupTemplate_theme-{{_options.theme}}
+                        controls-Popup__template {{_options.position.height ? 'controls-Popup__template-height'}}"
+                            template="{{_options.content}}"
+                            _prefetchData="{{_prefetchData || _options.prefetchData}}"
+                            _isPrefetchDataMode="{{_isPrefetchDataMode}}"
+                            scope="{{_options}}"
+                            style=""
+                            opener="{{null}}"
+                            __key="{{_options.id}}_content"
+                            name="{{_options.id}}_content"
+                            on:sendResult="_sendResult()"
+                            on:close="_close()"
+                            on:popupDragEnd="_popupDragEnd()"
+                            on:popupDragStart="_popupDragStart()"
+                            on:popupMovingSize="_popupMovingSize()"
+                            on:mouseenter="_popupMouseEnter()"
+                            on:mouseleave="_popupMouseLeave()"
+                            on:maximized="_maximized()"
+                            on:fullscreen="_fullscreen()"
+                            on:register="_registerHandler()"
+                            on:unregister="_unregisterHandler()"
+                            on:controlResize="_controlResizeHandler()"
+                            on:showIndicator="_showIndicatorHandler()"
+                            on:registerPending="_registerPendingHandler()"
+                            on:cancelFinishingPending="_cancelFinishingPendingHandler()"
+                            on:finishPendingOperations="_finishPendingOperationsHandler()" />
+
+                </div>
+            </Controls._popup.Context.ContextProvider>
+        </Controls.LoadingIndicator:ContextProvider>
+    </Controls.Pending:ContextProvider>
+</Controls.themes:Wrapper>

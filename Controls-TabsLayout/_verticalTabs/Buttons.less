@@ -1,0 +1,76 @@
+@button-width: 32px;
+
+.VerticalTabs-buttons__wrapper {
+   margin-left: 14px;
+   display: flex;
+   flex-direction: column;
+   position: relative;
+   z-index: 1;
+}
+
+.VerticalTabs-buttons__button {
+   transform: rotate(180deg);
+   writing-mode: vertical-rl;
+   width: @button-width;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-bottom-right-radius: var(--border-radius_xl);
+   border-top-right-radius: var(--border-radius_xl);
+   box-sizing: border-box;
+   overflow: hidden;
+   cursor: pointer;
+   box-shadow: var(--shadow_d);
+}
+
+.VerticalTabs-buttons__button-counter {
+   margin-top: var(--offset_2xs);
+}
+
+.VerticalTabs-buttons__button-spacing {
+   margin-top: var(--offset_3xs);
+}
+
+.VerticalTabs-buttons__button-title {
+   flex-shrink: 1;
+   min-height: 1px;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+
+   .controls-Header__caption {
+      cursor: pointer;
+   }
+}
+
+.VerticalTabs-buttons__heading-title {
+   height: 100%;
+   vertical-align: top;
+}
+
+.VerticalTabs-buttons__heading-title__fake {
+   width: 0;
+}
+
+.VerticalTabs-buttons__button-background {
+   background: var(--unaccented_active_background-color);
+
+   &:hover {
+      background: var(--unaccented_hover_background-color);
+   }
+}
+
+.VerticalTabs-buttons__button-background-active {
+   background: var(--contrast_background-color);
+}
+
+.VerticalTabs__buttonsWrapper__container {
+   overflow: hidden;
+   position: relative;
+}
+
+.VerticalTabs__buttonsWrapper__dropdown {
+   position: absolute;
+   bottom: 0;
+   z-index: 1;
+}

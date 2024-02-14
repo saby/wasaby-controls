@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="side-panel">
+        <Controls.popupTemplate:Stack
+                headingCaption="Мили, ООО (Star) ИНН 7604258100 КПП 760445001">
+            <ws:bodyContentTemplate>
+                <Controls-Wizard.horizontal:Layout
+                        on:selectedStepIndexChanged="selectedStepIndexChangedHandler()"
+                        selectedStepIndex="{{ selectedStepIndex }}"
+                        currentStepIndex="{{ currentStepIndex }}">
+                    <ws:items>
+                        <ws:Array>
+                            <ws:Object title="Регистрация в ФНС">
+                                <ws:template>
+                                    <Controls.Container.Async templateName=" Controls-Wizard-demo/demoHorizontal/Registration">
+                                        <ws:partial template="{{content.resolvedTemplate}}"
+                                                    theme="default"
+                                                    finished="{{finishedArray[0]}}"
+                                                    on:finishStep="finishStepHandler()"/>
+                                    </Controls.Container.Async>
+                                </ws:template>
+                            </ws:Object>
+                            <ws:Object title="Подключение к ОФД">
+                                <ws:template>
+                                    <Controls.Container.Async templateName=" Controls-Wizard-demo/demoHorizontal/Connection">
+                                        <ws:partial template="{{content.resolvedTemplate}}"
+                                                    finished="{{finishedArray[1]}}"
+                                                    theme="default"
+                                                    on:finishStep="finishStepHandler()"/>
+                                    </Controls.Container.Async>
+                                </ws:template>
+                            </ws:Object>
+                            <ws:Object title="Оплата">
+                                <ws:template>
+                                    <Controls.Container.Async templateName=" Controls-Wizard-demo/demoHorizontal/Pay">
+                                        <ws:partial template="{{content.resolvedTemplate}}"
+                                                    finished="{{finishedArray[2]}}"
+                                                    theme="default"
+                                                    on:finishStep="finishStepHandler()"/>
+                                    </Controls.Container.Async>
+                                </ws:template>
+                            </ws:Object>
+                            <ws:Object title="Авторизация">
+                                <ws:template>
+                                    <Controls.Container.Async templateName=" Controls-Wizard-demo/demoHorizontal/Autorization">
+                                        <ws:partial template="{{content.resolvedTemplate}}"
+                                                    finished="{{finishedArray[3]}}"
+                                                    theme="default"
+                                                    on:finishStep="finishStepHandler()"/>
+                                    </Controls.Container.Async>
+                                </ws:template>
+                            </ws:Object>
+                        </ws:Array>
+                    </ws:items>
+                </Controls-Wizard.horizontal:Layout>
+            </ws:bodyContentTemplate>
+        </Controls.popupTemplate:Stack>
+    </div>
+</div>

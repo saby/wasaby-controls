@@ -1,0 +1,19 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__mr4 controlsDemo__input" data-qa="controlsDemo__input_simple">
+        <div class="controls-text-label">placeholder</div>
+        <Controls.dropdown:Combobox source="{{_source}}"
+                                    displayProperty="title"
+                                    keyProperty="key"
+                                    placeholder="custom placeholder"
+                                    bind:selectedKey="_selectedKey"/>
+    </div>
+    <div class="controlsDemo__mr4 controlsDemo__input" data-qa="controlsDemo__input_readonly">
+        <div class="controls-text-label">placeholder and readOnly</div>
+        <Controls.dropdown:Combobox source="{{_source}}"
+                                    displayProperty="title"
+                                    keyProperty="key"
+                                    placeholder="readOnly placeholder"
+                                    readOnly="{{true}}"
+                                    bind:selectedKey="_readOnlySelectedKey"/>
+    </div>
+</div>

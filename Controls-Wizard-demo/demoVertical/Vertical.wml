@@ -1,0 +1,138 @@
+<ws:template name="wizard">
+    <Controls.popupTemplate:Stack>
+        <ws:headerContentTemplate>
+            <div class="demoVertical-Vertical__stackHeader">
+                Правило регистрации
+            </div>
+        </ws:headerContentTemplate>
+        <ws:bodyContentTemplate>
+            <div class="demoVertical-Vertical__stackContent">
+                <div class="demoVertical-Vertical_customContent">
+                </div>
+                <Controls-Wizard.vertical:Container
+                    attr:class="demoVertical-Vertical__verticalContainer">
+                    <Controls-Wizard.vertical:Layout
+                        displayMode="compact"
+                        selectedStepIndex="{{selectedStepIndex}}"
+                        items="{{items}}"
+                    />
+                </Controls-Wizard.vertical:Container>
+            </div>
+        </ws:bodyContentTemplate>
+    </Controls.popupTemplate:Stack>
+</ws:template>
+
+<div class="demoVertical-Vertical">
+    <ws:if data="{{selectedStepIndex === 4 }}">
+        <ws:partial template="wizard">
+            <ws:items>
+                <ws:Array>
+                    <ws:Object title="Если входящий документ" hideCompletedTitle="{{true}}">
+                        <ws:contentTemplate>
+                            <Controls.Container.Async
+                                templateName=" Controls-Wizard-demo/demoVertical/VerticalStep1">
+                                <ws:partial template="{{content.resolvedTemplate}}"
+                                            theme="default"
+                                            finished="{{finishedArray[0]}}"
+                                            textInputValue="Лопырев договор"
+                                            on:finishStep="finishStepHandler()"
+                                            on:finishWizard="finishWizardHandler()"/>
+                            </Controls.Container.Async>
+                        </ws:contentTemplate>
+                    </ws:Object>
+                    <ws:Object
+                        title="{{ finishedArray[1] ? 'Регистрируем как' : 'Зарегистрировать документ в системе как' }}">
+                        <ws:contentTemplate>
+                            <Controls.Container.Async
+                                templateName=" Controls-Wizard-demo/demoVertical/VerticalStep2">
+                                <ws:partial template="{{content.resolvedTemplate}}"
+                                            theme="default"
+                                            finished="{{finishedArray[1]}}"
+                                            on:finishStep="finishStepHandler()"
+                                            on:finishWizard="finishWizardHandler()"
+                                            on:stepBack="stepBackHandler()"/>
+                            </Controls.Container.Async>
+                        </ws:contentTemplate>
+                        <ws:titleContentTemplate>
+                            <div class="demoVertical-Vertical__titleTemplate">
+                            </div>
+                        </ws:titleContentTemplate>
+                    </ws:Object>
+                    <ws:Object title="В качестве ответственного назначить">
+                        <ws:contentTemplate>
+                            <Controls.Container.Async
+                                templateName=" Controls-Wizard-demo/demoVertical/VerticalStep3">
+                                <ws:partial template="{{content.resolvedTemplate}}"
+                                            theme="default"
+                                            finished="{{finishedArray[2]}}"
+                                            on:finishStep="finishStepHandler()"
+                                            on:finishWizard="finishWizardHandler()"/>
+                            </Controls.Container.Async>
+                        </ws:contentTemplate>
+                    </ws:Object>
+                    <ws:Object title="Если ответственный не определится, то можно будет назначить">
+                        <ws:contentTemplate>
+                            <Controls.Container.Async
+                                templateName=" Controls-Wizard-demo/demoVertical/VerticalStep4">
+                                <ws:partial template="{{content.resolvedTemplate}}"
+                                            theme="default"
+                                            finished="{{finishedArray[3]}}"
+                                            on:finishStep="finishStepHandler()"
+                                            on:finishWizard="finishWizardHandler()"/>
+                            </Controls.Container.Async>
+                        </ws:contentTemplate>
+                    </ws:Object>
+                </ws:Array>
+            </ws:items>
+        </ws:partial>
+    </ws:if>
+    <ws:else>
+        <ws:partial template="wizard">
+            <ws:items>
+                <ws:Array>
+                    <ws:Object title="Если входящий документ" hideCompletedTitle="{{true}}" contrastBackground="{{true}}">
+                        <ws:contentTemplate>
+                            <Controls.Container.Async
+                                templateName=" Controls-Wizard-demo/demoVertical/VerticalStep1">
+                                <ws:partial template="{{content.resolvedTemplate}}"
+                                            theme="default"
+                                            finished="{{finishedArray[0]}}"
+                                            textInputValue="Лопырев договор"
+                                            on:finishStep="finishStepHandler()"
+                                            on:finishWizard="finishWizardHandler()"/>
+                            </Controls.Container.Async>
+                        </ws:contentTemplate>
+                    </ws:Object>
+                    <ws:Object
+                        title="{{ finishedArray[1] ? 'Регистрируем как' : 'Зарегистрировать документ в системе как' }}"
+                        titleContentTemplate="{{_titleContentTemplate}}"
+                        titleContentTemplateOptions="{{_titleContentTemplateOptions}}">
+                        <ws:contentTemplate>
+                            <Controls.Container.Async
+                                templateName=" Controls-Wizard-demo/demoVertical/VerticalStep2">
+                                <ws:partial template="{{content.resolvedTemplate}}"
+                                            theme="default"
+                                            finished="{{finishedArray[1]}}"
+                                            on:finishStep="finishStepHandler()"
+                                            on:finishWizard="finishWizardHandler()"
+                                            on:stepBack="stepBackHandler()"/>
+                            </Controls.Container.Async>
+                        </ws:contentTemplate>
+                    </ws:Object>
+                    <ws:Object title="В качестве ответственного назначить" contrastBackground="{{true}}">
+                        <ws:contentTemplate>
+                            <Controls.Container.Async
+                                templateName=" Controls-Wizard-demo/demoVertical/VerticalStep3">
+                                <ws:partial template="{{content.resolvedTemplate}}"
+                                            theme="default"
+                                            finished="{{finishedArray[2]}}"
+                                            on:finishStep="finishStepHandler()"
+                                            on:finishWizard="finishWizardHandler()"/>
+                            </Controls.Container.Async>
+                        </ws:contentTemplate>
+                    </ws:Object>
+                </ws:Array>
+            </ws:items>
+        </ws:partial>
+    </ws:else>
+</div>

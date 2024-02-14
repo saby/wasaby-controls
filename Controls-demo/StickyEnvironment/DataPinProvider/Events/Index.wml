@@ -1,0 +1,28 @@
+<div class="controls-demo_Wrapper controlsDemo_fixedWidth500">
+   <div data-qa="controls-demo__text_top">Top edge data id: {{_topEdgeData}}</div>
+   <div data-qa="controls-demo__text_bottom">Bottom edge data id: {{_bottomEdgeData}}</div>
+
+   <Controls.stickyEnvironment:DataPinProvider on:edgesDataChanged="_onEdgesDataChanged()">
+      <Controls.scroll:Container attr:style="height: 500px;">
+         <Controls.list:View
+            source="{{_viewSource}}"
+            keyProperty="key"
+            navigation="{{_navigation}}"
+         >
+            <ws:virtualScrollConfig page="{{50}}" pageSize="{{50}}"/>
+            <ws:itemTemplate>
+               <ws:partial template="Controls/list:ItemTemplate">
+                  <ws:contentTemplate>
+                     <Controls.stickyEnvironment:DataPinContainer data="{{itemTemplate.item.contents.get('key')}}">
+                        <strong>Запись с id="{{itemTemplate.item.contents.get('key')}}"</strong>
+                     </Controls.stickyEnvironment:DataPinContainer>
+
+                     {{itemTemplate.item.contents.get('title')}}
+                     <i data-qa="Controls-Demo_StickyEnvironment__hooks">h</i>
+                  </ws:contentTemplate>
+               </ws:partial>
+            </ws:itemTemplate>
+         </Controls.list:View>
+      </Controls.scroll:Container>
+   </Controls.stickyEnvironment:DataPinProvider>
+</div>

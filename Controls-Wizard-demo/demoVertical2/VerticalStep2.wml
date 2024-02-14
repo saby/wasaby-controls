@@ -1,0 +1,47 @@
+<ws:if data="{{!_options.finished}}">
+    <div class="demoVertical-Vertical_secondBlock">
+        <Controls.list:View
+                source = "{{_viewSource}}"
+                markedKey="{{2}}"
+                allowEmptySelection="{{false}}"
+                markerVisibility="hidden"
+                keyProperty="id"
+                on:click="_finishStepHandler()"
+                attr:class="demoVertical-Vertical_list">
+            <ws:itemTemplate>
+                <ws:partial template="Controls/list:ItemTemplate"
+                            displayProperty="description"
+                />
+            </ws:itemTemplate>
+        </Controls.list:View>
+        <p class="demoVertical-Vertical_more">Еще...</p>
+        <p class="demoVertical-Vertical_or">или</p>
+        <div class="demoVertical-Vertical_decline">
+            <Controls.list:View
+                    source = "{{_viewSource2}}"
+                    markedKey="{{2}}"
+                    allowEmptySelection="{{false}}"
+                    markerVisibility="hidden"
+                    keyProperty="id"
+                    on:click="_finishStepHandler()"
+                    attr:class="demoVertical-Vertical_list">
+                <ws:itemTemplate>
+                    <ws:partial template="Controls/list:ItemTemplate"
+                                displayProperty="description"
+                    />
+                </ws:itemTemplate>
+            </Controls.list:View>
+        </div>
+    </div>
+</ws:if>
+<ws:else>
+    <div class="demoVertical-Vertical_secondBlock-completed">
+        <div class="demoVertical-Vertical_secondStepResult">
+            <p class="demoVertical-Vertical_underlinedText">Входящий договор </p>
+            <div class="demoVertical-Vertical_secondStepCloseIcon">
+                <div class="icon-medium icon-CloseNew icon-disabled"></div>
+            </div>
+        </div>
+    </div>
+</ws:else>
+

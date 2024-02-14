@@ -1,0 +1,54 @@
+<div class="controlsDemo__wrapper controlsDemo__width800px">
+<Controls.browser:Browser source="{{_viewSource}}"
+                          keyProperty="key"
+                          bind:filter="_filter"
+                          searchParam="title"
+                          minSearchLength="{{3}}"
+                          filterButtonSource="{{_fastFilterData}}">
+  <div class="ws-fragment">
+    <Controls.searchDeprecated:InputContainer>
+      <Controls.search:Input/>
+    </Controls.searchDeprecated:InputContainer>
+    <Controls.filter:ViewContainer>
+      <Controls.filter:View source="{{_fastFilterData}}"
+                            alignment="right"
+                            viewMode="frequent"
+                            panelTemplateName="Controls/filterPopup:SimplePanel"/>
+    </Controls.filter:ViewContainer>
+    <Controls.scroll:Container attr:class="controlsDemo__height300" initialScrollPosition="{{_initialScrollPosition}}">
+      <Controls.list:Container>
+        <Controls.list:View name="list">
+          <ws:navigation source="position" view="infinity">
+            <ws:sourceConfig field="key" position="{{_position}}" direction="backward" limit="{{15}}"/>
+          </ws:navigation>
+          <ws:iterativeLoadingTemplate>
+            <ws:partial template="Controls/list:IterativeLoadingTemplate"
+                        scope="{{iterativeLoadingTemplate}}">
+              <ws:footerTemplate>
+                <div>Дополнительная информация при итеративном поиске</div>
+              </ws:footerTemplate>
+            </ws:partial>
+          </ws:iterativeLoadingTemplate>
+          <ws:continueSearchTemplate>
+            <ws:partial template="Controls/list:ContinueSearchTemplate"
+                        scope="{{continueSearchTemplate}}">
+              <ws:footerTemplate>
+                <div>Дополнительная информация при итеративном поиске</div>
+              </ws:footerTemplate>
+            </ws:partial>
+          </ws:continueSearchTemplate>
+        </Controls.list:View>
+      </Controls.list:Container>
+    </Controls.scroll:Container>
+  </div>
+</Controls.browser:Browser>
+
+<div class="controlsDemo__flexColumn">
+  <Controls.checkbox:Checkbox caption="Страница не успеет загрузиться за 30с(запрос 10с)"
+                              bind:value="_longLoad"
+                              on:valueChanged="_longLoadChangedHandler()"/>
+  <Controls.checkbox:Checkbox caption="Индикатор не успеет показаться(запрос 1с)"
+                              bind:value="_fastLoad"
+                              on:valueChanged="_fastLoadChangedHandler()"/>
+</div>
+</div>

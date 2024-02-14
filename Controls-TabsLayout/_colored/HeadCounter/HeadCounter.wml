@@ -1,0 +1,15 @@
+<div class="controls-ColoredTabs-HeadCounter-header" attr:style="min-width: {{_minHeaderWidth}}px">
+    <ws:if data="{{ !_options.isCompact }}">
+        <div class="controls-ColoredTabs-HeadCounter-title">{{ _options.title }}</div>
+    </ws:if>
+    <ws:else>
+        <ws:if data="{{ _options.item.icon }}">
+            <Controls.icon:Icon
+                    icon='{{_options.item.icon}}'
+                    iconSize='s'/>
+        </ws:if>
+    </ws:else>
+    <div class="controls-ColoredTabs-HeadCounter-counter
+            controls-margin_left-{{ _getCounterOffset() }}
+         {{(_options.selectedKey !== null) ? ' controls-ColoredTabs-HeadCounter__fixed-tab-counter' : ''}}" attr:data-qa="ColoredTabs__item-counter">{{_options.item.counter}}</div>
+</div>

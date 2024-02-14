@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-Wizard"
+           id="d6e84b3b-e56f-44a0-837b-594bc0db212c"
+           kaizen_zone="a311e6de-2232-4251-9de5-35aa7ae5ffe3"
+           package="Wasaby"
+           responsible="Крайнов Д.О."
+           required="1"
+           version="1.00">
+  <description>Модуль содержит контролы для отображения процесса, состоящего из нескольких шагов.</description>
+    <depends>
+      <module id="f6fdf353-3ab3-4dbb-8671-01c2b418bf0a" name="Controls"/>
+      <module id="af50caf5-f84b-4b81-a19c-6f6618372dbd" name="Controls-default-theme"/>
+      <module id="686f183d-0bcc-4732-b4e4-6016c2a67a0f" name="Types"/>
+      <module id="f27abe12-19df-4c9f-b886-634bd20a0011" name="UI"/>
+      <module id="0f5d26db-dd61-4957-9375-8861ad66f219" name="Vdom"/>
+    </depends>
+  <load_after/>
+  <parameters/>
+  <resources/>
+  <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

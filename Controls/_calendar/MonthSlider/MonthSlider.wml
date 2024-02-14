@@ -1,0 +1,52 @@
+<div class="controls-MonthSlider controls-MonthSlider__{{ !_options.showWeekdays ? 'without' : 'with' }}-weekdays controls_calendar_theme-{{_options.theme}}">
+   <div attr:class="controls-MonthSlider__header">
+      <div class="controls-MonthSlider__home-button {{ !_isHomeVisible ? 'ws-invisible' }}" on:click="_setCurrentMonth()">
+         <span attr:class="controls-MonthSlider__header-button icon-size icon-Home3"></span>
+      </div>
+      <span attr:class="controls-MonthSlider__header-button icon-size icon-MarkC{{ _directionality === 'rtl' ?  'Right' : 'Left'}}Light
+                        controls-MonthSlider__header-button-{{ _prevArrowButtonVisible ? 'visible' : 'hidden'}}" on:click="_slideMonth(-1)"></span>
+      <span attr:class="controls-MonthSlider__header-title">{{ _formatDate(_month, 'MMMM, YYYY') }}</span>
+      <span attr:class="controls-MonthSlider__header-button icon-size icon-MarkC{{ _directionality === 'rtl' ?  'Left' : 'Right'}}Light
+                      controls-MonthSlider__header-button-{{ _nextArrowButtonVisible ? 'visible' : 'hidden'}}" on:click="_slideMonth(1)"></span>
+   </div>
+   <Controls._calendar.MonthSlider.Slider
+      data="{{_month}}"
+      animation="{{_animation}}"
+      attr:class="controls-MonthSlider__slider"
+      on:wheel="_wheelHandler()"
+   >
+      <Controls._calendar.Month
+         newMode="{{ _options.newMode }}"
+         attr:class="controls-MonthSlider__month"
+         month="{{content.data}}"
+         mode="{{_options.mode}}"
+         dayTemplate="{{ _options.dayTemplate }}"
+         dayFormatter="{{ _options.dayFormatter }}"
+         daysData="{{ _options.daysData }}"
+         on:itemClick="_itemClickHandler()"
+         startValue="{{_options.startValue}}"
+         endValue="{{_options.endValue}}"
+         showWeekdays="{{ _options.showWeekdays }}"
+         bind:selectionProcessing="selectionProcessing"
+         bind:selectionBaseValue="selectionBaseValue"
+         bind:selectionHoveredValue="selectionHoveredValue"
+         on:rangeChanged="_rangeChangedHandler()"
+         ranges="{{_options.ranges}}"
+         selectionType="{{_options.selectionType}}"
+
+         on:startValueChanged="_onStartValueChanged()"
+         on:endValueChanged="_onEndValueChanged()"
+      >
+         <ws:dayHeaderTemplate>
+            <ws:if data="{{ !_options.dayHeaderTemplate }}">
+               <div class="controls-MonthSlider__weekdays-item">
+                  {{ dayHeaderTemplate.value.caption}}
+               </div>
+            </ws:if>
+            <ws:else>
+               <ws:partial template="{{ _options.dayHeaderTemplate }}"/>
+            </ws:else>
+         </ws:dayHeaderTemplate>
+      </Controls._calendar.Month>
+   </Controls._calendar.MonthSlider.Slider>
+</div>

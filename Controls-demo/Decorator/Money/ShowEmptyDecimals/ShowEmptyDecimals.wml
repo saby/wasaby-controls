@@ -1,0 +1,30 @@
+<div class="controlsDemo__wrapper">
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">value = 1234.00, showEmptyDecimals = true</div>
+      <Controls.baseDecorator:Money value="{{1234.00}}" showEmptyDecimals="{{true}}"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">value = 1234.00, showEmptyDecimals = false</div>
+      <Controls.baseDecorator:Money value="{{1234.00}}" showEmptyDecimals="{{false}}"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">value = 1234.56, showEmptyDecimals = false</div>
+      <Controls.baseDecorator:Money value="{{1234.56}}" showEmptyDecimals="{{false}}"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">value = 1000.00, showEmptyDecimals = false abbreviationType = long</div>
+      <Controls.baseDecorator:Money value="{{1000.00}}" showEmptyDecimals="{{false}}" abbreviationType="long"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">value = 1000.00, showEmptyDecimals = false abbreviationType = short</div>
+      <Controls.baseDecorator:Money value="{{1000.00}}" showEmptyDecimals="{{false}}" abbreviationType="short"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">value = 1000.00, showEmptyDecimals = true abbreviationType = long</div>
+      <Controls.baseDecorator:Money value="{{1000.00}}" showEmptyDecimals="{{true}}" abbreviationType="long"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">value = 1000.00, showEmptyDecimals = true abbreviationType = short</div>
+      <Controls.baseDecorator:Money value="{{1000.00}}" showEmptyDecimals="{{true}}" abbreviationType="short"/>
+   </div>
+</div>

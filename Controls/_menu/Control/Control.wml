@@ -1,0 +1,83 @@
+<Controls.dataSource:error.Container viewConfig="{{_errorConfig}}">
+  <div class="controls_breadcrumbs_theme-{{_options.theme}} controls_dropdownPopup_theme-{{_options.theme}} controls-menu"
+       attr:data-index="{{_options.subMenuLevel}}"
+       attr:ws-no-focus="{{!_options.focusable}}"
+       on:keydown="_handleKeyDown()">
+     <ws:if data="{{_listModel}}">
+        <Controls._menu.Render scope="{{_options}}"
+                               historyRoot="{{_historyController ? _historyController.getRoot() : null}}"
+                               listModel="{{_listModel}}"
+                               itemActionVisibilityCallback="{{_itemActionsVisibilityCallback}}"
+                               itemActions="{{_itemActions}}"
+                               needStickyHistoryItems="{{_needStickyHistoryItems}}"
+                               dataName="{{_options.dataName}}"
+                               viewMode="{{_viewMode || _options.viewMode}}"
+                               sourceController="{{_sourceController}}"
+                               emptyItem="{{_emptyItem}}"
+                               selectedKeys="{{_selectedKeys}}"
+                               excludedKeys="{{_excludedKeys}}"
+                               expandedItems="{{[_options.openedSubMenuKey]}}"
+                               on:itemClick="_itemClick()"
+                               on:itemSwipe="_itemSwipe()"
+                               on:itemActionMouseDown="_itemActionMouseDown()"
+                               on:itemMouseEnter="_itemMouseEnter()"
+                               on:itemMouseMove="_itemMouseMove()"
+                               on:checkBoxClick="_checkBoxClick()"
+                               on:treeCheckBoxClick="_treeCheckBoxClick()"
+
+                               on:mouseenter="_mouseEnterHandler()"
+                               on:touchstart="_touchStartHandler()"
+
+                               on:mouseleave="_mouseLeaveHandler()"
+                               on:mousemove="_mouseMove()"
+                               on:separatorMouseEnter="_separatorMouseEnter()"
+                               on:pinClick="_pinClick()">
+        </Controls._menu.Render>
+        <ws:if data="{{_moreButtonVisible || _expandButtonVisible || _options.showMoreRightTemplate}}">
+           <Controls.stickyBlock:StickyBlock mode="stackable"
+                                        backgroundStyle="{{_options.backgroundStyle}}"
+                                        shadowVisibility="{{_expandButtonVisible}}"
+                                        position="bottom">
+              <div class="controls-Menu__footer {{_options.showMoreRightTemplate ? 'controls-Menu__footer-minHeight'}}"
+                   on:mouseenter="_footerMouseEnter()">
+                 <ws:if data="{{_moreButtonVisible}}">
+                    <div class="controls-Menu__moreButton controls-Menu__footer-moreButton"
+                         on:click="_openSelectorDialog()">
+                       <Controls.Container.Async templateName="Controls/ShowMoreButton">
+                          <ws:partial template="{{content.resolvedTemplate}}"
+                                      iconSize="m"
+                                      attr:data-qa="controls-Menu__moreButton"/>
+                       </Controls.Container.Async>
+                    </div>
+                 </ws:if>
+                 <ws:else data="{{_expandButtonVisible}}">
+                    <div class="controls-Menu__additional
+                               controls-Menu__footer-additional_padding-top
+                               {{_options.isAdaptive && _options.allowAdaptive !== false ? 'controls-padding_bottom-xs'}}
+                               {{_options.footerContentTemplate ? 'controls-Menu__footer-additional_padding-bottom'}}"
+                         on:click="_toggleExpanded()">
+                       <Controls.Container.Async templateName="Controls/ShowMoreButton">
+                          <ws:partial template="{{content.resolvedTemplate}}"
+                                      iconMode="arrow"
+                                      iconSize="l"
+                                      value="{{_expander}}"/>
+                       </Controls.Container.Async>
+                    </div>
+                 </ws:else>
+                 <ws:if data="{{_options.showMoreRightTemplate}}">
+                    <ws:partial template="{{_options.showMoreRightTemplate}}"
+                                attr:class="controls-Menu__footer-showMoreRightTemplate" />
+                 </ws:if>
+              </div>
+           </Controls.stickyBlock:StickyBlock>
+        </ws:if>
+        <Controls.popup:Sticky name="Sticky"
+                               actionOnScroll="close"
+                               closeOnOutsideClick="{{true}}"
+                               on:showIndicator="_changeIndicatorOverlay()"
+                               on:result="_subMenuResult()"
+                               on:close="_closeSubMenuHandler()"
+                               template="Controls/menu:Popup"/>
+     </ws:if>
+  </div>
+</Controls.dataSource:error.Container>

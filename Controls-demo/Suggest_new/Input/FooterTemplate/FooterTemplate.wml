@@ -1,0 +1,73 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell">
+        <div class="controls-text-label">Шаблон подвала с использованием стандарного footer'a</div>
+        <Controls.SuggestInput
+                attr:class="controlsDemo__input demo-SuggestNew__defaultFooter"
+                displayProperty="title"
+                searchParam="title"
+                navigation="{{_navigation}}"
+                source="{{_source}}">
+            <ws:suggestTemplate templateName="wml!Controls-demo/Suggest_new/Input/FooterTemplate/resources/SuggestTemplate">
+                <ws:templateOptions demoClass="demo-SuggestInputList"/>
+            </ws:suggestTemplate>
+            <ws:footerTemplate templateName="Controls/suggestPopup:FooterTemplate">
+                <ws:templateOptions>
+                    <ws:showSelectorButtonTemplate>
+                        <span class="demo-suggest-defaultFooter">Моя компания</span>
+                    </ws:showSelectorButtonTemplate>
+                </ws:templateOptions>
+            </ws:footerTemplate>
+        </Controls.SuggestInput>
+    </div>
+   <div class="controlsDemo__wrapper__horizontal controlsDemo__cell">
+      <div class="controls-text-label">Шаблон подвала со стандартной кнопкой открытия</div>
+      <Controls.SuggestInput
+              attr:class="controlsDemo__input demo-SuggestNew__templateFooter"
+              bind:value="_suggestCustomValue"
+              displayProperty="title"
+              searchParam="title"
+              navigation="{{_navigation}}"
+              source="{{_source}}">
+          <ws:suggestTemplate templateName="wml!Controls-demo/Suggest_new/Input/FooterTemplate/resources/SuggestTemplate">
+              <ws:templateOptions demoClass="demo-SuggestInputList"/>
+          </ws:suggestTemplate>
+          <ws:footerTemplate templateName="wml!Controls-demo/Suggest_new/Input/FooterTemplate/resources/StandartFooterTemplate"/>
+      </Controls.SuggestInput>
+  </div>
+   <div class="controlsDemo__wrapper__horizontal controlsDemo__cell">
+       <div class="controls-text-label">Шаблон подвала со своей кнопкой открытия</div>
+       <Controls.SuggestInput
+               attr:class="controlsDemo__input demo-SuggestNew__selfButtonFooter"
+               bind:value="_suggestStandartValue"
+               displayProperty="title"
+               searchParam="title"
+               navigation="{{_navigation}}"
+               source="{{_source}}">
+           <ws:suggestTemplate templateName="wml!Controls-demo/Suggest_new/Input/FooterTemplate/resources/SuggestTemplate">
+               <ws:templateOptions demoClass="demo-SuggestInputList"/>
+           </ws:suggestTemplate>
+           <ws:footerTemplate templateName="Controls/suggestPopup:FooterTemplate">
+               <ws:templateOptions>
+                   <ws:showSelectorButtonTemplate>
+                       <span>Моя компания</span>
+                   </ws:showSelectorButtonTemplate>
+               </ws:templateOptions>
+           </ws:footerTemplate>
+       </Controls.SuggestInput>
+   </div>
+   <div class="controlsDemo__wrapper__horizontal controlsDemo__cell">
+      <div class="controls-text-label">Без подвала</div>
+      <Controls.SuggestInput
+              attr:class="controlsDemo__input demo-SuggestNew__noFooter"
+              bind:value="_suggestDefaultValue"
+              displayProperty="title"
+              searchParam="title"
+              navigation="{{_navigation}}"
+              source="{{_source}}"
+              footerTemplate="{{null}}">
+          <ws:suggestTemplate templateName="wml!Controls-demo/Suggest_new/Input/FooterTemplate/resources/SuggestTemplate">
+              <ws:templateOptions demoClass="demo-SuggestInputList"/>
+          </ws:suggestTemplate>
+      </Controls.SuggestInput>
+   </div>
+</div>

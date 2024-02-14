@@ -1,0 +1,26 @@
+<div
+    name="wrapper"
+    on:focusin="_onFocusIn()"
+    on:focusOut="_onFocusOut()"
+    class="ws-flex-column ws-flexbox Keyboard-QwertyOpener controls_Keyboard_theme-{{_options.theme}}">
+    <ws:if data="{{ _options.content }}">
+        <ws:partial template="{{ _options.content }}"
+            class="Keyboard-QwertyOpener__content {{ _options.contentClass ? _options.contentClass }}"/>
+    </ws:if>
+    <ws:if data="{{ _visibleKeyboard }}">
+        <Controls.Container.Async templateName="Controls-Keyboard/Qwerty">
+            <ws:partial
+                template="{{ content.resolvedTemplate }}"
+                on:mousedown="_onKeyboardMouseDown()"
+                itemPressCallback="{{ _keyboardItemPressCallback }}"
+                accentButtonCaption="{{ _options.accentButtonCaption }}"
+                getSizeOfKeyboard="{{ _options.getSizeOfKeyboard }}"
+                size="{{ _options.size }}"
+                lang="{{ _options.lang }}"
+                layout="{{ _options.layout }}"
+                keyboardClass="{{ _options.keyboardClass }}"
+                >
+            </ws:partial>
+        </Controls.Container.Async>
+    </ws:if>
+</div>

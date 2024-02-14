@@ -1,0 +1,126 @@
+@import 'Controls-Lists/_dynamicGrid/styles/zIndexEnv/_cellContentContext';
+
+@timeline_padding_xs: calc(var(--offset_xs) / 2);
+
+// Прицел - перекрестие
+@cross-line-color: rgb(var(--label_icon-color_rgb));
+@cross-line-color-rgba: rgba(var(--label_icon-color_rgb), 50%);
+@cross-line-size: 4000px;
+
+.ControlsLists-dynamicGrid__dynamicCellsWrapper {
+   display: grid;
+   height: 100%;
+   position: relative;
+}
+
+.ControlsLists-dynamicGrid__autoScrollTarget {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   right: 0;
+}
+
+.for(@TOffsetSizeVariants, {
+  .ControlsLists-dynamicGrid__dynamicCellsWrapper_columns-spacing_@{_item} {
+    column-gap: ~'calc(var(--offset_@{_item}) - var(--border-thickness))';
+    margin-left: ~'calc(var(--offset_@{_item}) - var(--border-thickness))';
+  }
+  .ControlsLists-dynamicGrid__autoScrollTarget_columns-spacing_@{_item} {
+    left: ~'calc(-1 * ( calc(var(--offset_@{_item}) - var(--border-thickness)) ))';
+    right: ~'calc(-1 * ( calc(var(--offset_@{_item}) - var(--border-thickness)) ))';
+  }
+});
+
+.ControlsLists-dynamicGrid__dynamicHeaderCell {
+   align-items: center;
+   justify-content: center;
+   display: flex;
+}
+
+.ControlsLists-dynamicGrid__dynamicDataCell,
+.ControlsLists-dynamicGrid__eventCell {
+   height: 100%;
+   position: relative;
+}
+
+.ControlsLists-dynamicGrid__selectionCheckbox.controls-CheckboxMarker {
+   position: absolute;
+   bottom: 0;
+   display: none;
+   min-height: var(--icon-size_s);
+   z-index: @selectionCheckboxIndex;
+}
+
+.ControlsLists-dynamicGrid__tag {
+   z-index: 2;
+}
+
+.ws-is-hover {
+   .ControlsLists-dynamicGrid__dynamicDataCell:hover .ControlsLists-dynamicGrid__selectionCheckbox {
+      display: flex;
+   }
+
+
+   /* Вертикальные линии по ховеру */
+   .ControlsLists-dynamicGrid__cross-vertical-part:hover::after {
+      content: '';
+      position: absolute;
+      border-left: var(--border-thickness) solid @cross-line-color-rgba;
+      border-right: var(--border-thickness) solid @cross-line-color-rgba;
+      border-top: none;
+      border-bottom: none;
+      left: calc(-2 * var(--border-thickness));
+      right: calc(-2 * var(--border-thickness));
+      top: -(@cross-line-size);
+      height: @cross-line-size;
+      filter: drop-shadow(0 @cross-line-size 0 @cross-line-color);
+      pointer-events: none;
+      z-index: @crossLineVerticalZIndex;
+   }
+
+   /* Горизонтальные линии по ховеру. Мемуары.
+      Сделаны именно так из-за комбинации следующих требований к контролу:
+         1. Горизонтальные (и вертикальные) отступы между ячейками должны быть равны 3px.
+         2. При наведении на первую строку нижняя линия должна совпадать с верхней линией,
+            отображаемой при наведении на вторую строку.
+         3. Есть фиксированная часть таблицы, у которой есть фон (под фон уходит скроллируемая часть).
+
+      Это накладывает следующие ограничения на решение задачи отображения горизонтальных линий (номер ограничения
+      соответствует номеру требования):
+         1. Отступ между строками 3px является нечётным, значит нельзя задать одинаковые отступы сверху и снизу записи.
+            Также 1.5px будет работать некорректно во многих кейсах - зум, восстановление позиции при скролле и т.п.
+         2. Исходя из требования можно было бы использовать решение абсолютного позиционирования и вылезания за границы
+            ячейки, но 3-е требование блокирует такое решение (подробнее в п.3).
+         3. Нативный css последовательно формирует z-index для элементов (каждый следующий элемент с таким же z-index
+            располагается "выше" предыдущего). А значит любой элемент, вышедший за нижнюю границу первой строки будет
+            перекрыт фоном второй строкой. Следовательно, абсолютное позиционирование нижней линии невозможно.
+
+      Таким образом, итоговая реализация состоит из следующих решений:
+         1. Расстояние между строками в 3px обеспечивается верхним отступом в 3px и нижним отступом в 0px.
+         2. Совпадение по ховеру нижней линии первой записи и верхней линии второй записи обеспечивается так:
+            - верхняя линия отображается на текущей записи (item:hover:after);
+            - нижняя линия отображается в верхней области следующей записи (item:hover + item:after);
+            - для последней записи отсутствует следующая запись, а значит перекрывать нечем и нижняя линия располагается
+              прямо в последней записи (row:last-child:hover:after)
+    */
+
+   // Ховер на запись. Горизонтальные линии. Верхняя линия.
+   .ControlsLists-dynamicGrid__item:hover .ControlsLists-dynamicGrid__cross-horizontal-part::after,
+   .ControlsLists-dynamicGrid__item:hover + .ControlsLists-dynamicGrid__item .ControlsLists-dynamicGrid__cross-horizontal-part::after {
+      content: '';
+      position: absolute;
+      border-top: var(--border-thickness) solid @cross-line-color-rgba;
+      filter: drop-shadow(@cross-line-size 0 0 @cross-line-color);
+      left: -(@cross-line-size);
+      width: @cross-line-size;
+      top: calc((@timeline_padding_xs - var(--border-thickness)) / 2);
+      pointer-events: none;
+      z-index: @crossLineHorizontalZIndex;
+   }
+
+   // Ховер на запись. Горизонтальные линии. Нижняя линия (только для последней строки).
+   .ControlsLists-dynamicGrid__item:last-child:hover .ControlsLists-dynamicGrid__cross-horizontal-part::after {
+      border-bottom: var(--border-thickness) solid @cross-line-color-rgba;
+      bottom: calc(-1 * (@timeline_padding_xs - var(--border-thickness)));
+   }
+}
