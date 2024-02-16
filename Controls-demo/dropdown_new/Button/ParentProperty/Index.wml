@@ -1,0 +1,12 @@
+<div class="controlsDemo__flexRow">
+    <div class="controlsDemo__wrapper">
+        <Controls.dropdown:Button keyProperty="key"
+                                  displayProperty="title"
+                                  parentProperty="parent"
+                                  nodeProperty="@parent"
+                                  caption="Состояние"
+                                  items="{{_items}}"
+                                  attr:class="controlsDemo-menuButton">
+        </Controls.dropdown:Button>
+    </div>
+</div>

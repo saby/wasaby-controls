@@ -1,0 +1,7 @@
+<ws:partial template="Controls/menu:ItemTemplate"
+            scope="{{_options}}"
+            treeItem="{{treeItem}}"
+            attr:class="controls-SimplePanel-Menu__hierarchyItemTemplate"
+            multiSelect="{{item.contents.get(_options.nodeProperty) === false ? false : multiSelect}}"
+            marker="{{item.contents.get(_options.nodeProperty) === false ? true : !multiSelect}}">
+</ws:partial>

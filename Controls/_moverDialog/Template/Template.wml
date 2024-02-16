@@ -1,0 +1,50 @@
+<Controls._moverDialog.BaseTemplate
+        headingCaption="{{_options.headingCaption}}"
+        headerContentTemplate="{{_options.headerContentTemplate}}">
+   <ws:bodyContentTemplate>
+      <Controls.browser:Browser source="{{_options.source}}"
+                                bind:filter="_filter"
+                                sorting="{{_options.sorting}}"
+                                root="{{_root}}"
+                                bind:expandedItems="_expandedItems"
+                                bind:searchValue="_searchValue"
+                                navigation="{{_options.navigation}}"
+                                keyProperty="{{_options.keyProperty}}"
+                                searchParam="{{_options.searchParam}}"
+                                dedicatedItemProperty="{{_options.dedicatedItemProperty}}"
+                                parentProperty="{{_options.parentProperty}}"
+                                displayProperty="{{_options.displayProperty}}"
+                                dataLoadCallback="{{ _dataLoadCallback }}">
+            <div class="controls-MoveDialog__content">
+               <ws:if data="{{_options.searchParam}}">
+                 <Controls.search:Input attr:class="controls-MoveDialog__search" bind:value="_inputSearchValue" on:search="_search()" on:searchReset="_searchReset()"/>
+               </ws:if>
+               <Controls.scroll:Container attr:class="controls-MoveDialog__scroll">
+                  <Controls.listDataOld:ListContainer>
+                     <Controls.explorer:View
+                             name="explorer"
+                             showActionButton="{{false}}"
+                             attr:class="controls-MoveDialog__explorer"
+                             on:markedKeyChanged="_onMarkedKeyChanged()"
+                             on:beforeMarkedKeyChanged="_onBeforeMarkedKeyChanged()"
+                             on:itemClick="_onItemClick()"
+                             on:expandedItemsChanged="_resetWidth()"
+                             on:afterItemExpand="_onAfterItemExpand()"
+                             on:afterItemCollapse="_onAfterItemCollapse()"
+                             backgroundStyle="dialog"
+                             itemsReadyCallback="{{ _itemsReadyCallback }}"
+                             nodeProperty="{{_options.nodeProperty}}"
+                             hasChildrenProperty="{{_options.hasChildrenProperty}}"
+                             itemsFilterMethod="{{_itemsFilterMethod}}"
+                             expanderDisplayMode="adaptive"
+                             expanderVisibility="{{_options.expanderVisibility}}"
+                             emptyTemplate="{{ _getEmptyTemplate() }}"
+                             containerWidth="{{containerWidth}}"
+                             columns="{{columns}}"
+                             markedKey="{{_options.markedKey}}"/>
+                  </Controls.listDataOld:ListContainer>
+               </Controls.scroll:Container>
+            </div>
+      </Controls.browser:Browser>
+   </ws:bodyContentTemplate>
+</Controls._moverDialog.BaseTemplate>

@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center ws-align-items-center" data-qa="controlsDemo_capture">
+        <Controls.compactDatePicker:View
+            attr:class="controlsDemo-CompactDatePicker_height"
+            bind:startValue="_startValue"
+            bind:endValue="_endValue"
+            selectionType="single"
+            _date="{{ _date }}">
+            <ws:dayTemplate>
+                <ws:partial template="Controls/calendar:MonthViewDayTemplate"
+                            backgroundStyle="{{_getBackgroundStyle(dayTemplate)}}"
+                            className="controls-MonthView__border-currentMonthDay-unselected_style-CompactDatePickerItem">
+                    <ws:contentTemplate>
+                        {{ contentTemplate.value.day }}
+                    </ws:contentTemplate>
+                </ws:partial>
+            </ws:dayTemplate>
+        </Controls.compactDatePicker:View>
+    </div>
+</div>

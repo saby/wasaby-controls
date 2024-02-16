@@ -1,0 +1,8 @@
+<div class="controlsDemo__flexColumn">
+   <Controls.dropdown:Selector
+           keyProperty="key"
+           displayProperty="title"
+           source="{{_source}}"
+           groupProperty="group"
+           bind:selectedKeys="_selectedKeys" />
+</div>

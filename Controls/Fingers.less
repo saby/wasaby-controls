@@ -1,0 +1,97 @@
+.Controls-Fingers {
+   height: 100%;
+   position: relative;
+}
+
+.Controls-Fingers__item {
+   height: var(--inline_height_5xl);
+   font-size: var(--font-size_3xl);
+   align-items: center;
+   cursor: pointer;
+   position: relative;
+}
+
+.Controls-Fingers__item-shadow {
+   box-shadow: var(--shadow_d);
+}
+
+.Controls-Fingers__item_unmarked {
+   background: var(--default_contrast_background-color_button);
+   color: var(--text-color);
+}
+
+.Controls-Fingers__item_marked_default {
+   background: var(--item_selected_color);
+   color: var(--item_selected_text-color);
+}
+
+.Controls-Fingers__item_marked {
+   @variants: primary, secondary, success, warning, danger, info;
+
+   .for(@variants, {
+      &_@{_item} {
+         background: ~'var(--@{_item}_contrast_background-color)';
+         color: var(--contrast_text-color);
+      }
+   });
+}
+
+.Controls-Fingers__item__content {
+   display: flex;
+   align-items: center;
+   height: var(--inline_height_5xl);
+   border-radius: inherit;
+}
+
+.Controls-Fingers__item__content-align_right {
+   justify-content: space-between;
+}
+
+.Controls-Fingers__item__content-align_left {
+   flex-direction: row-reverse;
+   justify-content: flex-end;
+}
+
+.Controls-Fingers__item__content__title-align_left {
+   padding-left: var(--offset_m);
+}
+
+.Controls-Fingers__item__content__title-align_right {
+   padding-right: var(--offset_m);
+}
+
+.Controls-Fingers__item__content__image {
+   background-size: cover;
+   width: var(--size_mt_image);
+   height: var(--size_mt_image);
+   flex-shrink: 0;
+}
+
+.Controls-Fingers__item__content__image-imageViewMode_rectangle {
+   border-radius: var(--border-radius_s);
+}
+
+.Controls-Fingers__item__content__image-imageViewMode_circle {
+   border-radius: 50%;
+}
+
+// to make "fingers" items look like "chips"
+.ws-is-hover .Controls-Fingers__item_unmarked.controls-hover-background-unaccented-same:hover {
+   background-color: var(--pale_hover_contrast_background-color);
+}
+
+.controls-border_tl-radius-2xl {
+   border-top-left-radius: var(--border-radius_2xl);
+}
+
+.controls-border_tr-radius-2xl {
+   border-top-right-radius: var(--border-radius_2xl);
+}
+
+.controls-border_br-radius-2xl {
+   border-bottom-right-radius: var(--border-radius_2xl);
+}
+
+.controls-border_bl-radius-2xl {
+   border-bottom-left-radius: var(--border-radius_2xl);
+}

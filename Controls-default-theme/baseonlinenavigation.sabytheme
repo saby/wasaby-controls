@@ -1,0 +1,646 @@
+[
+    {
+        "styles": [
+            {
+                "metatype": "styles/palette",
+                "selector": "brand",
+                "id": "d101b555-93e7-4549-a398-bd212683331d",
+                "is_parent": null,
+                "properties": [
+                    {
+                        "id": "2d7c02ad-bd01-4127-b5bc-2aac08ddc359",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 1.0,
+                                    "base": true,
+                                    "h": 206.41975308642,
+                                    "key": "brand",
+                                    "l": 52.3529411764706,
+                                    "name": "brand",
+                                    "s": 100.0
+                                },
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "brand",
+                        "metatypeproperty": "",
+                        "key": "brand",
+                        "base": true
+                    },
+                    {
+                        "id": "7a9baeca-c1a6-4dcf-a79c-4ebb99b0e16a",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 0.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "brand_color",
+                                    "l": 0.0,
+                                    "name": "Брендовый основной",
+                                    "s": 0.0
+                                },
+                                "valuelinks": [
+                                    "brand"
+                                ],
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "Брендовый основной",
+                        "metatypeproperty": "styles/color",
+                        "key": "brand_color",
+                        "base": false
+                    }
+                ],
+                "title": "brand"
+            },
+            {
+                "metatype": "styles/palette",
+                "selector": "navigation",
+                "id": "da6bf870-06ff-43bc-be12-06a9c23ae6c4",
+                "is_parent": null,
+                "properties": [
+                    {
+                        "id": "164689bc-9df2-4567-b5fd-31fe2b14b633",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 1.0,
+                                    "base": false,
+                                    "h": 208.8,
+                                    "key": "navigation_icon_plus",
+                                    "l": 69.4117647058823,
+                                    "name": "Иконка на кнопке +",
+                                    "s": 32.051282051282
+                                },
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "Иконка на кнопке +",
+                        "metatypeproperty": "styles/color",
+                        "key": "navigation_icon_plus",
+                        "base": false
+                    },
+                    {
+                        "id": "11b16bc5-564f-446c-ad64-b28fcae469f4",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 1.0,
+                                    "base": false,
+                                    "h": 210.697674418605,
+                                    "key": "navigation_icon-color",
+                                    "l": 69.6078431372549,
+                                    "name": "Иконки разделов",
+                                    "s": 27.741935483871
+                                },
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "Иконки разделов",
+                        "metatypeproperty": "styles/color",
+                        "key": "navigation_icon-color",
+                        "base": false
+                    },
+                    {
+                        "id": "110d0720-4321-4a47-8779-808aeb75e302",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 0.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "navigation_fill_plus",
+                                    "l": 9.0,
+                                    "name": "Кнопка + на пункте аккордеона",
+                                    "s": -5.0
+                                },
+                                "valuelinks": [
+                                    "navigation_background-color"
+                                ],
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "Кнопка + на пункте аккордеона",
+                        "metatypeproperty": "styles/color",
+                        "key": "navigation_fill_plus",
+                        "base": false
+                    },
+                    {
+                        "id": "59f5d028-af29-4939-992a-67ccefc0fb26",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 0.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "navigation_fill_plus_hover",
+                                    "l": -7.0,
+                                    "name": "Кнопка + на пункте аккордеона (при наведении)",
+                                    "s": 3.0
+                                },
+                                "valuelinks": [
+                                    "navigation_fill_plus"
+                                ],
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "Кнопка + на пункте аккордеона (при наведении)",
+                        "metatypeproperty": "styles/color",
+                        "key": "navigation_fill_plus_hover",
+                        "base": false
+                    },
+                    {
+                        "id": "ebc8e5b4-afe1-4ca9-8f8d-31e912815a83",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 1.0,
+                                    "base": true,
+                                    "h": 210.0,
+                                    "key": "navigation",
+                                    "l": 24.3137254901961,
+                                    "name": "Меню навигации",
+                                    "s": 29.0322580645161
+                                },
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "Меню навигации",
+                        "metatypeproperty": "",
+                        "key": "navigation",
+                        "base": true
+                    },
+                    {
+                        "id": "23979309-4ce5-476b-be83-e288583dad7b",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 0.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "navigation_counter_separator-color",
+                                    "l": 7.0,
+                                    "name": "Разделитель счетчиков",
+                                    "s": -9.0
+                                },
+                                "valuelinks": [
+                                    "navigation_counter_background-color"
+                                ],
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "Разделитель счетчиков",
+                        "metatypeproperty": "styles/color",
+                        "key": "navigation_counter_separator-color",
+                        "base": false
+                    },
+                    {
+                        "id": "985a5244-b6d8-4f71-bebc-d73b9e6173c2",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 1.0,
+                                    "base": false,
+                                    "h": 199.411764705882,
+                                    "key": "navigation_unaccented_hover_text-color",
+                                    "l": 86.6666666666667,
+                                    "name": "Счетчики (при наведении) и иконки!!",
+                                    "s": 100.0
+                                },
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "Счетчики (при наведении) и иконки!!",
+                        "metatypeproperty": "styles/color",
+                        "key": "navigation_unaccented_hover_text-color",
+                        "base": false
+                    },
+                    {
+                        "id": "51020685-53dc-4de1-b5dc-a5f3dcc60664",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 1.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "navigation_secondary_text-color",
+                                    "l": 100.0,
+                                    "name": "Счетчик (на фоне подложки)",
+                                    "s": 0.0
+                                },
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "Счетчик (на фоне подложки)",
+                        "metatypeproperty": "styles/color",
+                        "key": "navigation_secondary_text-color",
+                        "base": false
+                    },
+                    {
+                        "id": "8232beb4-8b71-4ade-b821-b4f143abf529",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 1.0,
+                                    "base": false,
+                                    "h": 200.0,
+                                    "key": "navigation_text-color",
+                                    "l": 91.9607843137255,
+                                    "name": "Текст",
+                                    "s": 7.31707317073176
+                                },
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "Текст",
+                        "metatypeproperty": "styles/color",
+                        "key": "navigation_text-color",
+                        "base": false
+                    },
+                    {
+                        "id": "4bf692b9-1687-49e3-b2cd-18c993d2ca7f",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 1.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "navigation_active_text-color",
+                                    "l": 100.0,
+                                    "name": "Текст (в активном пункте)",
+                                    "s": 0.0
+                                },
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "Текст (в активном пункте)",
+                        "metatypeproperty": "styles/color",
+                        "key": "navigation_active_text-color",
+                        "base": false
+                    },
+                    {
+                        "id": "bf430739-6548-4d62-a156-cefce738c3b7",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 0.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "navigation_background-color",
+                                    "l": 0.0,
+                                    "name": "Фон",
+                                    "s": 0.0
+                                },
+                                "valuelinks": [
+                                    "navigation"
+                                ],
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "Фон",
+                        "metatypeproperty": "styles/color",
+                        "key": "navigation_background-color",
+                        "base": false
+                    },
+                    {
+                        "id": "c39226d6-0a23-4ce9-b9f6-cfa8072fddc5",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 0.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "navigation_menu_fill",
+                                    "l": 0.0,
+                                    "name": "Фон всплывающего меню",
+                                    "s": 0.0
+                                },
+                                "valuelinks": [
+                                    "navigation_hover_background"
+                                ],
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "Фон всплывающего меню",
+                        "metatypeproperty": "styles/color",
+                        "key": "navigation_menu_fill",
+                        "base": false
+                    },
+                    {
+                        "id": "4d69926a-5c9f-4f47-a054-969cf3829b1f",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 0.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "navigation_menu_hover",
+                                    "l": -3.0,
+                                    "name": "Фон всплывающего меню ( при наведении)",
+                                    "s": 0.0
+                                },
+                                "valuelinks": [
+                                    "navigation_menu_fill"
+                                ],
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "Фон всплывающего меню ( при наведении)",
+                        "metatypeproperty": "styles/color",
+                        "key": "navigation_menu_hover",
+                        "base": false
+                    },
+                    {
+                        "id": "ed917e7e-385d-4271-9b1f-aa79c016e56f",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 0.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "navigation_footer_button",
+                                    "l": 5.0,
+                                    "name": "Фон кнопки разворота разделов",
+                                    "s": -5.0
+                                },
+                                "valuelinks": [
+                                    "navigation_background-color"
+                                ],
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "Фон кнопки разворота разделов",
+                        "metatypeproperty": "styles/color",
+                        "key": "navigation_footer_button",
+                        "base": false
+                    },
+                    {
+                        "id": "432c1241-0f6d-4074-9de2-4039442ff69f",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 0.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "navigation_logo_fill",
+                                    "l": -3.0,
+                                    "name": "Фон кнопки с логотипом",
+                                    "s": 1.0
+                                },
+                                "valuelinks": [
+                                    "navigation_background-color"
+                                ],
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "Фон кнопки с логотипом",
+                        "metatypeproperty": "styles/color",
+                        "key": "navigation_logo_fill",
+                        "base": false
+                    },
+                    {
+                        "id": "ca251109-5eb4-4f9b-85bf-76485a3b4a49",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 0.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "navigation_logo_fill_hover",
+                                    "l": 10.0,
+                                    "name": "Фон кнопки с логотипом (при наведении)",
+                                    "s": -6.0
+                                },
+                                "valuelinks": [
+                                    "navigation_logo_fill"
+                                ],
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "Фон кнопки с логотипом (при наведении)",
+                        "metatypeproperty": "styles/color",
+                        "key": "navigation_logo_fill_hover",
+                        "base": false
+                    },
+                    {
+                        "id": "ce1688dd-30b5-4312-b191-fb8f1110848e",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 0.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "navigation_counter_background-color",
+                                    "l": -2.0,
+                                    "name": "Фон подложки счетчиков",
+                                    "s": 0.0
+                                },
+                                "valuelinks": [
+                                    "navigation"
+                                ],
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "Фон подложки счетчиков",
+                        "metatypeproperty": "styles/color",
+                        "key": "navigation_counter_background-color",
+                        "base": false
+                    },
+                    {
+                        "id": "8b05e52c-3570-4fbf-b65a-7d9a5724c4ed",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 1.0,
+                                    "base": false,
+                                    "h": 209.36170212766,
+                                    "key": "navigation_secondary_background-color",
+                                    "l": 48.0392156862745,
+                                    "name": "Фон подложки счетчиков для компактного вида",
+                                    "s": 19.1836734693878
+                                },
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "Фон подложки счетчиков для компактного вида",
+                        "metatypeproperty": "styles/color",
+                        "key": "navigation_secondary_background-color",
+                        "base": false
+                    },
+                    {
+                        "id": "08dd573f-e031-40c4-afc0-de54458a32a3",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 0.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "navigation_counter_hover_background-color",
+                                    "l": 4.0,
+                                    "name": "Фон подложки счетчиков (при наведении)",
+                                    "s": -2.0
+                                },
+                                "valuelinks": [
+                                    "navigation_counter_background-color"
+                                ],
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "Фон подложки счетчиков (при наведении)",
+                        "metatypeproperty": "styles/color",
+                        "key": "navigation_counter_hover_background-color",
+                        "base": false
+                    },
+                    {
+                        "id": "914ef51f-ea2f-485d-9022-0b7d264bdf95",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 0.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "navigation_counter_on_menu_hover_background-color",
+                                    "l": 5.0,
+                                    "name": "Фон подложки счетчиков (при наведении на пункт меню)",
+                                    "s": -5.0
+                                },
+                                "valuelinks": [
+                                    "navigation_counter_background-color"
+                                ],
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "Фон подложки счетчиков (при наведении на пункт меню)",
+                        "metatypeproperty": "styles/color",
+                        "key": "navigation_counter_on_menu_hover_background-color",
+                        "base": false
+                    },
+                    {
+                        "id": "4ead6c9f-f3c1-494f-9487-6ba146f48154",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 0.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "navigation_hover_background",
+                                    "l": 8.0,
+                                    "name": "Фон (при наведении)",
+                                    "s": -5.0
+                                },
+                                "valuelinks": [
+                                    "navigation_background-color"
+                                ],
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "Фон (при наведении)",
+                        "metatypeproperty": "styles/color",
+                        "key": "navigation_hover_background",
+                        "base": false
+                    },
+                    {
+                        "id": "8249b1bf-c26d-4e51-9457-abba35e2d2b9",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 0.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "navigation_active_background-color",
+                                    "l": -3.0,
+                                    "name": "Фон (при нажатии)",
+                                    "s": 1.0
+                                },
+                                "valuelinks": [
+                                    "navigation_background-color"
+                                ],
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "Фон (при нажатии)",
+                        "metatypeproperty": "styles/color",
+                        "key": "navigation_active_background-color",
+                        "base": false
+                    },
+                    {
+                        "id": "21f92f4f-9110-4807-8d96-4bafc31d192d",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 1.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "navigation_contrast_text-color",
+                                    "l": 100.0,
+                                    "name": "Цвет непрочитанного счетчика (на фоне)",
+                                    "s": 0.0
+                                },
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "Цвет непрочитанного счетчика (на фоне)",
+                        "metatypeproperty": "styles/color",
+                        "key": "navigation_contrast_text-color",
+                        "base": false
+                    },
+                    {
+                        "id": "c0633a67-796e-4324-a161-79d4ed8831f8",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 1.0,
+                                    "base": false,
+                                    "h": 19.5918367346939,
+                                    "key": "navigation_primary_text-color",
+                                    "l": 71.1764705882353,
+                                    "name": "Цвет непрочитанных счетчиков",
+                                    "s": 100.0
+                                },
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "Цвет непрочитанных счетчиков",
+                        "metatypeproperty": "styles/color",
+                        "key": "navigation_primary_text-color",
+                        "base": false
+                    },
+                    {
+                        "id": "221da004-9663-4e9a-a366-be1f01838cfe",
+                        "values": [
+                            {
+                                "value": {
+                                    "a": 1.0,
+                                    "base": false,
+                                    "h": 208.8,
+                                    "key": "navigation_unaccented_text-color",
+                                    "l": 69.4117647058823,
+                                    "name": "Цвет счетчиков (и иконок!!)",
+                                    "s": 32.051282051282
+                                },
+                                "theme_id": "4809f97d-b221-4a60-9595-e4add66e12a8"
+                            }
+                        ],
+                        "name": "Цвет счетчиков (и иконок!!)",
+                        "metatypeproperty": "styles/color",
+                        "key": "navigation_unaccented_text-color",
+                        "base": false
+                    }
+                ],
+                "title": "Меню навигации"
+            }
+        ],
+        "id": "4809f97d-b221-4a60-9595-e4add66e12a8",
+        "is_parent": null,
+        "title": "Тема для боя (КРАЙНОВ - НЕ ТРОГАТЬ) - базовая 2 с синим аккордеоном",
+        "selector": "baseonlinenavigation",
+        "aspect_theme": {
+            "keys": [
+                null
+            ],
+            "aspect_identifier": "87688e42-71bf-11ee-b962-0242ac120002"
+        }
+    }
+]

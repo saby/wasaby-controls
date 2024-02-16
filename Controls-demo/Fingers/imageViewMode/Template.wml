@@ -1,0 +1,36 @@
+<div class="controlsDemo_widthFit controlsDemo__height200" data-qa="controlsDemo_capture">
+    <div class="controls-margin-m ws-flexbox">
+        <Controls.Fingers
+                items="{{_items}}"
+                keyProperty="key"
+                displayProperty="caption"
+                selectedKey="1"
+                imageProperty="image"
+                imageViewMode="rectangle"
+                alignment="left"
+                storeId="0"
+                attr:style="width: 250px; height: 400px"/>
+
+        <Controls.Fingers
+                items="{{_items}}"
+                keyProperty="key"
+                displayProperty="caption"
+                selectedKey="1"
+                imageProperty="image"
+                imageViewMode="circle"
+                alignment="left"
+                storeId="0"
+                attr:style="width: 250px; height: 400px"/>
+
+        <Controls.Fingers
+                items="{{_items}}"
+                keyProperty="key"
+                displayProperty="caption"
+                selectedKey="1"
+                imageProperty="image"
+                imageViewMode="none"
+                alignment="left"
+                storeId="0"
+                attr:style="width: 250px; height: 400px"/>
+    </div>
+</div>

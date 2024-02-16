@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow demo-SearchSuggest__container controlsDemo__mb3">
+  <div class="controlsDemo__wrapper__horizontal controlsDemo__cell ControlsDemo-Suggest_padding-left">
+     <div class="controls-text-label">Открытие автодополнения при фокусе</div>
+     <Controls-ListEnv.SuggestSearch
+             attr:class="ControlsDemo-Suggest__simple controlsDemo__input"
+             bind:value="_suggestDownValue"
+             displayProperty="title"
+             searchParam="title"
+             autoDropDown="{{true}}"
+             navigation="{{_navigation}}"
+             source="{{_source}}">
+         <ws:suggestTemplate templateName="wml!Controls-ListEnv-demo/SuggestSearch/AutoDropDown/resources/SuggestTemplate"/>
+         <ws:suggestPopupOptions backgroundStyle="danger"/>
+     </Controls-ListEnv.SuggestSearch>
+  </div>
+</div>

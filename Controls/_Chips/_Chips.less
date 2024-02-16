@@ -1,0 +1,198 @@
+.controls-Button_buttonGroup {
+   border-radius: var(--border-radius_button);
+   max-width: 100%;
+   border: var(--border-thickness) solid transparent;
+}
+
+.controls-text-buttonGroupSelected-contrast {
+   color: var(--item_selected_text-color);
+}
+
+.controls-text-buttonGroupSelected-contrast_onprimary {
+   color: var(--primary_on_contrast_text-color);
+}
+
+.controls-text-buttonGroupUnselected-same {
+   color: var(--label_contrast_text-color);
+}
+
+.controls-text-buttonGroupSelected-same {
+   color: var(--text-color);
+   font-weight: var(--font-weight-bold);
+}
+
+.controls-text-buttonGroupSelected-same-contrast {
+   color: var(--text-color);
+}
+
+.controls-icon_style-chip_selected-contrast {
+   fill: var(--item_selected_icon-color);
+   color: var(--item_selected_icon-color);
+}
+
+.controls-icon_style-chip_selected-same {
+   fill: var(--icon-color);
+   color: var(--icon-color);
+}
+
+.controls-Button_buttonGroup_style-buttonGroupSelected {
+   &-contrast,
+   &-contrast-ghost {
+      background: var(--item_selected_color);
+   }
+
+   &-same-contrast {
+      background: var(--default_contrast_background-color_button);
+      box-shadow: var(--shadow_d)
+   }
+
+   &-same,
+   &-same-ghost {
+      background: var(--pale_active_contrast_background-color);
+   }
+}
+
+.controls-Button_buttonGroup_style-readOnly-buttonGroupSelected-contrast,
+.controls-Button_buttonGroup_style-readOnly-buttonGroupSelected-same,
+.controls-Button_buttonGroup_style-readOnly-buttonGroupSelected-same-contrast,
+.controls-Button_buttonGroup_style-readOnly-buttonGroupSelected-same-ghost,
+.controls-Button_buttonGroup_style-readOnly-buttonGroupSelected-contrast-ghost {
+   background: var(--readonly_background-color);
+   border-color: var(--readonly_background-color);
+}
+
+.controls-Button_buttonGroup_style-buttonGroupUnselected-contrast,
+.controls-Button_buttonGroup_style-buttonGroupUnselected-contrast-ghost,
+.controls-Button_buttonGroup_style-readOnly-buttonGroupUnselected-contrast,
+.controls-Button_buttonGroup_style-readOnly-buttonGroupUnselected-same,
+.controls-Button_buttonGroup_style-readOnly-buttonGroupUnselected-same-ghost {
+   background: var(--default_contrast_background-color_button);
+   box-sizing: border-box;
+}
+
+.controls-Button_buttonGroup_style-buttonGroupUnselected-same {
+   background: var(--pale_contrast_background-color);
+   box-sizing: border-box;
+}
+
+.controls-Button_buttonGroup_style-buttonGroupUnselected-contrast {
+   box-shadow: var(--shadow_d);
+}
+
+.controls-Button_buttonGroup_style-readOnly-buttonGroupUnselected-contrast,
+.controls-Button_buttonGroup_style-readOnly-buttonGroupUnselected-same {
+   border: var(--border-thickness) solid var(--readonly_border-color);
+}
+
+.controls-Button_buttonGroup_style-buttonGroupUnselected-contrast:active,
+.controls-Button_buttonGroup_style-buttonGroupUnselected-contrast-ghost:active {
+   background: var(--pale_hover_contrast_background-color);
+}
+
+.controls-Button_buttonGroup_style-buttonGroupUnselected-same:active,
+.controls-Button_buttonGroup_style-buttonGroupUnselected-same-ghost:active {
+   background: var(--pale_hover_contrast_background-color);
+
+   .controls-text-buttonGroupUnselected-same {
+      color: var(--text-color);
+   }
+}
+
+.ws-is-hover {
+   .controls-Button_buttonGroup_style-buttonGroupUnselected-contrast:hover,
+   .controls-Button_buttonGroup_style-buttonGroupUnselected-contrast-ghost:hover {
+      background: var(--pale_hover_contrast_background-color);
+   }
+
+   .controls-Button_buttonGroup_style-buttonGroupUnselected-same:hover,
+   .controls-Button_buttonGroup_style-buttonGroupUnselected-same-ghost:hover {
+      background: var(--pale_hover_contrast_background-color);
+
+      .controls-text-buttonGroupUnselected-same {
+         color: var(--text-color);
+      }
+   }
+}
+
+.controls-ButtonGroup__button_withMargin {
+   margin-right: var(--offset_m);
+   margin-top: var(--offset_m);
+   max-width: 100%;
+
+   &:last-child {
+      margin-right: 0;
+   }
+}
+
+.controls-ButtonGroup__wrapper {
+   display: inline-flex;
+}
+
+.controls-ButtonGroup__wrapper-horizontal {
+   margin-top: calc(-1 * var(--offset_m));
+   max-width: 100%;
+}
+
+.controls-ButtonGroup__wrapper-vertical {
+   .flex-direction(column);
+   width: 100%;
+}
+
+.controls-ButtonGroup__wrapper-horizontal_miltiline {
+   flex-flow: row wrap;
+}
+
+.Controls__Chips_withoutPadding {
+   .controls-BaseButton__icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+}
+
+.Controls__Chips_withoutPadding-width {
+   &_xs {
+      width: var(--inline_height_xs);
+   }
+
+   &_s {
+      width: var(--inline_height_s);
+   }
+
+   &_m {
+      width: var(--inline_height_m);
+   }
+
+   &_l {
+      width: var(--inline_height_l);
+   }
+
+   &_xl {
+      width: var(--inline_height_xl);
+   }
+
+   &_2xl {
+      width: var(--inline_height_2xl);
+   }
+
+   &_3xl {
+      width: var(--inline_height_3xl);
+   }
+
+   &_4xl {
+      width: var(--inline_height_4xl);
+   }
+
+   &_5xl {
+      width: var(--inline_height_5xl);
+   }
+}
+
+.controls-Button__wrapper_viewMode-buttonGroup {
+   justify-content: center;
+   align-items: baseline;
+}
+
+.controls-ButtonGroup__button-counter {
+   margin-left: var(--offset_2xs);
+}

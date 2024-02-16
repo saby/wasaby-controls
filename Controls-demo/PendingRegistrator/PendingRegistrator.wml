@@ -1,0 +1,34 @@
+<div>
+    Разрешить ожидание с помощью свойства onPendingFail:
+    <br/>
+    <Controls-demo.PendingRegistrator.RegistratorExample>
+        <Controls-demo.PendingRegistrator.Content/>
+    </Controls-demo.PendingRegistrator.RegistratorExample>
+
+    <br/>
+
+    Отмена ожидания завершения пендинга:
+    <br/>
+    <Controls-demo.PendingRegistrator.RegistratorExample>
+        <Controls-demo.PendingRegistrator.Content2/>
+    </Controls-demo.PendingRegistrator.RegistratorExample>
+
+    <br/>
+    Отправка множества пендингов:
+    <br/>
+    <Controls-demo.PendingRegistrator.RegistratorExample>
+        <div>
+            <Controls-demo.PendingRegistrator.Content/>
+            <Controls-demo.PendingRegistrator.Content/>
+        </div>
+    </Controls-demo.PendingRegistrator.RegistratorExample>
+
+    <br/>
+    PendingRegistrator внутри PendingRegistrator:
+    <br/>
+    <Controls-demo.PendingRegistrator.RegistratorExample class="example1">
+        <Controls-demo.PendingRegistrator.RegistratorExample class="example2">
+            <Controls-demo.PendingRegistrator.Content/>
+        </Controls-demo.PendingRegistrator.RegistratorExample>
+    </Controls-demo.PendingRegistrator.RegistratorExample>
+</div>

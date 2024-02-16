@@ -1,0 +1,18 @@
+<div>
+    <Controls-ListEnv.filterConnected:CompatibleView storeId="filterView"
+            detailPanelTemplateName="wml!Controls-ListEnv-demo/Filter/CompatibleView/FilterDetailPanel"/>
+        <Controls.grid:View storeId="filterView">
+            <ws:columns>
+                <ws:Array>
+                    <ws:Object displayProperty="name"/>
+                    <ws:Object displayProperty="city"/>
+                </ws:Array>
+            </ws:columns>
+            <ws:header>
+                <ws:Array>
+                    <ws:Object title="Имя"/>
+                    <ws:Object title="Город проживания"/>
+                </ws:Array>
+            </ws:header>
+        </Controls.grid:View>
+</div>

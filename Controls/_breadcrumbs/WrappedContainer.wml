@@ -1,0 +1,9 @@
+<Controls.context:ContextOptionsConsumer scope="{{ _options }}">
+    <ws:contextOptionsInnerComponent>
+      <Controls.context:DataContextCompatibleConsumer scope="{{_options}}">
+        <ws:innerComponent>
+        <Controls._breadcrumbs.Container scope="{{ contextOptionsInnerComponent }}" _dataOptionsValue="{{innerComponent.dataContextCompatibleValue || contextOptionsInnerComponent._dataOptionsValue}}" />
+        </ws:innerComponent>
+      </Controls.context:DataContextCompatibleConsumer>
+    </ws:contextOptionsInnerComponent>
+</Controls.context:ContextOptionsConsumer>

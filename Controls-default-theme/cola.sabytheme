@@ -1,0 +1,634 @@
+[
+    {
+        "is_parent": null,
+        "selector": "cola",
+        "id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+        "title": "Тема для боя (КРАЙНОВ - НЕ ТРОГАТЬ) - кола",
+        "styles": [
+            {
+                "is_parent": null,
+                "metatype": "styles/palette",
+                "selector": "brand",
+                "id": "79870355-9999-4bfc-ad41-c8870cd1d7cf",
+                "properties": [
+                    {
+                        "base": true,
+                        "key": "brand",
+                        "id": "2358162e-d9ff-4306-9c2d-a4cc560c1a43",
+                        "name": "brand",
+                        "metatypeproperty": "",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "value": {
+                                    "a": 1.0,
+                                    "base": true,
+                                    "h": 0.0,
+                                    "key": "brand",
+                                    "l": 50.0,
+                                    "name": "brand",
+                                    "s": 100.0
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "base": false,
+                        "key": "brand_color",
+                        "id": "1a69d6cd-0204-496d-917b-e2c64aef3ab0",
+                        "name": "Брендовый основной",
+                        "metatypeproperty": "styles/color",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "value": {
+                                    "a": 1.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "brand_color",
+                                    "l": 50.0,
+                                    "name": "Брендовый основной",
+                                    "s": 100.0
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "title": "brand"
+            },
+            {
+                "is_parent": null,
+                "metatype": "styles/palette",
+                "selector": "primary",
+                "id": "7bae726e-f064-4a5b-8606-587b37307268",
+                "properties": [
+                    {
+                        "base": false,
+                        "key": "primary_icon-color",
+                        "id": "824ad088-842a-423f-b8fb-a9f44a148b57",
+                        "name": "Иконки",
+                        "metatypeproperty": "styles/color",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "valuelinks": [
+                                    "primary"
+                                ],
+                                "value": {
+                                    "a": 0.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "primary_icon-color",
+                                    "l": 0.0,
+                                    "name": "Иконки",
+                                    "s": 0.0
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "base": false,
+                        "key": "primary_hover_icon-color",
+                        "id": "9ff99e0f-c70b-4876-a16c-0071025a1e85",
+                        "name": "Иконки (при наведении)",
+                        "metatypeproperty": "styles/color",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "valuelinks": [
+                                    "primary_hover_text-color"
+                                ],
+                                "value": {
+                                    "a": 0.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "primary_hover_icon-color",
+                                    "l": 0.0,
+                                    "name": "Иконки (при наведении)",
+                                    "s": 0.0
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "base": false,
+                        "key": "primary_border-color",
+                        "id": "14c47968-9342-4262-99b3-b5c6efc42084",
+                        "name": "Обводка",
+                        "metatypeproperty": "styles/color",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "valuelinks": [
+                                    "primary"
+                                ],
+                                "value": {
+                                    "a": 0.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "primary_border-color",
+                                    "l": 0.0,
+                                    "name": "Обводка",
+                                    "s": 0.0
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "base": false,
+                        "key": "primary_hover_border-color",
+                        "id": "c1574caa-2644-4a29-9114-9cd7b96ef493",
+                        "name": "Обводка (при наведении)",
+                        "metatypeproperty": "styles/color",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "valuelinks": [
+                                    "primary"
+                                ],
+                                "value": {
+                                    "a": 0.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "primary_hover_border-color",
+                                    "l": 0.0,
+                                    "name": "Обводка (при наведении)",
+                                    "s": 0.0
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "base": true,
+                        "key": "primary",
+                        "id": "9be6a10b-6305-44ec-b052-d12c007d2178",
+                        "name": "Первичный",
+                        "metatypeproperty": "",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "value": {
+                                    "a": 1.0,
+                                    "base": true,
+                                    "h": 352.923076923077,
+                                    "key": "primary",
+                                    "l": 49.2156862745098,
+                                    "name": "Первичный",
+                                    "s": 77.6892430278884
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "base": false,
+                        "key": "primary_text-color",
+                        "id": "99270ec1-d75b-4d38-bb69-37bd0f5d6d29",
+                        "name": "Текст",
+                        "metatypeproperty": "styles/color",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "valuelinks": [
+                                    "primary"
+                                ],
+                                "value": {
+                                    "a": 0.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "primary_text-color",
+                                    "l": 0.0,
+                                    "name": "Текст",
+                                    "s": 0.0
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "base": false,
+                        "key": "primary_hover_text-color",
+                        "id": "a9708768-dee6-4025-b850-6d8eb9445986",
+                        "name": "Текст (при наведении)",
+                        "metatypeproperty": "styles/color",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "value": {
+                                    "a": 1.0,
+                                    "base": false,
+                                    "h": 353.063583815029,
+                                    "key": "primary_hover_text-color",
+                                    "l": 33.921568627451,
+                                    "name": "Текст (при наведении)",
+                                    "s": 100.0
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "base": false,
+                        "key": "primary_background-color",
+                        "id": "e37e538b-8af4-4b2e-80f0-cbf353408b5b",
+                        "name": "Фон",
+                        "metatypeproperty": "styles/color",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "value": {
+                                    "a": 1.0,
+                                    "base": false,
+                                    "h": 354.0,
+                                    "key": "primary_background-color",
+                                    "l": 98.0392156862745,
+                                    "name": "Фон",
+                                    "s": 100.0
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "base": false,
+                        "key": "primary_contrast_background-color",
+                        "id": "19cfd502-c37a-422c-8ee4-0e4dcf446e55",
+                        "name": "Фон контрастный",
+                        "metatypeproperty": "styles/color",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "value": {
+                                    "a": 1.0,
+                                    "base": false,
+                                    "h": 353.065326633166,
+                                    "key": "primary_contrast_background-color",
+                                    "l": 60.9803921568627,
+                                    "name": "Фон контрастный",
+                                    "s": 100.0
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "base": false,
+                        "key": "primary_hover_contrast_background-color",
+                        "id": "8710f621-8ef6-4f71-a5e3-f2829d1981f2",
+                        "name": "Фон контрастный (при наведении)",
+                        "metatypeproperty": "styles/color",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "value": {
+                                    "a": 1.0,
+                                    "base": false,
+                                    "h": 353.150684931507,
+                                    "key": "primary_hover_contrast_background-color",
+                                    "l": 57.0588235294118,
+                                    "name": "Фон контрастный (при наведении)",
+                                    "s": 100.0
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "base": false,
+                        "key": "primary_active_contrast_background-color",
+                        "id": "dea7efd7-4326-4991-bc0d-aa82bc65b516",
+                        "name": "Фон контрастный (при нажатии)",
+                        "metatypeproperty": "styles/color",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "value": {
+                                    "a": 1.0,
+                                    "base": false,
+                                    "h": 17.7049180327869,
+                                    "key": "primary_active_contrast_background-color",
+                                    "l": 48.0392156862745,
+                                    "name": "Фон контрастный (при нажатии)",
+                                    "s": 74.6938775510204
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "base": false,
+                        "key": "primary_same_background-color",
+                        "id": "44bb3c06-e790-4622-8679-92f9138b4df4",
+                        "name": "Фон (маленьких блоков)",
+                        "metatypeproperty": "styles/color",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "value": {
+                                    "a": 1.0,
+                                    "base": false,
+                                    "h": 354.0,
+                                    "key": "primary_same_background-color",
+                                    "l": 96.078431372549,
+                                    "name": "Фон (маленьких блоков)",
+                                    "s": 99.9999999999999
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "base": false,
+                        "key": "primary_hover_same_background-color",
+                        "id": "18e23148-7963-4448-8ce7-17a31808f641",
+                        "name": "Фон маленьких блоков (при наведении)",
+                        "metatypeproperty": "styles/color",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "value": {
+                                    "a": 1.0,
+                                    "base": false,
+                                    "h": 353.333333333333,
+                                    "key": "primary_hover_same_background-color",
+                                    "l": 92.9411764705882,
+                                    "name": "Фон маленьких блоков (при наведении)",
+                                    "s": 100.0
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "base": false,
+                        "key": "primary_active_same_background-color",
+                        "id": "8e0257e0-ef4c-4fa4-90b7-a02049779a2b",
+                        "name": "Фон маленьких блоков (при нажатии)",
+                        "metatypeproperty": "styles/color",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "value": {
+                                    "a": 1.0,
+                                    "base": false,
+                                    "h": 352.941176470588,
+                                    "key": "primary_active_same_background-color",
+                                    "l": 90.0,
+                                    "name": "Фон маленьких блоков (при нажатии)",
+                                    "s": 100.0
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "base": false,
+                        "key": "primary_hover_background-color",
+                        "id": "710692b7-5952-4156-8f48-424bf0c836d3",
+                        "name": "Фон (при наведении)",
+                        "metatypeproperty": "styles/color",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "value": {
+                                    "a": 1.0,
+                                    "base": false,
+                                    "h": 354.0,
+                                    "key": "primary_hover_background-color",
+                                    "l": 96.078431372549,
+                                    "name": "Фон (при наведении)",
+                                    "s": 99.9999999999999
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "base": false,
+                        "key": "primary_active_background-color",
+                        "id": "df204550-c7d5-4315-9860-a3d0c5374efa",
+                        "name": "Фон (при нажатии)",
+                        "metatypeproperty": "styles/color",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "value": {
+                                    "a": 1.0,
+                                    "base": false,
+                                    "h": 353.333333333333,
+                                    "key": "primary_active_background-color",
+                                    "l": 92.9411764705882,
+                                    "name": "Фон (при нажатии)",
+                                    "s": 100.0
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "title": "Первичный"
+            },
+            {
+                "is_parent": null,
+                "metatype": "styles/palette",
+                "selector": "secondary",
+                "id": "62789182-6025-4638-98a3-87b28f0c85db",
+                "properties": [
+                    {
+                        "base": true,
+                        "key": "secondary",
+                        "id": "f9ca0d09-c7af-48b2-94b0-d52be0eb271e",
+                        "name": "Вторичный",
+                        "metatypeproperty": "",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "value": {
+                                    "a": 1.0,
+                                    "base": true,
+                                    "h": 0.0,
+                                    "key": "secondary",
+                                    "l": 60.0,
+                                    "name": "Вторичный",
+                                    "s": 0.0
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "base": false,
+                        "key": "secondary_icon-color",
+                        "id": "9c542875-d2cb-49c5-a6ff-862013e63036",
+                        "name": "Иконки",
+                        "metatypeproperty": "styles/color",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "valuelinks": [
+                                    "secondary"
+                                ],
+                                "value": {
+                                    "a": 0.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "secondary_icon-color",
+                                    "l": 0.0,
+                                    "name": "Иконки",
+                                    "s": 0.0
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "base": false,
+                        "key": "secondary_hover_icon-color",
+                        "id": "8eedd245-5d82-4c4b-84e7-ed40ed5a2133",
+                        "name": "Иконки (при наведении)",
+                        "metatypeproperty": "styles/color",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "valuelinks": [
+                                    "secondary_hover_text-color"
+                                ],
+                                "value": {
+                                    "a": 0.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "secondary_hover_icon-color",
+                                    "l": 0.0,
+                                    "name": "Иконки (при наведении)",
+                                    "s": 0.0
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "base": false,
+                        "key": "secondary_contrast_background-color",
+                        "id": "5956d912-2a12-4965-a2f5-66f44a8c0e87",
+                        "name": "Контрастный фон",
+                        "metatypeproperty": "styles/color",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "value": {
+                                    "a": 1.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "secondary_contrast_background-color",
+                                    "l": 50.1960784313725,
+                                    "name": "Контрастный фон",
+                                    "s": 0.0
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "base": false,
+                        "key": "secondary_hover_contrast_background-color",
+                        "id": "7d47eaa5-1732-4c27-9769-a3d1f8394a12",
+                        "name": "Контрастный фон (при наведении)",
+                        "metatypeproperty": "styles/color",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "value": {
+                                    "a": 1.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "secondary_hover_contrast_background-color",
+                                    "l": 45.8823529411765,
+                                    "name": "Контрастный фон (при наведении)",
+                                    "s": 0.0
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "base": false,
+                        "key": "secondary_active_contrast_background-color",
+                        "id": "6d6d5a07-ed7d-498b-ba6c-ade11c965960",
+                        "name": "Контрастный фон (при нажатии)",
+                        "metatypeproperty": "styles/color",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "value": {
+                                    "a": 1.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "secondary_active_contrast_background-color",
+                                    "l": 52.9411764705882,
+                                    "name": "Контрастный фон (при нажатии)",
+                                    "s": 0.0
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "base": false,
+                        "key": "secondary_border-color",
+                        "id": "e4d5ffa5-a890-4468-973b-55b770d608c3",
+                        "name": "Обводка",
+                        "metatypeproperty": "styles/color",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "valuelinks": [
+                                    "secondary"
+                                ],
+                                "value": {
+                                    "a": 0.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "secondary_border-color",
+                                    "l": 0.0,
+                                    "name": "Обводка",
+                                    "s": 0.0
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "base": false,
+                        "key": "secondary_text-color",
+                        "id": "d4a5776b-35b9-411b-a19f-d3bae390d5fd",
+                        "name": "Текст",
+                        "metatypeproperty": "styles/color",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "value": {
+                                    "a": 1.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "secondary_text-color",
+                                    "l": 40.0,
+                                    "name": "Текст",
+                                    "s": 0.0
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "base": false,
+                        "key": "secondary_hover_text-color",
+                        "id": "45057585-7613-4dba-b716-61f7802a88a7",
+                        "name": "Текст (при наведении)",
+                        "metatypeproperty": "styles/color",
+                        "values": [
+                            {
+                                "theme_id": "b1021a76-a5f1-48c7-952d-cbdcd4c1c21d",
+                                "value": {
+                                    "a": 1.0,
+                                    "base": false,
+                                    "h": 0.0,
+                                    "key": "secondary_hover_text-color",
+                                    "l": 27.843137254902,
+                                    "name": "Текст (при наведении)",
+                                    "s": 0.0
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "title": "Вторичный"
+            }
+        ],
+        "aspect_theme": {
+            "keys": [
+                null
+            ],
+            "aspect_identifier": "87688e42-71bf-11ee-b962-0242ac120002"
+        }
+    }
+]

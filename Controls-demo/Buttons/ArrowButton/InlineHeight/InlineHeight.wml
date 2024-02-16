@@ -1,0 +1,38 @@
+<div class="controlsDemo__flexColumn controlsDemo__ml2 controlsDemo_fixedWidth350">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label controlsDemo__maxWidth200">inlineHeight='default'</div>
+        <div class="controlDemo__input-row">
+            <Controls.extButtons:ArrowButton direction="left"/>
+            <Controls.extButtons:ArrowButton direction="right"/>
+            <Controls.extButtons:ArrowButton direction="up"/>
+            <Controls.extButtons:ArrowButton direction="down"/>
+        </div>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label controlsDemo__maxWidth200">inlineHeight='s'</div>
+        <div class="controlDemo__input-row">
+            <Controls.extButtons:ArrowButton direction="left" inlineHeight="s"/>
+            <Controls.extButtons:ArrowButton direction="right" inlineHeight="s"/>
+            <Controls.extButtons:ArrowButton direction="up" inlineHeight="s"/>
+            <Controls.extButtons:ArrowButton direction="down" inlineHeight="s"/>
+        </div>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label controlsDemo__maxWidth200">inlineHeight='m'</div>
+        <div class="controlDemo__input-row">
+            <Controls.extButtons:ArrowButton direction="left"/>
+            <Controls.extButtons:ArrowButton direction="right"/>
+            <Controls.extButtons:ArrowButton direction="up"/>
+            <Controls.extButtons:ArrowButton direction="down"/>
+        </div>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label controlsDemo__maxWidth200">inlineHeight='l'</div>
+        <div class="controlDemo__input-row">
+            <Controls.extButtons:ArrowButton direction="left" inlineHeight="l"/>
+            <Controls.extButtons:ArrowButton direction="right" inlineHeight="l"/>
+            <Controls.extButtons:ArrowButton direction="up" inlineHeight="l"/>
+            <Controls.extButtons:ArrowButton direction="down" inlineHeight="l"/>
+        </div>
+    </div>
+</div>

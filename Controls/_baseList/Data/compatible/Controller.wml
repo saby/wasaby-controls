@@ -1,0 +1,5 @@
+<Controls.context:ContextOptionsProvider configs="{{_configs}}" loadResults="{{_loadResults}}">
+    <Controls._baseList.Data.compatible.ListContainerConnectedCompatible scope="{{_options}}" storeId="_dataSyntheticStoreId" name="containerConnected">
+        <ws:partial template="{{_options.content}}"/>
+    </Controls._baseList.Data.compatible.ListContainerConnectedCompatible>
+</Controls.context:ContextOptionsProvider>

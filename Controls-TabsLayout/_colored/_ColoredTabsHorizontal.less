@@ -1,0 +1,48 @@
+.ColoredTabsHorizontal {
+  display: flex;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  .controls-ColoredTabs__head-tab {
+    bottom: 0;
+  }
+}
+
+.ColoredTabsHorizontal__tab-item__container {
+  display: flex;
+}
+
+.ColoredTabsHorizontal__content {
+  // TODO: поменять на переменную
+  height: calc(100% - 32px);
+  background: var(--background-color);
+  margin-right: var(--offset_xs);
+  border-radius: 0 var(--border-radius_s) var(--border-radius_s) var(--border-radius_s);
+  box-shadow: 0 0 5px var(--shadow-color_a);
+}
+
+.ColoredTabsHorizontal__content__scroll {
+  height: 100%;
+  border-radius: 0 var(--border-radius_s) var(--border-radius_s) var(--border-radius_s);
+}
+
+.ColoredTabsHorizontal__item-container {
+  z-index: 1;
+  transition: .5s;
+  position: absolute;
+  height: calc(100% - 2 * var(--offset_2xs));
+  padding: var(--offset_2xs) 0;
+}
+
+.ColoredTabsHorizontal__shadow-blur {
+  position: absolute;
+  z-index: 2;
+  top: 39px;
+  height: calc(100% - 39px);
+  width: 10px;
+  background: var(--background-color);
+  filter: blur(3px);
+  right: -3px;
+}

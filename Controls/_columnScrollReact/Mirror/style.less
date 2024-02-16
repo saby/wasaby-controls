@@ -1,0 +1,25 @@
+.hideNativeScrollbar() {
+   -ms-overflow-style: none; /* for Internet Explorer, Edge */
+   scrollbar-width: none; /* for Firefox */
+   // ios
+   &::-webkit-scrollbar {
+      width: 0;
+      -webkit-appearance: none;
+      display: none;
+   }
+}
+
+.controls-ColumnScrollReact__Mirror {
+   position: absolute;
+   left: 0;
+   height: 100%;
+   overflow-x: scroll;
+   z-index: 1;
+   user-select: none;
+   .hideNativeScrollbar();
+}
+
+.controls-ColumnScrollReact__Mirror__scroll {
+   height: 100%;
+   user-select: none;
+}
