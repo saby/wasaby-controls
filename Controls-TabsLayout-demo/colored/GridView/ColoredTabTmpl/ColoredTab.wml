@@ -1,0 +1,23 @@
+<Controls.scroll:Container attr:class="controlsDemo__scroll" shadowMode="js">
+    <Controls.grid:View
+        attr:class="controlsDemo__tab_view controls-ColoredTabs__content-bottomSpacing"
+        keyProperty="text"
+        markerVisibility="hidden"
+        multiSelectVisibility="{{ _options.multiSelectVisibility }}"
+        source="{{ _options.source }}"
+        itemsReadyCallback="{{ _itemsReadyCallback }}"
+        hoverBackgroundStyle="custom-gray"
+        bind:selectedKeys="_selectedKeys"
+        bind:excludedKeys="_excludedKeys"
+        on:selectedKeysChanged="_selectedKeysChangedHandler()"
+        on:excludedKeysChanged="_excludedKeysChangedHandler()"
+        on:listSelectedKeysCountChanged="_listSelectedKeysCountChangedHandler()"
+        on:itemClick="_itemClickHandler()"
+        on:itemActivate="_itemActivateHandler()">
+        <ws:columns>
+            <ws:Array>
+                <ws:Object displayProperty="text" />
+            </ws:Array>
+        </ws:columns>
+    </Controls.grid:View>
+</Controls.scroll:Container>

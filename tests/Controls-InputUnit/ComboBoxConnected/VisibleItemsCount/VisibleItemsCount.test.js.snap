@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls-Input/ComboBoxGroupConnected/VisibleItemsCount VisibleItemsCount 1`] = `
+<div>
+  <div
+    class="controlsDemo__wrapper controlsDemo_fixedWidth300 tw-flex tw-flex-col"
+  >
+    <div
+      class="tw-flex controls-max-w-full tw-flex-col controls-margin_top-m controls-Input-connected_filled"
+    >
+      <a
+        class="controls-Label controls-Label_underline_none tw-min-w-0"
+      >
+        <div
+          class="controls-Label__wrapper"
+        >
+          <div
+            class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+          >
+            VisibleItemsCount = 1
+          </div>
+          
+        </div>
+      </a>
+      <div
+        class="controls-ComboBox controls_toggle_theme-undefined controls-ComboBox-borderStyle-valid   controls-ComboBox-borderStyle-valid_focusing controls-ComboBox_background-same controls-text-default controls-fontweight-default controls-inlineheight-m controls-Combobox-fontsize-m controls-ComboBox_textAlign-left controls-ComboBox_border-partial controls-margin_top-m"
+        tabindex="0"
+        title=""
+      >
+        <div
+          class="controls-ComboBox-wrapper"
+        >
+          <div
+            class="controls-ComboBox__field controls-ComboBox__field_margin-null "
+            tabindex="0"
+          >
+            <div
+              class="controls-ComboBox__placeholder  tw-cursor-text"
+            >
+              Выберите вариант
+            </div>
+          </div>
+          <span
+            class="controls-ComboBox__arrow-wrapper controls-ComboBox__arrow-wrapper_offset-null"
+          >
+            <span
+              class="controls-ComboBox__iconArrow icon-ExpandLight"
+            />
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

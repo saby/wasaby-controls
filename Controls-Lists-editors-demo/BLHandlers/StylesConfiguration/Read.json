@@ -1,0 +1,629 @@
+{
+  "d": [
+    "default",
+    "Стандартная",
+    {
+      "d": [
+        [
+          "Название статьи",
+          "title",
+          "articleTitle",
+          "Inter",
+          42,
+          "--text-color",
+          [
+            true,
+            false,
+            false,
+            false
+          ],
+          "left",
+          60,
+          32,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          "richEditor_Base_articleTitle",
+          null,
+          null
+        ],
+        [
+          "Текстовая ссылка",
+          "link",
+          "link1",
+          "Inter",
+          null,
+          "--link_text-color",
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          "a",
+          null,
+          null
+        ],
+        [
+          "Маркированный список",
+          "list",
+          "unorderedList",
+          "Inter",
+          null,
+          "--text-color",
+          [
+            false,
+            false,
+            false,
+            false
+          ],
+          "left",
+          8,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          4,
+          "ul",
+          null,
+          null
+        ],
+        [
+          "Нумерованный список",
+          "list",
+          "orderedList",
+          "Inter",
+          null,
+          "--text-color",
+          [
+            false,
+            false,
+            false,
+            false
+          ],
+          "left",
+          8,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          4,
+          "ol",
+          null,
+          null
+        ],
+        [
+          "Инфоблок",
+          "wrapper",
+          "info-block",
+          "Inter",
+          null,
+          "--text-color",
+          [
+            false,
+            false,
+            false,
+            false
+          ],
+          "left",
+          0,
+          null,
+          30,
+          null,
+          null,
+          16,
+          16,
+          0,
+          "richEditor_Base_infoBlock",
+          null,
+          null
+        ],
+        [
+          "Цитата",
+          "wrapper",
+          "blockquote",
+          "Inter",
+          null,
+          "--text-color",
+          [
+            false,
+            true,
+            false,
+            false
+          ],
+          "left",
+          0,
+          null,
+          null,
+          null,
+          null,
+          2,
+          2,
+          0,
+          "richEditor_Base_blockquote",
+          null,
+          null
+        ]
+      ],
+      "s": [
+        {
+          "t": "Строка",
+          "n": "name"
+        },
+        {
+          "t": "Строка",
+          "n": "type"
+        },
+        {
+          "t": "Строка",
+          "n": "formatName"
+        },
+        {
+          "t": "Строка",
+          "n": "font"
+        },
+        {
+          "t": "Число целое",
+          "n": "size"
+        },
+        {
+          "t": "Строка",
+          "n": "color"
+        },
+        {
+          "t": {
+            "n": "Массив",
+            "t": "Логическое"
+          },
+          "n": "decoration"
+        },
+        {
+          "t": "Строка",
+          "n": "alignment"
+        },
+        {
+          "t": "Число целое",
+          "n": "offsetTop"
+        },
+        {
+          "t": "Число целое",
+          "n": "offsetBottom"
+        },
+        {
+          "t": "Число целое",
+          "n": "iconSize"
+        },
+        {
+          "t": "Строка",
+          "n": "hoverColor"
+        },
+        {
+          "t": {
+            "n": "Массив",
+            "t": "Логическое"
+          },
+          "n": "hoverDecoration"
+        },
+        {
+          "t": "Число целое",
+          "n": "paddingTop"
+        },
+        {
+          "t": "Число целое",
+          "n": "paddingBottom"
+        },
+        {
+          "t": "Число целое",
+          "n": "paddingLeft"
+        },
+        {
+          "t": "Строка",
+          "n": "selector"
+        },
+        {
+          "t": "Строка",
+          "n": "icon"
+        },
+        {
+          "t": "Строка",
+          "n": "iconStyle"
+        }
+      ],
+      "_type": "recordset"
+    },
+    {
+      "d": [
+        [
+          "Заголовок 1",
+          "heading",
+          "heading1",
+          "Inter",
+          32,
+          "--text-color",
+          [
+            true,
+            false,
+            false,
+            false
+          ],
+          "left",
+          32,
+          14,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          "richEditor_Base_headingStyle1",
+          null,
+          null
+        ],
+        [
+          "Заголовок 2",
+          "heading",
+          "heading2",
+          "Inter",
+          28,
+          "--text-color",
+          [
+            true,
+            false,
+            false,
+            false
+          ],
+          "left",
+          28,
+          10,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          "richEditor_Base_headingStyle2",
+          null,
+          null
+        ],
+        [
+          "Заголовок 3",
+          "heading",
+          "heading3",
+          "Inter",
+          24,
+          "--text-color",
+          [
+            true,
+            false,
+            false,
+            false
+          ],
+          "left",
+          22,
+          8,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          "richEditor_Base_headingStyle3",
+          null,
+          null
+        ],
+        [
+          "Заголовок 4",
+          "heading",
+          "heading4",
+          "Inter",
+          20,
+          "--text-color",
+          [
+            true,
+            false,
+            false,
+            false
+          ],
+          "left",
+          18,
+          6,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          "richEditor_Base_headingStyle4",
+          null,
+          null
+        ],
+        [
+          "Заголовок 5",
+          "heading",
+          "heading5",
+          "Inter",
+          18,
+          "--text-color",
+          [
+            true,
+            false,
+            false,
+            false
+          ],
+          "left",
+          14,
+          6,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          "richEditor_Base_headingStyle5",
+          null,
+          null
+        ]
+      ],
+      "s": [
+        {
+          "t": "Строка",
+          "n": "name"
+        },
+        {
+          "t": "Строка",
+          "n": "type"
+        },
+        {
+          "t": "Строка",
+          "n": "formatName"
+        },
+        {
+          "t": "Строка",
+          "n": "font"
+        },
+        {
+          "t": "Число целое",
+          "n": "size"
+        },
+        {
+          "t": "Строка",
+          "n": "color"
+        },
+        {
+          "t": {
+            "n": "Массив",
+            "t": "Логическое"
+          },
+          "n": "decoration"
+        },
+        {
+          "t": "Строка",
+          "n": "alignment"
+        },
+        {
+          "t": "Число целое",
+          "n": "offsetTop"
+        },
+        {
+          "t": "Число целое",
+          "n": "offsetBottom"
+        },
+        {
+          "t": "Число целое",
+          "n": "iconSize"
+        },
+        {
+          "t": "Строка",
+          "n": "hoverColor"
+        },
+        {
+          "t": {
+            "n": "Массив",
+            "t": "Логическое"
+          },
+          "n": "hoverDecoration"
+        },
+        {
+          "t": "Число целое",
+          "n": "paddingTop"
+        },
+        {
+          "t": "Число целое",
+          "n": "paddingBottom"
+        },
+        {
+          "t": "Число целое",
+          "n": "paddingLeft"
+        },
+        {
+          "t": "Строка",
+          "n": "selector"
+        },
+        {
+          "t": "Строка",
+          "n": "icon"
+        },
+        {
+          "t": "Строка",
+          "n": "iconStyle"
+        }
+      ],
+      "_type": "recordset"
+    },
+    {
+      "d": [
+        [
+          "Текст основной",
+          "text",
+          "default",
+          "Inter",
+          16,
+          "--text-color",
+          [
+            false,
+            false,
+            false,
+            false
+          ],
+          "left",
+          4,
+          4,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          "richEditor_Base_style1",
+          null,
+          null
+        ],
+        [
+          "Подпись к рисунку",
+          "text",
+          "text2",
+          "Inter",
+          15,
+          "--unaccented_text-color",
+          [
+            false,
+            true,
+            false,
+            false
+          ],
+          "center",
+          12,
+          12,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          "richEditor_Base_style2",
+          null,
+          null
+        ]
+      ],
+      "s": [
+        {
+          "t": "Строка",
+          "n": "name"
+        },
+        {
+          "t": "Строка",
+          "n": "type"
+        },
+        {
+          "t": "Строка",
+          "n": "formatName"
+        },
+        {
+          "t": "Строка",
+          "n": "font"
+        },
+        {
+          "t": "Число целое",
+          "n": "size"
+        },
+        {
+          "t": "Строка",
+          "n": "color"
+        },
+        {
+          "t": {
+            "n": "Массив",
+            "t": "Логическое"
+          },
+          "n": "decoration"
+        },
+        {
+          "t": "Строка",
+          "n": "alignment"
+        },
+        {
+          "t": "Число целое",
+          "n": "offsetTop"
+        },
+        {
+          "t": "Число целое",
+          "n": "offsetBottom"
+        },
+        {
+          "t": "Число целое",
+          "n": "iconSize"
+        },
+        {
+          "t": "Строка",
+          "n": "hoverColor"
+        },
+        {
+          "t": {
+            "n": "Массив",
+            "t": "Логическое"
+          },
+          "n": "hoverDecoration"
+        },
+        {
+          "t": "Число целое",
+          "n": "paddingTop"
+        },
+        {
+          "t": "Число целое",
+          "n": "paddingBottom"
+        },
+        {
+          "t": "Число целое",
+          "n": "paddingLeft"
+        },
+        {
+          "t": "Строка",
+          "n": "selector"
+        },
+        {
+          "t": "Строка",
+          "n": "icon"
+        },
+        {
+          "t": "Строка",
+          "n": "iconStyle"
+        }
+      ],
+      "_type": "recordset"
+    }
+  ],
+  "s": [
+    {
+      "t": "Строка",
+      "n": "id"
+    },
+    {
+      "t": "Строка",
+      "n": "name"
+    },
+    {
+      "t": "Выборка",
+      "n": "fixedStyles"
+    },
+    {
+      "t": "Выборка",
+      "n": "headingStyles"
+    },
+    {
+      "t": "Выборка",
+      "n": "textStyles"
+    }
+  ],
+  "_type": "record"
+}

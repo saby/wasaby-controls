@@ -1,0 +1,111 @@
+<div class="controls-breadcrumbsPathButton__menu" data-qa="controls-breadcrumbsMenuButton__menu">
+   <!-- Шапка -->
+   <ws:if data="{{_options.headerVisible}}">
+      <div class="controls-breadcrumbsPathButton__menu-header" data-qa="controls-breadcrumbsMenuButton__menuHeader">
+         <!-- На главную -->
+         <div
+            class="
+               controls-breadcrumbsPathButton__home-button
+               {{_options.readOnly ? 'controls-breadcrumbsPathButton__home-button_readonly'}}
+            "
+            data-qa="controls-breadcrumbsMenuButton__menuHeaderHome"
+            on:click="_goToRoot()"
+         >
+            <svg
+               width="16"
+               height="16"
+               viewBox="0 0 16 16"
+               xmlns="http://www.w3.org/2000/svg"
+               class="controls-breadcrumbsPathButton__home-button__icon"
+            >
+               <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M8.67267 0.260737C8.29125 -0.0869124 7.70875 -0.0869124 7.32733 0.260737L0.32733 5.81806C0.11885 6.00808 0 6.27745 0 6.55993V14.9974C0 15.5511 0.44772 16 1 16H15C15.5523 16 16 15.5511 16 14.9974V6.55993C16 6.27745 15.8811 6.00808 15.6727 5.81806L8.67267 0.260737ZM1 6.55993V14.9974H15V6.55993L8 1.00261L1 6.55993Z"
+               />
+            </svg>
+            <div
+               class="
+                  controls-breadcrumbsPathButton__home-button__caption
+                  {{_options.readOnly ? 'tw-cursor-text'}}
+               "
+            >
+               {{_options.caption}}
+            </div>
+         </div>
+
+         <!-- Крестик закрытия -->
+         <Controls.extButtons:CloseButton
+            offset="null"
+            viewMode="linkButton"
+            on:click="_onCloseClick()"
+         />
+      </div>
+   </ws:if>
+
+   <!-- Список -->
+   <Controls.scroll:Container attr:class="controls-breadcrumbsPathButton__menu-body" data-qa="controls-breadcrumbsMenuButton__menuBody">
+      <Controls.treeGrid:View
+         attr:class="controls-breadcrumbsPathButton__menu-body__content
+                     {{ _options.headerVisible ? 'controls-breadcrumbsPathButton__menu-body__content_withHeader' }}"
+         name="treeGrid"
+         filter="{{_filter}}"
+         source="{{_options.source}}"
+         sorting="{{_options.sorting}}"
+         navigation="{{_options.navigation}}"
+
+         keyProperty="{{_options.keyProperty}}"
+         nodeProperty="{{_options.nodeProperty}}"
+         parentProperty="{{_options.parentProperty}}"
+         hasChildrenProperty="{{_options.hasChildrenProperty}}"
+
+         expanderIcon="hiddenNode"
+         expanderVisibility="hasChildren"
+         supportExpand="{{!_options.readOnly}}"
+         expanderIconStyle="{{_options.readOnly ? 'readonly' : 'unaccented'}}"
+
+         itemsSpacing="3xs"
+         roundBorder="{{ {bl: '2xl', br: '2xl', tl: '2xl', tr: '2xl'} }}"
+
+         markerVisibility="hidden"
+         selectAncestors="{{false}}"
+         selectDescendants="{{false}}"
+         multiSelectVisibility="onhover"
+
+         selectedKeys="{{_selectedKeys}}"
+         bind:expandedItems="_expandedItems"
+
+         on:itemClick="_onItemClick()"
+         on:selectedKeysChanged="_onSelectedKeysChanged()"
+      >
+         <ws:columns>
+            <ws:Array>
+               <ws:Object
+                  fontSize="l"
+                  displayProperty="{{_options.displayProperty}}"
+               />
+            </ws:Array>
+         </ws:columns>
+         <ws:itemTemplate>
+            <ws:partial
+               template="Controls/treeGrid:ItemTemplate"
+               highlightOnHover="{{!_options.readOnly}}"
+               cursor="{{_options.readOnly ? 'text' : 'pointer'}}"
+            />
+         </ws:itemTemplate>
+         <ws:multiSelectTemplate>
+            <!-- Выводим шаблон мультиселекта только в том случае если мы не readOnly или текущий итем является выбранным -->
+            <ws:if data="{{!_options.readOnly || multiSelectTemplate.item.contents.getKey() === _selectedKeys[0]}}">
+               <!-- Обрабатывать события мультиселекта не нужно, т.к. он в NavigationMenu лишь для визуализации -->
+               <ws:partial
+                       attr:class="controls-breadcrumbsPathButton__menu__multiselect"
+                       template="Controls/baseList:MultiSelectCircleTemplate"
+                       scope="{{multiSelectTemplate}}"/>
+            </ws:if>
+            <ws:else>
+               <invisible-node/>
+            </ws:else>
+         </ws:multiSelectTemplate>
+      </Controls.treeGrid:View>
+   </Controls.scroll:Container>
+</div>

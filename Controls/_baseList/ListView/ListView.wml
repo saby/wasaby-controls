@@ -1,0 +1,103 @@
+<div class="{{ _getViewClasses() }}">
+   <ws:if data="{{_listModel}}">
+      <!--Top loading indicator-->
+      <ws:partial if="{{ _listModel.getTopIndicator() }}"
+                  template="{{_listModel.getTopIndicator().getTemplate()}}"
+                  item="{{_listModel.getTopIndicator()}}"/>
+      <!--Top loading trigger-->
+      <ws:partial template="{{ _listModel.getTopTrigger().getTemplate() }}" trigger="{{ _listModel.getTopTrigger() }}"/>
+      <ws:if data="{{_listModel.isTrackedValuesVisible()}}">
+         <Controls._baseList.TrackedPropertiesTemplate
+            trackedPropertiesTemplate="{{_options.trackedPropertiesTemplate}}"
+            paddingSize="{{_listModel.getLeftPadding()}}"
+            trackedProperties="{{_listModel.getTrackedProperties()}}"
+            className="{{_options.multiSelectVisibility !== 'hidden' && _options.multiSelectPosition !== 'custom' ? 'controls-padding_left-l'}}"
+         />
+      </ws:if>
+      <div name="itemsContainer" class="controls-ListViewV__itemsContainer {{_options.itemsContainerClass}}" attr:data-qa="items-container">
+         <ws:partial
+            template="{{_forTemplate}}"
+            collection="{{ _listModel }}"
+            keyPrefix="listView-item"
+            listModel="{{_listModel}}"
+
+            style="{{ _options.style }}"
+            theme="{{ _options.theme }}"
+
+            itemTemplate="{{ _itemTemplate }}"
+            itemTemplateProperty="{{ _options.itemTemplateProperty }}"
+            groupTemplate="{{ _groupTemplate }}"
+
+            itemActionsPosition="{{ _options.itemActionsPosition }}"
+            itemActionsTemplate="{{ _options.itemActionsTemplate }}"
+            itemActionsClass="{{ _options.itemActionsClass }}"
+            swipeTemplate="{{ _options.swipeTemplate }}"
+            backgroundStyle="{{ _options.backgroundStyle || _options.style }}"
+
+            subPixelArtifactFix="{{_options.subPixelArtifactFix}}"
+            pixelRatioBugFix="{{_options.pixelRatioBugFix}}"
+
+            stickyCallback="{{_options.stickyCallback}}"
+
+            onActionClick="{{_options.onActionClick}}"
+            onItemClickCallback="{{_onItemClick}}"
+
+            onItemMouseEnterCallback="{{_onItemMouseEnter}}"
+            onItemMouseLeaveCallback="{{_onItemMouseLeave}}"
+            onItemMouseMoveCallback="{{_onItemMouseMove}}"
+            onItemMouseDownCallback="{{_onItemMouseDown}}"
+            onItemMouseUpCallback="{{_onItemMouseUp}}"
+            onItemContextMenuCallback="{{_onItemContextMenu}}"
+            onItemSwipeCallback="{{_onItemSwipe}}"
+            onItemLongTapCallback="{{_onItemLongTap}}"
+            onItemTouchMoveCallback="{{_onItemTouchMove}}"
+            onItemWheelCallback="{{_onItemWheel}}"
+            onItemDeactivatedCallback="{{_options.onItemDeactivated}}"
+            onActionsMouseEnter="{{_options.onActionsMouseEnter}}"
+            onActionMouseDown="{{_options.onActionMouseDown}}"
+            onActionMouseUp="{{_options.onActionMouseUp}}"
+            onActionMouseEnter="{{_options.onActionMouseEnter}}"
+            onActionMouseLeave="{{_options.onActionMouseLeave}}"
+
+            onItemActionSwipeAnimationEnd="{{_options.onItemActionSwipeAnimationEnd}}"
+
+            itemActionsTemplateMountedCallback="{{_options.itemActionsTemplateMountedCallback}}"
+            itemActionsTemplateUnmountedCallback="{{_options.itemActionsTemplateUnmountedCallback}}"
+         />
+      </div>
+      <ws:if data="{{_options.bottomPaddingClass}}">
+         <div class="{{_options.bottomPaddingClass}}"></div>
+      </ws:if>
+
+      <ws:if data="{{ _isEmpty() && _listModel.getEmptyTemplateItem() }}">
+         <Controls._baseList.Render.EmptyWrapper template="{{ _listModel.getEmptyTemplateItem().getTemplate(_options.emptyTemplate) }}"
+                                                 item="{{ _listModel.getEmptyTemplateItem() }}"
+                                                 items="{{ _listModel.getSourceCollection() }}"
+                                                 filter="{{ _options.filter }}"/>
+      </ws:if>
+
+      <!--Bottom loading trigger-->
+      <ws:partial template="{{ _listModel.getBottomTrigger().getTemplate() }}" trigger="{{ _listModel.getBottomTrigger() }}"/>
+      <!--Bottom loading indicator-->
+      <ws:partial if="{{ _listModel.getBottomIndicator() }}"
+                  template="{{_listModel.getBottomIndicator().getTemplate()}}"
+                  item="{{_listModel.getBottomIndicator()}}"/>
+
+      <ws:if data="{{_listModel.getFooter()}}">
+         <ws:partial
+            template="{{_listModel.getFooter().getTemplate()}}"
+            item="{{_listModel.getFooter()}}"
+            subPixelArtifactFix="{{_options.subPixelArtifactFix}}"
+            pixelRatioBugFix="{{_options.pixelRatioBugFix}}"
+			needItemActionsSpacing="{{ _options.itemActionsPosition === 'outside' && _listModel.getCount() }}"
+            attr:class="{{_getFooterClasses()}}"
+            attr:data-qa="{{ _listModel.getFooter().listElementName }}"
+         />
+      </ws:if>
+
+      <!--Global loading indicator-->
+      <ws:partial if="{{ _listModel.getGlobalIndicator() }}"
+                  template="{{_listModel.getGlobalIndicator().getTemplate()}}"
+                  item="{{_listModel.getGlobalIndicator()}}"/>
+   </ws:if>
+</div>

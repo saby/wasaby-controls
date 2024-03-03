@@ -1,0 +1,33 @@
+<div class="controlsDemo__wrapper">
+<Controls.scroll:Container>
+  <Controls.list:View
+      groupProperty="group"
+      on:groupClick="_groupClick()"
+      storeId="Nested">
+    <ws:groupTemplate>
+      <ws:partial expanderAlign="right" fontSize="xl" template="Controls/list:GroupTemplate" textAlign="left"/>
+    </ws:groupTemplate>
+    <ws:itemTemplate>
+      <ws:partial highlightOnHover="{{false}}" template="Controls/list:ItemTemplate">
+        <ws:contentTemplate>
+          <div>
+            {{ contentTemplate.item.contents.get('title') }}
+          </div>
+          <Controls.list:View
+              groupProperty="group"
+              itemActions="{{_nestedItemActions}}"
+              on:groupClick="_groupClick()"
+              storeId="nestedListData">
+            <ws:groupTemplate>
+              <ws:partial expanderAlign="right" template="Controls/list:GroupTemplate" textAlign="left"/>
+            </ws:groupTemplate>
+          </Controls.list:View>
+        </ws:contentTemplate>
+      </ws:partial>
+    </ws:itemTemplate>
+  </Controls.list:View>
+</Controls.scroll:Container>
+<div if="{{_lastClickedGroup}}">
+  Кликнули на {{ _lastClickedElement }}
+</div>
+</div>

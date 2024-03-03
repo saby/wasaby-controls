@@ -1,0 +1,19 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow controlsDemo__childMaxWidth200 controlsDemo_fixedWidth850">
+
+    <div class="controlsDemo__cell controlsDemo__mr4">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/list_new/Navigation/Cut/ButtonPosition/Center/Index' }}">
+            <a href="{{content.href}}">Выравнивание кнопки "Развернуть" по центру (по умолчанию)</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.Navigation.Cut.ButtonPosition.Center.Index/>
+    </div>
+    <div class="controlsDemo__cell controlsDemo__mr4">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/list_new/Navigation/Cut/ButtonPosition/Start/Index' }}">
+            <a href="{{content.href}}">Выравнивание кнопки "Развернуть" по правому краю</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.Navigation.Cut.ButtonPosition.Start.Index/>
+    </div>
+</div>

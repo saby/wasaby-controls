@@ -1,0 +1,21 @@
+<Controls.source:SelectedKey
+   on:selectedKeyChanged="_selectedKeyChangedHandler()"
+   bind:selectedKey="_selectedKey">
+   <Controls.lookup:Input
+      attr:class="ws-flex-grow-1 ws-ellipsis"
+      source="{{_source}}"
+      filter="{{_filter}}"
+      placeholder="{[Регламент]}"
+      keyProperty="Key"
+      displayProperty="Name"
+      searchParam="search"
+      multiSelect="{{false}}"
+      horizontalPadding="null"
+      contrastBackground="{{true}}"
+      multiLine="{{false}}">
+      <ws:selectorTemplate
+         templateName="Motivation/PAP/kindsList:Selector"
+         templateOptions="{{_templateOptions}}"
+         popupOptions="{{_popupOptions}}"/>
+   </Controls.lookup:Input>
+</Controls.source:SelectedKey>

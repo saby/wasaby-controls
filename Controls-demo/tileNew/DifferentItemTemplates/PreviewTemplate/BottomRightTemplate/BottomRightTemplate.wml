@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper">
+   <Controls.tile:View
+           storeId="listData"
+           tileMode="static"
+           tileScalingMode="none"
+           tileWidth="250"
+           imageProperty="image">
+      <ws:itemTemplate>
+         <ws:partial
+                 template="Controls/tile:PreviewTemplate"
+                 scope="{{itemTemplate}}">
+            <ws:bottomRightTemplate>
+               <div>{{itemTemplate.item.contents.counter}}</div>
+            </ws:bottomRightTemplate>
+         </ws:partial>
+      </ws:itemTemplate>
+   </Controls.tile:View>
+</div>

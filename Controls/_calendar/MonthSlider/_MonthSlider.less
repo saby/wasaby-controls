@@ -1,0 +1,74 @@
+.controls-MonthSlider__weekdays-item {
+   flex-grow: 1;
+   flex-shrink: 1;
+   flex-basis: 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: var(--weekdays_text-color_monthSlider);
+   height: var(--weekdays_height_monthSlider);
+   font-size: var(--font-size_l);
+}
+
+.controls-MonthSlider__slider {
+   flex-shrink: 1;
+   flex-grow: 1;
+}
+
+.controls-MonthSlider__header-button {
+   cursor: pointer;
+   .icon(var(--arrow_icon-size_monthSlider));
+   color: var(--secondary_icon-color);
+
+   &:hover {
+      color: var(--secondary_hover_icon-color);
+   }
+}
+
+.controls-MonthSlider__header-button-hidden {
+   visibility: hidden;
+}
+
+.controls-MonthSlider__home-button {
+   width: var(--monthview_item_height_monthSlider);
+   display: flex;
+   justify-content: center;
+}
+
+.controls-MonthSlider__header-title {
+   text-align: center;
+   font-size: var(--font-size_l);
+   min-width: var(--value_min-width_MonthSlider);
+   color: var(--heading_text-color_monthSlider);
+}
+
+.controls-MonthSlider {
+   display: flex;
+   flex-direction: column;
+   width: var(--monthview_width_monthSlider);
+   height: var(--monthview_height_monthSlider);
+}
+
+.controls-MonthSlider__with-weekdays {
+   height: calc(var(--monthview_height_monthSlider) + var(--weekdays_height_monthSlider));
+}
+
+.controls-MonthSlider__header {
+   flex-shrink: 0;
+   display: flex;
+   align-items: center;
+   height: var(--header_height_monthSlider);
+}
+
+.kk,
+.ar {
+   .controls-MonthSlider__weekdays-item {
+      font-size: var(--font-size_3xs);
+   }
+}
+
+.en {
+   .controls-MonthSlider__weekdays-item {
+      font-size: var(--font-size_xs);
+   }
+}

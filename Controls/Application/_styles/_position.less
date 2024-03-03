@@ -1,0 +1,27 @@
+.ws-hidden {
+   /* stylelint-disable-next-line declaration-no-important */
+   display: none !important;
+}
+
+.ws-invisible {
+   /* stylelint-disable-next-line declaration-no-important */
+   visibility: hidden !important;
+}
+
+.ws-absolute {
+   /* stylelint-disable-next-line declaration-no-important */
+   position: absolute !important;
+}
+
+.ws-fixed {
+   position: fixed;
+}
+
+// Не навешивать top: -10000px, так как это приводит к некорректному вычислению stickyBlock
+// https://online.sbis.ru/opendoc.html?guid=7127cd76-b983-4209-93b1-750db00ab605
+.ws-outside-hidden {
+   /* stylelint-disable-next-line declaration-no-important */
+   position: absolute !important;
+   left: -10000px;
+   width: 100%;
+}

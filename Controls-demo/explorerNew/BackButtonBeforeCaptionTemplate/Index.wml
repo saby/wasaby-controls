@@ -1,0 +1,33 @@
+<div class="controlsDemo__wrapper">
+   <Controls.scroll:Container>
+      <Controls.explorer:View
+              bind:root="_root"
+              source="{{_source}}"
+
+              keyProperty="id"
+              nodeProperty="node"
+              parentProperty="parent"
+              displayProperty="title"
+
+              viewMode="table"
+              showActionButton="{{true}}"
+      >
+         <ws:columns>
+            <ws:Array>
+               <ws:Object displayProperty="title"/>
+            </ws:Array>
+         </ws:columns>
+         <ws:backButtonBeforeCaptionTemplate>
+            <ws:if data="{{backButtonBeforeCaptionTemplate.item.icon}}">
+               <div class="
+               controls-icon_size-s
+               {{backButtonBeforeCaptionTemplate.item.icon}}
+            "></div>
+            </ws:if>
+            <ws:if data="{{backButtonBeforeCaptionTemplate.item.image}}">
+               <img src="{{backButtonBeforeCaptionTemplate.item.image}}" style="width: 1em"/>
+            </ws:if>
+         </ws:backButtonBeforeCaptionTemplate>
+      </Controls.explorer:View>
+   </Controls.scroll:Container>
+</div>

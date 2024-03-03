@@ -1,0 +1,348 @@
+.controls-Back {
+   min-width: 1px;
+   max-width: 100%;
+   display: inline-flex;
+}
+
+// region Icon "<" styles
+.controls-Back__icon {
+   height: 1em;
+}
+
+.ws-is-ie {
+   // ie не умеет автоматически сайзить ширину svg элемента относительно его высоты
+   .controls-Back__icon {
+      width: calc(1em / 2);
+   }
+}
+
+.controls-Back__icon_style-default {
+   fill: var(--icon-color);
+}
+
+.controls-Back__icon_style-primary {
+   fill: var(--primary_icon-color);
+}
+
+.controls-Back__icon_style-secondary {
+   fill: var(--secondary_icon-color);
+}
+
+.controls-Back__icon_style-link {
+   fill: var(--link_icon-color);
+}
+
+.controls-Back__icon_style-label {
+   fill: var(--label_icon-color);
+}
+
+.controls-Back__icon_style-danger {
+   fill: var(--danger_icon-color);
+}
+
+.controls-Back__icon_style-success {
+   fill: var(--success_icon-color);
+}
+
+.controls-Back__icon_style-warning {
+   fill: var(--warning_icon-color);
+}
+
+.controls-Back__icon_style-unaccented {
+   fill: var(--unaccented_icon-color);
+}
+
+.controls-Back__icon_style-info {
+   fill: var(--info_icon-color);
+}
+
+.controls-Back__icon_style-readonly {
+   fill: var(--readonly_icon-color);
+}
+
+.controls-Back__icon_style-contrast {
+   fill: var(--contrast_icon-color);
+}
+//endregion
+
+//region icon view
+.controls-Back__icon_view-button {
+   // view
+   border-radius: 50%;
+   box-sizing: border-box;
+   background-color: var(--pale_contrast_background-color);
+   border: var(--border-thickness) solid var(--pale_border-color);
+
+   // inner align
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   .controls-Back__icon {
+      height: 50%;
+   }
+}
+
+.controls-Back__icon_view-button_size-xs {
+   width: var(--inline_height_xs);
+   height: var(--inline_height_xs);
+}
+
+.controls-Back__icon_view-button_size-m {
+   width: var(--inline_height_m);
+   height: var(--inline_height_m);
+}
+
+.controls-Back__icon_view-button_size-xl {
+   width: var(--inline_height_xl);
+   height: var(--inline_height_xl);
+}
+//endregion
+
+.controls-Back__wrapper {
+   cursor: pointer;
+   max-width: 100%;
+
+   // inner align
+   display: flex;
+   align-items: baseline;
+}
+
+// Выяснилось, что в шрифте Inter есть особенность: начиная с размера шрифта 18px, число пикселей, которое занимает
+// символ, считая от базовой линии, на 1px меньше размера шрифта. При этом кнопка назад прижата к базовой линии
+// и имеет высоту равную размеру шрифта, от чего ломает базовую линию. В связи с этим добавляем margin-top: -1px
+// Ошибка: https://online.sbis.ru/opendoc.html?guid=b3a12317-aee0-4147-a700-5894f5de8b65&client=3
+.controls-Back__icon_view-default {
+   margin-top: -1px;
+}
+
+.Application-tensorFont {
+   .controls-Back__icon_view-default {
+      margin-top: 0;
+   }
+}
+
+.Application-maison {
+   .controls-Back__icon_view-default {
+      margin-top: 0;
+   }
+}
+
+.controls-Back__icon-wrapper,
+.controls-Back__middle-wrapper {
+   flex-shrink: 0;
+   box-sizing: border-box;
+   display: flex;
+
+   .baseline-fix();
+}
+
+.controls-Back__icon-wrapper_offset-2xs {
+   padding-right: var(--offset_2xs);
+}
+
+.controls-Back__icon-wrapper_offset-xs {
+   padding-right: var(--offset_xs);
+}
+
+//region beforeCaptionTemplate
+.controls-Back__middle-wrapper {
+   padding-right: var(--offset_3xs);
+}
+
+.controls-Back__middle {
+   display: flex;
+}
+
+.controls-Back__middle_size-xs {
+   max-width: var(--inline_height_xs);
+   max-height: var(--inline_height_xs);
+}
+
+.controls-Back__middle_size-m {
+   max-width: var(--inline_height_m);
+   max-height: var(--inline_height_m);
+}
+
+.controls-Back__middle_size-xl {
+   max-width: var(--inline_height_xl);
+   max-height: var(--inline_height_xl);
+}
+//endregion
+
+//region Caption styles
+.controls-Back__caption {
+   font-weight: var(--font-weight_heading);
+}
+
+.controls-Back__caption_overflow-ellipsis {
+   .text-overflow();
+}
+
+.controls-Back__caption_overflow-none {
+   word-break: break-word;
+}
+
+.controls-Back__caption_style-default {
+   color: var(--default_text-color_heading);
+}
+
+.controls-Back__caption_style-primary {
+   color: var(--primary_text-color);
+}
+
+.controls-Back__caption_style-secondary {
+   color: var(--secondary_text-color);
+}
+
+.controls-Back__caption_style-link {
+   color: var(--link_text-color);
+}
+
+.controls-Back__caption_style-label {
+   color: var(--label_text-color);
+}
+
+.controls-Back__caption_style-danger {
+   color: var(--danger_text-color);
+}
+
+.controls-Back__caption_style-success {
+   color: var(--success_text-color);
+}
+
+.controls-Back__caption_style-warning {
+   color: var(--warning_text-color);
+}
+
+.controls-Back__caption_style-unaccented {
+   color: var(--unaccented_text-color);
+}
+
+.controls-Back__caption_style-info {
+   color: var(--info_text-color);
+}
+
+.controls-Back__caption_style-readonly {
+   color: var(--readonly_color);
+}
+
+.controls-Back__caption_style-contrast {
+   color: var(--contrast_text-color);
+}
+//endregion
+
+.controls-Back__wrapper:active {
+   .controls-Back__icon_view-button {
+      background-color: var(--pale_active_contrast_background-color);
+   }
+}
+
+.ws-is-phone.ws-is-sabypage {
+   .controls-Back__icon_view-default {
+      margin-top: 0;
+   }
+}
+
+.ws-is-phone.ws-is-sabypage.Application-mobileInterFont {
+   .controls-Back__icon_view-default {
+      margin-top: -1px;
+   }
+}
+
+.ws-is-hover {
+   .controls-Header_all__clickable:hover {
+      cursor: pointer;
+   }
+
+   .controls-Back__wrapper:hover,
+   .controls-Header_all__clickable:hover {
+      //region caption
+      .controls-Back__caption_style-default {
+         color: var(--hover_text-color);
+      }
+
+      .controls-Back__caption_style-primary {
+         color: var(--primary_hover_text-color);
+      }
+
+      .controls-Back__caption_style-secondary {
+         color: var(--secondary_hover_text-color);
+      }
+
+      .controls-Back__caption_style-link {
+         color: var(--link_hover_text-color);
+      }
+
+      .controls-Back__caption_style-label {
+         color: var(--label_hover_text-color);
+      }
+
+      .controls-Back__caption_style-danger {
+         color: var(--danger_hover_text-color);
+      }
+
+      .controls-Back__caption_style-success {
+         color: var(--success_hover_text-color);
+      }
+
+      .controls-Back__caption_style-warning {
+         color: var(--warning_hover_text-color);
+      }
+
+      .controls-Back__caption_style-unaccented {
+         color: var(--unaccented_hover_text-color);
+      }
+
+      .controls-Back__caption_style-info {
+         color: var(--info_hover_text-color);
+      }
+      //endregion
+
+      .controls-Back__icon_view-button {
+         background-color: var(--pale_hover_contrast_background-color);
+      }
+
+      //region icon
+      .controls-Back__icon_style-default {
+         fill: var(--hover_icon-color);
+      }
+
+      .controls-Back__icon_style-primary {
+         fill: var(--primary_hover_icon-color);
+      }
+
+      .controls-Back__icon_style-secondary {
+         fill: var(--secondary_hover_icon-color);
+      }
+
+      .controls-Back__icon_style-link {
+         fill: var(--link_hover_icon-color);
+      }
+
+      .controls-Back__icon_style-label {
+         fill: var(--label_hover_icon-color);
+      }
+
+      .controls-Back__icon_style-danger {
+         fill: var(--danger_hover_icon-color);
+      }
+
+      .controls-Back__icon_style-success {
+         fill: var(--success_hover_icon-color);
+      }
+
+      .controls-Back__icon_style-warning {
+         fill: var(--warning_hover_icon-color);
+      }
+
+      .controls-Back__icon_style-unaccented {
+         fill: var(--unaccented_hover_icon-color);
+      }
+
+      .controls-Back__icon_style-info {
+         fill: var(--info_hover_icon-color);
+      }
+      //endregion
+   }
+}

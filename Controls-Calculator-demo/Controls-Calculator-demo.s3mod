@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-Calculator-demo" kaizen_zone="6bae9493-19f8-4b8e-a80c-21c6398d9074"
+           id="999a1c7e-ac67-4775-9788-ea629125d91f"
+           package="Wasaby"
+           responsible="Кондратьев И.Н." responsible_uuid="3b44d193-8649-4a65-af51-e5a5596d16c6"
+           version="1.00">
+
+  <description/>
+  <depends>
+    <module id="8242f6d9-ff68-4b07-b2ad-04b9900f3b31" name="Controls-Calculator"/>
+    <module id="0db508a8-0160-439b-860c-32ca21fd1d8d" name="Controls-Calculator-default-theme"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <resources/>
+  <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

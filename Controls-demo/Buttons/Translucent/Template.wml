@@ -1,0 +1,34 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center controlsDemo__background-image">
+    <div class="controlsDemo__flex ws-justify-content-center ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="controls-margin_right-m">
+            <Controls.buttons:Button viewMode="filled"
+                                     caption="caption"
+                                     buttonStyle="primary"
+                                     translucent="dark"/>
+        </div>
+        <div class="controls-margin_right-m">
+            <Controls.buttons:Button viewMode="filled"
+                                     caption="caption"
+                                     buttonStyle="primary"
+                                     translucent="light"/>
+        </div>
+        <div class="controls-margin_right-m">
+            <Controls.buttons:Button viewMode="filled"
+                                     caption="caption"
+                                     buttonStyle="primary"
+                                     translucent="none"/>
+        </div>
+        <div class="controls-margin_right-m">
+            <Controls.buttons:Button viewMode="filled"
+                                     icon="icon-Yes"
+                                     buttonStyle="primary"
+                                     translucent="dark"/>
+        </div>
+        <div>
+            <Controls.buttons:Button viewMode="filled"
+                                     icon="icon-Yes"
+                                     buttonStyle="primary"
+                                     translucent="light"/>
+        </div>
+    </div>
+</div>

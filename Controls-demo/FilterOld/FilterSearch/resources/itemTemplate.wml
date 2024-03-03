@@ -1,0 +1,14 @@
+<ws:template name="owner">
+    <Controls.source:SelectedKey bind:selectedKey="item.value">
+        <Controls.filterPopup:Dropdown keyProperty='{{item.editorOptions.keyProperty}}' displayProperty='title' source='{{item.editorOptions.source}}'/>
+    </Controls.source:SelectedKey>
+</ws:template>
+
+<ws:template name="department">
+    <Controls.source:SelectedKey bind:selectedKey="item.value">
+        <Controls.filterPopup:Dropdown keyProperty='{{item.editorOptions.keyProperty}}' displayProperty='title' source='{{item.editorOptions.source}}'/>
+    </Controls.source:SelectedKey>
+</ws:template>
+
+
+<ws:partial template="{{item.name}}" item="{{item}}"/>

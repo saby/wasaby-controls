@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper ws-flexbox ws-justify-content-center">
+    <div>
+        <ws:for data="style in _baseStyles">
+            <div class="controlsDemo__cell">
+                <Controls.baseDecorator:Money value="{{_value}}" currency="Dollar" currencyStyle="{{style}}"/>
+            </div>
+        </ws:for>
+    </div>
+</div>

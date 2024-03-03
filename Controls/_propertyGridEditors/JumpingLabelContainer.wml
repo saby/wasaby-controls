@@ -1,0 +1,9 @@
+<div class="ws-flexbox ws-flex-column">
+    <div class="controls-PropertyGrid__editor_jumpingLabel_wrapper">
+        <span class="controls-PropertyGrid__editor_jumpingLabel_value">{{_options.caption}}</span>
+        <ws:if data="{{_options.required}}">
+            <div class="controls-PropertyGrid__editor_jumpingLabel_asterisk">&nbsp;*</div>
+        </ws:if>
+    </div>
+    <ws:partial template="{{_options.content}}"/>
+</div>

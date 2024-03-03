@@ -1,0 +1,23 @@
+<ws:template name="editor">
+    <Controls.Container.Async templateName="Controls-Name/Input">
+        <ws:partial template="{{content.resolvedTemplate}}"
+                    scope="{{_options}}"
+                    bind:firstName="_firstName"
+                    bind:middleName="_middleName"
+                    bind:lastName="_lastName"
+                    on:inputCompleted="_inputCompleted()"/>
+    </Controls.Container.Async>
+</ws:template>
+
+<ws:if data="{{_options.jumpingLabel}}">
+    <Controls.Container.Async templateName="Controls/propertyGridEditors:JumpingLabelContainer">
+        <ws:partial template="{{content.resolvedTemplate}}"
+                    caption="{{_options.caption}}"
+                    required="{{_options.required}}">
+            <ws:partial template="editor" />
+        </ws:partial>
+    </Controls.Container.Async>
+</ws:if>
+<ws:else>
+    <ws:partial template="editor" />
+</ws:else>

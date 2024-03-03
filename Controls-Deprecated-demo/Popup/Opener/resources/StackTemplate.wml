@@ -1,0 +1,23 @@
+<Controls.popupTemplate:Stack headingCaption="Задача в разработку" maximized="{{_options.maximized}}"
+                              maximizeButtonVisibility="{{_options.maximizeButtonVisibility}}"
+                              stackWidth="{{_options.workspaceWidth}}"
+                              stackMinWidth="{{_options.stackMinWidth}}"
+                              stackMaxWidth="{{_options.stackMaxWidth}}"
+                              stackPosition="{{ _options.stackPosition }}">
+    <ws:headerContentTemplate>
+            <Controls.buttons:Button attr:class="demo-Header__closeButton" attr:ws-no-focus="true"
+                                     caption="Закрыть задачу в разработку" on:click="_close()"/>
+    </ws:headerContentTemplate>
+    <ws:bodyContentTemplate>
+        <div class="demo-Header__columns">
+            <div class="demo-Header__column">
+                <ws:partial template="Controls-Deprecated-demo/Popup/Opener/resources/BaseTemplate"/>
+            </div>
+            <ws:if data="{{_options.workspaceWidth >= _midOfMinMax}}">
+                <div class="demo-Header__column">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                </div>
+            </ws:if>
+        </div>
+    </ws:bodyContentTemplate>
+</Controls.popupTemplate:Stack>

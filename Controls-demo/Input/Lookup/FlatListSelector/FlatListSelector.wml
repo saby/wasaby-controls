@@ -1,0 +1,22 @@
+<Controls.popupTemplate:Stack on:selectedKeysChanged="_selectedKeysChanged()">
+    <ws:headerContentTemplate>
+        <div attr:class="ControlsDemo-FlatListSelector-header">
+            <ws:if data="{{_options.multiSelect && _selectionChanged}}">
+                <Controls.buttons:Button viewMode="outlined" buttonStyle="primary" caption="{[Выбрать]}" on:click="_closeSelectorBind()" attr:class="ControlsDemo-FlatListSelector-confirmButton"/>
+            </ws:if>
+        </div>
+    </ws:headerContentTemplate>
+    <ws:bodyContentTemplate>
+        <Controls.lookupPopup:Controller name="SelectorController" selectedItems="{{_options.selectedItems}}">
+            <Controls.browser:Browser source="{{_source}}" keyProperty="{{_keyProperty}}" filter="{{_options.filter}}">
+                <Controls.lookupPopup:Container multiSelect="{{_options.multiSelect ? 'visible'}}" keyProperty="{{_keyProperty}}">
+                        <Controls.listDataOld:ListContainer>
+                            <Controls.lookupPopup:ListContainer multiSelect="{{_options.multiSelect ? 'visible'}}">
+                                <Controls.list:View displayProperty="title" idProperty="{{_keyProperty}}" multiSelectVisibility="{{_options.multiSelect ? 'visible'}}"/>
+                            </Controls.lookupPopup:ListContainer>
+                        </Controls.listDataOld:ListContainer>
+                </Controls.lookupPopup:Container>
+            </Controls.browser:Browser>
+        </Controls.lookupPopup:Controller>
+    </ws:bodyContentTemplate>
+</Controls.popupTemplate:Stack>

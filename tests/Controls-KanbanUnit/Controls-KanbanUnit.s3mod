@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module id="7bb67345-6961-469e-9204-5c79583a5d51" name="Controls-KanbanUnit" version="1.00">
+  <description/>
+  <depends>
+      <module id="07b75299-1e47-43ba-8b36-aa642cce3de2" name="Controls-Kanban"/>
+      <module id="0a5e1442-8690-43a5-9d01-d76662a4bc6c" name="Controls-Kanban-default-theme"/>
+      <module id="a10cb1cb-b23d-4ef6-a757-4f7382e0e8d1" name="SbisEnvUI"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <test environment="NodeJS" framework="Jest" />
+  <resources/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

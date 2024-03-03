@@ -1,0 +1,29 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <Controls.jumpingLabel:InputContainer attr:class="controlsDemo__input"
+                                              caption="Enter your name"
+                                              contrastBackground="{{contrastBackground}}">
+            <Controls.input:Text/>
+        </Controls.jumpingLabel:InputContainer>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Money attr:class="controlsDemo__input"
+                              placeholder="Enter the amount"
+                              borderVisibility="partial"
+                              horizontalPadding="{{contrastBackground ? 'xs' : 'null'}}"
+                              tagStyle="success"
+                              textAlign="right"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Area attr:class="controlsDemo__input" placeholder="Enter the text"
+                             borderVisibility="partial"
+                             horizontalPadding="{{contrastBackground ? 'xs' : 'null'}}"
+                             maxLines="{{4}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.jumpingLabel:InputContainer attr:class="controlsDemo__input" caption="Enter the password"
+                                              contrastBackground="{{contrastBackground}}">
+            <Controls.input:Password revealable="{{true}}"/>
+        </Controls.jumpingLabel:InputContainer>
+    </div>
+</div>

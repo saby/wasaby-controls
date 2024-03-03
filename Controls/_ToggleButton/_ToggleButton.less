@@ -1,0 +1,194 @@
+.controls-Button__wrapper_viewMode-pushButton {
+   justify-content: center;
+}
+//button
+.controls-button_outlined-secondary-style_toggled {
+   --container_border-color_button_local: var(--secondary_toggled_border-color_toggleButton_button);
+   --container_border-width_button_local: var(--toggled_border-thickness_toggleButton_button);
+}
+
+.controls-button_outlined-primary-style_toggled {
+   --container_border-color_button_local: var(--primary_color);
+   --container_border-width_button_local: var(
+      --primary_toggled_border-thickness_toggleButton_button
+   );
+}
+
+//ghost
+.controls-button_ghost-default-style_toggled {
+   --container_background-color_button_local: var(
+      --secondary_toggled_background-color_toggleButton_toolButton
+   );
+   --container_border-color_button_local: var(
+      --secondary_toggled_border-color_toggleButton_toolButton
+   );
+}
+
+.controls-Button_ghost_style-readonly_toggled {
+   background-color: var(--secondary_toggled_background-color_toggleButton_toolButton);
+   border-color: var(--readonly_border-color_button_toolButton);
+}
+
+.controls-button_pushButton-style {
+   border-width: var(--border-thickness_button);
+   border-radius: var(--border-radius_toggleButton_pushButton);
+   box-shadow: none;
+   border-style: solid;
+   min-width: var(--container_inline-height_button_local);
+
+   --container_padding-horizontal_button_local: 0;
+}
+
+.controls-button_pushButton-secondary-style {
+   --container_border-color_button_local: transparent;
+   --container_background-color_button_local: transparent;
+}
+
+.controls-button_pushButton-primary-style {
+   --container_border-color_button_local: transparent;
+}
+
+.controls-button_pushButton-danger-style {
+   --container_border-color_button_local: transparent;
+}
+
+.controls-button_pushButton-success-style {
+   --container_border-color_button_local: transparent;
+}
+
+.controls-button_pushButton-readonly-style {
+   --container_border-color_button_local: transparent;
+}
+
+.controls-button_pushButton-secondary-style_toggled {
+   --container_border-color_button_local: var(
+      --secondary_toggled_border-color_toggleButton_pushButton
+   );
+   --container_background-color_button_local: transparent;
+}
+
+.controls-button_pushButton-primary-style_toggled {
+   --container_background-color_button_local: var(
+      --secondary_toggled_border-color_toggleButton_pushButton
+   );
+}
+
+.controls-Button_pushButton-danger-style_toggled {
+   --container_border-color_button_local: var(--danger_color);
+}
+
+.controls-button_pushButton-success-style_toggled {
+   --container_border-color_button_local: var(--success_color);
+}
+
+.controls-button_pushButton-readonly-style_toggled {
+   --container_border-color_button_local: var(--readonly_color);
+}
+
+//background
+.controls-button_pushButton-secondary-style_toggled.controls-Button_bg-contrast {
+   --container_background-color_button_local: var(
+      --secondary_contrast_toggled_background-color_toggleButton_pushButton
+   );
+}
+
+.controls-button_pushButton-readonly-style.controls-Button_bg-contrast {
+   --container_background-color_button_local: var(
+      --readonly_contrast_toggled_background-color_toggleButton_pushButton
+   );
+}
+
+.controls-button_pushButton-readonly-style.controls-Button_bg-same {
+   --container_background-color_button_local: transparent;
+}
+
+.ws-is-hover {
+   .controls-button_pushButton-secondary-style:hover.controls-Button_bg-contrast {
+      --container_background-color_button_local: var(
+         --secondary_contrast_hover_background-color_toggleButton_pushButton
+      );
+   }
+
+   .controls-button_pushButton-secondary-style:hover.controls-Button_bg-same {
+      --container_border-color_button_local: var(
+         --secondary_toggled_border-color_toggleButton_pushButton
+      );
+      --container_background-color_button_local: transparent;
+   }
+
+   .controls-button_ghost-default-style_toggled:hover {
+      --container_border-color_button_local: var(
+         --secondary_toggled_border-color_toggleButton_toolButton
+      );
+      --container_background-color_button_local: var(
+         --secondary_toggled_background-color_toggleButton_toolButton
+      );
+   }
+
+   .controls-button_ghost-readonly-style_toggled:hover {
+      --container_border-color_button_local: var(--readonly_border-color_button_toolButton);
+   }
+}
+
+.ws-is-no-touch,
+.ws-is-touch {
+   .controls-button_pushButton-secondary-style:active.controls-Button_bg-contrast {
+      --container_background-color_button_local: var(
+         --secondary_contrast_hover_background-color_toggleButton_pushButton
+      );
+   }
+
+   .controls-button_pushButton-secondary-style:active.controls-Button_bg-same {
+      --container_background-color_button_local: transparent;
+      --container_border-color_button_local: var(
+         --secondary_toggled_border-color_toggleButton_pushButton
+      );
+   }
+
+   .controls-button_ghost-default-style_toggled:active {
+      --container_border-color_button_local: var(
+         --secondary_toggled_border-color_toggleButton_toolButton
+      );
+   }
+
+   .controls-button_ghost-readonly-style_toggled:active {
+      --container_border-color_button_local: var(--readonly_border-color_button_toolButton);
+   }
+}
+
+//this is square buttons, that's why width is equal to height
+.controls-Button_pushButton_xs {
+   min-width: var(--inline_height_xs);
+}
+
+.controls-Button_pushButton_s {
+   min-width: var(--inline_height_s);
+}
+
+.controls-Button_pushButton_m {
+   min-width: var(--inline_height_m);
+}
+
+.controls-Button_pushButton_l {
+   min-width: var(--inline_height_l);
+}
+
+.controls-Button_pushButton_xl {
+   min-width: var(--inline_height_xl);
+}
+
+.controls-Button_pushButton_2xl {
+   min-width: var(--inline_height_2xl);
+}
+
+.controls-Button_pushButton_default {
+   min-width: var(--inline_height_default);
+}
+
+.controls-Button_pushButton:active {
+   box-shadow: none;
+}
+
+.controls-linkButton_link-link-style_toggled {
+   --text_color_button_local: var(--link_text-color);
+}

@@ -1,0 +1,64 @@
+<div class="ws-flexbox">
+    <Controls.browser:Browser source="{{_listSource}}"
+                              keyProperty="id"
+                              parentProperty="parent"
+                              nodeProperty="node"
+                              searchParam="title"
+                              displayProperty="title"
+                              viewMode="{{_viewMode}}"
+                              bind:selectedKeys="_selectedKeys"
+                              filterButtonSource="{{_filterSource}}">
+        <ws:content>
+            <div>
+                <div class="ws-flexbox ws-justify-content-between">
+                    <div class="ws-flexbox ws-align-items-baseline">
+                        <Controls.searchDeprecated:InputContainer>
+                            <Controls.search:Input attr:data-qa="engine-demo__Widgets__search"/>
+                        </Controls.searchDeprecated:InputContainer>
+                        <Controls.operations:Button expanded="{{ _expandedOperationsPanel }}"
+                                                    on:expandedChanged="_expandedChangedHandler()"/>
+                        <Controls.filterOld:ViewContainer>
+                            <Controls.filter:View detailPanelTemplateName="Controls/filterPanelPopup:Sticky" attr:data-qa="engine-demo__Widgets__filter-padding"/>
+                        </Controls.filterOld:ViewContainer>
+                    </div>
+                </div>
+                <Controls.masterDetail:Base masterMinWidth="{{200}}">
+                    <ws:master>
+                        <Controls.filterOld:Container filterButtonItems="{{content.filterButtonItems}}">
+                            <Controls.filterPanel:View editorsViewMode="cloud" attr:data-qa="engine-demo__Widgets__filter-panel"/>
+                        </Controls.filterOld:Container>
+                    </ws:master>
+                    <ws:detail>
+                        <div class="engine-demo__Widgets_filterList ws-flexbox ws-flex-column">
+                            <ws:if data= "{{ _expandedOperationsPanel }}">
+                                <Controls.operations:PanelContainer selectedKeysCount="{{ content.selectedKeysCount }}" selectedKeys="{{ content.selectedKeys }}">
+                                    <Controls.operations:Panel source="{{_panelSource}}"
+                                                               on:expandedChanged="_expandedChangedHandler()"
+                                                               attr:data-qa="engine-demo__Widgets__operationsPanel"/>
+                                </Controls.operations:PanelContainer>
+                            </ws:if>
+                            <Controls.listDataOld:ListContainer searchValue="{{content.searchValue}}"
+                                                     viewMode="{{content.viewMode}}"
+                                                     parentProperty="{{content.parentProperty}}"
+                                                     displayProperty="{{content.displayProperty}}"
+                                                     nodeProperty="{{content.nodeProperty}}">
+                                <Controls.explorer:View columns="{{_columns}}"
+                                                        multiSelectVisibility="onhover"
+                                                        header="{{_nomenclatureHeader}}"
+                                                        attr:data-qa="engine-demo__Widgets__explorer"/>
+                            </Controls.listDataOld:ListContainer>
+                        </div>
+                  </ws:detail>
+                </Controls.masterDetail:Base>
+            </div>
+        </ws:content>
+    </Controls.browser:Browser>
+    <Controls.toolbars:View
+                    direction="vertical"
+                    keyProperty="id"
+                    parentProperty="parent"
+                    nodeProperty="@parent"
+                    items="{{_toolbarItems}}"
+                    on:itemClick="_itemClick()"
+                    attr:class="engine-demo__Widgets_toolbar"/>
+</div>

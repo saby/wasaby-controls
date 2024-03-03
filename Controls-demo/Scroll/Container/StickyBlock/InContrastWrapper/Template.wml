@@ -1,0 +1,58 @@
+<Controls.themesExt:ContrastWrapper>
+    <Controls.scroll:Container
+            attr:class="controlsDemo-StickyHeader controlsDemo-StickyHeader__border
+                        controlsDemo-StickyHeader__container1"
+            topShadowVisibility="hidden"
+            bottomShadowVisibility="hidden">
+        <div>
+            <Controls.stickyBlock:StickyBlock mode="stackable">
+                <div class="controlsDemo-StickyHeader__stickyHeader controlsDemo-StickyHeader__stickyHeader-top">
+                    First Header
+                </div>
+            </Controls.stickyBlock:StickyBlock>
+            <p class="controlsDemo-StickyHeader__item-contrastBackground">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
+                massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam
+                felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede
+                justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+                venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+            </p>
+            <Controls.stickyBlock:StickyBlock mode="stackable">
+                <div class="controlsDemo-StickyHeader__stickyHeader controlsDemo-StickyHeader__stickyHeader-top">
+                    Second Header</div>
+            </Controls.stickyBlock:StickyBlock>
+            <p class="controlsDemo-StickyHeader__item-contrastBackground">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
+                massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam
+                felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede
+                justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+                venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+            </p>
+
+            <Controls.stickyBlock:StickyBlock>
+                <div class="controlsDemo-StickyHeader__stickyHeader controlsDemo-StickyHeader__stickyHeader-top">
+                    Other header. Lorem ipsum dolor sit amet..
+                </div>
+            </Controls.stickyBlock:StickyBlock>
+            <p class="controlsDemo-StickyHeader__item-contrastBackground">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
+                massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec
+                quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec
+                pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+                venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+            </p>
+            <Controls.stickyBlock:StickyBlock>
+                <div class="controlsDemo-StickyHeader__stickyHeader controlsDemo-StickyHeader__stickyHeader-top">
+                    Next header
+                </div>
+            </Controls.stickyBlock:StickyBlock>
+            <p class="controlsDemo-StickyHeader__item-contrastBackground">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
+                massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec
+                quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec
+                pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+                venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+            </p>
+        </div>
+    </Controls.scroll:Container>
+</Controls.themesExt:ContrastWrapper>

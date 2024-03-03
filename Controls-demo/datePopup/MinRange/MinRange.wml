@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper ws-flexbox">
+    <div>
+        <Controls.datePopup
+                attr:class="controls-PeriodDialog_5"
+                startValue="{{_startValue}}"
+                endValue="{{_endValue}}"
+                minRange="month"
+                _date="{{ _date }}"
+        />
+    </div>
+</div>

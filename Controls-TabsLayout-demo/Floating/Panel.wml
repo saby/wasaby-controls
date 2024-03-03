@@ -1,0 +1,6 @@
+<div style="margin-top: 15px;">
+    <Controls.input:Label caption="Ширина стека" /> <Controls.input:Number bind:value="_stackWidth" />
+    <br/>
+    <Controls.buttons:Button attr:style="margin-top: 15px;" caption="Открыть стек" on:click="_openStack()" />
+</div>
+
