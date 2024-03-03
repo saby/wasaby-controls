@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300">
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">iconViewMode = "default"</div>
+      <Controls.heading:Back caption="Back" iconViewMode="default"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">iconViewMode = "functionalButton"</div>
+      <Controls.heading:Back caption="Back" iconViewMode="functionalButton"/>
+   </div>
+</div>

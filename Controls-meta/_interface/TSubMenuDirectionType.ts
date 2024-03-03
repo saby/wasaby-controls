@@ -1,0 +1,15 @@
+import { StringType } from 'Meta/types';
+import { TSubMenuDirection } from 'Controls/menu';
+
+const options: readonly TSubMenuDirection[] = ['bottom', 'right'] as const;
+
+export const TSubMenuDirectionType = StringType.id('Controls/meta:TSubMenuDirectionType')
+    .oneOf(options)
+    .editor(
+        () => {
+            return import('Controls-editors/dropdown').then(({ EnumStringEditor }) => {
+                return EnumStringEditor;
+            });
+        },
+        { options }
+    );

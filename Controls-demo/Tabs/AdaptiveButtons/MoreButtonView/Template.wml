@@ -1,0 +1,39 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell controlsDemo__mb2" attr:style="display: flex; flex-direction: column;">
+        <div class="controls-text-label">moreButtonView='link'</div>
+        <div class="demo-TabButtons" style="width: {{_containerWidth}}px;">
+            <Controls.tabs:AdaptiveButtons
+                    attr:data-qa="AdaptiveButtons__moreLink"
+                    bind:selectedKey="SelectedKey1"
+                    keyProperty="id"
+                    containerWidth="{{_containerWidth}}"
+                    items="{{_items}}"
+                    borderVisible="{{false}}"
+                    align="left">
+                <ws:menuFooterTemplate>
+                    <div class="controlsDemo_wrapper_container ws-flexbox">
+                        <div class="controlsDemo_wrapper_footer controls-text-label controls-padding_left-2xl
+                                                                                    ws-flex-grow-1 controls-fontsize-l">
+                            Категория
+                        </div>
+                    </div>
+                </ws:menuFooterTemplate>
+            </Controls.tabs:AdaptiveButtons>
+        </div>
+    </div>
+    <div class="controlsDemo__cell controlsDemo__mb2" attr:style="display: flex; flex-direction: column;">
+        <div class="controls-text-label">moreButtonView='separator'</div>
+        <div class="demo-TabButtons" style="width: {{_containerWidth}}px;">
+            <Controls.tabs:AdaptiveButtons
+                    attr:data-qa="AdaptiveButtons__moreButton"
+                    bind:selectedKey="SelectedKey2"
+                    keyProperty="id"
+                    containerWidth="{{_containerWidth}}"
+                    moreButtonView="separator"
+                    items="{{_items}}"
+                    borderVisible="{{false}}"
+                    align="left"
+            />
+        </div>
+    </div>
+</div>

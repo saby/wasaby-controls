@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper">
+    <span class="controls-text-label controlsDemo__mb1">pageSize 100, остальные опции не заданы</span>
+    <Controls-demo.list_new.VirtualScroll.NavigationSwitcher.Index storeId="DifferentHeightsDefault" totalCount="{{1000}}">
+        <ws:content>
+            <Controls.scroll:Container attr:class="controlsDemo__maxWidth500 controlsDemo__height500">
+                <Controls.list:View storeId="DifferentHeightsDefault">
+                    <ws:virtualScrollConfig pageSize="{{100}}"/>
+                </Controls.list:View>
+            </Controls.scroll:Container>
+        </ws:content>
+    </Controls-demo.list_new.VirtualScroll.NavigationSwitcher.Index>
+</div>

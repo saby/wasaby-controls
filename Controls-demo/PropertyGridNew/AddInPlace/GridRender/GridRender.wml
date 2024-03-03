@@ -1,0 +1,18 @@
+<div class="controls-Demo__wide-propertyGrid">
+    <Controls.propertyGrid:PropertyGrid
+            name="propertyGrid"
+            parentProperty="parent"
+            nodeProperty="parent@"
+            bind:editingObject="_editingObject"
+            bind:typeDescription="_typeDescription"
+            on:typeDescriptionChanged="_typeDescriptionChanged()"
+            on:editingObjectChanged="_editingObjectChanged()">
+        <ws:itemPadding top="s" right="m" bottom="s" left="m"/>
+        <ws:captionColumnOptions width="50%"/>
+        <ws:itemTemplate>
+            <ws:partial template="Controls/propertyGrid:ItemTemplate"
+                        highlightOnHover="{{true}}"/>
+        </ws:itemTemplate>
+    </Controls.propertyGrid:PropertyGrid>
+    <Controls.list:AddButton caption="Характеристика" on:click="_beginAdd()" class="padding-left"/>
+</div>

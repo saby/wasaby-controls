@@ -1,0 +1,19 @@
+<ws:partial template="wml!Controls/_Tumbler/itemTemplate" item="{{item}}" fontSize="{{fontSize}}">
+    <ws:contentTemplate>
+        <ws:partial template="{{contentTemplate.captionTemplate}}"/>
+        <ws:if data="{{item.get('icon')}}">
+            <span class="ws-align-self-center">
+                <i class="controls-margin_left-s controls-icon-{{item.get('iconStyle')}} controls-icon
+                          controls-icon_size-{{item.get('iconSize') || 's'}} {{item.get('icon')}}">
+                </i>
+            </span>
+        </ws:if>
+        <ws:if data="{{item.get('mainCounter') || item.get('counter')}}">
+            <span data-qa="controls-Tumbler__button-counter"
+                  class="controls-fontweight-default controls-Tumbler__button-counter
+                         controls-text-{{item.get('mainCounterStyle') || 'primary'}}"
+            >{{item.get('mainCounter') || item.get('counter')}}
+            </span>
+        </ws:if>
+    </ws:contentTemplate>
+</ws:partial>

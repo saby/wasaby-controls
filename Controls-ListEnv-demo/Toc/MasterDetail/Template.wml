@@ -1,0 +1,25 @@
+<div style="height: 400px; width: 600px;" class="controls-padding_top-m">
+    <Controls.masterDetail:Base newDesign="{{true}}"
+                                masterWidth="{{250}}"
+                                masterMaxWidth="{{250}}"
+                                masterMinWidth="{{250}}"
+                                attr:style="height: 100%">
+        <ws:master>
+            <Controls-ListEnv.Toc imageProperty="none"
+                                  alignment="left"
+                                  storeId="documents"
+                                  selectedStyle="default"
+                                  selectedKey="{{ _selectedKey }}"
+                                  onSelectedKeyChanged="{{_onSelectedKeyChanged}}"
+                                  attr:class="controls-padding_right-3xl controls-padding_top-m"/>
+        </ws:master>
+        <ws:detail>
+            <Controls.tree:View
+                    storeId="documents"
+                    parentProperty="parent"
+                    nodeProperty="parent"
+                    root="{{ _selectedKey }}"
+                    attr:style="width: 410px"/>
+        </ws:detail>
+    </Controls.masterDetail:Base>
+</div>

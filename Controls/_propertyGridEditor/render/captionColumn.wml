@@ -1,0 +1,82 @@
+<ws:template name="defaultCaptionTemplate">
+    <ws:partial template="wml!Controls/_propertyGridEditor/render/captionTemplate"
+                attr:class="controls-PropertyGridEditor__caption_label"
+                attr:data-qa="controls-PropertyGridEditor__captionLabel"
+                scope="{{_options}}"
+                caption="{{item.contents.caption || item.contents.name}}"
+                fontColorStyle="{{item.contents.captionOptions && item.contents.captionOptions.fontColorStyle || captionFontColorStyle}}"
+                fontSize="{{item.contents.captionOptions && item.contents.captionOptions.fontSize || captionFontSize}}"
+                required="{{item.contents.captionOptions && item.contents.captionOptions.required}}"
+                collectionItem="{{item}}"
+                item="{{item.contents}}"/>
+</ws:template>
+
+<ws:template name="captionTemplate">
+    <ws:if data="{{item.contents.captionTemplate}}">
+        <ws:partial template="{{item.contents.captionTemplate}}" item="{{item.contents}}">
+            <ws:defaultCaptionTemplate>
+                <ws:partial template="defaultCaptionTemplate"/>
+            </ws:defaultCaptionTemplate>
+        </ws:partial>
+    </ws:if>
+    <ws:else>
+        <ws:partial template="defaultCaptionTemplate"/>
+    </ws:else>
+</ws:template>
+
+<ws:template name="editorTemplate">
+    <ws:partial template="wml!Controls/_propertyGridEditor/render/editorTemplate"
+                attr:data-qa="controls-PropertyGridEditor__editorValue"
+                item="{{item}}"
+                caption="{{item.contents[column.config.displayProperty || 'title']}}"
+                scope="{{_options}}"/>
+</ws:template>
+
+<ws:partial template="Controls/grid:ColumnTemplate" itemData="{{itemData}}" scope="{{_options}}">
+    <ws:contentTemplate>
+        <ws:if data="{{item.getJumpingLabel()}}">
+            <ws:partial template="editorTemplate" jumpingLabel="{{true}}"/>
+        </ws:if>
+        <ws:else data="{{item.getCaptionPosition() === 'top'}}">
+            <ws:if data="{{item.getEditorTemplateName()}}">
+                <div class="controls-PropertyGridEditor__editor_captionPosition-top">
+                    <ws:partial template="captionTemplate"/>
+                    <ws:partial template="editorTemplate" scope="{{_options}}" attr:data-qa="controls-PropertyGridEditor__editorValue"/>
+                </div>
+            </ws:if>
+            <ws:else>
+                <ws:partial template="captionTemplate"/>
+            </ws:else>
+        </ws:else>
+        <ws:else data="{{item.getCaptionPosition() === 'none'}}">
+            <ws:if data="{{item.getEditorTemplateName()}}">
+                <ws:partial template="editorTemplate" attr:data-qa="controls-PropertyGridEditor__editorValue"/>
+            </ws:if>
+            <ws:else>
+                <ws:partial template="captionTemplate"/>
+            </ws:else>
+        </ws:else>
+        <ws:else>
+            <ws:if data="{{item.isEditing()}}">
+                <ws:partial template="Controls/list:EditingTemplate"
+                            inputBorderVisibility="hidden"
+                            inputBackgroundVisibility="hidden"
+                            enabled="{{false}}"
+                            value="{{item.contents[column.config.displayProperty || 'title']}}"
+                            scope="{{_options}}">
+                    <ws:editorTemplate>
+                        <Controls.input:Text contrastBackground="{{true}}"
+                                            bind:value="item.contents[column.config.displayProperty || 'title']"
+                                            borderVisibility="hidden"/>
+                    </ws:editorTemplate>
+                    <ws:viewTemplate>
+                        <ws:partial template="captionTemplate"/>
+                    </ws:viewTemplate>
+                </ws:partial>
+            </ws:if>
+            <ws:else>
+                <ws:partial template="captionTemplate"/>
+            </ws:else>
+        </ws:else>
+    </ws:contentTemplate>
+</ws:partial>

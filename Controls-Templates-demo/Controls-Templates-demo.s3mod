@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-Templates-demo"
+           id="3df0acd2-9870-41d3-93fd-f0c58d19df48"
+           package="Wasaby"
+           responsible="Крайнов Д.О."
+           version="1.00">
+
+  <description/>
+  <depends>
+    <module id="bfd15aec-af0f-40c9-b151-94601c5a0f71" name="Controls-Templates"/>
+    <module id="0641abed-e0fb-4f42-990c-4c24bdbd7bd0" name="Controls-demo"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <resources/>
+  <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

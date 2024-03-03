@@ -1,0 +1,140 @@
+<ws:template name="contentTemplate">
+    <ws:for data="index, item in _items">
+        <div class="controls-ColoredTabs__item-content controls-ColoredTabs__item-content{{ !_isMounted ? '_fake' : '_real' }}
+                controls-ColoredTabs__item-content_index-{{ index }}
+                      controls-ColoredTabs__border-{{item.backgroundStyle}}
+                        controls-ColoredTabs__item-{{item.state}}-content"
+             attr:data-qa="ColoredTabs__item-wrapper"
+             name="contentId{{item.key}}"
+             key="{{item.key}}"
+             style="{{ _isMounted ? _getItemContentStyle(item) : _getItemRatioHeight()}};">
+            <Controls.dragnDrop:Container
+                    name="dragNDrop{{index}}"
+                    on:documentDragEnd="_dragEndHandler()"
+                    on:dragMove="_dragMoveHandler(index)">
+                <div>
+                    <ws:if data="{{ index !== 0 }}">
+                        <div class="controls-ColoredTabs__item__dnd-border"
+                             attr:data-qa="ColoredTabs__item__dnd-border"
+                             on:mousedown="_startDragNDrop(item)"
+                             on:touchstart="_startDragNDrop(item)">
+                        </div>
+                    </ws:if>
+                    <div class="controls-ColoredTabs__item-title {{ _isStacked(item) ? ' controls-ColoredTabs__item-title_invisible'}}"
+                         name="tab{{item.key}}">
+                        <Controls-TabsLayout._colored.TabItem
+                                item="{{item}}"
+                                attr:data-qa="ColoredTabs__item"
+                                defaultAnimDuration="{{ _getDefaultAnimDuration() }}"
+                                isFirstTab="{{ _isFirstTab(item) }}"
+                                on:mousedown="_startDragNDrop(item)"
+                                on:touchstart="_startDragNDrop(item)"
+                                on:click="_onItemClickHandler(item)"
+                                position='right'
+                                useRoundings="{{ useRoundings }}"
+                                tabsPositionBottom="{{ _tabsPositionBottom }}"
+                                tabsPositionTop="{{ _tabsPositionTop }}"
+                                selectedKey="{{ _options.selectedKey }}"
+                                headTemplate="{{ _options.headTemplate }}"
+                                attr:class="controls-ColoredTabs__tab-index-{{ index }}"/>
+                        <Controls.scroll:IntersectionObserverContainer observerName="scroll" data="{{ {index: index, position: 'top'} }}">
+                            <div class="controls-ColoredTabs__item-title__fakeItem controls-ColoredTabs__item-title__fakeItem_top"></div>
+                        </Controls.scroll:IntersectionObserverContainer>
+                        <Controls.scroll:IntersectionObserverContainer observerName="scroll" data="{{ {index: index, position: 'bottom'} }}">
+                            <div class="controls-ColoredTabs__item-title__fakeItem controls-ColoredTabs__item-title__fakeItem_bottom"></div>
+                        </Controls.scroll:IntersectionObserverContainer>
+                    </div>
+                </div>
+            </Controls.dragnDrop:Container>
+            <div class="controls-ColoredTabs__content
+                            {{ _options.backgroundFill === 'header' ? 'controls-ColoredTabs__backgroundFill-header' }}
+                            controls-ColoredTabs__border-{{item.backgroundStyle}}"
+                 on:wheel="_wheelHandler(item)"
+                 on:touchmove="_touchMoveHandler(item)"
+                 attr:data-qa="ColoredTabs__item-content">
+                <Controls.scroll:Container
+                        name="scrollContainer{{ index }}"
+                        shadowMode="js"
+                        shadowStyle="colored"
+                        scrollbarVisible="{{ false }}"
+                        on:scrollStateChanged="_scrollStateChangedHandler(index)"
+                        attr:class="controls-ColoredTabs__content__scroll controls-ColoredTabs__content__scroll__index-{{ index }}">
+                    <ws:partial attr:class="controls-ColoredTabs__custom-content controls-ColoredTabs__custom-content__index-{{ index }}"
+                                template="{{item.itemTemplate}}" scope="{{item.templateOptions}}"/>
+                </Controls.scroll:Container>
+            </div>
+        </div>
+    </ws:for>
+</ws:template>
+
+<Controls.scroll:IntersectionObserverController observerName="scroll" on:intersect="_intersectHandler()">
+<div class="controls-ColoredTabs controls_ColoredTabs_theme-{{_options.theme}} controls-ColoredTabs_version-{{ _version }}"
+     on:touchend="_dragEndHandler()"
+     attr:data-qa="ColoredTabs">
+    <div class="controls-ColoredTabs__head">
+        <div class="controls-ColoredTabs__head-switch-wrapper">
+            <ws:if data="{{ _options.headerContentTemplate }}">
+                <ws:partial template="{{ _options.headerContentTemplate }}">
+                    <ws:expandButtonTemplate>
+                        <!--                        Удаляем кнопку раскрытия кнопок-->
+                        <div></div>
+                    </ws:expandButtonTemplate>
+                </ws:partial>
+            </ws:if>
+        </div>
+        <ws:if data="{{ _options.items.length }}">
+            <div class="controls-ColoredTabs__fixed-tab controls-ColoredTabs__head-top">
+
+                <ws:for data="itemIndex in _stackedTop">
+                    <Controls-TabsLayout._colored.TabItem
+                            attr:class="controls-ColoredTabs__head-tab__fixed-top controls-ColoredTabs__head-tab__fixed-top-{{ itemIndex }}"
+                            on:mousedown="_startDragNDrop(_items[itemIndex])"
+                            on:touchstart="_startDragNDrop(_items[itemIndex])"
+                            on:click="_onItemClickHandler(_items[itemIndex])"
+                            defaultAnimDuration="{{ _getDefaultAnimDuration() }}"
+                            useRoundings="{{ useRoundings }}"
+                            isFirstTab="{{ _isFirstTab(_items[itemIndex]) }}"
+                            position='right'
+                            tabsPositionBottom="{{ _tabsPositionBottom }}"
+                            tabsPositionTop="{{ _tabsPositionTop }}"
+                            item="{{_items[itemIndex]}}"
+                            selectedKey="{{ _options.selectedKey }}"
+                            itemIndex="{{ itemIndex }}"
+                            headTemplate="{{ _options.headTemplate }}"
+                            isCompact="{{ _isCompactTab(itemIndex, 'top') }}"
+                            tabsPosition="top"/>
+                </ws:for>
+            </div>
+        </ws:if>
+        <ws:else>
+            <ws:for data="_ in []">
+                <!-- для правильной работы ключей -->
+            </ws:for>
+        </ws:else>
+    </div>
+    <div class="controls-ColoredTabs__body controls-ColoredTabs__body{{ !_isMounted ? '_fake' : '_real'}}" name="body">
+        <ws:partial template="contentTemplate"/>
+    </div>
+    <div class="controls-ColoredTabs__fixed-tab controls-ColoredTabs__head-bottom">
+        <ws:for data="itemIndex in _stackedBottom">
+            <Controls-TabsLayout._colored.TabItem
+                    attr:class="controls-ColoredTabs__head-tab__fixed-bottom controls-ColoredTabs__head-tab__fixed-bottom-{{ itemIndex }}"
+                    on:mousedown="_startDragNDrop(_items[itemIndex])"
+                    on:touchstart="_startDragNDrop(_items[itemIndex])"
+                    on:click="_onItemClickHandler(_items[itemIndex])"
+                    defaultAnimDuration="{{ _getDefaultAnimDuration() }}"
+                    isFirstTab="{{ _isFirstTab(_items[itemIndex]) }}"
+                    useRoundings="{{ useRoundings }}"
+                    item="{{_items[itemIndex]}}"
+                    tabsPositionBottom="{{ _tabsPositionBottom }}"
+                    tabsPositionTop="{{ _tabsPositionTop }}"
+                    selectedKey="{{ _options.selectedKey }}"
+                    position='right'
+                    headTemplate="{{ _options.headTemplate }}"
+                    itemIndex="{{ itemIndex }}"
+                    isCompact="{{ _isCompactTab(itemIndex, 'bottom') }}"
+                    tabsPosition="bottom" />
+        </ws:for>
+    </div>
+</div>
+</Controls.scroll:IntersectionObserverController>

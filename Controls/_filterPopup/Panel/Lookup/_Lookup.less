@@ -1,0 +1,31 @@
+.controls-FilterPanel__LookupSelector {
+   width: 100%;
+   min-width: 1px;
+}
+
+.controls-FilterPanel__Lookup_link {
+   font-size: var(--item_font-size_filterPanel);
+}
+
+// Единственное решение, которое позволяет сдвинуть поле ввода влево
+// с помощью отрицательного margin'a
+// и не получить дырку справа от поля ввода на ширину этого сдвига
+.controls-Input_negativeOffset.controls-FilterPanel__LookupSelector {
+   display: block;
+   width: auto;
+}
+
+// Не меняем цвет метки, если поле ввода рядом с меткой не отображается
+.controls-FilterPanel__Lookup
+   .controls-FilterPanel__Lookup_link_default
+   .controls-FilterLink__text-default {
+   color: var(--item_text-color_filterPanel);
+}
+
+.ws-is-hover {
+   .controls-FilterPanel__Lookup
+      .controls-FilterPanel__Lookup_link_default
+      .controls-FilterLink__text-default:hover {
+      color: var(--item_hover_text-color_filterPanel);
+   }
+}

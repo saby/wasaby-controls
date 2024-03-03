@@ -1,0 +1,22 @@
+<div class="demo-News__item">
+    <img if="{{item.contents.banner}}" class="demo-News__banner" src="{{item.contents.banner}}"/>
+    <div class="demo-News__header">
+        <img class="demo-News__authorPhoto" src="{{item.contents.authorPhoto}}"/>
+        <span class="demo-News__signature">{{item.contents.orgName ? item.contents.orgName + ' '}}{{item.contents.author}}</span>
+        <ws:if data="{{!itemData.isSwiped}}">
+            <ws:partial template="{{itemActionsTemplate}}"
+                        scope="{{_options}}"
+                        attr:class="itemActions-demo_itemActions"/>
+        </ws:if>
+        <span class="demo-News__date{{item.contents.isNew ? ' demo-News__date_new'}}">{{item.contents.date}}</span>
+    </div>
+    <div class="demo-News__content">
+        <div if="{{item.contents.title}}" class="demo-News__title">{{item.contents.title}}</div>
+        <div class="demo-News__text">{{item.contents.text}}</div>
+    </div>
+    <img if="{{item.contents.photo}}" class="demo-News__photo" src="{{item.contents.photo}}"/>
+    <div class="demo-News__footer">
+        <div class="demo-News__comments icon-16 icon-EmptyMessage icon-disabled"></div>
+        <div class="demo-News__viewCount icon-16 icon-Show icon-disabled"></div>
+    </div>
+</div>

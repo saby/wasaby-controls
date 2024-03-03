@@ -1,0 +1,94 @@
+.Calculator-View {
+   /* rtl:ignore */
+   direction: ltr;
+   display: flex;
+   background: var(--unaccented_background-color);
+   padding: var(--offset_m);
+}
+
+.Calculator-Popup__Offset {
+   margin-top: var(--offset_xs);
+}
+
+.Calculator-View__input {
+   padding: 0 var(--offset_s);
+   margin-bottom: var(--offset_xs);
+   font-weight: var(--font-weight-bold);
+}
+
+.Calculator-View__active .Calculator-View__input::after,
+.Calculator-View__active:focus-within .Calculator-View__input::after {
+   background: var(--unaccented_hover_border-color);
+}
+
+.Calculator-View_standart {
+   width: var(--input_width_standart_Calculator_view);
+}
+
+.Calculator-View_extended {
+   width: var(--input_width_extended_Calculator_view);
+}
+
+.Calculator-View__keyboard {
+   flex-shrink: 0;
+}
+
+.Calculator-View__input-keyboard_extended {
+   /* rtl:ignore */
+   margin-left: var(--offset_xs);
+}
+
+.Calculator-View__input-keyboard {
+   flex-shrink: 0;
+   display: flex;
+   flex-direction: column;
+}
+
+.Calculator-View__outputArea {
+   display: flex;
+   flex-direction: column;
+   flex-shrink: 1;
+   flex-grow: 1;
+   min-width: 1px;
+   background: var(--background-color);
+   border: var(--border-thickness) solid var(--outputArea_border-color_Calculator_view);
+}
+
+.Calculator-View__memory {
+   width: 100%;
+}
+
+.Calculator-View__historyContainer {
+   display: flex;
+   flex-shrink: 0;
+}
+
+.Calculator-View__history {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   flex-shrink: 1;
+}
+
+.Calculator-View__valueWrapper {
+   width: 100%;
+   white-space: nowrap;
+   display: flex;
+   justify-content: flex-end;
+   overflow: hidden;
+
+   .ws-is-ie & {
+      // ie не понимает flex-end, когда у родительского контейнера overflow: hidden, в следствии чего работает как flex-start
+      // используем это, поменяв направление (flex элемент внутри один, поэтому свойство никак не повлияет на визуал)
+      // https://online.sbis.ru/opendoc.html?guid=c0e9cc14-0fc8-4899-a1d5-35909c1c06df
+      // https://stackoverflow.com/questions/32885534/how-to-make-flex-end-work-in-ie11
+      flex-direction: row-reverse;
+      justify-content: flex-start;
+   }
+}
+
+.controls-inlineheight-calculator {
+   height: var(--input_height_extended_Calculator_view);
+}
+
+@import '_view/_History';

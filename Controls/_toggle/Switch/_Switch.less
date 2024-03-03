@@ -1,0 +1,66 @@
+.controls-Switch {
+   display: inline-block;
+   font-size: var(--font-size_m);
+   max-width: 100%;
+}
+
+.controls-Switch__wrapper {
+   max-width: 100%;
+   display: inline-flex;
+   align-items: baseline;
+   min-height: var(--caption_height_switcher);
+
+   &::before {
+      content: '\200b';
+      line-height: var(--caption_height_switcher);
+   }
+}
+
+.controls-Switch_enabled {
+   cursor: pointer;
+   z-index: 1;
+   //We should isolate z-index context of switcher, because there is overlay inside
+}
+
+.controls-Switch_checked {
+   .flex-direction(row-reverse);
+}
+
+.controls-Switch__line {
+   display: inline-block;
+   position: relative;
+}
+
+.controls-Switch__text_endCaption {
+   margin-left: var(--offset_xs);
+}
+
+.controls-Switch__text_startCaption {
+   margin-right: var(--offset_xs);
+}
+
+.controls-Switch__text_enabled_unselected {
+   color: var(--text-color_switcher);
+}
+
+.controls-Switch__text_enabled_selected {
+   color: var(--selected_text-color_switcher);
+}
+
+.controls-Switch__text_disabled_selected {
+   color: var(--selected_text-color_switcher);
+}
+
+.controls-Switch__text_enabled_selected,
+.controls-Switch__text_enabled_unselected {
+   cursor: pointer;
+}
+
+.controls-Switch__text_disabled_unselected {
+   color: var(--readonly_color);
+}
+
+.ws-is-hover .controls-Switch_hovered:hover .controls-Switch__text-decoration,
+.ws-is-touch .controls-Switch_hovered:active .controls-Switch__text-decoration {
+   text-decoration: underline;
+}

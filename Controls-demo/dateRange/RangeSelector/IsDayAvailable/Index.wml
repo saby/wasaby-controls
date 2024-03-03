@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo-RageLink__componentWrap controlsDemo-RangeLink_capture">
+        <Controls.dateRange:Selector
+                bind:startValue="_startValue"
+                bind:endValue="_endValue"
+                isDayAvailable="{{_isDayAvailable}}"
+        />
+    </div>
+</div>

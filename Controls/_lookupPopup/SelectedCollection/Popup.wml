@@ -1,0 +1,24 @@
+<Controls.popupTemplate:InfoBox
+        stickyPosition="{{_options.stickyPosition}}"
+        attr:class="controls-SelectedCollection__infobox_content"
+        attr:style="width: {{_width}}px;">
+   <div class="controls-SelectedCollection__header_wrapper">
+      <span attr:class="controls-SelectedCollection__header">
+         {[Выбрано]}
+      </span>
+   </div>
+   <Controls.scroll:Container attr:class="controls-SelectedCollection__scroll" shadowMode="js">
+      <Controls.lookup:Collection
+            items="{{_items}}"
+            displayProperty="{{_options.displayProperty}}"
+            itemTemplate="{{_options.itemTemplate}}"
+            readOnly="{{_options.readOnly}}"
+            itemsLayout="{{_items.getCount() > _maxItemsCountForOneColumn ? 'twoColumns' : 'oneColumn'}}"
+            on:crossClick="_crossClick()"
+            on:itemClick="_itemClick()"
+            attr:style="width: {{_options.width}}px"
+            attr:class="controls-SelectedCollection__in_popup controls-SelectedCollection__in_popup_theme-{{_options.theme}}"
+            attr:data-qa="SelectedCollection__in_popup">
+      </Controls.lookup:Collection>
+   </Controls.scroll:Container>
+</Controls.popupTemplate:InfoBox>

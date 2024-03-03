@@ -1,0 +1,89 @@
+<div class="controls_slider_theme-{{_options.theme}} controls-Slider
+            controls-Slider{{_options.readOnly ? '_disabled' : '_enabled'}}
+            {{!_options.borderVisible ? (' controls-Slider_' + _options.size + '_withoutBorder-' + _options.direction)}}">
+   <div class="controls-Slider__wrapper controls-Slider__wrapper_{{_options.direction}}
+               {{_options.borderVisible ? ' controls-Slider__withBorder_' + _options.direction}}"
+        on:mousedown="_mouseDownAndTouchStartHandler()"
+        on:touchstart="_mouseDownAndTouchStartHandler()"
+        on:mousemove="_mouseMoveAndTouchMoveHandler()"
+        on:touchmove="_mouseMoveAndTouchMoveHandler()"
+        on:mouseleave="_mouseLeaveAndTouchEndHandler()"
+        on:mouseup="_mouseUpAndTouchStartHandler('Completed')"
+        on:touchend="_mouseLeaveAndTouchEndHandler()">
+      <div class="controls-Slider__mainSlider
+                  controls-Slider__mainSlider_{{_options.size}}_{{_options.direction}}{{_viewMode}}
+                  controls-Slider__mainSlider_{{_options.size}}__offset_{{_options.borderVisible ? 'withBorder' : 'withoutBorder'}}_{{_options.direction}}"
+           name="area">
+         <ws:for data="key, point in _pointData">
+            <ws:if data="{{(point.name=='tooltip' && (_tooltipValue || _tooltipValue==0) &&
+                         !_options.readOnly && !(_options.tooltipPosition === 'center' && _isDrag)) || point.name!='tooltip'}}">
+               <div class="controls-Slider__point
+                          {{!_options.markerVisibility ? 'controls-Slider__point-hidden'}}
+                          {{_viewMode === '' ? 'controls-Slider__point' + (_options.size === 'm' ? '_big' : '_small') }}
+                          controls-Slider__point{{_options.size=='m' ? '_big' : '_small'}}_{{_options.direction}}
+                          controls-Slider__point{{_options.readOnly ? '_disabled' : '_enabled'}}{{_viewMode}}
+                          {{point.name=='tooltip' ? (_isDrag ? 'controls-Slider__point_hidden controls-Slider__point_hidden' : 'controls-Slider__point_tooltip controls-Slider__point_tooltip')}}"
+                    value="{{_value}}"
+                    startValue="{{_startValue}}"
+                    endValue="{{_endValue}}"
+                    name="{{point.name}}"
+                    style="{{_localeDir == 'rtl' ? 'right' : 'left'}}: {{_options.direction === 'horizontal' ? _getPointPosition(point)}};
+                           bottom: {{_options.direction === 'vertical' ? _getPointPosition(point)}};">
+                  <ws:if data="{{point.name=='tooltip' && _options.tooltipVisible &&
+                               _options.tooltipPosition !== 'center' && !_options.readOnly &&
+                                                                                 (_tooltipValue || _tooltipValue==0)}}">
+                     <div class="controls-Slider__tooltipValue
+                                 controls-fontsize-{{_options.tooltipFontSize}}
+                                 controls-Slider__point{{_options.size=='m' ? '_big' : '_small'}}_tooltipValue_position-{{_options.tooltipPosition}}"
+                          attr:style="{{_getTooltipPosition()}}">
+                        {{_tooltipValue}}
+                     </div>
+                  </ws:if>
+                  <ws:if data="{{_options.tooltipPosition === 'center'}}">
+                     <p class="controls-Slider__pointValue">
+                        {{point.name!='tooltip' ? _value : _tooltipValue }}
+                     </p>
+                  </ws:if>
+               </div>
+            </ws:if>
+         </ws:for>
+         <Controls.dragnDrop:Container name="dragNDrop"
+                                       on:documentDragEnd="_onDocumentDragEnd()"
+                                       on:customdragStart="_onDragStartHandler()"
+                                       on:customdragEnd="_onDragNDropHandler()"
+                                       on:dragMove="_onDragNDropHandler()">
+            <div class="controls-Slider__line__wrapper
+                          controls-Slider__line__wrapper{{_options.readOnly ? '_disabled' : '_enabled'}}
+                          controls-Slider__line__wrapper_{{_options.size}}_{{_options.direction}}{{_viewMode}}">
+               <div class="controls-Slider__line_{{_options.direction}}{{_viewMode}} controls-Slider__line
+                             controls-Slider__line_{{_options.size}}_{{_options.direction}}{{_viewMode}}
+                             controls-Slider__line__empty_{{_options.readOnly ? 'disabled' : 'enabled'}}{{_viewMode}}
+                             controls-Slider__line__empty">
+               </div>
+               <div class="controls-Slider__line_{{_options.direction}}{{_viewMode}}
+                           controls-Slider__line controls-Slider__line_{{_options.size}}_{{_options.direction}}{{_viewMode}}
+                           controls-Slider__line__full
+                           controls-Slider__line__full_{{_options.readOnly ? 'disabled' : 'enabled'}}{{_viewMode}}"
+                    style="{{_localeDir == 'rtl' ? 'right' : 'left'}}: {{_options.direction === 'horizontal' ? _lineData.position + '%'}};
+                        width: {{_options.direction === 'horizontal' ? _lineData.width + '%'}};
+                        bottom: {{_options.direction === 'vertical' ? _lineData.position + '%'}};
+                        height: {{_options.direction === 'vertical' ? _lineData.width + '%'}};">
+               </div>
+               <ws:if data="{{_options.intervals}}">
+                  <ws:for data="key, interval in _intervals">
+                     <ws:partial template="{{_options.intervalTemplate}}" interval="{{interval}}" options="{{_options}}"/>
+                  </ws:for>
+               </ws:if>
+            </div>
+         </Controls.dragnDrop:Container>
+      </div>
+   </div>
+   <div if="{{_scaleData && !_options.borderVisible}}" class="controls-Slider__scale">
+      <ws:for data="key, segment in _scaleData">
+         <span class="controls-Slider__segment
+                      controls-fontsize-{{_options.scaleFontSize}}
+                      controls-Slider__segment_topSpace
+                      controls-Slider__segment{{_options.readOnly ? '_disabled' : '_enabled'}}">{{segment.value}}</span>
+      </ws:for>
+   </div>
+</div>

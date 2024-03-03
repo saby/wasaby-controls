@@ -1,0 +1,34 @@
+.Wizard-Vertical-New-View {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: row;
+   flex-grow: 1;
+   padding-top: var(--offset_l);
+   box-sizing: border-box;
+
+   &_steps {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+      width: 100%;
+      overflow: hidden;
+
+      &_content {
+         flex-grow: 4;
+         flex-shrink: 1;
+         min-width: 1px;
+         box-shadow: var(--box-shadow_block);
+         border-radius: var(--border-radius_s);
+         background-color: var(--detail_contrast_background-color_masterDetail);
+      }
+   }
+}
+
+// TODO https://online.sbis.ru/opendoc.html?guid=3f06ad1f-5f13-4615-b136-b0ab697fd648&client=3
+.Wizard-Vertical-New-List__marker_infoContrast {
+   .controls-ListView__itemV_marker::after {
+      background-color: var(--info_contrast_background-color);
+   }
+}

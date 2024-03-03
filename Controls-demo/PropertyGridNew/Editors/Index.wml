@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell controls-Demo__wide-propertyGrid">
+        <Controls.propertyGrid:PropertyGrid
+                bind:editingObject="_editingObject"
+                typeDescription="{{_typeDescription}}"
+                on:editingObjectChanged="_editingObjectChanged()">
+                 <ws:captionColumnOptions width="30%"/>
+        </Controls.propertyGrid:PropertyGrid>
+        <div>
+            <h3>editingObject:</h3><br/>
+            <pre data-qa="Controls-demo_PropertyGridNew__editingObject">{{_editingObjectString}}</pre>
+        </div>
+    </div>
+</div>

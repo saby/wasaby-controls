@@ -1,0 +1,286 @@
+.controls-Tumbler {
+   display: inline-block;
+}
+
+.controls-Tumbler__wrapper-readonly_border {
+   border-left: var(--border-thickness) solid transparent;
+}
+
+.controls-Tumbler__wrapper-readOnly,
+.controls-Tumbler__wrapper {
+   display: inline-flex;
+   align-items: center;
+   position: relative;
+   max-width: 100%;
+}
+
+.controls-Tumbler__wrapper-readOnly {
+   border: var(--border-thickness) solid var(--pale_border-color);
+   box-sizing: border-box;
+}
+
+.controls-Tumbler__wrapper_radius {
+   border-radius: var(--border-radius_button);
+}
+
+.controls-Tumbler__wrapper.controls-Tumbler__wrapper_same {
+   background: var(--pale_contrast_background-color);
+}
+
+.controls-Tumbler__wrapper.controls-Tumbler__wrapper_contrast {
+   background: var(--background-color);
+}
+
+.controls-Tumbler__wrapper_same_secondary {
+   background: var(--secondary_same_background-color);
+}
+
+.controls-Tumbler__wrapper_same_primary {
+   background: var(--primary_same_background-color);
+}
+
+.controls-Tumbler__wrapper_same_success {
+   background: var(--success_same_background-color);
+}
+
+.controls-Tumbler__wrapper_same_danger {
+   background: var(--danger_same_background-color);
+}
+
+.controls-Tumbler__wrapper_same_warning {
+   background: var(--warning_same_background-color);
+}
+
+.controls-Tumbler__wrapper_same_info {
+   background: var(--info_same_background-color);
+}
+
+.controls-Tumbler__wrapper_same_unaccented {
+   background: var(--pale_contrast_background-color);
+}
+
+.controls-Tumbler__button {
+   z-index: 1;
+   white-space: nowrap;
+   align-items: center;
+   justify-content: center;
+   display: flex;
+   flex-shrink: 1;
+   flex-grow: 1;
+   border-radius: var(--border-radius_button);
+}
+
+.controls-Tumbler__button-enabled {
+   cursor: pointer;
+}
+
+.controls-Tumbler__button-disabled {
+   height: 100%;
+   cursor: default;
+}
+
+.controls-Tumbler__button-animation {
+   // цвет текста может меняться на контрастный, а анимация перехода - плавная. Чтоб не бьло морганий, делаем плавный переход
+   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+   will-change: color;
+}
+
+@variants: xs, s, m, l, xl, ~'2xl', ~'3xl', ~'4xl', ~'5xl', default;
+
+.controls-Tumbler__wrapper_vertical {
+   .flex-direction(column);
+   padding: 0 var(--offset_3xs);
+   padding-top: var(--offset_3xs);
+
+   .controls-Tumbler__button {
+      padding: var(--offset_m) var(--offset_2xs);
+      margin-bottom: var(--offset_3xs);
+      height: auto;
+   }
+}
+
+.controls-Tumbler__button-background {
+   position: absolute;
+   z-index: 0;
+   border-radius: var(--border-radius_button);
+}
+
+.controls-Tumbler__button-background-animation {
+   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+   transition-property: top, left, width, height;
+   will-change: left, top;
+}
+
+.controls-Tumbler__wrapper_horizontal {
+   .controls-Tumbler__button {
+      margin-right: var(--offset_3xs);
+      width: auto;
+
+      .for(@variants, {
+         &-@{_item} {
+            height: ~'calc(var(--inline_height_@{_item}) - 2 * var(--offset_3xs))';
+         }
+      });
+   }
+
+   .controls-Tumbler__button-disabled {
+      height: 100%;
+   }
+
+   .controls-Tumbler__button-xs {
+      padding: 0 var(--offset_xs);
+   }
+
+   .controls-Tumbler__button-s {
+      padding: 0 var(--offset_st);
+   }
+
+   .controls-Tumbler__button-m,
+   .controls-Tumbler__button-default,
+   .controls-Tumbler__button-l {
+      padding: 0 var(--offset_m);
+   }
+
+   .controls-Tumbler__button-xl,
+   .controls-Tumbler__button-2xl {
+      padding: 0 var(--offset_l);
+   }
+
+   .controls-Tumbler__button-3xl,
+   .controls-Tumbler__button-4xl {
+      padding: 0 var(--offset_xl);
+   }
+
+   .controls-Tumbler__button-5xl {
+      padding: 0 var(--offset_2xl);
+   }
+
+   .controls-Tumbler__button-background {
+      padding: 0;
+   }
+}
+
+.controls-Tumbler__wrapper_horizontal_active {
+   padding-left: var(--offset_3xs);
+}
+
+.controls-Tumbler__button-selected_same,
+.controls-Tumbler__button-unselected_contrast {
+   color: var(--text-color);
+}
+
+.controls-Tumbler__button-unselected_same {
+   color: var(--label_contrast_text-color);
+}
+
+.controls-Tumbler__button-selected_contrast {
+   color: var(--item_selected_text-color);
+}
+
+.controls-Tumbler__button-unselected.controls-Tumbler__button-disabled {
+   color: var(--readonly_color);
+}
+
+.controls-Tumbler__button-selected.controls-Tumbler__button-disabled {
+   outline: var(--border-thickness) solid var(--pale_border-color);
+   margin-right: 0;
+   padding-right: calc(var(--offset_m) + var(--offset_3xs));
+}
+
+.controls-Tumbler__button-background_same {
+   background: var(--background-color);
+}
+
+.controls-Tumbler__button-background_contrast {
+   background: var(--item_selected_color);
+}
+
+.ws-is-ie .controls-Tumbler__button-background {
+   top: var(--offset_3xs);
+}
+
+.controls-Tumbler__button-selected_background_same {
+   background: var(--background-color);
+}
+
+.controls-Tumbler__button-selected_background_contrast {
+   background: var(--item_selected_color);
+}
+
+.controls-Tumbler__button-counter {
+   margin-left: var(--offset_2xs);
+}
+
+.ws-is-hover {
+   .controls-Tumbler__button-enabled.controls-Tumbler__button-underline_same:hover {
+      background: var(--pale_hover_contrast_background-color);
+   }
+
+   .controls-Tumbler__button-enabled.controls-Tumbler__button-underline_same_primary:hover {
+      background: var(--primary_hover_same_background-color);
+   }
+
+   .controls-Tumbler__button-enabled.controls-Tumbler__button-underline_same_secondary:hover {
+      background: var(--secondary_hover_same_background-color);
+   }
+
+   .controls-Tumbler__button-enabled.controls-Tumbler__button-underline_same_success:hover {
+      background: var(--success_hover_same_background-color);
+   }
+
+   .controls-Tumbler__button-enabled.controls-Tumbler__button-underline_same_danger:hover {
+      background: var(--danger_hover_same_background-color);
+   }
+
+   .controls-Tumbler__button-enabled.controls-Tumbler__button-underline_same_warning:hover {
+      background: var(--warning_hover_same_background-color);
+   }
+
+   .controls-Tumbler__button-enabled.controls-Tumbler__button-underline_same_info:hover {
+      background: var(--info_hover_same_background-color);
+   }
+
+   .controls-Tumbler__button-enabled.controls-Tumbler__button-underline_same_unaccented:hover {
+      background: var(--pale_contrast_background-color);
+   }
+
+   .controls-Tumbler__button-enabled.controls-Tumbler__button-underline_contrast:hover {
+      background: var(--hover_background-color);
+   }
+
+   .controls-Tumbler__button-enabled.controls-Tumbler__button-underline_contrast_primary:hover {
+      background: var(--primary_same_background-color);
+   }
+
+   .controls-Tumbler__button-enabled.controls-Tumbler__button-underline_contrast_secondary:hover {
+      background: var(--secondary_same_background-color);
+   }
+
+   .controls-Tumbler__button-enabled.controls-Tumbler__button-underline_contrast_success:hover {
+      background: var(--success_same_background-color);
+   }
+
+   .controls-Tumbler__button-enabled.controls-Tumbler__button-underline_contrast_danger:hover {
+      background: var(--danger_same_background-color);
+   }
+
+   .controls-Tumbler__button-enabled.controls-Tumbler__button-underline_contrast_warning:hover {
+      background: var(--warning_same_background-color);
+   }
+
+   .controls-Tumbler__button-enabled.controls-Tumbler__button-underline_contrast_info:hover {
+      background: var(--info_same_background-color);
+   }
+
+   .controls-Tumbler__button-enabled.controls-Tumbler__button-underline_contrast_unaccented:hover {
+      background: var(--unaccented_contrast_background-color);
+   }
+}
+
+.controls-Tumbler__shadow_small {
+   box-shadow: var(--shadow_d);
+}
+
+.controls-Tumbler__shadow_big {
+   box-shadow: 0 4px var(--shadow-blur_b) var(--shadow-color_b);
+}

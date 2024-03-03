@@ -1,0 +1,72 @@
+import { Control, TemplateFunction } from 'UI/Base';
+import * as template from 'wml!Controls-demo/dropdown_new/Button/HierarchyViewMode/Index';
+import { Memory } from 'Types/source';
+import { Model } from 'Types/entity';
+
+export default class extends Control {
+    protected _template: TemplateFunction = template;
+    protected _source: Memory;
+
+    protected _beforeMount(): void {
+        this._source = new Memory({
+            keyProperty: 'id',
+            data: [
+                {
+                    id: 1,
+                    title: 'Task',
+                    '@parent': true,
+                    parent: null,
+                },
+                {
+                    id: 2,
+                    title: 'Error in the development',
+                    '@parent': false,
+                    parent: null,
+                },
+                {
+                    id: 21,
+                    title: 'Sales',
+                    '@parent': true,
+                    parent: null,
+                },
+                {
+                    id: 211,
+                    title: 'Refund',
+                    '@parent': null,
+                    parent: 21,
+                },
+                {
+                    id: 212,
+                    title: 'Connection',
+                    '@parent': null,
+                    parent: 21,
+                },
+                { id: 3, title: 'Commission', parent: 1 },
+                {
+                    id: 4,
+                    title: 'Coordination',
+                    parent: 1,
+                    '@parent': true,
+                },
+                { id: 5, title: 'Application', parent: 1 },
+                { id: 6, title: 'Development', parent: 1 },
+                { id: 7, title: 'Exploitation', parent: 1 },
+                { id: 8, title: 'Coordination', parent: 4 },
+                { id: 9, title: 'Negotiate the discount', parent: 4 },
+                { id: 10, title: 'Coordination of change prices', parent: 4 },
+                { id: 11, title: 'Matching new dish', parent: 4 },
+                {
+                    id: 12,
+                    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+                    parent: 1,
+                    '@parent': true,
+                },
+                { id: 13, title: 'Nullam in nisi', parent: 12 },
+            ],
+        });
+    }
+
+    protected _menuItemActivate(event: Event, item: Model): boolean {
+        return !item.get('@parent');
+    }
+}

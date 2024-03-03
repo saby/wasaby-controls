@@ -1,0 +1,178 @@
+.controls-PagingV {
+   display: flex;
+}
+
+.controls-Paging__wrapper {
+   padding: var(--padding-vertical_paging) 0;
+   display: flex;
+   justify-content: flex-end;
+}
+
+.controls_Paging_separate {
+   margin-right: var(--offset_xs);
+}
+
+.controls-Paging__btn {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   user-select: none;
+   margin: 0;
+
+   &:active {
+      box-shadow: none;
+   }
+   height: var(--inline_height_l);
+   box-shadow: var(--item_box-shadow_paging);
+
+   & + .controls-Paging__btn,
+   & + .controls-DigitButtons {
+      margin-left: var(--item_offset_paging);
+
+      &.controls-Paging__btn_separated::before {
+         pointer-events: none;
+         position: absolute;
+         height: var(--arrow_separator_length_paging);
+         width: var(--arrow_separator_thickness_paging);
+         background: var(--arrow_separator_color_paging);
+         content: '';
+         top: calc((var(--inline_height_l) - var(--arrow_separator_length_paging)) / 2);
+         left: calc(-1 * var(--arrow_separator_thickness_paging));
+      }
+   }
+
+   &.controls-Paging__btn_last {
+      margin-right: var(--padding-horizontal_paging);
+   }
+}
+
+.controls-DigitButtons + .controls-Paging__btn {
+   margin-left: var(--item_offset_paging);
+}
+
+.controls-Paging__arrow {
+   padding: 0 var(--offset_s);
+   background-color: var(--item_background-color_paging);
+}
+
+.controls-Paging__arrow__state-normal {
+   color: var(--arrow_icon-color_paging);
+   cursor: pointer;
+}
+
+.ws-is-hover .controls-Paging__arrow__state-normal:hover {
+   background-color: var(--item_hover_background-color_paging);
+   color: var(--arrow_hover_icon-color_paging);
+   border-color: var(--item_hover_background-color_paging);
+}
+
+.controls-Paging__info {
+   color: var(--label_text-color);
+   font-size: var(--font-size_xs);
+}
+
+.controls-Paging__info_m {
+   color: var(--label_text-color);
+   font-size: var(--font-size_m);
+}
+
+.ws-is-hover .controls-Paging__wrapper:hover {
+   .controls-Paging__info {
+      color: var(--arrow_hover_icon-color_paging);
+   }
+}
+
+.controls-Paging__arrow__state-disabled {
+   color: var(--readonly_icon-color_paging);
+}
+
+.controls-Paging__icon {
+   font-family: var(--arrow_icon_font-family_paging);
+   font-size: var(--arrow_icon-size_paging);
+   font-style: normal;
+   width: var(--arrow_icon-size_paging);
+   min-height: var(--arrow_icon-size_paging);
+}
+
+.controls-Paging__contrast {
+   border-radius: var(--border-radius_m);
+   background-color: var(--unaccented_background-color);
+   box-shadow: var(--shadow_d);
+}
+
+.controls-Paging_icon-Begin_digits::before {
+   content: '\e980';
+}
+
+.controls-Paging_icon-Prev_digits::before {
+   content: '\e97f';
+}
+
+.controls-Paging_icon-Next_digits::before {
+   content: '\e97e';
+}
+
+.controls-Paging_icon-End_digits::before {
+   content: '\e97d';
+}
+
+.controls-Paging_icon-Begin::before {
+   content: '\e997';
+}
+
+.controls-Paging_icon-Prev::before {
+   content: '\e9a8';
+}
+
+.controls-Paging_icon-Next::before {
+   content: '\e9aa';
+}
+
+.controls-Paging_icon-End::before {
+   content: '\e996';
+}
+
+.controls-Paging__btn-elements-count {
+   padding-left: var(--offset_s);
+}
+
+.controls-Paging__digitButtons {
+   display: inline-flex;
+}
+
+.controls-Paging__arrow_padding-left-null {
+   padding-left: 0;
+}
+
+.controls-Paging__btn_separated {
+   position: relative;
+}
+
+.controls-Paging__content-Template {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   padding: 0 var(--offset_2xs) 0 var(--offset_s);
+
+   // При передаче в контентную опцию вёрстки, которая строится под условием в контроле невозможно проверить,
+   // что эта контентная опция оказалась пустая. Поэтому проверяем через css.
+   // Если в шаблоне пусто, то отступ справа не нужен.
+   // https://online.sbis.ru/opendoc.html?guid=8b2c991d-05d9-4513-be30-350a1b16fed9
+   &:empty {
+      padding-right: 0;
+   }
+}
+
+// На айпаде иногда не перерисовывается кусок экрана и
+// остаются видны артефакты от прошлого состояния элемента.
+.ws-is-mobile-safari .controls-PagingV {
+   transform: translateZ(0);
+}
+
+.controls-Paging__icon-resetDay {
+   font-family: var(--font-family);
+   font-size: var(--font-size_xs);
+   border-top: 1px solid var(--arrow_icon-color_paging);
+   display: flex;
+   justify-content: center;
+}

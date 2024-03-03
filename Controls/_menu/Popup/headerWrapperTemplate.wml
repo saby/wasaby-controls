@@ -1,0 +1,16 @@
+<div class="controls_dropdownPopup_theme-{{_options.theme}}
+            controls_list_theme-{{_options.theme}}
+            controls-Menu__popup-header
+            {{_options.isAdaptive ? 'controls-Menu__popup-header_offset'}}">
+    <ws:if data="{{_options.icon}}">
+        <div class="controls-Menu__popup-headerIcon_wrapper
+                    {{_options.content ? 'controls-Menu__popup_headerIcon_' + (_options.iconSize || 'm') + '_padding'}}">
+            <Controls.icon:Icon iconSize="{{_options.iconSize || 'm'}}"
+                                icon="{{_options.icon}}"
+                                iconStyle="secondary" />
+        </div>
+    </ws:if>
+    <ws:if data="{{_options.content}}">
+        <ws:partial template="{{_options.content}}" scope="{{_options}}" />
+    </ws:if>
+</div>

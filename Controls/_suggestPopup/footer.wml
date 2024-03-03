@@ -1,0 +1,20 @@
+<ws:if data="{{ _options.moreCount }}">
+   <Controls.buttons:Button
+      attr:data-qa="controls-Suggest__showMore"
+      viewMode="filled"
+      caption="{{ rk('Еще') + ' ' + _options.moreCount }}"
+      inlineHeight="s"
+      fontSize="s"
+      buttonStyle="pale"
+      fontColorStyle="label"
+      on:click="_moreClick()"
+   />
+</ws:if>
+<ws:else>
+   <Controls.Container.Async templateName="Controls/ShowMoreButton">
+      <ws:partial template="{{ content.resolvedTemplate }}"
+         attr:data-qa="controls-Suggest__showMore"
+         on:click="_showAllClick()"
+      />
+   </Controls.Container.Async>
+</ws:else>

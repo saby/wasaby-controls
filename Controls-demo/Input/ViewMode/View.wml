@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             bind:value="_value"
+                             contrastBackground="{{false}}"/>
+    </div>
+    <div class="controlsDemo__cell controls-padding-m controls-background-unaccented-same">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             bind:value="_value"
+                             contrastBackground="{{true}}"/>
+    </div>
+    <div class="controlsDemo__cell controls-padding-m controls-background-unaccented-same">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             value="{{_valueReadonly}}"
+                             readOnly="{{true}}"
+                             contrastBackground="{{true}}"/>
+    </div>
+</div>

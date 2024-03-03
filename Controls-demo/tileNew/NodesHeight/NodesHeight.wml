@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper controlDemo_Tile_nodesHeight">
+<Controls.treeTile:View
+        storeId="NodesHeight"
+        tileMode="dynamic"
+        tileHeight="{{ 210 }}"
+        nodesHeight="{{ 200 }}"
+        tileScalingMode="none"
+        imageProperty="image">
+    <ws:itemTemplate>
+        <ws:partial template="Controls/tile:ItemTemplate"
+                    height="{{ 160 }}"
+                    staticHeight="{{ true }}">
+        </ws:partial>
+    </ws:itemTemplate>
+</Controls.treeTile:View>
+</div>

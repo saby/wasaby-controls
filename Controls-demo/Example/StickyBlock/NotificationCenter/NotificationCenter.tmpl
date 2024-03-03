@@ -1,0 +1,38 @@
+<ws:template name="block">
+   <div class="ws-Block ws-Block_style_2">
+      <Controls.stickyBlock:StickyBlock attr:class="example-NotificationCenter__stickyHeader ws-flexbox ws-align-items-center">
+         <Controls.heading:Title caption="{{dataSource.getKeyProperty()}}" fontColorStyle="primary" fontSize="3xl"/>
+      </Controls.stickyBlock:StickyBlock>
+      <Controls.list:View source="{{dataSource}}"
+                     idProperty="{{dataSource.getKeyProperty()}}">
+         <ws:itemTemplate>
+            <ws:partial
+               template="{{'tmpl!Controls-demo/Example/StickyHeader/NotificationCenter/' + dataSource.getKeyProperty()}}"
+               attr:class="example-NotificationCenter__item"/>
+         </ws:itemTemplate>
+      </Controls.list:View>
+   </div>
+</ws:template>
+
+<div class="example-NotificationCenter ws-flexbox">
+   <Controls.scroll:Container attr:class="example-NotificationCenter__scroll ws-BlockLayout" shadowVisible="{{_shadowVisible}}">
+      <div>
+         <ws:if data="{{_titleVisible}}">
+            <div class="ws-Block ws-Block_style_6 ws-flexbox ws-justify-content-center">
+               <Controls.heading:Title caption="Notification center" fontSize="4xl"/>
+            </div>
+         </ws:if>
+         <ws:for data="index in _dataset.length">
+            <ws:partial template="block" dataSource="{{_dataset[index]}}"/>
+         </ws:for>
+         <ws:for data="index in _dataset.length">
+            <ws:partial template="block" dataSource="{{_dataset[_dataset.length - index - 1]}}"/>
+         </ws:for>
+      </div>
+   </Controls.scroll:Container>
+   <div class="example-NotificationCenter__settings ws-flexbox ws-flex-column ws-justify-content-between">
+      <Controls.heading:Title caption="Settings" fontSize="4xl" attr:class="ws-align-self-center"/>
+      <Controls.toggle:Switch caption="Заголовок" bind:value="_titleVisible"/>
+      <Controls.toggle:Switch caption="Тень" bind:value="_shadowVisible"/>
+   </div>
+</div>

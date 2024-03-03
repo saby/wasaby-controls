@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-Calculator"
+           id="8242f6d9-ff68-4b07-b2ad-04b9900f3b31"
+           package="Wasaby"
+           kaizen_zone="6bae9493-19f8-4b8e-a80c-21c6398d9074"
+           required="1"
+           version="1.00">
+
+  <description>Модуль содержит контролы калькулятора.</description>
+
+    <depends>
+      <module id="f6fdf353-3ab3-4dbb-8671-01c2b418bf0a" name="Controls"/>
+      <module id="af50caf5-f84b-4b81-a19c-6f6618372dbd" name="Controls-default-theme"/>
+      <module id="f27abe12-19df-4c9f-b886-634bd20a0011" name="UI"/>
+      <module id="0f5d26db-dd61-4957-9375-8861ad66f219" name="Vdom"/>
+      <module id="5013744b-0318-4446-8a94-e5f0c7857b95" name="Controls-Keyboard"/>
+      <module id="656177e2-4d75-42fa-9173-977dc90ff121" name="Browser"/>
+      <module id="686f183d-0bcc-4732-b4e4-6016c2a67a0f" name="Types"/>
+    </depends>
+
+  <load_after/>
+
+  <parameters/>
+
+  <resources/>
+
+  <preload/>
+
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

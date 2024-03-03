@@ -1,0 +1,41 @@
+<div attr:class="controls-ListViewV controls-ListView_default controls_list_theme-{{_options.theme}}">
+   <ws:if data="{{ _options.listModel }}">
+      <div attr:class="controls-ListViewV__itemsContainer controls-ListViewV__itemsContainer--newRender {{_options.itemsContainerClass}}" name="itemsContainer">
+         <ws:partial
+            template="wml!Controls/_listRender/Render/resources/For"
+            collection="{{ _options.listModel }}"
+            keyPrefix="{{ _templateKeyPrefix }}"
+            style="{{_options.style}}"
+
+            itemActionsPosition="{{ _options.itemActionsPosition }}"
+            itemTemplate="{{ _options.itemTemplate }}"
+            groupTemplate="{{ _options.groupTemplate }}"
+            menuIsShown="{{ _options.menuIsShown }}"
+
+            itemActionsTemplate="{{ _options.itemActionsTemplate }}"
+            swipeTemplate="{{ _options.swipeTemplate }}" />
+      </div>
+   </ws:if>
+   <ws:if data="{{ _options.emptyTemplate }}">
+      <ws:partial template="{{ _options.emptyTemplate }}" />
+   </ws:if>
+   <ws:if data="{{ _options.footerTemplate }}">
+      <ws:if data="{{ _options.stickyFooter }}">
+         <Controls.stickyBlock:StickyBlock
+                 subPixelArtifactFix="{{_options.subPixelArtifactFix}}"
+                 pixelRatioBugFix="{{_options.pixelRatioBugFix}}"
+            position="bottom"
+            attr:class="controls-ListView__footer__paddingLeft_{{ _canHaveMultiselect(_options) ? 'withCheckboxes' : 'default' }}">
+            <div>
+               <ws:partial template="{{ _options.footerTemplate }}" />
+            </div>
+         </Controls.stickyBlock:StickyBlock>
+      </ws:if>
+      <ws:else>
+         <div
+            attr:class="controls-ListView__footer__paddingLeft_{{ _canHaveMultiselect(_options) ? 'withCheckboxes' : 'default' }}">
+            <ws:partial template="{{ _options.footerTemplate }}" />
+         </div>
+      </ws:else>
+   </ws:if>
+</div>

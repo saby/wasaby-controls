@@ -1,0 +1,9 @@
+<div class="engineDemo__wrapper ws-flexbox">
+    <Controls-ListEnv.filterPanelConnected:View storeId="departments"
+        filterNames="['isDevelopment']"
+        attr:class="engine-demo__Widgets_filterPanel"
+    />
+    <Controls.grid:View storeId="departments"
+        columns="{{ _gridColumns }}"
+    />
+</div>

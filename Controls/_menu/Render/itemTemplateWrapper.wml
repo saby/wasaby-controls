@@ -1,0 +1,14 @@
+<ws:if data="{{treeItem['[Controls/_display/SearchSeparator]']}}">
+    <div attr:class="controls-Menu__row controls-Menu__row_overflow
+                    controls-ListView__itemV
+                    {{itemData.itemClassList}}">
+        <span class="controls-Menu__row__searchSeparator_line_horizontal"></span>
+    </div>
+</ws:if>
+<ws:else data="{{!!treeItem.getContents().forEach}}">
+    <ws:partial template="wml!Controls/_menu/Render/itemTemplate" scope="{{_options}}" />
+</ws:else>
+<ws:else>
+    <ws:partial template="{{treeItem.getContents()[_options.itemTemplateProperty] || _options.itemTemplate}}"
+                scope="{{_options}}" />
+</ws:else>

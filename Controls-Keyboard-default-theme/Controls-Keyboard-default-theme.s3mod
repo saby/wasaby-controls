@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-Keyboard-default-theme" kaizen_zone="6bae9493-19f8-4b8e-a80c-21c6398d9074"
+           id="5dba5b68-0d22-4016-9564-d3bc3e59c9f1"
+           package="Wasaby"
+           responsible="Кондратьев И.Н." responsible_uuid="3b44d193-8649-4a65-af51-e5a5596d16c6"
+           required="1"
+           version="1.00">
+  <description/>
+  <depends>
+    <module id="af50caf5-f84b-4b81-a19c-6f6618372dbd" name="Controls-default-theme"/>
+    <module id="5013744b-0318-4446-8a94-e5f0c7857b95" name="Controls-Keyboard"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <cluster_endpoints/>
+  <resources/>
+  <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

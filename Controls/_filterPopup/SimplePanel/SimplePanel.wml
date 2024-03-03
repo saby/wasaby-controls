@@ -1,0 +1,63 @@
+<ws:template name="sticky">
+   <Controls.popupTemplate:Sticky attr:class="controls_filter_theme-{{_options.theme}}
+                                             controls_filterPopup_theme-{{_options.theme}}
+                                             controls_dropdownPopup_theme-{{_options.theme}}
+                                             controls-Popup__isolatedFocusingContext
+                                             controls-SimplePanel_content
+                                             {{!_options.isAdaptive ? 'controls-SimplePanel_background'}}"
+                                  headerContentTemplate="{{headerContentTemplate}}"
+                                  closeButtonVisible="{{true}}"
+                                  closeButtonViewMode="{{_applyButtonVisible ? 'externalWide' : 'external'}}"
+                                  borderVisible="{{false}}">
+      <ws:bodyContentTemplate>
+         <Controls.scroll:Container attr:class="controls-ScrollContainer__flex controls-SimplePanel__scroll"
+                                    topShadowVisibility="hidden"
+                                    bottomShadowVisibility="hidden"
+                                    scrollbarVisible="{{false}}">
+            <ws:for data="index, item in _items">
+               <ws:partial template="{{_options.itemTemplate}}"
+                           scope="{{item}}"
+                           searchValue="{{_searchValue}}"
+                           hasApplyButton="{{!index && _hasApplyButton}}"
+                           emptyItemFontWeight="{{_items.length > 1 ? 'bold' : 'normal'}}"
+                           on:itemClick="_itemClickHandler(item)"
+                           on:checkBoxClick="_checkBoxClickHandler(index)"
+                           on:moreButtonClick="_moreButtonClick(item)"/>
+               <ws:if data="{{_items.length !== index + 1}}">
+                  <div class="controls-SimplePanel__block_separator"></div>
+               </ws:if>
+            </ws:for>
+         </Controls.scroll:Container>
+         <ws:if data="{{_applyButtonVisible}}">
+            <div class="controls-SimplePanel__applyButton" data-qa="SimplePanel__applyButton">
+               <Controls.buttons:Button viewMode="filled"
+                                        icon="icon-Yes"
+                                        iconSize="s"
+                                        iconStyle="contrast"
+                                        buttonStyle="success"
+                                        inlineHeight="menuapply"
+                                        on:click="_applySelection()"/>
+            </div>
+         </ws:if>
+      </ws:bodyContentTemplate>
+   </Controls.popupTemplate:Sticky>
+</ws:template>
+
+<div class="controls-SimplePanel {{!_options.isAdaptive ? ' controls-SimplePanel_close-padding'}}">
+   <ws:if data="{{_hasSearchInput}}">
+      <ws:partial template="sticky">
+         <ws:headerContentTemplate>
+               <Controls.menu:SearchHeaderTemplate on:search="_search()"
+                                                   on:searchReset="_searchReset()"
+                                                   minSearchLength="{{_items[0].minSearchLength}}"
+                                                   searchDelay="{{_items[0].searchDelay}}"
+                                                   isAdaptive="{{_items[0].isAdaptive}}"
+                                                   viewMode="search"
+               />
+         </ws:headerContentTemplate>
+      </ws:partial>
+   </ws:if>
+   <ws:else>
+      <ws:partial template="sticky" />
+   </ws:else>
+</div>

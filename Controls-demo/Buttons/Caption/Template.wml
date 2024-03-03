@@ -1,0 +1,26 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__flex ws-justify-content-center ws-align-items-center">
+            <div class="controls-text-label controlsDemo_fixedWidth200">Обычный текст:</div>
+            <div class="controlsDemo_fixedWidth200">
+                <Controls.buttons:Button viewMode="outlined"
+                                         caption="Оплатить"/>
+            </div>
+        </div>
+
+        <div class="controlsDemo__flex ws-justify-content-center ws-align-items-center controls-margin_top-m">
+            <div class="controls-text-label controlsDemo_fixedWidth200">Прикладной шаблон:</div>
+            <div class="controlsDemo_fixedWidth200">
+                <Controls.buttons:Button viewMode="outlined">
+                    <ws:caption>
+                        <span>Всего: </span>
+                        <Controls.baseDecorator:Money
+                                fontColorStyle="secondary"
+                                fontWeight="bold"
+                                value="365.12"/>
+                    </ws:caption>
+                </Controls.buttons:Button>
+            </div>
+        </div>
+    </div>
+</div>

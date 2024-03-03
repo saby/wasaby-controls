@@ -1,0 +1,22 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper">
+      <Controls.dropdown:Selector
+              bind:selectedKeys="_selectedKeys1"
+              source="{{_source}}"
+              keyProperty="key"
+              displayProperty="title"
+              itemTemplateProperty="template"
+              attr:class="ControlsDemo-menuControl_minWidth">
+      </Controls.dropdown:Selector>
+   </div>
+   <div class="controlsDemo__wrapper">
+      <Controls.dropdown:Selector
+              bind:selectedKeys="_selectedKeys2"
+              source="{{_source}}"
+              keyProperty="key"
+              displayProperty="title"
+              itemTemplateProperty="template"
+              attr:class="ControlsDemo-menuControl_minWidth">
+      </Controls.dropdown:Selector>
+   </div>
+</div>

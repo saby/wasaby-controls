@@ -1,0 +1,141 @@
+@import 'Controls/_scroll/Scroll/_contentEnvironmentZIndex';
+
+.flex-centered() {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+// НА ОБЁРТКЕ ГОРИЗОНТАЛЬНОГО СКРОЛЛА  НЕ ДОЛЖНО быть стилей, которые формируют
+// новый контекст z-index'ов. В противном случае оверлей скроллирования колонок
+// мышью будет ограничен размерами таблицы (даже будучи fixed).
+// https://www.w3.org/TR/css-transforms-1/#transform-rendering
+
+.controls-ColumnScroll__thumb {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   z-index: @z-index_Scroll-contentEnvironment_horizontal;
+   width: inherit;
+}
+
+.controls-ColumnScroll__shadow {
+   top: 0;
+   z-index: @z-index_Scroll-shadow;
+   position: absolute;
+   pointer-events: none;
+   width: var(--columnscroll_shadow-blur_grid);
+   box-sizing: border-box;
+   visibility: hidden;
+}
+
+.controls-ColumnScroll__shadow_without-bottom-padding {
+   bottom: 0;
+}
+
+.controls-ColumnScroll__shadow_with-bottom-padding {
+   bottom: var(--height_outside_itemActions);
+}
+
+// Набор классов для установки градиента горизонтального скролла через backgroundStyle (default, transparent)
+.controls-ColumnScroll__shadow-default,
+.controls-ColumnScroll__shadow-contrast,
+.controls-ColumnScroll__shadow-stack,
+.controls-ColumnScroll__shadow-stackHeader,
+.controls-ColumnScroll__shadow-infoBox-detail {
+   background: linear-gradient(
+      to right,
+      var(--columnscroll_shadow-start-color_grid),
+      var(--columnscroll_shadow-end-color_grid)
+   );
+   border-left: var(--columnscroll_separator_thickness_grid) solid
+      var(--columnscroll_separator_color_grid);
+}
+
+.controls-ColumnScroll__shadow_position-end {
+   right: 0;
+   transform: scaleX(-1);
+}
+
+// Усиление необходимо, т.к. z-index навешивается контроллером скрола через GUID-селектор
+// .GUID-селектор .controls-ColumnScroll__fixedElement {} и имеет больший вес.
+.ws-is-hover
+   .controls-ColumnScroll__fixedElement.controls-Grid__row-cell_single-cell-editable_fixed:hover {
+   z-index: 4;
+}
+
+.controls-VScrollbar.controls-ColumnScroll__thumb,
+.controls-ColumnScroll__scrollToButtons {
+   display: flex;
+}
+
+.controls-Grid__columnScrollBar__wrapper_table {
+   position: relative;
+}
+
+.controls-ColumnScroll__scrollToButtons {
+   pointer-events: none;
+   justify-content: flex-end;
+   position: absolute;
+   width: 100%;
+   top: calc(
+      0px -
+         (
+            var(--offset_xl) +
+               (
+                  (
+                        (var(--inline_height_ArrowButton) - 2 * var(--border-thickness_button)) -
+                           var(--offset_xl)
+                     ) / 2
+               )
+         )
+   );
+   box-sizing: border-box;
+   padding-right: var(--offset_xl);
+}
+
+// Контейнер стрелок расположен абсолютом поверх итогов, он не должен мешать событиям
+// итогов (ховеру, клику). Сами кнопки должны ловить события мыши.
+.controls-ColumnScroll__scrollToButton {
+   pointer-events: all;
+}
+
+.controls-ColumnScroll__scrollToButton_left {
+   margin-right: var(--offset_xs);
+}
+
+// Загрузка с проскролом вконец в новых таблицах
+.controls-Grid__ColumnScrollWrapper_withFakeRender {
+   position: relative;
+   cursor: pointer;
+}
+
+// Фиксированная часть при фейковом рендере. Эта часть является настоящей таблице и останется при активации.
+.controls-Grid__ColumnScroll__fakeFixedPart {
+   // На обеих частях убираем интерактивность, она может спровоцировать артефакты (неполный ховер).
+   pointer-events: none;
+   z-index: 1;
+}
+// Скроллируемые ячейки фиксированной части скрыты.
+.controls-Grid__ColumnScroll__fakeFixedPart .controls-ColumnScroll__scrollableElement {
+   visibility: hidden;
+}
+
+// Обертка фейковой скроллируемой части таблицы. Только с оберткой можно отцентрировать эту часть.
+.controls-Grid__ColumnScroll__fakeScrollablePartWrapper {
+   // Прижимаем обертку со скроллируемой частью к верхнему правому углу видимой области.
+   position: absolute;
+   right: 0;
+   top: 0;
+
+   // На обеих частях убираем интерактивность, она может спровоцировать артефакты (неполный ховер).
+   pointer-events: none;
+
+   // Индекс ноль, т.к. эта часть должна заходить под фиксированную, у которой индекс 1.
+   z-index: 0;
+
+   // Скроллируемая часть минимально должна закрывать всю видимую область, чтобы таблица растягивалась.
+   // Нужно для всех кейсов, но заметно в таблицах, в которой скролл по размерам не будет нужен.
+   min-width: 100%;
+}

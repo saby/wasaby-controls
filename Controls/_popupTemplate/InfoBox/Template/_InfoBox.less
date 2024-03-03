@@ -1,0 +1,335 @@
+.controls-InfoBoxTemplate {
+   display: flex;
+   height: 100%;
+}
+
+.controls-InfoBoxTemplate_horizontal-direction-right {
+   padding-right: var(--offset_m);
+}
+
+.controls-InfoBoxTemplate_horizontal-direction-left {
+   padding-left: var(--offset_m);
+}
+
+.controls-InfoBoxTemplate__content {
+   height: 100%;
+   position: relative;
+   box-sizing: border-box;
+   flex-shrink: 1;
+   width: 100%;
+   box-shadow: var(--shadow_a);
+   border: var(--border-thickness) solid var(--border-color);
+   max-height: inherit;
+
+   &-maxWidth {
+      max-width: var(--max-width_infobox);
+   }
+}
+
+.controls-InfoBoxTemplate__backgroundStyle-secondary {
+   background-color: var(--background-color_infobox);
+}
+
+.controls-InfoBoxTemplate__content-area {
+   position: relative;
+   z-index: 1;
+}
+
+.controls-InfoBoxTemplate__arrow-side-position-left {
+   flex-direction: row-reverse;
+}
+
+.controls-InfoBoxTemplate__arrow-side-position-top {
+   flex-direction: column-reverse;
+}
+
+.controls-InfoBoxTemplate__arrow-side-position-bottom {
+   flex-direction: column;
+}
+
+.controls-InfoBoxTemplate__arrow {
+   content: '';
+   box-sizing: border-box;
+   position: relative;
+   border-style: solid;
+   border-top: none;
+   border-left: none;
+   width: var(--arrow_side_length_infobox);
+   height: var(--arrow_side_length_infobox);
+   border-width: var(--marker-thickness_infobox);
+   border-right-color: var(--border-color);
+   border-bottom-color: var(--border-color);
+}
+
+//обводка стрелки
+/* stylelint-disable-next-line no-duplicate-selectors */
+.controls-InfoBoxTemplate__arrow {
+   &-danger {
+      border-right-color: var(--danger_border-color);
+      border-bottom-color: var(--danger_border-color);
+   }
+
+   &-warning {
+      border-right-color: var(--warning_border-color);
+      border-bottom-color: var(--warning_border-color);
+   }
+
+   &-success {
+      border-right-color: var(--success_border-color);
+      border-bottom-color: var(--success_border-color);
+   }
+
+   &-primary {
+      border-right-color: var(--primary_border-color);
+      border-bottom-color: var(--primary_border-color);
+   }
+
+   &-unaccented {
+      border-right-color: var(--unaccented_color);
+      border-bottom-color: var(--unaccented_color);
+   }
+
+   &-secondary {
+      border-right-color: var(--secondary_border-color);
+      border-bottom-color: var(--secondary_border-color);
+   }
+
+   &-info {
+      background-color: var(--info_background-color_infobox);
+      border-right-color: var(--info_border-color);
+      border-bottom-color: var(--info_border-color);
+   }
+
+   &-invalid,
+   &-invalidAccent {
+      border-width: var(--border-thickness);
+      border-right-color: var(--danger_border-color);
+      border-bottom-color: var(--danger_border-color);
+   }
+}
+
+.controls-InfoBoxTemplate_style_invalid,
+.controls-InfoBoxTemplate_style_invalidAccent {
+   box-shadow: var(--invalid_box-shadow-color_infobox) 0 0 var(--shadow-blur_b) 0;
+   border: var(--border-thickness) solid var(--danger_border-color);
+}
+
+.controls-InfoBoxTemplate_style-top_ {
+   &danger {
+      border-top: var(--marker-thickness_infobox) solid var(--danger_border-color);
+   }
+
+   &warning {
+      border-top: var(--marker-thickness_infobox) solid var(--warning_border-color);
+   }
+
+   &success {
+      border-top: var(--marker-thickness_infobox) solid var(--success_border-color);
+   }
+
+   &primary {
+      border-top: var(--marker-thickness_infobox) solid var(--primary_border-color);
+   }
+
+   &unaccented {
+      border-top: var(--marker-thickness_infobox) solid var(--unaccented_color);
+   }
+
+   &secondary {
+      border-top: var(--marker-thickness_infobox) solid var(--secondary_border-color);
+   }
+
+   &info {
+      border-top: var(--marker-thickness_infobox) solid var(--info_border-color);
+      background-color: var(--info_background-color_infobox);
+   }
+}
+
+.controls-InfoBoxTemplate_style-bottom_ {
+   &danger {
+      border-bottom: var(--marker-thickness_infobox) solid var(--danger_border-color);
+   }
+
+   &warning {
+      border-bottom: var(--marker-thickness_infobox) solid var(--warning_border-color);
+   }
+
+   &success {
+      border-bottom: var(--marker-thickness_infobox) solid var(--success_border-color);
+   }
+
+   &primary {
+      border-bottom: var(--marker-thickness_infobox) solid var(--primary_border-color);
+   }
+
+   &unaccented {
+      border-bottom: var(--marker-thickness_infobox) solid var(--unaccented_color);
+   }
+
+   &secondary {
+      border-bottom: var(--marker-thickness_infobox) solid var(--secondary_border-color);
+   }
+
+   &info {
+      border-bottom: var(--marker-thickness_infobox) solid var(--info_border-color);
+      background-color: var(--info_background-color_infobox);
+   }
+}
+
+.controls-InfoBoxTemplate_style-left_ {
+   &danger {
+      border-left: var(--marker-thickness_infobox) solid var(--danger_border-color);
+   }
+
+   &warning {
+      border-left: var(--marker-thickness_infobox) solid var(--warning_border-color);
+   }
+
+   &success {
+      border-left: var(--marker-thickness_infobox) solid var(--success_border-color);
+   }
+
+   &primary {
+      border-left: var(--marker-thickness_infobox) solid var(--primary_border-color);
+   }
+
+   &unaccented {
+      border-left: var(--marker-thickness_infobox) solid var(--unaccented_color);
+   }
+
+   &secondary {
+      border-left: var(--marker-thickness_infobox) solid var(--secondary_border-color);
+   }
+
+   &info {
+      border-left: var(--marker-thickness_infobox) solid var(--info_border-color);
+      background-color: var(--info_background-color_infobox);
+   }
+}
+
+.controls-InfoBoxTemplate_style-right_ {
+   &danger {
+      border-right: var(--marker-thickness_infobox) solid var(--danger_border-color);
+   }
+
+   &warning {
+      border-right: var(--marker-thickness_infobox) solid var(--warning_border-color);
+   }
+
+   &success {
+      border-right: var(--marker-thickness_infobox) solid var(--success_border-color);
+   }
+
+   &primary {
+      border-right: var(--marker-thickness_infobox) solid var(--primary_border-color);
+   }
+
+   &unaccented {
+      border-right: var(--marker-thickness_infobox) solid var(--unaccented_color);
+   }
+
+   &secondary {
+      border-right: var(--marker-thickness_infobox) solid var(--secondary_border-color);
+   }
+
+   &info {
+      border-right: var(--marker-thickness_infobox) solid var(--info_border-color);
+      background-color: var(--info_background-color_infobox);
+   }
+}
+
+.controls-InfoBoxTemplate__closeButton {
+   position: absolute;
+   cursor: pointer;
+   z-index: 2;
+   top: var(--close-button_offset-top_infobox);
+   right: var(--close-button_offset-right_infobox);
+}
+
+/**
+ * In firefox and safari, the text baseline is 1px higher than the standard.
+ * Compensate for this by reducing the indentation between the close button and the upper border by 1px.
+ * Presumably the problem is in the font. Error written https://online.sbis.ru/opendoc.html?guid=1e389bc5-8be7-4394-abdd-231e3ec040a8
+ */
+.ws-is-firefox,
+.ws-is-mobile-safari {
+   .controls-InfoBoxTemplate__closeButton {
+      top: calc(var(--close-button_offset-top_infobox) + 1px);
+   }
+}
+
+.controls-InfoBoxTemplate__arrow-wrapper {
+   flex-shrink: 0;
+}
+
+.controls-InfoBoxTemplate__arrow-wrapper-top,
+.controls-InfoBoxTemplate__arrow-wrapper-bottom {
+   width: calc(var(--target_offset_infobox) + 1);
+   height: var(--target_offset_infobox);
+}
+
+.controls-InfoBoxTemplate__arrow-wrapper-left,
+.controls-InfoBoxTemplate__arrow-wrapper-right {
+   width: var(--target_offset_infobox);
+   height: calc(var(--target_offset_infobox) + 1);
+}
+
+.controls-InfoBoxTemplate__arrow-top {
+   transform: rotate(-135deg);
+   top: calc(var(--arrow_side_length_infobox) / 2 - var(--marker-thickness_infobox));
+}
+
+.controls-InfoBoxTemplate__arrow-bottom {
+   transform: rotate(45deg);
+   bottom: calc(var(--arrow_side_length_infobox) / 2);
+}
+
+@infoboxTemplate_arrow-indent: calc(
+   var(--arrow_offset_infobox) +
+      ((var(--arrow_base_length_infobox) - var(--arrow_side_length_infobox)) / 2) +
+      var(--marker-thickness_infobox)
+);
+
+.controls-InfoBoxTemplate__arrow-top,
+.controls-InfoBoxTemplate__arrow-bottom {
+   &.controls-InfoBoxTemplate__arrow-position-start {
+      left: @infoboxTemplate_arrow-indent;
+   }
+
+   &.controls-InfoBoxTemplate__arrow-position-end {
+      right: @infoboxTemplate_arrow-indent;
+   }
+}
+
+.controls-InfoBoxTemplate__arrow-left {
+   transform: rotate(135deg);
+   left: calc(var(--arrow_side_length_infobox) / 2 - var(--marker-thickness_infobox));
+}
+
+.controls-InfoBoxTemplate__arrow-right {
+   transform: rotate(-45deg);
+   right: calc(var(--arrow_side_length_infobox) / 2);
+}
+
+.controls-InfoBoxTemplate__arrow-left,
+.controls-InfoBoxTemplate__arrow-right {
+   &.controls-InfoBoxTemplate__arrow-position-start {
+      top: @infoboxTemplate_arrow-indent;
+   }
+
+   &.controls-InfoBoxTemplate__arrow-position-end {
+      bottom: @infoboxTemplate_arrow-indent;
+   }
+}
+
+.controls-InfoBoxTemplate__arrow-side-start {
+   align-items: flex-start;
+}
+
+.controls-InfoBoxTemplate__arrow-side-center {
+   align-items: center;
+}
+
+.controls-InfoBoxTemplate__arrow-side-end {
+   align-items: flex-end;
+}

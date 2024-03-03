@@ -1,0 +1,47 @@
+.controls-Suggest__suggestionsContainer_hidden {
+   visibility: hidden;
+}
+
+.controls-Suggest__suggestionsContainer_popup {
+   height: 100%;
+   overflow: hidden;
+   max-height: inherit;
+}
+
+//в safari не работает overflow:hidden с заданным border-radius
+.ws-is-desktop-safari,
+.ws-is-mobile-safari {
+   .controls-Suggest__suggestionsContainer_popup {
+      transform: translateZ(0);
+   }
+}
+
+.controls-Suggest__tabs_PopupLayer {
+   margin-top: var(--tabs_offset-top_suggest);
+}
+
+.controls-Suggest_list_empty {
+   min-height: calc(var(--offset_l) * 2 + var(--spinner_l_size_loadingIndicator));
+}
+
+.controls-SuggestCloseButton {
+   position: absolute;
+   top: var(--offset_s);
+   right: calc(var(--width_closeButton_functionalButton) / -2);
+   z-index: 3;
+}
+
+.controls-suggestPopup {
+   height: 100%;
+   margin-left: calc(-1 * var(--offset_m));
+}
+
+.controls-suggestPopup-contrastBackground {
+   margin-left: calc(-1 * var(--offset_s));
+}
+
+.controls-suggestPopup__adaptive-height-fix {
+   display: flex;
+   flex-direction: column;
+   min-height: 1px;
+}

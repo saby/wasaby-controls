@@ -1,0 +1,53 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo_m">
+        <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys"
+                                    readOnly="{{true}}"
+                                    keyProperty="key"
+                                    displayProperty="title"
+                                    source="{{_source}}"
+                                    attr:data-qa="Controls-demo_dropdown_Input_ReadOnly__basic">
+        </Controls.dropdown:Selector>
+    </div>
+    <div class="controlsDemo_m">
+        <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys2"
+                                    readOnly="{{true}}"
+                                    emptyText="Не выбрано"
+                                    keyProperty="key"
+                                    displayProperty="title"
+                                    source="{{_source}}"
+                                    attr:data-qa="Controls-demo_dropdown_Input_ReadOnly__empty">
+        </Controls.dropdown:Selector>
+    </div>
+    <div class="controlsDemo_m">
+        <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys3"
+                                    maxVisibleItems="{{2}}"
+                                    readOnly="{{true}}"
+                                    fontColorStyle="primary"
+                                    multiSelect="{{true}}"
+                                    keyProperty="key"
+                                    displayProperty="title"
+                                    source="{{_source}}"
+                                    attr:data-qa="Controls-demo_dropdown_Input_ReadOnly__multiselect-max-2">
+        </Controls.dropdown:Selector>
+    </div>
+    <div class="controlsDemo_m">
+        <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys4"
+                                    readOnly="{{true}}"
+                                    multiSelect="{{true}}"
+                                    keyProperty="key"
+                                    displayProperty="title"
+                                    source="{{_source}}"
+                                    attr:data-qa="Controls-demo_dropdown_Input_ReadOnly__multiselect">
+        </Controls.dropdown:Selector>
+    </div>
+    <div class="controlsDemo_m">
+        <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys5"
+                                    readOnly="{{true}}"
+                                    multiSelect="{{true}}"
+                                    keyProperty="key"
+                                    displayProperty="title"
+                                    source="{{_sourceMax}}"
+                                    attr:data-qa="Controls-demo_dropdown_Input_ReadOnly__many">
+        </Controls.dropdown:Selector>
+    </div>
+</div>

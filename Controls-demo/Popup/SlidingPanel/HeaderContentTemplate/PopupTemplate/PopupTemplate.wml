@@ -1,0 +1,48 @@
+<ws:template name="slidingPanel">
+<Controls.popupSliding:Template
+    slidingPanelOptions="{{ _options.slidingPanelOptions }}"
+    headerContentTemplate="{{headerContent}}"
+    isAdaptive="{{_options.isAdaptive}}"
+    toolbarContentTemplate="{{toolbarContent}}">
+    <ws:bodyContentTemplate>
+        <Controls.scroll:Container
+            attr:style="height: 100%;"
+            name="scrollContainer"
+            topShadowVisibility="hidden"
+            bottomShadowVisibility="hidden"
+            scrollbarVisible="{{ false }}">
+            <Controls.Container.Async
+                templateName="Controls-demo/Popup/SlidingPanel/PopupTemplate/Content/LargeContent"/>
+        </Controls.scroll:Container>
+    </ws:bodyContentTemplate>
+</Controls.popupSliding:Template>
+</ws:template>
+
+<ws:if data="{{ _options.showToolbar || _options.showHeader }}">
+<ws:partial template="slidingPanel">
+    <ws:headerContent>
+        <ws:if data="{{ _options.showHeader }}">
+            <div
+                style="width: 100%;"
+                class="ws-flexbox controls-margin_left-m">
+                <Controls.heading:Title caption="Заголовок панели"/>
+            </div>
+        </ws:if>
+        <ws:else>
+            <invisible-node/>
+        </ws:else>
+    </ws:headerContent>
+    <ws:toolbarContent>
+        <ws:if data="{{ _options.showToolbar }}">
+            <Controls.toolbars:View
+                items="{{_toolbarItems}}"/>
+        </ws:if>
+        <ws:else>
+            <invisible-node/>
+        </ws:else>
+    </ws:toolbarContent>
+</ws:partial>
+</ws:if>
+<ws:else>
+<ws:partial template="slidingPanel"/>
+</ws:else>

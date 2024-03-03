@@ -1,0 +1,25 @@
+<div class="controlsDemo__flexColumn">
+    <div class="controlsDemo__wrapper controlsDemo__flex controlsDemo__flex-jc-sa" style="align-items: flex-start">
+        <div class="controlsDemo__cell">
+            <div class="controls-text-label controlsDemo__maxWidth200">readOnly=false</div>
+            <Controls.dateRange:Selector
+                    bind:startValue="_startValue1"
+                    bind:endValue="_endValue1"
+                    datePopupType="shortDatePicker"
+                    chooseHalfyears="{{false}}"
+                    chooseMonths="{{false}}"
+                    readOnly="{{false}}"
+                    chooseQuarters="{{false}}"/>
+        </div>
+        <div class="controlsDemo__cell">
+            <div class="controls-text-label controlsDemo__maxWidth200">readOnly=true</div>
+            <Controls.dateRange:Selector
+                    bind:startValue="_startValue1"
+                    bind:endValue="_endValue1"
+                    datePopupType="shortDatePicker"
+                    chooseHalfyears="{{false}}"
+                    readOnly="{{true}}"
+                    chooseMonths="{{false}}"/>
+        </div>
+    </div>
+</div>

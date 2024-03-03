@@ -1,0 +1,255 @@
+.controls-StickyTemplate {
+   display: flex;
+   flex-direction: column;
+   position: relative;
+   width: 100%;
+   box-sizing: border-box;
+   min-height: 0;
+   height: 100%;
+}
+
+.controls-StickyTemplate__border {
+   border: var(--border-thickness_sticky) solid transparent;
+
+   &::after {
+      content: '';
+      position: absolute;
+      pointer-events: none;
+      z-index: 1;
+      border-radius: inherit;
+      border-style: solid;
+   }
+}
+
+.controls-StickyTemplate-backgroundColor {
+   background-color: var(--background-color_sticky);
+}
+
+.controls-StickyTemplate-shadow {
+   box-shadow: var(--shadow_a);
+}
+
+.controls-StickyTemplate__top-area {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-shrink: 0;
+   padding-left: var(--header_padding-horizontal_sticky);
+   min-height: var(--header_min-height_sticky);
+}
+
+.controls-StickyTemplate__top-area-withClose {
+   padding-right: calc(var(--close-button_offset-right_sticky) + var(--width_closeButton_link));
+}
+
+.controls-StickyTemplate__top-area-withClose_external,
+.controls-StickyTemplate__top-area-withClose_externalWide {
+   padding-right: calc(
+      var(--close-button_offset-left_sticky) + var(--width_closeButton_functionalButton) / 2
+   );
+}
+
+.controls-StickyTemplate__top-area-withClose_link {
+   padding-right: calc(var(--close-button_offset-right_sticky) + var(--width_closeButton_link));
+}
+
+.controls-StickyTemplate__top-area-withoutClose {
+   padding-right: var(--header_padding-horizontal_sticky);
+}
+
+.controls-StickyTemplate__top-area-content {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   cursor: default;
+   .flex-shrink(0);
+   height: var(--header_min-height_sticky);
+}
+
+.controls-StickyTemplate__content-area {
+   max-height: inherit;
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+   flex-shrink: 1;
+   min-height: 1px;
+   overflow: hidden;
+}
+
+.controls-StickyTemplate__close_button {
+   position: absolute;
+   z-index: 2;
+}
+
+.controls-StickyTemplate__close_button_position-default {
+   right: var(--close-button_offset-right_sticky);
+}
+
+.controls-StickyTemplate_roundBorder__close_button_position-default {
+   right: calc((var(--close-button_offset-right_sticky) + var(--offset_xs)) - var(--air_l));
+}
+
+.controls-StickyTemplate__close_button_position-left {
+   left: calc(var(--width_closeButton_functionalButton) / -2);
+}
+
+.controls-StickyTemplate__close_button_position-right {
+   right: calc(var(--width_closeButton_functionalButton) / -2);
+}
+
+.controls-StickyTemplate__close_button-default-without-header_top-spacing-default {
+   top: calc(var(--close-button_offset-top_sticky) + var(--content_padding-top_sticky));
+}
+
+.controls-StickyTemplate__close_button-external-without-header_top-spacing-default {
+   top: calc(
+      (var(--header_min-height_sticky) - var(--width_closeButton_functionalButton)) / 2 +
+         var(--offset_xs)
+   );
+}
+
+.controls-StickyTemplate__close_button-external-with-header {
+   top: calc(
+      (var(--header_min-height_sticky) - var(--width_closeButton_functionalButton)) / 2 +
+         var(--offset_xs)
+   );
+}
+
+.controls-StickyTemplate__close_button-default-with-header {
+   top: var(--close-button_offset-top_sticky);
+}
+
+.controls-StickyTemplate__caption {
+   display: flex;
+   align-items: center;
+   overflow: hidden;
+   cursor: default;
+}
+
+.controls-StickyTemplate__footer {
+   display: flex;
+   align-items: center;
+   flex-shrink: 0;
+}
+
+.controls-StickyTemplate-animation {
+   transition: opacity 0.3s;
+}
+
+.controls-StickyTemplate-visibility {
+   opacity: 1;
+}
+
+.controls-StickyTemplate-visibility-hidden {
+   opacity: 0;
+   pointer-events: none;
+}
+
+.controls-StickyTemplate-borderStyle-default::after {
+   border-color: var(--border-color_sticky);
+}
+
+.controls-StickyTemplate-borderStyle-primary::after {
+   border-color: var(--primary_border-color);
+}
+
+.controls-StickyTemplate-borderStyle-secondary::after {
+   border-color: var(--secondary_border-color);
+}
+
+.controls-StickyTemplate-borderStyle-danger::after {
+   border-color: var(--danger_border-color);
+}
+
+.controls-StickyTemplate-borderStyle-warning::after {
+   border-color: var(--warning_border-color);
+}
+
+.controls-StickyTemplate-borderStyle-info::after {
+   border-color: var(--info_border-color);
+}
+
+.controls-StickyTemplate-borderStyle-unaccented::after {
+   border-color: var(--unaccented_border-color);
+}
+
+.controls-StickyTemplate-borderStyle-transparent::after {
+   border-color: transparent;
+}
+
+.controls-StickyTemplate-borderSize-default::after {
+   top: calc(-1 * var(--border-thickness_sticky));
+   left: calc(-1 * var(--border-thickness_sticky));
+   right: calc(-1 * var(--border-thickness_sticky));
+   bottom: calc(-1 * var(--border-thickness_sticky));
+   border-width: var(--border-thickness_sticky);
+}
+
+.controls-StickyTemplate-borderSize-m::after {
+   top: calc(-1 * var(--border-thickness_m_sticky));
+   left: calc(-1 * var(--border-thickness_m_sticky));
+   right: calc(-1 * var(--border-thickness_m_sticky));
+   bottom: calc(-1 * var(--border-thickness_m_sticky));
+   border-width: var(--border-thickness_m_sticky);
+}
+
+.ws-is-hover {
+   .controls-StickyTemplate-hoverBorderStyle-primary:hover::after {
+      border-color: var(--primary_border-color);
+   }
+
+   .controls-StickyTemplate-hoverBorderStyle-secondary:hover::after {
+      border-color: var(--secondary_border-color);
+   }
+
+   .controls-StickyTemplate-hoverBorderStyle-danger:hover::after {
+      border-color: var(--danger_border-color);
+   }
+
+   .controls-StickyTemplate-hoverBorderStyle-warning:hover::after {
+      border-color: var(--warning_border-color);
+   }
+
+   .controls-StickyTemplate-hoverBorderStyle-unaccented:hover::after {
+      border-color: var(--unaccented_border-color);
+   }
+
+   .controls-StickyTemplate-hoverBorderStyle-info:hover::after {
+      border-color: var(--info_border-color);
+   }
+}
+
+.controls-StickyTemplate__top-area-icon {
+   display: flex;
+   margin: 0 var(--offset_xs) 0 var(--offset_s);
+}
+
+.controls-StickyTemplate__resizingLine {
+   position: absolute;
+   z-index: 2;
+   top: 0;
+}
+
+.controls-StickyTemplate__resizingLine-right {
+   position: absolute;
+   z-index: 2;
+   top: 0;
+   right: 0;
+   height: 100%;
+}
+
+.controls-StickyTemplate__resizingLine-left {
+   position: absolute;
+   z-index: 2;
+   top: 0;
+   left: 0;
+   height: 100%;
+}
+
+.controls-StickyTemplate__resizingLine-bottom {
+   position: absolute;
+   z-index: 2;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+}

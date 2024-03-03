@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls/ToggleButton captions and value false 1`] = `
+<div>
+  <span
+    class=" controls-Button_clickable controls-Button_bg-same controls-Button_outlined_shadow-none controls-BaseButton controls-button-style controls-button_outlined-style controls-button_size-default controls-button_fontColorStyle-undefined-style  controls-Button_notCircle controls-button_fontsize-m controls-button_padding-default controls-button_outlined-secondary-style controls_toggle_theme-default "
+    tabindex="0"
+  >
+    <span
+      class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-outlined controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center controls-Button__wrapper_mode-button"
+    >
+      <span
+        class="controls-BaseButton__text controls-Button__text_viewMode-outlined"
+        tabindex="0"
+      >
+        Save
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/ToggleButton captions and value true 1`] = `
+<div>
+  <span
+    class=" controls-Button_clickable controls-Button_bg-same controls-Button_outlined_shadow-none controls-BaseButton controls-button-style controls-button_outlined-style controls-button_size-default controls-button_fontColorStyle-undefined-style controls-Button_toggled  controls-Button_notCircle controls-button_fontsize-m controls-button_padding-default controls-button_outlined-secondary-style_toggled controls_toggle_theme-default "
+    tabindex="0"
+  >
+    <span
+      class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-outlined controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center controls-Button__wrapper_mode-button"
+    >
+      <span
+        class="controls-BaseButton__text controls-Button__text_viewMode-outlined"
+        tabindex="0"
+      >
+        Change
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/ToggleButton iconStyles and value false 1`] = `
+<div>
+  <span
+    class=" controls-Button_clickable controls-Button_bg-same controls-Button_ghost_shadow-none controls-BaseButton controls-button-style controls-button_ghost-style controls-button_size-l controls-button_fontColorStyle-undefined-style  controls-Button_circle controls-button_fontsize-m controls-button_ghost-default-style controls_toggle_theme-default "
+    tabindex="0"
+  >
+    <span
+      class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-ghost controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center"
+    />
+  </span>
+</div>
+`;
+
+exports[`Controls/ToggleButton iconStyles and value true 1`] = `
+<div>
+  <span
+    class=" controls-Button_clickable controls-Button_bg-same controls-Button_ghost_shadow-none controls-BaseButton controls-button-style controls-button_ghost-style controls-button_size-l controls-button_fontColorStyle-undefined-style controls-Button_toggled  controls-Button_circle controls-button_fontsize-m controls-button_ghost-default-style_toggled controls_toggle_theme-default "
+    tabindex="0"
+  >
+    <span
+      class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-ghost controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center"
+    />
+  </span>
+</div>
+`;
+
+exports[`Controls/ToggleButton icons and value false 1`] = `
+<div>
+  <span
+    class=" controls-Button_clickable controls-Button_bg-same controls-Button_ghost_shadow-none controls-BaseButton controls-button-style controls-button_ghost-style controls-button_size-l controls-button_fontColorStyle-undefined-style  controls-Button_circle controls-button_fontsize-m controls-button_ghost-default-style controls-button_icon-style-secondary controls-button_hover_icon-style-secondary controls_toggle_theme-default "
+    tabindex="0"
+  >
+    <span
+      class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-ghost controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center"
+    >
+      <i
+        class="controls-BaseButton__icon controls-icon_size-m controls-icon icon-ArrangeList04"
+        tabindex="0"
+      />
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/ToggleButton icons and value true 1`] = `
+<div>
+  <span
+    class=" controls-Button_clickable controls-Button_bg-same controls-Button_ghost_shadow-none controls-BaseButton controls-button-style controls-button_ghost-style controls-button_size-l controls-button_fontColorStyle-undefined-style controls-Button_toggled  controls-Button_circle controls-button_fontsize-m controls-button_ghost-default-style_toggled controls-button_icon-style-secondary controls-button_hover_icon-style-secondary controls_toggle_theme-default "
+    tabindex="0"
+  >
+    <span
+      class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-ghost controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center"
+    >
+      <i
+        class="controls-BaseButton__icon controls-icon_size-m controls-icon icon-ArrangeList03"
+        tabindex="0"
+      />
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/ToggleButton viewMode=pushButton and inlineHeight=l 1`] = `
+<div>
+  <span
+    class=" controls-Button_clickable controls-Button_bg-same controls-Button_pushButton_shadow-none controls-BaseButton controls-button-style controls-button_pushButton-style controls-button_size-l controls-button_fontColorStyle-undefined-style  controls-Button_notCircle controls-button_fontsize-m controls-button_pushButton-secondary-style controls_toggle_theme-default "
+    tabindex="0"
+  >
+    <span
+      class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-pushButton controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center"
+    />
+  </span>
+</div>
+`;

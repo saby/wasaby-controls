@@ -1,0 +1,74 @@
+.Colormark__Panel {
+  &_background {
+    &_default {
+      background-color: var(--background-color_stack);
+    }
+
+    &_unaccented {
+      background-color: var(--unaccented_background-color);
+    }
+  }
+
+  &_header {
+    &_offset-left {
+      &_multiselect {
+        &_adaptive {
+          padding-left: calc(var(--inline_height_xl) + (3 * var(--offset_xs)));
+        }
+
+        &_noAdaptive {
+          padding-left: var(--inline_height_s);
+        }
+      }
+
+      &_single {
+        &_noAdaptive {
+          padding-left: var(--offset_m);
+        }
+
+        &_adaptive {
+          padding-left: calc(var(--offset_3xl) - var(--offset_3xs));
+        }
+      }
+    }
+  }
+
+  &_resetButton {
+    &-offset {
+      &_s {
+        &_adaptive {
+          margin-right: var(--offset_m);
+        }
+
+        &_default {
+          margin-right: calc(var(--inline_height_l) / 2 + var(--offset_xs));
+        }
+      }
+
+      &_m {
+        &_adaptive {
+          margin-right: calc(var(--inline_height_l) / 2 + var(--inline_height_xl) + var(--offset_m));
+        }
+
+        &_default {
+          margin-right: calc(var(--inline_height_l) + var(--inline_height_l) / 2 + var(--offset_2xs));
+        }
+      }
+    }
+  }
+
+  &_addButton {
+    &_adaptive {
+      position: absolute;
+      z-index: 1;
+      right: var(--offset_m);
+      bottom: var(--offset_m);
+    }
+  }
+
+  &__emptyView {
+    &_title {
+      text-align: center;
+    }
+  }
+}

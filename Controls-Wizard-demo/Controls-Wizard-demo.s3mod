@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-Wizard-demo"
+           id="e45dd5d4-8226-410b-8198-1c35246b362c"
+           kaizen_zone="a311e6de-2232-4251-9de5-35aa7ae5ffe3"
+           package="Wasaby"
+           version="1.00">
+
+  <description/>
+  <depends>
+    <module id="d6e84b3b-e56f-44a0-837b-594bc0db212c" name="Controls-Wizard"/>
+    <module id="140b9c75-19ae-4a1e-aa3c-ee08a3584c44" name="Controls-Wizard-default-theme"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <resources/>
+  <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

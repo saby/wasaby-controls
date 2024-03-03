@@ -1,0 +1,99 @@
+.controls_filterPopup_theme-@{themeName} {
+   // Переменные для окна быстрых фильтров
+   //
+   // Размеры и отступы
+
+   --max-width_filterSimplePanel: 300px;
+   // Пустое значение
+   --empty-item_font-size_filterSimplePanel: var(--font-size_xs);
+   --empty-item-marker_height_filterSimplePanel: 8px;
+
+   // Переменные для основной панели фильтров
+
+   // Ширина панели
+
+   --width_s_filterPanel: 400px;
+   --width_m_filterPanel: 400px;
+   --width_l_filterPanel: 600px;
+   --width_xl_filterPanel: 800px;
+
+   // Размеры и отступы
+
+   --history_width_s_filterPanel: 350px;
+   --history_width_l_filterPanel: 400px;
+   --padding-bottom_filterPanel: var(--offset_m);
+   --reset-button_offset-right_filterPanel: var(--offset_l);
+   --popup_offset-vertical_filterPanel: calc(
+      -1 * (var(--width_closeButton_functionalButton) / 2 - var(--offset_s))
+   );
+   --popup_offset-horizontal_filterPanel: calc(
+      -1 * (var(--width_filterButton_filterView) - var(--inline_height_l)) / 2 + var(--margin-right_closeButton_toolButton)
+   );
+
+   // Переменные для элементов фильтрации в панели
+
+   --item_text-color_filterPanel: var(--text-color);
+   --item_hover_text-color_filterPanel: var(--item_text-color_filterPanel);
+   --item_height_filterPanel: var(--inline_height_default);
+   --item_font-size_filterPanel: var(--font-size_default);
+   --reset-button_color_filterPanel: var(--label_text-color);
+   --reset-button_hover_color_filterPanel: var(--label_text-color);
+
+   // Переменные для блока основных фильтров
+   //
+   // Размеры и отступы
+
+   --basic_content_padding-top_filterPanel: 0;
+   --basic_content_padding-left_filterPanel: var(--offset_2xl);
+   --basic_content_padding-right_filterPanel: var(--offset_l);
+   --basic_offset_filterPanel: 0;
+
+   // Элементы фильтра
+
+   --basic_item_padding-bottom_filterPanel: var(--offset_2xs);
+   // Переменные для блока дополнительных фильтров
+   //
+   // Размеры и отступы
+
+   --extended_content_padding-left_filterPanel: var(--basic_content_padding-left_filterPanel);
+   --extended_group_height_filterPanel: 40px;
+
+   // Заголовок блока
+
+   --extended_heading_text-color_filterPanel: var(--secondary_text-color_heading);
+   --extended_heading_padding-left_filterPanel: var(--offset_m);
+
+   // Переменные для блока с историей фильтров
+   //
+   // Цвет фона
+
+   --history_background-color_filterPanel: var(--unaccented_background-color);
+
+   // Размеры и отступы
+
+   --history_content_padding-right_filterPanel: var(--basic_content_padding-right_filterPanel);
+   --history_content_padding-left_filterPanel: var(--basic_content_padding-left_filterPanel);
+
+   // Заголовок блока
+
+   --history_heading_padding-left_filterPanel: var(--extended_heading_padding-left_filterPanel);
+
+   // Элементы истории
+
+   --history_item_height_filterPanel: var(--item_height_filterPanel);
+   --history_vertical_item_text-color_filterPanel: var(--item_text-color_filterPanel);
+
+   // Разделитель блока истории
+
+   --separator_thickness_filterPanel: 1px;
+   --separator_color_filterPanel: #e4e4e4;
+
+   // Кнопка закрепления
+   --history_item_pin-button_icon-color_filterPanel: var(--unaccented_icon-color);
+   --history_item_pin-button_hover_icon-color_filterPanel: var(--secondary_hover_icon-color);
+   --history_item_pin-button_toggled_icon-color_filterPanel: var(--secondary_hover_icon-color);
+
+   // Переменные для диалога редактирования избранного
+   --width_filterFavoriteDialog: 400px;
+   --content-padding-top_filterFavoriteDialog: 0;
+}

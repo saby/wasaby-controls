@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module for_cdn="0" id="4d49c8c7-a3d1-4bcf-8d22-ea7f107f3654" name="Controls-Name-meta" kaizen_zone="7fa4b829-eb3a-4604-8b21-c8cb792c7316"  required="0" package="Wasaby"
+           version="1.00">
+
+   <description>Модуль, содержащий meta описание для контрола Controls-Name.</description>
+
+   <depends>
+      <module id="4e412d92-ef24-4300-ba29-35eb7a76107c" name="Controls-meta"/>
+      <module id="30f3262d-748e-4f05-ad19-ffde30da8711" name="Controls-Input"/>
+      <module id="1d769e24-6030-4849-867e-a0fd8bacc86c" name="Controls-Input-meta"/>
+      <module id="686f183d-0bcc-4732-b4e4-6016c2a67a0f" name="Types"/>
+      <module id="b7223918-657c-4e3d-ac98-f302a52f248c" name="Meta"/>
+   </depends>
+
+   <load_after/>
+
+   <parameters/>
+
+   <resources/>
+
+   <preload/>
+
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

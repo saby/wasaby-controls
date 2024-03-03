@@ -1,0 +1,5 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth350 controlsDemo__height200">
+    <Controls.popupTemplate:InfoBox stickyPosition="{{_options.stickyPosition}}" closeButtonVisible="{{false}}">
+        <Controls-demo.Popup.BaseTemplate/>
+    </Controls.popupTemplate:InfoBox>
+</div>

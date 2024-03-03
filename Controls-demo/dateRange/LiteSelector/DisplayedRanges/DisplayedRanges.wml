@@ -1,0 +1,40 @@
+<div class="controls-demo_LiteSelector-block">
+    <div class="ws-flexbox">
+        <Controls.date:ContextProvider>
+            <div class="controls-demo_LiteSelector-block__selector-container">
+                <Controls.dateRange:SelectorConsumer
+                        datePopupType="shortDatePicker"
+                        attr:class="ws-flex-grow-1"
+                        attr:data-qa="controls-demo_LiteSelector-block__month"
+                        displayedRanges="{{_displayedRanges}}"
+                        bind:startValue="_startValue1"
+                        bind:endValue="_endValue1"/>
+                <Controls.date:ArrowButtonConsumer direction="left" attr:class="controls-margin_left-m"/>
+                <Controls.date:ArrowButtonConsumer direction="right" attr:class="controls-margin_left-m"/>
+            </div>
+        </Controls.date:ContextProvider>
+    </div>
+    <div class="ws-flexbox">
+        <Controls.dateRange:Selector
+                datePopupType="shortDatePicker"
+                attr:data-qa="controls-demo_LiteSelector-block__year"
+                bind:startValue="_startValue2"
+                bind:endValue="_endValue2"
+                chooseHalfyears="{{false}}"
+                chooseMonths="{{false}}"
+                displayedRanges="{{_displayedRanges1}}"
+        />
+    </div>
+    <div class="ws-flexbox">
+        <Controls.dateRange:Selector
+                datePopupType="shortDatePicker"
+                attr:data-qa="controls-demo_LiteSelector-block__period"
+                displayedRanges="{{_displayedRanges3}}"
+                chooseHalfyears="{{false}}"
+                chooseMonths="{{false}}"
+                chooseQuarters="{{false}}"
+                bind:startValue="_startValue3"
+                bind:endValue="_endValue3"
+        />
+    </div>
+</div>

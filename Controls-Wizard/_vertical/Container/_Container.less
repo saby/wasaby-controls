@@ -1,0 +1,19 @@
+.Wizard-Vertical-Container {
+   height: 100%;
+
+   &__scroll {
+      height: 100%;
+
+      & > .controls-Scroll__shadow {
+         left: var(--marker_offset-horizontal_negative_Wizard-vertical);
+      }
+   }
+
+   &__content {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      flex-shrink: 0;
+   }
+}

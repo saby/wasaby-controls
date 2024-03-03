@@ -1,0 +1,20 @@
+<div class="controls_list_theme-{{_options.theme}} controls-BaseControl
+   {{!_isVisibleItemActions(itemActionsMenuId) ? 'controls-BaseControl_showActions controls-BaseControl_showActions_' + _options.itemActionsVisibility}}'
+   controls-BaseControl__renderContainer">
+   <ws:partial
+      name="renderer"
+      template="{{ _options.render }}"
+      listModel="{{ _collection }}"
+      scope="{{ _options }}"
+      on:touchstart="_onRenderTouchStart()"
+      on:mouseenter="_onRenderMouseEnter()"
+      on:itemClick="_onItemClick()"
+      on:itemSwipe="_onItemSwipe()"
+      on:closeSwipe="_onCloseSwipe()"
+      on:itemActionMouseDown="_onItemActionMouseDown()"
+      on:itemContextMenu="_onItemContextMenu()"
+      on:itemKeyDown="_onItemKeyDown()"
+      on:menuActionMouseEnter="_onMenuActionMouseEnter()"
+      on:menuActionMouseLeave="_onMenuActionMouseLeave()"
+   />
+</div>

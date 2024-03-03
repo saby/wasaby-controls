@@ -1,0 +1,119 @@
+.controls-EditableArea {
+   position: relative;
+   display: inline-block;
+}
+
+.controls-EditableArea__wrapper {
+   /* Когда поле редактирования вставляется во вкладку, вкладка состоит из двух элементов controls-EditableArea__wrapper и псевдоэлемента before. Для того, чтобы контейнер не падал вниз,
+      он должен себя вести, как инлайновый элемент и при этом иметь ширину родительского блока. */
+   display: inline-flex;
+   width: 100%;
+   flex-grow: 1;
+}
+
+.controls-EditableArea__Toolbar {
+   display: inline-flex;
+}
+
+.controls-background-editableArea {
+   background-color: var(--contrast_background-color_editableArea);
+}
+
+.controls-EditableArea__applyButton,
+.controls-EditableArea__closeButton {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   box-sizing: border-box;
+
+   &::before {
+      content: '\200b';
+   }
+}
+
+.controls-EditableArea_clickable {
+   cursor: pointer;
+}
+
+.controls-EditableArea__applyButton {
+   height: var(--height_applyButton_editableArea);
+   width: var(--height_applyButton_editableArea);
+   border-radius: var(--border-radius_applyButton_editableArea);
+   box-shadow: var(--box-shadow_applyButton_editableArea);
+}
+
+.controls-EditableArea__applyButton:active {
+   box-shadow: none;
+}
+
+.controls-EditableArea__applyButton-accent {
+   background: var(--background-color_applyButton_editableArea);
+}
+
+.controls-EditableArea__applyButton-accent:active {
+   background: var(--success_active_contrast_background-color);
+}
+
+.controls-EditableArea__applyButton-unaccent {
+   background: var(--pale_contrast_background-color);
+}
+
+.controls-EditableArea__applyButton-unaccent:active {
+   background: var(--pale_active_contrast_background-color);
+}
+
+.controls-EditableArea__closeButton {
+   width: var(--width_closeButton_editableArea);
+   height: var(--height_closeButton_editableArea);
+   border-width: var(--border-thickness_closeButton_editableArea);
+   border-style: solid;
+   border-color: var(--border-color_button_toolButton);
+   border-radius: var(--border-radius_closeButton_editableArea);
+   box-shadow: var(--box-shadow_closeButton_editableArea);
+   margin-left: var(--offset_m);
+   margin-right: var(--toolbar_padding-right_editableArea);
+   background: var(--background-color_closeButton_editableArea);
+}
+
+.controls-EditableArea__closeButton:active {
+   box-shadow: none;
+   border-color: var(--border-color_active_closeButton_editableArea);
+   background: var(--background-color_active_closeButton_editableArea);
+}
+
+.controls-EditableArea__closeButton-icon {
+   fill: var(--label_text-color);
+   width: var(--icon-size_closeButton_editableArea);
+   height: var(--icon-size_closeButton_editableArea);
+}
+
+.controls-EditableArea__closeButton-icon:hover {
+   fill: var(--link_hover_text-color);
+   width: var(--icon-size_closeButton_editableArea);
+   height: var(--icon-size_closeButton_editableArea);
+}
+
+.controls-EditableArea__applyButton-icon {
+   text-shadow: var(--text-shadow_applyButton_editableArea);
+   .icon(var(--icon-size_applyButton_editableArea), 'cbuc-icons');
+}
+
+.controls-EditableArea_isEditing_wrapper {
+   margin-left: var(--offset_m);
+}
+
+.ws-is-hover {
+   .controls-EditableArea__applyButton-accent:hover {
+      background: var(--background-color_hover_applyButton_editableArea);
+   }
+
+   .controls-EditableArea__applyButton-unaccent:hover {
+      background: var(--pale_hover_contrast_background-color);
+   }
+
+   .controls-EditableArea__closeButton:hover {
+      border-color: var(--border-color_hover_closeButton_editableArea);
+      background: var(--background-color_hover_closeButton_editableArea);
+   }
+}

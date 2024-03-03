@@ -1,0 +1,41 @@
+<div class="controlsDemo__wrapper">
+   <div class="ws-flexbox ws-flex-column">
+      <div class="ws-flexbox">
+         <div class="controlsDemo__cell">
+            <Router.router:Reference attr:class="controls-text-label"
+                                     state="app/:app"
+                                     app="{{ 'Controls-demo/progress/Rating/Base/Index' }}">
+               <a href="{{content.href}}">Базовая настройка</a>
+            </Router.router:Reference>
+            <Controls-demo.progress.Rating.Base.Index/>
+         </div>
+
+         <div class="controlsDemo__cell">
+            <Router.router:Reference attr:class="controls-text-label"
+                                     state="app/:app"
+                                     app="{{ 'Controls-demo/progress/Rating/IconColorMode/Index' }}">
+               <a href="{{content.href}}">Настройка цвета иконок звезды</a>
+            </Router.router:Reference>
+            <Controls-demo.progress.Rating.IconColorMode.Index/>
+         </div>
+
+         <div class="controlsDemo__cell">
+            <Router.router:Reference attr:class="controls-text-label"
+                                     state="app/:app"
+                                     app="{{ 'Controls-demo/progress/Rating/IconSize/Index' }}">
+               <a href="{{content.href}}">Настройка размера иконки</a>
+            </Router.router:Reference>
+            <Controls-demo.progress.Rating.IconSize.Index/>
+         </div>
+
+         <div class="controlsDemo__cell">
+            <Router.router:Reference attr:class="controls-text-label"
+                                     state="app/:app"
+                                     app="{{ 'Controls-demo/progress/Rating/EmptyIconFill/Index' }}">
+               <a href="{{content.href}}">Настройка заливки пустой иконки</a>
+            </Router.router:Reference>
+            <Controls-demo.progress.Rating.EmptyIconFill.Index/>
+         </div>
+      </div>
+   </div>
+</div>

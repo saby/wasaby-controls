@@ -1,0 +1,80 @@
+.controls-DateRangeSelectorLite__picker-normal {
+   margin-top: calc(
+      (
+         (var(--height_dateRangeSelector) - (var(--inline_height_ArrowButton) + var(--offset_xl))) /
+            2
+      )
+   );
+   margin-left: calc(-1 * (var(--width_closeButton_functionalButton) / 2 + var(--offset_l)));
+}
+
+.controls-DateRangeSelectorLite__picker-years {
+   margin-top: calc(-1 * (var(--inline_height_ArrowButton) + 2 * var(--offset_st)) / 3);
+}
+
+.controls-DateRangeSelector__quant-month {
+   width: 20ch;
+}
+
+.controls-DateRangeSelector__quant-year {
+   width: 14ch;
+}
+
+.controls-DateRangeSelector__quant-date {
+   width: 23ch;
+}
+
+.controls-DateRangeSelector__quant-halfyear {
+   width: 23ch;
+}
+
+.controls-DateRangeSelector__quant-quarter {
+   width: 21ch;
+}
+
+.controls-DateRangeSelector__quant-dateRange {
+   width: 26ch;
+}
+
+.controls-DateRangeSelector__quant-monthsRange {
+   width: 33ch;
+}
+
+.controls-DateRangeSelector__quant-yearsRange {
+   width: 19ch;
+}
+
+// В ie неправильно считается размер ch
+.ws-is-ie11 {
+   .controls-DateRangeSelector__quant-month {
+      width: 25ch;
+   }
+
+   .controls-DateRangeSelector__quant-year {
+      width: 17ch;
+   }
+
+   .controls-DateRangeSelector__quant-date {
+      width: 28ch;
+   }
+
+   .controls-DateRangeSelector__quant-halfyear {
+      width: 29ch;
+   }
+
+   .controls-DateRangeSelector__quant-quarter {
+      width: 26ch;
+   }
+
+   .controls-DateRangeSelector__quant-dateRange {
+      width: 33ch;
+   }
+
+   .controls-DateRangeSelector__quant-monthsRange {
+      width: 41ch;
+   }
+
+   .controls-DateRangeSelector__quant-yearsRange {
+      width: 24ch;
+   }
+}

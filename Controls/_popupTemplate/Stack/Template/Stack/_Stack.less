@@ -1,0 +1,305 @@
+// Подобранная ширина для корректного отображения тени
+@shadow-width: 100px;
+
+.controls-StackTemplate__wrapper {
+   overflow-x: auto;
+   width: 100%;
+   flex-grow: 1;
+}
+
+.controls-StackTemplate,
+.controls-StackTemplate-content,
+.controls-StackTemplate-content_wrapper {
+   display: flex;
+   flex-grow: 1;
+   flex-shrink: 1;
+   height: 100%;
+   width: 100%;
+   min-height: 0;
+}
+
+.controls-StackTemplate_backgroundColor {
+   background-color: var(--background-color_stack);
+}
+
+.controls-StackTemplate_headerBackgroundColor {
+   background-color: var(--header_background-color_stack);
+}
+
+.controls-StackTemplate {
+   position: relative;
+
+   --outer_padding: var(--offset_m);
+}
+
+.controls-StackTemplate-content_wrapper {
+   flex-direction: row-reverse;
+}
+
+.controls-StackTemplate-content {
+   flex-direction: column;
+   min-width: 0;
+}
+
+.controls-StackTemplate-shadow {
+   width: @shadow-width;
+   background: var(--background-color);
+   height: 100%;
+   pointer-events: none;
+}
+
+// В safari, и в старых браузерах есть проблема с отображением тени. Связана она с тем, что блок с filter находится
+// за пределами видимой области из-за чего свойство filter не применяется.
+// Поэтому навешиваем transform, но только для safari, иначе проблема появится в остальных браузерах
+.ws-is-mobile-safari,
+.ws-is-desktop-safari,
+.ws-is-mobile-chrome-ios,
+.ws-is-windows-xp {
+   .controls-StackTemplate-shadow {
+      transform: translateZ(0);
+   }
+}
+
+.controls-StackTemplate-shadow__content {
+   height: 100%;
+}
+
+.controls-StackTemplate-shadow__container {
+   pointer-events: none;
+   width: @shadow-width;
+   height: 100%;
+   position: absolute;
+   overflow: hidden;
+}
+
+.controls-StackTemplate-shadow_direction-right__container {
+   left: -@shadow-width;
+}
+
+.controls-StackTemplate-shadow_direction-left__container {
+   right: -@shadow-width;
+}
+
+.controls-StackTemplate-shadow_direction-right {
+   margin-left: @shadow-width;
+   filter: drop-shadow(
+         var(--box-shadow_stack_offset_first) 0 var(--box-shadow_stack_blur_and_color_first)
+      )
+      drop-shadow(
+         var(--box-shadow_stack_offset_second) 0 var(--box-shadow_stack_blur_and_color_second)
+      );
+}
+
+.controls-StackTemplate-shadow_direction-left {
+   margin-left: -@shadow-width;
+   filter: drop-shadow(
+         calc(-1 * var(--box-shadow_stack_offset_first)) 0
+            var(--box-shadow_stack_blur_and_color_first)
+      )
+      drop-shadow(
+         calc(-1 * var(--box-shadow_stack_offset_second)) 0
+            var(--box-shadow_stack_blur_and_color_second)
+      );
+}
+
+// В ie не работает drop-shadow
+.ws-is-ie11 {
+   .controls-StackTemplate-shadow_direction-right {
+      box-shadow: var(--box-shadow_stack_offset_first) 0
+            var(--box-shadow_stack_blur_and_color_first),
+         var(--box-shadow_stack_offset_second) 0 var(--box-shadow_stack_blur_and_color_second);
+   }
+
+   .controls-StackTemplate-shadow_direction-left {
+      box-shadow: calc(-1 * var(--box-shadow_stack_offset_first)) 0
+            var(--box-shadow_stack_blur_and_color_first),
+         calc(-1 * var(--box-shadow_stack_offset_second)) 0
+            var(--box-shadow_stack_blur_and_color_second);
+   }
+}
+
+.controls-StackTemplate-shadow_zIndex {
+   z-index: 3;
+}
+
+.controls-StackTemplate__top-area {
+   min-height: var(--header_min-height_stack);
+   display: flex;
+   flex-shrink: 0;
+}
+
+.controls-StackTemplate__top-area-background {
+   background: var(--header_background-color_stack);
+}
+
+.controls-StackTemplate__top-area-border {
+   border-bottom: var(--header_bottom-border-thickness_stack) solid
+      var(--header_bottom-border-color_stack);
+}
+
+.controls-StackTemplate__top-area__fakeRightTemplate {
+   visibility: hidden;
+   height: 0;
+}
+
+.controls-StackTemplate__content-area {
+   display: flex;
+   height: 100%;
+   flex-direction: column;
+   flex-grow: 1;
+   flex-shrink: 1;
+   min-height: 0;
+}
+
+.controls-StackTemplate__top-area-content {
+   width: 100%;
+   flex-shrink: 1;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.controls-StackTemplate__close_button {
+   position: relative;
+   z-index: 3;
+   margin-top: var(--close-button_offset-top_stack);
+}
+
+.ws-is-hover {
+   .controls-StackTemplate__close_button:hover {
+      --icon_color_button_local: var(--close-button_hover_icon-color_stack);
+   }
+}
+
+.ws-is-touch,
+.ws-is-no-touch {
+   .controls-StackTemplate__close_button:active {
+      --icon_color_button_local: var(--close-button_hover_icon-color_stack);
+   }
+}
+
+.controls-StackTemplate__headerContentTemplate {
+   position: relative;
+   display: flex;
+   justify-content: flex-end;
+   flex-grow: 1;
+   flex-shrink: 1;
+   min-width: 0;
+   height: 100%;
+   align-items: center;
+
+   &:empty {
+      padding-right: 0;
+   }
+}
+
+.controls-StackTemplate__headerContentTemplate_padding-right {
+   padding-right: var(--header-content_padding-right_stack);
+}
+
+.controls-StackTemplate__command_buttons {
+   position: relative;
+   display: flex;
+   align-self: flex-start;
+   flex-shrink: 0;
+   height: var(--header_min-height_stack);
+}
+
+.controls-StackTemplate__command_buttons_without_head {
+   position: absolute;
+   right: 0;
+   top: 0;
+   display: flex;
+   // Крестик закрытия должен быть выше всего контента, согласно правилу простановки z-index'ов, присваиваю максимальное значение.
+   z-index: 50;
+}
+
+.controls-StackTemplate__maximized_button {
+   position: relative;
+   width: 24px;
+   height: 24px;
+   z-index: 3;
+   cursor: pointer;
+   margin-top: var(--offset_xs);
+}
+
+.controls-StackTemplate__rightPanel__maximized {
+   width: var(--inline_height_xl);
+   height: var(--inline_height_xl);
+
+   &:active {
+      background-color: var(--background-color_hover_button_toolButton);
+      border-radius: var(--border-radius_button);
+   }
+}
+
+.ws-is-hover {
+   .controls-StackTemplate__rightPanel__maximized:hover {
+      background-color: var(--background-color_hover_button_toolButton);
+      border-radius: var(--border-radius_button);
+   }
+}
+
+.controls-StackTemplate__header_maximized_button {
+   margin-right: var(--maximized-button_offset-right_stack);
+}
+
+.controls-StackTemplate__caption {
+   cursor: default;
+   display: flex;
+   flex-shrink: 100;
+   overflow: hidden;
+   height: var(--header_min-height_stack);
+   min-width: var(--header_min-width_stack);
+   margin-left: var(--outer_padding, var(--header_padding-left_stack));
+   padding-right: var(--header_caption_offset-right_stack);
+}
+
+.controls-StackTemplate__caption_text {
+   text-overflow: ellipsis;
+   overflow: hidden;
+   white-space: nowrap;
+   flex-shrink: 1;
+
+   &::before {
+      content: '\200b';
+      font-size: var(--header_lineheight_stack);
+   }
+}
+
+.controls-StackTemplate__bottomArea {
+   border-top: var(--footer_top-border-thickness_stack) solid var(--footer_top-border-color_stack);
+   flex-shrink: 0;
+}
+
+.controls-StackTemplate__bottomArea-backgroundColor {
+   background: var(--footer_background-color_stack);
+}
+
+.controls-background-stackHeader {
+   background-color: var(--header_background-color_stack);
+}
+
+.controls-StackTemplate__leftArea {
+   position: absolute;
+   left: 0;
+   top: 0;
+   bottom: 0;
+}
+
+.controls-StackTemplate__leftArea-wrapper {
+   position: absolute;
+   right: 0;
+   top: 0;
+   bottom: 0;
+}
+
+.controls-StackTemplate__themeConstants {
+   margin-right: var(--content_width_a_stack);
+   margin-left: var(--content_width_b_stack);
+   margin-bottom: var(--content_width_c_stack);
+   margin-top: var(--content_width_d_stack);
+   padding-top: var(--content_width_e_stack);
+   padding-right: var(--content_width_f_stack);
+   padding-bottom: var(--content_width_g_stack);
+}

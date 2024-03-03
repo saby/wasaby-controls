@@ -1,0 +1,48 @@
+@import 'Application/_styles/_position';
+@import 'Application/_styles/_overflow';
+@import 'Application/_styles/_flex';
+@import 'Application/_styles/_links';
+@import 'Application/_styles/_images';
+@import 'Application/_styles/_cursors';
+@import 'Application/_styles/_colors_sizes';
+@import 'Application/_styles/_blockLayoutNew';
+@import 'Application/_styles/_marker';
+
+// Набор классов для настройки tag (уголок) у ячеек таблиц и input
+.controls__tag {
+   top: 0;
+   right: 0;
+   cursor: help;
+   position: absolute;
+   width: var(--tag-size);
+   height: var(--tag-size);
+}
+
+.controls__tag_style- {
+   @variants: danger, primary, success, secondary, warning;
+   .for(@variants, { &@{_item} {
+      fill: ~'var(--@{_item}_icon-color)';
+   } });
+}
+
+.controls__tag_style-info {
+   fill: var(--unaccented_color);
+}
+
+.controls__tag_light {
+   border-top: var(--tag-size) solid;
+   border-left: var(--tag-size) solid transparent;
+   width: 0;
+   height: 0;
+}
+
+.controls__tag_light_style- {
+   @variants: danger, primary, success, secondary, warning;
+   .for(@variants, { &@{_item} {
+      border-top-color: ~'var(--@{_item}_icon-color)';
+   } });
+}
+
+.controls__tag_light_style-info {
+   border-top-color: var(--unaccented_color);
+}

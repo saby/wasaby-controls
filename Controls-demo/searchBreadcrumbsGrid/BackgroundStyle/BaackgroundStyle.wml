@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper controlsDemo__maxWidth600 controls-background-unaccented">
+    <Controls.searchBreadcrumbsGrid:View
+       storeId="listData"
+       backgroundStyle="unaccented"
+       columns="{{ _columns }}"
+       header="{{ _header }}"
+    />
+</div>

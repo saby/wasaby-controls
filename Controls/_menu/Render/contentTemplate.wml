@@ -1,0 +1,76 @@
+<ws:template name="iconTemplate">
+   <ws:if data="{{!itemData.isSingleSelectionItem && (item.get('icon') || (iconPadding !== undefined ? iconPadding : itemData.iconPadding)) }}">
+      <ws:partial template="wml!Controls/_menu/Render/iconTemplate" scope="{{_options}}" iconPadding="{{itemData.iconPadding}}"/>
+   </ws:if>
+</ws:template>
+
+<ws:template name="customContent">
+   <!--If contentTemplate is a string, then use Async to load required module-->
+   <ws:if data="{{(contentTemplate.charAt)}}">
+      <Controls.Container.Async templateName="{{contentTemplate}}">
+         <ws:partial
+                 template="{{content.resolvedTemplate}}"
+                 itemData="{{itemData}}"
+                 item="{{itemData}}"
+                 selected="{{treeItem.isMarked ? treeItem.isMarked() : treeItem.isSelected()}}"
+         />
+      </Controls.Container.Async>
+   </ws:if>
+   <ws:else>
+      <ws:partial
+              template="{{contentTemplate}}"
+              selected="{{treeItem.isMarked ? treeItem.isMarked() : treeItem.isSelected()}}"
+              itemData="{{itemData}}"
+              item="{{itemData}}"
+      />
+   </ws:else>
+</ws:template>
+
+<ws:if data="{{contentTemplate && additionalTextTemplate}}">
+   <div class="ws-ellipsis controls-Menu__content-wrapper_width">
+      <ws:partial template="customContent" />
+      <ws:if data="{{additionalTextTemplate}}">
+         <ws:partial template="{{additionalTextTemplate}}"
+                     class="controls-Menu__row-additionalText"/>
+      </ws:if>
+   </div>
+</ws:if>
+<ws:else data="{{contentTemplate}}">
+   <ws:partial template="customContent" />
+</ws:else>
+<ws:else>
+   <div class="controls-Menu__content {{item.get('readOnly') ? 'controls-Menu__content-readOnly'}}
+                        controls-Menu__content_{{multiLine ? 'multiLine' : 'singleLine'}}
+                        controls-Menu__content_align_{{itemAlign}}"
+        title="{{item.get('tooltip') || item.get(displayProperty || 'title')}}">
+      <ws:if data="{{iconAlign !== 'right' && itemAlign !== 'left'}}">
+         <ws:partial template="iconTemplate" iconAlign="left"/>
+      </ws:if>
+      <div class="ws-ellipsis {{!expanderTemplate ? 'controls-Menu__content-wrapper_width'}}">
+         <ws:if data="{{searchValue}}">
+            <ws:partial template="wml!Controls/_menu/Render/searchDecoratorTemplate"
+                        item="{{item}}"
+                        displayProperty="{{displayProperty}}"
+                        searchValue="{{searchValue}}" />
+         </ws:if>
+         <ws:else>
+            {{item.get(displayProperty || 'title')}}
+         </ws:else>
+         <ws:if data="{{iconAlign === 'right' && itemAlign !== 'left' && additionalTextTemplate}}">
+            <ws:partial template="iconTemplate" iconAlign="right" />
+         </ws:if>
+         <ws:if data="{{additionalTextTemplate}}">
+            <ws:partial template="{{additionalTextTemplate}}"
+                        class="controls-Menu__row-additionalText"/>
+         </ws:if>
+      </div>
+      <ws:if data="{{iconAlign !== 'right' && itemAlign === 'left' ||
+       iconAlign === 'right' && itemAlign !== 'left' && !additionalTextTemplate}}">
+         <ws:partial template="iconTemplate" iconAlign="right" />
+      </ws:if>
+      <ws:if data="{{expanderTemplate}}">
+         <ws:partial template="{{ expanderTemplate }}"
+                     class="controls-padding_left-xs" />
+      </ws:if>
+   </div>
+</ws:else>

@@ -1,0 +1,66 @@
+<div class="controlsDemo__wrapper  controlsDemo__flex controlsDemo__flex-flow_wrap">
+    <div class="controlsDemo__cell demo-RadioGroup__base controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/RadioGroup/Base/Index' }}">
+            <a href="{{content.href}}">Базовая настройка радио группы</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.RadioGroup.Base.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-RadioGroup__ItemTemplate controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/RadioGroup/CustomItemTemplate/Index' }}">
+            <a href="{{content.href}}">Настройка пользовательского шаблона</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.RadioGroup.CustomItemTemplate.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-RadioGroup__Direction controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/RadioGroup/Direction/Index' }}">
+            <a href="{{content.href}}">Настройка ориентации</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.RadioGroup.Direction.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-RadioGroup__validationStatus controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/RadioGroup/ValidationStatus/Index' }}">
+            <a href="{{content.href}}">Настройка статуса валидации</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.RadioGroup.ValidationStatus.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-RadioGroup__Ierarhy controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/RadioGroup/ParentProperty/Index' }}">
+            <a href="{{content.href}}">Настройка иерархии</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.RadioGroup.ParentProperty.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-RadioGroup__captionPosition controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/RadioGroup/CaptionPosition/Index' }}">
+            <a href="{{content.href}}">Настройка расположения подписи маркера</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.RadioGroup.CaptionPosition.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-RadioGroup__RadioCircleVisible controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/RadioGroup/RadioCircleVisible/Index' }}">
+            <a href="{{content.href}}">Настройка видимости маркера</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.RadioGroup.RadioCircleVisible.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-RadioGroup__SelectedKey controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/RadioGroup/SelectedKey/Index' }}">
+            <a href="{{content.href}}">Настройка выбранных элементов</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.RadioGroup.SelectedKey.Index/>
+    </div>
+</div>

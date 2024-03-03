@@ -1,0 +1,70 @@
+.controls-DragScroll__overlay {
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 999;
+   cursor: grabbing;
+   display: none;
+}
+
+.controls-DragScroll__overlay_not-full-grid-support {
+   cursor: move;
+}
+
+.controls-Grid__DragScroll__drag-cursor {
+   .controls-Grid__row-cell:not(.controls-ColumnScroll__fixedElement) {
+      .controls-Grid__row-cell__content {
+         cursor: grab;
+      }
+
+      .controls-Grid__row-cell_cursor-pointer.js-controls-DragScroll__notDraggable,
+      .controls-Grid__row-cell_cursor-pointer .js-controls-DragScroll__notDraggable {
+         cursor: pointer;
+      }
+
+      .controls-Grid__row-cell_cursor-default.js-controls-DragScroll__notDraggable,
+      .controls-Grid__row-cell_cursor-default .js-controls-DragScroll__notDraggable {
+         cursor: default;
+      }
+   }
+
+   .controls-Grid__header-cell:not(.controls-ColumnScroll__fixedElement) {
+      // Удалить после https://online.sbis.ru/opendoc.html?guid=43399cd1-c875-42da-8b6c-3c1e3a413cbc
+      cursor: grab;
+
+      .controls-Grid__header-cell__content {
+         cursor: grab;
+      }
+
+      .controls-Grid__row-cell_cursor-pointer.js-controls-DragScroll__notDraggable,
+      .controls-Grid__row-cell_cursor-pointer .js-controls-DragScroll__notDraggable {
+         cursor: pointer;
+      }
+
+      .controls-Grid__row-cell_cursor-default.js-controls-DragScroll__notDraggable,
+      .controls-Grid__row-cell_cursor-default .js-controls-DragScroll__notDraggable {
+         cursor: default;
+      }
+   }
+
+   .controls-Grid__results-cell:not(.controls-ColumnScroll__fixedElement) {
+      // Удалить после https://online.sbis.ru/opendoc.html?guid=43399cd1-c875-42da-8b6c-3c1e3a413cbc
+      cursor: grab;
+
+      .controls-Grid__results-cell__content {
+         cursor: grab;
+      }
+
+      .controls-Grid__row-cell_cursor-pointer.js-controls-DragScroll__notDraggable,
+      .controls-Grid__row-cell_cursor-pointer .js-controls-DragScroll__notDraggable {
+         cursor: pointer;
+      }
+
+      .controls-Grid__row-cell_cursor-default.js-controls-DragScroll__notDraggable,
+      .controls-Grid__row-cell_cursor-default .js-controls-DragScroll__notDraggable {
+         cursor: default;
+      }
+   }
+}

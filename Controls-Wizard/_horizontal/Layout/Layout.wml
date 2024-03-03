@@ -1,0 +1,24 @@
+<div class="Wizard-Horizontal-Layout controls_Wizard_theme-{{_options.theme}}">
+    <Controls-Wizard._horizontal.StepBar
+        attr:class="Wizard-Horizontal-Layout__stepBar"
+        items="{{items}}"
+        displayMode="{{_options.displayMode}}"
+        selectedStepIndex="{{_options.selectedStepIndex}}"
+        currentStepIndex="{{_options.currentStepIndex}}"
+        on:selectedStepIndexChanged="tmplNotify('selectedStepIndexChanged')">
+    </Controls-Wizard._horizontal.StepBar>
+
+    <ws:if data="{{ _shouldLoadInAsync(_options.items[_options.selectedStepIndex].template) }}">
+        <Controls.Container.Async
+            templateName="{{_options.items[_options.selectedStepIndex].template}}">
+            <ws:partial template="{{content.resolvedTemplate}}"
+                        scope="{{_options.items[_options.selectedStepIndex].templateOptions}}"
+                        dataOptions="{{_dataOptions}}"/>
+        </Controls.Container.Async>
+    </ws:if>
+    <ws:else>
+        <ws:partial template="{{_options.items[_options.selectedStepIndex].template}}"
+                    scope="{{_options.items[_options.selectedStepIndex].templateOptions}}"
+                    dataOptions="{{_dataOptions}}"/>
+    </ws:else>
+</div>

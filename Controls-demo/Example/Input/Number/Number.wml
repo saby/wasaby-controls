@@ -1,0 +1,44 @@
+<div class="example-Number">
+   <Controls-demo.Example.resource.BaseDemoInput title="Number input field" blocker="{{true}}">
+      <ws:contents>
+         <ws:Array>
+            <ws:Object>
+               <ws:template>
+                  <div class="example-Base__wrapper">
+                     <div class="example-Base__specify">With tooltip inside</div>
+                     <Controls.input:Number placeholder="Count" class="ControlsDemo-ExampleInput_withTooltip"
+                                            precision="{{0}}"
+                                            bind:value="_defaultValue"/>
+                  </div>
+               </ws:template>
+            </ws:Object>
+            <ws:Object spacing="normal">
+               <ws:template>
+                  <div class="example-Base__wrapper">
+                     <div class="example-Base__specify">
+                        <p>Input of integers with a set range</p>
+                        <p>(0-999)</p>
+                     </div>
+                     <Controls.input:Number placeholder="Count" class="ControlsDemo-ExampleInput_withRange"
+                                            precision="{{0}}"
+                                            integersLength="{{3}}"
+                                            onlyPositive="{{true}}"
+                                            bind:value="_rangeValue"/>
+                  </div>
+               </ws:template>
+            </ws:Object>
+            <ws:Object spacing="normal">
+               <ws:template>
+                  <div class="example-Base__wrapper">
+                     <div class="example-Base__specify">Input of integer and fractional part</div>
+                     <Controls.input:Number placeholder="Count" class="ControlsDemo-ExampleInput_fractionalPart"
+                                            precision="{{2}}"
+                                            textAlign="right"
+                                            bind:value="_fractionalValue"/>
+                  </div>
+               </ws:template>
+            </ws:Object>
+         </ws:Array>
+      </ws:contents>
+   </Controls-demo.Example.resource.BaseDemoInput>
+</div>

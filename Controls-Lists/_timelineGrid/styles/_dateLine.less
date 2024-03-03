@@ -1,0 +1,35 @@
+.ControlsLists-dateLine__variables {
+   --date-line_border_width: 1px;
+   --date-triangle_border_width: 6px;
+}
+
+.ControlsLists-dateLine__line {
+   border-right: var(--date-line_border_width) dashed var(--primary_icon-color);
+   position: absolute;
+   pointer-events: none;
+   z-index: 1;
+}
+
+.ControlsLists-dateLine__triangle {
+   position: absolute;
+   width: 0;
+   height: 0;
+   z-index: 1;
+}
+
+.ControlsLists-dateLine__triangle_border {
+   border-left: var(--date-triangle_border_width) solid transparent;
+   border-right: var(--date-triangle_border_width) solid transparent;
+   border-top: var(--date-triangle_border_width) solid var(--primary_icon-color);
+}
+
+.ControlsLists-dateLine__wrapper {
+   position: relative;
+   grid-column-start: 1;
+   grid-column-end: -1;
+}
+
+.ControlsLists-dateLine__height {
+   height: 10000px;
+   bottom: 0;
+}

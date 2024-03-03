@@ -1,0 +1,23 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell controls-margin_right-l">
+            <Controls.toggle:SwitchButton value="{{_value}}"
+                                          viewMode="filled"
+                                          position="{{_getPosition()}}"
+                                          on:click="_onClickHandler()"/>
+        </div>
+        <div class="controlsDemo__cell controls-margin_right-l">
+            <Controls.toggle:SwitchButton value="{{_value}}"
+                                          position="{{_getPosition()}}"
+                                          viewMode="outlined"
+                                          on:click="_onClickHandler()"/>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.toggle:SwitchButton value="{{_value}}"
+                                          viewMode="filled"
+                                          position="{{_getPosition()}}"
+                                          readOnly="{{true}}"
+                                          on:click="_onClickHandler()"/>
+        </div>
+    </div>
+</div>

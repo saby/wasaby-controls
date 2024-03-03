@@ -1,0 +1,244 @@
+.controls-Scroll-Container {
+   position: relative;
+   overflow: hidden;
+   display: flex;
+   align-items: stretch;
+   min-height: 0;
+}
+
+.controls-Scroll-Container__base {
+   flex-grow: 1;
+   flex-shrink: 1;
+   min-height: 0;
+}
+
+// В IE некорректно растягивается элемент по высоте, если у родительского задан max-height.
+.ws-is-ie11 .controls-Scroll-Container__base {
+   max-height: inherit;
+}
+
+.controls-Scroll-Container__blur__leftRight {
+   mask-position: left, center, right;
+   mask-image: linear-gradient(to left, rgb(0, 0, 0), transparent),
+   linear-gradient(to right, rgb(0, 0, 0), rgb(0, 0, 0)),
+   linear-gradient(to right, rgb(0, 0, 0), transparent);
+   mask-size: 25px 100%, calc(100% - 48px) 100%, 25px 100%;
+   mask-repeat: no-repeat;
+}
+
+.controls-Scroll-Container__blur__left {
+   mask-position: left, right;
+   mask-image: linear-gradient(to left, rgb(0, 0, 0), transparent),
+   linear-gradient(to right, rgb(0, 0, 0), rgb(0, 0, 0));
+   mask-size: 25px 100%, calc(100% - 24px) 100%;
+   mask-repeat: no-repeat;
+}
+
+.controls-Scroll-Container__blur__right {
+   mask-position: left, right;
+   mask-image: linear-gradient(to right, rgb(0, 0, 0), rgb(0, 0, 0)),
+   linear-gradient(to right, rgb(0, 0, 0), transparent);
+   mask-size: calc(100% - 24px) 100%, 25px 100%;
+   mask-repeat: no-repeat;
+}
+
+.controls-Scroll__backgroundShadow,
+.controls-Scroll__backgroundShadow__horizontal {
+   background-repeat: no-repeat;
+   background-attachment: local, local, scroll, scroll;
+}
+
+.controls-Scroll__backgroundShadow {
+   background-position: top, bottom, top, bottom;
+}
+
+.controls-Scroll__backgroundShadow__horizontal {
+   background-position: left, right, left, right;
+}
+
+.controls-Scroll__background-Shadow_style-default {
+   background-image: linear-gradient(var(--background-color) 25%, var(--background-color) 100%),
+   linear-gradient(var(--background-color) 100%, var(--background-color) 75%),
+   linear-gradient(to bottom, var(--shadow_start-color_scroll), var(--shadow_end-color_scroll)),
+   linear-gradient(to top, var(--shadow_start-color_scroll), var(--shadow_end-color_scroll));
+}
+
+.controls-Scroll__background-Shadow_style-unaccented {
+   background-image: linear-gradient(var(--unaccented_background-color) 25%, transparent),
+   linear-gradient(transparent, var(--unaccented_background-color) 75%),
+   linear-gradient(to bottom, var(--shadow_start-color_scroll), var(--shadow_end-color_scroll)),
+   linear-gradient(to top, var(--shadow_start-color_scroll), var(--shadow_end-color_scroll));
+}
+
+.controls-Scroll__background-Shadow__horizontal__style-default {
+   background-image: linear-gradient(var(--background-color) 25%, var(--background-color) 100%),
+   linear-gradient(var(--background-color) 100%, var(--background-color) 75%),
+   linear-gradient(to right, var(--shadow_start-color_scroll), var(--shadow_end-color_scroll)),
+   linear-gradient(to left, var(--shadow_start-color_scroll), var(--shadow_end-color_scroll));
+}
+
+.controls-Scroll__background-Shadow_top-hidden_bottom-visible_style-default {
+   background-size: 100% var(--shadow_thickness-hider_height_scroll), 100% 0, 100% 0,
+   100% var(--shadow_thickness_scroll);
+}
+
+.controls-Scroll__background-Shadow_top-hidden_bottom-hidden_style-default {
+   background-size: 100% var(--shadow_thickness-hider_height_scroll),
+   100% var(--shadow_thickness-hider_height_scroll), 100% 0, 100% 0;
+}
+
+.controls-Scroll__background-Shadow_top-hidden_bottom-auto_style-default {
+   background-size: 100% var(--shadow_thickness-hider_height_scroll),
+   100% var(--shadow_thickness-hider_height_scroll), 100% 0, 100% var(--shadow_thickness_scroll);
+}
+
+.controls-Scroll__background-Shadow_top-visible_bottom-hidden_style-default {
+   background-size: 100% 0, 100% var(--shadow_thickness-hider_height_scroll),
+   100% var(--shadow_thickness_scroll), 100% 0;
+}
+
+.controls-Scroll__background-Shadow_top-visible_bottom-visible_style-default {
+   background-size: 100% 0, 100% 0, 100% var(--shadow_thickness_scroll),
+   100% var(--shadow_thickness_scroll);
+}
+
+.controls-Scroll__background-Shadow_top-visible_bottom-auto_style-default {
+   background-size: 100% 0, 100% var(--shadow_thickness-hider_height_scroll),
+   100% var(--shadow_thickness_scroll), 100% var(--shadow_thickness_scroll);
+}
+
+.controls-Scroll__background-Shadow_top-auto_bottom-auto_style-default {
+   background-size: 100% var(--shadow_thickness-hider_height_scroll),
+   100% var(--shadow_thickness-hider_height_scroll), 100% var(--shadow_thickness_scroll),
+   100% var(--shadow_thickness_scroll);
+}
+
+.controls-Scroll__background-Shadow_top-auto_bottom-visible_style-default {
+   background-size: 100% var(--shadow_thickness-hider_height_scroll), 100% 0,
+   100% var(--shadow_thickness_scroll), 100% var(--shadow_thickness_scroll);
+}
+
+.controls-Scroll__background-Shadow_top-auto_bottom-hidden_style-default {
+   background-size: 100% var(--shadow_thickness-hider_height_scroll),
+   100% var(--shadow_thickness-hider_height_scroll), 100% var(--shadow_thickness_scroll), 100% 0;
+}
+
+.controls-Scroll__background-Shadow_left-auto_right-auto_style-default {
+   background-size: var(--shadow_thickness-hider_height_scroll) 100%,
+   var(--shadow_thickness-hider_height_scroll) 100%, var(--shadow_thickness_scroll) 100%,
+   var(--shadow_thickness_scroll) 100%;
+}
+
+.controls-Scroll__content_hideNativeScrollbar::-webkit-scrollbar {
+   width: 0;
+   // Следующие свойства нужны для того, чтобы убрать скроллбар с айпада
+   -webkit-appearance: none;
+   display: none;
+}
+
+.controls-Scroll__content_hideNativeScrollbar_ff-ie-edge {
+   -ms-overflow-style: none; /* for Internet Explorer, Edge */
+   scrollbar-width: none; /* for Firefox */
+}
+
+.controls-StackTemplate {
+   .controls-Scroll__background-Shadow_style-default {
+      background-image: linear-gradient(var(--background-color_stack) 25%,
+      var(--background-color_stack) 100%),
+      linear-gradient(var(--background-color_stack) 100%, var(--background-color_stack) 75%),
+      linear-gradient(to bottom,
+      var(--shadow_start-color_scroll),
+      var(--shadow_end-color_scroll)),
+      linear-gradient(to top, var(--shadow_start-color_scroll), var(--shadow_end-color_scroll));
+   }
+}
+
+.controls-DialogTemplate_backgroundStyle-default,
+.controls-ConfirmationTemplate {
+   .controls-Scroll__background-Shadow_style-default {
+      background-image: linear-gradient(var(--background-color_dialog) 25%,
+      var(--background-color_dialog) 100%),
+      linear-gradient(var(--background-color_dialog) 100%, var(--background-color_dialog) 75%),
+      linear-gradient(to bottom,
+      var(--shadow_start-color_scroll),
+      var(--shadow_end-color_scroll)),
+      linear-gradient(to top, var(--shadow_start-color_scroll), var(--shadow_end-color_scroll));
+   }
+}
+
+.controls-StickyTemplate {
+   .controls-Scroll__background-Shadow_style-default {
+      background-image: linear-gradient(var(--background-color_sticky) 25%,
+      var(--background-color_sticky) 100%),
+      linear-gradient(var(--background-color_sticky) 100%, var(--background-color_sticky) 75%),
+      linear-gradient(to bottom,
+      var(--shadow_start-color_scroll),
+      var(--shadow_end-color_scroll)),
+      linear-gradient(to top, var(--shadow_start-color_scroll), var(--shadow_end-color_scroll));
+   }
+}
+
+.controls-InfoBoxTemplate__content {
+   .controls-Scroll__background-Shadow_style-default {
+      background-image: linear-gradient(var(--background-color_infobox) 25%,
+      var(--background-color_infobox) 100%),
+      linear-gradient(var(--background-color_infobox) 100%, var(--background-color_infobox) 75%),
+      linear-gradient(to bottom,
+      var(--shadow_start-color_scroll),
+      var(--shadow_end-color_scroll)),
+      linear-gradient(to top, var(--shadow_start-color_scroll), var(--shadow_end-color_scroll));
+   }
+}
+
+//https://online.sbis.ru/opendoc.html?guid=4e08bd9f-b3e7-4ab5-88ba-7a58127abdb5
+.ws-is-desktop-safari {
+   .controls-Scroll-Container {
+      perspective: 1000;
+      backface-visibility: hidden;
+   }
+}
+
+.controls-scroll_scrollButton__hovered {
+   opacity: 0;
+}
+
+.controls-Scroll-ContainerExternal {
+   &.controls-Scroll-Container,
+   > .controls-Scroll-ContainerBase {
+      padding: 0 var(--offset_m);
+      margin: 0 calc(var(--offset_m) / -1);
+   }
+
+   > .controls-VScrollbar_vertical {
+      right: var(--offset_m);
+   }
+
+   > .controls-Scroll__shadow_horizontal {
+      right: var(--offset_m);
+      left: var(--offset_m);
+   }
+}
+
+.controls-Scroll-ContainerExternal-vertical {
+   &.controls-Scroll-Container:not(.controls-Scroll-Container_scroll-position),
+   &.controls-Scroll-Container:not(.controls-Scroll-Container_scroll-position) > .controls-Scroll-ContainerBase {
+      padding-top: var(--offset_m);
+      margin-top: calc(var(--offset_m) / -1);
+   }
+
+   &.controls-Scroll-Container:not(.controls-Scroll-Container_scroll-position) > .controls-VScrollbar_vertical {
+      padding-top: var(--offset_m);
+   }
+}
+
+.ws-is-hover {
+   .controls-Scroll-Container:hover {
+      > .controls-Scroll__scrollbar {
+         visibility: visible;
+      }
+
+      > .controls-scroll_scrollButton__hovered {
+         opacity: 1;
+      }
+   }
+}

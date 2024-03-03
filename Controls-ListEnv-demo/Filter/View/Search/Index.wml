@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper">
+   <Controls-ListEnv.searchConnected:Input storeId="cities" />
+   <Controls-ListEnv.filterConnected:View storeId="cities" />
+   <Controls.list:View storeId="cities"
+                       emptyTemplate="Не найдено"
+   />
+</div>

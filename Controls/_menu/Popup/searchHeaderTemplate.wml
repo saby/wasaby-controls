@@ -1,0 +1,28 @@
+<ws:partial template="wml!Controls/_menu/Popup/headerWrapperTemplate"
+            attr:class="controls-Menu__popup_header_searchWrapper
+                 {{!_options.isAdaptive && !_options.icon ? 'controls-Menu__popup_header_searchWrapper_offset'}}
+                 controls-Menu__popup-header-{{_options.multiSelect ? 'multiSelect' : 'singleSelect'}}
+                 {{_options.closeButtonVisible ? 'controls-Menu__popup-header_withClose'}}"
+            scope="{{_options}}">
+    <div class="ws-flexbox ws-align-items-center
+     {{!_hasValue || _options.viewMode !== 'search' || _options.isAdaptive ? '' : 'controls-Menu__popup_header_searchWrapper-width'}}">
+      <ws:partial template="{{'Controls/search:Input'}}"
+                  on:valueChanged="_valueChanged()"
+                  bind:value="_inputSearchValue"
+                  on:search="_search()"
+                  on:searchReset="_searchReset()"
+                  minSearchLength="{{_options.minSearchLength}}"
+                  searchDelay="{{_options.searchDelay}}"
+                  placeholder="{{_options.searchPlaceholder}}"
+                  contrastBackground="{{true}}"
+                  theme="{{_options.searchHeaderTheme}}"
+                  name="menuSearch"
+                  iconSize="{{null}}"
+                  attr:class="controls_theme-{{_options.searchHeaderTheme}}
+                           controls-Menu__popup_header_search
+                           controls-Menu__popup_header_search_minWidth_{{(_options.searchWidth || 's')}}
+                           {{!_hasValue || _options.viewMode !== 'search' || _options.isAdaptive ?
+                            'controls-Menu__popup_header_search_maxWidth_' + (_options.searchWidth || 's')}}"
+        />
+    </div>
+</ws:partial>

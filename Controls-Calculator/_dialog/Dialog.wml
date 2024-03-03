@@ -1,0 +1,36 @@
+<Controls-Calculator.Container attr:class="=controls_Calculator_theme-{{_options.theme}}">
+    <Controls.popupTemplate:Dialog attr:class="Calculator-Dialog" draggable="{{true}}" on:close="_closeHandler()">
+        <ws:headerContentTemplate>
+            <div class="Calculator-Dialog__header ws-flexbox ws-flex-grow-1 ws-justify-content-end"
+                 on:click="_headerClickHandler()">
+                <ws:if data="{{_viewMode === 'extended' && _memoryNumber !== null}}">
+                    <div class="Calculator-Dialog__memoryWrapper">
+                        <div class="ws-ellipsis Calculator-Dialog__memory" title="{{_memoryNumber}}">
+                            M
+                            {{_memoryNumber}}
+                        </div>
+                    </div>
+                </ws:if>
+                <Controls.buttons:Button
+                        icon="icon-TimeHistory"
+                        iconSize="m"
+                        iconStyle="secondary"
+                        fontColorStyle="link"
+                        viewMode="linkButton"
+                        fontSize="m"
+                        attr:class="Calculator-Dialog__viewModeButton"
+                        tooltip="{{_viewMode === 'extended' ? 'Выключить расширенный режим' : 'Включить расширенный режим'}}"
+                        on:click="_viewModeButtonHandler()"/>
+            </div>
+        </ws:headerContentTemplate>
+        <ws:bodyContentTemplate>
+            <Controls-Calculator.View
+                name="Layout"
+                attr:ws-autofocus="{{true}}"
+                viewMode="{{_viewMode}}"
+                value="{{_options.value}}"
+                on:memoryNumberChanged="_memoryNumberChangeHandler()">
+            </Controls-Calculator.View>
+        </ws:bodyContentTemplate>
+    </Controls.popupTemplate:Dialog>
+</Controls-Calculator.Container>
