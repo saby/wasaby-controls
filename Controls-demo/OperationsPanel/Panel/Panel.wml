@@ -1,0 +1,45 @@
+<div class="demoWrapper">
+   <div class="testBlock" test_name="BackButtonCapture">
+      <div class="exampleBlock">
+         <h2>Панель операций</h2>
+         <ws:if data="{{ _expanded }}">
+            <Controls.operations:Panel
+               expanded="{{_expanded}}"
+               source="{{_source}}"
+               parentProperty="parent"
+               nodeProperty="@parent"
+               rightTemplate="{{_rightTemplate ? _rightTemplateTpl : null}}"
+               keyProperty="id"
+               selectedKeys="{{ _selectedKeys }}"
+               excludedKeys="{{ _excludedKeys }}"
+               selectedKeysCount="{{ _selectedKeysCount }}"
+               isAllSelected="{{ _isAllSelected }}"
+               on:activated="_eventHandler()"
+               on:selectedTypeChanged="_selectedTypeChangedHandler()"
+               on:deactivated="_eventHandler()"
+               on:itemClick="_eventHandler()"
+            />
+         </ws:if>
+      </div>
+      <div class="optionsBlock">
+         <h3>Опции</h3>
+         <Controls.input:Label caption="expanded:"/>
+         <Controls.checkbox:Checkbox attr:class="ControlsDemo-OperationsPanel__expanded" bind:value="_expanded" caption="Show/hide operationsPanel"/>
+         <Controls.input:Label caption="source:"/>
+         <Controls.RadioGroup:Control
+            attr:class="ControlsDemo-OperationsPanel__source"
+            on:selectedKeyChanged="sourceChange()"
+            keyProperty="id"
+            selectedKey="{{_sourceNumber}}"
+            source="{{_sourceConfig}}"/>
+         <Controls.input:Label caption="rightTemplate:"/>
+         <Controls.checkbox:Checkbox attr:class="ControlsDemo-OperationsPanel__rightTemplate" bind:value="_rightTemplate" caption="Show/hide rightTemplate"/>
+      </div>
+      <div class="eventBlock">
+         <span>Event that surfaced:</span>
+         <Controls.buttons:Button attr:class="demo-ResetButton" on:click="_reset()" fontColorStyle="unaccented" viewMode="linkButton" caption="reset"/>
+         <br/>
+         <span class="ControlsDemo__eventName">{{_eventName}}</span>
+      </div>
+   </div>
+</div>

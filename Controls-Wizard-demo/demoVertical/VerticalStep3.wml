@@ -1,0 +1,34 @@
+<ws:if data="{{!_options.finished}}">
+    <div class="demoVertical-Vertical_thirdBlock">
+        <Controls.list:View
+                source = "{{_viewSource}}"
+                allowEmptySelection="{{false}}"
+                markerVisibility="hidden"
+                keyProperty="id"
+                attr:class="demoVertical-Vertical_list">
+            <ws:itemTemplate>
+                <ws:partial template="Controls/list:ItemTemplate"
+                            displayProperty="description"
+                            on:click="clickHandler()"
+                ></ws:partial>
+            </ws:itemTemplate>
+        </Controls.list:View>
+        <div class="demoVertical-Vertical_stepTheeGrayText">
+            <p>Проверка выполняется последовательно. Если ответственный не определился - уведомление о новом документе придёт всем пользователям с ролями: 'Администратор системы', 'Настройщик системы' и 'Руководитель предприятия'</p>
+        </div>
+        <Controls.buttons:Button caption="Завершить настройку"
+                                 class="demoVertical-Vertical_stepTheeCompleteButton"
+                                 on:click="finishWizardHandler()"/>
+    </div>
+</ws:if>
+<ws:else>
+    <div class="demoVertical-Vertical_thirdBlock-completed">
+        <div class="demoVertical-Vertical_thirdStepResult">
+            <div class="demoVertical-Vertical_profileImage">
+            </div>
+            Большакова Мария
+        </div>
+        <p class="demoVertical-Vertical_thirdStepResult2">сотрудник, закрепленный за контрагентом</p>
+        <p class="demoVertical-Vertical_thirdStepResult3">конкретный сотрудник или подразделение, указанное отправителем в документе</p>
+    </div>
+</ws:else>

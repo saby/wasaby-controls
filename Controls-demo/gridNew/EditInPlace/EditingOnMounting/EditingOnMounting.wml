@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper">
+    <Controls.grid:View
+            storeId="EditInPlaceEditingOnMounting"
+            editingConfig="{{_editingConfig}}"
+            colspanCallback="{{_colspanCallback}}"
+            columns="{{_columns}}">
+    </Controls.grid:View>
+</div>

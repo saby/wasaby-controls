@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <Controls.input:Area attr:class="demo-Area__minLines1"
+                             minLines="{{1}}"
+                             attr:style="width:300px;"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Area attr:class="demo-Area__minLines2"
+                             minLines="{{2}}"
+                             maxLines="{{4}}"
+                             attr:style="width:300px;"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Area attr:class="demo-Area__minLines4"
+                             minLines="{{4}}"
+                             maxLines="{{4}}"
+                             attr:style="width:300px;"/>
+    </div>
+</div>
+

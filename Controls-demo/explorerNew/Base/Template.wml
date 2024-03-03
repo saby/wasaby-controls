@@ -1,0 +1,48 @@
+<div attr:style="{{ _viewMode === 'table' ? 'width: 800px'}}">
+    <Controls.buttons:Button attr:class="demo-Explorer__viewButton"
+                             on:click="_changeViewMode()"
+                             fontColorStyle="link"
+                             icon="{{ _changeViewIcon }}"
+                             iconSize="m"
+                             iconStyle="secondary"
+                             viewMode="linkButton"/>
+    <Controls.scroll:Container attr:class="demo-Explorer__scrollContainer">
+        <Controls.explorer:View
+                storeId="ExplorerNewBase"
+                attr:class="demo-Explorer ControlsDemo-Explorer"
+                backgroundStyle="default"
+                columns="{{ _viewColumns }}"
+                header="{{ _gridHeader }}"
+                imageProperty="image"
+                itemActions="{{ _itemActions }}"
+                itemsHeight="{{ 200 }}"
+                keyProperty="id"
+                showActionButton="{{ true }}"
+                tileScalingMode="outside">
+            <ws:tileItemTemplate>
+                <ws:if data="{{ tileItemTemplate.item.contents['parent@'] }}">
+                    <ws:partial
+                            template="Controls/tile:SmallItemTemplate"
+                            folderWidth="{{ 250 }}"
+                            itemWidth="{{ 250 }}"
+                            scope="{{ tileItemTemplate }}">
+                    </ws:partial>
+                </ws:if>
+                <ws:else>
+                    <ws:partial
+                            template="Controls/tile:ItemTemplate"
+                            folderWidth="{{ 250 }}"
+                            itemWidth="{{ 250 }}"
+                            hasTitle="{{ tileItemTemplate.item.contents.isDocument }}">
+                        <ws:contentTemplate>
+                            <ws:partial template="wml!Controls-demo/Explorer/resources/CustomItemContent"/>
+                        </ws:contentTemplate>
+                    </ws:partial>
+                </ws:else>
+            </ws:tileItemTemplate>
+            <ws:footerTemplate>
+                <Controls.input:Label caption="Footer" underline="hovered"/>
+            </ws:footerTemplate>
+        </Controls.explorer:View>
+    </Controls.scroll:Container>
+</div>

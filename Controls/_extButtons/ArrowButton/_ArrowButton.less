@@ -1,0 +1,71 @@
+.controls-inlineheight-ArrowButton {
+  width: var(--inline_height_ArrowButton);
+  height: var(--inline_height_ArrowButton);
+}
+
+.controls-ArrowButton_icon_direction-down,
+.controls-ArrowButton_icon_direction-left {
+  transform: rotate(180deg);
+}
+
+
+.controls-Button_stretched {
+  border-radius: var(--border-radius_l);
+  justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--translucent_background-color_button);
+  user-select: none;
+}
+
+.controls-Button__wrapper_viewMode-stretched {
+  justify-content: center;
+}
+
+.controls-ArrowButton_stretched {
+  &-up, &-down {
+    transform: rotate(90deg);
+  }
+}
+
+.ws-is-hover .controls-Button_stretched:hover {
+  background-color: var(--translucent_hover_background-color_button);
+  cursor: pointer;
+}
+
+.ws-is-touch,
+.ws-is-no-touch {
+  .controls-Button_stretched:active {
+    background-color: var(--translucent_active_background-color_button);
+  }
+}
+
+.controls-icon_size-stretched {
+  &-s {
+    width: var(--font-size_m);
+    height: var(--icon-size_s);
+
+  }
+
+  &-m {
+    width: var(--inline_height_s);
+    height: var(--icon-size_m);
+  }
+
+  &-l {
+    width: var(--inline_height_l);
+    height: var(--icon-size_l);
+  }
+}
+
+.controls-ArrowButton_stretched_icon {
+  &_direction {
+    &-left, &-up {
+      transform: rotate(-90deg);
+    }
+
+   &-down, &-right {
+      transform: rotate(90deg);
+    }
+  }
+}

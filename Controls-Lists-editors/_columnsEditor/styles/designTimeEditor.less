@@ -1,0 +1,111 @@
+@columns-list_popup-width: 500px;
+@resizeLine-zIndex: 1;
+@add-button_zIndex: 2;
+
+.ControlsListsEditors_columnsDesignTime-markup_container {
+   display: grid;
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   pointer-events: all;
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element {
+   position: relative;
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_background-color {
+   background: var(--info_hover_background-color);
+   opacity: 50%;
+   border-radius: var(--border-radius_xs);
+   border-width: var(--border-thickness);
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element-highlight {
+   position: absolute;
+   cursor: pointer;
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element-close_button {
+   position: absolute;
+   top: 0;
+   right: 0;
+   cursor: pointer;
+   visibility: hidden;
+   z-index: @add-button_zIndex;
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element-add_button {
+   position: absolute;
+   bottom: 50%;
+   z-index: 1;
+   visibility: hidden;
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element-add_button-right {
+   right: 0;
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element-add_button-left {
+   left: 0;
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element:hover {
+   .ControlsListsEditors_columnsDesignTime-markup_element-close_button,
+   .ControlsListsEditors_columnsDesignTime-markup_element-add_button {
+      visibility: visible;
+   }
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element-resizeLine {
+   position: absolute;
+   height: 100%;
+   z-index: @resizeLine-zIndex;
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element-resizeLine-left {
+   left: 0;
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element-resizeLine-right {
+   right: 0;
+}
+
+.ControlsListsEditors_columnWidthEditor-wrapper {
+   display: flex;
+   white-space: nowrap;
+}
+
+.ControlsListsEditors_columnWidthEditor-width_mode {
+   margin-right: var(--offset_l);
+}
+
+.ControlsListsEditors_columnWidthEditor-width_text {
+   color: var(--unaccented_text-color);
+   font-size: var(--font-size_m);
+}
+
+.ControlsListsEditors_columnWidthEditor-width_text-padding-left {
+   padding-left: var(--offset_xs);
+}
+
+.ControlsListsEditors_columnWidthEditor-width_text-padding-right {
+   padding-right: var(--offset_xs);
+}
+
+.ControlsListsEditors_columnsListPopup-content_wrapper {
+   background: var(--unaccented_background-color);
+   height: 100%;
+   width: @columns-list_popup-width;
+}
+
+.controls-ResizingLine__area_style-editor {
+   background: var(--info_hover_background-color);
+   opacity: 50%;
+}
+
+.ControlsListsEditors_columnsListPopup-content-padding_top {
+   padding-top: var(--offset_xs);
+}

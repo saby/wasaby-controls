@@ -1,0 +1,22 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell">
+         <div class="controls-text-label">Автодополнение с хлебными крошками</div>
+         <Controls.SuggestInput
+                 attr:class="controlsDemo__input"
+                 bind:value="_suggestDefaultValue"
+                 displayProperty="title"
+                 searchParam="title"
+                 keyProperty="id"
+                 source="{{_source}}"
+                 on:itemClick="_itemClick()"
+                 parentProperty="parent"
+                 nodeProperty="parent@"
+                 selectionType="all"
+                 footerTemplate="{{null}}">
+             <ws:suggestTemplate templateName="Controls/suggestPopup:SuggestTemplate">
+                 <ws:templateOptions columns="{{_viewColumns}}" />
+             </ws:suggestTemplate>
+             <ws:suggestPopupOptions width="600px"/>
+         </Controls.SuggestInput>
+    </div>
+</div>

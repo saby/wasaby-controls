@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-TabsLayout-demo"
+           id="60a21bd8-c3f7-44f4-9a6f-d40b8f7684d7"
+           kaizen_zone="404a2418-73f5-411e-a5c6-fd64d215c403"
+           package="Wasaby"
+           version="1.00">
+
+  <description/>
+  <depends>
+    <module id="e72e465e-fb9a-4f11-968d-8acc1e2225ed" name="Controls-TabsLayout"/>
+    <module id="0ec5f772-fea6-4103-8af4-cf77ecc545ee" name="Controls-TabsLayout-default-theme"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <resources/>
+  <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

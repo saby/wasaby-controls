@@ -1,0 +1,41 @@
+<Controls.listDataOld:DataContainer storeId="PopupEditPost"
+                             source="{{_viewSource}}"
+                             attr:class="controlsDemo__wrapper__padding-left"
+                             keyProperty="id"
+                             displayProperty="title">
+<div>
+    <div class="controls-text-label">Демонстрационный пример функционала для добавления записей в список,
+                                                                                           нажмите + что-бы начать</div>
+    <div class="demo-Grid__container"
+         on:itemClick="_clickHandler()"
+         attr:style="margin-top: 20px;">
+        <Controls.scroll:Container attr:class="demo-Grid__wrapper"
+                                   attr:test_name="selected_record">
+            <Controls.listDataOld:ListContainer>
+                <Controls.grid:View
+                        name="grid"
+                        attr:class="demo-Grid__control demo-PopupEditOpener__grid"
+                        itemTemplate="wml!Controls-demo/List/Grid/DemoItem"
+                        columns="{{_gridColumns}}"
+                        header="{{_gridHeader}}">
+                    <ws:emptyTemplate>
+                        <ws:partial template="Controls/list:EmptyTemplate" topSpacing="xl" bottomSpacing="l">
+                            <ws:contentTemplate>
+                                <div class="ws-flexbox ws-align-items-center ws-justify-content-center">
+                                    Нет данных...
+                                </div>
+                            </ws:contentTemplate>
+                        </ws:partial>
+                    </ws:emptyTemplate>
+                </Controls.grid:View>
+            </Controls.listDataOld:ListContainer>
+        </Controls.scroll:Container>
+    </div>
+    <Controls.popup:EditContainer>
+        <Controls.popup:Edit name="EditOpener"
+                             template="Controls-demo/Popup/Edit/docs/resources/Index">
+        </Controls.popup:Edit>
+    </Controls.popup:EditContainer>
+    <Controls.popup:Confirmation name="confirmation"/>
+</div>
+</Controls.listDataOld:DataContainer>

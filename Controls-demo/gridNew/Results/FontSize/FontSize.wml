@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper">
+    <Controls.grid:View
+            storeId="ResultsFontSize"
+            header="{{_header}}"
+            columns="{{_columns}}"
+            resultsPosition="top">
+    </Controls.grid:View>
+</div>

@@ -1,0 +1,77 @@
+.Controls-Templates-HorizontalItem__image_wrapper {
+   flex-shrink: 0;
+   align-items: center;
+   justify-content: center;
+   overflow: hidden;
+   display: flex;
+   max-width: 100%;
+   box-sizing: border-box;
+   position: relative;
+}
+
+.Controls-Templates-HorizontalItem__content {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+   width: 100%;
+}
+
+.Controls-Templates-HorizontalItem__content_justify_top {
+   justify-content: flex-start;
+}
+
+.Controls-Templates-HorizontalItem__content_justify_middle {
+   justify-content: center;
+}
+
+.Controls-Templates-HorizontalItem__content_justify_bottom {
+   justify-content: flex-end;
+}
+
+.Controls-Templates-HorizontalItem__image_position_right-fit,
+.Controls-Templates-HorizontalItem__image_position_right {
+   order: 2;
+}
+
+.Controls-Templates-HorizontalItem__image_viewMode_circle {
+   border-radius: 50%;
+}
+
+.Controls-Templates-HorizontalItem__image-fit_size_half {
+   width: 50%;
+}
+
+.Controls-Templates-HorizontalItem__image-fit_size {
+   /* stylelint-disable-next-line unit-no-unknown */
+   @sizes: s, m, l, xl, xlt, 2xl, 3xl, 4xl, 5xl, 6xl, 7xl;
+   .for(@sizes, {
+      &_@{_item} {
+         width: ~'var(--size_@{_item}_image)';
+      }
+   });
+}
+
+.Controls-Templates-HorizontalItem__image_gradientOverlay-right-fit::after {
+   background: linear-gradient(
+      to right,
+      var(--dominant-color_zen),
+      rgba(var(--dominant_zen_rgb), 0) 25%
+   );
+}
+
+.Controls-Templates-HorizontalItem__image_gradientOverlay-left-fit::after {
+   background: linear-gradient(
+      to left,
+      var(--dominant-color_zen),
+      rgba(var(--dominant_zen_rgb), 0) 25%
+   );
+}
+
+.Controls-Templates-HorizontalItem__image_gradientOverlay::after {
+   content: '';
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+}

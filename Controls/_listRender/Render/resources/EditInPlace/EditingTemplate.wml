@@ -1,0 +1,14 @@
+<ws:partial template="wml!Controls/_listRender/Render/resources/EditInPlace/baseEditingTemplate" scope="{{ _options }}">
+    <ws:viewTemplate>
+        <ws:if data="{{ searchValue }}">
+            <Controls.baseDecorator:Highlight highlightedValue="{{ searchValue }}">
+                <ws:value>
+                    <ws:String>{{ value }}</ws:String>
+                </ws:value>
+            </Controls.baseDecorator:Highlight>
+        </ws:if>
+        <ws:else>
+            {{value}}
+        </ws:else>
+    </ws:viewTemplate>
+</ws:partial>

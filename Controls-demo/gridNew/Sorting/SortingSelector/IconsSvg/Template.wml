@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth100">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">svg icons</div>
+        <div class="controlsDemo__cell">
+            <Controls.sorting:Selector
+                    sortingParams="{{_sortingParams}}"
+                    bind:value="_sorting"/>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.sorting:Selector
+                    sortingParams="{{_sortingParamsCustom}}"
+                    bind:value="_sorting1"/>
+        </div>
+    </div>
+</div>

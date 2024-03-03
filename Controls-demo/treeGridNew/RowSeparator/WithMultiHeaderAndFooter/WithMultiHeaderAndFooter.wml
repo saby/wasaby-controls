@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper controlsDemo_wrapper-treeGrid-base-treeGridView">
+    <Controls.treeGrid:View
+            attr:class="controlsDemo__inline-flex"
+            storeId="RowSeparatorWithMultiHeaderAndFooter"
+            columns="{{_columns}}"
+            header="{{_header}}"
+            rowSeparatorSize="s"
+            newDesign="{{true}}">
+        <ws:footerTemplate>
+            <ws:partial template="Controls/grid:FooterTemplate">
+                <div>Подвал растянут</div>
+            </ws:partial>
+        </ws:footerTemplate>
+    </Controls.treeGrid:View>
+</div>

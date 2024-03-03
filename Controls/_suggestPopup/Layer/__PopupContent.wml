@@ -1,0 +1,49 @@
+<ws:template name="popupContent">
+   <div data-qa="{{_showContent ? 'controls-suggestPopup'}}" class="{{_options.isAdaptive && _options.allowAdaptive ? ' controls-suggestPopup__adaptive-height-fix'}}">
+       <div attr:class="controls_suggestPopup_theme-{{_options.theme}}
+                        controls_popupTemplate_theme-{{_options.theme}}
+                        controls-background-{{_options.suggestPopupOptions.backgroundStyle || 'suggestPopup'}}
+                        controls-Suggest__suggestionsContainer
+                        {{_options.isAdaptive && _options.allowAdaptive ? 'controls-suggestPopup__adaptive-height-fix' : 'controls-Suggest__suggestionsContainer_popup_shadow_' + _options.stickyPosition.direction.vertical}}
+                        controls-Suggest__suggestionsContainer_popup
+                        {{_options.stickyPosition.direction.vertical === 'bottom' ? 'controls-margin_top-3xs' : 'controls-margin_bottom-3xs'}}
+                        {{!_showContent ? 'controls-Suggest__suggestionsContainer_hidden'}}">
+           <Controls.scroll:Container attr:class="controls-Suggest__scrollContainer {{_options.isAdaptive && _options.allowAdaptive ? ' controls-suggestPopup__adaptive-height-fix'}}" name="scrollContainer">
+               <ws:content>
+                   <ws:partial template="{{_options.content}}"
+                               attr:class="controls-Suggest-offset-top"
+                               suggestWidth="{{_suggestWidth}}"
+                               reverseList="{{_reverseList}}"
+                               stickyPosition="{{_options.stickyPosition}}"
+                               on:controlResize="resize()"/>
+               </ws:content>
+           </Controls.scroll:Container>
+       </div>
+       <ws:if data="{{_options.closeButtonVisible && _showContent}}">
+           <Controls.extButtons:CloseButton
+               attr:class="controls-SuggestCloseButton"
+               viewMode="external"
+               on:click="_notifyHandler('close')"
+           />
+       </ws:if>
+   </div>
+</ws:template>
+
+<ws:if data="{{_options.isAdaptive && _options.allowAdaptive}}">
+    <Controls.popupTemplate:Sticky allowAdaptive="{{ true }}"
+                                   closeButtonViewMode="external"
+                                   borderVisible="{{false}}"
+                                   closeButtonVisible="{{_options.closeButtonVisible}}"
+                                   attr:class="controls-Suggest__suggestionsContainer_popup_shadow_{{_options.stickyPosition.direction.vertical}}
+                                   controls-Suggest__suggestionsContainer_{{_options.isAdaptive ? 'adaptive'}}
+                                   ">
+        <ws:bodyContentTemplate>
+            <ws:partial template="popupContent"/>
+        </ws:bodyContentTemplate>
+    </Controls.popupTemplate:Sticky>
+</ws:if>
+<ws:else>
+    <ws:partial template="popupContent" attr:class="
+                                                 controls-suggestPopup {{_options.contrastBackground ? 'controls-suggestPopup-contrastBackground'}}"/>
+</ws:else>
+

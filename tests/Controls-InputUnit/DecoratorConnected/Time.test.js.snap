@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls-Input/decoratorConnected:Time Index 1`] = `
+<div>
+  <div
+    class="controlsDemo__wrapper controlsDemo_fixedWidth400 tw-flex tw-flex-col"
+  >
+    <span
+      class="controls-DecoratorDate controls-fontsize-undefined
+                         controls-text-undefined
+                         controls-fontweight-undefined"
+      title="12:12"
+    >
+      12:12
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Controls-Input/decoratorConnected:Time Mask 1`] = `
+<div>
+  <div
+    class="controlsDemo__wrapper controlsDemo_fixedWidth400 tw-flex tw-flex-col"
+  >
+    <div
+      class="controls-margin_bottom-m"
+    >
+      <span
+        class="controls-DecoratorDate controls-fontsize-undefined
+                         controls-text-undefined
+                         controls-fontweight-undefined"
+        title="12:12"
+      >
+        12:12
+      </span>
+    </div>
+    <div
+      class="controls-margin_bottom-m"
+    >
+      <span
+        class="controls-DecoratorDate controls-fontsize-undefined
+                         controls-text-undefined
+                         controls-fontweight-undefined"
+        title="12:12:12"
+      >
+        12:12:12
+      </span>
+    </div>
+  </div>
+</div>
+`;

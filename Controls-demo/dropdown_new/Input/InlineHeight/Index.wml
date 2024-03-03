@@ -1,0 +1,26 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow ws-align-items-baseline">
+    <div class="controlsDemo__mr4">
+        <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys"
+                                    inlineHeight="s"
+                                    keyProperty="key"
+                                    displayProperty="title"
+                                    items="{{_items}}">
+        </Controls.dropdown:Selector>
+    </div>
+    <div class="controlsDemo__mr4">
+        <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys"
+                                    inlineHeight="m"
+                                    keyProperty="key"
+                                    displayProperty="title"
+                                    items="{{_items}}">
+        </Controls.dropdown:Selector>
+    </div>
+    <div class="controlsDemo__mr4">
+        <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys"
+                                    inlineHeight="l"
+                                    keyProperty="key"
+                                    displayProperty="title"
+                                    items="{{_items}}">
+        </Controls.dropdown:Selector>
+    </div>
+</div>

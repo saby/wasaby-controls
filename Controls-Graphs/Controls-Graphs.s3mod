@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-Graphs" kaizen_zone="fd9fa20b-49b9-4974-9a76-1fecd10b7259"
+           id="347506b0-7e7d-441f-963f-6b97034fcc0c"
+           package="Wasaby"
+           responsible="Кондратьев И.Н." responsible_uuid="3b44d193-8649-4a65-af51-e5a5596d16c6"
+           required="1"
+           version="1.00">
+  <description>Модуль содержит контролы для отображения графиков.</description>
+    <depends>
+      <module id="f6fdf353-3ab3-4dbb-8671-01c2b418bf0a" name="Controls"/>
+      <module id="af50caf5-f84b-4b81-a19c-6f6618372dbd" name="Controls-default-theme"/>
+    </depends>
+  <load_after/>
+  <parameters/>
+  <resources/>
+  <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

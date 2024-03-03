@@ -1,0 +1,136 @@
+// дополнительная ширина, которая гарантирует отсутствие скачков текста при вводе во всех браузерах
+@_input-text-width-fix: 3px;
+
+.Name-Input__container {
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   box-sizing: border-box;
+   align-self: center;
+   align-items: center;
+}
+
+.Name-Input__field_padding-xs {
+   padding: 2px 4px;
+}
+
+.Name-Input__field_padding-null {
+   padding: 2px 0;
+}
+
+.Name-Input__text {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+
+.Name-Input__fakeField {
+   visibility: hidden;
+   user-select: none;
+}
+
+.Name-Input__text-placeholder {
+   color: var(--placeholder-color_inputText);
+   opacity: 1;
+}
+
+.Name-Input__inputWrapper_last {
+   flex-grow: 1;
+}
+
+.ws-is-hover .Name-Input__input_mark {
+   background-color: var(--text_background-color_decoratorHighlight);
+}
+
+.Name-Input__separator {
+   user-select: none;
+   padding-top: var(--separator_verticalPadding_Name_Input);
+   padding-right: var(--separator_horizontalPadding_Name_Input);
+   padding-bottom: var(--separator_verticalPadding_Name_Input);
+   padding-left: calc(var(--separator_horizontalPadding_Name_Input) - @_input-text-width-fix);
+   display: inline-flex;
+   flex-shrink: 0;
+   justify-content: center;
+   height: 100%;
+   box-sizing: border-box;
+
+   &::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 100%;
+      background-color: var(--separator_color);
+   }
+}
+
+.Name-Input__separator_active {
+   cursor: col-resize;
+}
+
+.Name-Input__buffer {
+   position: absolute;
+   top: -10000px;
+   left: -10000px;
+   visibility: hidden;
+   white-space: pre;
+}
+
+// В большинстве браузеров ширина input-а должна быть больше ширины текста в них, чтобы исключить ситуацию,
+// когда текст скачет по горизонтали при вводе, не помещаясь по ширине.
+.Name-Input__text_offset {
+   padding-right: @_input-text-width-fix;
+}
+
+// В IE Edge текст в input-ах нативно отображается с отступом слева в 1px.
+.ws-is-ie12 .Name-Input__text_offset {
+   padding-left: 1px;
+}
+
+.Name-Input__text_offset-readOnly {
+   padding-right: var(--offset_xs);
+}
+
+.Name-Input__reorder {
+   margin-right: var(--offset_2xs);
+   color: var(--unaccented_border-color);
+}
+
+.ws-is-hover .Name-input__reorder_action-hover:not(.ws-disabled):hover {
+   // todo возможно стоит использовать другую переменную
+   color: var(--label_text-color);
+}
+
+.Name-Input__inputWrapper {
+   position: relative;
+   overflow: hidden;
+   min-width: 2ch;
+}
+
+// В Safari при D&D в поле может зависнуть выделение на обертке, отключаем его.
+.ws-is-drag.ws-is-desktop-safari .Name-Input__inputWrapper {
+   user-select: none;
+}
+
+.Name-Input__inputPlaceholder {
+   // TODO копипаста из полей ввода
+   // Уберем после https://online.sbis.ru/opendoc.html?guid=250842df-3005-4af8-b467-eb4e07448525
+   max-width: 100%;
+   background-color: transparent;
+   cursor: text;
+   pointer-events: none;
+   user-select: none;
+}
+
+.Name-Input__input,
+.Name-Input__inputPlaceholder {
+   height: 100%;
+   display: flex;
+   align-items: center;
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+
+.Name-Input__hint {
+   width: var(--infobox_width_Name_Input);
+}
