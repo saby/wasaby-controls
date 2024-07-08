@@ -1,0 +1,94 @@
+<div class="controls_paging_theme-{{_options.theme}} controls-PagingV" >
+    <ws:if data="{{_stateReset !== 'disabled'}}">
+        <div class="controls_Paging_separate {{_options.contrastBackground ? 'controls-Paging__contrast' : ''}}">
+            <div class="controls-Paging__wrapper">
+                <span class="controls-Paging__btn controls-Paging__btn-Reset
+                           controls-Paging__arrow controls-Paging__arrow__state-normal"
+                      attr:title="{[В исходное положение]}" on:click="_arrowClick('Reset', 'Reset')"
+                      attr:data-qa="Paging__Reset">
+                    <ws:if data="{{_options.arrowState.reset === 'day'}}">
+                        <div class="controls-Paging__icon controls-Paging__icon-resetDay">{{_getResetButtonDay()}}</div>
+                    </ws:if>
+                    <ws:else>
+                        <i class="icon-Home3BsLine controls-Paging__icon"></i>
+                    </ws:else>
+                </span>
+            </div>
+        </div>
+    </ws:if>
+   <ws:if data="{{_options.pagingMode === 'edges'}}">
+       <div class="controls_Paging_separate {{_options.contrastBackground ? 'controls-Paging__contrast' : ''}}">
+           <div class="controls-Paging__wrapper">
+               <span class="controls-Paging__btn controls-Paging__btn-Begin
+                           controls-Paging__arrow controls-Paging__arrow__state-{{_stateTop}}"
+                     attr:title="{[В начало]}" on:click="_arrowClick('Begin', 'Top')" attr:data-qa="Paging__Begin">
+                   <i class="controls-Paging_icon-Begin{{_isDigit() ? '_digits'}} controls-Paging__icon"></i>
+               </span>
+           </div>
+      </div>
+   </ws:if>
+   <div class="{{_options.contrastBackground ? 'controls-Paging__contrast' : ''}}">
+       <div class="controls-Paging__wrapper">
+           <ws:if data="{{_options.contentTemplate && _isShowContentTemplate()}}">
+            <span class="controls-Paging__content-Template">
+               <ws:partial template="{{_options.contentTemplate}}"/>
+            </span>
+           </ws:if>
+           <ws:if data="{{_options.elementsCount && _options.pagingMode === 'numbers'}}">
+               <span class="controls-Paging__btn
+                            controls-Paging__btn-elements-count ">
+               <span class="controls-Paging__info_m">{[Всего]} {{_options.elementsCount}}</span>
+            </span>
+           </ws:if>
+           <ws:if data="{{(_options.pagingMode !== 'viewport') &&
+               (!_options.showDigits || _options.pagingMode === 'numbers') &&
+               _options.pagingMode !== 'edges' &&
+            (_getArrowStateVisibility('begin') !== 'hidden')}}">
+            <span class="controls-Paging__btn controls-Paging__btn-Begin
+                           controls-Paging__arrow controls-Paging__arrow__state-{{_stateTop}}
+                           {{_needLeftPadding(_options.pagingMode, _options.contentTemplate) ? '' : 'controls-Paging__arrow_padding-left-null'}}"
+                  attr:title="{[В начало]}" on:click="_arrowClick('Begin', 'Top')" attr:data-qa="Paging__Begin">
+               <i class="controls-Paging_icon-Begin{{_isDigit() ? '_digits'}} controls-Paging__icon"></i>
+            </span>
+           </ws:if>
+           <ws:if data="{{_getArrowStateVisibility('prev') !== 'hidden'}}">
+             <span class="controls-Paging__btn controls-Paging__btn-Prev
+                            {{!_options.showDigits ? ' controls-Paging__btn_separated '}}
+                            controls-Paging__arrow
+                            controls-Paging__arrow__state-{{_stateBackward}}"
+                   attr:title="{[Назад]}" on:click="_arrowClick('Prev', 'Backward')" attr:data-qa="Paging__Prev">
+                <i class="controls-Paging_icon-Prev{{_isDigit() ? '_digits' : ''}} controls-Paging__icon"></i>
+             </span>
+           </ws:if>
+           <ws:if data="{{_isDigit()}}">
+               <Controls._paging.Paging.DigitButtons
+                       className="controls-Paging__digitButons"
+                       on:onDigitClick="_digitClick()"
+                       digitRenderCallback="{{_options.digitRenderCallback}}"
+                       selectedKey="{{_options.selectedPage}}"
+                       mode="{{_options.pagingMode}}"
+                       count="{{_options.pagesCount}}"></Controls._paging.Paging.DigitButtons>
+           </ws:if>
+           <ws:if data="{{_getArrowStateVisibility('next') !== 'hidden'}}">
+             <span class="controls-Paging__btn controls-Paging__btn-Next
+                            {{!(_getArrowStateVisibility('end') !== 'hidden') ? ' controls-Paging__btn_last ' }}
+                            {{!_options.showDigits ? ' controls-Paging__btn_separated '}}
+                            controls-Paging__arrow
+                            controls-Paging__arrow__state-{{_stateForward}}"
+                   attr:title="{[Вперёд]}" on:click="_arrowClick('Next', 'Forward')" attr:data-qa="Paging__Next">
+                <i class="controls-Paging_icon-Next{{_isDigit() ? '_digits'}} controls-Paging__icon"></i>
+             </span>
+           </ws:if>
+           <ws:if data="{{(_options.pagingMode !== 'viewport') && (_options.pagingMode === 'edges' || _getArrowStateVisibility('end') !== 'hidden')}}">
+            <span class="controls-Paging__btn controls-Paging__btn-End
+                           {{!_options.showDigits ? ' controls-Paging__btn_separated ' }}
+                           controls-Paging__arrow
+                           controls-Paging__arrow__state-{{_stateBottom}}
+                           {{_needLeftPadding(_options.pagingMode, _options.contentTemplate) ? '' : 'controls-Paging__arrow_padding-left-null'}}"
+                  attr:title="{[В конец]}" on:click="_arrowClick('End', 'Bottom')" attr:data-qa="Paging__End">
+               <i class="controls-Paging_icon-End{{_isDigit() ? '_digits'}} controls-Paging__icon"></i>
+            </span>
+           </ws:if>
+       </div>
+   </div>
+</div>

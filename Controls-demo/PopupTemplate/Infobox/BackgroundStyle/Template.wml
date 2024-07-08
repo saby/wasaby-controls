@@ -1,0 +1,21 @@
+<div>
+    <div>
+        <div class="controls-text-label">backgroundStyle=secondary</div>
+        <Controls.popupTemplate:InfoBox closeButtonVisible="{{false}}"
+                                        stickyPosition="{{_stickyPosition}}">
+            <div attr:style="padding:10px">
+                Всплывающая подсказка с важным уведомлением!
+            </div>
+        </Controls.popupTemplate:InfoBox>
+    </div>
+    <div>
+        <div class="controls-text-label">backgroundStyle=default</div>
+        <Controls.popupTemplate:InfoBox closeButtonVisible="{{false}}"
+                                        backgroundStyle="default"
+                                        stickyPosition="{{_stickyPosition}}">
+            <div attr:style="padding:10px">
+                Всплывающая подсказка с важным уведомлением!
+            </div>
+        </Controls.popupTemplate:InfoBox>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<ws:partial template="Controls/grid:HeaderContent" scope="{{ _options }}">
+    <div>
+        {{ column.config.caption }}
+        <div>
+            <Controls-demo.HorizontalScroll.content.Grid.resources.header.AddButton
+                onClickCallback="{{ callback }}"
+                column="{{ column.config }}"
+                index="{{ column.config.index }}"
+            />
+        </div>
+    </div>
+</ws:partial>

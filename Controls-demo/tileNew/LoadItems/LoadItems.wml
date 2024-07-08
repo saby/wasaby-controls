@@ -1,0 +1,24 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container class="controlsDemo__height800 controlsDemo__width800px">
+        <Controls.tile:View
+                tileMode="static"
+                tileWidth="150"
+                imageProperty="image"
+                imageViewMode="rectangle"
+                imagePosition="left"
+                storeId="LoadItems">
+            <ws:itemTemplate>
+                <ws:partial
+                        template="Controls/tile:RichTemplate"
+                        gradientColor="{{itemTemplate.item.contents.gradientColor}}"
+                        titleLines="1"
+                        descriptionLines="2"
+                        imageSize="s"
+                        description="{{itemTemplate.item.contents.description}}"
+                        imageEffect="gradient"
+                        scope="{{itemTemplate}}">
+                </ws:partial>
+            </ws:itemTemplate>
+        </Controls.tile:View>
+    </Controls.scroll:Container>
+</div>

@@ -1,0 +1,5 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500 controlsDemo_wrapper-tree-base">
+    <Controls.tree:View
+            storeId="listData"
+            on:expandedItemsChanged="_onExpandedItemsChanged()"/>
+</div>

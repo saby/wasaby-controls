@@ -1,0 +1,111 @@
+.controls-Selectorbutton {
+   max-width: 100%;
+   min-height: var(--min-height_lookupSelector);
+   display: inline-block;
+   align-items: center;
+}
+
+.controls-Selectorbutton_empty {
+   display: inline-flex;
+   height: var(--min-height_lookupSelector);
+   line-height: var(--inline_height_default);
+}
+
+.controls-Selectorbutton__button-reset {
+   font-size: var(--font-size_xs);
+   color: var(--label_text-color);
+   cursor: pointer;
+}
+
+.controls-Selectorbutton_button-more {
+   font-size: var(--font-size_xs);
+   color: var(--label_text-color);
+   margin-right: var(--offset_s);
+   cursor: pointer;
+}
+
+.controls-Selectorbutton_button-more_fontsize-s {
+   font-size: var(--font-size_s);
+}
+
+.controls-Selectorbutton_button-more::after,
+.controls-Selectorbutton__button-reset::after {
+   content: '\200b';
+   font-size: var(--font-size_default_label);
+   line-height: var(--inline_height_default_label);
+}
+
+.controls-Selectorbutton__button-reset:active,
+.controls-Selectorbutton_button-more:active {
+   text-decoration: underline;
+}
+
+.ws-is-hover {
+   .controls-Selectorbutton__button-reset:hover,
+   .controls-Selectorbutton_button-more:hover {
+      text-decoration: underline;
+   }
+
+   .controls-SelectorButton_selectedItem:hover {
+      .controls-text-link {
+         color: var(--link_hover_text-color);
+      }
+
+      .controls-text-primary {
+         color: var(--primary_hover_text-color);
+      }
+
+      .controls-text-secondary {
+         color: var(--secondary_hover_text-color);
+      }
+
+      .controls-text-success {
+         color: var(--success_hover_text-color);
+      }
+
+      .controls-text-warning {
+         color: var(--warning_hover_text-color);
+      }
+
+      .controls-text-danger {
+         color: var(--danger_hover_text-color);
+      }
+
+      .controls-text-unaccented {
+         color: var(--unaccented_hover_text-color);
+      }
+
+      .controls-text-label {
+         color: var(--label_hover_text-color);
+      }
+
+      .controls-text-info {
+         color: var(--info_hover_text-color);
+      }
+
+      .controls-text-default {
+         color: var(--hover_text-color);
+      }
+   }
+}
+
+.controls-Selectorbutton_button-select_readOnly {
+   color: var(--text-color);
+}
+
+.controls-Selectorbutton_selectedCollection_multiSelect {
+   padding-right: var(--offset_2xs);
+}
+
+.controls-Selectorbutton_link {
+   max-width: 100%;
+}
+
+.controls-Selectorbutton_link-filterPanelItem-style.controls-BaseButton {
+   --text_color_button_local: var(--label_contrast_text-color);
+
+   .ws-is-hover &:hover {
+      --text_color_button_local: var(--label_contrast_text-color);
+      --text_decoration_button_local: none;
+   }
+}

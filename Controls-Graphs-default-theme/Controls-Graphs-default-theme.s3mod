@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-Graphs-default-theme" kaizen_zone="fd9fa20b-49b9-4974-9a76-1fecd10b7259"
+           id="bdd07856-3a06-4d5f-87f3-a27234b48f51"
+           package="Wasaby"
+           required="1"
+           version="1.00">
+  <description/>
+  <depends>
+    <module id="af50caf5-f84b-4b81-a19c-6f6618372dbd" name="Controls-default-theme"/>
+    <module id="347506b0-7e7d-441f-963f-6b97034fcc0c" name="Controls-Graphs"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <cluster_endpoints/>
+  <resources/>
+  <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

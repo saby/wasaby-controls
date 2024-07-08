@@ -1,0 +1,56 @@
+<div class="ws-flexbox controls-LottieDemo-Animation__wrapper">
+    <Controls-Lottie.Player
+        attr:class="controls-LottieDemo-Animation"
+        name="myAnimation"
+        loop="{{_isLoopActivate}}"
+        value="{{_animationValue}}"
+        playMode="{{_playMode}}"
+        speed="{{_currentSpeed === null ? 0 : _currentSpeed}}"
+    />
+    <div class="ws-flexbox ws-flex-column">
+        <div class="controls-LottieDemo-Animation__option">
+            <Controls.ComboBox
+                    bind:selectedKey="_playMode"
+                    source="{{_source}}"
+                    keyProperty="id"
+                    displayProperty="id"/>
+        </div>
+        <div class="controls-LottieDemo-Animation__option">
+            <Controls.checkbox:Checkbox
+                bind:value="_isLoopActivate"
+                caption="Зациклить"
+            />
+        </div>
+        <div class="controls-LottieDemo-Animation__option">
+            <Controls.buttons:Button
+                    viewMode="outlined"
+                    contrastBackground="{{true}}"
+                    buttonStyle="secondary"
+                    on:click="_startClickHandler()"
+                    caption="Старт"
+            />
+        </div>
+        <div class="controls-LottieDemo-Animation__option">
+            <Controls.buttons:Button
+                    viewMode="outlined"
+                    contrastBackground="{{true}}"
+                    buttonStyle="secondary"
+                    on:click="_stopClickHandler()"
+                    caption="Стоп"
+            />
+        </div>
+        <div class="controls-LottieDemo-Animation__option">
+            <Controls.input:Number
+                    attr:style="width: 56px;"
+                    onlyPositive="{{true}}"
+                    integersLength="{{2}}"
+                    precision="{{1}}"
+                    tooltip="Скорость"
+                    bind:value="_currentSpeed"
+            />
+            <div class="controls-LottieDemo-Animation__option-description">
+                Скорость
+            </div>
+        </div>
+    </div>
+</div>

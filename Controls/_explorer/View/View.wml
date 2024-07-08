@@ -1,0 +1,156 @@
+<ws:template name="treeControl">
+    <ws:partial template="{{ _compatibilityWrapper }}" scope="{{_options}}" _useReactScrollContexts="{{_useReactScrollContexts}}">
+        <ws:partial template="{{ _viewTemplate }}"
+                    attr:class="controls-Explorer__view"
+                    notifyCallback="{{ _notifyCallback }}"
+                    itemPadding="{{_itemPadding}}"
+                    header="{{contentHeader}}"
+                    results="{{contentResults}}"
+                    columns="{{contentColumns}}"
+                    name="treeControl"
+                    viewName="{{_viewName}}"
+                    _isReactView="{{ _isReactView }}"
+                    markerStrategy="{{_markerStrategy}}"
+                    viewModelConstructor="{{_viewModelConstructor}}"
+                    listVirtualScrollControllerConstructor="{{_listVirtualScrollControllerConstructor}}"
+                    actionAlignment="{{ _viewMode === 'tile' ? 'vertical' : _options.actionAlignment }}"
+                    actionCaptionPosition="{{ _viewMode === 'tile' ? 'none' : _options.actionCaptionPosition }}"
+                    itemTemplate="{{_getItemTemplate(_viewMode, _itemTemplate, _options.listItemTemplate, _options.tileItemTemplate)}}"
+                    itemTemplateOptions="{{_itemTemplateOptions}}"
+                    emptyTemplate="{{_getEmptyTemplate(_viewMode, _options.emptyTemplate, _options.listEmptyTemplate)}}"
+                    groupTemplate="{{_viewMode ==='tile' ? _options.tileGroupTemplate : _groupTemplate}}"
+                    itemActionsPosition="{{_itemActionsPosition}}"
+                    actionMode="{{_viewMode==='tile' ? _options.actionMode : 'strict'}}"
+                    dragControlId="{{ _dragControlId }}"
+                    canStartDragNDrop="{{ _canStartDragNDrop }}"
+                    markerVisibility="{{ _options.markerVisibility }}"
+                    columnScroll="{{ _viewMode === 'table' || _viewMode === 'search' ? _options.columnScroll }}"
+                    navigation="{{ _navigation }}"
+                    backgroundStyle="{{ _backgroundStyle }}"
+                    canMoveMarker="{{_canMoveMarker}}"
+                    root="{{ _useRootFromOptions ? _options.root : content._options.root }}"
+                    searchValue="{{_searchValue}}"
+                    _initBreadCrumbsMode="{{_searchInitialBreadCrumbsMode}}"
+                    containerWidth="{{_options.contentWidth}}"
+                    itemsSelector="{{_itemsSelector}}"
+                    multiColumns="{{_options.multiColumns || _viewMode === 'tile' || _options.useColumns && _viewMode === 'list'}}"
+                    disableVirtualScroll="{{_disableVirtualScrollForColumns && _options.useColumns && _viewMode === 'list'}}"
+                    autoColumnsRecalculating="{{_options.useColumns && _viewMode === 'list'}}"
+                    supportExpand="{{_viewMode === 'table'}}"
+                    onItemClick="{{ _onItemClick }}"
+                    onItemMouseDown="{{ _itemMouseDown }}"
+                    on:itemMouseLeave="_notifyHandler('itemMouseLeave')"
+                    on:itemMouseMove="_notifyHandler('itemMouseMove')"
+                    on:checkBoxClick="_notifyHandler('checkBoxClick')"
+                    on:itemSwipe="_notifyHandler('itemSwipe')"
+                    on:beforeBeginEdit="_notifyHandler('beforeBeginEdit')"
+                    on:drawItems="_notifyHandler('drawItems')"
+                    on:afterBeginEdit="_notifyHandler('afterBeginEdit')"
+                    on:beforeEndEdit="_notifyHandler('beforeEndEdit')"
+                    on:afterEndEdit="_notifyHandler('afterEndEdit')"
+                    on:actionClick="_notifyHandler('actionClick')"
+                    on:customdragStart="_notifyHandler('customdragStart')"
+                    on:customdragEnd="_notifyHandler('customdragEnd')"
+                    on:hoveredItemChanged="_notifyHandler('hoveredItemChanged')"
+                    on:rootChanged="_notifyHandler('rootChanged')"
+                    on:changeDragTarget="_notifyHandler('changeDragTarget')"
+                    on:customdragEnter="_notifyHandler('customdragEnter')"
+                    on:markedKeyChanged="_notifyHandler('markedKeyChanged')"
+                    on:beforeMarkedKeyChanged="_notifyHandler('beforeMarkedKeyChanged')"
+                    on:selectedKeysChanged="_notifyHandler('selectedKeysChanged')"
+                    on:selectedLimitChanged="_notifyHandler('selectedLimitChanged')"
+                    on:excludedKeysChanged="_notifyHandler('excludedKeysChanged')"
+                    on:beforeSelectionChanged="_notifyHandler('beforeSelectionChanged')"
+                    on:sortingChanged="_notifyHandler('sortingChanged')"
+                    on:itemExpanded="_notifyHandler('itemExpanded')"
+                    on:itemCollapsed="_notifyHandler('itemCollapsed')"
+                    on:itemExpand="_notifyHandler('itemExpand')"
+                    on:itemCollapse="_notifyHandler('itemCollapse')"
+                    on:afterItemExpand="_notifyHandler('afterItemExpand')"
+                    on:afterItemCollapse="_notifyHandler('afterItemCollapse')"
+                    on:beforeItemExpand="_notifyHandler('beforeItemExpand')"
+                    on:beforeItemCollapse="_notifyHandler('beforeItemCollapse')"
+                    on:expandedItemsChanged="_notifyHandler('expandedItemsChanged')"
+                    on:collapsedItemsChanged="_notifyHandler('collapsedItemsChanged')"
+                    on:editArrowClick="_notifyHandler('editArrowClick')"
+                    on:navigationParamsChanged="_notifyHandler('navigationParamsChanged')"
+                    on:tagClick="_notifyHandler('tagClick')"
+                    on:tagHover="_notifyHandler('tagHover')"
+                    on:dataError="_notifyHandler('dataError')"
+                    on:keyDown="_onExplorerKeyDown()"
+                    on:loadExpandedItem="_notifyHandler('loadExpandedItem')"
+                    itemsReadyCallback="{{_itemsReadyCallback}}"
+                    itemsSetCallback="{{_itemsSetCallback}}"
+                    _needSetMarkerCallback="{{_needSetMarkerCallback}}"
+                    _recreateCollection="{{_recreateCollection}}"
+        />
+    </ws:partial>
+</ws:template>
+
+<ws:template name="wrappedTreeColumnScrollControl">
+<ws:partial template="{{ 'Controls/columnScrollReact:ColumnScrollContextProvider' }}"
+            GUID="{{ _uniqueId }}"
+            autoScrollAnimation="{{ _options.columnScrollAutoScrollAnimation || 'smooth' }}"
+            columnScrollStartPosition="{{ _options.columnScrollStartPosition }}"
+            onEdgesStateChanged="{{ _options.onEdgesStateChanged }}"
+            onPositionChanged="{{ _options.onPositionChanged }}"
+            selectors="{{ _getColumnScrollSelectors && _getColumnScrollSelectors() }}"
+>
+    <ws:partial template="{{ 'Controls/columnScrollReact:DragScrollContextProvider' }}"
+                isEnabled="{{ _options.dragScrolling }}">
+        <ws:partial
+                template="treeControl"
+                _useRootFromOptions="{{ true }}"
+                contentHeader="{{contentHeader}}"
+                contentResults="{{contentResults}}"
+                contentColumns="{{contentColumns}}"
+        />
+    </ws:partial>
+</ws:partial>
+</ws:template>
+
+<div class="controls_list_theme-{{_options.theme}} controls-Explorer" on:keyDown="_onExternalKeyDown()">
+<Controls.dragnDrop:Container on:documentDragStart="_documentDragStart()"
+                              on:documentDragEnd="_documentDragEnd()"
+                              attr:class="controls-Explorer__wrapper">
+    <Controls._explorer.PathController
+            name="pathController"
+            scope="{{_options}}"
+            header="{{_header}}"
+            columns="{{_columns}}"
+            viewMode="{{_viewMode}}"
+            rootVisible="{{_dragOnBreadCrumbs}}"
+            highlighter="{{_breadCrumbsDragHighlighter}}"
+            breadCrumbsMaxWidth="{{ _breadCrumbsMaxWidth }}"
+
+            on:itemClick="_onBreadcrumbsClick()"
+            on:arrowClick="_notifyHandler('arrowClick')"
+            on:hoveredItemChanged="_hoveredCrumbChanged()"
+            on:arrowActivated="_notifyHandler('arrowActivated')"
+    >
+        <ws:content>
+            <ws:if data="{{ _useReactScrollContexts }}">
+                <!--  После переписывания таблиц на реакт это уйдет в Controls/_gridColumnScroll/GridControl.  -->
+                <ws:partial
+                        template="wrappedTreeColumnScrollControl"
+                        contentHeader="{{content.header}}"
+                        contentResults="{{content.results}}"
+                        contentColumns="{{content.columns}}"
+                        resultsVerticalPadding="{{content.resultsVerticalPadding}}"
+                />
+            </ws:if>
+            <ws:else>
+                <ws:partial
+                        template="treeControl"
+                        contentHeader="{{content.header}}"
+                        contentResults="{{content.results}}"
+                        contentColumns="{{content.columns}}"
+                        resultsVerticalPadding="{{content.resultsVerticalPadding}}"
+                />
+            </ws:else>
+        </ws:content>
+    </Controls._explorer.PathController>
+</Controls.dragnDrop:Container>
+<Controls.event:Listener event="scrollStateChanged" on:scrollStateChanged="_scrollStateChangedHandler()"/>
+<Controls.baseList:ScrollEmitter on:emitListScroll="_observeScrollHandler()" name="scrollObserver"/>
+</div>

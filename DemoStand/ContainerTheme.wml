@@ -1,0 +1,7 @@
+<Router.router:Route mask="theme/:theme">
+    <Page.theme:Wrapper activeTheme="{{ _convertTheme(content.theme) }}">
+        <ws:partial template="{{_options.content}}"
+                    attr:class="controls-Zoom"
+                    attr:style="zoom: {{_zoomValue}}"/>
+    </Page.theme:Wrapper>
+</Router.router:Route>

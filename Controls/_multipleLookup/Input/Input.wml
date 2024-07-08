@@ -1,0 +1,90 @@
+<ws:template name="baseLookupInputTemplate">
+  <Controls.lookup:BaseLookupInput scope="{{lookupOptions}}"
+                                   contrastBackground="{{_options.contrastBackground}}"
+                                   on:activated="_lookupActivated()"
+                                   on:selectedKeysChanged="_selectedKeysChanged(lookupOptions.name)"
+                                   on:valueChanged="_valueChanged(lookupOptions.name)"
+                                   on:itemClick="_proxyEvent('itemClick', lookupOptions.name)"
+                                   on:choose="_proxyEvent('choose', lookupOptions.name)"
+                                   on:itemsChanged="_itemsChanged(lookupOptions.name)"
+                                   on:showSelector="_showSelector(lookupOptions.name)"
+                                   on:toolbarItemClick="_proxyEvent('toolbarItemClick', lookupOptions.name)"
+                                   on:textValueChanged="_proxyEvent('textValueChanged', lookupOptions.name)"
+                                   on:selectorCallback="_proxyEvent('selectorCallback', lookupOptions.name)"
+                                   on:inputCompleted="_proxyEvent('inputCompleted', lookupOptions.name)"
+                                   on:suggestStateChanged="suggestStateChanged()"
+                                   showSelectButton="{{_options.showSelectButton !== false && _isLastLookup(_options.lookupsOptions, index)}}"
+                                   selectedKeys="{{_selectedKeys[lookupOptions.name]}}"
+                                   value="{{_value[lookupOptions.name]}}"
+                                   items="{{_items[lookupOptions.name]}}"
+                                   borderVisibility="hidden"
+                                   suggestTarget="{{_suggestTarget}}"
+                                   style="multipleInputNew"
+                                   attr:data-qa="{{lookupOptions['data-qa']}}"
+                                   attr:tabindex="{{_selectedKeys[lookupOptions.name].length ? 0 : index + 1}}"
+                                   attr:class="{{(_value[lookupOptions.name] || '').trim() && !_selectedKeys[lookupOptions.name].length ? 'controls-MultipleInputNew__lookup-absolute'}}">
+    <ws:placeholder>
+      <ws:if data="{{lookupOptions.placeholder}}">
+        <!-- name="{{null}}" нужно, т.к. если передаётся опция с названием name, то контрол/шаблон регистрируется в children-->
+        <ws:partial template="{{lookupOptions.placeholder}}" scope="{{lookupOptions}}" name="{{null}}"/>
+      </ws:if>
+    </ws:placeholder>
+    <ws:itemTemplate>
+      <ws:if data="{{lookupOptions.itemTemplate || _options.itemTemplate}}">
+        <!-- name="{{null}}" нужно, т.к. если передаётся опция с названием name, то контрол/шаблон регистрируется в children-->
+        <ws:partial template="{{lookupOptions.itemTemplate || _options.itemTemplate}}"
+                    scope="{{lookupOptions}}"
+                    name="{{null}}"/>
+      </ws:if>
+      <ws:else>
+        <ws:partial template="Controls/lookup:ItemTemplate"/>
+      </ws:else>
+    </ws:itemTemplate>
+  </Controls.lookup:BaseLookupInput>
+</ws:template>
+
+<div class="controls_lookup_theme-{{_options.theme}}
+            controls-text-default_theme-{{_options.theme}}
+            controls-MultipleInputNew
+            controls-text-default
+            controls-inlineheight-m
+            {{!_suggestState && _options.borderVisibility !== 'hidden' ? 'controls-MultipleInputNew_border' + (_options.readOnly ? '_readOnly')}}
+            {{_options.contrastBackground ? 'controls-MultipleInputNew_contrast'}}
+            {{_validationStatus ? ('controls-MultipleInputNew_' + _validationStatus)}}">
+  <ws:for data="index,lookupOptions in _options.lookupsOptions">
+    <div class="controls-MultipleInputNew__lookup
+                {{_isLastLookup(_options.lookupsOptions, index) ? 'controls-MultipleInputNew__lookup_last'}}
+                {{!_isLastLookup(_options.lookupsOptions ,index) && !(_value[lookupOptions.name] || '').trim() && !_selectedKeys[lookupOptions.name].length && !_lookupSizes[lookupOptions.name] ? 'controls-MultipleInputNew__lookup-withoutSize'}}
+                {{!_selectedKeys[lookupOptions.name].length && !(_value[lookupOptions.name] || '').trim() ? 'controls-MultipleInputNew__lookup-notSelected'}}
+                {{_selectedKeys[lookupOptions.name].length ? 'controls-MultipleInputNew__lookup-selected'}}
+                {{_needSetMaxWidth(lookupOptions, index) ? 'controls-MultipleInputNew__lookup_max-width'}}
+                {{_isInputWithoutSelect(lookupOptions) && !_isLastLookup(index) ? 'controls-MultipleInputNew__lookup_flex-shrink'}}"
+        style="width: {{!_isLastLookup(_options.lookupsOptions, index) && !(_value[lookupOptions.name] || '').trim() ? _lookupSizes[lookupOptions.name]}}px;
+               min-width:{{!(_value[lookupOptions.name] || '').trim() ? _lookupSizes[lookupOptions.name]}}px;"
+               data-qa="controls-MultipleInputNew__lookup">
+        <ws:if data="{{(_value[lookupOptions.name] || '').trim() && !_selectedKeys[lookupOptions.name].length}}">
+            <div class="controls-MultipleInputNew__fakeField controls-fontsize-{{lookupOptions.fontSize || 'm'}}  controls-fontweight-{{lookupOptions.fontWeight || 'default'}} {{_options.contrastBackground ? ' controls-MultipleInputNew__fakeField-contrast'}}">
+                <ws:if data="{{lookupOptions.leftFieldTemplate}}">
+                    <ws:partial template="{{lookupOptions.leftFieldTemplate}}" attr:ws-no-focus="true"/>
+                </ws:if>
+                <span class="controls-MultipleInputNew__fakeField_content" name="{{lookupOptions.name}}FakeField">
+                    {{_value[lookupOptions.name]}}
+                </span>
+            </div>
+        </ws:if>
+      <ws:if data="{{lookupOptions.validators}}">
+        <Controls.validate:SelectionContainer validators="{{lookupOptions.validators}}" validateOnFocusOut="{{false}}"  on:validateFinished="_changeValidationStatus()">
+          <ws:content>
+            <ws:partial template="baseLookupInputTemplate"/>
+          </ws:content>
+        </Controls.validate:SelectionContainer>
+      </ws:if>
+      <ws:else>
+        <ws:partial template="baseLookupInputTemplate"/>
+      </ws:else>
+    </div>
+    <ws:if data="{{_needShowSeparator(index, _options.lookupsOptions, _options.readOnly)}}">
+        <div class="controls-MultipleInputNew__separator {{_options.readOnly ? 'controls-MultipleInputNew__separator-readOnly'}}" data-qa="controls-MultipleInputNew__separator"></div>
+     </ws:if>
+  </ws:for>
+</div>

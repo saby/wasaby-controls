@@ -1,0 +1,10 @@
+<Controls.Container.Async templateName="Controls/themesExt:ZenWrapper">
+    <ws:partial template="{{content.resolvedTemplate}}"
+                dominantColor="{{ _dominant }}"
+                complementaryColor="{{ _complementary }}"
+                brightness="{{ __dominantTheme }}">
+        <div data-qa="zen-wrapped-control" style="width:200px; height: 300px; cursor: pointer">
+            Этот блок обёрнут в ZenWrapper
+        </div>
+    </ws:partial>
+</Controls.Container.Async>

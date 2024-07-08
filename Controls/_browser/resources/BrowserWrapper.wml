@@ -1,0 +1,10 @@
+<ws:if data="{{_options.dataStoreId}}">
+    <Controls.baseList:ListContainerConnectedCompatible scope="{{_options}}" storeId="{{_options.dataStoreId}}" isBrowser="{{true}}"/>
+</ws:if>
+<ws:else>
+    <Controls._browser.ContextResolver>
+        <Controls._browser.Browser
+            name="browser"
+            scope="{{_options}}"/>
+    </Controls._browser.ContextResolver>
+</ws:else>

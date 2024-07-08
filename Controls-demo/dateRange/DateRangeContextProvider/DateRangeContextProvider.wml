@@ -1,0 +1,54 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300">
+    <div class="controlsDemo__cell">
+        <Controls.date:ContextProvider attr:class="controlsDemo__flex controlsDemo-DateRangeContextProvider_default">
+            <div>
+                <Controls.date:ArrowButtonConsumer direction="left"/>
+                <Controls.dateRange:SelectorConsumer
+                        bind:startValue="_startValue1"
+                        bind:endValue="_endValue1"
+                />
+                <Controls.date:ArrowButtonConsumer direction="right"/>
+            </div>
+        </Controls.date:ContextProvider>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.date:ContextProvider attr:class="controlsDemo__flex controlsDemo-DateRangeContextProvider_left">
+            <div>
+                <Controls.date:ArrowButtonConsumer direction="left"/>
+                <Controls.date:ArrowButtonConsumer direction="right"/>
+                <Controls.date:SelectorConsumer
+                        bind:value="_startValue2"
+                        bind:endValue="_endValue2"
+                />
+            </div>
+        </Controls.date:ContextProvider>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.date:ContextProvider attr:class="controlsDemo__flex controlsDemo-DateRangeContextProvider_right">
+            <div>
+                <Controls.dateRange:SelectorConsumer
+                        datePopupType="shortDatePicker"
+                        bind:startValue="_startValue3"
+                        bind:endValue="_endValue3"
+                />
+                <Controls.date:ArrowButtonConsumer direction="left"/>
+                <Controls.date:ArrowButtonConsumer direction="right"/>
+            </div>
+        </Controls.date:ContextProvider>
+    </div>
+    <div class="controlsDemo__cell">
+        <span class="controls-text-label">Смена ширины периода с помощь утилиты getQuantByRange</span>
+        <Controls.date:ContextProvider attr:class="controls-DateRangeSelector__quant-{{ _quant }} controlsDemo__flex controlsDemo-DateRangeContextProvider_default">
+            <div>
+                <Controls.dateRange:SelectorConsumer
+                        attr:class="ws-flex-grow-1"
+                        bind:startValue="_startValue4"
+                        bind:endValue="_endValue4"
+                        on:rangeChanged="_rangeChangedHandler()"
+                />
+                <Controls.date:ArrowButtonConsumer direction="left"/>
+                <Controls.date:ArrowButtonConsumer direction="right" attr:class="controls-margin_left-m"/>
+            </div>
+        </Controls.date:ContextProvider>
+    </div>
+</div>

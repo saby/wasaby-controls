@@ -1,0 +1,16 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper">
+      <Controls.menu:Control
+              items="{{_items}}"
+              keyProperty="key"
+              displayProperty="title"
+              groupProperty="group">
+         <ws:groupTemplate>
+            <ws:partial template="Controls/menu:GroupTemplate"
+                        showText="{{true}}"
+                        textAlign="left"
+            />
+         </ws:groupTemplate>
+      </Controls.menu:Control>
+   </div>
+</div>

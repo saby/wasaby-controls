@@ -1,0 +1,30 @@
+<Controls.editableArea:View
+        editingObject="{{item}}"
+        readOnly="{{!selected}}"
+        backgroundStyle="withoutBorder"
+>
+    <div class="ControlsDemo-EditableArea__eapWrapper tw-cursor-pointer">
+        <div class="ControlsDemo-EditableArea__header">{{item[displayProperty]}}</div>
+        <div class="controls-Tabs__content_text">
+            <Controls.editableArea:Base
+                    bind:value="content.editingObject.date"
+                    attr:class="ControlsDemo-EditableArea__date ControlsDemo-EditableArea__tabEditor"
+            >
+                <ws:editorTemplate>
+                    <Controls.input:Text contrastBackground="{{true}}" selectOnClick="{{ false }}"
+                                         attr:class="ControlsDemo-EditableArea__input controls-Input_negativeOffset"/>
+                </ws:editorTemplate>
+            </Controls.editableArea:Base>
+        </div>
+        <span class="controls-Tabs__content_additionaltext">№</span>
+        <Controls.editableArea:Base
+                bind:value="content.editingObject.number"
+                attr:class="controls-Tabs__content_additionaltext ControlsDemo-EditableArea__number ControlsDemo-EditableArea__tabEditor"
+        >
+            <ws:editorTemplate>
+                <Controls.input:Text contrastBackground="{{true}}" selectOnClick="{{ false }}"
+                                     attr:class="ControlsDemo-EditableArea__input controls-Input_negativeOffset"/>
+            </ws:editorTemplate>
+        </Controls.editableArea:Base>
+    </div>
+</Controls.editableArea:View>

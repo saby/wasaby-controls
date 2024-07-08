@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__ml2 demo-ComboboxBorderVisibility__visible">
+        <div class="controls-text-label">additionalProperty="add"</div>
+        <Controls.ComboBox source="{{_source}}"
+                                    displayProperty="title"
+                                    keyProperty="key"
+                                    additionalProperty="add"
+                                    bind:selectedKey="_selectedKey"/>
+    </div>
+</div>

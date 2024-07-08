@@ -1,0 +1,10 @@
+<div class="controls-padding-m controlsDemo__flexRow">
+    <div>
+        <div class="controls-text-label">alignment="left"</div>
+        <Controls-ListEnv.filterConnected:View storeId="booleanData" filterNames="{{ ['booleanEditor'] }}" alignment="left"/>
+    </div>
+    <div class="listEnv-demo__padding-left">
+        <div class="controls-text-label">alignment="right"</div>
+        <Controls-ListEnv.filterConnected:View storeId="booleanData" filterNames="{{ ['booleanEditor'] }}" alignment="right"/>
+    </div>
+</div>

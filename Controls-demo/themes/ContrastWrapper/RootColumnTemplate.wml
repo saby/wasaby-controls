@@ -1,0 +1,31 @@
+<ws:partial template="Controls/grid:ColumnTemplate" scope="{{ _options }}">
+    <ws:contentTemplate>
+        <div class="controlsDemo_fixedWidth500 ws-flex-column">
+            <div>
+                {{ contentTemplate.item.contents.get('title') }}
+            </div>
+			<Controls.scroll:Container>
+				<Controls.grid:View
+					keyProperty="key"
+					backgroundStyle="contrast"
+					source="{{ nestedSource }}"
+					itemActions="{{ itemActions }}"
+					stickyHeader="{{ true }}"
+					resultsPosition="top"
+					dataLoadCallback="{{ dataLoadCallback }}"
+					header="{{ header }}"
+					itemActionsPosition="outside"
+					columns="{{ nestedColumns }}"
+					columnScroll="{{ true }}"
+					stickyColumnsCount="{{ 2 }}">
+					<ws:editingConfig editOnClick="{{ true }}" toolbarVisibility="{{ true }}"/>
+					<ws:footerTemplate>
+						<ws:partial template="Controls/grid:FooterTemplate">
+							<div class="controlsDemo__footer__FooterTemplate__content">Контент подвала таблицы</div>
+						</ws:partial>
+					</ws:footerTemplate>
+				</Controls.grid:View>
+			</Controls.scroll:Container>
+        </div>
+    </ws:contentTemplate>
+</ws:partial>

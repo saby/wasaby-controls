@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__mr4 controlsDemo__ml2">
+        <Controls.ComboBox items="{{_items}}"
+                                    displayProperty="title"
+                                    keyProperty="key"
+                                    bind:selectedKey="_selectedKey"/>
+    </div>
+</div>

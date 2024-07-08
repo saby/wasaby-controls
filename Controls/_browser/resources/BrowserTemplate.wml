@@ -1,0 +1,75 @@
+<ws:template name="browser">
+  <ws:partial
+      template="{{_options.content}}"
+      scope="{{_options}}"
+      viewMode="{{_viewMode}}"
+      selectionViewMode="{{_selectionViewMode}}"
+      itemOpenHandler="{{ _itemOpenHandler }}"
+      selectedKeysCount="{{ _selectedKeysCount }}"
+      showSelectedCount="{{ _showSelectedCount }}"
+      listCommandsSelection="{{ _listCommandsSelection }}"
+      selectionTypeForAllSelected="{{_selectionType}}"
+      isAllSelected="{{ _isAllSelected }}"
+      listMarkedKey="{{ _listMarkedKey }}"
+      dataLoadCallback="{{_dataLoadCallback}}"
+      deepReload="{{_deepReload || _options.deepReload}}"
+      searchParam="{{null}}"
+      searchValue="{{_returnedOnlyByMisspellValue ? _misspellValue : _searchValue}}"
+      groupHistoryId="{{_groupHistoryId}}"
+      inputSearchValue="{{_inputSearchValue}}"
+      misspellValue="{{_misspellValue}}"
+      loading="{{!_options.listsOptions ?  (_loading || _options.loading)}}"
+      items="{{_items}}"
+      filterButtonItems="{{_filterButtonItems}}"
+      fastFilterItems="{{_fastFilterItems}}"
+      topShadowVisibility="{{_topShadowVisibility}}"
+      bottomShadowVisibility="{{_bottomShadowVisibility}}"
+      multiSelectVisibility="{{_multiSelectVisibility}}"
+      filter="{{_contextState.filter}}"
+      navigation="{{_contextState.navigation}}"
+      sorting="{{_contextState.sorting}}"
+      source="{{_contextState.source}}"
+      root="{{_options.searchNavigationMode === 'expand' ? undefined : _contextState.root}}"
+      columns="{{_columns}}"
+      header="{{_header}}"
+      on:filterChanged="_filterChanged()"
+      on:rootChanged="_rootChanged()"
+      on:breadCrumbsItemClick="_breadCrumbsItemClick()"
+      on:dataError="_onDataError()"
+      on:listSelectedKeysChanged="_selectedKeysChanged()"
+      on:listExcludedKeysChanged="_excludedKeysChanged()"
+      on:listSelectedKeysCountChanged="_selectedKeysCountChanged()"
+      on:listSelectionTypeForAllSelectedChanged="_listSelectionTypeForAllSelectedChanged()"
+      on:markedKeyChanged="_markedKeyChangedHandler()"
+      on:selectedTypeChanged="_selectedTypeChangedHandler()"
+      on:listMarkedKeyChanged="_listMarkedKeyChangedHandler()"
+      on:listRootChanged="_rootChanged()"
+      on:listBeforeRootChanged="_beforeRootChanged()"
+      on:operationsPanelOpen="_operationsPanelOpen()"
+      on:operationsPanelClose="_operationsPanelClose()"
+      on:register="_registerHandler()"
+      on:unregister="_unregisterHandler()"
+      on:search="_search()"
+      on:searchReset="_searchResetHandler()"
+      on:listExpandedItemsChanged="_notifyHandler('expandedItemsChanged')"
+      on:listCollapsedItemsChanged="_notifyHandler('collapsedItemsChanged')"
+      on:listSortingChanged="_notifyHandler('sortingChanged')"
+      on:misspellCaptionClick="_misspellCaptionClick()"
+      on:filterItemsChanged="_filterItemsChanged()"
+      on:filterHistoryApply="_filterHistoryApply()"
+      on:inputSearchValueChanged="_inputSearchValueChanged()"
+      on:onCallListAction="_onCallListAction()"
+  />
+</ws:template>
+
+<ws:if data="{{_options.listsOptions.length}}">
+  <Controls.context:ContextOptionsProvider value="{{ _contextState }}"
+                                           changedCallback="{{_options.updateDataLoaderOnContextChanged && _contextChangedCallback}}">
+    <ws:partial template="browser"/>
+  </Controls.context:ContextOptionsProvider>
+</ws:if>
+<ws:else>
+  <Controls.context:DataContextCompatibleProvider value="{{_contextState}}">
+    <ws:partial template="browser"/>
+  </Controls.context:DataContextCompatibleProvider>
+</ws:else>

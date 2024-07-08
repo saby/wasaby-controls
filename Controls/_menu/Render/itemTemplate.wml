@@ -1,0 +1,109 @@
+<ws:template name="markerTemplate">
+  <ws:if data="{{_options.menuMode !== 'selector' && marker !== false && (!_options.multiSelect && !_options.multiSelect || _options.isSingleSelectionItem || _options.isFixedItem)}}">
+    <div class="controls-Menu__row_selected">
+      <ws:partial template="wml!Controls/_menu/Render/RadioCircle"
+                  selected="{{item.isMarked ? item.isMarked() : item.isSelected()}}"/>
+    </div>
+  </ws:if>
+</ws:template>
+
+<ws:template name="selectionTemplate">
+    <ws:if data="{{_options.multiSelectTemplate && _options.multiSelectPosition !== 'custom' && !_options.isFixedItem && !_options.isSingleSelectionItem}}">
+        <ws:if data="{{_options.menuMode === 'selector' && _options.multiSelect}}">
+            <Controls._menu.Render.MultiSelectPlusTemplate item="{{item}}" menuMode="{{_options.menuMode}}" />
+        </ws:if>
+        <ws:else>
+            <ws:partial template="{{ _options.multiSelectTemplate }}" attr:class="controls-TreeMenu__row-checkbox-left"/>
+        </ws:else>
+    </ws:if>
+    <ws:if data="{{_options.markerPosition !== 'right'}}">
+        <ws:partial template="markerTemplate" item="{{item}}"/>
+    </ws:if>
+</ws:template>
+
+<ws:template name="contentTemplate">
+    <div class="ws-flexbox {{additionalTextTemplate ? 'controls-Menu__row-additionalTextTemplate' : 'ws-align-items-center'}} tw-h-full
+                {{_options.menuMode === 'selector' && _options.multiSelect ? 'controls-Menu__row-reverse' : ''}}">
+        <ws:partial template="selectionTemplate"
+                    multiSelectTemplate="{{multiSelectTemplate}}"
+                    item="{{item}}"
+                    attr:class="{{_options.multiLine ? 'controls-Menu__row_selected-multiLine'}}
+                          {{additionalTextTemplate ? 'controls-Menu__row_selected_padding' : (_options.menuMode !== 'selector' ? 'controls-Menu__row_selected_align' : '')}}"
+        />
+        <ws:if data="{{item.getLevel && item.getLevel() > 1 && _options.menuMode !== 'selector'}}">
+            <ws:if data="{{_options.viewMode !== 'list' && item.searchValue}}">
+                <div class="controls-Menu__row_levelPadding_xl"></div>
+            </ws:if>
+            <ws:else>
+                <ws:for data="i in item.getLevel() - 1">
+                    <div class="controls-Menu__row_levelPadding_xl"></div>
+                </ws:for>
+            </ws:else>
+        </ws:if>
+        <ws:else data="{{_options.levelPadding}}">
+            <div class="controls-Menu__row_levelPadding_{{_options.levelPadding}}"></div>
+        </ws:else>
+        <ws:partial template="wml!Controls/_menu/Render/contentTemplate"
+                    iconStyle="{{iconStyle}}"
+                    treeItem="{{item}}"
+                    item="{{item.getContents()}}"
+                    itemData="{{_options.itemData}}"
+                    iconPadding="{{_options.iconPadding}}"
+                    displayProperty="{{_options.displayProperty}}"
+                    searchValue="{{item.searchValue}}"
+                    isSingleSelectionItem="{{_options.isSingleSelectionItem}}"
+                    multiLine="{{multiLine}}"
+                    itemAlign="{{itemAlign}}"
+                    contentTemplate="{{contentTemplate}}"
+                    expanderTemplate="{{contentTemplate.expanderTemplate || expanderTemplate}}"
+                    additionalTextTemplate="{{additionalTextTemplate}}"
+                    attr:class="{{rightTemplate || (_options.hierarchyViewMode !== 'tree' || !_options.subMenuLevel) && !_options.useListRender ? 'tw-w-full'}}
+                                   {{additionalTextTemplate ? 'controls-Menu__content_padding'}}"
+                    attr:style="width: {{_options.roundBorder !== false && _options.width ?
+                    'calc(' + _options.width + 'px - var(--combobox_item_content_padding)'}};
+                         max-width: {{_options.roundBorder !== false && _options.width ?
+                          'calc(' + _options.width + 'px - var(--combobox_item_content_padding))'}}"
+        />
+        <ws:if data="{{item.getContents().get(_options.nodeProperty) && (_options.viewMode !== 'list' || !_options.searchValue) && _options.menuMode !== 'selector'}}">
+            <ws:if data="{{_options.hierarchyViewMode === 'tree' && _options.subMenuLevel || _options.useListRender}}">
+                <ws:partial template="{{ contentTemplate.expanderTemplate || expanderTemplate }}"
+                            class="{{_options.menuMode !== 'selector' ? 'controls-padding_left-xs'}}" />
+            </ws:if>
+            <ws:else>
+                <ws:partial template="wml!Controls/_menu/Render/expanderTemplate"
+                            attr:class="{{additionalTextTemplate ? 'controls-Menu__arrow_padding' : 'controls-Menu__arrow_align'}}"
+                            scope="{{_options}}"/>
+            </ws:else>
+        </ws:if>
+        <ws:else data="{{rightTemplate}}">
+            <div class="controls-Menu__row__rightTemplate_separator"></div>
+            <div class="controls-Menu__row__rightTemplate_wrapper">
+                <ws:partial template="{{rightTemplate}}" scope="{{_options}}" item="{{item.getContents()}}"/>
+            </div>
+        </ws:else>
+        <ws:if data="{{itemActionsTemplate && item.shouldDisplayItemActions() && !item.isNode()}}">
+            <ws:partial template="{{itemActionsTemplate}}"
+                        itemActionsClass="controls-Menu__itemActions_position_rightBottom"
+                        itemActionsBackgroundStyle="menu-default" />
+        </ws:if>
+        <ws:if data="{{_options.markerPosition === 'right'}}">
+          <ws:partial template="markerTemplate"
+                      item="{{item}}"
+                      attr:class="controls-padding_left-st
+                                {{additionalTextTemplate ? 'controls-Menu__row_selected_padding' : (_options.menuMode !== 'selector' ? 'controls-Menu__row_selected_align' : '')}}"/>
+        </ws:if>
+    </div>
+</ws:template>
+
+<ws:partial template="contentTemplate"
+            attr:data-qa="item"
+            attr:class="controls-Menu__row_overflow
+                        controls-Menu__row
+                        tw-h-full
+                        {{_options.viewMode !== 'list' ? 'tw-w-full' : '' }}
+                        controls-Menu__row_{{multiLine ? 'multiLine' : 'singleLine'}}
+                        {{rightTemplate ? 'controls-Menu__row-rightPadding_menu-rightTemplate'}}
+                        {{rightTemplate || (_options.hierarchyViewMode !== 'tree' || !_options.subMenuLevel) && !_options.useListRender ? 'controls-Menu__row-width-full'}}
+                        {{roundBorder !== false && (!_options.isAdaptive || _options.allowAdaptive === false) ? 'controls-Menu__row_roundBorder'}}
+                        {{_options.itemClassList}}"
+/>
