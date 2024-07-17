@@ -1,0 +1,34 @@
+<div class="controlsDemo__wrapper__padding-left controlsDemo_fixedWidth800 controlsDemo__height500">
+    <div class="controlsDemo_ColumnsView_itemTemplate-title controlsDemo__cell">Controls.tabs:AccordionTabs</div>
+    <div class="controls-margin_bottom-m">maxHeaderWidth="225"</div>
+<Controls-TabsLayout.colored:View
+            name="coloredTabs"
+            class="controlsDemo__height500"
+            maxHeaderWidth="{{225}}"
+            bind:selectedKey="_selectedKey">
+                <ws:items>
+                    <ws:Array>
+                        <ws:Object key="1" title="Кастомная вкладка" backgroundStyle="primary">
+                            <ws:itemTemplate>
+                                <div>Контент вкладки "Просрочено"</div>
+                            </ws:itemTemplate>
+                        </ws:Object>
+                        <ws:Object key="2" title="Сделать" backgroundStyle="link">
+                            <ws:itemTemplate>
+                                <div>Контент вкладки "Сделать"</div>
+                            </ws:itemTemplate>
+                        </ws:Object>
+                        <ws:Object key="3" title="Выполнено" backgroundStyle="success">
+                            <ws:itemTemplate>
+                                <div>Контент вкладки "Выполнено"</div>
+                            </ws:itemTemplate>
+                        </ws:Object>
+                        <ws:Object key="4" title="Длинная вкладка для выравнивания" backgroundStyle="warning">
+                            <ws:itemTemplate>
+                                <div>Контент вкладки "Сегодня"</div>
+                            </ws:itemTemplate>
+                        </ws:Object>
+                    </ws:Array>
+                </ws:items>
+    </Controls-TabsLayout.colored:View>
+</div>

@@ -1,0 +1,11 @@
+<ws:partial template="Controls-Wizard/vertical:ItemTemplate" scope="{{ _options }}">
+    <ws:completedStepTemplate>
+        Здесь располагается контент для пройденных шагов
+    </ws:completedStepTemplate>
+    <ws:activeStepTemplate>
+        Здесь располагается контент для текущего шага
+    </ws:activeStepTemplate>
+    <ws:futureStepTemplate>
+        Здесь располагается контент для непройденных шагов
+    </ws:futureStepTemplate>
+</ws:partial>

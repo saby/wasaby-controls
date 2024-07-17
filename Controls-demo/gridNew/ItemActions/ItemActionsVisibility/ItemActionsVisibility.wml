@@ -1,0 +1,21 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/gridNew/ItemActions/ItemActionsVisibility/Delayed/Index' }}">
+            <a href="{{content.href}}">С задержкой отображения</a>
+        </Router.router:Reference>
+        <Controls-demo.gridNew.ItemActions.ItemActionsVisibility.Delayed.Index/>
+    </div>
+
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/gridNew/ItemActions/ItemActionsVisibility/Visible/Index' }}">
+            <a href="{{content.href}}">Видимы всегда</a>
+        </Router.router:Reference>
+        <Controls-demo.gridNew.ItemActions.ItemActionsVisibility.Visible.Index/>
+    </div>
+
+</div>

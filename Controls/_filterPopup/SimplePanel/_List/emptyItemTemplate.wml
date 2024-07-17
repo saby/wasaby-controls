@@ -1,0 +1,7 @@
+<ws:partial template="Controls/dropdown:ItemTemplate"
+           scope="{{_options}}"
+           multiSelect="{{false}}"
+           attr:data-qa="SimplePanel-dropdown__emptyItem"
+           attr:class="controls-SimplePanel-dropdown__emptyItem_content controls-SimplePanel-dropdown__emptyItem {{_options.emptyItemFontWeight === 'bold' ? 'controls-SimplePanel-dropdown__emptyItem_font-weight'}}"
+/>
+

@@ -1,0 +1,11 @@
+<div class="ws-flexbox">
+    <div class="controlsDemo__wrapper">
+        <div class="controlsDemo__cell controlsDemo_fixedWidth500">
+            <div class="controls-text-label">Dark</div>
+            <Controls.themes:Wrapper variables="{{_variables}}">
+                <ws:partial template="wml!Controls-demo/themes/Wrapper/resources/themedContent" />
+            </Controls.themes:Wrapper>
+        </div>
+    </div>
+
+</div>

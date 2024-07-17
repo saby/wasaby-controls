@@ -1,0 +1,39 @@
+// Защита, на случай, если в value передадут пустую строку и ширины для редактирования не будет.
+// Значение 5px подобрано. Должно хватить чтобы активировать редактирование и не сломать прикладную верстку.
+@min-width_EditableArea-wrapper: 5px;
+
+.controls-EditableArea__Text {
+   flex-shrink: 1;
+   display: inline-flex;
+   width: 100%;
+   box-sizing: border-box;
+}
+
+.controls-EditableArea__Text__wrapper {
+   width: 100%;
+   height: 100%;
+   display: inline-flex;
+   align-items: baseline;
+}
+
+.controls-EditableArea__Text__baseline {
+   height: 100%;
+   display: flex;
+   user-select: none;
+   align-items: center;
+}
+
+.controls-EditableArea__editorWrapper {
+   min-width: 0;
+   display: flex;
+   flex-grow: 1;
+}
+
+.controls-EditableArea__Text__inner {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: pre;
+   width: 100%;
+   display: inline-block;
+   min-width: @min-width_EditableArea-wrapper;
+}

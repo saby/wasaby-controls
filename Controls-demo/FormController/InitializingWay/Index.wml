@@ -1,0 +1,15 @@
+<div class="cotnrolsDemo-formInitializingWay">
+    <Controls.heading:Title caption="Initializing way demo" />
+    <div class="cotnrolsDemo-formInitializingWay-input">
+        <Controls.input:Label caption="initializingWay: " />
+        <Controls.dropdown:Selector bind:selectedKeys="_initializingWay" source="{{_initializingWaySource}}" keyProperty="key" displayProperty="key" />
+    </div>
+    <Controls.grid:View on:itemClick="_openStack()" keyProperty="key" source="{{_source}}">
+        <ws:columns>
+            <ws:Array>
+                <ws:Object displayProperty="regulation" />
+                <ws:Object displayProperty="milestone" />
+            </ws:Array>
+        </ws:columns>
+    </Controls.grid:View>
+</div>

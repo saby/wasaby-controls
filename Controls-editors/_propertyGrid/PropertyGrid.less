@@ -1,0 +1,60 @@
+.controls_PropertyGrid_objectEditorGrid {
+   overflow-y: hidden;
+   overflow-x: hidden;
+   display: grid;
+   grid-template-columns: auto minmax(0, auto) minmax(50%, 1fr);
+   grid-row-gap: var(--offset_s);
+   align-items: baseline;
+}
+
+.controls_PropertyGrid__separator {
+   width: 100%;
+   height: 1px;
+   background-color: var(--border-color);
+   margin: var(--offset_2xs) 0;
+   grid-column: ~'1 / 4';
+
+   &:first-child {
+      display: none;
+   }
+}
+
+.controls_PropertyGrid__title {
+   grid-column: ~'1 / 4';
+   font-size: var(--font-size_xs);
+   color: var(--text-color);
+   text-transform: uppercase;
+   font-weight: var(--font-weight_heading);
+}
+
+.controls_PropertyGrid__editor_layout {
+   display: contents;
+}
+
+.controls_PropertyGrid__editor_layout__title {
+   grid-column-start: 2;
+   display: flex;
+   align-items: baseline;
+
+   &-top,
+   &-float {
+      grid-column-end: 3;
+   }
+}
+
+.controls_PropertyGrid__editor_layout__label {
+   max-width: 100%;
+   min-width: 1px;
+}
+
+.controls_PropertyGrid__editor_layout__editor {
+   grid-column-start: 3;
+   grid-column-end: 4;
+   min-width: 0;
+   align-self: baseline;
+
+   &-title-top,
+   &:first-child {
+      grid-column-start: 2;
+   }
+}

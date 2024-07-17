@@ -1,0 +1,156 @@
+.controls-PeriodDialog-Years {
+   display: flex;
+   flex-direction: row;
+   flex-shrink: 0;
+   align-items: center;
+   height: var(--yearnav_height_datePicker);
+}
+
+.controls-PeriodDialog-Years__prevNextBtn {
+   display: flex;
+   justify-content: center;
+   width: var(--yearnav_arrow_width_datePicker);
+}
+
+.controls-PeriodDialog-Years__prevNextBtn_icon {
+   cursor: pointer;
+   color: var(--secondary_icon-color);
+}
+
+.controls-PeriodDialog-Years__prevNextBtn_icon_readOnly {
+   color: var(--readonly_icon-color);
+}
+
+.ws-is-hover {
+   .controls-PeriodDialog-Years__prevNextBtn_icon:hover {
+      color: var(--secondary_hover_icon-color);
+   }
+}
+
+.controls-PeriodDialog-Years__prevNextBtn_icon_focus:focus {
+   color: var(--secondary_hover_icon-color);
+}
+
+.controls-PeriodDialog-Years__yearsRange {
+   display: flex;
+   margin: 0 var(--offset_xs);
+   width: 100%;
+}
+
+.controls-PeriodDialog-Years__rangeBtn {
+   cursor: pointer;
+   text-align: center;
+   position: relative;
+   flex-basis: 0;
+   flex-grow: 1;
+   border-bottom: var(--border-thickness) solid transparent;
+   border-top: var(--border-thickness) solid transparent;
+   height: var(--yearnav_item_height_datePicker);
+   line-height: var(--yearnav_item_height_datePicker);
+   font-size: var(--font-size_l);
+   color: var(--unaccented_text-color);
+}
+
+.controls-PeriodDialog-Years__item-displayed {
+   font-weight: var(--font-weight-bold);
+   color: var(--primary_text-color);
+}
+
+.controls-PeriodDialog__year__selected {
+   border-top: var(--border-thickness) solid var(--unaccented_hover_border-color);
+   border-bottom: var(--border-thickness) solid var(--unaccented_hover_border-color);
+   background: var(--background-color);
+}
+
+.controls-PeriodDialog__year__selected-start {
+   margin-left: calc(-1 * var(--border-thickness));
+   border-left: var(--border-thickness) solid var(--unaccented_hover_border-color);
+   border-top-left-radius: var(--border-radius_m);
+   border-bottom-left-radius: var(--border-radius_m);
+}
+
+.controls-PeriodDialog__year__selected-end {
+   margin-right: calc(-1 * var(--border-thickness));
+   border-right: var(--border-thickness) solid var(--unaccented_hover_border-color);
+   border-top-right-radius: var(--border-radius_m);
+   border-bottom-right-radius: var(--border-radius_m);
+}
+
+.controls-PeriodDialog__year__selected-start,
+.controls-PeriodDialog__year__selected-end {
+   background: var(--background-color_stack);
+   border-top: var(--border-thickness) solid var(--unaccented_hover_border-color);
+   border-bottom: var(--border-thickness) solid var(--unaccented_hover_border-color);
+}
+
+.controls-PeriodDialog__year__selected-startEnd {
+   margin: 0 calc(-1 * var(--border-thickness));
+   border-radius: var(--border-radius_m);
+   background: var(--background-color);
+   border: var(--border-thickness) solid var(--unaccented_hover_border-color);
+}
+
+.controls-PeriodDialog__year_hovered {
+   margin: 0 calc(-1 * var(--border-thickness));
+   border-radius: var(--border-radius_m);
+   border: var(--border-thickness) solid var(--unaccented_hover_border-color);
+}
+
+.controls-PeriodDialog-Years__rangeBtn_selected__container {
+   position: absolute;
+   width: var(--yearnav_item_height_datePicker);
+   height: var(--yearnav_item_height_datePicker);
+   overflow: hidden;
+   border-radius: var(--border-radius_xs);
+}
+
+.controls-PeriodDialog-Years__rangeBtn_selected__container-start {
+   top: -1px;
+   left: -1px;
+}
+
+.controls-PeriodDialog-Years__rangeBtn_selected__container-end {
+   bottom: -1px;
+   right: -1px;
+}
+
+.controls-PeriodDialog-Years__rangeBtn_selected {
+   width: var(--yearnav_item_height_datePicker);
+   height: var(--yearnav_item_height_datePicker);
+}
+
+.controls-PeriodDialog-Years__rangeBtn_selected-start {
+   box-shadow: calc(-1 * var(--yearnav_item_height_datePicker) / 2) 0 0 var(--item_selected_color);
+   border-top-left-radius: 45%;
+}
+
+.controls-PeriodDialog-Years__rangeBtn_selected-end {
+   box-shadow: calc(var(--yearnav_item_height_datePicker) / 2) 0 0 var(--item_selected_color);
+   border-bottom-right-radius: 45%;
+}
+
+.controls-PeriodDialog-Years__yearsRange__button-right {
+   margin-right: var(--yearsRange_button_offset_datePicker);
+
+   --container_border-radius_button_local: var(
+      --yearnav_yearsRange-button_border-radius_datePicker
+   );
+}
+
+.controls-PeriodDialog-Years__yearsRange__button-left {
+   margin-left: var(--yearsRange_button_offset_datePicker);
+
+   --container_border-radius_button_local: var(
+      --yearnav_yearsRange-button_border-radius_datePicker
+   );
+}
+
+.controls-PeriodDialog_isAdaptive {
+   .controls-PeriodDialog-Years__rangeBtn {
+      font-size: var(--font-size_2xl);
+   }
+}
+
+.controls-PeriodDialog__closeButton .controls-CloseButton__close_toolButton_offset {
+   margin-right: var(--header_close-button_right-offset_datePicker);
+}

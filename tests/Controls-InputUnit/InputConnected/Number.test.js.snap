@@ -1,0 +1,895 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls-Input/InputConnected:Number IntegersLength 1`] = `
+<div>
+  <div
+    class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center"
+  >
+    <div
+      class="controlsDemo__wrapper controlsDemo__flex"
+    >
+      <div
+        class="controlsDemo__wrapper controlsDemo_fixedWidth400 tw-flex tw-flex-col"
+      >
+        <div
+          class="tw-flex controls-max-w-full tw-flex-col undefined controls-Input-connected_filled"
+        >
+          <a
+            class="controls-Label controls-Label_underline_none tw-min-w-0 controls-Label_verticalPosition"
+          >
+            <div
+              class="controls-Label__wrapper"
+            >
+              <div
+                class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+              >
+                integersLength = 2
+              </div>
+              
+            </div>
+          </a>
+          <div
+            class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default controls-Render_state-valid_caretFilled controls-inlineheight-m controls-Render-inlineheight-m  controls-Number controls_Number_theme-default"
+            data-qa="Controls-Input-demo_InputConnected_Number_IntegersLength__2"
+            tabindex="0"
+          >
+            <div
+              class="controls-Render__wrapper"
+            >
+              <span
+                class="controls-Render__baseline"
+              >
+                ﻿
+              </span>
+              <div
+                class="controls-InputBase__field controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+                data-qa="controls-Render__field"
+              >
+                <input
+                  autocapitalize="off"
+                  autocomplete="off"
+                  autocorrect="off"
+                  class="controls-Field js-controls-Field controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default"
+                  inputmode="decimal"
+                  name="ws-input_1996-06-20"
+                  spellcheck="true"
+                  tabindex="0"
+                  type="text"
+                  value="22"
+                />
+                <div
+                  class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+                >
+                  <div
+                    class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                  >
+                    Укажите число
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tw-flex controls-max-w-full tw-flex-col undefined "
+        >
+          <a
+            class="controls-Label controls-Label_underline_none tw-min-w-0 controls-Label_verticalPosition"
+          >
+            <div
+              class="controls-Label__wrapper"
+            >
+              <div
+                class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+              >
+                integersLength is empty
+              </div>
+              
+            </div>
+          </a>
+          <div
+            class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default controls-Render_state-valid_caretFilled controls-inlineheight-m controls-Render-inlineheight-m  controls-Number controls_Number_theme-default"
+            data-qa="Controls-Input-demo_InputConnected_Number_IntegersLength__empty"
+            tabindex="0"
+          >
+            <div
+              class="controls-Render__wrapper"
+            >
+              <span
+                class="controls-Render__baseline"
+              >
+                ﻿
+              </span>
+              <div
+                class="controls-InputBase__field controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+                data-qa="controls-Render__field"
+              >
+                <input
+                  autocapitalize="off"
+                  autocomplete="off"
+                  autocorrect="off"
+                  class="controls-Field js-controls-Field controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default"
+                  inputmode="decimal"
+                  name="ws-input_1996-06-20"
+                  spellcheck="true"
+                  tabindex="0"
+                  type="text"
+                  value=""
+                />
+                <div
+                  class="controls-InputBase__placeholder controls-InputBase__placeholder_displayed-under-caret"
+                >
+                  <div
+                    class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                  >
+                    Укажите число
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls-Input/InputConnected:Number OnlyPositive 1`] = `
+<div>
+  <div
+    class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center"
+  >
+    <div
+      class="controlsDemo__wrapper controlsDemo__flex"
+    >
+      <div
+        class="controlsDemo__wrapper controlsDemo_fixedWidth400 tw-flex tw-flex-col"
+      >
+        <div
+          class="tw-flex controls-max-w-full tw-flex-col undefined controls-Input-connected_filled"
+        >
+          <a
+            class="controls-Label controls-Label_underline_none tw-min-w-0 controls-Label_verticalPosition"
+          >
+            <div
+              class="controls-Label__wrapper"
+            >
+              <div
+                class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+              >
+                onlyPositive = false
+              </div>
+              
+            </div>
+          </a>
+          <div
+            class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default controls-Render_state-valid_caretFilled controls-inlineheight-m controls-Render-inlineheight-m  controls-Number controls_Number_theme-default"
+            data-qa="Controls-Input-demo_InputConnected_Number_OnlyPositive__false"
+            tabindex="0"
+          >
+            <div
+              class="controls-Render__wrapper"
+            >
+              <span
+                class="controls-Render__baseline"
+              >
+                ﻿
+              </span>
+              <div
+                class="controls-InputBase__field controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+                data-qa="controls-Render__field"
+              >
+                <input
+                  autocapitalize="off"
+                  autocomplete="off"
+                  autocorrect="off"
+                  class="controls-Field js-controls-Field controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default"
+                  inputmode="decimal"
+                  name="ws-input_1996-06-20"
+                  spellcheck="true"
+                  tabindex="0"
+                  type="text"
+                  value="22"
+                />
+                <div
+                  class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+                >
+                  <div
+                    class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                  >
+                    Укажите число
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tw-flex controls-max-w-full tw-flex-col undefined controls-Input-connected_filled"
+        >
+          <a
+            class="controls-Label controls-Label_underline_none tw-min-w-0 controls-Label_verticalPosition"
+          >
+            <div
+              class="controls-Label__wrapper"
+            >
+              <div
+                class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+              >
+                onlyPositive = true
+              </div>
+              
+            </div>
+          </a>
+          <div
+            class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default controls-Render_state-valid_caretFilled controls-inlineheight-m controls-Render-inlineheight-m  controls-Number controls_Number_theme-default"
+            data-qa="Controls-Input-demo_InputConnected_Number_OnlyPositive__true"
+            tabindex="0"
+          >
+            <div
+              class="controls-Render__wrapper"
+            >
+              <span
+                class="controls-Render__baseline"
+              >
+                ﻿
+              </span>
+              <div
+                class="controls-InputBase__field controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+                data-qa="controls-Render__field"
+              >
+                <input
+                  autocapitalize="off"
+                  autocomplete="off"
+                  autocorrect="off"
+                  class="controls-Field js-controls-Field controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default"
+                  inputmode="decimal"
+                  name="ws-input_1996-06-20"
+                  spellcheck="true"
+                  tabindex="0"
+                  type="text"
+                  value="22"
+                />
+                <div
+                  class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+                >
+                  <div
+                    class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                  >
+                    Укажите число
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls-Input/InputConnected:Number Precision 1`] = `
+<div>
+  <div
+    class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center"
+  >
+    <div
+      class="controlsDemo__wrapper controlsDemo__flex"
+    >
+      <div
+        class="controlsDemo__wrapper controlsDemo_fixedWidth400 tw-flex tw-flex-col"
+      >
+        <div
+          class="tw-flex controls-max-w-full tw-flex-col undefined controls-Input-connected_filled"
+        >
+          <a
+            class="controls-Label controls-Label_underline_none tw-min-w-0 controls-Label_verticalPosition"
+          >
+            <div
+              class="controls-Label__wrapper"
+            >
+              <div
+                class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+              >
+                precision = 2
+              </div>
+              
+            </div>
+          </a>
+          <div
+            class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default controls-Render_state-valid_caretFilled controls-inlineheight-m controls-Render-inlineheight-m  controls-Number controls_Number_theme-default"
+            data-qa="Controls-Input-demo_InputConnected_Number_Precision__2"
+            tabindex="0"
+          >
+            <div
+              class="controls-Render__wrapper"
+            >
+              <span
+                class="controls-Render__baseline"
+              >
+                ﻿
+              </span>
+              <div
+                class="controls-InputBase__field controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+                data-qa="controls-Render__field"
+              >
+                <input
+                  autocapitalize="off"
+                  autocomplete="off"
+                  autocorrect="off"
+                  class="controls-Field js-controls-Field controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default"
+                  inputmode="decimal"
+                  name="ws-input_1996-06-20"
+                  spellcheck="true"
+                  tabindex="0"
+                  type="text"
+                  value="22"
+                />
+                <div
+                  class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+                >
+                  <div
+                    class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                  >
+                    Укажите число
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tw-flex controls-max-w-full tw-flex-col undefined controls-Input-connected_filled"
+        >
+          <a
+            class="controls-Label controls-Label_underline_none tw-min-w-0 controls-Label_verticalPosition"
+          >
+            <div
+              class="controls-Label__wrapper"
+            >
+              <div
+                class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+              >
+                precision is empty
+              </div>
+              
+            </div>
+          </a>
+          <div
+            class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default controls-Render_state-valid_caretFilled controls-inlineheight-m controls-Render-inlineheight-m  controls-Number controls_Number_theme-default"
+            data-qa="Controls-Input-demo_InputConnected_Number_Precision__empty"
+            tabindex="0"
+          >
+            <div
+              class="controls-Render__wrapper"
+            >
+              <span
+                class="controls-Render__baseline"
+              >
+                ﻿
+              </span>
+              <div
+                class="controls-InputBase__field controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+                data-qa="controls-Render__field"
+              >
+                <input
+                  autocapitalize="off"
+                  autocomplete="off"
+                  autocorrect="off"
+                  class="controls-Field js-controls-Field controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default"
+                  inputmode="decimal"
+                  name="ws-input_1996-06-20"
+                  spellcheck="true"
+                  tabindex="0"
+                  type="text"
+                  value="22"
+                />
+                <div
+                  class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+                >
+                  <div
+                    class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                  >
+                    Укажите число
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls-Input/InputConnected:Number UseGrouping 1`] = `
+<div>
+  <div
+    class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center"
+  >
+    <div
+      class="controlsDemo__wrapper controlsDemo__flex"
+    >
+      <div
+        class="controlsDemo__wrapper controlsDemo_fixedWidth400 tw-flex tw-flex-col"
+        data-qa="controlsDemo_capture"
+      >
+        <div
+          class="tw-flex controls-max-w-full tw-flex-col undefined controls-Input-connected_filled"
+        >
+          <a
+            class="controls-Label controls-Label_underline_none tw-min-w-0 controls-Label_verticalPosition"
+          >
+            <div
+              class="controls-Label__wrapper"
+            >
+              <div
+                class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+              >
+                useGrouping = false
+              </div>
+              
+            </div>
+          </a>
+          <div
+            class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default controls-Render_state-valid_caretFilled controls-inlineheight-m controls-Render-inlineheight-m  controls-Number controls_Number_theme-default"
+            data-qa="Controls-Input-demo_InputConnected_Number_UseGrouping__false"
+            tabindex="0"
+          >
+            <div
+              class="controls-Render__wrapper"
+            >
+              <span
+                class="controls-Render__baseline"
+              >
+                ﻿
+              </span>
+              <div
+                class="controls-InputBase__field controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+                data-qa="controls-Render__field"
+              >
+                <input
+                  autocapitalize="off"
+                  autocomplete="off"
+                  autocorrect="off"
+                  class="controls-Field js-controls-Field controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default"
+                  inputmode="decimal"
+                  name="ws-input_1996-06-20"
+                  spellcheck="true"
+                  tabindex="0"
+                  type="text"
+                  value="22"
+                />
+                <div
+                  class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+                >
+                  <div
+                    class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                  >
+                    Укажите число
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tw-flex controls-max-w-full tw-flex-col undefined "
+        >
+          <a
+            class="controls-Label controls-Label_underline_none tw-min-w-0 controls-Label_verticalPosition"
+          >
+            <div
+              class="controls-Label__wrapper"
+            >
+              <div
+                class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+              >
+                useGrouping = true
+              </div>
+              
+            </div>
+          </a>
+          <div
+            class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default controls-Render_state-valid_caretFilled controls-inlineheight-m controls-Render-inlineheight-m  controls-Number controls_Number_theme-default"
+            data-qa="Controls-Input-demo_InputConnected_Number_UseGrouping__true"
+            tabindex="0"
+          >
+            <div
+              class="controls-Render__wrapper"
+            >
+              <span
+                class="controls-Render__baseline"
+              >
+                ﻿
+              </span>
+              <div
+                class="controls-InputBase__field controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+                data-qa="controls-Render__field"
+              >
+                <input
+                  autocapitalize="off"
+                  autocomplete="off"
+                  autocorrect="off"
+                  class="controls-Field js-controls-Field controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default"
+                  inputmode="decimal"
+                  name="ws-input_1996-06-20"
+                  spellcheck="true"
+                  tabindex="0"
+                  type="text"
+                  value=""
+                />
+                <div
+                  class="controls-InputBase__placeholder controls-InputBase__placeholder_displayed-under-caret"
+                >
+                  <div
+                    class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                  >
+                    Укажите число
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls-Input/InputConnected:Number defaultValue 1`] = `
+<div>
+  <div
+    class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center"
+  >
+    <div
+      class="controlsDemo__wrapper controlsDemo__flex"
+    >
+      <div
+        class="controlsDemo__wrapper controlsDemo_fixedWidth400 tw-flex tw-flex-col"
+      >
+        <div
+          class="tw-flex controls-max-w-full tw-flex-col undefined controls-Input-connected_filled"
+        >
+          <a
+            class="controls-Label controls-Label_underline_none tw-min-w-0 controls-Label_verticalPosition"
+          >
+            <div
+              class="controls-Label__wrapper"
+            >
+              <div
+                class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+              >
+                defaultValue = 2
+              </div>
+              
+            </div>
+          </a>
+          <div
+            class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default controls-Render_state-valid_caretFilled controls-inlineheight-m controls-Render-inlineheight-m  controls-Number controls_Number_theme-default"
+            tabindex="0"
+          >
+            <div
+              class="controls-Render__wrapper"
+            >
+              <span
+                class="controls-Render__baseline"
+              >
+                ﻿
+              </span>
+              <div
+                class="controls-InputBase__field controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+                data-qa="controls-Render__field"
+              >
+                <input
+                  autocapitalize="off"
+                  autocomplete="off"
+                  autocorrect="off"
+                  class="controls-Field js-controls-Field controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default"
+                  inputmode="decimal"
+                  name="ws-input_1996-06-20"
+                  spellcheck="true"
+                  tabindex="0"
+                  type="text"
+                  value="2"
+                />
+                <div
+                  class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+                >
+                  <div
+                    class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                  >
+                    Укажите число
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tw-flex controls-max-w-full tw-flex-col undefined "
+        >
+          <a
+            class="controls-Label controls-Label_underline_none tw-min-w-0 controls-Label_verticalPosition"
+          >
+            <div
+              class="controls-Label__wrapper"
+            >
+              <div
+                class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+              >
+                defaultValue is empty
+              </div>
+              
+            </div>
+          </a>
+          <div
+            class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default controls-Render_state-valid_caretFilled controls-inlineheight-m controls-Render-inlineheight-m  controls-Number controls_Number_theme-default"
+            tabindex="0"
+          >
+            <div
+              class="controls-Render__wrapper"
+            >
+              <span
+                class="controls-Render__baseline"
+              >
+                ﻿
+              </span>
+              <div
+                class="controls-InputBase__field controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+                data-qa="controls-Render__field"
+              >
+                <input
+                  autocapitalize="off"
+                  autocomplete="off"
+                  autocorrect="off"
+                  class="controls-Field js-controls-Field controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default"
+                  inputmode="decimal"
+                  name="ws-input_1996-06-20"
+                  spellcheck="true"
+                  tabindex="0"
+                  type="text"
+                  value=""
+                />
+                <div
+                  class="controls-InputBase__placeholder controls-InputBase__placeholder_displayed-under-caret"
+                >
+                  <div
+                    class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                  >
+                    Укажите число
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls-Input/InputConnected:Number label 1`] = `
+<div>
+  <div
+    class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center"
+  >
+    <div
+      class="controlsDemo__wrapper controlsDemo__flex"
+    >
+      <div
+        class="controlsDemo__wrapper controlsDemo_fixedWidth300 tw-flex tw-flex-col"
+      >
+        <div
+          class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default controls-Render_state-valid_caretFilled controls-inlineheight-m controls-Render-inlineheight-m  controls-Number controls_Number_theme-default controls-margin_top-m controls-margin_top-m controls-Input-connected_filled tw-w-full"
+          tabindex="0"
+        >
+          <div
+            class="controls-Render__wrapper"
+          >
+            <span
+              class="controls-Render__baseline"
+            >
+              ﻿
+            </span>
+            <div
+              class="controls-InputBase__field controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+              data-qa="controls-Render__field"
+            >
+              <input
+                autocapitalize="off"
+                autocomplete="off"
+                autocorrect="off"
+                class="controls-Field js-controls-Field controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default"
+                inputmode="decimal"
+                name="ws-input_1996-06-20"
+                spellcheck="true"
+                tabindex="0"
+                type="text"
+                value="22"
+              />
+              <div
+                class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+              >
+                <div
+                  class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                >
+                  Укажите число
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tw-flex controls-max-w-full tw-flex-col controls-margin_top-m controls-Input-connected_filled"
+        >
+          <a
+            class="controls-Label controls-Label_underline_none tw-min-w-0 controls-Label_verticalPosition"
+          >
+            <div
+              class="controls-Label__wrapper"
+            >
+              <div
+                class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+              >
+                label top
+              </div>
+              
+            </div>
+          </a>
+          <div
+            class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default controls-Render_state-valid_caretFilled controls-inlineheight-m controls-Render-inlineheight-m  controls-Number controls_Number_theme-default controls-margin_top-m"
+            tabindex="0"
+          >
+            <div
+              class="controls-Render__wrapper"
+            >
+              <span
+                class="controls-Render__baseline"
+              >
+                ﻿
+              </span>
+              <div
+                class="controls-InputBase__field controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+                data-qa="controls-Render__field"
+              >
+                <input
+                  autocapitalize="off"
+                  autocomplete="off"
+                  autocorrect="off"
+                  class="controls-Field js-controls-Field controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default"
+                  inputmode="decimal"
+                  name="ws-input_1996-06-20"
+                  spellcheck="true"
+                  tabindex="0"
+                  type="text"
+                  value="22"
+                />
+                <div
+                  class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+                >
+                  <div
+                    class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                  >
+                    Укажите число
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tw-flex controls-max-w-full tw-flex-row tw-items-baseline controls-margin_top-m controls-Input-connected_filled"
+        >
+          <a
+            class="controls-Label controls-Label_underline_none tw-min-w-0 tw-flex-shrink"
+          >
+            <div
+              class="controls-Label__wrapper"
+            >
+              <div
+                class="controls-Label__caption controls-fontsize-m  controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+              >
+                label start
+              </div>
+              
+            </div>
+          </a>
+          <div
+            class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default controls-Render_state-valid_caretFilled controls-inlineheight-m controls-Render-inlineheight-m  controls-Number controls_Number_theme-default controls-input_label_min-input-content controls-margin_top-m"
+            tabindex="0"
+          >
+            <div
+              class="controls-Render__wrapper"
+            >
+              <span
+                class="controls-Render__baseline"
+              >
+                ﻿
+              </span>
+              <div
+                class="controls-InputBase__field controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+                data-qa="controls-Render__field"
+              >
+                <input
+                  autocapitalize="off"
+                  autocomplete="off"
+                  autocorrect="off"
+                  class="controls-Field js-controls-Field controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default"
+                  inputmode="decimal"
+                  name="ws-input_1996-06-20"
+                  spellcheck="true"
+                  tabindex="0"
+                  type="text"
+                  value="22"
+                />
+                <div
+                  class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+                >
+                  <div
+                    class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                  >
+                    Укажите число
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tw-flex controls-max-w-full tw-flex-row tw-items-baseline controls-margin_top-m controls-Input-connected_filled"
+        >
+          <span
+            class="controls-icon_size-s controls-icon_style-secondary controls-margin_right-s icon-SabyBird controls-icon"
+          />
+          <div
+            class="controls-Render js-controls-Render controls-Render_border-top-empty controls-Render_border-bottom controls-Render_background-same controls-Render_textAlign-left controls-Render_borderRadius controls-Render_state-valid controls-fontsize-m controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default controls-Render_state-valid_caretFilled controls-inlineheight-m controls-Render-inlineheight-m  controls-Number controls_Number_theme-default controls-margin_top-m"
+            tabindex="0"
+          >
+            <div
+              class="controls-Render__wrapper"
+            >
+              <span
+                class="controls-Render__baseline"
+              >
+                ﻿
+              </span>
+              <div
+                class="controls-InputBase__field controls-InputBase__field_margin-null controls-InputBase__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+                data-qa="controls-Render__field"
+              >
+                <input
+                  autocapitalize="off"
+                  autocomplete="off"
+                  autocorrect="off"
+                  class="controls-Field js-controls-Field controls-InputBase__nativeField controls-InputBase__nativeField_caretFilled controls-InputBase__nativeField_caretFilled_theme_default"
+                  inputmode="decimal"
+                  name="ws-input_1996-06-20"
+                  spellcheck="true"
+                  tabindex="0"
+                  type="text"
+                  value="22"
+                />
+                <div
+                  class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+                >
+                  <div
+                    class="controls-Render__placeholder controls-Render__placeholder_overflow"
+                  >
+                    Укажите число
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,9 @@
+<div class="ws-align-self-center{{ !isEmptyMargin ? ' controls-Tabs_margin-left' }}">
+    <Controls.icon:Icon
+        attr:class="controls-Tabs_icon"
+        attr:title="{{tooltip}}"
+        icon="{{icon}}"
+        iconSize="{{iconSize || 's'}}"
+        iconStyle="{{iconStyle || 'unaccented'}}"
+    />
+</div>

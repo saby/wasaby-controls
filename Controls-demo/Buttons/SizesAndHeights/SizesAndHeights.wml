@@ -1,0 +1,47 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="ws-flex-column ws-align-items-center controls-margin_right-l">
+            <div class="controls-inlineheight-l controls-margin_bottom-m">
+                <Controls.buttons:Button caption="Кнопка" inlineHeight="m" fontSize="m" icon="icon-SabyBird"
+                                         iconSize="s"/>
+            </div>
+            <div class="controls-inlineheight-l controls-margin_bottom-m">
+                <Controls.buttons:Button caption="Кнопка" inlineHeight="xl" fontSize="xl" icon="icon-SabyBird"
+                                         iconSize="m"/>
+            </div>
+            <div class="controls-margin_bottom-m">
+                <Controls.buttons:Button caption="Кнопка" inlineHeight="5xl" fontSize="3xl" icon="icon-SabyBird"
+                                         iconSize="l"/>
+            </div>
+        </div>
+        <div class="ws-flex-column ws-align-items-center controls-margin_right-l">
+            <div class="controls-inlineheight-l controls-margin_bottom-m">
+                <Controls.buttons:Button viewMode="link" caption="Кнопка" inlineHeight="m" fontSize="m"
+                                         icon="icon-SabyBird"
+                                         iconSize="s"/>
+            </div>
+            <div class="controls-inlineheight-l controls-margin_bottom-m">
+                <Controls.buttons:Button viewMode="link" caption="Кнопка" inlineHeight="xl" fontSize="xl"
+                                         icon="icon-SabyBird" iconSize="m"/>
+            </div>
+            <div class="controls-margin_bottom-m">
+                <Controls.buttons:Button viewMode="link" caption="Кнопка" inlineHeight="5xl" fontSize="3xl"
+                                         icon="icon-SabyBird" iconSize="l"/>
+            </div>
+        </div>
+        <div class="ws-flex-column ws-align-items-center">
+            <div class="controls-inlineheight-l controls-margin_bottom-m">
+                <Controls.buttons:Button viewMode="filled" iconStyle="contrast" inlineHeight="m" icon="icon-SabyBird"
+                                         iconSize="s"/>
+            </div>
+            <div class="controls-inlineheight-l controls-margin_bottom-m">
+                <Controls.buttons:Button viewMode="filled" iconStyle="contrast" inlineHeight="xl" icon="icon-SabyBird"
+                                         iconSize="m"/>
+            </div>
+            <div class="controls-margin_bottom-m">
+                <Controls.buttons:Button viewMode="filled" iconStyle="contrast" inlineHeight="5xl" icon="icon-SabyBird"
+                                         iconSize="l"/>
+            </div>
+        </div>
+    </div>
+</div>

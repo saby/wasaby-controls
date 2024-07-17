@@ -1,0 +1,3 @@
+<ws:partial template="Controls/grid:ItemEditorTemplate" scope="{{ _options }}">
+	<Controls.input:Text contrastBackground="{{true}}" bind:value="item.contents.country"/>
+</ws:partial>

@@ -1,0 +1,23 @@
+<div class="controls_breadcrumbs_theme-{{_options.theme}} controls-BreadCrumbsView">
+    <ws:if data="{{_options.visibleItems.length > 0}}">
+        <div class="controls-BreadCrumbsView__wrapper">
+            <ws:partial
+               template="{{
+                  _options.displayMode === 'multiline' || _options.containerWidth
+                     ? _calculatedItemsTemplate
+                     : _itemsTemplate
+               }}"
+
+               items="{{_items}}"
+               reverseArrows="{{_reverseArrows}}"
+               itemTemplate="{{_options.itemTemplate}}"
+               displayProperty="{{ _options.displayProperty }}"
+
+               fontSize="{{_options.fontSize}}"
+               fontColorStyle="{{_options.fontColorStyle}}"
+               highlightItemsClass="{{_highlightItemsClass}}"
+               backgroundStyle="{{_options.backgroundStyle || _options.style}}"
+            />
+        </div>
+    </ws:if>
+</div>

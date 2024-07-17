@@ -1,0 +1,157 @@
+<div class="controls-AdaptiveButtons controls-AdaptiveButtons_align-more_{{_moreButtonAlign}}">
+<ws:template name="templateMore">
+    <div class="controls-AdaptiveButtons__more controls-AdaptiveButtons__more_align_{{ _moreButtonAlign }}">
+        <div
+            class="controls-AdaptiveButtons__more__text controls-AdaptiveButtons__more__text_align_{{ _moreButtonAlign }}">
+            <Controls.Container.Async templateName="Controls/dropdown:Selector" attr:data-qa="AdaptiveButtons__more">
+                <Controls.source:SelectedKey selectedKey="{{_options.selectedKey}}">
+                    <ws:partial template="{{content.resolvedTemplate}}"
+                                name="menuButton"
+                                keyProperty="{{_options.keyProperty}}"
+                                parentProperty="parent"
+                                nodeProperty="@parent"
+                                source="{{_menuSource}}"
+                                displayProperty="{{ _options.displayProperty }}"
+                                on:selectedKeysChanged="_menuItemClickHandler()"
+                                on:mousedown="_onMouseDownHandler()">
+                        <ws:itemTemplate>
+                            <ws:if data="{{ _getTemplateType() === 'TextAndCounter' }}">
+                                <Controls.Container.Async templateName="Controls/menu:ItemTemplate">
+                                    <ws:partial template="{{ content.resolvedTemplate }}" scope="{{ itemTemplate }}">
+                                        <ws:contentTemplate>
+                                            <ws:partial
+                                                template="wml!Controls/_tabs/AdaptiveButtons/templates/MenuItemWithTextAndCounter"
+                                                counter="{{itemTemplate.item.contents.get('mainCounter') || itemTemplate.item.contents.get('counter')}}"
+                                                caption="{{itemTemplate.item.contents.get('caption') || itemTemplate.item.contents.get('title')}}"/>
+                                        </ws:contentTemplate>
+                                    </ws:partial>
+                                </Controls.Container.Async>
+                            </ws:if>
+                            <ws:else>
+                                <Controls.Container.Async templateName="Controls/menu:ItemTemplate">
+                                    <ws:partial template="{{ content.resolvedTemplate }}" scope="{{ itemTemplate }}"/>
+                                </Controls.Container.Async>
+                            </ws:else>
+                        </ws:itemTemplate>
+                        <ws:footerTemplate>
+                            <ws:if data="{{_options.menuFooterTemplate}}">
+                                <ws:partial template="{{_options.menuFooterTemplate}}"/>
+                            </ws:if>
+                            <ws:else>
+                                <invisible-node/>
+                            </ws:else>
+                        </ws:footerTemplate>
+                        <ws:contentTemplate>
+                            <ws:if data="{{_options.moreButtonView === 'separator'}}">
+                                <Controls.ShowMoreButton iconSize="l"
+                                                         value="{{false}}"
+                                />
+                            </ws:if>
+                            <ws:else>
+                                <Controls.Container.Async templateName="Controls/dropdown:inputDefaultContentTemplate">
+                                    <ws:partial
+                                        template="{{content.resolvedTemplate}}"
+                                        underline="hovered"
+                                        icon=""
+                                        text=""
+                                        hasMoreText="{[Ещё]}..."/>
+                                </Controls.Container.Async>
+              </ws:else>
+            </ws:contentTemplate>
+          </ws:partial>
+        </Controls.source:SelectedKey>
+      </Controls.Container.Async>
+    </div>
+  </div>
+</ws:template>
+<div
+    class="controls-AdaptiveButtons__wrapper controls-AdaptiveButtons__wrapper_align_{{_options.align}}"
+    on:wheel="_onWheelHandler()"
+>
+    <Controls.scroll:Container
+        name="ScrollContainer"
+        scrollOrientation="horizontal"
+        shadowStyle="adaptive-tabs"
+        scrollbarVisible="{{false}}"
+        backgroundStyle="default"
+        shadowMode="blur"
+        on:scrollStateChanged="_scrollStateChangedHandler()"
+    >
+        <div class="tw-w-full tw-flex">
+            <Controls._tabs.Buttons selectedKey="{{_options.selectedKey}}"
+                                    keyProperty="{{_options.keyProperty}}"
+                                    items="{{_items}}"
+                                    style="{{_options.style}}"
+                                    selectedStyle="{{_options.selectedStyle}}"
+                                    borderVisible="{{_options.borderVisible}}"
+                                    inlineHeight="{{_options.inlineHeight}}"
+                                    displayProperty="{{_options.displayProperty}}"
+                                    align="{{_options.align}}"
+                                    tooltipVisible="{{false}}"
+                                    templateType="{{ _getTemplateType() }}"
+                                    on:selectedKeyChanged="_selectedKeyHandler()"
+                                    canShrink="{{false}}">
+                <ws:itemTemplate>
+                    <ws:if data="{{_options.itemTemplate}}">
+                        <ws:partial
+                            template="{{ _getTemplate(_options.itemTemplate, item, _options.itemTemplateProperty) || _defaultItemTemplate}}"/>
+                    </ws:if>
+                    <ws:else>
+                        <ws:if data="{{ _getTemplateType() === 'TextAndIcon' }}">
+                            <ws:partial template="{{_itemTemplate}}"
+                                        item="{{itemTemplate.item}}"
+                                        iconStyle="secondary"
+                                        attr:class="controls-AdaptiveButtons__item"
+                                        attr:title="{{itemTemplate.item[_options.displayProperty]}}"
+                                        displayProperty="{{ _options.displayProperty }}"/>
+                        </ws:if>
+                        <ws:else data="{{ _getTemplateType() === 'IconAndCounter' }}">
+                            <ws:partial template="wml!Controls/_tabs/Buttons/templates/IconCounterTabTemplate"
+                                        tooltip="{{ itemTemplate.item.iconTooltip }}"
+                                        icon="{{ itemTemplate.item.icon}}"
+                                        iconStyle="{{ itemTemplate.item.iconStyle }}"
+                                        mainCounter="{{ itemTemplate.item.counter || itemTemplate.item.mainCounter }}"
+                            />
+                        </ws:else>
+                        <ws:else data="{{ _getTemplateType() === 'TextAndCounter' }}">
+                            <ws:partial isSelected="{{ _options.selectedKey === itemTemplate.item.get(_keyProperty) }}"
+                                        template="wml!Controls/_tabs/Buttons/templates/TextCounterTabTemplate"/>
+                        </ws:else>
+                        <ws:else data="{{ _getTemplateType() === 'Icon' && itemTemplate.item.icon }}">
+                            <ws:partial template="wml!Controls/_tabs/Buttons/templates/IconTemplate"
+                                        tooltip="{{ itemTemplate.item.iconTooltip }}"
+                                        isEmptyMargin="{{ true }}"
+                                        icon="{{ itemTemplate.item.icon}}"
+                                        iconStyle="{{ itemTemplate.item.iconStyle }}"
+                                        iconSize="m"
+                            />
+                        </ws:else>
+                    </ws:else>
+                </ws:itemTemplate>
+                <ws:itemRightTemplate>
+                    <ws:if
+                        data="{{ _getTemplateType() === 'TextAndIcon' && (itemRightTemplate.item.title || itemRightTemplate.item.caption) }}">
+                        <ws:if data="{{itemRightTemplate.item.icon}}">
+                            <ws:partial template="wml!Controls/_tabs/Buttons/templates/IconTemplate"
+                                        tooltip="{{itemRightTemplate.item.iconTooltip}}"
+                                        icon="{{itemRightTemplate.item.icon}}"
+                                        iconStyle="{{itemRightTemplate.item.iconStyle}}"
+                            />
+                        </ws:if>
+                        <ws:if data="{{itemRightTemplate.item.icons}}">
+                            <ws:for data="_icon in itemRightTemplate.item.icons">
+                                <ws:partial template="wml!Controls/_tabs/Buttons/templates/IconTemplate"
+                                            tooltip="{{_icon.iconTooltip}}"
+                                            icon="{{_icon.icon}}"
+                                            iconStyle="{{_icon.iconStyle}}"
+                                />
+                            </ws:for>
+                        </ws:if>
+                    </ws:if>
+                </ws:itemRightTemplate>
+            </Controls._tabs.Buttons>
+        </div>
+    </Controls.scroll:Container>
+    <ws:partial template="templateMore"/>
+</div>
+</div>

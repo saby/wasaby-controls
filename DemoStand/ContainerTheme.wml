@@ -1,0 +1,7 @@
+<Router.router:Route mask="theme/:theme">
+    <UI.Theme:ThemeWrapper staticTheme="{{ _updateZoom(content.theme) }}">
+        <ws:partial template="{{_options.content}}"
+                    attr:class="controls-Zoom"
+                    attr:style="zoom: {{_zoomValue}}"/>
+    </UI.Theme:ThemeWrapper>
+</Router.router:Route>

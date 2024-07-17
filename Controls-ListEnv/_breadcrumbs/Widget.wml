@@ -1,0 +1,28 @@
+<div class="controls-breadcrumbs-widget">
+   <!-- Картинка -->
+   <ws:if data="{{_lastBreadcrumbsItem && _options.imageTemplate}}">
+      <div class="controls-breadcrumbs-widget__image">
+         <ws:partial template="{{_options.imageTemplate}}" item="{{_lastBreadcrumbsItem}}"/>
+      </div>
+   </ws:if>
+
+   <div class="controls-breadcrumbs-widget__path-wrapper">
+      <!-- Крошки -->
+      <div>
+         <Controls.breadcrumbs:HeadingPath
+            showActionButton="{{false}}"
+            items="{{_breadcrumbsItems}}"
+            scope="{{_headingPathOptions}}"
+
+            on:itemClick="_onItemClick()"
+         />
+      </div>
+
+      <!-- Описание -->
+      <ws:if data="{{_lastBreadcrumbsItem && _options.additionalTextProperty}}">
+         <div class="controls-breadcrumbs-widget__additional-text">
+            {{_lastBreadcrumbsItem.get(_options.additionalTextProperty)}}
+         </div>
+      </ws:if>
+   </div>
+</div>
