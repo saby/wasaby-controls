@@ -1,0 +1,66 @@
+<ws:template name="list">
+   <Controls._filterPopup.SimplePanel._List
+           keyProperty="{{_options.keyProperty}}"
+           opener="{{_options.opener}}"
+           selectorDialogResult="{{_options.selectorDialogResult}}"
+           displayProperty="{{_options.displayProperty}}"
+           nodeProperty="{{_options.nodeProperty}}"
+           parentProperty="{{_options.parentProperty}}"
+           itemTemplate="{{_options.itemTemplate}}"
+           itemTemplateProperty="{{_options.itemTemplateProperty}}"
+           hasMoreButton="{{hasMoreButton}}"
+           emptyText="{{emptyText}}"
+           emptyKey="{{emptyKey}}"
+           selectorTemplate="{{_options.selectorTemplate}}"
+           selectorOpener="{{_options.selectorOpener}}"
+           isCompoundTemplate="{{_options.isCompoundTemplate}}"
+           selectedKeys="{{selectedKeys}}"
+           resetValue="{{_options.resetValue}}"
+           multiSelect="{{multiSelect}}"
+           sourceController="{{sourceController}}"
+           source="{{source}}"
+           selectorItems="{{_options.selectorItems}}"
+           selectorSelectedKeys="{{_flatSelectedKeys}}"
+           selectionChanged="{{_selectionChanged}}"
+           levelPadding="{{levelPadding}}"
+           emptyItemFontWeight="{{_options.emptyItemFontWeight}}"
+           on:checkBoxClick="_checkBoxClickHandler(index)"
+           on:moreButtonClick="_moreButtonClick(item)"
+   />
+</ws:template>
+
+<div>
+   <ws:if data="{{_emptyItemSource}}">
+      <ws:partial template="list"
+                  emptyText="{{_options.emptyText}}"
+                  emptyKey="{{_options.emptyKey}}"
+                  source="{{_emptyItemSource}}"
+                  multiSelect="{{false}}"
+                  selectedKeys="{{_flatSelectedKeys || []}}"
+                  on:itemClick="_emptyItemClickHandler()"
+      />
+   </ws:if>
+
+   <ws:if data="{{_hasFolders()}}">
+      <ws:for data="index, item in _folders">
+         <ws:partial template="list"
+                     hasMoreButton="{{_hasMoreButton(item)}}"
+                     sourceController="{{_sourceControllers[index]}}"
+                     selectedKeys="{{_selectedKeys[index] || []}}"
+                     multiSelect="{{_options.multiSelect}}"
+                     levelPadding="m"
+                     on:itemClick="_itemClickHandler(index)"
+         />
+      </ws:for>
+   </ws:if>
+   <ws:else>
+      <ws:partial template="list"
+                  selectedKeys="{{_selectedKeys || []}}"
+                  emptyText="{{_options.emptyText}}"
+                  emptyKey="{{_options.emptyKey}}"
+                  multiSelect="{{_options.multiSelect}}"
+                  sourceController="{{_options.sourceController}}"
+                  on:itemClick="_itemClickHandler(null)"
+      />
+   </ws:else>
+</div>

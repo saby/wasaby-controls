@@ -1,0 +1,106 @@
+<div class="controlsDemo__wrapper controlsDemo__flex controlsDemo__flex-flow_wrap">
+<div>
+  <div class="controlsDemo__cell">
+    <Router.router:Reference attr:class="controls-text-label"
+                             state="app/:app"
+                             app="{{ 'Controls-demo/Decorator/Money/Abbreviation/Index' }}">
+      <a href="{{content.href}}">Abbreviation</a>
+    </Router.router:Reference>
+    <Controls-demo.Decorator.Money.Abbreviation.Index/>
+  </div>
+  <div class="ws-flexbox">
+    <div class="controlsDemo__cell">
+      <Router.router:Reference attr:class="controls-text-label"
+                               state="app/:app"
+                               app="{{ 'Controls-demo/Decorator/Money/Currency/Index' }}">
+        <a href="{{content.href}}">Currency</a>
+      </Router.router:Reference>
+      <Controls-demo.Decorator.Money.Currency.Index/>
+    </div>
+    <div>
+      <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Decorator/Money/Hovered/Index' }}">
+          <a href="{{content.href}}">Hovered</a>
+        </Router.router:Reference>
+        <Controls-demo.Decorator.Money.Hovered.Index/>
+        <div class="ws-flexbox">
+          <div class="controlsDemo__cell">
+            <Router.router:Reference attr:class="controls-text-label"
+                                     state="app/:app"
+                                     app="{{ 'Controls-demo/Decorator/Money/OnlyPositive/Index' }}">
+              <a href="{{content.href}}">OnlyPositive</a>
+            </Router.router:Reference>
+            <Controls-demo.Decorator.Money.OnlyPositive.Index/>
+          </div>
+          <div class="controlsDemo__cell">
+            <Router.router:Reference attr:class="controls-text-label"
+                                     state="app/:app"
+                                     app="{{ 'Controls-demo/Decorator/Money/Precision/Index' }}">
+              <a href="{{content.href}}">Precision</a>
+            </Router.router:Reference>
+            <Controls-demo.Decorator.Money.Precision.Index/>
+          </div>
+        </div>
+        <div class="ws-flexbox">
+          <div class="controlsDemo__cell">
+            <Router.router:Reference attr:class="controls-text-label"
+                                     state="app/:app"
+                                     app="{{ 'Controls-demo/Decorator/Money/Stroked/Index' }}">
+              <a href="{{content.href}}">Stroked</a>
+            </Router.router:Reference>
+            <Controls-demo.Decorator.Money.Stroked.Index/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="controlsDemo__cell">
+    <Router.router:Reference attr:class="controls-text-label"
+                             state="app/:app"
+                             app="{{ 'Controls-demo/Decorator/Money/Base/Index' }}">
+      <a href="{{content.href}}">Base</a>
+    </Router.router:Reference>
+    <Controls-demo.Decorator.Money.Base.Index/>
+    <div class="ws-flexbox">
+      <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Decorator/Money/Underline/Index' }}">
+          <a href="{{content.href}}">Underline</a>
+        </Router.router:Reference>
+        <Controls-demo.Decorator.Money.Underline.Index/>
+      </div>
+      <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Decorator/Money/HighlightedValue/Index' }}">
+          <a href="{{content.href}}">HighlightedValue</a>
+        </Router.router:Reference>
+        <Controls-demo.Decorator.Money.HighlightedValue.Index/>
+      </div>
+    </div>
+    <div class="ws-flexbox">
+      <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Decorator/Money/Value/Index' }}">
+          <a href="{{content.href}}">Value</a>
+        </Router.router:Reference>
+        <Controls-demo.Decorator.Money.Value.Index/>
+      </div>
+      <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Decorator/Money/FontWeight/Index' }}">
+          <a href="{{content.href}}">FontWeight</a>
+        </Router.router:Reference>
+        <Controls-demo.Decorator.Money.FontWeight.Index/>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

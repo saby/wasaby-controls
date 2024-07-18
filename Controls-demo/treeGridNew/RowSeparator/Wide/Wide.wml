@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper controlsDemo_wrapper-treeGrid-base-treeGridView">
+    <Controls.treeGrid:View
+            attr:class="controlsDemo__inline-flex"
+            storeId="RowSeparatorWide"
+            columns="{{_columns}}"
+            rowSeparatorSize="l"/>
+</div>

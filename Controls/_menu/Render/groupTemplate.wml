@@ -1,0 +1,27 @@
+<div class="controls-Menu__group_content">
+   <div class="tw-flex tw-items-center tw-w-full controls-inlineheight-s">
+   <ws:if data="{{showText !== true && separatorVisibility !== false}}">
+      <div class="controls-Menu__group_separator-container">
+         <div class="controls-Menu__group_separator"></div>
+      </div>
+   </ws:if>
+   <ws:else>
+      <ws:if data="{{textAlign !== 'left' && showText !== false}}">
+         <div class="controls-Menu__group_separator_left
+          controls-Menu__group_separator {{separatorVisibility === false ? 'ws-invisible'}}"></div>
+      </ws:if>
+      <div class="controls-Menu__group_content-text {{ !contentTemplate ? ( (multiSelect || markerVisibility !== 'hidden') && textAlign === 'left' ? 'controls-Menu__group_content_textAlign-withSelect' : 'controls-Menu__group_content_textAlign-'+textAlign) }}">
+         <ws:if data="{{!!contentTemplate}}">
+            <ws:partial template="{{contentTemplate}}" itemData="{{itemData}}" />
+         </ws:if>
+         <ws:else>
+            {{itemData.item !== undefined ? itemData.item : itemData.getContents()}}
+         </ws:else>
+      </div>
+      <ws:if data="{{textAlign !== 'right' && showText !== false}}">
+         <div class="controls-Menu__group_separator_right
+          controls-Menu__group_separator {{separatorVisibility === false ? 'ws-invisible'}}"></div>
+      </ws:if>
+   </ws:else>
+   </div>
+</div>

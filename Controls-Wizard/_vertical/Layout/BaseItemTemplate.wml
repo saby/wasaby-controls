@@ -1,0 +1,171 @@
+<ws:template name="stepMarker">
+<div class="Wizard-Vertical-View_stepMarker Wizard-Vertical-View_stepMarker_{{markerSize}}"
+     data-qa="Wizard-Vertical-View_stepMarker">
+  <ws:if data="{{markerSize === 's'}}">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 34" preserveAspectRatio="none" width="100%" height="100%">
+      <path class="Wizard-Vertical-View_stepMarkerFront" fill-rule="evenodd" clip-rule="evenodd"
+            d="M5 5H0V10V28C0 31.3137 2.68629 34 6 34H19L25 22L19 10H5V5Z"/>
+      <path class="Wizard-Vertical-View_stepMarkerBack" fill-rule="evenodd" clip-rule="evenodd"
+            d="M5 0C2.23853 0 0 2.23859 0 5C0 7.76141 2.23853 10 5 10V0Z"/>
+    </svg>
+  </ws:if>
+  <ws:else>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 34" preserveAspectRatio="none" width="100%" height="100%">
+      <path class="Wizard-Vertical-View_stepMarkerFront" fill-rule="evenodd" clip-rule="evenodd"
+            d="M5 5H0V10V28C0 31.3137 2.68629 34 6 34H32L38 22L32 10H5V5Z"/>
+      <path class="Wizard-Vertical-View_stepMarkerBack" fill-rule="evenodd" clip-rule="evenodd"
+            d="M5 0C2.23858 0 0 2.23858 0 5C0 7.76142 2.23858 10 5 10V0Z"/>
+    </svg>
+  </ws:else>
+</div>
+
+</ws:template>
+
+<ws:template name="headingTemplate">
+<div class="Wizard-Vertical-View_step-title-text controls-fontsize-l
+                 controls-text-{{titleFontColorStyle}}
+                 tw-cursor-{{ (stepClickAvailable && stepStatus === 'future' && !readOnly)
+                 ? 'pointer' : (!stepClickAvailable && stepStatus === 'future' && !readOnly)
+                 ? 'default' : (readOnly || stepStatus === 'active') ? 'text' : 'pointer' }}"
+     title="{{item.title}}"
+     data-qa="Wizard-Vertical-View__title_text">
+  {{ item.title }}
+</div>
+</ws:template>
+
+<ws:template name="defaultTitleTemplate">
+<ws:partial
+    template="{{headingTitle}}"
+    readOnly="{{true}}"
+/>
+</ws:template>
+
+<ws:template name="mainActionButton">
+<Controls.buttons:Button class="Wizard-Vertical-View__outsideNextButton"
+                         buttonStyle="primary"
+                         viewMode="outlined"
+                         caption="{{ caption }}"
+                         fontSize="{{ !isAdaptive ? 'm' : '3xl'}}"
+                         inlineHeight="{{ !isAdaptive ? 'm' : '5xl'}}"
+                         on:click="nextButtonClickHandler(index, !nextButton)"
+/>
+</ws:template>
+
+<ws:template name="additionActionTemplate">
+<Controls.buttons:Button class="Wizard-Vertical-View__outsideAdditionalActionButton"
+                         viewMode="{{ !isAdaptive ? 'link' : 'outlined'}}"
+                         inlineHeight="{{ !isAdaptive ? 'm' : '5xl'}}"
+                         buttonStyle="{{ !isAdaptive ? 'label' : 'default'}}"
+                         fontSize="{{ !isAdaptive ? 'm' : '3xl'}}"
+                         caption="{{ caption }}"
+                         on:click="_additionalActionClickHandler(step, buttonIndex)"
+/>
+</ws:template>
+
+<div class="Wizard-Vertical-View_step
+            Wizard-Vertical-View_step_{{stepStatus}}{{stepStatus === 'active' ? '_' + markerViewMode : '' }}
+            Wizard-Vertical-View_step_{{stepStatus}}__blockLayout_{{blockLayout}}
+            Wizard-Vertical-View_step_{{stepStatus}}__{{leftPadding}}
+            Wizard-Vertical-View_step_{{stepStatus}}__ordinal_{{index === 0 ? 'first' : 'notFirst'}}{{leftPadding && blockLayout ? '__hasLeftPadding'}}
+            Wizard-Vertical-View_step_{{stepStatus}}__ordinal_{{index === 0 ? 'first' : 'notFirst'}}__blockLayout_{{blockLayout}}
+            Wizard-Vertical-View_step_{{stepStatus}}__{{index + 1 === selectedStepIndex ? 'next' : 'notNext'}}ActiveStep
+            Wizard-Vertical-View_step_{{markerSize}}_{{stepStatus}}
+            controls-background-{{backgroundStyle}}
+            Wizard-Vertical-View_step__{{markerViewMode}}
+            Wizard-Vertical-View_step_{{stepStatus}}_bg-{{backgroundStyle || 'default'}}{{isAdaptive ? '_adaptive'}}
+            {{leftPadding && blockLayout ? 'Wizard-Vertical-View_step_' + stepStatus + '__hasLeftPadding'}}
+            {{index === itemsLength ? 'Wizard-Vertical-View_step-last' : ''}}
+            {{index === itemsLength ? 'Wizard-Vertical-View_step-last_' + stepStatus : ''}}
+            {{index === itemsLength && blockLayout ? 'Wizard-Vertical-View_step-last_' + stepStatus + '__blockLayout_true' : ''}}
+            {{index === itemsLength && stepStatus === 'future' ? 'Wizard-Vertical-View_step-fullHeight' : ''}}
+            {{index === 0 && progressbarVisible && stepStatus !== 'active' ? 'Wizard-Vertical-View_step-offsetAfterProgressbar' : ''}}
+            {{item.stepStyle ? 'Wizard-Vertical-View_step_' + stepStatus + '_style-' + item.stepStyle}}">
+<ws:if data="{{markerViewMode === 'arrow'}}">
+  <ws:if data="{{stepStatus !== 'completed' || completedStepsIndexVisible}}">
+    <div class="Wizard-Vertical-View_step-number-block
+                        Wizard-Vertical-View_step-number-block_{{stepStatus}}
+                        Wizard-Vertical-View_step-number-block_{{markerSize}}_{{stepStatus}}"
+         on:click="clickHandler(index)">
+      <ws:if data="{{stepStatus === 'active'}}">
+        <ws:partial template="stepMarker"/>
+      </ws:if>
+      <div class="Wizard-Vertical-View_step-number-text
+                            Wizard-Vertical-View_step-number-text_{{stepStatus}}
+                            Wizard-Vertical-View_step-number-text_{{markerSize}}_{{stepStatus}}">
+        <div class="Wizard-Vertical-View_step-number-text-inner">
+          {{ index + 1 }}
+        </div>
+      </div>
+    </div>
+  </ws:if>
+</ws:if>
+<ws:else>
+  <div class="Wizard-Vertical-View__step_markerWrapper">
+    <div class="Wizard-Vertical-View__step_marker Wizard-Vertical-View__step_marker__{{stepStatus}}"
+         data-qa="{{stepStatus === 'active' ? 'Wizard-Vertical-View_stepMarker' : ''}}"></div>
+  </div>
+</ws:else>
+
+<div class="Wizard-Vertical-View_step-content-block
+                Wizard-Vertical-View_step-content-block_{{stepStatus}}
+                Wizard-Vertical-View_step-content-block_marker-{{markerViewMode === 'arrow' ? markerSize : 'xs'}}_{{stepStatus}}
+                Wizard-Vertical-View_step-content-block_marker-{{markerSize}}_{{stepStatus}}_{{completedStepsIndexVisible ? 'with-number'}}"
+>
+
+  <ws:if data="{{!(item.hideCompletedTitle && stepStatus === 'completed' ||
+                       item.hideCurrentTitle && stepStatus === 'active')}}"
+  >
+    <div class="Wizard-Vertical-View_step-header
+                        Wizard-Vertical-View_step-header_{{stepStatus}}
+                        Wizard-Vertical-View_step-header_{{markerSize}}_{{stepStatus}}"
+         on:click="clickHandler(index)">
+      <div class="Wizard-Vertical-View_step-title
+                            Wizard-Vertical-View_step-title_{{stepStatus}} {{item.titleClassName ? item.titleClassName : ''}}
+                            {{item.stepStyle ? 'Wizard-Vertical-View_step-title_' + stepStatus + '_style-' + item.stepStyle}}">
+        <ws:partial
+            template="{{item.titleTemplate || 'defaultTitleTemplate'}}"
+            item="{{item}}"
+            stepStatus="{{stepStatus}}">
+          <ws:headingTitle>
+            <ws:partial
+                attr:class="Wizard-Vertical-View_overflow"
+                template="headingTemplate"
+                item="{{item}}"
+                stepStatus="{{stepStatus}}"/>
+          </ws:headingTitle>
+        </ws:partial>
+      </div>
+      <div class="Wizard-Vertical-View_step-title-content">
+        <ws:if data="{{item.titleContentTemplate && stepStatus !== 'future'}}">
+          <ws:partial template="{{item.titleContentTemplate}}"
+                      scope="{{item.titleContentTemplateOptions}}"
+                      item="{{item}}"/>
+        </ws:if>
+      </div>
+    </div>
+  </ws:if>
+  <ws:partial template="{{ content }}" scope="{{item.contentTemplateOptions}}" getDataOptions="{{getDataOptions}}"/>
+</div>
+<ws:if data="{{ nextButtonCaption && !isLast || completeButtonCaption || additionalButtonsConfig }}">
+  <div class="Wizard-Vertical-View__outsideActionButtonsContainer">
+    <ws:if data="{{ nextButtonCaption && firstOnFeature && !isLast}}">
+      <ws:partial template="mainActionButton" nextButton="{{ true }}" caption="{{ nextButtonCaption }}"/>
+    </ws:if>
+    <ws:else data="{{ completeButtonCaption && index === itemsLength && stepStatus === 'active' }}">
+      <ws:partial template="mainActionButton" nextButton="{{ false }}" caption="{{ completeButtonCaption }}"/>
+    </ws:else>
+    <ws:if data="{{ additionalButtonsConfig && firstOnFeature && !isLast }}">
+      <ws:for data="idx, additionalAction in additionalButtonsConfig.at(index - 1).buttonsConfig">
+        <ws:if data="{{ isAdaptive && additionalAction.isAdaptive || !isAdaptive }}">
+          <ws:partial
+              template="additionActionTemplate"
+              caption="{{ additionalAction.caption }}"
+              buttonIndex="{{ idx }}"
+              step="{{ index }}"
+          />
+        </ws:if>
+      </ws:for>
+    </ws:if>
+  </div>
+</ws:if>
+</div>

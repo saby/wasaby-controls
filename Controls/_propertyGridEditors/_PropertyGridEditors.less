@@ -1,0 +1,43 @@
+.controls-PropertyGrid__editor_booleanGroup_item,
+.controls-PropertyGrid__editor_enum_item {
+   margin-right: var(--offset_s);
+}
+
+.controls-PropertyGrid__editor_boolean_control,
+.controls-PropertyGrid__editor_checkbox_control,
+.controls-PropertyGrid__editor_dropdown_control,
+.controls-PropertyGrid__editor_time-interval_control,
+.controls-PropertyGrid__editor_dateRange_control,
+.controls-PropertyGrid__editor_date_control,
+.controls-PropertyGrid__editor_chips_control {
+   max-width: 100%;
+   width: auto;
+   flex-grow: 0;
+}
+
+.controls-PropertyGrid__editor_chips_control {
+   margin-left: calc(-1 * var(--offset_m));
+}
+
+.controls-PropertyGrid__editor_jumpingLabel_wrapper {
+   width: 100%;
+   height: 100%;
+   align-items: center;
+   display: inline-flex;
+   line-height: var(--inline_height_xs);
+}
+
+.controls-PropertyGrid__editor_jumpingLabel_value {
+   .text-overflow();
+   color: var(--label_text-color);
+   font-size: var(--font-size_xs);
+}
+
+.controls-PropertyGrid__editor_jumpingLabel_asterisk {
+   color: var(--danger_color);
+   font-size: var(--font-size_m);
+}
+
+.ws-is-ie .controls-PropertyGrid__editor_time-interval_control {
+   align-self: flex-start;
+}

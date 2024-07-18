@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center ws-flex-column" data-qa="controlsDemo_capture">
+        <div class="controls-text-label controlsDemo__maxWidth200 controls-margin_bottom-m">Заблокирован выбор понедельников
+            и четвергов</div>
+        <Controls.compactDatePicker:View
+            attr:class="controlsDemo-CompactDatePicker_height"
+            bind:startValue="_value"
+            bind:endValue="_value"
+            selectionType="single"
+            isDayAvailable="{{ _isDayAvailable }}"
+            _date="{{ _date }}"
+        />
+    </div>
+</div>

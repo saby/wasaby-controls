@@ -1,0 +1,69 @@
+<div class="controls-breadcrumbsPathButton__menu" data-qa="controls-breadcrumbsMenuButton__menu">
+
+  <!-- Крестик закрытия -->
+  <ws:if data="{{_options.headerVisible}}">
+    <Controls.extButtons:CloseButton
+        attr:class="controls-breadcrumbsPathButton__close-button"
+        offset="null"
+        viewMode="external"
+        on:click="_onCloseClick()"
+    />
+  </ws:if>
+  <!-- Список -->
+  <Controls.popupSliding:ScrollWrapper>
+    <Controls.scroll:Container attr:class="controls-breadcrumbsPathButton__menu-body" data-qa="controls-breadcrumbsMenuButton__menuBody">
+      <Controls.treeGrid:View
+          attr:class="controls-breadcrumbsPathButton__menu-body__content {{_options.headerVisible ? '' : 'controls-breadcrumbsPathButton__menu-body__content_withoutHeader'}}"
+          name="treeGrid"
+          filter="{{_filter}}"
+          source="{{_options.source}}"
+          sorting="{{_options.sorting}}"
+          navigation="{{_options.navigation}}"
+          header="{{_header}}"
+
+          keyProperty="{{_options.keyProperty}}"
+          nodeProperty="{{_options.nodeProperty}}"
+          parentProperty="{{_options.parentProperty}}"
+          hasChildrenProperty="{{_options.hasChildrenProperty}}"
+
+          expanderIcon="hiddenNode"
+          expanderVisibility="hasChildren"
+          supportExpand="{{!_options.readOnly}}"
+          expanderIconStyle="{{_options.readOnly ? 'readonly' : 'unaccented'}}"
+
+          itemsSpacing="3xs"
+          roundBorder="{{ {bl: '2xl', br: '2xl', tl: '2xl', tr: '2xl'} }}"
+          itemPadding="{{_itemPadding}}"
+
+          markerVisibility="hidden"
+          selectAncestors="{{false}}"
+          selectDescendants="{{false}}"
+
+          selectedKeys="{{_selectedKeys}}"
+          bind:expandedItems="_expandedItems"
+
+          on:itemClick="_onItemClick()"
+          on:selectedKeysChanged="_onSelectedKeysChanged()"
+      >
+        <ws:columns>
+          <ws:Array>
+            <ws:Object
+                displayProperty="{{_options.displayProperty}}"
+            />
+
+          </ws:Array>
+        </ws:columns>
+        <ws:itemTemplate>
+          <ws:partial
+              template="Controls/treeGrid:ItemTemplate"
+              highlightOnHover="{{!_options.readOnly}}"
+              cursor="{{_options.readOnly ? 'text' : 'pointer'}}"
+              fontWeight="{{itemTemplate.item.contents.getKey() === _selectedKeys[0] ? 'bold' : 'normal' }}"
+              fontSize="{{itemTemplate.item.contents.getKey() === _selectedKeys[0] ? '3xl' : 'xl' }}"
+              itemsContainerPadding="{{_itemsContainerPadding}}"
+          />
+        </ws:itemTemplate>
+      </Controls.treeGrid:View>
+    </Controls.scroll:Container>
+  </Controls.popupSliding:ScrollWrapper>
+</div>

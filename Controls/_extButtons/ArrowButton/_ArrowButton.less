@@ -1,0 +1,74 @@
+.controls-inlineheight-ArrowButton {
+   width: var(--inline_height_ArrowButton);
+   height: var(--inline_height_ArrowButton);
+}
+
+.controls-ArrowButton_icon_direction-down,
+.controls-ArrowButton_icon_direction-left {
+   transform: rotate(180deg);
+}
+
+.controls-ArrowButton_stretched {
+   border-radius: var(--border-radius_l);
+   justify-content: center;
+   display: inline-flex;
+   align-items: center;
+   user-select: none;
+
+   --container_border-style_button_local: none;
+   --container_padding-horizontal_button_local: 0;
+   --container_shadow_button_local: none;
+   --container_background-color_button_local: var(--translucent_background-color_button);
+
+   &-up,
+   &-down {
+      transform: rotate(90deg);
+   }
+}
+
+.controls-Button__wrapper_viewMode-stretched {
+   justify-content: center;
+}
+
+.ws-is-hover .controls-ArrowButton_stretched:hover {
+   --container_background-color_button_local: var(--translucent_hover_background-color_button);
+   cursor: pointer;
+}
+
+.ws-is-touch,
+.ws-is-no-touch {
+   .controls-ArrowButton_stretched:active {
+      --container_background-color_button_local: var(--translucent_active_background-color_button);
+   }
+}
+
+.controls-icon_size-stretched {
+   &-s {
+      width: var(--font-size_m);
+      height: var(--icon-size_s);
+   }
+
+   &-m {
+      width: var(--inline_height_s);
+      height: var(--icon-size_m);
+   }
+
+   &-l {
+      width: var(--inline_height_l);
+      height: var(--icon-size_l);
+   }
+}
+
+.controls-ArrowButton_stretched_icon {
+   &_direction {
+      &-left,
+      &-up {
+         transform: rotate(-90deg);
+      }
+
+      &-down,
+      &-right {
+         transform: rotate(90deg);
+      }
+   }
+}

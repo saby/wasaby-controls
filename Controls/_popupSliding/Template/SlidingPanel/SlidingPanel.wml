@@ -1,0 +1,154 @@
+<ws:template name="controller">
+<Controls.dragnDrop:Container
+    name="dragNDrop"
+    on:dragMove="_dragMoveHandler()"
+    on:customdragEnd="_dragEndHandler()">
+  <div
+      name="controlLine"
+      on:mousedown="_startDragNDrop()"
+      on:touchstart="_startDragNDrop()"
+      class="controls-SlidingPanel__controller-container controls-SlidingPanel__controller-container_{{_position}} {{_getHeaderBackgroundClass()}}">
+    <div class="controls-SlidingPanel__controller"></div>
+  </div>
+</Controls.dragnDrop:Container>
+</ws:template>
+<ws:template name="Content">
+<ws:partial
+    on:scrollStateChanged="_scrollStateChanged()"
+    name="customContentContainer"
+    attr:style="{{ _scrollAvailable ? '' : 'height: auto;' }}"
+    template="{{ _options.bodyContentTemplate }}"
+    headerContentTemplate="{{null}}"
+    borderStyle="{{null}}"
+    scope="{{_options}}">
+  <ws:controllerButtonTemplate>
+    <ws:partial template="controller"/>
+  </ws:controllerButtonTemplate>
+</ws:partial>
+</ws:template>
+<ws:template name="ContentTemplate">
+<ws:if data="{{_options.footerVisibility && _options.footerContentTemplate}}">
+  <div attr:class="controls-SlidingPanel__customContent"
+       attr:style="{{ _getContentStyle() ? '' : 'height: auto;' }}">
+    <ws:partial template="Content"/>
+    <ws:partial attr:class="controls-SlidingPanel__footer" template="{{_options.footerContentTemplate}}"/>
+  </div>
+</ws:if>
+<ws:else>
+  <ws:partial attr:class="controls-SlidingPanel__customContent" template="Content"/>
+</ws:else>
+</ws:template>
+<div class="controls-SlidingPanel-template">
+<div
+    on:_slidingPanelScrollStateChanged="_scrollStateChanged()"
+    class="controls_popupSliding_theme-{{_options.theme}} controls-SlidingPanel {{_options.shadowVisible !== false ? 'controls-SlidingPanel__box-shadow' : ''}}
+            controls-SlidingPanel__position-{{_position}}">
+  <div class="controls-SlidingPanel__content {{_getBackgroundClass()}}">
+    <ws:if data="{{ _options.controlButtonVisibility && _position === 'bottom' }}">
+      <ws:partial
+          template="controller"/>
+    </ws:if>
+    <div
+        name="customContentWrapper"
+        class="controls-SlidingPanel__body">
+      <div
+          name="customContent"
+          attr:class="controls-SlidingPanel__customContent-wrapper
+                  controls-SlidingPanel__customContent-scroll-{{ _scrollAvailable ? 'available' : 'disabled' }}"
+          on:touchstart="_touchStartHandler()"
+          on:touchmove="_touchMoveHandler()"
+          on:touchend="_touchEndHandler()">
+        <ws:if
+            data="{{ _options.headingCaption || _options.headerContentTemplate || _options.toolbarContentTemplate }}">
+          <div class="controls-SlidingPanel__customContent-header {{_getHeaderBackgroundClass()}} {{ _options.isAdaptive ? 'controls-padding_left-xs' }}
+                                    {{ (_options.headerContentTemplate && _options.isAdaptive) ? 'controls-padding_right-m'}}"
+               on:click="_proxyEvent('headerClick')">
+            <ws:if data="{{ _options.closeButtonVisible }}">
+              <Controls.buttons:Button
+                  attr:tabindex="-1"
+                  attr:data-qa="controls-stack-Button__close"
+                  icon="icon-ArrowBack"
+                  iconStyle="primary"
+                  viewMode="link"
+                  tooltip="{[Закрыть]}"
+                  readOnly="{{false}}"
+                  on:click="_closePopup()"
+              />
+            </ws:if>
+            <ws:if data="{{ _options.imageContentTemplate }}">
+              <div
+                  class="controls-SlidingStackPanel__imageContent{{ _options.headingCaption || _options.headerContentTemplate ? ' controls-margin_right-m' }}">
+                <ws:partial template="{{ _options.imageContentTemplate }}" scope="{{ _options }}"/>
+              </div>
+            </ws:if>
+            <ws:if data="{{_options.headingCaption}}">
+              <div class="controls-SlidingStackPanel__caption controls-padding_right-m controls-SlidingPanel__margin-right-auto">
+                <Controls.heading:Title attr:class="ws-ellipsis {{!_options.closeButtonVisible ? 'controls-margin_left-xs' : '' }}"
+                                        caption="{{_options.headingCaption}}"
+                                        fontColorStyle="{{_options.headingFontColorStyle}}"
+                                        fontSize="{{_options.headingFontSize}}"
+                                        fontWeight="{{_options.headingFontWeight}}"
+                                        textTransform="{{_options.headingTextTransform}}"
+                                        readOnly="{{true}}"
+                                        tooltip="{{_options.headingCaption}}"/>
+              </div>
+            </ws:if>
+            <ws:if data="{{ _options.headerContentTemplate }}">
+              <ws:partial
+                  template="{{ _options.headerContentTemplate }}"
+                  scope="{{ _options.topAreaOptions || _options }}"
+                  borderStyle="{{null}}"
+                  headerContentTemplate="{{null}}">
+                <ws:controllerButtonTemplate>
+                  <ws:partial
+                      template="controller"/>
+                </ws:controllerButtonTemplate>
+              </ws:partial>
+            </ws:if>
+            <ws:if data="{{_options.toolbarContentTemplate}}">
+              <ws:partial
+                  template="{{_options.toolbarContentTemplate}}"
+                  direction="horizontal"
+                  scope="{{_options}}"
+                  attr:class="controls-margin_left-l controls-margin_right-m ws-align-self-end"/>
+            </ws:if>
+            <ws:if data="{{ _options.applyButtonVisible }}">
+              <Controls.buttons:Button
+                  attr:data-qa="controls-stack-Button__apply"
+                  attr:tabindex="-1"
+                  icon="icon-Yes"
+                  iconStyle="contrast"
+                  iconSize="m"
+                  viewMode="filled"
+                  buttonStyle="success"
+                  inlineHeight="xl"
+                  tooltip="{[Применить]}"
+                  readOnly="{{false}}"
+                  on:click="_applyButtonClickHandler()"
+                  attr:class="controls-margin_right-m controls-margin_left-m"/>
+            </ws:if>
+          </div>
+        </ws:if>
+        <ws:if data="{{_isAdaptive && _options.usingScrollWrapper}}">
+          <Controls._popupSliding.ScrollWrapper>
+            <ws:partial template="ContentTemplate"/>
+          </Controls._popupSliding.ScrollWrapper>
+        </ws:if>
+        <ws:else>
+          <ws:partial template="ContentTemplate"/>
+        </ws:else>
+      </div>
+    </div>
+    <ws:if data="{{ _options.controlButtonVisibility && _position === 'top' }}">
+      <ws:partial
+          template="controller"/>
+    </ws:if>
+    <ws:if data="{{ _options.actionContentTemplate }}">
+      <div class="controls-SlidingStackPanel__actionContentTemplate">
+        <ws:partial template="{{ _options.actionContentTemplate }}"/>
+      </div>
+    </ws:if>
+  </div>
+  <div class="controls-SlidingPanel__shadow controls-SlidingPanel__shadow_{{_position}} {{!_shadowVisible ? 'ws-invisible' : ''}}"></div>
+</div>
+</div>

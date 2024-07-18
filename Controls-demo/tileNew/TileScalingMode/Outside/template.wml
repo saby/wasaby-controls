@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper" style="width: 900px;">
+   <Controls.scroll:Container attr:class="controls-demo-Tile__scalingMode_scroll">
+      <Controls.treeTile:View
+              tileMode="dynamic"
+              tileHeight="200"
+              folderWidth="400"
+              tileWidth="50"
+              imageWidthProperty="imageWidth"
+              itemActions="{{_itemActions}}"
+              imageHeightProperty="imageHeight"
+              tileScalingMode="outside"
+              imageProperty="image"
+              actionMenuViewMode="preview"
+              actionMode="adaptive"
+              itemTemplate="Controls/tile:PreviewTemplate"
+              storeId="TileScalingModeOutside"/>
+   </Controls.scroll:Container>
+</div>

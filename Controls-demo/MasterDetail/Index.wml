@@ -1,0 +1,19 @@
+<div class="controlsDemo__wrapper">
+   <div class="controlsDemo__cell">
+      <Router.router:Reference attr:class="controls-text-label"
+                               state="app/:app"
+                               app="{{ 'Controls-demo/MasterDetail/Base/Index' }}">
+         <a href="{{content.href}}">Base</a>
+      </Router.router:Reference>
+      <Controls-demo.MasterDetail.Base.Index/>
+   </div>
+
+   <div class="controlsDemo__cell">
+      <Router.router:Reference attr:class="controls-text-label"
+                               state="app/:app"
+                               app="{{ 'Controls-demo/MasterDetail/ResizingLine/Index' }}">
+         <a href="{{content.href}}">ResizingLine</a>
+      </Router.router:Reference>
+      <Controls-demo.MasterDetail.ResizingLine.Index/>
+   </div>
+</div>

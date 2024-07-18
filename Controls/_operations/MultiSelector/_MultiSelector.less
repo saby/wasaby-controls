@@ -1,0 +1,77 @@
+.controls-operationsPanelV__multiSelector {
+   display: inline-flex;
+   align-items: baseline;
+   flex-shrink: 0;
+   line-height: var(--inline_height_m);
+   height: var(--inline_height_m);
+}
+
+.controls-operationsPanelV__multiSelector_separator {
+   height: var(--separator_length_operationsPanel);
+   width: var(--separator_thickness_operationsPanel);
+   margin: 0 0 0 var(--separator_offset-left_operationsPanel);
+   background-color: var(--separator_color_operationsPanel);
+   align-self: center;
+}
+
+//TODO: will be deleted after https://online.sbis.ru/opendoc.html?guid=24d818b6-3e4d-45d9-9647-0128ae573cd2
+.controls-operationsPanelV__loadingIndicatorImg-wrapper .controls-loading-indicator {
+   position: relative;
+}
+//TODO: will be deleted after https://online.sbis.ru/opendoc.html?guid=24d818b6-3e4d-45d9-9647-0128ae573cd2
+.controls-operationsPanelV__loadingIndicatorImg-wrapper .controls-loading-indicator-in {
+   margin-left: var(--offset_m);
+   width: var(--spinner_s_size_loadingIndicator);
+   height: var(--spinner_s_size_loadingIndicator);
+}
+
+.controls-operationsPanelV__container {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-around;
+}
+
+.controls-MultiSelector__checkbox {
+   height: var(--height_checkbox);
+   cursor: pointer;
+}
+
+.controls-MultiSelector__checkbox_align {
+   &::before {
+      content: '\200b';
+      font-size: var(--font-size_2xl);
+      width: 0;
+   }
+}
+
+.controls-MultiSelector__checkbox_adaptiveAlign {
+   &::before {
+      content: '\200b';
+      line-height: var(--inline_height_m);
+      width: 0;
+   }
+}
+
+.controls-text-operationsPanel {
+   color: var(--link_text-color_operationsPanel);
+}
+
+.controls-text-operationsPanel:active {
+   color: var(--link_hover_text-color_operationsPanel);
+}
+
+.ws-is-hover {
+   .controls-Toolbar__button:hover .controls-text-operationsPanel {
+      color: var(--link_hover_text-color_operationsPanel);
+   }
+}
+
+// баг сафари, без translateX не перерисовывается текст кнопки
+.ws-is-mobile-safari .controls-MultiSelector__button {
+   transform: translateX(0);
+}
+
+.controls-operations__selectorButton-style {
+   --text_color_button_local: var(--link_text-color_operationsPanel);
+}

@@ -1,0 +1,4 @@
+<div class="controls-padding-m">
+    <Controls-ListEnv.filterConnected:View storeId="filterData" filterNames="{{ ['salary', 'booleanEditor'] }}" alignment="left"/>
+    <Controls.list:View storeId="filterData" />
+</div>

@@ -1,0 +1,20 @@
+<div>
+    <Controls.markup:Decorator value="{{_value}}">
+        <ws:inputControl>
+            <Controls-demo.Decorators.Markup.WithControls.WrapperControl
+                id="{{inputControl.id}}"
+                on:inputDataChanged="_inputDataChangedHandler()"
+                value="{{inputControl.value}}">
+                <ws:content>
+                    <Controls.input:Text
+                        attr:class="controlsDemo-Markup__control"
+                        maxLength="{{10}}"
+                        attr:data-qa="{{inputControl.id}}"/>
+                </ws:content>
+            </Controls-demo.Decorators.Markup.WithControls.WrapperControl>
+        </ws:inputControl>
+    </Controls.markup:Decorator>
+    <ws:if data="{{_inputID}}">
+        <div>Значение текстового поля с идентификатором <b>{{_inputID}}</b>: {{_inputValue}}</div>
+    </ws:if>
+</div>

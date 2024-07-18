@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlsUnit/columnScrollReact/DragScroll/OverlayComponent overlay render. should add hidden/visible class name  1`] = `
+<DocumentFragment>
+  <div
+    class="controls-ColumnScrollReact__DragScrollOverlay tw-hidden"
+    data-qa="ColumnScrollReact__drag-scroll-overlay"
+  />
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/columnScrollReact/DragScroll/OverlayComponent overlay render. should add hidden/visible class name  2`] = `
+<DocumentFragment>
+  <div
+    class="controls-ColumnScrollReact__DragScrollOverlay tw-block"
+    data-qa="ColumnScrollReact__drag-scroll-overlay"
+  />
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/columnScrollReact/DragScroll/OverlayComponent with context and consumer should call context methods on mouse events 1`] = `
+<div
+  class="controls-ColumnScrollReact__DragScrollOverlay controls-ColumnScrollReact__DragScrollOverlay_grabbing tw-block"
+  data-qa="ColumnScrollReact__drag-scroll-overlay"
+/>
+`;

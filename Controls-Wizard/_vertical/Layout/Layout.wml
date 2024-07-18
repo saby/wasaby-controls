@@ -1,0 +1,150 @@
+<ws:template name="item">
+<ws:partial template="{{ templateName }}"
+            scope="{{item.contentTemplateOptions}}"
+            item="{{item}}"
+            index="{{index}}"
+            shouldLoadInAsync="{{_shouldLoadInAsync}}"
+            isLoaded="{{ index <= _maxSelectedIndex }}"
+            stepStatus="{{getItemStatus(index)}}"
+            titleFontColorStyle="{{_getTitleFontColorStyle(item, getItemStatus(index))}}"
+            backgroundStyle="{{_getItemBackgroundStyle(item, getItemStatus(index))}}"
+            progressbarVisible="{{_options.progressbarVisible}}"
+            itemsLength="{{_options.items.length - 1}}"
+            markerSize="{{_markerSize}}"
+            TITLE_COLOR_STYLE="{{TITLE_COLOR_STYLE}}"
+            selectedStepIndex="{{selectedStepIndex}}"
+            completedStepsIndexVisible="{{_options.completedStepsIndexVisible}}"
+            markerViewMode="{{_options.markerViewMode}}"
+            leftPadding="{{_options.leftPadding}}"
+            getDataOptions="{{_getDataOptionsCallback}}"
+            mode="{{_options.mode}}"
+            blockLayout="{{_options.blockLayout}}"
+            attr:data-qa="Wizard-Vertical-View-step_{{index}}"
+            firstOnFeature="{{_isFirstOnFeature(index)}}"
+            isLast="{{_isLast(index)}}"
+            nextButtonCaption="{{ _options.nextButtonCaption }}"
+            completeButtonCaption="{{ _options.completeButtonCaption }}"
+            additionalButtonsConfig="{{ _options.additionalButtonsConfig }}"
+            stepClickAvailable="{{ _options.stepClickAvailable }}"
+            isAdaptive="{{ _isAdaptive }}"
+/>
+</ws:template>
+
+<ws:template name="defaultItemTemplate">
+<ws:partial template="wml!Controls-Wizard/_vertical/Layout/BaseItemTemplate" scope="{{ _options }}">
+  <ws:content>
+    <ws:if data="{{ stepStatus !== 'future' || isLoaded }}">
+      <div class="Wizard-Vertical-View_step-content {{ stepStatus === 'future' ? 'ws-hidden' }}">
+        <ws:if data="{{shouldLoadInAsync(item.itemContentTemplate || item.contentTemplate)}}">
+          <Controls.Container.Async
+              templateName="{{item.itemContentTemplate || item.contentTemplate}}">
+            <ws:partial template="{{content.resolvedTemplate}}"
+                        scope="{{item.contentTemplateOptions}}"
+                        getDataOptions="{{getDataOptions}}"/>
+          </Controls.Container.Async>
+        </ws:if>
+        <ws:else>
+          <ws:partial template="{{item.itemContentTemplate || item.contentTemplate}}"
+                      scope="{{item.contentTemplateOptions}}"
+                      getDataOptions="{{getDataOptions}}"/>
+        </ws:else>
+      </div>
+    </ws:if>
+  </ws:content>
+</ws:partial>
+</ws:template>
+
+<ws:template name="itemWrapper">
+<ws:if data="{{ _shouldLoadInAsync(item.itemTemplate) }}">
+  <Controls.Container.Async
+      templateName="{{ item.itemTemplate }}">
+    <ws:partial template="item"
+                templateName="{{ content.resolvedTemplate }}"
+                selectedStepIndex="{{_maxSelectedIndex}}"
+                item="{{ item }}"
+                index="{{ index }}"
+                getDataOptions="{{_getDataOptionsCallback}}"
+                firstOnFeature="{{_isFirstOnFeature(index)}}"
+                isLast="{{_isLast(index)}}"
+                nextButtonCaption="{{ _options.nextButtonCaption }}"
+                completeButtonCaption="{{ _options.completeButtonCaption }}"
+                additionalButtonsConfig="{{ _options.additionalButtonsConfig }}"
+                stepClickAvailable="{{ _options.stepClickAvailable }}"
+                isAdaptive="{{ _isAdaptive }}"
+    />
+  </Controls.Container.Async>
+</ws:if>
+<ws:else>
+  <ws:if data="{{ item.itemTemplate }}">
+    <ws:partial template="item"
+                templateName="{{ item.itemTemplate }}"
+                selectedStepIndex="{{_maxSelectedIndex}}"
+                item="{{ item }}"
+                index="{{ index }}"
+                getDataOptions="{{_getDataOptionsCallback}}"
+                firstOnFeature="{{_isFirstOnFeature(index)}}"
+                isLast="{{_isLast(index)}}"
+                nextButtonCaption="{{ _options.nextButtonCaption }}"
+                completeButtonCaption="{{ _options.completeButtonCaption }}"
+                additionalButtonsConfig="{{ _options.additionalButtonsConfig }}"
+                stepClickAvailable="{{ _options.stepClickAvailable }}"
+                isAdaptive="{{ _isAdaptive }}"
+    />
+  </ws:if>
+  <ws:else>
+    <ws:partial template="item"
+                templateName="defaultItemTemplate"
+                selectedStepIndex="{{_maxSelectedIndex}}"
+                item="{{ item }}"
+                index="{{ index }}"
+                getDataOptions="{{_getDataOptionsCallback}}"
+                firstOnFeature="{{_isFirstOnFeature(index)}}"
+                isLast="{{_isLast(index)}}"
+                nextButtonCaption="{{ _options.nextButtonCaption }}"
+                completeButtonCaption="{{ _options.completeButtonCaption }}"
+                additionalButtonsConfig="{{ _options.additionalButtonsConfig }}"
+                stepClickAvailable="{{ _options.stepClickAvailable }}"
+                isAdaptive="{{ _isAdaptive }}"
+    />
+  </ws:else>
+</ws:else>
+</ws:template>
+
+<div class="Wizard-Vertical-View controls_Wizard_theme-{{_options.theme}}
+            Wizard-Vertical-View__blockLayout_{{_options.blockLayout}}__{{_options.leftPadding ? 'leftPadding' : 'notLeftPadding'}}
+            {{_options.leftPadding ? 'controls-margin_left-st'}}">
+<ws:if data="{{_options.progressbarVisible}}">
+  <div class="Wizard-Vertical-View_progressbar">
+    <ws:for data="index, item in _options.items">
+      <div class="Wizard-Vertical-View_progressbar_step
+                            Wizard-Vertical-View_progressbar_step_{{getProgressbarItemStatus(index, item)}}"></div>
+    </ws:for>
+  </div>
+</ws:if>
+
+<div class="Wizard-Vertical-View__blockLayoutWrapper
+                Wizard-Vertical-View__blockLayoutWrapper__{{_options.leftPadding ? 'leftPadding' : 'notLeftPadding'}}__blockLayout_{{_options.blockLayout}}
+                Wizard-Vertical-View__blockLayoutWrapper__{{_options.mode}}__blockLayout_{{_options.blockLayout}}
+                {{_options.blockLayout ? 'Wizard-Vertical-View__blockLayoutWrapper__boxShadow'}}
+                {{_options.progressbarVisible ? 'controls-padding_top-3xs'}} {{_options.blockWrapperClassName}}">
+  <ws:for data="index, item in _options.items">
+    <ws:if
+        data="{{ _options.completeButtonCaption && _isLast(index+1) && getItemStatus(index) === 'active' }}">
+      <ws:partial template="itemWrapper"
+                  attr:class="Wizard-Vertical-View__lastItem_withCompleteButton{{ _isAdaptive ? '_adaptive' : ''}}"
+      />
+    </ws:if>
+    <ws:else data="{{getItemStatus(index) === 'active' || getItemStatus(index) === 'completed'}}">
+      <ws:partial template="itemWrapper"/>
+    </ws:else>
+  </ws:for>
+</div>
+<ws:for data="index, item in _options.items">
+  <ws:if data="{{getItemStatus(index) === 'future'}}">
+    <ws:partial template="itemWrapper"
+                attr:class="{{ (_options.completeButtonCaption || _options.nextButtonCaption || _options.additionalButtonsConfig) && _isFirstOnFeature(index) ?
+                                                    'Wizard-Vertical-View__item_firstOnFeature_withOutsideNextButton' + (_isAdaptive ? '_adaptive')}}"
+    />
+  </ws:if>
+</ws:for>
+</div>

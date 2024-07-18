@@ -1,0 +1,41 @@
+<Controls.scroll:Container scrollbarVisible="{{ false }}" shadowMode="js">
+    <div class="VerticalTabs-buttons__wrapper controls_popupTemplate_theme-{{_options.theme}} controls_VerticalTabs_theme-{{_options.theme}}"
+         name="itemsContainer">
+        <ws:for data="index, item in _options.items">
+            <div class="VerticalTabs-buttons__button {{ _getBackgroundStyle(item) }}
+                        {{ index !== 0 ? 'VerticalTabs-buttons__button-spacing' }}
+                        {{ index === _options.items.getCount() + 1 ? 'controls-margin_bottom-xs'}}
+                        {{ _options.offset ? 'VerticalTabs-buttons__button-offset_' + _options.offset }}"
+                 style="{{ item.get('backgroundImage') ? 'background-image: url(' + item.get('backgroundImage') + ');'}}
+                 {{ (item.height || _options.itemHeight) ? 'height: ' + (item.height || _options.itemHeight) + 'px;'}}"
+                 on:click="_itemClickHandler(item, index)"
+                 data-qa="FloatingTabs-buttons__button">
+                <div class="VerticalTabs-buttons__button-title" data-qa="FloatingTabs-buttons__button-title">
+                    <Controls.heading:Title
+                            attr:class="VerticalTabs-buttons__heading-title ws-ellipsis"
+                            readOnly="{{ true }}"
+                            fontSize="{{ item.get('fontSize') || _options.fontSize || 'l' }}"
+                            fontColorStyle="{{ item.get('fontColorStyle') || _options.fontColorStyle }}"
+                            fontWeight="{{ _getFontWeight(item) }}"
+                            textTransform="{{ item.get('textTransform') || _options.textTransform }}"
+                            caption="{{ _getItemCaption(item) }}" />
+                    <Controls.heading:Title
+                            attr:class="VerticalTabs-buttons__heading-title VerticalTabs-buttons__heading-title__fake ws-ellipsis"
+                            readOnly="{{ true }}"
+                            fontSize="{{ item.get('fontSize') || _options.fontSize || 's' }}"
+                            fontWeight="bold"
+                            textTransform="{{ item.get('textTransform') || _options.textTransform }}"
+                            caption="{{ _getItemCaption(item) }}" />
+                </div>
+                <ws:if data="{{ item.get('mainCounter') }}">
+                    <div class="VerticalTabs-buttons__button-counter" data-qa="FloatingTabs-buttons__button-counter">
+                        <Controls.heading:Counter fontSize="{{ item.get('mainCounterFontSize') || _options.mainCounterFontSize || 'm' }}"
+                                                  readOnly="{{ true }}"
+                                                  fontColorStyle="{{ item.get('mainCounterFontColorStyle') || _options.mainCounterFontColorStyle || 'label' }}"
+                                                  caption="{{ item.get('mainCounter') }}" />
+                    </div>
+                </ws:if>
+            </div>
+        </ws:for>
+    </div>
+</Controls.scroll:Container>

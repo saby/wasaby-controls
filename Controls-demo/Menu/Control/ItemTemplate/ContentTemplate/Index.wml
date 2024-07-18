@@ -1,0 +1,21 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper">
+      <Controls.menu:Control
+              items="{{_items}}"
+              keyProperty="key"
+              displayProperty="title"
+              selectedKeys="{{['1']}}"
+              attr:class="ControlsDemo-menuControl_minWidth">
+         <ws:itemTemplate>
+            <ws:partial template="Controls/menu:ItemTemplate">
+               <ws:contentTemplate>
+                  <div class="ws-flexbox">
+                     <div>{{itemTemplate.item.contents.get('title')}} city</div>
+                     <span class="controls-text-label controls-margin_left-xs">{{itemTemplate.item.contents.get('code')}}</span>
+                  </div>
+               </ws:contentTemplate>
+            </ws:partial>
+         </ws:itemTemplate>
+      </Controls.menu:Control>
+   </div>
+</div>

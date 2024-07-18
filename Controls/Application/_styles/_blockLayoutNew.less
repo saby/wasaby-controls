@@ -1,0 +1,254 @@
+@block-wrapper-padding: var(--box-shadow-blur_block);
+@block-wrapper-margin: calc(var(--box-shadow-blur_block) * -1);
+// Блоки для нового дизайна
+.controls__block-wrapper {
+   overflow: hidden;
+   padding: @block-wrapper-padding;
+   margin: @block-wrapper-margin;
+   pointer-events: none;
+}
+
+.controls__block {
+   background-color: var(--background-color);
+   box-shadow: var(--box-shadow_block);
+   border-radius: var(--border-radius_default_block);
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   pointer-events: auto;
+}
+
+.controls__block-contrast {
+   box-shadow: var(--box-shadow_block);
+   border-radius: var(--border-radius_default_block);
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   pointer-events: auto;
+}
+
+.controls__block_backgroundStyle-unaccented {
+   background-color: var(--unaccented_background-color);
+}
+
+.controls__block_backgroundStyle-gradient-secondary {
+   background: linear-gradient(135deg, var(--background-color), var(--secondary_background-color));
+}
+
+.controls__block_backgroundStyle-gradient-primary {
+   background: linear-gradient(135deg, var(--background-color), var(--primary_background-color));
+}
+
+.controls__block_backgroundStyle-gradient-success {
+   background: linear-gradient(135deg, var(--background-color), var(--success_background-color));
+}
+
+.controls__block_backgroundStyle-gradient-info {
+   background: linear-gradient(135deg, var(--background-color), var(--info_background-color));
+}
+
+.controls__block_backgroundStyle-gradient-warning {
+   background: linear-gradient(135deg, var(--background-color), var(--warning_background-color));
+}
+
+.controls__block_backgroundStyle-gradient-danger {
+   background: linear-gradient(135deg, var(--background-color), var(--danger_background-color));
+}
+
+.controls__block_backgroundStyle-gradient-unaccented {
+   background: linear-gradient(135deg, var(--background-color), var(--unaccented_background-color));
+}
+
+// Из-за ошибки в движке рендеринга в safari WebKit тень торчит из элемента с border-radius.
+// https://bugs.webkit.org/show_bug.cgi?id=98538
+.ws-is-webkit .controls__block,
+.ws-is-webkit .controls__block-contrast {
+   backface-visibility: hidden;
+}
+
+.controls__block-wrapper.tl {
+   padding: @block-wrapper-padding 0 0 @block-wrapper-padding;
+   margin: @block-wrapper-margin 0 0 @block-wrapper-margin;
+
+   > .controls__block,
+   > .controls__block-contrast {
+      border-radius: var(--border-radius_default_block) 0 0 0;
+   }
+}
+
+.controls__block-wrapper.tr {
+   padding: @block-wrapper-padding @block-wrapper-padding 0 0;
+   margin: @block-wrapper-margin @block-wrapper-margin 0 0;
+
+   > .controls__block,
+   > .controls__block-contrast {
+      border-radius: 0 var(--border-radius_default_block) 0 0;
+   }
+}
+
+.controls__block-wrapper.tlr {
+   padding: @block-wrapper-padding @block-wrapper-padding 0 @block-wrapper-padding;
+   margin: @block-wrapper-margin @block-wrapper-margin 0 @block-wrapper-margin;
+
+   > .controls__block,
+   > .controls__block-contrast {
+      border-radius: var(--border-radius_default_block) var(--border-radius_default_block) 0 0;
+   }
+}
+
+.controls__block-wrapper.none {
+   padding: 0;
+   margin: 0;
+
+   > .controls__block,
+   > .controls__block-contrast {
+      border-radius: 0;
+   }
+}
+
+.controls__block-wrapper.without-shadow {
+   > .controls__block,
+   > .controls__block-contrast {
+      box-shadow: none;
+   }
+}
+
+.controls__block-layout {
+   padding: calc(var(--offset_block) / 2);
+   display: flex;
+   flex-direction: column;
+
+   &.without-shadow {
+      padding: 0;
+
+      .controls__block-layout-item {
+         box-shadow: none;
+         margin: 0;
+      }
+   }
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.controls__block-layout-item {
+   margin: calc(var(--offset_block) / 2);
+   background-color: var(--background-color);
+   box-shadow: var(--box-shadow_block);
+   border-radius: var(--border-radius_default_block);
+}
+
+.controls__block-layout-background {
+   background-color: var(--unaccented_background-color);
+}
+
+.controls-BlockLayout {
+   overflow: hidden;
+   background-color: var(--separator_color_block);
+}
+
+.controls-BlockLayout_detached {
+   padding-top: var(--separator_thickness_block);
+}
+
+.controls-BlockLayout__block {
+   .for(6, {
+      &_style_@{_i} {
+         background-color: ~'var(--background-color_@{_i}_block)';
+      }
+   });
+}
+
+.controls-BlockLayout > .controls-BlockLayout__blockGroup {
+   @margin: calc(-1 * var(--separator_thickness_block) / 2);
+   margin-left: @margin;
+   margin-right: @margin;
+
+   &:first-of-type {
+      margin-top: @margin;
+   }
+
+   &:last-of-type {
+      margin-bottom: @margin;
+   }
+
+   .controls-BlockLayout__block {
+      position: relative;
+      border-style: solid;
+      border-width: calc(var(--separator_thickness_block) / 2 + var(--border-thickness_block));
+      .box-sizing();
+
+      /**
+       * There is space left between blocks on mobile devices when using borders (due to native render).
+       * The color of the blocks borders and the space background is different.
+       * There is no problem when using" outline" size one pixel larger than "border-width".
+       * To abandon the "border" is impossible because "outline" is not included in the width value in the calculations.
+       * The solution is only used on mobile devices because property outline-offset not support in ie browser.
+       */
+
+      .ws-is-mobile-platform & {
+         border-color: transparent;
+         outline: calc(var(--separator_thickness_block) / 2 + var(--border-thickness_block) + 1px)
+            solid var(--separator_color_block);
+         outline-offset: calc(
+            -1px * (var(--separator_thickness_block) / 2 + var(--border-thickness_block))
+         );
+      }
+
+      .ws-is-desktop-platform & {
+         border-color: var(--separator_color_block);
+      }
+   }
+}
+
+// Набор классов для установки фона контрола через backgroundStyle
+.controls-background-BlockLayout__block {
+   .for(6, {
+      &_style_@{_i} {
+         background-color: ~'var(--background-color_@{_i}_block)';
+      }
+   });
+}
+
+/**
+ * TODO: pointer-events работает в ie начиная с 11 версии.
+ * Поэтому живем в ie10 без тени на блоках.
+ * Убрать body:not(.ws-is-ie10), когда откажемся от e10.
+ * Страницы в IE11 перестали отображаться, проблема комплексная,
+ * удалось выяснить что отключение данных стилей решает проблему.
+ * В chrome на android есть баг, из-за которого контейнер даже с pointer-events: none
+ * перекрывающий скроллируемую область приводит к тому, что скроллбар не показывается
+ * https://codepen.io/ondanila-the-flexboxer/pen/dypVbBX
+ * В хф делаем временное решение, в 21.1000 согласовываем ошибку со ссылкой на багрепорт в хром
+ */
+/* stylelint-disable-next-line selector-max-type */
+body:not(.ws-is-ie10):not(.ws-is-ie11) .controls-BlockLayout__block::after {
+   content: '';
+   position: absolute;
+   pointer-events: none;
+   top: calc(-1 * var(--border-thickness_block));
+   right: calc(-1 * var(--border-thickness_block));
+   bottom: calc(-1 * var(--border-thickness_block));
+   left: calc(-1 * var(--border-thickness_block));
+   border: var(--border-thickness_block) solid var(--border-color_block);
+   border-radius: var(--border-radius_block);
+   box-shadow: var(--shadow_block);
+
+   /**
+    * Область между блоками реализуется через border. Тень рисуется поверх каждого блока.
+    * Граница соседнего блока может перекрывать тень. Чтобы такого не было нужно расположить тень выше всех.
+    * https://jsfiddle.net/q41Lmb7s/
+    */
+   z-index: 1;
+}
+
+.controls-BlockLayout__block_border- {
+   @variants: top, right, bottom, left;
+   .for(@variants, {
+      &@{_item} {
+         border-@{_item}: var(--separator_thickness_block) solid var(--separator_color_block);
+      }
+   });
+}
+
+.controls-BlockLayout_background {
+   background-color: var(--separator_color_block);
+}

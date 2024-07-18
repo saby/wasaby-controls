@@ -1,0 +1,173 @@
+.controls-Dropdown {
+   display: inline-block;
+}
+
+.controls-Dropdown__wrapper {
+   display: inline-flex;
+   align-items: center;
+   width: 100%;
+}
+
+.controls-Dropdown__wrapper-height-default {
+   height: var(--height_dropdownSelector);
+}
+
+.controls-Dropdown__content-wrapper-height-default::before {
+   line-height: var(--height_dropdownSelector);
+}
+
+@heights: xs, s, m, l, xl, 2xl, 3xl, 4xl, 5xl;
+
+.for(@heights, {
+  .controls-Dropdown__content-wrapper-height-@{_item}::before {
+     line-height: ~'var(--inline_height_@{_item})';
+  }
+});
+
+.controls-Dropdown__content-wrapper {
+   display: inline-flex;
+   align-items: baseline;
+   width: 100%;
+
+   &::before {
+      content: '\200b';
+   }
+}
+
+.controls-Dropdown__iconTemplate_wrapper {
+   display: flex;
+   align-items: baseline;
+   width: 100%;
+}
+
+.controls-Dropdown__iconTemplate_wrapper::before {
+   content: '\200b';
+   line-height: var(--height_dropdownSelector);
+}
+
+.controls-Dropdown-fontsize {
+   font-size: var(--font-size_default_dropdownSelector);
+}
+
+.controls-Dropdown__text-wrapper {
+   box-sizing: border-box;
+   display: inline-flex;
+   align-items: baseline;
+   width: 100%;
+}
+
+.controls-Dropdown__text-wrapper-fixed {
+   text-decoration: var(--text-decoration_hover_button_link);
+}
+
+.controls-Dropdown__text_enabled:active {
+   cursor: pointer;
+
+   .controls-Dropdown__text-wrapper-hovered {
+      text-decoration: var(--text-decoration_hover_button_link);
+   }
+
+   .controls-icon_style-secondary {
+      color: var(--link_hover_text-color);
+      fill: var(--link_hover_text-color);
+   }
+
+   .controls-icon_style-label {
+      color: var(--link_hover_text-color);
+      fill: var(--link_hover_text-color);
+   }
+}
+
+.controls-Dropdown__text {
+   .text-overflow();
+}
+
+.controls-Dropdown__text_enabled.controls-Dropdown__defaultItem:active.controls-text-link {
+   color: var(--link_hover_text-color);
+}
+
+.controls-Dropdown__text_enabled.controls-Dropdown__defaultItem:active.controls-text-primary {
+   color: var(--primary_hover_text-color);
+}
+
+.controls-Dropdown__text_enabled.controls-Dropdown__defaultItem:active.controls-text-secondary {
+   color: var(--link_hover_text-color);
+}
+
+.controls-Dropdown__text_enabled.controls-Dropdown__defaultItem:active.controls-text-label {
+   color: var(--link_hover_text-color);
+}
+
+.controls-Dropdown__text_enabled.controls-Dropdown__defaultItem:active.controls-text-unaccented {
+   color: var(--unaccented_hover_text-color);
+}
+
+.ws-is-hover {
+   .controls-Dropdown__text_enabled:hover {
+      cursor: pointer;
+
+      .controls-Dropdown__text-wrapper-hovered {
+         text-decoration: var(--text-decoration_hover_button_link);
+      }
+
+      .controls-icon_style-secondary {
+         color: var(--link_hover_text-color);
+         fill: var(--link_hover_text-color);
+      }
+
+      .controls-icon_style-label {
+         color: var(--link_hover_text-color);
+         fill: var(--link_hover_text-color);
+      }
+   }
+
+   .controls-Dropdown__text_enabled.controls-Dropdown__defaultItem:hover.controls-text-link {
+      color: var(--link_hover_text-color);
+   }
+
+   .controls-Dropdown__text_enabled.controls-Dropdown__defaultItem:hover.controls-text-primary {
+      color: var(--primary_hover_text-color);
+   }
+
+   .controls-Dropdown__text_enabled.controls-Dropdown__defaultItem:hover.controls-text-secondary {
+      color: var(--secondary_hover_text-color);
+   }
+
+   .controls-Dropdown__text_enabled.controls-Dropdown__defaultItem:hover.controls-text-label {
+      color: var(--label_hover_text-color);
+   }
+
+   .controls-Dropdown__text_enabled.controls-Dropdown__defaultItem:hover.controls-text-unaccented {
+      color: var(--unaccented_hover_text-color);
+   }
+}
+
+.controls-Dropdown__icon {
+   .inline-flexbox();
+   align-self: center;
+   flex-shrink: 0;
+}
+
+.controls-Dropdown__icon-rightSpacing {
+   margin-right: var(--offset_xs);
+}
+
+.controls-DropdownList__margin,
+.controls-DropdownList_multiSelect__margin {
+   margin-top: calc(
+      -1 * ((var(--item_height_menu) - var(--height_dropdownSelector)) / 2 + var(--offset_s) +
+               var(--offset_3xs))
+   );
+   margin-left: calc(
+      -1 * (var(--item_padding-left_s_list) + var(--icon-size_2xs) + var(--offset_3xs) +
+               var(--offset_s))
+   );
+}
+
+.controls-Dropdown__hasMoreText {
+   flex-shrink: 0;
+}
+
+.controls-Dropdown__infoboxWrapper {
+   width: 100%;
+}

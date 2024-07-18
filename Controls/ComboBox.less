@@ -1,0 +1,262 @@
+.controls-ComboBox {
+   position: relative;
+   border-width: 0;
+   border-style: var(--border-style_inputText);
+   box-sizing: border-box;
+   cursor: pointer;
+}
+
+.controls-ComboBox_background-contrast {
+   background-color: var(--background-color_inputText);
+}
+
+.controls-ComboBox_background-same {
+   background-color: transparent;
+}
+
+.controls-ComboBox__field {
+   width: 100%;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+
+.controls-ComboBox-wrapper {
+   display: inline-flex;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+
+   &::before {
+      content: '\200b';
+   }
+}
+
+.controls-ComboBox_border-visible {
+   border-width: var(--border-thickness);
+   border-color: var(--separator_color);
+}
+
+.controls-ComboBox_border-partial::after {
+   content: '\200b';
+   position: absolute;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   height: var(--border-thickness);
+   pointer-events: none;
+}
+
+.controls-ComboBox_textAlign-left {
+   text-align: left;
+}
+
+.controls-ComboBox_textAlign-right {
+   text-align: right;
+}
+
+.controls-ComboBox-borderStyle-valid {
+   border-bottom-color: var(--unaccented_border-color);
+
+   &::after {
+      background: var(--unaccented_border-color);
+   }
+}
+
+.controls-ComboBox-borderStyle-invalidAccent {
+   border-style: var(--invalid_border-style_inputText);
+   border-color: var(--invalid_border-color);
+
+   &::after {
+      background: var(--invalid_border-color);
+   }
+}
+
+.controls-ComboBox-validationStatus-invalidAccent {
+   background-color: var(--invalid_focus_background-color);
+}
+
+.controls-ComboBox-borderStyle-invalid {
+   border-style: var(--invalid_border-style_inputText);
+   border-color: var(--invalid_border-color);
+
+   &::after {
+      background: var(--invalid_border-color);
+   }
+}
+
+.ws-is-hover {
+   .controls-ComboBox-borderStyle-valid:hover {
+      border-style: var(--border-style_hover_inputText);
+      border-bottom-color: var(--unaccented_hover_border-color);
+
+      &::after {
+         background: var(--unaccented_hover_border-color);
+      }
+   }
+}
+
+.controls-ComboBox-borderStyle-invalidAccent:hover {
+   border-style: var(--invalid_border-style_inputText);
+}
+
+.controls-ComboBox-borderStyle-invalid:hover {
+   border-style: var(--invalid_border-style_inputText);
+}
+
+.controls-ComboBox-borderStyle-valid_focusing:focus-within {
+   border-style: var(--border-style_focus_inputText);
+   border-bottom-color: var(--unaccented_hover_border-color);
+
+   &::after {
+      background: var(--unaccented_hover_border-color);
+   }
+}
+
+.controls-ComboBox-borderStyle-invalidAccent_focusing:focus-within {
+   border-style: var(--invalid_border-style_inputText);
+   border-color: var(--invalid_border-color);
+
+   &::after {
+      background: var(--invalid_border-color);
+   }
+}
+
+.controls-ComboBox-borderStyle-invalid_focusing:focus-within {
+   border-style: var(--invalid_border-style_inputText);
+   border-color: var(--invalid_border-color);
+
+   &::after {
+      background: var(--invalid_border-color);
+   }
+}
+
+.controls-ComboBox-readOnly {
+   border-color: var(--readonly_border-color);
+   background-color: var(--readonly_background-color_inputText);
+   cursor: default;
+
+   &::after {
+      background: var(--readonly_border-color);
+   }
+}
+
+.controls-ComboBox__placeholder {
+   width: 100%;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+
+.controls-ComboBox__placeholderColor {
+   color: var(--placeholder-color_inputText);
+}
+
+.controls-ComboBox__nativeField_caretEmpty,
+.controls-ComboBox__nativeField_caretFilled {
+   cursor: pointer;
+}
+
+.controls-ComboBox__field_margin-xs {
+   margin: 0 var(--trigger_padding-right_combobox) 0 var(--padding-horizontal_inputText);
+}
+
+.controls-ComboBox__field_margin-null {
+   margin-right: var(--trigger_padding-right_combobox);
+}
+
+.controls-ComboBox-popup {
+   margin-top: calc(-1 * (var(--border-thickness) + var(--offset_3xs)));
+
+   // отступ попапа меню + отступ пункта меню + ширина маркера - ширина обводки - отступ маркера
+   --combobox_popup_shift: calc(
+      var(--offset_xs) + var(--item_padding-horizontal_s_menu) + var(--icon-size_2xs) / 2 -
+         var(--border-thickness) - var(--offset_3xs)
+   );
+}
+
+.controls-ComboBox-popup_shift {
+   margin-left: calc(-1 * var(--combobox_popup_shift));
+
+   --combobox_item_content_padding: calc(var(--icon-size_2xs) / 2 + var(--offset_3xs));
+}
+
+.controls-ComboBox-popup_shift_borderVisible {
+   margin-left: calc(-1 * (var(--combobox_popup_shift) - var(--border-thickness)));
+}
+
+.controls-ComboBox-popup_shift_contrastBackground {
+   margin-left: calc(-1 * (var(--combobox_popup_shift) - var(--padding-horizontal_inputText)));
+
+   --combobox_item_content_padding: calc(
+      var(--icon-size_2xs) / 2 + var(--offset_3xs) + 2 * var(--padding-horizontal_inputText)
+   );
+}
+
+.controls-ComboBox__arrow-wrapper {
+   display: inline-flex;
+   align-items: center;
+   align-self: center;
+   cursor: pointer;
+   height: 100%;
+   color: var(--unaccented_icon-color);
+   flex-shrink: 0;
+   font-weight: normal;
+}
+
+.controls-ComboBox__opened,
+.controls-ComboBox:hover {
+   .controls-ComboBox__arrow-wrapper {
+      color: var(--unaccented_hover_icon-color);
+   }
+}
+
+.controls-ComboBox__arrow-wrapper_offset-xs {
+   padding-right: var(--padding-horizontal_inputText);
+}
+
+.controls-ComboBox__arrow-wrapper::before {
+   content: '\200b';
+}
+
+.controls-ComboBox__iconArrow {
+   .icon-size-without-important(var(--icon-size_s));
+   display: inline-flex;
+   align-items: center;
+}
+
+.controls-Combobox-fontsize-xs {
+   font-size: var(--font-size_xs_input);
+}
+
+.controls-Combobox-fontsize-s {
+   font-size: var(--font-size_s_input);
+}
+
+.controls-Combobox-fontsize-m {
+   font-size: var(--font-size_m_input);
+}
+
+.controls-Combobox-fontsize-l {
+   font-size: var(--font-size_l);
+}
+
+.controls-Combobox-fontsize-xl {
+   font-size: var(--font-size_xl);
+}
+
+.controls-Combobox-fontsize-2xl {
+   font-size: var(--font-size_2xl);
+}
+
+.controls-Combobox-fontsize-3xl {
+   font-size: var(--font-size_3xl);
+}
+
+.controls-Combobox-fontsize-4xl {
+   font-size: var(--font-size_4xl);
+}
+
+.controls-Combobox-fontsize-5xl {
+   font-size: var(--font-size_5xl);
+}

@@ -1,0 +1,40 @@
+<div class="engineDemo__wrapper engineDemo_fixedWidth250">
+    <div class="engineDemo__cell controls-margin-m">
+        <div class="engine-demo-ChooseButton__containerWithSource">
+            <div class="controls-text-label">itemSpacing=s</div>
+            <Controls-Keyboard.View
+                    items="{{_items}}"
+                    borderVisible="{{_borderVisible}}"
+                    shadowVisible="{{_shadowVisible}}"
+                    itemSpacing="s"
+                    theme="default">
+            </Controls-Keyboard.View>
+        </div>
+    </div>
+
+    <div class="engineDemo__cell controls-margin-m">
+        <div class="engine-demo-ChooseButton__containerWithSource">
+            <div class="controls-text-label">itemSpacing=m</div>
+            <Controls-Keyboard.View
+                    items="{{_items}}"
+                    borderVisible="{{_borderVisible}}"
+                    shadowVisible="{{_shadowVisible}}"
+                    itemSpacing="m"
+                    theme="default">
+            </Controls-Keyboard.View>
+        </div>
+    </div>
+
+    <div class="engineDemo__cell controls-margin-m">
+        <div class="engine-demo-ChooseButton__containerWithSource">
+            <div class="controls-text-label">itemSpacing=l</div>
+            <Controls-Keyboard.View
+                    items="{{_items}}"
+                    borderVisible="{{_borderVisible}}"
+                    shadowVisible="{{_shadowVisible}}"
+                    itemSpacing="l"
+                    theme="default">
+            </Controls-Keyboard.View>
+        </div>
+    </div>
+</div>

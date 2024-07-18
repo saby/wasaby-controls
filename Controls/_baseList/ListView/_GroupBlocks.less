@@ -1,0 +1,207 @@
+.controls-ListView__groupViewMode_blocks,
+.controls-ListView__groupViewMode_titledBlocks {
+   .controls-GridView__checkbox_relative,
+   .controls-ListView__itemContent {
+      z-index: 1;
+      position: relative;
+      background-color: inherit;
+      border-radius: inherit;
+   }
+}
+
+.controls-List__groupViewMode_titledBlocks .controls-ListView__group {
+   .controls-ListView__groupContent {
+      overflow: hidden;
+   }
+
+   &.controls-ListView__GroupContentWrapper::after,
+   .controls-ListView__GroupContentWrapper::after {
+      content: '\200b';
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      box-sizing: border-box;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 0;
+      border-radius: inherit;
+      box-shadow: var(--shadow_b);
+   }
+}
+
+.controls-List__groupViewMode_blocks,
+.controls-List__groupViewMode_titledBlocks {
+   .controls-ListView__groupHidden
+      + .controls-List__item_grouped_in_block:not(.controls-ListView__group) {
+      border-start-start-radius: var(--border-radius_s);
+      border-start-end-radius: var(--border-radius_s);
+   }
+
+   .controls-ListView__groupHidden
+      + .controls-ListView__itemV:not(.controls-ListView__group)
+      > .controls-List__item_grouped_in_block:first-child {
+      border-start-start-radius: var(--border-radius_s);
+   }
+
+   .controls-ListView__groupHidden
+      + .controls-ListView__itemV:not(.controls-ListView__group)
+      > .controls-List__item_grouped_in_block:last-child {
+      border-start-end-radius: var(--border-radius_s);
+   }
+
+   .controls-ListView__group
+   + .controls-List__item_grouped_in_block:not(.controls-ListView__group)::after,
+   .controls-ListView__groupHidden
+   + .controls-List__item_grouped_in_block:not(.controls-ListView__group)::after,
+   .controls-ListView__itemV:not(.controls-ListView__group)
+      > .controls-List__item_grouped_in_block:last-child::after,
+   .controls-ListView__itemV:not(.controls-ListView__group)
+      > .controls-List__item_grouped_in_block:first-child::after,
+   .controls-ListView__itemV:not(.controls-ListView__group):last-child
+      > .controls-List__item_grouped_in_block::after,
+   .controls-ListView__group
+      + .controls-ListView__itemV:not(.controls-ListView__group)
+      > .controls-List__item_grouped_in_block::after,
+   .controls-ListView__groupHidden
+      + .controls-ListView__itemV:not(.controls-ListView__group)
+      > .controls-List__item_grouped_in_block::after,
+   .controls-ListView__itemV.controls-List__item_grouped_in_block:not(
+         .controls-ListView__group
+      )::after {
+      content: '\200b';
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      box-sizing: border-box;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 0;
+      border-radius: inherit;
+      box-shadow: var(--shadow_b);
+   }
+}
+
+.controls-List__groupViewMode_blocks {
+   .controls-ListView__group
+      + .controls-ListView__itemV:not(.controls-ListView__group)
+      > .controls-List__item_grouped_in_block:first-child {
+      border-start-start-radius: var(--border-radius_s);
+   }
+
+   .controls-ListView__group
+      + .controls-ListView__itemV:not(.controls-ListView__group)
+      > .controls-List__item_grouped_in_block:last-child {
+      border-start-end-radius: var(--border-radius_s);
+   }
+
+   .controls-ListView__group
+      + .controls-List__item_grouped_in_block.controls-ListView__itemV:not(
+         .controls-ListView__group
+      ) {
+      border-start-start-radius: var(--border-radius_s);
+      border-start-end-radius: var(--border-radius_s);
+   }
+
+   .controls-ListView__itemV:not(.controls-ListView__group):last-child
+      > .controls-List__item_grouped_in_block:first-child,
+   .controls-ListView__itemV:not(.controls-ListView__group):has(+ .controls-ListView__group)
+      > .controls-List__item_grouped_in_block:first-child {
+      border-end-start-radius: var(--border-radius_s);
+   }
+
+   .controls-ListView__itemV:not(.controls-ListView__group):last-child
+      > .controls-List__item_grouped_in_block:last-child,
+   .controls-ListView__itemV:not(.controls-ListView__group):has(+ .controls-ListView__group)
+      > .controls-List__item_grouped_in_block:last-child {
+      border-end-end-radius: var(--border-radius_s);
+   }
+
+   .controls-ListView__itemV.controls-List__item_grouped_in_block:not(
+         .controls-ListView__group
+      ):last-child,
+   .controls-ListView__itemV.controls-List__item_grouped_in_block:not(
+         .controls-ListView__group
+      ):has(+ .controls-ListView__group) {
+      border-end-start-radius: var(--border-radius_s);
+      border-end-end-radius: var(--border-radius_s);
+   }
+
+   .controls-ListView__itemV:not(.controls-ListView__group):has(+ .controls-ListView__group)
+      > .controls-List__item_grouped_in_block::after,
+   .controls-ListView__itemV.controls-List__item_grouped_in_block:not(
+         .controls-ListView__group
+      ):has(+ .controls-ListView__group)::after {
+      content: '\200b';
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      box-sizing: border-box;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 0;
+      border-radius: inherit;
+      box-shadow: var(--shadow_b);
+   }
+}
+
+.controls-List__groupViewMode_titledBlocks {
+   .controls-ListView__group.controls-ListView__GroupContentWrapper_first,
+   .controls-ListView__group .controls-ListView__GroupContentWrapper_first {
+      border-start-start-radius: var(--border-radius_s);
+   }
+
+   .controls-ListView__group.controls-ListView__GroupContentWrapper_last,
+   .controls-ListView__group .controls-ListView__GroupContentWrapper_last {
+      border-start-end-radius: var(--border-radius_s);
+   }
+
+   .controls-ListView__group.controls-ListView__GroupContentWrapper_first:has(+ .controls-List__SpaceItem),
+   .controls-ListView__group:has(+ .controls-List__SpaceItem) .controls-ListView__GroupContentWrapper_first,
+   .controls-ListView__itemV:not(.controls-List__SpaceItem):has(+ .controls-List__SpaceItem)
+      > .controls-List__item_grouped_in_block:first-child {
+      border-end-start-radius: var(--border-radius_s);
+   }
+
+   .controls-ListView__group.controls-ListView__GroupContentWrapper_last:has(+ .controls-List__SpaceItem),
+   .controls-ListView__group:has(+ .controls-List__SpaceItem) .controls-ListView__GroupContentWrapper_last,
+   .controls-ListView__itemV:not(.controls-List__SpaceItem):has(+ .controls-List__SpaceItem)
+      > .controls-List__item_grouped_in_block:last-child {
+      border-end-end-radius: var(--border-radius_s);
+   }
+
+   .controls-ListView__itemV.controls-List__item_grouped_in_block:not(
+         .controls-List__SpaceItem
+      ):has(+ .controls-List__SpaceItem) {
+      border-end-start-radius: var(--border-radius_s);
+      border-end-end-radius: var(--border-radius_s);
+   }
+
+   .controls-ListView__itemV:not(.controls-List__SpaceItem):has(+ .controls-List__SpaceItem)
+      > .controls-List__item_grouped_in_block::after,
+   .controls-ListView__itemV.controls-List__item_grouped_in_block:not(
+         .controls-List__SpaceItem
+      ):has(+ .controls-List__SpaceItem)::after {
+      content: '\200b';
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      box-sizing: border-box;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 0;
+      border-radius: inherit;
+      box-shadow: var(--shadow_b);
+   }
+}

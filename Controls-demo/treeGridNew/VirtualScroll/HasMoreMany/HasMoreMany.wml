@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:class="controlsDemo__maxWidth500 controlsDemo__height500">
+        <Controls.treeGrid:View
+                useTableInOldBrowsers="{{true}}"
+                storeId="VirtualScrollHasMoreMany"
+                columns="{{_columns}}">
+            <ws:virtualScrollConfig pageSize="{{100}}"/>
+        </Controls.treeGrid:View>
+    </Controls.scroll:Container>
+</div>

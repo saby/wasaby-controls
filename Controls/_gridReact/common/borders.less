@@ -1,0 +1,104 @@
+// Всем ячейкам добавляем after.
+.controls-GridReact__cell-border_row_visible,
+.controls-GridReact__cell-border_row_onhover,
+.controls-GridReact__cell-border_cell_visible,
+.controls-GridReact__cell-border_cell_onhover {
+   &::after {
+      content: '\200b';
+      position: absolute;
+      box-sizing: border-box;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 1;
+      border-radius: inherit;
+      visibility: hidden;
+   }
+}
+
+// region Строка
+
+// Даем всем after верхнюю и нижнюю границу.
+.controls-GridReact__cell-border_row_visible,
+.controls-GridReact__cell-border_row_onhover {
+   &::after {
+      // Стили пишутся раздельно, т.к. "border:" перебьет правила для цвета.
+      // Для цвета селектор в разы проще.
+      border-top-width: var(--border-thickness);
+      border-top-style: solid;
+      border-bottom-width: var(--border-thickness);
+      border-bottom-style: solid;
+   }
+}
+
+// Первой и последней ячейки даем еще границы слева и справа соответственно.
+.controls-GridReact__cell-border_row_first::after {
+   border-left-width: var(--border-thickness);
+   border-left-style: solid;
+}
+
+.controls-GridReact__cell-border_row_last::after {
+   border-right-width: var(--border-thickness);
+   border-right-style: solid;
+}
+
+// Включаем
+.controls-GridReact__cell-border_row_visible,
+.ws-is-hover
+   .controls-BaseControl_hover_enabled
+   .controls-GridReact__row-border_onhover:hover
+   .controls-GridReact__cell-border_row_onhover {
+   &::after {
+      visibility: visible;
+   }
+}
+
+// endregion Строка
+
+// region Выделение отдельных ячеек
+
+// Даем всем after все границы.
+.controls-GridReact__cell-border_cell_visible,
+.controls-GridReact__cell-border_cell_onhover {
+   &::after {
+      border-width: var(--border-thickness);
+      border-style: solid;
+   }
+}
+
+// Включаем
+.controls-GridReact__cell-border_cell_visible,
+.ws-is-hover
+   .controls-BaseControl_hover_enabled
+   .controls-GridReact__cell-border_cell_onhover:hover {
+   &::after {
+      visibility: visible;
+   }
+}
+
+// endregion
+
+// region Стили границ
+.controls-GridReact__cell-borderStyle_default::after {
+   border-color: var(--border-color);
+}
+
+.controls-GridReact__cell-borderStyle_danger::after {
+   border-color: var(--danger_border-color);
+}
+
+// hover редактирования, editABLE
+.controls-GridReact__cell-borderStyle_singleCellEditable::after {
+   border-color: var(--single-editable-cell_hover_border-color_grid);
+}
+
+// Непосредственно редактирование, editING
+.controls-GridReact__cell-borderStyle_singleCellEditing::after {
+   border-color: var(--single-editable-cell_editing_border-color_grid);
+   // Толстой границы в переменных тем оформления больше нет
+   border-width: var(--single-editable-cell_editing_border-width_grid);
+}
+
+// endregion Стили границ

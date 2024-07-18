@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell controls-margin_right-xl">
+            <Controls.toggle:Switch bind:value="_value"
+                                    resetValue="{{_resetValue}}"/>
+        </div>
+        <div class="controlsDemo__cell controls-margin_right-xl">
+            <Controls.toggle:Switch bind:value="_value"
+                                    resetValue="{{!_resetValue}}"/>
+        </div>
+        <div class="controlsDemo__cell controls-margin_right-xl">
+            <Controls.toggle:Switch bind:value="_value2"
+                                    resetValue="{{_resetValue}}"/>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.toggle:Switch bind:value="_value2"
+                                    resetValue="{{!_resetValue}}"/>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,141 @@
+<ws:template name="filtersContent">
+   <ws:if data="{{_hasBasicItems}}">
+      <Controls.validate:Controller name="formController">
+         <Controls._filterPopup.Panel.PropertyGrid items="{{_items}}"
+                                                    itemTemplate="{{_options.itemTemplate}}"
+                                                    itemTemplateProperty="{{_options.itemTemplateProperty}}"
+                                                    contrastBackground="{{_options.orientation === 'horizontal'}}"
+                                                    on:itemsChanged="_itemsChangedHandler()"
+                                                    attr:class="controls-FilterPanel__PropertyGrid
+                                                    {{_getPopupBackgroundStyle() ?
+                                                      'controls-background-' + _getPopupBackgroundStyle() : 'controls-FilterPanel_backgroundStyle-default'}}
+                                                     {{(!_hasAdditionalParams && (!_options.historyId || !_historyItems.getCount() || _options.orientation === 'horizontal')) ? 'controls-FilterPanel_lastBlock'}}"/>
+      </Controls.validate:Controller>
+   </ws:if>
+   <ws:if data="{{_hasAdditionalParams}}">
+      <Controls._filterPopup.Panel.AdditionalParams.Control
+              source="{{_items}}"
+              render="{{_options.additionalPanelTemplate}}"
+              columnProperty="column"
+              keyProperty="{{_keyProperty}}"
+              groupProperty="{{_options.groupProperty}}"
+              itemTemplate="{{_options.additionalTemplate}}"
+              itemTemplateProperty="{{_options.additionalTemplateProperty}}"
+              hasBasicItems="{{_hasBasicItems}}"
+              on:sourceChanged="_itemsChangedHandler()"
+              attr:class="controls-FilterPanel__AdditionalParams
+                          {{_hasBasicItems ? 'controls-FilterPanel__AdditionalParams_basicItems-paddingTop' : 'controls-FilterPanel__AdditionalParams_paddingTop'}}
+               {{!_options.historyId || !_historyItems.getCount() || _options.orientation === 'horizontal' ? 'controls-FilterPanel_lastBlock'}}"/>
+   </ws:if>
+   <ws:if data="{{_options.footerTemplate}}">
+      <ws:partial template="{{_options.footerTemplate}}"/>
+   </ws:if>
+</ws:template>
+
+<ws:template name="history">
+   <ws:if data="{{_isHistoryVisible()}}">
+      <Controls._filterPopup.History.List
+              items="{{_historyItems}}"
+              filterItems="{{_items}}"
+              historyId="{{_options.historyId}}"
+              saveMode="{{_historySaveMode}}"
+              orientation="{{_options.orientation}}"
+              on:historyChanged="_historyItemsChanged()"
+              attr:class="controls-HistoryList__{{_options.orientation}}"
+              on:applyHistoryFilter="_applyHistoryFilter()">
+          <ws:emptyTemplate>
+              <div class="controls-FilterPanel__emptyHistory">
+                  <ws:partial template="{{_options.emptyHistoryTemplate}}"/>
+              </div>
+          </ws:emptyTemplate>
+      </Controls._filterPopup.History.List>
+   </ws:if>
+</ws:template>
+
+<Controls.scroll:ScrollContextProvider pagingVisible="{{ false }}">
+   <Controls.form:PrimaryAction on:triggered="_applyFilter()">
+      <Controls.popupTemplate:Dialog headerBackgroundStyle="{{_getPopupBackgroundStyle()}}"
+                                     backgroundStyle="{{_getPopupBackgroundStyle()}}"
+                                     headingFontColorStyle="{{_options.headingStyle}}"
+                                     headingFontSize="{{_options.headingFontSize}}"
+                                     closeButtonVisible="{{_options.isAdaptive ? false : true}}"
+                                     closeButtonViewMode="toolButton"
+                                     attr:class="controls_filterPopup_theme-{{_options.theme}}
+                                                 controls_filter_theme-{{_options.theme}}
+                                                 controls-PanelFilter
+                                                 controls-FilterPanel__{{_options.orientation}}
+                                                 {{_options.isAdaptive ? 'controls-FilterPanel__adaptive'}}
+                                                 {{_hasHistory || _options.emptyHistoryTemplate ? 'controls-FilterPanel__' + _options.orientation + '_withHistory'}}">
+         <ws:headerContentTemplate>
+            <div class="ws-flexbox ws-flex-grow-1 ws-justify-content-between ws-align-items-baseline
+             controls-FilterPanel__headerContent controls-FilterPanel__headerContent-{{_options.orientation}}{{_options.isAdaptive ? '_adaptive' : ''}}">
+               <div class="ws-flexbox ws-align-items-baseline controls-margin_left-s controls-FilterPanel__headerContent-left">
+                  <ws:if data="{{_options.topTemplate}}">
+                     <ws:partial template="{{_options.topTemplate}}"/>
+                  </ws:if>
+                  <ws:else>
+                     <Controls.icon:Icon icon="Controls-icons/common:icon-Filter"
+                                         iconSize="xs"
+                                         iconStyle="primaryFilter"/>
+                  </ws:else>
+                  <div class="controls-FilterPanel__header controls-fontsize-{{_options.headingFontSize}} controls-text-{{_options.headingStyle}} controls-margin_left-xs controls-margin_right-s">
+                     {{_headingCaption}}
+                  </div>
+               </div>
+               <div class="controls-FilterPanel__header__buttons ws-flexbox ws-align-items-baseline">
+                  <ws:if data="{{_hasResetValue && _isChanged}}">
+                     <Controls.buttons:Button attr:class="controls-FilterPanel__resetButton"
+                                              on:click="_resetFilter()"
+                                              viewMode="link"
+                                              name="resetButton"
+                                              fontSize="xs"
+                                              attr:tabindex="-1"
+                                              inlineHeight="m"
+                                              caption="{[Сбросить]}"
+                                              tooltip="{[Сбросить]}"
+                                              attr:data-qa="FilterPanel__resetButton"/>
+                  </ws:if>
+               </div>
+            </div>
+            <Controls.buttons:Button viewMode="{{_options.applyButtonCaption ? 'outlined' : 'filled'}}"
+                                     buttonStyle="{{!_options.applyButtonCaption ? _options.applyButtonStyle : 'primary'}}"
+                                     caption="{{_options.applyButtonCaption}}"
+                                     icon="{{!_options.applyButtonCaption ? 'icon-Yes'}}"
+                                     iconStyle="contrast"
+                                     iconSize="filterApply"
+                                     inlineHeight="{{!_options.applyButtonCaption ? l}}"
+                                     on:click="_applyFilter()"
+                                     attr:tabindex="1"
+                                     attr:ws-autofocus="true"
+                                     attr:class="controls-FilterPanel__filterButton
+                                                 {{!_options.applyButtonCaption ? 'controls-FilterPanel__filterButton_withoutCaption'}}
+                                                 {{_options.isAdaptive ? 'controls-FilterPanel__filterButton-inAdaptive controls-FilterPanel__filterButton-' + _options.orientation + '-inAdaptive'}}"
+                                     attr:data-qa="FilterPanel__filterButton"/>
+         </ws:headerContentTemplate>
+         <ws:bodyContentTemplate>
+            <Controls.scroll:Container
+                    backgroundStyle="filterPanel"
+                    attr:class="controls-ScrollContainer__flex
+                                {{_options.orientation === 'vertical' &&
+                                    (_hasAdditionalParams || _isHistoryVisible()) ? 'controls-FilterPanel_content-background'}}
+                                {{_options.isAdaptive ? 'controls-FilterPanel_content__adaptive'}}">
+               <ws:if data="{{_options.orientation === 'horizontal' && !_options.adaptive}}">
+                  <div class="controls-FilterPanel__content-horizontal">
+                     <div class="controls-FilterPanel__filtersWrapper
+                    controls-FilterPanel_{{_options.historyId && _historyItems.getCount() ? 'twoColumn' : 'oneColumn'}}__filtersWrapper">
+                        <ws:partial template="filtersContent"/>
+                     </div>
+                     <ws:partial template="history"/>
+                  </div>
+               </ws:if>
+               <ws:else>
+                  <div class="controls-FilterPanel__content-vertical">
+                     <ws:partial template="filtersContent"/>
+                  </div>
+                  <ws:partial template="history"/>
+               </ws:else>
+            </Controls.scroll:Container>
+         </ws:bodyContentTemplate>
+      </Controls.popupTemplate:Dialog>
+   </Controls.form:PrimaryAction>
+</Controls.scroll:ScrollContextProvider>

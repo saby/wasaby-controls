@@ -1,0 +1,21 @@
+<div class="controlsDemo__wrapper" style="max-width: 700px;">
+        <Controls.scroll:Container attr:style="height: 350px;" attr:class="controlsDemo_fixedWidth500">
+                <Controls.explorer:View
+                    storeId="ColumnScroll"
+                    attr:class="demo-Explorer"
+                    columnScroll="{{true}}"
+                    multiSelectVisibility="{{ _hasMultiSelect ? 'visible' : 'hidden' }}"
+                    stickyColumnsCount="{{1}}"
+                    rowSeparatorSize="s"
+                    header="{{_header}}"
+                    columns="{{_columns}}">
+                </Controls.explorer:View>
+        </Controls.scroll:Container>
+        <div>
+          <Controls.checkbox:Checkbox
+              attr:class="controlsDemo__explorer-ColumnScroll__checkbox__hasMultiSelect"
+              attr:data-qa="controlsDemo__explorer-ColumnScroll__checkbox__hasMultiSelect"
+              bind:value="_hasMultiSelect"
+              caption="Множественный выбор"/>
+        </div>
+</div>

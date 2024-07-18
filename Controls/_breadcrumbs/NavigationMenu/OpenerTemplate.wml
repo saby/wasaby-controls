@@ -1,0 +1,33 @@
+<div class="
+    {{!_options.slidingPanelOptions.isMobileMode && headerVisible !== true ? 'controls-breadcrumbs-nav-menu__popup_close-btn-external'}}
+">
+  <Controls.popupSliding:Template
+      shadowVisible="{{true}}"
+      controlButtonVisibility="{{false}}"
+      borderVisible="{{false}}"
+
+      closeButtonVisible="{{headerVisible !== true}}"
+      closeButtonViewMode="{{headerVisible !== true ? 'external'}}"
+
+      slidingPanelOptions="{{ _options.slidingPanelOptions }}"
+  >
+      <ws:bodyContentTemplate>
+        <Controls._breadcrumbs.NavigationMenu
+            path="{{path}}"
+
+            caption="{{caption}}"
+            headerVisible="{{headerVisible}}"
+
+            source="{{source}}"
+            filter="{{filter}}"
+            sorting="{{sorting}}"
+            navigation="{{navigation}}"
+            keyProperty="{{keyProperty}}"
+            nodeProperty="{{nodeProperty}}"
+            parentProperty="{{parentProperty}}"
+            displayProperty="{{displayProperty}}"
+            hasChildrenProperty="{{hasChildrenProperty}}"
+        />
+      </ws:bodyContentTemplate>
+  </Controls.popupSliding:Template>
+</div>

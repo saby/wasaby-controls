@@ -1,0 +1,1376 @@
+[
+    {
+        "header": {
+            "md5": "3b10fdc647e9fc6bf0e9f11e8490ec5a",
+            "timestamp": "2024-04-04 15:10:48.225248"
+        },
+        "body": {
+            "id": "c6c9a958-3477-4c9a-a385-1a27b42a5b7b",
+            "is_parent": false,
+            "overrides": {
+                "base": {
+                    "brand_color": {
+                        "brand_color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": true,
+                                "h": 337.241379310345,
+                                "initial": false,
+                                "key": "brand",
+                                "l": 35.0980392156863,
+                                "name": "brand",
+                                "s": 81.0055865921788,
+                                "strict": false
+                            }
+                        }
+                    },
+                    "danger_color": {
+                        "danger_border-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "danger_border-color",
+                                "l": 0.0,
+                                "name": "Обводка",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "danger_color"
+                            ]
+                        },
+                        "danger_color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": true,
+                                "h": 357.216494845361,
+                                "initial": false,
+                                "key": "danger",
+                                "l": 55.2941176470588,
+                                "name": "Опасность",
+                                "s": 85.0877192982456,
+                                "strict": false
+                            }
+                        },
+                        "danger_hover_icon-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 356.984924623116,
+                                "initial": false,
+                                "key": "danger_hover_icon-color",
+                                "l": 39.0196078431373,
+                                "name": "Иконки (при наведении)",
+                                "s": 100.0,
+                                "strict": false
+                            }
+                        },
+                        "danger_hover_text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 356.984924623116,
+                                "initial": false,
+                                "key": "danger_hover_text-color",
+                                "l": 39.0196078431373,
+                                "name": "Текст (при наведении)",
+                                "s": 100.0,
+                                "strict": false
+                            }
+                        },
+                        "danger_icon-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "danger_icon-color",
+                                "l": 0.0,
+                                "name": "Иконки",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "danger_color"
+                            ]
+                        },
+                        "danger_text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "danger_text-color",
+                                "l": 0.0,
+                                "name": "Текст",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "danger_color"
+                            ]
+                        }
+                    },
+                    "heading_color": {
+                        "heading_color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": true,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "heading",
+                                "l": 0.0,
+                                "name": "Заголовки",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        }
+                    },
+                    "label_color": {
+                        "label_color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": true,
+                                "h": 225.0,
+                                "initial": false,
+                                "key": "label",
+                                "l": 60.0,
+                                "name": "Метки",
+                                "s": 15.68627,
+                                "strict": false
+                            }
+                        },
+                        "label_text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "label_text-color",
+                                "l": 0.0,
+                                "name": "Текст",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "label_color"
+                            ]
+                        }
+                    },
+                    "link_color": {
+                        "link_color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": true,
+                                "h": 213.913043478261,
+                                "initial": false,
+                                "key": "link",
+                                "l": 43.921568627451,
+                                "name": "Ссылки",
+                                "s": 82.1428571428572,
+                                "strict": false
+                            }
+                        },
+                        "link_hover_text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 229.014084507042,
+                                "initial": false,
+                                "key": "link_hover_text-color",
+                                "l": 33.1372549019608,
+                                "name": "Текст (при наведении)",
+                                "s": 42.0118343195266,
+                                "strict": false
+                            }
+                        },
+                        "link_text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "link_text-color",
+                                "l": 0.0,
+                                "name": "Текст",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "link_color"
+                            ]
+                        }
+                    },
+                    "navigation_color": {
+                        "navigation_active_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "navigation_active_background-color",
+                                "l": 13.3333333333333,
+                                "name": "Фон (при нажатии)",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "navigation_active_icon-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "navigation_active_icon-color",
+                                "l": 100.0,
+                                "name": "Иконки разделов (в активном пункте)",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "navigation_active_text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "navigation_active_text-color",
+                                "l": 100.0,
+                                "name": "Текст (в активном пункте)",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "navigation_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "navigation_background-color",
+                                "l": 19.6078431372549,
+                                "name": "Фон",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "navigation_color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": true,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "navigation",
+                                "l": 19.6078431372549,
+                                "name": "Меню навигации",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "navigation_counter_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "navigation_counter_background-color",
+                                "l": 16.8627450980392,
+                                "name": "Фон подложки счетчиков",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "navigation_counter_hover_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "navigation_counter_hover_background-color",
+                                "l": 26.6666666666667,
+                                "name": "Фон подложки счетчиков (при наведении)",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "navigation_counter_on_menu_hover_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 195.0,
+                                "initial": false,
+                                "key": "navigation_counter_on_menu_hover_background-color",
+                                "l": 30.9803921568627,
+                                "name": "Фон подложки счетчиков (при наведении на пункт меню)",
+                                "s": 2.53164556962025,
+                                "strict": false
+                            }
+                        },
+                        "navigation_counter_separator-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "navigation_counter_separator-color",
+                                "l": 29.0196078431373,
+                                "name": "Разделитель счетчиков",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "navigation_fill_plus": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 195.0,
+                                "initial": false,
+                                "key": "navigation_fill_plus",
+                                "l": 33.7254901960784,
+                                "name": "Кнопка + на пункте аккордеона",
+                                "s": 2.32558139534884,
+                                "strict": false
+                            }
+                        },
+                        "navigation_fill_plus_hover": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "navigation_fill_plus_hover",
+                                "l": 27.0588235294118,
+                                "name": "Кнопка + на пункте аккордеона (при наведении)",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "navigation_footer_button": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "navigation_footer_button",
+                                "l": 24.7058823529412,
+                                "name": "Фон кнопки разворота разделов",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "navigation_hover_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 195.0,
+                                "initial": false,
+                                "key": "navigation_hover_background-color",
+                                "l": 33.7254901960784,
+                                "name": "Фон (при наведении)",
+                                "s": 2.32558139534884,
+                                "strict": false
+                            }
+                        },
+                        "navigation_hover_text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "navigation_hover_text-color",
+                                "l": 94.9019607843137,
+                                "name": "Текст (при наведении)",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "navigation_icon-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "navigation_icon-color",
+                                "l": 61.1764705882353,
+                                "name": "Иконки разделов",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "navigation_icon_plus": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "navigation_icon_plus",
+                                "l": 61.1764705882353,
+                                "name": "Иконка на кнопке +",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "navigation_logo": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "navigation_logo",
+                                "l": 94.9019607843137,
+                                "name": "Иконка на кнопке с логотипом",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "navigation_logo_app": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 225.0,
+                                "initial": false,
+                                "key": "navigation_logo_app",
+                                "l": 60.0,
+                                "name": "Имя приложения",
+                                "s": 15.6862745098039,
+                                "strict": false
+                            }
+                        },
+                        "navigation_logo_fill": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 337.241379310345,
+                                "initial": false,
+                                "key": "navigation_logo_fill",
+                                "l": 35.0980392156863,
+                                "name": "Фон кнопки с логотипом",
+                                "s": 81.0055865921788,
+                                "strict": false
+                            }
+                        },
+                        "navigation_logo_fill_hover": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 337.241379310345,
+                                "initial": false,
+                                "key": "navigation_logo_fill_hover",
+                                "l": 35.0980392156863,
+                                "name": "Фон кнопки с логотипом (при наведении)",
+                                "s": 81.0055865921788,
+                                "strict": false
+                            }
+                        },
+                        "navigation_menu_fill": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "navigation_menu_fill",
+                                "l": 27.0588235294118,
+                                "name": "Фон всплывающего меню",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "navigation_menu_hover": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 195.0,
+                                "initial": false,
+                                "key": "navigation_menu_hover",
+                                "l": 33.7254901960784,
+                                "name": "Фон всплывающего меню ( при наведении)",
+                                "s": 2.32558139534884,
+                                "strict": false
+                            }
+                        },
+                        "navigation_primary_hover_text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 337.28813559322,
+                                "key": "navigation_primary_hover_text-color",
+                                "l": 40.1960784313725,
+                                "name": "Цвет непрочитанных счетчиков (при наведении)",
+                                "s": 86.3414634146341,
+                                "strict": false
+                            }
+                        },
+                        "navigation_primary_text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 337.241379310345,
+                                "key": "navigation_primary_text-color",
+                                "l": 35.0980392156863,
+                                "name": "Цвет непрочитанных счетчиков",
+                                "s": 81.0055865921788,
+                                "strict": false
+                            }
+                        },
+                        "navigation_secondary_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 216.0,
+                                "initial": false,
+                                "key": "navigation_secondary_background-color",
+                                "l": 49.8039215686275,
+                                "name": "Фон подложки счетчиков для компактного вида",
+                                "s": 7.8740157480315,
+                                "strict": false
+                            }
+                        },
+                        "navigation_text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "navigation_text-color",
+                                "l": 94.9019607843137,
+                                "name": "Текст",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "navigation_unaccented_hover_text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "navigation_unaccented_hover_text-color",
+                                "l": 94.9019607843137,
+                                "name": "Счетчики (при наведении) и иконки!!",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "navigation_unaccented_text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "navigation_unaccented_text-color",
+                                "l": 54.9019607843137,
+                                "name": "Цвет счетчиков (и иконок!!)",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        }
+                    },
+                    "neutral_color": {
+                        "active_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 228.0,
+                                "initial": false,
+                                "key": "active_background-color",
+                                "l": 93.92157,
+                                "name": "Фон (при нажатии)",
+                                "s": 16.12903,
+                                "strict": false
+                            }
+                        },
+                        "background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "background-color",
+                                "l": 100.0,
+                                "name": "Фон",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "border-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "border-color",
+                                "l": 91.76471,
+                                "name": "Обводка",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "contrast_icon-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "contrast_icon-color",
+                                "l": 100.0,
+                                "name": "Иконки (на контрастном фоне)",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "contrast_text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "contrast_text-color",
+                                "l": 100.0,
+                                "name": "Текст (на контрастном фоне)",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "hover_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 195.0,
+                                "initial": false,
+                                "key": "hover_background-color",
+                                "l": 94.90196,
+                                "name": "Фон (при наведении)",
+                                "s": 30.76923,
+                                "strict": false
+                            }
+                        },
+                        "hover_border-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "hover_border-color",
+                                "l": 81.56863,
+                                "name": "Обводка (при наведении)",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "hover_icon-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "hover_icon-color",
+                                "l": 34.11765,
+                                "name": "Иконки (при наведении)",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "hover_text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "hover_text-color",
+                                "l": 34.11765,
+                                "name": "Текст (при наведении)",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "icon-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "icon-color",
+                                "l": 19.6078431372549,
+                                "name": "Иконки",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "neutral_color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": true,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "neutral",
+                                "l": 60.0,
+                                "name": "Нейтральный",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "readonly_border-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "readonly_border-color",
+                                "l": 73.7254901960784,
+                                "name": "Обводка в режиме \"только чтение\"",
+                                "s": 0.0,
+                                "strict": true
+                            }
+                        },
+                        "readonly_icon-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "readonly_icon-color",
+                                "l": 73.7254901960784,
+                                "name": "Иконки в режиме \"только чтение\"",
+                                "s": 0.0,
+                                "strict": true
+                            }
+                        },
+                        "readonly_text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "readonly_text-color",
+                                "l": 73.7254901960784,
+                                "name": "Текст в режиме \"только чтение\"",
+                                "s": 0.0,
+                                "strict": true
+                            }
+                        },
+                        "text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "text-color",
+                                "l": 19.60784,
+                                "name": "Текст",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "unaccented_active_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 216.0,
+                                "initial": false,
+                                "key": "unaccented_active_background-color",
+                                "l": 91.56863,
+                                "name": "Неакцентный фон (при нажатии)",
+                                "s": 11.62791,
+                                "strict": false
+                            }
+                        },
+                        "unaccented_active_contrast_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "unaccented_active_contrast_background-color",
+                                "l": 83.13725,
+                                "name": "Неакцентный контрастный фон (при нажатии)",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "unaccented_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "unaccented_background-color",
+                                "l": 97.25491,
+                                "name": "Неакцентный фон",
+                                "s": 0.0,
+                                "strict": true
+                            }
+                        },
+                        "unaccented_border-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 210.0,
+                                "initial": false,
+                                "key": "unaccented_border-color",
+                                "l": 83.92157,
+                                "name": "Неакцентная обводка",
+                                "s": 9.756098,
+                                "strict": false
+                            }
+                        },
+                        "unaccented_contrast_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "unaccented_contrast_background-color",
+                                "l": 85.88235,
+                                "name": "Неакцентный контрастный фон",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "unaccented_hover_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 228.0,
+                                "initial": false,
+                                "key": "unaccented_hover_background-color",
+                                "l": 94.70588,
+                                "name": "Неакцентный фон (при наведении)",
+                                "s": 18.51852,
+                                "strict": false
+                            }
+                        },
+                        "unaccented_hover_contrast_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "unaccented_hover_contrast_background-color",
+                                "l": 80.0,
+                                "name": "Неакцентный контрастный фон (при наведении)",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "unaccented_hover_icon-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "unaccented_hover_icon-color",
+                                "l": 60.0,
+                                "name": "Неакцентные иконки (при наведении)",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "unaccented_hover_text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "unaccented_hover_text-color",
+                                "l": 40.0,
+                                "name": "Неакцентный текст (при наведении)",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "unaccented_icon-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "unaccented_icon-color",
+                                "l": 80.0,
+                                "name": "Неакцентные иконки",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "unaccented_separator_color": {
+                            "value": {
+                                "a": 0.07843138,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "unaccented_separator_color",
+                                "l": 0.0,
+                                "name": "Неакцентный разделитель",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "unaccented_text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "unaccented_text-color",
+                                "l": 60.0,
+                                "name": "Неакцентный текст",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        }
+                    },
+                    "primary_color": {
+                        "primary_active_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 336.666666666667,
+                                "initial": false,
+                                "key": "primary_active_background-color",
+                                "l": 92.9411764705882,
+                                "name": "Фон (при нажатии)",
+                                "s": 100.0,
+                                "strict": false
+                            }
+                        },
+                        "primary_active_contrast_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 337.021276595745,
+                                "initial": false,
+                                "key": "primary_active_contrast_background-color",
+                                "l": 46.078431372549,
+                                "name": "Фон контрастный (при нажатии)",
+                                "s": 100.0,
+                                "strict": false
+                            }
+                        },
+                        "primary_active_same_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 336.470588235294,
+                                "initial": false,
+                                "key": "primary_active_same_background-color",
+                                "l": 90.0,
+                                "name": "Фон маленьких блоков (при нажатии)",
+                                "s": 100.0,
+                                "strict": false
+                            }
+                        },
+                        "primary_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 336.0,
+                                "initial": false,
+                                "key": "primary_background-color",
+                                "l": 98.03922,
+                                "name": "Фон",
+                                "s": 100.0,
+                                "strict": false
+                            }
+                        },
+                        "primary_border-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "primary_border-color",
+                                "l": 0.0,
+                                "name": "Обводка",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "primary_color"
+                            ]
+                        },
+                        "primary_color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": true,
+                                "h": 337.241379310345,
+                                "initial": false,
+                                "key": "primary",
+                                "l": 35.0980392156863,
+                                "name": "Первичный",
+                                "s": 81.0055865921788,
+                                "strict": false
+                            }
+                        },
+                        "primary_contrast_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 336.964285714286,
+                                "initial": false,
+                                "key": "primary_contrast_background-color",
+                                "l": 43.921568627451,
+                                "name": "Фон контрастный",
+                                "s": 100.0,
+                                "strict": false
+                            }
+                        },
+                        "primary_hover_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 339.0,
+                                "initial": false,
+                                "key": "primary_hover_background-color",
+                                "l": 96.078431372549,
+                                "name": "Фон (при наведении)",
+                                "s": 99.9999999999999,
+                                "strict": false
+                            }
+                        },
+                        "primary_hover_border-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 337.03125,
+                                "initial": false,
+                                "key": "primary_hover_border-color",
+                                "l": 25.0980392156863,
+                                "name": "Обводка (при наведении)",
+                                "s": 100.0,
+                                "strict": false
+                            }
+                        },
+                        "primary_hover_contrast_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 337.033492822967,
+                                "initial": false,
+                                "key": "primary_hover_contrast_background-color",
+                                "l": 40.9803921568627,
+                                "name": "Фон контрастный (при наведении)",
+                                "s": 100.0,
+                                "strict": false
+                            }
+                        },
+                        "primary_hover_icon-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 337.03125,
+                                "initial": false,
+                                "key": "primary_hover_icon-color",
+                                "l": 25.0980392156863,
+                                "name": "Иконки (при наведении)",
+                                "s": 100.0,
+                                "strict": false
+                            }
+                        },
+                        "primary_hover_same_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 336.666666666667,
+                                "initial": false,
+                                "key": "primary_hover_same_background-color",
+                                "l": 92.9411764705882,
+                                "name": "Фон маленьких блоков (при наведении)",
+                                "s": 100.0,
+                                "strict": false
+                            }
+                        },
+                        "primary_hover_text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 337.03125,
+                                "initial": false,
+                                "key": "primary_hover_text-color",
+                                "l": 25.0980392156863,
+                                "name": "Текст (при наведении)",
+                                "s": 100.0,
+                                "strict": false
+                            }
+                        },
+                        "primary_icon-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "primary_icon-color",
+                                "l": 0.0,
+                                "name": "Иконки",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "primary_color"
+                            ]
+                        },
+                        "primary_same_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 339.0,
+                                "initial": false,
+                                "key": "primary_same_background-color",
+                                "l": 96.078431372549,
+                                "name": "Фон маленьких блоков",
+                                "s": 99.9999999999999,
+                                "strict": false
+                            }
+                        },
+                        "primary_text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "primary_text-color",
+                                "l": 0.0,
+                                "name": "Текст",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "primary_color"
+                            ]
+                        }
+                    },
+                    "secondary_color": {
+                        "secondary_active_contrast_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 214.615384615385,
+                                "initial": false,
+                                "key": "secondary_active_contrast_background-color",
+                                "l": 65.8823529411765,
+                                "name": "Фон контрастный (при нажатии)",
+                                "s": 14.9425287356322,
+                                "strict": false
+                            }
+                        },
+                        "secondary_border-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "secondary_border-color",
+                                "l": 0.0,
+                                "name": "Обводка",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "secondary_color"
+                            ]
+                        },
+                        "secondary_color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": true,
+                                "h": 216.0,
+                                "initial": false,
+                                "key": "secondary",
+                                "l": 49.8039215686275,
+                                "name": "Вторичный",
+                                "s": 7.8740157480315,
+                                "strict": false
+                            }
+                        },
+                        "secondary_contrast_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 216.521739130435,
+                                "initial": false,
+                                "key": "secondary_contrast_background-color",
+                                "l": 62.9411764705882,
+                                "name": "Фон контрастный",
+                                "s": 12.1693121693122,
+                                "strict": false
+                            }
+                        },
+                        "secondary_hover_contrast_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 216.428571428571,
+                                "initial": false,
+                                "key": "secondary_hover_contrast_background-color",
+                                "l": 58.0392156862745,
+                                "name": "Фон контрастный (при наведении)",
+                                "s": 13.0841121495327,
+                                "strict": false
+                            }
+                        },
+                        "secondary_hover_icon-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 216.0,
+                                "initial": false,
+                                "key": "secondary_hover_icon-color",
+                                "l": 34.9019607843137,
+                                "name": "Иконки (при наведении)",
+                                "s": 11.2359550561798,
+                                "strict": false
+                            }
+                        },
+                        "secondary_hover_text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 216.0,
+                                "initial": false,
+                                "key": "secondary_hover_text-color",
+                                "l": 34.9019607843137,
+                                "name": "Текст (при наведении)",
+                                "s": 11.2359550561798,
+                                "strict": false
+                            }
+                        },
+                        "secondary_icon-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "secondary_icon-color",
+                                "l": 0.0,
+                                "name": "Иконки",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "secondary_color"
+                            ]
+                        },
+                        "secondary_text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "secondary_text-color",
+                                "l": 0.0,
+                                "name": "Текст",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "secondary_color"
+                            ]
+                        }
+                    },
+                    "success_color": {
+                        "success_border-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "success_border-color",
+                                "l": 0.0,
+                                "name": "Обводка",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "success_color"
+                            ]
+                        },
+                        "success_color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": true,
+                                "h": 145.333333333333,
+                                "initial": false,
+                                "key": "success",
+                                "l": 41.7647058823529,
+                                "name": "Успех",
+                                "s": 63.3802816901408,
+                                "strict": false
+                            }
+                        },
+                        "success_hover_icon-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 131.612903225806,
+                                "initial": false,
+                                "key": "success_hover_icon-color",
+                                "l": 32.9411764705882,
+                                "name": "Иконки (при наведении)",
+                                "s": 73.8095238095238,
+                                "strict": false
+                            }
+                        },
+                        "success_hover_text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 131.612903225806,
+                                "initial": false,
+                                "key": "success_hover_text-color",
+                                "l": 32.9411764705882,
+                                "name": "Текст (при наведении)",
+                                "s": 73.8095238095238,
+                                "strict": false
+                            }
+                        },
+                        "success_icon-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "success_icon-color",
+                                "l": 0.0,
+                                "name": "Иконки",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "success_color"
+                            ]
+                        },
+                        "success_text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "success_text-color",
+                                "l": 0.0,
+                                "name": "Текст",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "success_color"
+                            ]
+                        }
+                    }
+                }
+            },
+            "selector": "default__ubrr",
+            "styles": [],
+            "title": "Темный аккордеон",
+            "aspect_theme": [
+                {
+                    "identifier": "87688e42-71bf-11ee-b962-0242ac120002",
+                    "key": null
+                }
+            ],
+            "parent": {
+                "id": "3a1539ba-0a0d-405e-b470-36bb496f282e",
+                "title": "Базовая"
+            }
+        }
+    }
+]

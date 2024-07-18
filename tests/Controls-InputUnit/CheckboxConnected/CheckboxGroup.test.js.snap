@@ -1,0 +1,1498 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls-Input/CheckboxGroupConnected Direction 1`] = `
+<div>
+  <div
+    class="controlsDemo__wrapper controlsDemo_fixedWidth400 tw-flex tw-flex-col"
+  >
+    <div
+      class="tw-flex controls-max-w-full tw-flex-col undefined controls-Input-connected_filled"
+    >
+      <a
+        class="controls-Label controls-Label_underline_none tw-min-w-0"
+      >
+        <div
+          class="controls-Label__wrapper"
+        >
+          <div
+            class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+          >
+            direction = vertical
+          </div>
+          
+        </div>
+      </a>
+      <div
+        class="controls_toggle_theme-default controls-CheckboxGroup"
+        tabindex="0"
+      >
+        <div
+          class="controls-CheckboxGroup__group_vertical"
+          tabindex="0"
+        >
+          <div
+            class="controls_toggle_theme-default controls-Checkbox controls-CheckboxGroup__item_vertical-padding"
+            tabindex="0"
+          >
+            <div
+              class="controls-invalid-container"
+            >
+              <div
+                class="controls-Checkbox__wrapper controls-Checkbox__enabled  controls-Checked__checked"
+              >
+                <div
+                  class="controls_toggle_theme-default controls-CheckboxMarker controls-CheckboxMarker_ghost controls-CheckboxMarker_theme-default controls-CheckboxMarker__state-true controls-CheckboxMarker__icon-border-color__enabled controls-CheckboxMarker_inCheckbox"
+                  data-qa="controls-CheckboxMarker"
+                  tabindex="0"
+                >
+                  <svg
+                    class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                    data-qa="controls-CheckboxMarker_state-true"
+                    tabindex="0"
+                    viewBox="0 0 12 12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-true"
+                      d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-subtract controls-CheckboxMarker__icon-subtract-checked_enabled"
+                      clip-rule="evenodd"
+                      d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-checked-color_enabled"
+                      clip-rule="evenodd"
+                      d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                      fill-rule="evenodd"
+                    />
+                    <rect
+                      class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                      height="6"
+                      rx="2"
+                      width="6"
+                      x="3"
+                      y="3"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="controls-Checkbox__caption  controls-Checkbox__caption-color__enabled  ws-ellipsis"
+                  tabindex="0"
+                >
+                  Первый
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="controls_toggle_theme-default controls-Checkbox controls-CheckboxGroup__item_vertical"
+            tabindex="0"
+          >
+            <div
+              class="controls-invalid-container"
+            >
+              <div
+                class="controls-Checkbox__wrapper controls-Checkbox__enabled"
+              >
+                <div
+                  class="controls_toggle_theme-default controls-CheckboxMarker controls-CheckboxMarker_ghost controls-CheckboxMarker_theme-default controls-CheckboxMarker__state-false controls-CheckboxMarker__icon-border-color__enabled controls-CheckboxMarker_inCheckbox"
+                  data-qa="controls-CheckboxMarker"
+                  tabindex="0"
+                >
+                  <svg
+                    class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                    data-qa="controls-CheckboxMarker_state-false"
+                    tabindex="0"
+                    viewBox="0 0 12 12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-false"
+                      d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-subtract "
+                      clip-rule="evenodd"
+                      d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-checked-color_transparent"
+                      clip-rule="evenodd"
+                      d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                      fill-rule="evenodd"
+                    />
+                    <rect
+                      class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                      height="6"
+                      rx="2"
+                      width="6"
+                      x="3"
+                      y="3"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="controls-Checkbox__caption  controls-Checkbox__caption-color__enabled  ws-ellipsis"
+                  tabindex="0"
+                >
+                  Второй
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="tw-flex controls-max-w-full tw-flex-col undefined controls-Input-connected_filled"
+    >
+      <a
+        class="controls-Label controls-Label_underline_none tw-min-w-0"
+      >
+        <div
+          class="controls-Label__wrapper"
+        >
+          <div
+            class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+          >
+            direction = horizontal
+          </div>
+          
+        </div>
+      </a>
+      <div
+        class="controls_toggle_theme-default controls-CheckboxGroup"
+        tabindex="0"
+      >
+        <div
+          class="controls-CheckboxGroup__group_horizontal"
+          tabindex="0"
+        >
+          <div
+            class="controls_toggle_theme-default controls-Checkbox controls-CheckboxGroup__item_horizontal-padding"
+            tabindex="0"
+          >
+            <div
+              class="controls-invalid-container"
+            >
+              <div
+                class="controls-Checkbox__wrapper controls-Checkbox__enabled  controls-Checked__checked"
+              >
+                <div
+                  class="controls_toggle_theme-default controls-CheckboxMarker controls-CheckboxMarker_ghost controls-CheckboxMarker_theme-default controls-CheckboxMarker__state-true controls-CheckboxMarker__icon-border-color__enabled controls-CheckboxMarker_inCheckbox"
+                  data-qa="controls-CheckboxMarker"
+                  tabindex="0"
+                >
+                  <svg
+                    class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                    data-qa="controls-CheckboxMarker_state-true"
+                    tabindex="0"
+                    viewBox="0 0 12 12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-true"
+                      d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-subtract controls-CheckboxMarker__icon-subtract-checked_enabled"
+                      clip-rule="evenodd"
+                      d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-checked-color_enabled"
+                      clip-rule="evenodd"
+                      d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                      fill-rule="evenodd"
+                    />
+                    <rect
+                      class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                      height="6"
+                      rx="2"
+                      width="6"
+                      x="3"
+                      y="3"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="controls-Checkbox__caption  controls-Checkbox__caption-color__enabled  ws-ellipsis"
+                  tabindex="0"
+                >
+                  Первый
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="controls_toggle_theme-default controls-Checkbox controls-CheckboxGroup__item_horizontal"
+            tabindex="0"
+          >
+            <div
+              class="controls-invalid-container"
+            >
+              <div
+                class="controls-Checkbox__wrapper controls-Checkbox__enabled"
+              >
+                <div
+                  class="controls_toggle_theme-default controls-CheckboxMarker controls-CheckboxMarker_ghost controls-CheckboxMarker_theme-default controls-CheckboxMarker__state-false controls-CheckboxMarker__icon-border-color__enabled controls-CheckboxMarker_inCheckbox"
+                  data-qa="controls-CheckboxMarker"
+                  tabindex="0"
+                >
+                  <svg
+                    class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                    data-qa="controls-CheckboxMarker_state-false"
+                    tabindex="0"
+                    viewBox="0 0 12 12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-false"
+                      d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-subtract "
+                      clip-rule="evenodd"
+                      d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-checked-color_transparent"
+                      clip-rule="evenodd"
+                      d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                      fill-rule="evenodd"
+                    />
+                    <rect
+                      class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                      height="6"
+                      rx="2"
+                      width="6"
+                      x="3"
+                      y="3"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="controls-Checkbox__caption  controls-Checkbox__caption-color__enabled  ws-ellipsis"
+                  tabindex="0"
+                >
+                  Второй
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls-Input/CheckboxGroupConnected Variants 1`] = `
+<div>
+  <div
+    class="controlsDemo__wrapper controlsDemo_fixedWidth400 tw-flex tw-flex-col"
+  >
+    <div
+      class="tw-flex controls-max-w-full tw-flex-col undefined controls-Input-connected_filled"
+    >
+      <a
+        class="controls-Label controls-Label_underline_none tw-min-w-0"
+      >
+        <div
+          class="controls-Label__wrapper"
+        >
+          <div
+            class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+          >
+            variants
+          </div>
+          
+        </div>
+      </a>
+      <div
+        class="controls_toggle_theme-default controls-CheckboxGroup"
+        tabindex="0"
+      >
+        <div
+          class="controls-CheckboxGroup__group_vertical"
+          tabindex="0"
+        >
+          <div
+            class="controls_toggle_theme-default controls-Checkbox controls-CheckboxGroup__item_vertical-padding"
+            tabindex="0"
+          >
+            <div
+              class="controls-invalid-container"
+            >
+              <div
+                class="controls-Checkbox__wrapper controls-Checkbox__enabled  controls-Checked__checked"
+              >
+                <div
+                  class="controls_toggle_theme-default controls-CheckboxMarker controls-CheckboxMarker_ghost controls-CheckboxMarker_theme-default controls-CheckboxMarker__state-true controls-CheckboxMarker__icon-border-color__enabled controls-CheckboxMarker_inCheckbox"
+                  data-qa="controls-CheckboxMarker"
+                  tabindex="0"
+                >
+                  <svg
+                    class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                    data-qa="controls-CheckboxMarker_state-true"
+                    tabindex="0"
+                    viewBox="0 0 12 12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-true"
+                      d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-subtract controls-CheckboxMarker__icon-subtract-checked_enabled"
+                      clip-rule="evenodd"
+                      d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-checked-color_enabled"
+                      clip-rule="evenodd"
+                      d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                      fill-rule="evenodd"
+                    />
+                    <rect
+                      class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                      height="6"
+                      rx="2"
+                      width="6"
+                      x="3"
+                      y="3"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="controls-Checkbox__caption  controls-Checkbox__caption-color__enabled  ws-ellipsis"
+                  tabindex="0"
+                >
+                  1
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="controls_toggle_theme-default controls-Checkbox controls-CheckboxGroup__item_vertical"
+            tabindex="0"
+          >
+            <div
+              class="controls-invalid-container"
+            >
+              <div
+                class="controls-Checkbox__wrapper controls-Checkbox__enabled  controls-Checked__checked"
+              >
+                <div
+                  class="controls_toggle_theme-default controls-CheckboxMarker controls-CheckboxMarker_ghost controls-CheckboxMarker_theme-default controls-CheckboxMarker__state-true controls-CheckboxMarker__icon-border-color__enabled controls-CheckboxMarker_inCheckbox"
+                  data-qa="controls-CheckboxMarker"
+                  tabindex="0"
+                >
+                  <svg
+                    class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                    data-qa="controls-CheckboxMarker_state-true"
+                    tabindex="0"
+                    viewBox="0 0 12 12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-true"
+                      d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-subtract controls-CheckboxMarker__icon-subtract-checked_enabled"
+                      clip-rule="evenodd"
+                      d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-checked-color_enabled"
+                      clip-rule="evenodd"
+                      d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                      fill-rule="evenodd"
+                    />
+                    <rect
+                      class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                      height="6"
+                      rx="2"
+                      width="6"
+                      x="3"
+                      y="3"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="controls-Checkbox__caption  controls-Checkbox__caption-color__enabled  ws-ellipsis"
+                  tabindex="0"
+                >
+                  2
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="controls-CheckboxGroup__group_vertical controls-CheckboxGroup__childGroup"
+            tabindex="0"
+          >
+            <div
+              class="controls_toggle_theme-default controls-Checkbox controls-CheckboxGroup__item_vertical"
+              tabindex="0"
+            >
+              <div
+                class="controls-invalid-container"
+              >
+                <div
+                  class="controls-Checkbox__wrapper controls-Checkbox__enabled  controls-Checked__checked"
+                >
+                  <div
+                    class="controls_toggle_theme-default controls-CheckboxMarker controls-CheckboxMarker_ghost controls-CheckboxMarker_theme-default controls-CheckboxMarker__state-true controls-CheckboxMarker__icon-border-color__enabled controls-CheckboxMarker_inCheckbox"
+                    data-qa="controls-CheckboxMarker"
+                    tabindex="0"
+                  >
+                    <svg
+                      class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                      data-qa="controls-CheckboxMarker_state-true"
+                      tabindex="0"
+                      viewBox="0 0 12 12"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-true"
+                        d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                      />
+                      <path
+                        class="controls-CheckboxMarker__icon-subtract controls-CheckboxMarker__icon-subtract-checked_enabled"
+                        clip-rule="evenodd"
+                        d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                        fill-rule="evenodd"
+                      />
+                      <path
+                        class="controls-CheckboxMarker__icon-checked-color_enabled"
+                        clip-rule="evenodd"
+                        d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                        fill-rule="evenodd"
+                      />
+                      <rect
+                        class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                        height="6"
+                        rx="2"
+                        width="6"
+                        x="3"
+                        y="3"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    class="controls-Checkbox__caption  controls-Checkbox__caption-color__enabled  ws-ellipsis"
+                    tabindex="0"
+                  >
+                    3
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="tw-flex controls-max-w-full tw-flex-col undefined controls-Input-connected_filled"
+    >
+      <a
+        class="controls-Label controls-Label_underline_none tw-min-w-0"
+      >
+        <div
+          class="controls-Label__wrapper"
+        >
+          <div
+            class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+          >
+            Variants is empty
+          </div>
+          
+        </div>
+      </a>
+      <div
+        class="controls_toggle_theme-default controls-CheckboxGroup"
+        tabindex="0"
+      >
+        <div
+          class="controls-CheckboxGroup__group_vertical"
+          tabindex="0"
+        >
+          <div
+            class="controls_toggle_theme-default controls-Checkbox controls-CheckboxGroup__item_vertical-padding"
+            tabindex="0"
+          >
+            <div
+              class="controls-invalid-container"
+            >
+              <div
+                class="controls-Checkbox__wrapper controls-Checkbox__enabled  controls-Checked__checked"
+              >
+                <div
+                  class="controls_toggle_theme-default controls-CheckboxMarker controls-CheckboxMarker_ghost controls-CheckboxMarker_theme-default controls-CheckboxMarker__state-true controls-CheckboxMarker__icon-border-color__enabled controls-CheckboxMarker_inCheckbox"
+                  data-qa="controls-CheckboxMarker"
+                  tabindex="0"
+                >
+                  <svg
+                    class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                    data-qa="controls-CheckboxMarker_state-true"
+                    tabindex="0"
+                    viewBox="0 0 12 12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-true"
+                      d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-subtract controls-CheckboxMarker__icon-subtract-checked_enabled"
+                      clip-rule="evenodd"
+                      d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-checked-color_enabled"
+                      clip-rule="evenodd"
+                      d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                      fill-rule="evenodd"
+                    />
+                    <rect
+                      class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                      height="6"
+                      rx="2"
+                      width="6"
+                      x="3"
+                      y="3"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="controls-Checkbox__caption  controls-Checkbox__caption-color__enabled  ws-ellipsis"
+                  tabindex="0"
+                >
+                  Первый
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="controls_toggle_theme-default controls-Checkbox controls-CheckboxGroup__item_vertical"
+            tabindex="0"
+          >
+            <div
+              class="controls-invalid-container"
+            >
+              <div
+                class="controls-Checkbox__wrapper controls-Checkbox__enabled"
+              >
+                <div
+                  class="controls_toggle_theme-default controls-CheckboxMarker controls-CheckboxMarker_ghost controls-CheckboxMarker_theme-default controls-CheckboxMarker__state-false controls-CheckboxMarker__icon-border-color__enabled controls-CheckboxMarker_inCheckbox"
+                  data-qa="controls-CheckboxMarker"
+                  tabindex="0"
+                >
+                  <svg
+                    class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                    data-qa="controls-CheckboxMarker_state-false"
+                    tabindex="0"
+                    viewBox="0 0 12 12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-false"
+                      d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-subtract "
+                      clip-rule="evenodd"
+                      d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-checked-color_transparent"
+                      clip-rule="evenodd"
+                      d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                      fill-rule="evenodd"
+                    />
+                    <rect
+                      class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                      height="6"
+                      rx="2"
+                      width="6"
+                      x="3"
+                      y="3"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="controls-Checkbox__caption  controls-Checkbox__caption-color__enabled  ws-ellipsis"
+                  tabindex="0"
+                >
+                  Второй
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls-Input/CheckboxGroupConnected WrapText 1`] = `
+<div>
+  <div
+    class="controlsDemo__wrapper controlsDemo_fixedWidth400 tw-flex tw-flex-col"
+  >
+    <div
+      class="tw-flex controls-max-w-full tw-flex-col undefined controls-Input-connected_filled"
+    >
+      <a
+        class="controls-Label controls-Label_underline_none tw-min-w-0"
+      >
+        <div
+          class="controls-Label__wrapper"
+        >
+          <div
+            class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+          >
+            WrapText = true
+          </div>
+          
+        </div>
+      </a>
+      <div
+        class="controls_toggle_theme-default controls-CheckboxGroup"
+        tabindex="0"
+      >
+        <div
+          class="controls-CheckboxGroup__group_vertical"
+          tabindex="0"
+        >
+          <div
+            class="controls_toggle_theme-default controls-Checkbox controls-CheckboxGroup__item_vertical-padding"
+            tabindex="0"
+          >
+            <div
+              class="controls-invalid-container"
+            >
+              <div
+                class="controls-Checkbox__wrapper controls-Checkbox__enabled  controls-Checked__checked"
+              >
+                <div
+                  class="controls_toggle_theme-default controls-CheckboxMarker controls-CheckboxMarker_ghost controls-CheckboxMarker_theme-default controls-CheckboxMarker__state-true controls-CheckboxMarker__icon-border-color__enabled controls-CheckboxMarker_inCheckbox"
+                  data-qa="controls-CheckboxMarker"
+                  tabindex="0"
+                >
+                  <svg
+                    class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                    data-qa="controls-CheckboxMarker_state-true"
+                    tabindex="0"
+                    viewBox="0 0 12 12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-true"
+                      d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-subtract controls-CheckboxMarker__icon-subtract-checked_enabled"
+                      clip-rule="evenodd"
+                      d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-checked-color_enabled"
+                      clip-rule="evenodd"
+                      d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                      fill-rule="evenodd"
+                    />
+                    <rect
+                      class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                      height="6"
+                      rx="2"
+                      width="6"
+                      x="3"
+                      y="3"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="controls-Checkbox__caption  controls-Checkbox__caption-color__enabled"
+                  tabindex="0"
+                >
+                  very very over very long long long long text for testing option wrapText
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="controls_toggle_theme-default controls-Checkbox controls-CheckboxGroup__item_vertical"
+            tabindex="0"
+          >
+            <div
+              class="controls-invalid-container"
+            >
+              <div
+                class="controls-Checkbox__wrapper controls-Checkbox__enabled"
+              >
+                <div
+                  class="controls_toggle_theme-default controls-CheckboxMarker controls-CheckboxMarker_ghost controls-CheckboxMarker_theme-default controls-CheckboxMarker__state-false controls-CheckboxMarker__icon-border-color__enabled controls-CheckboxMarker_inCheckbox"
+                  data-qa="controls-CheckboxMarker"
+                  tabindex="0"
+                >
+                  <svg
+                    class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                    data-qa="controls-CheckboxMarker_state-false"
+                    tabindex="0"
+                    viewBox="0 0 12 12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-false"
+                      d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-subtract "
+                      clip-rule="evenodd"
+                      d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-checked-color_transparent"
+                      clip-rule="evenodd"
+                      d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                      fill-rule="evenodd"
+                    />
+                    <rect
+                      class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                      height="6"
+                      rx="2"
+                      width="6"
+                      x="3"
+                      y="3"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="controls-Checkbox__caption  controls-Checkbox__caption-color__enabled"
+                  tabindex="0"
+                >
+                  normal text
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="controls-CheckboxGroup__group_vertical controls-CheckboxGroup__childGroup"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="tw-flex controls-max-w-full tw-flex-col undefined controls-Input-connected_filled"
+    >
+      <a
+        class="controls-Label controls-Label_underline_none tw-min-w-0"
+      >
+        <div
+          class="controls-Label__wrapper"
+        >
+          <div
+            class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+          >
+            WrapText = false
+          </div>
+          
+        </div>
+      </a>
+      <div
+        class="controls_toggle_theme-default controls-CheckboxGroup"
+        tabindex="0"
+      >
+        <div
+          class="controls-CheckboxGroup__group_vertical"
+          tabindex="0"
+        >
+          <div
+            class="controls_toggle_theme-default controls-Checkbox controls-CheckboxGroup__item_vertical-padding"
+            tabindex="0"
+          >
+            <div
+              class="controls-invalid-container"
+            >
+              <div
+                class="controls-Checkbox__wrapper controls-Checkbox__enabled  controls-Checked__checked"
+              >
+                <div
+                  class="controls_toggle_theme-default controls-CheckboxMarker controls-CheckboxMarker_ghost controls-CheckboxMarker_theme-default controls-CheckboxMarker__state-true controls-CheckboxMarker__icon-border-color__enabled controls-CheckboxMarker_inCheckbox"
+                  data-qa="controls-CheckboxMarker"
+                  tabindex="0"
+                >
+                  <svg
+                    class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                    data-qa="controls-CheckboxMarker_state-true"
+                    tabindex="0"
+                    viewBox="0 0 12 12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-true"
+                      d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-subtract controls-CheckboxMarker__icon-subtract-checked_enabled"
+                      clip-rule="evenodd"
+                      d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-checked-color_enabled"
+                      clip-rule="evenodd"
+                      d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                      fill-rule="evenodd"
+                    />
+                    <rect
+                      class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                      height="6"
+                      rx="2"
+                      width="6"
+                      x="3"
+                      y="3"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="controls-Checkbox__caption  controls-Checkbox__caption-color__enabled  ws-ellipsis"
+                  tabindex="0"
+                >
+                  very very over very long long long long text for testing option wrapText
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="controls_toggle_theme-default controls-Checkbox controls-CheckboxGroup__item_vertical"
+            tabindex="0"
+          >
+            <div
+              class="controls-invalid-container"
+            >
+              <div
+                class="controls-Checkbox__wrapper controls-Checkbox__enabled"
+              >
+                <div
+                  class="controls_toggle_theme-default controls-CheckboxMarker controls-CheckboxMarker_ghost controls-CheckboxMarker_theme-default controls-CheckboxMarker__state-false controls-CheckboxMarker__icon-border-color__enabled controls-CheckboxMarker_inCheckbox"
+                  data-qa="controls-CheckboxMarker"
+                  tabindex="0"
+                >
+                  <svg
+                    class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                    data-qa="controls-CheckboxMarker_state-false"
+                    tabindex="0"
+                    viewBox="0 0 12 12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-false"
+                      d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-subtract "
+                      clip-rule="evenodd"
+                      d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-checked-color_transparent"
+                      clip-rule="evenodd"
+                      d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                      fill-rule="evenodd"
+                    />
+                    <rect
+                      class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                      height="6"
+                      rx="2"
+                      width="6"
+                      x="3"
+                      y="3"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="controls-Checkbox__caption  controls-Checkbox__caption-color__enabled  ws-ellipsis"
+                  tabindex="0"
+                >
+                  normal text
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="controls-CheckboxGroup__group_vertical controls-CheckboxGroup__childGroup"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls-Input/CheckboxGroupConnected label 1`] = `
+<div>
+  <div
+    class="controlsDemo__wrapper controlsDemo_fixedWidth300 tw-flex tw-flex-col"
+  >
+    <div
+      class="controls_toggle_theme-default controls-CheckboxGroup controls-margin_top-m controls-margin_top-m controls-Input-connected_filled tw-w-full undefined controls-margin_top-m controls-Input-connected_filled tw-w-full"
+      tabindex="0"
+    >
+      <div
+        class="controls-CheckboxGroup__group_vertical"
+        tabindex="0"
+      >
+        <div
+          class="controls_toggle_theme-default controls-Checkbox controls-CheckboxGroup__item_vertical-padding"
+          tabindex="0"
+        >
+          <div
+            class="controls-invalid-container"
+          >
+            <div
+              class="controls-Checkbox__wrapper controls-Checkbox__enabled  controls-Checked__checked"
+            >
+              <div
+                class="controls_toggle_theme-default controls-CheckboxMarker controls-CheckboxMarker_ghost controls-CheckboxMarker_theme-default controls-CheckboxMarker__state-true controls-CheckboxMarker__icon-border-color__enabled controls-CheckboxMarker_inCheckbox"
+                data-qa="controls-CheckboxMarker"
+                tabindex="0"
+              >
+                <svg
+                  class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                  data-qa="controls-CheckboxMarker_state-true"
+                  tabindex="0"
+                  viewBox="0 0 12 12"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-true"
+                    d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                  />
+                  <path
+                    class="controls-CheckboxMarker__icon-subtract controls-CheckboxMarker__icon-subtract-checked_enabled"
+                    clip-rule="evenodd"
+                    d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                    fill-rule="evenodd"
+                  />
+                  <path
+                    class="controls-CheckboxMarker__icon-checked-color_enabled"
+                    clip-rule="evenodd"
+                    d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                    fill-rule="evenodd"
+                  />
+                  <rect
+                    class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                    height="6"
+                    rx="2"
+                    width="6"
+                    x="3"
+                    y="3"
+                  />
+                </svg>
+              </div>
+              <div
+                class="controls-Checkbox__caption  controls-Checkbox__caption-color__enabled  ws-ellipsis"
+                tabindex="0"
+              >
+                Первый
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="controls_toggle_theme-default controls-Checkbox controls-CheckboxGroup__item_vertical"
+          tabindex="0"
+        >
+          <div
+            class="controls-invalid-container"
+          >
+            <div
+              class="controls-Checkbox__wrapper controls-Checkbox__enabled"
+            >
+              <div
+                class="controls_toggle_theme-default controls-CheckboxMarker controls-CheckboxMarker_ghost controls-CheckboxMarker_theme-default controls-CheckboxMarker__state-false controls-CheckboxMarker__icon-border-color__enabled controls-CheckboxMarker_inCheckbox"
+                data-qa="controls-CheckboxMarker"
+                tabindex="0"
+              >
+                <svg
+                  class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                  data-qa="controls-CheckboxMarker_state-false"
+                  tabindex="0"
+                  viewBox="0 0 12 12"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-false"
+                    d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                  />
+                  <path
+                    class="controls-CheckboxMarker__icon-subtract "
+                    clip-rule="evenodd"
+                    d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                    fill-rule="evenodd"
+                  />
+                  <path
+                    class="controls-CheckboxMarker__icon-checked-color_transparent"
+                    clip-rule="evenodd"
+                    d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                    fill-rule="evenodd"
+                  />
+                  <rect
+                    class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                    height="6"
+                    rx="2"
+                    width="6"
+                    x="3"
+                    y="3"
+                  />
+                </svg>
+              </div>
+              <div
+                class="controls-Checkbox__caption  controls-Checkbox__caption-color__enabled  ws-ellipsis"
+                tabindex="0"
+              >
+                Второй
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="tw-flex controls-max-w-full tw-flex-col controls-margin_top-m controls-Input-connected_filled"
+    >
+      <a
+        class="controls-Label controls-Label_underline_none tw-min-w-0"
+      >
+        <div
+          class="controls-Label__wrapper"
+        >
+          <div
+            class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+          >
+            label top
+          </div>
+          
+        </div>
+      </a>
+      <div
+        class="controls_toggle_theme-default controls-CheckboxGroup controls-margin_top-m"
+        tabindex="0"
+      >
+        <div
+          class="controls-CheckboxGroup__group_vertical"
+          tabindex="0"
+        >
+          <div
+            class="controls_toggle_theme-default controls-Checkbox controls-CheckboxGroup__item_vertical-padding"
+            tabindex="0"
+          >
+            <div
+              class="controls-invalid-container"
+            >
+              <div
+                class="controls-Checkbox__wrapper controls-Checkbox__enabled  controls-Checked__checked"
+              >
+                <div
+                  class="controls_toggle_theme-default controls-CheckboxMarker controls-CheckboxMarker_ghost controls-CheckboxMarker_theme-default controls-CheckboxMarker__state-true controls-CheckboxMarker__icon-border-color__enabled controls-CheckboxMarker_inCheckbox"
+                  data-qa="controls-CheckboxMarker"
+                  tabindex="0"
+                >
+                  <svg
+                    class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                    data-qa="controls-CheckboxMarker_state-true"
+                    tabindex="0"
+                    viewBox="0 0 12 12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-true"
+                      d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-subtract controls-CheckboxMarker__icon-subtract-checked_enabled"
+                      clip-rule="evenodd"
+                      d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-checked-color_enabled"
+                      clip-rule="evenodd"
+                      d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                      fill-rule="evenodd"
+                    />
+                    <rect
+                      class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                      height="6"
+                      rx="2"
+                      width="6"
+                      x="3"
+                      y="3"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="controls-Checkbox__caption  controls-Checkbox__caption-color__enabled  ws-ellipsis"
+                  tabindex="0"
+                >
+                  Первый
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="controls_toggle_theme-default controls-Checkbox controls-CheckboxGroup__item_vertical"
+            tabindex="0"
+          >
+            <div
+              class="controls-invalid-container"
+            >
+              <div
+                class="controls-Checkbox__wrapper controls-Checkbox__enabled"
+              >
+                <div
+                  class="controls_toggle_theme-default controls-CheckboxMarker controls-CheckboxMarker_ghost controls-CheckboxMarker_theme-default controls-CheckboxMarker__state-false controls-CheckboxMarker__icon-border-color__enabled controls-CheckboxMarker_inCheckbox"
+                  data-qa="controls-CheckboxMarker"
+                  tabindex="0"
+                >
+                  <svg
+                    class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                    data-qa="controls-CheckboxMarker_state-false"
+                    tabindex="0"
+                    viewBox="0 0 12 12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-false"
+                      d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-subtract "
+                      clip-rule="evenodd"
+                      d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-checked-color_transparent"
+                      clip-rule="evenodd"
+                      d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                      fill-rule="evenodd"
+                    />
+                    <rect
+                      class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                      height="6"
+                      rx="2"
+                      width="6"
+                      x="3"
+                      y="3"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="controls-Checkbox__caption  controls-Checkbox__caption-color__enabled  ws-ellipsis"
+                  tabindex="0"
+                >
+                  Второй
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="tw-flex controls-max-w-full tw-flex-row tw-items-baseline controls-margin_top-m controls-Input-connected_filled"
+    >
+      <a
+        class="controls-Label controls-Label_underline_none tw-min-w-0 tw-flex-shrink"
+      >
+        <div
+          class="controls-Label__wrapper"
+        >
+          <div
+            class="controls-Label__caption controls-fontsize-undefined controls-Label__caption_fontsize-default controls-Label__caption_fontColorStyle-label controls-Label__caption_underline_none controls-Label__caption_underline_none_edit ws-ellipsis"
+          >
+            label start
+          </div>
+          
+        </div>
+      </a>
+      <div
+        class="controls_toggle_theme-default controls-CheckboxGroup controls-input_label_min-input-content controls-margin_top-m controls-input_label_min-input-content"
+        tabindex="0"
+      >
+        <div
+          class="controls-CheckboxGroup__group_vertical"
+          tabindex="0"
+        >
+          <div
+            class="controls_toggle_theme-default controls-Checkbox controls-CheckboxGroup__item_vertical-padding"
+            tabindex="0"
+          >
+            <div
+              class="controls-invalid-container"
+            >
+              <div
+                class="controls-Checkbox__wrapper controls-Checkbox__enabled  controls-Checked__checked"
+              >
+                <div
+                  class="controls_toggle_theme-default controls-CheckboxMarker controls-CheckboxMarker_ghost controls-CheckboxMarker_theme-default controls-CheckboxMarker__state-true controls-CheckboxMarker__icon-border-color__enabled controls-CheckboxMarker_inCheckbox"
+                  data-qa="controls-CheckboxMarker"
+                  tabindex="0"
+                >
+                  <svg
+                    class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                    data-qa="controls-CheckboxMarker_state-true"
+                    tabindex="0"
+                    viewBox="0 0 12 12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-true"
+                      d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-subtract controls-CheckboxMarker__icon-subtract-checked_enabled"
+                      clip-rule="evenodd"
+                      d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-checked-color_enabled"
+                      clip-rule="evenodd"
+                      d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                      fill-rule="evenodd"
+                    />
+                    <rect
+                      class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                      height="6"
+                      rx="2"
+                      width="6"
+                      x="3"
+                      y="3"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="controls-Checkbox__caption  controls-Checkbox__caption-color__enabled  ws-ellipsis"
+                  tabindex="0"
+                >
+                  Первый
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="controls_toggle_theme-default controls-Checkbox controls-CheckboxGroup__item_vertical"
+            tabindex="0"
+          >
+            <div
+              class="controls-invalid-container"
+            >
+              <div
+                class="controls-Checkbox__wrapper controls-Checkbox__enabled"
+              >
+                <div
+                  class="controls_toggle_theme-default controls-CheckboxMarker controls-CheckboxMarker_ghost controls-CheckboxMarker_theme-default controls-CheckboxMarker__state-false controls-CheckboxMarker__icon-border-color__enabled controls-CheckboxMarker_inCheckbox"
+                  data-qa="controls-CheckboxMarker"
+                  tabindex="0"
+                >
+                  <svg
+                    class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                    data-qa="controls-CheckboxMarker_state-false"
+                    tabindex="0"
+                    viewBox="0 0 12 12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-false"
+                      d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-subtract "
+                      clip-rule="evenodd"
+                      d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-checked-color_transparent"
+                      clip-rule="evenodd"
+                      d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                      fill-rule="evenodd"
+                    />
+                    <rect
+                      class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                      height="6"
+                      rx="2"
+                      width="6"
+                      x="3"
+                      y="3"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="controls-Checkbox__caption  controls-Checkbox__caption-color__enabled  ws-ellipsis"
+                  tabindex="0"
+                >
+                  Второй
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="tw-flex controls-max-w-full tw-flex-row tw-items-baseline controls-margin_top-m controls-Input-connected_filled"
+    >
+      <span
+        class="controls-icon_size-s controls-icon_style-secondary controls-margin_right-s icon-SabyBird controls-icon"
+      />
+      <div
+        class="controls_toggle_theme-default controls-CheckboxGroup controls-margin_top-m"
+        tabindex="0"
+      >
+        <div
+          class="controls-CheckboxGroup__group_vertical"
+          tabindex="0"
+        >
+          <div
+            class="controls_toggle_theme-default controls-Checkbox controls-CheckboxGroup__item_vertical-padding"
+            tabindex="0"
+          >
+            <div
+              class="controls-invalid-container"
+            >
+              <div
+                class="controls-Checkbox__wrapper controls-Checkbox__enabled  controls-Checked__checked"
+              >
+                <div
+                  class="controls_toggle_theme-default controls-CheckboxMarker controls-CheckboxMarker_ghost controls-CheckboxMarker_theme-default controls-CheckboxMarker__state-true controls-CheckboxMarker__icon-border-color__enabled controls-CheckboxMarker_inCheckbox"
+                  data-qa="controls-CheckboxMarker"
+                  tabindex="0"
+                >
+                  <svg
+                    class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                    data-qa="controls-CheckboxMarker_state-true"
+                    tabindex="0"
+                    viewBox="0 0 12 12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-true"
+                      d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-subtract controls-CheckboxMarker__icon-subtract-checked_enabled"
+                      clip-rule="evenodd"
+                      d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-checked-color_enabled"
+                      clip-rule="evenodd"
+                      d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                      fill-rule="evenodd"
+                    />
+                    <rect
+                      class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                      height="6"
+                      rx="2"
+                      width="6"
+                      x="3"
+                      y="3"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="controls-Checkbox__caption  controls-Checkbox__caption-color__enabled  ws-ellipsis"
+                  tabindex="0"
+                >
+                  Первый
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="controls_toggle_theme-default controls-Checkbox controls-CheckboxGroup__item_vertical"
+            tabindex="0"
+          >
+            <div
+              class="controls-invalid-container"
+            >
+              <div
+                class="controls-Checkbox__wrapper controls-Checkbox__enabled"
+              >
+                <div
+                  class="controls_toggle_theme-default controls-CheckboxMarker controls-CheckboxMarker_ghost controls-CheckboxMarker_theme-default controls-CheckboxMarker__state-false controls-CheckboxMarker__icon-border-color__enabled controls-CheckboxMarker_inCheckbox"
+                  data-qa="controls-CheckboxMarker"
+                  tabindex="0"
+                >
+                  <svg
+                    class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                    data-qa="controls-CheckboxMarker_state-false"
+                    tabindex="0"
+                    viewBox="0 0 12 12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-false"
+                      d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-subtract "
+                      clip-rule="evenodd"
+                      d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-checked-color_transparent"
+                      clip-rule="evenodd"
+                      d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                      fill-rule="evenodd"
+                    />
+                    <rect
+                      class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                      height="6"
+                      rx="2"
+                      width="6"
+                      x="3"
+                      y="3"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="controls-Checkbox__caption  controls-Checkbox__caption-color__enabled  ws-ellipsis"
+                  tabindex="0"
+                >
+                  Второй
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
