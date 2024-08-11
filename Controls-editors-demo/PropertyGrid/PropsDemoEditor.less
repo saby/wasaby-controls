@@ -1,0 +1,65 @@
+.PropsDemoEditor__header {
+   font-weight: var(--font-weight-bold);
+   background: var(--secondary_background-color);
+}
+
+.PropsDemoEditor__back-button {
+   padding: var(--offset_xs) var(--offset_st);
+   margin: var(--offset_xs);
+}
+
+.PropsDemoEditor__Content {
+   display: flex;
+}
+
+.PropsDemoEditor__PropertyGrid {
+   width: 400px;
+   padding: 10px;
+   max-height: 89vh;
+   overflow-y: auto;
+   overflow-x: hidden;
+   display: grid;
+   grid-template-columns: auto 1fr;
+   grid-column-gap: 10px;
+   grid-row-gap: 10px;
+}
+
+.PropsDemoEditorWrapper {
+   display: contents;
+
+   &__title {
+      grid-column-start: 1;
+      grid-column-end: 2;
+   }
+
+   &__editor {
+      grid-column-start: 2;
+      grid-column-end: 3;
+
+      &:first-child {
+         grid-column-start: 1;
+      }
+   }
+}
+
+.PropsDemoEditorGroupHeader {
+   border-top: 1px solid var(--border-color);
+   margin: 15px -10px -10px;
+   padding: 10px;
+   grid-column-start: 1;
+   grid-column-end: 3;
+
+   &:first-child {
+      border-top: none;
+      margin-top: 0;
+
+      &:empty {
+         display: none;
+      }
+   }
+
+   &__title {
+      color: var(--primary_text-color);
+      font-weight: var(--font-weight-bold);
+   }
+}

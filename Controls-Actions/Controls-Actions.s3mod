@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-Actions"
+           kaizen_zone="4efc1ffa-202d-406f-befe-efa4a5d4ee0c"
+           id="e029e579-06fb-4c1a-867f-2fef63b11864"
+           package="Wasaby"
+           required="1"
+           version="1.00">
+  <description>Модуль содержит действия для кнопок.</description>
+    <depends>
+      <module id="f27abe12-19df-4c9f-b886-634bd20a0011" name="UI"/>
+      <module id="f6fdf353-3ab3-4dbb-8671-01c2b418bf0a" name="Controls"/>
+      <module id="db908b43-8168-4c43-a7c2-cddce643248d" name="Permission"/>
+      <module id="af50caf5-f84b-4b81-a19c-6f6618372dbd" name="Controls-default-theme"/>
+    </depends>
+  <load_after/>
+  <parameters/>
+  <resources/>
+  <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

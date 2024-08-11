@@ -1,0 +1,23 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell">
+            <Controls.input:Text attr:class="controlsDemo__input"
+                                 attr:data-qa="Controls-demo_Input_ViewMode__contrastBackground-false"
+                                 bind:value="_value"
+                                 contrastBackground="{{false}}"/>
+        </div>
+        <div class="controlsDemo__cell controls-padding-m controls-background-unaccented-same">
+            <Controls.input:Text attr:class="controlsDemo__input"
+                                 attr:data-qa="Controls-demo_Input_ViewMode__contrastBackground-true"
+                                 bind:value="_value"
+                                 contrastBackground="{{true}}"/>
+        </div>
+        <div class="controlsDemo__cell controls-padding-m controls-background-unaccented-same">
+            <Controls.input:Text attr:class="controlsDemo__input"
+                                 attr:data-qa="Controls-demo_Input_ViewMode__contrastBackground-true-readOnly"
+                                 value="{{_valueReadonly}}"
+                                 readOnly="{{true}}"
+                                 contrastBackground="{{true}}"/>
+        </div>
+    </div>
+</div>

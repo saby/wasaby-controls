@@ -1,0 +1,88 @@
+<ws:template name="icon">
+<svg
+    id="Слой_1"
+    version="1.1"
+    xml:space="preserve"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    style="enable-background: new 0 0 6 12;"
+    x="0px"
+    y="0px"
+    viewBox="0 0 6 12"
+    class="controls-Back_arrow controls-Back__icon controls-Back__icon_style-{{_options.iconStyle}}"
+>
+      <path
+          transform="{{transform}}{{ _isReverse ? ' rotate(180, 3, 6)' : ''}}"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M4.58552 0L6 1.23896L2.36136 6L6 10.761L4.58552 12L0 6L4.58552 0Z"
+      />
+   </svg>
+</ws:template>
+
+<div class="controls-Back" title="{{_options.tooltip}}">
+
+<div class="controls-Back__wrapper controls-fontsize-{{_options.fontSize}}">
+
+  <div class="
+         controls-Back__icon-wrapper
+         {{
+            _options.beforeCaptionTemplate || _options.caption
+               ? ('controls-Back__icon-wrapper_offset-' + _offsetSize)
+               : ''
+         }}
+         {{_options.iconViewMode === 'functionalButton' ? 'ws-align-items-center' : 'ws-align-items-baseline'}}
+      ">
+    <ws:if data="{{_options.iconViewMode === 'functionalButton'}}">
+      <div class="
+               controls-Back__icon_view-button
+               controls-Back__icon_view-button-{{ _options.buttonStyle }}-style
+               controls-Back__icon_view-button_size-{{_iconSize}}
+            "
+           data-qa="controls-Back_arrow">
+        <ws:partial template="icon" transform=""/>
+      </div>
+    </ws:if>
+    <ws:else>
+      <div class="controls-Back__icon_view-default" data-qa="controls-Back_arrow">
+        <ws:partial template="icon" transform="{{ _isReverse ? 'matrix(0.7, 0, 0, 0.7, 0.5, 3.5)' : 'matrix(0.7, 0, 0, 0.7, 1.5, 3.5)'}}"/>
+      </div>
+    </ws:else>
+  </div>
+
+  <ws:if data="{{_options.beforeCaptionTemplate}}">
+    <div class="controls-Back__middle-wrapper">
+      <div class="
+               controls-Back__middle
+               controls-Back__middle_size-{{_iconSize}}
+            ">
+        <ws:partial
+            template="{{_options.beforeCaptionTemplate}}"
+            scope="{{_options.beforeCaptionTemplateOptions}}"
+        />
+      </div>
+    </div>
+  </ws:if>
+
+  <ws:if data="{{_options.caption}}">
+    <div class="
+            controls-Back__caption
+            controls-Back__caption_style-{{_options.fontColorStyle}}
+            controls-Back__caption_overflow-{{_options.textOverflow}}
+            {{
+               _options.textTransform !== 'none'
+                  ? ('controls-fontsize-' + _options.fontSize + ' controls-heading__' + _options.textTransform)
+            }}
+         ">
+      <ws:if data="{{_stringCaption}}">
+        {{ _options.caption }}
+      </ws:if>
+      <ws:else>
+        <ws:partial template="{{_options.caption}}"/>
+      </ws:else>
+    </div>
+  </ws:if>
+
+</div>
+
+</div>

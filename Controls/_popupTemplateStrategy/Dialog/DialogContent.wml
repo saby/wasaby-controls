@@ -1,0 +1,9 @@
+<ws:partial
+        template="{{template}}"
+        scope="{{templateOptions}}"
+        allowAdaptive="{{ _options.allowAdaptive }}"
+        prefetchPromise="{{ _options._prefetchPromise }}"
+        prefetchData="{{_options._prefetchData}}"
+        isPrefetchDataMode="{{_options._isPrefetchDataMode}}"
+        dialogPosition="{{position}}"
+        maximize="{{maximize}}" />

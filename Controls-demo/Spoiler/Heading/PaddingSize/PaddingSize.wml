@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth400">
+<div class="controlsDemo__cell">
+  <div>Переменная --spacing-icon-text_spoiler_local = --offset_xl</div>
+  <Controls.spoiler:Heading captions="{{['Свернуть', 'Развернуть']}}" className="size_xl" attr:style="width: 250px;" iconPaddingSize="xl"/>
+</div>
+<div class="controlsDemo__cell">
+  <div>Переменная --spacing-icon-text_spoiler_local = --offset_3xl, captionPosition = left</div>
+  <Controls.spoiler:Heading captions="{{['Много много много много текста', 'Развернуть']}}" className="size_3xl" attr:style="width: 250px;" captionPosition="left" iconPaddingSize="3xl"/>
+</div>
+<div class="controlsDemo__cell">
+  <div>Переменная --spacing-icon-text_spoiler_local = --offset_st</div>
+  <Controls.spoiler:Heading captions="{{['Много много много много текста','Развернуть']}}" className="size_st" attr:style="width: 250px;" bind:expanded="_expanded" iconPaddingSize="st"/>
+</div>
+<div class="controlsDemo__cell">
+  <div>Переменная --spacing-icon-text_spoiler_local не задан</div>
+  <Controls.spoiler:Heading captions="{{['Много много много много текста','Развернуть']}}" attr:style="width: 250px;" bind:expanded="_expanded" iconPaddingSize="st"/>
+</div>
+</div>

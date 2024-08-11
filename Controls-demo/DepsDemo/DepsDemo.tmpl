@@ -1,0 +1,10 @@
+<div>
+   <Controls.Container.Async templateName="Controls/input:Text" class="ControlsDemo-DepsDemo__container">
+      <ws:partial template="{{content.resolvedTemplate}}" value="Test dependencies preload"></ws:partial>
+   </Controls.Container.Async>
+   <Controls.buttons:Button attr:class="ControlsDemo-DepsDemo__button">
+      <ws:caption>
+         <span attr:class="checkSpan">{{ isOK ? 'ok' : 'Dependencies has not been preloaded. Check DepsDemo.tmpl' }}</span>
+      </ws:caption>
+   </Controls.buttons:Button>
+</div>

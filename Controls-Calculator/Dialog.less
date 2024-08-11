@@ -1,0 +1,28 @@
+.Calculator-Dialog {
+   background: var(--unaccented_background-color);
+
+   & .Calculator-View {
+      padding: 0 var(--offset_m) var(--offset_m) var(--offset_m);
+   }
+}
+
+.Calculator-Dialog__memoryWrapper {
+   flex-grow: 1;
+   display: flex;
+   align-items: center;
+   height: var(--inline_height_m);
+   padding-left: var(--offset_m);
+   font-size: var(--font-size_m);
+   color: var(--unaccented_text-color);
+}
+
+.Calculator-Dialog__memory {
+   max-width: 100%;
+   flex-shrink: 1;
+   min-width: 0;
+}
+
+// TODO: https://online.sbis.ru/opendoc.html?guid=073233ab-ea58-4a6c-9cfa-9d5173ea40a8
+.Calculator-Dialog .controls-DialogTemplate__top-area {
+   background-color: var(--unaccented_background-color);
+}

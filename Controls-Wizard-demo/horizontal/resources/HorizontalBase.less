@@ -1,0 +1,104 @@
+.engineDemo_horizontalBase {
+   width: 751px;
+   height: 740px;
+   padding: 10px 30px;
+
+   &_optionSwitch {
+      margin-bottom: 20px;
+   }
+
+   &_step1 {
+      width: 100%;
+      height: 680px;
+      display: flex;
+      justify-content: space-evenly;
+   }
+
+   &_panel {
+      width: 341px;
+      height: 634px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      margin: 25px 0 0;
+      border-radius: 10px;
+
+      &:hover {
+         box-shadow: 0 0 10px 0 #a8a8a8;
+      }
+   }
+
+   &_panel1 {
+      background: url('panel1.png') no-repeat;
+   }
+
+   &_panel2 {
+      background: url('panel2.png') no-repeat;
+   }
+
+   &_button {
+      width: 211px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 44px;
+      border: 1px solid #05b;
+      color: var(--link_text-color);
+      box-sizing: border-box;
+      margin: 0 0 38px 2px;
+      font-size: 18px;
+      border-radius: 31px;
+      cursor: pointer;
+
+      &:hover {
+         background: #05b;
+         color: #fff;
+      }
+   }
+
+   &_button2 {
+      margin: 0 0 38px -8px;
+   }
+
+   &_stepContent {
+      width: 100%;
+      height: 610px;
+   }
+
+   &_step2Content {
+      background: url('step2content.png');
+      background-position: 2px 0;
+   }
+
+   &_step3Content {
+      background: url('step3content.png');
+      margin-top: 4px;
+   }
+
+   &_step4Content {
+      background: url('step4content.png');
+      height: 426px;
+   }
+
+   &_header {
+      display: flex;
+      height: 40px;
+      margin-bottom: 11px;
+      align-items: center;
+      background: var(--unaccented_background-color);
+   }
+
+   &_headerText {
+      margin: 0 0 0 13px;
+      font-size: 18px;
+      height: 26px;
+      font-weight: var(--font-weight-bold);
+      flex-grow: 1;
+      color: var(--secondary_text-color);
+   }
+
+   &_nextButton {
+      width: 106px;
+      margin-right: 13px;
+   }
+}

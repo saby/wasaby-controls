@@ -1,0 +1,42 @@
+.TextEditor__block {
+   border-radius: var(--border-radius_s);
+   padding: var(--offset_s) var(--offset_m);
+   background-color: var(--background-color);
+   margin: var(--offset_s) 0 var(--offset_s) var(--offset_s);
+   box-sizing: border-box;
+}
+
+.TextEditor__block_active {
+   background-color: var(--active_background-color);
+}
+
+.TextEditor__block__preview {
+   position: relative;
+   display: flex;
+   align-content: center;
+   flex-wrap: wrap;
+   height: 120px;
+   overflow: hidden;
+}
+
+.TextEditor__block__preview__content {
+   width: 100%;
+   position: relative;
+   background-color: var(--active_background-color);
+   box-sizing: border-box;
+}
+
+.TextEditor__PropertyGrid {
+   width: 450px;
+}
+
+.TextTitleEditor__separator {
+   background-clip: content-box;
+   background-color: var(--border-color);
+   box-sizing: border-box;
+   height: 100%;
+   margin: 0 var(--offset_2xs);
+   padding: var(--offset_2xs) 0;
+   user-select: none;
+   width: 1px;
+}

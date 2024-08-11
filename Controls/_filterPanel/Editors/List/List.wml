@@ -1,0 +1,130 @@
+<ws:template name="listBase">
+    <Controls.Container.Async templateName="{{_options.parentProperty ? 'Controls/treeGrid:View' : 'Controls/grid:View'}}">
+        <ws:partial template="{{content.resolvedTemplate}}"
+                    name="gridView"
+                    filter="{{_filter}}"
+                    keyProperty="{{_options.keyProperty}}"
+                    source="{{_options.source}}"
+                    sourceController="{{_sourceController || _options.sourceController}}"
+                    isSourceControllerFromContext="{{true}}"
+                    parentProperty="{{_options.parentProperty}}"
+                    nodeProperty="{{_options.nodeProperty}}"
+                    hasChildrenProperty="{{_options.hasChildrenProperty}}"
+                    groupProperty="{{_options.groupProperty}}"
+                    groupTemplate="{{_options.groupTemplate}}"
+                    expanderVisibility="{{_options.expanderVisibility}}"
+                    expandedItems="{{_expandedItems}}"
+                    root="{{_options.root}}"
+                    dataLoadCallback="{{_options.dataLoadCallback}}"
+                    markItemByExpanderClick="{{_options.markItemByExpanderClick}}"
+                    contextMenuConfig="{{_options.contextMenuConfig}}"
+                    itemActionsProperty="{{_options.itemActionsProperty}}"
+                    itemActionsPosition="{{_options.itemActionsPosition}}"
+                    expanderPosition="{{_options.expanderPosition}}"
+                    nodeFooterTemplate="{{_options.nodeFooterTemplate}}"
+                    sorting="{{_options.sorting}}"
+                    navigation="{{_navigation}}"
+                    columns="{{_columns}}"
+                    selectAncestors="{{_options.multiSelect ? _options.selectAncestors : false}}"
+                    selectDescendants="{{_options.multiSelect ? _options.selectDescendants : false}}"
+                    footerTemplate="{{footerTemplate}}"
+                    multiSelectVisibility="{{(_options.multiSelect || _options.markerStyle !== 'primary') ? 'onhover' : 'hidden'}}"
+                    markerVisibility="{{_options.multiSelect ? 'hidden' : 'onactivated'}}"
+                    itemsReadyCallback="{{_itemsReadyCallback}}"
+                    colspanCallback="{{_colspanCallback}}"
+                    itemActions="{{_itemActions}}"
+                    itemsDragNDrop="{{!!_dragNDropProvider}}"
+                    itemActionVisibilityCallback="{{_itemActionVisibilityCallback}}"
+                    showEditArrow="{{false}}"
+                    expanderIcon="{{_options.expanderIcon}}"
+                    virtualScrollConfig="{{_options.virtualScrollConfig}}"
+                    keepScrollAfterReload="{{_options.keepScrollAfterReload}}"
+                    style="master"
+                    backgroundStyle="{{!_options.multiSelect && _options.markerStyle !== 'primary' ? 'filterPanel' : 'master'}}"
+                    _needBottomPadding="{{_options._needBottomPadding}}"
+                    attr:class="controls_toggle_theme-{{_options.theme}}
+                                controls-EditorList_style-{{_options.style}}
+                                {{_options.markerStyle !== 'primary' ? 'controls-EditorList_secondaryFilter'}}"
+                    on:itemClick="_handleItemClick()"
+                    on:actionClick="_handleActionClick()"
+                    on:register="_registerHandler()"
+                    on:editArrowClick="_handleEditArrowClick()"
+                    on:customdragStart="_dragStart()"
+                    on:customdragEnd="_dragEnd()"
+                    on:customdragEnter="_dragEnter()"
+                    on:changeDragTarget="_changeDragTarget()"
+                    on:selectedKeysChanged="_handleSelectedKeysChanged()"
+                    on:markedKeyChanged="_handleMarkedKeyChanged()"
+                    on:expandedItemsChanged="_handleExpandedItemsChanged()"
+                    itemTemplate="{{_options.itemTemplate}}"
+                    itemPadding="{{_options.itemPadding}}"
+                    itemsSpacing="{{_options.itemsSpacing}}"
+                    roundBorder="{{_options.roundBorder}}"
+                    markedKey="{{_markedKey}}"
+                    selectedKeys="{{_selectedKeys}}"
+                    stickyCallback="{{_stickyCallback}}"
+                    withoutLevelPadding="{{_options.withoutLevelPadding}}"
+                    moreFontColorStyle="{{_options.moreFontColorStyle}}"
+                    nodeMoreCaption="{{_options.nodeMoreCaption}}"
+                    moreButtonTemplate="{{_options.moreButtonTemplate}}"
+                    bottomPaddingMode="{{_options.bottomPaddingMode}}">
+            <ws:itemTemplateOptions
+                            parentProperty="{{_options.parentProperty}}"
+                            markerStyle="{{_options.markerStyle}}"
+                            emptyKey="{{_options.emptyKey}}"
+                            selectedAllKey="{{_options.selectedAllKey}}"
+                            itemStickyCallback="{{_itemStickyCallback}}"
+                />
+            <ws:multiSelectTemplate>
+                <ws:partial template="Controls/_filterPanel/Editors/resources/MultiSelectTemplate"
+                            multiSelectVerticalAlign="{{_options.multiSelectVerticalAlign}}"
+                            multiSelect="{{_options.multiSelect}}"
+                            checkBoxNewDesign="{{_options.checkBoxNewDesign}}"
+                            markerStyle="{{_options.markerStyle}}"
+                            emptyKey="{{_options.emptyKey}}"
+                            selectedAllKey="{{_options.selectedAllKey}}"
+                />
+            </ws:multiSelectTemplate>
+        </ws:partial>
+    </Controls.Container.Async>
+</ws:template>
+
+<ws:template name="listEditor">
+   <ws:if data="{{_needShowMoreButton(_options)}}">
+      <div>
+         <ws:partial template="listBase" />
+          <div class="controls-ListEditor__footer" on:click="_handleFooterClick()" data-qa="controls-ListEditor__footer">
+              <ws:if data="{{_hiddenItemsCount}}">
+                  <Controls.extButtons:MoreButton count="{{_hiddenItemsCount}}"
+                                               contrastBackground="{{false}}"
+                                               fontSize="xs"/>
+              </ws:if>
+              <ws:else>
+                  <Controls.Container.Async templateName="Controls/ShowMoreButton">
+                      <ws:partial template="{{content.resolvedTemplate}}"
+                                  contrastBackground="{{false}}"
+                                  iconSize="l"
+                                  fontSize="xs"/>
+                  </Controls.Container.Async>
+              </ws:else>
+          </div>
+      </div>
+   </ws:if>
+   <ws:else>
+      <ws:partial template="listBase"/>
+   </ws:else>
+</ws:template>
+
+<div class="controls-ListEditor {{_options.isAdaptive ? ' controls-ListEditor__adaptive'}} {{_needShowMoreButton(_options) ? 'controls-ListEditor__moreButton_margin-bottom' }}">
+   <ws:if data="{{_options.multiSelect}}">
+      <ws:partial template="listEditor"/>
+   </ws:if>
+   <ws:else>
+      <Controls.Container.Async templateName="Controls/multiselection:SingleSelection">
+         <ws:partial template="{{content.resolvedTemplate}}"
+                     on:selectedKeyChanged="_handleSelectedKeyChanged()">
+            <ws:partial template="listEditor"/>
+         </ws:partial>
+      </Controls.Container.Async>
+   </ws:else>
+</div>

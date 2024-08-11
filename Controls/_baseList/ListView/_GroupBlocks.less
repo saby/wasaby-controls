@@ -1,0 +1,126 @@
+.controls-ListView__groupViewMode_blocks,
+.controls-ListView__groupViewMode_titledBlocks {
+   .controls-GridView__checkbox_relative,
+   .controls-ListView__itemContent {
+      z-index: 1;
+      position: relative;
+      background-color: inherit;
+      border-radius: inherit;
+   }
+}
+
+// Залитые блоки со скруглением
+.controls-List__groupViewMode_titledBlocks {
+   .controls-ListView__group {
+      .controls-ListView__groupContent {
+         overflow: hidden;
+      }
+
+      &.controls-ListView__GroupContentWrapper::after,
+      .controls-ListView__GroupContentWrapper::after {
+         content: '\200b';
+         height: 100%;
+         width: 100%;
+         position: absolute;
+         box-sizing: border-box;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         pointer-events: none;
+         z-index: 0;
+         border-radius: inherit;
+         box-shadow: var(--shadow_b);
+      }
+   }
+
+   // Скругляем верхнюю часть заголовка группы
+   .controls-ListView__group.controls-ListView__GroupContentWrapper_first,
+   .controls-ListView__group .controls-ListView__GroupContentWrapper_first {
+      border-start-start-radius: var(--border-radius_s);
+   }
+
+   // Скругляем верхнюю часть заголовка группы
+   .controls-ListView__group.controls-ListView__GroupContentWrapper_last,
+   .controls-ListView__group .controls-ListView__GroupContentWrapper_last {
+      border-start-end-radius: var(--border-radius_s);
+   }
+
+   // Скругляем нижнюю часть заголовка свёрнутой группы
+   .controls-ListView__group_collapsed.controls-ListView__GroupContentWrapper_first,
+   .controls-ListView__group_collapsed .controls-ListView__GroupContentWrapper_first {
+      border-end-start-radius: var(--border-radius_s);
+   }
+
+   // Скругляем нижнюю часть заголовка свёрнутой группы
+   .controls-ListView__group_collapsed.controls-ListView__GroupContentWrapper_last,
+   .controls-ListView__group_collapsed .controls-ListView__GroupContentWrapper_last {
+      border-end-end-radius: var(--border-radius_s);
+   }
+
+   // Рисуем отступ сверху под нижнюю часть залитого блока со скруглением
+   .controls-ListView__group_SpaceItem_bottom.controls-ListView__item_contentWrapper,
+   .controls-ListView__group_SpaceItem_bottom > .controls-ListView__item_contentWrapper {
+      padding-top: var(--offset_xs);
+   }
+}
+
+.controls-List__groupViewMode_blocks,
+.controls-List__groupViewMode_titledBlocks {
+   // дополнительный блок после заголовка или после группы
+   .controls-ListView__group_SpaceItem_top.controls-ListView__item_contentWrapper,
+   .controls-ListView__group_SpaceItem_top > .controls-ListView__item_contentWrapper {
+      position: relative;
+   }
+
+   // тень для всех сгруппированных записей
+   .controls-ListView__item_grouped.controls-ListView__item_contentWrapper::after,
+   .controls-ListView__item_grouped > .controls-ListView__item_contentWrapper::after {
+      content: '\200b';
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      box-sizing: border-box;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 0;
+      border-radius: inherit;
+      box-shadow: var(--shadow_b);
+   }
+
+   .controls-ListView__group_SpaceItem.controls-ListView__item_contentWrapper,
+   .controls-ListView__group_SpaceItem > .controls-ListView__item_contentWrapper {
+      position: relative;
+   }
+
+   .controls-ListView__group_SpaceItem.controls-ListView__item_contentWrapper::after,
+   .controls-ListView__group_SpaceItem > .controls-ListView__item_contentWrapper::after {
+      content: '\200b';
+      width: 100%;
+      position: absolute;
+      left: 0;
+      height: var(--offset_xs);
+      background: #fff;
+      box-shadow: var(--shadow_b);
+   }
+
+   // Рисуем нижнюю часть залитого блока со скруглением
+   .controls-ListView__group_SpaceItem_bottom.controls-ListView__item_contentWrapper::after,
+   .controls-ListView__group_SpaceItem_bottom > .controls-ListView__item_contentWrapper::after {
+      top: 0;
+      border-end-start-radius: var(--border-radius_s);
+      border-end-end-radius: var(--border-radius_s);
+   }
+
+   // Рисуем верхнюю часть залитого блока со скруглением
+   .controls-ListView__group_SpaceItem_top.controls-ListView__item_contentWrapper::after,
+   .controls-ListView__group_SpaceItem_top > .controls-ListView__item_contentWrapper::after {
+      bottom: 0;
+      border-start-start-radius: var(--border-radius_s);
+      border-start-end-radius: var(--border-radius_s);
+      z-index:1;
+   }
+}

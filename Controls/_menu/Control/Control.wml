@@ -1,0 +1,150 @@
+<ws:template name="menuFooter">
+  <div class="controls-Menu__footer {{_options.showMoreRightTemplate ? 'controls-Menu__footer-minHeight'}}"
+       on:mouseenter="_footerMouseEnter()">
+    <ws:if data="{{_moreButtonVisible}}">
+      <div class="controls-Menu__moreButton controls-Menu__footer-moreButton"
+           on:click="_openSelectorDialog()">
+        <Controls.Container.Async templateName="Controls/ShowMoreButton">
+          <ws:partial template="{{content.resolvedTemplate}}"
+                      iconSize="m"
+                      attr:data-qa="controls-Menu__moreButton"/>
+        </Controls.Container.Async>
+      </div>
+    </ws:if>
+    <ws:else data="{{_expandButtonVisible}}">
+      <div class="controls-Menu__additional
+                                 controls-Menu__footer-additional_padding-top_{{_expander ? 'm' : 'xs'}}
+                                 {{_options.isAdaptive && _options.allowAdaptive !== false ? 'controls-padding_bottom-xs'}}
+                                 {{_options.footerContentTemplate ? 'controls-Menu__footer-additional_padding-bottom'}}"
+           on:click="_toggleExpanded()">
+        <Controls.Container.Async templateName="Controls/ShowMoreButton">
+          <ws:partial template="{{content.resolvedTemplate}}"
+                      iconMode="arrow"
+                      iconSize="l"
+                      value="{{_expander}}"/>
+        </Controls.Container.Async>
+      </div>
+    </ws:else>
+    <ws:if data="{{_options.showMoreRightTemplate}}">
+      <ws:partial template="{{_options.showMoreRightTemplate}}"
+                  attr:class="controls-Menu__footer-showMoreRightTemplate" />
+    </ws:if>
+  </div>
+</ws:template>
+
+
+<Controls.dataSource:error.Container viewConfig="{{_errorConfig}}">
+  <div class="controls_breadcrumbs_theme-{{_options.theme}} controls_dropdownPopup_theme-{{_options.theme}} controls-menu"
+       attr:data-index="{{_options.subMenuLevel}}"
+       attr:ws-no-focus="{{!_options.focusable}}"
+       on:keydown="_handleKeyDown()">
+     <ws:if data="{{_listModel}}">
+        <Controls._menu.Render name="menuRender"
+                               selectedAllText="{{_options.selectedAllText}}"
+                               selectedAllKey="{{_options.selectedAllKey}}"
+                               source="{{_options.source}}"
+                               filter="{{_options.filter}}"
+                               navigation="{{_options.navigation}}"
+                               dataLoadCallback="{{_options.dataLoadCallback}}"
+                               listModel="{{_listModel}}"
+                               root="{{_options.root}}"
+                               columns="{{_columns}}"
+                               leftPadding="{{_leftPadding}}"
+                               itemPadding="{{_options.itemPadding}}"
+                               itemsSpacing="{{_options.itemsSpacing}}"
+                               fontColorStyle="{{_options.fontColorStyle}}"
+                               virtualScrollConfig="{{_options.virtualScrollConfig}}"
+                               parentProperty="{{_options.parentProperty || (_options.viewMode === 'list' ? 'parent_field' : undefined)}}"
+                               emptyTemplate="{{_options.emptyTemplate}}"
+                               groupProperty="{{_options.groupProperty}}"
+                               groupingKeyCallback="{{_options.groupingKeyCallback}}"
+                               groupTemplate="{{_options.groupTemplate}}"
+                               markerVisibility="{{_options.markerVisibility}}"
+                               multiSelect="{{_options.multiSelect}}"
+                               multiSelectAccessibilityProperty="{{_options.multiSelectAccessibilityProperty}}"
+                               multiSelectVisibility="{{_multiSelectVisibility}}"
+                               emptyText="{{_options.emptyText}}"
+                               emptyKey="{{_options.emptyKey}}"
+                               nodeProperty="{{_options.nodeProperty || (_options.viewMode === 'list' ? 'node_field' : undefined)}}"
+                               hoverBackgroundStyle="{{_options.hoverBackgroundStyle}}"
+                               keyProperty="{{_options.keyProperty}}"
+                               displayProperty="{{_options.displayProperty}}"
+                               searchValue="{{_options.searchValue}}"
+                               itemTemplateProperty="{{_options.itemTemplateProperty}}"
+                               itemTemplate="{{_options.itemTemplate}}"
+                               breadCrumbsItemTemplate="{{_options.breadCrumbsItemTemplate}}"
+                               iconSize="{{_options.iconSize}}"
+                               iconStyle="{{_options.iconStyle}}"
+                               iconPadding="{{_options.iconPadding}}"
+                               isSourceControllerFromContext="{{_options.isSourceControllerFromContext}}"
+                               multiLine="{{_options.multiLine}}"
+                               multiSelectPosition="{{_options.multiSelectPosition}}"
+                               allowPin="{{_options.allowPin}}"
+                               itemAlign="{{_options.itemAlign}}"
+                               width="{{_options.width}}"
+                               useListRender="{{_options.useListRender}}"
+                               hierarchyViewMode="{{_options.hierarchyViewMode}}"
+                               subMenuLevel="{{_options.subMenuLevel}}"
+                               focusable="{{_options.focusable}}"
+                               itemActionsVisibility="{{_options.itemActionsVisibility}}"
+                               historyRoot="{{_historyController ? _historyController.getRoot() : null}}"
+                               itemActionVisibilityCallback="{{_itemActionsVisibilityCallback}}"
+                               itemActions="{{_itemActions}}"
+                               itemActionsProperty="{{_options.itemActionsProperty}}"
+                               needStickyHistoryItems="{{_needStickyHistoryItems}}"
+                               dataName="{{_options.dataName}}"
+                               viewMode="{{_viewMode || _options.viewMode}}"
+                               sourceController="{{_sourceController}}"
+                               menuMode="{{_options.menuMode}}"
+                               emptyItem="{{_emptyItem}}"
+                               selectedKeys="{{_selectedKeys}}"
+                               excludedKeys="{{_excludedKeys}}"
+                               expandedItems="{{_expandedItems}}"
+                               markedKey="{{_markedKey}}"
+                               allowAdaptive="{{_options.allowAdaptive}}"
+                               on:selectedKeysChanged="_selectedKeysChanged()"
+                               on:excludedKeysChanged="_excludedKeysChanged()"
+                               on:beforeSelectionChanged="_beforeSelectionChanged()"
+                               on:expandedItemsChanged="_expandedItemsChanged()"
+                               on:itemClick="_itemClick()"
+                               on:itemMouseEnter="_itemMouseEnter()"
+                               on:itemMouseMove="_itemMouseMove()"
+                               on:itemMouseLeave="_itemMouseLeave()"
+                               on:checkBoxClick="_checkBoxClick()"
+                               on:rootChanged="_rootChanged()"
+
+                               on:mouseleave="_mouseLeaveHandler()"
+                               on:mousemove="_mouseMove()"
+                               on:separatorMouseEnter="_separatorMouseEnter()"
+                               on:markedKeyChanged="_markedKeyChanged()"
+                               on:pinClick="_pinClick()">
+        </Controls._menu.Render>
+        <ws:if data="{{_options.stickyFooter}}">
+          <ws:if data="{{(_moreButtonVisible || _expandButtonVisible || _options.showMoreRightTemplate) &&
+         (_options.menuMode !== 'selector' || !_options.root)}}">
+            <Controls.stickyBlock:StickyBlock mode="stackable"
+                                              backgroundStyle="{{_options.backgroundStyle}}"
+                                              shadowVisibility="{{_expandButtonVisible}}"
+                                              position="bottom">
+              <ws:partial template="menuFooter" scope="{{_options}}"/>
+            </Controls.stickyBlock:StickyBlock>
+          </ws:if>
+        </ws:if>
+        <ws:else>
+          <ws:if data="{{_moreButtonVisible || _expandButtonVisible || _options.showMoreRightTemplate}}">
+            <ws:partial template="menuFooter" scope="{{_options}}"/>
+          </ws:if>
+          <ws:if data="{{_options.footerContentTemplate}}">
+            <ws:partial template="{{_options.footerContentTemplate}}" scope="{{_options}}"/>
+          </ws:if>
+        </ws:else>
+        <Controls.popup:Sticky name="Sticky"
+                               actionOnScroll="close"
+                               closeOnOutsideClick="{{true}}"
+                               on:showIndicator="_changeIndicatorOverlay()"
+                               on:result="_subMenuResult()"
+                               on:close="_closeSubMenuHandler()"
+                               template="Controls/menu:Popup"/>
+     </ws:if>
+  </div>
+</Controls.dataSource:error.Container>

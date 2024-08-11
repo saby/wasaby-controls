@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300 controlsDemo_treeGrid-offset-levelIndent-all-s">
+    <Controls.treeGrid:View
+            storeId="OffsetsLevelIndentSizeAllSizeS"
+            columns="{{_columns}}">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/treeGrid:ItemTemplate" levelIndentSize="s"/>
+        </ws:itemTemplate>
+    </Controls.treeGrid:View>
+</div>

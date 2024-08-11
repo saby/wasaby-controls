@@ -1,0 +1,22 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+<div class="controlsDemo__flex ws-flex-column ws-align-items-center controlsDemo_fixedWidth300"
+     data-qa="controlsDemo_capture">
+  <div class="controlsDemo__cell">Default</div>
+  <div class="controlsDemo__cell demo-RadioGroup__group1">
+    <Controls.RadioGroup:Control items="{{_items1}}"/>
+  </div>
+  <div class="controlsDemo__cell demo-RadioGroup__group2">
+    <Controls.RadioGroup:Control items="{{_items2}}" selectedKey="{{_selectedKey2}}"/>
+  </div>
+</div>
+<div class="controlsDemo__flex ws-flex-column ws-align-items-center controlsDemo_fixedWidth300"
+     data-qa="controlsDemo_capture">
+  <div class="controlsDemo__cell">Brand</div>
+  <div class="controlsDemo__cell demo-RadioGroup__group1">
+    <Controls.RadioGroup:Control items="{{_items1}}" className="controls-RadioGroup_brand"/>
+  </div>
+  <div class="controlsDemo__cell demo-RadioGroup__group2">
+    <Controls.RadioGroup:Control items="{{_items2}}" selectedKey="{{_selectedKey2}}" className="controls-RadioGroup_brand"/>
+  </div>
+</div>
+</div>

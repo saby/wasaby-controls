@@ -1,0 +1,9 @@
+<Controls-ListEnv._ExtSearch.Input
+   name="searchInput"
+   scope="{{ _options }}"
+   selectedKeys="{{ _selectedKeys }}"
+   items="{{ _items }}"
+   filterDescription="{{ _filterDescription }}"
+   on:filterDescriptionChanged="_filterSourceChanged()"
+   bind:value="_value"
+/>

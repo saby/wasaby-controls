@@ -1,0 +1,9 @@
+<ws:partial template="Controls/grid:ColumnTemplate" scope="{{ _options }}" editable="{{ false }}">
+    <ws:contentTemplate>
+        <div>
+            {{ item.contents[column.config.displayProperty || 'title'] }}
+        </div>
+        <ws:partial template="{{ contentTemplate.editArrowTemplate }}"/>
+        <ws:partial template="{{ contentTemplate.itemActionsTemplate }}" highlightOnHover="{{ false }}"/>
+    </ws:contentTemplate>
+</ws:partial>

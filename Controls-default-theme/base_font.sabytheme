@@ -1,0 +1,746 @@
+[
+    {
+        "header": {
+            "md5": "c0a476df14307a34d64ecce41e14f941",
+            "timestamp": "2024-07-15 17:00:55.567487"
+        },
+        "body": {
+            "id": "0efcb54e-32f1-4760-bbcd-1a97045cf74e",
+            "is_parent": true,
+            "overrides": null,
+            "selector": "base_font",
+            "properties": {
+                "fontPair": {
+                    "header": "Garamond",
+                    "text": "Inter"
+                }
+            },
+            "styles": [
+                {
+                    "id": "8926c5d5-4418-438e-821e-a58fd69c04a1",
+                    "is_parent": null,
+                    "metatype": "styles/header",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "b348e717-900a-4045-95fc-b7ae98e94bf6",
+                            "key": "font-family",
+                            "metatypeproperty": "styles/font-family",
+                            "name": "Шрифт",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "d627754f-8add-4979-a7da-5b783ad6b269",
+                            "key": "font-size",
+                            "metatypeproperty": "styles/font-size",
+                            "name": "Размер",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "value": 30,
+                                        "unit": "px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "e9f9d68d-4550-4d2d-98fb-5eb8ec11d8e1",
+                            "key": "font-weight",
+                            "metatypeproperty": "styles/font-weight",
+                            "name": "Жирность",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": 700
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "c7a80d5c-37c0-4d3e-92fe-8564fa3a3095",
+                            "key": "font-style",
+                            "metatypeproperty": "styles/font-style",
+                            "name": "Декорирование 1",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "b019e7c5-4bec-4b91-8339-7a1545c866b6",
+                            "key": "text-decoration",
+                            "metatypeproperty": "styles/text-decoration",
+                            "name": "Декорирование 2",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": "underline"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "5c7fc674-d855-48f5-ab2b-44b29d6a8ff9",
+                            "key": "text-transform",
+                            "metatypeproperty": "styles/text-transform",
+                            "name": "Преобразование",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": "capitalize"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "405a80fb-655c-40d7-9135-1813886bf1a7",
+                            "key": "color",
+                            "metatypeproperty": "styles/font-color",
+                            "name": "Цвет",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "l": 0.0,
+                                        "s": 0.0,
+                                        "bindingKey": null
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "moduleEditorWidgets__Header1",
+                    "title": "Заголовок 1"
+                },
+                {
+                    "id": "6e300b91-f977-4261-bc5d-80bda7893e9d",
+                    "is_parent": null,
+                    "metatype": "styles/header",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "bcbde31b-461e-4fa8-a3c3-22af5b9b948a",
+                            "key": "font-family",
+                            "metatypeproperty": "styles/font-family",
+                            "name": "Шрифт",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "d8982d54-2ff3-45df-9961-00847eb693b8",
+                            "key": "font-size",
+                            "metatypeproperty": "styles/font-size",
+                            "name": "Размер",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "value": 28,
+                                        "unit": "px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "062b0d58-b338-4768-8439-fd899a1ab073",
+                            "key": "font-weight",
+                            "metatypeproperty": "styles/font-weight",
+                            "name": "Жирность",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": 700
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "8ba92963-5386-4fa5-8e20-33eb3e5e637e",
+                            "key": "font-style",
+                            "metatypeproperty": "styles/font-style",
+                            "name": "Декорирование 1",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "78648a50-374c-4b47-959e-7c0f1a7b33dd",
+                            "key": "text-decoration",
+                            "metatypeproperty": "styles/text-decoration",
+                            "name": "Декорирование 2",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "c8367de2-5078-44aa-8d45-27384c3fda46",
+                            "key": "text-transform",
+                            "metatypeproperty": "styles/text-transform",
+                            "name": "Преобразование",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "75bebdcc-3fc3-4555-b7cc-9903d18e1585",
+                            "key": "color",
+                            "metatypeproperty": "styles/font-color",
+                            "name": "Цвет",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "l": 0.0,
+                                        "s": 0.0,
+                                        "bindingKey": null
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "moduleEditorWidgets__Header2",
+                    "title": "Заголовок 2"
+                },
+                {
+                    "id": "f979fec8-5417-4f9a-a5e2-4cbe3d5a9003",
+                    "is_parent": null,
+                    "metatype": "styles/header",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "ab36c677-d67f-46f9-bb93-e6b6b2ea96de",
+                            "key": "font-family",
+                            "metatypeproperty": "styles/font-family",
+                            "name": "Шрифт",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "0c085180-6203-44bd-a2ef-8dafcdeac4f9",
+                            "key": "font-size",
+                            "metatypeproperty": "styles/font-size",
+                            "name": "Размер",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "value": 24,
+                                        "unit": "px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "b658f16f-5c80-4a6c-91a4-7f2e0850e85b",
+                            "key": "font-weight",
+                            "metatypeproperty": "styles/font-weight",
+                            "name": "Жирность",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": 700
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "064f5ef9-bb86-44c5-851c-d414d094643a",
+                            "key": "font-style",
+                            "metatypeproperty": "styles/font-style",
+                            "name": "Декорирование 1",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "489bcecb-ee62-4366-9e6a-c6c3c58bed4e",
+                            "key": "text-decoration",
+                            "metatypeproperty": "styles/text-decoration",
+                            "name": "Декорирование 2",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "1229c3b6-0d31-4e92-8f3a-cbdc3f40ddd4",
+                            "key": "text-transform",
+                            "metatypeproperty": "styles/text-transform",
+                            "name": "Преобразование",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "5faf2e68-77c1-4398-9af4-20b27b21c0ec",
+                            "key": "color",
+                            "metatypeproperty": "styles/font-color",
+                            "name": "Цвет",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "l": 0.0,
+                                        "s": 0.0,
+                                        "bindingKey": null
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "moduleEditorWidgets__Header3",
+                    "title": "Заголовок 3"
+                },
+                {
+                    "id": "a90ee2e2-06ba-4206-877f-1166b4542df9",
+                    "is_parent": null,
+                    "metatype": "styles/header",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "503f6886-7bbd-4850-9cfa-63dcf35577ae",
+                            "key": "font-family",
+                            "metatypeproperty": "styles/font-family",
+                            "name": "Шрифт",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "d4e97247-2631-4cd6-87e7-4e582e8f4ca1",
+                            "key": "font-size",
+                            "metatypeproperty": "styles/font-size",
+                            "name": "Размер",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "value": 20,
+                                        "unit": "px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "76943dc1-ffd8-43d8-86d2-1436d76fdccb",
+                            "key": "font-weight",
+                            "metatypeproperty": "styles/font-weight",
+                            "name": "Жирность",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": 700
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "f8cc0a59-ca03-45ec-843a-bb454970ce02",
+                            "key": "font-style",
+                            "metatypeproperty": "styles/font-style",
+                            "name": "Декорирование 1",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "cb1accf7-8d80-49be-afaf-f1cee6eeb00e",
+                            "key": "text-decoration",
+                            "metatypeproperty": "styles/text-decoration",
+                            "name": "Декорирование 2",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "d779908a-5b75-4b78-89e3-a9d85a6215e1",
+                            "key": "text-transform",
+                            "metatypeproperty": "styles/text-transform",
+                            "name": "Преобразование",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "ae36f450-045f-498f-bba2-605eaadace89",
+                            "key": "color",
+                            "metatypeproperty": "styles/font-color",
+                            "name": "Цвет",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "l": 0.0,
+                                        "s": 0.0,
+                                        "bindingKey": null
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "moduleEditorWidgets__Header4",
+                    "title": "Заголовок 4"
+                },
+                {
+                    "id": "fe67e463-b120-4091-9bae-7f42ac331747",
+                    "is_parent": null,
+                    "metatype": "styles/header",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "6517b954-c5bf-4cb4-8269-715a2aeddf98",
+                            "key": "font-family",
+                            "metatypeproperty": "styles/font-family",
+                            "name": "Шрифт",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "763010e9-1e27-48fe-bcc4-381a0f324995",
+                            "key": "font-size",
+                            "metatypeproperty": "styles/font-size",
+                            "name": "Размер",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "value": 18,
+                                        "unit": "px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "90ff12fe-f636-4496-b16f-3fec44cc8926",
+                            "key": "font-weight",
+                            "metatypeproperty": "styles/font-weight",
+                            "name": "Жирность",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": 700
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "1e4e6de0-a42b-4479-9795-a32b2b8e88a5",
+                            "key": "font-style",
+                            "metatypeproperty": "styles/font-style",
+                            "name": "Декорирование 1",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "ecb0a718-bdb4-4320-80b7-11abe77958d2",
+                            "key": "text-decoration",
+                            "metatypeproperty": "styles/text-decoration",
+                            "name": "Декорирование 2",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "20ff44ed-7dfb-40c6-be9c-c50fd443b0c7",
+                            "key": "text-transform",
+                            "metatypeproperty": "styles/text-transform",
+                            "name": "Преобразование",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "b6a8620f-90b7-4a4e-9e72-ac01df971fb5",
+                            "key": "color",
+                            "metatypeproperty": "styles/font-color",
+                            "name": "Цвет",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "l": 0.0,
+                                        "s": 0.0,
+                                        "bindingKey": null
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "moduleEditorWidgets__Header5",
+                    "title": "Заголовок 5"
+                },                                                
+                {
+                    "id": "2b9f69ab-e07b-44aa-be92-9babb4a0f99e",
+                    "is_parent": null,
+                    "metatype": "styles/text",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "3076cd7c-c147-42ea-9796-e61e7a06421d",
+                            "key": "font-family",
+                            "metatypeproperty": "styles/font-family",
+                            "name": "Шрифт",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "dca5afb4-949b-4386-a0e4-e1442a061519",
+                            "key": "font-size",
+                            "metatypeproperty": "styles/font-size",
+                            "name": "Размер",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "value": 16,
+                                        "unit": "px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "b0553b74-cfbb-456b-a68d-628b9ec144bb",
+                            "key": "font-weight",
+                            "metatypeproperty": "styles/font-weight",
+                            "name": "Жирность",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": 100
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "7dc55a9d-6713-4ca7-900a-11e7e52bdd0a",
+                            "key": "font-style",
+                            "metatypeproperty": "styles/font-style",
+                            "name": "Декорирование 1",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "9a750b2c-9503-44cd-8bab-540cdf44a7be",
+                            "key": "text-decoration",
+                            "metatypeproperty": "styles/text-decoration",
+                            "name": "Декорирование 2",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": "underline"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "4d0b9ef7-eda5-4c00-ad30-f892f60e2b19",
+                            "key": "text-transform",
+                            "metatypeproperty": "styles/text-transform",
+                            "name": "Преобразование",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": "capitalize"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "400d6995-87ee-4e8e-a6ce-e8415f5fb503",
+                            "key": "color",
+                            "metatypeproperty": "styles/font-color",
+                            "name": "Цвет",
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "l": 0.0,
+                                        "s": 0.0,
+                                        "bindingKey": null
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "moduleEditorWidgets_Paragraph_style__default",
+                    "title": "Текст основной"
+                }
+            ],
+            "title": "Базовая тема",
+            "type": 1,
+            "apply": 1,
+            "aspect_theme": [
+                {
+                    "identifier": "87688e42-71bf-11ee-b962-0242ac120002",
+                    "keys": null,
+                    "uuid": "dd336bf7-420c-411a-9cc6-b2afa756fbbd"
+                }
+            ]
+        }
+    }
+]

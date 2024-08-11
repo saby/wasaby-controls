@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:class="controlsDemo__height300" shadowMode="js">
+        <Controls.listDeprecate:Mover name="listMover"/>
+        <Controls.grid:View
+                storeId="LadderStickyMultilineStickyMultiline0"
+                columns="{{_columns}}"
+                ladderProperties="{{_ladderProperties}}">
+            <ws:itemEditorTemplate>
+                <ws:partial scope="{{itemEditorTemplate}}"
+                            template="Controls/grid:ItemEditorTemplate">
+                                <Controls.input:Text contrastBackground="{{true}}"
+                                                     bind:value="itemEditorTemplate.item.contents.name"/>
+                </ws:partial>
+            </ws:itemEditorTemplate>
+            <ws:editingConfig editOnClick="{{true}}" toolbarVisibility="{{true}}"/>
+        </Controls.grid:View>
+    </Controls.scroll:Container>
+</div>

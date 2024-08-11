@@ -1,0 +1,220 @@
+.controls_popupTemplate_theme-@{themeName} {
+   // Переменные для кнопки закрытия
+   //
+   // Тень
+   --box-shadow_stack_offset_first: -6px;
+   --box-shadow_stack_offset_second: -2px;
+   --box-shadow_stack_blur_and_color_first: 22px rgba(0, 0, 0, 0.11);
+   --box-shadow_stack_blur_and_color_second: 8px rgba(0, 0, 0, 0.02);
+
+   // Фон
+   --background-color_closeButton_toolButton: var(--background-color_button_toolButton);
+
+   // Иконка
+
+   // Размеры
+   --height_closeButton_toolButton: var(--inline_height_l);
+   --width_closeButton_toolButton: 28px;
+   --margin-right_closeButton_toolButton: 8px;
+   --width_closeButton_functionalButton: 28px;
+   --margin-right_closeButton_functionalButton: 5px;
+   --width_closeButton_link: var(--inline_height_m);
+   --height_closeButton_link: var(--inline_height_m);
+
+   // Переменные для прилипающего окна
+   //
+   // Размеры и отступы
+   --content_padding-bottom_sticky: var(--offset_xs);
+   --content_padding-top_sticky: var(--offset_xs);
+   --header_padding-horizontal_sticky: var(--offset_s);
+   --header_min-height_sticky: 32px;
+
+   // Цвета фона
+
+   --background-color_sticky: var(--background-color);
+   --header_background-color_sticky: #f4f4f4;
+
+   // Границы
+   --border-color_sticky: var(--border-color);
+   --border-thickness_sticky: var(--border-thickness);
+   --border-thickness_m_sticky: 2px;
+   --header_bottom-border-color_sticky: #f0f0f0;
+
+   // Шапка
+   --header_font-size_sticky: var(--font-size_l);
+   --header_color_sticky: var(--secondary_text-color);
+
+   // Кнопка закрытия
+   --close-button_offset-top_sticky: var(--offset_2xs);
+   --close-button_offset-right_sticky: var(--offset_xs);
+   --close-button_offset-left_sticky: var(--offset_s);
+
+   // Маркер
+   --marker_height_popup: 3px;
+   --marker_width_popup: 40px;
+   --secondary_marker_color: #0c94ff;
+
+   // Переменные для инфобокса
+   //
+   // Стрелка инфобокса
+   --arrow_base_length_infobox: 16px;
+   --arrow_side_length_infobox: 12px;
+   --arrow_offset_infobox: 9px;
+
+   // Размеры и отступы
+   --target_offset_infobox: 11px;
+   --content_padding-vertical_infobox: var(--offset_s);
+   --content_padding-horizontal_infobox: var(--offset_m);
+   --max-width_infobox: 750px;
+   --text_padding-horizontal_infobox: calc(
+      var(--close-button_offset-left_infobox) + var(--width_closeButton_link) +
+         var(--close-button_offset-right_infobox) - var(--content_padding-horizontal_infobox)
+   );
+
+   // Кнопка закрытия
+   --close-button_offset-top_infobox: 5px;
+   --close-button_offset-right_infobox: 5px;
+   --close-button_offset-left_infobox: var(--offset_3xs);
+
+   // Обводка
+   --border-radius_infobox: 6px;
+
+   // Цвета фона
+   --background-color_infobox: var(--secondary_background-color);
+   --info_background-color_infobox: var(--info_background-color);
+
+   // Размер шрифта в тексте подсказки
+   --font-size_infobox: var(--font-size_l);
+
+   // Маркер
+   --marker-thickness_infobox: var(--border-thickness);
+
+   // Переменные для диалогового окна
+   //
+   // Размеры и отступы
+   --content_width_a_dialog: 200px;
+   --content_width_b_dialog: 250px;
+   --content_width_c_dialog: 300px;
+   --content_width_d_dialog: 350px;
+   --content_width_e_dialog: 400px;
+   --content_width_f_dialog: 450px;
+   --content_width_g_dialog: 500px;
+   --content_width_h_dialog: 550px;
+   --content_width_i_dialog: 600px;
+   --content_width_j_dialog: 650px;
+   --content_width_k_dialog: 700px;
+   --content_width_l_dialog: 750px;
+   --content_width_m_dialog: 800px;
+   --header_padding-left_dialog: var(--offset_m);
+   --header-min-height_dialog: 44px;
+   --header-min-height_size-l_dialog: 56px;
+   --header_lineheight_dialog: 27px;
+   --header-content_padding-right_dialog: var(--offset_m);
+   --header_min-width_dialog: 30px;
+   --footer_min-height_dialog: 64px;
+   --header_caption_offset-right_dialog: var(--offset_m);
+
+   // Переменная для отсутпа слева у контента
+   --offset-left_stack: var(--offset_l);
+
+   // Цвета фона
+   --background-color_dialog: var(--background-color);
+   --footer_background-color_dialog: var(--unaccented_background-color);
+
+   // Границы
+   --border-radius_dialog: var(--border-radius_s);
+   --header_bottom-border-thickness_dialog: 1px;
+   --header_bottom-border-color_dialog: #f0f0f0;
+   --footer_top-border-thickness_dialog: 1px;
+   --footer_top-border-color_dialog: #eaeaea;
+
+   // Кнопка закрытия
+   --close-button_offset-top_dialog: var(--offset_s);
+   --close-link-button_offset-top_dialog: 10px;
+   --close-link-button_offset-right_dialog: var(--offset_s);
+
+   // Переменные для стековой панели
+   //
+   // Размеры и отступы
+   --content_width_a_stack: 450px;
+   --content_width_b_stack: 550px;
+   --content_width_c_stack: 650px;
+   --content_width_d_stack: 700px;
+   --content_width_e_stack: 750px;
+   --content_width_f_stack: 900px;
+   --content_width_g_stack: 1200px;
+   --header_min-height_stack: 44px;
+   --header_lineheight_stack: 29px;
+   --header_min-width_stack: 30px;
+   --header_padding-left_stack: var(--offset_m);
+   --header-content_padding-right_stack: var(--offset_m);
+   --header_caption_offset-right_stack: var(--offset_m);
+
+   // Цвета фона
+   --background-color_stack: var(--background-color);
+   --header_background-color_stack: var(--unaccented_background-color);
+   --footer_background-color_stack: var(--unaccented_background-color);
+   --width_stack-right_panel: 52px;
+   --border_width_stack-right_panel: 2px;
+
+   // Границы
+   --border-color_stack: #bdbdbd;
+   --border-thickness_stack: var(--border-thickness);
+   --shadow-color_stack: rgba(0, 0, 0, 0.1);
+   --shadow-blur_stack: 12px;
+   --header_bottom-border-thickness_stack: 1px;
+   --header_bottom-border-color_stack: #f0f0f0;
+   --footer_top-border-thickness_stack: 1px;
+   --footer_top-border-color_stack: #f0f0f0;
+   --border-color_right-panel-stack: rgba(0, 0, 0, 0.04);
+
+   // Кнопки закрытия и изменения размера
+   --close-button_offset-top_stack: 6px;
+   --maximized-button_offset-right_stack: var(--offset_s);
+   --close-button_hover_icon-color_stack: var(--secondary_hover_icon-color);
+
+   // Изменение размера
+   --resizingLine_mobile_offset-left_stack: 15px;
+   --resizingLine_mobile_thickness_stack: 25px;
+
+   // Переменные для окна подтверждения
+   //
+   // Размеры и отступы
+   --width_s_confirmation: 350px;
+   --width_l_confirmation: 440px;
+   --content_padding_confirmation: var(--offset_2xl);
+   --footer-content_padding_confirmation: var(--offset_2xl);
+
+   // Текст
+   --message_font-size_confirmation: var(--font-size_3xl);
+   --message_text-color_confirmation: var(--text-color);
+   --details_text-color_confirmation: var(--label_contrast_text-color);
+   --details_offset_confirmation: var(--offset_s);
+
+   // Кнопки
+   --min-width_button_s_confirmation: 80px;
+   --min-width_button_l_confirmation: 86px;
+   --offset_button_confirmation: var(--offset_s);
+
+   // Фон
+   --secondary_background-color_confirmation: rgba(12, 148, 255, 0.08);
+   --warning_background-color_confirmation: rgba(236, 185, 86, 0.08);
+   --danger_background-color_confirmation: rgba(220, 34, 25, 0.08);
+   --info_background-color_confirmation: rgba(103, 87, 183, 0.08);
+   --success_background-color_confirmation: rgba(18, 161, 44, 0.08);
+
+   // Переменные для нотификационного окна
+   //
+   // Размеры и отступы
+   --min-height_notification: 40px;
+   --min-width_notification: 40px;
+   --content_padding_notification: var(--offset_s);
+   --icon_offset_notification: var(--offset_s);
+   --icon-size_notification: var(--icon-size_m);
+
+   // Кнопка закрытия
+   --close-button_offset-top_notification: var(--offset_s);
+   --close-button_offset-right_notification: var(--offset_s);
+   --line-height_dialogTemplate_caption: 43px;
+   --spacing_DialogTemplate-between-header-border: 40px;
+}

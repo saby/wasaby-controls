@@ -1,0 +1,377 @@
+.Controls-Lists_timelineGrid__RangeSelector,
+.ControlsLists-timelineGrid__headerCellContent,
+.ControlsLists-timelineGrid__dynamicHeaderCell {
+   height: var(--inline_height_3xl);
+}
+
+.ws-is-mobile-platform .ControlsLists-timelineGrid__dynamicHeaderCell {
+   height: 70px;
+}
+
+.ws-is-mobile-platform .Controls-Lists_timelineGrid__RangeSelector {
+   height: max-content;
+}
+
+@variants: primary, secondary, danger, success, warning, info, unaccented;
+.for(@variants, {
+  .ControlsLists-timelineGrid__EventSquircleRender_border_left-color_@{_item} {
+    border-left: var(--offset_3xs) solid ~'var(--@{_item}_border-color)';
+  }
+  .ControlsLists-timelineGrid__EventSquircleRender_border_right-color_@{_item} {
+    border-right: var(--offset_3xs) solid ~'var(--@{_item}_border-color)';
+  }
+});
+
+.ControlsLists-timelineGrid__EventSquircleRender {
+   box-sizing: border-box;
+   display: flex;
+   flex-wrap: wrap;
+   height: 100%;
+   position: relative;
+}
+
+.ControlsLists-timelineGrid__EventSquircleRender_text {
+   word-break: break-all;
+   height: fit-content;
+}
+
+.ControlsLists-timelineGrid__EventSquircleRender_border-radius {
+   border-radius: var(--border-radius_xs);
+}
+
+.ControlsLists-timelineGrid__EventSquircleRender_padding {
+   padding-left: var(--offset_s);
+   padding-right: var(--offset_s);
+   padding-bottom: var(--offset_s);
+}
+
+.ControlsLists-timelineGrid__EventSquircleRender_icon {
+   margin-right: var(--offset_xs);
+}
+
+.ControlsLists-timelineGrid__EventSquircleRender_footer-absolute {
+   position: absolute;
+   right: var(--offset_m);
+   bottom: var(--offset_s);
+}
+
+.ControlsLists-timelineGrid__EventSquircleRender_description {
+   z-index: 1;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_white-space {
+   white-space: nowrap;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_pointerEvents {
+   pointer-events: var(--pointer-ev, none);
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_pointerEvents_auto {
+   pointer-events: auto;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_pointerEvents_none {
+   pointer-events: none;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender {
+   box-sizing: border-box;
+   min-width: 100%;
+   max-width: 100%;
+   height: 100%;
+   display: flex;
+   align-items: baseline;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_stripes::after {
+   position: absolute;
+   inset: 0;
+   content: '\200b';
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_bg {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   z-index: 0;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_tag {
+   pointer-events: auto;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_stripes- {
+   @variants: danger, secondary, success, primary, warning, info, unaccented, pale;
+   .for(@variants, {
+    &@{_item}::after {
+      background-image: repeating-linear-gradient(-45deg,
+      ~'var(--@{_item}_active_same_background-color)' 0,
+      ~'var(--@{_item}_active_same_background-color)' var(--border-thickness),
+      transparent var(--offset_2xs),
+      transparent calc(var(--offset_2xs) + var(--border-thickness)));
+    }
+  });
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_icon {
+   margin-right: var(--offset_2xs);
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_text_hover {
+   pointer-events: auto;
+   cursor: pointer;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_text_nohover {
+   pointer-events: none;
+}
+
+.ControlsLists-timelineGrid__EventSquircleRender_text,
+.ControlsLists-timelineGrid__EventBlockRender_icon,
+.ControlsLists-timelineGrid__EventBlockRender_text {
+   z-index: 1;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_readOnly {
+   pointer-events: none;
+   cursor: default;
+
+   .ControlsLists-timelineGrid__EventBlockRender_icon,
+   .ControlsLists-timelineGrid__EventBlockRender_text {
+      pointer-events: none;
+      cursor: default;
+   }
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_overflow-ellipsis {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   width: 100%;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_overflow-hidden {
+   overflow: hidden;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_overflow-visible {
+   overflow: visible;
+   white-space: nowrap;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_intersection {
+   background-image: repeating-linear-gradient(
+      -45deg,
+      var(--timeline-event-hatch_color) 0,
+      var(--timeline-event-hatch_color) var(--border-thickness),
+      transparent var(--offset_2xs),
+      transparent calc(var(--offset_2xs) + var(--border-thickness))
+   );
+   position: absolute;
+   height: 100%;
+   top: 0;
+   z-index: 1;
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_bevel-left-top {
+   clip-path: polygon(var(--offset_m) 0%, 100% 0%, 100% 100%, 0 100%, 0 100%);
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_bevel-right-top {
+   clip-path: polygon(0% 0%, calc(100% - var(--offset_m)) 0%, 100% 100%, 0 100%, 0 100%);
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_bevel-left-bottom {
+   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0 100%, var(--offset_m) 100%);
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_bevel-right-bottom {
+   clip-path: polygon(0% 0%, 100% 0%, calc(100% - var(--offset_m)) 100%, 0 100%, 0 100%);
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_bevel-left-top-right-top {
+   clip-path: polygon(
+      var(--offset_m) 0%,
+      calc(100% - var(--offset_m)) 0%,
+      100% 100%,
+      0 100%,
+      0 100%
+   );
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_bevel-left-top-right-bottom {
+   clip-path: polygon(
+      var(--offset_m) 0%,
+      100% 0%,
+      calc(100% - var(--offset_m)) 100%,
+      0 100%,
+      0 100%
+   );
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_bevel-left-bottom-right-top {
+   clip-path: polygon(
+      0% 0%,
+      calc(100% - var(--offset_m)) 0%,
+      100% 100%,
+      0 100%,
+      var(--offset_m) 100%
+   );
+}
+
+.ControlsLists-timelineGrid__EventBlockRender_bevel-left-bottom-right-bottom {
+   clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      calc(100% - var(--offset_m)) 100%,
+      0 100%,
+      var(--offset_m) 100%
+   );
+}
+
+.ws-is-hover {
+   .ControlsLists-timelineGrid__EventBlockRender_text_hover:hover {
+      text-decoration: underline;
+   }
+
+   .ControlsLists-timelineGrid__GoToTodayButton:hover.controls-text-secondary {
+      color: var(--secondary_hover_text-color);
+      border-top-color: var(--secondary_hover_text-color);
+   }
+}
+
+.ControlsLists-timelineGrid__EventLineRender_size-m {
+   height: var(--offset_s);
+}
+
+.ControlsLists-timelineGrid__EventLineRender_size-s {
+   height: var(--offset_2xs);
+}
+
+.ControlsLists-timelineGrid__EventLineRender {
+   margin-top: 30px;
+   margin-bottom: 3px;
+   margin-left: 1px;
+   border-radius: 3px;
+   pointer-events: auto;
+   cursor: pointer;
+   position: relative;
+   box-sizing: border-box;
+}
+
+.ControlsLists-timelineGrid__EventLineRender_icon {
+   position: absolute;
+   margin-left: calc(50% - var(--icon-size_s) / 2);
+}
+
+.ControlsLists-timelineGrid__EventLineRender_icon_withoutBorder {
+   top: calc(-1 * var(--icon-size_s) - var(--offset_s));
+}
+
+.ControlsLists-timelineGrid__EventLineRender_icon_withBorder {
+   top: calc(-1 * var(--icon-size_s) - var(--offset_s) - var(--offset_3xs));
+}
+
+.ControlsLists-timelineGrid__EventLineRender_subEvent {
+   position: absolute;
+}
+
+@variants: danger, secondary, success, primary, warning, info, unaccented, pale;
+.for(@variants, {
+  .ControlsLists-timelineGrid__EventLineRender-border-top {
+    &-@{_item} {
+      border-top: var(--offset_3xs) solid ~'var(--@{_item}_border-color)';
+    }
+  }
+
+  .ControlsLists-timelineGrid__EventLineRender-border-bottom {
+    &-@{_item} {
+      border-bottom: var(--offset_3xs) solid ~'var(--@{_item}_border-color)';
+    }
+  }
+
+  .ControlsLists-timelineGrid__EventLineRender-border-left {
+    &-@{_item} {
+      border-left: var(--offset_3xs) solid ~'var(--@{_item}_border-color)';
+    }
+  }
+
+  .ControlsLists-timelineGrid__EventLineRender-border-right {
+    &-@{_item} {
+      border-right: var(--offset_3xs) solid ~'var(--@{_item}_border-color)';
+    }
+  }
+});
+
+.ControlsLists-timelineGrid__RangeSelectorComponent_buttons {
+   gap: var(--offset_m);
+
+   &::before {
+      content: '\200b';
+      font-size: var(--font-size_4xl);
+   }
+}
+
+.ControlsLists-timelineGrid__GoToTodayButton {
+   border-top: var(--border-thickness) solid var(--secondary_text-color);
+}
+
+.ControlsLists-timelineGrid__GoToTodayButton_wrapper {
+   height: var(--inline_height_m);
+}
+
+// 7 дней в неделе и нужно, чтобы каждый день был выше чем ховер
+.ControlsLists-timelineGrid__headerCellContent {
+   z-index: 7;
+   container-type: inline-size;
+}
+
+@container (min-width: 20px) {
+   .ControlsLists-timelineGrid__headerCellContent_hours {
+      font-size: ~"max(min(round(down, calc(var(--dynamic-column_width) / 2.5), 1px), var(--font-size_m)), var(--font-size_3xs))";
+   }
+
+   .ControlsLists-timelineGrid__headerCellContent_minutes {
+      font-size: ~"min(round(down, calc(var(--dynamic-column_width) / 5), 1px), var(--font-size_m))";
+   }
+}
+
+@container (max-width: 20px) {
+   .ControlsLists-timelineGrid__headerCellContent_hours {
+      font-size: ~"max(min(round(down, calc(var(--dynamic-column_width) / 2), 1px), var(--font-size_m)), 8px)";
+   }
+
+   .ControlsLists-timelineGrid__headerCellContent_minutes {
+      font-size: 0;
+   }
+}
+
+@container (min-width: 40px) {
+   .ControlsLists-timelineGrid__headerCellContent_hours {
+      font-size: ~"max(min(round(down, calc(var(--dynamic-column_width) / 3), 1px), var(--font-size_m)), var(--font-size_3xs))";
+   }
+
+   .ControlsLists-timelineGrid__headerCellContent_minutes {
+      font-size: ~"max(min(round(down, calc(var(--dynamic-column_width) / 3), 1px), var(--font-size_m)), var(--font-size_3xs))";
+   }
+}
+
+.ControlsLists-timelineGrid__verticalSeparatorsMode_lines {
+   background-position-x: var(--dynamic-column_gap); // -1px
+   background-size: auto auto;
+   background-image: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent calc(var(--dynamic-column_width) - 1px),
+      var(--border-color) calc(var(--dynamic-column_width) - 1px),
+      var(--border-color) var(--dynamic-column_width)
+   );
+}
+
+.ControlsLists-timelineGrid__swipeStaticColumnTransition {
+   .controls-Grid {
+      transition: 300ms;
+   }
+}

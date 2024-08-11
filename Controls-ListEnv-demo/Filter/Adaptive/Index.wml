@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper">
+        <div class="ws-flexbox ws-align-items-baseline">
+          <div class="controls-margin_right-m controls-fontsize-3xl controls-fontweight-bold"> Столицы </div>
+          <Controls-ListEnv.filterAdaptiveConnected:Button
+              storeId="city"
+              filterNames="{{ ['capital'] }}"
+          />
+        </div>
+        <Controls-ListEnv.filterAdaptiveConnected:FilterText
+            storeId="city"
+            filterNames="{{ ['capital'] }}"
+        />
+        <Controls.list:View storeId="city"/>
+
+</div>

@@ -1,0 +1,19 @@
+<Controls.popupTemplate:Stack headingCaption="PopupManager">
+    <ws:bodyContentTemplate>
+        <div>
+            <Controls.validate:InputContainer name="InputValidate3" attr:style="margin: 30px" >
+                <ws:validators>
+                    <ws:Function value="{{_value4 }}">Controls/validate:isEmail</ws:Function>
+                </ws:validators>
+                <ws:content>
+                    <Controls.input:Text
+                            name="textBox"
+                            bind:value="_value4"
+                            placeholder="input"
+                            tagStyle="success"
+                    />
+                </ws:content>
+            </Controls.validate:InputContainer>
+        </div>
+    </ws:bodyContentTemplate>
+</Controls.popupTemplate:Stack>

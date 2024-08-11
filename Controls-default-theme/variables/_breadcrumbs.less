@@ -1,0 +1,55 @@
+.controls_breadcrumbs_theme-@{themeName} {
+   // Общие переменные для хлебных крошек
+   //
+   // Размеры и отступы
+   --height_breadcrumbsView: var(--inline_height_default);
+   // Для нового размера шрифта размер базовой линии по умолчанию должен быть 18px
+   // Разбираться с базовыми линиями будем по задаче
+   // https://online.sbis.ru/opendoc.html?guid=00d1506b-f713-415b-b282-505110d38257&client=3
+   --baseline_breadcrumbsView: var(--font-size_3xl);
+
+   // Тень
+   --dots_shadow-offset_breadcrumbsView: 10px;
+   --dots_shadow-blur_breadcrumbsView: 2px;
+
+   // Переменные для элементов хлебных крошек
+   //
+   // Текст
+   --item_font-size_default_breadcrumbsView: var(--font-size_xs);
+   --item_text-color_default_breadcrumbsView: var(--label_text-color);
+   --item_hover_text-color_default_breadcrumbsView: var(--label_hover_text-color);
+   --item_text_min-width_breadcrumbs: 28px;
+   // Удалить после того, как гриды перейдут на css variable
+
+   // Иконки
+   --item_icon-size_default_breadcrumbsView: var(--icon-size_s);
+
+   // Переменные для всплывающего окна с полным путем
+   --popup_max-width_breadcrumbsView: 800px;
+
+   // Переменные для отображения драг'н'дропа
+   --droppable_border-thickness_breadcrumbsView: 1px;
+
+   // Переменные для темизации хлебных крошек при отображении иерархии
+   //
+   // Размеры и отступы
+   --padding-left_multiline_breadcrumbsPath: var(--offset_m);
+
+   // Иконка "домой"
+   --home_icon-size_breadcrumbsPath: var(--icon-size_s);
+   --home_offset_breadcrumbsPath: var(--offset_xs);
+
+   // Переменные для темизации хлебных крошек с кнопкой "назад"
+   //
+   // Размеры и отступы
+   --back_offset_breadcrumbsHeadingPath: var(--offset_s);
+
+   // Стрелка редактирования в кнопке "назад"
+   --back_editButton_icon-size_breadcrumbsHeadingPath: var(--icon-size_m);
+   --back_editButton_icon-color_breadcrumbsHeadingPath: var(--label_icon-color);
+   --back_editButton_hover_icon-color_breadcrumbsHeadingPath: var(--label_hover_icon-color);
+   // Счетчик в кнопке "назад"
+
+   --font-size_headingPathBack_headingBack: var(--font-size_3xl);
+   --font-weight_headingPathBack_headingBack: var(--font-weight-bold);
+}

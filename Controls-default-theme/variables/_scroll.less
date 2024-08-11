@@ -1,0 +1,33 @@
+.controls_scroll_theme-@{themeName} {
+   // Переменные для скроллбара
+   //
+   // Размеры и отступы
+
+   --padding_scrollbar: var(--offset_3xs);
+
+   // Линия по которой перемещается ползунок
+
+   --track_thickness_scrollbar: 1px;
+   --track_color_scrollbar: #c1cde1;
+
+   // Переменные для скролл-контейнера
+
+   --shadow_thickness_scroll: 8px;
+   --shadow_start-color_scroll: rgba(0, 0, 0, 0.15);
+   --shadow_end-color_scroll: rgba(0, 0, 0, 0);
+   --shadow_l_thickness_scroll: 12px;
+   --shadow_l_start-color_scroll: rgba(215, 225, 236, 0.55);
+   --shadow_l_end-color_scroll: rgba(255, 255, 255, 0);
+   --shadow_thickness-hider_height_scroll: 24px;
+
+   // Должна ссылаться на --secondary_color, но rgba не поддерживает hex значения. Подумать как лучше.
+   // https://online.sbis.ru/opendoc.html?guid=4ebee4fd-c0f8-4164-a155-c63029b388ab
+   --shadow_l_border_color_scroll: rgba(88, 122, 176, 0.4);
+
+   // Ширина кнопки скролла
+   --arrow-button_width_scroll: 22px;
+}
+
+.controls_theme-@{themeName} {
+   --background-color_default_sticky: var(--background-color);
+}
