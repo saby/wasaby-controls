@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+        <Controls.explorer:View
+            storeId="Default"
+            keyProperty="id"
+            attr:class="demo-Explorer ControlsDemo-Explorer"
+            backgroundStyle="default"
+            header="{{_gridHeader}}"
+            columns="{{_columns}}">
+        </Controls.explorer:View>
+</div>

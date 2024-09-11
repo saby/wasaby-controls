@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module id="62bf645b-207a-4e83-b06d-41e8c51d3122" name="ControlsUnit" version="1.00">
+
+  <description/>
+
+  <depends>
+      <module id="f6fdf353-3ab3-4dbb-8671-01c2b418bf0a" name="Controls"/>
+      <module id="7c6ae293-7359-4a54-8a33-74ce96945d57" name="Controls-editors"/>
+      <module id="af50caf5-f84b-4b81-a19c-6f6618372dbd" name="Controls-default-theme"/>
+      <module id="a10cb1cb-b23d-4ef6-a757-4f7382e0e8d1" name="SbisEnvUI"/>
+      <module id="2274d173-fe30-4fcf-81ca-767915919d69" name="EnvTouch"/>
+  </depends>
+
+  <load_after/>
+
+  <parameters/>
+
+  <test environment="NodeJS" framework="Jest" />
+
+  <resources/>
+
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

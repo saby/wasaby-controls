@@ -1,0 +1,38 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <div class="controlsDemo__cell" data-qa="controlsDemo-headingCounters__secondaryM">
+        <div class="controls-text-label">fontColorStyle=secondary, fontSize=m</div>
+        <div attr:class="controls-Header_all__clickable">
+            <Controls.heading:Title caption="Header" fontColorStyle="primary" fontSize="3xl"
+                                    attr:data-qa="controlsDemo-headingCounters__secondaryMTitle"
+                                    attr:class="controlsDemo__mr1_control"/>
+            <Controls.heading:Counter attr:class="counter" caption="12" fontColorStyle="secondary" fontSize="m"
+                                      attr:data-qa="controlsDemo-headingCounters__secondaryMCounter"/>
+        </div>
+    </div>
+    <div class="controlsDemo__cell" data-qa="controlsDemo-headingCounters__primaryL">
+        <div class="controls-text-label">fontColorStyle=primary, fontSize=l</div>
+        <div attr:class="controls-Header_all__clickable">
+            <Controls.heading:Title caption="Header" fontColorStyle="secondary" fontSize="3xl"
+                                    attr:data-qa="controlsDemo-headingCounters__primaryLTitle"
+                                    attr:class="controlsDemo__mr1_control"/>
+            <Controls.heading:Counter attr:class="counter" caption="12" fontColorStyle="primary" fontSize="l"
+                                      attr:data-qa="controlsDemo-headingCounters__primaryLCounter"/>
+        </div>
+    </div>
+    <div class="controlsDemo__cell" data-qa="controlsDemo-headingCounters__unaccented3L">
+        <div class="controls-text-label">fontColorStyle=unaccented, fontSize=3xl, separated hover</div>
+        <Controls.heading:Title caption="Header" fontColorStyle="primary" fontSize="3xl"
+                                attr:data-qa="controlsDemo-headingCounters__unaccented3LTitle"
+                                attr:class="controlsDemo__mr1_control"/>
+        <Controls.heading:Counter attr:class="counter" caption="12" fontColorStyle="unaccented" fontSize="3xl"
+                                  attr:data-qa="controlsDemo-headingCounters__unaccented3LCounter"/>
+    </div>
+    <div class="controlsDemo__cell" data-qa="controlsDemo-headingCounters__primary4L">
+        <div class="controls-text-label">fontColorStyle=primary, fontSize=4xl, separated hover</div>
+        <Controls.heading:Title caption="Header" fontColorStyle="secondary" fontSize="4xl"
+                                attr:data-qa="controlsDemo-headingCounters__primary4LTitle"
+                                attr:class="controlsDemo__mr1_control"/>
+        <Controls.heading:Counter attr:class="counter" caption="12" fontColorStyle="primary" fontSize="4xl"
+                                  attr:data-qa="controlsDemo-headingCounters__primary4LCounter"/>
+    </div>
+</div>

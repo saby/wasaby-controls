@@ -1,0 +1,14 @@
+<ws:partial template="Controls/dropdown:ItemTemplate"
+            scope="{{ _options }}"
+            multiLine="{{true}}">
+    <ws:contentTemplate>
+        <div class="tw-flex tw-items-baseline">
+            {{itemData.getPropValue(item.contents, 'title')}}
+            <ws:if data="{{itemData.getPropValue(item.contents, 'comment')}}">
+                <div class="controls-fontsize-xs controls-text-label controls-padding_left-2xs">
+                    {{itemData.getPropValue(item.contents, 'comment')}}
+                </div>
+            </ws:if>
+        </div>
+    </ws:contentTemplate>
+</ws:partial>

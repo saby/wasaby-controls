@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper controlsDemo__maxWidth500">
+   <Controls.browser:Browser source="{{_viewSource}}"
+                             nodeProperty="Раздел@"
+                             parentProperty="Раздел"
+                             keyProperty="id"
+                             bind:selectedKeys="_selectedKeys"
+                             bind:excludedKeys="_excludedKeys">
+      <div>
+         <Controls.operations:Panel source="{{null}}" items="{{[]}}"/>
+         <Controls.listDataOld:ListContainer>
+            <Controls.explorer:View displayProperty="department" columns="{{_gridColumns}}" multiSelectVisibility="{{'visible'}}"/>
+         </Controls.listDataOld:ListContainer>
+      </div>
+   </Controls.browser:Browser>
+
+</div>

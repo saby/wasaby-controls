@@ -1,0 +1,10 @@
+<Controls.listDataOld:ListContainer scope="{{_options}}"
+                                on:listExpandedItemsChanged="_notifyProxy('expandedItemsChanged')"
+                                on:listCollapsedItemsChanged="_notifyProxy('collapsedItemsChanged')"
+                                on:listSelectedKeysChanged="_notifyProxy('selectedKeysChanged')"
+                                on:listExcludedKeysChanged="_notifyProxy('excludedKeysChanged')"
+                                on:listMarkedKeyChanged="_notifyProxy('markedKeyChanged')"
+                                on:listRootChanged="_notifyProxy('rootChanged')"
+                                on:listBeforeRootChanged="_notifyProxy('beforeRootChanged')"
+                                on:listSortingChanged="_notifyProxy('sortingChanged')"
+/>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-Input-demo"
+           id="734ea8a6-575e-4f19-94b7-8fe16857c3e3"
+           kaizen_zone="c4f41dc0-617f-4dae-a3e8-78fd94e09ce2"
+           package="Wasaby"
+           version="1.00">
+
+  <description/>
+  <depends>
+    <module id="30f3262d-748e-4f05-ad19-ffde30da8711" name="Controls-Input"/>
+    <module id="1d769e24-6030-4849-867e-a0fd8bacc86c" name="Controls-Input-meta"/>
+    <module id="0641abed-e0fb-4f42-990c-4c24bdbd7bd0" name="Controls-demo"/>
+    <module id="7c6ae293-7359-4a54-8a33-74ce96945d57" name="Controls-editors"/>
+    <module id="8298f3a2-1964-11ed-861d-0242ac120002" name="Controls-DataEnv"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <resources/>
+  <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

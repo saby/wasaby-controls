@@ -1,0 +1,240 @@
+.controls-DialogTemplate {
+   pointer-events: all;
+   display: flex;
+   flex-direction: column;
+   flex-grow: 1;
+   flex-shrink: 1;
+   box-sizing: border-box;
+   max-height: inherit;
+   position: relative;
+   box-shadow: var(--shadow_a);
+   height: 100%;
+}
+
+.controls-PopupTemplate__roundBorder {
+   &.controls_border-radius-s {
+      border-radius: var(--border-radius_dialog);
+   }
+
+   .controls-PopupTemplate__roundBorder_top {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+   }
+
+   .controls-PopupTemplate__roundBorder_bottom {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+   }
+}
+
+.controls_border-radius-s {
+   .controls-PopupTemplate__roundBorder_top {
+      border-top-right-radius: var(--border-radius_dialog);
+      border-top-left-radius: var(--border-radius_dialog);
+   }
+
+   .controls-PopupTemplate__roundBorder_bottom {
+      border-bottom-right-radius: var(--border-radius_dialog);
+      border-bottom-left-radius: var(--border-radius_dialog);
+   }
+}
+
+.controls-DialogTemplate_backgroundStyle-default {
+   background-color: var(--background-color_dialog);
+}
+
+.controls-DialogTemplate__top-area {
+   display: flex;
+   flex-shrink: 0;
+   z-index: 1;
+}
+
+.controls-DialogTemplate__top-area_size-m {
+   min-height: var(--header-min-height_dialog);
+}
+
+.controls-DialogTemplate__top-area_size-l {
+   min-height: var(--header-min-height_size-l_dialog);
+   align-items: center;
+}
+
+.controls-DialogTemplate__content-area {
+   display: flex;
+   height: 100%;
+   flex-direction: column;
+   flex-grow: 1;
+   flex-shrink: 1;
+   min-height: 1px;
+   z-index: 1;
+   overflow: hidden;
+}
+
+.controls-DialogTemplate__headerContentTemplate {
+   position: relative;
+   display: flex;
+   justify-content: flex-end;
+   flex-grow: 1;
+   flex-shrink: 1;
+   min-width: 0;
+   height: 100%;
+   align-items: baseline;
+   align-self: center;
+
+   &_margin-right-default {
+      margin-right: var(--header-content_padding-right_dialog);
+   }
+
+   &::before {
+      content: '\200b';
+      line-height: var(--line-height_dialogTemplate_caption);
+      font-size: var(--font-size_3xl);
+   }
+}
+
+.controls-DialogTemplate__top-area-content {
+   width: 100%;
+   flex-shrink: 1;
+   display: flex;
+   align-items: baseline;
+   overflow: hidden;
+   justify-content: flex-start;
+}
+
+.controls-DialogTemplate__margin-right-auto {
+   margin-right: auto;
+}
+
+.controls-DialogTemplate__close_button {
+   position: relative;
+   z-index: 2; // The close button is above the content
+   align-self: flex-start;
+   flex-shrink: 0;
+}
+
+.controls-DialogTemplate__close_button_size-s,
+.controls-DialogTemplate__close_button_size-m {
+   margin-top: var(--close-button_offset-top_dialog);
+}
+
+.controls-DialogTemplate__close_button_size-l {
+   margin-top: var(--offset_xs);
+}
+
+.controls-DialogTemplate__resizingLine-left {
+   position: absolute;
+   z-index: 2;
+   top: 0;
+   left: 0;
+   height: 100%;
+}
+
+.controls-DialogTemplate__resizingLine-right {
+   position: absolute;
+   z-index: 2;
+   top: 0;
+   right: 0;
+   height: 100%;
+}
+
+.controls-DialogTemplate__resizingLine-bottom {
+   position: absolute;
+   z-index: 2;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+}
+
+.controls-DialogTemplate__resizingArrow {
+   position: absolute;
+   z-index: 2;
+   top: 0;
+   left: 0;
+}
+
+.controls-PopupTemplate__margin-horizontal {
+   margin-right: calc(var(--inline_height_l) / 2);
+   margin-left: calc(var(--inline_height_l) / 2);
+}
+
+.controls-DialogTemplate__close_external_headerSize-m_closeButtonSize-m,
+.controls-DialogTemplate__close_externalWide {
+   margin: calc((var(--header-min-height_dialog) - var(--inline_height_l)) / 2)
+      calc(var(--inline_height_l) / -2) 0 var(--offset_s);
+}
+
+.controls-DialogTemplate__close_external_headerSize-m_closeButtonSize-l {
+   margin: calc((var(--header-min-height_dialog) - var(--inline_height_xl)) / 2)
+      calc(var(--inline_height_l) / -2) 0 var(--offset_s);
+}
+
+.controls-DialogTemplate__close_external_headerSize-l_closeButtonSize-m {
+   margin: calc((var(--header-min-height_size-l_dialog) - var(--inline_height_l)) / 2)
+      calc(var(--inline_height_l) / -2) 0 var(--offset_s);
+}
+
+.controls-DialogTemplate__close_external_headerSize-l_closeButtonSize-l {
+   margin: calc((var(--header-min-height_size-l_dialog) - var(--inline_height_xl)) / 2)
+      calc(var(--inline_height_l) / -2) 0 var(--offset_s);
+}
+
+.controls-Popup__hidden-closeButton {
+   .controls-DialogTemplate__close_external {
+      visibility: hidden;
+   }
+}
+
+.controls-DialogTemplate__close_linkButton {
+   margin-top: var(--close-link-button_offset-top_dialog);
+   margin-right: calc(var(--close-link-button_offset-right_dialog));
+
+   .controls-CloseButton__close_linkButton_offset {
+      margin-right: 0;
+   }
+}
+
+.controls-DialogTemplate__close-button_without_head {
+   position: absolute;
+   right: 0;
+   top: 0;
+   display: flex;
+}
+
+.controls-DialogTemplate__caption {
+   align-items: baseline;
+   flex-shrink: 100;
+   display: flex;
+   overflow: hidden;
+   cursor: default;
+   min-width: var(--header_min-width_dialog);
+   height: var(--header-min-height_dialog);
+   margin-left: var(--header_padding-left_dialog);
+   line-height: var(--line-height_dialogTemplate_caption); // the baseline is not centered
+}
+
+.controls-DialogTemplate__margin-right-default {
+   margin-right: var(--header_caption_offset-right_dialog);
+}
+
+.controls-DialogTemplate__caption_text {
+   text-overflow: ellipsis;
+   overflow: hidden;
+   white-space: nowrap;
+}
+
+.controls-DialogTemplate__footer {
+   min-height: var(--footer_min-height_dialog);
+   flex-shrink: 0;
+}
+
+.controls-DialogTemplate__footerBackgroundColor {
+   background-color: var(--footer_background-color_dialog);
+}
+
+.controls-DialogTemplate__top-area-border {
+   border-bottom: var(--header_bottom-border-thickness_dialog) solid
+      var(--header_bottom-border-color_dialog);
+}
+
+.controls-DialogTemplate__footer-area-border {
+   border-top: var(--footer_top-border-thickness_dialog) solid var(--footer_top-border-color_dialog);
+}

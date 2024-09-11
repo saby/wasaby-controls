@@ -1,0 +1,34 @@
+<div class="controlsDemo__wrapper">
+    <Controls.checkbox:Checkbox readOnly="{{false}}" bind:value="_itemsDragNDrop" caption="Drag'N'Drop"/>
+    <Controls.checkbox:Checkbox readOnly="{{false}}" bind:value="_dragScrolling" caption="Перемещение мышкой"/>
+
+    <div class="controlDemo__input-row">
+        Drag'N'Drop delay in ms
+        <Controls.input:Number attr:style="margin-left: 10px" bind:value="_dndDelay" placeholder="Drag'N'Drop delay in ms"/>
+    </div>
+
+    <Controls.scroll:Container attr:class="controlsDemo__inline-flex"
+                               attr:style="width: 700px; height: 500px;">
+      <Controls.grid:View
+          name="grid"
+          storeId="ColumnScrollDragScrolling"
+          header="{{_header}}"
+          columns="{{_columns}}"
+          rowSeparatorSize="s"
+          itemsReadyCallback="{{_itemsReadyCallback}}"
+          itemsDragNDrop="{{ _itemsDragNDrop }}"
+          on:customdragStart="_dragStart()"
+          on:customdragEnd="_dragEnd()"
+          columnScroll="{{true}}"
+          columnScrollStartPosition="end"
+          dragScrolling="{{ _dragScrolling }}"
+          dragNDropDelay="{{ _dndDelay }}"
+      >
+        <ws:draggingTemplate>
+          <ws:partial template="Controls/dragnDrop:DraggingTemplate"
+                      mainText="{{draggingTemplate.entity._options.title}}">
+          </ws:partial>
+        </ws:draggingTemplate>
+      </Controls.grid:View>
+    </Controls.scroll:Container>
+</div>

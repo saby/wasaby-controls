@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper controlDemo_Tile_default">
+<Controls.treeTile:View
+        tileMode="dynamic"
+        imageProperty="image"
+        storeId="BackgroundColorStyle">
+  <ws:itemTemplate>
+    <ws:partial template="Controls/tile:ItemTemplate"
+                backgroundColorStyle="success">
+    </ws:partial>
+  </ws:itemTemplate>
+</Controls.treeTile:View>
+</div>

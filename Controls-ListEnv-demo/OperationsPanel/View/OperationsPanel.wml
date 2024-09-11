@@ -1,0 +1,7 @@
+<div>
+  <Controls-ListEnv.operationsPanelConnected:View storeId="listData"/>
+  <Controls.treeGrid:View
+      columns="{{_columns}}"
+      storeId="listData"
+  />
+</div>

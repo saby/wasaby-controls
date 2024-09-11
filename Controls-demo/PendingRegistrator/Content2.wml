@@ -1,0 +1,13 @@
+<div attr:class="controls-demo__content2_container">
+    <Controls.buttons:Button caption="отправить событие registerPending"
+                             class="controls-demo__pending-register2"
+                             on:click="_register()"/>
+    <br/>
+    <Controls.buttons:Button caption="отправить событие cancelFinishingPending"
+                             class="controls-demo__pending-cancel"
+                             on:click="_cancel()"/>
+    <br/>
+    <Controls.buttons:Button caption="отправить событие finishingPendingProcess"
+                             class="controls-demo__pending-finish"
+                             on:click="_finish()"/>
+</div>

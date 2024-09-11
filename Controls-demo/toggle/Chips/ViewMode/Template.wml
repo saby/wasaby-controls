@@ -1,0 +1,41 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center"
+         data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell">
+            <div class="controlsDemo__flex ws-align-items-center">
+                <div class="controls-text-label controlsDemo_fixedWidth200">contrastBackground=true, viewMode=filled</div>
+                <Controls.Chips:Control items="{{_items}}"
+                                        viewMode="filled"
+                                        contrastBackground="{{true}}"
+                                        bind:selectedKeys="_selectedKeys1"/>
+            </div>
+        </div>
+        <div class="controlsDemo__cell">
+            <div class="controlsDemo__flex ws-align-items-center">
+                <div class="controls-text-label controlsDemo_fixedWidth200">contrastBackground=true, viewMode=ghost</div>
+                <Controls.Chips:Control items="{{_items}}"
+                                        viewMode="ghost"
+                                        contrastBackground="{{true}}"
+                                        bind:selectedKeys="_selectedKeys2"/>
+            </div>
+        </div>
+        <div class="controlsDemo__cell">
+            <div class="controlsDemo__flex ws-align-items-center">
+                <div class="controls-text-label controlsDemo_fixedWidth200">contrastBackground=false, viewMode=filled</div>
+                <Controls.Chips:Control items="{{_items}}"
+                                        viewMode="filled"
+                                        contrastBackground="{{false}}"
+                                        bind:selectedKeys="_selectedKeys3"/>
+            </div>
+        </div>
+        <div class="controlsDemo__cell">
+            <div class="controlsDemo__flex ws-align-items-center">
+                <div class="controls-text-label controlsDemo_fixedWidth200">contrastBackground=false, viewMode=ghost</div>
+                <Controls.Chips:Control items="{{_items}}"
+                                        viewMode="ghost"
+                                        contrastBackground="{{false}}"
+                                        bind:selectedKeys="_selectedKeys4"/>
+            </div>
+        </div>
+    </div>
+</div>

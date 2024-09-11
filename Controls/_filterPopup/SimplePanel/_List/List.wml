@@ -1,0 +1,63 @@
+<div>
+   <ws:if data="{{_options.headingCaption}}">
+      <div class="controls-SimplePanel_caption">
+         <Controls.heading:Title attr:class="ws-ellipsis"
+                                 caption="{{_options.headingCaption}}"
+                                 fontColorStyle="label"
+                                 fontSize="m"
+                                 textTransform="uppercase"
+                                 fontWeight="normal"
+                                 readOnly="{{true}}"/>
+      </div>
+   </ws:if>
+   <Controls.menu:Control sourceController="{{_options.sourceController}}"
+                          source="{{_options.source}}"
+                          iconSize="{{_options.iconSize}}"
+                          markedKey="{{_markedKey}}"
+                          selectedKeys="{{_selectedKeys}}"
+                          itemTemplateProperty="{{_options.itemTemplateProperty}}"
+                          keyProperty="{{_options.keyProperty}}"
+                          displayProperty="{{_options.displayProperty}}"
+                          navigation="{{_options.navigation}}"
+                          searchParam="{{_options.searchParam}}"
+                          searchValue="{{_searchValue}}"
+                          viewMode="{{_menuViewMode}}"
+                          useListRender="{{_options.useListRender}}"
+                          parentProperty="{{_options.parentProperty}}"
+                          nodeProperty="{{_options.nodeProperty}}"
+                          emptyText="{{_options.emptyText}}"
+                          emptyKey="{{_options.emptyKey}}"
+                          multiSelect="{{_options.multiSelect}}"
+                          selectorTemplate="{{!_options.hasMoreButton ? _options.selectorTemplate}}"
+                          markerVisibility="onactivated"
+                          itemPadding="{{_itemPadding}}"
+                          emptyTemplate="{{_options.searchParam ? (_options.emptyTemplate || 'Controls/menu:EmptyTemplate') : undefined}}"
+                          expandedItems="{{_options.expandedItems}}"
+                          on:itemClick="_itemClickHandler()"
+                          on:selectedKeysChanged="_selectedKeysChanged()"
+                          on:moreButtonClick="_moreButtonClick()"
+   >
+      <ws:itemTemplate>
+         <ws:if data="{{_needShowEmptyItem(itemTemplate.item.contents.getKey())}}">
+            <ws:partial template="wml!Controls/_filterPopup/SimplePanel/_List/emptyItemTemplate" scope="{{itemTemplate}}" emptyItemFontWeight="{{_options.emptyItemFontWeight}}"/>
+         </ws:if>
+         <ws:else data="{{_options.itemTemplate}}">
+            <ws:partial template="{{_options.itemTemplate}}" scope="{{itemTemplate}}" />
+         </ws:else>
+         <ws:else>
+            <Controls.menu:ItemTemplate scope="{{itemTemplate}}" attr:class="{{itemTemplate.item.contents.get('pinned') ? 'controls-SimplePanel-List__row_pinned'}}"/>
+         </ws:else>
+      </ws:itemTemplate>
+   </Controls.menu:Control>
+   <ws:if data="{{_options.hasMoreButton && _options.selectorTemplate}}">
+      <div class="controls-Menu__moreButton controls-Menu__footer-moreButton"
+           data-qa="SimplePanel-List__hasMoreButton"
+           on:click="_moreButtonClick()">
+         <Controls.Container.Async templateName="Controls/ShowMoreButton">
+            <ws:partial template="{{content.resolvedTemplate}}"
+                        iconSize="m"
+                        attr:data-qa="controls-Menu__moreButton"/>
+         </Controls.Container.Async>
+      </div>
+   </ws:if>
+</div>

@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper">
+    <Controls.list:View
+            itemActions="{{_itemActions}}"
+            itemActionVisibilityCallback="{{_itemActionVisibilityCallback}}"
+            storeId="EditInPlaceDifferentItemActions">
+        <ws:itemPadding top="l" bottom="l"/>
+        <ws:editingConfig editOnClick="{{ true }}"/>
+        <ws:itemTemplate>
+            <ws:partial template="Controls/list:ItemTemplate" baseline="default">
+                <ws:contentTemplate>
+                    <ws:partial template="Controls/list:EditingTemplate" value="{{ itemTemplate.item.contents.title }}">
+                        <ws:editorTemplate>
+                            <Controls.input:Text contrastBackground="{{true}}" attr:style="width: calc(100% - 55px)" bind:value="itemTemplate.item.contents.title"/>
+                        </ws:editorTemplate>
+                    </ws:partial>
+                </ws:contentTemplate>
+            </ws:partial>
+        </ws:itemTemplate>
+    </Controls.list:View>
+</div>

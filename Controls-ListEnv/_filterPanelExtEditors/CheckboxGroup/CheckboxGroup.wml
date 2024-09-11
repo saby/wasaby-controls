@@ -1,0 +1,37 @@
+<Controls.Container.Async templateName="Controls/CheckboxGroup:Control">
+   <ws:partial
+      template="{{ content.resolvedTemplate }}"
+      source="{{ _options.source }}"
+      items="{{ _options.items }}"
+      selectedKeys="{{ _options.propertyValue }}"
+      displayProperty="{{ _options.displayProperty }}"
+      keyProperty="{{ _options.keyProperty }}"
+      parentProperty="{{ _options.parentProperty }}"
+      nodeProperty="{{ _options.nodeProperty }}"
+      direction="{{ _options.direction }}"
+      on:selectedKeysChanged="_selectedKeysChangedHandler()"
+      attr:class="controls-FilterEditors__CheckboxGroup">
+      <ws:itemTemplate>
+         <ws:if data="{{ _options.itemTemplate }}">
+            <ws:partial template="{{ _options.itemTemplate }}"
+               scope="{{ itemTemplate }}"
+            />
+         </ws:if>
+         <ws:else>
+            <Controls.Container.Async templateName="Controls/CheckboxGroup:defaultItemTemplate">
+               <ws:partial
+                  template="{{ content.resolvedTemplate }}"
+                  scope="{{ itemTemplate }}">
+                  <ws:contentTemplate>
+                     <div>
+                        <span class="controls-fontsize-l">
+                           {{ itemTemplate.item[this._options.displayProperty] }}
+                        </span>
+                     </div>
+                  </ws:contentTemplate>
+               </ws:partial>
+            </Controls.Container.Async>
+         </ws:else>
+      </ws:itemTemplate>
+   </ws:partial>
+</Controls.Container.Async>

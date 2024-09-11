@@ -1,0 +1,34 @@
+.controls-listTemplates__tableCellTemplate__footer {
+   color: var(--unaccented_text-color);
+   font-size: var(--font-size_xs);
+}
+
+.controls-listTemplates__tableCellTemplate__content {
+   flex-direction: column;
+   display: flex;
+   width: 100%;
+   overflow: visible;
+   min-width: 0;
+}
+
+.controls-listTemplates__tableCellTemplate__content-withPhoto {
+   min-height: var(--size_l_image);
+   margin-left: calc(var(--size_l_image) + var(--offset_xs));
+}
+
+.controls-listTemplates__tableCellTemplate {
+   display: flex;
+   width: 100%;
+   position: relative;
+   min-width: 0;
+}
+
+.controls-listTemplates_tableCellTemplate-image {
+   height: var(--size_l_image);
+   width: var(--size_l_image);
+   border-radius: var(--border-radius_s_image);
+   flex-shrink: 0;
+   position: absolute;
+   top: 0;
+   left: 0;
+}

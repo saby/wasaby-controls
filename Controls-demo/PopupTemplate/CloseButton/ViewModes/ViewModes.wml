@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <div class="controlsDemo__cell controlsDemo_ViewModes__toolButton">
+        <div class="controls-text-label">viewMode=toolButton</div>
+        <Controls.extButtons:CloseButton viewMode="toolButton" attr:data-qa="controlsDemo_ViewModes__toolButton"></Controls.extButtons:CloseButton>
+    </div>
+    <div class="controlsDemo__cell controlsDemo_ViewModes__linkButton">
+        <div class="controls-text-label">viewMode=linkButton</div>
+        <Controls.extButtons:CloseButton viewMode="linkButton" attr:data-qa="controlsDemo_ViewModes__linkButton"></Controls.extButtons:CloseButton>
+    </div>
+    <div class="controlsDemo__cell controlsDemo_ViewModes__functionalButton">
+        <div class="controls-text-label">viewMode=functionalButton</div>
+        <Controls.extButtons:CloseButton viewMode="functionalButton" attr:data-qa="controlsDemo_ViewModes__functionalButton"></Controls.extButtons:CloseButton>
+    </div>
+</div>

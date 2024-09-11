@@ -1,0 +1,120 @@
+.controls-SimplePanel {
+   .flexbox();
+   .flex-direction(column);
+   position: relative;
+   padding-top: var(--offset_3xs);
+
+   --inner_stickyPopup_closeButton-topOffset: var(--offset_3xs);
+}
+
+.controls-SimplePanel_close-padding {
+   padding-right: calc((var(--width_closeButton_functionalButton) / 2) + var(--border-thickness));
+}
+
+.controls-SimplePanel_content {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+   position: relative;
+   width: 100%;
+   min-height: 1px;
+   max-height: inherit;
+}
+
+.controls-SimplePanel_background {
+   max-width: var(--max-width_filterSimplePanel);
+   border-radius: var(--border-radius_default_block);
+   background: var(--background-color_sticky);
+   box-sizing: border-box;
+   padding: var(--offset_s);
+}
+
+.controls-SimplePanel_caption {
+   display: flex;
+   align-items: center;
+   height: var(--inline_height_l);
+   padding-right: calc(
+      var(--close-button_offset-left_sticky) + var(--width_closeButton_functionalButton) / 2 -
+         var(--offset_xs)
+   );
+   padding-left: calc(
+      var(--header_padding-horizontal_sticky) + var(--offset_3xs) + var(--icon-size_2xs)
+   );
+}
+
+.controls-SimplePanel__block_separator {
+   border-bottom: var(--grouping_separator_thickness_menu) solid
+      var(--grouping_separator_color_menu);
+   margin-top: var(--grouping_padding-vertical_menu);
+   margin-right: var(--grouping_padding-horizontal_menu);
+   margin-bottom: var(--grouping_padding-vertical_menu);
+   margin-left: var(--grouping_padding-horizontal_menu);
+}
+
+.controls-SimplePanel__applyButton {
+   position: absolute;
+   top: calc(
+      (var(--item_height_menu) - var(--apply-button_inline-height_menuPopup)) / 2 + var(--offset_s)
+   );
+   right: calc(var(--width_closeButton_functionalButton) / 2);
+   z-index: 3;
+}
+
+.controls-SimplePanel .controls-StickyTemplate__close_button {
+   // Крестик должен быть выше, чем стики элемент фильтра (у него z-index 2)
+   z-index: 3;
+}
+
+.controls-SimplePanel-cross-externalWide {
+   width: calc(
+      var(--apply-button_inline-height_menuPopup) + var(--width_closeButton_functionalButton)
+   );
+}
+
+.controls-SimplePanel-cross_wrapper {
+   position: absolute;
+   right: calc(var(--width_closeButton_functionalButton) / -2);
+   top: calc(
+      (var(--item_height_menu) - var(--apply-button_inline-height_menuPopup)) / 2 +
+         var(--content_padding-top_sticky)
+   );
+   z-index: 2;
+   display: flex;
+   flex-direction: row-reverse;
+   align-items: center;
+}
+
+.controls-FilterView-SimplePanel-popup {
+   margin-top: calc(
+      -1 * ((var(--item_height_menu) - var(--inline_height_default_link_button)) / 2 +
+               var(--content_padding-top_sticky) + var(--offset_2xs))
+   );
+
+   // толщина border'a + отступ пункта меню от бордера + отступ от ховера до маркера + ширина маркера + отступ от маркера до текста
+   margin-left: calc(
+      -1 * (var(--offset_xs) + var(--item_padding-left_s_list) + var(--icon-size_2xs) +
+               var(--offset_3xs))
+   );
+}
+
+.controls-FilterView-SimplePanel__buttonTarget-popup {
+   margin-top: (
+      calc(
+         -1 * ((var(--item_height_menu) - var(--height_filterView)) / 2 +
+                  var(--content_padding-top_sticky) + var(--offset_2xs))
+      )
+   );
+
+   // Чтобы при позиционировании над кнопкой, панель открывалась в том же месте, нужно сдвинуть ее на ширину иконки треугольника
+   // толщина border'a + отступ пункта меню от бордера + отступ от ховера до маркера + ширина маркера + отступ от маркера до текста - ширина треугольника
+   margin-left: calc(
+      -1 * (
+            var(--offset_xs) + var(--item_padding-left_s_list) + var(--icon-size_2xs) +
+               var(--offset_3xs)
+         ) + var(--item_icon-size_filterView)
+   );
+}
+
+.controls-SimplePanel__applyButton-size {
+   --container_inline-height_button_local: var(--apply-button_inline-height_menuPopup);
+}

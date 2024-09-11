@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500 controlsDemo__itemActions_list_GroupProperty">
+    <Controls.list:View
+            storeId="ItemActionsContextMenuConfigGroupProperty"
+            itemActions="{{_itemActions}}">
+        <ws:contextMenuConfig groupProperty="group"/>
+    </Controls.list:View>
+</div>

@@ -1,0 +1,7 @@
+<ws:partial
+      attr:class="controls-dateRange-RelationController__{{_options.number}}"
+      template="{{_options.content}}"
+      startValue="{{_options.ranges[_options.number][0]}}"
+      endValue="{{_options.ranges[_options.number][1]}}"
+      on:rangeChanged="_onRangeChanged()"
+/>

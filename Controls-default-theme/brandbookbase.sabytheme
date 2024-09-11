@@ -1,0 +1,746 @@
+[
+    {
+        "header": {
+            "md5": "8dc843dfc27e1fa39d88baebae7d1931",
+            "timestamp": "2024-07-03 08:49:31.184950"
+        },
+        "body": {
+            "id": "65b9a3c4-04b4-45c4-9553-50aeb10c7a09",
+            "is_parent": false,
+            "overrides": {
+                "base": {
+                    "heading_color": {
+                        "default_hover_text-color_heading": {
+                            "value": {
+                                "a": 0.8,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "default_hover_text-color_heading",
+                                "l": 0.0,
+                                "name": "Текст (при наведении)",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "heading_color"
+                            ]
+                        }
+                    },
+                    "label_color": {
+                        "label_color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": true,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "label",
+                                "l": 0.0,
+                                "name": "Метки",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "label_hover_text-color": {
+                            "value": {
+                                "a": 0.8,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "label_hover_text-color",
+                                "l": 0.0,
+                                "name": "Текст (при наведении)",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "label_color"
+                            ]
+                        },
+                        "label_text-color": {
+                            "value": {
+                                "a": 0.5,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "label_text-color",
+                                "l": 0.0,
+                                "name": "Текст",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "label_color"
+                            ]
+                        }
+                    },
+                    "link_color": {
+                        "link_color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": true,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "link",
+                                "l": 0.0,
+                                "name": "Ссылки",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "link_hover_text-color": {
+                            "value": {
+                                "a": 0.8,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "link_hover_text-color",
+                                "l": 0.0,
+                                "name": "Текст (при наведении)",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "link_color"
+                            ]
+                        },
+                        "link_text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "link_text-color",
+                                "l": 0.0,
+                                "name": "Текст",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "link_color"
+                            ]
+                        }
+                    },
+                    "neutral_color": {
+                        "hover_icon-color": {
+                            "value": {
+                                "a": 0.6,
+                                "base": false,
+                                "h": 0.0,
+                                "key": "hover_icon-color",
+                                "l": 0.0,
+                                "name": "Иконки (при наведении)",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "icon-color"
+                            ]
+                        },
+                        "hover_text-color": {
+                            "value": {
+                                "a": 0.6,
+                                "base": false,
+                                "h": 0.0,
+                                "key": "hover_text-color",
+                                "l": 0.0,
+                                "name": "Текст (при наведении)",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "text-color"
+                            ]
+                        },
+                        "icon-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "icon-color",
+                                "l": 0.0,
+                                "name": "Иконки",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "neutral_color"
+                            ]
+                        },
+                        "pale_active_color": {
+                            "value": {
+                                "a": 0.149019607843137,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "pale_active_contrast_background-color",
+                                "l": 20.0,
+                                "name": "Бледный фон (при нажатии)",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "pale_border-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 220.0,
+                                "initial": false,
+                                "key": "pale_border-color",
+                                "l": 90.9803921568628,
+                                "name": "Бледная обводка",
+                                "s": 13.0434782608695,
+                                "strict": false
+                            }
+                        },
+                        "pale_color": {
+                            "value": {
+                                "a": 0.0509803921568627,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "pale_contrast_background-color",
+                                "l": 20.0,
+                                "name": "Бледный фон",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "pale_hover_color": {
+                            "value": {
+                                "a": 0.101960784313725,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "pale_hover_contrast_background-color",
+                                "l": 20.0,
+                                "name": "Бледный фон (при наведении)",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "readonly_border-color": {
+                            "value": {
+                                "a": 0.3,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "readonly_border-color",
+                                "l": 0.0,
+                                "name": "Обводка в режиме \"только чтение\"",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "neutral_color"
+                            ]
+                        },
+                        "readonly_icon-color": {
+                            "value": {
+                                "a": 0.3,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "readonly_icon-color",
+                                "l": 0.0,
+                                "name": "Иконки в режиме \"только чтение\"",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "neutral_color"
+                            ]
+                        },
+                        "readonly_text-color": {
+                            "value": {
+                                "a": 0.3,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "readonly_text-color",
+                                "l": 0.0,
+                                "name": "Текст в режиме \"только чтение\"",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "neutral_color"
+                            ]
+                        },
+                        "text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "text-color",
+                                "l": 0.0,
+                                "name": "Текст",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "neutral_color"
+                            ]
+                        },
+                        "unaccented_active_contrast_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "unaccented_active_contrast_background-color",
+                                "l": 83.1372549019608,
+                                "name": "Неакцентный контрастный фон (при нажатии)",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "unaccented_border-color": {
+                            "value": {
+                                "a": 0.6,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "unaccented_border-color",
+                                "l": 0.0,
+                                "name": "Неакцентная обводка",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "neutral_color"
+                            ]
+                        },
+                        "unaccented_contrast_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "unaccented_contrast_background-color",
+                                "l": 85.8823529411765,
+                                "name": "Неакцентный контрастный фон",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "unaccented_hover_border-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 210.0,
+                                "initial": false,
+                                "key": "unaccented_hover_border-color",
+                                "l": 60.0,
+                                "name": "Неакцентная обводка (при наведении)",
+                                "s": 9.80392156862744,
+                                "strict": false
+                            }
+                        },
+                        "unaccented_hover_contrast_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "unaccented_hover_contrast_background-color",
+                                "l": 80.0,
+                                "name": "Неакцентный контрастный фон (при наведении)",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "unaccented_hover_icon-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "unaccented_hover_icon-color",
+                                "l": 40.0,
+                                "name": "Неакцентные иконки (при наведении)",
+                                "s": 0.0,
+                                "strict": false
+                            }
+                        },
+                        "unaccented_icon-color": {
+                            "value": {
+                                "a": 0.8,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "unaccented_icon-color",
+                                "l": 0.0,
+                                "name": "Неакцентные иконки",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "neutral_color"
+                            ]
+                        },
+                        "unaccented_text-color": {
+                            "value": {
+                                "a": 0.8,
+                                "base": false,
+                                "h": 0.0,
+                                "initial": false,
+                                "key": "unaccented_text-color",
+                                "l": 0.0,
+                                "name": "Неакцентный текст",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "neutral_color"
+                            ]
+                        }
+                    },
+                    "primary_color": {
+                        "marker_color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 17.9411764705882,
+                                "initial": false,
+                                "key": "marker_color",
+                                "l": 40.0,
+                                "name": "Маркер",
+                                "s": 100.0,
+                                "strict": false
+                            }
+                        },
+                        "primary_active_background-color": {
+                            "value": {
+                                "a": 0.6,
+                                "base": false,
+                                "h": 0.0,
+                                "key": "primary_active_background-color",
+                                "l": 0.0,
+                                "name": "Фон (при нажатии)",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "primary_color"
+                            ]
+                        },
+                        "primary_background-color": {
+                            "value": {
+                                "a": -1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "key": "primary_background-color",
+                                "l": 0.0,
+                                "name": "Фон",
+                                "s": 0.0
+                            },
+                            "valuelinks": [
+                                "primary_color"
+                            ]
+                        },
+                        "primary_border-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "key": "primary_border-color",
+                                "l": 0.0,
+                                "name": "Обводка",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "primary_color"
+                            ]
+                        },
+                        "primary_hover_background-color": {
+                            "value": {
+                                "a": 0.3,
+                                "base": false,
+                                "h": 0.0,
+                                "key": "primary_hover_background-color",
+                                "l": 0.0,
+                                "name": "Фон (при наведении)",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "primary_color"
+                            ]
+                        },
+                        "primary_hover_border-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "key": "primary_hover_border-color",
+                                "l": 0.0,
+                                "name": "Обводка (при наведении)",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "primary_border-color"
+                            ]
+                        },
+                        "primary_hover_icon-color": {
+                            "value": {
+                                "a": 0.8,
+                                "base": false,
+                                "h": 0.0,
+                                "key": "primary_hover_icon-color",
+                                "l": 0.0,
+                                "name": "Иконки (при наведении)",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "primary_icon-color"
+                            ]
+                        },
+                        "primary_hover_text-color": {
+                            "value": {
+                                "a": 0.8,
+                                "base": false,
+                                "h": 0.0,
+                                "key": "primary_hover_text-color",
+                                "l": 0.0,
+                                "name": "Текст (при наведении)",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "primary_text-color"
+                            ]
+                        },
+                        "primary_icon-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "key": "primary_icon-color",
+                                "l": 0.0,
+                                "name": "Иконки",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "primary_color"
+                            ]
+                        },
+                        "primary_text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "key": "primary_text-color",
+                                "l": 0.0,
+                                "name": "Текст",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "primary_color"
+                            ]
+                        }
+                    },
+                    "secondary_color": {
+                        "secondary_active_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 211.666666666667,
+                                "initial": false,
+                                "key": "secondary_active_background-color",
+                                "l": 92.9411764705882,
+                                "name": "Фон (при нажатии)",
+                                "s": 100.0,
+                                "strict": false
+                            }
+                        },
+                        "secondary_active_color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 212.25,
+                                "initial": false,
+                                "key": "secondary_active_contrast_background-color",
+                                "l": 30.9803921568627,
+                                "name": "Фон контрастный (при нажатии)",
+                                "s": 50.6329113924051,
+                                "strict": false
+                            }
+                        },
+                        "secondary_active_same_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 211.764705882353,
+                                "initial": false,
+                                "key": "secondary_active_same_background-color",
+                                "l": 90.0,
+                                "name": "Фон маленьких блоков (при нажатии)",
+                                "s": 100.0,
+                                "strict": false
+                            }
+                        },
+                        "secondary_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 210.0,
+                                "initial": false,
+                                "key": "secondary_background-color",
+                                "l": 98.0392156862745,
+                                "name": "Фон",
+                                "s": 100.0,
+                                "strict": true
+                            }
+                        },
+                        "secondary_color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": true,
+                                "h": 0.0,
+                                "key": "secondary",
+                                "l": 0.0,
+                                "name": "Вторичный",
+                                "s": 0.0
+                            }
+                        },
+                        "secondary_hover_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 213.0,
+                                "initial": false,
+                                "key": "secondary_hover_background-color",
+                                "l": 96.078431372549,
+                                "name": "Фон (при наведении)",
+                                "s": 99.9999999999999,
+                                "strict": false
+                            }
+                        },
+                        "secondary_hover_color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 212.258064516129,
+                                "initial": false,
+                                "key": "secondary_hover_contrast_background-color",
+                                "l": 35.0980392156863,
+                                "name": "Фон контрастный (при наведении)",
+                                "s": 51.9553072625698,
+                                "strict": false
+                            }
+                        },
+                        "secondary_hover_icon-color": {
+                            "value": {
+                                "a": 0.8,
+                                "base": false,
+                                "h": 0.0,
+                                "key": "secondary_hover_icon-color",
+                                "l": 0.0,
+                                "name": "Иконки (при наведении)",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "secondary_icon-color"
+                            ]
+                        },
+                        "secondary_hover_same_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 211.666666666667,
+                                "initial": false,
+                                "key": "secondary_hover_same_background-color",
+                                "l": 92.9411764705882,
+                                "name": "Фон маленьких блоков (при наведении)",
+                                "s": 100.0,
+                                "strict": false
+                            }
+                        },
+                        "secondary_hover_text-color": {
+                            "value": {
+                                "a": 0.8,
+                                "base": false,
+                                "h": 0.0,
+                                "key": "secondary_hover_text-color",
+                                "l": 0.0,
+                                "name": "Текст (при наведении)",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "secondary_text-color"
+                            ]
+                        },
+                        "secondary_icon-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "key": "secondary_icon-color",
+                                "l": 0.0,
+                                "name": "Иконки",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "secondary_color"
+                            ]
+                        },
+                        "secondary_same_background-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 213.0,
+                                "initial": false,
+                                "key": "secondary_same_background-color",
+                                "l": 96.078431372549,
+                                "name": "Фон маленьких блоков",
+                                "s": 99.9999999999999,
+                                "strict": true
+                            }
+                        },
+                        "secondary_text-color": {
+                            "value": {
+                                "a": 1.0,
+                                "base": false,
+                                "h": 0.0,
+                                "key": "secondary_text-color",
+                                "l": 0.0,
+                                "name": "Текст",
+                                "s": 0.0,
+                                "strict": false
+                            },
+                            "valuelinks": [
+                                "secondary_color"
+                            ]
+                        }
+                    }
+                }
+            },
+            "selector": "brandbookbase",
+            "styles": [],
+            "title": "Базовая тема",
+            "type": 1,
+            "aspect_theme": [
+                {
+                    "identifier": "87688e42-71bf-11ee-b962-0242ac120002",
+                    "keys": null,
+                    "uuid": "f6f9fe31-fb87-4442-8141-b1f176930be9"
+                }
+            ],
+            "parent": {
+                "id": "9ba4e73e-c289-4e59-9f79-dd4428452921",
+                "title": "Базовая - расчеты"
+            }
+        }
+    }
+]

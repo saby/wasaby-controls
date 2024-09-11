@@ -1,0 +1,61 @@
+.ExtSearch-suggest__input_selectedCollection {
+   padding-left: var(--offset_m);
+
+   .controls-SelectedCollection__itemsContainer_hidden-counter {
+      display: flex;
+      min-width: 1px;
+   }
+
+   .controls-SelectedCollection__itemsContainer {
+      display: flex;
+      align-items: baseline;
+   }
+}
+
+// Попытка починить выравнивание относительно placeholder'a в поле поиска на странице
+// у placeholder'a скачет базовая линия в зависимости от положения поля поиска на странице.
+.ws-is-chrome .ExtSearch-suggest__input_selectedCollection {
+   margin-top: -0.1px;
+}
+
+.ExtSearch-suggest__input_selectedCollection.controls-Lookup__collection__selectedSingle {
+   margin-right: calc(-1 * (var(--offset_m) - var(--border-thickness)));
+   height: 100%;
+}
+
+// Костыль, чтобы правильно работало выравнивание по базовой линии у элемента с align-self: baseline
+// внутри элемента с align-items: center
+// В хроме работает правильно, даже если height: 100%
+// а в webkit и firefox текст в блоке прижимается к низу
+.ws-is-webkit,
+.ws-is-firefox {
+   .ExtSearch-suggest__input_selectedCollection.controls-Lookup__collection__selectedSingle {
+      height: auto;
+   }
+}
+
+.ExtSearch-suggest__input_selectedCollection_item.controls-SelectedCollection__item {
+   flex-shrink: 1;
+   min-width: calc(var(--reset-button_icon-size) + var(--offset_2xs) + var(--font-size_m_input));
+}
+
+.ExtSearch-suggest__input_selectedCollection .controls-SelectedCollection__collection {
+   display: inline-flex;
+   padding-right: 0;
+}
+
+.ExtSearch-suggest__suggestTemplate_filterPanel {
+   margin-bottom: calc(var(--offset_l) * -1);
+}
+
+.controls-SuggestPopup__afterInputSuggestTemplate_left .extSearch-Suggest__searchButton {
+   margin-right: var(--offset_s);
+}
+
+.ws-is-old-webkit .extSearch-Suggest__searchButton {
+   margin-top: auto;
+}
+
+.ExtSearch-suggest__suggestTemplate_explorer {
+   margin-top: calc(var(--offset_l) + var(--offset_m));
+}

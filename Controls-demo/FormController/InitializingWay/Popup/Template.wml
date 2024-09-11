@@ -1,0 +1,22 @@
+<Controls.form:Controller entityKey="{{ _options.entityKey }}" source="{{_options.source}}" initializingWay="{{ _options.initializingWay }}" record="{{ _record }}" on:readSuccessed="_readSucessHandler()">
+    <Controls.popupTemplate:Stack headingCaption="Задача">
+        <ws:bodyContentTemplate>
+            <div class="cotnrolsDemo-formInitializingWay-popup">
+                <div class="cotnrolsDemo-formInitializingWay-input">
+                    <Controls.input:Label caption="Регламент: " />
+                    <Controls.input:Text bind:value="content.record.regulation" />
+                </div>
+                <div class="cotnrolsDemo-formInitializingWay-input">
+                    <Controls.input:Label caption="Веха: " />
+                    <Controls.input:Text bind:value="content.record.milestone" />
+                </div>
+                <ws:if data="{{ content.record.readField }}">
+                    <div class="cotnrolsDemo-formInitializingWay-input">
+                        <Controls.input:Label caption="Это поле появляется только после вызова чтения: " />
+                        <Controls.input:Text bind:value="content.record.readField" />
+                    </div>
+                </ws:if>
+            </div>
+        </ws:bodyContentTemplate>
+    </Controls.popupTemplate:Stack>
+</Controls.form:Controller>

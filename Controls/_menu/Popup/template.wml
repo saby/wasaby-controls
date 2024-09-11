@@ -1,0 +1,324 @@
+<ws:template name="menuControl">
+   <Controls.scroll:Container
+           attr:class="controls-ScrollContainer__flex controls-SlidingPanel__scrollWrapper
+                       {{_options.isAdaptive && _options.allowAdaptive !== false && !_adaptiveMenuIsSwiped ? 'tw-flex-shrink-0' : 'controls-Menu__scroll'}}
+                       {{!_options.searchParam && _options.headerTemplate && !_options.isAdaptive ? 'controls-Menu__popup-list_margin-top'}}"
+           shadowMode="js"
+           scrollbarVisible="{{_options.scrollbarVisible}}"
+           topShadowVisibility="{{_options.searchParam || (_hasHeader &&  _verticalDirection === 'bottom') ? 'auto' : 'hidden'}}"
+           bottomShadowVisibility="{{_footerTemplate || (_hasHeader && _verticalDirection === 'top') ? 'auto' : 'hidden'}}">
+      <Controls._menu.MenuConfigResolver
+              name="menuControl"
+              additionalProperty="{{_options.additionalProperty}}"
+              applyButtonVisibility="{{_options.applyButtonVisibility}}"
+              allowPin="{{_options.allowPin}}"
+              backgroundStyle="{{_options.backgroundStyle || 'menuPopup'}}"
+              beforeSelectionChangedCallback="{{_options.beforeSelectionChangedCallback}}"
+              borderRadius="{{_options.borderRadius}}"
+              borderSize="{{_options.borderSize}}"
+              borderStyle="{{_options.borderStyle}}"
+              breadCrumbsItemTemplate="{{_options.breadCrumbsItemTemplate}}"
+              calmTimer="{{_calmTimer}}"
+              closedSubMenuKey="{{_options.closedSubMenuKey}}"
+              dataLoadCallback="{{_dataLoadCallback}}"
+              dataLoadErrback="{{_dataLoadErrback}}"
+              dataName="{{_options.dataName}}"
+              displayProperty="{{_options.displayProperty}}"
+              dropdownClassName="{{_options.dropdownClassName}}"
+              emptyKey="{{_options.emptyKey}}"
+              emptyTemplate="{{_options.emptyTemplate}}"
+              emptyText="{{_options.emptyText}}"
+              excludedKeys="{{_options.excludedKeys}}"
+              filter="{{filter || _options.filter}}"
+              focusable="{{_options.focusable}}"
+              footerContentTemplate="{{_footerTemplate}}"
+              stickyFooter="{{_options.stickyFooter}}"
+              groupingKeyCallback="{{_options.groupingKeyCallback}}"
+              groupProperty="{{_options.groupProperty}}"
+              groupTemplate="{{_options.groupTemplate}}"
+              hasHistory="{{_options.hasHistory}}"
+              headingCaption="{{null}}"
+              headingCaptionProperty="{{_options.headingCaptionProperty}}"
+              hierarchyViewMode="{{_options.hierarchyViewMode}}"
+              historyId="{{_options.historyId}}"
+              historyRoot="{{_options.historyRoot}}"
+              hoverBackgroundStyle="{{_options.hoverBackgroundStyle}}"
+              hoverBorderStyle="{{_options.hoverBorderStyle}}"
+              isCompoundTemplate="{{_options.isCompoundTemplate}}"
+              isDragging="{{_options.isDragging}}"
+              isSourceControllerFromContext="{{isSourceControllerFromContext}}"
+              itemActions="{{_options.itemActions}}"
+              itemActionsClass="{{_options.itemActionsClass}}"
+              itemActionsProperty="{{_options.itemActionsProperty}}"
+              itemActionsVisibility="{{_options.itemActionsVisibility}}"
+              itemActionVisibilityCallback="{{_options.itemActionVisibilityCallback}}"
+              itemAlign="{{_options.itemAlign}}"
+              itemPadding="{{_itemPadding}}"
+              itemsSpacing="{{_options.itemsSpacing}}"
+              items="{{_options.items}}"
+              itemTemplate="{{_options.itemTemplate}}"
+              itemTemplateProperty="{{_options.itemTemplateProperty}}"
+              keyProperty="{{_options.keyProperty}}"
+              markerPosition="{{_markerPosition}}"
+              markerVisibility="{{_options.markerVisibility}}"
+              maxHistoryVisibleItems="{{_options.maxHistoryVisibleItems}}"
+              menuConfigs="{{_options.menuConfigs}}"
+              menuMode="{{_options.menuMode}}"
+              menuOpenedCallback="{{_options.menuOpenedCallback}}"
+              multiSelect="{{_options.multiSelect}}"
+              multiSelectPosition="{{_options.multiSelectPosition}}"
+              multiSelectAccessibilityProperty="{{_options.multiSelectAccessibilityProperty}}"
+              navigation="{{_options.navigation}}"
+              nodeFooterTemplate="{{_options.nodeFooterTemplate}}"
+              nodeProperty="{{_options.nodeProperty}}"
+              openedSubMenuKey="{{_options.openedSubMenuKey}}"
+              openedSubMenuOptions="{{_options.openedSubMenuOptions}}"
+              parentProperty="{{_options.parentProperty}}"
+              root="{{root}}"
+              searchParam="{{_options.searchParam}}"
+              selectedAllKey="{{_options.selectedAllKey}}"
+              selectedAllText="{{_options.selectedAllText}}"
+              selectorDialogResult="{{_options.selectorDialogResult}}"
+              showMoreRightTemplate="{{_options.showMoreRightTemplate}}"
+              selectedKeys="{{_options.selectedKeys}}"
+              selectorOpenCallback="{{_options.selectorOpenCallback}}"
+              selectorOpener="{{_options.selectorOpener}}"
+              selectorTemplate="{{_options.selectorTemplate}}"
+              source="{{_options.source}}"
+              sourceController="{{_options.sourceController}}"
+              sourceProperty="{{_options.sourceProperty}}"
+              stickyPosition="{{_options.stickyPosition}}"
+              subMenuDirection ="{{_options.subMenuDirection}}"
+              subMenuLevel="{{_options.subMenuLevel}}"
+              theme="{{_options.theme}}"
+              trigger="{{_options.trigger}}"
+              useListRender="{{_options.useListRender}}"
+              viewMode="{{viewMode || _options.viewMode}}"
+              virtualScrollConfig="{{_options.virtualScrollConfig}}"
+              width="{{_options.width}}"
+
+              attr:class="controls-Menu__popup-list
+                           {{!_options.isAdaptive || _options.allowAdaptive === false ? 'controls-padding_left-s controls-padding_right-s' : '' }}"
+              attr:ws-autofocus="{{_options.focusable}}"
+              on:applyButtonVisibleChanged="_updateApplyButton()"
+              on:menuItemClick="_sendResult('itemClick')"
+              on:selectionChanged="_sendResult('selectionChanged')"
+              on:rightTemplateClick="_sendResult('rightTemplateClick')"
+              on:moreButtonClick="_sendResult('openSelectorDialog')"
+              on:applyClick="_sendResult('applyClick')"
+              on:pinClick="_sendResult('pinClick')"
+              on:menuOpened="_sendResult('menuOpened')"
+              on:beforeSubMenuOpen="_prepareSubMenuConfig()"
+              on:closeButtonVisibilityChanged="_updateCloseButtonState()"
+              on:selectedItemsChanged="_setSelectedItems()"
+              on:selectedKeysChanged="_updateSelectedKeys()"
+              on:excludedKeysChanged="_updateExcludedKeys()"
+              on:subMenuMouseenter="_sendResult('subMenuMouseenter')"
+              on:expanderClick="_expanderClick()"
+              on:rootChanged="_rootChanged()"
+      />
+   </Controls.scroll:Container>
+</ws:template>
+
+<ws:template name="menuPopup" >
+   <div class="controls_dropdownPopup_theme-{{_options.theme}}
+               controls-Menu__popup
+               {{!_options.isAdaptive || _options.allowAdaptive === false ? 'controls-Menu__popup_padding-top' : ''}}
+               {{_paddingClassName}}"
+        on:mouseEnter="_mouseEvent()"
+        on:mouseMove="_mouseEvent()"
+        on:mouseLeave="_mouseEvent()">
+      <Controls.popupTemplate:Sticky
+              attr:data-name="{{_options.dataName ? _dataName}}"
+              attr:class="controls-Popup__isolatedFocusingContext
+                          controls-Menu__popup-template
+                          {{_options.isAdaptive && _options.allowAdaptive === false ? 'controls-Menu__popup-template_sticky-adaptive'}}
+                          {{!_options.isAdaptive ? 'controls-Menu__popup-template_maxWidth' : ''}}
+                          controls-Menu__popup-direction-vertical-{{_verticalDirection}}
+                          {{!_options.headerTemplate && _verticalDirection === 'top' ? 'controls-Menu__popup-reverse controls-Menu__popup-template-paddingInHeader-bottom' }}
+                          {{!_options.headerTemplate && _hasHeader && _verticalDirection !== 'top' && !_options.searchParam ?
+                          (_isWithSelect() ? 'controls-Menu__popup-template-paddingInHeader_withSelect' :
+                           ('controls-Menu__popup-template-paddingInHeader-top' + (_options.isAdaptive && _options.allowAdaptive === false ? '_sticky-adaptive')))
+                           : 'controls-Menu__popup-template-padding'}}
+                          {{!_options.isAdaptive || _options.allowAdaptive === false ? ' controls-Menu__popup-offset'}}
+                          {{_options.dropdownClassName}}
+                          {{ _hasHeader ? 'controls-Menu__popup-withHeader'}}"
+              attr:style="{{_options.width ?
+               'min-width: calc(' + _options.width + 'px + 2 * (var(--offset_xs) + var(--item_padding-horizontal_s_menu)))'}}
+               {{_options.isAdaptive && _options.allowAdaptive !== false ? 'min-height:' + (
+                  !_options.isMinHeightSet && !_options.subMenuLevel ? '25vh' :
+                   (_options.slidingPanelOptions['minHeight'] ? _options.slidingPanelOptions['minHeight'] + 'px'))}}"
+              icon="{{_headingIcon}}"
+              headingIconSize="{{_headingIconSize}}"
+              caption="{{_headingCaption}}"
+              searchHeaderTheme="{{_options.theme}}"
+              headingCaption="{{!_options.headerTemplate && !_headerTemplate ? _headingCaption : ''}}"
+              headingFontSize="{{_options.isAdaptive && _options.allowAdaptive ? '2xl' : 'm'}}"
+              headingFontColorStyle="{{_options.isAdaptive && _options.allowAdaptive ? 'default' : 'label'}}"
+              headingTextTransform="{{_options.isAdaptive && _options.allowAdaptive ? 'none' : 'uppercase'}}"
+              headingFontWeight="{{_options.isAdaptive && _options.allowAdaptive ? 'bold' : 'normal'}}"
+              iconSize="{{_options.iconSize}}"
+              iconStyle="{{_options.iconStyle}}"
+              footerContentTemplate="{{_options.stickyFooter && _footerTemplate ? footerContent : null}}"
+              headerContentTemplate="{{headerContentTemplate || _headerTemplate}}"
+              footerVisibility="{{_options.footerVisibility}}"
+              footerItemData="{{_options.footerItemData}}"
+              closeButtonVisible="{{_closeButtonVisibility}}"
+              closeButtonViewMode="{{_applyButtonVisible && _options.closeButtonViewMode === 'external' ?
+               'externalWide' : _options.closeButtonViewMode}}"
+              stickyPosition="{{_options.stickyPosition}}"
+              shadowVisible="{{_shadowVisible}}"
+              slidingPanelOptions="{{_slidingPanelOptions}}"
+              draggable="{{_options.draggable}}"
+              backgroundStyle="{{_options.backgroundStyle}}"
+              borderStyle="{{_options.borderStyle}}"
+              hoverBorderStyle="{{_options.hoverBorderStyle}}"
+              borderSize="{{_options.borderSize}}"
+              borderRadius="{{_options.borderRadius}}"
+              borderVisible="{{(_options.borderStyle || _options.hoverBorderStyle) ? true : _options.borderVisible}}"
+              searchPlaceholder="{{_options.searchPlaceholder}}"
+              minSearchLength="{{_options.minSearchLength}}"
+              searchDelay="{{_options.searchDelay}}"
+              headerBackgroundStyle="{{_options.headerBackgroundStyle || _options.backgroundStyle}}"
+              markerVisibility="{{_options.markerVisibility}}"
+              verticalDirection="{{_verticalDirection}}"
+              allowAdaptive="{{_options.allowAdaptive}}"
+              menuMode="{{_options.menuMode}}"
+              searchParam="{{_options.searchParam}}"
+              parentProperty="{{_options.parentProperty}}"
+              root="{{_root}}"
+              on:controlResize="_menuResized()"
+              on:customdragStart="_swipeMenu()"
+              on:mouseenter="_mouseEnterHandler()"
+              on:headerMouseEnter="_headerMouseEnter()"
+              on:breadcrumbsClick="_headerBreadCrumbsClick()"
+              on:headerClick="_headerClick()"
+              on:footerClick="_footerClick()">
+         <ws:bodyContentTemplate>
+            <ws:if data="{{_options.subMenuTemplate}}">
+               <ws:partial template="{{_options.subMenuTemplate}}"
+                           itemPadding="{{_itemPadding}}"
+                           subMenuTemplateOptions="{{_options.subMenuTemplateOptions}}"
+                           scope="{{_options.subMenuTemplateOptions}}"/>
+            </ws:if>
+            <ws:else>
+               <div name="contentTemplate"
+                    class="{{_options.headerTemplate && _verticalDirection === 'top' ? 'controls-Menu__popup-reverse'}}
+                           {{_options.searchParam ? 'controls-margin_top-2xs'}}
+                           controls-Menu__popup-content"
+                    style="{{(_minWidth ? 'min-width: ' + _minWidth + 'px;' : '') + (_minHeight ? 'min-height: ' + _minHeight + 'px;' : '')}}">
+                  <ws:if data="{{_applyButtonVisible}}">
+                     <div class="controls-Menu__popup_applyButton
+                           controls-Menu_{{_closeButtonVisibility ? 'withClose' : 'withoutClose'}}__applyButton">
+                        <Controls.buttons:Button viewMode="filled"
+                                                 contrastBackground="{{_closeButtonVisibility ? false : true}}"
+                                                 icon="icon-Yes"
+                                                 iconSize="s"
+                                                 iconStyle="contrast"
+                                                 buttonStyle="success"
+                                                 caption="{{null}}"
+                                                 attr:class="controls-Menu__applyButton"
+                                                 on:click="_applyButtonClick()"/>
+                     </div>
+                  </ws:if>
+                  <ws:if data="{{_options.headerTemplate && _headerVisible}}">
+                     <ws:partial template="{{_options.headerTemplate}}"
+                                 attr:class="controls-margin_left-s controls-margin_right-s
+                                 {{_closeButtonVisibility ? 'controls-Menu__popup-header-close' : 'controls-Menu__popup-header-withoutClose'}}"
+                                 iconSize="{{_options.iconSize}}"
+                                 headingIconSize="{{_headingIconSize}}"
+                                 iconStyle="{{_options.iconStyle}}"
+                                 icon="{{_headingIcon}}"
+                                 caption="{{_headingCaption}}"
+                                 multiSelect="{{_options.multiSelect}}"
+                                 theme="{{ _options.theme }}"
+                                 isAdaptive="{{_options.isAdaptive}}"
+                                 allowAdaptive="{{_options.allowAdaptive}}"
+                                 markerPosition="{{_markerPosition}}"
+                                 on:mouseenter="_headerMouseEnter()"
+                                 on:click="_headerClick()"/>
+                  </ws:if>
+                  <ws:if data="{{_options.searchParam}}">
+                     <ws:partial template="{{'Controls/search:MisspellContainer'}}"
+                                 attr:class="{{_options.isAdaptive && _options.allowAdaptive !== false ? 'controls-padding_top-xs'}}
+                                  controls-Menu__popup-misspellContainer"
+                                 misspellClass="controls-Menu__misspell"
+                                 inputSearchValue="{{null}}"
+                                 operationsPanel="{{null}}">
+                        <ws:partial template="menuControl" />
+                     </ws:partial>
+                  </ws:if>
+                  <ws:else>
+                     <ws:partial template="menuControl" />
+                  </ws:else>
+               </div>
+            </ws:else>
+         </ws:bodyContentTemplate>
+      </Controls.popupTemplate:Sticky>
+   </div>
+</ws:template>
+
+<ws:template name="menuPopupWrapper">
+   <ws:partial template="menuPopup">
+      <ws:footerContent>
+         <ws:if data="{{_footerTemplate}}">
+            <div attr:class="
+            {{_options.stickyFooter ? 'controls-margin_left-' + (_isWithSelect() ? 'xs' : 's') + ' controls-margin_right-' +
+             (_isWithSelect()? 'xs' : 's')}}">
+               <ws:partial template="{{_footerTemplate}}"
+                           footerItemData="{{_options.footerItemData}}"
+                           on:mouseenter="_onFooterMouseEnter()"
+                           on:beforeSubMenuOpen="_prepareSubMenuConfig()"
+                           calmTimer="{{_calmTimer}}"></ws:partial>
+            </div>
+         </ws:if>
+      </ws:footerContent>
+   </ws:partial>
+</ws:template>
+
+<ws:if data="{{_options.searchParam || _options.menuMode === 'selector'}}">
+   <ws:partial template="{{'Controls/browser:Browser'}}"
+               searchStartingWith="{{_options.searchStartingWith}}"
+               root="{{_root}}"
+               keyProperty="{{_options.keyProperty}}"
+               displayProperty="{{_options.displayProperty}}"
+               multiSelect="{{_options.multiSelect}}"
+               searchParam="{{_options.searchParam}}"
+               searchValue="{{_searchValue || ''}}"
+               minSearchLength="{{_options.minSearchLength}}"
+               searchDelay="{{_options.searchDelay}}"
+               emptyTemplate="{{_options.emptyTemplate}}"
+               source="{{_source}}"
+               sourceController="{{_options.sourceController}}"
+               navigation="{{_options.navigation}}"
+               filter="{{filter || _options.filter}}"
+               parentProperty="{{_options.parentProperty}}"
+               nodeProperty="{{_options.nodeProperty}}"
+               viewMode="{{_options.viewMode}}"
+               deepReload="{{_options.menuMode === 'selector'}}"
+               on:searchStart="_searchStart()"
+               on:searchReset="_searchReset()"
+               on:inputSearchValueChanged="_inputSearchValueChanged()"
+               on:searchValueChanged="_searchValueChanged()"
+               on:rootChanged="_browserRootChanged()">
+      <ws:partial template="{{'Controls/listDataOld:ListContainer'}}">
+         <ws:partial template="menuPopupWrapper"
+                     filter="{{content.filter}}"
+                     root="{{content.root}}"
+                     isSourceControllerFromContext="{{_options.menuMode === 'selector' ? content.isSourceControllerFromContext : false}}"
+                     viewMode="{{content.viewMode}}"/>
+      </ws:partial>
+   </ws:partial>
+</ws:if>
+<ws:else data="{{_headerTemplate}}">
+   <ws:partial template="menuPopupWrapper" root="{{_options.root}}">
+      <ws:headerContentTemplate>
+         <ws:partial template="{{_headerTemplate}}"
+                     on:mouseenter="_headerMouseEnter()"
+                     multiSelect="{{_options.multiSelect}}"/>
+      </ws:headerContentTemplate>
+   </ws:partial>
+</ws:else>
+<ws:else>
+   <ws:partial template="menuPopupWrapper" root="{{_options.root}}" />
+</ws:else>

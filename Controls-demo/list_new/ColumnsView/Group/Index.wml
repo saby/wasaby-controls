@@ -1,0 +1,37 @@
+<div class="controlsDemo__wrapper">
+   <Controls.columns:View
+      name="columnsView"
+      storeId="ColumnsViewGroup"
+      groupProperty="brand"
+      itemActions="{{_itemActions}}"
+   >
+      <ws:groupTemplate>
+         <ws:partial
+            template="Controls/list:GroupTemplate"
+            iconSize="m"
+            fontSize="4xl"
+            textAlign="left"
+
+            expanderVisible="{{true}}"
+            separatorVisibility="{{false}}"
+
+            scope="{{groupTemplate}}"
+         >
+            <ws:rightTemplate>
+               <Controls.buttons:Button
+                  icon="icon-Add"
+                  viewMode="ghost"
+                  on:click="_add(rightTemplate.item.contents)"
+               />
+            </ws:rightTemplate>
+         </ws:partial>
+      </ws:groupTemplate>
+      <ws:itemTemplate>
+         <ws:partial template="Controls/columns:ItemTemplate">
+            <ws:contentTemplate>
+               <div style="padding: 5px">{{itemTemplate.item.getContents().get('title')}}</div>
+            </ws:contentTemplate>
+         </ws:partial>
+      </ws:itemTemplate>
+   </Controls.columns:View>
+</div>

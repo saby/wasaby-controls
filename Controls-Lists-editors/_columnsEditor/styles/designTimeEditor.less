@@ -1,0 +1,361 @@
+@columns-list_popup-width: 500px;
+@resizeLine-zIndex: 1;
+@add-button_zIndex: 2;
+@editor-popup_content-padding_top: 20px;
+@infoLine_container-height: 18px;
+@infoLine-zIndex: 0;
+@infoLine_spot-diameter: 5px;
+@search-width: 184px;
+
+.ControlsListsEditors_columnsDesignTime-markup_container {
+   display: grid;
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   pointer-events: all;
+}
+
+.ControlsListsEditors_selectionPopup_search-width {
+   width: @search-width;
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element-resizeLine {
+   position: absolute;
+   height: 100%;
+   z-index: @resizeLine-zIndex;
+}
+
+// Пока нет легального способа отключить подсветку по ховеру на resizeline, поэтому перебиваю
+.ws-is-hover .ControlsListsEditors_columnsDesignTime-markup_element-resizeLine {
+   .controls-ResizingLine__border:hover::before {
+      background: transparent;
+   }
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element-highlight {
+   position: absolute;
+   cursor: pointer;
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element-highlight-border_bold {
+   border-width: calc(var(--border-thickness) * 2);
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element-highlight-border {
+   border-width: var(--border-thickness);
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_drag-object {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background: var(--background-color);
+   opacity: 50%;
+   box-shadow: var(--shadow_b);
+   border-radius: var(--border-radius_s);
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element-close_button,
+.ControlsListsEditors_columnsDesignTime-markup_element_checkbox,
+.ControlsListsEditors_columnsDesignTime-markup_element-add_button {
+   cursor: pointer;
+   z-index: @add-button_zIndex;
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element-close_button,
+.ControlsListsEditors_columnsDesignTime-markup_element-add_button {
+   visibility: hidden;
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element-close_button-onRight {
+   right: 0;
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element-close_button-onBelow {
+   left: var(--offset_2xs);
+}
+
+.controls-BaseButton.ControlsListsEditors_columnsDesignTime-markup_element-close_button {
+   border-radius: var(--border-radius_s);
+   background: var(--danger_same_background-color);
+   opacity: 75%;
+   margin-top: var(--offset_2xs);
+   margin-right: var(--offset_2xs);
+   border-color: var(--danger_active_same_background-color);
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element-close_button:hover {
+   background: var(--danger_hover_same_background-color);
+   border-color: var(--danger_active_same_background-color);
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element_checkbox {
+   left: var(--offset_2xs);
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element-add_button-right {
+   right: 0;
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element-add_button-left {
+   left: 0;
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element-resizeLine-left {
+   left: 0;
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element-resizeLine-right {
+   right: 0;
+}
+
+.ControlsListsEditors_columnWidthEditor-wrapper {
+   display: flex;
+   white-space: nowrap;
+}
+
+.ControlsListsEditors_columnWidthEditor-width_mode {
+   margin-right: var(--offset_l);
+}
+
+.ControlsListsEditors_columnWidthEditor-width_text {
+   color: var(--unaccented_text-color);
+   font-size: var(--font-size_m);
+}
+
+.ControlsListsEditors-rightToolbar_margin-top {
+   margin-top: calc(var(--inline_height_xl) + 2 * var(--close-button_offset-top_stack));
+}
+
+.ControlsListsEditors-close_button {
+   position: absolute;
+   right: calc(
+      -1 * calc(var(--inline_height_xl) + var(--border_width_stack-right_panel) +
+               (var(--width_stack-right_panel) - var(--inline_height_xl)) / 2)
+   );
+   top: var(--close-button_offset-top_stack);
+}
+
+.ControlsListsEditors_columnWidthEditor-width_text-padding-left {
+   padding-left: var(--offset_xs);
+}
+
+.ControlsListsEditors_columnWidthEditor-width_text-padding-right {
+   padding-right: var(--offset_xs);
+}
+
+.ControlsListsEditors_subTreeEditor_view-wrapper {
+   margin-left: calc(-1 * var(--offset_m));
+   margin-right: calc(-1 * var(--offset_m));
+}
+
+.ControlsListsEditors_subTreeEditor_text {
+   font-size: var(--font-size_xs);
+   color: var(--text-color);
+   text-transform: uppercase;
+   font-weight: var(--font-weight_heading);
+   margin-right: var(--offset_m);
+}
+
+.ControlsListsEditors_subTreeEditor_add-columns_button {
+   margin-right: var(--offset_s);
+}
+
+.ControlsListsEditors_addFolderPopup_apply-button {
+   margin-left: var(--offset_m);
+}
+
+.ControlsListsEditors_columnsListPopup-header_text {
+   margin-right: var(--offset_m);
+   font-size: var(--font-size_m);
+   color: var(--text-color);
+   align-self: center;
+}
+
+.ControlsListsEditors_columnsListPopup-content_wrapper {
+   background: var(--unaccented_background-color);
+   height: 100%;
+   width: @columns-list_popup-width;
+}
+
+.ControlsListsEditors_columnsListPopup-column_customTitle {
+   font-size: var(--font-size_xs);
+   color: var(--unaccented_text-color);
+}
+
+.controls-ResizingLine__area_style-editor {
+   background: var(--info_hover_background-color);
+   opacity: 50%;
+}
+
+.ControlsListsEditors_columnsListPopup-content-padding_top {
+   padding-top: var(--offset_xs);
+}
+
+.ControlsListsEditors-popup_content .FrameMirror--mirror {
+   pointer-events: none;
+}
+
+.ControlsListsEditors-popup_content .frameEditor-ControlDesigner {
+   pointer-events: none;
+}
+
+.ControlsListsEditors-popup_content {
+   height: 100%;
+   position: relative;
+}
+
+.controls__block.ControlsListsEditors-frame_player_editor-wrapper {
+   background: var(--unaccented_background-color);
+   box-shadow: none;
+   padding-top: @editor-popup_content-padding_top;
+}
+
+.ControlsListsEditors-frame_player_editor-wrapper::before {
+   content: '\200b';
+   display: flex;
+}
+
+.ControlsListsEditors_info-line {
+   position: absolute;
+   offset-path: rect(0 0 100% 100%);
+   visibility: visible;
+   color: var(--label_text-color);
+   font-size: var(--font-size_3xs);
+   display: flex;
+   overflow: hidden;
+   height: @infoLine_container-height;
+   pointer-events: none;
+}
+
+// safari не поддерживает значение rect() у offset-path
+.ws-is-mac {
+   .ControlsListsEditors_info-line {
+      offset-path: path('M0 0 H 100 V 100 H 0 L 0 0');
+   }
+}
+
+.ControlsListsEditors_info-line-container {
+   position: relative;
+   overflow: hidden;
+   display: inline-flex;
+   justify-content: center;
+}
+
+.ControlsListsEditors_info-line-content {
+   display: inline-flex;
+   white-space: nowrap;
+   background: var(--unaccented_background-color);
+}
+
+.ControlsListsEditors_info-line-spot-wrapper {
+   position: absolute;
+   text-align: center;
+   background: var(--unaccented_background-color);
+   left: calc(50% - (@infoLine_spot-diameter / 2) - var(--offset_2xs));
+   margin-top: calc(
+      -1 * 2 * @infoLine_container-height + var(--border-thickness) + @infoLine_spot-diameter
+   );
+   pointer-events: all;
+   cursor: pointer;
+}
+
+.ControlsListsEditors_info-line-spot {
+   width: @infoLine_spot-diameter;
+   height: @infoLine_spot-diameter;
+   background: var(--label_text-color);
+   border-radius: 50%;
+}
+
+.ControlsListsEditors_info-line-text {
+   padding-right: var(--offset_2xs);
+   padding-left: var(--offset_2xs);
+}
+
+.ControlsListsEditors_info-line-text-wrapper {
+   display: inline-block;
+   font-size: var(--font-size_3xs);
+   white-space: pre-wrap;
+   overflow: hidden;
+   line-height: @infoLine_container-height;
+   z-index: @infoLine-zIndex;
+}
+
+.ControlsListsEditors_info-line-separator {
+   position: absolute;
+   left: 0;
+   right: 0;
+   height: var(--border-thickness);
+   border-top: var(--unaccented_border-color) solid var(--border-thickness);
+   top: calc(50% - var(--border-thickness));
+}
+
+@variants: s, m;
+.for(@variants, {
+   .ControlsListsEditors_info-line-spacingRight_@{_item} {
+      right: ~' calc(var(--offset_@{_item}) / 2)'
+   }
+   .ControlsListsEditors_info-line-spacingLeft_@{_item} {
+      left: ~' calc(var(--offset_@{_item}) / 2)'
+   }
+});
+
+.ControlsListsEditors_info-line-spacingRight_null {
+   margin-right: 0;
+}
+
+.ControlsListsEditors_info-line-spacingLeft_null {
+   margin-left: 0;
+}
+
+.ControlsListsEditors_info-line-animation-hidden {
+   animation: fadeInFromNone 0.5s ease-out;
+   visibility: hidden;
+}
+
+@keyframes fadeInFromNone {
+   0% {
+      opacity: 1;
+      visibility: visible;
+   }
+
+   1% {
+      opacity: 1;
+   }
+
+   100% {
+      opacity: 0;
+      visibility: hidden;
+   }
+}
+
+.ControlsListsEditors-popup {
+   width: 100%;
+}
+
+.ControlsListsEditors-popup .controls-StackTemplate__rightBorder_hided {
+   background: var(--background-color);
+   border-color: var(--background-color);
+}
+
+.ControlsListsEditors_columnsDesignTime-markup_element:hover {
+   .ControlsListsEditors_columnsDesignTime-markup_element-highlight {
+      width: calc(100% + var(--border-thickness));
+      background: var(--info_hover_background-color);
+      opacity: 50%;
+      border-radius: var(--border-radius_xs);
+      border-color: var(--info_border-color);
+      border-style: solid;
+      box-sizing: border-box;
+   }
+
+   .ControlsListsEditors_columnsDesignTime-markup_element-close_button,
+   .ControlsListsEditors_columnsDesignTime-markup_element-add_button,
+   .ControlsListsEditors_columnsDesignTime-markup_element_checkbox {
+      visibility: visible;
+   }
+}

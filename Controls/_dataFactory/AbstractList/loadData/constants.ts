@@ -1,0 +1,1 @@
+export const QUERY_PARAMS_LOAD_TIMEOUT = 5000;
