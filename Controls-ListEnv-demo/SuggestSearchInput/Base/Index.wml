@@ -1,0 +1,9 @@
+<div class="engine-demo__widgets_suggest">
+    <Controls-ListEnv.ExtSearchConnected storeId="employees"
+                                         searchParam="title"
+                                         filterNames="{{ ['city', 'company', 'owner'] }}"
+    />
+    <Controls.treeGrid:View storeId="employees"
+                            columns="{{ _columns }}"
+    />
+</div>

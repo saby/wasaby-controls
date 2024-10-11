@@ -1,0 +1,57 @@
+<!--  По ошибке  https://online.sbis.ru/opendoc.html?guid=90bc9142-7a33-43f0-8b04-86a90bb63791&client=3 -->
+<ws:template name="list">
+   <Controls._baseList.Data scope="{{_options}}"
+                            insideList="{{true}}"
+                            disableSource="{{ _disableSource }}"
+                            name="data"
+                            navigation="{{ _disableSource ? undefined : _options.navigation }}"
+                            isSourceControllerFromContext="{{ _disableSource ? false : _options.isSourceControllerFromContext }}"
+                            doNotSendNullRootForMemory="{{ _disableSource ? false : _options.doNotSendNullRootForMemory }}">
+      <ws:partial template="{{ _compatibilityWrapper }}">
+         <ws:partial
+            name="listControl"
+            template="{{_viewTemplate}}"
+            viewName="{{_viewName}}"
+            ViewComponent="{{_getWasabyView && _getWasabyView()}}"
+            viewModelConstructor="{{_viewModelConstructor}}"
+            _isReactView="{{ _isReactView }}"
+            task1187242805="{{ _task1187242805 }}"
+            itemsSelector="{{_itemsSelector}}"
+            listVirtualScrollControllerConstructor="{{_listVirtualScrollControllerConstructor}}"
+            attr:data-qa="{{_options['data-qa']}}"
+            markerStrategy="{{_markerStrategy}}"
+            notifyCallback="{{ _notifyCallback }}"
+            navigation="{{ _disableSource ? _options.navigation : content.navigation }}"
+
+            attachLoadTopTriggerToNull="{{ false }}"
+            attachLoadBottomTriggerToNull="{{ false }}"
+
+            sourceController="{{null}}"
+         />
+      </ws:partial>
+   </Controls._baseList.Data>
+</ws:template>
+
+<ws:if data="{{ _useReactScrollContexts }}">
+    <!--  После переписывания таблиц на реакт это уйдет в Controls/_gridColumnScroll/GridControl.  -->
+    <!--  На васаби нельзя поймать контекст в контроле, нужно добавлять прослойки, а это трафик.   -->
+    <ws:partial template="{{ 'Controls/columnScrollReact:ColumnScrollContextProvider' }}"
+                GUID="{{ _uniqueId }}"
+                autoScrollAnimation="{{ _options.columnScrollAutoScrollAnimation || 'smooth' }}"
+                columnScrollStartPosition="{{ _options.columnScrollStartPosition }}"
+                onEdgesStateChanged="{{ _options.onEdgesStateChanged }}"
+                onPositionChanged="{{ _options.onPositionChanged }}"
+                autoScrollMode="{{ _options.columnScrollAutoScrollMode }}"
+                selectors="{{ _getColumnScrollSelectors && _getColumnScrollSelectors() }}"
+    >
+        <ws:partial template="{{ 'Controls/columnScrollReact:DragScrollContextProvider' }}"
+					isEnabled="{{ _options.dragScrolling }}">
+            <ws:partial template="{{ 'Controls/gridColumnScroll:WasabyGridContextCompatibilityConsumer' }}">
+                <ws:partial template="list"/>
+            </ws:partial>
+        </ws:partial>
+    </ws:partial>
+</ws:if>
+<ws:else>
+    <ws:partial template="list"/>
+</ws:else>

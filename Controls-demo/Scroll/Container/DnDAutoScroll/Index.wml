@@ -1,0 +1,24 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:style="height: 300px;">
+        <Controls.browser:Browser name="dataContainer" source="{{_viewSource}}" keyProperty="key" bind:selectedKeys="_selectedKeys">
+                <div>
+                    <Controls.listDeprecate:Mover name="listMover"/>
+                    <Controls.listDataOld:ListContainer>
+                        <Controls.list:View
+                                on:customdragStart="_dragStart()"
+                                on:customdragEnd="_dragEnd()"
+                                multiSelectVisibility="{{_multiselect}}"
+                                displayProperty="title"
+                                itemsReadyCallback="{{_itemsReadyCallback}}"
+                                itemsDragNDrop="{{true}}">
+                            <ws:draggingTemplate>
+                                <ws:partial template="Controls/dragnDrop:DraggingTemplate"
+                                            mainText="{{draggingTemplate.entity._options.title}}">
+                                </ws:partial>
+                            </ws:draggingTemplate>
+                        </Controls.list:View>
+                    </Controls.listDataOld:ListContainer>
+                </div>
+        </Controls.browser:Browser>
+    </Controls.scroll:Container>
+</div>

@@ -1,0 +1,9 @@
+<ws:partial template="Controls/CheckboxGroup:defaultItemTemplate" scope="{{ _options }}">
+   <ws:contentTemplate>
+      <div attr:class="{{ _options.item.type === 'short' ? 'search-Input-demo_itemTemplate__short' : 'search-Input-demo_itemTemplate__long'}}">
+         <span class="controls-fontsize-l">
+            {{ _options.item.title }}
+         </span>
+      </div>
+   </ws:contentTemplate>
+</ws:partial>

@@ -1,0 +1,6 @@
+<div>
+    {{msg}} :
+    <div>
+        <Controls.buttons:Button caption="{{currentValue}}" fontColorStyle="link" viewMode="linkButton" fontSize="m"/>
+    </div>
+</div>

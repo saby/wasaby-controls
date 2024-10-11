@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper">
+   <Controls.scroll:Container attr:class="controlsDemo__height400 controlsDemo__minWidth600 controlsDemo__maxWidth1200">
+      <Controls.columns:View storeId="ColumnsViewContentPadding">
+         <ws:itemTemplate>
+            <ws:partial template="Controls/columns:ItemTemplate" contentPadding="{{_contentPadding}}" />
+         </ws:itemTemplate>
+      </Controls.columns:View>
+   </Controls.scroll:Container>
+</div>

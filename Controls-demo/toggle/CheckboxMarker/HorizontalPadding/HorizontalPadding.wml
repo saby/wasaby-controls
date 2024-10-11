@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper controlsDemo__wrapper__padding-left">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">horizontalPadding = default</div>
+        <div class="controlsDemo__flex">
+            <Controls.checkbox:CheckboxMarker bind:value="_value1" horizontalPadding="default"/>Caption
+        </div>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">horizontalPadding = null</div>
+        <div class="controlsDemo__flex">
+            <Controls.checkbox:CheckboxMarker bind:value="_value2" horizontalPadding="null"/>Caption
+        </div>
+    </div>
+</div>

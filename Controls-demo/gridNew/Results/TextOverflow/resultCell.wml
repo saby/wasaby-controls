@@ -1,0 +1,6 @@
+<ws:partial template="Controls/grid:ResultColumnTemplate" scope="{{_options}}">
+    <div class="ws-ellipsis">
+        <div class="ws-ellipsis" title="Среднее">Среднее:</div>
+        <Controls.baseDecorator:Money attr:class="ws-ellipsis" value="{{ content.results.square }}" useGrouping="{{ true }}" fontWeight="bold" fontColorStyle="primary"/>
+    </div>
+</ws:partial>

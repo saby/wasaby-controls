@@ -1,0 +1,549 @@
+.controls-InfoBoxTemplate {
+   display: flex;
+   height: 100%;
+}
+
+.controls-InfoBoxTemplate_horizontal-direction-right {
+   padding-right: var(--offset_m);
+}
+
+.controls-InfoBoxTemplate_horizontal-direction-left {
+   padding-left: var(--offset_m);
+}
+
+.controls-InfoBoxTemplate__content {
+   height: 100%;
+   position: relative;
+   box-sizing: border-box;
+   flex-shrink: 1;
+   width: 100%;
+   box-shadow: var(--shadow_a);
+   max-height: inherit;
+
+   &-maxWidth {
+      max-width: var(--max-width_infobox);
+   }
+}
+
+.controls-InfoBoxTemplate__backgroundStyle-secondary {
+   background-color: var(--background-color_infobox);
+}
+
+.controls-InfoBoxTemplate__content-area {
+   position: relative;
+   z-index: 1;
+   flex-direction: column;
+   display: flex;
+   align-items: baseline;
+}
+
+.controls-InfoBoxTemplate__arrow-side-position-left {
+   flex-direction: row-reverse;
+   padding-left: var(--target_offset_infobox);
+}
+
+.controls-InfoBoxTemplate__arrow-side-position-right {
+   padding-right: var(--target_offset_infobox);
+}
+
+.controls-InfoBoxTemplate__arrow-side-position-top {
+   flex-direction: column-reverse;
+   padding-top: var(--target_offset_infobox);
+}
+
+.controls-InfoBoxTemplate__arrow-side-position-bottom {
+   flex-direction: column;
+   padding-bottom: var(--target_offset_infobox);
+}
+
+.controls-InfoBoxTemplate__closeButton {
+   position: absolute;
+   cursor: pointer;
+   z-index: 2;
+   top: var(--close-button_offset-top_infobox);
+   right: var(--close-button_offset-right_infobox);
+}
+
+/**
+ * In firefox and safari, the text baseline is 1px higher than the standard.
+ * Compensate for this by reducing the indentation between the close button and the upper border by 1px.
+ * Presumably the problem is in the font. Error written https://online.sbis.ru/opendoc.html?guid=1e389bc5-8be7-4394-abdd-231e3ec040a8
+ */
+.ws-is-firefox,
+.ws-is-mobile-safari {
+   .controls-InfoBoxTemplate__closeButton {
+      top: calc(var(--close-button_offset-top_infobox) + 1px);
+   }
+}
+
+@infoboxTemplate_arrow-indent: calc(
+   var(--arrow_offset_infobox) +
+      ((var(--arrow_base_length_infobox) - var(--arrow_side_length_infobox)) / 2) +
+      var(--marker-thickness_infobox)
+);
+
+.controls-InfoBoxTemplate__arrow-side-start {
+   align-items: flex-start;
+}
+
+.controls-InfoBoxTemplate__arrow-side-center {
+   align-items: center;
+}
+
+.controls-InfoBoxTemplate__arrow-side-end {
+   align-items: flex-end;
+}
+
+.controls-InfoBoxTemplate__backgroundGradientPosition-right-end {
+   background: radial-gradient(
+         180% 100% at -30% 20%,
+         transparent 0%,
+         var(--infobox_gradient_color) 100%
+      ),
+      var(--background-color_stack);
+}
+
+.controls-InfoBoxTemplate__backgroundGradientPosition-right-center {
+   background: radial-gradient(
+         140% 200% at -30% 50%,
+         transparent 0%,
+         var(--infobox_gradient_color) 100%
+      ),
+      var(--background-color_stack);
+}
+
+.controls-InfoBoxTemplate__backgroundGradientPosition-right-start {
+   background: radial-gradient(
+         180% 100% at -30% 100%,
+         transparent 0%,
+         var(--infobox_gradient_color) 100%
+      ),
+      var(--background-color_stack);
+}
+
+.controls-InfoBoxTemplate__backgroundGradientPosition-left-start {
+   background: radial-gradient(
+         180% 100% at 130% 100%,
+         transparent 0%,
+         var(--infobox_gradient_color) 100%
+      ),
+      var(--background-color_stack);
+}
+
+.controls-InfoBoxTemplate__backgroundGradientPosition-left-center {
+   background: radial-gradient(
+         140% 200% at 130% 50%,
+         transparent 0%,
+         var(--infobox_gradient_color) 100%
+      ),
+      var(--background-color_stack);
+}
+
+.controls-InfoBoxTemplate__backgroundGradientPosition-left-end {
+   background: radial-gradient(
+         180% 100% at 130% 0%,
+         transparent 0%,
+         var(--infobox_gradient_color) 100%
+      ),
+      var(--background-color_stack);
+}
+
+.controls-InfoBoxTemplate__backgroundGradientPosition-top-end {
+   background: radial-gradient(
+         180% 100% at -30% 100%,
+         transparent 0%,
+         var(--infobox_gradient_color) 100%
+      ),
+      var(--background-color_stack);
+}
+
+.controls-InfoBoxTemplate__backgroundGradientPosition-top-center {
+   background: radial-gradient(
+         180% 100% at 50% 100%,
+         transparent 0%,
+         var(--infobox_gradient_color) 100%
+      ),
+      var(--background-color_stack);
+}
+
+.controls-InfoBoxTemplate__backgroundGradientPosition-top-start {
+   background: radial-gradient(
+         180% 100% at 130% 100%,
+         transparent 0%,
+         var(--infobox_gradient_color) 100%
+      ),
+      var(--background-color_stack);
+}
+
+.controls-InfoBoxTemplate__backgroundGradientPosition-bottom-start {
+   background: radial-gradient(
+         180% 100% at 130% 0%,
+         transparent 0%,
+         var(--infobox_gradient_color) 100%
+      ),
+      var(--background-color_stack);
+}
+
+.controls-InfoBoxTemplate__backgroundGradientPosition-bottom-center {
+   background: radial-gradient(
+         130% 120% at 50% 0%,
+         transparent 0%,
+         var(--infobox_gradient_color) 100%
+      ),
+      var(--background-color_stack);
+}
+
+.controls-InfoBoxTemplate__backgroundGradientPosition-bottom-end {
+   background: radial-gradient(
+         130% 120% at -30% 0%,
+         transparent 0%,
+         var(--infobox_gradient_color) 100%
+      ),
+      var(--background-color_stack);
+}
+
+.controls-InfoBoxTemplate__backgroundGradientStyle-secondary {
+   --infobox_gradient_color: var(--secondary_background-color);
+}
+
+.controls-InfoBoxTemplate__backgroundGradientStyle-danger {
+   --infobox_gradient_color: var(--danger_background-color);
+}
+
+.controls-InfoBoxTemplate__backgroundGradientStyle-warning {
+   --infobox_gradient_color: var(--warning_background-color);
+}
+
+.controls-InfoBoxTemplate__backgroundGradientStyle-info {
+   --infobox_gradient_color: var(--info_background-color);
+}
+
+.controls-InfoBoxTemplate__backgroundGradientStyle-primary {
+   --infobox_gradient_color: var(--primary_background-color);
+}
+
+.controls-InfoBoxTemplate__backgroundGradientStyle-unaccented,
+.controls-InfoBoxTemplate__backgroundGradientStyle-default {
+   --infobox_gradient_color: var(--unaccented_background-color);
+}
+
+.controls-InfoBoxTemplate__backgroundGradientStyle-success {
+   --infobox_gradient_color: var(--success_background-color);
+}
+
+// Нет возможности нормально темизировать, так как встроенные функции less reg(), green() и т.д. не работают с css-переменными
+/* stylelint-disable saby/theme-colors */
+.controls-InfoBoxTemplate__borderGradientStyle-secondary {
+   --infobox_border_gradient-color: rgba(82, 146, 220, 0.35);
+}
+
+.controls-InfoBoxTemplate__borderGradientStyle-primary {
+   --infobox_border_gradient-color: rgba(248, 143, 98, 0.35);
+}
+
+.controls-InfoBoxTemplate__borderGradientStyle-danger,
+.controls-InfoBoxTemplate__borderGradientStyle-invalid,
+.controls-InfoBoxTemplate__borderGradientStyle-invalidAccent {
+   --infobox_border_gradient-color: rgba(248, 106, 98, 0.35);
+}
+
+.controls-InfoBoxTemplate__borderGradientStyle-warning {
+   --infobox_border_gradient-color: rgba(248, 198, 98, 0.35);
+}
+
+.controls-InfoBoxTemplate__borderGradientStyle-info {
+   --infobox_border_gradient-color: rgba(123, 98, 248, 0.35);
+}
+
+.controls-InfoBoxTemplate__borderGradientStyle-pale {
+   --infobox_border_gradient-color: rgba(83, 92, 104, 0.35);
+}
+
+.controls-InfoBoxTemplate__borderGradientStyle-unaccented {
+   --infobox_border_gradient-color: rgba(153, 153, 153, 0.35);
+}
+
+.controls-InfoBoxTemplate__borderGradientStyle-success {
+   --infobox_border_gradient-color: rgba(80, 206, 104, 0.35);
+}
+
+/* stylelint-enable saby/theme-colors */
+
+@arrowOffset: calc(-1 * ((var(--arrow_side_length_infobox) / 2) - var(--border-thickness)));
+
+.controls-InfoBoxTemplate__line {
+   border-radius: inherit;
+
+   &::before {
+      mask-image: linear-gradient(
+         var(--infobox_line_gradient-degree),
+         transparent,
+         #000 5%,
+         #000 55%,
+         transparent 100%
+      );
+      content: '';
+      position: absolute;
+      box-sizing: border-box;
+      width: 70%;
+      border-radius: inherit;
+      z-index: 2;
+      pointer-events: none;
+   }
+
+   .ws-is-ie &::before {
+      mask-image: none;
+   }
+
+   &_withArrow::after {
+      content: '';
+      position: absolute;
+      box-sizing: border-box;
+      width: calc(var(--arrow_side_length_infobox) - var(--border-thickness));
+      height: calc(var(--arrow_side_length_infobox) - var(--border-thickness));
+      border-left: var(--border-thickness) solid var(--infobox_border_gradient-color);
+      border-top: var(--border-thickness) solid var(--infobox_border_gradient-color);
+      background: var(--infobox_gradient_color);
+      z-index: 2;
+      mask-image: linear-gradient(180deg, transparent 0%, #000 5%, #000 97%, transparent 100%);
+   }
+
+   .ws-is-ie &_withArrow::after {
+      mask-image: none;
+   }
+}
+
+.controls-InfoBoxTemplate__line-arrowSide-right,
+.controls-InfoBoxTemplate__line-arrowSide-left {
+   &::before {
+      width: var(--inline_height_l);
+   }
+}
+
+.controls-InfoBoxTemplate__line-arrowSide-right {
+   &::after {
+      right: @arrowOffset;
+      transform: rotate(135deg);
+   }
+
+   &::before {
+      top: 0;
+      bottom: 0;
+      right: 0;
+      border-right: var(--border-thickness) solid var(--infobox_border_gradient-color);
+   }
+
+   &.controls-InfoBoxTemplate__line-arrowPosition-start {
+      &::before {
+         --infobox_line_gradient-degree: 180deg;
+      }
+
+      &::after {
+         top: @infoboxTemplate_arrow-indent;
+      }
+   }
+
+   &.controls-InfoBoxTemplate__line-arrowPosition-center {
+      &::before {
+         mask-image: linear-gradient(180deg, transparent 0%, #000 50%, transparent 100%);
+      }
+
+      &::after {
+         top: calc(50% - (var(--arrow_side_length_infobox) / 2));
+      }
+   }
+
+   &.controls-InfoBoxTemplate__line-arrowPosition-end {
+      &::before {
+         --infobox_line_gradient-degree: 360deg;
+      }
+
+      &::after {
+         bottom: @infoboxTemplate_arrow-indent;
+      }
+   }
+}
+
+.controls-InfoBoxTemplate__line-arrowSide-bottom {
+   &::before {
+      bottom: 0;
+      border-bottom: var(--border-thickness) solid var(--infobox_border_gradient-color);
+      height: var(--offset_m);
+   }
+
+   &::after {
+      bottom: @arrowOffset;
+      transform: rotate(-135deg);
+   }
+
+   &.controls-InfoBoxTemplate__line-arrowPosition-start {
+      &::before {
+         --infobox_line_gradient-degree: 90deg;
+         left: 0;
+      }
+
+      &::after {
+         left: @infoboxTemplate_arrow-indent;
+      }
+   }
+
+   &.controls-InfoBoxTemplate__line-arrowPosition-center {
+      &::before {
+         mask-image: linear-gradient(270deg, transparent 0%, #000 55%, transparent 100%);
+         width: 100%;
+      }
+
+      &::after {
+         left: calc(50% - (var(--arrow_side_length_infobox) / 2));
+      }
+   }
+
+   &.controls-InfoBoxTemplate__line-arrowPosition-end {
+      &::before {
+         --infobox_line_gradient-degree: 270deg;
+         right: 0;
+      }
+
+      &::after {
+         right: @infoboxTemplate_arrow-indent;
+      }
+   }
+}
+
+.controls-InfoBoxTemplate__line-arrowSide-top {
+   &::before {
+      top: 0;
+      border-top: var(--border-thickness) solid var(--infobox_border_gradient-color);
+      height: var(--offset_m);
+   }
+
+   &::after {
+      top: @arrowOffset;
+      transform: rotate(45deg);
+   }
+
+   &.controls-InfoBoxTemplate__line-arrowPosition-start {
+      &::before {
+         --infobox_line_gradient-degree: 90deg;
+         left: 0;
+      }
+
+      &::after {
+         left: @infoboxTemplate_arrow-indent;
+      }
+   }
+
+   &.controls-InfoBoxTemplate__line-arrowPosition-center {
+      &::before {
+         mask-image: linear-gradient(270deg, transparent 0%, #000 50%, transparent 100%);
+         width: 100%;
+      }
+
+      &::after {
+         left: calc(50% - (var(--arrow_side_length_infobox) / 2));
+      }
+   }
+
+   &.controls-InfoBoxTemplate__line-arrowPosition-end {
+      &::before {
+         --infobox_line_gradient-degree: 270deg;
+         right: 0;
+      }
+
+      &::after {
+         right: @infoboxTemplate_arrow-indent;
+      }
+   }
+}
+
+.controls-InfoBoxTemplate__line-arrowSide-left {
+   &::before {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      border-left: var(--border-thickness) solid var(--infobox_border_gradient-color);
+   }
+
+   &::after {
+      left: calc(-1 * ((var(--arrow_side_length_infobox) / 2) - var(--border-thickness)));
+      transform: rotate(-45deg);
+   }
+
+   &.controls-InfoBoxTemplate__line-arrowPosition-start {
+      &::before {
+         --infobox_line_gradient-degree: 180deg;
+      }
+
+      &::after {
+         top: @infoboxTemplate_arrow-indent;
+      }
+   }
+
+   &.controls-InfoBoxTemplate__line-arrowPosition-center {
+      &::before {
+         mask-image: linear-gradient(180deg, transparent 0%, #000 50%, transparent 100%);
+      }
+
+      &::after {
+         top: calc(50% - (var(--arrow_side_length_infobox) / 2));
+      }
+   }
+
+   &.controls-InfoBoxTemplate__line-arrowPosition-end {
+      &::before {
+         --infobox_line_gradient-degree: 360deg;
+      }
+
+      &::after {
+         bottom: @infoboxTemplate_arrow-indent;
+      }
+   }
+}
+// В ie11 не работает градиент
+.ws-is-ie11 {
+   .controls-InfoBoxTemplate__content {
+      background: var(--background-color);
+   }
+
+   .controls-InfoBoxTemplate__line::after {
+      background: var(--background-color);
+      // В ie11 не стиль rotate без transform
+      transform: rotate(45);
+   }
+
+   .controls-InfoBoxTemplate__line-arrowSide-right::before {
+      border-right: var(--border-thickness) solid var(--secondary_border-color);
+   }
+
+   .controls-InfoBoxTemplate__line-arrowSide-left::before {
+      border-left: var(--border-thickness) solid var(--secondary_border-color);
+   }
+
+   .controls-InfoBoxTemplate__line-arrowSide-top::before {
+      border-top: var(--border-thickness) solid var(--secondary_border-color);
+   }
+
+   .controls-InfoBoxTemplate__line-arrowSide-bottom::before {
+      border-bottom: var(--border-thickness) solid var(--secondary_border-color);
+   }
+
+   .controls-InfoBoxTemplate__borderGradientStyle-danger,
+   .controls-InfoBoxTemplate__borderGradientStyle-invalid,
+   .controls-InfoBoxTemplate__borderGradientStyle-invalidAccent {
+      .controls-InfoBoxTemplate__line-arrowSide-right::before {
+         border-right: var(--border-thickness) solid var(--danger_border-color);
+      }
+
+      .controls-InfoBoxTemplate__line-arrowSide-left::before {
+         border-left: var(--border-thickness) solid var(--danger_border-color);
+      }
+
+      .controls-InfoBoxTemplate__line-arrowSide-top::before {
+         border-top: var(--border-thickness) solid var(--danger_border-color);
+      }
+
+      .controls-InfoBoxTemplate__line-arrowSide-bottom::before {
+         border-bottom: var(--border-thickness) solid var(--danger_border-color);
+      }
+   }
+}

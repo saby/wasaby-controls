@@ -1,0 +1,6 @@
+<Controls.filterPopup:Dropdown
+        bind:selectedKeys="item.value"
+        bind:textValue="item.textValue"
+        emptyText="{{item.emptyText}}"
+        scope="{{item.editorOptions}}"
+/>

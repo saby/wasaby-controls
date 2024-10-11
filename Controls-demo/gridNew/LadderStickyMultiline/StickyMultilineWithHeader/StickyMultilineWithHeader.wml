@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:class="controlsDemo__height300">
+        <Controls.grid:View
+                storeId="LadderStickyMultilineStickyMultilineWithHeader1"
+                columns="{{_columns}}"
+                header="{{_header}}"
+                resultsPosition="top"
+                ladderProperties="{{_ladderProperties}}"/>
+    </Controls.scroll:Container>
+</div>

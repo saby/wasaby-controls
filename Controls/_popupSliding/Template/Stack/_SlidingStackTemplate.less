@@ -1,0 +1,105 @@
+.controls-SlidingPanel {
+   position: relative;
+}
+
+.controls-Popup .controls-SlidingPanel {
+   transform: translateZ(0);
+}
+
+// В мобильной версии отступ должен остаться 12px, решение проектирования
+// https://online.sbis.ru/opendoc.html?guid=640fd1d5-c032-4146-9802-a9286bd78728&client=3
+.controls-SlidingStackPanel {
+   --outer_padding: var(--offset_m);
+}
+
+.controls-SlidingStackPanel__closeButton {
+   display: flex;
+   align-items: baseline;
+   align-self: center;
+   flex-shrink: 0;
+}
+
+.controls-SlidingStackPanel__header {
+   width: 100%;
+   box-sizing: border-box;
+   display: flex;
+   align-items: baseline;
+   justify-content: flex-start;
+   min-height: calc(var(--inline_height_xl) + var(--offset_st) * 2);
+   flex-shrink: 0;
+
+   &::before {
+      content: '\200b';
+      font-size: var(--inline_height_xl);
+   }
+}
+
+.controls-SlidingStackPanel__headerContentTemplate {
+   align-self: center;
+   flex-shrink: 1;
+   flex-grow: 1;
+}
+
+.controls-SlidingStackPanel__headerBackgroundColor {
+   background: var(--unaccented_background-color);
+}
+
+.controls-SlidingStackPanel__toolbar {
+   align-self: center;
+}
+
+.controls-SlidingStackPanel__close-button {
+   flex-shrink: 0;
+   z-index: 1;
+   align-self: center;
+}
+
+.controls-SlidingStackPanel__actionContentTemplate {
+   z-index: 16;
+   position: fixed;
+   right: var(--offset_st);
+   max-width: 100%;
+   bottom: calc(
+      var(--horizontal_item_height_NavigationPanels-Accordion, 0px) + var(--offset_m) +
+         env(safe-area-inset-bottom)
+   );
+}
+
+.controls-SlidingPanel__customContentWrapper {
+   overflow-x: auto;
+   flex-grow: 1;
+   display: flex;
+   flex-direction: column;
+}
+
+.controls-SlidingStackPanel__headingCaption {
+   align-self: center;
+   flex-shrink: 1;
+}
+
+.controls-SlidingStackPanel__counter {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   min-width: var(--icon-size_s);
+   height: var(--icon-size_s);
+   background-color: var(--primary_icon-color);
+   color: var(--contrast_text-color);
+   font-size: var(--font-size_3xs);
+   align-self: center;
+   border-radius: var(--border-radius_button);
+   margin-right: var(--offset_m);
+}
+
+.controls-SlidingStackPanel__apply-button {
+   align-self: center;
+   margin-right: var(--offset_m);
+}
+
+.controls-SlidingStackPanel__imageContent {
+   align-self: center;
+}
+
+.controls-SlidingStackPanel__header_margin-left-auto {
+   margin-left: auto;
+}

@@ -1,0 +1,215 @@
+// ширина самой тонкой части горизонтального сечения картинки leftArrow.
+@spacing_HorizontalWizard-big-separator: var(--offset_s);
+@spacing_HorizontalWizard-short-separator: var(--offset_2xs);
+
+.Wizard-Horizontal-StepBar {
+   &-displayMode {
+      &-default {
+         height: var(--height_Wizard-horizontal);
+         font-size: var(--font-size_3xl);
+      }
+
+      &-compact {
+         height: var(--compact_height_Wizard-horizontal);
+         font-size: var(--font-size_l);
+      }
+   }
+
+   &__items-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      overflow-y: hidden;
+   }
+
+   &__item-container {
+      position: relative;
+   }
+
+   &__item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      box-sizing: border-box;
+      background: var(--unaccented_background-color);
+
+      &-displayMode {
+         &-default {
+            // 1px чтобы стрелка rightArrow наезжала на тело стрелки item и не появлялось белой полосы между стрелкой и блоком в ie и safari
+            width: calc(
+               100% -
+                  (
+                     var(--arrow_width_Wizard-horizontal) + @spacing_HorizontalWizard-big-separator +
+                        var(--separator_thickness_Wizard-horizontal) - 1px
+                  )
+            );
+
+            &:not(:first-child) {
+               margin-left: calc(
+                  var(--arrow_width_Wizard-horizontal) +
+                     var(--separator_thickness_Wizard-horizontal)
+               );
+            }
+         }
+
+         &-compact {
+            // 1px чтобы стрелка rightArrow наезжала на тело стрелки item и не появлялось белой полосы между стрелкой и блоком в ie и safari
+            width: calc(
+               100% -
+                  (
+                     var(--offset_m) + @spacing_HorizontalWizard-short-separator +
+                        var(--separator_thickness_Wizard-horizontal) - 1px
+                  )
+            );
+
+            &:not(:first-child) {
+               margin-left: calc(var(--offset_m) + var(--separator_thickness_Wizard-horizontal));
+            }
+         }
+      }
+
+      &-last {
+         width: 100%;
+      }
+
+      &-leftArrow {
+         height: 100%;
+         position: absolute;
+         top: 0;
+
+         &-displayMode {
+            &-default {
+               left: calc(-1 * var(--arrow_width_Wizard-horizontal));
+               // +1px чтобы стрелка leftArrow наезжала на тело стрелки item и не появлялось белой полосы между стрелкой и блоком в ie и safari
+               width: calc(var(--arrow_width_Wizard-horizontal) + 1px);
+            }
+
+            &-compact {
+               left: calc(-1 * var(--offset_m));
+               // +1px чтобы стрелка leftArrow наезжала на тело стрелки item и не появлялось белой полосы между стрелкой и блоком в ie и safari
+               width: calc(var(--offset_m) + 1px);
+            }
+         }
+
+         &-active {
+            fill: var(--current_item_background-color_Wizard-horizontal);
+         }
+
+         &-future {
+            fill: var(--unaccented_background-color);
+         }
+
+         &-traversed {
+            fill: var(--selected_item_background-color_Wizard-horizontal);
+         }
+      }
+
+      &-rightArrow {
+         position: absolute;
+         height: 100%;
+         z-index: 4;
+         top: 0;
+         fill: var(--unaccented_background-color);
+
+         &-displayMode {
+            &-default {
+               left: calc(
+                  100% -
+                     (
+                        var(--arrow_width_Wizard-horizontal) +
+                           @spacing_HorizontalWizard-big-separator +
+                           var(--separator_thickness_Wizard-horizontal)
+                     )
+               );
+               // 1px чтобы стрелка rightArrow наезжала на тело стрелки item и не появлялось белой полосы между стрелкой и блоком в ie и safari
+               width: calc(var(--arrow_width_Wizard-horizontal) + 1px);
+            }
+
+            &-compact {
+               left: calc(
+                  100% -
+                     (
+                        var(--offset_m) + @spacing_HorizontalWizard-short-separator +
+                           var(--separator_thickness_Wizard-horizontal)
+                     )
+               );
+               // 1px чтобы стрелка rightArrow наезжала на тело стрелки item и не появлялось белой полосы между стрелкой и блоком в ie и safari
+               width: calc(var(--offset_m) + 1px);
+            }
+         }
+
+         &-active {
+            fill: var(--current_item_background-color_Wizard-horizontal);
+         }
+
+         &-future {
+            fill: var(--unaccented_background-color);
+         }
+
+         &-traversed {
+            fill: var(--selected_item_background-color_Wizard-horizontal);
+         }
+      }
+
+      &-title {
+         width: 100%;
+         text-align: center;
+         padding: 0 var(--offset_s);
+         box-sizing: border-box;
+         color: var(--unaccented_text-color);
+
+         &-active {
+            background: var(--current_item_background-color_Wizard-horizontal);
+            color: var(--contrast_text-color);
+         }
+
+         &-future {
+            background: var(--unaccented_background-color);
+            color: var(--unaccented_text-color);
+         }
+
+         &-traversed {
+            background: var(--selected_item_background-color_Wizard-horizontal);
+            color: var(--text-color);
+         }
+      }
+
+      &::before {
+         box-shadow: calc(-1 * var(--separator_thickness_Wizard-horizontal)) 0 0
+            var(--background-color); //разделитель - цвета основного фона
+         left: calc(100% + var(--separator_thickness_Wizard-horizontal));
+      }
+
+      &-active {
+         background: var(--current_item_background-color_Wizard-horizontal);
+         color: var(--contrast_text-color);
+      }
+
+      &-future {
+         background: var(--unaccented_background-color);
+         color: var(--unaccented_text-color);
+
+         &-leftArrow,
+         &-rightArrow {
+            fill: var(--unaccented_background-color);
+         }
+      }
+
+      &-traversed {
+         background: var(--selected_item_background-color_Wizard-horizontal);
+         color: var(--text-color);
+
+         &-leftArrow,
+         &-rightArrow {
+            fill: var(--selected_item_background-color_Wizard-horizontal);
+         }
+      }
+
+      &-traversed,
+      &-active {
+         cursor: pointer;
+      }
+   }
+}

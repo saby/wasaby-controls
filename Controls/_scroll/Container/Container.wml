@@ -1,0 +1,69 @@
+<div class="controls-Scroll-Container{{_isClipScrollContainer ? ' controls-Scroll-ClipContainer'}} controls-Scroll controls_scroll_theme-{{ _options.theme }} controls-Scroll-Container_{{_scrollPosition}}-position{{
+_fixIOSShadow ? ' controls-Scroll-Container_fixShadow'}}"
+     on:wheel="_onWheelHandler()"
+     on:mouseenter="_mouseenterHandler()"
+     on:mouseover="_mouseoverHandler()"
+     on:mouseleave="_mouseleaveHandler()"
+     on:scrollbarTaken="_scrollbarTakenHandler()"
+     on:scrollbarReleased="_scrollbarReleasedHandler()">
+    <Controls._scroll.Contexts.ListScrollContextProvider setHorizontalScrollMode="{{ _setHorizontalScrollMode }}"
+                                                         horizontalScrollMode="{{ _horizontalScrollMode }}"
+                                                         setArrowButtonClickCallback="{{ _setArrowButtonClickCallback }}"
+                                                         removeArrowButtonClickCallback="{{ _removeArrowButtonClickCallback }}"
+                                                         getVerticalScrollPosition="{{ _getVerticalScrollPosition }}"
+                                                         getViewportRect="{{ _getViewportRect }}"
+                                                         scrollTo="{{ scrollTo }}"
+                                                         canHorizontalScroll="{{ _canHorizontalScroll() }}">
+            <Controls._scroll.ContainerReact.ContainerReact stickyModels="{{_stickyModelsContext}}"
+                                                            stickyGroupModels="{{_stickyGroupModelsContext}}"
+                                                            setStickyContextUpdater="{{_setStickyContextUpdaterCallback}}"
+                                                            horizontalScrollMode="{{_horizontalScrollMode}}"
+                                                            getContextValue="{{_setPagingVisibleCallback}}"
+                                                            shadows="{{_shadows}}"
+                                                            shadowMode="{{_options.shadowMode}}"
+                                                            buttonsMode="{{_options.buttonsMode}}"
+                                                            getShadowClasses="{{_getShadowClassesCallback}}"
+                                                            isOptimizeShadowEnabled="{{_isOptimizeShadowEnabled}}"
+                                                            arrowButtons="{{_arrowButtons}}"
+                                                            handleArrowButton="{{_arrowButtonHandlerCallback}}"
+                                                            scrollbars="{{_scrollbars}}"
+                                                            dragging="{{_dragging}}"
+                                                            offsetTop="{{_offsetTop}}"
+                                                            scrollbarOffsetTop="{{_scrollbarOffsetTop}}"
+                                                            verticalScrollbarPaddings="{{_verticalScrollbarPadding}}"
+                                                            horizontalScrollbarPaddings="{{_horizontalScrollbarPadding}}"
+                                                            scrollbarPositionChangedHandler="{{_positionChangedHandlerCallback}}"
+                                                            scrollbarDraggingChangedHandler="{{_draggingChangedHandlerCallback}}"
+            >
+            <ws:partial template="{{_baseTemplate}}"
+                        scope="{{_options}}"
+                        topShadowVisibility="{{undefined}}"
+                        bottomShadowVisibility="{{undefined}}"
+                        _scrollCssClass="{{_scrollCssClass}}"
+                        _contentWrapperCssClass="{{_contentWrapperCssClass}}"
+                        _initialScrollPositionCssClass="{{_initialScrollPositionCssClass}}"
+                        _horizontalScrollMode="{{ _horizontalScrollMode }}"
+                        _overscrollBehavior="{{_overscrollBehavior}}"
+                        _getContentDirectionClass="{{_getContentDirectionClass}}"
+                        attr:class="controls-Scroll-Container__base controls-BlockLayout__blockGroup {{_getBlurClasses()}} {{_optimizeShadowClass}}"
+                        attr:style="{{_initialScrollPositionStyle}} {{_getStyleForCorrectWorkBlur()}}"
+                        on:intersectionObserverRegister="_intersectionObserverRegisterHandler()"
+                        on:intersectionObserverUnregister="_intersectionObserverUnregisterHandler()"
+                        on:keydown="_keydownHandler()"
+                        on:updateShadowMode="_updateShadowVisibility()"
+            />
+            </Controls._scroll.ContainerReact.ContainerReact>
+
+            <ws:if data="{{_paging.isVisible}}">
+              <Controls.Container.Async templateName="Controls/paging:Paging">
+                <ws:partial template="{{content.resolvedTemplate}}"
+                            class="controls-Scroll__paging {{_isScrollOnBody ? 'controls-Scroll__paging-adaptive' : ''}} controls-Scroll__paging_position-{{_options.pagingPosition === 'left' ? 'left' : 'right'}}"
+                            pagingMode="{{_paging.pagingMode}}"
+                            contentTemplate="{{_options.pagingContentTemplate}}"
+                            contrastBackground="{{true}}"
+                            arrowState="{{_paging.arrowState}}"
+                            on:onArrowClick="_arrowClickHandler()"/>
+              </Controls.Container.Async>
+            </ws:if>
+    </Controls._scroll.Contexts.ListScrollContextProvider>
+</div>

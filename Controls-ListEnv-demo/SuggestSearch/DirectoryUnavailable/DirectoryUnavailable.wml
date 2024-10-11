@@ -1,0 +1,31 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow demo-SearchSuggest__container controlsDemo__mb3">
+  <div class="controlsDemo__wrapper__horizontal controlsDemo__cell ControlsDemo-Suggest_padding-left controlsDemo_fixedWidth350">
+     <div class="controls-text-label">Автодополнение с недоступным справочником</div>
+     <Controls-ListEnv.SuggestSearch
+             attr:class="ControlsDemo-Suggest__simple controlsDemo__input"
+             bind:value="_suggestDownValue"
+             displayProperty="title"
+             searchParam="title"
+             navigation="{{_navigation}}"
+             source="{{_source}}">
+         <ws:suggestTemplate
+             templateName="wml!Controls-ListEnv-demo/SuggestSearch/DirectoryUnavailable/resources/SuggestTemplate">
+           <ws:templateOptions classListWrapper="controlsDemo_fixedWidth350"/>
+         </ws:suggestTemplate>
+     </Controls-ListEnv.SuggestSearch>
+  </div>
+  <div class="controlsDemo__wrapper__horizontal controlsDemo__cell ControlsDemo-Suggest_padding-left controlsDemo_fixedWidth350">
+    <div class="controls-text-label_theme-{{_options.theme}}">Автодополнение с недоступным справочником без фиксированной ширины саггеста</div>
+    <Controls-ListEnv.SuggestSearch
+        attr:class="ControlsDemo-Suggest__simple controlsDemo__input"
+        bind:value="_suggestDownValue"
+        displayProperty="title"
+        searchParam="title"
+        navigation="{{_navigation}}"
+        source="{{_source}}"
+        attr:data-qa="controlsSearchInput__no_fixed_width">
+      <ws:suggestTemplate
+          templateName="wml!Controls-ListEnv-demo/SuggestSearch/DirectoryUnavailable/resources/SuggestTemplate"/>
+    </Controls-ListEnv.SuggestSearch>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__flex controls-margin_bottom-l">
+            <div class="controlsDemo__cell ws-flex-column controlsDemo_fixedWidth300">
+                <div class="controls-text-label controls-margin_bottom-xs">Акцентный переключатель</div>
+                <Controls.toggle:Switch bind:value="_value1"
+                                        viewMode="filled"
+                                        caption="Push-уведомление"/>
+            </div>
+
+            <div class="controlsDemo__cell ws-flex-column controlsDemo_fixedWidth250">
+                <div class="controls-text-label controls-margin_bottom-xs">Неакцентный переключатель</div>
+                <Controls.toggle:Switch bind:value="_value4"
+                                        viewMode="outlined"
+                                        caption="Push-уведомление"/>
+            </div>
+        </div>
+        <div class="controlsDemo__wrapper controlsDemo__flex">
+            <div class="controlsDemo__cell ws-flex-column controlsDemo_fixedWidth300">
+                <div class="controls-text-label controls-margin_bottom-xs">Двойной переключатель</div>
+                <Controls.toggle:DoubleSwitch bind:value="_value2"
+                                              onCaption="Наличными"
+                                              offCaption="По карте"/>
+            </div>
+
+            <div class="controlsDemo__cell ws-flex-column controlsDemo_fixedWidth250">
+                <div class="controls-text-label controls-margin_bottom-xs">Вертикальный переключатель</div>
+                <Controls.toggle:DoubleSwitch bind:value="_value5"
+                                              onCaption="Наличными"
+                                              offCaption="По карте"
+                                              orientation="vertical"/>
+            </div>
+        </div>
+        <div class="controlsDemo__wrapper controlsDemo__flex">
+            <div class="controlsDemo__cell ws-flex-column controlsDemo_fixedWidth300">
+                <div class="controls-text-label controls-margin_bottom-xs">Большой и маленький переключатель</div>
+                <Controls.toggle:Switch bind:value="_value31" size="s"/>
+                <Controls.toggle:Switch attr:class="controls-margin_left-xl" bind:value="_value32" size="l"/>
+            </div>
+
+            <div class="controlsDemo__cell ws-flex-column controlsDemo_fixedWidth250">
+                <div class="controls-text-label controls-margin_bottom-xs">Настраиваемая метка переключателя</div>
+                <Controls.toggle:Switch bind:value="_value6">
+                    <ws:caption>
+                        <ws:partial template="Controls/toggle:switchCaptionTemplate"
+                                    attr:class="controlsDemo__flex ws-flex-column" scope="{{captionTemplate}}">
+                            <ws:caption>
+                                <div class="controls-Switch__text-decoration">
+                                    Включить распознавание ответов
+                                </div>
+                            </ws:caption>
+                        </ws:partial>
+                    </ws:caption>
+                    <ws:additionalCaption>
+                        <div class="controls-text-unaccented controls-fontsize-xs">Подробнее</div>
+                    </ws:additionalCaption>
+                </Controls.toggle:Switch>
+            </div>
+        </div>
+    </div>
+</div>

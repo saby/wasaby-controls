@@ -1,0 +1,271 @@
+.controls-BreadCrumbsPath {
+   max-width: 100%;
+   min-width: 0;
+   flex-grow: 1;
+   box-sizing: border-box;
+   overflow: hidden;
+}
+
+// Добавляет отступ под тень кнопки "Назад"
+.controls-BreadCrumbsPath__backButton_functionalButton_shadow_offset {
+   margin-top: calc(-1 * var(--shadow-blur_d));
+   margin-bottom: calc(-1 * var(--shadow-blur_d));
+   margin-left: calc(-1 * var(--shadow-blur_d));
+   padding-top: var(--shadow-blur_d);
+   padding-bottom: var(--shadow-blur_d);
+   padding-left: var(--shadow-blur_d);
+}
+
+.controls-BreadCrumbsPath.controls-BreadCrumbsPath__backButton_functionalButton_shadow_offset {
+   box-sizing: content-box;
+}
+
+.controls-BreadCrumbsPath__twoRows {
+   padding-left: var(--padding-left_multiline_breadcrumbsPath);
+}
+
+.controls-BreadCrumbsPath__wrapper {
+   display: flex;
+   white-space: nowrap;
+   align-items: baseline;
+
+   //TODO KINGO есть темы, в которых выравнивание ХК идет по базовой линии шрифта, размер которого отличается от размера шрифта кнопки назад
+   .controls-Back__wrapper::before {
+      font-size: var(--baseline_breadcrumbsView);
+   }
+}
+
+.controls-BreadCrumbsPath__wrapper__multiline {
+   flex-direction: column-reverse;
+}
+
+.controls-BreadCrumbsPath__crumbsWrapper {
+   white-space: nowrap;
+   display: flex;
+   align-items: baseline;
+   max-width: 100%;
+   // добавляем минимальную ширину, чтобы обводка не обрезалась.
+   // min-width = ширина домика + левый отступ + обводка справа.
+   min-width: calc(
+      var(--home_icon-size_breadcrumbsPath) + var(--back_offset_breadcrumbsHeadingPath) +
+         var(--offset_2xs)
+   );
+}
+
+.controls-BreadCrumbsPath__crumbsWrapper_fullWidth {
+   width: 100%;
+   box-sizing: border-box;
+}
+
+.controls-BreadCrumbsPath__backButton {
+   white-space: nowrap;
+   min-width: 1px;
+   max-width: 100%;
+   text-align: left;
+
+   //во всех темах
+   .controls-Back__caption {
+      font-weight: var(--font-weight_headingPathBack_headingBack);
+   }
+}
+
+.controls-BreadCrumbsPath__home {
+   .icon(var(--home_icon-size_breadcrumbsPath));
+   color: var(--label_text-color);
+   flex-shrink: 0;
+}
+
+.controls-BreadCrumbsPath__backButton__wrapper {
+   position: relative;
+   display: inline-flex;
+   align-items: baseline;
+   max-width: 50%;
+   flex-shrink: 0;
+}
+
+.controls-BreadCrumbsPath__backButton__wrapper__only {
+   max-width: 100%;
+   box-sizing: border-box;
+   flex-shrink: 1;
+   min-width: 1px;
+}
+
+.controls-BreadCrumbsPath__backButton__wrapper_inHeader {
+   /*
+  Header cells have flex-direction: column and align-items: normal so button gets expanded to match cell's width.
+  To prevent this, we have to explicitly align button to the start of the cell.
+   */
+   align-self: flex-start;
+   max-width: 100%;
+}
+
+.controls-BreadCrumbsPath__homeContainer.controls-BreadCrumbsView__dropTarget_withoutArrow::after {
+   left: calc(-1 * var(--offset_2xs));
+   right: calc(-1 * var(--offset_2xs));
+}
+
+.controls-BreadCrumbsPath__backButtonArrow-container {
+   .baseline-fix();
+   height: 100%;
+   position: absolute;
+   align-self: baseline;
+   align-items: baseline;
+   right: calc(-1 * var(--back_offset_breadcrumbsHeadingPath));
+   bottom: 0;
+}
+
+.controls-BreadCrumbsPath__backButtonArrow {
+   display: none;
+   cursor: pointer;
+   height: 1em;
+   width: 1em;
+   fill: var(--label_icon-color);
+}
+
+.controls-Path__backButtonArrow_readonly {
+   color: var(--readonly_text-color);
+}
+
+.controls-BreadCrumbsPath__backButton__container__only__withArrow {
+   padding-right: var(--back_editButton_icon-size_breadcrumbsHeadingPath);
+}
+
+.controls-BreadCrumbsPath__backButtonArrow-container__only {
+   right: 0;
+}
+
+.controls-BreadCrumbsPath__counter {
+   margin-left: var(--offset_2xs);
+}
+
+.controls-BreadCrumbsPath__breadCrumbs {
+   overflow: hidden;
+   flex-grow: 1;
+}
+
+.controls-BreadCrumbsPath__breadCrumbs_home-path-spacing {
+   padding-left: var(--home_offset_breadcrumbsPath);
+}
+
+.controls-BreadCrumbsPath__homeContainer {
+   .baseline-fix();
+   position: relative;
+   display: inline-flex;
+   align-items: baseline;
+
+   &::before {
+      font-size: var(--baseline_breadcrumbsView);
+   }
+}
+
+.controls-BreadCrumbsPath__backButton_short,
+.controls-BreadCrumbsPath__breadCrumbs_short {
+   flex-shrink: 1;
+   overflow: hidden;
+}
+
+.controls-BreadCrumbsPath__backButton_short {
+   min-width: calc(var(--item_text_min-width_breadcrumbs) + 1em + var(--offset_xs));
+}
+
+.controls-BreadCrumbsPath__homeContainer__withoutBackButton {
+   margin-left: 0;
+}
+
+.controls-BreadCrumbsPath__homeContainer__withBackButton {
+   margin-left: var(--back_offset_breadcrumbsHeadingPath);
+}
+
+.controls-BreadCrumbsPath__backButton_half,
+.controls-BreadCrumbsPath__breadCrumbs_half {
+   width: 50%;
+   flex-shrink: 1;
+   overflow: hidden;
+}
+
+.controls-BreadCrumbsPath__breadCrumbs_long {
+   flex-shrink: 0;
+}
+
+.ws-is-hover {
+   .controls-BreadCrumbsPath__backButtonArrow:hover {
+      display: inline-flex;
+      fill: var(--label_hover_icon-color);
+   }
+
+   .controls-BreadCrumbsPath__backButton__wrapper:hover .controls-BreadCrumbsPath__backButtonArrow {
+      display: inline-flex;
+   }
+
+   .controls-BreadCrumbsPath__home:hover {
+      color: var(--label_hover_text-color);
+   }
+}
+
+.controls-BreadCrumbsPath__backButton_zeroWidth {
+   width: 0;
+}
+
+.controls-fontsize-headingPathBack {
+   font-size: var(--font-size_headingPathBack_headingBack);
+}
+
+.controls-BreadCrumbsPath__backButton__container {
+   position: relative;
+   display: inline-flex;
+   max-width: 100%;
+   align-items: baseline;
+   box-sizing: border-box;
+}
+
+.controls-BreadCrumbsPath__breadCrumbs__wrapper {
+   display: flex;
+   flex-grow: 1;
+   overflow: hidden;
+}
+
+.controls-BreadCrumbsPath__pathButton-wrapper {
+   flex-shrink: 0;
+   box-sizing: border-box;
+
+   // inner align
+   display: flex;
+   align-items: center;
+
+   .baseline-fix();
+}
+
+.controls-BreadCrumbsPath__pathButton-wrapper_offset-left {
+   margin-left: var(--offset_m);
+}
+
+.controls-BreadCrumbsPath__widthRestriction {
+   max-width: 50%;
+   flex-shrink: 0;
+   width: auto;
+
+   // width: auto включает механизм авто-расчёта ширины, который в некоторых случаях ограничивает ширину контейнера,
+   // несмотря на то, что свободного места ещё хватает, пример:
+   // https://online.sbis.ru/opendoc.html?guid=2ae408f8-ca72-49be-ab02-20aa1bcdfdc4
+   // flex-grow: 1 позволяет занимать доступное свободное место (если оно есть)
+   flex-grow: 1;
+}
+
+.controls-BreadCrumbsPath-min_width {
+   @variants: ~'3xs', ~'2xs', xs, s, m, l, xl, ~'2xl', ~'3xl';
+
+   .for(@variants, {
+    &_@{_item} {
+      min-width: ~'var(--inline_height_@{_item})';
+    }
+  });
+}
+
+.controls-BreadCrumbsPath-min_width_default {
+   min-width: 0;
+}
+
+.controls-BreadCrumbsPath__unrestrictedWidth {
+   flex-shrink: 1;
+   max-width: 100%;
+}

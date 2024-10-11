@@ -1,0 +1,107 @@
+/*
+  Иерархия классов вьюхи. Избыточность нужна для уменьшения вложенности
+  в правилах, чтобы стили пересчитывались быстрее на мобильных устройствах.
+  .controls-GridReact__view_columnScroll & (_mobile | _desktop) > (
+    .controls-GridReact__view_columnScroll_scrollable & (
+      .controls-GridReact__view_columnScroll_desktop_scrollable ||
+      .controls-GridReact__view_columnScroll_mobile_scrollable
+    )
+    .controls-GridReact__view_columnScroll_fixedStart & (
+      .controls-GridReact__view_columnScroll_desktop_fixed ||
+      .controls-GridReact__view_columnScroll_mobile_fixed
+    )
+  )
+*/
+
+.controls-GridReact__cell.js-controls-GridColumnScroll__cell_fixed,
+.controls-GridReact__cell.js-controls-GridColumnScroll__cell_scrollable {
+   min-width: initial;
+}
+
+// Корневой элемент Render'а
+.controls-GridReact__view_columnScroll_mobile {
+   position: relative;
+}
+
+.controls-GridReact__view_columnScroll_useFake-startFixed_desktop {
+   .controls-GridReact__view_columnScroll_scrollable {
+      position: absolute;
+      right: 0;
+   }
+}
+
+// Корневой элемент фейковых Render'ов, отображающих зафиксированные слева и справа колонки
+.controls-GridReact__view_columnScroll_fixedStart,
+.controls-GridReact__view_columnScroll_fixedEnd {
+   position: absolute;
+   top: 0;
+   z-index: 1;
+}
+
+// Поведение левого фейкового Render'а
+.controls-GridReact__view_columnScroll_fixedStart {
+   left: 0;
+
+   .js-controls-GridReact__cell:not(.js-controls-GridColumnScroll__cell_fixedStart) {
+      visibility: hidden;
+      z-index: -1;
+      pointer-events: none;
+   }
+}
+
+// Поведение правого фейкового Render'а
+.controls-GridReact__view_columnScroll_fixedEnd {
+   right: 0;
+
+   .js-controls-GridReact__cell:not(.js-controls-GridColumnScroll__cell_fixedEnd) {
+      visibility: hidden;
+      z-index: -1;
+      pointer-events: none;
+   }
+}
+
+.controls-GridReact__columnScroll__headerNavigation__minSizeWrapper_arrows {
+   min-height: var(--inline_height_m);
+}
+
+.controls-GridReact__columnScroll__headerNavigation {
+   box-sizing: border-box;
+}
+
+.controls-GridReact__columnScroll__headerNavigation-part_fixed {
+   position: absolute;
+   left: 100%;
+}
+
+.controls-GridReact__columnScroll__headerNavigation-mode_arrows {
+   display: flex;
+   justify-content: flex-end;
+   padding-right: var(--offset_m);
+   padding-top: var(--offset_2xs);
+   padding-bottom: var(--offset_2xs);
+   position: absolute;
+   bottom: 0;
+}
+
+.controls-GridReact__view_columnScroll_scrollable_scrollbarDragging {
+   pointer-events: none;
+}
+
+.controls-GridReact__view_columnScroll__shadowLeft_hideSeparator {
+   margin-left: calc(-1 * var(--item-separator_s_thickness_list));
+}
+
+.controls-GridReact__navigation-cell > .controls-StickyBlock__content {
+   // Контент стикиблока имеет минимальный размер.
+   // Невозможно отобразить стикишапку с абсолютным контентом, чтобы она визуально была не видна.
+   // Кейс: таблица с разделителями колонок и строк, стики блок, в котором лежит скроллбар образует
+   // разрыв в разделителе.
+   // Выписана задача https://online.sbis.ru/opendoc.html?guid=b253b7ef-ea7a-4fec-94f1-ea87b16268d5&client=3
+   min-height: 0;
+}
+
+// region z-index ячеек
+
+@import 'Controls/_gridColumnScroll/zIndexEnv/zIndexStyle';
+
+// endregion z-index ячеек

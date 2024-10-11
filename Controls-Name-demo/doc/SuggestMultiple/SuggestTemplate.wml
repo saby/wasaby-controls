@@ -1,0 +1,21 @@
+<Controls.suggestPopup:ListContainer>
+    <Controls.list:View keyProperty="id">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/list:ItemTemplate" displayProperty="displayValue">
+                <ws:contentTemplate>
+                    <ws:if data="{{contentTemplate.item.contents.type === 'person'}}">
+                        <div class="ws-flexbox demo__person">
+                            <div class="ws-flexbox ws-flex-column">
+                                <div class="demo__name-person">{{contentTemplate.item.contents.displayValue}}</div>
+                                <div class="demo__name-person_position">{{contentTemplate.item.contents.position}}</div>
+                            </div>
+                        </div>
+                    </ws:if>
+                    <ws:else>
+                        {{contentTemplate.item.contents.displayValue}}
+                    </ws:else>
+                </ws:contentTemplate>
+            </ws:partial>
+        </ws:itemTemplate>
+    </Controls.list:View>
+</Controls.suggestPopup:ListContainer>

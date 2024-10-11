@@ -1,0 +1,51 @@
+<div class="controls-ColoredTabs__head-tab {{ _options.tabsPosition ? 'controls-ColoredTabs__head-tab_fixed-' + _options.tabsPosition}}
+                controls-ColoredTabs__head-tab_position-{{ _options.position }}
+                {{ _options.selectedKey === _options.item.key ? 'controls-ColoredTabs__head-tab_position-' + _options.position + '_selected' }}
+                {{ _options.selectedKey === _options.item.key ? 'controls-ColoredTabs__head-tab_selected' }}
+                {{ !isCompact ? 'controls-ColoredTabs__head-tab_minWidth' }}
+                controls-ColoredTabs__head-tab_distributed_true"
+     attr:style="right: {{ _options.tabsPosition === 'top' ? _options.tabsPositionTop[_options.itemIndex] : _options.tabsPositionBottom[_options.itemIndex] }}px;"
+     data-qa="{{ !isCompact && !_options.tabsPosition ? 'ColoredTabs__item' }}">
+    <div class="controls-ColoredTabs__head-tab-background-left
+                        {{ _options.useRoundings && (_options.position === 'right' || _options.position === 'center') ? 'controls-ColoredTabs__head-tab-background-left-rounding' }}
+                        controls-ColoredTabs__head-tab-background
+                        {{_getBackgroundStyleClass(_options.item)}}">
+    </div>
+    <div class="controls-ColoredTabs__head-tab-background-center controls-ColoredTabs__head-tab-background
+                    {{_getBackgroundStyleClass(_options.item)}}"></div>
+    <div class="controls-ColoredTabs__head-tab-background-right
+                    {{ _options.useRoundings && (_options.position === 'left' || _options.position === 'center') ? 'controls-ColoredTabs__head-tab-background-right-rounding' }}
+                    controls-ColoredTabs__head-tab-background
+                    {{_getBackgroundStyleClass(_options.item)}}"></div>
+    <div class="controls-ColoredTabs__head-tab-text
+         {{_options.isFirstTab ? 'controls-ColoredTabs__pinned-first-tab '}}"
+         attr:style="{{_options.isFirstTab ? 'transition: min-width ' + defaultAnimDuration + 's linear;'}}"
+         data-qa="ColoredTabs__tab-text">
+        <ws:if data="{{_options.item.headTemplate || _options.headTemplate}}">
+            <ws:if data="{{ _tabHasContent(_options.itemIndex) }}">
+                <div class="controls-ColoredTabs__text-wrapper">
+                    <ws:partial template="{{_options.item.headTemplate ? _options.item.headTemplate : _options.headTemplate}}"
+                                scope="{{_options.item.headTemplateOptions}}"
+                                isCompact="{{ _options.isCompact }}"
+                                title="{{_options.item.title}}"
+                                selectedKey="{{_options.selectedKey}}"
+                                headPosition="{{ _options.headPosition }}"
+                                item="{{_options.item}}"/>
+                </div>
+            </ws:if>
+        </ws:if>
+        <ws:else>
+            <ws:if data="{{ !_options.isCompact }}">
+                {{_options.item.title}}
+            </ws:if>
+            <ws:else>
+                <Controls.icon:Icon
+                        icon='{{_options.item.icon}}'
+                        iconSize='s'/>
+            </ws:else>
+        </ws:else>
+        <div class="controls-ColoredTabs__blur-wrapper">
+            <div class="controls-ColoredTabs__blur"></div>
+        </div>
+    </div>
+</div>

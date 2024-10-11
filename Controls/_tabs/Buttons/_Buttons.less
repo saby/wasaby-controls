@@ -1,0 +1,582 @@
+@more_button-width: 40px;
+
+.tabs-baseline() {
+   &::before {
+      content: '\200b'; //zero width space
+      width: 0;
+      display: inline-block;
+      visibility: hidden;
+   }
+}
+
+.controls-Tabs__itemClickableArea {
+   flex-shrink: 1;
+   flex-grow: 1;
+   min-width: 0;
+   height: 100%;
+   display: inline-flex;
+   position: relative;
+   .tabs-baseline();
+}
+
+.controls-Tabs__itemClickableArea_type {
+   &-horizontal-default {
+      align-items: baseline;
+   }
+
+   &-vertical-default {
+      align-items: center;
+   }
+}
+
+.controls-Tabs__itemClickableArea_type-photo {
+   align-items: flex-end;
+}
+
+.controls-Tabs__itemClickableArea_inlineHeight-s {
+   &::before {
+      line-height: var(--item_height_tabs);
+      font-size: var(--item_font-size_tabs_local, var(--item_font-size_tabs));
+   }
+}
+
+.controls-Tabs__itemClickableArea_inlineHeight-l {
+   &::before {
+      line-height: var(--item_height_l_tabs);
+      font-size: var(--item_font-size_tabs_local, var(--item_font-size_tabs));
+   }
+}
+
+.controls-Tabs__itemClickableArea_inlineHeight-l_mobile {
+   &::before {
+      line-height: calc(var(--inline_height_5xl) + var(--offset_s));
+      font-size: var(--item_font-size_tabs_local, var(--font-size_ad_5xl));
+   }
+}
+
+.controls-Tabs_itemClickableArea-caption::before {
+   content: '\200b';
+}
+
+.controls-Tabs {
+   position: relative;
+
+   &__horizontal {
+      &::after {
+         content: '';
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         width: 100%;
+         background: var(--container_border-color_tabs_local, var(--separator_color));
+      }
+   }
+
+   &__vertical {
+      display: inline-flex;
+   }
+}
+
+.controls-Tabs_inlineHeight-s {
+   height: var(--item_height_tabs);
+}
+
+.controls-Tabs_inlineHeight-l {
+   height: var(--item_height_l_tabs);
+}
+
+.controls-Tabs_inlineHeight-l_mobile {
+   height: calc(var(--inline_height_5xl) + var(--offset_s));
+}
+
+.controls-Tabs_border {
+   &::after {
+      height: var(--container_border-width_tabs_local, var(--border-thickness));
+   }
+}
+
+.controls-Tabs-wrapper {
+   display: inline-flex;
+   height: 100%;
+
+   &__horizontal {
+      width: 100%;
+   }
+}
+
+.controls-Tabs__scrollWrapper {
+   overflow-x: scroll;
+   // hide scrollbar
+   -ms-overflow-style: none; /* for Internet Explorer, Edge */
+   scrollbar-width: none; /* for Firefox */
+
+   &::-webkit-scrollbar {
+      display: none; /* for Chrome, Safari, and Opera */
+   }
+}
+
+.controls-Tabs__space {
+   display: inline-flex;
+   //TODO: по поручению опишут как и что должно сжиматься. Пока вешаю огромный flex-shrink на дыру между элементами вкладок, чтобы главная вкладка не начинала сжиматься раньше времени
+   //https://online.sbis.ru/opendoc.html?guid=cf3f0514-ac78-46cd-9d6a-beb17de3aed8
+   flex-shrink: 999999;
+   box-sizing: border-box;
+   align-items: baseline;
+   .tabs-baseline();
+   position: relative;
+   width: 100%;
+   min-width: 0;
+   height: 100%;
+   order: 20;
+}
+
+.controls-Tabs__space_inlineHeight-s {
+   &::before {
+      line-height: var(--item_height_tabs);
+      font-size: var(--item_font-size_tabs_local, var(--item_font-size_tabs));
+   }
+}
+
+.controls-Tabs__space_inlineHeight-l {
+   &::before {
+      line-height: var(--item_height_l_tabs);
+      font-size: var(--item_font-size_tabs_local, var(--item_font-size_tabs));
+   }
+}
+
+.controls-Tabs__space_inlineHeight-l_mobile {
+   &::before {
+      line-height: calc(var(--inline_height_5xl) + var(--offset_s));
+      font-size: var(--item_font-size_tabs_local, var(--font-size_ad_5xl));
+   }
+}
+
+.controls-Tabs__item-underline {
+   border-bottom: var(--border-thickness) solid var(--separator_color);
+}
+
+.controls-Tabs__item {
+   display: inline-flex;
+   flex-shrink: 0;
+   align-items: baseline;
+   box-sizing: border-box;
+   .tabs-baseline();
+   height: 100%;
+   position: relative;
+   font-size: var(--item_font-size_tabs_local, var(--item_font-size_tabs));
+   cursor: pointer;
+   white-space: nowrap;
+   max-width: 100%;
+   border: var(--item_container_border-width_tabs_local, 0)
+      var(--item_container_border-style_tabs_local, hidden)
+      var(--item_container_border-color_tabs_local, transparent);
+   width: var(--item_container_width_tabs_local, unset);
+}
+
+.controls-Tabs__item-unselected {
+   background: var(--item_container_background-color_tabs_local, transparent);
+}
+
+.controls-Tabs__item-selected {
+   background: var(--item_container_selected-background-color_tabs_local, transparent);
+   border-width: var(--item_container_selected-border-width_tabs_local, 0);
+}
+
+.controls-Tabs__items_wrapper {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+   max-width: inherit;
+   flex-shrink: 1;
+   flex-grow: 1;
+   min-width: 1px;
+}
+
+.controls-Tabs__item-element-hidden {
+   height: 0;
+   visibility: hidden;
+   overflow: hidden;
+}
+
+.controls-Tabs__item_inlineHeight-s {
+   &::before {
+      line-height: var(--item_height_tabs);
+      font-size: var(--item_font-size_tabs_local, var(--item_font-size_tabs));
+   }
+}
+
+.controls-Tabs__item_inlineHeight-l {
+   &::before {
+      line-height: var(--item_height_l_tabs);
+      font-size: var(--item_font-size_tabs_local, var(--item_font-size_tabs));
+   }
+}
+
+.controls-Tabs__item_inlineHeight-l_mobile {
+   &::before {
+      line-height: calc(var(--inline_height_5xl) + var(--offset_s));
+      font-size: var(--item_font-size_tabs_local, var(--font-size_ad_5xl));
+   }
+}
+
+.controls-Tabs__item_canShrink {
+   flex-shrink: 1;
+   min-width: 1px;
+}
+
+.controls-Tabs__item_notShrink {
+   flex-shrink: 0;
+   min-width: 0;
+}
+
+.controls-Tabs__item_view_main {
+   color: var(--text-color);
+   font-size: var(--item_main_font-size_tabs_local, var(--font-size_4xl));
+   font-weight: var(--font-weight-bold);
+}
+
+.controls-Tabs__item_view_main_mobile {
+   color: var(--text-color);
+   font-size: var(--item_main_font-size_tabs_local, var(--font-size_ad_5xl));
+   font-weight: var(--font-weight-bold);
+}
+
+.controls-Tabs__item_view_selected {
+   font-weight: var(--font-weight-bold);
+   font-size: var(--item_font-size_tabs_local, var(--item_font-size_tabs));
+
+   &.controls-Tabs__item_view_adaptive_selected {
+      font-weight: normal;
+   }
+}
+
+.controls-Tabs__item_view_selected_style_unaccented {
+   font-size: var(--item_font-size_tabs_local, var(--item_font-size_tabs));
+}
+
+.controls-Tabs__item_align_left {
+   margin-left: 0;
+}
+
+.controls-Tabs__item_align_right {
+   margin-right: 0;
+}
+
+.controls-Tabs__item_extreme {
+   margin-right: 0;
+   margin-left: 0;
+}
+
+.controls-Tabs__item_extreme_first {
+   margin-right: var(--item_container_margin-horizontal_tabs_local, var(--offset_m));
+   margin-left: var(
+      --outer_padding,
+      var(--item_container_margin-horizontal_tabs_local, var(--offset_m))
+   );
+}
+
+.controls-Tabs__item_extreme_first_padding {
+   padding-right: var(--item_container_margin-horizontal_tabs_local, var(--offset_m));
+   padding-left: var(
+      --outer_padding,
+      var(--item_container_margin-horizontal_tabs_local, var(--offset_m))
+   );
+}
+
+.controls-Tabs__item_extreme_last {
+   margin-right: var(--item_container_margin-horizontal_tabs_local, var(--offset_m));
+   margin-left: var(--item_container_margin-horizontal_tabs_local, var(--offset_m));
+}
+
+.controls-Tabs__item_extreme_last_padding {
+   padding-right: var(--item_container_margin-horizontal_tabs_local, var(--offset_m));
+   padding-left: var(--item_container_margin-horizontal_tabs_local, var(--offset_m));
+}
+
+.controls-Tabs__item_default {
+   margin: 0 var(--item_container_margin-horizontal_tabs_local, var(--offset_m));
+}
+
+.controls-Tabs__item_default_padding {
+   padding: 0 var(--item_container_margin-horizontal_tabs_local, var(--offset_m));
+}
+
+.controls-Tabs__item-element {
+   padding: 0 var(--item_container_padding-horizontal_tabs_local, 0);
+   justify-content: var(--item_container_align_tabs_local, unset);
+   text-align: var(--item_container_align_tabs_local, unset);
+}
+
+.controls-Tabs__item_vertical {
+   padding: 0 var(--offset_3xs);
+}
+
+.controls-Tabs_style_primary__item_state_selected {
+   color: var(--primary_text-color);
+}
+
+.controls-Tabs_style_unaccented__item_state_selected {
+   color: var(--text-color);
+}
+
+.controls-Tabs_style_secondary__item_state_selected {
+   color: var(--secondary_item_text-color_tabs);
+}
+
+.controls-Tabs__marker {
+   border-radius: var(--border-radius_2xs);
+   position: absolute;
+   bottom: 0;
+   z-index: 1;
+}
+
+.controls-marker_style-tabssecondary {
+   &::after {
+      background-color: var(--container_color_marker_local, var(--secondary_marker_color_tabs));
+   }
+}
+
+.controls-marker_tabsThickness {
+   &_horizontal {
+      &::after {
+         height: var(--container_height_marker_local, var(--marker_thickness_tabs));
+      }
+   }
+
+   &_vertical {
+      &::after {
+         width: var(--marker_thickness_tabs);
+         height: var(--offset_xl);
+      }
+   }
+}
+
+.controls-marker_tabsMain {
+   &::after {
+      height: var(--container_height_marker_local, var(--marker_thickness_tabs));
+   }
+}
+
+.controls-Tabs__marker_animation {
+   transition: left 125ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+      right 125ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, width 125ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.controls-Tabs__marker_thickness {
+   height: var(--container_height_marker_local, var(--marker_thickness_tabs));
+}
+
+.controls-Tabs__marker_style-unaccented {
+   background: var(--container_color_marker_local, var(--item_selected_color));
+}
+
+.controls-Tabs__marker_style-primary {
+   background-color: var(--container_color_marker_local, var(--marker_color));
+}
+
+.controls-Tabs__marker_style-secondary {
+   background-color: var(--container_color_marker_local, var(--secondary_marker_color_tabs));
+}
+
+// Маркеры красятся под цвет текста
+.controls-Tabs__marker_style- {
+   @variants: link, label, danger, warning, success, info, readonly;
+   .for(@variants, { &@{_item} {
+      background-color: ~'var(--container_color_marker_local, var(--@{_item}_text-color))';
+   } });
+}
+
+.controls-Tabs__item_overflow {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   max-width: 100%;
+   display: inline-block;
+   white-space: nowrap;
+   height: 100%;
+}
+
+//TODO: удалить этот стиль для фото над табами оп задаче https://online.sbis.ru/opendoc.html?guid=c54eee1c-0578-4047-b3e8-666f078a3ae8
+.controls-Tabs__item_type_photo {
+   padding: 0;
+   .align-items(flex-end);
+
+   &::before {
+      content: '';
+   }
+}
+
+.controls-Tabs__content_heading {
+   font-weight: var(--font-weight-bold);
+   color: var(--secondary_text-color_heading);
+   font-size: var(--font-size_3xl);
+}
+
+.controls-Tabs__content_heading_state_selected {
+   font-weight: var(--font-weight-bold);
+   color: var(--primary_text-color_heading);
+   font-size: var(--font-size_3xl);
+}
+
+.controls-Tabs__content_text {
+   color: var(--text-color);
+   font-size: var(--font-size_l);
+}
+
+.controls-Tabs__content_additionaltext {
+   color: var(--unaccented_text-color);
+   font-size: var(--font-size_l);
+}
+
+.controls-Tabs__overlay {
+   position: absolute;
+   left: 0;
+   top: 0;
+   right: 0;
+   bottom: 0;
+}
+
+.controls-AdaptiveButtons {
+   overflow: hidden;
+}
+
+.controls-AdaptiveButtons_align-more_start {
+   padding-left: calc(@more_button-width + var(--offset_xs));
+}
+
+.controls-AdaptiveButtons_align-more_end {
+   padding-right: calc(@more_button-width + var(--offset_m));
+}
+
+.controls-AdaptiveButtons__wrapper {
+   display: flex;
+   width: 100%;
+   flex-wrap: wrap;
+}
+
+.controls-AdaptiveButtons__more {
+   position: relative;
+   width: 0;
+}
+
+.controls-AdaptiveButtons__more__text {
+   position: absolute;
+   top: calc((var(--item_height_tabs) - var(--offset_2xs)) * -1);
+}
+
+.controls-AdaptiveButtons__more__text_align_start {
+   transform: translateX(calc(-100% - var(--offset_xs)));
+}
+
+.controls-AdaptiveButtons__more__text_align_end {
+   transform: translateX(var(--offset_s));
+}
+
+// в ie есть проблема с flex-shrink, текст троеточится когда есть свободное место,
+// причем не хватает 1px, поэтому задаем минимальную ширину в calc(100% + 1px)
+// https://online.sbis.ru/opendoc.html?guid=2b5eb65e-8646-4068-a1ba-4b147e7671e2
+.ws-is-ie {
+   .controls-Tabs__itemClickableArea_minWidth {
+      min-width: calc(100% + 1px);
+   }
+
+   // Уменьшаем значение до пяти знаков,так как при большем значении выталкивается крайняя справа вкладка.
+   .controls-Tabs__space {
+      flex-shrink: 99999;
+   }
+}
+
+.ws-is-hover {
+   .controls-Tabs__marker_thickness {
+      height: var(--container_height_marker_local, var(--marker_thickness_tabs));
+   }
+
+   .controls-AdaptiveButtons__more:hover {
+      color: var(--link_hover_text-color);
+      text-decoration: underline;
+   }
+
+   .controls-Tabs__item-unselected:hover {
+      background: var(--item_container_hover-background-color_tabs_local, transparent);
+   }
+}
+
+.controls-AdaptiveButtons__item {
+   min-width: 26px;
+}
+
+.controls-AdaptiveButtons__more_align_start {
+   margin-right: auto;
+}
+
+.controls-AdaptiveButtons__more_align_end {
+   margin-left: auto;
+}
+
+.controls-Tabs_horizontal-padding-null {
+   &_first {
+      margin-left: 0;
+   }
+
+   &_last {
+      margin-right: 0;
+   }
+}
+
+.ws-is-mobile-platform {
+   .controls-Tabs_horizontal-padding-null {
+      &_first {
+         padding-left: 0;
+      }
+
+      &_last {
+         padding-right: 0;
+      }
+   }
+}
+
+.tempFix_1180388539.controls-Tabs::after {
+   height: 3px;
+}
+
+.controls-Tabs_margin-left {
+   margin-left: var(--offset_xs);
+}
+
+.controls-Tabs_image {
+   width: 100%;
+   height: 100%;
+}
+
+.controls-text-tabs-selected {
+   color: var(--item_selected_text-color_tabs_local, var(--primary_text-color));
+}
+
+.controls-text-tabs-unselected {
+   color: var(--item_text_color_tabs_local, var(--secondary_text-color));
+}
+
+.controls-Tabs_icon {
+   display: block;
+}
+
+// Костыль, чтобы не рисовать отступ в адаптивных вкладках на сервере, но при этом, визуально не было видно дерганий
+.controls-AdaptiveButtons_align-more_empty {
+   .controls-AdaptiveButtons__more__text {
+      background: var(--background-color);
+      padding: 0 var(--offset_xs);
+      padding-top: var(--offset_2xs);
+      width: calc(@more_button-width + var(--offset_xs) + var(--offset_xs));
+      height: var(--item_height_tabs);
+      top: calc(var(--item_height_tabs) * -1);
+      box-sizing: border-box;
+   }
+
+   .controls-AdaptiveButtons__more__text_align_end {
+      right: var(--offset_xs);
+   }
+
+   .controls-AdaptiveButtons__more__text_align_start {
+      left: var(--offset_xs);
+      transform: unset;
+   }
+}

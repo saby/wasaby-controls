@@ -1,0 +1,894 @@
+[
+    {
+        "header": {
+            "md5": "f91a71eaf933a1de652cbfd56afe0d03",
+            "timestamp": "2024-09-10 11:15:12.876981"
+        },
+        "body": {
+            "apply": 0,
+            "id": "a8b94eb9-ace4-424a-8503-f31dca94d114",
+            "is_parent": null,
+            "locale": {
+                "ru": {
+                    "name": "Папирус"
+                }
+            },
+            "overrides": {
+                "base": {
+                    "brand_color": {
+                        "brand_color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 156.923076923077,
+                                        "initial": false,
+                                        "l": 45.0980392156863,
+                                        "s": 79.1304347826087,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 207.0248,
+                                        "initial": false,
+                                        "l": 47.45098,
+                                        "s": 100.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark"
+                                }
+                            ]
+                        },
+                        "navigation_logo": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 0.0,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark",
+                                    "valuelinks": [
+                                        "brand_color"
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 0.0,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light",
+                                    "valuelinks": [
+                                        "brand_color"
+                                    ]
+                                }
+                            ]
+                        },
+                        "navigation_marker-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 0.0,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark",
+                                    "valuelinks": [
+                                        "navigation_logo"
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 0.0,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light",
+                                    "valuelinks": [
+                                        "navigation_logo"
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    "navigation_color": {
+                        "navigation_active_background-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": -10.0,
+                                        "s": 5.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark",
+                                    "valuelinks": [
+                                        "navigation_background-color"
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": -10.0,
+                                        "s": 5.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light",
+                                    "valuelinks": [
+                                        "navigation_background-color"
+                                    ]
+                                }
+                            ]
+                        },
+                        "navigation_background-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 0.0,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark",
+                                    "valuelinks": [
+                                        "navigation_color"
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 0.0,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light",
+                                    "valuelinks": [
+                                        "navigation_color"
+                                    ]
+                                }
+                            ]
+                        },
+                        "navigation_color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 210.0,
+                                        "initial": false,
+                                        "l": 24.31373,
+                                        "s": 29.03226,
+                                        "strict": false
+                                    },
+                                    "mode": "dark"
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 232.5,
+                                        "initial": false,
+                                        "l": 15.6862745098039,
+                                        "s": 90.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                }
+                            ]
+                        },
+                        "navigation_counter_background-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": -5.0,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark",
+                                    "valuelinks": [
+                                        "navigation_color"
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": -5.0,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light",
+                                    "valuelinks": [
+                                        "navigation_color"
+                                    ]
+                                }
+                            ]
+                        },
+                        "navigation_counter_hover_background-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 15.0,
+                                        "s": -10.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark",
+                                    "valuelinks": [
+                                        "navigation_counter_background-color"
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 15.0,
+                                        "s": -10.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light",
+                                    "valuelinks": [
+                                        "navigation_counter_background-color"
+                                    ]
+                                }
+                            ]
+                        },
+                        "navigation_counter_on_menu_hover_background-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 23.0,
+                                        "s": -17.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark",
+                                    "valuelinks": [
+                                        "navigation_counter_background-color"
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 23.0,
+                                        "s": -17.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light",
+                                    "valuelinks": [
+                                        "navigation_counter_background-color"
+                                    ]
+                                }
+                            ]
+                        },
+                        "navigation_counter_on_menu_hover_unaccented_icon-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 187.0,
+                                        "s": 10.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark",
+                                    "valuelinks": [
+                                        "navigation_color"
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 208.8,
+                                        "initial": false,
+                                        "l": 69.4117647058823,
+                                        "s": 32.051282051282,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                }
+                            ]
+                        },
+                        "navigation_counter_separator-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 27.0,
+                                        "s": -34.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark",
+                                    "valuelinks": [
+                                        "navigation_counter_background-color"
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 27.0,
+                                        "s": -34.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light",
+                                    "valuelinks": [
+                                        "navigation_counter_background-color"
+                                    ]
+                                }
+                            ]
+                        },
+                        "navigation_fill_plus": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 37.0,
+                                        "s": -17.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark",
+                                    "valuelinks": [
+                                        "navigation_background-color"
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 37.0,
+                                        "s": -17.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light",
+                                    "valuelinks": [
+                                        "navigation_background-color"
+                                    ]
+                                }
+                            ]
+                        },
+                        "navigation_fill_plus_hover": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": -20.0,
+                                        "s": 8.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark",
+                                    "valuelinks": [
+                                        "navigation_fill_plus"
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": -20.0,
+                                        "s": 8.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light",
+                                    "valuelinks": [
+                                        "navigation_fill_plus"
+                                    ]
+                                }
+                            ]
+                        },
+                        "navigation_footer_button": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 25.0,
+                                        "s": -13.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark",
+                                    "valuelinks": [
+                                        "navigation_background-color"
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 25.0,
+                                        "s": -13.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light",
+                                    "valuelinks": [
+                                        "navigation_background-color"
+                                    ]
+                                }
+                            ]
+                        },
+                        "navigation_hover_background-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 35.0,
+                                        "s": -17.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark",
+                                    "valuelinks": [
+                                        "navigation_background-color"
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 35.0,
+                                        "s": -17.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light",
+                                    "valuelinks": [
+                                        "navigation_background-color"
+                                    ]
+                                }
+                            ]
+                        },
+                        "navigation_hover_text-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": false,
+                                        "l": 100.0,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 200.0,
+                                        "initial": false,
+                                        "l": 91.96078,
+                                        "s": 7.317073,
+                                        "strict": false
+                                    },
+                                    "mode": "dark"
+                                }
+                            ]
+                        },
+                        "navigation_logo_fill": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": -10.0,
+                                        "s": 5.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark",
+                                    "valuelinks": [
+                                        "navigation_background-color"
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": -10.0,
+                                        "s": 5.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light",
+                                    "valuelinks": [
+                                        "navigation_background-color"
+                                    ]
+                                }
+                            ]
+                        },
+                        "navigation_logo_fill_hover": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": -25.0,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark",
+                                    "valuelinks": [
+                                        "navigation_logo_fill"
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": -25.0,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light",
+                                    "valuelinks": [
+                                        "navigation_logo_fill"
+                                    ]
+                                }
+                            ]
+                        },
+                        "navigation_menu_fill": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 0.0,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark",
+                                    "valuelinks": [
+                                        "navigation_hover_background-color"
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 0.0,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light",
+                                    "valuelinks": [
+                                        "navigation_hover_background-color"
+                                    ]
+                                }
+                            ]
+                        },
+                        "navigation_menu_hover": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 25.0,
+                                        "s": -13.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark",
+                                    "valuelinks": [
+                                        "navigation_menu_fill"
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 25.0,
+                                        "s": -13.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light",
+                                    "valuelinks": [
+                                        "navigation_menu_fill"
+                                    ]
+                                }
+                            ]
+                        },
+                        "navigation_text-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": false,
+                                        "l": 100.0,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 200.0,
+                                        "initial": false,
+                                        "l": 91.96078,
+                                        "s": 7.317073,
+                                        "strict": false
+                                    },
+                                    "mode": "dark"
+                                }
+                            ]
+                        },
+                        "navigation_unaccented_background-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 100.0,
+                                        "s": -34.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark",
+                                    "valuelinks": [
+                                        "navigation_color"
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 100.0,
+                                        "s": -34.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light",
+                                    "valuelinks": [
+                                        "navigation_color"
+                                    ]
+                                }
+                            ]
+                        },
+                        "navigation_unaccented_hover_icon-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 26.0,
+                                        "s": 213.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark",
+                                    "valuelinks": [
+                                        "navigation_unaccented_text-color"
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 26.0,
+                                        "s": 213.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light",
+                                    "valuelinks": [
+                                        "navigation_unaccented_text-color"
+                                    ]
+                                }
+                            ]
+                        },
+                        "navigation_unaccented_hover_text-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 26.0,
+                                        "s": 213.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark",
+                                    "valuelinks": [
+                                        "navigation_unaccented_text-color"
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 26.0,
+                                        "s": 213.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light",
+                                    "valuelinks": [
+                                        "navigation_unaccented_text-color"
+                                    ]
+                                }
+                            ]
+                        },
+                        "navigation_unaccented_icon-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": -28.0,
+                                        "s": -37.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark",
+                                    "valuelinks": [
+                                        "navigation_unaccented_text-color"
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 208.8,
+                                        "initial": false,
+                                        "l": 69.4117647058823,
+                                        "s": 32.051282051282,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                }
+                            ]
+                        },
+                        "navigation_unaccented_text-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 187.0,
+                                        "s": 10.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark",
+                                    "valuelinks": [
+                                        "navigation_color"
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 208.8,
+                                        "initial": false,
+                                        "l": 69.4117647058823,
+                                        "s": 32.051282051282,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                }
+                            ]
+                        }
+                    },
+                    "primary_color": {
+                        "navigation_primary_hover_text-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 18.36735,
+                                        "initial": false,
+                                        "l": 80.78432,
+                                        "s": 100.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark"
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 156.947368421053,
+                                        "initial": false,
+                                        "l": 57.6470588235294,
+                                        "s": 87.9629629629629,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                }
+                            ]
+                        },
+                        "navigation_primary_text-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 19.59184,
+                                        "initial": false,
+                                        "l": 71.17647,
+                                        "s": 100.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark"
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 156.923076923077,
+                                        "initial": false,
+                                        "l": 45.0980392156863,
+                                        "s": 79.1304347826087,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "selector": "default__papirus",
+            "styles": [],
+            "type": 0,
+            "aspect_theme": [
+                {
+                    "identifier": "87688e42-71bf-11ee-b962-0242ac120002",
+                    "keys": null,
+                    "uuid": "861c3d8c-3c34-43c3-9690-c8ba91ee93c8"
+                }
+            ],
+            "parent": {
+                "id": "1cb91fc8-56b0-41b9-9802-c92dfb910be3",
+                "title": "Синий аккордеон"
+            },
+            "properties": {}
+        }
+    }
+]

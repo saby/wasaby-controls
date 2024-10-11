@@ -1,0 +1,17 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center" data-qa="controlsDemo_capture">
+        <div data-qa="controlsDemo-checkboxMultiline__true" class="controlsDemo__cell controlsDemo_fixedWidth350">
+            <Controls.checkbox:Checkbox attr:class="controlsDemo_fixedWidth300"
+                                      caption="{{_caption}}"
+                                      bind:value="_value1"
+                                      multiline="{{true}}"/>
+        </div>
+        <div data-qa="controlsDemo-checkboxMultiline__false" class="controlsDemo__cell controlsDemo_fixedWidth350">
+            <Controls.checkbox:Checkbox attr:class="controlsDemo_fixedWidth300"
+                                      caption="{{_caption}}"
+                                      tooltip="{{_caption}}"
+                                      bind:value="_value2"
+                                      multiline="{{false}}"/>
+        </div>
+    </div>
+</div>

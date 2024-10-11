@@ -1,0 +1,6 @@
+<div class="controlsDemo__wrapper">
+    <Controls.treeGrid:View
+            storeId="MultiSelectSelectAncestorsDoNotSelectAncestors3"
+            columns="{{_columns}}"
+            selectAncestors="{{false}}"/>
+</div>

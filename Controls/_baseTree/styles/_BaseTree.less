@@ -1,0 +1,546 @@
+@_expander_width_treeGrid: var(--icon-size_s);
+@_expander_height_treeGrid: var(--icon-size_s);
+
+.controls-Tree__itemContentTreeWrapper {
+   display: flex;
+   align-items: baseline;
+   box-sizing: border-box;
+   border-radius: inherit;
+   width: 100%;
+}
+
+.controls-Tree__item {
+   display: flex;
+   align-items: baseline;
+}
+
+.controls-Tree__itemContent {
+   flex-grow: 1;
+   min-width: 1px;
+}
+
+// Отступ под чекбокс в дереве вешается на весь item, поэтому float: left не работает
+// Вешать отступ на контент нельзя, т.к. тогда ломаем кейс HorizontalLeaves (картинки меняют размер)
+.controls-Tree__item .controls-ListView__checkbox_position-default {
+   left: 0;
+}
+
+.controls-TreeGrid__row_default-expander_size_xs,
+.controls-TreeGrid__row-expanderPadding_size_xs {
+   padding-right: 0;
+   width: var(--size_xs_image);
+}
+
+// При очень узком пространстве под маленький экспандер выравнивание происходит отступами
+.controls-TreeGrid__row_default-expander_size_xs::before {
+   padding-left: var(--marker_thickness_content-xs_list);
+}
+
+.controls-TreeGrid__row_default-expander_size_s,
+.controls-TreeGrid__row-expanderPadding_size_s {
+   padding-right: var(--image_s_padding-right_treeGrid);
+   width: var(--size_xs_image);
+}
+
+.controls-TreeGrid__row_default-expander_size_m,
+.controls-TreeGrid__row-expanderPadding_size_m {
+   width: var(--size_s_image);
+   padding-right: var(--offset_xs);
+}
+
+.controls-TreeGrid__row_default-expander_size_l,
+.controls-TreeGrid__row-expanderPadding_size_l {
+   width: var(--size_m_image);
+   padding-right: var(--offset_xs);
+}
+
+.controls-TreeGrid__row_default-expander_size_xl,
+.controls-TreeGrid__row-expanderPadding_size_xl {
+   width: var(--size_l_image);
+   padding-right: var(--offset_xs);
+}
+
+.controls-TreeGrid__row_default-expander_size_default,
+.controls-TreeGrid__row-expanderPadding_size_default {
+   width: var(--size_xs_image);
+   padding-right: var(--image_s_padding-right_treeGrid);
+}
+
+.controls-TreeGrid__row_master-expander_size_default {
+   width: var(--size_xs_image);
+   padding-right: var(--image_s_padding-right_treeGrid);
+}
+
+.controls-TreeGrid__row_master-expander_size_s {
+   width: var(--size_xs_image);
+   padding-right: var(--image_s_padding-right_treeGrid);
+}
+
+.controls-TreeGrid__row_master-expander_size_m {
+   width: var(--size_s_image);
+   padding-right: var(--offset_xs);
+}
+
+.controls-TreeGrid__row_master-expander_size_l {
+   width: var(--size_m_image);
+   padding-right: var(--offset_xs);
+}
+
+.controls-TreeGrid__row_master-expander_size_xl {
+   width: var(--size_l_image);
+   padding-right: var(--offset_xs);
+}
+
+.controls-TreeGrid__row-expander {
+   min-height: @_expander_height_treeGrid;
+}
+
+.controls-TreeGrid__row-expander,
+.controls-Tree__row-expanderPadding {
+   line-height: 1;
+   min-width: @_expander_width_treeGrid;
+}
+
+.controls-TreeGridView__dragTargetNode::after {
+   content: '\200b';
+   border-top: 1px solid var(--primary_border-color);
+   border-bottom: 1px solid var(--primary_border-color);
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+
+   // Уже не актуально задавать z-index. Левая и правая границы не вызывают ошибок без него.
+}
+
+.controls-TreeGridView__itemsContainerPadding_left-xs {
+   margin-left: var(--offset_xs);
+}
+
+.controls-TreeGridView__itemsContainerPadding_right-xs {
+   margin-right: var(--offset_xs);
+}
+
+.controls-TreeGridView__dragTargetNode_first::after {
+   content: '\200b';
+   border-left: 1px solid var(--primary_border-color);
+}
+
+.controls-TreeGridView__dragTargetNode_last::after {
+   content: '\200b';
+   border-right: 1px solid var(--primary_border-color);
+}
+
+// region Аспект iconSize
+
+.controls-TreeGrid__row-expander_hiddenNode_iconSize_default::before,
+.controls-TreeGrid__row-expander_emptyNode_iconSize_default::before,
+.controls-TreeGrid__row-expander_node_iconSize_default::before {
+   font-size: @_expander_height_treeGrid;
+}
+
+.controls-TreeGrid__row-expander_emptyNode_iconSize_2xs::before,
+.controls-TreeGrid__row-expander_hiddenNode_iconSize_2xs::before,
+.controls-TreeGrid__row-expander_node_iconSize_2xs::before {
+   font-size: var(--icon-size_2xs);
+}
+
+.controls-TreeGrid__row-expander_node_iconSize_master::before {
+   font-size: var(--icon-size_2xs);
+   padding-right: calc(var(--icon-size_s) - var(--icon-size_2xs));
+}
+
+.controls-TreeGrid__row-expander_hiddenNode_iconSize_master::before {
+   font-size: var(--icon-size_s);
+   padding-right: calc(var(--icon-size_s) - var(--icon-size_2xs));
+}
+
+// endregion Аспект iconSize
+
+// region Аспект iconStyle
+
+.controls-TreeGrid__row-expander_emptyNode_iconStyle_default::before,
+.controls-TreeGrid__row-expander_node_iconStyle_default::before {
+   color: var(--node_expander_icon-color_treeGrid);
+}
+
+.controls-TreeGrid__row-expander_hiddenNode_iconStyle_unaccented::before,
+.controls-TreeGrid__row-expander_emptyNode_iconStyle_unaccented::before,
+.controls-TreeGrid__row-expander_node_iconStyle_unaccented::before {
+   color: var(--label_icon-color);
+}
+
+.controls-TreeGrid__row-expander_hiddenNode_iconStyle_right::before {
+   color: var(--unaccented_icon-color);
+}
+
+.controls-TreeGrid__row-expander_hiddenNode_iconStyle_readonly::before,
+.controls-TreeGrid__row-expander_emptyNode_iconStyle_readonly::before,
+.controls-TreeGrid__row-expander_node_iconStyle_readonly::before {
+   color: var(--readonly_text-color);
+}
+
+// endregion Аспект iconStyle
+
+.controls-TreeGrid__row-expander_node_iconSize_default::before,
+.controls-TreeGrid__row-expander_emptyNode_iconSize_default::before,
+.controls-TreeGrid__row-expander_node_master_position_custom::before,
+.controls-TreeGrid__row-expander_node_master_position_right::before {
+   position: relative;
+   bottom: calc(-1 * var(--expander_padding_icon-treeGrid));
+}
+
+.controls-TreeGrid__row-expander_hiddenNode_iconSize_default::before,
+.controls-TreeGrid__row-expander_hiddenNode_master_position_default::before,
+.controls-TreeGrid__row-expander_hiddenNode_master_position_custom::before,
+.controls-TreeGrid__row-expander_hiddenNode_master_position_right::before {
+   position: relative;
+   bottom: calc(-1 * var(--expander_padding_icon-hidden-node-treeGrid));
+}
+
+.controls-TreeGrid__row-expander_node_master_position_custom::before,
+.controls-TreeGrid__row-expander_node_master_position_right::before,
+.controls-TreeGrid__row-expander_hiddenNode_master_position_custom::before,
+.controls-TreeGrid__row-expander_hiddenNode_master_position_right::before {
+   padding-left: var(--offset_xs);
+}
+
+.controls-Grid__cell_valign_center
+   .controls-TreeGrid__row-expander_hiddenNode_master_position_default::before,
+.controls-GridReact__cell.tw-items-center
+   .controls-TreeGrid__row-expander_hiddenNode_master_position_default::before {
+   bottom: 0;
+}
+
+.controls-TreeGrid__row-expander::before {
+   user-select: none;
+   flex-shrink: 0;
+   overflow: hidden;
+   text-align: center;
+   font-weight: normal; // https://online.sbis.ru/opendoc.html?guid=c9f0873b-3b20-4b73-a084-f67cc2c3071f
+   font-family: var(--icon_font-family_s);
+}
+
+.controls-TreeGrid__row-expander_reverse::before {
+   transform: rotateY(180deg);
+}
+
+.controls-TreeGrid__row-expander_node_default_collapsed::before,
+.controls-TreeGrid__row-expander_node_master_collapsed::before {
+   content: '\e96e';
+}
+
+.controls-TreeGrid__row-expander_node_default_expanded::before,
+.controls-TreeGrid__row-expander_node_master_expanded::before {
+   content: '\e96d';
+}
+
+.controls-TreeGrid__row-expander_emptyNode_default_collapsed::before,
+.controls-TreeGrid__row-expander_emptyNode_master_collapsed::before {
+   content: '\e96c';
+}
+
+.controls-TreeGrid__row-expander_emptyNode_default_expanded::before,
+.controls-TreeGrid__row-expander_emptyNode_master_expanded::before {
+   content: '\e96b';
+}
+
+.controls-TreeGrid__row-expander_hiddenNode_default_collapsed::before,
+.controls-TreeGrid__row-expander_hiddenNode_master_collapsed::before {
+   content: '\e9c2';
+}
+
+.controls-TreeGrid__row-expander_hiddenNode_default_expanded::before,
+.controls-TreeGrid__row-expander_hiddenNode_master_expanded::before {
+   content: '\e9c1';
+}
+
+.controls-TreeGrid__nodeExtraItem-cell__content {
+   background-color: inherit;
+   width: 100%;
+   display: inline-flex;
+   align-items: baseline;
+   min-width: 0;
+   flex-shrink: 1;
+   box-sizing: border-box;
+   height: 100%;
+}
+
+.controls-TreeGrid__nodeExtraItem-minHeight {
+   min-height: var(--node-footer_height_treeGrid);
+}
+
+.controls-TreeGrid__node-extraItem__wrapper {
+   display: flex;
+   overflow: hidden;
+}
+
+.controls-TreeGrid__nodeExtraItemContent {
+   display: inline-flex;
+   align-items: baseline;
+   box-sizing: border-box;
+   border-top-style: solid;
+}
+
+.controls-TreeGrid__nodeFooterCell_columnSeparator-size_null {
+   border-left-width: 0;
+}
+
+.controls-TreeGrid__nodeFooterCell_columnSeparator-size_s {
+   border-left: var(--column_separator_s_thickness_grid) solid var(--column_separator_s_color_grid);
+}
+
+/* row separators for extraItems */
+.controls-TreeGrid__nodeExtraItemContent_rowSeparatorSize-null {
+   border-top-width: 0;
+}
+
+.controls-TreeGrid__nodeExtraItemContent_rowSeparatorSize-s {
+   border-top: var(--item-separator_s_thickness_list) solid var(--separator_color);
+}
+
+.controls-TreeGrid__nodeExtraItemContent_rowSeparatorSize-l {
+   border-top: var(--item-separator_l_thickness_list) solid var(--separator_color);
+}
+
+.controls-TreeGrid__nodeExtraItemContent__baseline::before {
+   content: '\200b';
+   font-size: var(--baseline_list);
+}
+
+.controls-TreeGrid__nodeFooter-cell__customContent {
+   width: 100%;
+   min-width: 1px;
+}
+
+.controls-TreeGrid__row-levelPadding_size_default {
+   width: calc(var(--size_xs_image) + var(--image_s_padding-right_treeGrid));
+}
+
+.controls-TreeGrid__row-levelPadding_size_xs {
+   width: var(--size_xs_image);
+}
+
+.controls-TreeGrid__row-levelPadding_size_s {
+   width: calc(var(--size_xs_image) + var(--image_s_padding-right_treeGrid));
+}
+
+.controls-TreeGrid__row-levelPadding_size_m {
+   width: calc(var(--size_s_image) + var(--offset_xs));
+}
+
+.controls-TreeGrid__row-levelPadding_size_l {
+   width: calc(var(--size_m_image) + var(--offset_xs));
+}
+
+.controls-TreeGrid__row-levelPadding_size_xl {
+   width: calc(var(--size_l_image) + var(--offset_xs));
+}
+
+.controls-TreeView-master__expanderPadding-default {
+   margin-left: 0;
+}
+
+.controls-TreeView__expanderPadding-default {
+   margin-left: calc(var(--size_xs_image) + var(--image_s_padding-right_treeGrid));
+}
+
+.controls-TreeView__expanderPadding-s {
+   margin-left: calc(var(--size_xs_image) + var(--image_s_padding-right_treeGrid));
+}
+
+.controls-TreeView__expanderPadding-m {
+   margin-left: calc(var(--size_s_image) + var(--offset_xs));
+}
+
+.controls-TreeView__expanderPadding-l {
+   margin-left: calc(var(--size_m_image) + var(--offset_xs));
+}
+
+.controls-TreeView__expanderPadding-xl {
+   margin-left: calc(var(--size_l_image) + var(--offset_xs));
+}
+
+.controls-TreeGrid__row-cell {
+   align-items: baseline;
+}
+
+.controls-TreeGrid__row-cell_default.controls-TreeGrid__row-cell__node,
+.controls-TreeGrid__row-cell__node .controls-EditingTemplateText_size_default {
+   font-size: var(--node_font-size_treeGrid);
+}
+
+.controls-TreeGrid__row-cell_default.controls-TreeGrid__row-cell__hiddenNode,
+.controls-TreeGrid__row-cell__hiddenNode .controls-EditingTemplateText_size_default {
+   font-size: var(--font-size_xl);
+}
+
+.controls-TreeGrid__row-cell_default.controls-TreeGrid__row-cell__item,
+.controls-TreeGrid__row-cell__item .controls-EditingTemplateText_size_default {
+   font-size: var(--item_font-size_m_grid);
+}
+
+// Отступы extraItem слева
+.controls-TreeGrid__nodeExtraItemContent_spacingLeft-default {
+   padding-left: var(--item_padding-left_default_list);
+}
+
+.controls-TreeGrid__nodeExtraItemContent_spacingLeft-null {
+   padding-left: 0;
+}
+
+.controls-TreeGrid__nodeExtraItemContent_spacingLeft-xs {
+   padding-left: var(--item_padding-left_xs_list);
+}
+
+.controls-TreeGrid__nodeExtraItemContent_spacingLeft-s {
+   padding-left: var(--item_padding-left_s_list);
+}
+
+.controls-TreeGrid__nodeExtraItemContent_spacingLeft-m {
+   padding-left: var(--item_padding-left_m_list);
+}
+
+.controls-TreeGrid__nodeExtraItemContent_spacingLeft-l {
+   padding-left: var(--item_padding-left_l_list);
+}
+
+.controls-TreeGrid__nodeExtraItemContent_spacingLeft-xl {
+   padding-left: var(--item_padding-left_xl_list);
+}
+
+.controls-TreeGrid__nodeExtraItemContent_spacingLeft-xxl {
+   padding-left: var(--item_padding-left_2xl_list);
+}
+
+// Отступы extraItem справа
+/* stylelint-disable-next-line no-descending-specificity */
+.controls-TreeGrid__nodeExtraItemContent_spacingRight-default {
+   padding-right: var(--item_padding-right_default_list);
+}
+
+.controls-TreeGrid__nodeExtraItemContent_spacingRight-null {
+   padding-right: 0;
+}
+
+.controls-TreeGrid__nodeExtraItemContent_spacingRight-xs {
+   padding-right: var(--item_padding-right_xs_list);
+}
+
+.controls-TreeGrid__nodeExtraItemContent_spacingRight-s {
+   padding-right: var(--item_padding-right_s_list);
+}
+
+.controls-TreeGrid__nodeExtraItemContent_spacingRight-m {
+   padding-right: var(--item_padding-right_m_list);
+}
+
+.controls-TreeGrid__nodeExtraItemContent_spacingRight-l {
+   padding-right: var(--item_padding-right_l_list);
+}
+
+.controls-TreeGrid__nodeExtraItemContent_spacingRight-xl {
+   padding-right: var(--item_padding-right_xl_list);
+}
+
+.controls-TreeGrid__nodeExtraItemContent_spacingRight-xxl {
+   padding-right: var(--item_padding-right_2xl_list);
+}
+
+.controls-Grid__row-cell__content:not(
+      .controls-Grid__row-ladder-cell__content
+   ).controls-TreeGrid__row-cell__firstColumn__contentSpacing_null {
+   padding-left: 0;
+}
+
+// For right vertiacal align of items inside block with display: table-cell.
+.controls-Grid_table-layout .controls-TreeGridView__row-cell_innerWrapper {
+   display: flex;
+   align-items: baseline;
+}
+
+.controls-Grid_table-layout .controls-TreeGrid__node-extraItem__wrapper {
+   display: table-cell;
+}
+
+// IE only. Обертка для выравнивания контента в подвалах/заголовках узлов должна быть 24, в отличие от строки (31px)
+.controls-TreeGrid__node-extraItem__wrapper .controls-TreeGridView__row-cell_innerWrapper {
+   min-height: var(--inline_height_m);
+}
+
+// Master list sets ::before on selected item, witch overflows expander. It has z-index: 2 and pointer-events: none, but
+// Old IE doesn't support pointer-events.
+.ws-is-ie10 .controls-TreeGrid__row-expander {
+   z-index: 2;
+}
+
+.controls-Grid__row-cell-editing
+   > .controls-TreeGridView__row-cell_innerWrapper
+   > .controls-itemActionsV {
+   visibility: visible;
+   opacity: 1;
+}
+
+.controls-TreeGrid__row__searchBreadCrumbs_colspaned .controls-Grid__row-cell__content_colspaned {
+   position: relative;
+}
+
+.controls-TreeGrid__breadCrumbs_colspaned {
+   position: absolute;
+   left: 0;
+   right: 0;
+   padding-right: var(--item_padding-right_default_list);
+}
+
+.controls-TreeGrid__row__searchBreadCrumbs .controls-itemActionsV__container {
+   // При поиске в списке с горизонтальным скроллом, хлебная крошка фиксируется и растягивается,
+   // стек z-index'ов для операций над записью на хлебных крошках должен начинаться с z-index хлебной крошки (фиксированной колонки).
+   // https://online.sbis.ru/opendoc.html?guid=7ec6ad1a-6c9d-412d-b477-7935d81c82cc
+   z-index: 3;
+}
+
+.controls-TreeGrid__row__searchSeparator_line_horizontal {
+   align-self: center;
+   width: 100px;
+   height: 1px;
+   background-color: var(--label_text-color);
+   display: block;
+}
+
+.ws-is-hover {
+   .controls-TreeGrid__row-expander_emptyNode_iconStyle_default:hover::before,
+   .controls-TreeGrid__row-expander_node_iconStyle_default:hover::before {
+      color: var(--node_expander_hover_icon-color_treeGrid);
+   }
+
+   .controls-TreeGrid__row-expander_hiddenNode_iconStyle_right:hover::before {
+      color: var(--unaccented_hover_icon-color);
+   }
+
+   .controls-TreeGrid__row-expander_hiddenNode_iconStyle_unaccented:hover::before,
+   .controls-TreeGrid__row-expander_emptyNode_iconStyle_unaccented:hover::before,
+   .controls-TreeGrid__row-expander_node_iconStyle_unaccented:hover::before {
+      color: var(--label_hover_text-color);
+   }
+
+   .controls-TreeGrid__row-expander_visibility_hover {
+      visibility: hidden;
+   }
+
+   .controls-Grid__row:hover .controls-TreeGrid__row-expander_visibility_hover {
+      visibility: visible;
+   }
+
+   .controls-BaseControl_showActions_visible .controls-ListView__item_showActions,
+   .controls-BaseControl_showActions_onhover .controls-ListView__item_showActions:hover,
+   .controls-BaseControl_showActions_delayed .controls-ListView__item_showActions:hover {
+      &
+         > .controls-TreeGrid__row-cell
+         > .controls-TreeGridView__row-cell_innerWrapper
+         > .controls-itemActionsV {
+         visibility: visible;
+         opacity: 1;
+      }
+   }
+}

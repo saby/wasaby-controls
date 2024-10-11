@@ -1,0 +1,155 @@
+<ws:template name="groupTemplate">
+   <ws:partial template="Controls/_menu/Render/GroupTemplate"
+               scope="{{groupTemplate}}"
+               customGroupTemplate="{{_options.groupTemplate}}"
+               emptyItem="{{_options.emptyItem}}"
+               class="controls-ListView__itemV"
+               on:mouseenter="_separatorMouseEnter()" />
+</ws:template>
+
+<ws:template name="itemTpl">
+   <ws:partial template="Controls/_menu/Render/ItemTemplateWrapper"
+               markerVisibility="{{_options.markerVisibility}}"
+               itemActionsVisibility="{{_options.itemActionsVisibility}}"
+               multiSelect="{{_options.multiSelect}}"
+               hoverBackgroundStyle="{{_options.hoverBackgroundStyle}}"
+               viewMode="{{_options.viewMode}}"
+               directionality="{{_directionality}}"
+               item="{{item}}"
+               itemVersion="{{itemVersion}}"
+               itemData="{{itemData}}"
+               emptyText="{{_options.emptyText}}"
+               emptyKey="{{_options.emptyKey}}"
+               selectedAllText="{{_options.selectedAllText}}"
+               selectedAllKey="{{_options.selectedAllKey}}"
+               historyRoot="{{_options.historyRoot}}"
+               searchValue="{{_options.searchValue}}"
+               allowPin="{{_options.allowPin}}"
+               isAdaptive="{{_options.isAdaptive}}"
+               allowAdaptive="{{_options.allowAdaptive}}"
+               itemPadding="{{_options.itemPadding}}"
+               leftPadding="{{_options.leftPadding}}"
+               fontColorStyle="{{_options.fontColorStyle}}"
+               keyProperty="{{_options.keyProperty}}"
+               displayProperty="{{_options.displayProperty}}"
+               parentProperty="{{_options.parentProperty}}"
+               nodeProperty="{{_options.nodeProperty}}"
+               source="{{_options.source}}"
+               itemTemplateProperty="{{_options.itemTemplateProperty}}"
+               itemTemplate="{{_options.itemTemplate}}"
+               breadCrumbsItemTemplate="{{_options.breadCrumbsItemTemplate}}"
+               iconSize="{{_options.iconSize}}"
+               iconStyle="{{_options.iconStyle}}"
+               iconPadding="{{_options.iconPadding}}"
+               multiLine="{{_options.multiLine}}"
+               multiSelectPosition="{{_options.multiSelectPosition}}"
+               itemAlign="{{_options.itemAlign}}"
+               width="{{_options.width}}"
+               useListRender="{{_options.useListRender}}"
+               hierarchyViewMode="{{_options.hierarchyViewMode}}"
+               menuMode="{{_options.menuMode}}"
+               subMenuLevel="{{_options.subMenuLevel}}"
+               root="{{_options.root}}"
+               focusable="{{_options.focusable}}"
+               scope="{{item.contents['itemTemplateOptions']}}"
+               attr:data-target="{{_options.dataName ? _options.dataName + '_item_' + item.contents[_options.keyProperty]}}"
+               attr:data-qa="{{item.listElementName}}"
+               attr:type-data-qa="{{item.getContents()[_options.nodeProperty] ? 'node' : 'leaf'}}"
+               on:itemClick="_itemClick()"> <!-- https://online.sbis.ru/opendoc.html?guid=47950520-ef97-4302-8573-4b8495a3f0ee -->
+   </ws:partial>
+   <ws:if data="{{_isHistorySeparatorVisible(item)}}">
+      <ws:partial template="Controls/_menu/Render/GroupTemplate"
+                  isHistoryGroup="{{true}}"
+                  attr:class="controls-Menu__group_marginBottom"
+                  attr:key="{{item.getUid()}} + '_separator'"
+                  on:mouseenter="_separatorMouseEnter()"/>
+   </ws:if>
+</ws:template>
+
+<ws:template name="menuRender">
+   <div attr:tabindex="-1"
+        attr:ws-no-focus="{{!_options.focusable}}"
+        attr:class="ws-flexbox ws-flex-column {{'controls-Menu_showActions_' + _options.itemActionsVisibility}}">
+      <ws:if data="{{_options.emptyItem}}">
+         <ws:partial template="itemTpl"
+                     item="{{_options.emptyItem}}"
+                     itemData="{{_options.emptyItem}}"
+                     itemVersion="{{_options.emptyItem.getVersion()}}"
+                     on:mousemove="_emptyItemMouseMove(_options.emptyItem)"
+                     on:mouseenter="_emptyItemMouseEnter(_options.emptyItem)"
+                     on:click="_emptyItemClick(_options.emptyItem.contents)"
+                     attr:class="ws-flex-shrink-0"
+         />
+      </ws:if>
+       <!--
+        // Из-за реализации ListContainerConnectedCompatible при поиске сюда всегда прилетает сначала
+        // новая модель, а потом отдельно прилетает viewMode. Из-за чего падает explorer,
+        // т.к. пытается отренедерить хлебные крошки через обычные ячейки.
+        // Единственный возможный путь - пока что передавать viewMode синхронно.
+        // Для этого сделана опция _passViewModeFromOptions -->
+      <ws:partial template="{{_options.viewMode === 'list' ? 'Controls/tree:View' : 'Controls/explorer:View' }}"
+                  viewMode="{{_options.viewMode || 'table'}}"
+                  _passViewModeFromOptions="{{ true }}"
+                  searchNavigationMode="readonly"
+                  breadcrumbsVisibility="{{_options.breadCrumbsVisibility === 'visible' ? 'visible' : 'hidden'}}"
+                  name="list"
+                  fontColorStyle="{{undefined}}"
+                  fontSize="xl"
+                  collection="{{_options.listModel}}"
+                  stickyHeader="{{false}}"
+                  expanderPosition="{{_options.menuMode === 'selector' ? 'default' : 'custom'}}"
+                  expanderIcon="hiddenNode"
+                  expandByItemClick="{{_options.hierarchyViewMode === 'tree' && _options.subMenuLevel || _options.useListRender}}"
+                  itemActionsPosition="custom"
+                  actionAlignment="horizontal"
+                  actionCaptionPosition="none"
+                  multiSelectPosition="custom"
+                  recursiveSelection="{{_options.menuMode !== 'selector'}}"
+                  groupTemplate="{{groupTemplate}}"
+                  virtualScrollConfig="{{_options.useListRender ? _options.virtualScrollConfig}}"
+                  itemTemplateProperty="{{null}}"
+                  keepScrollAfterReload="{{true}}"
+                  itemsSpacing="{{_options.isAdaptive ? null : _options.itemsSpacing}}"
+                  class="{{_options.emptyItem ? 'controls-margin_top-' + _options.itemsSpacing}}"
+                  dataLoadCallback="{{_options.menuMode === 'selector' ? _options.dataLoadCallback : null}}"
+                  bind:expandedItems="_expandedItems"
+                  on:expandedItemsChanged="_expandedItemsChanged()"
+                  on:rootChanged="_rootChanged()"
+                  on:controlResize="_listResized()"
+                  on:itemMouseMove="_itemMouseMove()"
+                  on:itemMouseEnter="_itemMouseEnter()"
+                  on:itemMouseLeave="_itemMouseLeave()"
+                  on:itemClick="_itemClick()"
+                  on:selectedKeysChanged="_selectedKeysChanged('selectedKeysChanged')"
+                  on:excludedKeysChanged="_selectedKeysChanged('excludedKeysChanged')"
+                  on:beforeSelectionChanged="_beforeSelectionChanged()"
+                  on:markedKeyChanged="_markedKeyChanged()"
+                  on:checkBoxClick="_checkBoxClick()"
+                  on:beforeItemExpand="_beforeItemExpand()"
+                  on:afterItemCollapse="_afterItemCollapse()"
+                  scope="{{_options}}">
+           <ws:roundBorder tl="menu-m" tr="menu-m" bl="menu-m" br="menu-m"/>
+           <ws:itemPadding left="{{_options.leftPadding}}" right="null" top="null" bottom="null" />
+           <ws:itemTemplate>
+              <ws:partial template="itemTpl" scope="{{itemTemplate}}"/>
+           </ws:itemTemplate>
+           <ws:multiSelectTemplate>
+              <ws:partial template="wml!Controls/_menu/Render/multiSelectTpl" scope="{{multiSelectTemplate}}"/>
+           </ws:multiSelectTemplate>
+           <ws:searchBreadCrumbsItemTemplate>
+               <ws:partial template="Controls/_menu/Render/SearchBreadCrumbsItemTemplate" scope="{{searchBreadCrumbsItemTemplate}}"/>
+           </ws:searchBreadCrumbsItemTemplate>
+      </ws:partial>
+   </div>
+</ws:template>
+
+<ws:if data="{{_options.groupTemplate && (_options.groupProperty || _options.groupingKeyCallback)}}">
+   <ws:partial template="menuRender">
+      <ws:groupTemplate>
+         <ws:partial template="groupTemplate" />
+      </ws:groupTemplate>
+   </ws:partial>
+</ws:if>
+<ws:else>
+   <ws:partial template="menuRender" />
+</ws:else>

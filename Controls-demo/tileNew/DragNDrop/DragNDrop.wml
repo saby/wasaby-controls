@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper controlDemo_Tile_dnd">
+    <div class="demo-DragNDrop__list">
+        <Controls.treeTile:View
+                name="view"
+                tileMode="dynamic"
+                on:customdragStart="_dragStart()"
+                on:customdragEnd="_dragEnd()"
+                itemsDragNDrop="{{true}}"
+                itemsReadyCallback="{{_itemsReadyCallback}}"
+                imageProperty="image"
+                storeId="DragNDrop">
+            <ws:draggingTemplate>
+                <ws:partial template="Controls/dragnDrop:DraggingTemplate"
+                            mainText="{{draggingTemplate.entity._options.title}}"
+                            image="{{draggingTemplate.entity._options.image}}">
+                </ws:partial>
+            </ws:draggingTemplate>
+        </Controls.treeTile:View>
+    </div>
+</div>

@@ -1,0 +1,4 @@
+<div style="display: flex; justify-content: center;">
+    <Controls-TabsLayout.verticalTabs:Buttons items="{{_items}}" bind:selectedKey="_selectedKey" keyProperty="key"/>
+</div>
+

@@ -1,0 +1,25 @@
+.controls-FilterViewPanel__dropdownEditor {
+   max-width: 100%;
+}
+
+.controls-FilterViewPanel__dropdownEditor_popupClassName {
+   margin-top: calc(
+      -1 * ((var(--item_height_menu) - var(--inline_height_m)) / 2 + var(--offset_s) +
+               var(--offset_3xs))
+   );
+   margin-left: calc(
+      -1 * ((
+                  var(--item_padding-left_s_list) + var(--icon-size_2xs) + var(--offset_3xs) +
+                     var(--offset_xs)
+               ) - var(--additional-editor_horizontal-offset_filterViewPanel))
+   );
+}
+
+.controls-FilterViewPanel__dropdownEditor_cross
+   .controls-FilterViewPanel__baseEditor-cross_container {
+   align-self: baseline;
+
+   &::before {
+      line-height: normal;
+   }
+}

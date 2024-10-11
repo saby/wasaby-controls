@@ -1,0 +1,44 @@
+<ws:partial template="{{ _baseCutTemplate }}" attr:class="controls-Cut__container" attr:style="{{
+         '--calculated-content-max-height_inputArea: calc(' + (_lines + 1) + ' * var(--line-height_' + _options.lineHeight + '_inputArea));' +
+         '--calculated-btn-margin-top_inputArea: calc(' + (_lines + 1) + ' * var(--line-height_' + _options.lineHeight + '_inputArea));'
+      }}">
+    <ws:content>
+        <div class="controls-Cut controls-TextCut_lineHeight-{{_options.lineHeight}}"
+             style="{{
+            _lines !== null ?
+            ('max-height: ' + (
+               _isIE ?
+                  ((_lines + 1) * _lineHeightForIE[_options.lineHeight]) + 'px; ' :
+                  'var(--calculated-content-max-height_inputArea); ')
+            )
+         }}">
+            <div name="content" class="controls-Cut__content">
+                <ws:partial template="{{ _options.content }}"/>
+            </div>
+            <ws:if data="{{ _options.lines !== null }}">
+                <ws:if data="{{ !_expanded }}">
+                    <ws:partial template="{{ content.notExpandedButtonTemplate }}"
+                                cutVisible="{{ _cutVisible }}"
+                                isIE="{{ _isIE }}"
+                                scope="{{ _options }}"
+                                lineHeight="{{_lineHeight}}"
+                                expanded="{{ false }}"/>
+                </ws:if>
+                <ws:else>
+                    <div class="controls-TextCut__ellipsisWrapper{{ _expanded ? '_expanded_lineHeight-' +  _options.lineHeight}}"
+                         style="{{
+              'margin-top: ' + (
+                  _isIE ?
+                     ((_lines + 1) * _lineHeightForIE[_options.lineHeight]) + 'px; ' :
+                     'var(--calculated-btn-margin-top_inputArea); '
+                  )
+              }}">
+                        <ws:partial template="{{ content.expandedButtonTemplate }}"
+                                    scope="{{ _options }}"
+                                    expanded="{{ true }}"/>
+                    </div>
+                </ws:else>
+            </ws:if>
+        </div>
+    </ws:content>
+</ws:partial>

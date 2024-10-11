@@ -1,0 +1,20 @@
+<div class="controlsDemo__cell">
+    <div class="controls-text-label">icon from cbuc-icons</div>
+    <Controls.icon:Icon
+            icon="icon-Plus"
+            iconSize="default"
+            iconStyle="danger"
+    />
+    <div class="controls-text-label">icon from svg</div>
+    <Controls.icon:Icon
+        icon="Controls-icons/actions:icon-CloseCheck"
+        iconSize="default"
+        iconStyle="danger"
+    />
+    <div class="controls-text-label">icon from dynamic build font</div>
+    <Controls.icon:Icon
+        icon="FONT:Controls-icons/actions:icon-CloseCheck"
+        iconSize="default"
+        iconStyle="danger"
+    />
+</div>
