@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">roundMode=trunc</div>
+      <Controls.baseDecorator:Number value="{{_value}}" precision="{{_precision}}" roundMode="trunc"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">roundMode=round</div>
+      <Controls.baseDecorator:Number value="{{_value}}" precision="{{_precision}}" roundMode="round"/>
+   </div>
+</div>

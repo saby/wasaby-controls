@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module id="590e2cd1-e406-4ea2-b470-cd8ec277eccb" name="Controls-LayoutUnit" version="1.00">
+  <description/>
+  <depends>
+      <module id="8b5b7952-3839-48c6-8e0e-aa1209a98c21" name="Controls-Layout"/>
+      <module id="30adfd2b-eab8-4c9e-82c2-c964445e9662" name="Controls-Layout-default-theme"/>
+      <module id="a10cb1cb-b23d-4ef6-a757-4f7382e0e8d1" name="SbisEnvUI"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <test environment="NodeJS" framework="Jest" />
+  <resources/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

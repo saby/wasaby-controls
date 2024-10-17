@@ -1,0 +1,56 @@
+/**
+ * @kaizen_zone 54264d06-aeee-417a-83fc-b192e24178b2
+ */
+import CollectionItem, { IOptions } from './CollectionItem';
+import { TemplateFunction } from 'UI/Base';
+
+export interface IEmptyTemplateItemOptions extends IOptions<null> {
+    template: TemplateFunction;
+}
+
+export class EmptyTemplateItem extends CollectionItem<null> {
+    private _template: TemplateFunction;
+
+    constructor(options: IEmptyTemplateItemOptions) {
+        super(options);
+        this._template = options.template;
+    }
+
+    getTemplate(userTemplate: TemplateFunction | string): TemplateFunction | string {
+        return userTemplate || this._template;
+    }
+
+    getContentClasses(
+        params: {
+            align?: string;
+            isEditing?: boolean;
+            topSpacing?: string;
+            bottomSpacing?: string;
+        } = {}
+    ): string {
+        const rightPadding = this.getOwner().getRightPadding().toLowerCase();
+        let classes = 'controls-ListView__empty';
+        classes += ` controls-ListView__empty-textAlign_${params.align || 'center'}`;
+        classes += ` controls-ListView__empty_topSpacing_${params.topSpacing || 'l'}`;
+        classes += ` controls-ListView__empty_bottomSpacing_${params.bottomSpacing || 'l'}`;
+
+        if (this._$rowSeparatorSize) {
+            const rowSeparatorSize = this.getRowSeparatorSize();
+            classes += ` controls-ListView__rowSeparator_size-${rowSeparatorSize}`;
+            classes += ` controls-ListView__rowSeparator_bottom_size-${rowSeparatorSize}`;
+        }
+
+        if (params.align && params.align !== 'center') {
+            classes += ` ${this._getLeftSpacingContentClasses()}`;
+            classes += ` controls-ListView__item-rightPadding_${rightPadding}`;
+        }
+
+        if (params.isEditing) {
+            classes += ' controls-ListView__empty_background-editing';
+        }
+
+        return classes;
+    }
+}
+
+export default EmptyTemplateItem;

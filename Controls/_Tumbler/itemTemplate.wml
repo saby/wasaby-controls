@@ -1,0 +1,19 @@
+<ws:template name="CaptionTemplate">
+    <span data-qa="controls-Tumbler__button-caption"
+          class="controls-Tumbler__button-caption controls-fontsize-{{fontSize}} ws-ellipsis"
+          tabindex="0">
+        {{ item.get(displayProperty || 'title') ||  item.get('caption') }}
+    </span>
+</ws:template>
+
+<ws:if data="{{contentTemplate}}">
+    <ws:partial template="{{contentTemplate}}" item="{{item}}">
+        <ws:captionTemplate>
+            <ws:partial template="CaptionTemplate" tabindex="0"/>
+        </ws:captionTemplate>
+    </ws:partial>
+</ws:if>
+<ws:else>
+    <ws:partial template="CaptionTemplate"/>
+</ws:else>
+

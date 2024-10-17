@@ -1,0 +1,28 @@
+<div class="controlsDemo__wrapper controls-demo_MasterDetail-background">
+   <div class="controlsDemo__masterDetail-container">
+      <Controls.masterDetail:Base masterClassName="controls-air-m">
+         <ws:master>
+            <Controls.scroll:Container shadowMode="js">
+               <Controls.masterDetail:List>
+                  <Controls.grid:View
+                          storeId="master"
+                          style="master"
+                          backgroundStyle="master"
+                          columns="{{_gridColumns}}"
+                  >
+                  </Controls.grid:View>
+               </Controls.masterDetail:List>
+            </Controls.scroll:Container>
+         </ws:master>
+         <ws:detail>
+            <Controls.scroll:Container attr:class="controlsDemo_fixedWidth500 controls-air-l">
+               <Controls.grid:View
+                       keyProperty="id"
+                       storeId="detail"
+                       columns="{{_gridColumns}}"
+                       header="{{_header}}"/>
+            </Controls.scroll:Container>
+         </ws:detail>
+      </Controls.masterDetail:Base>
+   </div>
+</div>

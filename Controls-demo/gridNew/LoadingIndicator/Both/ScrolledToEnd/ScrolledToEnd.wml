@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:class="controlsDemo__height400" attr:style="max-width: 700px"
+                               initialScrollPosition="{{_initialScrollPosition}}">
+        <Controls.grid:View
+                name="list"
+                columns="{{_columns}}"
+                storeId="LoadingIndicatorBothScrolledToEnd"/>
+    </Controls.scroll:Container>
+</div>

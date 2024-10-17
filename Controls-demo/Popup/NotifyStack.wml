@@ -1,0 +1,21 @@
+<Controls.popupTemplate:Stack headingCaption="Notify Stack Test">
+   <ws:headerContentTemplate>
+      <div style="display: flex;justify-content: flex-end;flex-grow: 1;">
+         <Controls.buttons:Button caption="Закрыть {{_options.type  || ''}}" on:click="_close()"/>
+      </div>
+   </ws:headerContentTemplate>
+   <ws:bodyContentTemplate>
+      <Controls.popup:Stack name="formControllerOpener" template="Controls-demo/Popup/Edit/MyFormController" type="stack" width="650">
+      </Controls.popup:Stack>
+      <div style="width: 700px">
+         <Controls.input:Text bind:value="_textValue1" attr:class="ControlsDemo-NotifyStack__input1" />
+         <br/>
+         <Controls.input:Text bind:value="_textValue2" attr:class="ControlsDemo-NotifyStack__input2" />
+         <br/>
+         <Controls.buttons:Button caption="Отправить текст в опенер" on:click="_sendResult()" attr:class="ControlsDemo-NotifyStack__input" />
+         <br/>
+         <Controls.buttons:Button name="FCButton" caption="Открыть FormController" on:click="_openFC()"
+                                  attr:class="ControlsDemo-TestStack__FC"/>
+      </div>
+   </ws:bodyContentTemplate>
+</Controls.popupTemplate:Stack>

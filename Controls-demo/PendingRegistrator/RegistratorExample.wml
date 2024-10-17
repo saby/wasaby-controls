@@ -1,0 +1,17 @@
+<div attr:class="controls-demo__pending_container">
+    состояние пендинга: {{ _message }}
+    <br/>
+    статус: {{ _pendingMessage }}
+    <Controls.Pending name="registrator">
+        <ws:partial template="{{_options.content}}"
+                    on:registerPending="_registerPending()"
+                    on:finishingPendingProcess="_finishingPendingProcess()"
+                    on:finishedPendingProcess="_finishedPendingProcess()"
+                    on:cancelFinishingPending="_cancelFinishingPending()"
+                    attr:class="controls-demo__indicator_content"
+        />
+    </Controls.Pending>
+    <Controls.buttons:Button caption="вызвать finishPendingOperations"
+                             class="controls-demo__pending-finish"
+                             on:click="_finish()"/>
+</div>

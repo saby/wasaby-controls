@@ -1,0 +1,112 @@
+<Controls.validate:Controller name="formController">
+    <Controls.popupTemplate:Dialog closeButtonViewMode="toolButton"
+                                   closeButtonOffset="null"
+                                   closeButtonVisible="{{_options.isAdaptive ? false : true}}"
+                                   headerBackgroundStyle="{{(_options.orientation === 'horizontal' || !_hasBasicItems) ? 'unaccented' : 'filterPanelPopup'}}"
+                                   borderVisible="{{false}}"
+                                   attr:class="controls-FilterPanelPopup
+                                               controls-FilterPanelPopup-uppercase
+                                               {{(_historyItems && _historyItems.getCount() || _options.emptyHistoryTemplate) ? 'controls-FilterPanelPopup-withHistory' : 'controls-FilterPanelPopup-withoutHistory'}}
+                                               {{_options.isAdaptive ? 'controls-FilterPanelPopup__adaptive' :
+                                                    ' controls-FilterPanelPopup_close-padding' +
+                                                    (_options.width !== 'default' ? ' controls-FilterPanelPopup_' + _options.orientation + '_width-' + _options.width :
+                                                    ' controls-FilterPanelPopup-' + _options.orientation + '-' + _options.width)}}
+                                               controls_filterPanelPopup_theme-{{_options.theme}}
+                                               controls_filterPanel_theme-{{_options.theme}}
+                                               controls_filterPopup_theme-{{_options.theme}}">
+        <ws:headerContentTemplate>
+            <div class="controls-FilterPanelPopup__header-wrapper ws-flexbox ws-align-items-baseline
+                        controls-FilterPanelPopup__header-{{_options.orientation}}{{_options.isAdaptive ? '_adaptive' : ''}}">
+                <Controls.icon:Icon icon="Controls-icons/common:icon-Filter"
+                                    iconSize="xs"
+                                    iconStyle="primaryFilter"
+                                    attr:class="controls-icon controls-margin_right-xs {{_options.isAdaptive ? 'controls-margin_left-3xs' : 'controls-margin_left-s'}}"
+                />
+                <Controls.heading:Title attr:class="ws-ellipsis"
+                                        caption="{{_headingCaption}}"
+                                        fontColorStyle="primaryFilter"
+                                        fontSize="xl"
+                                        readOnly="{{true}}"
+                                        fontWeight="normal"
+                                        tooltip="{{_headingCaption}}"/>
+                <ws:if data="{{_options.topTemplate}}">
+                    <div class="controls-FilterPanelPopup__topTemplate controls-margin_left-l">
+                        <ws:partial template="{{ _options.topTemplate }}"
+                                    filterDescription="{{ _items }}"
+                                    scope="{{ _options.topTemplateOptions }}"
+                                    on:filterDescriptionChanged="_sourceChangedHandler()"/>
+                    </div>
+                </ws:if>
+                <div class="controls-FilterPanelPopup__header
+                            controls-FilterPanelPopup-normal">
+                    <ws:if data="{{_resetButtonVisible}}">
+                        <Controls.buttons:Button viewMode="linkButton"
+                                                    caption="{{rk('Сбросить')}}"
+                                                    tooltip="{{rk('Сбросить')}}"
+                                                    fontColorStyle="label"
+                                                    fontSize="xs"
+                                                    inlineHeight="m"
+                                                    attr:class="controls-FilterPanelPopup__reset-button"
+                                                    attr:data-qa="controls-FilterPanelPopup__reset-button"
+                                                    on:click="_resetFilter()"/>
+                    </ws:if>
+                    <ws:if data="{{_options.applyButtonCaption}}">
+                        <div class="controls-FilterPanelPopup__applyButton">
+                            <Controls.buttons:Button caption="{{_options.applyButtonCaption}}"
+                                                     tooltip="{{_options.applyButtonCaption}}"
+                                                        buttonStyle="primary"
+                                                        attr:tabindex="1"
+                                                        attr:ws-autofocus="true"
+                                                        attr:data-qa="controls-FilterPanelPopup__applyButton"
+                                                        on:click="_applyFilterHandler()"/>
+                        </div>
+                    </ws:if>
+                    <ws:else data="{{_applyButtonVisible}}">
+                        <Controls.buttons:Button viewMode="filled"
+                                                    icon="icon-Yes"
+                                                    iconSize="s"
+                                                    iconStyle="contrast"
+                                                    buttonStyle="success"
+                                                    caption="{{null}}"
+                                                    tooltip="{{rk('Применить')}}"
+                                                    inlineHeight="l"
+                                                    attr:tabindex="1"
+                                                    attr:ws-autofocus="true"
+                                                    attr:class="controls-FilterPanelPopup__applyButton"
+                                                    attr:data-qa="controls-FilterPanelPopup__applyButton"
+                                                    on:click="_applyFilterHandler()"/>
+                    </ws:else>
+                </div>
+            </div>
+        </ws:headerContentTemplate>
+        <ws:bodyContentTemplate>
+            <Controls.scroll:Container attr:class="controls-FilterPanelPopup-normal
+                                                   {{_options.isAdaptive ? 'controls-FilterPanelPopup__adaptive'}}
+                                                   {{(_historyItems && _historyItems.getCount()) || _hasExtendedItems ? 'controls-FilterViewPanel__editors-container-popup'}}"
+                                       attr:data-qa="Controls_FilterPanelPopup-Sticky__scroll">
+                <Controls.form:PrimaryAction on:triggered="_applyFilterHandler()">
+                    <Controls.filterPanel:View name="filterPanel"
+                                               source="{{_items}}"
+                                               extendedTemplateName="{{_options.extendedTemplateName}}"
+                                               backgroundStyle="{{_options.orientation === 'horizontal' ? 'default' : 'contrast'}}"
+                                               viewMode="popup"
+                                               style="popup"
+                                               editorsViewMode="cloud"
+                                               filterItemLocalProperty="window"
+                                               orientation="{{_options.orientation}}"
+                                               extendedItemsViewMode="{{_options.isAdaptive ? 'row' : _options.extendedItemsViewMode}}"
+                                               historyId="{{_options.historyId}}"
+                                               historySaveMode="{{_options.historySaveMode}}"
+                                               historyItems="{{_historyItems}}"
+                                               emptyHistoryTemplate="{{_options.emptyHistoryTemplate}}"
+                                               useScroll="{{false}}"
+                                               on:sourceChanged="_sourceChangedHandler()"
+                                               on:historyItemClick="_historyItemClick()"
+                                               attr:data-qa="controls-FilterPanelPopup__sticky_filterPanel">
+                                               <ws:itemsContainerPadding top="null" bottom="null" left="filterPanelPopup" right="l" />
+                    </Controls.filterPanel:View>
+                </Controls.form:PrimaryAction>
+            </Controls.scroll:Container>
+        </ws:bodyContentTemplate>
+    </Controls.popupTemplate:Dialog>
+</Controls.validate:Controller>

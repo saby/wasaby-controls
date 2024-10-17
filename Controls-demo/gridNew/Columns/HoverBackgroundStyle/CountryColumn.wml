@@ -1,0 +1,7 @@
+<ws:partial template="Controls/grid:ColumnTemplate"
+            scope="{{ _options }}"
+            hoverBackgroundStyle="primary">
+    <ws:contentTemplate>
+        <span>{{ item.contents.country }}</span>
+    </ws:contentTemplate>
+</ws:partial>

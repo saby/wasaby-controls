@@ -1,0 +1,5 @@
+<ws:partial template="Controls/treeGrid:NodeFooterTemplate"
+            navigationButtonView="separator"
+            scope="{{ _options }}">
+    <ws:navigationButtonConfig size="s"/>
+</ws:partial>

@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="controls-margin_right-m ControlsDemo-IconStyle__success">
+            <Controls.buttons:Button viewMode="outlined"
+                                     icon="icon-ThumbUp2"
+                                     caption="Поощрить"
+                                     captionPosition="start"
+                                     iconSize="s"
+                                     iconStyle="success"/>
+        </div>
+        <div class="controls-margin_right-m ControlsDemo-IconStyle__danger">
+            <Controls.buttons:Button viewMode="outlined"
+                                     icon="icon-ThumbDown2"
+                                     caption="Наказать"
+                                     captionPosition="start"
+                                     iconSize="s"
+                                     iconStyle="danger"/>
+        </div>
+    </div>
+</div>

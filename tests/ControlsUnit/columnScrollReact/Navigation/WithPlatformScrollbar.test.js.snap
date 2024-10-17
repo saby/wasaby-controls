@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlsUnit/columnScrollReact/Navigation/WithPlatformScrollbar Базовый рендер с платформенным скроллбаром, без моков 1`] = `
+<DocumentFragment>
+  <div
+    class="tw-w-full controls-ColumnScrollReact__acceleration testClassName__scrollBar"
+    data-qa="ColumnScrollReact__navigation__scrollbar"
+  >
+    <div
+      class="controls-VScrollbar controls_scroll_theme-default controls-VScrollbar_horizontal controls-VScrollbar_horizontal_size-s controls-VScrollbar_horizontal-track_size-s controls-VScrollbar_horizontal-track controls-VScrollbar_horizontal-track ws-invisible"
+      data-qa="VScrollbar_horizontal"
+      style="top: 0px;"
+    >
+      <div
+        class="controls-VScrollbar__thumbWrapper controls-VScrollbar__thumbWrapper_size-s controls-VScrollbar__thumbWrapper_horizontal controls-padding_left-m controls-padding_right-m"
+        style="width: 0px; transform: translateX(0px);"
+      >
+        <div
+          class="controls-VScrollbar__thumb controls-VScrollbar__thumb_unaccented controls-VScrollbar__thumb_size-s controls-VScrollbar__thumb_unaccented_horizontal controls-VScrollbar__thumb_horizontal controls-VScrollbar__thumb_horizontal_size-s"
+          data-qa="VScrollbar__thumb"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

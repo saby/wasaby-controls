@@ -1,0 +1,24 @@
+<div class="controlsDemo__wrapper controlDemo_Tile_ItemActions-custom-tpl">
+    <Controls.treeTile:View
+            tileMode="dynamic"
+            imageProperty="image"
+            itemActions="{{_itemActions}}"
+            itemActionsPosition="custom"
+            storeId="ItemActionsCustomPositionComponent">
+        <ws:roundBorder tl="m" tr="m" bl="m" br="m"/>
+        <ws:itemTemplate>
+            <ws:partial
+                    template="Controls/tile:ItemTemplate"
+                    itemWidth="{{itemTemplate.item.contents.width}}"
+                    hasTitle="{{itemTemplate.item.contents.isDocument}}">
+                <ws:contentTemplate>
+                    <Controls-demo.tileNew.ItemActions.CustomPositionComponent.InnerComponent
+                            image="{{ itemTemplate.item.contents.image }}"
+                            title="{{ itemTemplate.item.contents.title }}"
+                            itemActionsTemplate="{{ contentTemplate.itemActionsTemplate }}"
+                    />
+                </ws:contentTemplate>
+            </ws:partial>
+        </ws:itemTemplate>
+    </Controls.treeTile:View>
+</div>

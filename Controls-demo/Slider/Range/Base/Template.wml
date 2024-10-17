@@ -1,0 +1,47 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <div class="controls-text-label">default slider</div>
+    <Controls.slider:Range
+            attr:data-qa="controlsDemo-Slider__default"
+            maxValue="{{100}}"
+            minValue="{{0}}"
+    />
+    <div class="controls-text-label">readOnly=true</div>
+    <Controls.slider:Range
+            attr:data-qa="controlsDemo-Slider__readOnly"
+            maxValue="{{100}}"
+            minValue="{{0}}"
+            bind:startValue="_startValue1"
+            bind:endValue="_endValue1"
+            readOnly="{{true}}"
+    />
+    <div class="controls-text-label">slider</div>
+    <Controls.slider:Range
+            attr:data-qa="controlsDemo-Slider__bind"
+            maxValue="{{100}}"
+            minValue="{{0}}"
+            bind:startValue="_startMiddleValue"
+            bind:endValue="_endMiddleValue"
+            on:startValueChanged="_changeStartSliderHandler()"
+            on:endValueChanged="_changeEndSliderHandler()"
+    />
+    <div class="controlsDemo__cell ws-flexbox">
+        <div>
+            <div class="controls-text-label">start</div>
+            <Controls.input:Number bind:value="_startValue"
+                                   selectOnClick="{{true}}"
+                                   attr:style="width:100px"
+                                   attr:data-qa="controlsDemo-Slider__startInput"
+                                   on:deactivated="_deactivatedHandler('start')"
+                                   on:keyDown="_keyDownHandler('start')"/>
+        </div>
+        <div attr:style="margin-left: 20px">
+            <div class="controls-text-label">end</div>
+            <Controls.input:Number bind:value="_endValue"
+                                   selectOnClick="{{true}}"
+                                   attr:style="width:100px;"
+                                   attr:data-qa="controlsDemo-Slider__endInput"
+                                   on:deactivated="_deactivatedHandler('end')"
+                                   on:keyDown="_keyDownHandler('end')"/>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<div style="height: 800px; width: 100%">
+  <Controls-Wizard.verticalNew:List
+      selectedStepIndex="{{_selectedStepIndex}}"
+      currentStepIndex="{{_currentStepIndex}}"
+      items="{{_items}}"
+      on:selectedStepIndexChanged="_indexChanged()"
+  />
+</div>

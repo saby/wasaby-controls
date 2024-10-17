@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+   <Controls.scroll:Container attr:class="controlsDemo__height400 controlsDemo__minWidth600">
+      <Controls.columns:View
+         storeId="ColumnsViewTemplateProperty"
+         columnsMode="auto"
+         itemActions="{{_itemActions}}"
+         itemTemplateProperty="itemTemplate"
+         name="view"/>
+   </Controls.scroll:Container>
+</div>

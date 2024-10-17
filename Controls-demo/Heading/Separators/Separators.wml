@@ -1,0 +1,17 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label controls-text-label">style=secondary</div>
+        <div attr:class="controls-Header_all__clickable">
+            <Controls.heading:Title caption="Header" fontColorStyle="primary" fontSize="3xl"/>
+            <Controls.heading:Separator/>
+        </div>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">style=primary</div>
+        <div attr:class="controls-Header_all__clickable">
+            <Controls.heading:Title caption="Header" fontColorStyle="secondary" fontSize="3xl"/>
+            <Controls.heading:Separator separatorStyle="primary"/>
+        </div>
+    </div>
+</div>
+

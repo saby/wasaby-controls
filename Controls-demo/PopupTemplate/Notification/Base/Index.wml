@@ -1,0 +1,22 @@
+<div class="Controls-demo_NotificationTemplateCommonClass">
+    <div class="Controls-demo_NotificationTemplateOpenerClass">
+        <Controls.popupTemplate:Notification name="myOpenerSecondary"
+                                             bodyContentTemplate="Notification"
+                                             backgroundStyle="secondary"
+                                             icon="icon-AdminInfo"
+                                             attr:class="controlsDemo-Notification__primary"/>
+        <Controls.popupTemplate:Notification name="myOpenerSuccess"
+                                             bodyContentTemplate="Notification"
+                                             backgroundStyle="success"
+                                             attr:class="controlsDemo-Notification__noCloseIcon"/>
+        <Controls.popupTemplate:Notification name="myOpenerWarning"
+                                             bodyContentTemplate="Notification"
+                                             backgroundStyle="warning"
+                                             attr:class="controlsDemo-Notification__noIcon"/>
+        <Controls.popupTemplate:Notification name="myOpenerDanger"
+                                             bodyContentTemplate="Notification"
+                                             backgroundStyle="danger"
+                                             attr:class="controlsDemo-Notification__closeButton"/>
+
+    </div>
+</div>

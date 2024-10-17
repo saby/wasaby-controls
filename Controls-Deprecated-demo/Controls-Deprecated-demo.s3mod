@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ui_module name="Controls-Deprecated-demo"
+           id="1f7de4b9-239a-4587-8758-0377433080b4"
+           package="Wasaby"
+           responsible="Крайнов Д.О."
+           required="1"
+           version="1.00"
+>
+  <depends>
+      <module id="f6fdf353-3ab3-4dbb-8671-01c2b418bf0a" name="Controls"/>
+      <module id="0df0fce3-53ba-47f8-987d-edf1fd078295" name="WS.Core"/>
+      <module id="636177e5-4d75-44fa-9173-977dc90ff111" name="Env"/>
+      <module id="0f5d26db-dd61-4957-9375-8861ad66f219" name="Vdom"/>
+      <module id="f27abe12-19df-4c9f-b886-634bd20a0011" name="UI"/>
+      <module id="3735da8d-a287-4fc1-a22d-7d00a7732ce8" name="SBIS3.CONTROLS"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <resources/>
+  <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

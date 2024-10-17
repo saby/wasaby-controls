@@ -1,0 +1,14 @@
+<div class="controlsDemo__maxWidth1000">
+    <Controls.masterDetail:Base>
+        <ws:master>
+            <Controls-ListEnv.filterPanelConnected:View filterNames="['department', 'owner', 'city']"
+                                                 storeId="basicData"
+                                                 attr:class="engine-demo__Widgets_filterPanel"/>
+        </ws:master>
+        <ws:detail>
+           <Controls.grid:View storeId="basicData"
+                               columns="{{_columns}}"
+                               header="{{_header}}"/>
+        </ws:detail>
+    </Controls.masterDetail:Base>
+</div>

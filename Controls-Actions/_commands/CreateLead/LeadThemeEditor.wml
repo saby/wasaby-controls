@@ -1,0 +1,11 @@
+<Controls.Container.Async templateName="CRMClient/Controls/ThemeChoice/Editor">
+   <ws:partial template="{{content.resolvedTemplate}}"
+               attr:class="tw-truncate"
+               value="{{_value}}"
+               textValue="{{_textValue}}"
+               folderSelection="{{false}}"
+               hideLink="{{true}}"
+               placeholder="{[Выберите тему]}"
+               themesTypes="{{_themesTypes}}"
+               on:valueChanged="_valueChangedHandler()"/>
+</Controls.Container.Async>

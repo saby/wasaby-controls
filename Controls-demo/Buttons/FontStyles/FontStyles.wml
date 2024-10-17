@@ -1,0 +1,35 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center ws-align-items-center controlsDemo__flex-flow_wrap"
+         data-qa="controlsDemo_capture">
+        <div class="controls-margin_right-3xl">
+            <Controls.buttons:Button viewMode="link" caption="link" fontColorStyle="link"/>
+        </div>
+        <div class="controls-margin_right-3xl">
+            <Controls.buttons:Button viewMode="link" caption="primary" fontColorStyle="primary"/>
+        </div>
+        <div class="controls-margin_right-3xl">
+            <Controls.buttons:Button viewMode="link" caption="secondary" fontColorStyle="secondary"/>
+        </div>
+        <div class="controls-margin_right-3xl">
+            <Controls.buttons:Button viewMode="link" caption="success" fontColorStyle="success"/>
+        </div>
+        <div class="controls-margin_right-3xl">
+            <Controls.buttons:Button viewMode="link" caption="warning" fontColorStyle="warning"/>
+        </div>
+        <div class="controls-margin_right-3xl">
+            <Controls.buttons:Button viewMode="link" caption="danger" fontColorStyle="danger"/>
+        </div>
+        <div class="controls-margin_right-3xl">
+            <Controls.buttons:Button viewMode="link" caption="unaccented" fontColorStyle="unaccented"/>
+        </div>
+        <div class="controls-margin_right-3xl">
+            <Controls.buttons:Button viewMode="link" caption="label" fontColorStyle="label"/>
+        </div>
+        <div class="controls-margin_right-3xl">
+            <Controls.buttons:Button viewMode="link" caption="info" fontColorStyle="info"/>
+        </div>
+        <div>
+            <Controls.buttons:Button viewMode="link" caption="default" fontColorStyle="default"/>
+        </div>
+    </div>
+</div>

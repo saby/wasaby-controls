@@ -1,0 +1,30 @@
+@button_position_top: calc((var(--inline_height_m) - var(--inline_height_l)) / 2 + var(--offset_st) - var(--border-thickness));
+
+.Controls-Colors__DialogOpener {
+  &_container {
+    position: relative;
+  }
+
+  &_closeButton {
+    position: absolute;
+    top: @button_position_top;
+    right: calc(-0.5 * var(--inline_height_l));
+    z-index: 1;
+  }
+
+  &_applyButton {
+    position: absolute;
+    right: calc(var(--inline_height_l) / 2);
+    z-index: 2;
+
+    &_position {
+      &_default {
+        top: @button_position_top;
+      }
+
+      &_adaptive {
+        top: var(--inline_height_l);
+      }
+    }
+  }
+}

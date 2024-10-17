@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper controlsDemo__flex">
+    <div class="controlsDemo__wrapper controlsDemo_fixedWidth350">
+        <div class="controls-text-label">SearchInputDirection = right</div>
+        <Controls.ExpandableSearch bind:value="_searchValue"
+                                         searchInputDirection="right"
+                                         attr:class="controlsDemo__ml1"/>
+    </div>
+
+    <div class="controlsDemo__wrapper controlsDemo_fixedWidth350">
+        <div class="controls-text-label">SearchInputDirection = left</div>
+        <Controls.ExpandableSearch bind:value="_searchValue"
+                                         searchInputDirection="left"
+                                         attr:class="controlsDemo__ml1"
+                                         attr:data-qa="SearchInputDirection_Left"/>
+    </div>
+</div>

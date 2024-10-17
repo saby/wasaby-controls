@@ -1,0 +1,10 @@
+<div class="controlsDemo__flexColumn">
+   <Controls.dropdown:Selector
+           keyProperty="key"
+           displayProperty="title"
+           source="{{_source}}"
+           groupProperty="group"
+           groupTemplate="wml!Controls-demo/dropdown_new/Input/GroupProperty/GroupTemplate/groupTemplate"
+           bind:selectedKeys="_selectedKeys" >
+   </Controls.dropdown:Selector>
+</div>

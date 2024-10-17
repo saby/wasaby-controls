@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell controlsDemo__maxWidth800">
+        <Controls.propertyGridEditor:PropertyGridEditor
+                bind:editingObject="_editingObject"
+                typeDescription="{{_typeDescription}}"
+                groupProperty="{{null}}"
+                nodeProperty="@group"
+                parentProperty="group">
+            <ws:itemTemplate>
+                <ws:partial template="Controls/propertyGridEditor:ItemTemplate">
+                    <ws:afterEditorTemplate>
+                        <Controls.buttons:Button buttonStyle="pale" iconSize="s" icon="icon-Question2" viewMode="filled"/>
+                    </ws:afterEditorTemplate>
+                </ws:partial>
+            </ws:itemTemplate>
+        </Controls.propertyGridEditor:PropertyGridEditor>
+    </div>
+</div>

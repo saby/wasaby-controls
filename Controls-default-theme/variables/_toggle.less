@@ -1,0 +1,101 @@
+.controls_theme-@{themeName} {
+   // переменные, которые должны переопределяться через wrapper должны быть опеределены на корневмо элементе темы
+   // Переменные для большого разделителя
+   //
+   // Переменные для кнопок с залипанием
+   //
+   // цвет фона
+   --secondary_contrast_hover_background-color_toggleButton_pushButton: #ebeef0;
+   --secondary_contrast_toggled_background-color_toggleButton_pushButton: #e3e6e8;
+   --readonly_border-color_button_toolButton: rgba(0, 0, 0, 0.08);
+
+   // Переменные для переключателей
+   //
+   // Текст
+   --selected_text-color_switcher: var(--text-color);
+   --text-color_switcher: var(--label_text-color);
+}
+
+.controls_toggle_theme-@{themeName} {
+   // Переменные для кнопок с залипанием
+   //
+   // Обводка кнопок
+   --toggled_border-thickness_toggleButton_button: 2px;
+   --secondary_toggled_border-color_toggleButton_button: var(--secondary_color);
+   --secondary_toggled_border-color_toggleButton_toolButton: var(--secondary_icon-color);
+   --secondary_toggled_border-color_toggleButton_pushButton: var(--secondary_icon-color);
+
+   // Радиус скругления кнопок
+   --border-radius_toggleButton_pushButton: 2px;
+
+   // цвет фона
+   --secondary_toggled_background-color_toggleButton_toolButton: var(
+           --pale_hover_color
+   );
+   --readonly_contrast_toggled_background-color_toggleButton_pushButton: transparent;
+
+   // Переменные для переключателей
+   //
+   // Размеры
+   --caption_height_switcher: var(--inline_height_m);
+   --width_switcher: 22px;
+   --width_switcher-small: 18px;
+   --width_switcher-big: 46px;
+   --height_horizontal_switcher: 14px;
+   --height_horizontal_switcher-small: 6px;
+   --height_horizontal_switcher-big: 30px;
+   --height_vertical_switcher: 40px;
+
+   // Обводка
+   --border-radius_switcher: 100px; // круглый
+   --border-color_switcher: var(--unaccented_border-color);
+
+   //Маркер
+   --marker_contrast-color_switcher: var(--background-color);
+   --marker_size_switcher: 12px;
+   --marker_big-size_switcher: 24px;
+   --marker_border-offset_switcher: 2px;
+
+   //Маркер для радикнопок
+   --marker-box_size_radio: var(--marker_size_switcher);
+   --readonly_marker-box_border-color_radio: var(--readonly_border-color);
+
+   // Переменные для большого разделителя
+   //
+   // Размеры
+   --height_s_BigSeparator: 8px;
+   --height_m_BigSeparator: 10px;
+   --height_l_BigSeparator: var(--icon-size_2xs);
+   --height_adaptive_BigSeparator: var(--icon-size_s);
+   --width_s_BigSeparator: 28px;
+   --width_m_BigSeparator: 32px;
+   --width_l_BigSeparator: 38px;
+   --width_adaptive_BigSeparator: 48px;
+   --border-radius_BigSeparator: 100px;
+
+   // Переменные для чекбокса
+   //
+   // Размеры и отступы
+   --height_checkbox: var(--inline_height_m);
+   --click-area_width_checkbox: calc(var(--marker-box_size_checkbox) + var(--offset_2xs) * 2);
+   --padding-vertical_checkbox: 3px;
+   --text_line-height_checkbox: 18px;
+
+   // Текст
+   --text-color_checkbox: var(--text-color);
+
+   // обводка маркера
+   --marker-box_size_checkbox: 12px;
+
+   // фон чекбокса с заливкой
+   --marker-box_background-color_checkbox: var(--background-color);
+
+   // маркер
+   --true_marker_padding-top_checkbox: 0px;
+
+   // Переменные для группы радиокнопок
+   //
+   // Размер и отступы
+   --item_height_radioGroup: var(--inline_height_m);
+   --padding-vertical_radioGroup: 3px;
+}

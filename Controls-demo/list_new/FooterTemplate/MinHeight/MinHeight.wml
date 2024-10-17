@@ -1,0 +1,67 @@
+<ws:template name="HINT">
+	<div class="controlsDemo__flexRow controlsDemo__mb1">
+		<div class="controlsDemo-ListFooter-MinHeight__hintColor_list"></div>
+		<div class="controlsDemo-ListFooter-MinHeight__hintCaption controlsDemo__ml1">Список</div>
+	</div>
+	<div class="controlsDemo__flexRow controlsDemo__mb1">
+		<div class="controlsDemo-ListFooter-MinHeight__hintColor_platformFooter"></div>
+		<div class="controlsDemo-ListFooter-MinHeight__hintCaption controlsDemo__ml1">Платформенный подвал</div>
+	</div>
+	<div class="controlsDemo__flexRow controlsDemo__mb1">
+		<div class="controlsDemo-ListFooter-MinHeight__hintColor_footerContent"></div>
+		<div class="controlsDemo-ListFooter-MinHeight__hintCaption controlsDemo__ml1">Прикладной шаблон</div>
+	</div>
+</ws:template>
+
+<div class="controlsDemo__wrapper">
+	<div class="controlsDemo__flexRow controlsDemo__mb3">
+		<div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-hor-padding-null">
+			<div class="controls-text-label">Авто высота, с базовым шаблоном</div>
+			<Controls.list:View attr:class="controlsDemo-ListFooter-MinHeight__list"
+								storeId="FooterTemplateMinHeight">
+				<ws:footerTemplate>
+					<ws:partial template="Controls/list:FooterTemplate" height="auto">
+						<div class="controlsDemo-ListFooter-MinHeight__footerContent">Подвал списка</div>
+					</ws:partial>
+				</ws:footerTemplate>
+			</Controls.list:View>
+		</div>
+
+		<div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-hor-padding-null">
+			<div class="controls-text-label">Авто высота, с базовым шаблоном и экшенами</div>
+			<Controls.list:View attr:class="controlsDemo-ListFooter-MinHeight__list"
+								itemActions="{{ _itemActions }}"
+								itemActionsPosition="outside"
+                storeId="FooterTemplateMinHeight">
+				<ws:footerTemplate>
+					<ws:partial template="Controls/list:FooterTemplate" height="auto">
+						<div class="controlsDemo-ListFooter-MinHeight__footerContent">Подвал списка</div>
+					</ws:partial>
+				</ws:footerTemplate>
+			</Controls.list:View>
+		</div>
+
+		<div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-hor-padding-null">
+			<div class="controls-text-label">Стандартная минимальная высота, с базовым шаблоном</div>
+			<Controls.list:View attr:class="controlsDemo-ListFooter-MinHeight__list"
+                          storeId="FooterTemplateMinHeight">
+				<ws:footerTemplate>
+					<ws:partial template="Controls/list:FooterTemplate" height="default">
+						<div class="controlsDemo-ListFooter-MinHeight__footerContent">Подвал списка</div>
+					</ws:partial>
+				</ws:footerTemplate>
+			</Controls.list:View>
+		</div>
+
+		<div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-hor-padding-null">
+			<div class="controls-text-label">Стандартная минимальная высота, без базового шаблона</div>
+			<Controls.list:View attr:class="controlsDemo-ListFooter-MinHeight__list"
+                          storeId="FooterTemplateMinHeight">
+				<ws:footerTemplate>
+					<div class="controlsDemo-ListFooter-MinHeight__footerContent">Подвал списка</div>
+				</ws:footerTemplate>
+			</Controls.list:View>
+		</div>
+	</div>
+	<ws:partial template="HINT"/>
+</div>

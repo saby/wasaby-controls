@@ -1,0 +1,36 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center ws-align-items-center">
+            <div class="controlsDemo__cell controls-margin_right-l">
+                <Controls.toggle:Switch bind:value="_value"
+                                        size="s"/>
+            </div>
+            <div class="controlsDemo__cell controls-margin_right-xl">
+                <Controls.toggle:Switch bind:value="_value2"
+                                        size="m"/>
+            </div>
+            <div class="controlsDemo__cell controls-margin_right-xl">
+                <Controls.toggle:Switch bind:value="_value3"
+                                        size="l"/>
+            </div>
+        </div>
+
+        <div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center ws-align-items-center">
+            <div class="controlsDemo__cell controls-margin_right-l">
+                <Controls.toggle:Switch bind:value="_value"
+                                        viewMode="outlined"
+                                        size="s"/>
+            </div>
+            <div class="controlsDemo__cell controls-margin_right-xl">
+                <Controls.toggle:Switch bind:value="_value2"
+                                        viewMode="outlined"
+                                        size="m"/>
+            </div>
+            <div class="controlsDemo__cell controls-margin_right-xl">
+                <Controls.toggle:Switch bind:value="_value3"
+                                        viewMode="outlined"
+                                        size="l"/>
+            </div>
+        </div>
+    </div>
+</div>

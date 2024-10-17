@@ -1,0 +1,38 @@
+<div class="example-Area">
+   <Controls-demo.Example.resource.BaseDemoInput title="Multiline input field" blocker="{{true}}">
+      <ws:contents>
+         <ws:Array>
+            <ws:Object>
+               <ws:template>
+                  <div class="example-Base__wrapper">
+                     <div class="example-Base__specify demo-ExampleInput__dynamicLabel">Dynamic height</div>
+                     <Controls.input:Area placeholder="Helpful tooltip" class="ControlsDemo-ExampleInput_focusText"
+                                          maxLines="{{7}}"
+                                          bind:value="_dynamicValue"/>
+                  </div>
+               </ws:template>
+            </ws:Object>
+            <ws:Object spacing="normal">
+               <ws:template>
+                  <div class="example-Base__wrapper">
+                     <div class="example-Base__specify demo-ExampleInput__fixedLabel">Fixed height</div>
+                     <Controls.input:Area placeholder="Helpful tooltip" class="ControlsDemo-ExampleInput_fixedHeightArea"
+                                          minLines="{{4}}"
+                                          maxLines="{{4}}"
+                                          bind:value="_fixedValue"/>
+                  </div>
+               </ws:template>
+            </ws:Object>
+            <ws:Object spacing="normal">
+               <ws:template>
+                  <Controls.input:Area placeholder="Helpful tooltip" class="ControlsDemo-ExampleInput_labelArea"
+                                       minLines="{{4}}"
+                                       maxLines="{{4}}"
+                                       bind:value="_value3"/>
+               </ws:template>
+               <ws:label position="left" value="Label"/>
+            </ws:Object>
+         </ws:Array>
+      </ws:contents>
+   </Controls-demo.Example.resource.BaseDemoInput>
+</div>

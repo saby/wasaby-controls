@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper">
+    <Controls.list:View storeId="ItemTemplateBackgroundColorStyle">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/list:ItemTemplate"
+                        backgroundColorStyle="{{itemTemplate.item.contents.backgroundStyle}}"/>
+        </ws:itemTemplate>
+    </Controls.list:View>
+</div>
