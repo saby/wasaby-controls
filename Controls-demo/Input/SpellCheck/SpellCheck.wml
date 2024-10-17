@@ -1,0 +1,17 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <Controls.input:Area attr:class="controlsDemo__input"
+                             attr:ws-autofocus="true"
+                             bind:value="_value"
+                             spellCheck="{{true}}"
+                             minLines="{{3}}"
+                             maxLines="{{3}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Area attr:class="controlsDemo__input"
+                             bind:value="_value"
+                             spellCheck="{{false}}"
+                             minLines="{{3}}"
+                             maxLines="{{3}}"/>
+    </div>
+</div>

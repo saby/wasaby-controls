@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <Controls.input:Mask replacer=" "
+                             mask="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+                             bind:value="_value1"
+                             formatMaskChars="{{ _formatMaskChars }}"
+                             attr:class="ControlsDemo-MaskInput_phoneField"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Mask replacer=" "
+                             mask="yyyy"
+                             bind:value="_value2"
+                             formatMaskChars="{{ _formatMaskChars }}"
+                             attr:class="ControlsDemo-MaskInput_phoneField"/>
+    </div>
+</div>

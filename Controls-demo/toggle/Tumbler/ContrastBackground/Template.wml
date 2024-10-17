@@ -1,0 +1,28 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center {{_options.theme.indexOf('default') < 0 ? 'controlsDemo_fixedWidth500' : 'controlsDemo_fixedWidth300'}}"
+         data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell">
+            <Controls.Tumbler:Control items="{{_items1}}"
+                                     direction="horizontal"
+                                     bind:selectedKey="_selectedKey1"
+                                     attr:class="ControlsDemo-Tumbler__horizontal"/>
+        </div>
+        <div class="controlsDemo__cell">
+            <div class="controlsDemo__background">
+                <Controls.Tumbler:Control items="{{_items1}}"
+                                         contrastBackground="{{true}}"
+                                         direction="horizontal"
+                                         bind:selectedKey="_selectedKey2"
+                                         attr:class="ControlsDemo-Tumbler__horizontalContrast"/>
+            </div>
+            <div class="controlsDemo__background">
+                <Controls.Tumbler:Control inlineHeight="2xl"
+                                         items="{{_items1}}"
+                                         contrastBackground="{{true}}"
+                                         direction="horizontal"
+                                         bind:selectedKey="_selectedKey3"
+                                         attr:class="ControlsDemo-Tumbler__horizontalContrast"/>
+            </div>
+        </div>
+    </div>
+</div>

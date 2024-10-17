@@ -1,0 +1,16 @@
+<div>
+    <Controls.ComboBox
+        keyProperty="key"
+        displayProperty="title"
+        source="{{ _source }}"
+        filter="{{ _filter }}"
+        placeholder="{[ Тип события ]}"
+        selectedKey="{{ _options.propertyValue.type }}"
+        on:selectedKeyChanged="_onSelectedKeyChanged()" />
+    <Controls.checkbox:Checkbox
+        attr:class="controls-margin_top-m"
+        caption="{[ Плановое ]}"
+        captionPosition="start"
+        value="{{ _options.propertyValue.isPlaned }}"
+        on:valueChanged="_onPlanedChanged()" />
+</div>

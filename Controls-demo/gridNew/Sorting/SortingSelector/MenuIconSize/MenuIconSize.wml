@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300">
+    <div class="controlsDemo__cell">
+        <Controls.sorting:Selector
+                sortingParams="{{_sortingParams}}"
+                menuIconSize="s"
+                bind:value="_sorting"/>
+    </div>
+</div>

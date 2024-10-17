@@ -1,0 +1,35 @@
+<div class="controlsDemo__wrapper controlsDemo__flexColumn controlsDemo_fixedWidth600">
+    <div class="controlsDemo__mb1 controlsDemo__wrapper__horizontal controlsDemo__cell controlsDemo-Lookup-simple">
+        <div class="controls-text-label controlsDemo__cell">default caption</div>
+        <Controls.lookup:Selector
+            bind:selectedKeys="_selectedKeys"
+            source="{{_source}}"
+            keyProperty="id"
+            multiSelect="{{true}}"
+            displayProperty="title">
+        </Controls.lookup:Selector>
+    </div>
+
+    <div class="controlsDemo__mb1 controlsDemo__wrapper__horizontal controlsDemo__cell controlsDemo-Lookup-simple">
+        <div class="controls-text-label controlsDemo__cell">changed caption</div>
+        <Controls.lookup:Selector
+            bind:selectedKeys="_selectedKeys"
+            source="{{_source}}"
+            keyProperty="id"
+            multiSelect="{{true}}"
+            displayProperty="title"
+            showSelectorCaption="+сотрудник">
+        </Controls.lookup:Selector>
+    </div>
+    <div class="controlsDemo__mb1 controlsDemo__wrapper__horizontal controlsDemo__cell controlsDemo-Lookup-simple">
+        <div class="controls-text-label controlsDemo__cell">without caption</div>
+        <Controls.lookup:Selector
+            bind:selectedKeys="_selectedKeys"
+            source="{{_source}}"
+            keyProperty="id"
+            multiSelect="{{true}}"
+            displayProperty="title"
+            showSelectorCaption="">
+        </Controls.lookup:Selector>
+    </div>
+</div>

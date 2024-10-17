@@ -1,0 +1,34 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell controls-Demo__wide-propertyGrid">
+        <div class="controls-text-label">captionColumnOptions: width = 50%</div>
+        <Controls.propertyGrid:PropertyGrid
+                bind:editingObject="_editingObject"
+                typeDescription="{{_typeDescription}}"
+                parentProperty="parent"
+                nodeProperty="isNode">
+            <ws:captionColumnOptions width="50%"/>
+        </Controls.propertyGrid:PropertyGrid>
+    </div>
+
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell controls-Demo__wide-propertyGrid">
+        <div class="controls-text-label">captionColumnOptions: width = 90%</div>
+        <Controls.propertyGrid:PropertyGrid
+                bind:editingObject="_editingObject"
+                typeDescription="{{_typeDescription}}"
+                parentProperty="parent"
+                nodeProperty="isNode">
+            <ws:captionColumnOptions width="90%"/>
+        </Controls.propertyGrid:PropertyGrid>
+    </div>
+
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell controls-Demo__wide-propertyGrid">
+        <div class="controls-text-label">captionColumnOptions: width = 30%</div>
+        <Controls.propertyGrid:PropertyGrid
+                bind:editingObject="_editingObject"
+                typeDescription="{{_typeDescription}}"
+                parentProperty="parent"
+                nodeProperty="isNode">
+            <ws:captionColumnOptions width="30%"/>
+        </Controls.propertyGrid:PropertyGrid>
+    </div>
+</div>

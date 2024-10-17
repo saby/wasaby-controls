@@ -1,0 +1,73 @@
+<div class="controlsDemo__wrapper controlsDemo-StickyBlockDemo__wrapper">
+    <Controls.scroll:Container attr:class="controlsDemo__height300" attr:style="width: 300px;">
+        <Controls.stickyBlock:StickyBlock offsetTop="{{_offsetTop}}"
+                                     mode="{{_mode}}"
+                                     fixedBackgroundStyle="contrast">
+            <div class="controls-padding_bottom-3xs controls-padding_top-3xs controls-fontweight-bold">
+                StickyBlock #0
+            </div>
+        </Controls.stickyBlock:StickyBlock>
+        <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </div>
+        <Controls.stickyBlock:StickyBlock offsetTop="{{_offsetTop}}"
+                                     mode="{{_mode}}"
+                                     backgroundStyle="danger"
+                                     fixedBackgroundStyle="contrast">
+            <div class="controls-padding_bottom-3xs controls-padding_top-3xs controls-fontweight-bold">
+                StickyBlock #1
+            </div>
+        </Controls.stickyBlock:StickyBlock>
+        <ws:for data="i in 2">
+            <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+        </ws:for>
+        <Controls.stickyBlock:StickyBlock position="topBottom"
+                                     offsetTop="{{_offsetTop}}"
+                                     mode="{{_mode}}"
+                                     fixedBackgroundStyle="contrast">
+            <div class="controls-padding_bottom-3xs controls-padding_top-3xs controls-fontweight-bold">
+                StickyBlock #2
+            </div>
+        </Controls.stickyBlock:StickyBlock>
+        <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </div>
+        <Controls.stickyBlock:StickyBlock position="bottom"
+                                     mode="{{_mode}}"
+                                     fixedBackgroundStyle="contrast">
+            <div class="controls-padding_bottom-3xs controls-padding_top-3xs controls-fontweight-bold">
+                StickyBlock #3
+            </div>
+        </Controls.stickyBlock:StickyBlock>
+        <ws:for data="i in 2">
+            <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </div>
+        </ws:for>
+    </Controls.scroll:Container>
+
+    <div>
+        <div class="controls-margin_bottom-xs">
+            <div class="controls-margin_bottom-2xs">Сменить mode</div>
+            <Controls.Tumbler:Control items="{{_modeItems}}"
+                                     bind:selectedKey="_modeSelectedKey"
+                                     on:selectedKeyChanged="_modeKeyChanged()"/>
+        </div>
+        <div class="controls-margin_bottom-xs">
+            <div class="controls-margin_bottom-2xs">Сменить offsetTop</div>
+            <Controls.Tumbler:Control items="{{_offsetTopItems}}"
+                                     bind:selectedKey="_offsetTopSelectedKey"
+                                     on:selectedKeyChanged="_offsetTopKeyChanged()"/>
+        </div>
+    </div>
+</div>

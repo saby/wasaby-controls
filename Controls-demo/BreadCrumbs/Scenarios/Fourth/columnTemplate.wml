@@ -1,0 +1,10 @@
+<ws:partial template="Controls/grid:ColumnTemplate"
+            attr:class="controls-Grid__row-cell__content_baseline_L"
+            scope="{{ _options }}">
+   <ws:contentTemplate>
+      <Controls.baseDecorator:Money value="{{item.contents[column.config.displayProperty]}}"
+                                fontColorStyle="{{column.config.displayProperty !== 'sum' ? 'unaccented' : 'default'}}"
+                                useGrouping="{{true}}"/>
+      <span if="{{!item.isNode() && column.config.displayProperty === 'amount'}}">шт</span>
+   </ws:contentTemplate>
+</ws:partial>

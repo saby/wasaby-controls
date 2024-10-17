@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper">
+    <span class="controls-text-label controlsDemo__mb1">Одна запись занимает большую часть вьюпорта, virtualPageSize 20, pageSize 100.</span>
+    <Controls-demo.list_new.VirtualScroll.NavigationSwitcher.Index storeId="DifferentHeightsBigFirstItemDown" totalCount="{{1000}}" pageSize="{{100}}">
+        <ws:content>
+            <Controls.scroll:Container attr:class="controlsDemo__maxWidth500 controlsDemo__height500">
+                <Controls.list:View storeId="DifferentHeightsBigFirstItemDown"
+                                    attr:class="controlsDemo_line-height18">
+                    <ws:virtualScrollConfig pageSize="{{20}}"/>
+                    <ws:itemTemplate>
+                        <ws:partial template="Controls/list:ItemTemplate" attr:style="{{itemTemplate.item.key === 0 ? 'min-height: 410px;'}}"/>
+                    </ws:itemTemplate>
+                </Controls.list:View>
+            </Controls.scroll:Container>
+        </ws:content>
+    </Controls-demo.list_new.VirtualScroll.NavigationSwitcher.Index>
+</div>

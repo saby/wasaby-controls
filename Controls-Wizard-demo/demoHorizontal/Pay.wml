@@ -1,0 +1,25 @@
+<div class="engineDemo_Wizard_block">
+    <h1>Оплата услуг ОФД</h1><br/>
+
+    <div class="ws-flexbox">
+        <div class="engindeDemo_Wizard_Pay">
+            <h3 class="engindeDemo_Wizard_Pay-title">Ввести код активации</h3>
+            <div class="engindeDemo_Wizard_Pay-caption">Код указан на обороте приобретенной вами карты под защитным
+                слоем.
+            </div>
+        </div>
+        <div class="engindeDemo_Wizard_Pay">
+            <h3 class="engindeDemo_Wizard_Pay-title">Оплатить картой</h3>
+            <div class="engindeDemo_Wizard_Pay-caption">Стоимость услуги 3000 рублей за 13 месяцев</div>
+        </div>
+        <div class="engindeDemo_Wizard_Pay">
+            <h3 class="engindeDemo_Wizard_Pay-title">Выставить счет</h3>
+            <div class="engindeDemo_Wizard_Pay-caption">3000 рублей за 13 месяцев.<br/>Система автоматически отследить
+                оплату счета
+            </div>
+        </div>
+    </div>
+    <ws:if data="{{!_options.finished}}">
+      <Controls.buttons:Button caption="Оплатить позже" viewMode="link" on:click="clickHandler()"/>
+    </ws:if>
+</div>

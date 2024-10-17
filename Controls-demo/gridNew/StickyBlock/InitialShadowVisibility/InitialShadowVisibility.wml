@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <Controls.buttons:Button caption="Reload" on:click="_onReload()"/>
+    </div>
+    <Controls.scroll:Container attr:class="controlsDemo__height400" attr:style="max-width: 1500px">
+        <Controls.grid:View
+                name="list"
+                header="{{_header}}"
+                columns="{{_columns}}"
+                storeId="StickyBlockInitialShadowVisibility"
+                groupProperty="group"
+                stickyHeader="{{true}}"/>
+    </Controls.scroll:Container>
+</div>

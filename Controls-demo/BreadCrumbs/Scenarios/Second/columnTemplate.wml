@@ -1,0 +1,11 @@
+<ws:partial template="Controls/grid:ColumnTemplate"
+            attr:class="controls-Grid__row-cell__content_baseline_L"
+            scope="{{ _options }}">
+   <ws:contentTemplate>
+      <ws:if data="{{!item.isNode()}}">
+         <Controls.baseDecorator:Money value="{{item.contents[column.config.displayProperty]}}"
+                                   useGrouping="{{true}}"/>
+         <span if="{{column.config.displayProperty === 'remainder'}}">шт</span>
+      </ws:if>
+   </ws:contentTemplate>
+</ws:partial>

@@ -1,0 +1,6 @@
+<div class="controlsDemo__wrapper">
+    <Controls.filterPanelPopup:Sticky items="{{_items}}"
+                                      orientation="horizontal"
+                                      historyId="FILTER_HISTORY_EMPTY"
+                                      headingCaption="{[Отчет по сотрудникам]}"/>
+</div>

@@ -1,0 +1,44 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper controlsDemo__flexColumn">
+     <div class="controls-text-label">Направление разворота строки поиска:</div>
+     <Controls.RadioGroup:Control items="{{_items}}" selectedKey="{{_selectedKey}}" on:selectedKeyChanged="_selectedKeyChanged()"/>
+     <Controls.menu:Popup
+         source="{{_source}}"
+         keyProperty="key"
+         displayProperty="title">
+       <ws:headerContentTemplate>
+         <div style="position:relative; display:flex; justify-content: space-between; width:100%">
+           <ws:if data="{{_selectedKey === '1'}}">
+             <ws:partial template="Controls/menu:HeaderTemplate" caption="{[Выберите город]}"/>
+           </ws:if>
+           <Controls.ExpandableSearch
+               searchInputDirection="{{_selectedKey === '0' ? 'right' : 'left'}}"
+               inlineWidth="auto"
+               contrastBackground="{{true}}"
+           />
+           <ws:if data="{{_selectedKey === '0'}}">
+             <ws:partial template="Controls/menu:HeaderTemplate" caption="{[Выберите город]}"/>
+           </ws:if>
+         </div>
+       </ws:headerContentTemplate>
+     </Controls.menu:Popup>
+      <Controls.menu:Popup
+          attr:class="controls-margin_top-m"
+              source="{{_source}}"
+              keyProperty="key"
+              displayProperty="title">
+         <ws:headerContentTemplate>
+           <div style="position:relative; display:flex; justify-content: space-between; width:100%">
+             <ws:partial template="Controls/menu:HeaderTemplate" caption="{[Выберите город]}"/>
+             <Controls.ExpandableSearch
+                 searchInputDirection="{{_selectedKey === '0' ? 'right' : 'left'}}"
+                 inlineWidth="auto"
+                 contrastBackground="{{true}}"
+             />
+             <ws:partial template="Controls/menu:HeaderTemplate" caption="{[Прикладной контент]}"/>
+           </div>
+         </ws:headerContentTemplate>
+      </Controls.menu:Popup>
+   </div>
+</div>
+

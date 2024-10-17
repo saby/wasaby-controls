@@ -1,0 +1,22 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center ws-flex-column" data-qa="controlsDemo_capture">
+        <Controls.datePopup
+            bind:startValue="_startValue"
+            bind:endValue="_endValue"
+            _date="{{ _date }}">
+            <ws:dayTemplate>
+                <ws:partial template="Controls/calendar:MonthViewDayTemplate">
+                    <ws:contentTemplate>
+                        <div>
+                            {{ contentTemplate.value.day }}
+                        </div>
+                        <ws:if data="{{ contentTemplate.value.day === 7 }}">
+                            <div class="controlsDemo__datePopup__dot" title="Запланирована встреча">
+                            </div>
+                        </ws:if>
+                    </ws:contentTemplate>
+                </ws:partial>
+            </ws:dayTemplate>
+        </Controls.datePopup>
+    </div>
+</div>

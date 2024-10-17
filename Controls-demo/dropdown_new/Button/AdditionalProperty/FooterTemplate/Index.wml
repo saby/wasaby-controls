@@ -1,0 +1,15 @@
+<div class="controlsDemo__flexRow {{_options.theme.indexOf('default')<0 ? 'controlsDemo_fixedWidth500' : 'controlsDemo_fixedWidth300'}}">
+   <div class="controlsDemo__wrapper">
+      <Controls.dropdown:Button
+              keyProperty="key"
+              caption="Create"
+              items="{{_items}}"
+              additionalProperty="additional"
+              attr:class="controlsDemo-menuButton"
+              attr:data-qa="ControlsDemo_MenuButton__extra-footer">
+         <ws:footerContentTemplate>
+            <div>Footer content template</div>
+         </ws:footerContentTemplate>
+      </Controls.dropdown:Button>
+   </div>
+</div>

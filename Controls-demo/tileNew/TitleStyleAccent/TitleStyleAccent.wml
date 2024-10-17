@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper controlDemo_Tile_styleAccent">
+<Controls.treeTile:View
+        imageProperty="image"
+        tileHeight="{{200}}"
+        tileWidth="{{200}}"
+        storeId="TitleStyleAccent">
+        <ws:itemTemplate>
+            <ws:partial titleStyle="accent"
+                        hasTitle="{{ true }}"
+                        template="Controls/tile:ItemTemplate"/>
+        </ws:itemTemplate>
+</Controls.treeTile:View>
+</div>

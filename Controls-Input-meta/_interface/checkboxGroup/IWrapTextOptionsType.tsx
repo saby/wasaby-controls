@@ -1,0 +1,12 @@
+import { BooleanType, ObjectType } from 'Meta/types';
+import * as rk from 'i18n!Controls-Input';
+
+export const IWrapTextOptionsType = ObjectType.id('Controls/meta:IWrapTextOptionsType')
+    .properties({
+        wrapText: BooleanType.description(rk('Определяет возможность переноса текста.'))
+            .title('Перенос текста')
+            .order(4)
+            .editor('Controls-editors/CheckboxEditor:CheckboxEditor')
+            .defaultValue(false),
+    })
+    .defaultValue({});

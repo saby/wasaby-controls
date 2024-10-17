@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper">
+    <Controls.buttons:Button on:click="_move()"
+                             caption="Переместить" viewMode="link" icon="icon-Move"/>
+    <div>
+        <Controls.treeGrid:View
+                storeId="listData"
+                name="treeGrid"
+                attr:class="demo-Grid__control"
+                columns="{{_gridColumns}}"
+                moveDialogTemplate="{{moveDialogTOptions}}"/>
+    </div>
+</div>

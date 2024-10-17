@@ -1,0 +1,68 @@
+<div class="controls_operations_theme-{{_options.theme}}
+            controls-operationsPanelV{{ (_initialized || _options.isHeaderFixed) ? ' controls-operationsPanelV_initialized' : ' controls-operationsPanelV_notInitialized' }}
+            {{_options.contrastBackground ? 'controls-operationsPanelV_contrast'}}">
+    <Controls.operations:MultiSelector selectedKeys="{{ _options.selectedKeys }}"
+                                       excludedKeys="{{ _options.excludedKeys }}"
+                                       task1192905045="{{ _options.task1192905045 }}"
+                                       selectionCountMode="{{_options.selectionCountMode}}"
+                                       size="{{_options.multiSelectSize}}"
+                                       fontColorStyle="default"
+                                       fontSize="{{_options.multiSelectFontSize}}"
+                                       closeButtonVisibility="{{true}}"
+                                       countLoading="{{_options.countLoading}}"
+                                       menuBackgroundStyle="{{_options.menuBackgroundStyle}}"
+                                       onSelectedTypeChanged="{{_onSelectedTypeChanged}}"
+                                       menuHoverBackgroundStyle="{{_options.menuBackgroundStyle}}"
+                                       selectedKeysCount="{{ _options.selectedKeysCount }}"
+                                       showSelectedCount="{{ _options.showSelectedCount }}"
+                                       selectionViewMode="{{ _options.selectionViewMode }}"
+                                       operationsController="{{_options.operationsController}}"
+                                       on:controlResize="_onResize()"
+                                       selectedCountConfig="{{ _options.selectedCountConfig }}"
+                                       isAllSelected="{{ _options.isAllSelected }}"
+                                       attr:class="{{ _initialized ? '' : 'ws-invisible' }}"/>
+    <div class="controls-operationsPanelV__multiSelector_separator"></div>
+    <div class="controls-operationsPanelV__actions controls-operationsPanelV__actions{{ _initialized ? '' : ' controls-operationsPanelV__actions_notInitialized' }}"
+         name="toolbarBlock">
+        <ws:if data="{{_toolbarSource && _initialized && (_options.source || _options.items)}}">
+            <Controls.toolbars:View attr:class="controls-operationsPanelV__toolbar"
+                                    popupFooterTemplate="{{_options.popupFooterTemplate}}"
+                                    parentProperty="{{_options.parentProperty}}"
+                                    menuHoverBackgroundStyle="{{_options.menuBackgroundStyle}}"
+                                    menuBackgroundStyle="{{_options.menuBackgroundStyle}}"
+                                    nodeProperty="{{_options.nodeProperty}}"
+                                    keyProperty="{{_options.keyProperty}}"
+                                    iconSize="{{_options.iconSize}}"
+                                    fontColorStyle="default"
+                                    menuIconSize="{{_options.iconSize}}"
+                                    menuIcon="{{_options.menuIcon}}"
+                                    contrastBackground="{{true}}"
+                                    menuButtonViewMode="link"
+                                    menuSource="{{_options.menuSource}}"
+                                    iconStyle="{{_options.iconStyle}}"
+                                    items="{{_toolbarSource}}"
+                                    on:itemClick="_itemClickHandler()"
+                                    on:applyClick="_applyClick()"
+                                    itemTemplate="{{ _options.itemTemplate }}"
+                                    itemTemplateProperty="{{ _options.itemTemplateProperty }}">
+            </Controls.toolbars:View>
+        </ws:if>
+    </div>
+    <ws:if data="{{_options.rightTemplate}}">
+        <ws:partial attr:class="controls-operationsPanelV__rightTemplate {{ _initialized ? '' : 'ws-invisible' }}"
+                    template="{{_options.rightTemplate}}"/>
+    </ws:if>
+    <ws:if data="{{_options.closeButtonVisible}}">
+      <div class="controls-operationsPanelV__multiSelector_separator
+                  controls-operationsPanelV__multiSelector_separator_right"></div>
+      <div attr:data-qa="controls-OperationsPanel__close"
+          class="controls-operationsPanelNew__closeButton
+                    controls-icon
+                    icon-Close
+                    controls-icon_size-m
+                    controls-icon_style-unaccented"
+           on:click="_close()"></div>
+    </ws:if>
+    <Controls.event:Listener event="controlResize"
+                             on:controlResize="_onResize()"/>
+</div>

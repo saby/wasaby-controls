@@ -1,0 +1,214 @@
+@import 'Controls-Lists/_dynamicGrid/styles/zIndexEnv/_cellContentContext';
+
+.ControlsLists-dynamicGrid__selection__indicator,
+.ControlsLists-dynamicGrid__selection__dragIndicator {
+   border: var(--border-thickness) solid var(--unaccented_hover_border-color);
+   background-color: var(--pale_color);
+   box-sizing: border-box;
+   z-index: 1;
+   pointer-events: none;
+}
+
+/**
+ * Индикатор выделения (SelectionIndicatorMemo) - также ячейка грида, создаваемого в динамической колонке.
+ * В будущем может понадобиться его автоматическое растягивание на высоту нескольких строк.
+ * В этом случае можно сделать position: absolute; width: 100%; top: 0; bottom: 0;
+ */
+.ControlsLists-dynamicGrid__selection__indicator {
+   height: 100%;
+   grid-row-start: 1;
+   grid-row-end: 2;
+   position: relative;
+}
+
+.ControlsLists-dynamicGrid__selection__dragIndicator {
+   position: fixed;
+}
+
+.ControlsLists-dynamicGrid__selection__indicator_colspanTop {
+   border-top-width: 0;
+   position: relative;
+   top: 0;
+   height: 100%;
+
+   .for(@TOffsetSizeVariants, {
+      &_@{_item} {
+         top: ~'calc(-1 * (var(--offset_@{_item}) + var(--border-thickness)))';
+         height: ~'calc(100% + var(--offset_@{_item}) + var(--border-thickness))';
+      }
+   });
+}
+
+.ControlsLists-dynamicGrid__selection__indicator_colspanBottom {
+   border-bottom-width: 0;
+}
+
+.ControlsLists-dynamicGrid__selection__resizer {
+   position: absolute;
+   z-index: @selectionResizerIndex;
+}
+
+.ControlsLists-dynamicGrid__selection__resizer_top {
+   top: 0;
+}
+
+.ControlsLists-dynamicGrid__selection__resizer_bottom {
+   bottom: 0;
+}
+
+.ControlsLists-dynamicGrid__selection__resizer_top,
+.ControlsLists-dynamicGrid__selection__resizer_bottom {
+   height: var(--size_line_selection_dynamicGrid);
+   cursor: ns-resize;
+   background-color: var(--backgroung-color_selection_resizingLine_dynamicGrid);
+
+   &_spacing_spacing {
+      left: var(--size_rect_selection_dynamicGrid);
+      right: var(--size_rect_selection_dynamicGrid);
+   }
+
+   &_spacing_noSpacing {
+      left: var(--size_rect_selection_dynamicGrid);
+      right: 0;
+   }
+
+   &_noSpacing_spacing {
+      left: 0;
+      right: var(--size_rect_selection_dynamicGrid);
+   }
+
+   &_noSpacing_noSpacing {
+      left: 0;
+      right: 0;
+   }
+
+   .for(@TOffsetSizeVariants, {
+      // &_spacing_noSpacing выше
+      // &_spacing_spacing выше
+      &_spacing_colspan-@{_item} {
+         left: var(--size_rect_selection_dynamicGrid);
+         right: ~'calc(-1 * (var(--offset_@{_item}) + var(--border-thickness)))';
+      }
+      &_noSpacing_colspan-@{_item},
+      &_colspan-@{_item}_colspan-@{_item} {
+         left: 0;
+         right: ~'calc(-1 * (var(--offset_@{_item}) + var(--border-thickness)))';
+      }
+      &_colspan-@{_item}_spacing {
+         left: 0;
+         right: var(--size_rect_selection_dynamicGrid);
+      }
+      &_colspan-@{_item}_noSpacing {
+         left: 0;
+         right: 0;
+      }
+   });
+   &_spacing_colspan-null {
+      left: var(--size_rect_selection_dynamicGrid);
+      right: ~'calc(-1 * var(--border-thickness))';
+   }
+   &_noSpacing_colspan-null,
+   &_colspan-null_colspan-null {
+      left: 0;
+      right: ~'calc(-1 * var(--border-thickness))';
+   }
+}
+
+.ControlsLists-dynamicGrid__selection__resizer_left {
+   left: 0;
+}
+
+.ControlsLists-dynamicGrid__selection__resizer_right {
+   right: 0;
+}
+
+.ControlsLists-dynamicGrid__selection__resizer_left,
+.ControlsLists-dynamicGrid__selection__resizer_right {
+   width: var(--size_line_selection_dynamicGrid);
+   cursor: ew-resize;
+   background-color: var(--backgroung-color_selection_resizingLine_dynamicGrid);
+
+   &_spacing_spacing {
+      top: var(--size_rect_selection_dynamicGrid);
+      bottom: var(--size_rect_selection_dynamicGrid);
+   }
+
+   &_spacing_noSpacing {
+      top: var(--size_rect_selection_dynamicGrid);
+      bottom: 0;
+   }
+
+   &_noSpacing_spacing {
+      top: 0;
+      bottom: var(--size_rect_selection_dynamicGrid);
+   }
+
+   &_noSpacing_noSpacing {
+      top: 0;
+      bottom: 0;
+   }
+
+   .for(@TOffsetSizeVariants, {
+      // &_noSpacing_noSpacing выше
+      // &_noSpacing_spacing выше
+      &_noSpacing_colspan-@{_item} {
+         top: 0;
+         bottom: var(--size_rect_selection_dynamicGrid);
+      }
+
+      // &_spacing_noSpacing выше
+      // &_spacing_spacing выше
+      &_spacing_colspan-@{_item} {
+         top: var(--size_rect_selection_dynamicGrid);
+         bottom: ~'calc(-1 * var(--offset_@{_item}))';
+      }
+
+      &_colspan-@{_item}_noSpacing {
+         top: ~'calc(-1 * var(--offset_@{_item}))';
+         bottom: 0;
+      }
+
+      &_colspan-@{_item}_spacing {
+         top: ~'calc(-1 * var(--offset_@{_item}))';
+         bottom: var(--size_rect_selection_dynamicGrid);
+      }
+
+      &_colspan-@{_item}_colspan-@{_item} {
+         top: ~'calc(-1 * var(--offset_@{_item}))';
+         bottom: ~'calc(-1 * var(--offset_@{_item}))';
+      }
+   });
+}
+
+.ControlsLists-dynamicGrid__selection__resizer_topLeft,
+.ControlsLists-dynamicGrid__selection__resizer_topRight,
+.ControlsLists-dynamicGrid__selection__resizer_bottomLeft,
+.ControlsLists-dynamicGrid__selection__resizer_bottomRight {
+   background-color: var(--backgroung-color_selection_resizingRect_dynamicGrid);
+   height: var(--size_rect_selection_dynamicGrid);
+   width: var(--size_rect_selection_dynamicGrid);
+}
+
+.ControlsLists-dynamicGrid__selection__resizer_topLeft {
+   left: 0;
+   top: 0;
+   cursor: nw-resize;
+}
+
+.ControlsLists-dynamicGrid__selection__resizer_topRight {
+   right: 0;
+   top: 0;
+   cursor: sw-resize;
+}
+
+.ControlsLists-dynamicGrid__selection__resizer_bottomLeft {
+   left: 0;
+   bottom: 0;
+   cursor: sw-resize;
+}
+
+.ControlsLists-dynamicGrid__selection__resizer_bottomRight {
+   right: 0;
+   bottom: 0;
+   cursor: nw-resize;
+}

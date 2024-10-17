@@ -1,0 +1,31 @@
+<div class="controlsDemo__wrapper controlsDemo__width800px">
+
+    <div class="ws-fragment">
+      <Controls-ListEnv.searchConnected:Input storeId="SearchingPortionedSearch" />
+      <Controls.scroll:Container attr:class="controlsDemo__height300">
+        <Controls.listDataOld:ListContainer>
+          <Controls.list:View storeId="SearchingPortionedSearch">
+            <ws:iterativeLoadingTemplate>
+              <ws:partial template="Controls/list:IterativeLoadingTemplate"
+                          scope="{{iterativeLoadingTemplate}}"
+                          loadingIndicatorCaption="Остановить поиск">
+                <ws:footerTemplate>
+                  <div>Дополнительная информация при итеративном поиске</div>
+                </ws:footerTemplate>
+              </ws:partial>
+            </ws:iterativeLoadingTemplate>
+            <ws:continueSearchTemplate>
+              <ws:partial template="Controls/list:ContinueSearchTemplate"
+                          scope="{{continueSearchTemplate}}"
+                          continueSearchCaption="Возобновить поиск">
+                <ws:footerTemplate>
+                  <div>Дополнительная информация при итеративном поиске</div>
+                </ws:footerTemplate>
+              </ws:partial>
+            </ws:continueSearchTemplate>
+            <ws:virtualScrollConfig pageSize="{{15}}"/>
+          </Controls.list:View>
+        </Controls.listDataOld:ListContainer>
+      </Controls.scroll:Container>
+    </div>
+</div>

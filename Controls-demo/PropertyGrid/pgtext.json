@@ -1,0 +1,1616 @@
+{
+  "Controls/breadcrumbs:Path": {
+    "name": "Controls.breadcrumbs:Path",
+    "title": "Breadcrumbs.",
+    "className": "Controls.breadcrumbs:Path",
+    "kind": "control",
+    "isPublic": true,
+    "fullname": "Controls.breadcrumbs:Path",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "items": {
+            "type": "Array",
+            "arrayElementType": "Object",
+            "title": "Array of breadcrumbs to draw."
+          },
+          "displayProperty": {
+            "title": "Name of the item property which content will be displayed.",
+            "type": "String",
+            "default": "title"
+          },
+          "keyProperty": {
+            "title": "Name of the item property that uniquely identifies collection item.",
+            "type": "String",
+            "default": ""
+          },
+          "parentProperty": {
+            "title": "Name of the field that contains information about parent node.",
+            "type": "String",
+            "default": ""
+          }
+        }
+      }
+    }
+  },
+  "Controls/breadcrumbs:HeadingPath": {
+    "name": "Controls.breadcrumbs:HeadingPath",
+    "title": "Breadcrumbs with back button.",
+    "className": "Controls.breadcrumbs:HeadingPath",
+    "kind": "control",
+    "isPublic": true,
+    "fullname": "Controls.breadcrumbs:HeadingPath",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "items": {
+            "type": "Array",
+            "arrayElementType": "Object",
+            "title": "Array of breadcrumbs to draw."
+          },
+          "displayProperty": {
+            "title": "Name of the item property which content will be displayed.",
+            "type": "String",
+            "default": "title"
+          },
+          "keyProperty": {
+            "title": "Name of the item property that uniquely identifies collection item.",
+            "type": "String",
+            "default": ""
+          },
+          "parentProperty": {
+            "title": "Name of the field that contains information about parent node.",
+            "type": "String",
+            "default": ""
+          },
+          "showActionButton": {
+            "title": "Determines whether the arrow near \"back\" button should be shown.",
+            "type": "Boolean",
+            "default": true
+          }
+        }
+      }
+    }
+  },
+  "Controls/heading:Back": {
+    "name": "Controls/heading:Back",
+    "title": "Specialized heading to go to the previous level. Support different display styles and sizes.",
+    "className": "Controls/heading:Back",
+    "kind": "control",
+    "isPublic": true,
+    "fullname": "Controls/heading:Back",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "tooltip": {
+            "type": "String",
+            "title": "Tooltip text."
+          },
+          "caption": {
+            "type": "String",
+            "title": "Back button text."
+          },
+          "name": {
+            "title": "Имя контрола",
+            "type": "String",
+            "default": ""
+          },
+          "style": {
+            "type": "enum",
+            "title": "Display style of back button.",
+            "enum": {
+              "secondary": "Button display as icon with border.",
+              "primary": "Button display as main link style."
+            }
+          },
+          "size": {
+            "type": "enum",
+            "title": "Size of the back button.",
+            "enum": {
+              "s": "Back button has s size.",
+              "m": "Back button has m size.",
+              "l": "Back button has l size."
+            }
+          }
+        }
+      }
+    }
+  },
+  "Controls/toggle:Switch": {
+    "name": "Controls/toggle:Switch",
+    "title": "Switch control.",
+    "className": "Controls/toggle:Switch",
+    "kind": "control",
+    "isPublic": true,
+    "fullname": "Controls/toggle:Switch",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "tooltip": {
+            "type": "String",
+            "title": "Tooltip text."
+          },
+          "value": {
+            "type": "Boolean",
+            "title": "Current state."
+          },
+          "readOnly": {
+            "type": "Boolean",
+            "title": "Determines whether control will react to user actions."
+          },
+          "name": {
+            "title": "Имя контрола",
+            "type": "String",
+            "default": ""
+          },
+          "caption": {
+            "type": "String",
+            "title": "Caption text."
+          },
+          "captionPosition": {
+            "type": "enum",
+            "title": "Determines on which side of the button caption is located.",
+            "enum": {
+              "start": "Caption before toggle.",
+              "end": "Toggle before caption. It is default value."
+            }
+          }
+        }
+      }
+    }
+  },
+  "Controls/checkbox:Checkbox": {
+    "name": "Controls/checkbox:Checkbox",
+    "title": "Basic checkbox.",
+    "className": "Controls/checkbox:Checkbox",
+    "kind": "control",
+    "isPublic": true,
+    "fullname": "Controls/checkbox:Checkbox",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "tooltip": {
+            "type": "String",
+            "title": "Tooltip text."
+          },
+          "caption": {
+            "type": "String",
+            "title": "Button text."
+          },
+          "value": {
+            "type": "Boolean|null",
+            "title": "Current state."
+          },
+          "readOnly": {
+            "type": "Boolean",
+            "title": "Indicates whether control will react to user actions."
+          },
+          "name": {
+            "title": "Имя контрола",
+            "type": "String",
+            "default": ""
+          },
+          "triState": {
+            "type": "Boolean",
+            "title": "Enable three-state mode."
+          }
+        }
+      }
+    }
+  },
+  "Controls/ComboBox": {
+    "name": "Controls/ComboBox",
+    "title": "Control that shows list of options",
+    "className": "Controls/ComboBox",
+    "kind": "control",
+    "isPublic": true,
+    "fullname": "Controls/ComboBox",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "displayProperty": {
+            "type": "String",
+            "title": "The name of the field whose value is displayed when you select an item from the list."
+          },
+          "itemTemplate": {
+            "type": "function",
+            "default": "wml!Controls/_dropdown/itemTemplate",
+            "title": "Template for item render."
+          },
+          "itemTemplateProperty": {
+            "type": "String",
+            "title": "Name of the item property that contains template for item render"
+          },
+          "filter": {
+              "type": "Object",
+              "title": "Filter configuration - object with field names and their values."
+          },
+          "placeholder": {
+            "type": "function|String",
+            "title": "Field placeholder."
+          },
+          "emptyText": {
+            "type": "String",
+            "title": "Add an empty item to the list with the given text."
+          },
+          "selectedKey": {
+            "type": "String",
+            "default": "Undefined",
+            "title": "Selected item key."
+          },
+          "source": {
+            "type": "Array",
+            "title": "Object that implements ISource interface for data access."
+          },
+          "keyProperty": {
+            "type": "String",
+            "title": "Name of the item property that uniquely identifies collection item."
+          },
+          "readOnly": {
+            "type": "Boolean",
+            "title": "Determines whether control will react to user actions."
+          }
+        }
+      }
+    }
+  },
+  "Controls/date:BaseInput": {
+    "name": "Controls/date:BaseInput",
+    "title": "Input for entering date or/and time.",
+    "className": "Controls/date:BaseInput",
+    "kind": "control",
+    "isPublic": true,
+    "fullname": "Controls/date:BaseInput",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "value": {
+            "type": "DateTime",
+            "title": "Field value."
+          },
+          "mask": {
+            "type": "enum",
+            "title": "Mask of input field.",
+            "enum": {
+              "DD.MM.YY": "DD.MM.YY",
+              "DD.MM.YYYY": "DD.MM.YYYY",
+              "DD.MM": "DD.MM",
+              "YYYY-MM-DD": "YYYY-MM-DD",
+              "YY-MM-DD": "YY-MM-DD",
+              "HH:mm:ss": "HH:mm:ss",
+              "HH:mm": "HH:mm",
+              "DD.MM.YYYY HH:mm:ss": "DD.MM.YYYY HH:mm:ss",
+              "DD.MM.YYYY HH:mm": "DD.MM.YYYY HH:mm",
+              "DD.MM.YY HH:mm:ss": "DD.MM.YY HH:mm:ss",
+              "DD.MM.YY HH:mm": "DD.MM.YY HH:mm",
+              "DD.MM HH:mm:ss": "DD.MM HH:mm:ss",
+              "DD.MM HH:mm": "DD.MM HH:mm",
+              "YYYY-MM-DD HH:mm:ss": "YYYY-MM-DD HH:mm:ss",
+              "YYYY-MM-DD HH:mm": "YYYY-MM-DD HH:mm",
+              "YY-MM-DD HH:mm:ss": "YY-MM-DD HH:mm:ss",
+              "YY-MM-DD HH:mm": "YY-MM-DD HH:mm",
+              "YYYY": "YYYY",
+              "MM.YYYY": "MM.YYYY"
+            }
+          },
+          "tagStyle": {
+            "type": "enum",
+            "title": "Tag style (colored indicator).",
+            "enum": {
+              "primary": "primary",
+              "secondary": "secondary",
+              "success": "success",
+              "danger": "danger",
+              "info": "info",
+              "warning": "warning"
+            }
+          },
+          "tooltip": {
+            "type": "String",
+            "title": "Field tooltip."
+          },
+          "readOnly": {
+            "type": "Boolean",
+            "title": "Indicates whether control will react to user actions."
+          },
+          "name": {
+            "title": "Имя контрола",
+            "type": "String",
+            "default": ""
+          },
+          "inlineHeight": {
+            "type": "enum",
+            "title": "Control.",
+            "enum": {
+              "default": "default",
+              "xs": "xs",
+              "s": "s",
+              "m": "m",
+              "l": "l",
+              "xl": "xl",
+              "2xl": "2xl"
+            }
+          }
+        }
+      }
+    }
+  },
+  "Controls/date:Input": {
+    "name": "Controls/date:Input",
+    "title": "Input for entering date.",
+    "className": "Controls/date:Input",
+    "kind": "control",
+    "isPublic": true,
+    "fullname": "Controls/date:Input",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "value": {
+            "type": "DateTime",
+            "title": "Field value."
+          },
+          "mask": {
+            "type": "enum",
+            "title": "Mask of input field.",
+            "enum": {
+              "DD.MM.YY": "DD.MM.YY",
+              "DD.MM.YYYY": "DD.MM.YYYY"
+            }
+          },
+          "tagStyle": {
+            "type": "enum",
+            "title": "Tag style (colored indicator).",
+            "enum": {
+              "primary": "primary",
+              "secondary": "secondary",
+              "success": "success",
+              "danger": "danger",
+              "info": "info",
+              "warning": "warning"
+            }
+          },
+          "tooltip": {
+            "type": "String",
+            "title": "Field tooltip."
+          },
+          "readOnly": {
+            "type": "Boolean",
+            "title": "Indicates whether control will react to user actions."
+          },
+          "name": {
+            "title": "Имя контрола",
+            "type": "String",
+            "default": ""
+          },
+          "style": {
+            "type": "enum",
+            "title": "Display style of the field.",
+            "enum": {
+              "info": "info",
+              "danger": "danger",
+              "success": "success",
+              "primary": "primary",
+              "warning": "warning",
+              "invalid": "invalid"
+            }
+          },
+          "inlineHeight": {
+            "type": "enum",
+            "title": "Control.",
+            "enum": {
+              "default": "default",
+              "xs": "xs",
+              "s": "s",
+              "m": "m",
+              "l": "l",
+              "xl": "xl",
+              "2xl": "2xl"
+            }
+          }
+        }
+      }
+    }
+  },
+  "Controls/dateRange:Input": {
+    "name": "Controls/dateRange:Input",
+    "title": "Input for entering date range.",
+    "className": "Controls/dateRange:Input",
+    "kind": "control",
+    "isPublic": true,
+    "fullname": "Controls/dateRange:Input",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "startValue": {
+            "type": "DateTime",
+            "title": "Field value."
+          },
+          "endValue": {
+            "type": "DateTime",
+            "title": "Field value."
+          },
+          "mask": {
+            "type": "enum",
+            "title": "Mask of input field.",
+            "enum": {
+              "DD.MM.YY": "DD.MM.YY",
+              "DD.MM.YYYY": "DD.MM.YYYY"
+            }
+          },
+          "validationStatus": {
+            "type": "enum",
+            "title": "Display style of the field.",
+            "enum": {
+              "valid": "valid",
+              "invalid": "invalid",
+              "invalidAccent": "invalidAccent"
+              }
+          },
+          "fontStyle": {
+            "type": "enum",
+            "title": "Fonts of the text in field.",
+            "enum": {
+              "default": "default",
+              "primary": "primary"
+            }
+          },
+          "startTagStyle": {
+            "type": "enum",
+            "title": "Style of the tag (colored indicator shown at the top right corner of the field).",
+            "enum": {
+              "info": "info",
+              "danger": "danger",
+              "success": "success",
+              "primary": "primary",
+              "warning": "warning",
+              "secondary": "secondary"
+            }
+          },
+          "endTagStyle": {
+            "type": "enum",
+            "title": "Style of the tag (colored indicator shown at the top right corner of the field).",
+            "enum": {
+              "info": "info",
+              "danger": "danger",
+              "success": "success",
+              "primary": "primary",
+              "warning": "warning",
+              "secondary": "secondary"
+            }
+          },
+          "readOnly": {
+            "type": "Boolean",
+            "title": "Indicates whether control will react to user actions."
+          },
+          "name": {
+            "title": "Имя контрола",
+            "type": "String",
+            "default": ""
+          },
+          "inlineHeight": {
+            "type": "enum",
+            "title": "Control.",
+            "enum": {
+              "default": "default",
+              "xs": "xs",
+              "s": "s",
+              "m": "m",
+              "l": "l",
+              "xl": "xl",
+              "2xl": "2xl"
+            }
+          }
+        }
+      }
+    }
+  },
+  "Controls/dateRange:RangeShortSelector": {
+    "name": "Controls/dateRange:RangeShortSelector",
+    "title": "Input for selection date range links in Light Calendar.",
+    "className": "Controls/dateRange:RangeShortSelector",
+    "kind": "control",
+    "isPublic": true,
+    "fullname": "Controls/dateRange:RangeShortSelector",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "startValue": {
+            "type": "DateTime",
+            "title": "Field value."
+          },
+          "endValue": {
+            "type": "DateTime",
+            "title": "Field value."
+          },
+          "tooltip": {
+            "type": "String",
+            "title": "Field tooltip."
+          },
+          "readOnly": {
+            "type": "Boolean",
+            "title": "Indicates whether control will react to user actions."
+          },
+          "showPrevArrow": {
+            "type": "Boolean",
+            "title": "",
+            "default": true
+          },
+          "showNextArrow": {
+            "type": "Boolean",
+            "title": "",
+            "default": true
+          },
+          "name": {
+            "title": "Имя контрола",
+            "type": "String",
+            "default": ""
+          }
+        }
+      }
+    }
+  },
+  "Controls/dropdown:Selector": {
+    "name": "Controls/dropdown:Selector",
+    "title": "Input for selection from the list of options.",
+    "className": "Controls/dropdown:Selector",
+    "kind": "control",
+    "isPublic": true,
+    "fullname": "Controls/dropdown:Selector",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "displayProperty": {
+            "type": "String",
+            "title": "The name of the field whose value is displayed when you select an item from the list."
+          },
+          "itemTemplate": {
+            "type": "function",
+            "default": "wml!Controls/_dropdown/itemTemplate",
+            "title": "Template for item render."
+          },
+          "itemTemplateProperty": {
+            "type": "function",
+            "title": "Name of the item property that contains template for item render."
+          },
+          "emptyText": {
+            "type": "String",
+            "title": "Add an empty item to the list with the given text."
+          },
+
+          "nodeProperty": {
+            "type": "String",
+            "title": "Name of the field describing the type of the node (list, node, hidden node)."
+          },
+          "parentProperty": {
+            "type": "String",
+            "title": "Name of the field that contains information about parent node."
+          },
+          "source": {
+            "type": "Array",
+            "title": "Object that implements ISource interface for data access."
+          },
+          "keyProperty": {
+            "type": "String",
+            "title": "Name of the item property that uniquely identifies collection item."
+          },
+          "readOnly": {
+            "type": "Boolean",
+            "title": "Determines whether control will react to user actions."
+          },
+          "multiSelect": {
+            "type": "Boolean"
+          },
+          "contentTemplate": {
+            "type": "function",
+            "title": "Template that will be render calling element."
+          },
+          "navigation": {
+            "type": "Object",
+            "title": "List navigation configuration"
+          },
+          "headerTemplate": {
+            "type": "function|String",
+            "title": "Template that will be rendered above the list."
+          },
+          "footerTemplate": {
+            "type": "function|String",
+            "title": "Template that will be rendered below the list."
+          },
+          "dropdownClassName": {
+            "type": "String",
+            "title": "Сlass for template."
+          },
+          "filter": {
+            "type": "Object",
+            "title": "Filter configuration - object with field names and their values."
+          }
+        }
+      }
+    }
+  },
+  "Controls/RadioGroup:Control": {
+    "name": "Controls/Toggle/Radio",
+    "title": "Radio button switch.",
+    "className": "Controls/Toggle/Radio",
+    "kind": "control",
+    "isPublic": true,
+    "fullname": "Controls/Toggle/Radio",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "selectedKey": {
+            "type": "Number",
+            "title": "Identifier of selected item."
+          },
+          "source": {
+            "title": "Object that implements ISource interface for data access."
+          },
+          "itemTemplate": {
+            "type": "function",
+            "title": "Template for item render."
+          },
+          "keyProperty": {
+            "type": "String",
+            "title": "Name of the item property that uniquely identifies collection item."
+          },
+          "itemTemplateProperty": {
+            "type": "String",
+            "title": "Name of the item property that contains template for item render"
+          },
+          "readOnly": {
+            "type": "Boolean",
+            "title": "Indicates whether control will react to user actions."
+          },
+          "name": {
+            "title": "Имя контрола",
+            "type": "String",
+            "default": ""
+          },
+          "direction": {
+            "type": "enum",
+            "title": "Direction of RadioGroup.",
+            "enum": {
+              "horizontal": "RadioGroup is a row of RadioButton.",
+              "vertical": "RadioGroup is a column of RadioButton."
+            }
+          }
+        }
+      }
+    }
+  },
+  "Controls/filterPopup:Panel": {
+    "name": "Controls/filterPopup:Panel",
+    "className": "Controls/filterPopup:Panel",
+    "kind": "control",
+    "isPublic": true,
+    "fullname": "Controls/filterPopup:Panel",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "items": {
+            "type": "Array",
+            "title": "Properties for editing or showing"
+          },
+          "itemTemplate": {
+            "type": "function",
+            "title": "Template for item render."
+          },
+          "itemTemplateProperty": {
+            "type": "String",
+            "title": "Name of the item property that contains template for item render. If not set, itemTemplate is used instead."
+          },
+          "additionalTemplate": {
+            "type": "function",
+            "arrayElementType": "String",
+            "title": "Template for item render in block 'Possible to select'"
+          },
+          "additionalTemplateProperty": {
+            "type": "String",
+            "title": "Name of the item property that contains template for item render in block Possible to select. If not set, additionalTemplate is used instead."
+          },
+          "historyId": {
+            "type": "String",
+            "title": "Unique id for save history."
+          },
+          "orientation": {
+            "default": "vertical",
+            "title": "Sets the display of the filter panel.",
+            "type": "enum",
+            "enum": {
+              "vertical": "Vertical orientation of the panel. The history block is displayed below.",
+              "horizontal": "Horizontal orientation of the panel. History block is displayed on the right."
+            }
+          },
+          "applyButtonCaption" : {
+            "type": "String",
+            "title": "Caption of apply button",
+            "default": "Отобрать"
+          },
+          "headingCaption": {
+            "default": "Отбираются",
+            "title": "Text heading.",
+            "type": "String"
+          },
+          "readOnly": {
+            "default": "false",
+            "title": "Determines whether user can change control's value (or interact with the control if its value is not editable).",
+            "type": "Boolean"
+          }
+        }
+      }
+    }
+  },
+  "Controls/lookup:Input": {
+    "name": "Controls/lookup:Input",
+    "title": "Control \"Lookup\"",
+    "className": "Controls/lookup:Input",
+    "kind": "control",
+    "isPublic": true,
+    "fullname": "Controls/lookup:Input",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "value": {
+            "type": "String",
+            "title": "Field value."
+          },
+          "placeholder": {
+            "type": "function|String",
+            "title": "Input's placeholder text."
+          },
+          "comment": {
+            "type": "String",
+            "title": "Input's comment text."
+          },
+          "minSearchLength": {
+            "type": "String"
+          },
+          "maxVisibleItems": {
+            "type": "String"
+          },
+          "autoDropDown": {
+            "type": "Boolean"
+          },
+          "multiSelect": {
+            "type": "Boolean"
+          },
+          "multiLine": {
+            "type": "Boolean"
+          },
+          "readOnly": {
+            "type": "Boolean"
+          },
+          "source": {
+            "type": "Array"
+          },
+          "selectorTemplate": {
+            "type": "Array"
+          },
+          "itemTemplate.style": {
+            "type": "enum",
+            "default": "none",
+            "enum": {
+              "none": "none",
+              "bold": "bold",
+              "accent": "accent",
+              "primary": "primary"
+            }
+          },
+          "itemTemplate.size": {
+            "type": "enum",
+            "default": "s",
+            "enum": {
+              "m": "m",
+              "l": "l",
+              "xl": "xl",
+              "2xl": "2xl",
+              "3xl": "3xl"
+            }
+          },
+          "displayProperty": {
+            "type": "enum",
+            "default": "title",
+            "enum": {
+              "id": "id",
+              "title": "title"
+            }
+          }
+        }
+      }
+    }
+  },
+  "Controls/lookup:Selector": {
+    "name": "Controls/lookup:Selector",
+    "title": "Button link with the specified text, on clicking on which a selection window opens.",
+    "className": "Controls/lookup:Selector",
+    "kind": "control",
+    "isPublic": true,
+    "fullname": "Controls/lookup:Selector",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "caption": {
+            "type": "String"
+          },
+          "maxVisibleItems": {
+            "type": "String"
+          },
+          "multiSelect": {
+            "type": "Boolean"
+          },
+          "readOnly": {
+            "type": "Boolean"
+          },
+          "source": {
+            "type": "Array"
+          },
+          "displayProperty": {
+            "type": "enum",
+            "default": "title",
+            "enum": {
+              "id": "id",
+              "title": "title"
+            }
+          }
+        }
+      }
+    }
+  },
+  "Controls/toggle:DoubleSwitch": {
+    "name": "Controls/toggle:DoubleSwitch",
+    "title": "Switch with two captions and with support two orientation.",
+    "className": "Controls/toggle:DoubleSwitch",
+    "kind": "control",
+    "isPublic": true,
+    "fullname": "Controls/toggle:DoubleSwitch",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "tooltip": {
+            "type": "String",
+            "title": "Tooltip text."
+          },
+          "value": {
+            "type": "Boolean",
+            "title": "Current state."
+          },
+          "readOnly": {
+            "type": "Boolean",
+            "title": "Determines whether control will react to user actions."
+          },
+          "name": {
+            "title": "Имя контрола",
+            "type": "String",
+            "default": ""
+          },
+          "onCaption": {
+            "type": "String",
+            "title": "On caption"
+          },
+          "offCaption": {
+            "type": "String",
+            "title": "Off caption"
+          },
+          "orientation": {
+            "type": "enum",
+            "title": "Double switch orientation in space.",
+            "enum": {
+              "horizontal": "Horizontal orientation. It is default value.",
+              "vertical": "Vertical orientation."
+            }
+          }
+        }
+      }
+    }
+  },
+  "Controls/dropdown:Button": {
+    "name": "Controls/dropdown:Button",
+    "title": "Control \"ButtonMenu\"",
+    "className": "Controls/dropdown:Button",
+    "kind": "control",
+    "isPublic": true,
+    "fullname": "Controls/dropdown:Button",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "tooltip": {
+            "type": "String",
+            "title": "Tooltip text."
+          },
+          "icon": {
+            "type": "String",
+            "title": "Button icon."
+          },
+          "caption": {
+            "type": "String",
+            "title": "Button text."
+          },
+          "style": {
+            "type": "enum",
+            "title": "Display style of button.",
+            "enum": {
+              "primary": "Button display as main link style.",
+              "success": "Button display as first nonaccent link style.",
+              "warning": "Button display as second nonaccent link style.",
+              "danger": "Button display as third nonaccent link style.",
+              "info": "Button display as first accent link style.",
+              "secondary": "Button display as icon with border.",
+              "default": "The display style of button as default text."
+            }
+          },
+          "viewMode": {
+            "type": "enum",
+            "title": "View mode of button.",
+            "enum": {
+              "link": "Decorated hyperlink.",
+              "outlined": "Default button.",
+              "ghost": "Toolbar button."
+            }
+          },
+          "size": {
+            "type": "enum",
+            "title": "Button size. The value is given by common size notations.",
+            "enum": {
+              "s": "Small button size.",
+              "m": "Medium button size.",
+              "l": "Large button size.",
+              "xl": "Extra large button size."
+            }
+          },
+          "iconStyle": {
+            "type": "enum",
+            "title": "Displaying icon style.",
+            "enum": {
+              "primary": "The display style of the attracting attention icon.",
+              "success": "The display style of the success icon.",
+              "warning": "The display style of the warning icon.",
+              "danger": "The display style of the danger icon.",
+              "info": "The display style of the simple information icon.",
+              "secondary": "The display style of the secondary icon."
+            }
+          },
+          "source": {
+            "type": "Array",
+            "title": "Object that implements ISource interface for data access."
+          },
+          "groupTemplate": {
+            "type": "function|String",
+            "title": "Group template."
+          },
+          "groupingKeyCallback": {
+            "type": "function",
+            "title": "Function that returns group identifier."
+          },
+          "nodeProperty": {
+            "type": "String",
+            "title": "Name of the field describing the type of the node (list, node, hidden node)."
+          },
+          "parentProperty": {
+            "type": "String",
+            "title": "Name of the field that contains item's parent identifier."
+          },
+          "navigation": {
+            "type": "Object",
+            "title": "List navigation configuration"
+          },
+          "headerTemplate": {
+            "type": "function|String",
+            "title": "Template that will be rendered above the list."
+          },
+          "footerTemplate": {
+            "type": "function|String",
+            "title": "Template that will be rendered below the list."
+          },
+          "dropdownClassName": {
+            "type": "String",
+            "title": "Сlass for template."
+          },
+          "filter": {
+            "type": "Object",
+            "title": "Filter configuration - object with field names and their values."
+          },
+          "itemTemplate": {
+            "type": "function|String",
+            "title": "Template for item render."
+          },
+          "itemTemplateProperty": {
+            "type": "String",
+            "title": "Name of the item property that contains template for item render"
+          },
+          "keyProperty": {
+            "type": "String",
+            "title": "Name of the item property that uniquely identifies collection item."
+          },
+          "readOnly": {
+            "type": "Boolean",
+            "title": "Determines whether control will react to user actions."
+          },
+          "name": {
+            "title": "Имя контрола",
+            "type": "String",
+            "default": ""
+          }
+        }
+      }
+    }
+  },
+  "Controls/progress:Bar": {
+    "name": "Controls/progress:Bar",
+    "title": "Control that renders progress bar",
+    "className": "Controls/progress:Bar",
+    "kind": "control",
+    "isPublic": true,
+    "fullname": "Controls/progress:Bar",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "value": {
+            "default": "",
+            "title": "Value",
+            "type": "Number"
+          },
+          "name": {
+            "default": "",
+            "title": "Имя контрола",
+            "type": "String"
+          }
+        }
+      }
+    }
+  },
+  "Controls-demo/PendingRegistrator/PendingRegistrator": {
+    "name": "Controls-demo/PendingRegistrator/RegistratorExample",
+    "title": "Control that show pending registrator working",
+    "className": "Controls-demo/PendingRegistrator/RegistratorExample",
+    "kind": "control",
+    "inPublic": true,
+    "fullname": "Controls-demo/PendingRegistrator/RegistratorExample",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+        }
+      }
+    }
+  },
+  "Controls-demo/LoadingIndicator/IndicatorContainer": {
+    "name": "Controls-demo/LoadingIndicator/IndicatorContainer",
+    "title": "Control that show loading indicator",
+    "className": "Controls-demo/LoadingIndicator/IndicatorContainer",
+    "kind": "control",
+    "inPublic": true,
+    "fullname": "Controls-demo/LoadingIndicator/IndicatorContainer",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "isGlobal": {
+            "default": false,
+            "title": "isGlobal",
+            "type": "Boolean"
+          },
+          "message": {
+            "default": "message",
+            "title": "message",
+            "type": "String"
+          },
+          "scroll": {
+            "default": "",
+            "title": "scroll",
+            "type": "String"
+          },
+          "small": {
+            "default": "",
+            "title": "small",
+            "type": "String"
+          },
+          "overlay": {
+            "default": "default",
+            "title": "Overlay",
+            "type": "String"
+          },
+          "mods": {
+            "default": [],
+            "title": "mods",
+            "type": "Array"
+          },
+          "delay": {
+            "default": 0,
+            "title": "delay",
+            "type": "Number"
+          }
+        }
+      }
+    }
+  },
+  "Controls/search:Input": {
+    "name": "Controls/search:Input",
+    "title": "Search input.",
+    "className": "Controls/search:Input",
+    "kind": "control",
+    "isPublic": true,
+    "fullname": "Controls/search:Input",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "value": {
+            "type": "String",
+            "default": "'' (empty string)",
+            "title": "Text in the field."
+          },
+          "placeholder": {
+            "type": "function|String",
+            "title": "Field placeholder."
+          },
+          "selectOnClick": {
+            "type": "Boolean",
+            "default": false,
+            "title": "Determines whether text is selected when input is clicked."
+          },
+          "searchButtonVisible": {
+            "type": "Boolean",
+            "default": true
+          },
+          "readOnly": {
+            "type": "Boolean",
+            "title": "Determines whether control will react to user actions."
+          },
+          "maxLength": {
+            "type": "Number",
+            "title": "Maximum number of characters that can be entered in the field."
+          },
+          "trim": {
+            "type": "Boolean",
+            "default": false,
+            "title": "Determines whether the field value should be trimmed when input is completed."
+          },
+          "constraint": {
+            "type": "String",
+            "title": "Regular expression for input filtration."
+          }
+        }
+      }
+    }
+  },
+  "Controls/suggest:Input": {
+    "name": "Controls/suggest:Input",
+    "title": "A suggest box control is similar to a textbox control, since the user can type any text into a suggest box, but offers suggested options to the user to help guide the input.",
+    "className": "Controls/suggest:Input",
+    "kind": "class",
+    "isPublic": true,
+    "fullname": "Controls/suggest:Input",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "value": {
+            "type": "String",
+            "title": "Field value."
+          },
+          "readOnly": {
+            "type": "Boolean",
+            "title": "Determines whether control will react to user actions."
+          },
+          "autoDropDown": {
+            "type": "Boolean",
+            "title": "Show suggest when the input get focused"
+          },
+          "source": {
+            "type": "Array",
+            "title": "Object that implements ISource interface for data access."
+          },
+          "navigation": {
+            "type": "function",
+            "title": "List navigation configuration. Configures data source navigation (pages, offset, position) and navigation view (pages, infinite scroll, etc.)"
+          },
+          "suggestTemplate": {
+            "type": "function",
+            "title": "Template for suggest, that showing search results."
+          },
+          "footerTemplate": {
+            "type": "function",
+            "title": "Footer template of suggest."
+          },
+          "emptyTemplate": {
+            "type": "function",
+            "title": "Template for suggest when no results were found."
+          },
+          "searchParam": {
+            "type": "enum",
+            "title": "Name of the field that search should operate on. Search value will insert in filter by this parameter.",
+            "default": "city",
+            "enum": {
+              "city": "",
+              "name": ""
+            }
+          },
+          "displayProperty": {
+            "type": "enum",
+            "title": "Defines which field from suggest list will be used as text after selecting an option.",
+            "default": "city",
+            "enum": {
+              "city": "",
+              "name": ""
+            }
+          },
+          "minSearchLength": {
+            "type": "Number",
+            "title": "The minimum number of characters a user must type before a search is performed.",
+            "default": 3
+          },
+          "searchDelay": {
+            "type": "Number",
+            "title": "The delay between when a symvol was typed and when a search is performed.",
+            "default": 300
+          }
+        }
+      }
+    }
+  },
+  "Controls/suggest:SearchInput": {
+    "name": "Controls/suggest:SearchInput",
+    "title": "A suggest box control is similar to a textbox control, since the user can type any text into a suggest box, but offers suggested options to the user to help guide the input.",
+    "className": "Controls/suggest:SearchInput",
+    "kind": "class",
+    "isPublic": true,
+    "fullname": "Controls/suggest:SearchInput",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "value": {
+            "type": "String",
+            "title": "Field value."
+          },
+          "readOnly": {
+            "type": "Boolean",
+            "title": "Determines whether control will react to user actions."
+          },
+          "autoDropDown": {
+            "type": "Boolean",
+            "title": "Show suggest when the input get focused"
+          },
+          "source": {
+            "type": "Array",
+            "title": "Object that implements ISource interface for data access."
+          },
+          "navigation": {
+            "type": "function",
+            "title": "List navigation configuration. Configures data source navigation (pages, offset, position) and navigation view (pages, infinite scroll, etc.)"
+          },
+          "suggestTemplate": {
+            "type": "function",
+            "title": "Template for suggest, that showing search results."
+          },
+          "footerTemplate": {
+            "type": "function",
+            "title": "Footer template of suggest."
+          },
+          "emptyTemplate": {
+            "type": "function",
+            "title": "Template for suggest when no results were found."
+          },
+          "searchParam": {
+            "type": "enum",
+            "title": "Name of the field that search should operate on. Search value will insert in filter by this parameter.",
+            "default": "city",
+            "enum": {
+              "city": "",
+              "name": ""
+            }
+          },
+          "displayProperty": {
+            "type": "enum",
+            "title": "Defines which field from suggest list will be used as text after selecting an option.",
+            "default": "city",
+            "enum": {
+              "city": "",
+              "name": ""
+            }
+          },
+          "minSearchLength": {
+            "type": "Number",
+            "title": "The minimum number of characters a user must type before a search is performed.",
+            "default": 3
+          },
+          "searchDelay": {
+            "type": "Number",
+            "title": "The delay between when a symvol was typed and when a search is performed.",
+            "default": 300
+          }
+        }
+      }
+    }
+  },
+  "Controls/popup:Sticky": {
+    "name": "Controls/popup:Sticky",
+    "className": "Controls/popup:Sticky",
+    "kind": "control",
+    "isPublic": true,
+    "fullname": "Controls/popup:Sticky",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "name": {
+            "default": "",
+            "title": "Имя контрола",
+            "type": "String"
+          },
+          "autofocus": {
+            "title": "Determines whether focus is set to the template when popup is opened.",
+            "type": "Boolean"
+          },
+          "actionOnScroll": {
+            "type": "enum",
+            "default": "close",
+            "enum": {
+              "close": "close",
+              "track": "track"
+            }
+          },
+          "direction": {
+            "type": "Object"
+          },
+          "offset": {
+            "type": "Object"
+          },
+          "targetPoint": {
+            "type": "Object"
+          },
+          "fittingMode": {
+            "type": "enum",
+            "default": "fixed",
+            "enum": {
+              "fixed": "fixed",
+              "adaptive": "adaptive",
+              "overflow": "overflow"
+            }
+          },
+          "templateOptions": {
+            "title": "Шаблон отображения внутреннего содержимого",
+            "type": "Object"
+          },
+          "modal": {
+            "title": "Determines whether the window is modal.",
+            "type": "Boolean"
+          },
+          "className": {
+            "title": "Class names of popup.",
+            "type": "String"
+          },
+          "closeOnOutsideClick": {
+            "title": "Determines whether possibility of closing the popup when clicking past.",
+            "type": "Boolean"
+          },
+          "template": {
+            "title": "Template inside popup.",
+            "type": "function|String"
+          },
+          "width": {
+            "title": "The minimum width of popup.",
+            "type": "Number"
+          },
+          "maxWidth": {
+            "title": "The maximum height of popup.",
+            "type": "Number"
+          },
+          "minWidth": {
+            "title": "The maximum height of popup.",
+            "type": "Number"
+          },
+          "height": {
+            "title": "The minimum height of popup.",
+            "type": "Number"
+          },
+          "maxHeight": {
+            "title": "The maximum height of popup.",
+            "type": "Number"
+          },
+          "minHeight": {
+            "title": "The maximum height of popup.",
+            "type": "Number"
+          }
+        }
+      }
+    }
+  },
+  "Controls/popup:Notification": {
+    "name": "Controls/popup:Notification",
+    "title": "Component that opens a popup that is positioned in the lower right corner of the browser window",
+    "className": "Controls/popup:Notification",
+    "kind": "control",
+    "isPublic": true,
+    "fullname": "Controls/popup:Notification",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "name": {
+            "default": "",
+            "title": "Имя контрола",
+            "type": "String"
+          },
+          "className": {
+            "title": "Class names of popup.",
+            "type": "String"
+          },
+          "template": {
+            "title": "Template inside popup.",
+            "type": "function|String"
+          },
+          "templateOptions": {
+            "title": "Шаблон отображения внутреннего содержимого",
+            "type": "Object"
+          }
+        }
+      }
+    }
+  },
+  "Controls/popupTemplate:Confirmation": {
+    "name": "Controls/popupTemplate:Confirmation",
+    "title": "Base template of confirm dialog.",
+    "className": "Controls/popupTemplate:Confirmation",
+    "kind": "control",
+    "isPublic": true,
+    "fullname": "Controls/popupTemplate:Confirmation",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "name": {
+            "title": "Имя контрола",
+            "type": "String",
+            "default": ""
+          },
+          "style": {
+            "type": "enum",
+            "default": "default",
+            "title": "Option description.",
+            "enum": {
+              "default": "default",
+              "success": "success",
+              "danger": "danger"
+            }
+          },
+          "size": {
+            "type": "enum",
+            "default": "m",
+            "title": "Option description.",
+            "enum": {
+              "m": "m",
+              "l": "l"
+            }
+          },
+          "bodyContentTemplate": {
+            "type": "function|String",
+            "title": "Main content."
+          },
+          "footerContentTemplate": {
+            "type": "function|String",
+            "title": "Content at the bottom of the confirm panel."
+          }
+        }
+      }
+    }
+  },
+  "Controls/popupTemplate:Stack": {
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "name": {
+            "title": "Имя контрола",
+            "type": "String",
+            "default": ""
+          },
+          "headingCaption": {
+            "type": "String",
+            "title": "Header title."
+          },
+          "headingStyle": {
+            "type": "enum",
+            "default": "secondary",
+            "title": "Caption display style.",
+            "enum": {
+              "secondary": "secondary",
+              "primary": "primary",
+              "info": "info"
+            }
+          },
+          "headerContentTemplate": {
+            "type": "function|String",
+            "title": "The content between the header and the cross closure."
+          },
+          "bodyContentTemplate": {
+            "type": "function|String",
+            "title": "Main content."
+          },
+          "footerContentTemplate": {
+            "type": "function|String",
+            "title": "Content at the bottom of the stack panel."
+          },
+          "closeButtonVisibility": {
+            "type": "Boolean",
+            "title": "Determines whether display of the close button."
+          },
+          "maximizeButtonVisibility": {
+            "type": "Boolean",
+            "title": "Determines the display maximize button."
+          },
+          "closeButtonTransparent": {
+            "type": "Boolean"
+          },
+          "closeButtonViewMode": {
+            "type": "enum",
+            "default": "popup",
+            "title": "Close button display style.",
+            "enum": {
+              "toolButton": "toolButton",
+              "link": "link",
+              "popup": "popup"
+            }
+          }
+        }
+      }
+    }
+  },
+  "Controls/popupTemplate:Notification": {
+    "name": "Controls/popupTemplate:Notification",
+    "title": "Base template of notification popup.",
+    "className": "Controls/popupTemplate:Notification",
+    "kind": "control",
+    "isPublic": true,
+    "fullname": "Controls/popupTemplate:Notification",
+    "properties": {
+      "ws-config": {
+        "title": "Базовая конфигурация",
+        "options": {
+          "style": {
+            "type": "enum",
+            "default": "primary",
+            "title": "Notification display style.",
+            "enum": {
+              "warning": "warning",
+              "primary": "primary",
+              "success": "success",
+              "danger": "danger"
+            }
+          },
+          "closeButtonVisibility": {
+            "type": "Boolean",
+            "title": "Determines whether display of the close button."
+          },
+          "bodyContentTemplate": {
+            "type": "function|String",
+            "title": "Main content."
+          },
+          "name": {
+            "default": "",
+            "title": "Имя контрола",
+            "type": "String"
+          }
+        }
+      }
+    }
+  }
+}

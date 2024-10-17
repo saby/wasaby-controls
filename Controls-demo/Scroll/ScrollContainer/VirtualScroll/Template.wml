@@ -1,0 +1,19 @@
+<div class="pageWrap">
+    <Controls.scroll:Container attr:style="height: 300px;" name="scrollContainer">
+        <!-- Костыль, чтобы список работал через старую схему и строился на клиенте синхронно,
+             убрать при переходе на storeId -->
+        <Controls.listDataOld:ListContainer>
+            <Controls.grid:View
+                    keyProperty="id"
+                    source="{{_viewSource}}"
+                    columns="{{_columns}}"
+                    navigation="{{_navigation}}"
+                    virtualScrolling="{{true}}"/>
+        </Controls.listDataOld:ListContainer>
+    </Controls.scroll:Container>
+    <div class="buttons-block">
+        <Controls.buttons:Button class="btn-scroll" caption="Scroll" on:click="_onScroll()"/>
+        <Controls.buttons:Button class="btn-unfreeze" caption="Unfreeze" on:click="_onLoad()"/>
+    </div>
+</div>
+

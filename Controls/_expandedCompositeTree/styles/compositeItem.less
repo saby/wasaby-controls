@@ -1,0 +1,35 @@
+.controls-ExpandedCompositeTree-composite-item {
+   &__itemActions.controls-itemActionsV {
+      position: relative;
+      margin-top: calc(-1 * var(--offset_2xs));
+      margin-bottom: calc(-1 * var(--offset_2xs));
+   }
+
+   &__multiSelect {
+      margin-left: calc(-1 * var(--offset_xs));
+      width: calc(var(--offset_xs) + var(--offset_m));
+
+      &_margin-top {
+         margin-top: calc(-1 * var(--offset_s));
+      }
+   }
+
+   // Пока что отступы можно задать только для всего списка, поэтому приходится перебивать стили.
+   // https://online.sbis.ru/opendoc.html?guid=2de5296d-5f30-4a11-9be7-eb067e204fc4&client=3
+   &-top-node .controls-ListView__itemContent {
+      padding-bottom: calc(var(--offset_3xs) / 2);
+   }
+
+   &-node .controls-ListView__itemContent {
+      padding-top: var(--offset_m);
+      padding-bottom: var(--offset_s);
+   }
+
+   &-top-node + &-node .controls-ListView__itemContent {
+      padding-top: 0;
+   }
+
+   &__content {
+      max-width: 100%;
+   }
+}

@@ -1,0 +1,16 @@
+<div class="demo-FormControllerBase">
+    <Controls.buttons:Button
+        attr:class="demo-FormControllerBase__create"
+        caption="Создать"
+        on:click="_createClickHandler()"/>
+    <Controls.grid:View
+            name="grid"
+            storeId="FormControllerBase"
+            attr:class="demo-Grid__control demo-FormControllerBase__grid"
+            on:itemClick="_itemClickHandler()"
+            itemsReadyCallback="{{ _itemsReadyCallback }}"
+            rowSeparatorSize="l"
+            columns="{{ _gridColumns }}"
+            header="{{ _gridHeader }}">
+    </Controls.grid:View>
+</div>

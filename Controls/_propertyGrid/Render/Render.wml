@@ -1,0 +1,24 @@
+<div>
+    <ws:partial template="wml!Controls/_propertyGrid/Render/resources/for"
+                listModel="{{_options.listModel}}"
+                groupTemplate="{{_options.groupTemplate || _groupTemplate}}"
+                collapsedGroups="{{_options.collapsedGroups}}"
+                toggleEditorsTemplate="{{_toggleEditorsTemplate}}"
+                captionPosition="{{_options.captionPosition}}"
+                captionFontColorStyle="{{_options.captionFontColorStyle}}"
+                captionFontSize="{{_options.captionFontSize}}"
+                captionFontWeight="{{_options.captionFontWeight}}"
+                multiSelectVisibility="{{_options.multiSelectVisibility}}"
+                multiSelectPosition="{{_options.multiSelectPosition}}"
+                jumpingLabel="{{_options.jumpingLabel}}">
+        <ws:itemTemplate>
+            <ws:partial template="{{_options.itemTemplate}}">
+                <ws:editorTemplate>
+                    <ws:partial template="wml!Controls/_propertyGrid/Render/resources/editorTemplate"
+                                on:propertyValueChanged="_propertyValueChanged(editorTemplate.collectionItem.contents)"
+                                on:validateFinished="_validateFinished(collectionItem.contents.name)"/>
+                </ws:editorTemplate>
+            </ws:partial>
+        </ws:itemTemplate>
+    </ws:partial>
+</div>

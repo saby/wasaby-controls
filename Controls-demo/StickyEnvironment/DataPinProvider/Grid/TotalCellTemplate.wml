@@ -1,0 +1,15 @@
+<ws:partial template="Controls/grid:ColumnTemplate" scope="{{_options}}">
+   <ws:contentTemplate>
+      <ws:if data="{{item.contents.nodeType === 'group'}}">
+         <Controls.stickyEnvironment:DataPinContainer
+            data="{{item.contents}}"
+            topMargin="{{topMargin}}"
+         >
+            <b>{{ item.contents.total }}</b>
+         </Controls.stickyEnvironment:DataPinContainer>
+      </ws:if>
+      <ws:else>
+         {{item.contents.total}}
+      </ws:else>
+   </ws:contentTemplate>
+</ws:partial>
