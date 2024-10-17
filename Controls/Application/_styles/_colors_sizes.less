@@ -1,0 +1,634 @@
+//icon-sizes
+
+.controls-icon_size-default {
+   font-size: var(--icon-size_m);
+   line-height: var(--icon-size_m);
+   width: var(--icon-size_m);
+   height: var(--icon-size_m);
+   font-family: var(--icon_font-family_m);
+}
+
+.controls-icon_size-2xs {
+   font-size: var(--icon-size_2xs);
+   line-height: var(--icon-size_2xs);
+   width: var(--icon-size_2xs);
+   height: var(--icon-size_2xs);
+   font-family: var(--icon_font-family_2xs);
+}
+
+.controls-icon_size-xs {
+   font-size: var(--icon-size_xs);
+   line-height: var(--icon-size_xs);
+   width: var(--icon-size_xs);
+   height: var(--icon-size_xs);
+   font-family: var(--icon_font-family_xs);
+}
+
+.controls-icon_size-s {
+   font-size: var(--icon-size_s);
+   line-height: var(--icon-size_s);
+   width: var(--icon-size_s);
+   height: var(--icon-size_s);
+   font-family: var(--icon_font-family_s);
+}
+
+// временный размер иконок = 20. Проблема в том что все средние иконки m должны быть 20
+// но поскольку они нарисованы в шрифте с отступами, то для того чтобы получить 20, контейнеру иконки надо ставить 24
+// в svg отступы не рисуют, поэтому чтобы svg иконки выглядели со шрифтовыми одинаково, для svg сделан временный отдельный размер
+// в будущем нужно m сделать 20, а st удалить
+.controls-icon_size-st {
+   line-height: var(--icon-size_st);
+   width: var(--icon-size_st);
+   height: var(--icon-size_st);
+}
+
+.controls-icon_size-m {
+   font-size: var(--icon-size_m);
+   line-height: var(--icon-size_m);
+   width: var(--icon-size_m);
+   height: var(--icon-size_m);
+   font-family: var(--icon_font-family_m);
+}
+
+//todo change font icons to svg https://online.sbis.ru/opendoc.html?guid=90761cbd-04f8-4fad-be7d-8c1707bdd30e
+//icon-24 font has a problem with baseline in FF IE
+//important is for cases when non-theme css loads after theme css
+.controls_theme-default {
+   .controls-icon_size-m {
+      /* stylelint-disable-next-line declaration-no-important */
+      line-height: calc(var(--icon-size_m) - 1px) !important;
+   }
+}
+
+.icon-RoundPlus.controls-icon_size-s,
+.icon-RoundPlus.controls-icon_size-m {
+   transform: rotate(360deg);
+}
+
+//end todo
+
+.controls-icon {
+   flex-shrink: 0;
+   speak: none;
+   font-style: normal;
+   font-weight: normal;
+   font-variant: normal;
+   text-transform: none;
+   line-height: 1;
+   display: inline-block;
+}
+
+.controls-icon_svg {
+   transform: scale(1);
+}
+
+//icon colors
+
+.controls-icon_size-l {
+   font-size: var(--icon-size_l);
+   line-height: var(--icon-size_l);
+   width: var(--icon-size_l);
+   height: var(--icon-size_l);
+   font-family: var(--icon_font-family_l);
+}
+
+.controls-icon_style-info {
+   fill: var(--info_icon-color);
+   color: var(--info_icon-color);
+}
+
+.controls-icon_style-unaccented {
+   fill: var(--unaccented_icon-color);
+   color: var(--unaccented_icon-color);
+}
+
+.controls-icon_style-label {
+   fill: var(--label_text-color);
+   color: var(--label_text-color);
+}
+
+.controls-icon_style-success {
+   fill: var(--success_icon-color);
+   color: var(--success_icon-color);
+}
+
+.controls-icon_style-danger {
+   fill: var(--danger_icon-color);
+   color: var(--danger_icon-color);
+}
+
+.controls-icon_style-warning {
+   fill: var(--warning_icon-color);
+   color: var(--warning_icon-color);
+}
+
+.controls-icon_style-secondary {
+   fill: var(--secondary_icon-color);
+   color: var(--secondary_icon-color);
+}
+
+.controls-icon_style-primary {
+   fill: var(--primary_icon-color);
+   color: var(--primary_icon-color);
+}
+
+.controls-icon_style-default {
+   fill: var(--icon-color);
+   color: var(--icon-color);
+}
+
+.controls-icon_style-link {
+   fill: var(--link_icon-color);
+   color: var(--link_icon-color);
+}
+
+.controls-icon_style-contrast {
+   fill: var(--contrast_icon-color);
+   color: var(--contrast_icon-color);
+}
+
+.controls-icon_style-readonly {
+   fill: var(--readonly_icon-color);
+   color: var(--readonly_icon-color);
+}
+
+.controls-icon_style-brand {
+   fill: var(--brand_color);
+   color: var(--brand_color);
+}
+
+.controls-icon_style-forTranslucent,
+.controls-icon_style-forTranslucent-dark {
+   fill: #fff;
+   color: #fff;
+}
+
+.controls-icon_style-forTranslucent-light {
+   fill: var(--icon-color);
+   color: var(--icon-color);
+}
+
+.ws-is-hover .controls-icon_highlightOnHover:hover {
+   fill: var(--secondary_hover_icon-color);
+   color: var(--secondary_hover_icon-color);
+}
+
+//text colors
+.controls-text-default {
+   color: var(--text-color);
+}
+
+.controls-text-primary {
+   color: var(--primary_text-color);
+}
+
+.controls-text-brand {
+   color: var(--brand_color);
+}
+
+.controls-text-secondary {
+   color: var(--secondary_text-color);
+}
+
+.controls-text-link {
+   color: var(--link_text-color);
+}
+
+.controls-text-label {
+   color: var(--label_text-color);
+}
+
+.controls-text-danger {
+   color: var(--danger_text-color);
+}
+
+.controls-text-success {
+   color: var(--success_text-color);
+}
+
+.controls-text-warning {
+   color: var(--warning_text-color);
+}
+
+.controls-text-unaccented {
+   color: var(--unaccented_text-color);
+}
+
+.controls-text-info {
+   color: var(--info_text-color);
+}
+
+.controls-text-readonly {
+   color: var(--readonly_text-color);
+}
+
+.controls-text-results {
+   color: var(--results-text-color_decoratorMoney);
+}
+
+.controls-text-contrast {
+   color: var(--contrast_text-color);
+}
+
+.controls-text-contrast-label {
+   color: var(--label_contrast_text-color);
+}
+
+.controls-text-forTranslucent,
+.controls-text-forTranslucent-dark {
+   color: #fff;
+}
+
+.controls-text-forTranslucent-light {
+   color: var(--text-color);
+}
+
+//backgrounds
+
+.controls-background-primary {
+   background-color: var(--primary_background-color);
+}
+
+.controls-background-secondary {
+   background-color: var(--secondary_background-color);
+}
+
+.controls-background-danger {
+   background-color: var(--danger_background-color);
+}
+
+.controls-background-success {
+   background-color: var(--success_background-color);
+}
+
+.controls-background-warning {
+   background-color: var(--warning_background-color);
+}
+
+.controls-background-info {
+   background-color: var(--info_background-color);
+}
+
+.controls-background-unaccented {
+   background-color: var(--unaccented_background-color);
+}
+
+.controls-background-contrast {
+   background-color: var(--contrast_background-color, #f3f5f7); //удалить в 22.1100 то что в скобках
+}
+
+.controls-background-contrast-pale {
+   background-color: var(--pale_color);
+}
+
+.controls-background-contrast-info {
+   background-color: var(--info_color);
+}
+
+.controls-background-primary-same {
+   background-color: var(--primary_same_background-color);
+}
+
+.controls-background-contrast-primary {
+   background-color: var(--primary_color);
+}
+
+.controls-background-contrast-secondary {
+   background-color: var(--secondary_color);
+}
+
+.controls-background-contrast-success {
+   background-color: var(--success_color);
+}
+
+.controls-background-contrast-warning {
+   background-color: var(--warning_color);
+}
+
+.controls-background-contrast-danger {
+   background-color: var(--danger_color);
+}
+
+.controls-background-contrast-unaccented {
+   background-color: var(--unaccented_contrast_background-color);
+}
+
+.controls-background-secondary-same {
+   background-color: var(--secondary_same_background-color);
+}
+
+.controls-background-danger-same {
+   background-color: var(--danger_same_background-color);
+}
+
+.controls-background-success-same {
+   background-color: var(--success_same_background-color);
+}
+
+.controls-background-warning-same {
+   background-color: var(--warning_same_background-color);
+}
+
+.controls-background-info-same {
+   background-color: var(--info_same_background-color);
+}
+
+.controls-background-unaccented-same {
+   background-color: var(--pale_color);
+}
+
+//для стики блоков для сайтов с темой брендбука, где надо залипать в цвет фона страницы, может быть не только цвет!
+.controls-background-page {
+   background: var(--brandbook_background-color);
+}
+//font-sizes
+
+.controls-fontsize-inherit {
+   font-size: inherit;
+}
+
+.controls-fontsize-3xs {
+   font-size: var(--font-size_3xs);
+}
+
+.controls-fontsize-2xs {
+   font-size: var(--font-size_2xs);
+}
+
+.controls-fontsize-xs {
+   font-size: var(--font-size_xs);
+}
+
+.controls-fontsize-s {
+   font-size: var(--font-size_s);
+}
+
+.controls-fontsize-m {
+   font-size: var(--font-size_m);
+}
+
+.controls-fontsize-l {
+   font-size: var(--font-size_l);
+}
+
+.controls-fontsize-xl {
+   font-size: var(--font-size_xl);
+}
+
+.controls-fontsize-2xl {
+   font-size: var(--font-size_2xl);
+}
+
+.controls-fontsize-3xl {
+   font-size: var(--font-size_3xl);
+}
+
+.controls-fontsize-4xl {
+   font-size: var(--font-size_4xl);
+}
+
+.controls-fontsize-5xl {
+   font-size: var(--font-size_5xl);
+}
+
+.controls-fontsize-6xl {
+   font-size: var(--font-size_6xl);
+}
+
+.controls-fontsize-7xl {
+   font-size: var(--font-size_7xl);
+}
+
+.controls-fontsize-8xl {
+   font-size: var(--font-size_8xl);
+}
+
+//heights
+.controls-inlineheight-xs {
+   height: var(--inline_height_xs);
+}
+
+.controls-inlineheight-s {
+   height: var(--inline_height_s);
+}
+
+.controls-inlineheight-m {
+   height: var(--inline_height_m);
+}
+
+.controls-inlineheight-mt {
+   height: var(--inline_height_mt);
+}
+
+.controls-inlineheight-l {
+   height: var(--inline_height_l);
+}
+
+.controls-inlineheight-xl {
+   height: var(--inline_height_xl);
+}
+
+.controls-inlineheight-2xl {
+   height: var(--inline_height_2xl);
+}
+
+.controls-inlineheight-3xl {
+   height: var(--inline_height_3xl);
+}
+
+.controls-inlineheight-4xl {
+   height: var(--inline_height_4xl);
+}
+
+.controls-inlineheight-5xl {
+   height: var(--inline_height_5xl);
+}
+
+.controls-inlineheight-6xl {
+   height: var(--inline_height_6xl);
+}
+
+.controls-inlineheight-7xl {
+   height: var(--inline_height_7xl);
+}
+
+.controls-inlineheight-default {
+   height: var(--inline_height_default);
+}
+
+//font-weights
+.controls-fontweight-normal {
+   font-weight: normal;
+}
+
+.controls-fontweight-bold {
+   font-weight: var(--font-weight-bold);
+}
+
+.controls-fontweight-default {
+   font-weight: var(--font-weight);
+}
+
+// Набор классов для установки фона контрола через backgroundStyle (default, transparent)
+.controls-background-default {
+   background-color: var(--background-color);
+}
+
+.controls-background-transparent {
+   background-color: transparent;
+}
+
+.controls-focused-item_underline:focus-within {
+   transition: border-color 0.5s;
+   border-bottom: solid var(--border-thickness) var(--focused_border-color);
+}
+
+.controls-focused-item_background:focus-within {
+   transition: background 0.5s;
+   background: var(--focused_background-color);
+}
+
+.controls-focused-item:focus-within {
+   transition:
+      background 0.5s,
+      box-shadow 0.5s,
+      border-radius 0.5s;
+   background: var(--focused_background-color);
+   box-shadow: 0 0 0 var(--offset_2xs) var(--focused_background-color);
+   border-radius: var(--border-radius_xs);
+}
+
+.controls-focused-item_text-decoration:focus-within .controls-BaseButton__text {
+   text-decoration: underline;
+}
+
+.controls-focused-item_shadow:focus-within {
+   animation: 0.5s shadowAnimate forwards;
+}
+
+@keyframes shadowAnimate {
+   from {
+      box-shadow: 0 0 0 0 var(--focused_shadow-color);
+   }
+
+   to {
+      box-shadow: 0 0 0 var(--offset_2xs) var(--focused_shadow-color);
+   }
+}
+
+//validate
+.controls-invalid-border {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   pointer-events: none;
+   z-index: -1;
+   border: var(--border-thickness) solid var(--invalid_border-color);
+   left: calc(-1 * (var(--invalid_padding-horizontal) + var(--border-thickness)));
+   bottom: calc(-1 * (var(--invalid_padding-vertical) + var(--border-thickness)));
+   padding: var(--invalid_padding-vertical) var(--invalid_padding-horizontal);
+   border-radius: var(--border-radius_xs);
+}
+
+.controls-invalid-container {
+   position: relative;
+
+   // Для того, чтобы отображались дочерние элементы с отрицательным z-index-ом, если задается цвет фона. Пример: https://jsfiddle.net/koshka_alesya/df1cqL6s/42/
+   // https://stackoverflow.com/questions/18564974/html-backgrounds-with-z-index0-hidden-by-parent-background
+   z-index: 0;
+}
+
+.controls-invalidAccent-border {
+   border: var(--border-thickness) solid var(--invalid_border-color);
+   left: calc(-1 * (var(--invalid_padding-horizontal) + var(--border-thickness)));
+   bottom: calc(-1 * (var(--invalid_padding-vertical) + var(--border-thickness)));
+   padding: var(--invalid_padding-vertical) var(--invalid_padding-horizontal);
+   background-color: var(--invalid_focus_background-color);
+}
+
+//offsets
+/* stylelint-disable-next-line unit-no-unknown */
+@variants: 3xs, 2xs, xs, s, st, m, l, xl, 2xl, 3xl;
+
+.for(@variants, {
+   .controls-padding_top-@{_item} {
+      padding-top: ~'var(--offset_@{_item})';
+   }
+
+   .controls-padding_right-@{_item} {
+      padding-right: ~'var(--offset_@{_item})';
+   }
+
+   .controls-padding_bottom-@{_item} {
+      padding-bottom: ~'var(--offset_@{_item})';
+   }
+
+   .controls-padding_left-@{_item} {
+      padding-left: ~'var(--offset_@{_item})';
+   }
+
+   .controls-padding-@{_item} {
+      padding: ~'var(--offset_@{_item})';;
+   }
+
+   .controls-margin_top-@{_item} {
+      margin-top: ~'var(--offset_@{_item})';
+   }
+
+   .controls-margin_right-@{_item} {
+      margin-right: ~'var(--offset_@{_item})';
+   }
+
+   .controls-margin_bottom-@{_item} {
+      margin-bottom: ~'var(--offset_@{_item})';
+   }
+
+   .controls-margin_left-@{_item} {
+      margin-left: ~'var(--offset_@{_item})';
+   }
+
+   .controls-margin-@{_item} {
+      margin: ~'var(--offset_@{_item})';;
+   }
+
+   .controls-top-@{_item} {
+      top: ~'var(--offset_@{_item})';
+   }
+
+   .controls-right-@{_item} {
+      right: ~'var(--offset_@{_item})';
+   }
+
+   .controls-bottom-@{_item} {
+      bottom: ~'var(--offset_@{_item})';
+   }
+
+   .controls-left-@{_item} {
+      left: ~'var(--offset_@{_item})';
+   }
+
+   .controls_border-radius-@{_item} {
+      border-radius: ~'var(--border-radius_@{_item})';
+   }
+});
+
+.controls-padding_left-m_optional {
+   padding-left: var(--outer_padding, var(--offset_m));
+}
+
+.controls-margin_left-m_optional {
+   margin-left: var(--outer_padding, var(--offset_m));
+}
+
+// Классы для добавления "воздуха" между элементами
+.controls-air-m {
+   padding-top: var(--air_m);
+}
+
+.controls-air-l {
+   padding-top: var(--air_l);
+}
+
+.controls-max-w-full {
+   max-width: 100%;
+}

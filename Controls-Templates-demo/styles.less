@@ -1,0 +1,192 @@
+.Controls-Templates-demo__itemsSpacing {
+   margin: var(--offset_s);
+}
+
+.Controls-Templates-demo__itemsSpacing-left {
+   margin-left: var(--offset_s);
+}
+
+.Controls-Templates-demo__squareImage_size {
+   width: var(--size_6xl_image);
+   height: var(--size_6xl_image);
+   flex-shrink: 0;
+}
+
+.Controls-Templates-demo__rectangleImage_size {
+   width: var(--size_7xl_image);
+}
+
+.Controls-Templates-demo__newsImage_size {
+   width: var(--size_7xl_image);
+   height: var(--size_7xl_image);
+}
+
+// Демка сертификатов
+.Controls-Templates-demo_certificate_group {
+   display: contents;
+}
+
+.Controls-Templates-demo_certificate {
+   width: 216px;
+   height: 150px;
+   background-color: var(--background-color);
+}
+
+.Controls-Templates-demo_certificate.first {
+   z-index: 3;
+}
+
+.Controls-Templates-demo_certificate.second {
+   z-index: 2;
+}
+
+.Controls-Templates-demo_certificate.third {
+   z-index: 1;
+}
+
+.Controls-Templates-demo_certificate.shifted {
+   margin-left: -125px;
+   transition: transform 0.4s;
+   transform: translate(0);
+}
+
+.Controls-Templates-demo_certificate.shifted:hover {
+   transform: translateX(var(--offset_xs));
+   z-index: 4;
+}
+
+.Controls-Templates-demo_certificate.shifted .Controls-Templates-demo_certificate_caption,
+.Controls-Templates-demo_certificate_group:hover
+   > .Controls-Templates-demo_certificate.first
+   .Controls-Templates-demo_certificate_caption {
+   opacity: 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.Controls-Templates-demo_certificate.shifted:hover .Controls-Templates-demo_certificate_caption,
+.Controls-Templates-demo_certificate_group:hover
+   > .Controls-Templates-demo_certificate.first:hover
+   .Controls-Templates-demo_certificate_caption {
+   opacity: 1;
+}
+
+.Controls-Templates-demo_certificate.shifted .Controls-Templates-demo_certificate_image,
+.Controls-Templates-demo_certificate_group:hover
+   > .Controls-Templates-demo_certificate.first
+   .Controls-Templates-demo_certificate_image {
+   opacity: 50%;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.Controls-Templates-demo_certificate.shifted:hover .Controls-Templates-demo_certificate_image,
+.Controls-Templates-demo_certificate_group:hover
+   > .Controls-Templates-demo_certificate.first:hover
+   .Controls-Templates-demo_certificate_image {
+   opacity: 100%;
+}
+
+.Controls-Templates-demo_certificate_price {
+   color: var(--contrast_text-color);
+   position: absolute;
+   text-align: center;
+   padding: 0 10px;
+   right: 8px;
+   top: 10px;
+   border-radius: calc(var(--inline_height_2xl) / 2);
+   background-color: var(--primary_text-color);
+   line-height: var(--inline_height_2xl);
+}
+
+// демка интересных заведений
+.Controls-Templates-demo__place-logo {
+   width: var(--icon-size_l);
+   height: var(--icon-size_l);
+   border-radius: 50%;
+   background: #ffb27c;
+}
+
+.Controls-Templates-demo__placeImage_size {
+   width: 220px;
+   height: 273px;
+}
+
+.Controls-Templates-demo__place_icon_row {
+   position: absolute;
+   right: 0;
+   top: var(--offset_xs);
+   display: flex;
+}
+
+.Controls-Templates-demo__icon-round-primary {
+   background: var(--primary_text-color);
+   width: var(--icon-size_s);
+   height: var(--icon-size_s);
+   padding: var(--offset_s);
+   margin-right: var(--offset_s);
+   border-radius: 50%;
+}
+
+// Демка каталог
+.Controls-Templates-demo__catalog-item-size {
+   width: 300px;
+}
+
+.Controls-Templates-demo__catalog_icon {
+   background: var(--unaccented_background-color);
+   width: var(--icon-size_s);
+   height: var(--icon-size_s);
+   padding: var(--offset_xs);
+   margin-right: var(--offset_s);
+   align-self: flex-end;
+   border-radius: 50%;
+}
+
+// демка курсы
+.Controls-Templates-demo__course-item-size {
+   width: 289px;
+   height: 148px;
+}
+
+.Controls-Templates-demo_course_image.Controls-Templates-demo_course_image-shift {
+   margin-right: -30px;
+}
+
+.Controls-Templates-demo__course_icon {
+   position: absolute;
+   bottom: var(--offset_xs);
+   left: var(--offset_xs);
+}
+
+.Controls-Templates-demo__news-width {
+   flex-basis: 50%;
+}
+
+.Controls-Templates-demo__news-absolute-time {
+   position: absolute;
+   top: var(--offset_s);
+   right: var(--offset_s);
+}
+
+.Controls-Templates-demo__news_collage {
+   margin-top: var(--offset_s);
+   margin-left: calc(-1 * var(--offset_s));
+   margin-right: calc(-1 * var(--offset_s));
+}
+
+.Controls-Templates-demo__news_collage-photo {
+   width: calc(50% - var(--offset_3xs));
+}
+
+.Controls-Templates-demo__news_green::after {
+   content: '\200b';
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   height: 3px;
+   background-color: var(--success_color);
+}
+
+.Controls-Templates-demo__ItemActions_position_custom {
+   top: 0;
+}

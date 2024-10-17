@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper">
+<Controls.propertyGrid:PropertyGrid
+    bind:editingObject="_editingObject"
+    captionPosition="left"
+    typeDescription="{{_typeDescription}}">
+  <ws:groupTemplate>
+    <ws:partial template="Controls/propertyGrid:GroupTemplate">
+      <ws:contentTemplate>
+        <div>Заголовок группы</div>
+      </ws:contentTemplate>
+    </ws:partial>
+  </ws:groupTemplate>
+</Controls.propertyGrid:PropertyGrid>
+</div>

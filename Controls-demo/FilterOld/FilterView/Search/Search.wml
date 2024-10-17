@@ -1,0 +1,17 @@
+<div class="controlsDemo__wrapper">
+    <Controls.browser:Browser filterButtonSource="{{_filterSource}}"
+                              source="{{_source}}"
+                              searchParam="city">
+        <div>
+            <Controls.searchDeprecated:InputContainer>
+                <Controls.search:Input />
+            </Controls.searchDeprecated:InputContainer>
+            <Controls.filterOld:ViewContainer>
+                <Controls.filter:View/>
+            </Controls.filterOld:ViewContainer>
+            <Controls.listDataOld:ListContainer>
+                <Controls.list:View emptyTemplate="Не найдено" />
+            </Controls.listDataOld:ListContainer>
+        </div>
+    </Controls.browser:Browser>
+</div>

@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth400">
+    <Controls.scroll:Container attr:class="controlsDemo__height300" shadowMode="js">
+        <div class="controlsDemo__height50">Контент до списка</div>
+        <Controls.stickyBlock:StickyBlock position="top" mode="stackable">
+            <div class="controlsDemo__height50">Прилипающий контент до списка</div>
+        </Controls.stickyBlock:StickyBlock>
+        <Controls.grid:View
+                storeId="LadderTrackedPropertiesWithSticky"
+                columns="{{_columns}}"
+                header="{{_header}}"
+                trackedProperties="{{_trackedProperties}}"
+                itemPadding="{{_itemPadding}}"
+                ladderProperties="{{_ladderProperties}}">
+        </Controls.grid:View>
+    </Controls.scroll:Container>
+</div>

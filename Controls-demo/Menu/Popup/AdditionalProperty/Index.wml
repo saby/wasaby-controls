@@ -1,0 +1,11 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper controlsDemo__flexColumn controls-margin-m">
+      <div class="controls-text-label">С additionalProperty</div>
+      <Controls.menu:Popup
+              items="{{_items}}"
+              keyProperty="key"
+              displayProperty="title"
+              additionalProperty="additional">
+      </Controls.menu:Popup>
+   </div>
+</div>

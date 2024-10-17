@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500 controlsDemo_wrapper-treeGrid-base-treeGridView">
+    <Controls.treeGrid:View
+            storeId="NodeTypePropertyDynamicParentProperty"
+            rowSeparatorSize="s"
+            colspanCallback="{{ _colspanCallback }}"
+            useNewNodeFooters="{{ true }}"
+            columns="{{ _columns }}"/>
+</div>

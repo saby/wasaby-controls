@@ -1,0 +1,9 @@
+<ws:partial template="{{ _options.content }}"
+            validationStatus="{{_validationStatus}}"
+            scope="{{_options}}"
+            attr:class="controls-ValidateContainer__validationStatus-{{_validationStatus}}"
+            on:mouseenter="_hoverHandler()"
+            on:focusIn="_focusInHandler()"
+            on:focusOut="_focusOutHandler()"
+            on:valueChanged="_valueChangedHandler()"
+            on:mouseleave="_mouseLeaveHandler()"/>

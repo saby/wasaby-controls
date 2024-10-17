@@ -1,0 +1,16 @@
+<div>
+    <Controls-ListEnv.operationsPanelConnected:View storeId="listData">
+        <ws:rightTemplate>
+            <Controls.buttons:Button
+                    caption="Доп. операции"
+                    iconSize="s"
+                    icon="icon-Settings"
+                    viewMode="link"
+                    fontColorStyle="link"/>
+        </ws:rightTemplate>
+    </Controls-ListEnv.operationsPanelConnected:View>
+    <Controls.treeGrid:View
+            columns="{{_columns}}"
+            storeId="listData"
+    />
+</div>

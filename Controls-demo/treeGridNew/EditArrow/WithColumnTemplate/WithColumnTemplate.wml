@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <Controls.treeGrid:View
+            attr:style="width: 500px;"
+            showEditArrow="{{ true }}"
+            editArrowVisibilityCallback="{{ _editArrowVisibilityCallback }}"
+            columns="{{ _columns }}"
+            header="{{ _header }}"
+            storeId="EditArrowWithColumnTemplate">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/treeGrid:ItemTemplate"
+                        highlightOnHover="{{ _getHighlightOnHover(itemTemplate.item.contents) }}"/>
+        </ws:itemTemplate>
+    </Controls.treeGrid:View>
+</div>

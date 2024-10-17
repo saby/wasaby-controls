@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300 controlsDemo_treeGrid-offset-withoutLevelPadding">
+    <Controls.tree:View
+            storeId="listData">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/tree:ItemTemplate"
+                        expanderSize="s"
+                        withoutLevelPadding="{{true}}"
+                        expanderIcon="{{ _getExpanderIcon(itemTemplate.item.contents) }}"/>
+        </ws:itemTemplate>
+    </Controls.tree:View>
+</div>

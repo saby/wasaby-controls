@@ -1,0 +1,372 @@
+/* stylelint-disable saby/non-theme-colors -- это и есть источник цветов */
+.controls_theme-@{themeName} {
+   // Цвета
+   //
+   // Общие цвета
+   --background-color: #fff;
+   --unaccented_background-color: #f8f8f8;
+   --unaccented_adaptive_background-color: #ecedee;
+   --contrast_background-color: #f3f5f7;
+   --hover_background-color: #f3f4f8;
+   --active_background-color: #eff1f5;
+   --active_background-color_rgb: 239, 241, 245;
+   --unaccented_color: #999; //пока нужен, в сервисе тем от него строятся расчеты
+   --readonly_text-color: #ccc;
+   --readonly_icon-color: #ccc;
+   --invalid_border-color: var(--danger_border-color);
+   --invalid_focus_background-color: var(--danger_background-color);
+   --marker_color: #cc3d00;
+   --marker_hover_color: var(--pale_border-color);
+   --border-color: #eaeaea;
+   --hover_border-color: #d0d0d0;
+   --separator_color: rgba(0, 0, 0, 0.04);
+   --unaccented_separator_color: rgba(0, 0, 0, 0.08);
+   --readonly_marker-color: #ffdbcc;
+   --readonly_border-color: #e4e4e4;
+   --readonly_background-color: #dce1e4;
+   // Ситуативные цвета
+   --rate_icon-color: #fec63f;
+   --rate2_color: var(--danger_icon-color);
+   --rate4_color: #e86a15;
+   --rate6_color: var(--rate_icon-color);
+   --rate8_color: #8dc742;
+   --rate10_color: var(--success_icon-color);
+   --focused_background-color: rgba(46, 102, 210, 0.15);
+   --focused_shadow-color: #d9e3f7;
+   --focused_border-color: #2e66d2;
+   --brand_color: #0085f2;
+   --brand_color_rgb: 0, 133, 242;
+   --unread_text-color: var(--primary_text-color);
+
+   // Цвета текста
+   --text-color: #000;
+   --hover_text-color: #575757;
+   --contrast_text-color: #fff;
+   --link_text-color: #2562aa;
+   --link_hover_text-color: #153f6f;
+   --label_text-color: #8991a9;
+   --label_hover_text-color: #313e78;
+   --label_contrast_text-color: #656c87;
+   --unaccented_text-color: #999;
+   --unaccented_hover_text-color: #666;
+   --link_text-color_inline: var(--link_hover_text-color);
+   --link_hover_text-color_inline: var(--link_text-color);
+
+   // Цвета иконок
+   --icon-color: #333;
+   --hover_icon-color: #575757;
+   --contrast_icon-color: #fff;
+   --unaccented_icon-color: #ccc;
+   --unaccented_hover_icon-color: #999;
+   --label_icon-color: #8991a9;
+   --label_icon-color_rgb: 137, 145, 169;
+   --label_hover_icon-color: #313e78;
+   --link_icon-color: #2562aa;
+   --link_hover_icon-color: #153f6f;
+
+   // Новая палитра
+   --primary_color: #f6733c;
+   --primary_hover_color: #e4662f;
+   --primary_active_color: #d6551f;
+   --primary_text-color: #cc3d00;
+   --primary_on_contrast_text-color: var(--contrast_text-color);
+   --primary_hover_text-color: #e27140;
+   --primary_icon-color: #f47843;
+   --primary_hover_icon-color: #db4200;
+   --primary_border-color: #f88f62;
+   --primary_hover_border-color: #f55714;
+   --primary_background-color: #fff8f5;
+   --primary_hover_background-color: #fff1eb;
+   --primary_active_background-color: #ffe6db;
+   --primary_same_background-color: #fff1eb;
+   --primary_hover_same_background-color: #ffe6db;
+   --primary_active_same_background-color: #ffdbcc;
+   --secondary_color: #265fa1;
+   --secondary_hover_color: #2b5688;
+   --secondary_active_color: #274c77;
+   --secondary_text-color: #313e78;
+   --secondary_hover_text-color: #1e5391;
+   --secondary_icon-color: #656c87;
+   --secondary_hover_icon-color: #1e5391;
+   --secondary_border-color: #529edc;
+   --secondary_hover_border-color: #0065b8;
+   --secondary_background-color: #f5faff;
+   --secondary_hover_background-color: #ebf4ff;
+   --secondary_active_background-color: #dbecff;
+   --secondary_same_background-color: #ebf4ff;
+   --secondary_same_background-color_rgb: 235, 244, 255;
+   --secondary_hover_same_background-color: #dbecff;
+   --secondary_active_same_background-color: #cce4ff;
+   --danger_color: #dc2219;
+   --danger_hover_color: #c22219;
+   --danger_active_color: #aa2018;
+   --danger_text-color: #c2140a;
+   --danger_hover_text-color: #e50c00;
+   --danger_icon-color: #c2140a;
+   --danger_hover_icon-color: #e50c00;
+   --danger_border-color: #f86a62;
+   --danger_hover_border-color: #f51f14;
+   --danger_background-color: #fff7f7;
+   --danger_hover_background-color: #ffeceb;
+   --danger_active_background-color: #ffdddb;
+   --danger_same_background-color: #ffeceb;
+   --danger_hover_same_background-color: #ffdddb;
+   --danger_active_same_background-color: #ffcfcc;
+   --success_color: #12a12c;
+   --success_hover_color: #128c29;
+   --success_active_color: #127d26;
+   --success_text-color: #298e3c;
+   --success_hover_text-color: #28bd44;
+   --success_icon-color: #298e3c;
+   --success_hover_icon-color: #28bd44;
+   --success_border-color: #50ce68;
+   --success_hover_border-color: #00a31f;
+   --success_background-color: #f7fff8;
+   --success_hover_background-color: #ebffee;
+   --success_active_background-color: #dbffe2;
+   --success_same_background-color: #ecf9ec;
+   --success_hover_same_background-color: #e0f5e0;
+   --success_active_same_background-color: #d5f1d5;
+   --warning_color: #ecb956;
+   --warning_hover_color: #e5ab38;
+   --warning_active_color: #df9f20;
+   --warning_text-color: #e6a119;
+   --warning_hover_text-color: #f6c055;
+   --warning_icon-color: #e6a119;
+   --warning_hover_icon-color: #f6c055;
+   --warning_border-color: #f8c662;
+   --warning_hover_border-color: #f5aa14;
+   --warning_background-color: #fffcf7;
+   --warning_hover_background-color: #fff8eb;
+   --warning_active_background-color: #fff3db;
+   --warning_same_background-color: #fff8eb;
+   --warning_hover_same_background-color: #fff3db;
+   --warning_active_same_background-color: #fec;
+   --info_color: #6757b7;
+   --info_hover_color: #5949a7;
+   --info_active_color: #504294;
+   --info_text-color: #5a49ab;
+   --info_hover_text-color: #7e70c2;
+   --info_icon-color: #5a49ab;
+   --info_hover_icon-color: #7e70c2;
+   --info_border-color: #7b62f8;
+   --info_hover_border-color: #3a14f5;
+   --info_border-color_rgb: 123, 98, 248;
+   --info_background-color: #f8f7ff;
+   --info_hover_background-color: #eeebff;
+   --info_active_background-color: #e1dbff;
+   --info_same_background-color: #eeebff;
+   --info_hover_same_background-color: #e1dbff;
+   --info_active_same_background-color: #d4ccff;
+   --unaccented_hover_background-color: #eff0f4;
+   --unaccented_hover_background-color_rgb: 239, 240, 244;
+   --unaccented_active_background-color: #e7e9ec;
+   --unaccented_contrast_background-color: #dbdbdb;
+   --unaccented_hover_contrast_background-color: #ccc;
+   --unaccented_active_contrast_background-color: #d4d4d4;
+   --unaccented_border-color: #d2d6da;
+   --unaccented_hover_border-color: #8f99a3;
+   --translucent_background-color: rgba(205, 205, 205, 0.8);
+   --translucent_hover_background-color: rgba(196, 196, 196, 0.8);
+   --translucent_active_background-color: rgba(189, 189, 189, 0.8);
+   --translucent_on_icon-color: #fff;
+   --translucent_on_text-color: #fff;
+   --translucent_background-color_light: rgba(255, 255, 255, 0.35);
+   --translucent_hover_background-color_light: rgba(255, 255, 255, 0.5);
+   --translucent_active_background-color_light: rgba(255, 255, 255, 0.7);
+   --translucent_on_light_icon-color: #000;
+   --translucent_on_light_text-color: #000;
+   --pale_color: rgba(51, 51, 51, 0.05);
+   --pale_hover_color: rgba(51, 51, 51, 0.1);
+   --pale_active_color: rgba(51, 51, 51, 0.15);
+   --pale_border-color: #e5e7eb;
+   --pale_hover_border-color: #e4e4e4;
+   --item_selected_color: #05121e;
+   --item_selected_text-color: var(--contrast_text-color);
+   --item_selected_icon-color: var(--contrast_icon-color);
+
+   // Шрифты
+   //
+   // Общие размеры шрифтов
+   --font-size_3xs: 10px;
+   --font-size_2xs: 11px;
+   --font-size_xs: 12px;
+   --font-size_s: 13px;
+   --font-size_m: 14px;
+   --font-size_l: 15px;
+   --font-size_xl: 16px;
+   --font-size_2xl: 17px;
+   --font-size_3xl: 18px;
+   --font-size_4xl: 20px;
+   --font-size_5xl: 24px;
+   --font-size_6xl: 28px;
+   --font-size_7xl: 32px;
+   --font-size_8xl: 36px;
+   --font-size_default: var(--font-size_m);
+
+   // Жирность шрифта
+   --font-weight: normal;
+   --font-weight-bold: 600;
+   --letter-spacing: -0.0141em;
+
+   // Высоты элементов
+   //
+   // Высоты строчных контролов (кнопок, полей ввода)
+   --inline_height_xs: 16px;
+   --inline_height_s: 20px;
+   --inline_height_m: 24px;
+   --inline_height_mt: 26px;
+   --inline_height_l: 28px;
+   --inline_height_xl: 32px;
+   --inline_height_2xl: 36px;
+   --inline_height_3xl: 40px;
+   --inline_height_4xl: 44px;
+   --inline_height_5xl: 48px;
+   --inline_height_6xl: 52px;
+   --inline_height_7xl: 56px;
+   --inline_height_default: var(--inline_height_m);
+
+   // Межстрочный интервал
+   --message_line-height_confirmation: var(--line-height_3xl_inputArea);
+
+   // Иконки
+   //
+   // Шрифты для иконок
+   --icon_font-family_2xs: 'cbuc-icons';
+   --icon_font-family_xs: 'cbuc-icons';
+   --icon_font-family_s: 'cbuc-icons';
+   --icon_font-family_m: 'cbuc-icons24';
+   --icon_font-family_l: 'cbuc-icons';
+
+   // Размеры иконок
+   --icon-size_2xs: 12px;
+   --icon-size_xs: 14px;
+   --icon-size_s: 16px;
+   // временный размер иконок = 20. Проблема в том что все средние иконки m должны быть 20
+   // но поскольку они нарисованы в шрифте с отступами, то для того чтобы получить 20, контейнеру иконки надо ставить 24
+   // в svg отступы не рисуют, поэтому чтобы svg иконки выглядели со шрифтовыми одинаково, для svg сделан временный отдельный размер
+   // в будущем нужно m сделать 20, а st удалить
+   --icon-size_st: 20px;
+   --icon-size_m: 24px;
+   --icon-size_l: 32px;
+
+   // Линейка стандартных отступов
+   --offset_3xs: 2px;
+   --offset_2xs: 4px;
+   --offset_xs: 6px;
+   --offset_s: 8px;
+   --offset_st: 10px;
+   --offset_m: 12px;
+   --offset_l: 16px;
+   --offset_xl: 20px;
+   --offset_2xl: 24px;
+   --offset_3xl: 28px;
+
+   // Линейка стандартных скруглений
+   --border-radius_3xs: 2px;
+   --border-radius_2xs: 4px;
+   --border-radius_xs: 6px;
+   --border-radius_s: 8px;
+   --border-radius_m: 12px;
+   --border-radius_l: 16px;
+   --border-radius_xl: 20px;
+   --border-radius_2xl: 24px;
+   --border-radius_3xl: 28px;
+   --border-radius_circle: 50%;
+
+   // Толщина обводки контролов.
+   --border-thickness: 1px;
+
+   // Валидация
+   //
+   // отступ от контрола до обводки валидации сверху и снизу
+   --invalid_padding-vertical: 0px;
+
+   // отступ от контрола до обводки валидации справа и слева
+   --invalid_padding-horizontal: var(--offset_xs);
+
+   //Размер тэга.
+   //Примечание: тэг - это цветной индикатор, использующийся для информации о состоянии поля.
+   --tag-size: 8px;
+
+   //Кнопка сброса
+   --reset-button_icon-size: var(--icon-size_s);
+   --reset-button_color: var(--unaccented_icon-color);
+
+   //Кнопка "применить"
+   --apply-icon-size: var(--icon-size_s);
+   --apply-icon-fontFamily: var(--icon_font-family_s);
+
+   // Отображение картинок
+   --border-radius_s_image: var(--border-radius_2xs);
+   --border-radius_m_image: var(--border-radius_s);
+   --size_xs_image: 16px;
+   --size_s_image: 24px;
+   --size_m_image: 32px;
+   --size_mt_image: 36px;
+   --size_l_image: 40px;
+   --size_xl_image: 48px;
+   --size_xlt_image: 56px;
+   --size_2xl_image: 64px;
+   --size_3xl_image: 72px;
+   --size_4xl_image: 96px;
+   --size_5xl_image: 144px;
+   --size_6xl_image: 190px;
+   --size_7xl_image: 300px;
+   //для картинок, которые не имею своего фона (прозрачные png) нужен контейнер который этот фон задаст
+   --image_background-color: var(--unaccented_background-color);
+
+   // Набор теней
+   --shadow-blur_a: 18px;
+   --shadow-color_a: rgba(0, 0, 0, 0.12);
+   --shadow_a: 0 0 var(--shadow-blur_a) var(--shadow-color_a);
+   --shadow-blur_b: 8px;
+   --shadow-color_b: rgba(0, 0, 0, 0.14);
+   --shadow_b: 0 0 var(--shadow-blur_b) var(--shadow-color_b);
+   --shadow-blur_c: 8px;
+   --shadow-color_c: rgba(0, 0, 0, 0.06);
+   --shadow_c: 0 0 var(--shadow-blur_c) var(--shadow-color_c);
+   --shadow-blur_d: 6px;
+   --shadow-color_d: rgba(0, 0, 0, 0.1);
+   --shadow_d: 0 0 var(--shadow-blur_d) var(--shadow-color_d);
+
+   // Блоки для нового дизайна
+   --border-radius_default_block: var(--border-radius_s);
+   --box-shadow-blur_block: var(--shadow-blur_c);
+   --box-shadow_block: 0 0 var(--box-shadow-blur_block) var(--shadow-color_c);
+   --offset_block: var(--offset_s);
+
+   // Фон сайта
+   --page_background-image: url('/cdn/OnlineCDN/themes/1.0.0/background.jpg');
+   --page_background-color: #dad9e0;
+
+   // шапки для окон
+   --header_background-color: var(--unaccented_background-color);
+   --header_min-height: 38px;
+
+   // "воздух" для контролов
+   --air_m: 5px;
+   --air_l: var(--offset_s);
+   --font-size_ad_3xs: 12px;
+   --font-size_ad_2xs: 13px;
+   --font-size_ad_xs: 14px;
+   --font-size_ad_s: 15px;
+   --font-size_ad_m: 16px;
+   --font-size_ad_l: 17px;
+   --font-size_ad_xl: 18px;
+   --font-size_ad_2xl: 20px;
+   --font-size_ad_3xl: 22px;
+   --font-size_ad_4xl: 24px;
+   --font-size_ad_5xl: 30px;
+   --font-size_ad_default: var(--font-size_ad_m);
+   --item_height_ad_menu: 44px;
+}
+
+// определяю на :root, т.к. для Mac мы перебиваем --font-family на --font-family-mac на body.
+:root {
+   // Начертание шрифта
+   --font-family: 'Inter', 'Twemoji Mozilla', 'Apple Color Emoji', 'Segoe UI Emoji',
+      'Segoe UI Symbol', 'Noto Color Emoji', 'EmojiOne Color', 'Android Emoji', sans-serif;
+   --font-family-mac: 'InterMac', 'Twemoji Mozilla', 'Apple Color Emoji', 'Segoe UI Emoji',
+      'Segoe UI Symbol', 'Noto Color Emoji', 'EmojiOne Color', 'Android Emoji', sans-serif;
+}

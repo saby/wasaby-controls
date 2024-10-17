@@ -1,0 +1,5 @@
+<ws:partial template="Controls/grid:ResultColumnTemplate" scope="{{ _options }}">
+    <ws:contentTemplate>
+        <div style="color: red;">{{column.config.results}}</div>
+    </ws:contentTemplate>
+</ws:partial>

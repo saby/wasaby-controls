@@ -1,0 +1,8 @@
+<span title="{[Калькулятор]}" class="controls_Calculator_theme-{{_options.theme}}">
+    <Controls.buttons:Button attr:class="Calculator-Opener"
+                             viewMode="{{_options.buttonViewMode}}"
+                             icon="icon-Calc"
+                             iconStyle="secondary"
+                             iconSize="m"
+                             on:click="_clickHandler()"/>
+</span>

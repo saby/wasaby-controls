@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper controlsDemo__width800px">
+    <div class="ws-fragment">
+      <Controls-ListEnv.searchConnected:Input storeId="SearchingIterativeLoadPageSize" />
+        <Controls.scroll:Container attr:class="controlsDemo__height300">
+            <Controls.listDataOld:ListContainer>
+                <Controls.list:View storeId="SearchingIterativeLoadPageSize"/>
+            </Controls.listDataOld:ListContainer>
+        </Controls.scroll:Container>
+    </div>
+</div>

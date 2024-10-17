@@ -1,0 +1,28 @@
+<Controls-demo.gridNew.DemoLayout.Index attr:class="controlsDemo__grid-tagStyleProperty controlsDemo__maxWidth800">
+    <ws:content>
+        <div class=" controlsDemo__grid-tagStyleProperty controlsDemo__maxWidth800">
+            <Controls.grid:View
+                    storeId="TagStyleFromCellData0"
+                    columns="{{_columns}}"
+                    columnSeparatorSize="{{_columnSeparatorSize}}"
+                    on:tagClick="_onTagClickCustomHandler()"
+                    on:tagHover="_onTagHoverCustomHandler()"/>
+            <div class="controlsDemo-toolbar-panel">
+                &nbsp;&nbsp;{{_currentEvent && _currentColumnIndex && _currentValue ? (_currentEvent + ' на теге в колонке №' +
+                _currentColumnIndex + ' со значением ' + _currentValue) : ''}}
+            </div>
+        </div>
+    </ws:content>
+    <ws:rightSidebar isExpanded="{{ true }}">
+        <ws:items>
+            <ws:Array>
+                <ws:Object>
+                    <ws:template>
+                        <h4 class="controlsDemo__mb1">Переключатель опции списка columnSeparator</h4>
+                        <button data-qa="controlsDemo-Development__toggleColumnSeparator" on:click="_toggleColumnSeparator()" style="padding: 3px;">{{ _columnSeparatorSize ? 'Выключить' : 'Включить' }}</button>
+                    </ws:template>
+                </ws:Object>
+            </ws:Array>
+        </ws:items>
+    </ws:rightSidebar>
+</Controls-demo.gridNew.DemoLayout.Index>

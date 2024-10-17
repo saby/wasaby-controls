@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth550">
+    <div class="controlsDemo__cell demo-Toolbar__iconStyleSecondary_fontColorStyleLink">
+        <div class="controls-text-label">iconStyle = secondary, fontColorStyle = link</div>
+        <Controls.toolbars:View
+                items="{{_items}}"
+                keyProperty="id"
+        />
+    </div>
+    <div class="controlsDemo__cell demo-Toolbar__iconStyleLabel_fontColorStyleSecondary">
+        <div class="controls-text-label">iconStyle = label, fontColorStyle = secondary</div>
+        <Controls.toolbars:View
+                items="{{_items}}"
+                keyProperty="id"
+                iconStyle="label"
+                fontColorStyle="secondary"
+        />
+    </div>
+</div>

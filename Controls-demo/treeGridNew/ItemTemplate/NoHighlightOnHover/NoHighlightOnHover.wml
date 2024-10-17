@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500 controlsDemo_wrapper-treeGrid-itemTemplate-noHighlights">
+    <Controls.treeGrid:View
+            storeId="ItemTemplateNoHighlightOnHover"
+            columns="{{_columns}}">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/treeGrid:ItemTemplate" highlightOnHover="{{false}}"/>
+        </ws:itemTemplate>
+    </Controls.treeGrid:View>
+</div>

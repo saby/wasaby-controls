@@ -1,0 +1,21 @@
+<Controls.popupTemplate:Confirmation size="l"
+                                     markerStyle="{{_options.operationsCount === _options.operationsSuccess ? 'success' : 'danger'}}"
+                                     attr:class="controls_operations_theme-{{_options.theme}}">
+   <ws:bodyContentTemplate>
+      <div class="controls-ReportDialog__title">{{_options.title}}</div>
+      <div class="controls-ReportDialog__message">{{_message}}</div>
+      <ws:if data="{{_options.errors}}">
+         <Controls.scroll:Container shadowMode="js">
+            <ws:for data="index, error in _options.errors">
+               <div class="controls-ReportDialog__error {{index === 0 ? ' controls-ReportDialog__error_first' : ' controls-ReportDialog__error_withSpacing'}}">{{error}}</div>
+            </ws:for>
+         </Controls.scroll:Container>
+      </ws:if>
+   </ws:bodyContentTemplate>
+   <ws:footerContentTemplate>
+      <div class="controls-ReportDialog__closeButtonContainer">
+         <ws:partial if="{{_options.footerContentTemplate}}" template="{{_options.footerContentTemplate}}"/>
+         <Controls.buttons:Button attr:class="controls-ReportDialog__closeButton" caption="{[ОК]}" buttonStyle="primary" on:click="_onCloseClick()"/>
+      </div>
+   </ws:footerContentTemplate>
+</Controls.popupTemplate:Confirmation>

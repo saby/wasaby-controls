@@ -1,0 +1,58 @@
+<div class="controlsDemo__wrapper ws-flexbox">
+    <div class="ws-flex-column">
+        <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-hor-padding-null">
+            <Router.router:Reference attr:class="controls-text-label"
+                                     state="app/:app"
+                                     app="{{ 'Controls-demo/list_new/ColumnsView/roundBorder/default/Index' }}">
+                <a href="{{content.href}}">Без скругления</a>
+            </Router.router:Reference>
+            <Controls-demo.list_new.ColumnsView.roundBorder.default.Index />
+        </div>
+
+        <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-hor-padding-null">
+            <Router.router:Reference attr:class="controls-text-label"
+                                     state="app/:app"
+                                     app="{{ 'Controls-demo/list_new/ColumnsView/roundBorder/xs/Index' }}">
+                <a href="{{content.href}}">Скругления xs</a>
+            </Router.router:Reference>
+            <Controls-demo.list_new.ColumnsView.roundBorder.xs.Index />
+        </div>
+
+        <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-hor-padding-null">
+            <Router.router:Reference attr:class="controls-text-label"
+                                     state="app/:app"
+                                     app="{{ 'Controls-demo/list_new/ColumnsView/roundBorder/s/Index' }}">
+                <a href="{{content.href}}">Скругления s</a>
+            </Router.router:Reference>
+            <Controls-demo.list_new.ColumnsView.roundBorder.s.Index />
+        </div>
+    </div>
+    <div class="ws-flex-column">
+        <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-hor-padding-null">
+            <Router.router:Reference attr:class="controls-text-label"
+                                     state="app/:app"
+                                     app="{{ 'Controls-demo/list_new/ColumnsView/roundBorder/m/Index' }}">
+                <a href="{{content.href}}">Скругления m</a>
+            </Router.router:Reference>
+            <Controls-demo.list_new.ColumnsView.roundBorder.m.Index />
+        </div>
+
+        <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-hor-padding-null">
+            <Router.router:Reference attr:class="controls-text-label"
+                                     state="app/:app"
+                                     app="{{ 'Controls-demo/list_new/ColumnsView/roundBorder/l/Index' }}">
+                <a href="{{content.href}}">Скругления l</a>
+            </Router.router:Reference>
+            <Controls-demo.list_new.ColumnsView.roundBorder.l.Index />
+        </div>
+
+        <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-hor-padding-null">
+            <Router.router:Reference attr:class="controls-text-label"
+                                     state="app/:app"
+                                     app="{{ 'Controls-demo/list_new/ColumnsView/roundBorder/xl/Index' }}">
+                <a href="{{content.href}}">Скругления xl</a>
+            </Router.router:Reference>
+            <Controls-demo.list_new.ColumnsView.roundBorder.xl.Index />
+        </div>
+    </div>
+</div>

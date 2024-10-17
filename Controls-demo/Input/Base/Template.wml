@@ -1,0 +1,43 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__wrapper controlsDemo__flex">
+        <div class="controlsDemo__cell ws-flex-column controlsDemo_fixedWidth250">
+            <div class="controls-text-label controls-margin_bottom-xs">Виды полей ввода</div>
+            <div class="controlsDemo__cell controls-padding_left-m">
+                <Controls.input:Text attr:class="controlsDemo__input"
+                                     bind:value="_outlinedValue"
+                                     contrastBackground="{{false}}"/>
+            </div>
+            <div class="controlsDemo__cell controls-padding-m controls-background-unaccented-same">
+                <Controls.input:Text attr:class="controlsDemo__input"
+                                     bind:value="_filledValue"
+                                     contrastBackground="{{true}}"/>
+            </div>
+        </div>
+        <div class="controlsDemo__cell ws-flex-column controlsDemo_fixedWidth250 controls-padding_left-m">
+            <div class="controls-text-label controls-margin_bottom-xs">Поле ввода числа</div>
+            <Controls.input:Number bind:value="_numberValue"/>
+            <div class="controls-text-label controls-margin_top-m controls-margin_bottom-xs">Поле ввода с маской</div>
+            <Controls.input:Mask replacer=" "
+                                 mask="ddd.ddd.ddd.ddd"
+                                 bind:value="_maskValue"/>
+        </div>
+    </div>
+    <div class="controlsDemo__wrapper controlsDemo__flex">
+        <div class="controlsDemo__cell ws-flex-column controlsDemo_fixedWidth250">
+            <div class="controls-text-label controls-margin_bottom-xs">Поле ввода с прыгающей меткой</div>
+            <Controls.jumpingLabel:InputContainer attr:class="controlsDemo__input"
+                                                  value="{{_name}}"
+                                                  caption="Enter your name">
+                <Controls.input:Text bind:value="_jumpingValue"/>
+            </Controls.jumpingLabel:InputContainer>
+        </div>
+
+        <div class="controlsDemo__cell ws-flex-column controlsDemo_fixedWidth250">
+            <div class="controls-text-label controls-margin_bottom-xs">Многострочное поле ввода</div>
+            <Controls.input:Area attr:class="controlsDemo_fixedWidth250"
+                                 bind:value="_areaValue"
+                                 minLines="{{2}}"
+                                 maxLines="{{4}}"/>
+        </div>
+    </div>
+</div>

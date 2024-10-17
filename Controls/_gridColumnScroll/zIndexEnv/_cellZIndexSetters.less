@@ -1,0 +1,176 @@
+@import 'Controls/_grid/gridReact/zIndexEnv/_cellZIndexSetters';
+
+.setAnyScrollableCellIndex(@anyScrollableCellSelector, @zIndex) {
+   .setAnyCellIndex(~'.js-controls-GridColumnScroll__cell_scrollable@{anyScrollableCellSelector}', @zIndex);
+}
+
+.setAnyFixedCellIndex(@anyFixedCellSelector, @zIndex) {
+   .setAnyCellIndex(~'.js-controls-GridColumnScroll__cell_fixed@{anyFixedCellSelector}', @zIndex);
+}
+
+.setScrollableDataCellIndex(@zIndex, @extraSelector: none) {
+   .ifExistsSelectorCallback(@extraSelector, {
+    .setDataCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_scrollable@{extraSelector}');
+  }, {
+    .setDataCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_scrollable');
+  });
+}
+
+.setFixedDataCellIndex(@zIndex, @extraSelector: none) {
+   .ifExistsSelectorCallback(@extraSelector, {
+    .setDataCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_fixed@{extraSelector}');
+  }, {
+    .setDataCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_fixed');
+  });
+}
+
+.setScrollableStickiedDataCellIndex(@zIndex, @extraSelector: none) {
+   .ifExistsSelectorCallback(@extraSelector, {
+    .setStickiedDataCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_scrollable@{extraSelector}');
+  }, {
+    .setStickiedDataCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_scrollable');
+  });
+}
+
+.setFixedStickiedDataCellIndex(@zIndex, @extraSelector: none) {
+   .ifExistsSelectorCallback(@extraSelector, {
+    .setStickiedDataCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_fixed@{extraSelector}');
+  }, {
+    .setStickiedDataCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_fixed');
+  });
+}
+
+.setFixedColspanDataCellIndex(@zIndex, @extraSelector: none) {
+  .ifExistsSelectorCallback(@extraSelector, {
+    .setDataCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_fixed.controls-GridReact__cell_fullColspan_columnScroll@{extraSelector}');
+  }, {
+    .setDataCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_fixed.controls-GridReact__cell_fullColspan_columnScroll');
+  });
+}
+
+.setScrollableHeaderCellIndex(@zIndex, @extraSelector: none) {
+   .ifExistsSelectorCallback(@extraSelector, {
+    .setHeaderCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_scrollable@{extraSelector}');
+  }, {
+    .setHeaderCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_scrollable');
+  });
+}
+
+.setFixedHeaderCellIndex(@zIndex, @extraSelector: none) {
+   .ifExistsSelectorCallback(@extraSelector, {
+    .setHeaderCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_fixed@{extraSelector}');
+  }, {
+    .setHeaderCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_fixed');
+  });
+}
+
+.setScrollableStickiedHeaderCellIndex(@zIndex, @extraSelector: none) {
+   .ifExistsSelectorCallback(@extraSelector, {
+    .setStickiedHeaderCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_scrollable@{extraSelector}');
+  }, {
+    .setStickiedHeaderCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_scrollable');
+  });
+}
+
+.setFixedStickiedHeaderCellIndex(@zIndex, @extraSelector: none) {
+   .ifExistsSelectorCallback(@extraSelector, {
+    .setStickiedHeaderCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_fixed@{extraSelector}');
+  }, {
+    .setStickiedHeaderCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_fixed');
+  });
+}
+
+.setScrollableResultCellIndex(@zIndex, @extraSelector: none) {
+   .ifExistsSelectorCallback(@extraSelector, {
+    .setTopResultCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_scrollable@{extraSelector}');
+  }, {
+    .setTopResultCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_scrollable');
+  });
+   .ifExistsSelectorCallback(@extraSelector, {
+    .setBottomResultCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_scrollable@{extraSelector}');
+  }, {
+    .setBottomResultCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_scrollable');
+  });
+}
+
+.setFixedResultCellIndex(@zIndex, @extraSelector: none) {
+   .ifExistsSelectorCallback(@extraSelector, {
+    .setTopResultCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_fixed@{extraSelector}');
+  }, {
+    .setTopResultCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_fixed');
+  });
+   .ifExistsSelectorCallback(@extraSelector, {
+    .setBottomResultCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_fixed@{extraSelector}');
+  }, {
+    .setBottomResultCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_fixed');
+  });
+}
+
+.setScrollableStickiedResultCellIndex(@zIndex, @extraSelector: none) {
+   .ifExistsSelectorCallback(@extraSelector, {
+    .setStickiedTopResultCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_scrollable@{extraSelector}');
+  }, {
+    .setStickiedTopResultCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_scrollable');
+  });
+   .ifExistsSelectorCallback(@extraSelector, {
+    .setStickiedBottomResultCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_scrollable@{extraSelector}');
+  }, {
+    .setStickiedBottomResultCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_scrollable');
+  });
+}
+
+.setFixedStickiedResultCellIndex(@zIndex, @extraSelector: none) {
+   .ifExistsSelectorCallback(@extraSelector, {
+    .setStickiedTopResultCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_fixed@{extraSelector}');
+  }, {
+    .setStickiedTopResultCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_fixed');
+  });
+}
+
+.setScrollableFooterCellIndex(@zIndex, @extraSelector: none) {
+   .ifExistsSelectorCallback(@extraSelector, {
+    .setFooterCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_scrollable@{extraSelector}');
+  }, {
+    .setFooterCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_scrollable');
+  });
+}
+
+.setFixedFooterCellIndex(@zIndex, @extraSelector: none) {
+   .ifExistsSelectorCallback(@extraSelector, {
+    .setFooterCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_fixed@{extraSelector}');
+  }, {
+    .setFooterCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_fixed');
+  });
+}
+
+.setScrollableStickiedFooterCellIndex(@zIndex, @extraSelector: none) {
+   .ifExistsSelectorCallback(@extraSelector, {
+    .setStickiedFooterCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_scrollable@{extraSelector}');
+  }, {
+    .setStickiedFooterCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_scrollable');
+  });
+}
+
+.setFixedStickiedFooterCellIndex(@zIndex, @extraSelector: none) {
+   .ifExistsSelectorCallback(@extraSelector, {
+    .setStickiedFooterCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_fixed@{extraSelector}');
+  }, {
+    .setStickiedFooterCellIndex(@zIndex, ~'.js-controls-GridColumnScroll__cell_fixed');
+  });
+}
+
+.setScrollableNavigationCellIndex(@zIndex, @extraSelector: none) {
+   .choosePostfix(~'.controls-GridReact__navigation-cell.js-controls-GridColumnScroll__cell_scrollable', @extraSelector, @zIndex);
+}
+
+.setFixedNavigationCellIndex(@zIndex, @extraSelector: none) {
+   .controls-GridReact__navigation-cell.js-controls-GridColumnScroll__cell_fixed {
+      z-index: @zIndex;
+   }
+}
+
+.setResizerCellIndex(@zIndex) {
+   .controls-GridReact__resizer-cell {
+      z-index: @zIndex;
+   }
+}
