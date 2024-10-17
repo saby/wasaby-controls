@@ -1,0 +1,35 @@
+<div class="Wizard-Vertical-New-List controls_Wizard_theme-{{_options.theme}}">
+  <Controls-Wizard._verticalNew.List
+      attr:class="Wizard-Vertical-New-List__marker_{{_options.mode === 'edit' ? 'infoContrast' : 'primary'}}"
+      items="{{_options.items}}"
+      selectedStepIndex="{{_options.selectedStepIndex}}"
+      currentStepIndex="{{_options.currentStepIndex}}"
+      on:selectedStepIndexChanged="_indexChanged()"
+      on:changeRecord="_switchChangesRecord()"
+  />
+  <div class="Wizard-Vertical-New-View_steps_content"
+       on:validateCreated="_onValidateCreated()"
+       on:validateDestroyed="_onValidateDestroyed()"
+       data-qa="Wizard-Vertical-New__content">
+    <ws:if data="{{_shouldLoadInAsync(_selectedTemplate)}}">
+      <Controls.Container.Async templateName="{{_selectedTemplate}}">
+        <ws:partial
+            template="{{ content.resolvedTemplate }}"
+            scope="{{ _selectedTemplateOptions }}"
+            selectedStepIndex="{{_options.selectedStepIndex}}"
+            record="{{ _selectedRecord }}"
+            dataOptions="{{_dataOptions}}"
+        />
+      </Controls.Container.Async>
+    </ws:if>
+    <ws:else>
+      <ws:partial
+          template="{{ _selectedTemplate }}"
+          scope="{{ _selectedTemplateOptions }}"
+          selectedStepIndex="{{_options.selectedStepIndex}}"
+          record="{{ _selectedRecord }}"
+          dataOptions="{{_dataOptions}}"
+      />
+    </ws:else>
+  </div>
+</div>

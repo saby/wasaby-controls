@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <Controls.treeGrid:View
+            storeId="ChildrenLoadMode"
+            childrenLoadMode="always"
+            columns="{{ _columns }}"
+            allowEmptySelection="{{ false }}"/>
+</div>

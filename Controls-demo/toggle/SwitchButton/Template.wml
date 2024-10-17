@@ -1,0 +1,65 @@
+<div class="controlsDemo__wrapper controlsDemo__flex controlsDemo__flex-flow_wrap">
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/SwitchButton/Base/Index' }}">
+            <a href="{{content.href}}">Базовое отображение</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.SwitchButton.Base.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/SwitchButton/Tooltip/Index' }}">
+            <a href="{{content.href}}">Настройка всплывающей подсказки</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.SwitchButton.Tooltip.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/SwitchButton/ResetValue/Index' }}">
+            <a href="{{content.href}}">Настройка предустановленного значения</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.SwitchButton.ResetValue.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/SwitchButton/ViewMode/Index' }}">
+            <a href="{{content.href}}">Настройка внешнего вида</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.SwitchButton.ViewMode.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/SwitchButton/Size/Index' }}">
+            <a href="{{content.href}}">Настройка размеров</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.SwitchButton.Size.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <div class="controls-text-label">Для тестов: size и viewMode</div>
+        <div class="controlsDemo__cell">
+            <Controls.toggle:SwitchButton value="{{true}}"
+                                          viewMode="outlined"
+                                          size="l"/>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.toggle:SwitchButton value="{{true}}"
+                                          viewMode="outlined"
+                                          size="m"/>
+        </div>
+
+        <div class="controlsDemo__cell">
+            <Controls.toggle:SwitchButton value="{{true}}"
+                                          viewMode="outlined"
+                                          size="s"/>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+.controls-Separator__icon_size {
+   font-size: var(--icon-size_s);
+   width: var(--icon-size_s);
+   height: var(--icon-size_s);
+   font-family: var(--icon_font-family_s);
+}
+
+.controls-Separator__icon_style-secondary {
+   color: var(--secondary_icon-color);
+}
+
+.controls-Separator__icon_style-primary {
+   color: var(--primary_text-color);
+}
+
+.controls-Separator__icon_style-unaccented {
+   color: var(--unaccented_icon-color);
+}
+
+.controls-Separator__wrapper {
+   cursor: pointer;
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   width: var(--inline_height_default);
+   height: var(--inline_height_default);
+}
+
+.controls-Separator__wrapper::before {
+   content: '\200b';
+}
+
+.controls-Separator__icon {
+   display: inline-block;
+}
+
+.controls-Separator__icon_style-secondary:active {
+   color: var(--secondary_hover_icon-color_toggleSeparator);
+}
+
+.controls-Separator__icon_style-primary:active {
+   color: var(--primary_icon-color);
+}
+
+.controls-Separator__icon_style-unaccented:active {
+   color: var(--unaccented_hover_icon-color_toggleSeparator);
+}
+
+.ws-is-hover {
+   .controls-Separator__icon_style-secondary:hover {
+      color: var(--secondary_hover_icon-color);
+   }
+
+   .controls-Separator__icon_style-primary:hover {
+      color: var(--primary_hover_icon-color);
+   }
+
+   .controls-Separator__icon_style-unaccented:hover {
+      color: var(--secondary_hover_icon-color);
+   }
+}

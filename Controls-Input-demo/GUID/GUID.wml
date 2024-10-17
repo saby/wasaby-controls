@@ -1,0 +1,6 @@
+<div class="engineDemo__wrapper">
+    <div class="engineDemo__cell demo-IP__default">
+        <div class="controls-text-label demo-IP__defaultLabel">Поле ввода GUID</div>
+        <Controls-Input.GUID bind:value="_value"/>
+    </div>
+</div>

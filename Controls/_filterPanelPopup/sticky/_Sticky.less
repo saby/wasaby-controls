@@ -1,0 +1,218 @@
+.controls-FilterPanelPopup {
+   box-shadow: var(--shadow_a);
+   border-width: 0;
+
+   --header_caption_letter_spacing: 0.1em;
+}
+
+// TODO Пока в sticky шаблоне нет отступа под крестик https://online.sbis.ru/opendoc.html?guid=bf944c40-805f-456a-b70f-686f9c3e3aa5
+.controls-FilterPanelPopup_close-padding {
+   margin-right: calc(var(--width_closeButton_functionalButton) / 2);
+}
+
+.controls-background-filterPanelPopup {
+   background-color: var(--background-color);
+}
+
+.controls-FilterPanelPopup__adaptive {
+   min-height: 33vh;
+}
+
+.controls-FilterPanelPopup-uppercase {
+   letter-spacing: var(--header_caption_letter_spacing);
+   text-transform: uppercase;
+}
+
+.controls-FilterPanelPopup-normal {
+   letter-spacing: normal;
+   text-transform: none;
+}
+
+.controls-FilterPanelPopup-vertical-default {
+   max-width: var(--width-vertical_filterViewPanelPopup);
+   min-width: var(--width-vertical_filterViewPanelPopup);
+}
+
+.controls-FilterPanelPopup__header-wrapper {
+   width: 100%;
+   height: 100%;
+}
+
+.controls-FilterPanelPopup__header {
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: flex-end;
+   flex-grow: 1;
+}
+
+.controls-FilterPanelPopup__header::before {
+   content: '\200b';
+   font-size: var(--font-size_xl);
+}
+
+.controls-FilterPanelPopup__header-vertical_adaptive {
+   padding-bottom: var(--offset_m);
+   line-height: var(--inline_height_l);
+   box-sizing: border-box;
+}
+
+.controls-FilterPanelPopup__filter-icon {
+   .icon-size(var(--icon-size_xs));
+   color: var(--primary_text-color);
+}
+
+.controls-FilterPanelPopup__filter-caption {
+   padding: 0 var(--offset_m);
+}
+
+.controls-FilterPanelPopup__reset-button {
+   display: inline-flex;
+   align-items: baseline;
+   padding-left: var(--offset_l);
+}
+
+.controls-FilterPanelPopup__applyButton {
+   margin-left: var(--offset_s);
+   line-height: 1;
+}
+
+.controls-FilterPanelPopup__applyButton_adaptive {
+   margin-right: var(--offset_m);
+}
+
+.controls-FilterPanelPopup__reset-button::before {
+   content: '\200b';
+   font-size: var(--font-size_xl);
+   line-height: var(--inline_height_m);
+}
+
+.controls-icon_style-primaryFilter {
+   color: var(--primary_text-color);
+   fill: var(--primary_text-color);
+}
+
+.controls-icon_size-filterApply {
+   font-size: var(--apply-icon-size);
+   line-height: var(--apply-icon-size);
+   width: var(--apply-icon-size);
+   height: var(--apply-icon-size);
+   font-family: var(--apply-icon-fontFamily);
+}
+
+.controls-Header__caption_style-primaryFilter {
+   color: var(--primary_text-color);
+}
+
+// panel width
+.controls-FilterPanelPopup_vertical_width-a {
+   min-width: var(--content_width_a_dialog);
+   max-width: var(--content_width_a_dialog);
+}
+
+.controls-FilterPanelPopup_vertical_width-b {
+   min-width: var(--content_width_b_dialog);
+   max-width: var(--content_width_b_dialog);
+}
+
+.controls-FilterPanelPopup_vertical_width-c {
+   min-width: var(--content_width_c_dialog);
+   max-width: var(--content_width_c_dialog);
+}
+
+.controls-FilterPanelPopup_vertical_width-d {
+   min-width: var(--content_width_d_dialog);
+   max-width: var(--content_width_d_dialog);
+}
+
+.controls-FilterPanelPopup_vertical_width-e {
+   min-width: var(--content_width_e_dialog);
+   max-width: var(--content_width_e_dialog);
+}
+
+.controls-FilterPanelPopup_vertical_width-f {
+   min-width: var(--content_width_f_dialog);
+   max-width: var(--content_width_f_dialog);
+}
+
+.controls-FilterPanelPopup_vertical_width-g {
+   min-width: var(--content_width_g_dialog);
+   max-width: var(--content_width_g_dialog);
+}
+
+.controls-FilterPanelPopup_vertical_width-h {
+   min-width: var(--content_width_h_dialog);
+   max-width: var(--content_width_h_dialog);
+}
+
+.controls-FilterPanelPopup_vertical_width-i {
+   min-width: var(--content_width_i_dialog);
+   max-width: var(--content_width_i_dialog);
+}
+
+.controls-FilterPanelPopup_vertical_width-j {
+   min-width: var(--content_width_j_dialog);
+   max-width: var(--content_width_j_dialog);
+}
+
+.controls-FilterPanelPopup_vertical_width-k {
+   min-width: var(--content_width_k_dialog);
+   max-width: var(--content_width_k_dialog);
+}
+
+.controls-FilterPanelPopup_vertical_width-l {
+   min-width: var(--content_width_l_dialog);
+   max-width: var(--content_width_l_dialog);
+}
+
+.controls-FilterPanelPopup_vertical_width-m {
+   min-width: var(--content_width_m_dialog);
+   max-width: var(--content_width_m_dialog);
+}
+
+// panel width
+.controls-FilterPanelPopup_horizontal_width {
+   @variants: a, b, c, d, e, f, g;
+   .for(@variants, {
+         &-@{_item} {
+            .controls_filterPanel-horizontal__column-left {
+               width: ~'var(--content_width_@{_item}_dialog)';
+            }
+            .controls_filterPanel-horizontal__column-right {
+               width: ~'var(--content_width_@{_item}_dialog)';
+            }
+         }
+      });
+}
+
+.controls-FilterPanelPopup-horizontal-default {
+   max-width: var(--width-horizontal_filterViewPanelPopup);
+
+   .controls_filterPanel-horizontal__column-left {
+      width: calc(var(--width-horizontal_filterViewPanelPopup) / 2);
+   }
+
+   .controls_filterPanel-horizontal__column-right {
+      width: calc(var(--width-horizontal_filterViewPanelPopup) / 2);
+   }
+}
+
+.controls-FilterPanelPopup-orientation-left {
+   margin-top: var(--popup_offset-vertical_filterPanel);
+   margin-left: calc(
+      var(--popup_offset-horizontal_filterPanel) + var(--width_closeButton_functionalButton) / 2
+   );
+}
+
+.controls-FilterPanelPopup-orientation-right {
+   margin-top: calc(
+      -1 * ((var(--header-min-height_dialog) - var(--height_filterButton_filterView)) / 2)
+   );
+}
+
+// В FireFox letterSpacing добавляет расстояние не только между символами, но и перед первым символом
+// приходится компенсировать
+.ws-is-firefox .controls-FilterPanelPopup__header-wrapper .controls-Header__caption {
+   margin-left: calc(-1 * var(--header_caption_letter_spacing));
+}

@@ -1,0 +1,13 @@
+<Controls.scroll:Container shadowVisibility="{{showShadow}}" scrollbarVisibility="{{showScrollbar}}">
+   <Controls.list:View source="{{usersSource}}" keyProperty="id" markerVisibility="visible">
+      <ws:itemTemplate>
+         <ws:partial template="Controls/list:ItemTemplate">
+            <ws:contentTemplate>
+               <ws:partial showStatus="{{true}}"
+                           user="{{itemTemplate.item.contents}}"
+                           template="wml!Controls-demo/Container/resources/User"/>
+            </ws:contentTemplate>
+         </ws:partial>
+      </ws:itemTemplate>
+   </Controls.list:View>
+</Controls.scroll:Container>

@@ -1,0 +1,5 @@
+<ws:partial
+    template="{{_options.content}}"
+    on:valueChanged="_valueChangedHandler()"
+    value="{{_value}}"
+/>

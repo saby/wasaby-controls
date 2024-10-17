@@ -1,0 +1,129 @@
+<div>
+   <div class="controlsDemo__flex">
+      <Controls.scroll:Container
+              attr:class="controlsDemo-StickyHeader controlsDemo-StickyHeader__border controlsDemo-StickyHeader__container1"
+              topShadowVisibility="hidden"
+              bottomShadowVisibility="hidden">
+         <div>
+            <p>
+               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+            </p>
+            <Controls.stickyBlock:StickyBlock mode="stackable">
+               <div class="controlsDemo-StickyHeader__stickyHeader controlsDemo-StickyHeader__stickyHeader-top">First Header</div>
+            </Controls.stickyBlock:StickyBlock>
+            <p>
+               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+            </p>
+
+            <Controls.stickyBlock:StickyBlock mode="stackable">
+               <div class="controlsDemo-StickyHeader__stickyHeader controlsDemo-StickyHeader__stickyHeader-top">Second Header</div>
+            </Controls.stickyBlock:StickyBlock>
+            <p>
+               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+            </p>
+
+            <Controls.stickyBlock:StickyBlock>
+               <div class="controlsDemo-StickyHeader__stickyHeader controlsDemo-StickyHeader__stickyHeader-top">Other header. Lorem ipsum dolor sit amet..</div>
+            </Controls.stickyBlock:StickyBlock>
+            <p>
+               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+            </p>
+            <Controls.stickyBlock:StickyBlock>
+               <div class="controlsDemo-StickyHeader__stickyHeader controlsDemo-StickyHeader__stickyHeader-top">Next header</div>
+            </Controls.stickyBlock:StickyBlock>
+            <p>
+               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+            </p>
+            <Controls.stickyBlock:StickyBlock position="{{ {'vertical' : 'top'} }}">
+               <div class="controlsDemo-StickyHeader__stickyHeader controlsDemo-StickyHeader__stickyHeader-top">Last header</div>
+            </Controls.stickyBlock:StickyBlock>
+            <p>
+               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+            </p>
+         </div>
+      </Controls.scroll:Container>
+      <Controls.scroll:Container
+              attr:class="controlsDemo__ml3 controlsDemo-StickyHeader controlsDemo-StickyHeader__border controlsDemo-StickyHeader__container1"
+              topShadowVisibility="hidden"
+              bottomShadowVisibility="hidden">
+         <div>
+            <p>
+               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+            </p>
+            <p>
+               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+            </p>
+
+            <Controls.stickyBlock:StickyBlock  position="{{ {'vertical' : 'bottom'} }}">
+               <div class="controlsDemo-StickyHeader__stickyHeader controlsDemo-StickyHeader__stickyHeader-bottom">Second Header</div>
+            </Controls.stickyBlock:StickyBlock>
+            <p>
+               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+            </p>
+
+            <Controls.stickyBlock:StickyBlock mode="stackable" position="{{ {'vertical' : 'bottom'} }}">
+               <div class="controlsDemo-StickyHeader__stickyHeader controlsDemo-StickyHeader__stickyHeader-bottom">Other header. Lorem ipsum dolor sit amet..</div>
+            </Controls.stickyBlock:StickyBlock>
+            <p>
+               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+            </p>
+            <Controls.stickyBlock:StickyBlock mode="stackable" position="{{ {'vertical' : 'bottom'} }}">
+               <div class="controlsDemo-StickyHeader__stickyHeader controlsDemo-StickyHeader__stickyHeader-bottom">Next header</div>
+            </Controls.stickyBlock:StickyBlock>
+            <p>
+               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+            </p>
+            <Controls.stickyBlock:StickyBlock mode="stackable" position="{{ {'vertical' : 'bottom'} }}">
+               <div class="controlsDemo-StickyHeader__stickyHeader controlsDemo-StickyHeader__stickyHeader-bottom">Last header</div>
+            </Controls.stickyBlock:StickyBlock>
+            <p>
+               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+            </p>
+         </div>
+      </Controls.scroll:Container>
+   </div>
+   <Controls.scroll:Container
+      attr:class="controlsDemo-StickyHeader controlsDemo-StickyHeader__border controlsDemo-StickyHeader__container2"
+      topShadowVisibility="hidden"
+      bottomShadowVisibility="hidden">
+      <div>
+         <p>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+         </p>
+         <Controls.stickyBlock:StickyBlock mode="stackable">
+            <div class="controlsDemo-StickyHeader__stickyHeader controlsDemo-StickyHeader__stickyHeader-top">First Header</div>
+         </Controls.stickyBlock:StickyBlock>
+
+         <ws:if data="{{_headerVisible}}">
+            <Controls.stickyBlock:StickyBlock mode="stackable">
+               <div class="controlsDemo-StickyHeader__stickyHeader controlsDemo-StickyHeader__stickyHeader-top">After first Header</div>
+            </Controls.stickyBlock:StickyBlock>
+         </ws:if>
+
+         <p>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+         </p>
+
+         <Controls.stickyBlock:StickyBlock attr:class="controlsDemo-StickyHeader_narrow" mode="stackable" shadowVisibility="hidden">
+            <div class="controlsDemo-StickyHeader__stickyHeader controlsDemo-StickyHeader__stickyHeader-top">Second Header without shadow</div>
+         </Controls.stickyBlock:StickyBlock>
+         <p>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+         </p>
+         <div name="containerForHeadersHeight"></div>
+
+      </div>
+   </Controls.scroll:Container>
+   <Controls.buttons:Button
+         attr:class="controlsDemo-StickyHeader_button"
+         caption="Add header"
+         on:click="_addButtonClickHandler()"/>
+
+   <div>
+      <Controls.buttons:Button
+         attr:class="controlsDemo-StickyHeader_button"
+         caption="get all sticky headers height"
+         on:click="_updateHeadersHeight()"/>
+      <span> {{_headersHeight}}</span>
+   </div>
+</div>

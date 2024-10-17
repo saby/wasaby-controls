@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500 controlsDemo_wrapper-treeGrid-base-treeGridView">
+    <Controls.treeGrid:ItemsView
+            name="tree"
+            items="{{_items}}"
+            columns="{{_columns}}"
+            keyProperty="key"
+            parentProperty="parent"
+            nodeProperty="type"
+            markerMoveMode="leaves"/>
+    <Controls.buttons:Button caption="Go to prev" on:click="_goToPrev()"/>
+    <Controls.buttons:Button caption="Go to next" on:click="_goToNext()"/>
+</div>

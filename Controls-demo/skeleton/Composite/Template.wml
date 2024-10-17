@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth350">
+    <div class="skeletondemo_head" >
+        <Controls.skeleton:Image active="{{true}}" borderRadius="xs" className="skeletondemo_img"></Controls.skeleton:Image>
+        <Controls.skeleton:Text rows="{{2}}" active="{{true}}" className="skeletondemo_caption"></Controls.skeleton:Text>
+    </div>
+    <div>
+        <Controls.skeleton:Base active="{{true}}" className="skeletondemo_data"></Controls.skeleton:Base>
+    </div>
+</div>

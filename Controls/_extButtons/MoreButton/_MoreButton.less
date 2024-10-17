@@ -1,0 +1,47 @@
+.controls-MoreButton {
+   display: inline-block;
+   cursor: pointer;
+   line-height: unset;
+}
+
+.controls-MoreButton-contrast {
+   background-color: var(--pale_color);
+}
+
+.controls-MoreButton-same {
+   background-color: var(--background-color);
+}
+
+.controls-MoreButton-readonly {
+   cursor: default;
+}
+
+.controls-MoreButton-icon-readonly {
+   fill: var(--readonly_icon-color_MoreButton);
+}
+
+.controls-MoreButton-container {
+   border-radius: var(--border-radius_button);
+}
+
+.controls-MoreButton-container-size-xs {
+   padding: 0 var(--offset_s);
+}
+
+.controls-MoreButton-container-size-s {
+   padding: var(--offset_3xs) var(--offset_st);
+}
+
+.controls-MoreButton-container-size-m {
+   padding: var(--offset_2xs) var(--offset_m);
+}
+
+.controls-MoreButton-container-size-l {
+   padding: var(--offset_2xs) var(--offset_m);
+}
+
+.ws-is-hover {
+   .controls-MoreButton-textContainer:hover .controls-MoreButton_text-label {
+      color: var(--label_hover_text-color);
+   }
+}

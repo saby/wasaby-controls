@@ -1,0 +1,26 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <div class="controlsDemo__cell" data-qa="controlsDemo_Toolbar__translucent-false">
+        <div class="controls-text-label">translucent=false</div>
+        <Controls.toolbars:View
+                items="{{_items}}"
+                keyProperty="id"
+                translucent="{{false}}"
+                inlineHeight="l"
+                menuIconStyle="contrast"
+                parentProperty="parent"
+                nodeProperty="@parent"
+        />
+    </div>
+    <div class="controlsDemo__cell" data-qa="controlsDemo_Toolbar__translucent-true">
+        <div class="controls-text-label">translucent=true</div>
+        <Controls.toolbars:View
+                items="{{_items}}"
+                keyProperty="id"
+                translucent="{{true}}"
+                inlineHeight="l"
+                menuIconStyle="contrast"
+                parentProperty="parent"
+                nodeProperty="@parent"
+        />
+    </div>
+</div>

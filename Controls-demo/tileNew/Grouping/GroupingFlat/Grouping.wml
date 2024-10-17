@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper">
+   <Controls.scroll:Container attr:class="controlsDemo__height400 controlsDemo__maxWidth800">
+      <Controls.tile:View
+              attr:class="demo-Tile__static demo-Tile__staticGroup"
+              tileMode="dynamic"
+              imageProperty="image"
+              storeId="GroupingFlat"
+              groupProperty="group">
+         <ws:itemTemplate>
+            <ws:partial
+                    shadowVisibility="onhover"
+                    template="Controls/tile:ItemTemplate"/>
+         </ws:itemTemplate>
+      </Controls.tile:View>
+   </Controls.scroll:Container>
+</div>

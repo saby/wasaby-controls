@@ -1,0 +1,24 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center controlsDemo__cell {{_options.theme.indexOf('default') < 0 ? 'controlsDemo_fixedWidth500' : 'controlsDemo_fixedWidth300'}}"
+         data-qa="controlsDemo_capture">
+        <Controls.Tumbler:Control attr:data-qa="controlsDemo-Tumbler__counterPropertyNull"
+                                 items="{{_items}}"
+                                 bind:selectedKey="_selectedKey">
+            <ws:itemTemplate>
+                <ws:partial template="Controls/Tumbler:ItemTemplate"
+                            scope="{{itemTemplate}}">
+                    <ws:contentTemplate>
+                        <div>
+                            <span>
+                                {{itemTemplate.item.caption}}
+                            </span>
+                            <span class="controls-margin_left-s controls-text-warning">
+                                {{itemTemplate.item.text}}
+                            </span>
+                        </div>
+                    </ws:contentTemplate>
+                </ws:partial>
+            </ws:itemTemplate>
+        </Controls.Tumbler:Control>
+    </div>
+</div>

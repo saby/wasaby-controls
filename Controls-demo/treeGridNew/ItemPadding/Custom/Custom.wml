@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper__padding-left ws-flexbox ws-flex-wrap">
+    <div class="controlsDemo__cell controlsDemo__fixedWidth-s_theme-{{_options.theme}} controlsDemo_treeGrid-iP-custom">
+        <div if="{{_showTitle}}" class="controls-text-label">Настраиваемые отступы</div>
+        <Controls.treeGrid:View
+                storeId="ItemPaddingCustom0"
+                columns="{{_columns}}">
+            <ws:itemPadding left="XXL" right="null"/>
+        </Controls.treeGrid:View>
+    </div>
+</div>

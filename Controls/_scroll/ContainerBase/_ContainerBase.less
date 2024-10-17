@@ -1,0 +1,93 @@
+.controls-Scroll-ContainerBase {
+   display: flex;
+}
+
+.controls-Scroll-ContainerBase__scrollPosition-regular {
+   flex-direction: column;
+}
+
+.controls-Scroll-ContainerBase__scrollPosition-vertical-end {
+   flex-direction: column-reverse;
+}
+
+.controls-Scroll-ContainerBase__scrollPosition-horizontal-end {
+   flex-direction: row-reverse;
+}
+
+.controls-Scroll-ContainerBase__content {
+   display: flex;
+   flex-grow: 1;
+   min-height: 100%;
+   box-sizing: border-box;
+}
+
+.controls-Scroll-ContainerBase__content__vertical,
+.controls-Scroll-ContainerBase__content__verticalHorizontal {
+   flex-shrink: 0;
+}
+
+.controls-Scroll-ContainerBase__content__horizontal {
+   flex-shrink: 1;
+}
+
+.controls-Scroll-ContainerBase__content-direction_column {
+   flex-direction: column;
+}
+
+.controls-Scroll-ContainerBase__contentNotScrollable {
+   height: 100%;
+}
+
+.controls-Scroll-containerBase_userContent {
+   flex-shrink: 0;
+}
+
+.controls-Scroll-ContainerBase__scroll_vertical {
+   overflow-y: scroll;
+   overflow-x: hidden;
+}
+
+.ws-is-phone {
+   .controls-Scroll-ClipContainer {
+      > .controls-Scroll-ContainerBase__scroll_vertical {
+         overflow: clip;
+         max-width: 100%;
+      }
+   }
+}
+
+.controls-Scroll-ContainerBase__scroll_horizontal {
+   overflow-y: hidden;
+   overflow-x: scroll;
+}
+
+.controls-Scroll-ContainerBase__scroll_verticalHorizontal {
+   overflow: scroll;
+}
+
+.controls-Scroll-ContainerBase__scroll_none {
+   overflow: hidden;
+}
+
+// Chrome после обновления с 83 до 84 версии по умолчанию стал overflow-anchor: visible, из-за этого происходит
+// браузерный подскролл к низу вновь добавляемого контента.
+// https://online.sbis.ru/opendoc.html?guid=8673c14b-da6e-444b-86d1-d1a997555bfe
+// https://bugs.chromium.org/p/chromium/issues/detail?id=1105785
+.ws-is-chrome,
+.ws-is-firefox {
+   .controls-Scroll-ContainerBase__scroll_vertical,
+   .controls-Scroll-ContainerBase__scroll_verticalHorizontal,
+   .controls-Scroll-ContainerBase__scroll_horizontal {
+      overflow-anchor: none;
+   }
+}
+
+.ws-is-ie11 {
+   // Класс для использования только в платформе. Решает проблему невозможности устновки min-height: 100% на контент.
+   // Если установлен, то под ie контент не будет растягивать скролл контейнер если у него не установлена высота.
+   .controls-Scroll-ContainerBase__ieStretchedСontent {
+      .controls-Scroll-ContainerBase__content {
+         height: 100%;
+      }
+   }
+}

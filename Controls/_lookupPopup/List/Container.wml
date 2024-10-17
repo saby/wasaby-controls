@@ -1,0 +1,8 @@
+<ws:partial template="{{_options.content}}"
+            scope="{{_options}}"
+            selectedKeys="{{_options.multiSelect ? _selectedKeys: null}}"
+            bind:markedKey="_markedKey"
+            on:itemActivate="_itemActivate()"
+            itemActions="{{_itemActions}}"
+            itemActionVisibilityCallback="{{_itemActionVisibilityCallback}}"
+/>

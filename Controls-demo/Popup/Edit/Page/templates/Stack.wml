@@ -1,0 +1,111 @@
+<Controls.popupTemplate:Stack headingCaption="Карта продукта">
+    <ws:headerContentTemplate>
+        <div style="display: flex;justify-content: flex-end;flex-grow: 1;">
+            <Controls.buttons:Button iconSize="m"
+                                     iconStyle="danger"
+                                     icon="icon-Erase"
+                                     viewMode="linkButton"
+                                     fontColorStyle="link"
+                                     on:click="_delete()"
+                                     attr:style="margin-right: 15px;"
+                                     attr:class="demo-MyFormController__delete"/>
+            <Controls.buttons:Button caption="Сохранить"
+                                     on:click="_update()"
+                                     attr:class="demo-MyFormController__update"/>
+        </div>
+    </ws:headerContentTemplate>
+    <ws:bodyContentTemplate>
+        <div attr:style="margin: 15px 0 0 15px;">
+            <Controls.form:Controller name="formController"
+                                      source="{{_dataSource}}"
+                                      record="{{_record}}"
+                                      entityKey="{{_dataSource.keyProperty}}"
+                                      initializingWay="{{_initializingWay}}"
+                                      bind:isNewRecord="_isNewRecord"
+                                      on:updateSuccessed="_updateSuccessedHandler()"
+                                      on:deleteSuccessed="_deleteSuccessedHandler()">
+                <div>
+                    <div class="controls-demo-page__block">
+                        <div class="controls-demo-page__row controls-demo-page__title">Название:</div>
+                        <div class="controls-demo-page__row">
+                            <Controls.input:Text bind:value="content.record.name"
+                                                 attr:class="demo-MyFormController__name"
+                                                 placeholder="Название"/>
+
+                        </div>
+                    </div>
+                    <div class="controls-demo-page__block">
+                        <div class="controls-demo-page__row controls-demo-page__title">Цена:</div>
+                        <div class="controls-demo-page__row">
+                            <Controls.input:Text bind:value="content.record.price"
+                                                 attr:class="demo-MyFormController__price"/>
+                        </div>
+                    </div>
+                    <div class="controls-demo-page__block">
+                        <div class="controls-demo-page__row controls-demo-page__title">Остаток:</div>
+                        <div class="controls-demo-page__row">
+                            <Controls.input:Text bind:value="content.record.balance"
+                                                 attr:class="demo-MyFormController__balance"/>
+                        </div>
+                    </div>
+                    <div class="controls-demo-page__block">
+                        <div class="controls-demo-page__row controls-demo-page__title">Себестоимость:</div>
+                        <div class="controls-demo-page__row">
+                            <Controls.input:Text bind:value="content.record.costPrice"
+                                                 attr:class="demo-MyFormController__costPrice"/>
+                        </div>
+                    </div>
+                    <ws:if data="{{content.record.costPrice1 || _isNewRecord}}">
+                        <div class="controls-demo-page__block">
+                            <div class="controls-demo-page__row controls-demo-page__title">Код продукта в ФСН:</div>
+                            <div class="controls-demo-page__row">
+                                <Controls.input:Text bind:value="content.record.costPrice1"
+                                                     attr:class="demo-MyFormController__costPrice1"/>
+                            </div>
+                        </div>
+                        <div class="controls-demo-page__block">
+                            <div class="controls-demo-page__row controls-demo-page__title">Код продукта в базе:</div>
+                            <div class="controls-demo-page__row">
+                                <Controls.input:Text bind:value="content.record.costPrice2"
+                                                     attr:class="demo-MyFormController__costPrice2"/>
+                            </div>
+                        </div>
+                        <div class="controls-demo-page__block">
+                            <div class="controls-demo-page__row controls-demo-page__title">Дополнительный код:</div>
+                            <div class="controls-demo-page__row">
+                                <Controls.input:Text bind:value="content.record.costPrice3"
+                                                     attr:class="demo-MyFormController__costPrice3"/>
+                            </div>
+                        </div>
+                    </ws:if>
+
+                    <div class="controls-MyFormController__block">
+                        <div class="controls-MyFormController__row controls-demo-page__title">Наличие в магазинах:</div>
+                        <div>
+                            <Controls.list:ItemsView
+                                    items="{{_listSource}}"
+                                    name="list"
+                                    keyProperty="id">
+                                <ws:editingConfig editOnClick="{{true}}"/>
+                                <ws:itemTemplate>
+                                    <ws:partial template="Controls/list:ItemTemplate">
+                                        <ws:contentTemplate>
+                                            <ws:partial template="Controls/list:EditingTemplate"
+                                                        value="{{itemTemplate.item.contents.caption}}"
+                                                        enabled="{{true}}">
+                                                <ws:editorTemplate>
+                                                    <Controls.input:Text contrastBackground="{{true}}"
+                                                                         bind:value="itemTemplate.item.contents.caption"/>
+                                                </ws:editorTemplate>
+                                            </ws:partial>
+                                        </ws:contentTemplate>
+                                    </ws:partial>
+                                </ws:itemTemplate>
+                            </Controls.list:ItemsView>
+                        </div>
+                    </div>
+                </div>
+            </Controls.form:Controller>
+        </div>
+    </ws:bodyContentTemplate>
+</Controls.popupTemplate:Stack>

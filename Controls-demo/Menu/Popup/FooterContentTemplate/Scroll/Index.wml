@@ -1,0 +1,31 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper controlsDemo__flexColumn">
+      <div class="controls-text-label">Со скроллом</div>
+      <Controls.menu:Popup
+              attr:data-qa="Controls-demo_Menu_Popup_FooterContentTemplate_Scroll__footer"
+              source="{{_source}}"
+              keyProperty="key"
+              displayProperty="title"
+              attr:class="ControlsDemo-Menu-Control_scroll"
+      >
+         <ws:footerContentTemplate>
+            <div class="ControlsDemo-Menu-Control__footerContentTemplate">+ {[Добавить]}</div>
+         </ws:footerContentTemplate>
+      </Controls.menu:Popup>
+   </div>
+   <div class="controlsDemo__wrapper controlsDemo__flexColumn">
+      <div class="controls-text-label">Со скроллом, шапкой и футером</div>
+      <Controls.menu:Popup
+              attr:data-qa="Controls-demo_Menu_Popup_FooterContentTemplate_Scroll__header-and-footer"
+              source="{{_source}}"
+              keyProperty="key"
+              displayProperty="title"
+              headingCaption="Выберите"
+              attr:class="ControlsDemo-Menu-Control_scroll"
+      >
+         <ws:footerContentTemplate>
+            <div class="ControlsDemo-Menu-Control__footerContentTemplate">+ {[Добавить]}</div>
+         </ws:footerContentTemplate>
+      </Controls.menu:Popup>
+   </div>
+</div>

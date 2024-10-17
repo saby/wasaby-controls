@@ -1,0 +1,49 @@
+<Controls.scroll:Container attr:style="height: 100%;">
+   <div class="controls-demo_Wrapper">
+      <div class="controls-demo_options-wrapper">
+
+         <Controls-demo.PropertyGridForDemo.PropertyGrid items="{{_options.description}}"
+                                                         data="{{_options.dataObject}}"
+                                                         scopeObject="{{_exampleControlOptions}}"
+                                                         name="PropertyGrid"
+                                                         dataTemplates="{{dataTemplates}}"
+                                                         templateName="wml!Controls-demo/PropertyGrid/PropertyGridTemplate"
+                                                         on:itemsChanged="_valueChangedHandler()">
+         </Controls-demo.PropertyGridForDemo.PropertyGrid>
+      </div>
+      <div class="controls-demo_event-example__wrapper ">
+         <div class="controls-demo_example-wrapper">
+            <!-- scope1 нужен потому что без него dirtyChecking не смотрит на scope при вычислении изменений https://online.sbis.ru/opendoc.html?guid=83c8c334-0e38-413e-9ef0-640d63408c01-->
+            <ws:partial template="{{_options.content}}"
+                        scope="{{_exampleControlOptions}}"
+                        scope1="{{_exampleControlOptions}}"
+                        bind:value="_options.componentOpt.value"
+                        bind:startValue="_options.componentOpt.startValue"
+                        bind:endValue="_options.componentOpt.endValue"
+                        bind:selectedKey="_options.componentOpt.selectedKey"
+                        bind:markedKey="_options.componentOpt.markedKey"
+                        bind:selectedKeys="_options.componentOpt.selectedKeys"
+                        bind:collapsedGroups="_options.componentOpt.collapsedGroups"
+                        bind:sorting="_options.componentOpt.sorting"
+                        bind:toolbarVisibility="_options.componentOpt.toolbarVisibility"
+                        on:click="_clickHandler()"
+                        attr:class="js-Controls_{{_demoName}}_mainField
+                        {{_options.componentClass ? _options.componentClass : 'controls-demo-pg'}}"/>
+         </div>
+         <div class="controls-demo_event-wrapper">
+
+            <Controls.scroll:Container
+               attr:style="height: 100px; border-width:thin"
+               scrollbarVisible="{{true}}"
+               topShadowVisibility="visible"
+               bottomShadowVisibility="visible"
+               attr:class="PropertyGrid_events">
+               <div attr:style="width:200px; word-spacing:200px;">{{myEvent}}</div>
+            </Controls.scroll:Container>
+            <Controls.buttons:Button attr:class="demo-ResetButton" on:click="reset()" fontColorStyle="unaccented"
+                                     viewMode="linkButton" caption="reset"/>
+
+         </div>
+      </div>
+   </div>
+</Controls.scroll:Container>

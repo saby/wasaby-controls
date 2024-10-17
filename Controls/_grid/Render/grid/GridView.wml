@@ -1,0 +1,236 @@
+<ws:template name="gridView">
+    <div class="{{ _getGridViewClasses(_options, columnScrollPartName) }}"
+         style="{{ _getGridViewStyles(_options, _options.task1188023407 && columnScrollPartName === 'scrollable') }}">
+		<ws:if data="{{_listModel.isTrackedValuesVisible()}}">
+			<Controls.listVisualAspects:TrackedPropertiesComponentWrapper
+					trackedPropertiesTemplate="{{_options.trackedPropertiesTemplate}}"
+					trackedProperties="{{_listModel.getTrackedProperties()}}"
+			/>
+		</ws:if>
+        <!-- Header -->
+        <ws:if data="{{ _listModel.getHeader() }}">
+            <ws:partial template="{{ _listModel.getHeader().getRow().getTemplate() }}"
+                        attr:name="header{{columnScrollPartName === 'scrollable' ? '_fake'}}"
+                        item="{{ _listModel.getHeader().getRow() }}"
+                        _showOnlyFixedColumns="{{ _options.task1188023407 && columnScrollPartName === 'scrollable' }}"
+                        itemVersion="{{ _listModel.getHeader().getRow().getVersion() }}"
+                        style="{{ _options.style }}"
+                        isSticked="{{ columnScrollPartName !== 'scrollable' }}"
+                        fixedBackgroundStyle="{{ _options.fixedBackgroundStyle }}"
+                        backgroundStyle="{{ _options.backgroundStyle || _options.style }}"
+                        subPixelArtifactFix="{{_options.subPixelArtifactFix}}"
+                        pixelRatioBugFix="{{_options.pixelRatioBugFix}}"
+                        fixedPositionInitial="{{_options.headerFixedPositionInitial}}"
+                        on:click="_onHeaderRowClick()"
+            />
+        </ws:if>
+
+        <!-- Results (top) -->
+        <ws:if data="{{ _listModel.getResults() && _listModel.getResultsPosition() === 'top' }}">
+            <ws:partial template="{{ _listModel.getResults().getTemplate() }}"
+                        attr:name="results{{columnScrollPartName === 'scrollable' ? '_fake'}}"
+                        isSticked="{{ columnScrollPartName !== 'scrollable' }}"
+                        item="{{ _listModel.getResults() }}"
+                        _showOnlyFixedColumns="{{ _options.task1188023407 && columnScrollPartName === 'scrollable' }}"
+						itemVersion="{{ _listModel.getResults().getVersion() }}"
+                        style="{{ _options.style }}"
+                        subPixelArtifactFix="{{_options.subPixelArtifactFix}}"
+                        pixelRatioBugFix="{{_options.pixelRatioBugFix}}"
+                        backgroundStyle="{{ _options.backgroundStyle || _options.style }}"
+                        fixedBackgroundStyle="{{ _options.fixedBackgroundStyle }}"/>
+        </ws:if>
+
+		<ws:if data="{{columnScrollPartName !== 'scrollable'}}">
+			<!--Top loading indicator-->
+			<ws:partial if="{{ _listModel.getTopIndicator() }}"
+						template="{{_listModel.getTopIndicator().getTemplate()}}"
+						item="{{_listModel.getTopIndicator()}}"/>
+			<!--Top loading trigger-->
+			<ws:partial template="{{ _listModel.getTopTrigger().getTemplate() }}" trigger="{{ _listModel.getTopTrigger() }}"/>
+		</ws:if>
+
+        <!-- Скроллбар горизонтального скролла. -->
+        <ws:if data="{{ _options.columnScroll }}">
+            <Controls.columnScroll:ScrollBar
+                    name="horizontalScrollBar{{columnScrollPartName === 'scrollable' ? '_fake'}}"
+                    attr:style="{{ _getColumnScrollThumbStyles(_options) }}"
+                    mode="{{ _options.columnScrollViewMode || 'scrollbar' }}"
+                    stickyHeader="{{ _options.stickyHeader !== false }}"
+                    readOnly="{{ (_options.columnScrollViewMode === 'arrows' || _options.columnScrollViewMode !== 'unaccented') &&
+                                 (_$pendingMouseEnterForActivate || !_$columnScrollController) }}"
+                    backgroundStyle="{{ _options.backgroundStyle || _options.style }}"
+                    arrowButtonsStyle="{{ _options.columnScrollArrowButtonsStyle }}"
+                    on:positionChanged="_onColumnScrollThumbPositionChanged()"
+                    on:customdragEnd="_onColumnScrollThumbDragEnd()"/>
+
+            <!-- Контрол строит наиболее полный набор колонок таблицы. Подробное описание в контроле. -->
+            <ws:if data="{{ _options.columnScroll }}">
+                <Controls.columnScroll:RelativeColumns
+                        if="{{ !_$columnScrollUseFakeRender }}"
+                        isFullGridSupport="{{ true }}"
+                        containersUpdatedCallback="{{ _relativeCellContainersUpdateCallback }}"
+                        viewColumns="{{ _getViewColumns(_options, false) }}"/>
+            </ws:if>
+        </ws:if>
+
+        <!-- Items -->
+        <div name="itemsContainer{{columnScrollPartName === 'scrollable' ? '_fake'}}" class="controls-GridViewV__itemsContainer {{_options.itemsContainerClass}}" attr:data-qa="items-container">
+
+            <!-- TODO избавиться от прокидывания _onBreadcrumbClick https://online.sbis.ru/doc/0649e69a-d507-4024-9f99-c70205f535ef-->
+            <ws:partial
+                    template="{{_forTemplate}}"
+                    itemTemplate="{{ _itemTemplate }}"
+					getItemTemplateProps="{{ _options.getItemTemplateProps }}"
+                    collection="{{ _listModel }}"
+                    keyPrefix="gridView-item"
+
+                    style="{{ _options.style }}"
+                    _showOnlyFixedColumns="{{ _options.task1188023407 && columnScrollPartName === 'scrollable' }}"
+					theme="{{ _options.theme }}"
+                    itemTemplateProperty="{{ _options.itemTemplateProperty }}"
+                    groupTemplate="{{ _groupTemplate }}"
+                    itemActionsPosition="{{ _options.itemActionsPosition }}"
+                    itemActionsTemplate="{{ _options.itemActionsTemplate }}"
+                    itemActionsClass="{{ _options.itemActionsClass }}"
+                    swipeTemplate="{{ _options.swipeTemplate }}"
+                    backgroundStyle="{{ _options.backgroundStyle || _options.style }}"
+                    stickyCallback="{{_options.stickyCallback}}"
+                    subPixelArtifactFix="{{_options.subPixelArtifactFix}}"
+                    pixelRatioBugFix="{{_options.pixelRatioBugFix}}"
+
+                    _onBreadcrumbClick="{{_onBreadcrumbClick}}"
+                    _onBreadcrumbItemClick="{{_onBreadcrumbItemClick}}"
+
+                    onItemMouseEnterCallback="{{_onItemMouseEnter}}"
+                    onItemMouseLeaveCallback="{{_onItemMouseLeave}}"
+                    onItemMouseMoveCallback="{{_onItemMouseMove}}"
+                    onItemMouseDownCallback="{{_onItemMouseDown}}"
+                    onItemMouseUpCallback="{{_onItemMouseUp}}"
+                    onItemClickCallback="{{_onItemClick}}"
+					onItemDeactivatedCallback="{{_options.onItemDeactivated}}"
+					onItemContextMenuCallback="{{_onItemContextMenu}}"
+                    onItemSwipeCallback="{{_onItemSwipe}}"
+                    onItemLongTapCallback="{{_onItemLongTap}}"
+					onItemTouchMoveCallback="{{_onItemTouchMove}}"
+                    onItemWheelCallback="{{_onItemWheel}}"
+                    onTagClick="{{_options.onTagClick}}"
+                    onTagHover="{{_options.onTagHover}}"
+
+					onActionsMouseEnter="{{_options.onActionsMouseEnter}}"
+					onActionMouseDown="{{_options.onActionMouseDown}}"
+					onActionMouseUp="{{_options.onActionMouseUp}}"
+					onActionMouseEnter="{{_options.onActionMouseEnter}}"
+					onActionMouseLeave="{{_options.onActionMouseLeave}}"
+					onActionClick="{{_options.onActionClick}}"
+					onItemActionSwipeAnimationEnd="{{_options.onItemActionSwipeAnimationEnd}}"
+					itemActionsTemplateMountedCallback="{{_options.itemActionsTemplateMountedCallback}}"
+					itemActionsTemplateUnmountedCallback="{{_options.itemActionsTemplateUnmountedCallback}}"
+            />
+        </div>
+       <ws:if data="{{_options.bottomPaddingClass}}">
+          <div class="{{_options.bottomPaddingClass}}"></div>
+       </ws:if>
+
+        <!-- emptyTemplate -->
+        <ws:if data="{{ _listModel.getEmptyGridRow() && _isEmpty() }}">
+            <ws:partial template="{{ _listModel.getEmptyGridRow().getTemplate() }}"
+                        attr:name="emptyView"
+                        item="{{ _listModel.getEmptyGridRow() }}"
+                        itemVersion="{{ _listModel.getEmptyGridRow().getVersion() }}"
+                        style="{{ _options.style }}"
+                        containerSize="{{ _$columnScrollEmptyViewMaxWidth }}"
+                        backgroundStyle="{{ _options.backgroundStyle || _options.style }}"/>
+        </ws:if>
+
+		<ws:if data="{{columnScrollPartName !== 'scrollable'}}">
+			<!--Bottom loading trigger-->
+			<ws:partial template="{{ _listModel.getBottomTrigger().getTemplate() }}" trigger="{{ _listModel.getBottomTrigger() }}"/>
+			<!--Bottom loading indicator-->
+			<ws:partial if="{{ _listModel.getBottomIndicator() }}"
+						template="{{_listModel.getBottomIndicator().getTemplate()}}"
+						item="{{_listModel.getBottomIndicator()}}"/>
+		</ws:if>
+
+        <!-- Results (bottom) -->
+        <ws:if data="{{ _listModel.getResults() && _listModel.getResultsPosition() === 'bottom' }}">
+            <ws:partial template="{{ _listModel.getResults().getTemplate() }}"
+                        attr:name="results{{columnScrollPartName === 'scrollable' ? '_fake'}}"
+                        _showOnlyFixedColumns="{{ _options.task1188023407 && columnScrollPartName === 'scrollable' }}"
+						item="{{ _listModel.getResults() }}"
+                        itemVersion="{{ _listModel.getResults().getVersion() }}"
+                        style="{{ _options.style }}"
+                        subPixelArtifactFix="{{_options.subPixelArtifactFix}}"
+                        pixelRatioBugFix="{{_options.pixelRatioBugFix}}"
+                        backgroundStyle="{{ _options.backgroundStyle || _options.style }}"/>
+        </ws:if>
+        <!-- Footer -->
+        <ws:if data="{{ _listModel.getFooter() }}">
+            <ws:partial template="{{ _listModel.getFooter().getTemplate() }}"
+                        attr:name="footer{{columnScrollPartName === 'scrollable' ? '_fake'}}"
+                        item="{{ _listModel.getFooter() }}"
+                        _showOnlyFixedColumns="{{ _options.task1188023407 && columnScrollPartName === 'scrollable' }}"
+						itemVersion="{{ _listModel.getFooter().getVersion() }}"
+                        containerSize="{{ _$columnScrollEmptyViewMaxWidth }}"
+                        style="{{ _options.style }}"
+						needItemActionsSpacing="{{ _options.itemActionsPosition === 'outside' && _listModel.getCount() }}"
+						subPixelArtifactFix="{{_options.subPixelArtifactFix}}"
+                        pixelRatioBugFix="{{_options.pixelRatioBugFix}}"
+                        backgroundStyle="{{ _options.backgroundStyle || _options.style }}"/>
+        </ws:if>
+
+        <!--Global loading indicator-->
+        <!--Отображаем глобальный индикатор внутри дива со столбцами,-->
+        <!--чтобы он центровался так же как и другие индикаторы, через стили в ColumnScrollController-->
+        <ws:partial if="{{ _listModel.getGlobalIndicator() }}"
+                    template="{{_listModel.getGlobalIndicator().getTemplate()}}"
+                    item="{{_listModel.getGlobalIndicator()}}"/>
+    </div>
+</ws:template>
+
+<div name="gridWrapper"
+     on:wheel="_onColumnScrollViewWheel()"
+     on:mouseenter="_onColumnScrollViewMouseEnter()"
+     on:focusIn="_onFocusIn()"
+     class="{{ _getGridViewWrapperClasses(_options) }}">
+
+    <style>{{_ladderTopOffsetStyles}}</style>
+
+    <ws:if data="{{ _options.columnScroll }}">
+        <Controls.columnScroll:StyleContainers name="columnScrollStyleContainers"
+											   preRenderTransformStyles="{{ _$columnScrollPreRenderTransformStyles }}"/>
+        <Controls.columnScroll:Shadows if="{{_options.columnScrollViewMode !== 'unaccented'}}"
+                                       backgroundStyle="{{ _options.backgroundStyle }}"
+                                       needBottomPadding="{{ _options.needBottomPadding }}"/>
+		<Controls.columnScroll:DragScrollOverlay if="{{ _isDragScrollEnabledByOptions(_options) }}"
+												 on:mousemove="_onColumnScrollDragScrolling()"
+												 on:touchmove="_onColumnScrollDragScrolling()"
+												 on:mouseup="_onColumnScrollStopDragScrolling()"
+												 on:touchend="_onColumnScrollStopDragScrolling()"
+												 on:mouseleave="_onColumnScrollStopDragScrolling()"/>
+		<Controls.event:Listener event="controlResize" on:controlResize="_onColumnScrollViewResized()"/>
+	</ws:if>
+
+	<ws:if data="{{ _options.task1188023407 }}">
+		<Controls.columnScroll:NewScrollOverlay width="{{ _contentScrollWidth }}"/>
+	</ws:if>
+
+	<Controls.event:Register name="scrollDetect" register="horizontalScroll">
+		<!-- Контент таблицы -->
+		<ws:partial template="gridView"
+					attr:name="grid"
+					columnScrollPartName="fixed"
+					on:mousedown="_onColumnScrollStartDragScrolling('mouse')"
+					on:touchstart="_onColumnScrollStartDragScrolling('touch')"
+					on:mousemove="_onColumnScrollDragScrolling('mouse')"
+					on:touchmove="_onColumnScrollDragScrolling('touch')"
+					on:mouseup="_onColumnScrollStopDragScrolling('mouse')"
+					on:touchend="_onColumnScrollStopDragScrolling('touch')"/>
+	</Controls.event:Register>
+
+	<ws:if data="{{ _options.task1188023407 || _$columnScrollUseFakeRender === true }}">
+		<div class="controls-Grid__ColumnScroll__fakeScrollablePartWrapper">
+			<!-- На фейке отключены стики шабки, имена всех детей имеют префикс _fake -->
+			<ws:partial template="gridView" columnScrollPartName="scrollable"/>
+		</div>
+	</ws:if>
+</div>

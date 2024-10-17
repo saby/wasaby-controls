@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ui_module name="Controls-Buttons-editors"
+           id="45808782-7f86-4cd0-953b-945a85ea85aa"
+           kaizen_zone="4efc1ffa-202d-406f-befe-efa4a5d4ee0c"
+           package="Wasaby"
+           version="1.00">
+      <depends>
+        <module id="25a0d01b-25d2-41e4-855d-010cb249005f" name="Controls-Buttons"/>
+        <module id="7c6ae293-7359-4a54-8a33-74ce96945d57" name="Controls-editors"/>
+      </depends>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

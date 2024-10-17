@@ -1,0 +1,87 @@
+.ws-ellipsis {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+
+.ws-line-clamp {
+   display: -webkit-box;
+   overflow: hidden;
+   -ms-box-orient: vertical;
+   -moz-box-orient: vertical;
+   -webkit-box-orient: vertical;
+   word-wrap: break-word;
+}
+
+.ws-line-clamp_1 {
+   -ms-line-clamp: 1;
+   -moz-line-clamp: 1;
+   -webkit-line-clamp: 1;
+}
+
+.ws-line-clamp_2 {
+   -ms-line-clamp: 2;
+   -moz-line-clamp: 2;
+   -webkit-line-clamp: 2;
+}
+
+.ws-line-clamp_3 {
+   -ms-line-clamp: 3;
+   -moz-line-clamp: 3;
+   -webkit-line-clamp: 3;
+}
+
+.ws-line-clamp_4 {
+   -ms-line-clamp: 4;
+   -moz-line-clamp: 4;
+   -webkit-line-clamp: 4;
+}
+
+.ws-line-clamp_5 {
+   -ms-line-clamp: 5;
+   -moz-line-clamp: 5;
+   -webkit-line-clamp: 5;
+}
+
+.ws-line-clamp_6 {
+   -ms-line-clamp: 6;
+   -moz-line-clamp: 6;
+   -webkit-line-clamp: 6;
+}
+
+.ws-line-clamp_7 {
+   -ms-line-clamp: 7;
+   -moz-line-clamp: 7;
+   -webkit-line-clamp: 7;
+}
+
+// Совместимость для IE, потому что в нём не поддеживается line-clamp
+.ws-is-ie {
+   .ws-line-clamp_1 {
+      max-height: var(--line-height_m_inputArea);
+   }
+
+   .ws-line-clamp_2 {
+      max-height: calc(var(--line-height_m_inputArea) * 2);
+   }
+
+   .ws-line-clamp_3 {
+      max-height: calc(var(--line-height_m_inputArea) * 3);
+   }
+
+   .ws-line-clamp_4 {
+      max-height: calc(var(--line-height_m_inputArea) * 4);
+   }
+
+   .ws-line-clamp_5 {
+      max-height: calc(var(--line-height_m_inputArea) * 5);
+   }
+
+   .ws-line-clamp_6 {
+      max-height: calc(var(--line-height_m_inputArea) * 6);
+   }
+
+   .ws-line-clamp_7 {
+      max-height: calc(var(--line-height_m_inputArea) * 7);
+   }
+}

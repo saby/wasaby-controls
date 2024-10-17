@@ -1,0 +1,20 @@
+<Controls.popupSliding:Template
+   slidingPanelOptions="{{ _options.slidingPanelOptions }}"
+   controlButtonVisibility="{{ _controlButtonVisibility }}">
+   <ws:bodyContentTemplate>
+      <Controls.scroll:Container
+         attr:style="height: 100%;"
+         name="scrollContainer"
+         topShadowVisibility="hidden"
+         bottomShadowVisibility="hidden"
+         scrollbarVisible="{{ false }}">
+         <div class="ControlDemo__SlidingPanel-popupTemplate-content">
+            <div class="ControlDemo__SlidingPanel-popupTemplate-setting">
+               <Controls.input:Label caption="controlButtonVisibility"/>
+               <Controls.toggle:Switch bind:value="_controlButtonVisibility"/>
+            </div>
+            <Controls.Container.Async templateName="{{_options.popupTemplate}}"/>
+         </div>
+      </Controls.scroll:Container>
+   </ws:bodyContentTemplate>
+</Controls.popupSliding:Template>

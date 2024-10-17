@@ -1,0 +1,13 @@
+<Controls.browser:Browser source="{{ _viewSource }}"
+    filterDescription="{{ _filterDescription }}"
+    keyProperty="department"
+    attr:class="engine-demo__Widgets_filter-container">
+    <div>
+        <Controls-ListEnv.filterPanelConnected:View filterNames="['department']"
+                                             storeId="0"
+            attr:class="engine-demo__Widgets_filterPanel" />
+        <Controls.listDataOld:ListContainer>
+            <Controls.list:View/>
+        </Controls.listDataOld:ListContainer>
+    </div>
+</Controls.browser:Browser>

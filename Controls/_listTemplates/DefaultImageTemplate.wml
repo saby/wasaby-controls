@@ -1,0 +1,13 @@
+<div class="controls-listTemplates__imageTemplate">
+   <div class="controls-listTemplates__imageTemplate_image
+               controls-listTemplates__imageTemplate_image_{{imageFit || 'cover'}}
+               controls-listTemplates__imageTemplate_image_viewMode-{{viewMode}}"
+        style="{{'background-image: url(' + (src || fallbackImage) + ')'}}"></div>
+   <ws:partial
+           if="{{afterImageTemplate}}"
+           template="{{afterImageTemplate}}"
+           item="{{item}}"/>
+   <ws:if data="{{effect !== 'none'}}">
+      <div class="controls-listTemplates__imageTemplate_image_effect-{{effect}}"></div>
+   </ws:if>
+</div>

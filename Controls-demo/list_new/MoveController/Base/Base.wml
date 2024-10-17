@@ -1,0 +1,6 @@
+<div class="controlsDemo__wrapper demo-Mover controlsDemo_fixedWidth300">
+    <Controls.list:View storeId="MoveControllerBase"
+                        attr:class="demo-Mover__list test_list_2"
+                        name="listControl"
+                        itemActions="{{_itemActions}}"/>
+</div>
