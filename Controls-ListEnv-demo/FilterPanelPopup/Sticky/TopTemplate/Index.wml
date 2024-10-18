@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper">
+    <Controls.filterPanelPopup:Sticky items="{{_items}}">
+        <ws:topTemplate>
+            <Controls.buttons:Button viewMode="link"
+                                     icon="icon-Send"
+                                     attr:data-qa="controlsDemo_Buttons__linkIcon"/>
+        </ws:topTemplate>
+    </Controls.filterPanelPopup:Sticky>
+</div>

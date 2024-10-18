@@ -1,0 +1,29 @@
+<ws:partial template="Controls/grid:ColumnTemplate"
+            scope="{{ _options }}">
+    <ws:contentTemplate>
+        <ws:partial template="Controls/list:EditingTemplate"
+                    value="{{ item.contents[column.config.displayProperty || 'title'] }}"
+                    scope="{{ contentTemplate }}"
+					inputBackgroundVisibility="{{
+						column.config.inputBackgroundVisibility === 'visible' && (column.config.displayProperty === 'title' || column.config.displayProperty === 'description') ?
+						'hidden' : column.config.inputBackgroundVisibility
+					}}"
+					align="{{
+						column.config.inputBackgroundVisibility === 'visible' && (column.config.displayProperty === 'title' || column.config.displayProperty === 'description') ?
+						'center' : undefined
+					}}"
+                    enabled="{{ true }}">
+            <ws:editorTemplate>
+                <Controls.input:Text contrastBackground="{{
+                						column.config.inputBackgroundVisibility === 'visible' && !(column.config.displayProperty === 'title' || column.config.displayProperty === 'description')
+                					 }}"
+									 horizontalPadding="{{
+									 	column.config.inputBackgroundVisibility === 'visible' && (column.config.displayProperty === 'title' || column.config.displayProperty === 'description') ?
+									 	'xs' : undefined
+									 }}"
+									 attr:class="js-controls-Grid__editInPlace__input-1"
+                                     bind:value="item.contents[column.config.displayProperty || 'title']"/>
+            </ws:editorTemplate>
+        </ws:partial>
+    </ws:contentTemplate>
+</ws:partial>

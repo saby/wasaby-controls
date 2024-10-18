@@ -1,0 +1,17 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__ml3">
+      <div class="controls-text-label">Меню с поиском, который растягивается при вводе значения, и иконкой в шапке</div>
+      <Controls.dropdown:Button
+              source="{{_source}}"
+              keyProperty="key"
+              searchParam="title"
+              icon="icon-AddButtonNew"
+              iconSize="m">
+         <ws:itemTemplate>
+            <Controls.dropdown:ItemTemplate
+                                   scope="{{itemTemplate}}"
+                                    attr:style="min-width: 400px" />
+         </ws:itemTemplate>
+      </Controls.dropdown:Button>
+   </div>
+</div>

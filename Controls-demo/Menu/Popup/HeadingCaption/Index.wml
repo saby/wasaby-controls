@@ -1,0 +1,11 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper controlsDemo__flexColumn">
+      <div class="controls-text-label">С указанием headingCaption</div>
+      <Controls.menu:Popup
+              items="{{_items}}"
+              keyProperty="key"
+              headingCaption="{[Выберите город]}"
+              displayProperty="title">
+      </Controls.menu:Popup>
+   </div>
+</div>

@@ -1,0 +1,5 @@
+<span attr:class="controls_filterPopup_theme-{{_options.theme}} controls-FilterLink" on:mousedown="_clickHandler()">
+    <span attr:class="controls-FilterLink__text
+                      {{_options.fontColorStyle ? 'controls-text-' + _options.fontColorStyle : 'controls-FilterLink__text-default'}}"
+          attr:data-qa="FilterLink__text">{{_options.caption}}</span>
+</span>

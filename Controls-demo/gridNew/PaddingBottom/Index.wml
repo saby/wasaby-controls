@@ -1,0 +1,19 @@
+<div class="controlsDemo__wrapper">
+  <Controls.grid:View
+      columns="{{_columns}}"
+      storeId="PaddingBottom"
+      itemActions="{{_itemActions}}"
+      itemActionsPosition="outside"
+  />
+  <div>
+    Контент после списка.
+
+    <ul style="margin-left: 20px;">
+      <li>Если кнопка "Ещё" есть, то должен идти сразу под ней.</li>
+      <li>
+        Если кнопки "Ещё" нет, то между этим контентом и списком должно быть расстояние, зарезервированное
+        под itemActions последней записи.
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+.controls-viewModeEditor {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: var(--background-color);
+   z-index: 9;
+   display: flex;
+   flex-direction: column;
+   padding: var(--offset_m);
+   box-sizing: border-box;
+}
+
+.controls-viewModeEditor_item {
+   position: relative;
+   padding-top: var(--offset_s);
+   padding-bottom: var(--offset_xs);
+}
+
+.controls-viewModeEditor_item_content {
+   width: 100%;
+   cursor: pointer;
+   border-radius: var(--border-radius_xs);
+   padding: var(--offset_2xs);
+   margin-top: var(--offset_2xs);
+}
+
+.controls-viewModeEditor_item::before {
+   content: '\200b';
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: var(--border-thickness);
+   background-color: var(--border-color);
+}
+
+.controls-viewModeEditor_item:last-child::before {
+   height: 0;
+}
+
+.ws-is-hover .controls-viewModeEditor_item_content:hover {
+   background: var(--unaccented_background-color);
+}

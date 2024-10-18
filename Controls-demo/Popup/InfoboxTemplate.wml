@@ -1,0 +1,32 @@
+<div class="ControlsDemo-InfoboxTemplate" attr:style="display:flex;width: 100%; height: 600px; align-items: center;justify-content: center;">
+   <Controls.popup:Sticky name="sticky"
+                          onResult="{{_onResult}}"
+                          autoHide="{{true}}">
+      <ws:template>
+         <Controls.popupTemplate:InfoBox stickyPosition="{{_options.stickyPosition}}" closeButtonVisible="{{false}}">
+            <Controls-demo.Popup.BaseTemplate/>
+         </Controls.popupTemplate:InfoBox>
+      </ws:template>
+      <ws:templateOptions closeButtonVisible="{{true}}"/>
+      <ws:direction vertical="{{_config[_selectedKeysSimple-1].direction.vertical}}" horizontal="{{_config[_selectedKeysSimple-1].direction.horizontal}}"/>
+      <ws:targetPoint vertical="{{_config[_selectedKeysSimple-1].targetPoint.vertical}}" horizontal="{{_config[_selectedKeysSimple-1].targetPoint.horizontal}}"/>
+   </Controls.popup:Sticky>
+
+   <Controls.buttons:Button name="stickyButton" caption="sticky" on:click="openSticky()" attr:class="ControlsDemo-InfoboxTemplate__stickyButton"/>
+   <div style="margin-left: 20px;" class="ControlsDemo-InfoboxTemplate__blockOptions">
+      <Controls.dropdown:Selector bind:selectedKeys="_selectedKeysSimple"
+                               keyProperty="id"
+                               displayProperty="title"
+                               attr:class="ControlsDemo-simple ControlsDemo-InputDropdown__item"
+                               source="{{_simpleItems}}"/>
+      <br/>
+      direction.vertical={{_config[_selectedKeysSimple-1].direction.vertical}}
+      <br/>
+      direction.horizontal={{_config[_selectedKeysSimple-1].direction.horizontal}}
+      <br/>
+      targetPoint.vertical={{_config[_selectedKeysSimple-1].targetPoint.vertical}}
+      <br/>
+      targetPoint.horizontal={{_config[_selectedKeysSimple-1].targetPoint.horizontal}}
+      <br/>
+   </div>
+</div>

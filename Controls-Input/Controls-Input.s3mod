@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-Input"
+           id="30f3262d-748e-4f05-ad19-ffde30da8711"
+           kaizen_zone="c4f41dc0-617f-4dae-a3e8-78fd94e09ce2"
+           package="Wasaby"
+           required="1"
+           version="1.00">
+  <description>Модуль содержит контролы полей ввода.</description>
+    <depends>
+      <module id="f6fdf353-3ab3-4dbb-8671-01c2b418bf0a" name="Controls"/>
+      <module id="af50caf5-f84b-4b81-a19c-6f6618372dbd" name="Controls-default-theme"/>
+      <module id="4f09610b-d8c0-4e75-99b7-e733211c98df" name="Hint"/>
+      <module id="f27abe12-19df-4c9f-b886-634bd20a0011" name="UI"/>
+      <module id="e029e579-06fb-4c1a-867f-2fef63b11864" name="Controls-Actions"/>
+    </depends>
+  <load_after/>
+  <parameters/>
+  <resources/>
+  <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

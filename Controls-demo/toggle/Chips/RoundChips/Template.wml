@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo_fixedWidth500">
+            <div class="ws-flexbox">
+                <Controls.Chips:Control bind:selectedKeys="_selectedKeys1"
+                                       items="{{_items}}"
+                                       inlineHeight="l"
+                />
+                <Controls.Chips:Control bind:selectedKeys="_selectedKeys2"
+                                       items="{{_items}}"
+                                       inlineHeight="l"
+                                       direction="vertical"
+                                       attr:class="controls-margin_left-l"
+                />
+            </div>
+        </div>
+    </div>
+</div>

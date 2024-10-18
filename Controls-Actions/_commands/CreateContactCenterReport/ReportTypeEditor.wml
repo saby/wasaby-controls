@@ -1,0 +1,8 @@
+<Controls.ComboBox
+   bind:selectedKey="_selectedKey"
+   on:selectedKeyChanged="_selectedKeyChangedHandler()"
+   keyProperty="id"
+   displayProperty="title"
+   items="{{ _items }}"
+   placeholder="Тип отчета"
+/>

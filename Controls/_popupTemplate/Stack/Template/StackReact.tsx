@@ -1,0 +1,134 @@
+/**
+ * @kaizen_zone 05aea820-650e-420c-b050-dd641a32b2d5
+ */
+import StackTemplate, { IStackTemplateOptions } from './Stack';
+import { Component, createRef, RefObject } from 'react';
+import { Context } from 'Controls/popup';
+import { withWasabyEventObject } from 'UICore/Events';
+import { SyntheticEvent } from 'Vdom/Vdom';
+import { Context as StackPageWrapperContext } from './StackPageWrapper/ContextProvider';
+import { checkWasabyEvent } from 'UI/Events';
+
+class StackPageWrapperContextWrapper extends Component<IStackTemplateOptions> {
+    constructor(props: IStackTemplateOptions) {
+        super(props);
+        this._onClose = this._onClose.bind(this);
+    }
+
+    private _onClose(event: SyntheticEvent): void {
+        if (this.context?.close && !this.props.isPopup) {
+            this.context.close();
+        } else {
+            this.props.onClose(event);
+        }
+    }
+
+    render(): JSX.Element {
+        return (
+            <StackTemplate
+                {...this.props}
+                // Защита от того, что кто-то может передать устаревшую опцию customEvents, из-за чего могут не стрелять
+                // коллбеки событий
+                customEvents={null}
+                isPopup={this.props.isPopup}
+                popupId={this.props.popupId}
+                ref={this.props.setRef}
+                onClose={withWasabyEventObject(this._onClose)}
+            />
+        );
+    }
+
+    static contextType = StackPageWrapperContext;
+}
+
+// Есть много мест, где прикладники завязались на on:close и стопают его, чтобы совершить свою логику
+// Если в пропсы не придет коллбек onClose, работаем через контекст
+
+/**
+ * Базовый шаблон {@link /doc/platform/developmentapl/interface-development/controls/openers/stack/ стекового окна}.
+ *
+ * @remark
+ * Полезные ссылки:
+ * * {@link /doc/platform/developmentapl/interface-development/controls/openers/stack/ руководство разработчика}
+ * * {@link https://github.com/saby/wasaby-controls/blob/rc-20.4000/Controls-default-theme/variables/_popupTemplate.less переменные тем оформления}
+ *
+ * @class Controls/_popupTemplate/Stack
+ *
+ * @public
+ * @implements Controls/popupTemplate:IPopupTemplate
+ * @implements Controls/popupTemplate:IPopupTemplateBase
+ * @implements Controls/popup:IAdaptivePopup
+ * @demo Controls-demo/PopupTemplate/Stack/HeaderBorderVisible/Index
+ * @demo Controls-demo/PopupTemplate/Stack/DoubleSideContent/Index
+ */
+class Stack extends Component<IStackTemplateOptions> {
+    constructor(props: IStackTemplateOptions) {
+        super(props);
+        this._onClose = this._onClose.bind(this);
+        this._setRef = this._setRef.bind(this);
+        this._onMaximized = this._onMaximized.bind(this);
+    }
+    private _stackRef: React.RefObject<StackTemplate> = createRef();
+
+    // Костыль для compatible, там обращаются к шаблону окна через children
+    _startDragNDrop(...args): void {
+        this._stackRef.current?._startDragNDrop(...args);
+    }
+
+    private _setRef(ref: RefObject<HTMLElement>): void {
+        if (ref) {
+            this._stackRef.current = ref;
+        }
+    }
+
+    private _onClose(event: SyntheticEvent): void {
+        if (this.props.onClose) {
+            if (checkWasabyEvent(this.props.onClose)) {
+                const result = this.props.onClose();
+                if (result === false) {
+                    event?.stopPropagation();
+                }
+            }
+        } else {
+            this.context?.close();
+        }
+    }
+
+    private _onMaximized(event: SyntheticEvent): void {
+        if (this.props.onMaximized) {
+            if (checkWasabyEvent(this.props.onMaximized)) {
+                const result = this.props.onMaximized();
+                if (result === false) {
+                    event?.stopPropagation();
+                }
+            }
+        } else {
+            this.context?.maximized();
+        }
+    }
+
+    // Проксируем публичный метод, т.к. на него завязались
+    close(): void {
+        this._stackRef.current.close();
+    }
+    toggleMaximizeState(maximized?: boolean): void {
+        this._stackRef.current.toggleMaximizeState(maximized);
+    }
+
+    render(): JSX.Element {
+        return (
+            <StackPageWrapperContextWrapper
+                {...this.props}
+                isPopup={this.context?.isPopup || this.props.isPopup}
+                popupId={this.context?.popupId}
+                setRef={this._setRef}
+                onClose={this._onClose}
+                onMaximized={this._onMaximized}
+            />
+        );
+    }
+
+    static contextType = Context;
+}
+
+export default Stack;

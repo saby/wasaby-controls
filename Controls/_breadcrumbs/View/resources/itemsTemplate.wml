@@ -1,0 +1,90 @@
+<div class="controls-BreadCrumbsView__itemsTemplate">
+    <div class="controls-BreadCrumbsView__items">
+
+        <ws:template name="templatePart">
+            <ws:partial
+                    attr:class="
+                        {{highlightItemsClass[itemData.item.getId()]}}
+                        controls-BreadCrumbsView__max-width{{edge ? '__edge'}}
+                    "
+                    template="{{itemTemplate}}"
+                    itemData="{{itemData}}"
+                    fontSize="{{fontSize}}"
+                    reverseArrows="{{reverseArrows}}"
+                    fontColorStyle="{{fontColorStyle}}"
+                    displayProperty="{{ displayProperty }}"
+                    edge="{{edge}}"
+            />
+        </ws:template>
+
+       <ws:if data="{{items.length === 1 || items.length === 2}}">
+            <ws:partial attr:class="controls-BreadCrumbsView__crumb__edge controls-BreadCrumbsView__crumb__left_edge"
+                        template="templatePart"
+                        itemData="{{items[0]}}"
+                        on:click="_onItemClick(items[0])"
+                        on:mouseEnter="_onItemMouseEnter(items[0])"
+                        on:mouseLeave="_onItemMouseLive(items[0])"
+            />
+        </ws:if>
+
+
+        <ws:if data="{{items.length > 2}}">
+            <div class="controls-BreadCrumbsView__items__middle">
+                <ws:partial attr:class="controls-BreadCrumbsView__crumb__edge controls-BreadCrumbsView__crumb__left_edge"
+                            template="templatePart"
+                            itemData="{{items[0]}}"
+                            on:click="_onItemClick(items[0])"
+                            on:mouseEnter="_onItemMouseEnter(items[0])"
+                            on:mouseLeave="_onItemMouseLive(items[0])"
+                />
+                <ws:for data="index, itemData in items">
+                    <ws:if data="{{index !== (items.length - 1) && index !== 0}}">
+                        <ws:partial template="templatePart"
+                                    itemData="{{itemData}}"
+                                    on:click="_onItemClick(itemData)"
+                                    on:mouseEnter="_onItemMouseEnter(itemData)"
+                                    on:mouseLeave="_onItemMouseLive(itemData)"
+                        />
+                    </ws:if>
+                </ws:for>
+                <div class="controls-BreadCrumbsView__menu">
+                    <div
+                       class="
+                           controls-BreadCrumbsView__menu__dots
+                           controls-fontsize-{{fontSize}}
+                           {{fontColorStyle ? 'controls-text-' + fontColorStyle : 'controls-BreadCrumbsView__crumb_color'}}
+                           controls-background-{{backgroundStyle || 'default'}}
+                       "
+                       on:mousedown="_dotsClick()"
+                       on:click="_clickHandler()"
+                    >
+                        <div class="controls-BreadCrumbsView__menu__dots__shadow"></div>
+                        <ws:partial
+                           template="wml!Controls/_breadcrumbs/View/resources/icon"
+                           isReverse="{{reverseArrows}}"
+                           attr:class="controls-BreadCrumbsView__arrow_enabled"
+                        />
+                        <span class="controls-BreadCrumbsView__titleWrapper{{itemData.withOverflow ? ' controls-BreadCrumbsView__titleWrapper_withOverflow'}}"
+                              title="{{itemData.withOverflow ? itemData.item.get(displayProperty) : ''}}">
+                            <span class="controls-BreadCrumbsView__title
+                            controls-BreadCrumbsView__title_enabled
+                            {{'controls-fontsize-' + fontSize}}">...
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </ws:if>
+        <ws:if data="{{items.length >= 2}}">
+            <ws:partial attr:class="controls-BreadCrumbsView__crumb__edge controls-BreadCrumbsView__crumb__last"
+                        template="templatePart"
+                        itemData="{{items[items.length - 1]}}"
+                        edge="{{items.length > 2}}"
+                        on:click="_onItemClick(items[items.length - 1])"
+                        on:mouseEnter="_onItemMouseEnter(items[items.length - 1])"
+                        on:mouseLeave="_onItemMouseLive(items[items.length - 1])"
+            />
+        </ws:if>
+    </div>
+</div>

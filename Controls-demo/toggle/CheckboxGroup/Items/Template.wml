@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell">
+            <Controls.CheckboxGroup:Control items="{{_items}}"
+                                           bind:selectedKeys="_selectedKeys1"/>
+        </div>
+        <div class="controlsDemo__cell controls-margin_left-l">
+            <Controls.CheckboxGroup:Control items="{{_items}}"
+                                           bind:selectedKeys="_selectedKeys2"/>
+        </div>
+    </div>
+</div>

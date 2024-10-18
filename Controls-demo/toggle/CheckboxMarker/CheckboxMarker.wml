@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">value = null</div>
+        <Controls.checkbox:CheckboxMarker bind:value="_value1" triState="true"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">value = true</div>
+        <Controls.checkbox:CheckboxMarker bind:value="_value2"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">value = false</div>
+        <Controls.checkbox:CheckboxMarker bind:value="_value3"/>
+    </div>
+</div>

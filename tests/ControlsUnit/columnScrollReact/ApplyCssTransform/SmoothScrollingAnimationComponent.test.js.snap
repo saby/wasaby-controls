@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlsUnit/columnScrollReact/ApplyCssTransform/SmoothScrollingAnimationComponent base animation style. 1`] = `
+<style
+  data-qa="ColumnScrollReact__smooth-styles"
+>
+  @keyframes scrollAnimation_default {from{transform:translate3d(0px,0,0);}to{transform:translate3d(-139px,0,0);}}@keyframes fixationAnimation_default {from{transform:translate3d(0px,0,0);}to{transform:translate3d(139px,0,0);}}@keyframes fixationAnimation_right {from{transform:translate3d(-550px,0,0);}to{transform:translate3d(-411px,0,0);}}.js-controls-ColumnScrollReact_rootElement_guid123 { animation-name: scrollAnimation_default;animation-duration: 0.25s; }.js-controls-ColumnScrollReact_fixed_guid123 { animation-name: fixationAnimation_default;animation-duration: 0.25s; }.js-controls-ColumnScrollReact_fixed-toRightEdge_guid123 { animation-name: fixationAnimation_right;animation-duration: 0.25s; }
+</style>
+`;

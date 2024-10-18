@@ -1,0 +1,12 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper controlsDemo__flexColumn">
+      <div class="controls-text-label">Задержка перед поиском 1000мс</div>
+      <Controls.menu:Popup
+              source="{{_source}}"
+              keyProperty="key"
+              displayProperty="title"
+              searchParam="title"
+              searchDelay="1000"
+      />
+   </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth800">
+    <Controls.treeGrid:View
+            storeId="EditInPlaceColspan"
+            columns="{{_columns}}"
+            colspanCallback="{{_colspanCallback}}">
+        <ws:editingConfig editOnClick="{{true}}" enabled="{{true}}" sequentialEditing="{{true}}"
+                          toolbarVisibility="{{true}}"/>
+    </Controls.treeGrid:View>
+</div>

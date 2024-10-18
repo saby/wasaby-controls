@@ -1,0 +1,17 @@
+<div>
+    <Controls.buttons:Button caption="Открыть стек" on:click="_openStack()"/>
+    <div class="ws-flexbox">
+        <div class="controls-padding_right-2xs">initializingWay:</div>
+        <Controls.toggle:DoubleSwitch
+           bind:value="_initializingWay"
+           onCaption="{{'delayedRemote'}}" offCaption="{{'remote'}}"/>
+    </div>
+    <div>
+        <ws:if data="{{ _initializingWay }}">
+            Рекорд загрузится через секунду после открытия, вложения через 2.
+        </ws:if>
+        <ws:else>
+            Загрузка будет длиться 2 секунды, окно откроется только по завершении загрузки.
+        </ws:else>
+    </div>
+</div>

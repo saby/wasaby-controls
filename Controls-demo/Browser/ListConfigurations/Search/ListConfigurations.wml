@@ -1,0 +1,25 @@
+<Controls.browser:Browser listsOptions="{{_listConfigurations}}"
+                          keyProperty="id"
+                          on:filterChanged="_filterChanged()">
+    <div>
+        <Controls.searchDeprecated:InputContainer>
+            <Controls.search:Input placeholder="Введите текст для поиска" attr:class="controlsDemo__browser_search"/>
+        </Controls.searchDeprecated:InputContainer>
+
+        <div class="ws-flexbox">
+            <div class="controlsDemo__browser_firstList">
+                <h2>Список с id="firstList"</h2>
+                <Controls.listDataOld:ListContainer id="firstList">
+                    <Controls.list:View multiSelectVisibility="visible"/>
+                </Controls.listDataOld:ListContainer>
+            </div>
+
+            <div class="controlsDemo__browser_secondList">
+                <h2>Список с id="secondList"</h2>
+                <Controls.listDataOld:ListContainer id="secondList">
+                    <Controls.list:View multiSelectVisibility="visible"/>
+                </Controls.listDataOld:ListContainer>
+            </div>
+        </div>
+    </div>
+</Controls.browser:Browser>

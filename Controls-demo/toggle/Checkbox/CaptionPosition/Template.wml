@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell">
+            <Controls.checkbox:Checkbox
+                    caption="end position"
+                    bind:value="_value1"
+                    captionPosition="end"
+            />
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.checkbox:Checkbox
+                    caption="start position"
+                    bind:value="_value2"
+                    captionPosition="start"
+            />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1416 @@
+[
+    {
+        "header": {
+            "md5": "64eab674ae280ee39f9bceee9e18f715",
+            "timestamp": "2024-08-22 15:05:25.168155"
+        },
+        "body": {
+            "apply": 1,
+            "id": "0efcb54e-32f1-4760-bbcd-1a97045cf74e",
+            "is_parent": true,
+            "locale": {
+                "ru": {
+                    "name": "Базовая тема"
+                },
+                "ar": {
+                    "name": "Basic theme"
+                },
+                "el": {
+                    "name": "Basic theme"
+                },
+                "en": {
+                    "name": "Basic theme"
+                },
+                "es": {
+                    "name": "Basic theme"
+                },
+                "fr": {
+                    "name": "Basic theme"
+                },
+                "he": {
+                    "name": "Basic theme"
+                },
+                "kk": {
+                    "name": "Basic theme"
+                },
+                "tk": {
+                    "name": "Basic theme"
+                },
+                "uz": {
+                    "name": "Basic theme"
+                },
+                "zh": {
+                    "name": "Basic theme"
+                }
+            },
+            "overrides": null,
+            "selector": "base_font",
+            "styles": [
+                {
+                    "id": "8926c5d5-4418-438e-821e-a58fd69c04a1",
+                    "is_parent": null,
+                    "locale": {
+                        "ru": {
+                            "description": null,
+                            "name": "Заголовок 1"
+                        }
+                    },
+                    "metatype": "styles/header",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "b348e717-900a-4045-95fc-b7ae98e94bf6",
+                            "key": "font-family",
+                            "locale": {
+                                "ru": {
+                                    "name": "Шрифт"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-family",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "d627754f-8add-4979-a7da-5b783ad6b269",
+                            "key": "font-size",
+                            "locale": {
+                                "ru": {
+                                    "name": "Размер"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-size",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "unit": "px",
+                                        "value": 60
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "e9f9d68d-4550-4d2d-98fb-5eb8ec11d8e1",
+                            "key": "font-weight",
+                            "locale": {
+                                "ru": {
+                                    "name": "Жирность"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-weight",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": "bold"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "c7a80d5c-37c0-4d3e-92fe-8564fa3a3095",
+                            "key": "font-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 1"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "b019e7c5-4bec-4b91-8339-7a1545c866b6",
+                            "key": "text-decoration",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 2"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-decoration",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "5c7fc674-d855-48f5-ab2b-44b29d6a8ff9",
+                            "key": "text-transform",
+                            "locale": {
+                                "ru": {
+                                    "name": "Преобразование"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-transform",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": null
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "controls_heading-style_h1"
+                },
+                {
+                    "id": "6e300b91-f977-4261-bc5d-80bda7893e9d",
+                    "is_parent": null,
+                    "locale": {
+                        "ru": {
+                            "description": null,
+                            "name": "Заголовок 2"
+                        }
+                    },
+                    "metatype": "styles/header",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "bcbde31b-461e-4fa8-a3c3-22af5b9b948a",
+                            "key": "font-family",
+                            "locale": {
+                                "ru": {
+                                    "name": "Шрифт"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-family",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "d8982d54-2ff3-45df-9961-00847eb693b8",
+                            "key": "font-size",
+                            "locale": {
+                                "ru": {
+                                    "name": "Размер"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-size",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "unit": "px",
+                                        "value": 28
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "062b0d58-b338-4768-8439-fd899a1ab073",
+                            "key": "font-weight",
+                            "locale": {
+                                "ru": {
+                                    "name": "Жирность"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-weight",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": "bold"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "8ba92963-5386-4fa5-8e20-33eb3e5e637e",
+                            "key": "font-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 1"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "78648a50-374c-4b47-959e-7c0f1a7b33dd",
+                            "key": "text-decoration",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 2"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-decoration",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "c8367de2-5078-44aa-8d45-27384c3fda46",
+                            "key": "text-transform",
+                            "locale": {
+                                "ru": {
+                                    "name": "Преобразование"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-transform",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": null
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "controls_heading-style_h2"
+                },
+                {
+                    "id": "f979fec8-5417-4f9a-a5e2-4cbe3d5a9003",
+                    "is_parent": null,
+                    "locale": {
+                        "ru": {
+                            "description": null,
+                            "name": "Заголовок 3"
+                        }
+                    },
+                    "metatype": "styles/header",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "ab36c677-d67f-46f9-bb93-e6b6b2ea96de",
+                            "key": "font-family",
+                            "locale": {
+                                "ru": {
+                                    "name": "Шрифт"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-family",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "0c085180-6203-44bd-a2ef-8dafcdeac4f9",
+                            "key": "font-size",
+                            "locale": {
+                                "ru": {
+                                    "name": "Размер"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-size",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "unit": "px",
+                                        "value": 20
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "b658f16f-5c80-4a6c-91a4-7f2e0850e85b",
+                            "key": "font-weight",
+                            "locale": {
+                                "ru": {
+                                    "name": "Жирность"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-weight",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": "bold"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "064f5ef9-bb86-44c5-851c-d414d094643a",
+                            "key": "font-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 1"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "489bcecb-ee62-4366-9e6a-c6c3c58bed4e",
+                            "key": "text-decoration",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 2"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-decoration",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "1229c3b6-0d31-4e92-8f3a-cbdc3f40ddd4",
+                            "key": "text-transform",
+                            "locale": {
+                                "ru": {
+                                    "name": "Преобразование"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-transform",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": null
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "controls_heading-style_h3"
+                },
+                {
+                    "id": "a90ee2e2-06ba-4206-877f-1166b4542df9",
+                    "is_parent": null,
+                    "locale": {
+                        "ru": {
+                            "description": null,
+                            "name": "Заголовок 4"
+                        }
+                    },
+                    "metatype": "styles/header",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "503f6886-7bbd-4850-9cfa-63dcf35577ae",
+                            "key": "font-family",
+                            "locale": {
+                                "ru": {
+                                    "name": "Шрифт"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-family",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "d4e97247-2631-4cd6-87e7-4e582e8f4ca1",
+                            "key": "font-size",
+                            "locale": {
+                                "ru": {
+                                    "name": "Размер"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-size",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "unit": "px",
+                                        "value": 18
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "76943dc1-ffd8-43d8-86d2-1436d76fdccb",
+                            "key": "font-weight",
+                            "locale": {
+                                "ru": {
+                                    "name": "Жирность"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-weight",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": "bold"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "f8cc0a59-ca03-45ec-843a-bb454970ce02",
+                            "key": "font-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 1"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "cb1accf7-8d80-49be-afaf-f1cee6eeb00e",
+                            "key": "text-decoration",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 2"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-decoration",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "d779908a-5b75-4b78-89e3-a9d85a6215e1",
+                            "key": "text-transform",
+                            "locale": {
+                                "ru": {
+                                    "name": "Преобразование"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-transform",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": null
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "controls_heading-style_h4"
+                },
+                {
+                    "id": "fe67e463-b120-4091-9bae-7f42ac331747",
+                    "is_parent": null,
+                    "locale": {
+                        "ru": {
+                            "description": null,
+                            "name": "Заголовок 5"
+                        }
+                    },
+                    "metatype": "styles/header",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "6517b954-c5bf-4cb4-8269-715a2aeddf98",
+                            "key": "font-family",
+                            "locale": {
+                                "ru": {
+                                    "name": "Шрифт"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-family",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "763010e9-1e27-48fe-bcc4-381a0f324995",
+                            "key": "font-size",
+                            "locale": {
+                                "ru": {
+                                    "name": "Размер"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-size",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "unit": "px",
+                                        "value": 16
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "90ff12fe-f636-4496-b16f-3fec44cc8926",
+                            "key": "font-weight",
+                            "locale": {
+                                "ru": {
+                                    "name": "Жирность"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-weight",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": "bold"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "1e4e6de0-a42b-4479-9795-a32b2b8e88a5",
+                            "key": "font-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 1"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "ecb0a718-bdb4-4320-80b7-11abe77958d2",
+                            "key": "text-decoration",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 2"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-decoration",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "20ff44ed-7dfb-40c6-be9c-c50fd443b0c7",
+                            "key": "text-transform",
+                            "locale": {
+                                "ru": {
+                                    "name": "Преобразование"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-transform",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": null
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "controls_heading-style_h5"
+                },
+                {
+                    "id": "3a85cda0-53dd-11ef-a886-0800200c9a66",
+                    "is_parent": null,
+                    "locale": {
+                        "ru": {
+                            "description": null,
+                            "name": "Заголовок 6"
+                        }
+                    },
+                    "metatype": "styles/header",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "445d55a0-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-family",
+                            "locale": {
+                                "ru": {
+                                    "name": "Шрифт"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-family",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "494cc320-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-size",
+                            "locale": {
+                                "ru": {
+                                    "name": "Размер"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-size",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "unit": "px",
+                                        "value": 14
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "4ec92e60-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-weight",
+                            "locale": {
+                                "ru": {
+                                    "name": "Жирность"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-weight",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": "bold"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "51feb6e0-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 1"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "574a4e20-53dd-11ef-a886-0800200c9a66",
+                            "key": "text-decoration",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 2"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-decoration",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "5c282f70-53dd-11ef-a886-0800200c9a66",
+                            "key": "text-transform",
+                            "locale": {
+                                "ru": {
+                                    "name": "Преобразование"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-transform",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": null
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "controls_heading-style_h6"
+                },
+                {
+                    "id": "2b9f69ab-e07b-44aa-be92-9babb4a0f99e",
+                    "is_parent": null,
+                    "locale": {
+                        "ru": {
+                            "description": null,
+                            "name": "Основной текст"
+                        }
+                    },
+                    "metatype": "styles/base-text",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "3076cd7c-c147-42ea-9796-e61e7a06421d",
+                            "key": "font-family",
+                            "locale": {
+                                "ru": {
+                                    "name": "Шрифт"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-family",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "dca5afb4-949b-4386-a0e4-e1442a061519",
+                            "key": "font-size",
+                            "locale": {
+                                "ru": {
+                                    "name": "Размер"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-size",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "unit": "px",
+                                        "value": 14
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "b0553b74-cfbb-456b-a68d-628b9ec144bb",
+                            "key": "font-weight",
+                            "locale": {
+                                "ru": {
+                                    "name": "Жирность"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-weight",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "7dc55a9d-6713-4ca7-900a-11e7e52bdd0a",
+                            "key": "font-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 1"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "9a750b2c-9503-44cd-8bab-540cdf44a7be",
+                            "key": "text-decoration",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 2"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-decoration",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "4d0b9ef7-eda5-4c00-ad30-f892f60e2b19",
+                            "key": "text-transform",
+                            "locale": {
+                                "ru": {
+                                    "name": "Преобразование"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-transform",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": null
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "controls_text-style_default"
+                },
+                {
+                    "id": "9845be00-53dd-11ef-a886-0800200c9a66",
+                    "is_parent": null,
+                    "locale": {
+                        "ru": {
+                            "description": null,
+                            "name": "Крупный текст"
+                        }
+                    },
+                    "metatype": "styles/text",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "ba3b9700-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-family",
+                            "locale": {
+                                "ru": {
+                                    "name": "Шрифт"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-family",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "be433c90-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-size",
+                            "locale": {
+                                "ru": {
+                                    "name": "Размер"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-size",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "unit": "px",
+                                        "value": 18
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "c3222f50-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-weight",
+                            "locale": {
+                                "ru": {
+                                    "name": "Жирность"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-weight",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "c7544040-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 1"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "cadb4420-53dd-11ef-a886-0800200c9a66",
+                            "key": "text-decoration",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 2"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-decoration",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "cf000ea0-53dd-11ef-a886-0800200c9a66",
+                            "key": "text-transform",
+                            "locale": {
+                                "ru": {
+                                    "name": "Преобразование"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-transform",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": null
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "controls_text-style_3xl"
+                },
+                {
+                    "id": "d70101e0-53dd-11ef-a886-0800200c9a66",
+                    "is_parent": null,
+                    "locale": {
+                        "ru": {
+                            "description": null,
+                            "name": "Акцентный текст"
+                        }
+                    },
+                    "metatype": "styles/text",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "d9e78000-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-family",
+                            "locale": {
+                                "ru": {
+                                    "name": "Шрифт"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-family",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "ded47c80-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-size",
+                            "locale": {
+                                "ru": {
+                                    "name": "Размер"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-size",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "unit": "px",
+                                        "value": 16
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "e330f8d0-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-weight",
+                            "locale": {
+                                "ru": {
+                                    "name": "Жирность"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-weight",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "e6e5ea80-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 1"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "eb1f9c90-53dd-11ef-a886-0800200c9a66",
+                            "key": "text-decoration",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 2"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-decoration",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "ee704e30-53dd-11ef-a886-0800200c9a66",
+                            "key": "text-transform",
+                            "locale": {
+                                "ru": {
+                                    "name": "Преобразование"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-transform",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": null
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "controls_text-style_xl"
+                },
+                {
+                    "id": "f5a8c150-53dd-11ef-a886-0800200c9a66",
+                    "is_parent": null,
+                    "locale": {
+                        "ru": {
+                            "description": null,
+                            "name": "Дополнительный текст"
+                        }
+                    },
+                    "metatype": "styles/text",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "f9258c00-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-family",
+                            "locale": {
+                                "ru": {
+                                    "name": "Шрифт"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-family",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "fc886610-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-size",
+                            "locale": {
+                                "ru": {
+                                    "name": "Размер"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-size",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "unit": "px",
+                                        "value": 12
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "01919d20-53de-11ef-a886-0800200c9a66",
+                            "key": "font-weight",
+                            "locale": {
+                                "ru": {
+                                    "name": "Жирность"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-weight",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "06cf78c0-53de-11ef-a886-0800200c9a66",
+                            "key": "font-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 1"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "0b487dc0-53de-11ef-a886-0800200c9a66",
+                            "key": "text-decoration",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 2"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-decoration",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "0e9cb1d0-53de-11ef-a886-0800200c9a66",
+                            "key": "text-transform",
+                            "locale": {
+                                "ru": {
+                                    "name": "Преобразование"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-transform",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": null
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "controls_text-style_xs"
+                }
+            ],
+            "type": 1,
+            "aspect_theme": [
+                {
+                    "identifier": "87688e42-71bf-11ee-b962-0242ac120002",
+                    "keys": null,
+                    "uuid": "dd336bf7-420c-411a-9cc6-b2afa756fbbd"
+                }
+            ],
+            "properties": {
+                "fontPair": {
+                    "header": "Inter",
+                    "text": "Inter"
+                }
+            }
+        }
+    }
+]

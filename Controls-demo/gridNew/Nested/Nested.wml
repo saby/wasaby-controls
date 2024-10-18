@@ -1,0 +1,19 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container>
+        <Controls.grid:View
+                storeId="Nested"
+                groupProperty="group"
+                columns="{{_rootColumns}}"
+                on:groupClick="_groupClick()">
+            <ws:groupTemplate>
+                <ws:partial template="Controls/grid:GroupTemplate" fontSize="xl" textAlign="left" expanderAlign="right"/>
+            </ws:groupTemplate>
+            <ws:itemTemplate>
+                <ws:partial template="Controls/grid:ItemTemplate" highlightOnHover="{{false}}"/>
+            </ws:itemTemplate>
+        </Controls.grid:View>
+    </Controls.scroll:Container>
+    <div if="{{_lastClickedElement}}">
+        Кликнули на {{_lastClickedElement}}
+    </div>
+</div>

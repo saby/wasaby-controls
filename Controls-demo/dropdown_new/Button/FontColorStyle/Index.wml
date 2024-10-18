@@ -1,0 +1,107 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+   <div class="controlsDemo__flexColumn controlsDemo__ml1 {{_options.theme.indexOf('default')<0 ? 'controlsDemo_fixedWidth500' : 'controlsDemo_fixedWidth300'}}">
+      <div class="controlsDemo__cell controlsDemo__mb1" attr:data-qa="controlsDemo_md1__primary">
+        <div class="controls-text-label">Меню с fontColorStyle = primary</div>
+        <Controls.dropdown:Button
+              keyProperty="key"
+              caption="Create"
+              source="{{_source}}"
+              fontColorStyle="primary"
+              attr:class="controlsDemo-menuButton" attr:data-qa="controlsDemo_button__primary">
+        </Controls.dropdown:Button>
+      </div>
+      <div class="controlsDemo__cell controlsDemo__mb1" attr:data-qa="controlsDemo_md1__secondary">
+        <div class="controls-text-label">Меню с fontColorStyle = secondary</div>
+        <Controls.dropdown:Button
+              keyProperty="key"
+              caption="Create"
+              source="{{_source}}"
+              fontColorStyle="secondary"
+              attr:class="controlsDemo-menuButton" attr:data-qa="controlsDemo_button__secondary">
+        </Controls.dropdown:Button>
+      </div>
+      <div class="controlsDemo__cell controlsDemo__mb1" attr:data-qa="controlsDemo_md1__success">
+        <div class="controls-text-label">Меню с fontColorStyle = success</div>
+        <Controls.dropdown:Button
+              keyProperty="key"
+              caption="Create"
+              source="{{_source}}"
+              fontColorStyle="success"
+              attr:class="controlsDemo-menuButton" attr:data-qa="controlsDemo_button__success">
+        </Controls.dropdown:Button>
+      </div>
+      <div class="controlsDemo__cell controlsDemo__mb1" attr:data-qa="controlsDemo_md1__warning">
+        <div class="controls-text-label">Меню с fontColorStyle = warning</div>
+        <Controls.dropdown:Button
+              keyProperty="key"
+              caption="Create"
+              source="{{_source}}"
+              fontColorStyle="warning"
+              attr:class="controlsDemo-menuButton" attr:data-qa="controlsDemo_button__warning">
+        </Controls.dropdown:Button>
+      </div>
+      <div class="controlsDemo__cell controlsDemo__mb1" attr:data-qa="controlsDemo_md1__danger">
+        <div class="controls-text-label">Меню с fontColorStyle = danger</div>
+        <Controls.dropdown:Button
+              keyProperty="key"
+              caption="Create"
+              source="{{_source}}"
+              fontColorStyle="danger"
+              attr:class="controlsDemo-menuButton" attr:data-qa="controlsDemo_button__danger">
+        </Controls.dropdown:Button>
+      </div>
+   </div>
+
+   <div class="controlsDemo__flexColumn controlsDemo__ml1 {{_options.theme.indexOf('default')<0 ? 'controlsDemo_fixedWidth500' : 'controlsDemo_fixedWidth300'}}">
+      <div class="controlsDemo__cell controlsDemo__mb1" attr:data-qa="controlsDemo_md1__unaccented">
+         <div class="controls-text-label">Меню с fontColorStyle = unaccented</div>
+         <Controls.dropdown:Button
+                 keyProperty="key"
+                 caption="Create"
+                 source="{{_source}}"
+                 fontColorStyle="unaccented"
+                 attr:class="controlsDemo-menuButton" attr:data-qa="controlsDemo_button__unaccented">
+         </Controls.dropdown:Button>
+      </div>
+      <div class="controlsDemo__cell controlsDemo__mb1" attr:data-qa="controlsDemo_md1__link">
+        <div class="controls-text-label">Меню с fontColorStyle = link</div>
+        <Controls.dropdown:Button
+              keyProperty="key"
+              caption="Create"
+              source="{{_source}}"
+              fontColorStyle="link"
+              attr:class="controlsDemo-menuButton" attr:data-qa="controlsDemo_button__link">
+        </Controls.dropdown:Button>
+      </div>
+      <div class="controlsDemo__cell controlsDemo__mb1" attr:data-qa="controlsDemo_md1__label">
+        <div class="controls-text-label">Меню с fontColorStyle = label</div>
+        <Controls.dropdown:Button
+              keyProperty="key"
+              caption="Create"
+              source="{{_source}}"
+              fontColorStyle="label"
+              attr:class="controlsDemo-menuButton" attr:data-qa="controlsDemo_button__label">
+        </Controls.dropdown:Button>
+      </div>
+      <div class="controlsDemo__cell controlsDemo__mb1" attr:data-qa="controlsDemo_md1__info">
+        <div class="controls-text-label">Меню с fontColorStyle = info</div>
+        <Controls.dropdown:Button
+              keyProperty="key"
+              caption="Create"
+              source="{{_source}}"
+              fontColorStyle="info"
+              attr:class="controlsDemo-menuButton" attr:data-qa="controlsDemo_button__info">
+        </Controls.dropdown:Button>
+      </div>
+      <div class="controlsDemo__cell controlsDemo__mb1" attr:data-qa="controlsDemo_md1__default">
+        <div class="controls-text-label">Меню с fontColorStyle = default</div>
+        <Controls.dropdown:Button
+              keyProperty="key"
+              caption="Create"
+              source="{{_source}}"
+              fontColorStyle="default"
+              attr:class="controlsDemo-menuButton" attr:data-qa="controlsDemo_button__default">
+        </Controls.dropdown:Button>
+      </div>
+   </div>
+</div>

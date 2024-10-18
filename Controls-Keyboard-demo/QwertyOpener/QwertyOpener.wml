@@ -1,0 +1,12 @@
+<div>
+    <Controls-Keyboard.QwertyOpener size='s'>
+            <p class="engine-demo-QwertyOpener__elem">
+                Выберите одно из ниже доступных полей ввода и нажмите не него:
+            </p>
+            <Controls.input:Text
+            bind:value="_searchString"
+            class="engine-demo-QwertyOpener__elem"/>
+            <Controls.input:Text
+            class="engine-demo-QwertyOpener__elem"/>
+    </Controls-Keyboard.QwertyOpener>
+</div>

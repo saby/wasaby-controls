@@ -1,0 +1,12 @@
+<span class="{{orientation === 'vertical' ? ' controls-DoubleSwitch__text_vertical'}} ws-ellipsis
+               controls-DoubleSwitch__text_{{enabled ? 'enabled' : 'disabled'}}_{{value ? 'selected' : 'unselected'}}">
+    <ws:if data="{{caption}}">
+        <span class="{{(enabled && ! value) ? 'controls-Switch__text-decoration'}}">
+            <ws:partial template="{{caption}}"/>
+        </span>
+
+    </ws:if>
+    <ws:if data="{{additionalCaption}}">
+              <ws:partial template="{{additionalCaption}}"/>
+    </ws:if>
+</span>

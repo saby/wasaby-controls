@@ -1,0 +1,25 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <div class="controlsDemo__cell" style="border: 1px solid red">
+        <div class="controls-text-label">displayMode = 'multiline'</div>
+        <Controls.breadcrumbs:HeadingPath attr:id="double"
+                                          items="{{_items}}"
+                                          parentProperty="parent"
+                                          keyProperty="id"
+                                          displayMode="multiline"/>
+    </div>
+    <div class="controlsDemo__cell" style="border: 1px solid red">
+        <div class="controls-text-label">displayMode = 'multiline' with 1 button back </div>
+        <Controls.breadcrumbs:HeadingPath attr:id="double"
+                                          items="{{_item}}"
+                                          parentProperty="parent"
+                                          keyProperty="id"
+                                          displayMode="multiline"/>
+    </div>
+    <div class="controlsDemo__cell" style="border: 1px solid red">
+        <div class="controls-text-label">displayMode = 'default'</div>
+        <Controls.breadcrumbs:HeadingPath attr:id="single"
+                                          items="{{_items}}"
+                                          parentProperty="parent"
+                                          keyProperty="id"/>
+    </div>
+</div>

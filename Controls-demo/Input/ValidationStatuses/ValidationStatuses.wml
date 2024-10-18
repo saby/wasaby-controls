@@ -1,0 +1,24 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell controlsDemo__flex ws-flex-column">
+        <div class="controls-text-label controls-margin_bottom-s">Валидное состояние</div>
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             validationStatus="valid"
+                             bind:value="_validValue"
+                             placeholder="{{_placeholder}}"/>
+    </div>
+    <div class="controlsDemo__cell controlsDemo__flex ws-flex-column">
+        <div class="controls-text-label controls-margin_bottom-s">Невалидное состояние</div>
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             validationStatus="invalid"
+                             bind:value="_invalidValue"
+                             placeholder="{{_placeholder}}"/>
+    </div>
+    <div class="controlsDemo__cell controlsDemo__flex ws-flex-column">
+        <div class="controls-text-label controls-margin_bottom-s">Невалидное состояние в фокусе</div>
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             validationStatus="invalidAccent"
+                             contrastBackground="{{true}}"
+                             bind:value="_invalidAccentValue"
+                             placeholder="{{_placeholder}}"/>
+    </div>
+</div>
