@@ -1,0 +1,62 @@
+<Controls-Calculator.Container >
+    <div>
+        <Controls.toggle:Switch bind:value="calculatorVisibility"/>
+        <ws:if data="{{calculatorVisibility}}">
+            <Controls-Calculator.View viewMode="extended"/>
+        </ws:if>
+        <Controls.grid:View
+                keyProperty="id"
+                source="{{_viewSource}}">
+            <ws:columns>
+                <ws:Array>
+                    <ws:Object displayProperty="number">
+                        <ws:template>
+                            <ws:partial template="Controls/grid:ColumnTemplate">
+                                <ws:contentTemplate>
+                                    <Controls-Calculator.Number>
+                                        <span>{{contentTemplate.item.contents.number}}</span>
+                                    </Controls-Calculator.Number>
+                                </ws:contentTemplate>
+                            </ws:partial>
+                        </ws:template>
+                    </ws:Object>
+                    <ws:Object displayProperty="country"/>
+                    <ws:Object displayProperty="capital"/>
+                    <ws:Object displayProperty="population">
+                        <ws:template>
+                            <ws:partial template="Controls/grid:ColumnTemplate">
+                                <ws:contentTemplate>
+                                    <Controls-Calculator.Number>
+                                        <span>{{contentTemplate.item.contents.population}}</span>
+                                    </Controls-Calculator.Number>
+                                </ws:contentTemplate>
+                            </ws:partial>
+                        </ws:template>
+                    </ws:Object>
+                    <ws:Object displayProperty="square">
+                        <ws:template>
+                            <ws:partial template="Controls/grid:ColumnTemplate">
+                                <ws:contentTemplate>
+                                    <Controls-Calculator.Number>
+                                        <span>{{contentTemplate.item.contents.square}}</span>
+                                    </Controls-Calculator.Number>
+                                </ws:contentTemplate>
+                            </ws:partial>
+                        </ws:template>
+                    </ws:Object>
+                    <ws:Object displayProperty="populationDensity">
+                        <ws:template>
+                            <ws:partial template="Controls/grid:ColumnTemplate">
+                                <ws:contentTemplate>
+                                    <Controls-Calculator.Number>
+                                        <span>{{contentTemplate.item.contents.populationDensity}}</span>
+                                    </Controls-Calculator.Number>
+                                </ws:contentTemplate>
+                            </ws:partial>
+                        </ws:template>
+                    </ws:Object>
+                </ws:Array>
+            </ws:columns>
+        </Controls.grid:View>
+    </div>
+</Controls-Calculator.Container>

@@ -1,0 +1,18 @@
+<Controls.lookupPopup:Controller scope="{{_options}}" name="SelectorController">
+    <Controls.popupTemplate:Dialog closeButtonViewMode="external">
+        <ws:bodyContentTemplate>
+            <Controls.browser:Browser source="{{_source}}"
+                                     searchParam="title"
+                                     multiSelectorVisibility="hidden"
+                                     keyProperty="id"
+                                     filter="{{_filter}}">
+                <ws:search>
+                    <Controls.search:Input attr:class="engine-demo__Widgets_selector_search"/>
+                </ws:search>
+                <ws:content>
+                    <Controls.list:View />
+                </ws:content>
+            </Controls.browser:Browser>
+        </ws:bodyContentTemplate>
+    </Controls.popupTemplate:Dialog>
+</Controls.lookupPopup:Controller>

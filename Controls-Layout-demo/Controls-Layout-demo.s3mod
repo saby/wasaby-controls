@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-Layout-demo" kaizen_zone="da8d7d1f-1cf8-4615-9f04-1fc7d15d1d51"
+           id="0e211068-0028-4450-8601-8042c22a4632"
+           package="Wasaby"
+           responsible="Герасимов А.М." responsible_uuid="0c1a8c24-40ea-4a73-95f4-53e2b5ce615a"
+           version="1.00">
+
+  <description/>
+  <depends>
+    <module id="8b5b7952-3839-48c6-8e0e-aa1209a98c21" name="Controls-Layout"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <resources/>
+  <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

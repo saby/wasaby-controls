@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth100">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">different icons</div>
+        <Controls.sorting:Selector
+                sortingParams="{{_sortingParams}}"
+                bind:value="_sorting">
+        </Controls.sorting:Selector>
+    </div>
+</div>

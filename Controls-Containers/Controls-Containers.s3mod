@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ui_module name="Controls-Containers"
+           id="2a3f5a68-8262-452d-979a-62ebf9526028"
+           kaizen_zone="f43717a4-ecb5-4bdd-a32c-4ebbcb125017"
+           package="Wasaby"
+           autodoc="1"
+           version="1.00">
+  <depends>
+          <module id="f6fdf353-3ab3-4dbb-8671-01c2b418bf0a" name="Controls"/>
+          <module id="af50caf5-f84b-4b81-a19c-6f6618372dbd" name="Controls-default-theme"/>
+          <module id="4f09610b-d8c0-4e75-99b7-e733211c98df" name="Hint"/>
+          <module id="f27abe12-19df-4c9f-b886-634bd20a0011" name="UI"/>
+          <module id="fdfa228a-647b-4709-888d-23e3bdfee9a2" name="FrameControls"/>
+          <module id="d0a473fc-4aef-4798-a4e5-d3bcab3779a1" name="Frame"/>
+  </depends>
+  <typescript>
+    <arg key="typecheck" value="1"/>
+  </typescript>
+</ui_module>

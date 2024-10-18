@@ -1,0 +1,68 @@
+<div class="controlsDemo__wrapper">
+<div class="ws-flexbox ws-flex-column">
+  <div class="ws-flexbox tw-flex-wrap">
+    <div class="controlsDemo__cell">
+      <Router.router:Reference attr:class="controls-text-label"
+                               state="app/:app"
+                               app="{{ 'Controls-demo/progress/Rating/Base/Index' }}">
+        <a href="{{content.href}}">Базовая настройка</a>
+      </Router.router:Reference>
+      <Controls-demo.progress.Rating.Base.Index/>
+    </div>
+
+    <div class="controlsDemo__cell">
+      <Router.router:Reference attr:class="controls-text-label"
+                               state="app/:app"
+                               app="{{ 'Controls-demo/progress/Rating/IconColorMode/Index' }}">
+        <a href="{{content.href}}">Настройка цвета иконок звезды</a>
+      </Router.router:Reference>
+      <Controls-demo.progress.Rating.IconColorMode.Index/>
+    </div>
+
+    <div class="controlsDemo__cell">
+      <Router.router:Reference attr:class="controls-text-label"
+                               state="app/:app"
+                               app="{{ 'Controls-demo/progress/Rating/IconSize/Index' }}">
+        <a href="{{content.href}}">Настройка размера иконки</a>
+      </Router.router:Reference>
+      <Controls-demo.progress.Rating.IconSize.Index/>
+    </div>
+
+    <div class="controlsDemo__cell">
+      <Router.router:Reference attr:class="controls-text-label"
+                               state="app/:app"
+                               app="{{ 'Controls-demo/progress/Rating/EmptyIconFill/Index' }}">
+        <a href="{{content.href}}">Настройка заливки пустой иконки</a>
+      </Router.router:Reference>
+      <Controls-demo.progress.Rating.EmptyIconFill.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controls-margin_left-2xl">
+      <Router.router:Reference attr:class="controls-text-label"
+                               state="app/:app"
+                               app="{{ 'Controls-demo/progress/Rating/ContainerWidth/Index' }}">
+        <a href="{{content.href}}">Настройка ширины контейнера</a>
+      </Router.router:Reference>
+      <Controls-demo.progress.Rating.ContainerWidth.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controls-margin_left-2xl">
+      <Router.router:Reference attr:class="controls-text-label"
+                               state="app/:app"
+                               app="{{ 'Controls-demo/progress/Rating/MaxValue/Index' }}">
+        <a href="{{content.href}}">Настройка максимального количества иконок</a>
+      </Router.router:Reference>
+      <Controls-demo.progress.Rating.MaxValue.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controls-margin_left-2xl">
+      <Router.router:Reference attr:class="controls-text-label"
+                               state="app/:app"
+                               app="{{ 'Controls-demo/progress/Rating/ViewMode/Index' }}">
+        <a href="{{content.href}}">Настройка варианта иконки</a>
+      </Router.router:Reference>
+      <Controls-demo.progress.Rating.ViewMode.Index/>
+    </div>
+  </div>
+</div>
+</div>

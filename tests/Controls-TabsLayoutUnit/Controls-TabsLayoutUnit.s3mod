@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module id="4e1f9a1b-adfc-4820-b97c-176ad2edaee0" name="Controls-TabsLayoutUnit" version="1.00">
+  <description/>
+  <depends>
+      <module id="e72e465e-fb9a-4f11-968d-8acc1e2225ed" name="Controls-TabsLayout"/>
+      <module id="0ec5f772-fea6-4103-8af4-cf77ecc545ee" name="Controls-TabsLayout-default-theme"/>
+      <module id="a10cb1cb-b23d-4ef6-a757-4f7382e0e8d1" name="SbisEnvUI"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <test environment="NodeJS" framework="Jest" />
+  <resources/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

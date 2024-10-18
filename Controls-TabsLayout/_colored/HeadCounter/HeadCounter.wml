@@ -1,0 +1,28 @@
+<div class="controls-ColoredTabs-HeadCounter-header" attr:style="min-width: {{_minHeaderWidth}}px">
+    <ws:if data="{{ _options.headPosition === 'left' && _isCounterVisible() }}">
+        <div class="controls-ColoredTabs-HeadCounter-counter
+            controls-margin_right-{{ _getCounterOffset() }}
+         {{(_options.selectedKey !== null) ? ' controls-ColoredTabs-HeadCounter__fixed-tab-counter' : ''}}" attr:data-qa="ColoredTabs__item-counter">{{_options.item.counter}}</div>
+    </ws:if>
+    <ws:if data="{{ !_options.isCompact }}">
+        <ws:if data="{{ _options.item.icon && _options.iconViewMode === 'visible' }}">
+            <Controls.icon:Icon
+                    attr:class="controls-ColoredTabs-HeadCounter__header__icon"
+                    icon='{{_options.item.icon}}'
+                    iconSize='s'/>
+        </ws:if>
+        <div class="controls-ColoredTabs-HeadCounter-title" data-qa="ColoredTabs__item-title">{{ _options.title }}</div>
+    </ws:if>
+    <ws:else>
+        <ws:if data="{{ _options.item.icon }}">
+            <Controls.icon:Icon
+                    icon='{{_options.item.icon}}'
+                    iconSize='s'/>
+        </ws:if>
+    </ws:else>
+    <ws:if data="{{ _options.headPosition === 'right' && _isCounterVisible()}}">
+        <div class="controls-ColoredTabs-HeadCounter-counter
+            controls-margin_left-{{ _getCounterOffset() }}
+         {{(_options.selectedKey !== null) ? ' controls-ColoredTabs-HeadCounter__fixed-tab-counter' : ''}}" attr:data-qa="ColoredTabs__item-counter">{{_options.item.counter}}</div>
+    </ws:if>
+</div>

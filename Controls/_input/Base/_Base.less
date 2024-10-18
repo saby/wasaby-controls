@@ -1,0 +1,203 @@
+.controls-InputBase__field {
+   width: 100%;
+   flex-grow: 1;
+   overflow: hidden;
+   position: relative;
+
+   /**
+    * https://github.com/philipwalton/flexbugs#6-the-default-flex-value-has-changed
+    */
+   flex-shrink: 1;
+}
+
+/**
+ * Edge bug: If <input> height equal to the content, that the text is shifted up by 1px when selected.
+ * IE bug: If <input> height equal to the content, that the text is shifted up by 2px when selected right to left.
+ * Solution: We need to maximize the height.
+ * Remark: Use only in edge and not empty <input>. In an empty <input>, this solution will break the alignment of the placeholder.
+ * Because the placeholder is positioned absolutely and because of this has no alignment with other inner elements.
+ * The alignment is due to the <input> with a height to the content.
+ */
+.controls-InputBase__field_ie {
+   height: 100%;
+}
+
+.controls-InputBase__placeholder {
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   position: absolute;
+   pointer-events: none;
+   text-decoration: inherit;
+}
+
+/**
+ * Для того, чтобы подсказка отображалась под кареткой, необходимо задать z-index меньше чем у render_field
+ * https://online.sbis.ru/opendoc.html?guid=5acafc3c-0b90-4d14-9dab-600d636a8772
+ */
+.controls-InputBase__placeholder_displayed-under-caret {
+   z-index: -1;
+}
+
+.controls-InputBase__field_readOnly {
+   width: 100%;
+   max-height: 100%;
+   .text-overflow();
+}
+
+.controls-InputBase__nativeField_caretEmpty {
+   caret-color: var(--caret-color_empty_inputText);
+}
+
+.controls-InputBase__nativeField_caretFilled {
+   caret-color: var(--caret-color_fill_inputText);
+}
+
+.controls-InputBase__field_margin-xs {
+   margin: 0 var(--padding-horizontal_inputText);
+}
+
+.controls-InputBase__field_margin-null {
+   margin: 0;
+}
+
+/**
+ * The modifier hides the custom placeholder if the native placeholder is hidden.
+ * Condition for work:
+ * 1. Used on the input element.
+ * 2. The modifier element have a native placeholder, such as a space.
+ * 3. Custom placeholder is placed after the modifier element.
+ */
+.controls-InputBase__nativeField_hideCustomPlaceholder {
+   &:-webkit-autofill,
+   &:not(:placeholder-shown) {
+      & + .controls-InputBase__placeholder {
+         display: none;
+      }
+   }
+}
+
+/*
+ * In Edge, spacing between border and text is more than in others browsers
+ * https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/13433382/
+ */
+.controls-InputBase__nativeField_edge {
+   margin-left: -1px;
+   margin-right: -1px;
+}
+
+.controls-InputBase__forCalc {
+   contain: strict;
+   user-select: none;
+   position: absolute;
+   visibility: hidden;
+
+   /**
+    * Элемент с этим классом используется для вычисления ширины текста.
+    * Запрещаем перенос, чтобы текст был в одну строку.
+    */
+   white-space: nowrap;
+}
+
+.controls-InputBase__stretcher-content {
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+
+.controls-InputBase__stretcher {
+   display: inline-flex;
+}
+
+.controls-InputBase__stretcher-block {
+   visibility: hidden;
+   white-space: pre;
+}
+
+/**
+ * Элемент <input> с шириной по stretcher`у может быть прокручен по горизонтали.
+ * Предположительно, <input> имеет большую ширину из-за курсора в поле. Расстояние от текста до курсора равно
+ * 1px, и ширина самого курсора тоже 1px. В качестве решения нужно увеличить ширину на 2px.
+ * В edge и MAC ширину нужно увеличить на 4px. Откуда берутся ещё 2px не понятно, какой-то баг. Так как поле визуально
+ * увеличится, то нужно уменьшить отступ от текста до границы поля на это же значение.
+ * https://jsfiddle.net/kz0awcu6/
+ */
+& {
+   .expansionFix(@value) {
+      .controls-InputBase__field_autoWidth.controls-InputBase__field_margin-xs {
+         margin: 0 calc(var(--padding-horizontal_inputText) - @value) 0
+            var(--padding-horizontal_inputText);
+      }
+
+      .controls-InputBase__stretcher-block_margin-xs {
+         padding-right: @value;
+      }
+
+      .controls-InputBase__stretcher-block_margin-null {
+         padding-right: @value - 2;
+      }
+   }
+   .expansionFix(2px);
+
+   .ws-is-ie {
+      .expansionFix(4px);
+   }
+
+   .ws-is-mac {
+      .expansionFix(4px);
+   }
+}
+
+/**
+ * TODO: KINGO
+ * Механизм растягивания <input> по контенту требует его абсолютного позиционирования.
+ * Это нарушает выравнивание <input> относительно контейнера. Выравнивание должно быть по центру.
+ */
+.controls-InputBase__field_fixStretcherIE {
+   align-self: center;
+}
+
+.controls-Input_negativeOffset {
+   margin-left: calc(var(--padding-horizontal_inputText) / (-1));
+}
+
+.controls-Input__width {
+   @sizes: 1ch, 2ch, 3ch, 4ch, 5ch, 6ch, 7ch, 8ch, 9ch, 10ch, 11ch, 12ch;
+
+   .for(@sizes, {
+      &-@{_item} {
+         .controls-Field,
+         .controls-InputBase__field_readOnly,
+         .controls-InputBase__placeholder_readOnly {
+            width: ~'@{_item}';
+         }
+      }
+   });
+}
+
+// Нельзя перебить стили из -internal-autofill-selected, поэтому задаем большой transition и внутреннюю тень с background-color
+// Если просто задавать большое transition, то проблема уходит до тех пор, пока не скрыть поле ввода, и не отобразить его заново.
+// Например навесить класс ws-hidden и убрать. В таком случае, у поля ввода появляется заливка.
+// Поэтому, для таких случаев, задаем box-shadow с большой задержкой
+// https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied
+.controls-Field:-webkit-autofill,
+.controls-Field:-webkit-autofill:focus,
+.ws-is-hover .controls-Field:-webkit-autofill:hover {
+   transition:
+      background-color 2147483647s ease-in-out,
+      color 2147483647s ease-in-out,
+      box-shadow 2147483647s ease-in-out;
+   box-shadow: inset 0 0 1000px var(--background-color);
+}
+
+.controls-InputBase__placeholder_readOnly {
+   position: relative;
+}
+
+.controls-InputBase__counter_container {
+   position: absolute;
+   bottom: calc((-1) * var(--line-height_xs));
+   right: 0;
+   line-height: var(--line-height_xs);
+}

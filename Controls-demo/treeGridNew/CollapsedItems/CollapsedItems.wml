@@ -1,0 +1,6 @@
+<div class="controlsDemo__wrapper">
+    <Controls.treeGrid:View
+            storeId="CollapsedItems"
+            columns="{{_columns}}"
+            bind:collapsedItems="_collapsedItems"/>
+</div>

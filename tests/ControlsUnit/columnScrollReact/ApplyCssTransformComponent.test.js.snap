@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlsUnit/columnScrollReact/ApplyCssTransformComponent desktop device. animation. static tests. 0. 0 -> 100. Edges: [AnimatedFromVisibleToInvisible, AnimatedInvisible] 1`] = `
+<DocumentFragment>
+  <style
+    data-qa="ColumnScrollReact__static-styles"
+  >
+    .js-controls-ColumnScrollReact_fixed_guid123 {transform: translate3d(0, 0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);will-change: transform;}.js-controls-ColumnScrollReact_hideFixedElements_guid123 .js-controls-ColumnScrollReact_fixed_guid123,.js-controls-ColumnScrollReact_hideFixedElements_guid123 .js-controls-ColumnScrollReact_fixed-toRightEdge_guid123 { visibility: hidden; }
+  </style>
+  <style
+    data-qa="ColumnScrollReact__width-styles"
+  >
+    .js-controls-ColumnScrollReact_offsetForFixed_guid123 { left: 230px; } .js-controls-ColumnScrollReact_offsetForEndFixed_guid123 { right: 0px; }.js-controls-ColumnScrollReact_stretchedToViewPortElement_guid123 { width: 700px; }.js-controls-ColumnScrollReact_rootElement_guid123 .controls-Grid__header-cell_withColumnScrollArrows { padding-bottom: calc( var(--inline_height_ArrowButton) + 2 * var(--offset_2xs) ); }
+  </style>
+  <style
+    data-qa="ColumnScrollReact__smooth-styles"
+  >
+    @keyframes scrollAnimation_default {from{transform:translate3d(0px,0,0);}to{transform:translate3d(-100px,0,0);}}@keyframes fixationAnimation_default {from{transform:translate3d(0px,0,0);}to{transform:translate3d(100px,0,0);}}@keyframes fixationAnimation_right {from{transform:translate3d(-400px,0,0);}to{transform:translate3d(-300px,0,0);}}.js-controls-ColumnScrollReact_rootElement_guid123 { animation-name: scrollAnimation_default;animation-duration: 0.25s; }.js-controls-ColumnScrollReact_fixed_guid123 { animation-name: fixationAnimation_default;animation-duration: 0.25s; }.js-controls-ColumnScrollReact_fixed-toRightEdge_guid123 { animation-name: fixationAnimation_right;animation-duration: 0.25s; }
+  </style>
+  <style
+    data-qa="ColumnScrollReact__position-styles"
+  >
+    .js-controls-ColumnScrollReact_rootElement_guid123 {transform:translate3d(0px,0,0);}.js-controls-ColumnScrollReact_fixed_guid123 {transform:translate3d(0px,0,0);}.js-controls-ColumnScrollReact_fixed-toRightEdge_guid123 {transform:translate3d(-400px,0,0);
+  </style>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/columnScrollReact/ApplyCssTransformComponent desktop device. animation. static tests. 1. 100 -> 200. Edges: [AnimatedInvisible, AnimatedInvisible] 1`] = `
+<DocumentFragment>
+  <style
+    data-qa="ColumnScrollReact__static-styles"
+  >
+    .js-controls-ColumnScrollReact_fixed_guid123 {transform: translate3d(0, 0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);will-change: transform;}.js-controls-ColumnScrollReact_hideFixedElements_guid123 .js-controls-ColumnScrollReact_fixed_guid123,.js-controls-ColumnScrollReact_hideFixedElements_guid123 .js-controls-ColumnScrollReact_fixed-toRightEdge_guid123 { visibility: hidden; }
+  </style>
+  <style
+    data-qa="ColumnScrollReact__width-styles"
+  >
+    .js-controls-ColumnScrollReact_offsetForFixed_guid123 { left: 230px; } .js-controls-ColumnScrollReact_offsetForEndFixed_guid123 { right: 0px; }.js-controls-ColumnScrollReact_stretchedToViewPortElement_guid123 { width: 700px; }.js-controls-ColumnScrollReact_rootElement_guid123 .controls-Grid__header-cell_withColumnScrollArrows { padding-bottom: calc( var(--inline_height_ArrowButton) + 2 * var(--offset_2xs) ); }
+  </style>
+  <style
+    data-qa="ColumnScrollReact__smooth-styles"
+  >
+    @keyframes scrollAnimation_default {from{transform:translate3d(-100px,0,0);}to{transform:translate3d(-200px,0,0);}}@keyframes fixationAnimation_default {from{transform:translate3d(100px,0,0);}to{transform:translate3d(200px,0,0);}}@keyframes fixationAnimation_right {from{transform:translate3d(-300px,0,0);}to{transform:translate3d(-200px,0,0);}}.js-controls-ColumnScrollReact_rootElement_guid123 { animation-name: scrollAnimation_default;animation-duration: 0.25s; }.js-controls-ColumnScrollReact_fixed_guid123 { animation-name: fixationAnimation_default;animation-duration: 0.25s; }.js-controls-ColumnScrollReact_fixed-toRightEdge_guid123 { animation-name: fixationAnimation_right;animation-duration: 0.25s; }
+  </style>
+  <style
+    data-qa="ColumnScrollReact__position-styles"
+  >
+    .js-controls-ColumnScrollReact_rootElement_guid123 {transform:translate3d(-100px,0,0);}.js-controls-ColumnScrollReact_fixed_guid123 {transform:translate3d(100px,0,0);}.js-controls-ColumnScrollReact_fixed-toRightEdge_guid123 {transform:translate3d(-300px,0,0);
+  </style>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/columnScrollReact/ApplyCssTransformComponent desktop device. animation. static tests. 2. 200 -> 300. Edges: [AnimatedInvisible, AnimatedFromInvisibleToVisible] 1`] = `
+<DocumentFragment>
+  <style
+    data-qa="ColumnScrollReact__static-styles"
+  >
+    .js-controls-ColumnScrollReact_fixed_guid123 {transform: translate3d(0, 0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);will-change: transform;}.js-controls-ColumnScrollReact_hideFixedElements_guid123 .js-controls-ColumnScrollReact_fixed_guid123,.js-controls-ColumnScrollReact_hideFixedElements_guid123 .js-controls-ColumnScrollReact_fixed-toRightEdge_guid123 { visibility: hidden; }
+  </style>
+  <style
+    data-qa="ColumnScrollReact__width-styles"
+  >
+    .js-controls-ColumnScrollReact_offsetForFixed_guid123 { left: 230px; } .js-controls-ColumnScrollReact_offsetForEndFixed_guid123 { right: 0px; }.js-controls-ColumnScrollReact_stretchedToViewPortElement_guid123 { width: 700px; }.js-controls-ColumnScrollReact_rootElement_guid123 .controls-Grid__header-cell_withColumnScrollArrows { padding-bottom: calc( var(--inline_height_ArrowButton) + 2 * var(--offset_2xs) ); }
+  </style>
+  <style
+    data-qa="ColumnScrollReact__smooth-styles"
+  >
+    @keyframes scrollAnimation_default {from{transform:translate3d(-200px,0,0);}to{transform:translate3d(-300px,0,0);}}@keyframes fixationAnimation_default {from{transform:translate3d(200px,0,0);}to{transform:translate3d(300px,0,0);}}@keyframes fixationAnimation_right {from{transform:translate3d(-200px,0,0);}to{transform:translate3d(-100px,0,0);}}.js-controls-ColumnScrollReact_rootElement_guid123 { animation-name: scrollAnimation_default;animation-duration: 0.25s; }.js-controls-ColumnScrollReact_fixed_guid123 { animation-name: fixationAnimation_default;animation-duration: 0.25s; }.js-controls-ColumnScrollReact_fixed-toRightEdge_guid123 { animation-name: fixationAnimation_right;animation-duration: 0.25s; }
+  </style>
+  <style
+    data-qa="ColumnScrollReact__position-styles"
+  >
+    .js-controls-ColumnScrollReact_rootElement_guid123 {transform:translate3d(-200px,0,0);}.js-controls-ColumnScrollReact_fixed_guid123 {transform:translate3d(200px,0,0);}.js-controls-ColumnScrollReact_fixed-toRightEdge_guid123 {transform:translate3d(-200px,0,0);
+  </style>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/columnScrollReact/ApplyCssTransformComponent desktop device. animation. static tests. 3. 300 -> 200. Edges: [AnimatedInvisible, AnimatedFromVisibleToInvisible] 1`] = `
+<DocumentFragment>
+  <style
+    data-qa="ColumnScrollReact__static-styles"
+  >
+    .js-controls-ColumnScrollReact_fixed_guid123 {transform: translate3d(0, 0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);will-change: transform;}.js-controls-ColumnScrollReact_hideFixedElements_guid123 .js-controls-ColumnScrollReact_fixed_guid123,.js-controls-ColumnScrollReact_hideFixedElements_guid123 .js-controls-ColumnScrollReact_fixed-toRightEdge_guid123 { visibility: hidden; }
+  </style>
+  <style
+    data-qa="ColumnScrollReact__width-styles"
+  >
+    .js-controls-ColumnScrollReact_offsetForFixed_guid123 { left: 230px; } .js-controls-ColumnScrollReact_offsetForEndFixed_guid123 { right: 0px; }.js-controls-ColumnScrollReact_stretchedToViewPortElement_guid123 { width: 700px; }.js-controls-ColumnScrollReact_rootElement_guid123 .controls-Grid__header-cell_withColumnScrollArrows { padding-bottom: calc( var(--inline_height_ArrowButton) + 2 * var(--offset_2xs) ); }
+  </style>
+  <style
+    data-qa="ColumnScrollReact__smooth-styles"
+  >
+    @keyframes scrollAnimation_default {from{transform:translate3d(-300px,0,0);}to{transform:translate3d(-200px,0,0);}}@keyframes fixationAnimation_default {from{transform:translate3d(300px,0,0);}to{transform:translate3d(200px,0,0);}}@keyframes fixationAnimation_right {from{transform:translate3d(-100px,0,0);}to{transform:translate3d(-200px,0,0);}}.js-controls-ColumnScrollReact_rootElement_guid123 { animation-name: scrollAnimation_default;animation-duration: 0.25s; }.js-controls-ColumnScrollReact_fixed_guid123 { animation-name: fixationAnimation_default;animation-duration: 0.25s; }.js-controls-ColumnScrollReact_fixed-toRightEdge_guid123 { animation-name: fixationAnimation_right;animation-duration: 0.25s; }
+  </style>
+  <style
+    data-qa="ColumnScrollReact__position-styles"
+  >
+    .js-controls-ColumnScrollReact_rootElement_guid123 {transform:translate3d(-300px,0,0);}.js-controls-ColumnScrollReact_fixed_guid123 {transform:translate3d(300px,0,0);}.js-controls-ColumnScrollReact_fixed-toRightEdge_guid123 {transform:translate3d(-100px,0,0);
+  </style>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/columnScrollReact/ApplyCssTransformComponent desktop device. animation. static tests. 4. 200 -> 100. Edges: [AnimatedInvisible, AnimatedInvisible] 1`] = `
+<DocumentFragment>
+  <style
+    data-qa="ColumnScrollReact__static-styles"
+  >
+    .js-controls-ColumnScrollReact_fixed_guid123 {transform: translate3d(0, 0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);will-change: transform;}.js-controls-ColumnScrollReact_hideFixedElements_guid123 .js-controls-ColumnScrollReact_fixed_guid123,.js-controls-ColumnScrollReact_hideFixedElements_guid123 .js-controls-ColumnScrollReact_fixed-toRightEdge_guid123 { visibility: hidden; }
+  </style>
+  <style
+    data-qa="ColumnScrollReact__width-styles"
+  >
+    .js-controls-ColumnScrollReact_offsetForFixed_guid123 { left: 230px; } .js-controls-ColumnScrollReact_offsetForEndFixed_guid123 { right: 0px; }.js-controls-ColumnScrollReact_stretchedToViewPortElement_guid123 { width: 700px; }.js-controls-ColumnScrollReact_rootElement_guid123 .controls-Grid__header-cell_withColumnScrollArrows { padding-bottom: calc( var(--inline_height_ArrowButton) + 2 * var(--offset_2xs) ); }
+  </style>
+  <style
+    data-qa="ColumnScrollReact__smooth-styles"
+  >
+    @keyframes scrollAnimation_default {from{transform:translate3d(-200px,0,0);}to{transform:translate3d(-100px,0,0);}}@keyframes fixationAnimation_default {from{transform:translate3d(200px,0,0);}to{transform:translate3d(100px,0,0);}}@keyframes fixationAnimation_right {from{transform:translate3d(-200px,0,0);}to{transform:translate3d(-300px,0,0);}}.js-controls-ColumnScrollReact_rootElement_guid123 { animation-name: scrollAnimation_default;animation-duration: 0.25s; }.js-controls-ColumnScrollReact_fixed_guid123 { animation-name: fixationAnimation_default;animation-duration: 0.25s; }.js-controls-ColumnScrollReact_fixed-toRightEdge_guid123 { animation-name: fixationAnimation_right;animation-duration: 0.25s; }
+  </style>
+  <style
+    data-qa="ColumnScrollReact__position-styles"
+  >
+    .js-controls-ColumnScrollReact_rootElement_guid123 {transform:translate3d(-200px,0,0);}.js-controls-ColumnScrollReact_fixed_guid123 {transform:translate3d(200px,0,0);}.js-controls-ColumnScrollReact_fixed-toRightEdge_guid123 {transform:translate3d(-200px,0,0);
+  </style>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/columnScrollReact/ApplyCssTransformComponent desktop device. animation. static tests. 5. 100 -> 0. Edges: [AnimatedFromInvisibleToVisible, AnimatedInvisible] 1`] = `
+<DocumentFragment>
+  <style
+    data-qa="ColumnScrollReact__static-styles"
+  >
+    .js-controls-ColumnScrollReact_fixed_guid123 {transform: translate3d(0, 0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);will-change: transform;}.js-controls-ColumnScrollReact_hideFixedElements_guid123 .js-controls-ColumnScrollReact_fixed_guid123,.js-controls-ColumnScrollReact_hideFixedElements_guid123 .js-controls-ColumnScrollReact_fixed-toRightEdge_guid123 { visibility: hidden; }
+  </style>
+  <style
+    data-qa="ColumnScrollReact__width-styles"
+  >
+    .js-controls-ColumnScrollReact_offsetForFixed_guid123 { left: 230px; } .js-controls-ColumnScrollReact_offsetForEndFixed_guid123 { right: 0px; }.js-controls-ColumnScrollReact_stretchedToViewPortElement_guid123 { width: 700px; }.js-controls-ColumnScrollReact_rootElement_guid123 .controls-Grid__header-cell_withColumnScrollArrows { padding-bottom: calc( var(--inline_height_ArrowButton) + 2 * var(--offset_2xs) ); }
+  </style>
+  <style
+    data-qa="ColumnScrollReact__smooth-styles"
+  >
+    @keyframes scrollAnimation_default {from{transform:translate3d(-100px,0,0);}to{transform:translate3d(0px,0,0);}}@keyframes fixationAnimation_default {from{transform:translate3d(100px,0,0);}to{transform:translate3d(0px,0,0);}}@keyframes fixationAnimation_right {from{transform:translate3d(-300px,0,0);}to{transform:translate3d(-400px,0,0);}}.js-controls-ColumnScrollReact_rootElement_guid123 { animation-name: scrollAnimation_default;animation-duration: 0.25s; }.js-controls-ColumnScrollReact_fixed_guid123 { animation-name: fixationAnimation_default;animation-duration: 0.25s; }.js-controls-ColumnScrollReact_fixed-toRightEdge_guid123 { animation-name: fixationAnimation_right;animation-duration: 0.25s; }
+  </style>
+  <style
+    data-qa="ColumnScrollReact__position-styles"
+  >
+    .js-controls-ColumnScrollReact_rootElement_guid123 {transform:translate3d(-100px,0,0);}.js-controls-ColumnScrollReact_fixed_guid123 {transform:translate3d(100px,0,0);}.js-controls-ColumnScrollReact_fixed-toRightEdge_guid123 {transform:translate3d(-300px,0,0);
+  </style>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/columnScrollReact/ApplyCssTransformComponent desktop device. no animation. render static, width and position styles components. 1`] = `
+<DocumentFragment>
+  <style
+    data-qa="ColumnScrollReact__static-styles"
+  >
+    .js-controls-ColumnScrollReact_fixed_guid123 {transform: translate3d(0, 0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);will-change: transform;}.js-controls-ColumnScrollReact_hideFixedElements_guid123 .js-controls-ColumnScrollReact_fixed_guid123,.js-controls-ColumnScrollReact_hideFixedElements_guid123 .js-controls-ColumnScrollReact_fixed-toRightEdge_guid123 { visibility: hidden; }
+  </style>
+  <style
+    data-qa="ColumnScrollReact__width-styles"
+  >
+    .js-controls-ColumnScrollReact_offsetForFixed_guid123 { left: 230px; } .js-controls-ColumnScrollReact_offsetForEndFixed_guid123 { right: 0px; }.js-controls-ColumnScrollReact_stretchedToViewPortElement_guid123 { width: 600px; }.js-controls-ColumnScrollReact_rootElement_guid123 .controls-Grid__header-cell_withColumnScrollArrows { padding-bottom: calc( var(--inline_height_ArrowButton) + 2 * var(--offset_2xs) ); }
+  </style>
+  <style
+    data-qa="ColumnScrollReact__position-styles"
+  >
+    .js-controls-ColumnScrollReact_rootElement_guid123 {transform:translate3d(-150px,0,0);}.js-controls-ColumnScrollReact_fixed_guid123 {transform:translate3d(150px,0,0);}.js-controls-ColumnScrollReact_fixed-toRightEdge_guid123 {transform:translate3d(-1050px,0,0);
+  </style>
+</DocumentFragment>
+`;
+
+exports[`ControlsUnit/columnScrollReact/ApplyCssTransformComponent mobile device. render only static and width dependent components. 1`] = `
+<DocumentFragment>
+  <style
+    data-qa="ColumnScrollReact__static-styles"
+  >
+    .js-controls-ColumnScrollReact_fixed_guid123 {transform: translate3d(0, 0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);will-change: transform;}.js-controls-ColumnScrollReact_hideFixedElements_guid123 .js-controls-ColumnScrollReact_fixed_guid123,.js-controls-ColumnScrollReact_hideFixedElements_guid123 .js-controls-ColumnScrollReact_fixed-toRightEdge_guid123 { visibility: hidden; }
+  </style>
+  <style
+    data-qa="ColumnScrollReact__width-styles"
+  >
+    .js-controls-ColumnScrollReact_offsetForFixed_guid123 { left: 230px; } .js-controls-ColumnScrollReact_offsetForEndFixed_guid123 { right: 0px; }.js-controls-ColumnScrollReact_stretchedToViewPortElement_guid123 { width: 500px; }.js-controls-ColumnScrollReact_rootElement_guid123 .controls-Grid__header-cell_withColumnScrollArrows { padding-bottom: calc( var(--inline_height_ArrowButton) + 2 * var(--offset_2xs) ); }
+  </style>
+</DocumentFragment>
+`;

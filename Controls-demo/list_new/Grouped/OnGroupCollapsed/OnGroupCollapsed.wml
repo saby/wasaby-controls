@@ -1,0 +1,17 @@
+<div class="controlsDemo__wrapper">
+<Controls.scroll:Container>
+  <Controls.list:View
+      groupProperty="brand"
+      on:groupCollapsed="_onGroupCollapsed()"
+      on:groupExpanded="_onGroupExpanded()"
+      storeId="GroupedOnGroupCollapsed3"/>
+</Controls.scroll:Container>
+<ws:if data="{{_groupClickMessage}}">
+  <div class="controlsDemo__wrapper" data-qa="controlsDemo_OnGroupCollapsed__click-message">
+    {{ _groupClickMessage || '' }}
+  </div>
+  <div class="controlsDemo__wrapper controlsDemo__pt-none">
+    <a class="controls-text-link" href="#" on:click="_clearMessage()">Очистить</a>
+  </div>
+</ws:if>
+</div>

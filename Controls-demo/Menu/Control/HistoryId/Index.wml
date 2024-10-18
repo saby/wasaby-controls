@@ -1,0 +1,16 @@
+<div class="controlsDemo__flexRow">
+<div class="controlsDemo__wrapper">
+  <div class="controls-text-label">historyId</div>
+  <Controls.menu:Control
+      source="{{_source}}"
+      keyProperty="key"
+      displayProperty="title"
+      parentProperty="parent"
+      nodeProperty="@parent"
+      historyId="TEST_HISTORY_ID"
+      hasHistory="{{true}}"
+      allowPin="{{true}}"
+      attr:class="ControlsDemo-menuControl_minWidth"
+  />
+</div>
+</div>

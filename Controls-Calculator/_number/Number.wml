@@ -1,0 +1,7 @@
+<ws:partial scope="{{ _options }}"
+            template="{{_options.content}}"
+            on:mousedown="_clickHandler()"
+            on:click="_clickHandler()"
+            attr:class="controls_Calculator_theme-{{_options.theme}} calculator-View__number
+            {{_isCalculatorRegistered ? 'calculator-View__number__clickable'}}"
+/>

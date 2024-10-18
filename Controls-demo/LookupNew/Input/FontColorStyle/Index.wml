@@ -1,0 +1,70 @@
+<div class="controlsDemo__flexRow controlsDemo_fixedWidth500">
+    <div class="controlsDemo__wrapper controlsDemo__flexColumn">
+        <div class="controlsDemo__mb1 controlsDemo__wrapper__horizontal controlsDemo__cell controlsDemo__childWidth400 controlsDemo-Lookup-multi_readOnly">
+            <div class="controls-text-label">fontColorStyle="link"</div>
+            <Controls.lookup:Input
+                bind:selectedKeys="_selectedKeys"
+                fontColorStyle="link"
+                source="{{_source}}"
+                searchParam="title"
+                keyProperty="id"
+                multiSelect="{{true}}"
+                readOnly="{{true}}"/>
+        </div>
+        <div class="controlsDemo__mb1 controlsDemo__wrapper__horizontal controlsDemo__cell controlsDemo__childWidth400 controlsDemo-Lookup-multi_readOnly">
+            <div class="controls-text-label">fontColorStyle="primary"</div>
+            <Controls.lookup:Input
+                bind:selectedKeys="_selectedKeys"
+                fontColorStyle="primary"
+                source="{{_source}}"
+                searchParam="title"
+                keyProperty="id"
+                multiSelect="{{true}}"
+                readOnly="{{true}}"/>
+        </div>
+        <div class="controlsDemo__mb1 controlsDemo__wrapper__horizontal controlsDemo__cell controlsDemo__childWidth400 controlsDemo-Lookup-multi_readOnly">
+            <div class="controls-text-label">fontColorStyle="secondary"</div>
+            <Controls.lookup:Input
+                bind:selectedKeys="_selectedKeys"
+                fontColorStyle="secondary"
+                source="{{_source}}"
+                searchParam="title"
+                keyProperty="id"
+                multiSelect="{{true}}"
+                readOnly="{{true}}"/>
+        </div>
+        <div class="controlsDemo__mb1 controlsDemo__wrapper__horizontal controlsDemo__cell controlsDemo__childWidth400 controlsDemo-Lookup-multi_readOnly">
+            <div class="controls-text-label">fontColorStyle="success"</div>
+            <Controls.lookup:Input
+                bind:selectedKeys="_selectedKeys"
+                fontColorStyle="success"
+                source="{{_source}}"
+                searchParam="title"
+                keyProperty="id"
+                multiSelect="{{true}}"
+                readOnly="{{true}}"/>
+        </div>
+        <div class="controlsDemo__mb1 controlsDemo__wrapper__horizontal controlsDemo__cell controlsDemo__childWidth400 controlsDemo-Lookup-multi_readOnly">
+            <div class="controls-text-label">fontColorStyle="warning"</div>
+            <Controls.lookup:Input
+                bind:selectedKeys="_selectedKeys"
+                fontColorStyle="warning"
+                source="{{_source}}"
+                searchParam="title"
+                keyProperty="id"
+                multiSelect="{{true}}"
+                readOnly="{{true}}"/>
+        </div>
+        <div class="controlsDemo__mb1 controlsDemo__wrapper__horizontal controlsDemo__cell controlsDemo__childWidth400 controlsDemo-Lookup-multi_readOnly">
+            <div class="controls-text-label">fontColorStyle="danger"</div>
+            <Controls.lookup:Input
+                bind:selectedKeys="_selectedKeys"
+                fontColorStyle="danger"
+                source="{{_source}}"
+                searchParam="title"
+                keyProperty="id"
+                multiSelect="{{true}}"
+                readOnly="{{true}}"/>
+        </div>
+    </div>
+</div>

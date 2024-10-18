@@ -1,0 +1,50 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Classes/Blocks/Layout/VerticalBackground/Index' }}">
+            <a href="{{content.href}}">Статическая вертикальная раскладка</a>
+        </Router.router:Reference>
+        <Controls-demo.Classes.Blocks.Layout.VerticalBackground.Index/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Classes/Blocks/Layout/Vertical/Index' }}">
+            <a href="{{content.href}}">Статическая вертикальная раскладка. Блоки заполняют предоставленную область не полностью.</a>
+        </Router.router:Reference>
+        <Controls-demo.Classes.Blocks.Layout.Vertical.Index/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Classes/Blocks/Layout/Horizontal/Index' }}">
+            <a href="{{content.href}}">Статическая горизонтальная раскладка</a>
+        </Router.router:Reference>
+        <Controls-demo.Classes.Blocks.Layout.Horizontal.Index/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Classes/Blocks/Layout/Mixed/Index' }}">
+            <a href="{{content.href}}">Статическая смешанная раскладка</a>
+        </Router.router:Reference>
+        <Controls-demo.Classes.Blocks.Layout.Mixed.Index/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Classes/Blocks/Layout/Dinamic/Index' }}">
+            <a href="{{content.href}}">Динамическая раскладка</a>
+        </Router.router:Reference>
+        <Controls-demo.Classes.Blocks.Layout.Dinamic.Index/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Classes/Blocks/Layout/TwoColumn/Index' }}">
+            <a href="{{content.href}}">Две колонки. Вторая объединена.</a>
+        </Router.router:Reference>
+        <Controls-demo.Classes.Blocks.Layout.TwoColumn.Index/>
+    </div>
+</div>

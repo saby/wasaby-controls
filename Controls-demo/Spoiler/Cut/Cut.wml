@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300">
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">Контент не превышает трёх строк.</div>
+      <Controls.cut:TextCut attr:style="width: 200px;" lines="{{3}}">
+         <ws:content>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam cupiditate.
+         </ws:content>
+      </Controls.cut:TextCut>
+   </div>
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">Контент превышает три строки.</div>
+      <Controls.cut:TextCut attr:style="width: 200px;" lines="{{3}}">
+         <ws:content>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam cupiditate delectus, eaque laboriosam maiores mollitia praesentium quo ratione vel. At cum cumque earum ipsam non quis soluta ullam veritatis.
+         </ws:content>
+      </Controls.cut:TextCut>
+   </div>
+</div>

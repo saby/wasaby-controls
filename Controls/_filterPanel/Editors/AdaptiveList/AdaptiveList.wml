@@ -1,0 +1,61 @@
+<ws:template name="FolderButton">
+    <Controls.icon:Icon
+            attr:class="controls-margin_right-s controls-cursor_pointer"
+            attr:data-qa="controls-Adaptive__FolderButton"
+            icon="{{_viewMode === 'collapsed' ? 'icon-TFFolder2' : 'icon-TFFolder2Opened'}}"
+            iconSize="m"
+            iconStyle="secondary"
+            on:click="_viewModeChanged()" />
+</ws:template>
+
+<div class="controls-EditorAdaptiveList ws-flexbox">
+    <ws:if data="{{_viewMode === 'collapsed'}}">
+        <ws:partial template="FolderButton" attr:class="controls-padding_bottom-st controls-padding_top-st"/>
+        <Controls.scroll:Container
+                rightShadowVisibility="hidden"
+                leftShadowVisibility="hidden"
+                scrollOrientation="horizontal"
+                scrollbarVisible="{{false}}">
+            <div class="ws-flexbox ws-align-items-center controls-padding_bottom-xs controls-padding_top-xs">
+                <div class="ws-flexbox ws-align-items-center controls-EditorAdaptiveList__Chips">
+                    <Controls.Chips:Control
+                            items="{{_roots}}"
+                            keyProperty="{{_options.keyProperty}}"
+                            displayProperty="{{_options.displayProperty}}"
+                            selectedKeys="{{_selectedKeys}}"
+                            multiline="{{false}}"
+                            inlineHeight="xl"
+                            fontSize="xl"
+                            on:selectedKeysChanged="_selectedKeysChanged()">
+                        <ws:itemTemplate>
+                            <ws:partial template="Controls/Chips:chipsItemTemplate">
+                                <ws:contentTemplate>
+                                    <div class="ws-flexbox ws-align-items-baseline">
+                                        <ws:partial template="{{contentTemplate.captionTemplate}}"/>
+                                        <ws:partial template="Controls/_filterPanel/Editors/resources/AdditionalContentTemplate"
+                                                    additionalTextProperty="{{_options.additionalTextProperty}}"
+                                                    mainCounterProperty="{{_options.mainCounterProperty}}"
+                                                    item="{{item}}"
+                                                    counterTemplate="{{_options.counterTemplate}}" />
+                                    </div>
+                                </ws:contentTemplate>
+                            </ws:partial>
+                        </ws:itemTemplate>
+                    </Controls.Chips:Control>
+                </div>
+            </div>
+        </Controls.scroll:Container>
+    </ws:if>
+    <ws:else>
+        <ws:partial template="FolderButton" attr:class="controls-margin_top-st controls-EditorAdaptiveList__FolderButton_fixed"/>
+        <Controls._filterPanel.Editors._List
+                scope="{{_options}}"
+                markerStyle="{{_options.markerStyle}}"
+                fontSize="xl"
+                fontWeight="normal"
+                class="controls-padding_bottom-2xs">
+            <ws:roundBorder bl="s" br="s" tl="s" tr="s" />
+            <ws:itemPadding left="l" right="l" />
+        </Controls._filterPanel.Editors._List>
+    </ws:else>
+</div>

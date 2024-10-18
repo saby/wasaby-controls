@@ -1,0 +1,11 @@
+<ws:partial template="Controls/grid:ResultColumnTemplate"
+			scope="{{ _options }}"
+			backgroundColorStyle="{{ column.config.resultsBackgroundColorStyle }}">
+	<ws:contentTemplate>
+		<div>
+			<div>Всего: </div>
+			<Controls.baseDecorator:Number value="{{ column.config.result }}" useGrouping="{{true}}"/>
+			<div>Опция из resultsTemplateOptions: {{ myVar }}</div>
+		</div>
+	</ws:contentTemplate>
+</ws:partial>

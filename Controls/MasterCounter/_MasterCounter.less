@@ -1,0 +1,28 @@
+.Controls__MasterCounter__wrapper {
+   display: flex;
+   align-items: center;
+   flex-direction: row-reverse;
+   padding: var(--offset_3xs) 0;
+   border-radius: var(--border-radius_2xl);
+}
+
+.Controls__MasterCounter__item {
+   padding: 0 var(--offset_xs);
+   font-size: var(--font-size_m);
+   font-weight: normal;
+}
+
+.Controls__MasterCounter__item_withSeparator {
+   border-right: calc(2 * var(--border-thickness)) solid var(--unaccented_separator_color);
+}
+
+.ws-is-hover {
+   .Controls__MasterCounter__wrapper:hover {
+      outline: var(--border-thickness) solid var(--unaccented_border-color);
+   }
+
+   .controls-ListView__item_highlightOnHover:hover .Controls__MasterCounter__wrapper,
+   .controls-GridReact__row__hoverMode_row:hover .Controls__MasterCounter__wrapper {
+      background: var(--background-color);
+   }
+}

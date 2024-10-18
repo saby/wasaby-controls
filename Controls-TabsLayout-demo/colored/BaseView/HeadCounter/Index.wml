@@ -1,0 +1,64 @@
+<div class="controlsDemo__wrapper__padding-left controlsDemo_fixedWidth800 controlsDemo__height500">
+  <div class="controlsDemo_ColumnsView_itemTemplate-title controlsDemo__cell">Controls.tabs:AccordionTabs</div>
+  <Controls-TabsLayout.colored:View
+      name="coloredTabs"
+      class="controlsDemo__height500"
+      bind:selectedKey="_selectedKey"
+      headTemplate="{{_headCounter}}">
+    <ws:items>
+      <ws:Array>
+        <ws:Object key="1" backgroundStyle="primary" title="Основной" counter="95">
+          <ws:itemTemplate>
+            <div>
+              <div>Контент вкладки "Основной"</div>
+              <div>Контент вкладки "Основной"</div>
+              <div>Контент вкладки "Основной"</div>
+              <div>Контент вкладки "Основной"</div>
+              <div>Контент вкладки "Основной"</div>
+            </div>
+          </ws:itemTemplate>
+        </ws:Object>
+        <ws:Object key="2" backgroundStyle="secondary" title="Вторичный" counter="950">
+          <ws:itemTemplate>
+            <div>
+              <div>Контент вкладки "Вторичный"</div>
+              <div>Контент вкладки "Вторичный"</div>
+              <div>Контент вкладки "Вторичный"</div>
+              <div>Контент вкладки "Вторичный"</div>
+            </div>
+          </ws:itemTemplate>
+        </ws:Object>
+        <ws:Object key="3" backgroundStyle="success" title="Выполнено" counter="62">
+          <ws:itemTemplate>
+            <div>
+              <div>Контент вкладки "Выполнено"</div>
+              <div>Контент вкладки "Выполнено"</div>
+              <div>Контент вкладки "Выполнено"</div>
+              <div>Контент вкладки "Выполнено"</div>
+            </div>
+          </ws:itemTemplate>
+        </ws:Object>
+        <ws:Object key="4" backgroundStyle="warning" title="Предупреждение" counter="1">
+          <ws:itemTemplate>
+            <div>
+              <div>Контент вкладки "Предупреждение"</div>
+              <div>Контент вкладки "Предупреждение"</div>
+              <div>Контент вкладки "Предупреждение"</div>
+              <div>Контент вкладки "Предупреждение"</div>
+            </div>
+          </ws:itemTemplate>
+        </ws:Object>
+        <ws:Object key="5" backgroundStyle="danger" title="Опасность" counter="182">
+          <ws:itemTemplate>
+            <div>
+              <div>Контент вкладки "Опасность"</div>
+              <div>Контент вкладки "Опасность"</div>
+              <div>Контент вкладки "Опасность"</div>
+              <div>Контент вкладки "Опасность"</div>
+            </div>
+          </ws:itemTemplate>
+        </ws:Object>
+      </ws:Array>
+    </ws:items>
+  </Controls-TabsLayout.colored:View>
+</div>

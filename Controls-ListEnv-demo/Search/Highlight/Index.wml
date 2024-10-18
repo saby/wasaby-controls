@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper">
+   <Controls-ListEnv.searchConnected:Input storeId="departments" />
+   <Controls.list:View storeId="departments">
+      <ws:itemTemplate>
+         <ws:partial template="Controls/list:ItemTemplate">
+            <ws:contentTemplate>
+               <Controls.baseDecorator:Highlight
+                       highlightedValue="{{itemTemplate.item.searchValue}}"
+                       value="{{itemTemplate.item.contents.title}}"/>
+            </ws:contentTemplate>
+         </ws:partial>
+      </ws:itemTemplate>
+   </Controls.list:View>
+</div>

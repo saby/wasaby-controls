@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-hor-padding-2xl controls-background-contrast">
+        <Controls.treeTile:View
+                tileMode="dynamic"
+                imageProperty="image"
+                storeId="ItemsContainerPaddingPadding2XL">
+            <ws:itemsContainerPadding left="2xl" right="2xl"/>
+        </Controls.treeTile:View>
+    </div>
+</div>

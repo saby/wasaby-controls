@@ -1,0 +1,575 @@
+[
+    {
+        "header": {
+            "md5": "29bd764c9bc95922e6abb6894868b9a3",
+            "timestamp": "2024-10-11 11:26:55.672928"
+        },
+        "body": {
+            "apply": 0,
+            "id": "5e57bae8-4974-49d0-ae14-f44350686d45",
+            "is_parent": null,
+            "locale": {
+                "ru": {
+                    "name": "Т-Банк"
+                }
+            },
+            "overrides": {
+                "base": {
+                    "brand_color": {
+                        "brand_color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 50.5714285714286,
+                                        "initial": false,
+                                        "l": 58.4313725490196,
+                                        "s": 99.0566037735849,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 207.0248,
+                                        "initial": false,
+                                        "l": 47.45098,
+                                        "s": 100.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark"
+                                }
+                            ]
+                        },
+                        "navigation_logo": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 0.0,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark",
+                                    "valuelinks": [
+                                        "brand_color"
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 0.0,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light",
+                                    "valuelinks": [
+                                        "brand_color"
+                                    ]
+                                }
+                            ]
+                        },
+                        "navigation_marker-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 0.0,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark",
+                                    "valuelinks": [
+                                        "navigation_logo"
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": true,
+                                        "l": 0.0,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light",
+                                    "valuelinks": [
+                                        "navigation_logo"
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    "navigation_color": {
+                        "navigation_active_background-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": false,
+                                        "l": 94.90196,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark"
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 36.3636363636364,
+                                        "initial": false,
+                                        "l": 82.5490196078431,
+                                        "s": 37.0786516853932,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                }
+                            ]
+                        },
+                        "navigation_background-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": false,
+                                        "l": 91.76471,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark"
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 42.0,
+                                        "initial": false,
+                                        "l": 92.5490196078431,
+                                        "s": 26.3157894736842,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                }
+                            ]
+                        },
+                        "navigation_color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": false,
+                                        "l": 91.7647058823529,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": false,
+                                        "l": 91.76471,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark"
+                                }
+                            ]
+                        },
+                        "navigation_counter_background-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": false,
+                                        "l": 93.72549,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark"
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 48.0,
+                                        "initial": false,
+                                        "l": 92.5490196078431,
+                                        "s": 26.3157894736842,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                }
+                            ]
+                        },
+                        "navigation_counter_on_menu_hover_background-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": false,
+                                        "l": 91.76471,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark"
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": false,
+                                        "l": 97.6470588235294,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                }
+                            ]
+                        },
+                        "navigation_counter_on_menu_hover_unaccented_icon-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 212.7273,
+                                        "initial": false,
+                                        "l": 59.21569,
+                                        "s": 31.73077,
+                                        "strict": false
+                                    },
+                                    "mode": "dark"
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 216.0,
+                                        "initial": false,
+                                        "l": 8.62745098039216,
+                                        "s": 22.7272727272727,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                }
+                            ]
+                        },
+                        "navigation_fill_plus": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": false,
+                                        "l": 94.90196,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark"
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 40.0000000000001,
+                                        "initial": false,
+                                        "l": 92.7450980392157,
+                                        "s": 24.3243243243243,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                }
+                            ]
+                        },
+                        "navigation_hover_background-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": false,
+                                        "l": 97.64706,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark"
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": false,
+                                        "l": 98.0392156862745,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                }
+                            ]
+                        },
+                        "navigation_logo_app": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": false,
+                                        "l": 0.0,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark"
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": false,
+                                        "l": 12.9411764705882,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                }
+                            ]
+                        },
+                        "navigation_logo_fill": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 36.0,
+                                        "initial": false,
+                                        "l": 94.3137254901961,
+                                        "s": 51.7241379310345,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 225.0,
+                                        "initial": false,
+                                        "l": 95.29412,
+                                        "s": 16.66667,
+                                        "strict": false
+                                    },
+                                    "mode": "dark"
+                                }
+                            ]
+                        },
+                        "navigation_logo_fill_hover": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": false,
+                                        "l": 97.64706,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark"
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 40.8,
+                                        "initial": false,
+                                        "l": 62.3529411764706,
+                                        "s": 26.0416666666667,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                }
+                            ]
+                        },
+                        "navigation_menu_hover": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": false,
+                                        "l": 91.76471,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark"
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 48.0,
+                                        "initial": false,
+                                        "l": 92.5490196078431,
+                                        "s": 26.3157894736842,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                }
+                            ]
+                        },
+                        "navigation_unaccented_background-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": false,
+                                        "l": 20.0,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": false,
+                                        "l": 75.29412,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark"
+                                }
+                            ]
+                        },
+                        "navigation_unaccented_hover_icon-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 210.2128,
+                                        "initial": false,
+                                        "l": 72.35294,
+                                        "s": 100.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark"
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 220.0,
+                                        "initial": false,
+                                        "l": 8.43137254901961,
+                                        "s": 20.9302325581395,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                }
+                            ]
+                        },
+                        "navigation_unaccented_hover_text-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 210.2128,
+                                        "initial": false,
+                                        "l": 72.35294,
+                                        "s": 100.0,
+                                        "strict": false
+                                    },
+                                    "mode": "dark"
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 216.0,
+                                        "initial": false,
+                                        "l": 8.62745098039216,
+                                        "s": 22.7272727272727,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                }
+                            ]
+                        },
+                        "navigation_unaccented_icon-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": false,
+                                        "l": 42.3529411764706,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 212.4,
+                                        "initial": false,
+                                        "l": 78.03922,
+                                        "s": 44.64286,
+                                        "strict": false
+                                    },
+                                    "mode": "dark"
+                                }
+                            ]
+                        },
+                        "navigation_unaccented_text-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 0.0,
+                                        "initial": false,
+                                        "l": 20.0,
+                                        "s": 0.0,
+                                        "strict": false
+                                    },
+                                    "mode": "light"
+                                },
+                                {
+                                    "value": {
+                                        "a": 1.0,
+                                        "h": 212.7273,
+                                        "initial": false,
+                                        "l": 59.21569,
+                                        "s": 31.73077,
+                                        "strict": false
+                                    },
+                                    "mode": "dark"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "selector": "default__tbank",
+            "styles": [],
+            "type": 0,
+            "aspect_theme": [
+                {
+                    "identifier": "87688e42-71bf-11ee-b962-0242ac120002",
+                    "keys": null,
+                    "uuid": "b8bfb628-1318-4d55-808f-f0834be82d0f"
+                }
+            ],
+            "parent": {
+                "id": "3a1539ba-0a0d-405e-b470-36bb496f282e",
+                "title": "Базовая"
+            },
+            "properties": {
+                "staticTheme": "default"
+            }
+        }
+    }
+]

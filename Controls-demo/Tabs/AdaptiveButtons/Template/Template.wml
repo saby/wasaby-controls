@@ -1,0 +1,154 @@
+<div class="tw-flex tw-justify-center">
+    <div data-qa="controlsDemo_capture">
+        <div attr:style="margin-bottom: 15px">
+            <div attr:style="text-align: center;" class="controls-text-secondary">1. default</div>
+            <div
+                class="demo-TabButtons controls-margin_bottom-m tw-flex tw-items-baseline tw-justify-end"
+            >
+                <Controls.tabs:AdaptiveButtons
+                    attr:class="controlsDemo_fixedWidth200"
+                    bind:selectedKey="SelectedKey2"
+                    keyProperty="id"
+                    items="{{ _items1 }}"
+                    displayProperty="caption"
+                />
+            </div>
+        </div>
+        <div>
+            <div attr:style="text-align: center;" class="controls-text-secondary">
+                2. TextCounterTabTemplate
+            </div>
+            <div
+                attr:style="display: flex;align-items: flex-end"
+                class="demo-TabButtons controls-margin_bottom-m tw-flex tw-items-baseline tw-justify-between"
+            >
+                <span attr:style="white-space: nowrap">caption-counter</span>
+                <Controls.tabs:AdaptiveButtons
+                    attr:class="controls-margin_left-xl controlsDemo_fixedWidth300"
+                    bind:selectedKey="SelectedKey1"
+                    itemTemplate="Controls/tabs:TextCounterTabTemplate"
+                    items="{{ _items1 }}"
+                    keyProperty="id"
+                    displayProperty="caption"
+                />
+            </div>
+            <div
+                attr:style="display: flex;align-items: flex-end"
+                class="demo-TabButtons controls-margin_bottom-m tw-flex tw-items-baseline tw-justify-between"
+            >
+                <span attr:style="white-space: nowrap">caption-icon</span>
+                <Controls.tabs:AdaptiveButtons
+                    attr:class="controls-margin_left-xl controlsDemo_fixedWidth300"
+                    attr:data-qa="controlsDemo_demoTabButtons__captionIcon"
+                    bind:selectedKey="SelectedKey1"
+                    itemTemplate="Controls/tabs:TextCounterTabTemplate"
+                    items="{{ _items3 }}"
+                    keyProperty="id"
+                />
+            </div>
+            <div
+                attr:style="display: flex;align-items: flex-end"
+                class="demo-TabButtons controls-margin_bottom-m tw-flex tw-items-baseline tw-justify-between"
+            >
+                <span attr:style="white-space: nowrap">caption-counter-icon</span>
+                <Controls.tabs:AdaptiveButtons
+                    attr:class="controls-margin_left-xl controlsDemo_fixedWidth300"
+                    bind:selectedKey="SelectedKey1"
+                    itemTemplate="Controls/tabs:TextCounterTabTemplate"
+                    items="{{ _items4 }}"
+                    keyProperty="id"
+                    displayProperty="title"
+                />
+            </div>
+            <div
+                attr:style="display: flex;align-items: flex-end"
+                class="demo-TabButtons controls-margin_bottom-m tw-flex tw-items-baseline tw-justify-between"
+            >
+                <span attr:style="white-space: nowrap">caption-counter-icon-additionalCaption</span>
+                <Controls.tabs:AdaptiveButtons
+                    attr:class="controls-margin_left-xl controlsDemo_fixedWidth300"
+                    bind:selectedKey="SelectedKey1"
+                    itemTemplate="Controls/tabs:TextCounterTabTemplate"
+                    items="{{ _items5 }}"
+                    keyProperty="id"
+                    displayProperty="caption"
+                />
+            </div>
+        </div>
+        <div attr:style="text-align: center;" class="controls-text-secondary">
+            3. IconCounterTabTemplate
+        </div>
+        <div
+            attr:style="display: flex;align-items: flex-end"
+            class="demo-TabButtons controls-margin_bottom-m tw-flex tw-items-baseline tw-justify-between"
+        >
+            <span attr:style="white-space: nowrap">icon</span>
+            <Controls.tabs:AdaptiveButtons
+                attr:class="controls-margin_left-xl"
+                bind:selectedKey="SelectedKey3"
+                itemTemplate="Controls/tabs:IconCounterTabTemplate"
+                items="{{ _items6 }}"
+                keyProperty="id"
+            />
+        </div>
+        <div
+            attr:style="display: flex;align-items: flex-end"
+            class="demo-TabButtons controls-margin_bottom-m tw-flex tw-items-baseline tw-justify-between"
+        >
+            <span attr:style="white-space: nowrap">icon-counter</span>
+            <Controls.tabs:AdaptiveButtons
+                attr:class="controls-margin_left-xl"
+                bind:selectedKey="SelectedKey3"
+                itemTemplate="Controls/tabs:IconCounterTabTemplate"
+                items="{{ _items7 }}"
+                keyProperty="id"
+            />
+        </div>
+        <div
+            attr:style="display: flex;align-items: flex-end"
+            class="demo-TabButtons controls-margin_bottom-m tw-flex tw-items-baseline tw-justify-between"
+        >
+            <span attr:style="white-space: nowrap">icon-caption</span>
+            <Controls.tabs:AdaptiveButtons
+                attr:class="controls-margin_left-xl controlsDemo_fixedWidth300"
+                attr:data-qa="controlsDemo_demoTabButtons__iconCaption"
+                bind:selectedKey="SelectedKey3"
+                itemTemplate="Controls/tabs:IconCounterTabTemplate"
+                items="{{ _items8 }}"
+                keyProperty="id"
+                displayProperty="caption"
+            />
+        </div>
+        <div
+            attr:style="display: flex;align-items: flex-end"
+            class="demo-TabButtons controls-margin_bottom-m tw-flex tw-items-baseline tw-justify-between"
+        >
+            <span attr:style="white-space: nowrap">image-caption</span>
+            <Controls.tabs:AdaptiveButtons
+                attr:class="controls-margin_left-xl controlsDemo_fixedWidth300"
+                bind:selectedKey="SelectedKey3"
+                itemTemplate="Controls/tabs:IconCounterTabTemplate"
+                items="{{ _items9 }}"
+                keyProperty="id"
+                displayProperty="caption"
+            />
+        </div>
+        <div attr:style="text-align: center;" class="controls-text-secondary">
+            4. IconTextSelectedTabTemplate
+        </div>
+        <div
+            attr:style="display: flex;align-items: flex-end"
+            class="demo-TabButtons controls-margin_bottom-m tw-flex tw-items-baseline tw-justify-end"
+        >
+            <Controls.tabs:AdaptiveButtons
+                attr:class="controlsDemo_fixedWidth200"
+                attr:data-qa="controlsDemo_demoTabButtons__IconTextSelected"
+                bind:selectedKey="SelectedKey4"
+                itemTemplate="Controls/tabs:IconTextSelectedTabTemplate"
+                items="{{ _items10 }}"
+                keyProperty="id"
+                displayProperty="caption"
+            />
+        </div>
+    </div>
+</div>

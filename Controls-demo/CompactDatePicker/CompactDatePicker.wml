@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper">
+    <Controls.compactDatePicker:View
+            attr:class="{{_getClassForTheme()}}"
+            bind:startValue="_startValue"
+            bind:endValue="_endValue"
+            _date="{{ _date }}"
+    />
+</div>

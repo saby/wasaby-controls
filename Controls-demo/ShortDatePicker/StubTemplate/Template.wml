@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center ws-align-items-center" data-qa="controlsDemo_capture">
+        <Controls.shortDatePicker:View
+            attr:class="controlsDemo-ShortDatePicker__large"
+            startValue="{{_startValue}}"
+            endValue="{{_endValue}}"
+            displayedRanges="{{_displayedRanges}}">
+            <ws:stubTemplate>
+                    <span
+                        class="controls-text-danger controls-margin_left-xs controls-margin_right-xs">
+                        Выбор не доступен
+                    </span>
+            </ws:stubTemplate>
+        </Controls.shortDatePicker:View>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="controls-Menu__emptyTemplate">
+   <ws:if data="{{contentTemplate}}">
+      <ws:partial template="{{contentTemplate}}"/>
+   </ws:if>
+   <ws:else>
+      <div class="controls-Menu__emptyTemplate_defaultText">{[Не найдено]}</div>
+   </ws:else>
+</div>

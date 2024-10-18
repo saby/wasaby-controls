@@ -1,0 +1,87 @@
+<div class="PageWrap">
+   <div class="PageBlock">
+      <div class="PageBlock__title"></div>
+      <div class="PageBlock__content">
+         <div class="PageBlock__componentWrap">
+            <Controls.dateRange:Selector
+                    bind:startValue="_startValueEmpty"
+                    bind:endValue="_endValueEmpty"
+                    datePopupType="shortDatePicker"
+               attr:test_name="default_range"/>
+         </div>
+         <div class="PageBlock__componentWrap ControlsDemo-RangeLinkLite_capture">
+            <Controls.date:ContextProvider
+                    attr:test_name="show_arrow_range">
+               <div class="ControlsDemo-RangeLinkLite__container">
+                  <Controls.dateRange:SelectorConsumer
+                          datePopupType="shortDatePicker"
+                          attr:class="ws-flex-grow-1"
+                          bind:startValue="_startValueHalfYear"
+                          bind:endValue="_endValueHalfYear"
+                  />
+                  <Controls.date:ArrowButtonConsumer direction="left" attr:class="controls-margin_left-m"/>
+                  <Controls.date:ArrowButtonConsumer direction="right" attr:class="controls-margin_left-m"/>
+               </div>
+            </Controls.date:ContextProvider>
+         </div>
+         <div class="PageBlock__componentWrap">
+            <Controls.dateRange:Selector
+               bind:startValue="_startValueBind"
+               bind:endValue="_endValueBind"
+               datePopupType="shortDatePicker"
+               chooseHalfyears="{{false}}"
+               chooseQuarters="{{false}}"
+               fontColorStyle="link"
+               fontWeight="normal"
+               fontSize="m"
+               attr:test_name="months_range"/>
+         </div>
+         <div class="PageBlock__componentWrap">
+            <Controls.dateRange:Selector
+               bind:startValue="_startValueQuarter"
+               bind:endValue="_endValueQuarter"
+               datePopupType="shortDatePicker"
+               chooseHalfyears="{{false}}"
+               chooseMonths="{{false}}"
+               fontWeight="normal"
+               fontSize="m"
+               fontColorStyle="unaccented"
+               attr:test_name="quarters_range"
+            />
+
+         </div>
+         <div class="PageBlock__componentWrap">
+            <Controls.dateRange:Selector
+               fontWeight="normal"
+               fontSize="m"
+               fontColorStyle="label"
+               datePopupType="shortDatePicker"
+               emptyCaption="не задан"
+               attr:test_name="range_not_value"
+               bind:startValue="_startValueEmptyCaption"
+               bind:endValue="_endValueEmptyCaption"
+            />
+         </div>
+         <div class="PageBlock__componentWrap">
+            <Controls.dateRange:Selector
+               bind:startValue="_startValue2"
+               bind:endValue="_endValue2"
+               datePopupType="shortDatePicker"
+               chooseHalfyears="{{false}}"
+               chooseMonths="{{false}}"
+               chooseQuarters="{{false}}"
+               attr:test_name="range_years_only"
+            />
+         </div>
+      </div>
+      <div class="PageBlock__componentWrap">
+         <Controls.dateRange:Selector
+            bind:startValue="_startValueYear"
+            bind:endValue="_endValueYear"
+            datePopupType="shortDatePicker"
+            readOnly="{{true}}"
+            attr:test_name="readonly"
+         />
+      </div>
+   </div>
+</div>

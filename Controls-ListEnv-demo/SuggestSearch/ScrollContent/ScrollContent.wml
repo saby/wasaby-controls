@@ -1,0 +1,17 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow demo-SearchSuggest__container controlsDemo__mb3">
+  <Controls.scroll:Container scrollbarVisible="{{true}}" topShadowVisibility="hidden" bottomShadowVisibility="hidden" attr:class="ControlsDemo-Suggest__scroll controlsDemo_fixedWidth500">
+     <div class="controlsDemo__wrapper__horizontal controlsDemo__cell ControlsDemo-Suggest_padding-left ControlsDemo-Suggest__content">
+        <div class="controls-text-label">Автодополнение с scroll:Container</div>
+        <Controls-ListEnv.SuggestSearch
+                attr:class="ControlsDemo-Suggest__simple controlsDemo__input"
+                bind:value="_suggestDownValue"
+                displayProperty="title"
+                searchParam="title"
+                autoDropDown="{{true}}"
+                navigation="{{_navigation}}"
+                source="{{_source}}">
+            <ws:suggestTemplate templateName="wml!Controls-ListEnv-demo/SuggestSearch/ScrollContent/resources/SuggestTemplate"/>
+        </Controls-ListEnv.SuggestSearch>
+     </div>
+  </Controls.scroll:Container>
+</div>

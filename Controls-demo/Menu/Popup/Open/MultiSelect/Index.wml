@@ -1,0 +1,5 @@
+<div class="controlsDemo__flexRow">
+   <Controls.buttons:Button name="button"
+                            caption="{{_caption}}"
+                            on:click="_openMenu()"/>
+</div>

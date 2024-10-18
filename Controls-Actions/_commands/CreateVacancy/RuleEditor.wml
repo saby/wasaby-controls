@@ -1,0 +1,19 @@
+<Controls.source:SelectedKey
+    selectedKey="{{ _options.propertyValue }}"
+    on:selectedKeyChanged="_onSelectedKeyChanged()">
+    <Controls.lookup:Input
+        multiLine="{{ false }}"
+        multiSelect="{{ false }}"
+        source="{{ _source }}"
+        searchParam="{{ _displayProperty }}"
+        keyProperty="{{ _keyProperty }}"
+        displayProperty="{{ _displayProperty }}"
+        placeholder="{[ Регламент ]}"
+        contrastBackground="{{ true }}"
+        horizontalPadding="null">
+        <ws:selectorTemplate
+            templateName="Regulation/list:Selector"
+            templateOptions="{{ _selectorOptions }}"
+        />
+    </Controls.lookup:Input>
+</Controls.source:SelectedKey>

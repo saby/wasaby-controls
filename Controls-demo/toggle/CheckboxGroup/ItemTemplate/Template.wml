@@ -1,0 +1,23 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell">
+            <Controls.CheckboxGroup:Control items="{{_items}}"
+                                           bind:selectedKeys="_selectedKeys">
+                <ws:itemTemplate>
+                    <ws:partial template='Controls/CheckboxGroup:defaultItemTemplate'>
+                        <ws:contentTemplate>
+                            <div>
+                                <div class="controls-fontsize-l controls-text-{{itemTemplate.selected ? 'warning' : 'readonly'}}">
+                                    {{itemTemplate.item.title}}
+                                </div>
+                                <p class="contract-radio__type__text">
+                                    {{itemTemplate.item.text}}
+                                </p>
+                            </div>
+                        </ws:contentTemplate>
+                    </ws:partial>
+                </ws:itemTemplate>
+            </Controls.CheckboxGroup:Control>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<ws:partial template="Controls/grid:ColumnTemplate" scope="{{ _options }}">
+    <ws:contentTemplate>
+        <div class="engine-demo__Widgets__image-container">
+            <img src="{{item.contents['sourceImage']}}" srcset="{{item.contents['sourceImage']}}" attr:class="engine-demo__Widgets__image controls-image_border-large"/>
+            <span class="demo-PersonInfo__name">{{item.contents.task}}</span>
+        </div>
+    </ws:contentTemplate>
+</ws:partial>

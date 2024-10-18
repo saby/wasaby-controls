@@ -1,0 +1,69 @@
+<div config="{{_options.__$config}}" data-component="{{_moduleName}}" class="{{_className}}"
+     on:close="closeHandler()" on:keydown="_keyDown()" on:keyup="_keyUp()"
+     on:mouseenter="_mouseenterHandler()" on:mouseleave="_mouseleaveHandler()">
+   <ws:if data="{{_options.type === 'base'}}">
+      <div name="compoundBlock" attr:class="controls-CompoundArea__container
+               {{ _options.isAdaptive ? 'controls-CompoundArea__container__adaptive' }}"></div>
+   </ws:if>
+   <ws:else data="{{_options.type === 'stack'}}">
+      <div class="controls-StackTemplate-shadow__container controls-StackTemplate-shadow_direction-right__container">
+         <div class="controls-StackTemplate-shadow controls-StackTemplate-shadow_direction-right">
+            <div class="controls-StackTemplate-shadow__content"></div>
+         </div>
+      </div>
+      <ws:if data="{{_hasRightPanel}}">
+         <Controls.popupTemplate:Stack
+                 on:close="_close()"
+                 closeButtonVisible="{{!_options.hideCross}}"
+                 isCompatiblePopup="{{true}}"
+                 maximizeButtonVisibility="{{_options.canMaximize}}"
+                 closeButtonViewMode="{{_options.closeButtonStyle}}"
+                 on:maximized="_changeMaximizedMode()">
+            <ws:bodyContentTemplate>
+               <div name="compoundBlock" attr:class="controls-CompoundArea__container
+               {{ _options.isAdaptive ? 'controls-CompoundArea__container__adaptive' }}"></div>
+            </ws:bodyContentTemplate>
+            <ws:toolbarContentTemplate>
+               <div name="toolbarBlock" attr:class="controls-CompoundArea_toolbar{{ _options.isAdaptive ? '_adaptive'}}"></div>
+            </ws:toolbarContentTemplate>
+            <ws:tabindex><ws:Number>0</ws:Number></ws:tabindex>
+         </Controls.popupTemplate:Stack>
+      </ws:if>
+      <ws:else>
+         <Controls.popupTemplate:Stack
+                 on:close="_close()"
+                 closeButtonVisible="{{!_options.hideCross}}"
+                 isCompatiblePopup="{{true}}"
+                 maximizeButtonVisibility="{{_options.canMaximize}}"
+                 closeButtonViewMode="{{_options.closeButtonStyle}}"
+                 on:maximized="_changeMaximizedMode()">
+            <ws:bodyContentTemplate>
+               <div name="compoundBlock" attr:class="controls-CompoundArea__container
+               {{ _options.isAdaptive ? 'controls-CompoundArea__container__adaptive' }}"></div>
+            </ws:bodyContentTemplate>
+            <ws:tabindex><ws:Number>0</ws:Number></ws:tabindex>
+         </Controls.popupTemplate:Stack>
+      </ws:else>
+   </ws:else>
+   <ws:else>
+      <Controls.popupTemplate:Dialog
+         name="DialogTemplate"
+         on:close="_close()"
+         allowAdaptive="{{ _options.allowAdaptive }}"
+         attr:class="controls-CompoundArea__dialog"
+         closeButtonVisible="{{!_options.hideCross}}"
+         closeButtonTransparent="{{_options.closeButtonTransparent}}"
+         closeButtonViewMode="{{_options.closeButtonViewMode}}"
+         draggable="{{_options.draggable}}"
+         maximize="{{_options.maximize}}">
+         <ws:bodyContentTemplate>
+               <div name="compoundBlock" attr:class="controls-CompoundArea__container {{_getDialogClasses()}}
+               {{ _options.isAdaptive ? 'controls-CompoundArea__container__adaptive' }}"></div>
+         </ws:bodyContentTemplate>
+         <ws:tabindex><ws:Number>0</ws:Number></ws:tabindex>
+      </Controls.popupTemplate:Dialog>
+   </ws:else>
+   <Controls.event:Listener event="controlResize" on:controlResize="_resizeHandler()" name="listener">
+      <ws:tabindex><ws:Number>0</ws:Number></ws:tabindex>
+   </Controls.event:Listener>
+</div>

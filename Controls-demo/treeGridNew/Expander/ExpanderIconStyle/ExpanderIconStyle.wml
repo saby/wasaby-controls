@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper">
+    <Controls.treeGrid:View
+            storeId="ExpanderIconStyle"
+            columns="{{ _columns }}"
+            expanderIconStyle="unaccented"
+            expanderIconSize="2xs"/>
+</div>

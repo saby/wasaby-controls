@@ -1,0 +1,44 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             borderStyle="secondary"
+                             bind:value="_secondaryValue"
+                             placeholder="{{_placeholder}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             borderStyle="success"
+                             bind:value="_successValue"
+                             placeholder="{{_placeholder}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             borderStyle="warning"
+                             bind:value="_warningValue"
+                             placeholder="{{_placeholder}}"/>
+    </div>
+
+    <div class="controls-background-unaccented-same controls-padding-m">
+        <div class="controlsDemo__cell">
+            <Controls.input:Text attr:class="controlsDemo__input"
+                                 borderStyle="secondary"
+                                 contrastBackground="{{true}}"
+                                 bind:value="_secondaryContrastValue"
+                                 placeholder="{{_placeholder}}"/>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.input:Text attr:class="controlsDemo__input"
+                                 borderStyle="success"
+                                 contrastBackground="{{true}}"
+                                 bind:value="_successContrastValue"
+                                 placeholder="{{_placeholder}}"/>
+        </div>
+        <div>
+            <Controls.input:Text attr:class="controlsDemo__input"
+                                 borderStyle="warning"
+                                 contrastBackground="{{true}}"
+                                 bind:value="_warningContrastValue"
+                                 placeholder="{{_placeholder}}"/>
+        </div>
+    </div>
+</div>
