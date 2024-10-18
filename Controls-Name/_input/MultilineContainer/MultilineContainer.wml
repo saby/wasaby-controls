@@ -1,0 +1,32 @@
+<ws:template name="ContentTemplate">
+    <ws:partial
+            template="{{contentTemplate}}"
+            scope="{{_options}}"
+            firstName="{{_options.firstName}}"
+            middleName="{{_options.middleName}}"
+            lastName="{{_options.lastName}}"
+            rightFieldTemplate="{{rightFieldTemplate}}"
+            onValueChanged="{{undefined}}"
+            on:valueChanged="_onValueChanged()"
+            on:firstNameChanged="_valueChangedHandler('firstName')"
+            on:middleNameChanged="_valueChangedHandler('middleName')"
+            on:lastNameChanged="_valueChangedHandler('lastName')"
+            on:dataReceived="_onDataReceived()"
+    />
+</ws:template>
+<div>
+    <ws:if data="{{_options.firstLineTemplate}}">
+        <ws:partial
+                template="ContentTemplate"
+                contentTemplate="{{_options.firstLineTemplate}}"
+                rightFieldTemplate="{{_options.rightFieldTemplate}}"
+                hideReorderButton="{{true}}"
+        />
+    </ws:if>
+    <ws:if data="{{_options.secondLineTemplate}}">
+        <ws:partial
+                template="ContentTemplate"
+                contentTemplate="{{_options.secondLineTemplate}}"
+        />
+    </ws:if>
+</div>

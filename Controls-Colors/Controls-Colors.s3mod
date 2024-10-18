@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <ui_module name="Controls-Colors"
+               kaizen_zone="8af9d112-b835-49ac-bc1c-8b6fdcf5b753"
+               id="8eb2d1c0-c57a-4bb1-b41e-67ea30eb288d"
+               package="Wasaby"
+               required="1"
+               version="1.00"
+    >
+    <depends>
+        <module id="f6fdf353-3ab3-4dbb-8671-01c2b418bf0a" name="Controls"/>
+        <module id="af50caf5-f84b-4b81-a19c-6f6618372dbd" name="Controls-default-theme"/>
+        <module id="4f09610b-d8c0-4e75-99b7-e733211c98df" name="Hint"/>
+        <module id="6a8124d7-7a1b-4d16-b3ad-c0858e93b98e" name="ExtControls"/>
+        <module id="38bd326e-2e0d-4dc8-ad7b-129c29e388a6" name="ExtControls-default-theme"/>
+    </depends>
+    <load_after/>
+    <parameters/>
+    <resources/>
+    <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

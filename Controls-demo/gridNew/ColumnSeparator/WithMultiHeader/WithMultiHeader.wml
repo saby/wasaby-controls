@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper" style="max-width: 620px">
+    <div style="margin-bottom: 20px;">
+        <Controls.checkbox:Checkbox bind:value="_rowSeparator" caption="Show row separator"/>
+        <Controls.checkbox:Checkbox bind:value="_columnSeparator" caption="Show column separator"/>
+    </div>
+    <Controls.grid:View
+            storeId="ColumnSeparatorWithMultiHeader1"
+            header="{{_header}}"
+            columns="{{_columns}}"
+            rowSeparatorSize="{{ _rowSeparator ? 's' }}"
+            columnSeparatorSize="{{ _columnSeparator ? 's' }}">
+    </Controls.grid:View>
+</div>

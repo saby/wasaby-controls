@@ -1,0 +1,82 @@
+<div class="controlsDemo__wrapper__padding-left controlsDemo_fixedWidth800 controlsDemo__height500">
+  <div class="controlsDemo_ColumnsView_itemTemplate-title controlsDemo__cell">Controls.tabs:AccordionTabs</div>
+  <Controls-TabsLayout.colored:View
+      class="controlsDemo__height500"
+      name="coloredTabs"
+      bind:selectedKey="_selectedKey">
+    <ws:items>
+      <ws:Array>
+        <ws:Object key="1" backgroundStyle="secondary" title="Вторичный" >
+          <ws:headTemplate>
+            <div class="controlsDemo_ColoredTabs-header
+                        {{(_selectedKey !== null) ? ' controlsDemo_ColoredTabs__fixed-tab-header' : ''}}">
+              <div attr:style="min-width: {{headTemplate.titleWidth}}px"
+                   class="controlsDemo_ColoredTabs-title">{{ headTemplate.title }}</div>
+              <div class="controlsDemo_ColoredTabs-counter
+                        {{(_selectedKey !== null) ? ' controlsDemo_ColoredTabs__fixed-tab-counter' : ''}}">123</div>
+            </div>
+          </ws:headTemplate>
+          <ws:itemTemplate>
+            <div class="coloredDemo-item">Контент вкладки "Вторичный"</div>
+          </ws:itemTemplate>
+        </ws:Object>
+        <ws:Object key="2" backgroundStyle="success" title="Выполнено">
+          <ws:headTemplate>
+            <div class="controlsDemo_ColoredTabs-header
+                        {{(_selectedKey !== null) ? ' controlsDemo_ColoredTabs__fixed-tab-header' : ''}}">
+              <div attr:style="min-width: {{headTemplate.titleWidth}}px"
+                   class="controlsDemo_ColoredTabs-title">{{ headTemplate.title }}</div>
+              <div class="controlsDemo_ColoredTabs-counter
+                        {{(_selectedKey !== null) ? ' controlsDemo_ColoredTabs__fixed-tab-counter' : ''}}">8</div>
+            </div>
+          </ws:headTemplate>
+          <ws:itemTemplate>
+            <div class="coloredDemo-item">Контент вкладки "Выполнено"</div>
+          </ws:itemTemplate>
+        </ws:Object>
+        <ws:Object key="3" backgroundStyle="warning" title="Предупреждение">
+          <ws:headTemplate>
+            <div class="controlsDemo_ColoredTabs-header
+                        {{(_selectedKey !== null) ? ' controlsDemo_ColoredTabs__fixed-tab-header' : ''}}">
+              <div attr:style="min-width: {{headTemplate.titleWidth}}px"
+                   class="controlsDemo_ColoredTabs-title">{{ headTemplate.title }}</div>
+              <div class="controlsDemo_ColoredTabs-counter
+                        {{(_selectedKey !== null) ? ' controlsDemo_ColoredTabs__fixed-tab-counter' : ''}}">423</div>
+            </div>
+          </ws:headTemplate>
+          <ws:itemTemplate>
+            <div class="coloredDemo-item">Контент вкладки "Предупреждение"</div>
+          </ws:itemTemplate>
+        </ws:Object>
+        <ws:Object key="4" backgroundStyle="danger" title="Опасность">
+          <ws:headTemplate>
+            <div class="controlsDemo_ColoredTabs-header
+                        {{(_selectedKey !== null) ? ' controlsDemo_ColoredTabs__fixed-tab-header' : ''}}">
+              <div attr:style="min-width: {{headTemplate.titleWidth}}px"
+                   class="controlsDemo_ColoredTabs-title">{{ headTemplate.title }}</div>
+              <div class="controlsDemo_ColoredTabs-counter
+                        {{(_selectedKey !== null) ? ' controlsDemo_ColoredTabs__fixed-tab-counter' : ''}}">420</div>
+            </div>
+          </ws:headTemplate>
+          <ws:itemTemplate>
+            <div class="coloredDemo-item">Контент вкладки "Опасность"</div>
+          </ws:itemTemplate>
+        </ws:Object>
+        <ws:Object key="5" backgroundStyle="default" title="Стандатрный">
+          <ws:headTemplate>
+            <div class="controlsDemo_ColoredTabs-header
+                        {{(_selectedKey !== null) ? ' controlsDemo_ColoredTabs__fixed-tab-header' : ''}}">
+              <div attr:style="min-width: {{headTemplate.titleWidth}}px"
+                   class="controlsDemo_ColoredTabs-title">{{ headTemplate.title }}</div>
+              <div class="controlsDemo_ColoredTabs-counter
+                        {{(_selectedKey !== null) ? ' controlsDemo_ColoredTabs__fixed-tab-counter' : ''}}">423</div>
+            </div>
+          </ws:headTemplate>
+          <ws:itemTemplate>
+            <div class="coloredDemo-item">Контент вкладки "Стендатрный"</div>
+          </ws:itemTemplate>
+        </ws:Object>
+      </ws:Array>
+    </ws:items>
+  </Controls-TabsLayout.colored:View>
+</div>

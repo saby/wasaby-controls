@@ -1,0 +1,36 @@
+<div class="controlsDemo__wrapper">
+    <Controls.browser:Browser source="{{_viewSource}}"
+                              keyProperty="id"
+                              bind:filter="_filter"
+                              bind:root="_root"
+                              on:filterChanged="_filterChanged()"
+                              parentProperty="parent"
+                              searchParam="title"
+                              minSearchLength="{{3}}"
+                              startingWith="root">
+        <div class="ws-fragment">
+            <Controls.searchDeprecated:InputContainer>
+                <Controls.search:Input/>
+            </Controls.searchDeprecated:InputContainer>
+            <Controls.listDeprecate:Remover name="remover"/>
+            <Controls.listDataOld:ListContainer>
+                <Controls.explorer:View
+                        source="{{_viewSource}}"
+                        bind:root="_root"
+                        bind:expandedItems="_expandedItems"
+                        attr:class="demo-Explorer ControlsDemo-Explorer"
+                        keyProperty="id"
+                        itemActions="{{_itemActions}}"
+                        displayProperty="title"
+                        parentProperty="parent"
+                        nodeProperty="parent@"
+                        columns="{{_columns}}"
+                        searchStartingWith="root"
+                        deepReload="{{ true }}"
+                        stickyHeader="{{false}}">
+                </Controls.explorer:View>
+            </Controls.listDataOld:ListContainer>
+        </div>
+    </Controls.browser:Browser>
+</div>
+

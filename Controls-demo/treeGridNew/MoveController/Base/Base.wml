@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper demo-Mover controlsDemo_fixedWidth300">
+    <Controls.treeGrid:View
+            storeId="MoveControllerBase"
+            name="treeGrid"
+            itemsReadyCallback="{{_itemsReadyCallback}}"
+            itemActions="{{_itemActions}}"
+            itemActionVisibilityCallback="{{_itemActionVisibilityCallback}}"
+            columns="{{_columns}}"/>
+</div>

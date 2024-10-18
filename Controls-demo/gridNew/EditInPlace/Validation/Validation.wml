@@ -1,0 +1,16 @@
+<div class="controlsDemo__cell">
+  <div class="controlsDemo__inline-flex" style="max-width: 356px">
+    <Controls.listDataOld:ListContainer>
+      <Controls.grid:View
+          storeId="EditInPlaceValidation"
+          itemActionsPosition="outside"
+          header="{{_header}}"
+          itemActions="{{_itemActions}}"
+          columns="{{_columns}}">
+        <ws:editingConfig>
+          <ws:Object editOnClick="{{true}}" autoAdd="{{true}}" toolbarVisibility="{{true}}"/>
+        </ws:editingConfig>
+      </Controls.grid:View>
+    </Controls.listDataOld:ListContainer>
+  </div>
+</div>

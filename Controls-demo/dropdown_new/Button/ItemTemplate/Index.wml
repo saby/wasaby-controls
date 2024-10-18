@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+   <div class="controlsDemo__mr4">
+      <div class="controls-text-label">Выпадающий список с itemTemplate tile</div>
+      <Controls.dropdown:Button caption="Choose"
+                                keyProperty="id"
+                                displayProperty="title"
+                                itemTemplateProperty="template"
+                                iconSize="s"
+                                source="{{_source}}"
+                                icon="{{_selectedIcon}}"
+                                on:menuItemActivate="_itemChoose()">
+      </Controls.dropdown:Button>
+   </div>
+</div>

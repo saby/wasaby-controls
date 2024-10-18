@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center controlsDemo_fixedWidth500"
+         data-qa="controlsDemo_capture">
+        <Controls.Chips:Control bind:selectedKeys="_selectedKeys"
+                               items="{{_items}}"
+                               inlineHeight="2xl"
+        />
+    </div>
+</div>

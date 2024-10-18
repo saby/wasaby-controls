@@ -1,0 +1,58 @@
+[{
+  "include": [
+    "Controls/Application",
+    "Controls/Application/*",
+    "css!Controls/application",
+    "css!Controls/CommonClasses"
+  ],
+  "exclude": [
+    "Controls/Application/TagTemplate/*"
+  ],
+  "output": "controls-application.package.js"
+}, {
+  "include": [
+    "Controls/Container/Async",
+    "Controls/Container/Async/*"
+  ],
+  "output": "controls-container-async.package.js"
+}, {
+  "include": [
+    "Controls/Utils/*"
+  ],
+  "exclude": [
+    "Controls/Utils/FontWidthConstants/*",
+    "Controls/Utils/FontConstantsLoader",
+    "Controls/Utils/GridLoader",
+    "Controls/Utils/getFontWidthSync",
+    "Controls/Utils/TouchKeyboardHelper",
+    "Controls/Utils/RecordSynchronizer",
+    "Controls/Utils/GridIsEqualUtil",
+    "Controls/Utils/keyboardLayoutRevert"
+  ],
+  "output": "controls-utils.package.js"
+}, {
+  "include": [
+    "Controls/context",
+    "Controls/design",
+    "Controls/dragnDrop",
+    "Controls/popup",
+    "Controls/Pending",
+    "Controls/popupConfirmation",
+    "Controls/event",
+    "Controls/error",
+    "Controls/LoadingIndicator",
+    "Controls/scroll",
+    "Controls/stickyBlock",
+    "Controls/buttons",
+    "Controls/sizeUtils",
+    "Controls/dataFactory",
+    "Controls/dataSource",
+    "Controls/themes"
+  ],
+  "includePackages": [
+    "Controls/controls-application.package.js",
+    "Controls/controls-container-async.package.js",
+    "Controls/controls-utils.package.js"
+  ],
+  "output": "controls-superbundle.package.js"
+}]

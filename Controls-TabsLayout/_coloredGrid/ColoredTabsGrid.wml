@@ -1,0 +1,11 @@
+<Controls-TabsLayout.colored:View
+    attr:class="colored-tabs-grid controls_ColoredTabs_theme-{{_options.theme}}"
+    name="ColoredTabs"
+    items="{{ _colorItems }}"
+    backgroundFill="{{ _options.backgroundFill }}"
+    headerContentTemplate="{{ _options.headerContentTemplate }}"
+    bind:selectedKey="_tabSelectedKey"
+    on:selectedKeysTabChanged="_selectedKeysTabChangedHandler()"
+    on:excludedKeysTabChanged="_excludedKeysTabChangedHandler()"
+    on:listSelectedKeysCountTabChanged="_listSelectedKeysCountTabChangedHandler()"
+    on:selectedKeyChanged="_tabSelectedKeyChangedHandler()"/>

@@ -1,0 +1,11 @@
+<div class="controls-Demo__wide-propertyGrid">
+    <Controls.propertyGrid:PropertyGrid
+            bind:editingObject="_editingObject"
+            typeDescription="{{_typeDescription}}"
+            nodeProperty="@parent"
+            parentProperty="parent"
+            levelPadding="{{true}}"
+            captionPosition="none">
+        <ws:captionColumnOptions width="50%"/>
+    </Controls.propertyGrid:PropertyGrid>
+</div>

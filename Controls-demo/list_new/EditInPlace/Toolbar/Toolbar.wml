@@ -1,0 +1,29 @@
+<div class="controlsDemo__wrapper">
+    <Controls.list:View
+            name="list"
+            storeId="EditInPlaceToolbar"
+            on:actionClick="_onActionClick()"
+    >
+        <ws:editingConfig editOnClick="{{true}}" toolbarVisibility="{{true}}"/>
+        <ws:itemTemplate>
+            <ws:partial template="Controls/list:ItemTemplate">
+                <ws:contentTemplate>
+                    <ws:partial template="Controls/list:EditingTemplate" value="{{ itemTemplate.item.contents.title }}">
+                        <ws:editorTemplate>
+                            <Controls.validate:InputContainer name="InputValidate">
+                                <ws:validators>
+                                    <ws:Function value="{{ itemTemplate.item.contents.title }}">Controls/validate:isRequired</ws:Function>
+                                </ws:validators>
+                                <ws:content>
+                                    <Controls.input:Text trim="{{true}}"
+                                                         contrastBackground="{{true}}"
+                                                         bind:value="itemTemplate.item.contents.title"/>
+                                </ws:content>
+                            </Controls.validate:InputContainer>
+                        </ws:editorTemplate>
+                    </ws:partial>
+                </ws:contentTemplate>
+            </ws:partial>
+        </ws:itemTemplate>
+    </Controls.list:View>
+</div>

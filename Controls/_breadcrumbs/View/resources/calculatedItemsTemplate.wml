@@ -1,0 +1,37 @@
+<div class="controls-BreadCrumbsView__itemsTemplate">
+    <div class="controls-BreadCrumbsView__items">
+
+       <ws:template name="templatePart">
+          <ws:partial
+             attr:class="{{highlightItemsClass[itemData.item.getId()]}}"
+             template="{{itemTemplate}}"
+             itemData="{{itemData}}"
+             fontSize="{{fontSize}}"
+             isReverse="{{reverseArrows}}"
+             fontColorStyle="{{fontColorStyle}}"
+             displayProperty="{{ displayProperty }}"
+          />
+       </ws:template>
+
+       <ws:for data="index, itemData in items">
+            <ws:if data="{{itemData.isDots}}">
+                <ws:partial template="templatePart"
+                            itemData="{{itemData}}"
+                            on:mouseEnter="_onItemMouseEnter(itemData)"
+                            on:mouseLeave="_onItemMouseLive(itemData)"
+                            on:mousedown="_dotsClick()"
+                            on:click="_clickHandler()"
+                />
+            </ws:if>
+            <ws:else>
+                <ws:partial template="templatePart"
+                            itemData="{{itemData}}"
+                            attr:class="{{index === 0 ? 'controls-BreadCrumbsView__crumb__left_edge'}}"
+                            on:click="_onItemClick(itemData)"
+                            on:mouseEnter="_onItemMouseEnter(itemData)"
+                            on:mouseLeave="_onItemMouseLive(itemData)"
+                />
+            </ws:else>
+        </ws:for>
+    </div>
+</div>

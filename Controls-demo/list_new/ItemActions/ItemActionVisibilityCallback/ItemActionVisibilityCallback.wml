@@ -1,0 +1,6 @@
+<div class="controlsDemo__wrapper">
+    <Controls.list:View
+            storeId="ItemActionVisibilityCallback"
+            itemActions="{{_itemActions}}"
+            itemActionVisibilityCallback="{{_itemActionVisibilityCallback}}"/>
+</div>

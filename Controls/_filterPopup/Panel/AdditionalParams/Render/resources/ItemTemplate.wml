@@ -1,0 +1,18 @@
+<ws:if data="{{(item[_options.itemTemplateProperty] || _options.itemTemplate.templateName).charAt}}">
+   <Controls.Container.Async
+      templateName="{{item[_options.itemTemplateProperty] || _options.itemTemplate.templateName}}">
+      <ws:templateOptions
+         item="{{item}}"/>
+      <ws:content>
+         <ws:partial template="{{content.resolvedTemplate}}"
+                     item="{{content.item}}"
+                     templateOptions="{{_options.itemTemplate.templateOptions}}"/>
+      </ws:content>
+   </Controls.Container.Async>
+</ws:if>
+<ws:else>
+   <ws:partial template="{{item[_options.itemTemplateProperty] || _options.itemTemplate.templateName}}"
+               item="{{item}}"
+               templateOptions="{{_options.itemTemplate.templateOptions}}"/>
+</ws:else>
+

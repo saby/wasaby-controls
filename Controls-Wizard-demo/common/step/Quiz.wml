@@ -1,0 +1,8 @@
+<div>
+    <p>Сколько будет 2 + 2?</p>
+    <div>
+        <Controls.buttons:Button caption="3" on:click="_notifyIncorrect()"/>{{' '}}
+        <Controls.buttons:Button caption="4" on:click="_notifyCorrect()"/>{{' '}}
+        <Controls.buttons:Button caption="5" on:click="_notifyIncorrect()"/>
+    </div>
+</div>

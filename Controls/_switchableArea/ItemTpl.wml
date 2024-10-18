@@ -1,0 +1,11 @@
+<Controls.event:Register name="resizeDetect" register="controlResize">
+    <ws:partial template="{{ _options.itemTemplate }}"
+                type="{{ _options.type }}"
+                selected="{{_options.selectedKey === _options.currentItemKey}}"
+                dataOptions="{{_options.dataOptions}}"
+                scope="{{_options.templateOptions}}"
+                on:registerKeyHook="_registerKeyHook()"
+                on:unregisterKeyHook="_unregisterKeyHook()">
+        <ws:templateOptions type="{{ _options.type }}" selected="{{_options.selectedKey === _options.currentItemKey}}"/>
+    </ws:partial>
+</Controls.event:Register>

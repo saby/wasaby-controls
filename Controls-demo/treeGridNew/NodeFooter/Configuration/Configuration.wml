@@ -1,0 +1,42 @@
+<div class="controlsDemo__wrapper">
+
+    <div class="controlsDemo__cell controlsDemo__flexRow controlsDemo__mb2">
+        <div class="controlsDemo__cell controlsDemo__mr2">
+            <Router.router:Reference attr:class="controls-text-label"
+                                     state="app/:app"
+                                     app="{{ 'Controls-demo/treeGridNew/NodeFooter/Configuration/DefaultFooterColspaned/Index' }}">
+                <a href="{{content.href}}">Подвал не определен</a>
+            </Router.router:Reference>
+            <Controls-demo.treeGridNew.NodeFooter.Configuration.DefaultFooterColspaned.Index/>
+        </div>
+
+        <div class="controlsDemo__cell">
+            <Router.router:Reference attr:class="controls-text-label"
+                                     state="app/:app"
+                                     app="{{ 'Controls-demo/treeGridNew/NodeFooter/Configuration/DefaultFooter/Index' }}">
+                <a href="{{content.href}}">Кастомный подвал не определен, colspan false</a>
+            </Router.router:Reference>
+            <Controls-demo.treeGridNew.NodeFooter.Configuration.DefaultFooter.Index/>
+        </div>
+    </div>
+
+    <div class="controlsDemo__cell controlsDemo__flexRow controlsDemo__mb2">
+        <div class="controlsDemo__cell controlsDemo__mr2">
+            <Router.router:Reference attr:class="controls-text-label"
+                                     state="app/:app"
+                                     app="{{ 'Controls-demo/treeGridNew/NodeFooter/Configuration/CustomFooterColspaned/Index' }}">
+                <a href="{{content.href}}">Задан прикладной шаблон подвала узла, с colspan</a>
+            </Router.router:Reference>
+            <Controls-demo.treeGridNew.NodeFooter.Configuration.CustomFooterColspaned.Index/>
+        </div>
+
+        <div class="controlsDemo__cell controlsDemo__mr2">
+            <Router.router:Reference attr:class="controls-text-label"
+                                     state="app/:app"
+                                     app="{{ 'Controls-demo/treeGridNew/NodeFooter/Configuration/CustomFooter/Index' }}">
+                <a href="{{content.href}}">Задан прикладной шаблон подвала узла, без colspan</a>
+            </Router.router:Reference>
+            <Controls-demo.treeGridNew.NodeFooter.Configuration.CustomFooter.Index/>
+        </div>
+    </div>
+</div>

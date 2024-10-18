@@ -1,0 +1,167 @@
+<ws:template name="levelPadding">
+    <ws:if data="{{ levelPadding && collectionItem.getLevel() > 1 }}">
+        <ws:for data="i in collectionItem.getLevel() - 1">
+            <div class="tw-flex-shrink-0 tw-inline-block controls-TreeGrid__row-levelPadding_size_default"></div>
+        </ws:for>
+    </ws:if>
+</ws:template>
+
+<ws:template name="defaultCaptionTemplate">
+   <ws:if data="{{collectionItem.isEditing()}}">
+     <Controls.Container.Async templateName="Controls/validate:InputContainer">
+       <ws:partial template="{{content.resolvedTemplate}}">
+         <ws:validators>
+           <ws:Function value="{{ item.caption }}">Controls/validate:isRequired</ws:Function>
+           <ws:Function
+               item="{{item}}"
+               collectionItem="{{collectionItem}}"
+               validators="{{collectionItem.getCaptionValidators()}}"
+               value="{{item.caption}}"
+           >
+             Controls/propertyGrid:PropertyGrid.prototype.startValidation
+           </ws:Function>
+         </ws:validators>
+         <ws:content>
+           <Controls.input:Text contrastBackground="{{ true }}" horizontalPadding="null"
+                                attr:class="ws-flex-grow-1"
+                                bind:value="item.caption"/>
+         </ws:content>
+       </ws:partial>
+     </Controls.Container.Async>
+   </ws:if>
+   <ws:else>
+      <ws:partial template="wml!Controls/_propertyGrid/Render/resources/captionTemplate"
+                  item="{{item}}"
+                  collectionItem="{{collectionItem}}"
+                  caption="{{item.editorOptions.caption || item.caption}}"
+                  fontColorStyle="{{item.captionOptions && item.captionOptions.fontColorStyle || captionFontColorStyle}}"
+                  fontSize="{{item.captionOptions && item.captionOptions.fontSize || captionFontSize}}"
+                  fontWeight="{{item.captionOptions && item.captionOptions.fontWeight || captionFontWeight}}"
+                  scope="{{item.captionOptions}}"
+                  attr:data-qa="controls-PropertyGrid__editor-caption controls-PropertyGrid__editor-caption-{{item.name}}"
+                  attr:class="controls-PropertyGrid__editor-caption
+                              controls-PropertyGrid__gridLayout_editor-caption_ellipsis"
+                  attr:tabindex="-1"
+      />
+   </ws:else>
+</ws:template>
+
+<ws:template name="checkbox">
+    <ws:if data="{{collectionItem.getMultiSelectTemplate().charAt}}">
+        <Controls.Container.Async templateName="{{collectionItem.getMultiSelectTemplate()}}">
+            <ws:partial template="{{content.resolvedTemplate}}" item="{{collectionItem}}"/>
+        </Controls.Container.Async>
+    </ws:if>
+    <ws:else>
+        <ws:partial template="{{collectionItem.getMultiSelectTemplate()}}" item="{{collectionItem}}"/>
+    </ws:else>
+</ws:template>
+
+<ws:if data="{{_options.colspan || _options.colspanTemplate}}">
+   <ws:partial template="{{_options.colspanTemplate}}"
+               attr:class="{{collectionItem.isHovered() && highlightOnHover ? 'controls-PropertyGrid__cell_highlightOnHover'}}"
+               attr:style="{{getEditorStyles(collectionItem, collectionItem.getCaptionPosition(), true)}}"
+               item="{{_options.item}}"
+               collectionItem="{{_options.collectionItem}}"/>
+</ws:if>
+<ws:else>
+    <ws:if data="{{ multiSelectVisibility && multiSelectVisibility !== 'hidden' && multiSelectPosition !== 'custom'}}">
+        <ws:if data="{{collectionItem.getCaptionPosition() === 'top'}}">
+            <div style="{{getCheckboxStyles(collectionItem,  collectionItem.getCaptionPosition(), true)}}"
+                 class="{{collectionItem.isHovered() && highlightOnHover ? 'controls-PropertyGrid__cell_highlightOnHover'}}
+                                {{collectionItem.isEditing() ? 'controls-PropertyGrid__cell_editing'}}"></div>
+        </ws:if>
+        <div style="{{getCheckboxStyles(collectionItem,  collectionItem.getCaptionPosition())}}"
+             class="controls-PropertyGrid__cell_checkbox
+                            {{collectionItem.isHovered() && highlightOnHover ? 'controls-PropertyGrid__cell_highlightOnHover'}}
+                            {{collectionItem.isEditing() ? 'controls-PropertyGrid__cell_editing'}}">
+            <ws:partial template="checkbox" collectionItem="{{collectionItem}}"/>
+        </div>
+    </ws:if>
+    <ws:if data="{{!item.editorOptions.jumpingLabel  && !jumpingLabel && (collectionItem.isEditing() || item.caption || item.captionTemplate)}}">
+        <div class="controls-PropertyGrid__gridLayout_editor-caption
+                    {{collectionItem.isDragTargetNode() ? 'controls-PropertyGrid__dragTargetNode'}}
+                    {{collectionItem.isDragged() ? 'controls-PropertyGrid__item_dragging'}}
+                    {{collectionItem.isHovered() && highlightOnHover ? 'controls-PropertyGrid__cell_highlightOnHover'}}
+                    {{collectionItem.isEditing() ? 'controls-PropertyGrid__cell_editing controls-PropertyGrid__caption_cell_editing'}}
+                    {{collectionItem.getItemPaddingClasses(1, collectionItem.getCaptionPosition())}}
+                    js-controls-ListView__editingTarget"
+             data-qa="controls-PropertyGrid__editor-caption"
+             style="{{getCaptionStyles(collectionItem, collectionItem.getCaptionPosition(), !collectionItem.getEditorTemplateName())}}">
+            <ws:partial template="levelPadding"/>
+            <ws:if data="{{collectionItem.getCaptionPosition() !== 'none' || collectionItem.getCaptionPosition() == 'none' && !collectionItem.getEditorTemplateName()}}">
+                <ws:if data="{{item.captionTemplate}}">
+                    <ws:partial template="{{item.captionTemplate}}" item="{{item}}">
+                        <ws:defaultCaptionTemplate>
+                            <ws:partial template="defaultCaptionTemplate" item="{{item}}"/>
+                        </ws:defaultCaptionTemplate>
+                        <ws:multiSelectTemplate>
+                            <ws:partial template="checkbox" collectionItem="{{collectionItem}}"/>
+                        </ws:multiSelectTemplate>
+                    </ws:partial>
+                </ws:if>
+                <ws:else>
+                    <ws:partial template="defaultCaptionTemplate" item="{{ item }}"/>
+                </ws:else>
+            </ws:if>
+            <ws:if data="{{!collectionItem.getEditorTemplateName() && collectionItem.shouldDisplayItemActions()}}">
+                <ws:if data="{{ !collectionItem.isSwiped() }}">
+                    <ws:partial
+                            attr:class="{{collectionItem.isHovered() || collectionItem.isEditing() ? 'controls-PropertyGrid__gridLayout_showActions'}}"
+                            template="{{ itemActionsTemplate }}" />
+                </ws:if>
+            </ws:if>
+            <ws:if data="{{!collectionItem.getEditorTemplateName() || collectionItem.getCaptionPosition() === 'top'}}">
+                <ws:if data="{{afterEditorTemplate}}">
+                    <ws:partial template="{{afterEditorTemplate}}">
+                        <ws:multiSelectTemplate>
+                            <ws:partial template="checkbox" collectionItem="{{collectionItem}}"/>
+                        </ws:multiSelectTemplate>
+                    </ws:partial>
+                </ws:if>
+            </ws:if>
+        </div>
+    </ws:if>
+    <ws:if data="{{collectionItem.getEditorTemplateName()}}">
+        <div class="controls-PropertyGrid__gridLayout_editor
+                   {{collectionItem.isDragTargetNode() ? 'controls-PropertyGrid__dragTargetNode'}}
+                   {{collectionItem.isDragged() ? 'controls-PropertyGrid__item_dragging'}}
+                   {{collectionItem.isHovered() && highlightOnHover ? 'controls-PropertyGrid__cell_highlightOnHover'}}
+                   {{collectionItem.isEditing() ? 'controls-PropertyGrid__cell_editing'}}
+                   {{collectionItem.getItemPaddingClasses(2, collectionItem.getCaptionPosition())}}
+                   js-controls-ListView__editingTarget"
+             data-qa="controls-PropertyGrid__editor"
+             style="{{getEditorStyles(collectionItem, collectionItem.getCaptionPosition(), !(item.caption || collectionItem.isEditing()))}}">
+            <ws:if data="{{!(!item.editorOptions.jumpingLabel  && !jumpingLabel  && item.caption) || (item.caption && (collectionItem.getCaptionPosition() === 'top' || collectionItem.getCaptionPosition() === 'none'))}}">
+                <ws:partial template="levelPadding"/>
+            </ws:if>
+            <ws:if data="{{collectionItem.isEditing()}}">
+                <Controls.input:Text contrastBackground="{{true}}" horizontalPadding="null"
+                                     attr:class="ws-flex-grow-1"
+                                     bind:value="item.editingValue" />
+            </ws:if>
+            <ws:else>
+                <ws:partial template="wml!Controls/_propertyGrid/Render/resources/editorTemplate"
+                            caption="{{item.editorOptions.caption || item.caption}}"
+                            jumpingLabel="{{jumpingLabel || item.editorOptions.jumpingLabel}}"
+                            attr:class="controls-PropertyGrid__editor_control
+                                    {{item.editorOptions.caption || item.caption ? 'controls-PropertyGrid__editor_control_stretch' }}"
+                            scope="{{_options}}"/>
+            </ws:else>
+            <ws:if data="{{ collectionItem.shouldDisplayItemActions() }}">
+                <ws:if data="{{ !collectionItem.isSwiped() }}">
+                    <ws:partial
+                            attr:class="{{collectionItem.isHovered() || collectionItem.isEditing()? 'controls-PropertyGrid__gridLayout_showActions'}}"
+                            template="{{ itemActionsTemplate }}" />
+                </ws:if>
+            </ws:if>
+            <ws:if data="{{afterEditorTemplate && (collectionItem.getCaptionPosition() !== 'top' || item.editorOptions.jumpingLabel)}}">
+                <ws:partial template="{{afterEditorTemplate}}">
+                    <ws:multiSelectTemplate>
+                        <ws:partial template="checkbox" collectionItem="{{collectionItem}}"/>
+                    </ws:multiSelectTemplate>
+                </ws:partial>
+            </ws:if>
+        </div>
+    </ws:if>
+</ws:else>

@@ -1,0 +1,21 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="controls-margin_right-m">
+            <Controls.buttons:Button viewMode="filled"
+                                     iconStyle="contrast"
+                                     icon="icon-RoundPlus"/>
+        </div>
+        <div class="controls-margin_right-m">
+            <Controls.buttons:Button viewMode="filled"
+                                     iconStyle="contrast"
+                                     icon="Controls-icons/common:icon-Burger"/>
+        </div>
+        <div class="controls-margin_right-m">
+            <Controls.buttons:Button viewMode="filled" iconStyle="contrast">
+                <ws:iconTemplate>
+                    <span class="controls-text-contrast controls-fontsize-l">LL</span>
+                </ws:iconTemplate>
+            </Controls.buttons:Button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper">
+    <Controls.browser:Browser filterButtonSource="{{_filterSource}}"
+                              source="{{_source}}"
+                              keyProperty="id">
+        <div>
+            <Controls.filterOld:ViewContainer>
+                <Controls.filter:View detailPanelTemplateName="Controls/filterPanelPopup:Sticky"/>
+            </Controls.filterOld:ViewContainer>
+            <Controls.listDataOld:ListContainer>
+                <Controls.list:View/>
+            </Controls.listDataOld:ListContainer>
+        </div>
+    </Controls.browser:Browser>
+</div>

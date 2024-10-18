@@ -1,0 +1,9 @@
+<div style="{{ _getStyles() }}"
+     tab-index="-1"
+     on:scroll="_onScroll()"
+     on:click="_emulateEvent()"
+     on:mousedown="_emulateEvent()"
+     on:mouseup="_emulateEvent()"
+>
+    <div style="height: 100%; width: calc(100% - {{_scrollContainerWidth}}px + {{_options.width}}px);"></div>
+</div>

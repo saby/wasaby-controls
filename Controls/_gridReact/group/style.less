@@ -1,0 +1,18 @@
+.controls-GridReact__groupViewMode_blocks_contentWrapper,
+.controls-GridReact__groupViewMode_titledBlocks_contentWrapper {
+   z-index: 1;
+   flex-grow: 1;
+   height: 100%;
+   min-width: 0;
+   background-color: inherit;
+   border-radius: inherit;
+   box-sizing: border-box;
+}
+
+// Уменьшаем z-index стики группы, для titledBlocks, если она не застикана.
+.controls-List__groupViewMode_titledBlocks
+   .controls-ListView__GroupContentWrapper.controls-StickyBlock:has(
+      > .controls-StickyHeader__shadow-bottom.ws-hidden
+   ) {
+   z-index: 1;
+}

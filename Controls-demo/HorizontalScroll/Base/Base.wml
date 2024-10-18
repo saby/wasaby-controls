@@ -1,0 +1,37 @@
+<div style="margin: 100px;">
+    <div style="margin-bottom: 20px; display: flex; justify-content: space-around; width: {{ _width }};">
+        <div>
+            <h4 class="controlsDemo__mb1">Количество строк</h4>
+            <Controls.input:Number contrastBackground="{{true}}" bind:value="_rowsCountInputValue"/>
+            <button on:click="_applyRowsCount()" style="padding: 3px;">Применить</button>
+        </div>
+
+        <div>
+            <h4 class="controlsDemo__mb1">Количество колонок</h4>
+            <Controls.input:Number contrastBackground="{{true}}" bind:value="_columnsCountInputValue"/>
+            <button on:click="_applyColumnsCount()" style="padding: 3px;">Применить</button>
+        </div>
+    </div>
+    <ws:if data="{{ _beforeLength || _afterLength }}">
+        <Controls-demo.HorizontalScroll.content.Scroll.Index width="{{ _width }}" height="{{ _height }}">
+            <Controls-demo.HorizontalScroll.content.Lorem.Index beforeLength="{{ _beforeLength }}" afterLength="{{ _afterLength }}">
+                <Controls-demo.HorizontalScroll.content.Grid.Index
+                    rowsCount="{{ _rowsCount }}"
+                    columnsCount="{{ _columnsCount }}"
+                    stickyHeader="{{ _stickyHeader }}"
+                    attr:style="{{ _marginValue ? 'margin: ' + _marginValue + ';' }}"
+                />
+            </Controls-demo.HorizontalScroll.content.Lorem.Index>
+        </Controls-demo.HorizontalScroll.content.Scroll.Index>
+    </ws:if>
+    <ws:else>
+        <Controls-demo.HorizontalScroll.content.Scroll.Index width="{{ _width }}" height="{{ _height }}">
+            <Controls-demo.HorizontalScroll.content.Grid.Index
+                rowsCount="{{ _rowsCount }}"
+                columnsCount="{{ _columnsCount }}"
+                stickyHeader="{{ _stickyHeader }}"
+                attr:style="{{ _marginValue ? 'margin: ' + _marginValue + ';' }}"
+            />
+        </Controls-demo.HorizontalScroll.content.Scroll.Index>
+    </ws:else>
+</div>

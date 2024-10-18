@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper" attr:style="flex-grow: 1">
+   <div class="ws-flexbox">
+      <Controls.input:Label caption="position = "/>
+      <Controls.RadioGroup:Control
+              attr:class="controlsDemo__input controlsDemo_ResizeDirection__horizontal"
+              bind:selectedKey="_position"
+              keyProperty="id"
+              items="{{_itemsPosition}}"/>
+   </div>
+   <div attr:style="width: 100px; height:300px; padding-top: 8px;">
+      <Controls.buttons:Button name="insideBtn" caption="Открыть dialog" on:click="_openDialogHandler()" />
+   </div>
+</div>

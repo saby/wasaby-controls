@@ -1,0 +1,71 @@
+<ws:template name="chips">
+    <Controls.Container.Async templateName="Controls/Chips:Control">
+        <div>
+            <Controls.source:SelectedKey selectedKey="{{ _activeElement }}">
+                <ws:partial template="{{ content.resolvedTemplate }}"
+                            attr:class="controls-navigation-chips"
+                            items="{{ _sourceItems }}"
+                            keyProperty="{{ _options.keyProperty }}"
+                            displayProperty="{{ _options.displayProperty }}"
+                            multiline="{{ false }}"
+                            inlineHeight="2xl"
+                            on:selectedKeyChanged="_onSelectedKeyChanged()"/>
+            </Controls.source:SelectedKey>
+        </div>
+    </Controls.Container.Async>
+</ws:template>
+
+<ws:template name="chipsMenu">
+    <div class="controls-navigation-chips__menuWrapper">
+        <Controls.source:SelectedKey selectedKey="{{ _activeElement }}">
+            <Controls.dropdown:Selector
+                    attr:class="controls-navigation-chips__menu"
+                    items="{{ _sourceItems }}"
+                    keyProperty="{{ _options.keyProperty }}"
+                    displayProperty="{{ _options.displayProperty }}"
+                    on:selectedKeyChanged="_onSelectedKeyChanged()">
+                <ws:contentTemplate>
+                    <Controls.buttons:Button
+                            icon="icon-Burger"
+                            viewMode="filled"
+                            iconSize="s"
+                            inlineHeight="2xl"
+                            buttonStyle="pale"/>
+                </ws:contentTemplate>
+            </Controls.dropdown:Selector>
+        </Controls.source:SelectedKey>
+    </div>
+</ws:template>
+
+<ws:template name="radioGroup">
+    <Controls.Container.Async templateName="Controls/RadioGroup:Control">
+        <ws:partial template="{{ content.resolvedTemplate }}"
+                    attr:class="controls-navigation-radioGroup"
+                    items="{{ _sourceItems }}"
+                    selectedKey="{{ _activeElement }}"
+                    keyProperty="{{ _options.keyProperty }}"
+                    displayProperty="{{ _options.displayProperty }}"
+                    radioCircleVisible="{{false}}"
+                    direction="horizontal"
+                    on:selectedKeyChanged="_onSelectedKeyChanged()"/>
+    </Controls.Container.Async>
+</ws:template>
+
+<div class="controls-navigation
+            {{ _getRightPaddingClasses(_options.containerPadding) }}
+            {{ _getLeftPaddingClasses(_options.containerPadding) }}">
+    <Controls.scroll:Container
+            name="ScrollContainer"
+            attr:class="controls-navigation-scroll"
+            shadowMode="js"
+            scrollOrientation="horizontal"
+            leftShadowVisibility="hidden"
+            rightShadowVisibility="hidden"
+            scrollbarVisible="{{ false }}"
+            on:scrollStateChanged="_scrollStateChangedHandler()">
+        <ws:partial template="chips" if="{{ _options.viewMode === 'chips' }}"/>
+        <ws:partial template="radioGroup" if="{{ _options.viewMode === 'radioGroup' }}"/>
+    </Controls.scroll:Container>
+
+    <ws:partial template="chipsMenu" if="{{ _options.viewMode === 'chips' }}"/>
+</div>

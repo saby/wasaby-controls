@@ -1,0 +1,8 @@
+<Controls.treeGrid:View keyProperty="key"
+                        parentProperty="parent"
+                        nodeProperty="type"
+                        source="{{ _viewSource }}"
+                        header="{{ _header }}"
+                        columns="{{ _columns }}"
+                        stickyHeader="{{ !!_options.stickyHeader }}"
+/>

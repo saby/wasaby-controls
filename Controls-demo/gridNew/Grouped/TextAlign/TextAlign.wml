@@ -1,0 +1,19 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell ControlsDemo-grouped__textAlign-left">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/gridNew/Grouped/TextAlign/WithoutSeparator/Index' }}">
+            <a href="{{content.href}}">Без разделителей</a>
+        </Router.router:Reference>
+        <Controls-demo.gridNew.Grouped.TextAlign.WithoutSeparator.Index/>
+    </div>
+
+    <div class="controlsDemo__cell ControlsDemo-grouped__textAlign-left">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/gridNew/Grouped/TextAlign/WithSeparator/Index' }}">
+            <a href="{{content.href}}">С разделителями</a>
+        </Router.router:Reference>
+        <Controls-demo.gridNew.Grouped.TextAlign.WithSeparator.Index/>
+    </div>
+</div>

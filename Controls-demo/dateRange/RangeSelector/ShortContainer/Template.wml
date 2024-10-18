@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo-RageLink__componentWrap controlsDemo-RangeLink_capture">
+        <div class="controls-text-label">Отображение контрола при ограниченном контейнере</div>
+        <div class="Controls-demo__shortContainer">
+            <Controls.dateRange:Selector
+                    bind:startValue="_startValue"
+                    bind:endValue="_endValue"
+                    fontSize="s"
+            />
+        </div>
+    </div>
+</div>

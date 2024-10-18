@@ -1,0 +1,22 @@
+<ws:partial template="wml!Controls/_propertyGrid/Render/resources/groupTemplate" scope="{{_options}}">
+    <ws:contentTemplate>
+        <div class="controls-PropertyGrid_toggleEditorButtons_wrapper">
+            <ws:for data="index, toggleableItem in collectionItem.getToggleEditorsButtons()">
+                <Controls.Container.Async templateName="Controls/ToggleButton">
+                    <ws:partial template="{{ content.resolvedTemplate }}"
+                                icons="{{[toggleableItem.get('toggleEditorButtonIcon')]}}"
+                                tooltip="{{toggleableItem.get('toggleEditorButtonTooltip')}}"
+                                fontColorStyle="primary"
+                                viewMode="pushButton"
+                                buttonStyle="secondary"
+                                inlineHeight="m"
+                                iconSize="s"
+                                value="{{toggledEditors[toggleableItem.getId()]}}"
+                                on:valueChanged="_toggleEditor(toggleableItem)"
+                                attr:class="{{(index > 0 ? 'controls-PropertyGrid_toggleEditorButton_offset')}}"
+                                attr:data-qa="toggle-button-{{toggleableItem.getId()}}"/>
+                </Controls.Container.Async>
+            </ws:for>
+        </div>
+    </ws:contentTemplate>
+</ws:partial>

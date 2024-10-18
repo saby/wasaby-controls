@@ -1,0 +1,26 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__cell">
+        <Controls.grid:View
+                attr:class="controlsDemo__inline-flex"
+                storeId="ColumnsFontColorStyle">
+            <ws:columns>
+                <ws:Array>
+                    <ws:Object displayProperty="country"
+                               fontColorStyle="primary"/>
+                    <ws:Object displayProperty="population"
+                               displayType="number"
+                               fontColorStyle="secondary"
+                    />
+                    <ws:Object displayProperty="populationDensity"
+                               displayType="money"
+                               fontColorStyle="warning"/>
+                    <ws:Object displayProperty="date"
+                               displayType="date"
+                               fontColorStyle="warning">
+                        <ws:displayTypeOptions format="DD MMM'YY HH:mm"/>
+                    </ws:Object>
+                </ws:Array>
+            </ws:columns>
+        </Controls.grid:View>
+    </div>
+</div>

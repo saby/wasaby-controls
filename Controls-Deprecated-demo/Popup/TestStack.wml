@@ -1,0 +1,62 @@
+<Controls.popupTemplate:Stack headingCaption="PopupManager">
+   <ws:headerContentTemplate>
+      <div style="display: flex;justify-content: flex-end;flex-grow: 1;">
+         <Controls.buttons:Button caption="Закрыть {{_options.type  || ''}}" on:click="_close()"/>
+      </div>
+   </ws:headerContentTemplate>
+   <ws:toolbarContentTemplate>
+      <Controls.toolbars:View
+              source="{{_buttonsSource}}"
+              keyProperty="id"
+              direction="vertical"/>
+   </ws:toolbarContentTemplate>
+   <ws:bodyContentTemplate>
+      <div style="width: {{ _options.demoWidth || '700px'}}">
+         <Controls.popup:Stack name="stack" template="Controls-Deprecated-demo/Popup/TestStack">
+            <ws:componentOptions type="stack"/>
+         </Controls.popup:Stack>
+         <Controls.popup:Dialog name="modalDialog" modal="{{true}}" template="Controls-Deprecated-demo/Popup/TestDialog">
+            <ws:templateOptions type="dialog"/>
+         </Controls.popup:Dialog>
+         <Controls.buttons:Button caption="{{_options.type === 'sticky' ? '123' : 'Открыть stack'}}" on:click="_onClick()"
+                          attr:class="ControlsDemo-TestStack__stack"/>
+         <br/>
+         <Controls.buttons:Button caption="Открыть через OpenEditDialog (TestStack, dialog)"
+                          on:click="_openOldPanel('Controls-Deprecated-demo/Popup/TestStack', 'dialog')"/>
+         <br/>
+         <Controls.buttons:Button caption="Открыть через OpenEditDialog (TestStack, floatArea, stack)"
+                          on:click="_openOldPanel('Controls-Deprecated-demo/Popup/TestStack', 'floatArea', true)"/>
+         <br/>
+         <Controls.buttons:Button caption="Открыть через OpenEditDialog (TestStack, floatArea, not stack)"
+                          on:click="_openOldPanel('Controls-Deprecated-demo/Popup/TestStack', 'floatArea', false)"/>
+         <br/>
+         <Controls.buttons:Button caption="Открыть через OpenEditDialog (MyTextBox, dialog)"
+                          on:click="_openOldPanel('Controls-Deprecated-demo/Popup/resources/MyTextBox', 'dialog')"/>
+         <br/>
+         <Controls.buttons:Button caption="Открыть через OpenEditDialog (MyTextBox, floatArea)"
+                          on:click="_openOldPanel('Controls-Deprecated-demo/Popup/resources/MyTextBox', 'floatArea', true)"/>
+         <br/>
+         <Controls.buttons:Button caption="Открыть через OpenEditDialog (MyTextBox, floatArea, not stack)"
+                          on:click="_openOldPanel('Controls-Deprecated-demo/Popup/resources/MyTextBox', 'floatArea', false)"/>
+
+         <br/>
+         <Controls.buttons:Button caption="Открыть через OpenEditDialog (FormController, dialog)"
+                          on:click="_openOldPanel('Controls-Deprecated-demo/Popup/resources/SimpleListEditDialog', 'dialog')"/>
+         <br/>
+         <Controls.buttons:Button caption="Открыть modalDialog" on:click="_openModalDialog()"
+                          attr:class="ControlsDemo-TestStack__modalDialog"/>
+         <br/>
+         <Controls.buttons:Button name="infoboxButton" caption="Открыть Инфобокс" on:click="_openInfobox()"
+                          attr:class="ControlsDemo-TestStack__infobox"/>
+         <br/>
+         <Controls.buttons:Button name="infoboxButton" caption="Открыть индикатор загрузки" on:click="_openIndicator()"
+                                  attr:class="ControlsDemo-TestStack__indicator"/>
+         <br/>
+         <Controls.buttons:Button name="stackButton1" caption="Открыть Stack1" on:click="_openNewStack()"
+                                  attr:class="ControlsDemo-TestStack__childStack"/>
+         <br/>
+         <Controls.buttons:Button name="stackButton2" caption="Открыть Stack2" on:click="_openNewStack2()"
+                                  attr:class="ControlsDemo-TestStack__childStackSecond"/>
+      </div>
+   </ws:bodyContentTemplate>
+</Controls.popupTemplate:Stack>

@@ -1,0 +1,54 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+<div class="controlsDemo__flex ws-flex-column ws-align-items-center controlsDemo__cell ws-justify-content-center" data-qa="controlsDemo_capture">
+    <Controls.Chips:Control items="{{_items}}"
+                            bind:selectedKeys="_selectedKeys1"
+                            selectedStyle="secondary"
+                            data-qa="controlsDemo__Chips_selectedStyle-secondary"
+    />
+    <Controls.Chips:Control items="{{_items}}"
+                            bind:selectedKeys="_selectedKeys2"
+                            selectedStyle="warning"
+                            attr:class="controls-margin_top-l"
+                            data-qa="controlsDemo__Chips_selectedStyle-warning"
+    />
+    <Controls.Chips:Control items="{{_items}}"
+                            bind:selectedKeys="_selectedKeys3"
+                            selectedStyle="primary"
+                            attr:class="controls-margin_top-l"
+                            data-qa="controlsDemo__Chips_selectedStyle-primary"
+    />
+    <Controls.Chips:Control items="{{_items}}"
+                            bind:selectedKeys="_selectedKeys4"
+                            selectedStyle="success"
+                            attr:class="controls-margin_top-l"
+                            data-qa="controlsDemo__Chips_selectedStyle-success"
+    />
+    <Controls.Chips:Control items="{{_items}}"
+                            bind:selectedKeys="_selectedKeys5"
+                            selectedStyle="danger"
+                            attr:class="controls-margin_top-l"
+                            data-qa="controlsDemo__Chips_selectedStyle-danger"
+    />
+    <Controls.Chips:Control items="{{_items}}"
+                            bind:selectedKeys="_selectedKeys6"
+                            selectedStyle="info"
+                            attr:class="controls-margin_top-l"
+                            data-qa="controlsDemo__Chips_selectedStyle-info"
+    />
+    <Controls.Chips:Control items="{{_items}}"
+                            bind:selectedKeys="_selectedKeys7"
+                            selectedStyle="contrast"
+                            attr:class="controls-margin_top-l controls-margin_bottom-m"
+                            data-qa="controlsDemo__Chips_selectedStyle-contrast"
+    />
+    <div class="controls-background-unaccented-same">
+        <Controls.Chips:Control items="{{_items}}"
+                                bind:selectedKeys="_selectedKeys8"
+                                selectedStyle="contrast"
+                                attr:class="controls-margin_top-m controls-margin_bottom-l"
+                                contrastBackground="{{false}}"
+                                data-qa="controlsDemo__Chips_selectedStyle-contrast-same"
+        />
+    </div>
+</div>
+</div>

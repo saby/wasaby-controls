@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <Controls.input:Label caption="Label"
+                              underline="none"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Label caption="Label"
+                              underline="fixed"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Label caption="Label"
+                              underline="hovered"/>
+    </div>
+</div>
