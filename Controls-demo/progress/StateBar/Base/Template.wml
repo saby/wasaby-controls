@@ -1,0 +1,30 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth350">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">Один показатель: 0%, blankAreaStyle="secondary"</div>
+        <Controls.progress:StateBar data="{{_data0}}" blankAreaStyle="secondary"/>
+    </div>
+     <div class="controlsDemo__cell">
+        <div class="controls-text-label">Один показатель: 1%, blankAreaStyle="secondary"</div>
+        <Controls.progress:StateBar data="{{_data1}}" blankAreaStyle="secondary"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">Один показатель без заданного цвета и названия: 60%</div>
+        <Controls.progress:StateBar data="{{_data60default}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">Один показатель: 60%</div>
+        <Controls.progress:StateBar data="{{_data60}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">Один показатель: 100%</div>
+        <Controls.progress:StateBar data="{{_data100}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">Два показателя: 40% и 20%</div>
+        <Controls.progress:StateBar data="{{_data4020}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">Три показателя: 10%, 40%, 50%</div>
+        <Controls.progress:StateBar data="{{_data104050}}"/>
+    </div>
+</div>

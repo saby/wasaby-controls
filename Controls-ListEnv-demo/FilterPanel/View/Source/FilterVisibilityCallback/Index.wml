@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__flexRow">
+        <Controls-ListEnv.filterPanelConnected:View filterNames="['amount', 'owner']"
+                                           storeId="callbackData"/>
+        <Controls.list:View storeId="callbackData"/>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="controlsDemo__wrapper">
+   <div style="margin-bottom: 8px;">
+      <div>Back button font size</div>
+      <Controls.Tumbler:Control
+         displayProperty="title"
+         items="{{_fontSizes}}"
+         bind:selectedKey="_backButtonFontSize"
+      />
+   </div>
+   <Controls.explorer:View
+      storeId="BreadcrumbsNewDesign"
+      pathButtonVisible="{{true}}"
+      showActionButton="{{true}}"
+      backButtonFontSize="{{_backButtonFontSize}}"
+      columns="{{_columns}}"
+      header="{{_gridHeader}}"
+      pathButtonSource="{{_pathButtonSource}}"
+      breadcrumbsPathButtonCaption="Домой"
+      attr:class="demo-Explorer ControlsDemo-Explorer"
+   />
+</div>

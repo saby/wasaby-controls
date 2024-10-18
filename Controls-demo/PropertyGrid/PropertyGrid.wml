@@ -1,0 +1,5 @@
+<div>
+<Controls.checkbox:Checkbox attr:id="validationErrors" on:valueChanged="_validationErrorsHandler()" value="{{_options.validationErrorsValue}}"  caption="validationErrors"/>
+<Controls.checkbox:Checkbox attr:id="selectOnClick" value="{{_options.selectOnClickValue}}"  on:valueChanged="_selectOnClickHandler()" caption="selectOnClick"/>
+<Controls.checkbox:Checkbox attr:id="readOnly" value="{{_options.readOnlyValue}}" on:valueChanged="_readOnlyHandler()" caption="readOnly"/>
+</div>

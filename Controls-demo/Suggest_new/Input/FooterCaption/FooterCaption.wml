@@ -1,0 +1,17 @@
+<div class="controlsDemo__flex ws-justify-content-center">
+  <Controls-ListEnv.SuggestSearch
+      attr:class="demo-SuggestNewSearch__footerSelfButton controlsDemo__input"
+      bind:value="_suggestCustomValue"
+      displayProperty="title"
+      searchParam="title"
+      navigation="{{_navigation}}"
+      autoDropDown="{{true}}"
+      source="{{_source}}">
+    <ws:suggestTemplate templateName="wml!Controls-ListEnv-demo/SuggestSearch/FooterTemplate/resources/SuggestTemplate"/>
+    <ws:footerTemplate templateName="Controls/suggestPopup:FooterTemplate">
+      <ws:templateOptions caption="Кастомный footer"/>
+    </ws:footerTemplate>
+
+  </Controls-ListEnv.SuggestSearch>
+</div>
+

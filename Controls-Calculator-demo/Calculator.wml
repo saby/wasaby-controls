@@ -1,0 +1,61 @@
+<div>
+    <ws:if data="{{!_reloadState}}">
+        <Controls-Calculator.Container>
+            <div class="engine-demo-Calculator">
+                <div>
+                    <Controls-Calculator.View viewMode="extended" attr:class="engine-demo-Calculator__view"/>
+                </div>
+                <div class="ws-flexbox">
+                    <Controls.input:Number bind:value="_number" attr:class="engine-demo-Calculator__input"/>
+                    <Controls-Calculator.Button/>
+                    <Controls.buttons:Button
+                            attr:class="engine-demo-Calculator__clearHistoryButton"
+                            on:click="_clearHistory()"
+                            caption="Очистить историю"/>
+                </div>
+                <div class="engine-demo-numbers">
+                    <div class="engine-demo-number">
+                        <span>Целое число: </span>
+                        <Controls-Calculator.Number><span>1552384</span></Controls-Calculator.Number>
+                    </div>
+                    <div class="engine-demo-number">
+                        <span>Дробное число с точкой: </span>
+                        <Controls-Calculator.Number><span>55000.99</span></Controls-Calculator.Number>
+                    </div>
+                    <div class="engine-demo-number">
+                        <span>Дробное число с запятой: </span>
+                        <Controls-Calculator.Number><span>255000,99</span></Controls-Calculator.Number>
+                    </div>
+                    <div class="engine-demo-number">
+                        <span>Целое число(Controls.baseDecorator:Number): </span>
+                        <Controls-Calculator.Number>
+                            <Controls.baseDecorator:Number value="{{1552384}}" useGrouping="{{true}}"/>
+                        </Controls-Calculator.Number>
+                    </div>
+                    <div class="engine-demo-number">
+                        <span>Дробное число(Controls.baseDecorator:Number): </span>
+                        <Controls-Calculator.Number>
+                            <Controls.baseDecorator:Number value="{{255000.99}}" useGrouping="{{true}}"/>
+                        </Controls-Calculator.Number>
+                    </div>
+                    <div class="engine-demo-number">
+                        <span>Целое число(Controls.baseDecorator:Money): </span>
+                        <Controls-Calculator.Number>
+                            <Controls.baseDecorator:Money value="{{1552384}}" useGrouping="{{true}}"/>
+                        </Controls-Calculator.Number>
+                    </div>
+                    <div class="engine-demo-number">
+                        <span>Дробное число(Controls.baseDecorator:Money): </span>
+                        <Controls-Calculator.Number>
+                            <Controls.baseDecorator:Money value="{{255000.99}}" useGrouping="{{true}}"/>
+                        </Controls-Calculator.Number>
+                    </div>
+                </div>
+            </div>
+        </Controls-Calculator.Container>
+    </ws:if>
+    <ws:else>
+        <div></div>
+    </ws:else>
+</div>
+

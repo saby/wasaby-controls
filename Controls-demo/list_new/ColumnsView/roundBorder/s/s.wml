@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper controlsDemo__width800px">
+    <div class="controls-text-label">Размер скруглений s</div>
+    <Controls.columns:View
+            storeId="ColumnsViewroundBorders2">
+        <ws:roundBorder tl="s" tr="s" bl="s" br="s"/>
+        <ws:itemTemplate>
+            <ws:partial template="Controls/columns:ItemTemplate" attr:class="controlsDemo__height36_item"/>
+        </ws:itemTemplate>
+    </Controls.columns:View>
+</div>

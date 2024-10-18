@@ -1,0 +1,69 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <div class="controlsDemo__cell demo-ButtonsCaptionPosition__rightButton">
+        <Controls.buttons:Button attr:class="controlsDemo_fixedWidth300"
+                                 icon="icon-Send"
+                                 textAlign="left"
+                                 viewMode="outlined"
+                                 captionPosition="end"
+                                 caption="Button"/>
+    </div>
+    <div class="controlsDemo__cell demo-ButtonsCaptionPosition__leftButton">
+        <Controls.buttons:Button attr:class="controlsDemo_fixedWidth300"
+                                 icon="icon-Send"
+                                 textAlign="left"
+                                 viewMode="outlined"
+                                 captionPosition="start"
+                                 caption="Button"/>
+    </div>
+
+    <div class="controlsDemo__cell demo-ButtonsCaptionPosition__rightButton">
+        <Controls.buttons:Button attr:class="controlsDemo_fixedWidth300"
+                                 icon="icon-Send"
+                                 textAlign="center"
+                                 viewMode="outlined"
+                                 captionPosition="end"
+                                 caption="Button"/>
+    </div>
+    <div class="controlsDemo__cell demo-ButtonsCaptionPosition__leftButton">
+        <Controls.buttons:Button attr:class="controlsDemo_fixedWidth300"
+                                 icon="icon-Send"
+                                 textAlign="center"
+                                 viewMode="outlined"
+                                 captionPosition="start"
+                                 caption="Button"/>
+    </div>
+
+    <div class="controlsDemo__cell demo-ButtonsCaptionPosition__rightButton">
+        <Controls.buttons:Button attr:class="controlsDemo_fixedWidth300"
+                                 icon="icon-Send"
+                                 textAlign="right"
+                                 viewMode="outlined"
+                                 captionPosition="end"
+                                 caption="Button"/>
+    </div>
+    <div class="controlsDemo__cell demo-ButtonsCaptionPosition__leftButton">
+        <Controls.buttons:Button attr:class="controlsDemo_fixedWidth300"
+                                 icon="icon-Send"
+                                 textAlign="right"
+                                 viewMode="outlined"
+                                 captionPosition="start"
+                                 caption="Button"/>
+    </div>
+
+    <div class="controlsDemo__cell demo-ButtonsCaptionPosition__rightButton">
+        <Controls.buttons:Button attr:class="controlsDemo_fixedWidth300"
+                                 icon="icon-Send"
+                                 textAlign="justify"
+                                 viewMode="outlined"
+                                 captionPosition="end"
+                                 caption="Button"/>
+    </div>
+    <div class="controlsDemo__cell demo-ButtonsCaptionPosition__leftButton">
+        <Controls.buttons:Button attr:class="controlsDemo_fixedWidth300"
+                                 icon="icon-Send"
+                                 textAlign="justify"
+                                 viewMode="outlined"
+                                 captionPosition="start"
+                                 caption="Button"/>
+    </div>
+</div>

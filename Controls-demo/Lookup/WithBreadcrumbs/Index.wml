@@ -1,0 +1,18 @@
+<div class="controlsDemo__flexRow tw-justify-center controlsDemo__childWidth400">
+         <Controls.lookup:Input
+             source="{{_source}}"
+             placeholder="Введите, например SATA"
+             searchParam="title"
+             keyProperty="id"
+             parentProperty="parent"
+             nodeProperty="parent@"
+             selectionType="all"
+             historyId="testHistoryId"
+             suggestWidth="400px"
+             autoDropDown="{{false}}">
+           <ws:suggestTemplate templateName="Controls/suggestPopup:SuggestTemplate">
+             <ws:templateOptions columns="{{_viewColumns}}" />
+           </ws:suggestTemplate>
+           <ws:suggestPopupOptions width="600px"/>
+         </Controls.lookup:Input>
+</div>

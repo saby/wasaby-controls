@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center controlsDemo__cell" data-qa="controlsDemo_capture">
+        <Controls.Tumbler:Control items="{{_items}}" bind:selectedKey="_selectedKey">
+            <ws:itemTemplate>
+                <ws:partial template="Controls/Tumbler:tumblerItemCounterTemplate" scope="{{itemTemplate}}"/>
+            </ws:itemTemplate>
+        </Controls.Tumbler:Control>
+    </div>
+</div>

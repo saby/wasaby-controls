@@ -1,0 +1,8 @@
+<Controls.ComboBox
+        bind:selectedKey="_selectedKey"
+        on:selectedKeyChanged="_selectedKeyChangedHandler()"
+        keyProperty="key"
+        displayProperty="title"
+        source="{{_source}}"
+        placeholder="Тип события"
+        filter="{{_filter}}"/>

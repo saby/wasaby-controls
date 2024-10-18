@@ -1,0 +1,21 @@
+<div class="controlsDemo__wrapper demo-EmptyText__withDetailPanel">
+   <div class="controlsDemo__wrapper">
+      <Controls.filter:View
+              attr:data-qa="Filter-new_ArrowVisible__Left"
+              source="{{_sourceLeft}}"
+              detailPanelTemplateName="Controls-ListEnv-demo/Filter/NotConnectedView/resources/Panel">
+         <ws:detailPanelTemplateOptions
+                 additionalTemplateProperty="additionalTemplate"/>
+      </Controls.filter:View>
+   </div>
+
+   <div class="controlsDemo__wrapper">
+      <Controls.filter:View
+              attr:data-qa="Filter-new_ArrowVisible__Right"
+              source="{{_sourceRight}}"
+              detailPanelTemplateName="Controls-ListEnv-demo/Filter/NotConnectedView/resources/Panel">
+         <ws:detailPanelTemplateOptions
+                 additionalTemplateProperty="additionalTemplate"/>
+      </Controls.filter:View>
+   </div>
+</div>

@@ -1,0 +1,125 @@
+<div class="controlsDemo__wrapper controlsDemo__flex controlsDemo__flex-flow_wrap">
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/DoubleSwitch/Base/Index' }}">
+            <a href="{{content.href}}">Базовая настройка двойного переключателя</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.DoubleSwitch.Base.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/DoubleSwitch/Caption/Index' }}">
+            <a href="{{content.href}}">Настройка caption</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.DoubleSwitch.Caption.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/DoubleSwitch/Orientation/Index' }}">
+            <a href="{{content.href}}">Настройка ориентации</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.DoubleSwitch.Orientation.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/DoubleSwitch/Tooltip/Index' }}">
+            <a href="{{content.href}}">Настройка всплывающей подсказки</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.DoubleSwitch.Tooltip.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/DoubleSwitch/Size/Index' }}">
+            <a href="{{content.href}}">Настройка размера</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.DoubleSwitch.Size.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/DoubleSwitch/ViewMode/Index' }}">
+            <a href="{{content.href}}">Настройка внешнего вида</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.DoubleSwitch.ViewMode.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/DoubleSwitch/ResetValue/Index' }}">
+            <a href="{{content.href}}">Настройка предустановленного значения</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.DoubleSwitch.ResetValue.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <div class="controls-text-label">Для тестов: resetValue и viewMode</div>
+        <div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+            <div class="controlsDemo__cell">
+                <Controls.toggle:DoubleSwitch bind:value="_resetValue"
+                                              onCaption="Наличными"
+                                              offCaption="По карте"
+                                              resetValue="{{false}}"
+                                              viewMode="outlined"/>
+            </div>
+            <div class="controlsDemo__cell">
+                <Controls.toggle:DoubleSwitch bind:value="_resetValue"
+                                              onCaption="Наличными"
+                                              offCaption="По карте"
+                                              resetValue="{{true}}"
+                                              viewMode="outlined"/>
+            </div>
+            <div class="controlsDemo__cell">
+                <Controls.toggle:DoubleSwitch bind:value="_resetValue"
+                                              onCaption="Наличными"
+                                              offCaption="По карте"
+                                              size="s"
+                                              resetValue="{{false}}"
+                                              viewMode="outlined"/>
+            </div>
+            <div class="controlsDemo__cell">
+                <Controls.toggle:DoubleSwitch bind:value="_resetValue"
+                                              onCaption="Наличными"
+                                              offCaption="По карте"
+                                              size="s"
+                                              resetValue="{{true}}"
+                                              viewMode="outlined"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <div class="controls-text-label">Для тестов: size и viewMode</div>
+        <div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+            <div class="controlsDemo__cell">
+                <Controls.toggle:DoubleSwitch bind:value="_sizeValue"
+                                              onCaption="Наличными"
+                                              offCaption="По карте"
+                                              size="l"
+                                              viewMode="outlined"/>
+            </div>
+            <div class="controlsDemo__cell">
+                <Controls.toggle:DoubleSwitch bind:value="_sizeValue"
+                                              onCaption="Наличными"
+                                              offCaption="По карте"
+                                              size="m"
+                                              viewMode="outlined"/>
+            </div>
+
+            <div class="controlsDemo__cell">
+                <Controls.toggle:DoubleSwitch bind:value="_sizeValue"
+                                              onCaption="Наличными"
+                                              offCaption="По карте"
+                                              size="s"
+                                              viewMode="outlined"/>
+            </div>
+        </div>
+    </div>
+</div>

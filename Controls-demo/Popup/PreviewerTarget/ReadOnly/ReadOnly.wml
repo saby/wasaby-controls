@@ -1,0 +1,29 @@
+<div attr:class="controlsDemo_fixedWidth350 controlsDemo_m3">
+<div class="controls-text-label">readOnly=false</div>
+<div class="controlsDemo__cell">
+    <Controls.popupTargets:PreviewerTarget readOnly="{{false}}" trigger="hoverAndClick"
+                                    template="Controls-demo/Popup/Edit/MyFormController">
+        <ws:content>
+            <Controls.input:Text bind:value="_text"/>
+        </ws:content>
+    </Controls.popupTargets:PreviewerTarget>
+</div>
+<div class="controls-text-label">readOnly=true</div>
+<div class="controlsDemo__cell">
+    <Controls.popupTargets:PreviewerTarget readOnly="{{true}}" trigger="hoverAndClick"
+                                    template="Controls-demo/Popup/Edit/MyFormController">
+        <ws:content>
+            <Controls.input:Text bind:value="_text"/>
+        </ws:content>
+    </Controls.popupTargets:PreviewerTarget>
+</div>
+<div class="controls-text-label">readOnly=false and content readOnly true</div>
+<div class="controlsDemo__cell">
+    <Controls.popupTargets:PreviewerTarget readOnly="{{false}}" trigger="hoverAndClick"
+                                    template="Controls-demo/Popup/Edit/MyFormController">
+        <ws:content>
+            <Controls.input:Text bind:value="_text" readOnly="{{true}}"/>
+        </ws:content>
+    </Controls.popupTargets:PreviewerTarget>
+</div>
+</div>

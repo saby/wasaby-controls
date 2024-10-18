@@ -1,0 +1,42 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow controlsDemo_fixedWidth800">
+    <div class="controlsDemo_m">
+        <div class="controls-text-label">underline = none</div>
+        <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys"
+                                    underline="none"
+                                    keyProperty="key"
+                                    displayProperty="title"
+                                    source="{{_source}}">
+        </Controls.dropdown:Selector>
+    </div>
+    <div class="controlsDemo_m">
+        <div class="controls-text-label">underline = hovered</div>
+        <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys2"
+                                    underline="hovered"
+                                    emptyText="Не выбрано"
+                                    keyProperty="key"
+                                    displayProperty="title"
+                                    source="{{_source}}"
+                                    attr:data-qa="Controls-Demo_Dropdown__hover">
+        </Controls.dropdown:Selector>
+    </div>
+    <div class="controlsDemo_m">
+        <div class="controls-text-label">underline = fixed</div>
+        <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys3"
+                                    underline="fixed"
+                                    fontColorStyle="primary"
+                                    multiSelect="{{true}}"
+                                    keyProperty="key"
+                                    displayProperty="title"
+                                    source="{{_source}}">
+        </Controls.dropdown:Selector>
+    </div>
+    <div class="controlsDemo_m">
+        <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys4"
+                                    readOnly="{{true}}"
+                                    multiSelect="{{true}}"
+                                    keyProperty="key"
+                                    displayProperty="title"
+                                    source="{{_source}}">
+        </Controls.dropdown:Selector>
+    </div>
+</div>

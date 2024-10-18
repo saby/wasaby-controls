@@ -1,0 +1,134 @@
+<div class="controlsDemo__wrapper controlsDemo__flex controlsDemo__flex-flow_wrap">
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/Switch/Value/Index' }}">
+            <a href="{{content.href}}">Настройка value</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Switch.Value.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/Switch/Caption/Index' }}">
+            <a href="{{content.href}}">Настройка caption</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Switch.Caption.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/Switch/CaptionPosition/Index' }}">
+            <a href="{{content.href}}">Настройка положения надписи</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Switch.CaptionPosition.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/Switch/Tooltip/Index' }}">
+            <a href="{{content.href}}">Настройка всплывающей подсказки</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Switch.Tooltip.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/Switch/ResetValue/Index' }}">
+            <a href="{{content.href}}">Настройка предустановленного значения</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Switch.ResetValue.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/Switch/ViewMode/Index' }}">
+            <a href="{{content.href}}">Настройка внешнего вида</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Switch.ViewMode.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/Switch/Size/Index' }}">
+            <a href="{{content.href}}">Настройка размеров</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Switch.Size.Index/>
+    </div>
+
+    <div class="controlsDemo__cell demo-checkboxIndex__withIcon {{_widthClass}} controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/Switch/Multiline/Index' }}">
+            <a href="{{content.href}}">Настройка с обрезанием текста</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Switch.Multiline.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <div class="controls-text-label">Для тестов: resetValue и viewMode</div>
+        <div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+            <div class="controlsDemo__cell controls-margin_right-xl">
+                <Controls.toggle:Switch bind:value="_resetValue"
+                                        viewMode="filled"
+                                        size="s"
+                                        resetValue="{{false}}"/>
+            </div>
+            <div class="controlsDemo__cell controls-margin_right-xl">
+                <Controls.toggle:Switch bind:value="_resetValue"
+                                        viewMode="filled"
+                                        size="s"
+                                        resetValue="{{true}}"/>
+            </div>
+            <div class="controlsDemo__cell controls-margin_right-xl">
+                <Controls.toggle:Switch bind:value="_resetValue"
+                                        viewMode="outlined"
+                                        resetValue="{{false}}"/>
+            </div>
+            <div class="controlsDemo__cell controls-margin_right-xl">
+                <Controls.toggle:Switch bind:value="_resetValue"
+                                        viewMode="outlined"
+                                        resetValue="{{true}}"/>
+            </div>
+            <div class="controlsDemo__cell controls-margin_right-xl">
+                <Controls.toggle:Switch bind:value="_resetValue"
+                                        viewMode="outlined"
+                                        size="s"
+                                        resetValue="{{false}}"/>
+            </div>
+            <div class="controlsDemo__cell">
+                <Controls.toggle:Switch bind:value="_resetValue"
+                                        viewMode="outlined"
+                                        size="s"
+                                        resetValue="{{true}}"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <div class="controls-text-label">Для тестов: size и viewMode</div>
+        <div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+            <div class="controlsDemo__cell controls-margin_right-xl">
+                <Controls.toggle:Switch bind:value="_sizeValue"
+                                        viewMode="outlined"
+                                        size="l"/>
+            </div>
+            <div class="controlsDemo__cell controls-margin_right-xl">
+                <Controls.toggle:Switch bind:value="_sizeValue"
+                                        viewMode="outlined"
+                                        size="m"/>
+            </div>
+            <div class="controlsDemo__cell">
+                <Controls.toggle:Switch bind:value="_sizeValue"
+                                        viewMode="outlined"
+                                        size="s"/>
+            </div>
+        </div>
+    </div>
+</div>

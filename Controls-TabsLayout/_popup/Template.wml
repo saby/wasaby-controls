@@ -1,0 +1,22 @@
+<div class="FloatingTabs-popup {{!_options.backgroundImage ? 'controls-background-default' }}"
+     style="{{_options.backgroundImage ? 'background-image: url(' + _options.backgroundImage + ');background-size: cover;'}}
+            {{ _options.isShowed ? 'width: 100vw;max-width:' + _width + 'px;min-width:' + _getMinWidth() + 'px;margin-left: var(--shadow-blur_stack)' }}"
+     on:keydown="_keydownHandler()"
+     on:transitionend="_transitionendHandler()">
+    <Controls.extButtons:CloseButton viewMode="external"
+                                        attr:class="FloatingTabs-popup_closeButton"
+                                        on:click="_closeButtonClickHandler()"/>
+    <div class="controls-StackTemplate-shadow__container controls-StackTemplate-shadow_direction-right__container">
+        <div class="controls-StackTemplate-shadow controls-StackTemplate-shadow_direction-right">
+            <div class="controls-StackTemplate-shadow__content"></div>
+        </div>
+    </div>
+    <ws:if data="{{_options.propStorageId}}">
+        <Controls.dragnDrop:ResizingLine attr:class="controls-PageTemplate__resizingLine controls-PageTemplate__resizingLine-left"
+                                         direction="reverse"
+                                         minOffset="{{_minOffset}}"
+                                         maxOffset="{{_maxOffset}}"
+                                         on:offset="_offsetHandler()"/>
+    </ws:if>
+    <ws:partial template="{{ _options.content }}"/>
+</div>

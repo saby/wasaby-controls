@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+  <div class="controlsDemo__wrapper__horizontal controlsDemo__cell">
+     <div class="controls-text-label">Диалоговое окно с описанием ошибок</div>
+     <Controls-ListEnv.operationsPopup:ReportDialog title="Заголовок"
+                                            errors="{{_errors}}"
+                                            operationsCount="{{4}}"
+                                             operationsSuccess="{{1}}">
+     </Controls-ListEnv.operationsPopup:ReportDialog>
+  </div>
+</div>

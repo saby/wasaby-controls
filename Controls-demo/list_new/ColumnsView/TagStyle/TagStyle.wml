@@ -1,0 +1,17 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:class="controlsDemo__height150 controlsDemo__minWidth600 controlsDemo__maxWidth1200">
+        <Controls.columns:View
+                storeId="ColumnsViewTagStyle"
+                on:tagClick="_onTagClickCustomHandler()"
+                on:tagHover="_onTagHoverCustomHandler()">
+            <ws:itemTemplate>
+                <ws:partial template="Controls/columns:ItemTemplate" tagStyle="{{ _getTagStyle(itemTemplate.item.contents) }}" />
+            </ws:itemTemplate>
+        </Controls.columns:View>
+    </Controls.scroll:Container>
+    <div if="{{_currentEvent}}" class="controlsDemo-toolbar-panel">
+        {{_currentEvent}} на теге
+        {{_currentColumnIndex !== undefined ? ' в колонке №' + _currentColumnIndex }}
+        {{_currentValue !== undefined ? ' со значением ' + _currentValue }}
+    </div>
+</div>

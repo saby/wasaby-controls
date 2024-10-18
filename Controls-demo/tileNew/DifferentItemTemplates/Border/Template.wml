@@ -1,0 +1,40 @@
+<div class="controlsDemo__wrapper">
+   <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-richTemplate_horizontalImageSize-2xl">
+      <Controls.treeTile:View
+              storeId="listData"
+              tileMode="static"
+              tileWidth="250"
+              tileHeight="50"
+              imageProperty="image"
+              roundBorder="{{_roundBorder}}">
+         <ws:itemTemplate>
+            <ws:partial template="Controls/tile:ItemTemplate"
+                        shadowVisibility="hidden"
+                        border="{{ true }}"
+                        borderStyle="{{ _borderStyle }}"
+                        staticHeight="{{ true }}"
+                        highlightOnHover="{{ false }}">
+               <ws:contentTemplate>
+                  <div class="ColumnsDemo__TileNew_border_item">
+                     <Controls.buttons:Button data-qa="button-to-click"
+                                              caption="Нажми меня"
+                                              viewMode="link"
+                                              on:click="_clickHandler(contentTemplate.item)"/>
+                  </div>
+               </ws:contentTemplate>
+            </ws:partial>
+         </ws:itemTemplate>
+      </Controls.treeTile:View>
+      <div>
+         <ws:if data="{{_clickedItemButton !== undefined}}">
+            Click on button {{_clickedItemButton}}
+         </ws:if>
+      </div>
+   </div>
+   <div class="controlsDemo__cell">
+      <h4 class="controlsDemo__mb1">Цвет border. Сейчас={{ _borderStyle ? _borderStyle : 'default' }}</h4>
+      <ws:for data="index, variant in _borderStyleVariants">
+         <Controls.buttons:Button attr:data-qa="button_borderStyle_{{variant}}" caption="{{variant}}" on:click="_setBorderStyle(variant)"/>
+      </ws:for>
+   </div>
+</div>

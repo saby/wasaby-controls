@@ -1,0 +1,4 @@
+<div class="Controls-ListEnvDemo-breadcrumbs__content">
+  <Controls-ListEnv.breadcrumbs:HeadingPath storeId="nomenclature"/>
+  <Controls.treeGrid:View name="tree" storeId="nomenclature" columns="{{_columns}}" on:itemClick="_itemClick()"/>
+</div>

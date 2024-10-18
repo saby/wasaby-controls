@@ -1,0 +1,77 @@
+.controls-ProgressBar {
+   border-radius: var(--border-radius_xs);
+   background-color: var(--blank-area_background-color_progressBar_local, var(--pale_color));
+}
+
+.controls-ProgressBar_size-s {
+   height: calc(var(--inline_height_m) / 8);
+}
+
+.controls-ProgressBar_size-m {
+   height: calc(var(--inline_height_m) / 3);
+}
+
+.controls-ProgressBar_style-default {
+   --blank-area_background-color_progressBar_local: var(--pale_color);
+}
+
+.controls-ProgressBar_style-none {
+   --blank-area_background-color_progressBar_local: transparent;
+}
+
+.controls-ProgressBar_style-primary {
+   --blank-area_background-color_progressBar_local: var(--primary_same_background-color);
+}
+
+.controls-ProgressBar_style-success {
+   --blank-area_background-color_progressBar_local: var(--success_same_background-color);
+}
+
+.controls-ProgressBar_style-warning {
+   --blank-area_background-color_progressBar_local: var(--warning_same_background-color);
+}
+
+.controls-ProgressBar_style-danger {
+   --blank-area_background-color_progressBar_local: var(--danger_same_background-color);
+}
+
+.controls-ProgressBar_style-secondary {
+   --blank-area_background-color_progressBar_local: var(--secondary_same_background-color);
+}
+
+.controls-ProgressBar_style-info {
+   --blank-area_background-color_progressBar_local: var(--info_same_background-color);
+}
+
+.controls-ProgressBar_style__filled {
+   max-width: 100%;
+   transition: width 0.2s;
+   height: 100%;
+   border-top-left-radius: var(--border-radius_xs);
+   border-bottom-left-radius: var(--border-radius_xs);
+   background-color: var(--bar_background-color_progressBar_local, var(--primary_color));
+}
+
+.controls-ProgressBar_style-primary__filled {
+   --bar_background-color_progressBar_local: var(--primary_color);
+}
+
+.controls-ProgressBar_style-success__filled {
+   --bar_background-color_progressBar_local: var(--success_color);
+}
+
+.controls-ProgressBar_style-warning__filled {
+   --bar_background-color_progressBar_local: var(--warning_color);
+}
+
+.controls-ProgressBar_style-danger__filled {
+   --bar_background-color_progressBar_local: var(--danger_color);
+}
+
+.controls-ProgressBar_style-secondary__filled {
+   --bar_background-color_progressBar_local: var(--secondary_color);
+}
+
+.controls-ProgressBar_style-info__filled {
+   --bar_background-color_progressBar_local: var(--info_color);
+}

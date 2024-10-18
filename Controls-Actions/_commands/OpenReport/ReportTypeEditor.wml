@@ -1,0 +1,12 @@
+<div class="ws-flexbox ws-flex-row">
+    <Controls.buttons:Button viewMode="link"
+                             caption="{{_captionText}}"
+                             attr:data-qa="OpenReport-action_report-btn"
+                             on:click="_onChooseReportClick()"/>
+    <Controls.buttons:Button viewMode="ghost"
+                             icon="icon-Settings"
+                             readOnly="{{_disableSettings}}"
+                             attr:data-qa="OpenReport-action_reportSettings-btn"
+                             attr:class="controls-margin_left-m"
+                             on:click="_onSettingsClick()"/>
+</div>

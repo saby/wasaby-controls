@@ -1,0 +1,19 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper controlsDemo__flexColumn">
+      <div class="controls-text-label">hoverBorderStyle = info</div>
+      <Controls.menu:Popup
+              source="{{_source}}"
+              keyProperty="key"
+              displayProperty="title"
+              hoverBorderStyle="info">
+      </Controls.menu:Popup>
+   </div>
+   <div class="controlsDemo__wrapper controlsDemo__flexColumn">
+      <div class="controls-text-label">hoverBorderStyle = warning</div>
+      <Controls.menu:Popup
+              source="{{_source}}"
+              keyProperty="key"
+              displayProperty="title"
+              hoverBorderStyle="warning" />
+   </div>
+</div>

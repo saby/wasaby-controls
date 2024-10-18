@@ -1,0 +1,8 @@
+<Controls.suggestPopup:ListContainer attr:class="{{_options.classListWrapper}}">
+    <Controls.list:View keyProperty="id"
+                        attr:class="{{_options.demoClass + (_options.dialogMode ? ' demo-suggestSelector')}}">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/list:ItemTemplate" displayProperty="suggestValue"/>
+        </ws:itemTemplate>
+    </Controls.list:View>
+</Controls.suggestPopup:ListContainer>
