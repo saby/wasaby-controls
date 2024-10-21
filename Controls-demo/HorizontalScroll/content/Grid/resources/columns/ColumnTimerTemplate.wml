@@ -1,0 +1,10 @@
+<ws:partial template="Controls/grid:ColumnTemplate" scope="{{ _options }}">
+    <ws:contentTemplate>
+        <div>
+            {{ item.contents[column.config.displayProperty] }}
+            <div>
+                <Controls-demo.HorizontalScroll.content.Grid.resources.columns.Timer/>
+            </div>
+        </div>
+    </ws:contentTemplate>
+</ws:partial>

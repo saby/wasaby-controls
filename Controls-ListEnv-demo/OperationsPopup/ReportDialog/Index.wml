@@ -1,0 +1,34 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-ListEnv-demo/app/:app"
+                                 app="{{ 'Controls-ListEnv-demo/OperationsPopup/ReportDialog/Title/Title' }}">
+            <a href="{{content.href}}">Title.</a>
+        </Router.router:Reference>
+        <Controls-ListEnv-demo.OperationsPopup.ReportDialog.Title.Title/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="/Controls-ListEnv-demo/app/:app"
+                                 app="{{ 'Controls-ListEnv-demo/OperationsPopup/ReportDialog/Errors/Errors' }}">
+            <a href="{{content.href}}">Errors.</a>
+        </Router.router:Reference>
+        <Controls-ListEnv-demo.OperationsPopup.ReportDialog.Errors.Errors/>
+    </div>
+    <div class="controlsDemo__cell">
+       <Router.router:Reference attr:class="controls-text-label"
+                                state="/Controls-ListEnv-demo/app/:app"
+                                app="{{ 'Controls-ListEnv-demo/OperationsPopup/ReportDialog/FooterContentTemplate/FooterContentTemplate' }}">
+           <a href="{{content.href}}">FooterContentTemplate.</a>
+       </Router.router:Reference>
+       <Controls-ListEnv-demo.OperationsPopup.ReportDialog.FooterContentTemplate.FooterContentTemplate/>
+   </div>
+   <div class="controlsDemo__cell">
+       <Router.router:Reference attr:class="controls-text-label"
+                                state="/Controls-ListEnv-demo/app/:app"
+                                app="{{ 'Controls-ListEnv-demo/OperationsPopup/ReportDialog/OperationsSuccess/OperationsSuccess' }}">
+           <a href="{{content.href}}">OperationsSuccess.</a>
+       </Router.router:Reference>
+       <Controls-ListEnv-demo.OperationsPopup.ReportDialog.OperationsSuccess.OperationsSuccess/>
+   </div>
+</div>

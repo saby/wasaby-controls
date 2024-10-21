@@ -1,0 +1,14 @@
+<ws:template name="editorTemplate">
+    <ws:partial template="wml!Controls/_propertyGridEditor/render/editorTemplate" item="{{item}}" scope="{{_options}}" />
+</ws:template>
+
+<ws:partial template="Controls/grid:ColumnTemplate" itemData="{{itemData}}" scope="{{_options}}">
+    <ws:contentTemplate>
+        <ws:if data="{{item.getEditorTemplateName()}}">
+            <ws:partial template="editorTemplate"
+                        caption="{{item.contents[column.config.displayProperty || 'title']}}"
+                        class="controls-PropertyGridEditor__editor controls-PropertyGridEditor__editor_captionPosition-left"
+            />
+        </ws:if>
+    </ws:contentTemplate>
+</ws:partial>

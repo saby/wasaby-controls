@@ -1,0 +1,12 @@
+<Controls.treeGrid:View keyProperty="key"
+						parentProperty="parent"
+						nodeProperty="type"
+						source="{{ _viewSource }}"
+						header="{{ _header }}"
+                        task1188023407="{{ true }}"
+						rowSeparatorSize="s"
+						columnSeparatorSize="s"
+						columns="{{ _columns }}"
+						columnScroll3="{{ true }}"
+						stickyHeader="{{ false }}"
+/>

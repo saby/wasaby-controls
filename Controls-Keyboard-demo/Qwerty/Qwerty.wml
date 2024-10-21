@@ -1,0 +1,12 @@
+<div>
+    <div class="engine-demo-Qwerty engine-demo-Qwerty__header">
+        <Controls.buttons:Button caption="{{_textOfButton}}" on:click="_toggleKeyboard()" attr:class="engineDemo_Qwerty__open-btn"/>
+        <div if="{{ _pressedButton }}"  class="engine-demo-Qwerty__header-pressed-button">
+            <div>Нажата клавиша:</div>
+            <div class="engine-demo-Qwerty__header-pressed-button-value">{{ _pressedButton }}</div>
+        </div>
+    </div>
+    <Controls.source:EnumAdapter enum="{{_enumInst}}" class="engine-demo-Qwerty">
+        <Controls.RadioGroup:Control bind:selectedKey="_selectedKey"/>
+    </Controls.source:EnumAdapter>
+</div>

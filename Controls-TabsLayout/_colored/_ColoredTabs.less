@@ -1,0 +1,456 @@
+@danger_background-color_h: 3;
+@danger_background-color_s: 100%;
+@danger_background-color_l: 96%;
+
+@warning_background-color_h: 39;
+@warning_background-color_s: 100%;
+@warning_background-color_l: 96%;
+
+@link_background-color_h: 213;
+@link_background-color_s: 100%;
+@link_background-color_l: 96%;
+
+@success_background-color_h: 120;
+@success_background-color_s: 52%;
+@success_background-color_l: 95%;
+
+@secondary_background-color_h: 213;
+@secondary_background-color_s: 100%;
+@secondary_background-color_l: 96%;
+
+@default_background-color_h: 0;
+@default_background-color_s: 0%;
+@default_background-color_l: 100%;
+
+@label_background-color_h: 0;
+@label_background-color_s: 0%;
+@label_background-color_l: 100%;
+
+@primary_background-color_h: 18;
+@primary_background-color_s: 100%;
+@primary_background-color_l: 98%;
+
+@contrast_background-color_h: 210;
+@contrast_background-color_s: 20%;
+@contrast_background-color_l: 96%;
+
+.controls-ColoredTabs__ {
+   @variants: danger, warning, link, success, secondary, label, default, primary, contrast;
+   .for(@variants, {
+    &background-@{_item} {
+      background: hsl(~'@{@{_item}_background-color_h} @{@{_item}_background-color_s} @{@{_item}_background-color_l}');
+      border-color: hsl(~'@{@{_item}_background-color_h} @{@{_item}_background-color_s} @{@{_item}_background-color_l}');
+    }
+    &border-@{_item} {
+      border-color: hsl(~'@{@{_item}_background-color_h} @{@{_item}_background-color_s} calc(@{@{_item}_background-color_l} - 5%)');
+    }
+  });
+}
+
+.controls-ColoredTabs {
+   margin-top: calc(-1 * var(--offset_3xs));
+   touch-action: none;
+   position: relative;
+   overflow: hidden;
+}
+
+.controls-ColoredTabs__body_real {
+   position: relative;
+   height: calc(100% - var(--inline_height_xl));
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
+   margin-top: calc(-1 * var(--border-thickness));
+   border-top-left-radius: var(--border-radius_s);
+}
+
+.controls-ColoredTabs__body_fake {
+   position: relative;
+   height: calc(100% - var(--inline_height_xl));
+   display: flex;
+   overflow: hidden;
+   margin-top: calc(-1 * var(--border-thickness));
+   flex-direction: column;
+}
+
+/* Фиксируем высоту шапки чтобы контент не уезжал вверх, если фиксированные табы отсутствуют */
+.controls-ColoredTabs__head {
+   display: flex;
+   min-height: var(--inline_height_xl);
+}
+
+.controls-ColoredTabs__fixed-tab {
+   display: flex;
+   justify-content: flex-end;
+   overflow: hidden;
+   position: relative;
+   height: calc(32px + var(--offset_3xs));
+   flex-shrink: 1;
+   flex-grow: 1;
+}
+
+.controls-ColoredTabs__head-bottom {
+   pointer-events: none;
+   z-index: 3;
+   margin-top: calc(-1 * var(--inline_height_xl));
+}
+
+.controls-ColoredTabs__head-switch-wrapper {
+   z-index: 2;
+   max-width: 30%;
+   flex-shrink: 0;
+   overflow: hidden;
+   padding: 0 0 0 var(--offset_m);
+}
+
+.controls-ColoredTabs__head-tab_distributed_true {
+   padding: 0 calc(var(--item_head_padding-right_colored-tabs)) 0
+      var(--item_head_padding-left_colored-tabs);
+}
+
+.controls-ColoredTabs__head-tab_distributed_false {
+   margin: 0 3px;
+}
+
+.controls-ColoredTabs__head-tab {
+   pointer-events: all;
+   flex-grow: 0;
+   position: relative;
+   bottom: calc(-1 * var(--offset_3xs));
+   height: var(--inline_height_l);
+   line-height: var(--inline_height_l);
+   font-size: var(--font-size_l);
+}
+
+.controls-ColoredTabs__head-tab__minWidth {
+   min-width: var(--item_head_min-width_colored-tabs);
+}
+
+.ws-is-android {
+   .controls-ColoredTabs__head-tab {
+      // При изменении масштаба страницы и на мобилках, между блоками появляется небольшая щель, похожая на сглаживание
+      // https://online.sbis.ru/opendoc.html?guid=e7809fee-2242-42ac-8515-911310ffa124
+      transform: translate3d(0, 0, 0);
+   }
+}
+
+.controls-ColoredTabs__blur-wrapper {
+   height: calc(var(--inline_height_xl) - 2px);
+   right: -5px;
+   width: 7px;
+   float: right;
+   position: relative;
+   top: calc((var(--inline_height_xl) - 2px) * (-1));
+}
+
+// и z-index: 3, чтобы вкладка перекрывала бордер
+.controls-ColoredTabs__head-tab_fixed-top:last-child,
+.controls-ColoredTabs__head-tab_fixed-bottom:last-child {
+   z-index: 3;
+}
+
+.controls-ColoredTabs__head-tab-background {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   border-style: solid;
+   cursor: pointer;
+   // При масштабе 110% закладка может сместиться на 1px выше, при этом бордер вкладки, который должен перекрываться, на этот пиксель не сместится,
+   // в итоге получится пустой разрыв.
+   margin-bottom: -1px;
+}
+
+.controls-ColoredTabs__distributed__head-tab-text {
+   // В развернутом состоянии компенсируем отсутствие блюра.
+   padding-right: 7px;
+}
+
+.controls-ColoredTabs__head-tab-text {
+   max-width: 100%;
+   position: relative;
+   white-space: nowrap;
+   overflow: hidden;
+   cursor: pointer;
+   z-index: 2;
+}
+
+.controls-ColoredTabs__head-tab__wrapper {
+   overflow: hidden;
+}
+
+.controls-ColoredTabs__item-title {
+   margin-top: calc(-1 * var(--inline_height_xl) + var(--border-thickness));
+   flex-shrink: 0;
+   flex-grow: 0;
+   display: flex;
+   justify-content: flex-end;
+   overflow: hidden;
+   position: absolute;
+   right: 0;
+   z-index: 1;
+   padding-left: 8px;
+   height: var(--inline_height_xl);
+}
+
+.ws-is-drag {
+   .controls-ColoredTabs {
+      &__item-title {
+         cursor: move;
+
+         & .controls-ColoredTabs__head-tab {
+            &-background {
+               cursor: move;
+            }
+
+            &-text {
+               cursor: move;
+            }
+         }
+      }
+   }
+}
+
+.ws-is-mobile-safari {
+   .controls-ColoredTabs__item-title {
+      // Делаем вкладку внахлёст с контентом, чтобы между ними не было мерцаний на ios
+      height: calc(var(--inline_height_xl) + 1px);
+   }
+}
+
+.ws-is-desktop-safari,
+.ws-is-mobile-safari {
+   // По какой-то причине, IntersectionObserver отказывается корректно работать при текущей верстке.
+   // Эксперементальным путем выяснилось, что дело в паддинге (который был в старой версии компонента).
+   // Оставим его в сафари до тех пор, пока не разберемся в причине.
+   .controls-ColoredTabs__item-title {
+      padding-right: 1px;
+   }
+}
+
+.controls-ColoredTabs__item-title_invisible {
+   visibility: hidden;
+}
+
+.controls-ColoredTabs__item-content {
+   transform: translateZ(0);
+   border-style: solid;
+   border-width: 0;
+   width: 100%;
+   bottom: 0;
+   border-top-left-radius: var(--border-radius_s);
+}
+
+.controls-ColoredTabs__item-content_real {
+   position: absolute;
+}
+
+.controls-ColoredTabs__item-content_fake {
+   position: static;
+   min-height: 15%;
+   max-height: 100%;
+   border-style: solid;
+   border-width: 0;
+   width: 100%;
+}
+
+.controls-ColoredTabs__selected-item_border_top {
+   z-index: 1;
+}
+
+.controls-ColoredTabs__selected-item {
+   z-index: 2;
+}
+
+.controls-ColoredTabs__content {
+   background: var(--background-color);
+   height: 100%;
+   z-index: 0;
+   position: relative;
+   border-width: var(--border-thickness) var(--border-thickness) 0 var(--border-thickness);
+   border-top-style: solid;
+   border-top-left-radius: var(--border-radius_s);
+}
+
+// Обсервер прилипания, значения подобраны эмпирическим методом
+.controls-ColoredTabs__item-title__fakeItem {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+
+   &_bottom {
+      bottom: 0;
+   }
+
+   &_top {
+      bottom: 3px;
+   }
+}
+
+.controls-ColoredTabs__custom-content {
+   margin-top: var(--offset_2xs);
+}
+
+.controls-ColoredTabs__content__scroll {
+   height: 100%;
+   overflow: hidden;
+   border-top-left-radius: var(--border-radius_s);
+}
+
+.controls-ColoredTabs_disableMinHeight{
+   .controls-ColoredTabs__item-content_fake {
+      min-height: 0;
+   }
+}
+
+.controls-ColoredTabs__content-bottomSpacing::after {
+   height: var(--inline_height_xl);
+   content: '\00a0';
+   display: block;
+}
+
+.controls-ColoredTabs__item-pinnedBottom-content {
+   height: 0;
+}
+
+.controls-ColoredTabs__head-tab-background-center {
+   left: 17px;
+   right: 17px;
+   border-width: var(--border-thickness) 0 0 0;
+}
+
+.controls-ColoredTabs__head-tab-background-left,
+.controls-ColoredTabs__head-tab-background-right {
+   // Для сглаживания border'a в FF.
+   transform-style: preserve-3d;
+   // Для сглаживания border'a в Chrome.
+   -webkit-backface-visibility: hidden;
+}
+
+.controls-ColoredTabs__head-tab-background-left {
+   left: -2px;
+   border-width: var(--border-thickness) 0 0 var(--border-thickness);
+}
+
+.controls-ColoredTabs__head-tab-background-right {
+   right: -2px;
+   border-width: var(--border-thickness) var(--border-thickness) 0 0;
+}
+
+.controls-ColoredTabs__head-tab_position-right {
+   padding: 0 var(--offset_2xs) 0 var(--offset_m);
+   bottom: calc(-1 * var(--offset_2xs));
+
+   .controls-ColoredTabs__head-tab-background-left {
+      border-top-right-radius: var(--border-radius_s);
+      border-top-left-radius: var(--border-radius_s);
+      box-shadow: -1px -1px 5px var(--shadow-color_a);
+      width: 100%;
+   }
+
+   .controls-ColoredTabs__head-tab-background-right {
+      border-radius: 0 var(--border-radius_3xs) 0 0;
+      width: 30px;
+   }
+}
+
+.controls-ColoredTabs__head-tab_position-left {
+   padding: 0 var(--offset_m) 0 calc(var(--offset_l) - 2px);
+   margin-left: 2px;
+
+   .controls-ColoredTabs__head-tab-background-left {
+      border-radius: var(--border-radius_s) 0 0;
+      z-index: 1;
+      width: 30px;
+   }
+
+   .controls-ColoredTabs__head-tab-background-right {
+      border-radius: var(--border-radius_s) var(--border-radius_s) 0 0;
+      box-shadow: 1px -1px 5px var(--shadow-color_a);
+      width: 100%;
+   }
+}
+
+.controls-ColoredTabs__head-tab_position-center {
+   padding: 0 var(--offset_m) 0 var(--offset_l);
+
+   .controls-ColoredTabs__head-tab-background-left {
+      border-radius: var(--border-radius_s) 0 0;
+      z-index: 1;
+      box-shadow: -1px -1px 5px var(--shadow-color_a);
+      width: 30px;
+   }
+
+   .controls-ColoredTabs__head-tab-background-right {
+      border-radius: var(--border-radius_s) var(--border-radius_s) 0 0;
+      box-shadow: 1px -1px 5px var(--shadow-color_a);
+      width: calc(100% - 30px);
+   }
+
+   .controls-ColoredTabs__head-tab-background-center {
+      z-index: 2;
+   }
+}
+
+.controls-ColoredTabs__head-tab_position-center_padding-left {
+   padding-left: var(--offset_2xl);
+   margin-left: calc(var(--offset_3xl) / -2);
+}
+
+.controls-ColoredTabs__head-tab_position-center_padding-right {
+   padding-right: var(--offset_l);
+   margin-right: calc(var(--offset_3xl) / -2);
+}
+
+.controls-ColoredTabs__head-tab_position-left_selected {
+   padding-right: 48px;
+}
+
+.controls-ColoredTabs__head-tab-background-left-rounding {
+   // translateY(-0.1px) для сглаживания border'a в FF.
+   transform: translateY(-0.1px) skewX(-10deg);
+}
+
+.controls-ColoredTabs__head-tab-background-right-rounding {
+   // translateY(-0.1px) для сглаживания border'a в FF.
+   transform: translateY(-0.1px) skewX(10deg);
+}
+
+.controls-ColoredTabs__head-tab__fixed-bottom,
+.controls-ColoredTabs__head-tab__fixed-top {
+   transition: 0.1s;
+   position: absolute;
+   bottom: 0;
+}
+
+.controls-ColoredTabs__blur {
+   height: calc(var(--inline_height_xl) - 3px);
+   width: 12px;
+   float: right;
+   position: relative;
+   top: 0;
+   filter: blur(3px);
+}
+
+.controls-ColoredTabs__text-wrapper {
+   display: inline-block;
+}
+
+.controls-ColoredTabs__backgroundFill-header {
+   background-color: var(--background-color);
+}
+
+.controls-ColoredTabs__item__dnd-border {
+   position: absolute;
+   width: 100%;
+   height: 3px;
+   z-index: 1;
+   cursor: ns-resize;
+}
+
+.controls-Scroll__shadow_top_style-colored {
+   background: linear-gradient(to bottom, var(--shadow-color_c), var(--shadow_end-color_scroll));
+}
+
+.controls-Scroll__shadow_bottom_style-colored {
+   background: linear-gradient(to top, var(--shadow-color_c), var(--shadow_end-color_scroll));
+}

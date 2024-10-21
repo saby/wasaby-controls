@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo_fixedWidth100">
+            <Controls.buttons:Button icon="icon-Add"
+                                     caption="link"
+                                     viewMode="link"/>
+        </div>
+        <div class="controlsDemo_fixedWidth100">
+            <Controls.buttons:Button href="https://www.google.com/"
+                                     caption="google.com"
+                                     viewMode="link"/>
+        </div>
+        <div class="controlsDemo_fixedWidth100">
+            <Controls.buttons:Button attr:target="_blank"
+                                     href="https://www.google.com/"
+                                     caption="google.com"
+                                     viewMode="link"/>
+        </div>
+    </div>
+</div>

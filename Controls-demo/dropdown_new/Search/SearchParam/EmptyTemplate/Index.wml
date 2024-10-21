@@ -1,0 +1,39 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__ml3">
+      <div class="controls-text-label">С emptyTemplate=Controls/menu:EmptyTemplate</div>
+      <Controls.dropdown:Selector
+              source="{{_source}}"
+              keyProperty="key"
+              multiSelect="true"
+              bind:selectedKeys="_selectedKeys"
+              displayProperty="title"
+              searchParam="title"
+              emptyTemplate="Controls/menu:EmptyTemplate"
+      />
+   </div>
+   <div class="controlsDemo__ml3">
+      <div class="controls-text-label">С emptyTemplate</div>
+      <Controls.dropdown:Selector
+              source="{{_source}}"
+              keyProperty="key"
+              multiSelect="true"
+              bind:selectedKeys="_selectedKeys"
+              displayProperty="title"
+              searchParam="title"
+              bind:searchValue="_searchValue"
+      >
+         <ws:emptyTemplate>
+            <div class="controlsDemo__ml1">
+               <Controls.buttons:Button viewMode="link"
+                                        caption="reset"
+                                        on:click="_resetSearch()"
+               /> search or&nbsp;
+               <Controls.buttons:Button viewMode="link"
+                                        caption="change"
+                                        on:click="_changeSearch()"
+               /> search
+            </div>
+         </ws:emptyTemplate>
+      </Controls.dropdown:Selector>
+   </div>
+</div>

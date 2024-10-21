@@ -1,0 +1,13 @@
+<div class="controls-Grid__header-cell__content">
+   <Controls.heading:Title caption="{{column.config.title}}"
+                     fontColorStyle="secondary"
+                     readOnly="{{true}}"
+                     attr:class="ControlsDemo-EipScenarios__headerCaption"
+                     fontSize="l"/>
+   <Controls.buttons:Button iconSize="s" icon="icon-AddButtonNew"
+                    buttonStyle="secondary"
+                    iconStyle="secondary"
+                    viewMode="ghost"
+                    inlineHeight="m"
+                    readOnly="{{true}}" />
+</div>

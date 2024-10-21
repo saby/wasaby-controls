@@ -1,0 +1,7 @@
+<Controls.popupTemplate:Stack>
+    <ws:bodyContentTemplate>
+        <Controls.buttons:Button caption="Открыть Sticky"
+                                 class="controlsDemo_fixedWidth200 controlsDemo__margin-top"
+                                 on:click="_openClickHandler()"/>
+    </ws:bodyContentTemplate>
+</Controls.popupTemplate:Stack>

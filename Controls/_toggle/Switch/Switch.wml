@@ -1,0 +1,31 @@
+<ws:template name="toggle">
+<Controls._toggle.SwitchButton
+    value="{{_value}}"
+    viewMode="{{_options.viewMode}}"
+    size="{{_options.size}}"
+    position="{{_value ? 'end' : 'start'}}"
+    resetValue="{{_options.resetValue}}"/>
+</ws:template>
+<ws:template name="caption">
+<ws:partial template="{{_captionTemplate}}" captionPosition="{{_options.captionPosition}}" scope="{{_options}}"
+            tabindex="0"/>
+</ws:template>
+
+<span
+    class="controls_toggle_theme-{{_options.theme}} controls-Switch {{_highlightedOnFocus ? 'controls-focused-item'}}"
+    on:click="_clickHandler()"
+    on:keypress="_keyUpHandler()"
+    title="{{_options.tooltip}}">
+       <div class="controls-invalid-container controls-Switch__wrapper controls-Switch_hovered" tabindex="0">
+          <ws:if data="{{_options.captionPosition === 'start'}}">
+             <ws:partial template="caption"/>
+             <ws:partial template="toggle"/>
+          </ws:if>
+          <ws:else>
+             <ws:partial template="toggle"/>
+             <ws:partial template="caption"/>
+          </ws:else>
+          <div
+              class="{{ _options.validationStatus!== 'valid' ? 'controls-invalid-border controls-' + _options.validationStatus + '-border'}}"></div>
+       </div>
+</span>

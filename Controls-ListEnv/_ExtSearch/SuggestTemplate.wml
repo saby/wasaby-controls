@@ -1,0 +1,33 @@
+<div>
+    <ws:if data="{{ _options.suggestSettingsOptions && _options.suggestSettingsOptions.length && _options.needShowSettings }}">
+        <Controls.Container.Async templateName="Controls/filterPanel:View">
+               <ws:partial template="{{content.resolvedTemplate}}"
+                           attr:class="ExtSearch-suggest__suggestTemplate_filterPanel
+                                     {{ _options.suggestListsOptions ? 'controls-margin_top-2xs controls-margin_bottom-m' : 'ExtSearch-suggest__suggestTemplate_filterPanel_offset' }}"
+                          attr:data-qa="ExtSearch-suggest__suggestTemplate_filterPanel"
+                          backgroundStyle="{{ null }}"
+                          source="{{ _options.suggestSettingsOptions }}"
+                          on:filterChanged="_onFilterChanged()">
+                  <ws:itemsContainerPadding top="null" bottom="null" left="m" right="m" />
+              </ws:partial>
+           </Controls.Container.Async>
+    </ws:if>
+   <Controls.suggestPopup:ListContainer
+      if="{{ _options.suggestListsOptions }}"
+      attr:class="{{ _options.suggestSettingsOptions
+                     && _options.suggestSettingsOptions.length
+                     && _options.needShowSettings ? 'ExtSearch-suggest__suggestTemplate_explorer' }}">
+      <Controls.explorer:View
+         displayProperty="{{ _displayProperty }}"
+         parentProperty="{{ _parentProperty }}"
+         nodeProperty="{{ _nodeProperty }}"
+         keyProperty="{{ _keyProperty }}"
+         itemTemplate="{{ _suggestItemTemplate }}"
+         columns="{{ _columns }}"
+         navigation="{{ _navigation }}"
+         filter="{{ _filter }}"
+         itemPadding="{{ _suggestItemPadding }}"
+         on:markedKeyChanged="_markedKeyChangedHandler()"
+      />
+   </Controls.suggestPopup:ListContainer>
+</div>

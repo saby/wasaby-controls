@@ -1,0 +1,26 @@
+<Controls.popupSliding:Template
+        slidingPanelOptions="{{ _options.slidingPanelOptions }}">
+    <ws:headerContentTemplate>
+        <Controls.heading:Title fontColorStyle="secondary" fontSize="4xl" caption="Заголовок" />
+    </ws:headerContentTemplate>
+    <ws:bodyContentTemplate>
+        <Controls.scroll:Container
+                attr:style="height: 100%;">
+            <div class="ControlDemo__SlidingPanel-popupTemplate-content">
+                <div class="ControlDemo__SlidingPanel-popupTemplate-setting">
+                    <Controls.buttons:Button on:click="_openSlidingPanelHandler()"/>
+                    <Controls.input:Text/>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, cumque dolorem enim eveniet facere, fugit minima optio, quia ratione repellat repudiandae saepe similique vel? Adipisci est fuga iure necessitatibus saepe.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, cumque dolorem enim eveniet facere, fugit minima optio, quia ratione repellat repudiandae saepe similique vel? Adipisci est fuga iure necessitatibus saepe.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, cumque dolorem enim eveniet facere, fugit minima optio, quia ratione repellat repudiandae saepe similique vel? Adipisci est fuga iure necessitatibus saepe.
+                </div>
+            </div>
+        </Controls.scroll:Container>
+    </ws:bodyContentTemplate>
+    <ws:actionContentTemplate>
+        <Controls.buttons:Button buttonStyle="primary"
+                                 inlineHeight="5xl"
+                                 fontSize="5xl"
+                                 caption="Подписать"/>
+    </ws:actionContentTemplate>
+</Controls.popupSliding:Template>

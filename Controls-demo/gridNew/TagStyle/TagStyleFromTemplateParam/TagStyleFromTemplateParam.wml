@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper controlsDemo__grid-tagStyle controlsDemo__maxWidth800">
+    <Controls.grid:View
+            storeId="TagStyleFromTemplateParam1"
+            columns="{{_columns}}"
+            on:tagClick="_onTagClickCustomHandler()"
+            on:tagHover="_onTagHoverCustomHandler()"/>
+    <div class="controlsDemo-toolbar-panel">
+        &nbsp;&nbsp;{{_currentEvent && _currentColumnIndex && _currentValue ? (_currentEvent + ' на теге в колонке №' +
+        _currentColumnIndex + ' со значением ' + _currentValue) : ''}}
+    </div>
+</div>

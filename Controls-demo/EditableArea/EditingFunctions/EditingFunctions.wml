@@ -1,0 +1,19 @@
+<div class="controlsDemo__wrapper">
+   <div class="controlsDemo__cell">
+      <Controls.editableArea:View
+         name="editingView"
+         toolbarVisible="{{true}}"
+         editingObject="{{_editingObject}}">
+         <Controls.editableArea:Base bind:value="content.editingObject.text">
+            <ws:editorTemplate>
+               <Controls.input:Text contrastBackground="{{true}}" attr:class="controls-Input_negativeOffset"/>
+            </ws:editorTemplate>
+         </Controls.editableArea:Base>
+      </Controls.editableArea:View>
+   </div>
+   <div class="ws-flexbox">
+      <Controls.buttons:Button attr:class="demo-EditableArea__beginEdit" caption="Начать редактирование" on:click="_beginEdit()"/>
+      <Controls.buttons:Button attr:class="demo-EditableArea__cancelEdit" caption="Отменить редактирование" on:click="_cancelEdit()"/>
+      <Controls.buttons:Button attr:class="demo-EditableArea__commitEdit" caption="Сохранить изменения и завершить редактирование" on:click="_commitEdit()"/>
+   </div>
+</div>

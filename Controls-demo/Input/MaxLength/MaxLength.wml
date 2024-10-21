@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             maxLength="{{10}}"
+                             placeholder="maxLength=10"/>
+    </div>
+    <ws:if data="{{_forTest}}">
+        <div class="controlsDemo__cell">
+            <Controls.input:Text attr:class="controlsDemo__input"/>
+        </div>
+    </ws:if>
+</div>

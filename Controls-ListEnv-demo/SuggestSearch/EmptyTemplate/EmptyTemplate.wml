@@ -1,0 +1,27 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow demo-SearchSuggest__container controlsDemo__mb3">
+   <div class="controlsDemo__wrapper__horizontal controlsDemo__cell ControlsDemo-Suggest_padding-left controlsDemo_fixedWidth350">
+      <div class="controls-text-label">Шаблон пустого списка с кнопкой</div>
+      <Controls-ListEnv.SuggestSearch
+              attr:class="demo-SuggestNewSearch__withButton controlsDemo__input"
+              bind:value="_suggestCustomValue"
+              displayProperty="title"
+              searchParam="title"
+              navigation="{{_navigation}}"
+              source="{{_source}}">
+          <ws:emptyTemplate templateName="wml!Controls-ListEnv-demo/SuggestSearch/EmptyTemplate/resources/EmptyTemplate"/>
+          <ws:suggestTemplate templateName="wml!Controls-ListEnv-demo/SuggestSearch/EmptyTemplate/resources/SuggestTemplate"/>
+      </Controls-ListEnv.SuggestSearch>
+  </div>
+   <div class="controlsDemo__wrapper__horizontal controlsDemo__cell ControlsDemo-Suggest_padding-left">
+      <div class="controls-text-label">Шаблон пустого списка по умолчанию</div>
+      <Controls-ListEnv.SuggestSearch
+              attr:class="demo-SuggestNewSearch__default controlsDemo__input"
+              bind:value="_suggestDefaultValue"
+              displayProperty="title"
+              searchParam="title"
+              navigation="{{_navigation}}"
+              source="{{_source}}">
+          <ws:suggestTemplate templateName="wml!Controls-ListEnv-demo/SuggestSearch/EmptyTemplate/resources/SuggestTemplate"/>
+      </Controls-ListEnv.SuggestSearch>
+   </div>
+</div>

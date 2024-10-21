@@ -1,0 +1,84 @@
+@import 'Controls-default-theme/_new-mixins';
+
+.formControllerDemo__input {
+   border-radius: 6px;
+   border: 1px solid var(--readonly_border-color);
+   padding: 5px;
+   padding-left: 8px;
+   color: var(--text-color);
+   height: 30px;
+   width: 600px;
+   margin-top: 5px;
+}
+
+/* stylelint-disable-next-line selector-max-type */
+input::placeholder {
+   color: var(--readonly_text-color);
+}
+
+.formControllerDemo__button {
+   height: 35px;
+   width: 90px;
+   border-radius: 8px;
+   background-color: var(--warning_color);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   letter-spacing: 2px;
+   font-weight: var(--font-weight-bold);
+   box-sizing: border-box;
+}
+
+.formControllerDemo__button__delete {
+   background-color: #f4f4f4;
+   color: var(--readonly_text-color);
+   margin-left: 10px;
+   font-weight: normal;
+}
+
+.formControllerDemo__button__create {
+   font-weight: normal;
+}
+
+.formControllerDemo__button:hover {
+   background-color: var(--text-color);
+   color: var(--background-color);
+}
+
+.formControllerDemo__list__header {
+   padding: 10px 0;
+   border-bottom: 1px solid var(--warning_border-color);
+}
+
+.formControllerDemo__list__item {
+   width: 200px;
+}
+
+.formControllerDemo__list {
+   padding: 10px 0;
+}
+
+.formControllerDemo__record__header {
+   margin-bottom: 8px;
+   padding-bottom: 10px;
+   border-bottom: 1px solid var(--warning_border-color);
+}
+
+.formControllerDemo__record {
+   width: 250px;
+   padding: 20px;
+   box-shadow: 0 0 10px var(--readonly_text-color);
+}
+
+.formControllerDemo__button__pending {
+   background-color: #f4f4f4;
+   color: var(--readonly_text-color);
+   margin-left: 10px;
+   font-weight: normal;
+   padding-left: 15px;
+}
+
+.formControllerDemo__operation__icon {
+   .icon(20px);
+   color: var(--warning_icon-color);
+}

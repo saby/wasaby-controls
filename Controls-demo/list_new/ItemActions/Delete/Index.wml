@@ -1,0 +1,6 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300">
+    <Controls.list:View name="list"
+                        storeId="ItemActionsDelete"
+                        itemActions="{{_itemActions}}">
+    </Controls.list:View>
+</div>

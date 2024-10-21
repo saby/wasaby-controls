@@ -1,0 +1,26 @@
+<div class="ws-flexbox ws-align-self-baseline">
+<div title="{{item.tooltip}}"
+     class="controls-Tabs_margin-{{horizontalPadding ? horizontalPadding : 'left'}} controls-Tabs_itemClickableArea-caption">
+  {{ item.caption || item[displayProperty] }}
+</div>
+<ws:if data="{{item.icon}}">
+  <ws:partial template="wml!Controls/_tabs/Buttons/templates/IconTemplate"
+              icon="{{item.icon}}"
+              tooltip="{{item.iconTooltip}}"
+              iconSize="{{item.iconSize || iconSize}}"
+              iconStyle="{{item.iconStyle || iconStyle}}"
+  />
+</ws:if>
+<ws:if data="{{item.mainCounter}}">
+  <div class="{{item.icon ? 'controls-margin_left-3xs' : 'controls-Tabs_margin-left'}} ws-align-self-center">
+    <Controls.heading:Counter class="{{ !isSelected ? 'controls-fontweight-default'}}"
+                              caption="{{item.mainCounter}}"
+                              fontColorStyle="{{isSelected ? 'primary' : (item.mainCounterStyle || 'unaccented') }}"/>
+  </div>
+</ws:if>
+<ws:if data="{{item.additionalCaption}}">
+  <div class="controls-Tabs_margin-left controls-Tabs__item_overflow controls-text-unaccented">
+    {{ item.additionalCaption }}
+  </div>
+</ws:if>
+</div>

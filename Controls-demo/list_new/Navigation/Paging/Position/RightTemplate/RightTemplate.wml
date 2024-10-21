@@ -1,0 +1,23 @@
+<!-- eslint-disable -->
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth800">
+    <Controls.scroll:Container attr:class="controlsDemo__height400">
+        <Controls.list:HotKeysContainer>
+            <Controls.list:View
+                    storeId="NavigationPagingPositionRightTemplate"
+                    attr:class="controlsDemo_line-height18"
+                    moveMarkerOnScrollPaging="{{true}}">
+                <ws:pagingRightTemplate>
+                    <Controls.buttons:Button iconSize="s"
+                                             inlineHeight="l"
+                                             icon="icon-EmptyMessage"
+                                             buttonStyle="primary"
+                                             viewMode="filled"
+                                             iconStyle="contrast"
+                                             tooltip="{[Отправить]}"
+                                             attr:style="margin-left: 8px;"
+                    />
+                </ws:pagingRightTemplate>
+            </Controls.list:View>
+        </Controls.list:HotKeysContainer>
+    </Controls.scroll:Container>
+</div>

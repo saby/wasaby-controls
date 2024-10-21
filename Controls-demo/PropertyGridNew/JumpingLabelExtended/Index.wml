@@ -1,0 +1,17 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell controls-Demo__wide-propertyGrid">
+        <div class="controls-text-label">jumpingLabel vertical</div>
+        <Controls.propertyGrid:PropertyGrid
+                bind:editingObject="_editingObject"
+                typeDescription="{{_typeDescription}}"
+                jumpingLabel="{{true}}">
+            <ws:groupTemplate>
+                <ws:partial template="Controls/propertyGrid:GroupTemplate">
+                    <ws:contentTemplate>
+                        <h1>{{contentTemplate.item}}</h1>
+                    </ws:contentTemplate>
+                </ws:partial>
+            </ws:groupTemplate>
+        </Controls.propertyGrid:PropertyGrid>
+    </div>
+</div>

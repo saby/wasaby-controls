@@ -1,0 +1,33 @@
+.notes .notes-item {
+   position: absolute;
+   background-color: #fffbe4;
+   box-shadow: 1px 0 4px 0 var(--readonly_text-color);
+   border-left: none;
+   z-index: 1;
+}
+
+.notes .controls-ListViewV {
+   position: static;
+}
+
+.notes .notes-draggingItem {
+   z-index: 2;
+   opacity: 0.5;
+}
+
+.notes-title {
+   font-size: 18px;
+   padding: 4px;
+}
+
+.notes-triangle {
+   position: absolute;
+   bottom: -16px;
+   right: -20px;
+   cursor: nwse-resize;
+   width: 64px;
+   height: 64px;
+   /* stylelint-disable-next-line declaration-no-important */
+   font-family: 'cbuc-icons' !important;
+   font-size: 64px;
+}

@@ -1,0 +1,36 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <Controls.buttons:Button caption="Toggle multiselectVisibility" on:click="_onToggle()"/>
+        <Controls.buttons:Button caption="{{'Установить startingWith в '+ _startingWithBtnCaption}}"
+                                 on:click="_updateStartingWith()" attr:style="padding-left: 5px"/>
+        <Controls.buttons:Button caption="{{ !!_dedicatedItemProperty ? 'Выключить' : 'Включить' }} dedicatedItemProperty"
+                                 on:click="_onToggleDedicatedItemProperty()" attr:style="padding-left: 5px"/>
+    </div>
+    <Controls.browser:Browser source="{{_viewSource}}" keyProperty="id" bind:filter="_filter" parentProperty="parent" bind:root="_root"
+                              searchParam="title" minSearchLength="{{3}}" searchStartingWith="{{_startingWith}}">
+        <div class="ws-fragment">
+            <Controls.searchDeprecated:InputContainer name="search">
+                <Controls.search:Input/>
+            </Controls.searchDeprecated:InputContainer>
+            <Controls.listDeprecate:Remover name="remover"/>
+            <Controls.listDataOld:ListContainer>
+                <Controls.explorer:View
+                        source="{{_viewSource}}"
+                        bind:root="_root"
+                        bind:selectedKeys="_selectedKeys"
+                        bind:excludedKeys="_excludedKeys"
+                        attr:class="demo-Explorer ControlsDemo-Explorer"
+                        itemsReadyCallback="{{_itemsReadyCallback}}"
+                        keyProperty="id"
+                        displayProperty="title"
+                        parentProperty="parent"
+                        nodeProperty="parent@"
+                        multiSelectVisibility="{{_multiselect}}"
+                        dedicatedItemProperty="{{_dedicatedItemProperty}}"
+                        columns="{{_columns}}">
+                </Controls.explorer:View>
+            </Controls.listDataOld:ListContainer>
+        </div>
+    </Controls.browser:Browser>
+</div>
+

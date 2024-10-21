@@ -1,0 +1,115 @@
+<div class="demo-MonthList">
+   <div class="demo-MonthList__header">Controls.calendar:MonthList</div>
+   <div class="demo-MonthList__content">
+      <div class="demo-MonthList__content-row">
+         <div class="demo-MonthList__content-block">
+            <div class="demo-MonthList__content-block-header">Base, viewMode: year</div>
+            <Controls.calendar:MonthList>
+               <ws:yearHeaderTemplate>
+                  <div>
+                     {{yearHeaderTemplate.date.getFullYear()}}
+                  </div>
+               </ws:yearHeaderTemplate>
+               <ws:monthTemplate>
+                  <ws:partial template="Controls/calendar:MonthListMonthTemplate">
+                     <ws:headerTemplate>
+                        {{_formatMonth(headerTemplate.date)}}
+                     </ws:headerTemplate>
+                     </ws:partial>
+               </ws:monthTemplate>
+            </Controls.calendar:MonthList>
+         </div>
+         <div class="demo-MonthList__content-block">
+            <div class="demo-MonthList__content-block-header">Base, viewMode: month</div>
+            <Controls.calendar:MonthList viewMode="month">
+               <ws:monthTemplate>
+                  <ws:partial template="Controls/calendar:MonthListMonthTemplate">
+                     <ws:headerTemplate>
+                        {{_formatMonth(headerTemplate.date)}}
+                     </ws:headerTemplate>
+                  </ws:partial>
+               </ws:monthTemplate>
+            </Controls.calendar:MonthList>
+         </div>
+      </div>
+      <div class="demo-MonthList__content-row">
+         <div class="demo-MonthList__content-block">
+            <div class="demo-MonthList__content-block-header">Custom templates and source, viewMode: year</div>
+            <div class="demo-MonthList__monthList-header">{{_yearHeader}}</div>
+            <Controls.calendar:MonthList
+               displayedRanges="{{_displayedRanges2}}"
+               name="yearsMonthList"
+               bind:position="_year"
+               source="{{_source}}"
+               on:positionChanged="_yearPositionChangedHandler()">
+               <ws:stubTemplate>
+                  <div>
+                     ---- // ----
+                  </div>
+               </ws:stubTemplate>
+               <ws:yearHeaderTemplate>
+                  <div class="demo-MonthList__itemHeader">
+                     {{yearHeaderTemplate.date.getFullYear()}}
+                  </div>
+               </ws:yearHeaderTemplate>
+               <ws:monthTemplate>
+                  <ws:partial template="Controls/calendar:MonthListMonthTemplate">
+                     <ws:headerTemplate>
+                        {{_formatMonth(headerTemplate.date)}}
+                     </ws:headerTemplate>
+                     <ws:dayTemplate>
+                        <ws:partial template="Controls/calendar:MonthViewDayTemplate">
+                           <ws:contentTemplate>
+                              <ws:partial template="{{_dayTemplate}}"/>
+                           </ws:contentTemplate>
+                        </ws:partial>
+                     </ws:dayTemplate>
+                  </ws:partial>
+               </ws:monthTemplate>
+            </Controls.calendar:MonthList>
+         </div>
+         <div class="demo-MonthList__content-block">
+            <div class="demo-MonthList__content-block-header">Custom templates and source, viewMode: month</div>
+            <div class="demo-MonthList__monthList-header">{{_monthHeader}}</div>
+            <Controls.calendar:MonthList
+               name="monthsMonthList"
+               bind:position="_month"
+               source="{{_source}}"
+               viewMode="month"
+               displayedRanges="{{_displayedRanges}}"
+               on:positionChanged="_monthPositionChangedHandler()">
+               <ws:stubTemplate>
+                  <div>
+                     ---- // ----
+                  </div>
+               </ws:stubTemplate>
+               <ws:monthTemplate>
+                  <ws:partial template="Controls/calendar:MonthListMonthTemplate">
+                     <ws:headerTemplate>
+                        <div class="demo-MonthList__itemHeader">{{_formatMonth(headerTemplate.date)}}</div>
+                     </ws:headerTemplate>
+                     <ws:dayTemplate>
+                        <ws:partial template="Controls/calendar:MonthViewDayTemplate">
+                           <ws:contentTemplate>
+                              <ws:partial template="{{_dayTemplate}}"/>
+                           </ws:contentTemplate>
+                        </ws:partial>
+                     </ws:dayTemplate>
+                  </ws:partial>
+               </ws:monthTemplate>
+            </Controls.calendar:MonthList>
+         </div>
+      </div>
+      <div class="demo-MonthList__content-row">
+         <Controls.buttons:Button
+               attr:class="demo-MonthList__button"
+               caption="Обновить 2019 год"
+               on:click="_updateYear()"/>
+         <Controls.buttons:Button
+               attr:class="demo-MonthList__button"
+               caption="Скролировать к 03.06.2019"
+               on:click="_scrollToDate()"/>
+      </div>
+   </div>
+
+</div>

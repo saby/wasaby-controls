@@ -1,0 +1,33 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__mr4">
+        <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys"
+                                    keyProperty="key"
+                                    displayProperty="title"
+                                    nodeProperty="node"
+                                    parentProperty="parent"
+                                    source="{{_source}}">
+            <ws:itemTemplate>
+                <ws:partial template="Controls/dropdown:ItemTemplate"
+                            iconAlign="right"
+                            multiLine="{{true}}">
+                    <ws:contentTemplate>
+                        <div class="ws-flexbox">
+                            <ws:if data="{{itemTemplate.item.contents.get('icon')}}">
+                                <div class="{{itemTemplate.item.contents.get('icon')}}
+                                 controls-icon_style-{{itemTemplate.item.contents.get('iconStyle')}}
+                                 controls-icon_size-s"></div>
+                            </ws:if>
+                            <div>{{itemTemplate.item.contents.get('title')}}</div>
+                        </div>
+                    </ws:contentTemplate>
+                    <ws:additionalTextTemplate>
+                        <div class="ws-flexbox ws-justify-content-between">
+                            <div>{{itemTemplate.item.contents.get('comment')}}</div>
+                            <div class="controls-margin_left-3xs">{{itemTemplate.item.contents.get('number')}}</div>
+                        </div>
+                    </ws:additionalTextTemplate>
+                </ws:partial>
+            </ws:itemTemplate>
+        </Controls.dropdown:Selector>
+    </div>
+</div>

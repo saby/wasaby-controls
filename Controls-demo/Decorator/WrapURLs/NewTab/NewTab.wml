@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">newTab=false</div>
+      <Controls.extendedDecorator:WrapURLs value="{{_value}}" newTab="{{false}}"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">newTab=true</div>
+      <Controls.extendedDecorator:WrapURLs value="{{_value}}" newTab="{{true}}"/>
+   </div>
+</div>

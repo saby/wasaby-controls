@@ -1,0 +1,32 @@
+<div class="demoVertical-Vertical_firstBlock">
+  <div class="body_template">
+    <div class="body_template_header body_template_header_content">
+      <span>Добавление виджета на сайт</span>
+    </div>
+    <div class="body_template_row">
+      <Controls.validate:Container class="body_template_input">
+        <ws:validators>
+          <ws:Function value="{{_options.record.siteAddress}}">Controls/validate:isRequired</ws:Function>
+        </ws:validators>
+        <ws:content>
+          <Controls.input:Text placeholder="Адрес сайта" bind:value="_options.record.siteAddress" />
+        </ws:content>
+      </Controls.validate:Container>
+    </div>
+    <div class="body_template_row">
+      <Controls.input:Text class="body_template_input" placeholder="Название канала" bind:value="_options.record.channelName" />
+    </div>
+    <div class="body_template_row">
+      <Controls.input:Text class="body_template_input" placeholder="Регламент" bind:value="_options.record.regulations" />
+    </div>
+    <div class="body_template_row">
+      <Controls.input:Text class="body_template_input" placeholder="Оператор" bind:value="_options.record.operator" />
+    </div>
+    <div class="body_template_row">
+      <Controls.input:Text class="body_template_input" placeholder="Вид обращения" bind:value="_options.record.appealType" />
+    </div>
+    <div class="body_template_footer">
+      <Controls.input:Label class="body_template_input" caption="Ссылка на размещение https://online.sbis.ru/" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="controlsDemo__wrapper">
+   <Controls.Tumbler:Control
+      displayProperty="id"
+      items="{{_itemsSpacingSource}}"
+      bind:selectedKey="_itemsSpacing"
+   />
+   <Controls.scroll:Container attr:style="height: 400px; width: 400px;">
+      <Controls.list:View
+         storeId="ItemsSpacing"
+         itemsSpacing="{{_itemsSpacing}}"
+         groupProperty="group"
+      >
+         <ws:editingConfig editOnClick="{{true}}"/>
+         <ws:itemTemplate>
+            <ws:partial template="Controls/list:ItemTemplate">
+               <ws:contentTemplate>
+                  <ws:partial
+                     template="Controls/list:EditingTemplate"
+                     value="{{ itemTemplate.item.contents.title }}"
+                     enabled="{{true}}"
+                  >
+                     <ws:editorTemplate>
+                        <Controls.input:Text
+                           contrastBackground="{{true}}"
+                           bind:value="itemTemplate.item.contents.title"
+                        />
+                     </ws:editorTemplate>
+                  </ws:partial>
+               </ws:contentTemplate>
+            </ws:partial>
+         </ws:itemTemplate>
+      </Controls.list:View>
+   </Controls.scroll:Container>
+</div>
