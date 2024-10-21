@@ -1,0 +1,43 @@
+<div class="controlsDemo__wrapper">
+
+    <div class="controlsDemo__wrapper controlsDemo__flexRow">
+        <div class="controlsDemo__cell controlsDemo__mr2">
+            <Router.router:Reference attr:class="controls-text-label"
+                                     state="app/:app"
+                                     app="{{ 'Controls-demo/list_new/ItemPadding/NoPadding/Index' }}">
+                <a href="{{content.href}}">Без отступов</a>
+            </Router.router:Reference>
+            <Controls-demo.list_new.ItemPadding.NoPadding.Index/>
+        </div>
+
+        <div class="controlsDemo__cell">
+            <Router.router:Reference attr:class="controls-text-label"
+                                     state="app/:app"
+                                     app="{{ 'Controls-demo/list_new/ItemPadding/DifferentPadding/Index' }}">
+                <a href="{{content.href}}">Нестандартные отступы</a>
+            </Router.router:Reference>
+            <Controls-demo.list_new.ItemPadding.DifferentPadding.Index/>
+        </div>
+    </div>
+
+
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/list_new/ItemPadding/HorizontalPadding/Index' }}">
+            <a href="{{content.href}}">Горизонтальные отступы</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.ItemPadding.HorizontalPadding.Index/>
+    </div>
+
+
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/list_new/ItemPadding/VerticalPadding/Index' }}">
+            <a href="{{content.href}}">Вертикальные отступы</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.ItemPadding.VerticalPadding.Index/>
+    </div>
+
+</div>

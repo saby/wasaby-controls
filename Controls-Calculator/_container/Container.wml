@@ -1,0 +1,8 @@
+<ws:partial template="{{_options.content}}"
+            attr:class="controls_Calculator_theme-{{_options.theme}}"
+            scope="{{_options}}"
+            on:CalculatorSetNumber="_setNumber()"
+            on:CalculatorRegisterNumber="_registerNumber()"
+            on:CalculatorUnregisterNumber="_unregisterNumber()"
+            on:CalculatorRegisterCalculator="_registerCalculator()"
+            on:CalculatorUnregisterCalculator="_unregisterCalculator()"/>

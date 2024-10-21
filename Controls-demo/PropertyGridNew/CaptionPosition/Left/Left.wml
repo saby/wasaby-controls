@@ -1,0 +1,12 @@
+<div class="controls-Demo__wide-propertyGrid">
+    <Controls.propertyGrid:PropertyGrid
+            bind:editingObject="_editingObject"
+            typeDescription="{{_typeDescription}}"
+            captionPosition="left">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/propertyGrid:ItemTemplate"
+                        class="controls-demo-pg-highlightOnHover-editor-padding"
+                        scope="{{itemTemplate}}"/>
+        </ws:itemTemplate>
+    </Controls.propertyGrid:PropertyGrid>
+</div>

@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300" data-qa="Controls-demo_toggle_BigSeparator_ViewMode__wrapper">
+    <div class="controlsDemo__cell demo-BigSeparator__filled">
+        <div class="controls-text-label controls-text-label">viewMode = filled</div>
+        <Controls.ShowMoreButton caption="Button" bind:value="_expandedFilled" viewMode="filled"
+                                      attr:data-qa="Controls-demo_toggle_BigSeparator_ViewMode__show-more-filled"/>
+    </div>
+    <div class="controlsDemo__cell demo-BigSeparator__ghost">
+        <div class="controls-text-label controls-text-label">viewMode = ghost</div>
+        <Controls.ShowMoreButton caption="Button 2" bind:value="_expandedGhost" viewMode="ghost"
+                                      attr:data-qa="Controls-demo_toggle_BigSeparator_ViewMode__show-more-ghost"/>
+    </div>
+</div>

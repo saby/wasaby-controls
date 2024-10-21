@@ -1,0 +1,7 @@
+<Controls.context:ContextOptionsConsumer scope="{{_options}}">
+    <ws:contextOptionsInnerComponent>
+        <Controls-Wizard._verticalNew.Layout
+                _dataOptionsValue="{{_getDataOptionsValue(contextOptionsInnerComponent)}}"
+                scope="{{ contextOptionsInnerComponent }}"/>
+    </ws:contextOptionsInnerComponent>
+</Controls.context:ContextOptionsConsumer>

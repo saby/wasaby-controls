@@ -1,0 +1,4 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <Controls.buttons:Button caption="Изменить source. Список будет перезагружен" viewMode="linkButton" on:click="_changeSource()"/>
+    <Controls.tree:View storeId="listData"/>
+</div>

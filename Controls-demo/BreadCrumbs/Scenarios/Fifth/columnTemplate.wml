@@ -1,0 +1,8 @@
+<ws:partial template="Controls/grid:ColumnTemplate"
+            attr:class="controls-Grid__row-cell__content_baseline_L"
+            scope="{{ _options }}">
+   <ws:contentTemplate>
+      <Controls.baseDecorator:Money value="{{item.contents[column.config.displayProperty]}}"
+                                useGrouping="{{true}}"/>
+   </ws:contentTemplate>
+</ws:partial>

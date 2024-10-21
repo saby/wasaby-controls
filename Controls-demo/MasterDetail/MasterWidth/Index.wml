@@ -1,0 +1,40 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow controlsDemo__height300">
+  <div class="controlsDemo__wrapper__horizontal controlsDemo__cell">
+    <div class="controls-text-label">masterWidth="300"</div>
+    <Controls.masterDetail:Base newDesign="{{true}}" masterWidth="300">
+      <ws:master>
+        <Controls.list:View
+          storeId="Basemaster"
+          style="master"
+          on:markedKeyChanged="_onMarkedKeyChanged()"
+        >
+        </Controls.list:View>
+    </ws:master>
+      <ws:detail>
+        <Controls.list:View
+          storeId="Basedetail"
+          attr:class="controlsDemo_fixedWidth500">
+        </Controls.list:View>
+      </ws:detail>
+    </Controls.masterDetail:Base>
+  </div>
+  <div class="controlsDemo__wrapper__horizontal controlsDemo__cell">
+    <div class="controls-text-label">masterWidth="auto"</div>
+    <Controls.masterDetail:Base newDesign="{{true}}" masterWidth="auto">
+       <ws:master>
+        <Controls.list:View
+           storeId="BasemasterAuto"
+           style="master"
+           on:markedKeyChanged="_onMarkedKeyChanged()"
+        >
+        </Controls.list:View>
+     </ws:master>
+     <ws:detail>
+       <Controls.list:View
+           storeId="BasedetailAuto"
+           attr:class="controlsDemo_fixedWidth500">
+       </Controls.list:View>
+     </ws:detail>
+   </Controls.masterDetail:Base>
+  </div>
+</div>

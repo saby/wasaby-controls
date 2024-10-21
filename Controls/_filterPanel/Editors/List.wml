@@ -1,0 +1,22 @@
+<ws:if data="{{_options.isAdaptive && (!_options.viewMode || _options.viewMode === 'basic') && _options.filterViewMode === 'default'}}">
+    <Controls._filterPanel.Editors.AdaptiveList scope="{{_options}}" />
+</ws:if>
+<ws:else data="{{_options.editorsViewMode === 'cloud'}}">
+    <Controls.Container.Async templateName="Controls/filterPanelEditors:Lookup">
+        <ws:partial template="{{content.resolvedTemplate}}"
+                    scope="{{_options}}"
+                    name="{{_options.name}}"/>
+    </Controls.Container.Async>
+</ws:else>
+<ws:else data="{{(_options.editorsViewMode !== 'default' ||
+                 (_options.expanderVisible && _options.markerStyle !== 'primary')) &&
+                 _options.viewMode === 'extended'}}">
+    <Controls._filterPanel.BaseEditor scope="{{_options}}"
+                                      on:extendedCaptionClick="_extendedCaptionClickHandler()">
+    </Controls._filterPanel.BaseEditor>
+</ws:else>
+<ws:else>
+    <Controls._filterPanel.Editors._List scope="{{_options}}"
+                                         multiSelect="{{_options.editorsViewMode === 'popupCloudPanelDefault' ?
+                                          false : _options.multiSelect}}"/>
+</ws:else>

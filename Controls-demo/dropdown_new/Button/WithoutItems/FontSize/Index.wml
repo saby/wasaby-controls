@@ -1,0 +1,13 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper demo-dropdownNew__fontSizeXL">
+      <div class="controls-text-label"></div>
+      <Controls.dropdown:Button
+              fontSize="xl"
+              keyProperty="key"
+              displayProperty="title"
+              viewMode="link"
+              caption="{[Кнопка]}"
+              source="{{_source}}">
+      </Controls.dropdown:Button>
+   </div>
+</div>

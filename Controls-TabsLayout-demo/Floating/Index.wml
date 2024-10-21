@@ -1,0 +1,10 @@
+<div style="display: flex; justify-content: center;flex-grow: 1">
+    <Controls.popupTemplate:StackPageWrapper propStorageId="new_tab_panel" minWidth="{{600}}" maxWidth="{{1400}}" workspaceWidth="{{1000}}">
+        <Controls-TabsLayout-demo.Floating.Template.StackTemplate isSinglePage="{{true}}">
+            <ws:leftContentTemplate2>
+                <Controls-TabsLayout.floatingTabs:Buttons items="{{_items}}" />
+            </ws:leftContentTemplate2>
+        </Controls-TabsLayout-demo.Floating.Template.StackTemplate>
+    </Controls.popupTemplate:StackPageWrapper>
+</div>
+

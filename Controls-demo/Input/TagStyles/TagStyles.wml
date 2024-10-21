@@ -1,0 +1,38 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             tagStyle="primary"
+                             bind:value="_primaryValue"
+                             placeholder="{{_placeholder}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             tagStyle="secondary"
+                             bind:value="_secondaryValue"
+                             placeholder="{{_placeholder}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             tagStyle="success"
+                             bind:value="_successValue"
+                             placeholder="{{_placeholder}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             tagStyle="warning"
+                             bind:value="_warningValue"
+                             placeholder="{{_placeholder}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             tagStyle="danger"
+                             bind:value="_dangerValue"
+                             placeholder="{{_placeholder}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             tagStyle="info"
+                             bind:value="_infoValue"
+                             placeholder="{{_placeholder}}"/>
+    </div>
+</div>

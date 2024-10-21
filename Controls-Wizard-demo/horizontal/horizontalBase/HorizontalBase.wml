@@ -1,0 +1,78 @@
+<div class="engineDemo_horizontalBase">
+    <div class="engineDemo_horizontalBase_optionSwitch">
+        <Controls.input:Label caption="displayMode: "/>
+        <Controls.RadioGroup:Control
+            keyProperty="name"
+            selectedKey="{{ _displayMode }}"
+            source="{{ _displayModeSource }}"
+            direction="horizontal"
+            on:selectedKeyChanged="_displayModeChanged()"/>
+    </div>
+    <div class="engineDemo_horizontalBase_header">
+        <div class="engineDemo_horizontalBase_headerText">
+            Мастер подключения
+        </div>
+        <ws:if data="{{ selectedStepIndex > 0 }}">
+            <Controls.buttons:Button buttonStyle="primary" caption="Далее" class="engineDemo_horizontalBase_nextButton"
+                                     on:click="nextStep()"/>
+        </ws:if>
+    </div>
+    <Controls-Wizard.horizontal:Layout
+        displayMode="{{ _displayMode }}"
+        selectedStepIndex="{{ selectedStepIndex }}"
+        currentStepIndex="{{ currentStepIndex }}"
+        on:selectedStepIndexChanged="selectedStepIndexChangedHandler()">
+        <ws:items>
+            <ws:Array>
+                <ws:Object title="Тип оборудования">
+                    <ws:template>
+                        <Controls.Container.Async templateName="wml!Controls-Wizard-demo/horizontal/horizontalBase/Step1">
+                        <ws:partial template="{{content.resolvedTemplate}}"
+                                    theme="default"
+                                    on:finishStep="finishStepHandler(templateOptions.stepIndex)"/>
+                        </Controls.Container.Async>
+                    </ws:template>
+                    <ws:templateOptions
+                        stepIndex="0"
+                    />
+                </ws:Object>
+                <ws:Object title="Номера">
+                    <ws:template>
+                        <Controls.Container.Async templateName="wml!Controls-Wizard-demo/horizontal/horizontalBase/Step2">
+                            <ws:partial template="{{content.resolvedTemplate}}"
+                                        theme="default"
+                                        on:finishStep="finishStepHandler(templateOptions.stepIndex)"/>
+                        </Controls.Container.Async>
+                    </ws:template>
+                    <ws:templateOptions
+                        stepIndex="1"
+                    />
+                </ws:Object>
+                <ws:Object title="Тарифный план">
+                    <ws:template>
+                        <Controls.Container.Async templateName="wml!Controls-Wizard-demo/horizontal/horizontalBase/Step3">
+                            <ws:partial template="{{content.resolvedTemplate}}"
+                                        theme="default"
+                                        on:finishStep="finishStepHandler(templateOptions.stepIndex)"/>
+                        </Controls.Container.Async>
+                    </ws:template>
+                    <ws:templateOptions
+                        stepIndex="2"
+                    />
+                </ws:Object>
+                <ws:Object title="Подключение">
+                    <ws:template>
+                        <Controls.Container.Async templateName="wml!Controls-Wizard-demo/horizontal/horizontalBase/Step4">
+                            <ws:partial template="{{content.resolvedTemplate}}"
+                                        theme="default"
+                                        on:finishStep="finishStepHandler(templateOptions.stepIndex)"/>
+                        </Controls.Container.Async>
+                    </ws:template>
+                    <ws:templateOptions
+                        stepIndex="3"
+                    />
+                </ws:Object>
+            </ws:Array>
+        </ws:items>
+    </Controls-Wizard.horizontal:Layout>
+</div>

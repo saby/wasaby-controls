@@ -1,0 +1,31 @@
+<div class="removeDemo">
+    <Controls.listDataOld:DataContainer source="{{_viewSource}}" keyProperty="id">
+        <ws:content>
+            <div>
+                <Controls.listDeprecate:Remover name="listRemoveFirst" on:beforeItemsRemove="_beforeItemsRemove()"/>
+                <Controls.listDataOld:ListContainer>
+                    <Controls.list:View
+                            class="removeDemo__list test_list_1"
+                            name="list"
+                            markedKey="{{1}}"
+                            itemActions="{{_itemActions}}"/>
+                </Controls.listDataOld:ListContainer>
+            </div>
+        </ws:content>
+    </Controls.listDataOld:DataContainer>
+    <Controls.listDataOld:DataContainer source="{{_viewSourceSecond}}" keyProperty="id">
+        <ws:content>
+            <div>
+                <Controls.listDeprecate:Remover name="listRemoveSecond" on:afterItemsRemove="_afterItemsRemove()"/>
+                <Controls.listDataOld:ListContainer>
+                    <Controls.list:View
+                            class="removeDemo__list test_list_3"
+                            name="listSecond"
+                            itemActions="{{_itemActionsSecond}}">
+                    </Controls.list:View>
+                </Controls.listDataOld:ListContainer>
+            </div>
+        </ws:content>
+    </Controls.listDataOld:DataContainer>
+    <Controls.popup:Confirmation name="popupOpener"/>
+</div>

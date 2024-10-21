@@ -1,0 +1,62 @@
+.controls-StateIndicator_padding-xs {
+   margin: 0 var(--offset_xs);
+}
+
+.controls-StateIndicator_padding-null {
+   margin: 0;
+}
+
+.controls-StateIndicator__box {
+   display: inline-block;
+
+   &:last-child {
+      margin-right: 0;
+   }
+}
+
+.controls-StateIndicator__emptySector {
+   background: var(--unaccented_contrast_background-color);
+}
+
+.controls-StateIndicator__sector1 {
+   background: var(--success_color);
+}
+
+.controls-StateIndicator__sector2 {
+   background: var(--warning_color);
+}
+
+.controls-StateIndicator__sector3 {
+   background: var(--danger_color);
+}
+
+.controls-StateIndicator__box_sectorSize-2xl {
+   width: calc(var(--inline_height_s) / 2);
+   height: calc(var(--inline_height_l) / 2);
+   margin-right: 3px;
+}
+
+/* оставлено чтобы было можно вставить еще размер между l и 2xl. 2xl - слишком большой */
+.controls-StateIndicator__box_sectorSize-xl {
+   width: calc(var(--inline_height_m) / 4);
+   height: calc(var(--inline_height_m) / 3);
+   margin-right: var(--offset_3xs);
+}
+
+.controls-StateIndicator__box_sectorSize-l {
+   width: calc(var(--inline_height_m) / 4);
+   height: calc(var(--inline_height_m) / 3);
+   margin-right: var(--offset_3xs);
+}
+
+.controls-StateIndicator__box_sectorSize-m {
+   width: calc(var(--inline_height_m) / 4);
+   height: calc(var(--inline_height_m) / 4);
+   margin-right: var(--offset_3xs);
+}
+
+.controls-StateIndicator__box_sectorSize-s {
+   width: calc(var(--inline_height_m) / 8);
+   height: calc(var(--inline_height_m) / 3);
+   margin-right: var(--offset_3xs);
+}

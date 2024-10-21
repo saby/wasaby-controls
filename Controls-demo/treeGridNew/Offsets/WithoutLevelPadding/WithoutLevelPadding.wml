@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300 controlsDemo_treeGrid-offset-withoutLevelPadding">
+    <Controls.treeGrid:View
+            storeId="OffsetsWithoutLevelPadding0"
+            columns="{{ _columns }}"
+            collapsedItems="{{ _collapsedItems }}">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/treeGrid:ItemTemplate"
+                        withoutLevelPadding="{{true}}"
+                        scope="{{ _options }}"
+                        expanderIcon="{{ _getExpanderIcon(itemTemplate.item.contents) }}"/>
+        </ws:itemTemplate>
+    </Controls.treeGrid:View>
+</div>

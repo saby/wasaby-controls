@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper">
+<Controls.listDeprecate:Mover name="listMover"/>
+<Controls.listDataOld:ListContainer>
+  <Controls.list:View
+      groupProperty="brand"
+      itemsDragNDrop="{{true}}"
+      on:customdragEnd="_dragEnd()"
+      storeId="GroupedDnD"
+  />
+</Controls.listDataOld:ListContainer>
+</div>

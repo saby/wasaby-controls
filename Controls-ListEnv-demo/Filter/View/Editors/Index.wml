@@ -1,0 +1,24 @@
+<div class="engine-demo__Widgets_scroll">
+    <Controls.buttons:Button caption="{{_buttonCaption}}"
+                             on:click="_handleButtonClick()"
+                             attr:class="controlsDemo_m"/>
+    <div class="engine-demo__Widgets_filter-container">
+            <div>
+                <Controls-ListEnv.filterConnected:View
+                        storeId="department"
+                        alignment="left"
+                        detailPanelOrientation="{{_orientation}}"
+                        detailPanelTemplateName="Controls/filterPanelPopup:Sticky"/>
+                <Controls.grid:View storeId="department"
+                                    columns="{{_columns}}"
+                                    header="{{_header}}"
+                                    attr:class="engine-demo__Widgets_filterList"/>
+            </div>
+
+            <Controls-ListEnv.filterConnected:View
+                    storeId="scrollDepartment"
+                    alignment="right"
+                    detailPanelTemplateName="Controls/filterPanelPopup:Sticky"/>
+    </div>
+
+</div>

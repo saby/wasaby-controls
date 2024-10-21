@@ -1,0 +1,17 @@
+<div class="controlsDemo__wrapper">
+    <div class="controls-text-label">Проверяем построение с заранее известными высотами</div>
+    <Controls.scroll:Container attr:class="controlsDemo__maxWidth500 controlsDemo_line-height18 controlsDemo__height500">
+        <Controls.list:View storeId="VirtualScrollItemHeightProperty">
+            <ws:virtualScrollConfig pageSize="{{3}}" viewportHeight="{{500}}" itemHeightProperty="height"/>
+            <ws:itemTemplate>
+                <ws:partial template="Controls/list:ItemTemplate">
+                    <ws:contentTemplate>
+                        <div style="height: {{itemTemplate.item.contents.height}}px; border-bottom: 1px solid black;">
+                            {{itemTemplate.item.contents.title}}
+                        </div>
+                    </ws:contentTemplate>
+                </ws:partial>
+            </ws:itemTemplate>
+        </Controls.list:View>
+    </Controls.scroll:Container>
+</div>

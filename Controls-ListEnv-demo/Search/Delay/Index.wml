@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper">
+    <div class="controls-margin_bottom-m">
+        <div class="controls-text-label">default searchDelay</div>
+        <Controls-ListEnv.searchConnected:Input storeId="departments" />
+        <Controls.list:View storeId="departments" />
+    </div>
+    <div>
+        <div class="controls-text-label">searchDelay = "1000"</div>
+        <Controls-ListEnv.searchConnected:Input storeId="departmentsWithDelay" />
+        <Controls.list:View storeId="departmentsWithDelay" />
+    </div>
+</div>

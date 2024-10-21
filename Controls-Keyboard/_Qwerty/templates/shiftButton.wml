@@ -1,0 +1,20 @@
+<div class="Keyboard-Qwerty__Shift-Button">
+    <ws:if data="{{ isLongShift }}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 9 19" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 0L9 7.12504L6 6.51607V14H3V6.51607L0 7.12504L4.5 0ZM6
+             19V16H3V19H6Z" fill="black"/>
+        </svg>
+    </ws:if>
+    <ws:else data="{{ isShift }}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 9 19" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9 7.12504L4.5 0L0 7.12504L3 6.51607L3 19H6L6 6.51607L9
+             7.12504Z" fill="black"/>
+        </svg>
+    </ws:else>
+    <ws:else>
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 9 19" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9 7.12504L4.5 0L0 7.12504L3 6.51607L3 19H6L6 6.51607L9
+             7.12504ZM5 18L5 5.29268L6.90409 5.6792L4.5 1.87269L2.09591 5.6792L4 5.29268L4 18H5Z" fill="black"/>
+        </svg>
+    </ws:else>
+</div>

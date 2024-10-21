@@ -1,0 +1,31 @@
+<div class="controls-CheckboxGroup__group_{{_options.direction}} {{isChildGroup ? ('controls-CheckboxGroup__childGroup')}}
+            {{_options.validationStatus!== 'valid' ? ' controls-invalid-container'}}">
+    <ws:for data="index, item in groups[parent]">
+        <ws:partial template="{{item[_options.itemTemplateProperty] || _options.itemTemplate}}"
+                    selected="{{isSelected(item)}}"
+                    triState = "{{triStateKeys.indexOf(item[keyProperty]) > -1}}"
+                    on:valueChanged="_valueChangedHandler(item)"
+                    attr:class="controls-CheckboxGroup__item_{{_options.direction}}{{index !== groups[parent].length - 1 ? '-padding' : ''}}"
+                    item="{{item}}"
+                    displayProperty="{{_options.displayProperty}}"
+                    validationStatus="{{_options.validationStatus}}"
+                    readOnly="{{_options.readOnly || item.readOnly}}"/>
+        <ws:if data="{{item[_options.nodeProperty]}}">
+            <ws:partial template="{{_options.groupTemplate}}"
+                        itemTemplate="{{_options.itemTemplate}}"
+                        groupTemplate="{{_options.groupTemplate}}"
+                        groups="{{_options.groups}}"
+                        isChildGroup="{{true}}"
+                        parent="{{item[keyProperty]}}"
+                        direction="{{_options.direction}}"
+                        selectedKeys="{{_options.selectedKeys}}"
+                        triStateKeys="{{_options.triStateKeys}}"
+                        isSelected="{{_options.isSelected}}"
+                        keyProperty="{{_options.keyProperty}}"
+                        parentProperty="{{_options.parentProperty}}"
+                        nodeProperty="{{_options.nodeProperty}}"
+                        validationStatus="{{_options.validationStatus}}"
+                        displayProperty="{{_options.displayProperty}}" />
+        </ws:if>
+    </ws:for>
+</div>

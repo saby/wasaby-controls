@@ -1,0 +1,25 @@
+<div class="example-Suggest">
+   <Controls-demo.Example.resource.BaseDemoInput title="Input field with auto completion" blocker="{{true}}">
+      <ws:contents>
+         <ws:Array>
+            <ws:Object>
+               <ws:template>
+                  <Controls.SuggestInput placeholder="FIO"
+                                          searchParam="title"
+                                          displayProperty="title"
+                                          source="{{_source}}"
+                                          autoDropDown="{{true}}"
+                                          minSearchLength="{{0}}"
+                                          bind:value="_defaultValue"
+                                          attr:class="example-Suggest__suggest">
+                     <ws:suggestTemplate templateName="Controls-demo/Suggest/resources/SuggestTemplate"/>
+                     <ws:navigation source="page" view="page">
+                        <ws:sourceConfig pageSize="{{10}}" page="{{0}}" hasMore="{{false}}"/>
+                     </ws:navigation>
+                  </Controls.SuggestInput>
+               </ws:template>
+            </ws:Object>
+         </ws:Array>
+      </ws:contents>
+   </Controls-demo.Example.resource.BaseDemoInput>
+</div>

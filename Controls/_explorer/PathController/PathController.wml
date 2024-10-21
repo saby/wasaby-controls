@@ -1,0 +1,34 @@
+<div>
+   <ws:if data="{{_drawTop}}">
+      <Controls._explorer.PathWrapper
+         name="path"
+         scope="{{_options}}"
+         header="{{_header}}"
+         needShadow="{{_needShadow}}"
+
+         withoutBackButton="{{_topWithoutBackButton}}"
+         withoutBreadcrumbs="{{_options.breadcrumbsVisibility === 'onlyBackButton'}}"
+
+         on:backButtonClick="_notifyHandler('backButtonClick')"
+         on:hoveredItemChanged="_notifyHandler('hoveredItemChanged')"
+         on:itemClick="_notifyHandler('itemClick')"
+         on:itemMouseDown="_notifyHandler('itemMouseDown')"
+         on:arrowClick="_notifyHandler('arrowClick')"
+         on:arrowActivated="_notifyHandler('arrowActivated')"
+      />
+   </ws:if>
+
+   <ws:partial
+      template="{{_options.content}}"
+      scope="{{_options}}"
+      header="{{_header}}"
+      results="{{_results}}"
+      resultsVerticalPadding="{{_breadcrumbsLayout.backButtonPosition === 'results'}}"
+      columns="{{_columns}}"
+      ladderOffset="{{_crumbsVisible ? 'var(--inline-height_headingBack)' : 0}}"
+      on:backButtonClick="goBack()"
+      on:headerArrowClick="_onHeaderArrowClick()"
+      on:headerArrowActivated="_onHeaderArrowActivated()"
+      on:headerBreadcrumbsClick="_onHeaderBreadcrumbsClick()"
+   />
+</div>

@@ -1,0 +1,8 @@
+<ws:partial template="Controls/grid:ColumnTemplate" scope="{{ _options }}">
+    <ws:contentTemplate>
+        <div>
+            <b>{{ item.contents.name }}</b>
+            <div>{{ item.contents.text }}</div>
+        </div>
+    </ws:contentTemplate>
+</ws:partial>

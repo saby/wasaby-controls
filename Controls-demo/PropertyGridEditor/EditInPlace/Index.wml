@@ -1,0 +1,8 @@
+<div class="controls-Demo__wide-propertyGrid">
+    <Controls.propertyGridEditor:PropertyGridEditor
+            editingObject="{{_editingObject}}"
+            typeDescription="{{_typeDescription}}"
+            itemActionsPosition="outside">
+        <ws:editingConfig editOnClick="{{true}}" toolbarVisibility="{{true}}" />
+    </Controls.propertyGridEditor:PropertyGridEditor>
+</div>

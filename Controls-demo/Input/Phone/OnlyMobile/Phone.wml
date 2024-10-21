@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell" data-qa="Controls-demo_Input_Phone_OnlyMobile__cell-true">
+        <div class="controls-text-label">onlyMobile = true</div>
+        <Controls.input:Phone attr:class="ControlsDemo-PhoneInput_phoneField"
+                              attr:data-qa="Controls-demo_Input_Phone_OnlyMobile__true"
+                              value="{{_value}}"
+                              on:valueChanged="_valueChanged()"
+                              placeholder="+7 Телефон"
+                              onlyMobile="{{true}}"/>
+    </div>
+    <div class="controlsDemo__cell" data-qa="Controls-demo_Input_Phone_OnlyMobile__cell-false">
+        <div class="controls-text-label">onlyMobile = false</div>
+        <Controls.input:Phone attr:class="ControlsDemo-PhoneInput_phoneField"
+                              attr:data-qa="Controls-demo_Input_Phone_OnlyMobile__false"
+                              placeholder="+7 (999)"
+                              onlyMobile="{{false}}"/>
+    </div>
+</div>

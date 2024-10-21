@@ -1,0 +1,17 @@
+<div class="controlsDemo__wrapper">
+<Controls.scroll:Container>
+  <Controls.list:View
+      groupProperty="brand"
+      storeId="GroupedFontSize">
+    <ws:groupTemplate>
+      <ws:partial
+          fontColorStyle="secondary"
+          fontSize="m"
+          fontWeight="bold"
+          iconStyle="secondary"
+          scope="{{ _options }}"
+          template="Controls/list:GroupTemplate"/>
+    </ws:groupTemplate>
+  </Controls.list:View>
+</Controls.scroll:Container>
+</div>

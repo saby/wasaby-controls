@@ -1,0 +1,14 @@
+<div class="Name-Demo__container">
+    <Controls-Name.Input class="Name-Demo__input EngineDemo-Name__with_suggest"
+                bind:firstName="_firstName"
+                bind:middleName="_middleName"
+                bind:lastName="_lastName"
+                fields="{{_nameFields}}">
+        <ws:rightFieldTemplate>
+            <Controls.buttons:Button viewMode="link"
+                                     icon="icon-Author"
+                                     iconStyle="secondary"
+                                     iconSize="s"/>
+        </ws:rightFieldTemplate>
+    </Controls-Name.Input>
+</div>

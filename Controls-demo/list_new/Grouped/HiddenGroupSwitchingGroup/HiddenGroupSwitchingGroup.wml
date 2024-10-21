@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+<Controls.scroll:Container>
+  <Controls.tree:View
+      groupProperty="group"
+      importantItemProperties="{{['group']}}"
+      itemActions="{{_itemActions}}"
+      itemsReadyCallback="{{_onItemsReady}}"
+      storeId="GroupedHiddenGroupSwitchingGroup"/>
+</Controls.scroll:Container>
+</div>

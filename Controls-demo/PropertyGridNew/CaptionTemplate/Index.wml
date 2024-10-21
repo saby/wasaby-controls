@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell controls-Demo__wide-propertyGrid">
+        <div class="controls-text-label">captionTemplate</div>
+        <Controls.propertyGrid:PropertyGrid
+                bind:editingObject="_editingObject"
+                typeDescription="{{_typeDescription}}"
+                parentProperty="parent"
+                nodeProperty="isNode">
+        </Controls.propertyGrid:PropertyGrid>
+    </div>
+</div>

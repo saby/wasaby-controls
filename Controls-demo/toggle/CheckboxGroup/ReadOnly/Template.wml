@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell">
+            <Controls.CheckboxGroup:Control items="{{_items}}"
+                                           readOnly="{{true}}"
+                                           bind:selectedKeys="_selectedKeys"/>
+        </div>
+    </div>
+</div>

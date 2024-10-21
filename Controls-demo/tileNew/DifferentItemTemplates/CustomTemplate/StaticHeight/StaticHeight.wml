@@ -1,0 +1,21 @@
+<Controls.tile:View
+        storeId="listData"
+        imageProperty="image"
+        tileMode="static"
+        tileWidth="{{250}}"
+        tileHeight="{{200}}"
+        attr:class="controlsDemo_fixedWidth850">
+   <ws:itemTemplate>
+      <ws:partial
+              template="Controls/tile:ItemTemplate"
+              staticHeight="{{itemTemplate.item.contents.staticHeight}}"
+              scope="{{itemTemplate}}">
+         <ws:contentTemplate>
+            <div class="controlsDemo__Tile_StaticHeight_ItemContent">
+               <img src="{{ itemTemplate.item.contents.image }}" class="controlsDemo__Tile_StaticHeight_ItemContent-image"/>
+               <p class="controlsDemo__Tile_StaticHeight_ItemContent-title">{{itemTemplate.item.contents.title}}</p>
+            </div>
+         </ws:contentTemplate>
+      </ws:partial>
+   </ws:itemTemplate>
+</Controls.tile:View>
