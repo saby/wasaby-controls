@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper controlDemo_Tile_same-width">
+   <Controls.treeTile:View
+      storeId="listData"
+      tileMode="dynamic"
+      imageProperty="image"
+      tileWidthProperty="width">
+      <ws:itemTemplate>
+         <ws:partial
+            template="Controls/tile:ItemTemplate"
+            hasTitle="{{itemTemplate.item.contents.isDocument}}"/>
+      </ws:itemTemplate>
+   </Controls.treeTile:View>
+</div>

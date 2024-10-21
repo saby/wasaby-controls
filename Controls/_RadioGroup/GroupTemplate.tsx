@@ -1,0 +1,128 @@
+import * as React from 'react';
+import { Model } from 'Types/entity';
+import { IRadioGroupProps, IGroups } from '../RadioGroup';
+import { default as Async } from 'Controls/Container/Async';
+import { useReadonly } from 'UI/Contexts';
+
+interface IGroupTemplateProps extends IRadioGroupProps {
+    _selectKeyChanged: (e, item: Model, keyProperty: string) => void;
+    isSelected: (item: Model) => boolean;
+    defaultItemTemplate: React.ReactElement;
+    groupTemplate: React.ReactElement;
+    isChildGroup?: boolean;
+    parent: string;
+    groups: IGroups;
+    isMarked: (item: Model) => boolean;
+}
+
+interface IItemTemplateProps extends IGroupTemplateProps {
+    item: Model;
+    index: number;
+}
+
+function ItemTemplate(props: IItemTemplateProps) {
+    const { item, index, readOnly } = props;
+    const ItemTemplate =
+        item.get(props.itemTemplateProperty) || props.itemTemplate || props.defaultItemTemplate;
+    const itemTemplateOptions = {
+        onClick: (e) => {
+            return props._selectKeyChanged(e, item, props.keyProperty);
+        },
+        className:
+            `controls-RadioGroup_defaultItem_${props.direction}${
+                index !== props.groups[props.parent]?.items.length - 1 ? '-padding' : ''
+            }` +
+            ` controls-RadioItem__wrapper ${!props.multiline ? 'ws-flex-shrink-0' : ''} ${
+                props.itemClassName
+            }`,
+        item,
+        readOnly: readOnly || item.get('readOnly'),
+        displayProperty: props.displayProperty,
+        captionPosition: props.captionPosition,
+        selected: props.isSelected(item),
+        radioCircleVisible: props.radioCircleVisible,
+        multiline: props.direction === 'vertical' ? props.multiline : false,
+        marked: props.isMarked(item),
+    };
+    const groupTemplateOptions = {
+        groupTemplate: props.groupTemplate,
+        defaultItemTemplate: props.defaultItemTemplate,
+        _selectKeyChanged: props._selectKeyChanged,
+        isSelected: props.isSelected,
+        groups: props.groups,
+        isChildGroup: true,
+        parent: item.get(props.keyProperty),
+        itemTemplateProperty: props.itemTemplateProperty,
+        itemTemplate: props.itemTemplate,
+        keyProperty: props.keyProperty,
+        direction: props.direction,
+        multiline: props.multiline,
+        itemClassName: props.itemClassName,
+        displayProperty: props.displayProperty,
+        captionPosition: props.captionPosition,
+        radioCircleVisible: props.radioCircleVisible,
+        validationStatus: props.validationStatus,
+        nodeProperty: props.nodeProperty,
+        isMarked: props.isMarked,
+    };
+    if (typeof ItemTemplate === 'string') {
+        return (
+            <>
+                <Async templateName={ItemTemplate} templateOptions={itemTemplateOptions} />
+                {item.get(props.nodeProperty) && <props.groupTemplate {...groupTemplateOptions} />}
+            </>
+        );
+    }
+    return (
+        <>
+            <ItemTemplate {...itemTemplateOptions} />
+            {item.get(props.nodeProperty) && <props.groupTemplate {...groupTemplateOptions} />}
+        </>
+    );
+}
+
+export default React.forwardRef(function GroupTemplate(
+    props: IGroupTemplateProps,
+    forwardedRef: React.LegacyRef<HTMLDivElement>
+): React.ReactElement {
+    const items = props.groups[props.parent]?.items || [];
+    const readOnly = useReadonly(props);
+
+    return (
+        <div
+            ref={forwardedRef}
+            className={`controls-invalid-container ${
+                props.isChildGroup ? 'controls-RadioGroup__childGroup' : ''
+            }`}
+            onKeyPress={props.onKeyPress}
+        >
+            <div
+                className={
+                    `controls-RadioGroup__wrapper_${props.direction}` +
+                    ` controls-RadioGroup__wrapper_${props.direction}_${
+                        props.multiline ? 'multi' : ''
+                    }line`
+                }
+            >
+                {items.map((item, index) => {
+                    return (
+                        <ItemTemplate
+                            {...props}
+                            item={item}
+                            index={index}
+                            key={item.get(props.keyProperty || 'id')}
+                            readOnly={readOnly}
+                        />
+                    );
+                })}
+            </div>
+            <div
+                className={`${
+                    props.validationStatus !== 'valid'
+                        ? 'controls-invalid-border controls-' + props.validationStatus + '-border'
+                        : ''
+                }`}
+            />
+        </div>
+    );
+});

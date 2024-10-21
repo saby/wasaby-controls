@@ -1,0 +1,110 @@
+.controls-Grid__no-rowSeparator {
+   border: 0 solid transparent;
+}
+
+// Разделители строк
+
+/*
+ Вспомогательный класс, вешается на ячейку. Через него задаются правильные отступы ячейке.
+ Обеспечивает отсутствие "скачков" при динамической смене размера границы.
+ .controls-Grid__row-cell_withRowSeparator_size-null {}
+ .controls-Grid__row-cell_withRowSeparator_size-s
+ .controls-Grid__row-cell_withRowSeparator_size-l
+*/
+
+// Сам сепаратор, его главный класс, дает границы.
+.controls-Grid__rowSeparator_size-s {
+   border: 0 solid transparent;
+   border-top-width: var(--item-separator_s_thickness_list);
+   border-top-color: var(--separator_color);
+}
+
+.controls-Grid__rowSeparator_size-l {
+   border: 0 solid transparent;
+   border-top-width: var(--item-separator_l_thickness_list);
+   border-top-color: var(--separator_color);
+}
+
+// При горизонтальном скроле, в контейнере элементов, первой лежит строка для подсчета размеров колонок.
+// Она имеет другой тип, чтобы можно было написать удобный каскад.
+// Использование каскада, а не расчетных классов обусловлено производительностью, чтобы при смене разделителей
+// не пересчитывать все строки и не перестраивать все колонки.
+.controls-Grid__row:first-of-type,
+.controls-ListView__groupHidden + .controls-Grid__row {
+   .controls-Grid__rowSeparator_size-s {
+      border-top-color: var(--unaccented_separator_color);
+   }
+
+   .controls-Grid__rowSeparator_size-l {
+      border-top-color: var(--separator_color);
+   }
+}
+
+.controls-Grid__rowSeparator_bottom_size-s {
+   border-bottom: var(--item-separator_s_thickness_list) solid var(--unaccented_separator_color);
+}
+
+.controls-Grid__rowSeparator_bottom_size-l {
+   border-bottom: var(--item-separator_l_thickness_list) solid var(--separator_color);
+}
+
+.controls-Grid__row-cell_default_style-default_min_height,
+.controls-Grid__row-cell_default_style-master_min_height {
+   &.controls-Grid__rowSeparator_bottom_size-s {
+      min-height: calc(var(--cell_min-height_grid) + var(--item-separator_s_thickness_list));
+   }
+
+   &.controls-Grid__rowSeparator_bottom_size-l {
+      min-height: calc(var(--cell_min-height_grid) + var(--item-separator_l_thickness_list));
+   }
+}
+
+.controls-Grid__row-cell_small_style-master_min_height,
+.controls-Grid__row-cell_small_style-default_min_height {
+   &.controls-Grid__rowSeparator_bottom_size-l,
+   &.controls-Grid__rowSeparator_bottom_size-s {
+      min-height: var(--inline_height_m);
+   }
+}
+
+// В таблицах IE(table-layout) функцию min-height выполняет height
+.controls-Grid_table-layout {
+   .controls-Grid__rowSeparator_bottom_size-s {
+      height: calc(var(--cell_min-height_grid) + var(--item-separator_s_thickness_list));
+   }
+
+   .controls-Grid__rowSeparator_bottom_size-l {
+      height: calc(var(--cell_min-height_grid) + var(--item-separator_l_thickness_list));
+   }
+}
+
+// Разделители колонок
+.controls-Grid__columnSeparator_size-s {
+   border-left-style: solid;
+   border-left-width: var(--column_separator_s_thickness_grid);
+   border-left-color: var(--column_separator_s_color_grid);
+}
+
+.controls-Grid__columnSeparator_size-bold {
+   border-left: var(--border-thickness) solid var(--unaccented_border-color);
+}
+
+// В Grid рамка вешается на :after во wrapper, и находится внутри border,
+// поэтому если включены вертикальные разделители (columnSeparator), рамка прерывается на каждом разделителе.
+// Растягиваем на 1px рамку на каждой яячейке, кроме самой первой.
+// Для last-child нельзя из-за ItemActions, в ListView нельзя из-за маркера.
+.controls-Grid__row
+   > .controls-Grid__columnSeparator_size-s.controls-ListView__item_shadow_visible::after,
+.controls-Grid__row
+   > .controls-Grid__columnSeparator_size-s.controls-ListView__itemContent_border_visible::after,
+.ws-is-hover
+   .controls-BaseControl_hover_enabled
+   .controls-Grid__row:hover
+   > .controls-Grid__columnSeparator_size-s.controls-ListView__item_shadow_onhover::after,
+.ws-is-hover
+   .controls-BaseControl_hover_enabled
+   .controls-Grid__row:hover
+   > .controls-Grid__columnSeparator_size-s.controls-ListView__itemContent_border_onhover::after {
+   width: calc(100% + 1px);
+   left: -1px;
+}

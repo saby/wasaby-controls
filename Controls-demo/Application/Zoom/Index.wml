@@ -1,0 +1,65 @@
+<Controls.Application bodyClass="controls-Zoom ApplicationDemo__zoom-{{_zoom[0]}}">
+    <div attr:class="ApplicationDemo__zoom ">
+        <div class="ApplicationDemo__zoom-line controls-Zoom">
+            Выбор значения zoom на body:&nbsp;
+            <Controls.dropdown:Selector
+                    bind:selectedKeys="_zoom"
+                    on:selectedKeysChanged="_selectedKeysChangedHandler()"
+                    keyProperty="key"
+                    displayProperty="key"
+                    source="{{_zoomDdlSource}}">
+            </Controls.dropdown:Selector>
+        </div>
+        <div class="ApplicationDemo__zoom-line">
+            <Controls.buttons:Button
+                    caption="Открыть стековую панель"
+                    on:click="_openStack()"/>
+        </div>
+        <div class="ApplicationDemo__zoom-line">
+            <Controls.buttons:Button
+                    caption="Открыть диалог с перетаскиванием"
+                    on:click="_openDialog()"/>
+        </div>
+        <div class="ApplicationDemo__zoom-line controls-Zoom" style="zoom: 0.75;">
+            Inner zoom 0.75<br/>
+            <Controls.slider:Base
+                    maxValue="{{100}}"
+                    minValue="{{0}}"/>
+        </div>
+
+        <div class="ApplicationDemo__zoom-line controls-Zoom" style="zoom: 0.75;">
+            Inner zoom 0.75<br/>
+            <Controls.scroll:Container
+                    scrollOrientation="verticalHorizontal"
+                    attr:style="height: 200px; width: 200px;">
+                <div attr:style="height: 1000px; width: 1000px;">
+
+                </div>
+            </Controls.scroll:Container>
+        </div>
+
+        <div class="ApplicationDemo__zoom-line controls-Zoom" style="zoom: 0.75;">
+            Inner zoom 0.75<br/>
+            <Controls.dropdown:Button
+                    caption="Меню с иерархией"
+                    source="{{_hierarchySource}}"
+                    keyProperty="key"
+                    displayProperty="title"
+                    nodeProperty="@parent"
+                    parentProperty="parent">
+            </Controls.dropdown:Button>
+        </div>
+
+        <div class="ApplicationDemo__zoom-line">
+            <Controls.progress:Bar value="{{50}}"/>
+        </div>
+
+        <div class="ApplicationDemo__zoom-line controls-Zoom" style="zoom: 0.75;">
+            <div
+                on:contextmenu="_contextMenuHandler()"
+                style="height: 200px; width: 200px; border: 1px solid;">
+                Кликни здесь правой кнопкой мыши чтобы открыть контекстное меню
+            </div>
+        </div>
+    </div>
+</Controls.Application>

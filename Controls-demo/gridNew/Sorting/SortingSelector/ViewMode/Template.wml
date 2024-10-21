@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">viewMode='linkButton'</div>
+        <Controls.sorting:Selector
+                attr:data-qa="controlsDemo_SortingSelector__linkButton"
+                sortingParams="{{_sortingParams}}"
+                viewMode="linkButton"
+                bind:value="_sorting">
+        </Controls.sorting:Selector>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">viewMode='ghost'</div>
+        <Controls.sorting:Selector
+                attr:data-qa="controlsDemo_SortingSelector__toolButton"
+                sortingParams="{{_sortingParams}}"
+                viewMode="ghost"
+                bind:value="_sorting">
+        </Controls.sorting:Selector>
+    </div>
+</div>

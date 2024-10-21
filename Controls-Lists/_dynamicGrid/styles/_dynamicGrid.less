@@ -1,0 +1,252 @@
+@import 'Controls-Lists/_dynamicGrid/styles/zIndexEnv/_cellContentContext';
+
+// Прицел - перекрестие
+@cross-line-color: #d1d3db;
+@cross-line-color-rgba: #d1d3db;
+@cross-line-size: 4000px;
+@cross-line-item-color: #b6bac6;
+
+.ControlsLists-dynamicGrid__dynamicCellsWrapper {
+   display: grid;
+   height: 100%;
+   position: relative;
+}
+
+.ControlsLists-dynamicGrid__autoScrollTarget {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   right: 0;
+}
+
+.for(@TOffsetSizeVariants, {
+  .ControlsLists-dynamicGrid__dynamicCellsWrapper_columns-spacing_@{_item} {
+    column-gap: ~'calc(var(--gap_@{_item}) + var(--border-thickness))';
+    margin-left: ~'calc(var(--gap_@{_item}) + var(--border-thickness))';
+    margin-right: ~'calc(var(--gap_@{_item}) + var(--border-thickness))';
+  }
+  .ControlsLists-dynamicGrid__autoScrollTarget_columns-spacing_@{_item} {
+    left: ~'calc(-1 * ( calc(var(--gap_@{_item}) + var(--border-thickness)) ))';
+    right: ~'calc(-1 * ( calc(var(--gap_@{_item}) + var(--border-thickness)) ))';
+  }
+});
+
+.ControlsLists-dynamicGrid__dynamicCellsWrapper_columns-spacing_null {
+   column-gap: var(--border-thickness);
+   margin-left: var(--border-thickness);
+   margin-right: var(--border-thickness);
+}
+
+.ControlsLists-dynamicGrid__autoScrollTarget_columns-spacing_null {
+   left: calc(-1 * var(--border-thickness));
+   right: calc(-1 * var(--border-thickness));
+}
+
+.ControlsLists-dynamicGrid__dynamicHeaderCell {
+   align-items: center;
+   justify-content: center;
+   display: flex;
+}
+
+.ControlsLists-dynamicGrid__dynamicDataCell,
+.ControlsLists-dynamicGrid__eventCell {
+   height: 100%;
+   position: relative;
+}
+
+.ControlsLists-dynamicGrid__tag {
+   z-index: 2;
+}
+
+.for(@TOffsetSizeVariants, {
+  .controls-padding_top-dynamic-grid_@{_item},
+  .controls-ListView__itemV_marker-default_topPadding-dynamic-grid_@{_item}{
+    padding-top: ~'calc(var(--gap_@{_item}) + var(--border-thickness))';
+  }
+});
+
+.ws-is-hover {
+   .ControlsLists-dynamicGrid__dynamicDataCell:hover .ControlsLists-dynamicGrid__selectionCheckbox {
+      display: flex;
+   }
+
+   /* Прицел при наведении на ячейку, рисуется именно так для выделения перекрестия прицела отдельным цветом - цвет background`а
+   и другим цветом вне пересечения прицельных линий - цвет box-shadow */
+   .ControlsLists-dynamicGrid__cell-crosshair:hover::after {
+      border-radius: unset;
+      border: 0;
+      position: absolute;
+      content: '';
+      top: 0;
+      left: calc(-1 * var(--border-thickness));
+      right: calc(-1 * var(--border-thickness));
+      bottom: calc(-1 * var(--border-thickness));
+      background: @cross-line-item-color;
+      box-shadow: 0 0 0 @cross-line-size @cross-line-color-rgba;
+      z-index: 5;
+      clip-path: polygon(
+         var(--border-thickness) 0,
+         var(--border-thickness) -@cross-line-size,
+         0 -@cross-line-size,
+         0 0,
+         -@cross-line-size 0,
+         -@cross-line-size var(--border-thickness),
+         0 var(--border-thickness),
+         0 calc(100% - var(--border-thickness)),
+         -@cross-line-size calc(100% - var(--border-thickness)),
+         -@cross-line-size 100%,
+         0 100%,
+         0 @cross-line-size,
+         var(--border-thickness) @cross-line-size,
+         var(--border-thickness) 100%,
+         calc(100% - var(--border-thickness)) 100%,
+         calc(100% - var(--border-thickness)) @cross-line-size,
+         100% @cross-line-size,
+         100% 100%,
+         @cross-line-size 100%,
+         @cross-line-size calc(100% - var(--border-thickness)),
+         100% calc(100% - var(--border-thickness)),
+         100% var(--border-thickness),
+         @cross-line-size var(--border-thickness),
+         @cross-line-size 0,
+         100% 0,
+         100% -@cross-line-size,
+         calc(100% - var(--border-thickness)) -@cross-line-size,
+         calc(100% - var(--border-thickness)) 0,
+         calc(100% - var(--border-thickness)) calc(100% - var(--border-thickness)),
+         var(--border-thickness) calc(100% - var(--border-thickness)),
+         var(--border-thickness) var(--border-thickness),
+         100% var(--border-thickness),
+         100% 0
+      );
+   }
+   .for(@TOffsetSizeVariants, {
+      .ControlsLists-dynamicGrid__item .controls-padding_top-dynamic-grid_@{_item} .ControlsLists-dynamicGrid__dynamicDataCell:hover::after
+      {
+         top: ~'calc(-1px - 1*(var(--gap_@{_item}) / 2))';
+         bottom: ~'calc(-1px - var(--gap_@{_item}) / 2)';
+      }
+    });
+
+   /* Для отображения чисто вертикальных прицельных линий при ховере на хеддер */
+   .ControlsLists-timelineGrid__headerCellContent:hover::after {
+      position: absolute;
+      content: '';
+      background: @cross-line-color-rgba;
+      box-shadow: 0 0 0 @cross-line-size @cross-line-color-rgba;
+      z-index: 5;
+      left: calc(-1 * var(--border-thickness));
+      right: calc(-1 * var(--border-thickness));
+      clip-path: polygon(
+         0 -@cross-line-size,
+         0 @cross-line-size,
+         var(--border-thickness) @cross-line-size,
+         var(--border-thickness) -@cross-line-size,
+         calc(100% - var(--border-thickness)) -@cross-line-size,
+         calc(100% - var(--border-thickness)) @cross-line-size,
+         100% @cross-line-size,
+         100% @cross-line-size,
+         100% @cross-line-size,
+         100% -@cross-line-size
+      );
+   }
+   .for(@TOffsetSizeVariants, {
+      .ControlsLists-dynamicGrid__dynamicCellsWrapper_columns-spacing_@{_item} .ControlsLists-dynamicGrid__dynamicDataCell:hover::after,
+      .ControlsLists-dynamicGrid__dynamicCellsWrapper_columns-spacing_@{_item} .ControlsLists-timelineGrid__headerCellContent:hover::after
+      {
+         left: ~'calc(-1* var(--gap_@{_item}) / 2 - 1px)';
+         right: ~'calc(-1* var(--gap_@{_item}) / 2 - 1px)';
+      }
+    });
+
+   /* Горизонтальные линии по ховеру. Мемуары.
+   Сделаны именно так из-за комбинации следующих требований к контролу:
+   1. Горизонтальные (и вертикальные) отступы между ячейками должны быть равны 3px.
+   2. При наведении на первую строку нижняя линия должна совпадать с верхней линией,
+      отображаемой при наведении на вторую строку.
+   3. Есть фиксированная часть таблицы, у которой есть фон (под фон уходит скроллируемая часть).
+
+   Это накладывает следующие ограничения на решение задачи отображения горизонтальных линий (номер ограничения
+   соответствует номеру требования):
+   1. Отступ между строками 3px является нечётным, значит нельзя задать одинаковые отступы сверху и снизу записи.
+      Также 1.5px будет работать некорректно во многих кейсах - зум, восстановление позиции при скролле и т.п.
+   2. Исходя из требования можно было бы использовать решение абсолютного позиционирования и вылезания за границы
+      ячейки, но 3-е требование блокирует такое решение (подробнее в п.3).
+   3. Нативный css последовательно формирует z-index для элементов (каждый следующий элемент с таким же z-index
+      располагается "выше" предыдущего). А значит любой элемент, вышедший за нижнюю границу первой строки будет
+      перекрыт фоном второй строкой. Следовательно, абсолютное позиционирование нижней линии невозможно.
+
+   Таким образом, итоговая реализация состоит из следующих решений:
+   1. Расстояние между строками в 3px обеспечивается верхним отступом в 3px и нижним отступом в 0px.
+   2. Совпадение по ховеру нижней линии первой записи и верхней линии второй записи обеспечивается так:
+      - верхняя линия отображается на текущей записи (item:hover:after);
+      - нижняя линия отображается в верхней области следующей записи (item:hover + item:after);
+      - для последней записи отсутствует следующая запись, а значит перекрывать нечем и нижняя линия располагается
+         прямо в последней записи (row:last-child:hover:after)
+   */
+   // Ховер на запись. Горизонтальные линии. Верхняя линия.
+   .ControlsLists-dynamicGrid__item:hover .ControlsLists-dynamicGrid__cross-horizontal-part::after,
+   .ControlsLists-dynamicGrid__item:hover
+      + .ControlsLists-dynamicGrid__item
+      .ControlsLists-dynamicGrid__cross-horizontal-part::after {
+      position: absolute;
+      content: '';
+      top: 0;
+      background: @cross-line-color-rgba;
+      box-shadow: 0 0 0 @cross-line-size @cross-line-color-rgba;
+      clip-path: polygon(
+         -@cross-line-size var(--border-thickness),
+         -@cross-line-size 0,
+         @cross-line-size 0,
+         @cross-line-size var(--border-thickness)
+      );
+      z-index: @crossLineHorizontalZIndex;
+   }
+
+   .for(@TOffsetSizeVariants, {
+     .ControlsLists-dynamicGrid__item:hover .controls-padding_top-dynamic-grid_@{_item}::after,
+     .ControlsLists-dynamicGrid__item:hover
+     + .ControlsLists-dynamicGrid__item
+     .controls-padding_top-dynamic-grid_@{_item}::after {
+       top: ~'calc((var(--gap_@{_item}) / 2))';
+     }
+   });
+
+   // Ховер на запись. Горизонтальные линии (только для последней строки).
+   .ControlsLists-dynamicGrid__item:last-child:hover
+      .ControlsLists-dynamicGrid__cross-horizontal-part::after {
+      position: absolute;
+      content: '';
+      bottom: calc(-1 * var(--border-thickness));
+      top: 0;
+      background: @cross-line-color-rgba;
+      box-shadow: 0 0 0 @cross-line-size @cross-line-color-rgba;
+      z-index: @crossLineHorizontalZIndex;
+      clip-path: polygon(
+         -@cross-line-size var(--border-thickness),
+         -@cross-line-size 0,
+         @cross-line-size 0,
+         @cross-line-size var(--border-thickness),
+         @cross-line-size calc(100% - var(--border-thickness)),
+         @cross-line-size 100%,
+         -@cross-line-size 100%,
+         -@cross-line-size calc(100% - var(--border-thickness)),
+         @cross-line-size calc(100% - var(--border-thickness)),
+         @cross-line-size var(--border-thickness)
+      );
+   }
+
+   .for(@TOffsetSizeVariants, {
+      .ControlsLists-dynamicGrid__item:last-child:hover
+      .controls-padding_top-dynamic-grid_@{_item}::after
+       {
+        top: ~'calc((var(--gap_@{_item}) / 2))';
+      }});
+
+   .for(@TOffsetSizeVariants, {
+     .ControlsLists-dynamicGrid__item:last-child:hover
+     .controls-padding_top-dynamic-grid_@{_item}::after {
+       bottom: ~'calc(-1 * (var(--gap_@{_item}) / 2 + var(--border-thickness)))';
+     }
+   });
+}

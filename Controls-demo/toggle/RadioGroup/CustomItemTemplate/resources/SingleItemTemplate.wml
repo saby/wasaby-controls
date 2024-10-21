@@ -1,0 +1,20 @@
+<ws:partial template='Controls/RadioGroup:ItemTemplate'
+            item="{{item}}"
+            readOnly="{{readOnly}}"
+            selected="{{selected}}"
+            displayProperty="caption"
+            onClick="{{onClick}}"
+            className="{{className}}"
+>
+    <ws:contentTemplate>
+        <div class="controls-custom-template__wrapper">
+            <div class="controls-text-secondary">
+                {{item.title}}
+            </div>
+            <div class="controls-margin_left-s
+                        controls-custom-template__caption_{{ selected ? 'selected' : 'unselected' }}">
+                {{item.caption}}
+            </div>
+        </div>
+    </ws:contentTemplate>
+</ws:partial>

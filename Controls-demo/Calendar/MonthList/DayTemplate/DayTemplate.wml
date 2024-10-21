@@ -1,0 +1,19 @@
+<ws:partial template="wml!Controls-demo/Calendar/MonthList/resources/DemoTemplate"
+            title="Задан шаблон дня через опцию dayTemplate">
+    <div class="controlsDemo__flex controlsDemo__flexColumn">
+        <Controls.calendar:MonthList
+                name="monthList"
+                viewMode="month">
+            <ws:dayTemplate>
+                <ws:partial template="Controls/calendar:MonthViewDayTemplate" value="{{value}}" scope="{{ _options }}">
+                    <ws:contentTemplate>
+                        <div class="controlsDemo-MonthList__day {{ contentTemplate.value.day % 2 ? 'controlsDemo-MonthList__day-red' }}">
+                            {{contentTemplate.value.day}}
+                        </div>
+                    </ws:contentTemplate>
+                </ws:partial>
+
+            </ws:dayTemplate>
+        </Controls.calendar:MonthList>
+    </div>
+</ws:partial>

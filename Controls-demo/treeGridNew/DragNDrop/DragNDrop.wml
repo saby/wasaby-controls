@@ -1,0 +1,29 @@
+<div class="controlsDemo__wrapper">
+    <Controls.buttons:Button caption="Toggle multiselectVisibility" on:click="_onToggle()"/>
+    <Controls.browser:Browser source="{{_viewSource}}"
+                              keyProperty="key"
+                              parentProperty="parent"
+                              nodeProperty="type"
+                              bind:selectedKeys="_selectedKeys">
+        <div>
+            <Controls.listDeprecate:Mover name="listMover"/>
+            <Controls.listDataOld:ListContainer>
+                <Controls.treeGrid:View
+                        on:customdragStart="_dragStart()"
+                        on:customdragEnd="_dragEnd()"
+                        multiSelectVisibility="{{_multiselect}}"
+                        itemsDragNDrop="{{true}}"
+                        itemsReadyCallback="{{_itemsReadyCallback}}"
+                        columns="{{_columns}}">
+                    <ws:draggingTemplate>
+                        <ws:partial template="Controls/dragnDrop:DraggingTemplate"
+                                    mainText="{{draggingTemplate.entity.getOptions().mainText}}"
+                                    image="{{draggingTemplate.entity.getOptions().image}}"
+                                    additionalText="{{draggingTemplate.entity.getOptions().additionalText}}">
+                        </ws:partial>
+                    </ws:draggingTemplate>
+                </Controls.treeGrid:View>
+            </Controls.listDataOld:ListContainer>
+        </div>
+    </Controls.browser:Browser>
+</div>

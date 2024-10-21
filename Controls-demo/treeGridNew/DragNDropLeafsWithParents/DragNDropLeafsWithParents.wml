@@ -1,0 +1,17 @@
+<div class="controlsDemo__wrapper">
+    <Controls.treeGrid:View
+            storeId="DragNDropLeafsWithParents"
+            name="view"
+            columns="{{_columns}}"
+            itemsDragNDrop="{{true}}"
+            on:customdragEnd="_dragEnd()"
+    >
+        <ws:draggingTemplate>
+            <ws:partial template="Controls/dragnDrop:DraggingTemplate"
+                        mainText="{{draggingTemplate.entity.getOptions().mainText}}"
+                        image="{{draggingTemplate.entity.getOptions().image}}"
+                        additionalText="{{draggingTemplate.entity.getOptions().additionalText}}">
+            </ws:partial>
+        </ws:draggingTemplate>
+    </Controls.treeGrid:View>
+</div>

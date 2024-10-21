@@ -1,0 +1,29 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center ws-justify-content-center"
+         data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell controls-margin_bottom-s">
+            <Controls.Chips:Control items="{{_items}}"
+                                   bind:selectedKeys="_selectedKeys"/>
+        </div>
+        <div class="controlsDemo__cell controls-margin_bottom-s">
+            <Controls.Chips:Control items="{{_items1}}"
+                                   bind:selectedKeys="_selectedKeys1"
+                                   attr:data-qa="controlsButtonGroup__first_group">
+                <ws:itemTemplate>
+                    <ws:partial template="Controls/Chips:chipsItemCounterTemplate" counterStyle="primary"
+                                scope="{{itemTemplate}}"/>
+                </ws:itemTemplate>
+            </Controls.Chips:Control>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.Chips:Control items="{{_items2}}"
+                                   bind:selectedKeys="_selectedKeys2"
+                                   attr:data-qa="controlsButtonGroup__first_group">
+                <ws:itemTemplate>
+                    <ws:partial template="Controls/Chips:chipsItemCounterTemplate" counterStyle="primary"
+                                scope="{{itemTemplate}}"/>
+                </ws:itemTemplate>
+            </Controls.Chips:Control>
+        </div>
+    </div>
+</div>

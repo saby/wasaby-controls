@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper">
+   <div class="controlsDemo__cell">
+      <Router.router:Reference attr:class="controls-text-label"
+                               state="/Controls-ListEnv-demo/app/:app"
+                               app="{{ 'Controls-ListEnv-demo/Filter/NotConnectedView/EmptyText/WithDetailPanel/Index' }}">
+         <a href="{{content.href}}">EmptyText with detail panel</a>
+      </Router.router:Reference>
+      <Controls-ListEnv-demo.Filter.NotConnectedView.EmptyText.WithDetailPanel.Index/>
+   </div>
+   <div class="controlsDemo__cell">
+      <Router.router:Reference attr:class="controls-text-label"
+                               state="/Controls-ListEnv-demo/app/:app"
+                               app="{{ 'Controls-ListEnv-demo/Filter/NotConnectedView/EmptyText/WithSimplePanel/Index'}}">
+         <a href="{{content.href}}">EmptyText with simple panel</a>
+      </Router.router:Reference>
+      <Controls-ListEnv-demo.Filter.NotConnectedView.EmptyText.WithSimplePanel.Index/>
+   </div>
+</div>

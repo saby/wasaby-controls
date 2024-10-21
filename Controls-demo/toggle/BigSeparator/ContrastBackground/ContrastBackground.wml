@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300" data-qa="Controls-demo_toggle_BigSeparator_ContrastBackground__wrapper">
+    <div class="controlsDemo__cell demo-BigSeparator__contrastBackgroundTrue">
+        <div class="controls-text-label controls-text-label">contrastBackground = true</div>
+        <Controls.ShowMoreButton caption="Button"
+                                      contrastBackground="{{true}}"
+                                      bind:value="_expanded"
+                                      attr:data-qa="Controls-demo_toggle_BigSeparator_ContrastBackground__show-more-true"/>
+    </div>
+    <div class="controlsDemo__cell controlsDemo__background demo-BigSeparator__contrastBackgroundFalse">
+        <div class="controls-text-label controls-text-label">contrastBackground = false</div>
+        <Controls.ShowMoreButton caption="Button 2"
+                                      contrastBackground="{{false}}"
+                                      bind:value="_expanded"
+                                      attr:data-qa="Controls-demo_toggle_BigSeparator_ContrastBackground__show-more-false"/>
+    </div>
+</div>

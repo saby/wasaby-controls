@@ -1,0 +1,17 @@
+<Controls.filterPanel:BaseEditor scope="{{_options}}"
+                                  closeButtonVisible="{{false}}"
+                                  on:extendedCaptionClick="_extendedCaptionClickHandler()"
+                                  extendedCaption="{{_options.extendedCaption}}">
+   <ws:editorTemplate>
+       <Controls.Container.Async templateName="Controls/Tumbler:Control">
+           <ws:partial template="{{content.resolvedTemplate}}"
+                       items="{{_options.items}}"
+                       selectedKey="{{_options.propertyValue}}"
+                       keyProperty="{{_options.keyProperty}}"
+                       displayProperty="{{_options.displayProperty}}"
+                       readOnly="{{_options.readOnly}}"
+                       attr:class="controls-FilterEditors__toggleTumbler "
+                       on:selectedKeyChanged="_selectedKeyChangedHandler()"/>
+       </Controls.Container.Async>
+   </ws:editorTemplate>
+</Controls.filterPanel:BaseEditor>

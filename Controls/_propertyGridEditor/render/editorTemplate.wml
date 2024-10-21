@@ -1,0 +1,19 @@
+<ws:if data="{{item.getEditorTemplateName()}}">
+	<Controls.Container.Async templateName="{{item.getEditorTemplateName()}}"
+								attr:class="{{item.getEditorClasses()}}">
+		<ws:templateOptions
+			propertyValue="{{item.getPropertyValue()}}"/>
+		<ws:content>
+			<ws:partial
+				attr:key="{{item.getUid()}}"
+				template="{{content.resolvedTemplate}}"
+				scope="{{item.getEditorOptions()}}"
+				jumpingLabel="{{item.getEditorOptions().jumpingLabel || jumpingLabel}}"
+				caption="{{caption}}"
+				readonly="{{true}}"/>
+		</ws:content>
+	</Controls.Container.Async>
+</ws:if>
+<ws:else>
+	<invisible-node/>
+</ws:else>

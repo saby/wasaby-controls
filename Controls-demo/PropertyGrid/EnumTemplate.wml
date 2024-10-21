@@ -1,0 +1,7 @@
+<div>
+    <Controls.input:Label caption="{{_options.caption}}" attr:class="demo-TextBox"/>
+    <Controls.ComboBox
+            scope="{{_comboboxOptions}}"
+            on:selectedKeyChanged="_selectedItemHandler()"
+            attr:class="demo-TextBox js-Controls-PropertyGridEditor__options-{{_options.caption}}"/>
+</div>

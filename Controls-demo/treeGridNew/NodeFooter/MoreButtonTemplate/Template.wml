@@ -1,0 +1,15 @@
+<div attr:class="controlsDemo__cell"
+     data-qa="controlsDemo-MoreButtonTemplate">
+    <Controls.treeGrid:View
+            name="tree"
+            storeId="NodeFooterMoreFontColorStyleDefault"
+            columns="{{ _columns }}"
+            useNewNodeFooters="{{ true }}">
+        <ws:moreButtonTemplate>
+            <div class="ControlsDemo__moreButton_wrapper">
+                <ws:partial template="Controls/list:MoreButtonTemplate"/>
+                <i class="ControlsDemo__moreButton_indicator"/>
+            </div>
+        </ws:moreButtonTemplate>
+    </Controls.treeGrid:View>
+</div>

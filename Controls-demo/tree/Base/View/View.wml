@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+<Controls.tree:View
+    storeId="listData">
+  <ws:nodeFooterTemplate>
+    <Controls.tree:NodeFooterTemplate>
+      <b>footer template</b>
+    </Controls.tree:NodeFooterTemplate>
+  </ws:nodeFooterTemplate>
+</Controls.tree:View>
+</div>

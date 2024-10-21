@@ -1,0 +1,15 @@
+<div style="padding: 10px;">
+    <div style="height: 30px;">
+        <ws:if data="{{_getSaveButtonVisible()}}">
+            <Controls.buttons:Button caption="Сохранить" buttonStyle="primary" on:click="_onSave()"/>
+        </ws:if>
+    </div>
+    <Controls.validate:Controller name="validateController">
+        <Controls-Wizard.verticalNew:Layout attr:style="height: 800px; width: 100%;"
+                                   bind:selectedStepIndex="_selectedStepIndex"
+                                   bind:currentStepIndex="_currentStepIndex"
+                                   items="{{_items}}"
+                                   mode="{{_mode}}"
+        />
+    </Controls.validate:Controller>
+</div>

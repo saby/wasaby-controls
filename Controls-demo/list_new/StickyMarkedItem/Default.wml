@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:class="controlsDemo__maxWidth500" attr:style="max-height: 250px">
+        <Controls.list:View storeId="StickyMarkedItem"
+                            style="master"
+                            backgroundStyle="default"
+                            stickyMarkedItem="{{true}}">
+            <ws:virtualScrollConfig pageSize="{{20}}"/>
+        </Controls.list:View>
+    </Controls.scroll:Container>
+</div>

@@ -1,0 +1,23 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500 controlsDemo_wrapper-treeGrid-base-treeGridView">
+   <Controls.stickyEnvironment:DataPinProvider>
+      <Controls.scroll:Container
+         name="scrollContainer"
+         attr:style="height: 300px"
+      >
+         <Controls.treeGrid:View
+            header="{{ _header }}"
+            columns="{{ _columns }}"
+            source="{{ _viewSource }}"
+            colspanCallback="{{ _colspanCallback }}"
+            expandByItemClick="{{true}}"
+            stickyGroup="{{false}}"
+            bind:expandedItems="_expandedItems"
+
+            nodeProperty="type"
+            parentProperty="parent"
+            nodeTypeProperty="nodeType"
+            rowSeparatorSize="s"
+         />
+      </Controls.scroll:Container>
+   </Controls.stickyEnvironment:DataPinProvider>
+</div>

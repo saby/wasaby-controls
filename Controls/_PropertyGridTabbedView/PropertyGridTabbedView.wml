@@ -1,0 +1,28 @@
+<div class="controls-PropertyGrid-TabbedView">
+    <Controls.Container.Async templateName="Controls/tabs:Buttons">
+        <ws:partial template="{{content.resolvedTemplate}}"
+                    attr:class="controls-PropertyGrid-TabbedView__tabs"
+                    keyProperty="key"
+                    markerThickness="s"
+                    inlineHeight="s"
+                    borderVisible="{{false}}"
+                    bind:selectedKey="_selectedKey"
+                    source="{{_tabsSource}}"
+                    separatorVisible="{{false}}"/>
+    </Controls.Container.Async>
+    <Controls.Container.Async templateName="Controls/switchableArea:View">
+        <ws:partial template="{{content.resolvedTemplate}}"
+                    attr:class="controls-PropertyGrid-TabbedView__switchableArea"
+                    selectedKey="{{_selectedKey}}"
+                    items="{{_switchableAreaItems}}">
+            <ws:itemTemplate>
+                <Controls.propertyGrid:PropertyGrid
+                    attr:class="controls-PropertyGrid-TabbedView__editor"
+                    scope="{{_options}}"
+                    typeDescription="{{itemTemplate.templateOptions.source}}"
+                    editingObject="{{_options.editingObject}}"
+                    on:editingObjectChanged="_handleObjectChange()"/>
+            </ws:itemTemplate>
+        </ws:partial>
+    </Controls.Container.Async>
+</div>

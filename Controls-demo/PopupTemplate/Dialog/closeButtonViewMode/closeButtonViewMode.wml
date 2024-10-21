@@ -1,0 +1,16 @@
+<div class="controlsDemo__flexRow">
+    <div class="controlsDemo__flexColumn controlsDemo__ml2">
+        <ws:for data="closeButtonViewMode in _closeButtonViewModes">
+            <div class="controlsDemo__cell controlsDemo__mb2 controlsDemo__maxWidth500">
+                <div class="controls-text-label">closeButtonViewMode="{{closeButtonViewMode}}"</div>
+                <Controls.popupTemplate:Dialog headingCaption="Задача в разработку" closeButtonViewMode="{{closeButtonViewMode}}">
+                    <ws:bodyContentTemplate>
+                        <div  style="text-align: center; padding: 12px; min-height: 100px;">
+                            Chicago, the state of Illinois, is known as The Second City, which refers to its rebuilding after the fire.
+                            The current city is literally the second Chicago, after the one that disappeared in 1871. </div>
+                    </ws:bodyContentTemplate>
+                </Controls.popupTemplate:Dialog>
+            </div>
+        </ws:for>
+    </div>
+</div>

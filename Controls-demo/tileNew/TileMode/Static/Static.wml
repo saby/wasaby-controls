@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper">
+   <Controls.treeTile:View
+      storeId="listData1"
+      tileMode="static"
+      tileHeight="200"
+      tileScalingMode="outside"
+      imageProperty="image">
+      <ws:itemTemplate>
+         <ws:partial
+            template="Controls/tile:ItemTemplate"
+            scope="{{itemTemplate}}"
+            hasTitle="{{false}}"/>
+      </ws:itemTemplate>
+   </Controls.treeTile:View>
+</div>

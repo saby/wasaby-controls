@@ -1,0 +1,17 @@
+<div class="controlsDemo__wrapper ws-flexbox ws-flex-column ws-align-items-center">
+    <Controls.scroll:Container
+            attr:class="controlsDemo_fixedWidth500 controlsDemo__maxWidth500 controlsDemo__height500 controlsDemo__mb1">
+        <Controls.list:View
+                storeId="VirtualScrollVirtualScrollContainerDown"
+                name="list">
+            <ws:virtualScrollConfig pageSize="{{20}}"/>
+        </Controls.list:View>
+        <Controls.scroll:VirtualScrollContainer position="bottom">
+            <div data-qa="ControlsDemo-VisualScrollContainer__bottom">
+                Контент, который расположен ниже списка.
+                Он не должен отображаться, пока у списка есть данные внизу.
+                Появляется только если отображается последняя запись списка.
+            </div>
+        </Controls.scroll:VirtualScrollContainer>
+    </Controls.scroll:Container>
+</div>

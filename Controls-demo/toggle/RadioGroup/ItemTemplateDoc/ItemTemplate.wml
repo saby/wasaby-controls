@@ -1,0 +1,26 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center controlsDemo__cell" data-qa="controlsDemo_capture">
+        <Controls.RadioGroup:Control
+                bind:selectedKey="_selectedKey"
+                keyProperty="id"
+                items="{{_items}}">
+            <ws:itemTemplate>
+                <ws:partial
+                        template="Controls/RadioGroup:ItemTemplate"
+                        selected="{{itemTemplate.selected}}"
+                        item="{{itemTemplate.item}}">
+                    <ws:contentTemplate>
+                        <div>
+                            <div>
+                                {{ itemTemplate.item.get('title') }}
+                            </div>
+                            <div class="controls-text-unaccented controls-fontsize-xs">Только при подключении тарифа
+                            </div>
+                        </div>
+                    </ws:contentTemplate>
+                </ws:partial>
+            </ws:itemTemplate>
+        </Controls.RadioGroup:Control>
+    </div>
+</div>
+

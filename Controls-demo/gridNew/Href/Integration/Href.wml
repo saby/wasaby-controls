@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper" style="max-width: 500px">
+<Controls.scroll:Container>
+   <div class="controlsDemo__inline-flex">
+      <Controls.grid:View
+         storeId="Href"
+         columns="{{_columns}}">
+         <ws:itemTemplate>
+            <ws:partial template="Controls/grid:ItemTemplate"
+                        href="{{itemTemplate.item.contents.get('href')}}" />
+         </ws:itemTemplate>
+      </Controls.grid:View>
+   </div>
+</Controls.scroll:Container>
+</div>

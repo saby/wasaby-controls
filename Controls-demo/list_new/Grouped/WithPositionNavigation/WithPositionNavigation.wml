@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth350">
+<Controls.scroll:Container attr:class="controls-background-unaccented" attr:style="max-height: 200px">
+  <Controls.list:View
+      backgroundStyle="unaccented"
+      groupProperty="group"
+      stickyHeader="{{true}}"
+      storeId="GroupedWithPositionNavigation">
+    <ws:virtualScrollConfig pageSize="{{40}}"/>
+  </Controls.list:View>
+</Controls.scroll:Container>
+</div>

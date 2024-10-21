@@ -1,0 +1,3 @@
+<div class="controlsDemo-MonthTemplate">
+    {{ _formatDate(_options.month.date, _formatDate.FULL_MONTH) }}
+</div>

@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell controlsDemo_fixedWidth350">
+        <Controls.jumpingLabel:InputContainer attr:class="controlsDemo__input"
+                                              caption="Enter your name">
+            <Controls.input:Text/>
+        </Controls.jumpingLabel:InputContainer>
+    </div>
+    <div class="controlsDemo__cell controlsDemo_fixedWidth350">
+        <Controls.jumpingLabel:InputContainer attr:class="controlsDemo__input"
+                                              value="{{_name}}"
+                                              caption="Enter your name">
+            <Controls.input:Text bind:value="_name"/>
+        </Controls.jumpingLabel:InputContainer>
+    </div>
+</div>
