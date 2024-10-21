@@ -1,0 +1,31 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell controlsDemo_fixedWidth500">
+        <Controls.themesExt:ContrastWrapper>
+            <!-- Controls.themesExt:ContrastWrapper не должен задавать собственный фон, т.к. иногда в него оборачивают
+                 целую страницу, в которой уже есть различные контрастные блоки на белом фоне -->
+            <div class="controls-background-contrast">
+                <Controls.scroll:Container attr:style="max-height: 200px" backgroundStyle="contrast">
+                    <Controls.grid:View
+                            keyProperty="key"
+                            source="{{_rootSource}}"
+                            markerVisibility="hidden"
+                            columns="{{_rootColumns}}">
+                        <ws:itemPadding left="null" right="null" bottom="null" top="null" />
+                        <ws:itemTemplate>
+                            <ws:partial template="Controls/grid:ItemTemplate" highlightOnHover="{{false}}"/>
+                        </ws:itemTemplate>
+                    </Controls.grid:View>
+                </Controls.scroll:Container>
+                <div class="controlsDemo__cell controls-margin_top-l">
+                    <div class="controls-text-label">Кнопки</div>
+                    <ws:for data="buttonStyle in _buttonStyles">
+                        <Controls.buttons:Button attr:class="controls-margin_top-3xs" caption="{{buttonStyle}}" buttonStyle="{{buttonStyle}}"
+                                                 viewMode="filled"/>
+                        {{' '}}
+                    </ws:for>
+                    <Controls.buttons:Button attr:class="controls-margin_top-3xs" caption="readonly" buttonStyle="primary" readOnly="{{true}}"/>
+                </div>
+            </div>
+        </Controls.themesExt:ContrastWrapper>
+    </div>
+</div>

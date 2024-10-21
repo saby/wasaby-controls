@@ -1,0 +1,13 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper controlsDemo__flexColumn">
+      <div class="controls-text-label">С closeButtonVisibility = true</div>
+      <Controls.menu:Popup
+              items="{{_items}}"
+              keyProperty="key"
+              displayProperty="title"
+              closeButtonVisibility="{{true}}"
+              attr:data-qa="controls-Menu__popup-Simple"
+      >
+      </Controls.menu:Popup>
+   </div>
+</div>

@@ -1,0 +1,22 @@
+<ws:template name="gridDemo">
+	<div class="controlsDemo__cell">
+		<div class="controls-text-label">Выравнивание теста при значении опции align="{{ align }}"</div>
+		<Controls.grid:View
+			storeId="EmptyGridAlign"
+			header="{{_header}}"
+			columns="{{_columns}}"
+			headerVisibility="visible">
+			<ws:emptyTemplate>
+				<ws:partial template="Controls/grid:EmptyTemplate" align="{{ align }}">
+					<ws:contentTemplate>No data available!</ws:contentTemplate>
+				</ws:partial>
+			</ws:emptyTemplate>
+		</Controls.grid:View>
+	</div>
+</ws:template>
+
+<div class="controlsDemo__wrapper">
+	<ws:partial template="gridDemo" align="start"/>
+	<ws:partial template="gridDemo" align="end"/>
+	<ws:partial template="gridDemo" align="center"/>
+</div>

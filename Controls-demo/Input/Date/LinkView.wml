@@ -1,0 +1,114 @@
+<div class="controlsDemo-LinkView__pageWrap">
+   <div class="controlsDemo-LinkView__pageBlock">
+      <div class="PageBlock__title"></div>
+      <div class="controlsDemo-LinkView__componentWrap ws-flexbox">
+         <Controls.dateRange:LinkView
+         />
+         <Controls.dateRange:LinkView
+               bind:startValue="_startValue"
+               bind:endValue="_endValue"
+
+         />
+         <Controls.dateRange:LinkView
+               bind:startValue="_startValue"
+               bind:endValue="_endValue"
+
+         />
+         <Controls.dateRange:LinkView
+               bind:startValue="_startValue"
+               bind:endValue="_endValue"
+               fontSize="m"
+               fontWeight="normal"
+               fontColorStyle="link"
+         />
+         <Controls.dateRange:LinkView
+               startValue="{{_startValue}}"
+               endValue="{{_endValue}}"
+               fontSize="m"
+               fontWeight="normal"
+               fontColorStyle="unaccented"
+         />
+         <Controls.dateRange:LinkView
+               startValue="{{_startValue}}"
+               endValue="{{_endValue}}"
+               fontSize="m"
+               fontWeight="normal"
+               fontColorStyle="label"
+         />
+      </div>
+      <div class="controlsDemo-LinkView__pageBlock-baseline ws-flexbox">
+         Baseline
+         <Controls.dateRange:LinkView
+               attr:class="controlsDemo__ml2 controlsDemo-LinkView__component"
+               bind:startValue="_startValue"
+               bind:endValue="_endValue"
+         />
+         <Controls.dateRange:LinkView
+               attr:class="controlsDemo-LinkView__component"
+               bind:startValue="_startValue"
+               bind:endValue="_endValue"
+         />
+         <Controls.dateRange:LinkView
+               attr:class="controlsDemo-LinkView__component"
+               bind:startValue="_startValue"
+               bind:endValue="_endValue"
+               fontSize="m"
+               fontWeight="normal"
+               fontColorStyle="link"
+         />
+         <Controls.dateRange:LinkView
+               attr:class="controlsDemo-LinkView__component"
+               startValue="{{_startValue}}"
+               endValue="{{_endValue}}"
+               fontSize="m"
+               fontWeight="normal"
+               fontColorStyle="unaccented"
+         />
+         <Controls.dateRange:LinkView
+               attr:class="controlsDemo-LinkView__component"
+               startValue="{{_startValue}}"
+               endValue="{{_endValue}}"
+               fontSize="m"
+               fontWeight="normal"
+               fontColorStyle="label"
+         />
+      </div>
+      <div class="controlsDemo-LinkView__pageBlock-baseline controlsDemo-LinkView__pageBlock-baseline-size ws-flexbox">
+         Baseline
+         <Controls.dateRange:LinkView
+               attr:class="controlsDemo__ml2 controlsDemo-LinkView__component"
+               bind:startValue="_startValue"
+               bind:endValue="_endValue"
+         />
+         <Controls.dateRange:LinkView
+               attr:class="controlsDemo-LinkView__component"
+               bind:startValue="_startValue"
+               bind:endValue="_endValue"
+         />
+         <Controls.dateRange:LinkView
+               attr:class="controlsDemo-LinkView__component"
+               bind:startValue="_startValue"
+               bind:endValue="_endValue"
+               fontSize="m"
+               fontWeight="normal"
+               fontColorStyle="link"
+         />
+         <Controls.dateRange:LinkView
+               attr:class="controlsDemo-LinkView__component"
+               startValue="{{_startValue}}"
+               endValue="{{_endValue}}"
+               fontSize="m"
+               fontWeight="normal"
+               fontColorStyle="unaccented"
+         />
+         <Controls.dateRange:LinkView
+               attr:class="controlsDemo-LinkView__component"
+               startValue="{{_startValue}}"
+               endValue="{{_endValue}}"
+               fontSize="m"
+               fontWeight="normal"
+               fontColorStyle="label"
+         />
+      </div>
+   </div>
+</div>

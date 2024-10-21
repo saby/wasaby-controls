@@ -1,0 +1,8 @@
+<div class="controls-Demo__propertyGrid">
+    <Controls.propertyGridEditor:PropertyGridEditor
+            bind:editingObject="_editingObject"
+            itemActions="{{_itemActions}}"
+            typeDescription="{{_typeDescription}}"
+            itemActionVisibilityCallback="{{_itemActionVisibilityCallback}}">
+    </Controls.propertyGridEditor:PropertyGridEditor>
+</div>

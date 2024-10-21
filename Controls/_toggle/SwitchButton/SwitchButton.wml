@@ -1,0 +1,21 @@
+<span class="controls-SwitchButton controls_toggle_theme-{{_options.theme}}
+            controls-SwitchButton_size-{{_options.size}}
+            {{_isResetValue() ? 'controls-SwitchButton_resetValue'}}
+            controls-SwitchButton_{{_options.viewMode}}_{{_options.readOnly ? 'disabled_' : ''}}{{_options.value ? 'checked' : 'notChecked'}}
+            controls-SwitchButton_{{!_options.readOnly ? 'enabled' : 'disabled'}}
+            controls-SwitchButton_{{_options.orientation}}
+            controls-SwitchButton_{{_options.orientation}}_{{_options.position === 'end' ? 'checked' : 'notChecked'}}"
+      title="{{_options.tooltip}}"
+      data-qa="controls-SwitchButton"
+      on:click="_clickHandler()">
+   <ws:if data="{{ _options.orientation === 'vertical' }}">
+      <span class="controls-SwitchButton__fake-element controls-SwitchButton__fake-element_{{ _options.position === 'start' ? 'active' : 'inactive' }}"></span>
+   </ws:if>
+
+    <div class="controls-SwitchButton-circle controls-SwitchButton-circle_orientation-{{_options.orientation}}
+            controls-SwitchButton-circle_size-{{_options.size}}
+            {{_isResetValue() ? 'controls-SwitchButton-circle_resetValue'}}
+            controls-SwitchButton-circle_{{_options.viewMode}}-{{_options.value ? 'selected' : 'unselected'}}{{_options.readOnly ? '_disabled'}}"
+         data-qa="controls-SwitchButton_{{_options.position}}">
+    </div>
+</span>

@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper controlsDemo__ml3">
+    <div class="controlsDemo__cell">
+        <Controls.date:Input
+                bind:value="_value">
+            <ws:rightFieldTemplate>
+                <Controls.date:WeekdayFormatter value="{{ rightFieldTemplate.value }}"/>
+            </ws:rightFieldTemplate>
+        </Controls.date:Input>
+    </div>
+</div>

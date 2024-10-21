@@ -1,0 +1,62 @@
+<div>
+    <div class="controlsDemo__cell controlsDemo__mb2" attr:style="display: flex; flex-direction: column; align-items: flex-end">
+        <div class="controls-text-label">align=right</div>
+        <div style="width: {{_containerWidth}}px;">
+            <Controls.tabs:AdaptiveButtons
+                    bind:selectedKey="SelectedKey1"
+                    keyProperty="id"
+                    items="{{_items}}"
+                    align="right"
+                    attr:data-qa="AdaptiveButtons__right">
+                <ws:menuFooterTemplate>
+                    <div class="controlsDemo_wrapper_container ws-flexbox">
+                        <div class="controlsDemo_wrapper_footer controls-text-label controls-padding_left-2xl
+                                                                                    ws-flex-grow-1 controls-fontsize-l">
+                            Категория
+                        </div>
+                    </div>
+                </ws:menuFooterTemplate>
+            </Controls.tabs:AdaptiveButtons>
+        </div>
+    </div>
+    <div class="controlsDemo__cell controlsDemo__mb2" attr:style="display: flex; flex-direction: column; align-items: flex-end">
+        <div class="controls-text-label">align=right | markerThickness=l | inlineHeight=l</div>
+        <div style="width: {{_containerWidth}}px;">
+            <Controls.tabs:AdaptiveButtons
+                    bind:selectedKey="SelectedKey2"
+                    keyProperty="id"
+                    markerThickness="l"
+                    inlineHeight="l"
+                    attr:data-qa="AdaptiveButtons__right2"
+                    items="{{_items}}"
+                    align="right"
+            />
+        </div>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">align=left</div>
+        <div style="width: {{_containerWidth}}px;">
+            <Controls.tabs:AdaptiveButtons
+                    bind:selectedKey="SelectedKey3"
+                    keyProperty="id"
+                    displayProperty="caption"
+                    items="{{_items2}}"
+                    align="left"
+                    attr:data-qa="AdaptiveButtons__left"
+            />
+        </div>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">align=left | with icons</div>
+        <div style="width: {{_containerWidth}}px;">
+            <Controls.tabs:AdaptiveButtons
+                    bind:selectedKey="SelectedKeyIcon"
+                    keyProperty="id"
+                    displayProperty="caption"
+                    items="{{_itemsIcon}}"
+                    align="left"
+                    attr:data-qa="AdaptiveButtons__left"
+            />
+        </div>
+    </div>
+</div>

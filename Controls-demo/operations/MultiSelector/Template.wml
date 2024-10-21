@@ -1,0 +1,14 @@
+<Controls.browser:Browser source="{{_viewSource}}" filter="{{_filter}}" bind:selectedKeys="_selectedKeys"
+                                                                                    bind:excludedKeys="_excludedKeys">
+        <div>
+            <Controls.operations:MultiSelector/>
+            <Controls.listDataOld:ListContainer>
+                <Controls.treeGrid:View
+                        keyProperty="key"
+                        columns="{{_gridColumns}}"
+                        parentProperty="parent"
+                        nodeProperty="type"
+                        multiSelectVisibility="visible"/>
+            </Controls.listDataOld:ListContainer>
+        </div>
+</Controls.browser:Browser>

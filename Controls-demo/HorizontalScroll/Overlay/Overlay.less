@@ -1,0 +1,59 @@
+.controls-Scroll-Container {
+   transform: translate3d(0, 0, 0);
+}
+
+.Demo-HorizontalScroll__scrollContainer {
+   width: 900px;
+   height: 600px;
+
+   .controls-Scroll-ContainerBase__content-direction_column {
+      flex-direction: row;
+   }
+
+   .controls-Grid_part-fixed {
+      transform: translate3d(0, 0, 0);
+      will-change: transform;
+   }
+
+   .controls-Grid__ColumnScroll__fakeScrollablePartWrapper {
+      z-index: 1;
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      .controls-Grid__cell_spacingFirstCol_default {
+         height: var(--fixed_header_height);
+      }
+
+      .controls-Grid__row-cell__first-default {
+         background-color: #fff;
+         height: var(--fixed_data_height);
+      }
+   }
+
+   .controls-Grid__header-cell {
+      position: sticky;
+      top: 0;
+      background-color: #fff;
+      transform: translate3d(0, 0, 0);
+   }
+
+   .controls-Scroll__shadow_top {
+      top: var(--fixed_header_height);
+   }
+}
+
+.scrolling_may_be_now {
+   .controls-Grid__ColumnScroll__fakeScrollablePartWrapper {
+      display: block;
+      border-right: var(--columnscroll_separator_thickness_grid) solid
+         var(--columnscroll_separator_color_grid);
+   }
+
+   .controls-Grid_part-fixed {
+      .controls-Grid__header .controls-Grid__cell_spacingFirstCol_default,
+      .controls-GridViewV__itemsContainer .controls-Grid__row-cell__first-default {
+         visibility: hidden;
+      }
+   }
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module id="80da3119-a6dd-49c9-9ead-16169b9c952b" name="Controls-KeyboardUnit" version="1.00">
+  <description/>
+  <depends>
+      <module id="5013744b-0318-4446-8a94-e5f0c7857b95" name="Controls-Keyboard"/>
+      <module id="5dba5b68-0d22-4016-9564-d3bc3e59c9f1" name="Controls-Keyboard-default-theme"/>
+      <module id="a10cb1cb-b23d-4ef6-a757-4f7382e0e8d1" name="SbisEnvUI"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <test environment="NodeJS" framework="Jest" />
+  <resources/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

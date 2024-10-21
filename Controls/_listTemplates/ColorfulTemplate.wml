@@ -1,0 +1,64 @@
+<Controls.Container.Async templateName="Controls/themesExt:ZenWrapper">
+   <ws:partial template="{{content.resolvedTemplate}}"
+               dominantColor="{{_options.item.contents[_options.dominantColorProperty]}}"
+               complementaryColor="{{_options.item.contents[_options.complementaryColorProperty]}}"
+               brightness="{{_options.item.contents[_options.dominantThemeColorProperty]}}">
+      <!--Шаблон элемента-->
+      <Controls.Container.Async templateName="Controls/columns:ItemTemplate">
+         <ws:partial template="{{content.resolvedTemplate}}"
+                     highlightOnHover="{{false}}" scope="{{_options}}"
+                     attr:class="controls-listTemplates-ColorfulTemplate
+                                 {{(_options.item || _options.itemData).getRoundBorderClasses()}}">
+            <ws:contentTemplate>
+               <div class="controls-listTemplates-ColorfulTemplate__content">
+                  <!--Изображение-->
+                  <ws:partial
+                     src="{{_options.item.contents[_options.imageProperty]}}"
+                     attr:class="controls-listTemplates-ColorfulTemplate__image"
+                     template="wml!Controls/_listTemplates/DefaultImageTemplate"
+                     viewMode="rectangle" effect="gradient"/>
+                  <!--Область с основной информацией-->
+                  <div class="ws-flexbox ws-flex-column
+                              controls-padding_left-m controls-padding_right-m
+                              {{_options.footerTemplate ? 'controls-padding_bottom-s' : 'controls-padding_bottom-m'}}">
+                     <ws:if data="{{_options.afterImageTemplate}}">
+                        <ws:partial template="{{_options.afterImageTemplate}}"/>
+                     </ws:if>
+                     <!--Область заголовка-->
+                     <div class="ws-flexbox ws-flex-row ws-align-items-baseline">
+                        <div title="{{_options.title}}"
+                             class="ws-ellipsis controls-margin_top-s ws-flex-grow-1
+                                    controls-text-secondary controls-fontsize-3xl controls-fontweight-bold">
+                           {{_options.title}}
+                        </div>
+                        <ws:if data="{{_options.afterTitleTemplate}}">
+                           <ws:partial attr:class="controls-margin_left-m" template="{{_options.afterTitleTemplate}}"/>
+                        </ws:if>
+                     </div>
+                     <ws:if data="{{_options.description}}">
+                        <div title="{{_options.description}}"
+                             class="ws-line-clamp ws-line-clamp_{{_options.descriptionLines}}
+                                    controls-text-label controls-fontsize-m controls-margin_top-s">
+                           {{_options.description}}
+                        </div>
+                     </ws:if>
+                  </div>
+                  <!--Подвал-->
+                  <ws:if data="{{_options.footerTemplate}}">
+                     <ws:partial template="{{_options.footerTemplate}}"/>
+                  </ws:if>
+                  <!--
+                     Шаблон в правом верхнем углу поверх изображения.
+                     Позиционируется абсолютно, поэтому должен стоять в конце верстки, либо иметь z-index.
+                  -->
+                  <ws:if data="{{_options.additionalPanelTemplate}}">
+                     <ws:partial
+                        attr:class="controls-listTemplates-ColorfulTemplate__additionalPanelTemplate"
+                        template="{{_options.additionalPanelTemplate}}"/>
+                  </ws:if>
+               </div>
+            </ws:contentTemplate>
+         </ws:partial>
+      </Controls.Container.Async>
+   </ws:partial>
+</Controls.Container.Async>

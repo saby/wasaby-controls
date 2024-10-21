@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">value = 10, stroked = true</div>
+        <Controls.baseDecorator:Money value="{{10}}" stroked="{{true}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">value = 10, stroked = false</div>
+        <Controls.baseDecorator:Money value="{{10}}" stroked="{{false}}"/>
+    </div>
+</div>

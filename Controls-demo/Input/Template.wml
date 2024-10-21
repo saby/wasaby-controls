@@ -1,0 +1,134 @@
+<div class="controlsDemo__wrapper controlsDemo__flex controlsDemo__flex-flow_wrap">
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Input/ViewMode/Index' }}">
+            <a href="{{content.href}}">Типы поля ввода</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.ViewMode.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Input/Value/Index' }}">
+            <a href="{{content.href}}">Настройка value</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.Value.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Input/BorderStyles/Index' }}">
+            <a href="{{content.href}}">Настройка borderStyle</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.BorderStyles.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Input/FontStyles/Index' }}">
+            <a href="{{content.href}}">Настройка fontColorStyle</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.FontStyles.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Input/FontWeight/Index' }}">
+            <a href="{{content.href}}">Настройка fontWeight</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.FontWeight.Index/>
+    </div>
+
+
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Input/InlineHeight/Index' }}">
+            <a href="{{content.href}}">Настройка inlineHeight</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.InlineHeight.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Input/FontSize/Index' }}">
+            <a href="{{content.href}}">Настройка fontSize</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.FontSize.Index/>
+    </div>
+
+
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Input/ValidationStatuses/Index' }}">
+            <a href="{{content.href}}">Настройка validationStatus</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.ValidationStatuses.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Input/Number/Index' }}">
+            <a href="{{content.href}}">Настройка поля ввода числа</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.Number.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Input/Area/Index' }}">
+            <a href="{{content.href}}">Настройка многострочного поля ввода</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.Area.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Input/Masks/Index' }}">
+            <a href="{{content.href}}">Настройка поля ввода маски</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.Masks.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Input/TextAlignments/Index' }}">
+            <a href="{{content.href}}">Настройка textAlign</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.TextAlignments.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Input/FieldTemplate/Index' }}">
+            <a href="{{content.href}}">Настройка leftFieldTemplate и rightFieldTemplate</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.FieldTemplate.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Input/TagStyles/Index' }}">
+            <a href="{{content.href}}">Настройка tagStyle</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.TagStyles.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Input/Placeholders/Index' }}">
+            <a href="{{content.href}}">Настройка placeholder</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.Placeholders.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Input/PlaceholderVisibility/Index' }}">
+            <a href="{{content.href}}">Настройка placeholderVisibility</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.PlaceholderVisibility.Index/>
+    </div>
+</div>

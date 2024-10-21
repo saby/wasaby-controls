@@ -1,0 +1,25 @@
+<div class="controlsDemo__wrapper">
+   <Controls.scroll:Container attr:class="controlsDemo__height750 controlsDemo__minWidth600 controlsDemo__maxWidth800">
+      <Controls.columns:View
+         storeId="ColumnsViewVirtualScroll"
+         itemActions="{{_itemActions}}"
+         name="listView2"
+         columnsCount="{{3}}"
+         autoColumnsRecalculating="{{true}}"
+         disableVirtualScroll="{{false}}"
+         itemPadding="{{_itemPadding}}"
+         topTriggerOffsetCoefficient="{{0}}"
+         bottomTriggerOffsetCoefficient="{{0}}"
+         virtualScrollConfig="{{_virtualScrollConfig}}">
+         <ws:itemTemplate>
+            <ws:partial template="Controls/columns:ItemTemplate">
+               <ws:contentTemplate>
+                  <div style="height: {{contentTemplate.item.contents.get('height')}}px;">
+                     {{contentTemplate.item.contents.get('title')}}
+                  </div>
+               </ws:contentTemplate>
+            </ws:partial>
+         </ws:itemTemplate>
+      </Controls.columns:View>
+   </Controls.scroll:Container>
+</div>

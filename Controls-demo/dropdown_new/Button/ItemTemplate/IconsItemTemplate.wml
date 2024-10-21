@@ -1,0 +1,18 @@
+<Controls.dropdown:ItemTemplate scope="{{_options}}"
+                            multiLine="{{true}}">
+   <ws:contentTemplate>
+      <Controls.menu:Control source="{{_source}}"
+                             keyProperty="id"
+                             displayProperty="title"
+                             iconSize="s"
+                             on:itemClick="_itemClick()"
+                             attr:class="ControlsDemo-DropdownButton__iconsTemplate">
+         <ws:itemTemplate>
+            <ws:partial
+                    template="Controls/dropdown:ItemTemplate"
+                    class="ControlsDemo-DropdownButton__icons">
+            </ws:partial>
+         </ws:itemTemplate>
+      </Controls.menu:Control>
+   </ws:contentTemplate>
+</Controls.dropdown:ItemTemplate>

@@ -1,0 +1,4 @@
+<div class="ws-flexbox ws-flex-row" data-qa="controlsDemo-PropertyGridNew__multiSelectPositionCustom-{{_options.item.getId()}}">
+	<ws:partial template="{{ multiSelectTemplate }}"/>
+	<ws:partial template="{{_options.defaultCaptionTemplate}}"/>
+</div>

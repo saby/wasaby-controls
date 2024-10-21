@@ -1,0 +1,60 @@
+<div class="controlsDemo__wrapper-background">
+    <div class="ws-flexbox ws-align-items-baseline engine-demo__Widgets__contentRight_withMargin">
+    <div>
+        <span class="engine-demo__Widgets__info"> Настройте режим отображение фильтров, где: </span>
+        <span class="engine-demo__Widgets__info"> <b> popupCloudPanelDefault, cloud, default, cloud|default </b>: соответствуют значениям опции editorsViewMode </span>
+        <span class="engine-demo__Widgets__info"> <b> Не задано </b>: значение для опции editorsViewMode = 'default' </span>
+        <span class="engine-demo__Widgets__info"> <b> unrelatedFilters </b>: фильтры, расположенные в панели и окне фильтров не взаимосвязаны </span>
+        <span> Режим отображения фильтров: </span>
+        <Controls.Tumbler:Control items="{{_toggleItems}}" bind:selectedKey="_toggleSelectedKey"
+                                     displayProperty="title"
+                                     on:selectedKeyChanged="_handleSelectedKeyChanged()"
+                                     attr:class="engine-demo__Widgets__filter"
+                                     attr:data-qa="engine-demo__Widgets__configuration"/>
+    </div>
+        <Controls-ListEnv.ExtSearchConnected storeId="nomenclature"
+                                              contrastBackground="{{true}}"
+                                              searchParam="title"
+                                              filterNames="{{ ['type'] }}"
+                                              attr:class="engine-demo__searchConnected"
+                                              attr:data-qa="engine-demo__Widgets__search"/>
+    </div>
+    <div class="ws-flexbox ws-align-items-center ws-justify-content-between">
+        <Controls-ListEnv.filterConnected:View editorsViewMode="{{ _editorsViewMode }}"
+                                               alignment="left" filterNames="{{ _filterViewNames || _filterNames }}" storeId="nomenclature" attr:class="engine-demo__Widgets__filter-padding" attr:data-qa="engine-demo__Widgets__filter-padding"/>
+        <div class="ws-flexbox ws-align-items-baseline engine-demo__Widgets__contentRight">
+            <Controls-ListEnv.breadcrumbs:View storeId="nomenclature" attr:class="engine-demo__Widgets__filter" attr:data-qa="engine-demo__Widgets__breadcrumbs"/>
+            <Controls-ListEnv.frequentFilterConnected:Tumbler storeId="nomenclature" filterNames="{{ ['country'] }}"  attr:class="engine-demo__Widgets__filter" attr:data-qa="engine-demo__Widgets__tumbler"/>
+           <Controls-ListEnv.operationsConnected:Button storeId="nomenclature"  attr:class="engine-demo__Widgets__filter"/>
+        </div>
+    </div>
+    <div class="ws-flexbox">
+        <Controls.masterDetail:Base masterWidth="{{200}}"
+                                    newDesign="{{true}}"
+                                    attr:class="engine-demo__Widgets_list">
+            <ws:master>
+                <Controls-ListEnv.filterPanelConnected:View
+                    storeId="nomenclature"
+                    attr:data-qa="engine-demo__Widgets__filter-panel"
+                    editorsViewMode="{{ _editorsViewMode }}"
+                    multiSelect="{{ _multiSelect }}"
+                    filterNames="{{ _filterNames }}"
+                />
+            </ws:master>
+            <ws:detail>
+                <div class="ws-flexbox ws-flex-column engine-demo__Widgets_list">
+                    <Controls-ListEnv.operationsPanelConnected:View
+                        storeId="nomenclature"/>
+                    <Controls.explorer:View
+                        attr:data-qa="engine-demo__Widgets__explorer"
+                        storeId="nomenclature"
+                        columns="{{_columns}}"
+                        header="{{_nomenclatureHeader}}"/>
+                </div>
+            </ws:detail>
+        </Controls.masterDetail:Base>
+        <Controls-ListEnv.toolbarConnected:Container storeId="nomenclature" actions="Controls-ListEnv-demo/StoreIdConnected/listActions">
+            <Controls.toolbars:View direction="vertical"/>
+        </Controls-ListEnv.toolbarConnected:Container>
+    </div>
+</div>

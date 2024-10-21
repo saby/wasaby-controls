@@ -1,0 +1,164 @@
+.controls-AdditionalParamsRender__items {
+   display: flex;
+   align-items: baseline;
+   margin-left: calc(var(--offset_m) - var(--offset_st));
+}
+
+.controls-AdditionalParamsRender_block-maxHeight {
+   overflow: hidden;
+   max-height: calc((var(--item_height_filterPanel) + var(--offset_3xs)) * 5);
+}
+
+.controls-AdditionalParamsRender__heading-wrapper {
+   display: flex;
+   align-items: center;
+   height: var(--inline_height_s);
+   margin-left: var(--offset_m);
+   margin-bottom: var(--offset_2xs);
+}
+
+.controls-AdditionalParamsRender__heading {
+   font-size: var(--font-size_xs);
+   color: var(--label_contrast_text-color);
+   height: var(--inline_height_xs);
+   align-items: center;
+   letter-spacing: 0.1em;
+   text-transform: uppercase;
+}
+
+.controls-AdditionalParamsRender__item_left {
+   padding-right: var(--offset_m);
+}
+
+.controls-AdditionalParamsRender__items-leftColumn {
+   min-width: 50%;
+   flex-shrink: 0;
+}
+
+.controls-AdditionalParamsRender__items-leftColumn_maxWidth {
+   max-width: 70%;
+}
+
+.controls-AdditionalParamsRender__items-column {
+   display: flex;
+   flex-direction: column;
+}
+
+.controls-AdditionalParamsRender__items-rightColumn {
+   margin-right: auto;
+   width: 100%;
+   flex-shrink: 1;
+}
+
+.controls-AdditionalParamsRender__group {
+   height: var(--extended_group_height_filterPanel);
+}
+
+.controls-AdditionalParamsRender-withGroup {
+   margin-top: calc(-1 * var(--extended_group_height_filterPanel));
+}
+
+// Так как для старой панели шаблон элемента задается в прикладном шаблоне
+// Массово изменить цвет элементов на панели фильтров можно только каскадом
+.controls-AdditionalParamsRender__item {
+   display: flex;
+   align-items: center;
+   color: var(--label_contrast_text-color);
+   font-size: var(--item_font-size_filterPanel);
+   height: var(--inline_height_m);
+   cursor: pointer;
+   line-height: var(--inline_height_m);
+   padding: 0 var(--offset_st);
+   margin-right: auto;
+   margin-bottom: var(--offset_3xs);
+   border-radius: var(--border-radius_m);
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   max-width: 100%;
+   box-sizing: border-box;
+
+   .controls-FilterLink__text {
+      color: var(--label_contrast_text-color);
+   }
+
+   .controls_FilterSelector__separator {
+      color: var(--label_contrast_text-color);
+   }
+
+   .controls-Dropdown__item_style-filter {
+      color: var(--label_contrast_text-color);
+   }
+
+   .controls-text-filterPanelItem {
+      color: var(--label_contrast_text-color);
+   }
+
+   .controls-linkButton_fontColorStyle-filterPanelItem-style {
+      --text_color_button_local: var(--label_contrast_text-color);
+   }
+
+   .controls-FilterPanel__Lookup .controls-FilterPanel__Lookup_link_default {
+      .controls-FilterLink__text {
+         color: var(--label_contrast_text-color);
+      }
+   }
+
+   .controls-Selectorbutton_link-filterPanelItem-style.controls-BaseButton {
+      --text_color_button_local: var(--label_contrast_text-color);
+   }
+}
+
+.ws-is-hover {
+   .controls-AdditionalParamsRender__item {
+      .controls-FilterLink__text:hover {
+         color: var(--label_contrast_text-color);
+         text-decoration: none;
+      }
+
+      .controls-FilterSelect {
+         .controls-FilterLink__text:hover {
+            text-decoration: underline;
+         }
+      }
+
+      .controls-text-filterPanelItem:hover {
+         color: var(--label_contrast_text-color);
+         text-decoration: none;
+      }
+
+      .controls-linkButton_fontColorStyle-filterPanelItem-style:hover {
+         --text_color_button_local: var(--label_contrast_text-color);
+      }
+
+      // lookup
+      .controls-FilterPanel__Lookup .controls-FilterPanel__Lookup_link_default:hover {
+         .controls-FilterLink__text {
+            color: var(--label_contrast_text-color);
+            text-decoration: none;
+         }
+      }
+
+      .controls-Selectorbutton_link-filterPanelItem-style.controls-BaseButton:hover {
+         --text_color_button_local: var(--label_contrast_text-color);
+         --text_decoration_button_local: none;
+      }
+
+      // dropdown
+      .controls-Dropdown__item_style-filter:hover {
+         color: var(--label_contrast_text-color);
+
+         .controls-Dropdown__text-wrapper-hovered {
+            text-decoration: none;
+         }
+
+         .controls-FilterDropdown__content_text {
+            text-decoration: none;
+         }
+      }
+   }
+
+   .controls-AdditionalParamsRender__item:hover {
+      background-color: var(--background-color);
+   }
+}

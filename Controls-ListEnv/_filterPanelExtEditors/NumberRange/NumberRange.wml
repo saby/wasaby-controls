@@ -1,0 +1,41 @@
+<Controls.filterPanel:BaseEditor scope="{{_options}}"
+                                  on:extendedCaptionClick="_extendedCaptionClickHandler()"
+                                  extendedCaption="{{_options.extendedCaption}}">
+    <ws:editorTemplate>
+        <div class="controls-FilterEditors__numberRange controls-FilterViewPanel__basicEditor-cloud_without-hover
+                    controls-FilterViewPanel__basicEditor-cloud-{{_options.filterViewMode}}">
+            <div> {{rk('от', 'ЧисловойДиапазон')}} </div>
+            <Controls.Container.Async templateName="Controls/input:Number">
+                <ws:partial template="{{content.resolvedTemplate}}"
+                            scope="{{_options}}"
+                            placeholder="{{_options.minValueInputPlaceholder}}"
+                            value="{{_minValue}}"
+                            on:valueChanged="_handleMinValueChanged()"
+                            on:inputCompleted="_handleInputCompleted()"
+                            attr:data-qa="FilterEditors__numberRange-editor-from"
+                            attr:class="controls-FilterEditors__numberRange-editor"
+                            attr:style="width: {{_inputWidth}}"/>
+            </Controls.Container.Async>
+            <div> {{rk('до', 'ЧисловойДиапазон')}} </div>
+            <Controls.Container.Async templateName="Controls/input:Number">
+                <ws:partial template="{{content.resolvedTemplate}}"
+                            scope="{{_options}}"
+                            placeholder="{{_options.maxValueInputPlaceholder}}"
+                            value="{{_maxValue}}"
+                            on:valueChanged="_handleMaxValueChanged()"
+                            on:inputCompleted="_handleInputCompleted()"
+                            attr:data-qa="FilterEditors__numberRange-editor-to"
+                            attr:class="controls-FilterEditors__numberRange-editor"
+                            attr:style="width: {{_inputWidth}}"/>
+            </Controls.Container.Async>
+            <ws:if data="{{_options.afterEditorTemplate}}">
+                <Controls.Container.Async templateName="{{_options.afterEditorTemplate}}">
+                   <ws:partial template="{{ content.resolvedTemplate }}"
+                               minValue="{{ _minValue }}"
+                               maxValue="{{ _maxValue }}"/>
+                </Controls.Container.Async>
+            </ws:if>
+        </div>
+    </ws:editorTemplate>
+</Controls.filterPanel:BaseEditor>
+

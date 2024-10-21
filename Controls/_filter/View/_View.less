@@ -1,0 +1,244 @@
+.controls-FilterView {
+   display: inline-flex;
+   align-items: center;
+   height: var(--height_filterView);
+   min-width: 1px;
+   flex-shrink: 1;
+}
+
+.controls-FilterView_withButton {
+   min-width: var(--width_filterButton_filterView);
+}
+
+.controls-FilterView_withoutButton {
+   min-width: var(--item_text_min-width_filterView);
+}
+
+.controls-FilterView-left {
+   flex-direction: row-reverse;
+}
+
+.controls-FilterView__wrapper {
+   display: inline-flex;
+   align-items: baseline;
+   overflow: hidden;
+   flex-shrink: 1;
+}
+
+.controls-FilterView__wrapper_state_enabled {
+   cursor: pointer;
+}
+
+.controls-FilterView__filterTextLine {
+   // Набранные параметры из окна должны первыми сжиматься до минимальной ширины, только после этого сжимаются быстрые фильтры
+   flex-shrink: 9999999;
+}
+
+.controls-FilterView__block {
+   display: inline-flex;
+   align-items: baseline;
+   white-space: nowrap;
+   cursor: pointer;
+}
+
+.controls-FilterView__frequentFilter {
+   flex-shrink: 1;
+}
+
+.controls-FilterView__wrapper::before,
+.controls-FilterView__block::before {
+   font-size: var(--item_font-size_filterView);
+   content: '\200b';
+}
+
+.controls-FilterView__block-withoutArrow {
+   margin-left: var(--item_spacing_filterView);
+   min-width: var(--item_text_min-width_filterView);
+}
+
+.controls-FilterView__block-withArrow {
+   min-width: calc(var(--item_icon-size_filterView) + var(--item_text_min-width_filterView));
+}
+
+//Text
+.controls-FilterView__text-wrapper {
+   box-sizing: border-box;
+   width: 100%;
+   overflow: hidden;
+   display: inline-flex;
+   font-size: var(--item_font-size_filterView);
+   flex-shrink: 1;
+}
+
+.controls-FilterView__text {
+   .text-overflow();
+   flex-shrink: 1;
+}
+
+.controls-FilterView__text_state_enabled {
+   color: var(--item_color_filterView);
+}
+
+.controls-FilterView__text_state_readOnly {
+   color: var(--readonly_item_color_filterView);
+   cursor: text;
+}
+
+.controls-FilterView__block:active {
+   .controls-FilterView__text_state_enabled {
+      color: var(--item_hover_color_filterView);
+      text-decoration: underline;
+   }
+
+   .controls-FilterView__iconArrow_state_enabled {
+      color: var(--secondary_hover_icon-color);
+   }
+}
+
+// filter button icon
+.controls-FilterView-button-left {
+   margin-right: var(--filterButton_offset_filterView);
+}
+
+.controls-FilterView-button-right {
+   margin-left: var(--filterButton_offset_filterView);
+}
+
+.controls-FilterView__icon {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   flex-shrink: 0;
+   .icon-size-without-important(var(--icon-size_filterButton_filterView), var(--icon_font-family_m));
+   width: var(--width_filterButton_filterView);
+   height: var(--height_filterButton_filterView);
+   border-radius: var(--border-radius_button);
+   position: relative;
+}
+
+.controls-FilterView__icon_state_enabled {
+   color: var(--icon-color_filterButton_filterView);
+   background: var(--background-color_filterButton_filterView);
+   box-shadow: var(--box-shadow_filterButton_filterView);
+   cursor: pointer;
+}
+
+.controls-FilterView__icon_state_enabled:active {
+   color: var(--hover_icon-color_filterButton_filterView);
+   background: var(--background-color_active_filterButton_filterView);
+}
+
+.controls-FilterView__icon_state_disabled {
+   color: var(--readonly_item_icon-color_filterView);
+}
+
+//Reset button
+.controls-FilterView__iconReset {
+   .icon-size(var(--reset-button_icon-size));
+   display: flex;
+   color: var(--reset-button_icon-color_filterView);
+   cursor: pointer;
+   flex-shrink: 0;
+}
+
+.controls-FilterView__iconReset:active {
+   color: var(--reset-button_hover_icon-color_filterView);
+}
+
+//arrow
+.controls-FilterView__iconArrow {
+   .icon-size(var(--item_icon-size_filterView));
+   align-self: center;
+   flex-shrink: 0;
+}
+
+[dir='rtl'] .controls-FilterView__iconArrow {
+   transform: scaleX(-1);
+}
+
+.controls-FilterView__block:first-of-type {
+   margin-left: 0;
+   min-width: var(--item_text_min-width_filterView);
+
+   .controls-FilterView__iconArrow {
+      display: none;
+   }
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.controls-FilterView__iconArrow_state_enabled {
+   cursor: pointer;
+   color: var(--item_icon-color_filterView);
+}
+
+.controls-FilterView__iconArrow_state_readOnly {
+   color: var(--readonly_item_icon-color_filterView);
+}
+
+.controls-FilterEditor-DateRange {
+   flex-shrink: 0;
+   .text-overflow();
+}
+
+.controls-text-filterItem {
+   color: var(--item_color_filterView);
+}
+
+.controls-text-filterItem:active {
+   color: var(--item_hover_color_filterView);
+}
+
+.controls-text-filterItem_readOnly {
+   color: var(--text-color);
+}
+
+.controls-FilterView-buttonIndicator {
+   position: absolute;
+   top: var(--offset_s);
+   right: var(--offset_xs);
+   background-color: var(--marker_color);
+   width: 6px;
+   height: 6px;
+   border-radius: var(--border-radius_xs);
+}
+
+.controls-FilterView-buttonIndicator_hidden {
+   visibility: hidden;
+}
+
+.ws-is-hover {
+   .controls-FilterView__block:hover {
+      .controls-FilterView__text_state_enabled {
+         color: var(--item_hover_color_filterView);
+         text-decoration: underline;
+      }
+
+      .controls-FilterView__iconArrow_state_enabled {
+         color: var(--item_hover_icon-color_filterView);
+      }
+   }
+
+   .controls-text-filterItem:hover {
+      color: var(--item_hover_color_filterView);
+   }
+
+   .controls-FilterView__iconReset:hover {
+      color: var(--reset-button_hover_icon-color_filterView);
+   }
+
+   .controls-FilterView__icon_state_enabled:hover {
+      color: var(--hover_icon-color_filterButton_filterView);
+      background: var(--background-color_hover_filterButton_filterView);
+   }
+}
+
+// todo Нет возможности навесить класс напрямую на кнопку
+// filter:View->filterDateRangeEditor:DateRange->DateRange:Selector->DateRange:LinkView->Date:LinkView и далее класс
+// вешается на враппер Date:LinkView а не на кнопку находящуюся внутри
+.controls-linkButton_link-filterItem-style {
+   --text_color_button_local: var(--item_color_filterView);
+
+   .ws-is-hover &:hover {
+      --text_color_button_local: var(--item_hover_color_filterView);
+   }
+}

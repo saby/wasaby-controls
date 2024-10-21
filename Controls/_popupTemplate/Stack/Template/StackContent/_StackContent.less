@@ -1,0 +1,73 @@
+.controls-Stack__content-wrapper {
+   position: relative;
+   display: flex;
+   height: 100%;
+}
+
+.controls-Stack__resizingLine {
+   position: absolute;
+   height: 100%;
+   // Устанавливаем 50, чтобы линия ресайза перекрывала графическую шапку
+   z-index: 50; // https://docs.google.com/document/d/1jKYv2go53aYc-zjOhUERS0CzvfihVJ5ZdRrbN-WL9WA/edit
+}
+
+.ws-is-desktop-platform .controls-Stack__resizingLine {
+   left: 0;
+}
+
+.ws-is-mobile-platform .controls-Stack__resizingLine {
+   left: calc(var(--resizingLine_mobile_offset-left_stack) * -1);
+   width: var(--resizingLine_mobile_thickness_stack);
+
+   .controls-ResizingLine_mobile__areaWrapper_horizontal {
+      width: calc(
+         var(--resizingLine_mobile_thickness_stack) - var(--resizingLine_mobile_offset-left_stack)
+      );
+   }
+}
+
+.controls-background-stack {
+   background-color: var(--background-color_stack);
+}
+
+.controls-Stack__content {
+   display: flex;
+   flex-grow: 1;
+   max-width: 100%;
+}
+
+// В целях оптимизации для стековых панелей, которые перекрыты верхними стековыми панелями, скрываем контент через display: none,
+// чтобы не видные пользователю элементы не тормозили браузер своей перерисовкой. Но оптимизировать нужно не все,
+// у стековых раскладок появилась левая контентая область, которая скрываться в этом случае не должна.
+// она не влияет на ширину и может быть не перекрыта. Каскадом определяем, какие части шаблона скрывать.
+.controls-Popup__hidden {
+   .controls-StackTemplate-content_wrapper,
+   .sabyPage-MainLayout__wrapper,
+   .controls-StackTemplate-shadow {
+      display: none;
+   }
+}
+
+// скрытие панели в реакте на первый рендер надо делать через абсолютное позиционирование за переделами окна
+// это связанно с тем, что много прикладной логики, логики ws3-контролов и логика активации/фокусировки
+// завязаны на видимость DOM-элемента
+.controls-Popup__react-hidden {
+   position: absolute;
+   /* stylelint-disable-next-line declaration-no-important */
+   inset: -10000px auto auto -10000px !important;
+}
+// Не все браузеры поддерживают inset, а везде ставить отрицательный top и left не можем, так как это приводит к ошибке
+// https://online.sbis.ru/doc/f118312a-a09f-4670-9656-d22b69b0874a
+.controls-Popup__react-hidden_old-browser {
+   position: absolute;
+   /* stylelint-disable-next-line declaration-no-important */
+   top: -10000px !important;
+   /* stylelint-disable-next-line declaration-no-important */
+   left: -10000px !important;
+}
+// В IE есть проблемы с отображением окон, который построились за пределами экрана, поэтому делаем окно не видимым
+// https://online.sbis.ru/opendoc.html?guid=297052ad-aee6-4b0a-a5f5-7e7a296b156e
+.controls-Popup__react-hidden_ie-browser {
+   position: absolute;
+   visibility: hidden;
+}

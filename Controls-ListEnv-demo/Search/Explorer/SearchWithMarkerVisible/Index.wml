@@ -1,0 +1,22 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow controlsDemo__height300">
+    <Controls.masterDetail:Base newDesign="{{true}}">
+        <ws:master>
+            <Controls.masterDetail:List>
+                <Controls.explorer:View storeId="Basemaster"
+                                        columns="{{ _columns }}"
+                                        style="master"/>
+            </Controls.masterDetail:List>
+        </ws:master>
+        <ws:detail>
+            <div>
+                <div>
+                    <Controls-ListEnv.searchConnected:Input storeId="Basemaster"/>
+                </div>
+                <div>
+                    <Controls.explorer:View storeId="Basedetail"
+                                            columns="{{ _columns }}"/>
+                </div>
+            </div>
+        </ws:detail>
+    </Controls.masterDetail:Base>
+</div>

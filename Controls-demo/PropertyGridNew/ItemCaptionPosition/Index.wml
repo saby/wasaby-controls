@@ -1,0 +1,7 @@
+<div class="controls-Demo__wide-propertyGrid">
+    <Controls.propertyGrid:PropertyGrid
+            bind:editingObject="_editingObject"
+            typeDescription="{{_typeDescription}}">
+        <ws:itemPadding left="m" right="m"/>
+    </Controls.propertyGrid:PropertyGrid>
+</div>

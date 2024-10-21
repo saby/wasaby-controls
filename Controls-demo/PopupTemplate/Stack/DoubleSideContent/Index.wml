@@ -1,0 +1,39 @@
+<div
+    class="ControlsDemo__popupStack-body-template ws-flexbox ws-flex-column ws-flex-grow-1 ws-flex-shrink-1">
+    <Controls.popupTemplate:Stack
+        headerBorderVisible="{{false}}"
+        backgroundStyle="unaccented">
+        <ws:headerContentTemplate>
+            <div class="ws-flexbox ws-flex-end">
+                <Controls.toolbars:View
+                    items="{{_toolbarItems}}"/>
+            </div>
+        </ws:headerContentTemplate>
+        <ws:bodyContentTemplate>
+            <div class="ControlsDemo__popupStack-body ws-flexbox ws-flex-grow-1 ws-flex-shrink-1">
+                <div class="controls__block-wrapper tr ControlsDemo__popupStack-body-leftSide">
+                    <div class="controls__block">
+                        <div class="ControlsDemo__popupStack-body-leftSide-content">
+                            <div class="ws-flexbox">
+                                    <Controls.input:Text attr:class="ws-flex-grow-1" placeholder="Введите название"/>
+                                    <Controls.Tumbler:Control items="{{_tumblerItems}}" bind:value="_value" inlineHeight="s"/>
+                            </div>
+                            <div class="ControlsDemo__popupStack-body-leftSide-anotherContent">
+                                Контент
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ControlsDemo__popupStack-body-rightSide">
+                    <Controls.toggle:Switch
+                        captionPosition="start"
+                        caption="Публикация"/>
+                    <div class="ControlsDemo__popupStack-body-bannerCaption">БАННЕР</div>
+                    <div class="ControlsDemo__popupStack-body-banner"></div>
+                    <div class="ControlsDemo__popupStack-body-bannerCaption">ПОДРОБНАЯ ИНФОРМАЦИЯ</div>
+                    <div class="ControlsDemo__popupStack-body-banner"></div>
+                </div>
+            </div>
+        </ws:bodyContentTemplate>
+    </Controls.popupTemplate:Stack>
+</div>
