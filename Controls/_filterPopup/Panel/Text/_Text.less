@@ -1,0 +1,39 @@
+.controls-FilterText {
+   display: inline-block;
+}
+
+.controls-FilterText__wrapper {
+   display: inline-flex;
+   align-items: baseline;
+   line-height: var(--item_height_filterPanel);
+}
+
+.controls-FilterPanelText-caption {
+   font-size: var(--item_font-size_filterPanel);
+}
+
+.controls-FilterText__resetContainer {
+   display: inline-flex;
+   align-items: baseline;
+   line-height: var(--inline_height_m);
+}
+
+.controls-FilterText__reset {
+   display: flex;
+   cursor: pointer;
+   color: var(--reset-button_color);
+}
+
+.controls-icon_size-FilterTextReset {
+   .icon-size(var(--reset-button_icon-size));
+}
+
+.controls-FilterText__reset:active {
+   color: var(--reset-button_color);
+}
+
+.ws-is-hover {
+   .controls-FilterText__reset:hover {
+      color: var(--reset-button_color);
+   }
+}

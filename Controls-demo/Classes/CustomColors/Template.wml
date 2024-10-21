@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper">
+    <ws:for data="category in _numCategories">
+        <div class="controlsDemo__cell ws-flexbox controlsDemo_fixedWidth800 ws-justify-content-between">
+            <ws:for data="color in _numColors">
+                <div attr:class="ControlsDemo__colorsCircle"
+                     on:click="_onColorClick(color+1, category+1)"
+                     attr:style="background-color: var(--palette_color{{color+1}}_{{category+1}})"></div>
+            </ws:for>
+        </div>
+    </ws:for>
+    <div class="controlsDemo__cell ws-flexbox controlsDemo_fixedWidth800 ws-justify-content-between">
+        <Controls.input:Text bind:value="_selectedValue" selectOnClick="{{true}}"></Controls.input:Text>
+    </div>
+</div>

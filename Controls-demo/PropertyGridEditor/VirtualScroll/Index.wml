@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell controls-Demo__wide-propertyGrid">
+        <Controls.scroll:Container attr:style="height: 500px;">
+            <Controls.propertyGridEditor:PropertyGridEditor
+                editingObject="{{_editingObject}}"
+                typeDescription="{{_typeDescription}}">
+                <ws:virtualScrollConfig pageSize="{{10}}"/>
+            </Controls.propertyGridEditor:PropertyGridEditor>
+        </Controls.scroll:Container>
+    </div>
+</div>

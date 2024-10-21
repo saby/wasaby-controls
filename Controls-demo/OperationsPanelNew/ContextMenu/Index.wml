@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper controlsDemo__maxWidth500">
+   <Controls.browser:Browser source="{{_source}}"
+                             bind:selectedKeys="_selectedKeys"
+                             bind:excludedKeys="_excludedKeys"
+                             keyProperty="id">
+      <div>
+         <Controls.operations:PanelContainer>
+            <Controls.operations:Panel source="{{_panelSource}}"/>
+         </Controls.operations:PanelContainer>
+         <Controls.listDataOld:ListContainer>
+            <Controls.list:View multiSelectVisibility="visible"/>
+         </Controls.listDataOld:ListContainer>
+      </div>
+   </Controls.browser:Browser>
+</div>

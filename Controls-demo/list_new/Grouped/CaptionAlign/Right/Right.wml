@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper">
+<Controls.scroll:Container>
+  <Controls.list:View
+      groupProperty="byDemand"
+      storeId="GroupedCaptionAlignRight10">
+    <ws:groupTemplate>
+      <ws:partial expanderAlign="right" scope="{{ _options }}" template="Controls/list:GroupTemplate"
+                  textAlign="right"/>
+    </ws:groupTemplate>
+  </Controls.list:View>
+</Controls.scroll:Container>
+</div>

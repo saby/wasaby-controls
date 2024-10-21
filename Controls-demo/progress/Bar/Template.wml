@@ -1,0 +1,34 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__flexRow">
+        <div data-qa="controlsDemo-progressBar__column1" class="controlsDemo__flexColumn controlsDemo__mr2">
+            <div class="controlsDemo__cell">
+                <Router.router:Reference attr:class="controls-text-label"
+                                         state="app/:app"
+                                         app="{{ 'Controls-demo/progress/Bar/Base/Index' }}">
+                    <a href="{{content.href}}">Значение в процентах</a>
+                </Router.router:Reference>
+                <Controls-demo.progress.Bar.Base.Index/>
+            </div>
+
+            <div class="controlsDemo__cell">
+                <Router.router:Reference attr:class="controls-text-label"
+                                         state="app/:app"
+                                         app="{{ 'Controls-demo/progress/Bar/BarStyle/Index' }}">
+                    <a href="{{content.href}}">Настройка стиля отображения</a>
+                </Router.router:Reference>
+                <Controls-demo.progress.Bar.BarStyle.Index/>
+            </div>
+        </div>
+
+        <div data-qa="controlsDemo-progressBar__column2" class="controlsDemo__flexColumn controlsDemo__mr2 controlsDemo_fixedWidth350">
+            <div class="controlsDemo__cell">
+                <Router.router:Reference attr:class="controls-text-label"
+                                         state="app/:app"
+                                         app="{{ 'Controls-demo/progress/Bar/BlankAreaStyle/Index' }}">
+                    <a href="{{content.href}}">Настройка стиля отображения не заполненной области прогресс бара</a>
+                </Router.router:Reference>
+                <Controls-demo.progress.Bar.BlankAreaStyle.Index/>
+            </div>
+        </div>
+    </div>
+</div>

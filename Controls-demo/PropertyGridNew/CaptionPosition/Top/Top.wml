@@ -1,0 +1,11 @@
+<div class="controls-Demo__wide-propertyGrid">
+    <Controls.propertyGrid:PropertyGrid
+            bind:editingObject="_editingObject"
+            typeDescription="{{_typeDescription}}"
+            captionPosition="top">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/propertyGrid:ItemTemplate"
+                        scope="{{itemTemplate}}"/>
+        </ws:itemTemplate>
+    </Controls.propertyGrid:PropertyGrid>
+</div>

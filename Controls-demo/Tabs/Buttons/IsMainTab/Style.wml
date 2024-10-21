@@ -1,0 +1,25 @@
+<div class="root controlsDemo_fixedWidth500">
+    <div>
+        <div class="separator">isMainTab=true</div>
+        <div class="demo-TabButtons ControlsDemo-Tabs__rightAlign">
+            <Controls.tabs:Buttons
+                bind:selectedKey='_selectedKey'
+                style="primary"
+                keyProperty="id"
+                items="{{_items}}"
+            />
+        </div>
+    </div>
+    <div class="controls-margin_top-m">
+        <div class="separator">isMainTab=true, inlineHeight=l</div>
+        <div class="demo-TabButtons ControlsDemo-Tabs__rightAlign">
+            <Controls.tabs:Buttons
+                bind:selectedKey='_selectedKey'
+                inlineHeight="l"
+                style="primary"
+                keyProperty="id"
+                items="{{_items}}"
+            />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+<Controls.ComboBox items="{{_items}}"
+                            keyProperty="id"
+                            displayProperty="id"
+                            placeholder="Тип клиента"
+                            bind:selectedKey="_selectedKey"
+                            on:selectedKeyChanged="_selectedKeyChangedHandler()"/>

@@ -1,0 +1,12 @@
+<ws:partial
+   template="{{template}}"
+   scope="{{templateOptions}}"
+   minWidth="{{ _options.minWidth }}"
+   maxWidth="{{ _options.maxWidth }}"
+   width="{{ _options.width }}"
+   isPrefetchDataMode="{{ _options._isPrefetchDataMode }}"
+   prefetchData="{{ _options._prefetchData }}"
+   workspaceWidth="{{ _options.workspaceWidth }}"
+   currentHeight="{{ slidingPanelData.height }}"
+   heightList="{{ options.slidingPanelOptions.heightList }}"
+   slidingPanelOptions="{{slidingPanelData}}"/>

@@ -1,0 +1,79 @@
+.controls-Dropdown.Controls_PhoneFlag {
+   display: inline-flex;
+   line-height: 20px;
+   align-self: center;
+}
+
+.Controls_PhoneFlag-pickerSpacing-right {
+   margin-top: calc((var(--header_min-height_sticky) + var(--offset_xs) + var(--offset_s)) * -1);
+   margin-left: calc(var(--offset_3xl) / -2);
+}
+
+.Controls_PhoneFlag-pickerSpacing-left {
+   margin-top: calc(var(--offset_3xl) / -2);
+   margin-left: calc(var(--offset_3xl) * 2);
+}
+
+.Controls_PhoneFlag-itemCaption {
+   white-space: nowrap;
+   align-self: center;
+}
+
+.Controls_PhoneFlag-flagRow {
+   display: flex;
+   align-items: baseline;
+}
+
+.Controls_PhoneFlag-flagItem {
+   align-self: center;
+   cursor: pointer;
+}
+
+.Controls_PhoneFlag-flagItem-border {
+   border: var(--border-thickness_button) solid var(--pale_border-color);
+}
+
+.Controls_PhoneFlag-flagItem_size-s {
+   width: var(--inline_height_xs);
+   height: var(--inline_height_xs);
+}
+
+.Controls_PhoneFlag-flagItem_size-m {
+   width: var(--inline_height_m);
+   height: var(--inline_height_m);
+}
+
+.Controls_PhoneFlag-flagItem_wrapper {
+   position: relative;
+}
+
+.Controls_PhoneFlag-flagItem_size-m.controls-icon_size-m {
+   font-size: var(--icon-size_m);
+   width: var(--inline_height_m);
+   height: var(--inline_height_m);
+}
+
+.Controls_PhoneFlag-flagItem-normal.controls-icon_size-s {
+   width: 20px;
+   height: 14px;
+}
+
+.Controls_PhoneFlag-flagItem-rounded {
+   border-radius: var(--offset_xl);
+   overflow: hidden;
+   box-sizing: border-box;
+}
+
+.Controls_PhoneFlag-flagItem-icon-rounded.controls-icon_size-m {
+   position: absolute;
+   top: calc((var(--offset_2xs) + var(--border-thickness)) * -1);
+   left: calc(var(--offset_s) / -2);
+   height: var(--inline_height_m);
+}
+
+.Controls_PhoneFlag-flagItem-icon-rounded.controls-icon_size-l {
+   position: absolute;
+   top: calc(var(--border-thickness) * -1);
+   left: calc(var(--offset_st) / -2);
+   height: var(--inline_height_m);
+}

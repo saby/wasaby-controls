@@ -1,0 +1,42 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">iconSize='2xs'</div>
+        <Controls.sorting:Selector
+                sortingParams="{{_sortingParams}}"
+                iconSize="2xs"
+                bind:value="_sorting">
+        </Controls.sorting:Selector>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">iconSize='xs'</div>
+        <Controls.sorting:Selector
+                sortingParams="{{_sortingParams}}"
+                iconSize="xs"
+                bind:value="_sorting">
+        </Controls.sorting:Selector>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">iconSize='s'</div>
+        <Controls.sorting:Selector
+                sortingParams="{{_sortingParams}}"
+                iconSize="s"
+                bind:value="_sorting">
+        </Controls.sorting:Selector>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">iconSize='m'</div>
+        <Controls.sorting:Selector
+                sortingParams="{{_sortingParams}}"
+                iconSize="m"
+                bind:value="_sorting">
+        </Controls.sorting:Selector>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">iconSize='l'</div>
+        <Controls.sorting:Selector
+                sortingParams="{{_sortingParams}}"
+                iconSize="l"
+                bind:value="_sorting">
+        </Controls.sorting:Selector>
+    </div>
+</div>

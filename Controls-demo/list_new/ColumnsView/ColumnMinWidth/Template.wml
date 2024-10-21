@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper controlsDemo__height300 controlsDemo_fixedWidth850">
+   <div attr:data-qa="controlsDemo_ColumnMinWidth__changeWidth" on:click="_changeColumnWidth()">Изменить ширину колонок</div>
+   <div attr:data-qa="controlsDemo_ColumnMinWidth__changeMaxColumnsCount" on:click="_changeMaxColumnsCount()">Изменить максимальное число колонок</div>
+   <Controls.scroll:Container attr:class="controlsDemo__height400 controlsDemo__minWidth600 controlsDemo__maxWidth800">
+      <Controls.columns:View
+              storeId="ColumnsViewColumnMinWidth"
+              maxColumnsCount="{{_maxColumnsCount}}"
+              columnMaxWidth="{{_wideColumns ? 400 : 250}}"
+              columnMinWidth="{{_wideColumns ? 300 : 150}}">
+         <ws:itemTemplate>
+            <ws:partial template="Controls/columns:ItemTemplate" attr:class="controlsDemo__height36_item"></ws:partial>
+         </ws:itemTemplate>
+      </Controls.columns:View>
+   </Controls.scroll:Container>
+</div>

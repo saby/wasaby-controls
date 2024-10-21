@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-Headers-demo" kaizen_zone="649fb0a2-e4c4-4008-9e20-2258b847f8ec"
+           id="e6260812-7ac8-47b2-abc0-0ac255075d5b"
+           package="Wasaby"
+           responsible="Мочалов М.А." responsible_uuid="5bf5b206-a664-422b-b5e2-41217142717a"
+           version="1.00">
+
+  <description/>
+  <depends>
+    <module id="35c6e694-736c-456d-8e33-e3d6477d1847" name="Controls-Headers"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <resources/>
+  <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

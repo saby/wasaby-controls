@@ -1,0 +1,30 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo_fixedWidth350">
+        <div class="controlsDemo__cell">
+            <Router.router:Reference attr:class="controls-text-label"
+                                     state="app/:app"
+                                     app="{{ 'Controls-demo/progress/StateBar/Base/Index' }}">
+                <a href="{{content.href}}">Базовая настройка многоцветного индикатора выполнения</a>
+            </Router.router:Reference>
+            <Controls-demo.progress.StateBar.Base.Index/>
+        </div>
+
+        <div class="controlsDemo__cell">
+            <Router.router:Reference attr:class="controls-text-label"
+                                     state="app/:app"
+                                     app="{{ 'Controls-demo/progress/StateBar/Align/Index' }}">
+                <a href="{{content.href}}">Настройка выравнивания</a>
+            </Router.router:Reference>
+            <Controls-demo.progress.StateBar.Align.Index/>
+        </div>
+
+        <div class="controlsDemo__cell">
+            <Router.router:Reference attr:class="controls-text-label"
+                                     state="app/:app"
+                                     app="{{ 'Controls-demo/progress/StateBar/BlankAreaStyle/Index' }}">
+                <a href="{{content.href}}">Настройка цвета незаполненной области индикатора</a>
+            </Router.router:Reference>
+            <Controls-demo.progress.StateBar.BlankAreaStyle.Index/>
+        </div>
+    </div>
+</div>

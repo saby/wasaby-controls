@@ -1,0 +1,18 @@
+<div class="controlsDemo_widthFit controlsDemo__height200" data-qa="controlsDemo_capture">
+    <div class="controls-margin-m ws-flexbox">
+        <Controls.Fingers alignment="left"
+                          keyProperty="key"
+                          items="{{_items}}"
+                          selectedKey="1"
+                          displayProperty="caption"
+                attr:style="width: 250px; height: 400px"
+        />
+        <Controls.Fingers alignment="right"
+                          keyProperty="key"
+                          items="{{_items}}"
+                          selectedKey="1"
+                          displayProperty="caption"
+                attr:style="width: 250px; height: 400px"
+        />
+    </div>
+</div>

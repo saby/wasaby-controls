@@ -1,0 +1,21 @@
+.ControlsDemo-wrapper {
+   display: flex;
+   justify-content: space-around;
+}
+
+.ControlsDemo-options_block {
+   padding: 3em;
+}
+
+.ControlsDemo-options_wrapper,
+.ControlsDemo-settings_wrapper {
+   display: grid;
+}
+
+.ControlsDemo-example_block {
+   padding: 3em;
+}
+
+.ControlsDemo-scroll_container {
+   max-height: 400px;
+}

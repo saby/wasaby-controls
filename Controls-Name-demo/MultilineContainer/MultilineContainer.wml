@@ -1,0 +1,35 @@
+<div class="Name-Demo__container Name-demo_width">
+    <div class="Name-Demo__title">Name.container</div>
+    <Controls-Name.MultilineContainer
+            bind:firstName="_firstName"
+            bind:middleName="_middleName"
+            bind:lastName="_lastName"
+            keyProperty="id"
+            displayProperty="suggestValue"
+            source="{{_suggestSource}}">
+        <ws:firstLineTemplate>
+            <Controls-Name.Input attr:data-qa="Name-Demo__input-lastname"
+                        class="Name-Demo__input"
+                        fields="{{_nameFields}}">
+            </Controls-Name.Input>
+        </ws:firstLineTemplate>
+        <ws:secondLineTemplate>
+            <Controls-Name.Input attr:data-qa="Name-Demo__input-name"
+                        class="Name-Demo__input"
+                        fields="{{_nameFields2}}">
+            </Controls-Name.Input>
+        </ws:secondLineTemplate>
+    </Controls-Name.MultilineContainer>
+
+    <div>
+        <div class="Name-Demo__title">Копирование в буфер обмена</div>
+        <ws:for data="item in _copyItems">
+            <div class="engineDemo-ExtendedEditor__copyWrapper-{{item.id}}" on:click="_copyClickHandler(item.id)">
+                <Controls.buttons:Button icon="icon-Copy" viewMode="link" caption="{{item.caption}}"/>
+                <div name="{{item.id}}">
+                    {{item.text}}
+                </div>
+            </div>
+        </ws:for>
+    </div>
+</div>

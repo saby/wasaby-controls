@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontColorStyles=[success, primary]</div>
+        <Controls.ToggleButton caption="Button" bind:value="_buttonValue" viewMode="link" captions="{{['Change', 'Save']}}" fontColorStyles="{{['success', 'primary']}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontColorStyle=primary</div>
+        <Controls.ToggleButton caption="Button" bind:value="_buttonValue" viewMode="link" captions="{{['Change', 'Save']}}" fontColorStyle="primary"/>
+    </div>
+</div>

@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls/_scrollbar/Scrollbar Горизонтальный скроллбар строится с нулевой позицией 1`] = `
+<div>
+  <div
+    class="controls_scroll_theme-undefined controls-VScrollbar controls-VScrollbar_horizontal controls-VScrollbar_horizontal_size-l controls-VScrollbar_horizontal-track_size-l ws-invisible"
+    data-qa="VScrollbar_horizontal"
+  >
+    <div
+      class="controls-VScrollbar__thumbWrapper controls-VScrollbar__thumbWrapper_size-l controls-VScrollbar__thumbWrapper_horizontal controls-padding_left-3xs controls-padding_right-3xs"
+      style="transform: translateX(0px);"
+    >
+      <div
+        class="controls-VScrollbar__thumb controls-VScrollbar__thumb_accented controls-VScrollbar__thumb_size-l controls-VScrollbar__thumb_accented controls-VScrollbar__thumb_accented_horizontal controls-VScrollbar__thumb_horizontal controls-VScrollbar__thumb_horizontal_size-l "
+        data-qa="VScrollbar__thumb"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls/_scrollbar/Scrollbar Скроллбар строится в ненулевой позицией с заданной опцией position (position = 10) 1`] = `
+<div>
+  <div
+    class="controls_scroll_theme-undefined controls-VScrollbar controls-VScrollbar_vertical controls-VScrollbar_vertical_size-l controls-VScrollbar_horizontal-track_size-l"
+    data-qa="VScrollbar_vertical"
+  >
+    <div
+      class="controls-VScrollbar__thumbWrapper controls-VScrollbar__thumbWrapper_size-l controls-VScrollbar__thumbWrapper_vertical controls-padding_top-3xs controls-padding_bottom-3xs"
+      style="transform: translateY(6px); height: 360px;"
+    >
+      <div
+        class="controls-VScrollbar__thumb controls-VScrollbar__thumb_accented controls-VScrollbar__thumb_size-l controls-VScrollbar__thumb_accented controls-VScrollbar__thumb_accented_vertical controls-VScrollbar__thumb_vertical controls-VScrollbar__thumb_vertical_size-l "
+        data-qa="VScrollbar__thumb"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls/_scrollbar/Scrollbar Скроллбар строится с нижним отступом 1`] = `
+<div>
+  <div
+    class="controls_scroll_theme-undefined controls-VScrollbar controls-VScrollbar_vertical controls-VScrollbar_vertical_size-l controls-VScrollbar_horizontal-track_size-l ws-invisible"
+    data-qa="VScrollbar_vertical"
+  >
+    <div
+      class="controls-VScrollbar__thumbWrapper controls-VScrollbar__thumbWrapper_size-l controls-VScrollbar__thumbWrapper_vertical controls-padding_top-3xs controls-padding_bottom-m"
+      style="transform: translateY(0px);"
+    >
+      <div
+        class="controls-VScrollbar__thumb controls-VScrollbar__thumb_accented controls-VScrollbar__thumb_size-l controls-VScrollbar__thumb_accented controls-VScrollbar__thumb_accented_vertical controls-VScrollbar__thumb_vertical controls-VScrollbar__thumb_vertical_size-l "
+        data-qa="VScrollbar__thumb"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls/_scrollbar/Scrollbar Скроллбар строится с нулевой позицией 1`] = `
+<div>
+  <div
+    class="controls_scroll_theme-undefined controls-VScrollbar controls-VScrollbar_vertical controls-VScrollbar_vertical_size-l controls-VScrollbar_horizontal-track_size-l ws-invisible"
+    data-qa="VScrollbar_vertical"
+  >
+    <div
+      class="controls-VScrollbar__thumbWrapper controls-VScrollbar__thumbWrapper_size-l controls-VScrollbar__thumbWrapper_vertical controls-padding_top-3xs controls-padding_bottom-3xs"
+      style="transform: translateY(0px);"
+    >
+      <div
+        class="controls-VScrollbar__thumb controls-VScrollbar__thumb_accented controls-VScrollbar__thumb_size-l controls-VScrollbar__thumb_accented controls-VScrollbar__thumb_accented_vertical controls-VScrollbar__thumb_vertical controls-VScrollbar__thumb_vertical_size-l "
+        data-qa="VScrollbar__thumb"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls/_scrollbar/Scrollbar Скроллбар строится с опциями thumbThickness=s и thumbStyle=unaccented 1`] = `
+<div>
+  <div
+    class="controls_scroll_theme-undefined controls-VScrollbar controls-VScrollbar_vertical controls-VScrollbar_vertical_size-s controls-VScrollbar_horizontal-track_size-s ws-invisible"
+    data-qa="VScrollbar_vertical"
+  >
+    <div
+      class="controls-VScrollbar__thumbWrapper controls-VScrollbar__thumbWrapper_size-s controls-VScrollbar__thumbWrapper_vertical controls-padding_top-3xs controls-padding_bottom-3xs"
+      style="transform: translateY(0px);"
+    >
+      <div
+        class="controls-VScrollbar__thumb controls-VScrollbar__thumb_unaccented controls-VScrollbar__thumb_size-s controls-VScrollbar__thumb_unaccented controls-VScrollbar__thumb_unaccented_vertical controls-VScrollbar__thumb_vertical controls-VScrollbar__thumb_vertical_size-s "
+        data-qa="VScrollbar__thumb"
+      />
+    </div>
+  </div>
+</div>
+`;

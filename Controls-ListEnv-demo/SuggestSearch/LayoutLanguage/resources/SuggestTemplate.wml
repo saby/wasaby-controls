@@ -1,0 +1,11 @@
+<Controls.suggestPopup:ListContainer attr:class="{{_options.classListWrapper}} controlsDemo_fixedWidth350">
+    <Controls.list:View displayProperty="title" keyProperty="id">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/list:ItemTemplate" attr:key="{{itemTemplate.item.getUid()}}">
+                <ws:contentTemplate>
+                    <Controls.baseDecorator:Highlight highlightedValue="{{_options.searchValue || ''}}" value="{{itemTemplate.item.contents.get('department')}}"/>
+                </ws:contentTemplate>
+            </ws:partial>
+        </ws:itemTemplate>
+    </Controls.list:View>
+</Controls.suggestPopup:ListContainer>

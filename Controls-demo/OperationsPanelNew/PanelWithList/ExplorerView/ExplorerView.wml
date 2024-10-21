@@ -1,0 +1,41 @@
+<div class="controlsDemo__wrapper controlsDemo__minWidth600 controlsDemo__maxWidth800">
+<Controls.scroll:Container>
+  <Controls.browser:Browser source="{{_viewSource}}"
+                            keyProperty="{{_keyProperty}}"
+                            nodeProperty="{{_nodeProperty}}"
+                            parentProperty="{{_parentProperty}}"
+                            bind:selectedKeys="_selectedKeys"
+                            bind:excludedKeys="_excludedKeys"
+                            on:selectedKeysCountChanged="_notifyHandler('selectedKeysCountChanged')">
+    <div>
+      <div style="padding-bottom: 12px">
+        <Controls.operations:Button on:expandedChanged="_expandedChangedHandler()"
+                                    expanded="{{ _expandedOperationsPanel }}"/>
+        <Controls.buttons:Button caption="{{_childrenCountProperty ? 'Выключить' : 'Включить'}} childrenCountProperty"
+                                 on:click="_toggleChildrenProperty()"/>
+      </div>
+      <ws:if data="{{_expandedOperationsPanel}}">
+        <Controls.operations:PanelContainer
+            selectedKeys="{{ _options.selectedKeys }}"
+            listMarkedKey="{{ content._options.listMarkedKey }}">
+          <Controls.operations:Panel
+              excludedKeys="{{ _options.excludedKeys }}"
+              selectedKeysCount="{{content._options.selectedKeysCount}}"
+              parentProperty="parent"
+              nodeProperty="@parent"
+              keyProperty="id"
+              source="{{null}}">
+          </Controls.operations:Panel>
+        </Controls.operations:PanelContainer>
+      </ws:if>
+
+      <Controls.listDataOld:ListContainer>
+        <Controls.explorer:View displayProperty="department"
+                                columns="{{_gridColumns}}"
+                                multiSelectVisibility="visible"
+                                childrenCountProperty="{{_childrenCountProperty}}"/>
+      </Controls.listDataOld:ListContainer>
+    </div>
+  </Controls.browser:Browser>
+</Controls.scroll:Container>
+</div>

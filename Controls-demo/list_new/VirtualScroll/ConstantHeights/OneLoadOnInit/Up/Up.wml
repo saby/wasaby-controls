@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper">
+    <span class="controls-text-label controlsDemo__mb1">
+        Загруженных изначально двух пачек хватает для отображения. Еще одна загрузка не пошла, потому что тригер скрыт, virtualPageSize 40, pageSize 15, показ с последней страницы
+    </span>
+    <Controls-demo.list_new.VirtualScroll.NavigationSwitcher.Index storeId="ConstantHeightsOneLoadOnInitUp" totalCount="{{1000}}" pageSize="{{15}}" direction="backward" page="{{67}}">
+        <ws:content>
+            <Controls.scroll:Container attr:class="controlsDemo__maxWidth500 controlsDemo__height500">
+                <Controls.list:View storeId="ConstantHeightsOneLoadOnInitUp">
+                    <ws:virtualScrollConfig pageSize="{{40}}"/>
+                </Controls.list:View>
+            </Controls.scroll:Container>
+        </ws:content>
+    </Controls-demo.list_new.VirtualScroll.NavigationSwitcher.Index>
+</div>

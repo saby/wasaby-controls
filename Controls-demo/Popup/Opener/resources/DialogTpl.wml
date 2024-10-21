@@ -1,0 +1,11 @@
+<div style="height: 100%;">
+    <Controls.popupTemplate:Dialog headingCaption="Dialog" draggable="{{_options.canTemplateDrag}}" footerContentTemplate="{{_options.footerContentTemplate}}">
+        <ws:headerContentTemplate>
+            <Controls.buttons:Button attr:class="demo-Header__closeButton" caption="Закрыть" on:click="_close()"/>
+        </ws:headerContentTemplate>
+        <ws:bodyContentTemplate>
+            <ws:partial template="Controls-demo/Popup/BaseTemplate">
+            </ws:partial>
+        </ws:bodyContentTemplate>
+    </Controls.popupTemplate:Dialog>
+</div>

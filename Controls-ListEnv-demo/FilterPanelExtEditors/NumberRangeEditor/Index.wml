@@ -1,0 +1,10 @@
+<div class="engineDemo__wrapper ws-flexbox">
+    <Controls-ListEnv.filterPanelConnected:View filterNames="['salary']"
+        storeId="salary"
+        editorsViewMode="cloud"
+        attr:class="engine-demo__Widgets_filterPanel_300"
+    />
+    <Controls.grid:View storeId="salary"
+        columns="{{ _gridColumns }}"
+    />
+</div>

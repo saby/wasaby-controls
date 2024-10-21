@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+   <div class="controlsDemo__cell">
+      <Controls.date:BaseInput displayValue="{{_displayValue}}"
+                               inputMode="partial"
+                               on:valueChanged="_onValueChanged()"/>
+   </div>
+</div>

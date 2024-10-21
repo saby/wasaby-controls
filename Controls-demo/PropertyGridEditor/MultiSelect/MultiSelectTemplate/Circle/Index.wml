@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell controls-Demo__wide-propertyGrid">
+        <div class="controls-text-label">circle template</div>
+        <Controls.propertyGridEditor:PropertyGridEditor
+            bind:editingObject="_editingObject"
+            typeDescription="{{_typeDescription}}"
+            multiSelectVisibility="visible">
+            <ws:multiSelectTemplate>
+                <ws:partial template="Controls/list:MultiSelectCircleTemplate"/>
+            </ws:multiSelectTemplate>
+        </Controls.propertyGridEditor:PropertyGridEditor>
+    </div>
+</div>

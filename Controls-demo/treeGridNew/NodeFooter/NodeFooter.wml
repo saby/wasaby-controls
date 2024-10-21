@@ -1,0 +1,28 @@
+<div class="controlsDemo__wrapper controlsDemo_wrapper-treeGrid-nodeFooter">
+    <div class="controlsDemo__cell controlsDemo_fixedWidth300">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/treeGridNew/NodeFooter/NodeFooterTemplate/Index' }}">
+            <a href="{{content.href}}">Шаблон подвалов узлов</a>
+        </Router.router:Reference>
+        <Controls-demo.treeGridNew.NodeFooter.NodeFooterTemplate.Index/>
+    </div>
+
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/treeGridNew/NodeFooter/Configuration/Index' }}">
+            <a href="{{content.href}}">Настройка шаблона подвалов узлов</a>
+        </Router.router:Reference>
+        <Controls-demo.treeGridNew.NodeFooter.Configuration.Index/>
+    </div>
+
+    <div class="controlsDemo__cell">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/treeGridNew/NodeFooter/MoreButton/Index' }}">
+            <a href="{{content.href}}">Настройка кнопки "Ещё" в подвалах узлов</a>
+        </Router.router:Reference>
+        <Controls-demo.treeGridNew.NodeFooter.MoreButton.Index/>
+    </div>
+</div>

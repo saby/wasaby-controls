@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper ws-flexbox">
+    <div class="controlsDemo__maxWidth200" style="border: 1px solid red">
+        <ws:partial template="{{ _wrappedTemplate }}"
+                    on:contextmenu="_contextMenuHandler()"/>
+    </div>
+    <div data-qa="wasabyEvents-logger" class="controlsDemo__maxWidth200">
+        <ws:for data="event in _log">
+            {{event}}<br/>
+        </ws:for>
+    </div>
+</div>

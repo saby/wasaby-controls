@@ -1,0 +1,34 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth350">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">blankAreaStyle не указан</div>
+        <Controls.progress:StateBar data="{{_dataDefault}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">blankAreaStyle = readonly</div>
+        <Controls.progress:StateBar data="{{_dataReadonly}}" blankAreaStyle="readonly"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">blankAreaStyle = primary</div>
+        <Controls.progress:StateBar data="{{_dataPrimary}}" blankAreaStyle="primary"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">blankAreaStyle = secondary</div>
+        <Controls.progress:StateBar data="{{_dataSecondary}}" blankAreaStyle="secondary"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">blankAreaStyle = success</div>
+        <Controls.progress:StateBar data="{{_dataSuccess}}" blankAreaStyle="success"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">blankAreaStyle = warning</div>
+        <Controls.progress:StateBar data="{{_dataWarning}}" blankAreaStyle="warning"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">blankAreaStyle = danger</div>
+        <Controls.progress:StateBar data="{{_dataDanger}}" blankAreaStyle="danger"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">blankAreaStyle = info</div>
+        <Controls.progress:StateBar data="{{_dataInfo}}" blankAreaStyle="info"/>
+    </div>
+</div>
