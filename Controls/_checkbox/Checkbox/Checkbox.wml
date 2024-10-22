@@ -1,0 +1,38 @@
+<ws:template name="CheckboxMarker">
+<Controls._checkbox.Checkbox.resources.CheckboxMarker
+    attr:class="controls-CheckboxMarker_inCheckbox"
+    value="{{_value}}"
+    triState="{{_options.triState}}"
+    viewMode="{{_options.viewMode}}"
+    resetValue="{{_options.resetValue}}"
+    size="{{_options.size}}"
+    validationStatus="{{_options.validationStatus}}"
+    on:keypress="_keyUpHandler()"/>
+</ws:template>
+
+<div
+    class="controls_toggle_theme-{{_options.theme}} controls-Checkbox {{_highlightedOnFocus ? 'controls-focused-item'}}">
+<div class="controls-invalid-container">
+    <div on:click="_clickHandler()"
+         class="controls-Checkbox__wrapper
+                    {{_options.readOnly ? 'controls-Checkbox__disabled' : 'controls-Checkbox__enabled'}}
+                    {{_value ? ' controls-Checked__checked'}}
+                    {{_value === null && _options.triState ? ' controls-ToggleButton__null'}}"
+         title="{{_options.tooltip}}">
+        <ws:if data="{{_options.captionPosition !== 'start'}}">
+            <ws:partial template="CheckboxMarker"/>
+        </ws:if>
+        <ws:partial template="wml!Controls/_checkbox/Checkbox/resources/CheckboxCaption"
+                    readOnly="{{_value !== null && !_value ? _options.readOnly : false}}"
+                    icon="{{_options.icon}}"
+                    iconSize="{{_options.iconSize}}"
+                    fontColorStyle="{{_options.fontColorStyle}}"
+                    iconStyle="{{_options.iconStyle}}"
+                    multiline="{{_options.multiline}}"
+                    caption="{{_options.caption}}"/>
+        <ws:if data="{{_options.captionPosition === 'start'}}">
+            <ws:partial template="CheckboxMarker"/>
+        </ws:if>
+    </div>
+</div>
+</div>

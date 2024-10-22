@@ -1,0 +1,41 @@
+.controls-FilterLink {
+   display: inline-flex;
+   align-items: baseline;
+   flex-shrink: 0;
+   height: var(--item_height_filterPanel);
+}
+
+.controls-FilterLink::before {
+   content: '\200b';
+   line-height: var(--item_height_filterPanel);
+}
+
+.controls-FilterLink__text {
+   cursor: pointer;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   font-size: var(--item_font-size_filterPanel);
+}
+
+.controls-FilterLink__text-default {
+   color: var(--item_text-color_filterPanel);
+}
+
+.controls-FilterLink__text:active {
+   text-decoration: underline;
+}
+
+.controls-FilterLink__text-default:active {
+   color: var(--item_hover_text-color_filterPanel);
+}
+
+.ws-is-hover {
+   .controls-FilterLink__text:hover {
+      text-decoration: underline;
+   }
+
+   .controls-FilterLink__text-default:hover {
+      color: var(--item_hover_text-color_filterPanel);
+   }
+}

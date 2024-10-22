@@ -1,0 +1,35 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <Controls.list:View
+            storeId="EditInPlaceGrouped"
+            name="list"
+            groupProperty="brand"
+            editingConfig="{{_editingConfig}}"
+            on:beforeBeginEdit="_onBeforeBeginEdit()">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/list:ItemTemplate">
+                <ws:contentTemplate>
+                    <ws:partial template="Controls/list:EditingTemplate" value="{{ itemTemplate.item.contents.title }}">
+                        <ws:editorTemplate>
+                            <Controls.input:Text contrastBackground="{{true}}" bind:value="itemTemplate.item.contents.title"/>
+                        </ws:editorTemplate>
+                    </ws:partial>
+                </ws:contentTemplate>
+            </ws:partial>
+        </ws:itemTemplate>
+        <ws:footerTemplate>
+           <div>
+              <Controls.list:AddButton caption="Add record to '{{_activeGroup}}'" on:click="_beginAdd()"
+                                       attr:style="margin-right: 20px"/>
+              <Controls.buttons:Button on:click="_setPosition('top')"
+                                       buttonStyle="{{ _addPosition === 'top' ? 'primary' : 'secondary' }}"
+                                       caption="Add position: TOP" attr:style="margin-right: 10px"
+                                       attr:class="demo-EditInPlace__addTop"/>
+              <Controls.buttons:Button on:click="_setPosition('bottom')"
+                                       buttonStyle="{{ _addPosition === 'bottom' ? 'primary' : 'secondary' }}"
+                                       caption="Add position: BOTTOM"
+                                       attr:class="demo-EditInPlace__addBottom"/>
+           </div>
+        </ws:footerTemplate>
+    </Controls.list:View>
+</div>
+

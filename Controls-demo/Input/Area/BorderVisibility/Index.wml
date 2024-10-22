@@ -1,0 +1,52 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center controlsDemo__mr3">
+        <div class="controlsDemo__cell">
+            <Controls.input:Area attr:class="controlsDemo_fixedWidth300"
+                                 borderVisibility="partial"
+                                 placeholder="borderVisibility=partial"
+                                 minLines="{{4}}"
+                                 maxLines="{{4}}"/>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.input:Area attr:class="controlsDemo_fixedWidth300"
+                                 borderVisibility="bottom"
+                                 placeholder="borderVisibility=bottom"
+                                 minLines="{{4}}"
+                                 maxLines="{{4}}"/>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.input:Area attr:class="controlsDemo_fixedWidth300"
+                                 borderVisibility="hidden"
+                                 placeholder="borderVisibility=hidden"
+                                 minLines="{{4}}"
+                                 maxLines="{{4}}"/>
+        </div>
+    </div>
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center">
+        <div class="controlsDemo__cell">
+            <Controls.input:Area attr:class="controlsDemo_fixedWidth300"
+                                 readOnly="{{true}}"
+                                 borderVisibility="partial"
+                                 placeholder="borderVisibility=partial"
+                                 minLines="{{4}}"
+                                 maxLines="{{4}}"/>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.input:Area attr:class="controlsDemo_fixedWidth300"
+                                 readOnly="{{true}}"
+                                 borderVisibility="bottom"
+                                 placeholder="borderVisibility=bottom"
+                                 minLines="{{4}}"
+                                 maxLines="{{4}}"/>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.input:Area attr:class="controlsDemo_fixedWidth300"
+                                 readOnly="{{true}}"
+                                 borderVisibility="hidden"
+                                 placeholder="borderVisibility=hidden"
+                                 minLines="{{4}}"
+                                 maxLines="{{4}}"/>
+        </div>
+    </div>
+</div>
+

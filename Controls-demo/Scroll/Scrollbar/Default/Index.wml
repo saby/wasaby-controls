@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper">
+    <div class="controls-Demo__Scrollbar">
+        <Controls.scrollbar:Scrollbar bind:position="_position"
+                                   contentSize="{{1000}}"
+                                   paddings="{{_verticalPadding}}"/>
+        <Controls.scrollbar:Scrollbar bind:position="_positionHorizontal"
+                                   direction="horizontal"
+                                   paddings="{{_horizontalPadding}}"
+                                   contentSize="{{1000}}"/>
+    </div>
+</div>

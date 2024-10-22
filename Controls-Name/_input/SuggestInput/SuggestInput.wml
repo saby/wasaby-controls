@@ -1,0 +1,62 @@
+<ws:template name="input">
+    <Controls-Name._input.Input
+            name="input"
+            value="{{_value}}"
+            fields="{{_options.fields}}"
+            placeholders="{{_options.placeholders}}"
+            validationStatus="{{_options.validationStatus}}"
+            size="{{_options.size}}"
+            tagStyle="{{_options.tagStyle}}"
+            fontStyle="{{_options.fontStyle}}"
+            fontColorStyle="{{_options.fontColorStyle}}"
+            borderStyle="{{_options.borderStyle}}"
+            fontSize="{{_options.fontSize}}"
+            fontWeight="{{_options.fontWeight}}"
+            inlineHeight="{{_options.inlineHeight}}"
+            borderVisibility="{{_suggestVisible ? 'hidden' : _options.borderVisibility}}"
+            contrastBackground="{{_options.contrastBackground}}"
+            textAlign="{{_options.textAlign}}"
+            source="{{_options.source}}"
+            inputOrder="{{_inputOrder}}"
+            showReorderButton="{{_showReorderButton}}"
+            rightFieldTemplate="{{_options.rightFieldTemplate}}"
+            placeholderVisibility="{{_options.placeholderVisibility}}"
+            autoComplete="{{_options.autoComplete}}"
+            trim="{{_options.trim}}"
+            on:inputFocus="_inputFocusHandler()"
+            on:reorder="_reorderHandler()"
+            on:dataReceived="_dataReceivedHandler()"
+            on:valueChanged="_valueChangedHandler()">
+    </Controls-Name._input.Input>
+</ws:template>
+<ws:if data="{{_options.source && _options.suggestTemplate}}">
+    <Controls.suggest:_InputController
+            attr:class="controls_Name_theme-{{_options.theme}}"
+            on:choose="_chooseHandler()"
+            on:deactivated="_deactivatedHandler()"
+            searchStartCallback="{{_searchStart}}"
+            searchEndCallback="{{_searchEnd}}"
+            suggestTemplate="{{_options.suggestTemplate}}"
+            footerTemplate="{{_options.footerTemplate}}"
+            emptyTemplate="{{ null }}"
+            minSearchLength="{{ 0 }}"
+            autoDropDown="{{false}}"
+            historyId=""
+            trim="{{false}}"
+            source="{{_options.source}}"
+            navigation="{{_options.navigation}}"
+            keyProperty="{{_options.keyProperty}}"
+            searchParam="{{'suggestValue'}}"
+            searchDelay="{{ 1000 }}"
+            layerName="Controls/suggestPopup:__PopupLayer"
+            filter="{{_filter}}"
+            value="{{_value}}"
+            rightFieldTemplate="{{_options.rightFieldTemplate}}"
+            suggestPopupOptions="{{_options.suggestPopupOptions}}"
+            bind:suggestState="_suggestVisible">
+        <ws:partial template="input"/>
+    </Controls.suggest:_InputController>
+</ws:if>
+<ws:else>
+    <ws:partial attr:class="controls_Name_theme-{{_options.theme}}" template="input"/>
+</ws:else>

@@ -1,0 +1,23 @@
+<div class="controlsDemo__flexRow {{_options.theme.indexOf('default')<0 ? 'controlsDemo_fixedWidth500' : 'controlsDemo_fixedWidth300'}}">
+   <div class="controlsDemo__wrapper" data-qa="controlsDemo-CloseButtonVisibility__true">
+      <div class="controls-text-label">Меню с крестиком</div>
+      <Controls.dropdown:Button
+              keyProperty="key"
+              icon="icon-Send"
+              caption="Create"
+              source="{{_source}}"
+              attr:class="controlsDemo-menuButton">
+      </Controls.dropdown:Button>
+   </div>
+   <div class="controlsDemo__wrapper" data-qa="controlsDemo-CloseButtonVisibility__false">
+      <div class="controls-text-label">Меню с closeButtonVisibility = false</div>
+      <Controls.dropdown:Button
+              closeButtonVisibility="{{false}}"
+              keyProperty="key"
+              icon="icon-Send"
+              caption="Create"
+              source="{{_source}}"
+              attr:class="controlsDemo-menuButton">
+      </Controls.dropdown:Button>
+   </div>
+</div>

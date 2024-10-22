@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper">
+    <Controls.treeGrid:View
+            storeId="ExpanderPositionCustom"
+            columns="{{_columns}}"
+            expanderIcon="emptyNode"
+            expanderPosition="custom"/>
+</div>

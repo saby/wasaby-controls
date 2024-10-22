@@ -1,0 +1,28 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow controlsDemo__childMinWidth400">
+    <div class="controlsDemo__cell controlsDemo__mr4">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-ListEnv-demo/Search/List/StandardSearch/Index' }}">
+            <a href="{{content.href}}">Поиск в плоском списке</a>
+        </Router.router:Reference>
+        <Controls-ListEnv-demo.Search.List.StandardSearch.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controlsDemo__mr4 controlsDemo__maxWidth500">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-ListEnv-demo/Search/List/PortionedSearch/Index' }}">
+            <a href="{{content.href}}">Порционный поиск в плоском списке</a>
+        </Router.router:Reference>
+        <Controls-ListEnv-demo.Search.List.PortionedSearch.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controlsDemo__mr4 controlsDemo__maxWidth500">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-ListEnv-demo/Search/List/EditInPlace/Index' }}">
+            <a href="{{content.href}}">Поиск с редактированием по месту</a>
+        </Router.router:Reference>
+        <Controls-ListEnv-demo.Search.List.EditInPlace.Index/>
+    </div>
+</div>

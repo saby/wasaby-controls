@@ -1,0 +1,181 @@
+.controls-ConfirmationTemplate {
+   pointer-events: all;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+   box-sizing: border-box;
+   background: var(--background-color_dialog);
+   box-shadow: var(--shadow_a);
+   border-radius: var(--border-radius_dialog);
+   overflow: hidden;
+   max-width: inherit;
+}
+
+.controls-ConfirmationTemplate__marker {
+   width: var(--marker_width_popup);
+   min-height: var(--marker_height_popup);
+   margin: var(--offset_xl) auto var(--offset_xl);
+   border-radius: var(--border-radius_2xl);
+}
+
+.controls-ConfirmationTemplate__close-button {
+   position: absolute;
+   right: 0;
+   top: 0;
+}
+
+.controls-ConfirmationTemplate__marker__style-info {
+   background: var(--info_color);
+}
+
+.controls-ConfirmationTemplate__marker__style-default,
+.controls-ConfirmationTemplate__marker__style-secondary {
+   background: var(--secondary_marker_color);
+}
+
+.controls-ConfirmationTemplate__marker__style-danger {
+   background: var(--danger_color);
+}
+
+.controls-ConfirmationTemplate__marker__style-success {
+   background: var(--success_color);
+}
+
+.controls-ConfirmationTemplate__marker__style-warning {
+   background: var(--warning_color);
+}
+
+.controls-ConfirmationTemplate__body {
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   box-sizing: border-box;
+   border-radius: var(--border-radius_dialog);
+   max-height: inherit;
+}
+
+.controls-ConfirmationTemplate__main {
+   height: 100%;
+   flex-shrink: 1;
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
+   padding: 0 var(--content_padding_confirmation) var(--footer-content_padding_confirmation);
+
+   &.controls-ConfirmationTemplate__main_adaptive {
+      padding: 0 var(--offset_m) var(--footer-content_padding_confirmation);
+   }
+}
+
+.controls-ConfirmationTemplate__footer {
+   padding: 0 var(--content_padding_confirmation) var(--footer-content_padding_confirmation);
+   border-radius: 0 0 var(--border-radius_dialog) var(--border-radius_dialog);
+
+   &_adaptive {
+      display: flex;
+      justify-content: center;
+      padding: 0 var(--offset_m) var(--footer-content_padding_confirmation);
+   }
+}
+
+.controls-ConfirmationTemplate__size-l {
+   width: var(--width_l_confirmation);
+}
+
+.controls-ConfirmationTemplate__width-a {
+   width: var(--content_width_a_dialog);
+}
+
+.controls-ConfirmationTemplate__width-b {
+   width: var(--content_width_b_dialog);
+}
+
+.controls-ConfirmationTemplate__width-c {
+   width: var(--content_width_c_dialog);
+}
+
+.controls-ConfirmationTemplate__width-d {
+   width: var(--content_width_d_dialog);
+}
+
+.controls-ConfirmationTemplate__width-e {
+   width: var(--content_width_e_dialog);
+}
+
+.controls-ConfirmationTemplate__width-f {
+   width: var(--content_width_f_dialog);
+}
+
+.controls-ConfirmationTemplate__width-g {
+   width: var(--content_width_g_dialog);
+}
+
+.controls-ConfirmationTemplate__width-h {
+   width: var(--content_width_h_dialog);
+}
+
+.controls-ConfirmationTemplate__width-i {
+   width: var(--content_width_i_dialog);
+}
+
+.controls-ConfirmationTemplate__width-j {
+   width: var(--content_width_j_dialog);
+}
+
+.controls-ConfirmationTemplate__width-k {
+   width: var(--content_width_k_dialog);
+}
+
+.controls-ConfirmationTemplate__width-l {
+   width: var(--content_width_l_dialog);
+}
+
+.controls-ConfirmationTemplate__width-m {
+   width: var(--content_width_m_dialog);
+}
+
+.controls-ConfirmationTemplate__style-secondary {
+   background: radial-gradient(
+         210% 260% at 25% -15%,
+         var(--background-color_dialog) 0,
+         rgba(255, 255, 255, 0) 100%
+      ),
+      var(--secondary_background-color_confirmation);
+}
+
+.controls-ConfirmationTemplate__style-warning {
+   background: radial-gradient(
+         210% 260% at 25% -15%,
+         var(--background-color_dialog) 0,
+         rgba(255, 255, 255, 0) 100%
+      ),
+      var(--warning_background-color_confirmation);
+}
+
+.controls-ConfirmationTemplate__style-danger {
+   background: radial-gradient(
+         210% 260% at 25% -15%,
+         var(--background-color_dialog) 0,
+         rgba(255, 255, 255, 0) 100%
+      ),
+      var(--danger_background-color_confirmation);
+}
+
+.controls-ConfirmationTemplate__style-info {
+   background: radial-gradient(
+         210% 260% at 25% -15%,
+         var(--background-color_dialog) 0,
+         rgba(255, 255, 255, 0) 100%
+      ),
+      var(--info_background-color_confirmation);
+}
+
+.controls-ConfirmationTemplate__style-success {
+   background: radial-gradient(
+         210% 260% at 25% -15%,
+         var(--background-color_dialog) 0,
+         rgba(255, 255, 255, 0) 100%
+      ),
+      var(--success_background-color_confirmation);
+}

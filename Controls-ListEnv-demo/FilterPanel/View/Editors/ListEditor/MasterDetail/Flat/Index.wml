@@ -1,0 +1,19 @@
+<div class="ws-flexbox controlsDemo__wrapper controlsDemo__height800">
+    <Controls.masterDetail:Base newDesign="{{true}}" masterMinWidth="{{200}}">
+        <ws:master>
+            <Controls-ListEnv.filterPanelConnected:View
+                editorsViewMode="default"
+                storeId="documents"
+                filterNames="{{ ['document'] }}"
+            />
+        </ws:master>
+        <ws:detail>
+            <div class="engine-demo__Widgets_filterList ws-flexbox ws-flex-column">
+                <Controls.grid:View
+                    storeId="documents"
+                    columns="{{_columns}}"
+                    header="{{_header}}"/>
+            </div>
+        </ws:detail>
+    </Controls.masterDetail:Base>
+</div>

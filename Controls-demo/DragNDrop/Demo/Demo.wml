@@ -1,0 +1,102 @@
+<div class="demo-DragNDrop">
+   <h1>Перемещение записей методом "Drag&Drop"</h1>
+   <h2>Перемещение в плоском реестре c плиточным отображением</h2>
+   <Controls.browser:Browser source="{{_viewSourceFirst}}" keyProperty="id" attr:class="demo-DragNDrop__list" bind:selectedKeys="_selectedKeys">
+      <div>
+         <Controls.listDeprecate:Mover name="listMoverFirst"/>
+            <Controls.listDataOld:ListContainer>
+               <Controls.list:View
+                  on:customdragStart="_dragStartFirst()"
+                  on:customdragEnd="_dragEndFirst()"
+                  itemsDragNDrop="{{true}}"
+                  multiSelectVisibility="onhover"
+                  itemsReadyCallback="{{_itemsReadyCallbackFirst}}"
+                  itemActions="{{_itemActionsFirst}}"
+                  markerVisibility="hidden">
+                  <ws:itemTemplate>
+                     <ws:partial template="Controls/list:ItemTemplate" itemActionsClass="demo-DragNDrop__list_itemActionsPosition" attr:class="demo-DragNDrop__list_item">
+                        <ws:contentTemplate>
+                           <div class="demo-DragNDrop__list_itemContent">
+                              <img class="demo-DragNDrop__list_item_icon" src="{{itemTemplate.item.contents.get('image')}}" />
+                              <div class="demo-DragNDrop__list_item_text">
+                                 <div class="demo-DragNDrop__list_item_mainText controls-List_DragNDrop__notDraggable">{{itemTemplate.item.contents.get('title')}}</div>
+                                 <div class="demo-DragNDrop__list_item_additionalText controls-List_DragNDrop__notDraggable">{{itemTemplate.item.contents.get('additional')}}</div>
+                              </div>
+                              <div class="demo-DragNDrop__list_item_usersCount">{{itemTemplate.item.contents.get('usersCunt')}}</div>
+                           </div>
+                        </ws:contentTemplate>
+                     </ws:partial>
+                  </ws:itemTemplate>
+                  <ws:draggingTemplate>
+                     <ws:partial template="Controls/dragnDrop:DraggingTemplate"
+                                 mainText="{{draggingTemplate.entity._options.mainText}}"
+                                 image="{{draggingTemplate.entity._options.image}}"
+                                 additionalText="{{draggingTemplate.entity._options.additionalText}}">
+                     </ws:partial>
+                  </ws:draggingTemplate>
+               </Controls.list:View>
+            </Controls.listDataOld:ListContainer>
+      </div>
+   </Controls.browser:Browser>
+   <h2>Перемещение в реестре с иерархией</h2>
+   <Controls.popup:Confirmation name="popupOpener" />
+   <Controls.listDataOld:DataContainer source="{{_viewSourceSecond}}" parentProperty="parent" keyProperty="id" attr:class="demo-DragNDrop__explorer">
+      <div>
+         <Controls.listDeprecate:Mover name="listMoverSecond" parentProperty="parent"/>
+         <Controls.listDataOld:ListContainer>
+            <Controls.explorer:View
+               bind:root="_root"
+               on:customdragStart="_dragStartSecond()"
+               on:customdragEnd="_dragEndSecond()"
+               itemsDragNDrop="{{true}}"
+               nodeProperty="type"
+               displayProperty="title"
+               viewMode="table"
+               header="{{_gridHeader}}"
+               columns="{{_gridColumns}}"
+               expandedItems="{{_expandedItems}}"
+               itemsReadyCallback="{{_itemsReadyCallbackSecond}}">
+               <ws:draggingTemplate>
+                  <ws:partial template="Controls/dragnDrop:DraggingTemplate"
+                              mainText="{{draggingTemplate.entity._options.mainText}}"
+                              image="{{draggingTemplate.entity._options.image}}"
+                              logo="{{draggingTemplate.entity._options.logo}}"
+                              additionalText="{{draggingTemplate.entity._options.additionalText}}">
+                  </ws:partial>
+               </ws:draggingTemplate>
+            </Controls.explorer:View>
+         </Controls.listDataOld:ListContainer>
+      </div>
+   </Controls.listDataOld:DataContainer>
+   <h2>Перемещение в папку (реестр в виде плитки)</h2>
+   <Controls.listDataOld:DataContainer source="{{_viewSourceThird}}" keyProperty="id" parentProperty="parent" attr:class="demo-DragNDrop__tile">
+      <div>
+         <Controls.listDeprecate:Mover name="listMoverThird" parentProperty="parent"/>
+         <Controls.listDataOld:ListContainer>
+            <Controls.explorer:View
+               on:customdragStart="_dragStartThird()"
+               on:customdragEnd="_dragEndThird()"
+               itemsDragNDrop="{{true}}"
+               nodeProperty="type"
+               displayProperty="title"
+               imageProperty="image"
+               viewMode="tile"
+               tileScalingMode="outside"
+               itemsReadyCallback="{{_itemsReadyCallbackThird}}">
+               <ws:draggingTemplate>
+                  <ws:partial template="Controls/dragnDrop:DraggingTemplate"
+                              mainText="{{draggingTemplate.entity._options.mainText}}"
+                              image="{{draggingTemplate.entity._options.image}}"
+                              logo="{{draggingTemplate.entity._options.logo}}"
+                              additionalText="{{draggingTemplate.entity._options.additionalText}}">
+                  </ws:partial>
+               </ws:draggingTemplate>
+               <ws:tileItemTemplate>
+                  <ws:partial template="Controls/tile:ItemTemplate" hasTitle="{{true}}">
+                  </ws:partial>
+               </ws:tileItemTemplate>
+            </Controls.explorer:View>
+         </Controls.listDataOld:ListContainer>
+      </div>
+   </Controls.listDataOld:DataContainer>
+</div>

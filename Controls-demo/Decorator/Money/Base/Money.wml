@@ -1,0 +1,26 @@
+<div class="controlsDemo__wrapper">
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">value = 100000 useGrouping = false</div>
+      <Controls.baseDecorator:Money value="{{100000}}" useGrouping="{{false}}"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">value = 100000 useGrouping = true</div>
+      <Controls.baseDecorator:Money value="{{100000}}" useGrouping="{{true}}"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">value = 100000.00 showEmptyDecimals = false</div>
+      <Controls.baseDecorator:Money value="{{100000.00}}" showEmptyDecimals="{{false}}"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">value = 100000.00 showEmptyDecimals = true</div>
+      <Controls.baseDecorator:Money value="{{100000.00}}" showEmptyDecimals="{{true}}"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">value = 100000 tooltip = Current money</div>
+      <Controls.baseDecorator:Money value="{{100000}}" tooltip="Current money"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">readOnly = true</div>
+      <Controls.baseDecorator:Money value="{{100000}}" readOnly="{{true}}"/>
+   </div>
+</div>
