@@ -1,0 +1,10 @@
+<ws:if data="{{_enabled}}">
+    <div class="Graphs-HighChartsLight {{_graphMountedOnMac ? 'Graphs-HighChartsLight-smoothing'}}
+                controls_Graphs_theme-{{_options.theme}}"
+         name="chartContainer">
+    </div>
+</ws:if>
+<ws:else>
+    <span tabindex="{{-1}}">
+    </span>
+</ws:else>

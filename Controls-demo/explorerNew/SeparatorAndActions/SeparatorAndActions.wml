@@ -1,0 +1,29 @@
+<div class="controlsDemo__wrapper">
+    <Controls.browser:Browser
+            attr:class="controlsDemo__margin-top"
+            source="{{ _viewSource }}"
+            keyProperty="id"
+            displayProperty="title"
+            parentProperty="parent"
+            nodeProperty="parent@"
+            searchParam="title"
+            itemActionsPosition="outside"
+            bind:searchValue="_searchValue"
+            header="{{ _header }}"
+            columns="{{ _columns  }}"
+            columnScroll="{{true}}"
+            itemActions="{{_itemActions}}"
+            editingConfig="{{_editingConfig}}"
+    >
+        <Controls.scroll:Container attr:class="controlsDemo__mr4"
+                                   attr:style="width: 650px; max-height: 400px;"
+                                   scrollOrientation="vertical">
+            <Controls.listDataOld:ListContainer>
+                <Controls.explorer:View name="explorer"
+                                        attr:class="demo-Explorer ControlsDemo-Explorer">
+                </Controls.explorer:View>
+            </Controls.listDataOld:ListContainer>
+        </Controls.scroll:Container>
+    </Controls.browser:Browser>
+</div>
+

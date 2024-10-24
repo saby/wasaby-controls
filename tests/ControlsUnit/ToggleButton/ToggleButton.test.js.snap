@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls/ToggleButton captions and value false 1`] = `
+<div>
+  <span
+    class="controls-BaseButton controls-Button_clickable controls-Button_bg-same controls-linkButton-style controls-button_link-style  controls-linkButton_link-secondary-style   controls-Button_notCircle controls-button_fontsize-m controls-notFocusOnEnter controls_toggle_theme-default "
+    tabindex="0"
+  >
+    <span
+      class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-link controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center"
+    >
+      <span
+        class="controls-BaseButton__text controls-Button__text_viewMode-link controls_text-style_default"
+        tabindex="0"
+      >
+        Save
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/ToggleButton captions and value true 1`] = `
+<div>
+  <span
+    class="controls-BaseButton controls-Button_clickable controls-Button_bg-same controls-Button_toggled controls-linkButton-style controls-button_link-style  controls-linkButton_link-secondary-style_toggled   controls-Button_notCircle controls-button_fontsize-m controls-notFocusOnEnter controls_toggle_theme-default "
+    tabindex="0"
+  >
+    <span
+      class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-link controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center"
+    >
+      <span
+        class="controls-BaseButton__text controls-Button__text_viewMode-link controls_text-style_default"
+        tabindex="0"
+      >
+        Change
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/ToggleButton iconStyles and value false 1`] = `
+<div>
+  <span
+    class="controls-BaseButton controls-Button_clickable controls-Button_bg-same controls-button-style controls-button_ghost-style controls-button_size-l controls-button_ghost-default-style   controls-Button_circle controls-button_fontsize-m controls-notFocusOnEnter controls_toggle_theme-default "
+    tabindex="0"
+  >
+    <span
+      class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-ghost controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center"
+    />
+  </span>
+</div>
+`;
+
+exports[`Controls/ToggleButton iconStyles and value true 1`] = `
+<div>
+  <span
+    class="controls-BaseButton controls-Button_clickable controls-Button_bg-same controls-Button_toggled controls-button-style controls-button_ghost-style controls-button_size-l controls-button_ghost-default-style_toggled   controls-Button_circle controls-button_fontsize-m controls-notFocusOnEnter controls_toggle_theme-default "
+    tabindex="0"
+  >
+    <span
+      class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-ghost controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center"
+    />
+  </span>
+</div>
+`;
+
+exports[`Controls/ToggleButton icons and value false 1`] = `
+<div>
+  <span
+    class="controls-BaseButton controls-Button_clickable controls-Button_bg-same controls-button-style controls-button_ghost-style controls-button_size-l controls-button_ghost-default-style   controls-Button_circle controls-button_fontsize-m controls-button_icon-style-secondary controls-button_hover_icon-style-secondary controls-button_icon-size-m controls-notFocusOnEnter controls_toggle_theme-default "
+    tabindex="0"
+  >
+    <span
+      class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-ghost controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center"
+    >
+      <i
+        class="controls-BaseButton__icon controls-icon_size-m controls-icon icon-ArrangeList04"
+        tabindex="0"
+      />
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/ToggleButton icons and value true 1`] = `
+<div>
+  <span
+    class="controls-BaseButton controls-Button_clickable controls-Button_bg-same controls-Button_toggled controls-button-style controls-button_ghost-style controls-button_size-l controls-button_ghost-default-style_toggled   controls-Button_circle controls-button_fontsize-m controls-button_icon-style-secondary controls-button_hover_icon-style-secondary controls-button_icon-size-m controls-notFocusOnEnter controls_toggle_theme-default "
+    tabindex="0"
+  >
+    <span
+      class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-ghost controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center"
+    >
+      <i
+        class="controls-BaseButton__icon controls-icon_size-m controls-icon icon-ArrangeList03"
+        tabindex="0"
+      />
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/ToggleButton viewMode=pushButton and inlineHeight=l 1`] = `
+<div>
+  <span
+    class="controls-BaseButton controls-Button_clickable controls-Button_bg-same controls-button-style controls-button_pushButton-style controls-button_size-l controls-button_pushButton-secondary-style   controls-Button_circle controls-button_fontsize-m controls-notFocusOnEnter controls_toggle_theme-default "
+    tabindex="0"
+  >
+    <span
+      class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-pushButton controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center"
+    />
+  </span>
+</div>
+`;

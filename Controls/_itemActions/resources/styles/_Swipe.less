@@ -1,0 +1,251 @@
+@keyframes itemActionsSwipeOpen {
+   0% {
+      transform: translate(100%, 0);
+   }
+
+   100% {
+      transform: translate(0, 0);
+   }
+}
+
+@keyframes itemActionsSwipeClose {
+   0% {
+      transform: translate(0, 0);
+   }
+
+   100% {
+      transform: translate(100%, 0);
+   }
+}
+
+@keyframes rightSwipe {
+   0% {
+      transform: translateX(0);
+   }
+
+   50% {
+      transform: translateX(var(--animation_offset_swipe));
+   }
+
+   100% {
+      transform: translateX(0);
+   }
+}
+
+@keyframes rightSwipeReverse {
+   0% {
+      transform: translateX(0);
+   }
+
+   50% {
+      transform: translateX(calc(-1 * var(--animation_offset_swipe)));
+   }
+
+   100% {
+      transform: translateX(0);
+   }
+}
+
+.controls-itemActionsV_swipe_animationContainer {
+   position: absolute;
+   right: 0;
+   bottom: 0;
+   overflow: hidden;
+   height: 100%;
+   box-sizing: border-box;
+   background-color: transparent;
+   z-index: 2;
+   pointer-events: auto;
+   // В IOS safari без этого теряются скругления углов
+   border-top-right-radius: inherit;
+   border-bottom-right-radius: inherit;
+}
+
+.controls-Swipe {
+   align-items: center;
+   display: inline-flex;
+   height: 100%;
+   overflow: hidden;
+   box-sizing: border-box;
+   background-color: transparent;
+   background-image: linear-gradient(
+      to right,
+      transparent,
+      var(--shadow-color_swipe) var(--shadow-blur_swipe),
+      var(--background-color_swipe) var(--shadow-blur_swipe),
+      var(--background-color_swipe) 100%
+   );
+}
+
+.controls-Swipe__action {
+   display: inline-flex;
+   align-items: center;
+   box-sizing: border-box;
+   flex-shrink: 0;
+   flex-grow: 1;
+   position: relative;
+   justify-content: center;
+}
+
+.controls-Swipe__action_column {
+   flex-direction: column;
+}
+
+.controls-Swipe__action_caption_right {
+   justify-content: flex-start;
+}
+
+.controls-Swipe_open {
+   animation: itemActionsSwipeOpen 0.35s 0ms ease;
+   animation-fill-mode: backwards;
+}
+
+.controls-Swipe_close {
+   animation: itemActionsSwipeClose 0.35s 0ms ease;
+   animation-fill-mode: forwards;
+}
+
+.controls-Swipe__action_padding_size_s {
+   padding-top: var(--offset_3xs);
+   padding-bottom: var(--offset_3xs);
+}
+
+.controls-Swipe__action_padding_size_m {
+   padding-top: var(--item_horizontal_padding-vertical_swipe);
+   padding-bottom: var(--item_horizontal_padding-vertical_swipe);
+}
+
+.controls-Swipe__action_padding_size_l {
+   padding-top: var(--offset_xs);
+   padding-bottom: var(--offset_xs);
+}
+
+.controls-Swipe__action_icon_size_m {
+   .icon(var(--item_s_icon-size_swipe), var(--icon_font-family_m));
+}
+
+.controls-Swipe__action_icon_size_l {
+   .icon(var(--item_l_icon-size_swipe), var(--icon_font-family_m));
+}
+
+.controls-Swipe__action_title {
+   color: var(--item_text-color_swipe);
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+
+.controls-Swipe__action_title_position_right {
+   padding-left: var(--offset_xs);
+   max-width: var(--item_horizontal_text_max-width_swipe);
+}
+
+.controls-Swipe__action_title_position_bottom {
+   max-width: var(--item_vertical_text_max-width_swipe);
+}
+
+.controls-Swipe__action_title_size_m {
+   font-size: var(--item_s_font-size_swipe);
+}
+
+.controls-Swipe__action_title_size_l {
+   font-size: var(--item_l_font-size_swipe);
+}
+
+.controls-Swipe__separator {
+   background: var(--separator_color_swipe);
+   flex-shrink: 0;
+   display: block;
+}
+
+.controls-Swipe__separator_horizontal {
+   width: var(--separator_thickness_swipe);
+   height: calc(100% ~'-' 2 * var(--separator_edge_padding-vertical_swipe));
+   margin-bottom: var(--separator_edge_padding-vertical_swipe);
+   margin-top: var(--separator_edge_padding-vertical_swipe);
+}
+
+.controls-Swipe__separator_vertical {
+   width: auto;
+   height: var(--separator_thickness_swipe);
+   margin-left: calc(var(--separator_edge_padding-horizontal_swipe) + var(--shadow-blur_swipe));
+   margin-right: var(--separator_edge_padding-horizontal_swipe);
+}
+
+.controls-Swipe__separator_columns_first {
+   width: auto;
+   height: var(--separator_thickness_swipe);
+   margin-right: var(--separator_padding-horizontal_swipe);
+}
+
+.controls-Swipe__separator_columns_second {
+   width: auto;
+   height: var(--separator_thickness_swipe);
+   margin-left: var(--separator_padding-horizontal_swipe);
+}
+
+.controls-Swipe_horizontal,
+.controls-Swipe_vertical,
+.controls-Swipe_columns {
+   display: inline-flex;
+   height: 100%;
+}
+
+.controls-Swipe_horizontal,
+.controls-Swipe_columns {
+   padding-left: calc(
+      var(--item_edge_padding-horizontal_swipe) + var(--shadow-blur_swipe) -
+         var(--item_vertical_padding-horizontal_swipe)
+   );
+   padding-right: calc(
+      var(--item_edge_padding-horizontal_swipe) - var(--item_vertical_padding-horizontal_swipe)
+   );
+}
+
+.controls-Swipe_horizontal {
+   align-items: center;
+}
+
+.controls-Swipe__action_columns {
+   display: flex;
+}
+
+.controls-Swipe_vertical,
+.controls-Swipe__action_columns {
+   flex-direction: column;
+   justify-content: space-evenly;
+}
+
+.controls-Swipe__action_horizontal {
+   padding-left: var(--item_vertical_padding-horizontal_swipe);
+   padding-right: var(--item_vertical_padding-horizontal_swipe);
+}
+
+.controls-Swipe__action_vertical {
+   /*
+   * Gradient takes some of the container's width on the left side, so we should compensate for it with larger padding.
+   */
+   padding-left: calc(var(--item_edge_padding-horizontal_swipe) + var(--shadow-blur_swipe));
+   padding-right: var(--item_edge_padding-horizontal_swipe);
+}
+
+.controls-Swipe__action_iconStyle_secondary {
+   color: var(--secondary_icon-color_swipe);
+   fill: var(--secondary_icon-color_swipe);
+}
+
+/**
+TODO: на андроиде дёргается запись в списке если после анимации перестраивается ПМО.
+Нужно или разобраться почему дёргается запись, или откладывать перестраивание ПМО.
+Верну анимацию по задаче:
+https://online.sbis.ru/opendoc.html?guid=a1a72f4f-de87-400c-8cb1-1e32d8b63068
+ */
+/* stylelint-disable-next-line selector-max-type */
+body:not(.ws-is-mobile-android) .controls-ListView__item_rightSwipeAnimation {
+   animation: rightSwipe 0.3s;
+
+   /* stylelint-disable-next-line selector-max-type */
+   .controls-ListView__itemV_marker {
+      animation: rightSwipeReverse 0.3s;
+   }
+}

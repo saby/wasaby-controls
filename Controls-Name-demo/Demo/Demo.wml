@@ -1,0 +1,81 @@
+<div class="Name-Demo__container">
+    <div class="Name-Demo__title">With suggest, default styles.<br/>Для демонстрации автоопределения ФИО вводить "Иванов", "Иван", "Иванович"</div>
+    <Controls-Name.Input class="Name-Demo__input EngineDemo-Name__with_suggest"
+                bind:firstName="_firstName"
+                bind:middleName="_middleName"
+                bind:lastName="_lastName"
+                fields="{{_nameFields}}"
+                keyProperty="id"
+                displayProperty="suggestValue"
+                source="{{_suggestSource}}">
+        <ws:suggestTemplate templateName="wml!Controls-Name-demo/SuggestTemplate">
+            <ws:templateOptions demoClass="demo-SuggestInputList"/>
+        </ws:suggestTemplate>
+    </Controls-Name.Input>
+    <div>
+        <div class="Name-Demo__title">No suggest, input styles</div>
+        <Controls-Name.Input class="Name-Demo__input EngineDemo-Name__no_suggest"
+                    bind:firstName="_firstName2"
+                    bind:middleName="_middleName2"
+                    bind:lastName="_lastName2"
+                    fields="{{_nameFields}}"
+                    fontColorStyle="primary"
+                    fontSize="xl"
+                    inlineHeight="l"
+                    tagStyle="success">
+        </Controls-Name.Input>
+    </div>
+    <div>
+        <div class="Name-Demo__title">ReadOnly</div>
+        <Controls-Name.Input class="Name-Demo__input EngineDemo-Name__read_only"
+                    firstName="Иван"
+                    middleName="Иванович"
+                    lastName="Иванов"
+                    fields="{{_nameFields}}"
+                    readOnly="{{true}}">
+        </Controls-Name.Input>
+    </div>
+    <div>
+        <div class="Name-Demo__title">ReadOnly empty field</div>
+        <Controls-Name.Input class="Name-Demo__input EngineDemo-Name__read_only_empty"
+                    firstName=""
+                    middleName=""
+                    lastName=""
+                    fields="{{_nameFields}}"
+                    readOnly="{{true}}">
+        </Controls-Name.Input>
+    </div>
+    <div>
+        <div class="Name-Demo__title">ReadOnly with overflow</div>
+        <Controls-Name.Input class="Name-Demo__input EngineDemo-Name__read_only_overflow"
+                    firstName="Очень длинное имя Иван"
+                    middleName="Очень длинное отчество Иванович"
+                    lastName="Очень длинная фамилия Иванов"
+                    fields="{{_nameFields}}"
+                    readOnly="{{true}}">
+        </Controls-Name.Input>
+    </div>
+    <div>
+        <div class="Name-Demo__title">ReadOnly empty field and placeholderVisibility is empty</div>
+        <Controls-Name.Input class="Name-Demo__input EngineDemo-Name__read_only_empty"
+                    firstName=""
+                    middleName=""
+                    lastName=""
+                    placeholderVisibility="empty"
+                    fields="{{_nameFields}}"
+                    readOnly="{{true}}"
+                    attr:data-qa="EngineDemo-Name__read_only_placeholder_empty">
+        </Controls-Name.Input>
+    </div>
+    <div>
+        <div class="Name-Demo__title">Копирование в буфер обмена</div>
+        <ws:for data="item in copyItems">
+            <div class="engineDemo-ExtendedEditor__copyWrapper-{{item.id}}" on:click="_copyClickHandler(item.id)">
+                <Controls.buttons:Button icon="icon-Copy" viewMode="link" caption="{{item.caption}}"/>
+                <div name="{{item.id}}">
+                    {{item.text}}
+                </div>
+            </div>
+        </ws:for>
+    </div>
+</div>

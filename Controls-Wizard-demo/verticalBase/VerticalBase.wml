@@ -1,0 +1,5 @@
+<Controls-Wizard.vertical:Layout
+    displayMode="compact"
+    items="{{items}}"
+    bind:selectedStepIndex="selectedStepIndex"
+    currentStepIndex="{{selectedStepIndex}}"/>

@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center">
+        <div class="controls-text-label controls-margin_bottom-s">Ширина ограничена в 200px</div>
+        <Controls.input:Text bind:value="_value1"
+                             attr:style="width: 200px"/>
+    </div>
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center">
+        <div class="controls-text-label controls-margin_bottom-s">Ширина ограничена в 5 символов</div>
+        <Controls.input:Text bind:value="_value2"
+                             attr:class="controls-Input__width-5ch"/>
+    </div>
+</div>

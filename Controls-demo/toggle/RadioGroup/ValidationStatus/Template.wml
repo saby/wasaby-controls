@@ -1,0 +1,31 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center controlsDemo_fixedWidth500"
+         data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell demo-RadioGroup__group1">
+            <Controls.RadioGroup:Control
+                    bind:selectedKey="_selectedKey"
+                    keyProperty="id"
+                    items="{{_items}}"
+                    validationStatus="valid"
+            />
+        </div>
+        <div class="controlsDemo__cell demo-RadioGroup__group2">
+            <Controls.RadioGroup:Control
+                    bind:selectedKey="_selectedKey2"
+                    keyProperty="id"
+                    items="{{_items}}"
+                    directio="horizontal"
+                    validationStatus="invalid"
+            />
+        </div>
+        <div class="controlsDemo__cell demo-RadioGroup__group3">
+            <Controls.RadioGroup:Control
+                    bind:selectedKey="_selectedKey3"
+                    keyProperty="id"
+                    items="{{_items}}"
+                    directio="horizontal"
+                    validationStatus="invalidAccent"
+            />
+        </div>
+    </div>
+</div>

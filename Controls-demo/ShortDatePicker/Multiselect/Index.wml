@@ -1,0 +1,32 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center"
+         data-qa="controlsDemo_capture"
+    >
+        <div class="controlsDemo__flex ws-justify-content-center ws-align-items-center ws-flex-column">
+            <div class="controlsDemo__flex ws-align-items-baseline">
+                <div class="controls-text-label controlsDemo_fixedWidth200">Выбор любого периода:</div>
+                <Controls.dateRange:Selector
+                        attr:class="controlsDemo_fixedWidth200"
+                        bind:startValue="_startValue"
+                        bind:endValue="_endValue"
+                        multiSelect="{{ true }}"
+                        datePopupType="shortDatePicker"
+                />
+            </div>
+            <div class="controlsDemo__flex ws-align-items-baseline">
+                <div class="controls-text-label controlsDemo_fixedWidth200">Выбор года/нескольких лет:</div>
+                <Controls.dateRange:Selector
+                        attr:class="controlsDemo_fixedWidth200"
+                        attr:data-qa="controlsDemo-ShortDatePicker-Base__year"
+                        bind:startValue="_startValue2"
+                        bind:endValue="_endValue2"
+                        multiSelect="{{ true }}"
+                        datePopupType="shortDatePicker"
+                        chooseHalfyears="{{false}}"
+                        chooseMonths="{{false}}"
+                        chooseQuarters="{{false}}"
+                />
+            </div>
+        </div>
+    </div>
+</div>

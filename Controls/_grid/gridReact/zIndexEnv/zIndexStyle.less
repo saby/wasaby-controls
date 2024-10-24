@@ -1,0 +1,17 @@
+@import 'Controls/_grid/gridReact/zIndexEnv/_cellZIndexSetters';
+
+// +=================================================================================================================+
+// | МЕНЯЯ ЗДЕСЬ ТРЕБУЕТСЯ ПРОВЕРЯТЬ ГОРИЗОНТАЛЬНЫЙ СКРОЛЛ В Controls/_gridColumnScroll/zIndexEnv/zIndexStyle.less и |
+// |                     DynamicGrid в Controls-Lists/_dynamicGrid/styles/_zIndexStyle.less                          |
+// +=================================================================================================================+
+
+// Для ячейки данных это единственно верное значение, чтобы item actions в позиции outside были выше следующей записи.
+// Иначе, zIndex нужно будет повышать на hover записи.
+.setStickiedHeaderCellIndex(3);
+.setStickiedTopResultCellIndex(3);
+.setDataCellIndex(auto);
+.setItemActionsInsideZIndex(1);
+.setItemActionsOutsideZIndex(2);
+.setStickiedDataCellIndex(1);
+.setStickiedBottomResultCellIndex(auto);
+.setStickiedFooterCellIndex(auto);

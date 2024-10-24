@@ -1,0 +1,17 @@
+<UI.Adaptive:AdaptiveContainer isPhone="{{ true }}">
+   <div class="ControlDemo__SlidingPanel">
+      <div class="ControlDemo__SlidingPanel-setting">
+         <Controls.input:Label caption="desktopMode"/>
+         <Controls.dropdown:Selector
+                 keyProperty="id"
+                 displayProperty="id"
+                 source="{{_desktopModeSource}}"
+                 bind:selectedKeys="_desktopMode"/>
+      </div>
+       <div class="ControlDemo__SlidingPanel-setting">
+           <Controls.input:Label caption="animation"/>
+           <Controls.toggle:Switch bind:value="_animation"/>
+       </div>
+      <Controls.buttons:Button caption="Открыть шторку" on:click="_openSlidingPanelHandler()"/>
+   </div>
+</UI.Adaptive:AdaptiveContainer>

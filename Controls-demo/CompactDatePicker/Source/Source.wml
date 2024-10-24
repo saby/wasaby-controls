@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div
+        class="controlsDemo__flex ws-justify-content-center ws-align-items-center"
+        data-qa="controlsDemo_capture"
+    >
+        <Controls.compactDatePicker:View
+            attr:class="controlsDemo-CompactDatePicker_height"
+            bind:startValue="_startValue"
+            bind:endValue="_endValue"
+            source="{{ _source }}"
+            order="desc"
+            _date="{{ _date }}"
+        >
+        </Controls.compactDatePicker:View>
+    </div>
+</div>

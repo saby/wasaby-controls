@@ -1,0 +1,170 @@
+/* ============== Верхний отступ ============== */
+// Верхний отступ контента ячейки.
+// Необходимо обеспечить непордвижность контента при смене размера межстрочных разделителей.
+
+// Без разделителей,
+.controls-ListView__itemV_marker-default_topPadding-default,
+.controls-ListView__itemV_marker-master_topPadding-grid_s,
+.controls-ListView__itemV_marker-default_topPadding-grid_s {
+   padding-top: var(--item_padding-top_s_grid);
+}
+
+.controls-ListView__itemV_marker-master_topPadding-master,
+.controls-ListView__itemV_marker-master_topPadding-default {
+   padding-top: var(--master_item_padding-top_list);
+}
+
+.controls-ListView__itemV_marker-master_topPadding-master_adaptive {
+   padding-top: var(--offset_st);
+}
+
+.controls-ListView__itemV_marker-master_topPadding-st,
+.controls-ListView__itemV_marker-default_topPadding-st {
+   padding-top: var(--offset_st);
+}
+
+.controls-ListView__itemV_marker-master_topPadding-grid_l,
+.controls-ListView__itemV_marker-default_topPadding-grid_l {
+   padding-top: var(--item_padding-top_l_grid);
+}
+
+// С тонким разделителем
+.controls-GridReact-cell_topSeparatorSize-s {
+   .controls-ListView__itemV_marker-default_topPadding-default,
+   .controls-Grid__row-cell_default_rowSpacingTop_default,
+   .controls-Grid__row-checkboxCell_default_rowSpacingTop_default,
+   &.controls-Grid__row-checkboxCell_default_rowSpacingTop_default {
+      padding-top: calc(var(--item_padding-top_s_grid) - var(--item-separator_s_thickness_list));
+   }
+
+   .controls-ListView__itemV_marker-master_topPadding-master,
+   .controls-ListView__itemV_marker-master_topPadding-default,
+   .controls-Grid__row-cell_master_rowSpacingTop_default,
+   .controls-Grid__row-checkboxCell_master_rowSpacingTop_default {
+      padding-top: calc(
+         var(--master_item_padding-top_list) - var(--item-separator_s_thickness_list)
+      );
+   }
+
+   .controls-ListView__itemV_marker-master_topPadding-grid_s,
+   .controls-ListView__itemV_marker-default_topPadding-grid_s,
+   .controls-Grid__row-cell_master_rowSpacingTop_s,
+   .controls-Grid__row-checkboxCell_master_rowSpacingTop_s,
+   .controls-Grid__row-cell_default_rowSpacingTop_s,
+   .controls-Grid__row-checkboxCell_default_rowSpacingTop_s,
+   &.controls-Grid__row-checkboxCell_default_rowSpacingTop_s {
+      padding-top: calc(var(--item_padding-top_s_grid) - var(--item-separator_s_thickness_list));
+   }
+
+   .controls-ListView__itemV_marker-master_topPadding-st,
+   .controls-ListView__itemV_marker-default_topPadding-st,
+   .controls-Grid__row-cell_default_rowSpacingTop_st,
+   .controls-Grid__row-cell_master_rowSpacingTop_st,
+   .controls-Grid__row-checkboxCell_default_rowSpacingTop_st,
+   .controls-Grid__row-checkboxCell_master_rowSpacingTop_st,
+   &.controls-Grid__row-checkboxCell_default_rowSpacingTop_st,
+   &.controls-Grid__row-checkboxCell_master_rowSpacingTop_st {
+      padding-top: calc(var(--offset_st) - var(--item-separator_s_thickness_list));
+   }
+
+   .controls-ListView__itemV_marker-master_topPadding-grid_l,
+   .controls-ListView__itemV_marker-default_topPadding-grid_l,
+   .controls-Grid__row-cell_default_rowSpacingTop_l,
+   .controls-Grid__row-checkboxCell_default_rowSpacingTop_l,
+   &.controls-Grid__row-checkboxCell_default_rowSpacingTop_l {
+      padding-top: calc(var(--item_padding-top_l_grid) - var(--item-separator_s_thickness_list));
+   }
+}
+
+// С широким разделитем
+.controls-GridReact-cell_topSeparatorSize-l {
+   .controls-ListView__itemV_marker-default_topPadding-default,
+   .controls-Grid__row-cell_default_rowSpacingTop_default,
+   .controls-Grid__row-checkboxCell_default_rowSpacingTop_default,
+   &.controls-Grid__row-checkboxCell_default_rowSpacingTop_default {
+      padding-top: calc(var(--item_padding-top_s_grid) - var(--item-separator_l_thickness_list));
+   }
+
+   .controls-ListView__itemV_marker-master_topPadding-master,
+   .controls-ListView__itemV_marker-master_topPadding-default,
+   .controls-Grid__row-cell_master_rowSpacingTop_default,
+   .controls-Grid__row-checkboxCell_master_rowSpacingTop_default {
+      padding-top: calc(
+         var(--master_item_padding-top_list) - var(--item-separator_l_thickness_list)
+      );
+   }
+
+   .controls-ListView__itemV_marker-default_topPadding-grid_s,
+   .controls-Grid__row-cell_default_rowSpacingTop_s,
+   .controls-Grid__row-checkboxCell_default_rowSpacingTop_s,
+   &.controls-Grid__row-checkboxCell_default_rowSpacingTop_s {
+      padding-top: calc(var(--item_padding-top_s_grid) - var(--item-separator_l_thickness_list));
+   }
+
+   .controls-ListView__itemV_marker-master_topPadding-grid_s,
+   .controls-Grid__row-cell_master_rowSpacingTop_s,
+   .controls-Grid__row-checkboxCell_master_rowSpacingTop_s {
+      padding-top: calc(
+         var(--master_item_padding-top_list) - var(--item-separator_l_thickness_list)
+      );
+   }
+
+   .controls-Grid__row-cell_default_rowSpacingTop_st,
+   .controls-Grid__row-cell_master_rowSpacingTop_st,
+   .controls-ListView__itemV_marker-master_topPadding-st,
+   .controls-ListView__itemV_marker-default_topPadding-st,
+   .controls-Grid__row-checkboxCell_default_rowSpacingTop_st,
+   .controls-Grid__row-checkboxCell_master_rowSpacingTop_st,
+   &.controls-Grid__row-checkboxCell_default_rowSpacingTop_st,
+   &.controls-Grid__row-checkboxCell_master_rowSpacingTop_st {
+      padding-top: calc(var(--offset_st) - var(--item-separator_l_thickness_list));
+   }
+
+   .controls-ListView__itemV_marker-master_topPadding-grid_l,
+   .controls-ListView__itemV_marker-default_topPadding-grid_l,
+   .controls-Grid__row-cell_default_rowSpacingTop_l,
+   .controls-Grid__row-cell_master_rowSpacingTop_l,
+   .controls-Grid__row-checkboxCell_default_rowSpacingTop_l,
+   .controls-Grid__row-checkboxCell_master_rowSpacingTop_l,
+   &.controls-Grid__row-checkboxCell_default_rowSpacingTop_l,
+   &.controls-Grid__row-checkboxCell_master_rowSpacingTop_l {
+      padding-top: calc(var(--item_padding-top_l_grid) - var(--item-separator_l_thickness_list));
+   }
+}
+
+/* ============== Верхний отступ "прилипшей" ячейки лесенки ============== */
+
+// Отступ этой ячейки не зависит от границ, т.к. это отдельный фиктивный блок поверх контента.
+// Расстояние от начала границы до контента обычной ячейки равен var(--item_padding-top_s_grid) и var(--item_padding-top_l_grid),
+// но padding может быть меньше, для компенсации границы. У прилипшей ячейки нет границы.
+
+.controls-Grid__row-ladder-cell__content_default, .controls-Grid__row-ladder-cell__content_s {
+   padding-top: var(--item_padding-top_s_grid);
+}
+
+.controls-Grid__row-ladder-cell__content_l {
+   padding-top: var(--item_padding-top_l_grid);
+}
+
+/* ============== Нижний отступ ============== */
+
+.controls-Grid__row-cell_master_rowSpacingBottom_default {
+   padding-bottom: var(--master_item_padding-bottom_list);
+}
+
+.controls-Grid__row-cell_rowSpacingBottom_null {
+   padding-bottom: 0;
+}
+
+.controls-Grid__row-cell_rowSpacingBottom_default,
+.controls-Grid__row-cell_rowSpacingBottom_s {
+   padding-bottom: var(--item_padding-bottom_s_grid);
+}
+
+.controls-Grid__row-cell_rowSpacingBottom_st {
+   padding-bottom: var(--offset_st);
+}
+
+.controls-Grid__row-cell_rowSpacingBottom_l {
+   padding-bottom: var(--item_padding-bottom_l_grid);
+}

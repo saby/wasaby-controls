@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <Controls.toolbars:View
+                items="{{_items}}"
+                parentProperty="parent"
+                nodeProperty="@parent"
+                keyProperty="id"
+                on:itemClick="_itemClick()"
+                attr:data-qa="Controls-demo_Toolbar__toolButtons"
+        />
+    </div>
+    <div class="controlsDemo__cell" data-qa="Controls-demo_Toolbar__event">
+        {{_currentClick}}
+    </div>
+</div>

@@ -1,0 +1,12 @@
+.controls-SearchBreadcrumbsTile__breadcrumbsItem {
+   width: calc(100% - var(--offset_m));
+}
+// Чтобы выравнивать по базовой линии элементы highlight при поиске.
+// https://online.sbis.ru/opendoc.html?guid=b3c4f839-db06-4cf5-9d53-20787b1cadc2&client=3
+.controls-SearchBreadcrumbsTile__breadcrumbsItem_highlight::before {
+   content: '\200b';
+   width: 0;
+   display: inline-block;
+   visibility: hidden;
+   font-size: var(--baseline_breadcrumbsView);
+}

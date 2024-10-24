@@ -1,0 +1,57 @@
+<div class="controls-InfoBoxDemo">
+   <Controls.popup:Infobox name="IBOpener"></Controls.popup:Infobox>
+
+   <ws:for data="block in _blocks">
+      <div class="controls-InfoBoxDemo-block demo-InfoBoxDemo__block{{block.header}}">
+         <div class="controls-InfoBoxDemo-header">{{block.header}}</div>
+      </div>
+      <div class="controls-InfoBoxDemo-targets">
+         <ws:for data="item in block.items">
+            <div class="controls-InfoBoxDemo-target controls-InfoBoxDemo-target-standard controls-InfoBoxDemo__{{item.text.toLowerCase().replace(' ', '')}}" on:mouseenter="_open(item.cfg)" on:touchstart="_openTouch(item.cfg)">
+               {{item.text}}
+            </div>
+         </ws:for>
+      </div>
+   </ws:for>
+
+   <div class="controls-icon controls-icon_size-default controls-icon_style-secondary
+                icon-EmptyMessage controls-InfoBoxDemo-icon-position controls-InfoBoxDemo__top-right tw-cursor-help"
+        attr:style="right: 12px; top: 24px" on:mouseenter="_open(_cfgRight)"></div>
+   <div class="controls-icon controls-icon_size-default controls-icon_style-secondary
+                icon-EmptyMessage controls-InfoBoxDemo-icon-position controls-InfoBoxDemo__bottom-right tw-cursor-help"
+        attr:style="right: 12px; bottom: 10px" on:mouseenter="_open(_cfgRight)"></div>
+   <div class="controls-icon controls-icon_size-default controls-icon_style-secondary
+                icon-EmptyMessage controls-InfoBoxDemo-icon-position controls-InfoBoxDemo__top-left tw-cursor-help"
+        attr:style="left: 12px; top: 24px" on:mouseenter="_open(_cfgLeft)"></div>
+   <div class="controls-icon controls-icon_size-default controls-icon_style-secondary
+                icon-EmptyMessage controls-InfoBoxDemo-icon-position controls-InfoBoxDemo__bottom-left tw-cursor-help"
+        attr:style="left: 12px; bottom: 10px" on:mouseenter="_open(_cfgLeft)"></div>
+   <div class="controls-icon controls-icon_size-default controls-icon_style-secondary
+                icon-EmptyMessage controls-InfoBoxDemo-icon-position controls-InfoBoxDemo__top-center tw-cursor-help"
+        attr:style="top: 24px;left:calc(50% - 12px)" on:mouseenter="_open(_cfgTop)"></div>
+   <div class="controls-icon controls-icon_size-default controls-icon_style-secondary
+                icon-EmptyMessage controls-InfoBoxDemo-icon-position controls-InfoBoxDemo__bottom-center tw-cursor-help"
+        attr:style="bottom: 10px;left:calc(50% - 12px)" on:mouseenter="_open(_cfgBottom)"></div>
+
+   <div style="margin-bottom: 30px ">
+      <div class="controls-InfoBoxDemo-block demo-InfoBoxDemo__blockicons">
+         <div class="controls-InfoBoxDemo-header">{{'ICONS'}}</div>
+      </div>
+      <ws:for data="item in _icons">
+         <div class="controls-InfoBoxDemo-targets controls-InfoBoxDemo__{{item.items[0].cfg.size}}">
+            <ws:for data="config in item.items">
+               <div class="controls-InfoBoxDemo-icon">
+                  <Controls.buttons:Button viewMode="linkButton" fontColorStyle="link"
+                                           iconSize="{{config.cfg.iconSize}}"
+                                           inlineHeight="{{config.cfg.inlineHeight}}"
+                                           attr:class="controls-InfoBoxDemo__{{config.cfg.size}}-{{config.cfg.targetSide}}"
+                                           icon="icon-EmptyMessage"
+                                           on:touchstart="_openTouch(config.cfg)"
+                                           on:mouseenter="_open(config.cfg)"/>
+               </div>
+            </ws:for>
+         </div>
+      </ws:for>
+   </div>
+
+</div>

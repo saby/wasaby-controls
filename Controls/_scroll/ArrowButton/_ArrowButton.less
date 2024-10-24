@@ -1,0 +1,52 @@
+.controls-ArrowButton_stretched_scroll {
+   z-index: 3;
+   position: absolute;
+
+   --button-offset_horizontal_local: var(--offset_xs);
+   --button-offset_vertical_local: var(--border-thickness);
+
+   &_offset {
+      &-m {
+         --button-offset_horizontal_local: var(--offset_xs);
+         --button-offset_vertical_local: var(--border-thickness);
+      }
+
+      &-xl {
+         --button-offset_horizontal_local: var(--offset_2xs);
+         --button-offset_vertical_local: calc(-1 * var(--offset_3xs));
+      }
+
+      &-5xl {
+         --button-offset_horizontal_local: var(--offset_3xs);
+         --button-offset_vertical_local: calc(-1 * var(--offset_s));
+      }
+   }
+
+   &-horizontal {
+      top: calc(50% - (var(--inline_height_xl) / 2));
+      width: var(--arrow-button_width_scroll);
+   }
+
+   &-vertical {
+      left: calc(50% - (var(--inline_height_xl) / 2));
+      top: var(--arrow-button_height_scroll);
+   }
+
+   &_direction {
+      &-down {
+         bottom: var(--button-offset_vertical_local);
+      }
+
+      &-up {
+         top: var(--button-offset_vertical_local);
+      }
+
+      &-right {
+         right: var(--button-offset_horizontal_local);
+      }
+
+      &-left {
+         left: var(--button-offset_horizontal_local);
+      }
+   }
+}

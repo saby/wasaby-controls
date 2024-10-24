@@ -1,0 +1,68 @@
+<div class="demo-BreadCrumbs__wrapper">
+    <Controls.scroll:Container>
+        <div class="demo-BreadCrumbs__example controlsDemo-BreadCrumbs__withoutHeaders">
+            <Controls.heading:Title caption="Реестр без заголовков"
+                                    fontColorStyle="secondary"
+                                    fontSize="4xl"/>
+            <Controls.explorer:View storeId="BreadCrumbsScenarioFirst0"
+                                    columns="{{_columns}}"
+                                    showActionButton="{{true}}"/>
+        </div>
+        <div class="demo-BreadCrumbs__example controlsDemo-BreadCrumbs__withoutTotal">
+            <Controls.heading:Title caption="Реестр с однострочными заголовками"
+                                    fontColorStyle="secondary"
+                                    fontSize="4xl"/>
+            <div>
+                <Controls.input:Label caption='Без строки "Итого"'/>
+            </div>
+            <Controls.explorer:View storeId="BreadCrumbsScenarioFirst1"
+                                    columns="{{_columns1}}"
+                                    showActionButton="{{true}}"
+                                    header="{{_header1}}"
+                                    rowSeparatorSize="s"
+                                    itemsDragNDrop="{{true}}">
+            </Controls.explorer:View>
+        </div>
+        <div class="demo-BreadCrumbs__example controlsDemo-BreadCrumbs__withTotal">
+            <div>
+                <Controls.input:Label caption='Со строкой "Итого"'/>
+            </div>
+            <Controls.explorer:View storeId="BreadCrumbsScenarioFirst2"
+                                    showActionButton="{{true}}"
+                                    rowSeparatorSize="s"
+                                    columns="{{_columns2}}"
+                                    header="{{_header2}}"
+                                    resultsPosition="top">
+            </Controls.explorer:View>
+        </div>
+        <div class="demo-BreadCrumbs__example controlsDemo-BreadCrumbs__exitStack" style="width: 1600px;">
+            <div>
+                <Controls.input:Label caption='На выезжающей панели'/>
+            </div>
+            <div>
+                <Controls.popupTemplate:Stack
+                        attr:class="demo-FourthExample"
+                        headingCaption="Продажи"
+                        headingFontColorStyle="primary"
+                        backgroundStyle="stack"
+                        maximizeButtonVisibility="{{true}}">
+                    <ws:headerContentTemplate>
+                        <div>
+
+                        </div>
+                    </ws:headerContentTemplate>
+                    <ws:bodyContentTemplate>
+                        <Controls.scroll:Container>
+                            <Controls.explorer:View storeId="BreadCrumbsScenarioFirst3"
+                                                    showActionButton="{{true}}"
+                                                    columns="{{_columns3}}"
+                                                    header="{{_header3}}"
+                                                    resultsPosition="top">
+                            </Controls.explorer:View>
+                        </Controls.scroll:Container>
+                    </ws:bodyContentTemplate>
+                </Controls.popupTemplate:Stack>
+            </div>
+        </div>
+    </Controls.scroll:Container>
+</div>

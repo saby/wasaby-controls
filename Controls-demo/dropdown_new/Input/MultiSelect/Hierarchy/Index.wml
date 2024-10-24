@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__ml2">
+        <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys"
+                                    bind:excludedKeys="_excludedKeys"
+                                    emptyText="Not selected"
+                                    emptyKey="not_selected"
+                                    keyProperty="id"
+                                    searchParam="title"
+                                    displayProperty="title"
+                                    multiSelect="{{true}}"
+                                    parentProperty="parent"
+                                    nodeProperty="@parent"
+                                    source="{{_source}}">
+        </Controls.dropdown:Selector>
+    </div>
+</div>

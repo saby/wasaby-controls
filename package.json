@@ -1,0 +1,63 @@
+{
+   "name": "wasaby-controls",
+   "version": "24.6000.0",
+   "repository": {
+      "type": "git",
+      "url": "git@git.sbis.ru:root/sbis3-controls"
+   },
+   "files": [
+      "Data/*",
+      "Controls/*",
+      "Controls-default-theme/*",
+      "Controls-demo/*"
+   ],
+   "scripts": {
+      "update-cli-store": "wasaby-cli loadProject",
+      "build:all": "wasaby-cli buildProject",
+      "build:all:watch": "wasaby-cli buildProject --watcher --inlineSourceMaps",
+      "build:all:release": "wasaby-cli buildProject --release",
+      "build:all:release:watch": "wasaby-cli buildProject --release --watcher",
+      "build:all:rtl": "wasaby-cli buildProject --localization=ru-RU,ar-AE",
+      "build:basic": "wasaby-cli buildProject --modules=Controls",
+      "build:basic:watch": "wasaby-cli buildProject --watcher --modules=Controls",
+      "build:basic:release": "wasaby-cli buildProject --release --modules=Controls",
+      "build:basic:rtl": "wasaby-cli buildProject --localization=ru-RU,ar-AE --modules=Controls",
+      "initTypescript": "wasaby-cli initTSEnv",
+      "buildAutoDoc": "wasaby-cli buildAutoDoc --modules=Controls-DataEnv",
+      "start": "wasaby-cli startServer",
+      "start:release": "wasaby-cli startServer --release",
+      "start:hot": "concurrently \"npm:builder:watch\" \"npm:start\"",
+      "test": "wasaby-cli runUnitTests --NodeJS --report=console",
+      "test:coverage": "wasaby-cli runUnitTests --NodeJS --coverage",
+      "test:wdio": "wasaby-cli runBrowserTests",
+      "lint": "eslint .",
+      "lint:css": "stylelint \"**/*.{css,less}\"",
+      "lint:fix": "eslint . --fix",
+      "lint:css:fix": "stylelint \"**/*.{css,less}\" --fix",
+      "prettier": "prettier --write .",
+      "lint:debug": "eslint . -o eslintResult.log --no-color --quiet",
+      "lint:css:debug": "stylelint \"**/*.{css,less}\" -o stylelintResult.log --no-color",
+      "fallback": "node ./Controls-default-theme/JenerateFallback",
+      "prepare": "npm run update-cli-store && npm run initTypescript && wasaby-cli initGitHooks"
+   },
+   "wasaby-cli": {
+      "inlineSourceMaps": true,
+      "port": 777,
+      "copy": true,
+      "umd": true,
+      "repositories": [
+         "https://git.sbis.ru/engine/cdn.git",
+         "https://git.sbis.ru/sbis/engine.git"
+      ],
+      "preCommitHooks": [
+         "Prettier",
+         "ESLint",
+         "Stylelint"
+      ]
+   },
+   "dependencies": {},
+   "devDependencies": {
+      "concurrently": "^5.3.0",
+      "wasaby-cli": "git+ssh://git@git.sbis.ru:saby/wasaby-cli.git#rc-24.6000"
+   }
+}

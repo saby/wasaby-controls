@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper">
+<Controls.scroll:Container>
+  <Controls.list:View
+      groupProperty="brand"
+      storeId="GroupedTextVisible">
+    <ws:groupTemplate>
+      <ws:partial scope="{{ _options }}" template="Controls/list:GroupTemplate" textVisible="{{false}}"/>
+    </ws:groupTemplate>
+  </Controls.list:View>
+</Controls.scroll:Container>
+</div>

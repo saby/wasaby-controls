@@ -1,0 +1,31 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper controlsDemo__flexColumn">
+      <div class="controls-text-label">С указанием headerContentTemplate</div>
+      <Controls.menu:Popup
+              source="{{_source}}"
+              keyProperty="key"
+              displayProperty="title">
+         <ws:headerContentTemplate>
+            <ws:partial template="Controls/menu:HeaderTemplate" caption="{[Выберите город]}"/>
+         </ws:headerContentTemplate>
+      </Controls.menu:Popup>
+   </div>
+   <div class="controlsDemo__wrapper controlsDemo__flexColumn">
+      <div class="controls-text-label">С кастомным контентом в headerContentTemplate</div>
+      <Controls.menu:Popup
+              source="{{_source}}"
+              keyProperty="key"
+              displayProperty="title">
+         <ws:headerContentTemplate>
+            <ws:partial class="ControlsDemo_headerCustomTemplate" template="Controls/menu:HeaderTemplate">
+               <div class="ControlsDemo_headerCustomTemplate">
+                  <span>Заголовок меню</span>
+                  <span class="ControlsDemo_headerButton controls-icon_style-link
+                  controls-icon_size-m
+                icon-SettingsNew" title="Настройка"></span>
+               </div>
+            </ws:partial>
+         </ws:headerContentTemplate>
+      </Controls.menu:Popup>
+   </div>
+</div>

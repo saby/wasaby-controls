@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow controlsDemo__height300">
+   <Controls.masterDetail:Base>
+      <ws:master>
+         <Controls.list:View
+                 storeId="Basemaster"
+                 style="master"
+                 on:markedKeyChanged="_onMarkedKeyChanged()"
+         >
+         </Controls.list:View>
+      </ws:master>
+      <ws:detail>
+            <Controls.list:View
+                    storeId="Basedetail"
+                    attr:class="controlsDemo_fixedWidth500">
+            </Controls.list:View>
+      </ws:detail>
+   </Controls.masterDetail:Base>
+</div>

@@ -1,0 +1,28 @@
+.controls-Input-DateRange {
+   display: inline-flex;
+   align-items: center;
+   white-space: nowrap;
+}
+
+.controls-Input-DateRange__inputs {
+   display: flex;
+   align-items: baseline;
+}
+
+// The wrong height is set for the control in ie. min-height thing solves the problem.
+.ws-is-ie .controls-Input-DateRange {
+   min-height: 1px;
+}
+
+.controls-Input-DateRange__button {
+   cursor: pointer;
+   display: inline-flex;
+   padding-left: var(--trigger-offset_inputDate);
+}
+
+.controls-Input-DateRange__dash {
+   display: inline-block;
+   vertical-align: middle;
+   width: var(--dash_length_dateRangeInput);
+   border-top: var(--dash_thickness_dateRangeInput) solid var(--text-color);
+}

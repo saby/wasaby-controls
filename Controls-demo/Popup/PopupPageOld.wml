@@ -1,0 +1,34 @@
+<div class="popup-page">
+   <Controls.popup:Dialog name="dialog" template="Controls-demo/Popup/TestDialog">
+   </Controls.popup:Dialog>
+   <Controls.popup:Dialog name="modalDialog" modal="{{true}}" template="Controls-demo/Popup/TestDialog">
+   </Controls.popup:Dialog>
+   <Controls.popup:Sticky name="sticky"
+                                 onResult="{{_onResult}}"
+                                 template="Controls-demo/Popup/TestDialog"
+                                 autoHide="{{true}}"
+   >
+      <ws:direction vertical="bottom" horizontal="left"/>
+      <ws:targetPoint vertical="bottom" horizontal="left"/>
+   </Controls.popup:Sticky>
+   <Controls.popup:Notification name="notification" template="Controls-demo/Popup/TestDialog">
+   </Controls.popup:Notification>
+   <Controls.popup:Stack name="stack" template="Controls-demo/Popup/NotifyStack">
+   </Controls.popup:Stack>
+
+   <div>
+      <Controls.buttons:Button name="dialogButton" caption="dialog" on:click="openDialog()" class="ControlsDemo-PopupPageOld__dialogButton"/>
+   </div>
+   <div>
+      <Controls.buttons:Button name="modalDialogButton" caption="modal dialog" on:click="openModalDialog()" class="ControlsDemo-PopupPageOld__modalDialogButton"/>
+   </div>
+   <div>
+      <Controls.buttons:Button name="stickyButton" caption="sticky" on:click="openSticky()" class="ControlsDemo-PopupPageOld__stickyButton"/>
+   </div>
+   <div>
+      <Controls.buttons:Button name="notificationButton" caption="notification" on:click="openNotification()" class="ControlsDemo-PopupPageOld__notificationButton"/>
+   </div>
+   <div>
+      <Controls.buttons:Button name="stackButton" caption="stack" on:click="openStack()" class="ControlsDemo-PopupPageOld__stackButton"/>
+   </div>
+</div>

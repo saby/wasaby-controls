@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper">
+    <span class="controls-text-label controlsDemo__mb1">virtualScrollConfig.pageSize 20, navigation.sourceConfig.pageSize 20. При скролле вниз и подгрузки данных не должно быть скачка.</span>
+    <Controls-demo.list_new.VirtualScroll.NavigationSwitcher.Index storeId="ConstantHeightsVirtualPageEqualSourcePage" totalCount="{{300}}" pageSize="{{20}}" pagingMode="basic">
+        <ws:content>
+            <Controls.scroll:Container attr:class="controlsDemo__maxWidth500 controlsDemo_line-height18" attr:style="max-height: 600px">
+                <Controls.list:View storeId="ConstantHeightsVirtualPageEqualSourcePage">
+                    <ws:virtualScrollConfig pageSize="{{20}}"/>
+                </Controls.list:View>
+            </Controls.scroll:Container>
+        </ws:content>
+    </Controls-demo.list_new.VirtualScroll.NavigationSwitcher.Index>
+</div>

@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper controlsDemo_wrapper-treeGrid-base-treeGridView controls-MasterDetail_details-newDesign">
+    <Controls.treeGrid:View
+            attr:class="controlsDemo__inline-flex"
+            storeId="RowSeparatorBaseNewDesign"
+            columns="{{_columns}}"
+            rowSeparatorSize="s"
+            newDesign="{{true}}"/>
+</div>

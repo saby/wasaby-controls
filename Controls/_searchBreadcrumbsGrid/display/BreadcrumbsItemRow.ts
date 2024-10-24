@@ -1,0 +1,263 @@
+/**
+ * @kaizen_zone 6c74c736-f802-4b48-b22b-7cd14c0a2e28
+ */
+import { object } from 'Types/util';
+import { Model } from 'Types/entity';
+import { TemplateFunction } from 'UI/Base';
+import SearchGridDataRow from './SearchGridDataRow';
+import { TreeChildren } from 'Controls/baseTree';
+import { getKey } from 'Controls/baseList';
+import SearchGridCollection from './SearchGridCollection';
+import { GridDataRow, TColspanCallbackResult, IColumn } from 'Controls/grid';
+import { IOptions as IBreadcrumbsItemCellOptions } from './BreadcrumbsItemCell';
+import { injectSource } from './utils/injectSource';
+
+export interface IOptions<T extends Model> {
+    owner?: SearchGridCollection<T>;
+    last: SearchGridDataRow<T>;
+    fix88221033223603?: boolean;
+}
+
+export type BreadcrumbsModel<T extends Model = Model> = T[] | (T[] & T);
+
+/**
+ * Хлебная крошка
+ * @class Controls/_searchBreadcrumbsGrid/BreadcrumbsItemRow
+ * @extends Controls/_display/CollectionItem
+ * @private
+ */
+export default class BreadcrumbsItemRow<T extends Model = Model> extends GridDataRow<T> {
+    readonly EditableItem: boolean = false;
+    readonly Fadable: boolean = false;
+
+    get Markable(): boolean {
+        return this._$markBreadcrumbs;
+    }
+
+    protected _$owner: SearchGridCollection<T>;
+
+    /**
+     * Последний элемент хлебной крошки
+     */
+    protected _$last: SearchGridDataRow<T>;
+
+    protected _$cellTemplate: TemplateFunction;
+
+    protected _$colspanBreadcrumbs: boolean;
+
+    protected _$breadCrumbsMode: 'row' | 'cell';
+
+    protected _$parent: SearchGridDataRow<T>;
+
+    protected _$isReadonly: boolean;
+
+    protected _$containerWidth: number;
+
+    protected _$markBreadcrumbs: boolean;
+
+    readonly listInstanceName: string = 'controls-SearchBreadcrumbsGrid';
+
+    readonly listElementName: string = 'row';
+
+    // Коллекция реагирует на рекордсет до того как долетает новое состояние от слайса.
+    // https://online.sbis.ru/opendoc.html?guid=f457225b-ac60-4561-b6a7-b4573808250c&client=3
+    private _$fix88221033223603: boolean;
+
+    protected get _first(): SearchGridDataRow<T> {
+        const root = this._$owner ? this._$owner.getRoot() : {};
+        let current = this._$last;
+
+        while (current) {
+            const parent = current.getParent();
+            if (!parent || parent === root || parent['[Controls/treeGrid:TreeGridGroupDataRow]']) {
+                break;
+            }
+            current = parent;
+        }
+
+        return current;
+    }
+
+    get key(): unknown {
+        // В качестве идентификатора отдаем ключ последней записи крошки
+        const lastItem = this._$last.getContents();
+        return getKey(lastItem);
+    }
+
+    // region Public methods
+
+    getContents(): T[] {
+        const root = this._$owner ? this._$owner.getRoot() : {};
+        let current = this._$last;
+        const contents: BreadcrumbsModel<T> = [];
+
+        // Go up from last item until end
+        while (current) {
+            contents.unshift(current.getContents());
+            current = current.getParent();
+
+            // current может не быть если запись переместили в папку, которой нет в коллекции
+            if (
+                !current ||
+                current === root ||
+                current['[Controls/treeGrid:TreeGridGroupDataRow]']
+            ) {
+                break;
+            }
+        }
+
+        // Коллекция реагирует на рекордсет до того как долетает новое состояние от слайса.
+        // https://online.sbis.ru/opendoc.html?guid=f457225b-ac60-4561-b6a7-b4573808250c&client=3
+        if (this._$fix88221033223603 && contents.filter((i) => i !== null).length === 0) {
+            return [
+                new Model({
+                    keyProperty: this.getKeyProperty(),
+                    rawData: {
+                        [this.getKeyProperty()]: root,
+                    },
+                }) as T,
+            ];
+        }
+
+        return contents;
+    }
+
+    getOriginalContents() {
+        return this._$last && this._$last.getContents();
+    }
+
+    setContents(): void {
+        throw new ReferenceError('BreadcrumbsItem contents is read only.');
+    }
+
+    getMinHeightClasses(): string {
+        return ' controls-Grid__row-cell_breadCrumbsSearch_min_height';
+    }
+
+    _updateRowProps() {
+        this._rowProps = null;
+        if (typeof this._$getRowProps === 'function') {
+            const contents = this.getContents();
+            const lastItem = contents[contents.length - 1];
+            if (lastItem instanceof Model) {
+                this._rowProps = this._$getRowProps(lastItem);
+            }
+        }
+    }
+
+    setContainerWidth(containerWidth: number): boolean {
+        const isUpdated = this._$containerWidth !== containerWidth;
+        if (isUpdated) {
+            this._$containerWidth = containerWidth;
+            this._nextVersion();
+            return true;
+        }
+        return false;
+    }
+
+    getContainerWidth(): number {
+        return this._$containerWidth;
+    }
+
+    /**
+     * Returns branch level in tree
+     */
+    getLevel(): number {
+        const first = this._first;
+        return first ? first.getLevel() : 0;
+    }
+
+    getRoot() {
+        return this._$owner.getRoot();
+    }
+
+    getLast(): SearchGridDataRow<T> {
+        return this._$last;
+    }
+
+    getParent(): SearchGridDataRow<T> {
+        return this._$parent;
+    }
+
+    getChildren(withFilter: boolean = true): TreeChildren<T> {
+        return this._$owner.getChildren(this, withFilter);
+    }
+
+    getBottomPadding() {
+        return this._$bottomPadding === 'default' ? 'null' : this._$bottomPadding;
+    }
+
+    hasChildren(): boolean {
+        return this.getLast().hasChildren();
+    }
+
+    isRoot(): boolean {
+        return false;
+    }
+
+    isGroupNode(): boolean {
+        return false;
+    }
+
+    setColspanBreadcrumbs(colspanBreadcrumbs: boolean): void {
+        if (this._$colspanBreadcrumbs !== colspanBreadcrumbs) {
+            this._$colspanBreadcrumbs = colspanBreadcrumbs;
+            this._reinitializeColumns();
+        }
+    }
+
+    setBreadCrumbsMode(breadCrumbsMode: 'row' | 'cell'): void {
+        if (this._$breadCrumbsMode === breadCrumbsMode) {
+            return;
+        }
+
+        this._$breadCrumbsMode = breadCrumbsMode;
+        this._reinitializeColumns();
+    }
+
+    isReadonly(): boolean {
+        return this._$isReadonly;
+    }
+
+    protected _getColspan(column: IColumn, columnIndex: number): TColspanCallbackResult {
+        return this._$colspanBreadcrumbs ? 'end' : 1;
+    }
+
+    protected _getMultiSelectAccessibility(): boolean | null {
+        const value = object.getPropertyValue<boolean | null>(
+            this.getLast().getContents(),
+            this._$multiSelectAccessibilityProperty
+        );
+        return value === undefined ? true : value;
+    }
+
+    // endregion
+
+    protected _getColumnFactoryParams(
+        column: IColumn,
+        columnIndex: number
+    ): Partial<IBreadcrumbsItemCellOptions<T>> {
+        return {
+            ...super._getColumnFactoryParams(column, columnIndex),
+            breadCrumbsMode: this._$breadCrumbsMode,
+        };
+    }
+}
+
+Object.assign(BreadcrumbsItemRow.prototype, {
+    '[Controls/_searchBreadcrumbsGrid/BreadcrumbsItemRow]': true,
+    '[Controls/_baseTree/BreadcrumbsItem]': true,
+    _moduleName: 'Controls/searchBreadcrumbsGrid:BreadcrumbsItemRow',
+    _instancePrefix: 'search-breadcrumbs-grid-row-',
+    _cellModule: 'Controls/searchBreadcrumbsGrid:BreadcrumbsItemCell',
+    _$cellTemplate: 'Controls/searchBreadcrumbsGrid:SearchBreadcrumbsItemTemplate',
+    _$last: null,
+    _$parent: null,
+    _$colspanBreadcrumbs: true,
+    _$displayExpanderPadding: false,
+    _$breadCrumbsMode: 'row',
+    _$isReadonly: false,
+    _$containerWidth: null,
+    _$markBreadcrumbs: null,
+    _$fix88221033223603: false,
+});

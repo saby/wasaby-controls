@@ -1,0 +1,11 @@
+<ws:partial template="wml!Controls/_suggestPopup/WrappedList">
+  <Controls.explorer:View scope="{{_options}}"
+                          columns="{{_options.columns || _defaultColumns}}"
+                          itemPadding="{{_options.itemPadding || _defaultItemPadding}}"
+                          viewMode="{{_getViewMode()}}"
+                          nodeProperty="{{_getProperty('nodeProperty')}}"
+                          parentProperty="{{_getProperty('parentProperty')}}"
+                          breadcrumbsVisibility="{{_options.breadcrumbsVisibility || 'hidden'}}"
+                          on:itemClick="_itemClick()">
+  </Controls.explorer:View>
+</ws:partial>

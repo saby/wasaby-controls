@@ -1,0 +1,7 @@
+<div class="controlsDemo_fixedWidth400">
+    <Controls-Wizard.vertical:Layout
+            items="{{_items}}"
+            markerViewMode="marker"
+            bind:selectedStepIndex="_selectedStepIndex"
+    />
+</div>

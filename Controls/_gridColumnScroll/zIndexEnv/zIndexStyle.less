@@ -1,0 +1,122 @@
+@import 'Controls/_gridColumnScroll/zIndexEnv/_cellZIndexSetters';
+
+// +==========================================================================================================================+
+// | МЕНЯЯ ЗДЕСЬ ТРЕБУЕТСЯ ПРОВЕРЯТЬ ГОРИЗОНТАЛЬНЫЙ СКРОЛЛ В DynamicGrid Controls-Lists/_dynamicGrid/styles/_zIndexStyle.less |
+// +==========================================================================================================================+
+
+// TODO в файле Controls/_grid/cleanRender/cell/utils/Props/ZIndex производятся дополнительные расчёты z-index стики ячеек, независимо от этого файла,
+//  т.к. он не решает проблемы, когда, например, запись не была застикана и ItemActions должен быть над ней, потом её застикали и itemActions должен быть под ней
+//  кроме того, тут некорректно указаны z-index по отношению к itemActions, потому что itemActions имееет z-index = 2
+//  и перекрывает указанные тут значения стики-элементов.
+
+// region Строки данных грида.
+
+// Скроллируемая ячейка данных
+// Чтобы  item actions в позиции outside были выше следующей записи.
+// Любой другой zIndex будет рождать свой контекст, внутри которого экшены будут позиционироваться относительно него.
+// Тогда ячейки следующей строки будут перекрывать экшены предыдущей записи, т.к. у ячеек обеих записей хоть и один zIndex,
+// но следующая запись идет после в DOM, а значит и выше по порядку.
+// Иначе, zIndex нужно будет повышать на hover записи.
+//  https://online.sbis.ru/opendoc.html?guid=cb33f39c-807a-4dee-934f-c384c750cf00&client=3
+@scrollableDataCell: auto;
+// Зафиксированная по вертикали скроллируемая ячейка данных. должна быть выше, чем не зафиксированная (auto + 1 = 1).
+@scrollableStickiedDataCell: 1;
+
+// Зафиксированная по горизонтали ячейка данных. должна быть выше, чем зафиксированная только по вертикали (1 + 1 = 2).
+// Должна перекрыть тень скроллируемой части Sticky заголовка/результата/подвала/навигации.
+// Поэтому ее индекс ДОЛЖЕН БЫТЬ РАВЕН индексу скроллируемой части Sticky заголовка/результата/подвала/навигации
+// Перекрытие будет обеспечено за счет порядки в DOM ячеек с одинаковым индексом.
+@fixedDataCell: @scrollableStickiedDataCell + 1;
+// Зафиксированная по вертикали и горизонтали ячейка данных должна быть выше, чем зафиксированная только по горизонтали (2 + 1 = 3).
+@fixedStickiedDataCell: @fixedDataCell + 1;
+// Зафиксированная по горизонтали ячейка данных в сосятонии ховера. должна быть выше, чем @fixedDataCell, иначе съедаются рамки снизу.
+@fixedHoveredDataCell: @fixedDataCell + 1;
+
+// endregion Строки данных грида.
+
+// region Ячейки грида, зафиксированные по вертикали сверху
+
+// Скроллируемая ячейка заголовка
+@scrollableHeaderCell: 1;
+// Зафиксированная по горизонтали ячейка заголовка
+@fixedHeaderCell: @fixedDataCell + 1;
+// Скроллируемая ячейка итогов сверху
+@scrollableResultCell: @scrollableHeaderCell;
+// Зафиксированная по горизонтали ячейка итогов сверху
+@fixedResultCell: @fixedHeaderCell;
+
+// Зафиксированная по вертикали скроллируемая ячейка заголовка. Должна быть выше операций над записью (2 + 1 = 3).
+@scrollableStickiedHeaderCell: @fixedDataCell;
+// Зафиксированная по вертикали и горизонтали ячейка заголовка. Должна быть выше скроллируемой части шапки (3 + 1 = 4).
+@fixedStickiedHeaderCell: @fixedStickiedDataCell + 1;
+
+// Зафиксированная по вертикали скроллируемая ячейка итогов сверху. Должна быть выше ячейки данных (=2).
+@scrollableStickiedResultCell: @scrollableStickiedHeaderCell;
+// Зафиксированная по вертикали и горизонтали ячейка итогов сверху. Должна быть выше скроллируемой части шапки.
+@fixedStickiedResultCell: @fixedStickiedHeaderCell;
+
+@scrollableNavigationCell: @scrollableStickiedHeaderCell + 3;
+@fixedNavigationCell: @fixedStickiedHeaderCell;
+
+// Должен быть выше И скроллируемой И фиксированной части шапки, т.к. ресайзер рисуется в обе
+// стороны (на скроллируемую наезжает при увеличении ширины, на фиксированную - при уменьшении)
+@resizerCell: max(@scrollableStickiedHeaderCell, @fixedStickiedHeaderCell) + 1;
+
+// endregion Ячейки грида, зафиксированные по вертикали сверху
+
+// region Нижние строки грида, после записей с данными.
+
+@scrollableStickiedFooterCellIndex: @scrollableDataCell;
+@fixedStickiedFooterCellIndex: @fixedDataCell;
+
+// endregion Нижние строки грида, после записей с данными.
+
+// region ItemActions
+
+// ItemActions должны перекрывать зафиксированные по горизонтали ячейки данных.
+@itemActionsOutsideZIndex: @fixedDataCell + 1;
+
+// endRegion itemActions
+
+// +==========================================================================================================================+
+// | МЕНЯЯ ЗДЕСЬ ТРЕБУЕТСЯ ПРОВЕРЯТЬ ГОРИЗОНТАЛЬНЫЙ СКРОЛЛ В DynamicGrid Controls-Lists/_dynamicGrid/styles/_zIndexStyle.less |
+// +==========================================================================================================================+
+.setScrollableDataCellIndex(@scrollableDataCell);
+.setFixedDataCellIndex(@fixedDataCell);
+.setFixedHoveredDataCellIndex(@fixedHoveredDataCell);
+
+.setScrollableStickiedDataCellIndex(@scrollableStickiedDataCell);
+.setFixedStickiedDataCellIndex(@fixedStickiedDataCell);
+
+.setFixedColspanDataCellIndex(auto);
+
+// Делаем усиление, т.к. аналогичный селектор летит из грида и может перекрыть установленный тут
+.js-controls-GridColumnScroll__cell_scrollable {
+  .setItemActionsInsideZIndex(@fixedDataCell);
+  .setItemActionsOutsideZIndex(@itemActionsOutsideZIndex);
+}
+
+.setScrollableHeaderCellIndex(@scrollableHeaderCell);
+.setFixedHeaderCellIndex(@fixedHeaderCell);
+
+.setScrollableStickiedHeaderCellIndex(@scrollableStickiedHeaderCell);
+.setFixedStickiedHeaderCellIndex(@fixedStickiedHeaderCell);
+
+.setScrollableResultCellIndex(@scrollableResultCell);
+.setFixedResultCellIndex(@fixedResultCell);
+
+.setScrollableStickiedResultCellIndex(@scrollableStickiedResultCell);
+.setFixedStickiedResultCellIndex(@fixedStickiedResultCell);
+
+.setScrollableNavigationCellIndex(@scrollableNavigationCell);
+.setFixedNavigationCellIndex(@fixedNavigationCell);
+
+// TODO: С фиксацией справа надо что то добавить?
+.controls-GridReact__view_columnScroll_fixedStart {
+  .setScrollableNavigationCellIndex(@fixedNavigationCell);
+}
+
+.setScrollableStickiedFooterCellIndex(@scrollableStickiedFooterCellIndex);
+.setFixedStickiedFooterCellIndex(@fixedStickiedFooterCellIndex);
+
+.setResizerCellIndex(@resizerCell);

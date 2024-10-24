@@ -1,0 +1,37 @@
+<Controls.lookupPopup:Controller scope="{{_options}}" name="SelectorController" >
+   <Controls.popupTemplate:Stack on:selectedKeysChanged="_selectedKeysChanged()"
+                                 headingCaption="{{_options.headingCaption || 'Выберите организацию'}}"
+                                 attr:class="demo-selector__flatList demo-StackSelector-dropdown {{_options.className}}">
+      <ws:headerContentTemplate>
+         <div attr:class="ControlsDemo-FlatListSelector-header">
+            <ws:if data="{{_options.multiSelect && _selectionChanged}}">
+               <Controls.buttons:Button viewMode="outlined" buttonStyle="primary" caption="{[Выбрать]}" on:click="_selectComplete()" attr:class="ControlsDemo-FlatListSelector-confirmButton"/>
+            </ws:if>
+         </div>
+      </ws:headerContentTemplate>
+      <ws:bodyContentTemplate>
+         <Controls.browser:Browser
+             source="{{_source}}"
+             keyProperty="id"
+             filter="{{_filter}}"
+             multiSelectVisibility="{{_options.multiSelect ? 'visible'}}"
+             nodeProperty="{{_options.nodeProperty}}"
+             parentProperty="{{_options.parentProperty}}"
+             columns="{{_gridColumns}}"
+         >
+            <Controls.lookupPopup:Container multiSelect="{{_options.multiSelect}}">
+                  <Controls.listDataOld:ListContainer>
+                     <Controls.lookupPopup:ListContainer multiSelect="{{_options.multiSelect}}">
+                        <Controls.scroll:Container attr:class="demo-selector__scroll">
+                           <Controls.treeGrid:View
+                               class="ControlsDemo-Selector__flatList"
+                               emptyTemplate="Не найдено"
+                           />
+                        </Controls.scroll:Container>
+                     </Controls.lookupPopup:ListContainer>
+                  </Controls.listDataOld:ListContainer>
+            </Controls.lookupPopup:Container>
+         </Controls.browser:Browser>
+      </ws:bodyContentTemplate>
+   </Controls.popupTemplate:Stack>
+</Controls.lookupPopup:Controller>
