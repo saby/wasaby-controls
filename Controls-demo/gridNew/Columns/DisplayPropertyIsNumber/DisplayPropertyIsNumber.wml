@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper">
+    <Controls.grid:View
+            storeId="ColumnsDisplayPropertyIsNumber"
+            columns="{{_columns}}"
+            rowSeparatorSize="s"
+            columnSeparatorSize="s"
+    />
+</div>

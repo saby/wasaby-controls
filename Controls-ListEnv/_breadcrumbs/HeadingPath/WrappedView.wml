@@ -1,0 +1,31 @@
+<Controls.context:ContextOptionsConsumer>
+    <ws:contextOptionsInnerComponent>
+      <Controls-ListEnv._breadcrumbs.HeadingPath.View
+        storeId="{{_options.storeId}}"
+        backgroundStyle="{{_options.backgroundStyle}}"
+        withoutBackButton="{{_options.withoutBackButton}}"
+        backButtonFontSize="{{_options.backButtonFontSize}}"
+        backButtonStyle="{{_options.backButtonStyle}}"
+        fontSize="{{_options.fontSize}}"
+        backButtonFontColorStyle="{{_options.backButtonFontColorStyle}}"
+        backButtonIconStyle="{{_options.backButtonIconStyle}}"
+        backButtonIconViewMode="{{_options.backButtonIconViewMode}}"
+        afterBackButtonTemplate="{{_options.afterBackButtonTemplate}}"
+        itemClickCallback="{{_options.itemClickCallback}}"
+        arrowClickCallback="{{_options.arrowClickCallback}}"
+        pathButtonVisible="{{_options.pathButtonVisible}}"
+        pathHomeButtonVisible="{{_options.pathHomeButtonVisible}}"
+        pathButtonKeyProperty="{{_options.pathButtonKeyProperty}}"
+        pathButtonNodeProperty="{{_options.pathButtonNodeProperty}}"
+        pathButtonFilter="{{_options.pathButtonFilter}}"
+        pathButtonDisplayProperty="{{_options.pathButtonDisplayProperty}}"
+        pathButtonParentProperty="{{_options.pathButtonParentProperty}}"
+        pathButtonNavigation="{{_options.pathButtonNavigation}}"
+        pathButtonCaption="{{_options.pathButtonCaption}}"
+        pathButtonSorting="{{_options.pathButtonSorting}}"
+        pathButtonSource="{{_options.pathButtonSource}}"
+        pathButtonHasChildrenProperty="{{_options.pathButtonHasChildrenProperty}}"
+        showActionButton="{{_options.showActionButton}}"
+        _dataOptionsValue="{{contextOptionsInnerComponent._dataOptionsValue}}"/>
+    </ws:contextOptionsInnerComponent>
+</Controls.context:ContextOptionsConsumer>

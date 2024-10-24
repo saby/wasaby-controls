@@ -1,0 +1,33 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell controlsDemo__flex ws-align-items-center">
+            <div class="controls-text-label controlsDemo_fixedWidth300">Переключатель с привязкой состояния:</div>
+            <Controls.toggle:Switch bind:value="_value"/>
+        </div>
+        <div class="controlsDemo__row ws-align-items-center">
+          <div class="controls-text-label controlsDemo_fixedWidth300">Режим только чтение:</div>
+        </div>
+        <div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center ws-align-items-center">
+          <div class="controlsDemo__cell controls-margin_right-l">
+            <Controls.toggle:Switch value="{{false}}" readOnly="{{true}}" size="s"/>
+          </div>
+          <div class="controlsDemo__cell controls-margin_right-xl">
+            <Controls.toggle:Switch value="{{false}}" readOnly="{{true}}" size="m"/>
+          </div>
+          <div class="controlsDemo__cell controls-margin_right-xl">
+            <Controls.toggle:Switch value="{{false}}" readOnly="{{true}}" size="l"/>
+          </div>
+        </div>
+        <div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center ws-align-items-center">
+          <div class="controlsDemo__cell controls-margin_right-l">
+            <Controls.toggle:Switch value="{{true}}" readOnly="{{true}}" size="s"/>
+          </div>
+          <div class="controlsDemo__cell controls-margin_right-xl">
+            <Controls.toggle:Switch value="{{true}}" readOnly="{{true}}" size="m"/>
+          </div>
+          <div class="controlsDemo__cell controls-margin_right-xl">
+            <Controls.toggle:Switch value="{{true}}" readOnly="{{true}}" size="l"/>
+          </div>
+        </div>
+    </div>
+</div>

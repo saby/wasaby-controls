@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper__padding-left">
+    <div class="controls-text-label controlsDemo__mb1">Демонстрационный пример функционала документа, находящегося в
+                                                                 отдельной вкладке, нажмите изменить что-бы начать</div>
+    <div class="ws-flexbox ws-align-items-center ws-justify-content-center">
+        <Controls-demo.Popup.Edit.docs.resources.Index source="{{_viewSource}}"
+                                                       width="600"
+                                                       record="{{_record}}"
+                                                       type="ExternalView"/>
+    </div>
+</div>

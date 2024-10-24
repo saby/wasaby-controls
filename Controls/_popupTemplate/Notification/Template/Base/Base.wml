@@ -1,0 +1,30 @@
+<Controls.dragnDrop:Container name="dragNDrop" on:dragMove="_onDragMove()" on:documentDragEnd="_onDragEnd()" on:touchmove="_touchMoveHandler()">
+   <div class="controls_popupTemplate_theme-{{_options.theme}} controls-Notification tw-cursor-move
+      {{ _isAdaptive ? 'controls-Notification_adaptive' }} {{ _options.closeButtonViewMode === 'external' ? 'controls-Notification__external-offset' }}
+      {{ _getShadowClass() }} controls-Notification__{{_backgroundStyle}} controls-Popup__isolatedFocusingContext"
+        on:mousedown="_onMouseDown()"
+        on:touchstart="_onMouseDown()"
+        on:click="_onClick()">
+      <div class="controls-Notification__content tw-flex-grow
+                  {{(_options.closeButtonVisible && _options.backgroundStyle !== 'none') ? 'controls-Notification__content-spacing'}}
+                  {{_options.backgroundStyle !== 'none' ? 'controls-Notification__content-padding'}}">
+         <ws:if data="{{_options.bodyContentTemplate}}">
+            <ws:partial template="{{_options.bodyContentTemplate}}"></ws:partial>
+         </ws:if>
+      </div>
+      <ws:if data="{{_options.closeButtonVisible}}">
+         <div class="controls-Notification__closeButton
+         controls-Notification__closeButton__style-{{ _options.closeButtonViewMode }}"
+              on:click="_closeClick()">
+             <Controls.Container.Async
+                 templateName="Controls/extButtons:CloseButton">
+                 <ws:partial
+                     template="{{content.resolvedTemplate}}"
+                     viewMode="{{ _options.closeButtonViewMode }}"
+                     offset="null"
+                 />
+             </Controls.Container.Async>
+         </div>
+      </ws:if>
+   </div>
+</Controls.dragnDrop:Container>

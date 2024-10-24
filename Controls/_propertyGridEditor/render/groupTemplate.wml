@@ -1,0 +1,11 @@
+<ws:partial template="Controls/grid:GroupTemplate"
+            separatorVisibility="{{false}}"
+            expanderVisible="{{false}}"
+            textAlign="left"
+            fontColorStyle="secondary"
+            fontSize="m"
+            scope="{{_options}}">
+    <ws:contentTemplate>
+        {{groupTemplate.itemData.getDefaultDisplayValue()}}
+    </ws:contentTemplate>
+</ws:partial>

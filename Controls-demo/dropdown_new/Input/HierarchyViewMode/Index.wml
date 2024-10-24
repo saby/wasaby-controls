@@ -1,0 +1,16 @@
+<div class="controlsDemo__flexRow controlsDemo__wrapper__padding-left">
+    <div class="controlsDemo_m">
+        <div class="controls-text-label">Подменю на втором уровне в виде дерева</div>
+        <Controls.dropdown:Selector keyProperty="id"
+                                    displayProperty="title"
+                                    source="{{_source}}"
+                                    multiSelect="{{true}}"
+                                    nodeProperty="@parent"
+                                    parentProperty="parent"
+                                    hierarchyViewMode="tree"
+                                    bind:selectedKeys="_selectedKeys"
+                                    bind:excludedKeys="_excludedKeys"
+                                    attr:class="controlsDemo-menuButton">
+        </Controls.dropdown:Selector>
+    </div>
+</div>

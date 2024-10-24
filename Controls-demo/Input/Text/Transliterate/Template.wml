@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             transliterate="{{true}}"
+                             placeholder="transliterate=true"
+                             attr:data-qa="controlsInputText__true"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             transliterate="{{false}}"
+                             placeholder="transliterate=false"
+                             attr:data-qa="controlsInputText__false"/>
+    </div>
+</div>

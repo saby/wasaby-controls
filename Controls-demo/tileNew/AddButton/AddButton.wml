@@ -1,0 +1,8 @@
+<ws:partial template="Controls/tile:AdditionalItemTemplate"
+            className="{{_options.className}} controls-Demo__TileView__addTile"
+            on:click="_addItem('before')"
+            scope="{{_options}}">
+    <ws:contentTemplate>
+        <Controls.icon:Icon iconSize="s" iconStyle="default" icon="icon-RoundPlus"/>
+    </ws:contentTemplate>
+</ws:partial>

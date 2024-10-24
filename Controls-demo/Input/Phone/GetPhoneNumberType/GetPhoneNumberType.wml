@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <Controls.input:Phone attr:class="ControlsDemo-PhoneInput_phoneField"
+                              bind:value="_value"
+                              on:deactivated="_updateNumberType()"/>
+        <span class="controls-margin_left-m" attr:data-qa="controlsDemo_PhoneInput__numberType">numberType: {{ _numberType }}</span>
+    </div>
+</div>

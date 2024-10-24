@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__mr4">
+        <div class="controls-text-label">MenuHeadingCaption</div>
+        <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys"
+                                    keyProperty="key"
+                                    displayProperty="title"
+                                    menuHeadingCaption="Menu Caption"
+                                    items="{{_items}}">
+        </Controls.dropdown:Selector>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div>
+    <div class="controlsDemo__flexColumn controlsDemo__ml2">
+        Диалог с headerSize = m
+        <div class="controlsDemo__cell controlsDemo__mb2 controlsDemo__maxWidth500">
+            <Controls.popupTemplate:Dialog headerSize="m" headingCaption="Задача в разработку">
+                <ws:bodyContentTemplate>
+                    <div style="text-align: center; margin: 12px; min-height: 100px;">
+                        Chicago, the state of Illinois, is known as The Second City, which refers to its rebuilding
+                        after the fire.
+                        The current city is literally the second Chicago, after the one that disappeared in 1871.
+                    </div>
+                </ws:bodyContentTemplate>
+            </Controls.popupTemplate:Dialog>
+        </div>
+    </div>
+
+    <div class="controlsDemo__flexColumn controlsDemo__ml2">
+        Диалог с headerSize = l
+        <div class="controlsDemo__cell controlsDemo__mb2 controlsDemo__maxWidth500">
+            <Controls.popupTemplate:Dialog headerSize="l" headingCaption="Задача в разработку">
+                <ws:bodyContentTemplate>
+                    <div style="text-align: center; margin: 12px; min-height: 100px;">
+                        Chicago, the state of Illinois, is known as The Second City, which refers to its rebuilding
+                        after the fire.
+                        The current city is literally the second Chicago, after the one that disappeared in 1871.
+                    </div>
+                </ws:bodyContentTemplate>
+            </Controls.popupTemplate:Dialog>
+        </div>
+    </div>
+</div>

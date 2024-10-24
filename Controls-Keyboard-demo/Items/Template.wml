@@ -1,0 +1,11 @@
+<div class="engine-demo-Keyboard">
+    <Controls.checkbox:Checkbox bind:value="_borderVisible" caption="borderVisible" attr:data-qa="engineDemo-Keyboard__border"/><br/>
+    <Controls.checkbox:Checkbox bind:value="_shadowVisible" caption="shadowVisible" attr:data-qa="engineDemo-Keyboard__shadow"/><br/>
+
+    <Controls-Keyboard.View
+        items="{{_items}}"
+        borderVisible="{{_borderVisible}}"
+        shadowVisible="{{_shadowVisible}}"
+        theme="default">
+    </Controls-Keyboard.View>
+</div>

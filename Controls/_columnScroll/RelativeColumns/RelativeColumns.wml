@@ -1,0 +1,19 @@
+<ws:if data="{{ _options.isFullGridSupport }}">
+    <div class="controls-ColumnScroll__relativeColumns" style="display: contents;">
+        <ws:for data="column in _options.viewColumns">
+            <div class="{{ column.type === 'DATA' ? _dataCellClassName : '' }}"></div>
+        </ws:for>
+    </div>
+</ws:if>
+<ws:else>
+    <thead>
+        <tr class="controls-ColumnScroll__relativeColumns">
+            <ws:for data="column in _options.viewColumns">
+                <td>
+                    <div class="{{ column.type === 'DATA' ? _dataCellClassName : '' }}"
+                         style="{{ column.type === 'DATA' ? 'min-width: ' + column.width + '; max-width: ' + column.width + ';'}}"></div>
+                </td>
+            </ws:for>
+        </tr>
+    </thead>
+</ws:else>

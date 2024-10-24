@@ -1,0 +1,6 @@
+<div style="display: flex; width: 100%; margin: 20px;">
+    <Controls-Wizard.vertical:Layout
+        items="{{_items}}"
+        selectedStepIndex="{{_selectedStepIndex}}"
+        on:selectedStepIndexChanged="_selectedStepIndexChangedHandler()"/>
+</div>

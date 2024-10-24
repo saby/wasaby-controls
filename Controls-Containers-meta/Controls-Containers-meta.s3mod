@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ui_module name="Controls-Containers-meta"
+           id="30f4268f-aa6b-4270-80d3-5eba2a6c331e"
+           kaizen_zone="f43717a4-ecb5-4bdd-a32c-4ebbcb125017"
+           package="Wasaby"
+           version="1.00">
+  <depends>
+    <module id="2a3f5a68-8262-452d-979a-62ebf9526028" name="Controls-Containers"/>
+    <module id="b7223918-657c-4e3d-ac98-f302a52f248c" name="Meta"/>
+    <module id="9ac2a127-d0c9-46d6-b4d2-b85cbb066ec1" name="FrameEditor"/>
+    <module id="c314bdac-a10a-41b8-9944-2c5a1b8756c0" name="FrameEditorConverter"/>
+  </depends>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

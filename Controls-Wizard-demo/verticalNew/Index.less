@@ -1,0 +1,64 @@
+.body_template {
+   margin: 10px auto;
+   width: 300px;
+   box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.75);
+
+   &_toggle {
+      display: flex;
+   }
+
+   &_header {
+      border-top: 3px solid #c17405;
+      padding: 20px 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-grow: 1;
+
+      &_content {
+         text-align: center;
+      }
+   }
+
+   &_row {
+      box-sizing: border-box;
+      margin: 10px;
+      display: flex;
+      flex-grow: 1;
+
+      &_message {
+         border-radius: 4px;
+         margin: 20px;
+         box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+
+         &_to-me {
+            margin-right: 40px;
+         }
+
+         &_from-me {
+            background-color: var(--hover_background-color);
+            margin-left: 40px;
+         }
+
+         &-input {
+            border: none;
+            color: var(--text-color);
+         }
+      }
+   }
+
+   &_input {
+      box-sizing: border-box;
+      flex-grow: 1;
+   }
+
+   &_footer {
+      display: flex;
+      box-sizing: border-box;
+      padding: 10px 10px 20px;
+      flex-grow: 1;
+   }
+
+   &_message {
+      padding: 20px;
+   }
+}

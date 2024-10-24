@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+<Controls.list:View
+    name="list"
+    storeId="MarkerOnReload3"/>
+
+<a class="controls-text-link" href="#" on:click="_reloadList()">Reload list</a>
+<ws:if data="{{_listReloaded}}">
+  <p>list reloaded</p>
+</ws:if>
+</div>

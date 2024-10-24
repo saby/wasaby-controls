@@ -1,0 +1,722 @@
+@import 'Controls/_grid/dirtyRender/cell/styles/CellComponentStickyItemActions';
+
+.controls-GridReact__minHeight-data {
+   min-height: var(--cell_min-height_grid);
+
+   &.controls-GridReact-cell_bottomSeparatorSize-s {
+      min-height: calc(var(--cell_min-height_grid) + var(--item-separator_s_thickness_list));
+   }
+
+   &.controls-GridReact-cell_bottomSeparatorSize-l {
+      min-height: calc(var(--cell_min-height_grid) + var(--item-separator_l_thickness_list));
+   }
+}
+
+.controls-GridReact__minHeight-breadcrumbs {
+   min-height: calc(var(--cell_min-height_grid) - var(--item_padding-bottom_s_grid));
+}
+
+.controls-GridReact__minHeight_without_padding {
+   min-height: var(--cell_min-height_grid_without_padding);
+}
+
+.controls-ListView__group + .controls-GridReact__row .controls-GridReact__cell {
+   border-top-color: transparent;
+}
+
+// Отдельно от topSeparatorStyle, т.к. ячейка не знает о том, что она после HiddenGroup
+.controls-ListView__groupHidden + .controls-GridReact__row .controls-GridReact__cell {
+   border-top-color: var(--unaccented_separator_color);
+}
+
+.controls-GridReact__cell {
+   box-sizing: border-box;
+   // Задаем min-width, чтобы ячейка обрезалась по ширине колонки.
+   // http://css-live.ru/articles/chto-mozhet-polomat-maket-na-gridax-css-grid-layout.html
+   min-width: 0;
+}
+
+.controls-GridReact__cell.controls-list__vertical-spacing {
+   box-sizing: content-box;
+}
+
+.controls-background-default_active {
+   background-color: var(--item_hover_background-color_list);
+
+   .controls-background-default {
+      background-color: var(--item_hover_background-color_list);
+   }
+}
+
+@variants: primary, secondary, danger, success, warning, unaccented, readonly, info;
+.for(@variants, {
+  > .controls-background-@{_item}_active {
+    background-color: ~'var(--@{_item}_hover_background-color)';
+  }
+
+  // Убираем  светлые  пятна на закрашенных элементах внутри подсвеченного элемента
+  > .controls-background-@{_item}_active .controls-background-default {
+    background-color: ~'var(--@{_item}_hover_background-color)';
+  }
+});
+
+.ws-is-hover .controls-BaseControl_hover_enabled {
+   .controls-GridReact__row__hoverMode_row:hover {
+      > .controls-hover-background-default {
+         background-color: var(--item_hover_background-color_list);
+      }
+
+      // Убираем "светлые" пятна на закрашенных элементах внутри подсвеченного элемента
+      > .controls-hover-background-default .controls-background-default {
+         background-color: var(--item_hover_background-color_list);
+      }
+
+      > .controls-hover-background-master {
+         background-color: var(--master_item_hover_background-color_list);
+      }
+
+      @variants: primary, secondary, danger, success, warning, unaccented, readonly, info;
+      .for(@variants, {
+      > .controls-hover-background-@{_item} {
+        background-color: ~'var(--@{_item}_hover_background-color)';
+      }
+
+      // Убираем  светлые  пятна на закрашенных элементах внутри подсвеченного элемента
+      > .controls-hover-background-@{_item} .controls-background-default {
+        background-color: ~'var(--@{_item}_hover_background-color)';
+      }
+    });
+   }
+
+   // Ховер редактирования не полностью укладывается в классовую модель обычного
+   // стилизованного ховера, т.к. он работает не от заховеренной строки,
+   // а от заховеренной ячейки. В остальном различий нет.
+   .controls-hover-background-list_singleCellEditable:hover {
+      background-color: var(--item_hover_background-color_list);
+   }
+
+   // Замечание от Егора:
+   // перебиваем controls-BreadCrumbsView__menu__dots, а не controls-background-default,
+   // потому что controls-background-default присутствует во многих местах на странице,
+   // и замедляет ховер в среднем в 2 раза.
+   .controls-hover-background-list_singleCellNotEditable:hover,
+   .controls-hover-background-list_singleCellNotEditable:hover
+      .controls-BreadCrumbsView__menu__dots {
+      background-color: var(--single-not-editable-cell_hover_background-color_grid);
+   }
+}
+
+// region editArrow
+
+.ws-is-hover .controls-BaseControl_showActions {
+   // Если строка выделяется целиком, то и стрелка редактирования
+   // появляется при ховере по всей строке
+   .controls-GridView__item_showActions.controls-GridReact__row__hoverMode_row:hover
+      .controls-Grid__editArrow-wrapper {
+      visibility: visible;
+      opacity: 1;
+   }
+
+   // При поячеечном редактировании стрелка появляется только при ховере
+   // на ячейку, в которой лежит стрелка.
+   .controls-GridView__item_showActions
+      .controls-GridReact__cell__hoverMode_cell:hover
+      .controls-Grid__editArrow-wrapper {
+      visibility: visible;
+      opacity: 1;
+   }
+}
+
+// Показываем стрелку редактирования, расположенную в кастомном месте шаблона с кастомным ховером
+.ws-is-hover
+   .controls-GridReact__row
+   .controls-ListView__item_showActions:hover
+   .controls-Grid__editArrow-wrapper {
+   visibility: visible;
+   opacity: 1;
+}
+
+.controls-Grid__editArrow_background_list_singleCellEditable,
+.controls-Grid__editArrow_background_default {
+   background-color: var(--item_hover_background-color_list);
+}
+
+.controls-Grid__editArrow-blur_list_singleCellEditable,
+.controls-Grid__editArrow-blur_default {
+   background: linear-gradient(
+      90deg,
+      rgba(240, 245, 251, 0),
+      var(--item_hover_background-color_list)
+   );
+}
+
+.controls-Grid__editArrow_background_list_singleCellNotEditable {
+   background-color: var(--single-not-editable-cell_hover_background-color_grid);
+}
+
+.controls-Grid__editArrow-blur_list_singleCellNotEditable {
+   background: linear-gradient(
+      90deg,
+      rgba(240, 245, 251, 0),
+      var(--single-not-editable-cell_hover_background-color_grid)
+   );
+}
+
+// endregion editArrow
+
+// region cell separators
+
+.controls-GridReact-cell_topSeparatorSize-s {
+   border-top-style: solid;
+   border-top-width: var(--item-separator_s_thickness_list);
+   border-top-color: var(--separator_color);
+
+   &.controls-GridReact-cell_topSeparatorSize_style-bold {
+      border-top-color: var(--unaccented_separator_color);
+   }
+}
+
+.controls-GridReact-cell_topSeparatorSize-l {
+   border-top-style: solid;
+   border-top-width: var(--item-separator_l_thickness_list);
+   border-top-color: var(--separator_color);
+}
+
+.controls-GridReact-cell_bottomSeparatorSize-s {
+   border-bottom-style: solid;
+   border-bottom-width: var(--item-separator_s_thickness_list);
+   border-bottom-color: var(--separator_color);
+
+   &.controls-GridReact-cell_bottomSeparatorSize_style-bold {
+      border-bottom-color: var(--unaccented_separator_color);
+   }
+}
+
+.controls-GridReact-cell_bottomSeparatorSize-l {
+   border-bottom-style: solid;
+   border-bottom-width: var(--item-separator_l_thickness_list);
+   border-bottom-color: var(--separator_color);
+}
+
+.controls-GridReact-cell_leftSeparatorSize-s {
+   border-left-style: solid;
+   border-left-width: var(--column_separator_s_thickness_grid);
+   border-left-color: var(--column_separator_s_color_grid);
+}
+
+.controls-GridReact-cell_rightSeparatorSize-s {
+   border-right-style: solid;
+   border-right-width: var(--column_separator_s_thickness_grid);
+   border-right-color: var(--column_separator_s_color_grid);
+}
+
+.controls-GridReact-cell_leftSeparatorSize-bold {
+   border-left-style: solid;
+   border-left-width: var(--column_separator_s_thickness_grid);
+   border-left-color: var(--unaccented_border-color);
+}
+
+.controls-GridReact-cell_rightSeparatorSize-bold {
+   border-right-style: solid;
+   border-right-width: var(--column_separator_s_thickness_grid);
+   border-right-color: var(--unaccented_border-color);
+}
+
+// endregion cell separators
+
+// region Padding
+// Приходится писать свои классы, т.к. в стандартной линейке нет таких размеров
+
+// region VerticalPadding
+.controls-padding_top-grid_null {
+   padding-top: 0;
+
+   .controls-GridReact-cell_topSeparatorSize-s > &, // checkbox
+  &.controls-GridReact-cell_topSeparatorSize-s {
+      padding-top: calc(var(--item_padding-top_s_grid) - var(--item-separator_s_thickness_list));
+   }
+
+   .controls-GridReact-cell_topSeparatorSize-l > &, // checkbox
+  &.controls-GridReact-cell_topSeparatorSize-l {
+      padding-top: calc(var(--item_padding-top_s_grid) - var(--item-separator_l_thickness_list));
+   }
+}
+
+.controls-padding_top-grid_default,
+.controls-padding_top-grid_s {
+   padding-top: var(--item_padding-top_s_grid);
+
+   .controls-GridReact-cell_topSeparatorSize-s > &, // checkbox
+  &.controls-GridReact-cell_topSeparatorSize-s {
+      padding-top: calc(var(--item_padding-top_s_grid) - var(--item-separator_s_thickness_list));
+   }
+
+   .controls-GridReact-cell_topSeparatorSize-l > &, // checkbox
+  &.controls-GridReact-cell_topSeparatorSize-l {
+      padding-top: calc(var(--item_padding-top_s_grid) - var(--item-separator_l_thickness_list));
+   }
+}
+
+.controls-padding_top-grid_l {
+   padding-top: var(--item_padding-top_l_grid);
+
+   .controls-GridReact-cell_topSeparatorSize-s > &, // checkbox
+  &.controls-GridReact-cell_topSeparatorSize-s {
+      padding-top: calc(var(--item_padding-top_l_grid) - var(--item-separator_s_thickness_list));
+   }
+
+   .controls-GridReact-cell_topSeparatorSize-l > &, // checkbox
+  &.controls-GridReact-cell_topSeparatorSize-l {
+      padding-top: calc(var(--item_padding-top_l_grid) - var(--item-separator_l_thickness_list));
+   }
+}
+
+.controls-padding_bottom-grid_null {
+   padding-bottom: 0;
+}
+
+.controls-padding_bottom-grid_default,
+.controls-padding_bottom-grid_s {
+   padding-bottom: var(--item_padding-bottom_s_grid);
+}
+
+.controls-padding_bottom-grid_l {
+   padding-bottom: var(--item_padding-bottom_l_grid);
+}
+
+// endregion VerticalPadding
+
+// region HorizontalPadding
+
+/* ============== Левый отступ ============== */
+.controls-padding_left-grid_null,
+.controls-padding_left-list_null {
+   padding-left: 0;
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      left: 0;
+   }
+}
+
+.controls-padding_left-list_xs {
+   padding-left: 0;
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      left: 0;
+   }
+}
+
+.controls-padding_left-list_default {
+   padding-left: var(--outer_padding, var(--offset_m));
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      left: var(--outer_padding, var(--offset_m));
+   }
+}
+
+.controls-padding_left-list_s {
+   padding-left: var(--outer_padding, var(--offset_s));
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      left: var(--outer_padding, var(--offset_s));
+   }
+}
+
+.controls-padding_left-list_m {
+   padding-left: var(--outer_padding, var(--offset_m));
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      left: var(--outer_padding, var(--offset_m));
+   }
+}
+
+.controls-padding_left-list_l {
+   padding-left: var(--outer_padding, var(--offset_l));
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      left: var(--outer_padding, var(--offset_l));
+   }
+}
+
+.controls-padding_left-list_xl {
+   padding-left: var(--outer_padding, var(--offset_xl));
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      left: var(--outer_padding, var(--offset_xl));
+   }
+}
+
+.controls-padding_left-list_2xl {
+   padding-left: var(--outer_padding, var(--offset_2xl));
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      left: var(--outer_padding, var(--offset_2xl));
+   }
+}
+
+// compatible value (=== 2xl)
+.controls-padding_left-list_xxl {
+   padding-left: var(--outer_padding, var(--offset_2xl));
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      left: var(--outer_padding, var(--offset_2xl));
+   }
+}
+
+.controls-padding_left-list_3xl {
+   padding-left: var(--outer_padding, var(--offset_3xl));
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      left: var(--outer_padding, var(--offset_3xl));
+   }
+}
+
+// grid
+
+.controls-padding_left-grid_null {
+   padding-left: 0;
+}
+
+.controls-padding_left-grid_xs {
+   padding-left: 0;
+}
+
+.controls-padding_left-grid_default {
+   padding-left: calc(var(--offset_m) / 2);
+}
+
+.controls-padding_left-grid_s {
+   padding-left: calc(var(--offset_xs) / 2);
+}
+
+.controls-padding_left-grid_st {
+   padding-left: calc(var(--offset_st) / 2);
+}
+
+.controls-padding_left-grid_m {
+   padding-left: calc(var(--offset_m) / 2);
+}
+
+.controls-padding_left-grid_l {
+   padding-left: calc(var(--offset_l) / 2);
+}
+
+.controls-padding_left-grid_xl {
+   padding-left: calc(var(--offset_2xl) / 2);
+}
+
+/* ============== Правый отступ ============== */
+
+.controls-padding_right-list_null {
+   padding-right: 0;
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      right: 0;
+   }
+}
+
+.controls-padding_right-list_xs {
+   padding-right: 0;
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      right: 0;
+   }
+}
+
+.controls-padding_right-list_default {
+   padding-right: var(--offset_m);
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      right: var(--offset_m);
+   }
+}
+
+.controls-padding_right-list_s {
+   padding-right: var(--offset_s);
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      right: var(--offset_s);
+   }
+}
+
+.controls-padding_right-list_m {
+   padding-right: var(--offset_m);
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      right: var(--offset_m);
+   }
+}
+
+.controls-padding_right-list_l {
+   padding-right: var(--offset_l);
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      right: var(--offset_l);
+   }
+}
+
+.controls-padding_right-list_xl {
+   padding-right: var(--offset_xl);
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      right: var(--offset_xl);
+   }
+}
+
+.controls-padding_right-list_2xl {
+   padding-right: var(--offset_2xl);
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      right: var(--offset_2xl);
+   }
+}
+
+// compatible value (=== 2xl)
+.controls-padding_right-list_xxl {
+   padding-right: var(--offset_2xl);
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      right: var(--offset_2xl);
+   }
+}
+
+.controls-padding_right-list_3xl {
+   padding-right: var(--offset_3xl);
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      right: var(--offset_3xl);
+   }
+}
+
+// grid
+
+.controls-padding_right-grid_null {
+   padding-right: 0;
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      right: 0;
+   }
+}
+
+.controls-padding_right-grid_xs {
+   padding-right: 0;
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      right: 0;
+   }
+}
+
+.controls-padding_right-grid_default {
+   padding-right: calc(var(--offset_m) / 2);
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      right: calc(var(--offset_m) / 2);
+   }
+}
+
+.controls-padding_right-grid_s {
+   padding-right: calc(var(--offset_xs) / 2);
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      right: calc(var(--offset_xs) / 2);
+   }
+}
+
+.controls-padding_right-grid_m {
+   padding-right: calc(var(--offset_m) / 2);
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      right: calc(var(--offset_m) / 2);
+   }
+}
+
+.controls-padding_right-grid_l {
+   padding-right: calc(var(--offset_l) / 2);
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      right: calc(var(--offset_l) / 2);
+   }
+}
+
+.controls-padding_right-grid_xl {
+   padding-right: calc(var(--offset_2xl) / 2);
+
+   .controls-Grid__row-cell__ladder-content_additional-with-main {
+      right: calc(var(--offset_2xl) / 2);
+   }
+}
+
+// endregion HorizontalPadding
+
+// endregion Padding
+
+/* region ItemActions display */
+
+.controls-BaseControl_showActions_visible {
+   .controls-itemActionsV {
+      visibility: visible;
+      opacity: 1;
+   }
+
+   .controls-ListView__item_showActions_outside > .controls-GridReact__cell_actionsCell {
+      border-bottom-right-radius: 0;
+   }
+}
+
+.ws-is-hover .controls-BaseControl_showActions_delayed {
+   .controls-GridView__item_showActions_row:hover {
+      .controls-itemActionsV_custom,
+      > .controls-GridReact__cell_actionsCell > .controls-itemActionsV {
+         /* stylelint-disable no-unknown-animations */
+         animation: timeout 0.8s ease-out;
+      }
+   }
+}
+
+.ws-is-hover .controls-BaseControl_showActions_delayed,
+.ws-is-hover .controls-BaseControl_showActions_onhover {
+   .controls-GridView__item_showActions_row:hover {
+      .controls-itemActionsV_custom,
+      > .controls-GridReact__cell_actionsCell > .controls-itemActionsV {
+         visibility: visible;
+         opacity: 1;
+      }
+   }
+
+   .controls-ListView__item_showActions_outside:hover > .controls-GridReact__cell_actionsCell {
+      border-bottom-right-radius: 0;
+   }
+}
+
+// Операции над записью показываются при ховере по ячейке, в случае, если она сейчас не редактируется.
+.ws-is-hover
+   .controls-BaseControl_showActions_onhover
+   .controls-GridView__item_showActions_cell
+   .controls-GridReact__cell:hover
+   .controls-itemActionsV_custom {
+   visibility: visible;
+   opacity: 1;
+}
+
+.controls-itemActionsV_style_list_singleCellNotEditable {
+   background-color: var(--single-not-editable-cell_hover_background-color_grid);
+}
+
+/* endregion ItemActions display */
+
+// region Shadows
+// С помощью clip-path скрываем тень между ячейками https://codepen.io/stormkirill98/pen/xxaGpvY
+.controls-GridReact__first-cell_shadow-mask::after {
+   clip-path: polygon(
+      calc(100% + var(--shadow-blur_b)) calc(100% + var(--shadow-blur_b)),
+      calc(-1 * var(--shadow-blur_b)) calc(100% + var(--shadow-blur_b)),
+      calc(-1 * var(--shadow-blur_b)) calc(-1 * var(--shadow-blur_b)),
+      calc(100% + var(--shadow-blur_b)) calc(-1 * var(--shadow-blur_b)),
+      calc(100% + var(--shadow-blur_b)) 0,
+      100% 0,
+      100% 100%,
+      calc(100% + var(--shadow-blur_b)) 100%
+   );
+}
+
+.controls-GridReact__last-cell_shadow-mask::after {
+   clip-path: polygon(
+      calc(100% + var(--shadow-blur_b)) calc(100% + var(--shadow-blur_b)),
+      calc(-1 * var(--shadow-blur_b)) calc(100% + var(--shadow-blur_b)),
+      calc(-1 * var(--shadow-blur_b)) 100%,
+      0 100%,
+      0 0,
+      calc(-1 * var(--shadow-blur_b)) 0,
+      calc(-1 * var(--shadow-blur_b)) calc(-1 * var(--shadow-blur_b)),
+      calc(100% + var(--shadow-blur_b)) calc(-1 * var(--shadow-blur_b))
+   );
+}
+
+.controls-GridReact__cell_shadow-mask::after {
+   clip-path: polygon(
+      calc(100% + var(--shadow-blur_b)) calc(100% + var(--shadow-blur_b)),
+      calc(-1 * var(--shadow-blur_b)) calc(100% + var(--shadow-blur_b)),
+      calc(-1 * var(--shadow-blur_b)) 100%,
+      0 100%,
+      0 0,
+      calc(-1 * var(--shadow-blur_b)) 0,
+      calc(-1 * var(--shadow-blur_b)) calc(-1 * var(--shadow-blur_b)),
+      calc(100% + var(--shadow-blur_b)) calc(-1 * var(--shadow-blur_b)),
+      calc(100% + var(--shadow-blur_b)) 0,
+      100% 0,
+      100% 100%,
+      calc(100% + var(--shadow-blur_b)) 100%
+   );
+}
+
+// endregion Shadows
+
+// region z-index
+
+@import 'Controls/_grid/gridReact/zIndexEnv/zIndexStyle';
+
+// endregion z-index
+
+// region baseline
+
+.controls-GridReact__cell-baseline::before {
+   content: '\200b';
+   width: 0;
+}
+
+.controls-TreeGrid__nodeExtraItem-minHeight-null::before {
+   content: '\200b';
+   width: 0;
+   height: 0;
+}
+
+.controls-GridReact__cell-baseline_default::before {
+   font-size: var(--baseline_list);
+}
+
+@variants:
+   ~'3xs',
+   ~'2xs',
+   xs,
+   s,
+   st,
+   m,
+   l,
+   xl,
+   ~'2xl',
+   ~'3xl',
+   ~'4xl',
+   ~'5xl',
+   ~'6xl',
+   ~'7xl',
+   ~'8xl';
+.for(@variants, {
+  .controls-GridReact__cell-baseline_@{_item}::before {
+    font-size: ~'var(--font-size_@{_item})';
+  }
+});
+
+.controls-GridReact__cell-marker {
+   top: 0;
+}
+
+.controls-GridReact__cell-marker_default {
+   position: absolute;
+   left: 0;
+}
+
+.controls-Grid__ladder_sticky_background_cell {
+   background: var(--background-color_default_sticky);
+}
+
+.controls-Grid__ladder_sticky_z_index_cell {
+   z-index: 1;
+}
+
+.controls-GridReact__cell-underline {
+   border-bottom-style: solid;
+   border-bottom-width: var(--border-thickness);
+   border-bottom-color: var(--border-color);
+}
+
+// endregion baseline

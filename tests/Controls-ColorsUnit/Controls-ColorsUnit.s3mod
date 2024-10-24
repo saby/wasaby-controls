@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module id="e1856b87-353f-4dc8-ad61-0e58fceb2367"
+           name="Controls-ColorsUnit"
+           version="1.00"
+           >
+  <description/>
+  <depends>
+      <module id="8eb2d1c0-c57a-4bb1-b41e-67ea30eb288d" name="Controls-Colors"/>
+      <module id="6f9dd6db-ddc9-486a-88f0-7daddfb41248" name="Controls-Colors-default-theme"/>
+      <module id="3e60ac8b-2e41-4c9e-b6c5-4537abb59505" name="Controls-Colors-demo"/>
+      <module id="a10cb1cb-b23d-4ef6-a757-4f7382e0e8d1" name="SbisEnvUI"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <test environment="NodeJS" framework="Jest" />
+  <resources/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>
