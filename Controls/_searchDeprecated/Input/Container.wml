@@ -1,0 +1,9 @@
+<ws:partial template="{{_options.content}}"
+            value="{{_value}}"
+            searchValueTrim="{{_options.searchValueTrim}}"
+            searchDelay="{{_options.searchDelay}}"
+            minSearchLength="{{_options.minSearchLength}}"
+            on:search="_search()"
+            on:searchReset="_searchReset()"
+            on:keyDown="_keyDown()"
+            on:valueChanged="_valueChanged()"/>

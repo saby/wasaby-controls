@@ -1,0 +1,383 @@
+// Прилипающий заголовок изначально не имеет z-index, он задается после того как stickyHeader застикается.
+// Если z-index'а нет, заголовок находится ниже контента до тех пор, пока не рассчитает свои стили.
+// При тупняках на странице время на эти расчеты увеличивается и визуально видно дерганье.
+// Задаем z-index: 1, т.к. элементы у списков имеют такой z-index и этого достаточно
+.controls-StickyBlock {
+   z-index: 1;
+   position: sticky;
+}
+
+// Прилипающий заголовок дергается при скролле в горизонтальных списках на macOS, т.к. на корневой ноде списка висит свойство transformX.
+// Устанавливаем свойство will-change для оптимизации данного кейса.
+.ws-is-desktop-safari {
+   .controls-StickyBlock {
+      will-change: transform;
+   }
+}
+
+.base-rounded-shadow() {
+   content: "\200b";
+   position: absolute;
+   box-shadow: 0 0 var(--shadow-blur_a) var(--shadow-color_a);
+   border-radius: calc(var(--inline_height_xs) / 2);
+}
+
+.controls-background-default-sticky {
+   background: var(--background-color_default_sticky);
+}
+
+.controls-StickyBlock__observationTarget_top,
+.controls-StickyBlock__observationTarget_top2,
+.controls-StickyBlock__observationTarget_bottomLeft,
+.controls-StickyBlock__observationTarget_bottomRight {
+   // Если сверстано так, что положение скролл контейнера выражается дробными числами(например ширины элементов страницы
+   // заданы через проценты), IntersectionObserver всегда считает что триггеры невидимы. В обработчике приходит
+   // правильное положение но, isIntersecting равен false. При последующем скрытии триггера событие не стреляет.
+   // Даже если мы правильно вычислим текущее состояние, мы теряем следующее событие о скрытии.
+   // Сдвинем триггеры от края на 1px.
+   // Пробовал расширять root через rootMargin. В обработчике координаты root правильно изменились, но все равно
+   // isIntersecting равен false.
+   left: 1px;
+   right: 0;
+   height: 1px;
+   // В safari 13 неправильно рассчитывается ширина, через left: 0; right: 0; Ограничим ее.
+   // safari 13 (iPad, iOS) и chrome (iPad) случае max-width: 1px считают, что scrollWidth элемента 1px, тогда как его offsetWidth 0px.
+   // в результате начинает расчёты StickyHeader тогда, когда это не нужно
+   width: 0;
+   position: absolute;
+}
+
+.controls-StickyBlock__observationTarget_top2Right {
+   right: 1px;
+   height: 1px;
+   width: 0;
+   position: absolute;
+}
+
+.controls-StickyBlock__observationTarget_top2 {
+   top: 0;
+}
+
+.controls-StickyBlock__observationTarget_top {
+   top: -2px;
+}
+
+.controls-StickyBlock__observationTarget_bottomLeft,
+.controls-StickyBlock__observationTarget_bottomRight {
+   bottom: -2px;
+}
+
+.controls-StickyBlock__observationTarget_left,
+.controls-StickyBlock__observationTarget_right {
+   width: 1px;
+   top: 0;
+   height: 0;
+   position: absolute;
+}
+
+.controls-StickyBlock__observationTarget_left {
+   left: -2px;
+}
+
+.controls-StickyBlock__observationTarget_right {
+   right: -2px;
+}
+
+.controls-StickyHeader__shadow-rounded {
+   position: absolute;
+   overflow: hidden;
+   pointer-events: none;
+
+   &_horizontal {
+      left: 0;
+      right: 0;
+   }
+
+   &_vertical {
+      top: 0;
+      bottom: 0;
+   }
+
+   &_right {
+      left: 100%;
+      right: calc(-1 * var(--offset_2xl));
+
+      &::before {
+         .base-rounded-shadow();
+         top: var(--shadow-blur_a);
+         bottom: var(--shadow-blur_a);
+         width: var(--shadow-blur_a);
+         left: calc(-1 * var(--shadow-blur_a));
+      }
+   }
+
+   &_left {
+      right: 100%;
+      left: calc(-1 * var(--offset_2xl));
+
+      &::before {
+         .base-rounded-shadow();
+         top: var(--shadow-blur_a);
+         bottom: var(--shadow-blur_a);
+         width: var(--shadow-blur_a);
+         right: calc(-1 * var(--shadow-blur_a));
+      }
+   }
+
+   &_bottom {
+      top: 100%;
+      bottom: calc(-1 * var(--offset_2xl));
+
+      &::before {
+         .base-rounded-shadow();
+         left: var(--shadow-blur_a);
+         right: var(--shadow-blur_a);
+         height: var(--shadow-blur_a);
+         top: calc(-1 * var(--shadow-blur_a));
+      }
+   }
+
+   &_top {
+      bottom: 100%;
+      top: calc(-1 * var(--offset_2xl));
+
+      &::before {
+         .base-rounded-shadow();
+         left: var(--shadow-blur_a);
+         right: var(--shadow-blur_a);
+         height: var(--shadow-blur_a);
+         bottom: calc(-1 * var(--shadow-blur_a));
+      }
+   }
+}
+
+.controls-StickyHeader__shadow-bottom {
+   bottom: calc(-1 * var(--shadow_thickness_scroll));
+   background: linear-gradient(
+      to bottom,
+      var(--shadow_start-color_scroll),
+      var(--shadow_end-color_scroll)
+   );
+}
+
+.controls-StickyHeader__shadow-top {
+   top: calc(-1 * var(--shadow_thickness_scroll));
+   background: linear-gradient(
+      to top,
+      var(--shadow_start-color_scroll),
+      var(--shadow_end-color_scroll)
+   );
+}
+
+.controls-StickyHeader__shadow-left {
+   left: calc(-1 * var(--shadow_thickness_scroll));
+   background: linear-gradient(
+      to left,
+      var(--shadow_start-color_scroll),
+      var(--shadow_end-color_scroll)
+   );
+}
+
+.controls-StickyHeader__shadow-right_default {
+   right: calc(-1 * var(--shadow_thickness_scroll));
+   background: linear-gradient(
+      to right,
+      var(--shadow_start-color_scroll),
+      var(--shadow_end-color_scroll)
+   );
+}
+
+.controls-StickyHeader__shadow-right_custom {
+   box-sizing: border-box;
+   right: calc(-1 * var(--shadow_l_thickness_scroll));
+   width: var(--shadow_l_thickness_scroll);
+   background: linear-gradient(
+      to right,
+      var(--shadow_l_start-color_scroll),
+      var(--shadow_l_end-color_scroll)
+   );
+   border-left: var(--border-thickness) solid var(--shadow_l_border_color_scroll);
+}
+
+/* region Sub-Pixel Fix */
+
+// В хроме могут возникать разрывы и артефакты между заголовками из-за особенностей субпиксельного рендеринга.
+// Делаем заголовки внахлёст на 1px.
+
+.controls-StickyBlock__subpixelFix-backgroundDefault {
+   box-shadow: -1px 0 0 0 var(--background-color_default_sticky);
+}
+
+.controls-StickyBlock__subpixelFix-default,
+.controls-StickyBlock__subpixelFix-listItem {
+   box-shadow: -1px 0 0 0 var(--background-color);
+}
+
+.controls-StickyBlock__subpixelFix-contrast {
+   box-shadow: -1px 0 0 0 var(--contrast_background-color);
+}
+
+.controls-StickyBlock__subpixelFix-stack {
+   box-shadow: -1px 0 0 0 var(--background-color_stack);
+}
+
+.controls-StickyBlock__subpixelFix-primary {
+   box-shadow: -1px 0 0 0 var(--primary_background-color);
+}
+
+.controls-StickyBlock__subpixelFix-secondary {
+   box-shadow: -1px 0 0 0 var(--secondary_background-color);
+}
+
+.controls-StickyBlock__subpixelFix-danger {
+   box-shadow: -1px 0 0 0 var(--danger_background-color);
+}
+
+.controls-StickyBlock__subpixelFix-success {
+   box-shadow: -1px 0 0 0 var(--success_background-color);
+}
+
+.controls-StickyBlock__subpixelFix-warning {
+   box-shadow: -1px 0 0 0 var(--warning_background-color);
+}
+
+.controls-StickyBlock__subpixelFix-info {
+   box-shadow: -1px 0 0 0 var(--info_background-color);
+}
+
+.controls-StickyBlock__subpixelFix-infoBox {
+   box-shadow: -1px 0 0 0 var(--background-color_infobox);
+}
+
+.controls-StickyBlock__subpixelFix-detailContrast {
+   box-shadow: -1px 0 0 0 var(--detail_contrast_background-color_masterDetail);
+}
+
+.controls-StickyBlock__subpixelFix-stackHeader {
+   box-shadow: -1px 0 0 0 var(--header_background-color_stack);
+}
+
+/* endregion Sub-Pixel Fix */
+
+/* region Mobile Safari Gap Fix */
+
+// В Safari на iOS и в десктопе на масштабе могут появляться щели между стики блоками. Делаем заголовки внахлёст на 1px.
+
+.controls-StickyBlock__topGapFix-default,
+.controls-StickyBlock__topGapFix-listItem {
+   box-shadow: 0 -1px 0 0 var(--background-color);
+}
+
+.controls-StickyBlock__topGapFix-default.controls-bottom-separator-hide-default-l{
+   box-shadow: 0 -3px 0 0 var(--background-color);
+}
+
+.controls-StickyBlock__topGapFix-listItem.controls-bottom-separator-hide-listItem-l {
+   box-shadow: 0 -3px 0 0 var(--background-color);
+}
+
+.controls-StickyBlock__topGapFix-contrast {
+   box-shadow: 0 -1px 0 0 var(--contrast_background-color);
+}
+
+.controls-StickyBlock__topGapFix-contrast.controls-bottom-separator-hide-contrast-l {
+   box-shadow: 0 -3px 0 0 var(--contrast_background-color);
+}
+
+.controls-StickyBlock__topGapFix-stack {
+   box-shadow: 0 -1px 0 0 var(--background-color_stack);
+}
+
+.controls-StickyBlock__topGapFix-stack.controls-bottom-separator-hide-stack-l {
+   box-shadow: 0 -3px 0 0 var(--background-color_stack);
+}
+
+.controls-StickyBlock__topGapFix-backgroundDefault {
+   box-shadow: 0 -1px 0 0 var(--background-color_default_sticky);
+}
+
+.controls-StickyBlock__topGapFix-backgroundDefault.controls-bottom-separator-hide-default-l {
+   box-shadow: 0 -3px 0 0 var(--background-color_default_sticky);
+}
+
+.controls-StickyBlock__topGapFix-primary {
+   box-shadow: 0 -1px 0 0 var(--primary_background-color);
+}
+
+.controls-StickyBlock__topGapFix-primary.controls-bottom-separator-hide-primary-l {
+   box-shadow: 0 -3px 0 0 var(--primary_background-color);
+}
+
+.controls-StickyBlock__topGapFix-secondary {
+   box-shadow: 0 -1px 0 0 var(--secondary_background-color);
+}
+
+.controls-StickyBlock__topGapFix-secondary.controls-bottom-separator-hide-secondary-l {
+   box-shadow: 0 -3px 0 0 var(--secondary_background-color);
+}
+
+.controls-StickyBlock__topGapFix-danger {
+   box-shadow: 0 -1px 0 0 var(--danger_background-color);
+}
+
+.controls-StickyBlock__topGapFix-danger.controls-bottom-separator-hide-danger-l {
+   box-shadow: 0 -3px 0 0 var(--danger_background-color);
+}
+
+.controls-StickyBlock__topGapFix-success {
+   box-shadow: 0 -1px 0 0 var(--success_background-color);
+}
+
+.controls-StickyBlock__topGapFix-success.controls-bottom-separator-hide-success-l {
+   box-shadow: 0 -3px 0 0 var(--success_background-color);
+}
+
+.controls-StickyBlock__topGapFix-warning {
+   box-shadow: 0 -1px 0 0 var(--warning_background-color);
+}
+
+.controls-StickyBlock__topGapFix-warning.controls-bottom-separator-hide-warning-l {
+   box-shadow: 0 -3px 0 0 var(--warning_background-color);
+}
+
+.controls-StickyBlock__topGapFix-info {
+   box-shadow: 0 -1px 0 0 var(--info_background-color);
+}
+
+.controls-StickyBlock__topGapFix-info.controls-bottom-separator-hide-info-l {
+   box-shadow: 0 -3px 0 0 var(--info_background-color);
+}
+
+.controls-StickyBlock__topGapFix-master {
+   box-shadow: 0 -1px 0 0 var(--master_item_background-color_list);
+}
+
+.controls-StickyBlock__topGapFix-master.controls-bottom-separator-hide-master-l {
+   box-shadow: 0 -3px 0 0 var(--master_item_background-color_list);
+}
+
+.controls-StickyBlock__topGapFix-infoBox {
+   box-shadow: 0 -1px 0 0 var(--background-color_infobox);
+}
+
+.controls-StickyBlock__topGapFix-infoBox.controls-bottom-separator-hide-infoBox-l {
+   box-shadow: 0 -3px 0 0 var(--background-color_infobox);
+}
+
+.controls-StickyBlock__topGapFix-detailContrast {
+   box-shadow: 0 -1px 0 0 var(--detail_contrast_background-color_masterDetail);
+}
+
+.controls-StickyBlock__topGapFix-detailContrast.controls-bottom-separator-hide-detailContrast-l {
+   box-shadow: 0 -3px 0 0 var(--detail_contrast_background-color_masterDetail);
+}
+
+.controls-StickyBlock__topGapFix-stackHeader {
+   box-shadow: 0 -1px 0 0 var(--header_background-color_stack);
+}
+
+.controls-StickyBlock__topGapFix-stackHeader.controls-bottom-separator-hide-stackHeader-l {
+   box-shadow: 0 -3px 0 0 var(--header_background-color_stack);
+}
+
+/* endregion Mobile Safari Gap Fix */

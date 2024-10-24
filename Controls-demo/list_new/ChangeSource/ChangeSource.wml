@@ -1,0 +1,6 @@
+<div class="controlsDemo__wrapper controlsDemo__maxWidth200 controlDemo_list-new_base">
+    <Controls.list:View storeId="ChangeSource"
+                        itemActions="{{ _itemActions }}"
+                        itemActionsProperty="{{ _itemActionsProperty }}"/>
+    <Controls.buttons:Button data-qa="toggle-source" caption="Поменять source и свойство itemActionsProperty" on:click="_toggleEnableActionProperty()"/>
+</div>

@@ -1,0 +1,23 @@
+<div class="demoWrapper">
+    <Controls.heading:Title caption="Простой список" readOnly="{{true}}" fontColorStyle="primary" fontSize="l" />
+    <div>
+        1) Выбрать "элемент 0"
+    </div>
+    <div>
+        2) нажать кнопку вниз
+    </div>
+    <div>
+        3) нажать кнопку вверх
+    </div>
+    <div>
+        4) перевести фокус в поле ввода
+    </div>
+    <div>
+        5) нажать кнопку вниз
+    </div>
+    <div>
+        ОР: маркер на "элемент 0"
+    </div>
+    <Controls.input:Text />
+    <Controls.list:View keyProperty="id" source="{{_viewSource}}"/>
+</div>

@@ -1,0 +1,245 @@
+@TensorInterVarVer: '3.0.0';
+
+@UnicodeRangeSmall: U+A, U+20-7e, U+a0, U+a2-a3, U+a5, U+a7, U+a9, U+ab, U+ad-ae, U+b1-b3, U+b9,
+U+bb-be, U+d7, U+f7, U+401, U+410-44f, U+451, U+1fff-200b, U+2010-2015, U+2022-202f,
+U+205f, U+2070-2071, U+2074-208e, U+2090-2093, U+2095-209c, U+20a0-20bf, U+2103, U+2109,
+U+2116-2117, U+2122, U+212a, U+2153, U+215a-217f, U+2212, U+2248, U+2260, U+2264-2265,
+U+e06b-e080, U+e093-e096, U+e0b4-e0c7, U+e0cd-e0d6, U+e0dc-e0e5, U+e13e-e14d, U+feff;
+
+@UnicodeRangeMedium: U+100-02AF, U+304, U+308, U+329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+
+@UnicodeRangeOther: U+a1, U+a4, U+a6, U+a8, U+aa, U+ac, U+af-b0, U+b4-b8, U+ba, U+bf-d6, U+d8-f6,
+U+f8-148, U+14a-1c3, U+1c5-268, U+3b9, U+26a-31e, U+321-377, U+37a-37f, U+384-38a, U+38c, U+38e-393, U+2206,
+U+395-3a1, U+3a3-3a8, U+2126, U+3aa-3b8, U+3ba-3e1, U+3f0-400, U+402-40f, U+450, U+452-49d,
+U+4a0-4ff, U+52f, U+e3f, U+1d43, U+1d47-1d49, U+1d4d, U+1d4f-1d50, U+1d52, U+1d56-1d58, U+1d5b,
+U+1d62-1d65, U+1d9c, U+1da0, U+1dbb, U+1dbf-1df5, U+1dfc-1dff, U+1f18-1f1d, U+1f20-1f45,
+U+1f48-1f4d, U+1f50-1f57, U+1f59, U+1f5b, U+1f5d, U+1f5f-1f7d, U+1f80-1fb4, U+1fb6-1fc4,
+U+1fc6-1fd3, U+1fd6-1fdb, U+1fdd-1fef, U+1ff2-1ff4, U+1ff6-1ffe, U+2016-2021,
+U+2030-205e, U+2094, U+20db-20de, U+20e8, U+20f0, U+2100-2101, U+2105-2106, U+211e-2121,
+U+2123, U+212b, U+212e, U+2132, U+213b, U+214d, U+214f, U+2180-2188, U+2190-2199, U+21a9-21aa,
+U+21b0-21b1, U+21b3-21b5, U+21ba-21bb, U+21d0, U+21d2, U+21d4, U+21de-21df, U+21e4-21e5,
+U+21e7, U+21ea, U+2202, U+2205, U+220f, U+2211, U+221a, U+221e, U+222b, U+2303, U+2305, U+2318,
+U+2325-2327, U+232b, U+2380, U+2387, U+238b, U+23ce-23cf, U+2423, U+2780-2788, U+24b6-24cf,
+U+24ea, U+25a0-25a2, U+25aa, U+25b2-25b3, U+25ba-25bd, U+25c4-25c7, U+25ca-25cb, U+25cf,
+U+25e6, U+25ef, U+2600, U+2605-2606, U+263c, U+2661, U+2665, U+26a0, U+2713, U+2717, U+2756,
+U+2764, U+27ef, U+27f5-27fa, U+2b06, U+2b12-2b13, U+2b1c, U+2dff, U+2e18, U+a69f, U+a92e,
+U+e000, U+e002-e06a, U+e0a5-e0b3, U+e0c8-e0cc, U+e0d7-e0db, U+e0e6, U+e0f3-e11c, U+e11e-e13d,
+U+e14e-e164, U+ee01-ee05, U+f6c3, U+fe20-fe2d, U+1f12f-1f149, U+1f16a-1f16b, U+1f850, U+1f852;
+
+@font-face {
+   font-family: 'Inter';
+   font-weight: normal;
+   font-style: normal;
+   src: url('/cdn/TensorInter/@{TensorInterVarVer}/static-hint/Inter-Regular-small-hint.woff2') format("woff2"),
+   url('/cdn/TensorInter/@{TensorInterVarVer}/ie/Inter-Regular.otf');
+   unicode-range: @UnicodeRangeSmall;
+}
+
+@font-face {
+   font-family: 'Inter';
+   font-weight: normal;
+   font-style: normal;
+   src: url('/cdn/TensorInter/@{TensorInterVarVer}/static-hint/Inter-Regular-medium-hint.woff2') format("woff2"),
+   url('/cdn/TensorInter/@{TensorInterVarVer}/ie/Inter-Regular.otf');
+   unicode-range: @UnicodeRangeMedium;
+}
+
+@font-face {
+   font-family: 'Inter';
+   font-weight: normal;
+   font-style: normal;
+   src: url('/cdn/TensorInter/@{TensorInterVarVer}/static-hint/Inter-Regular-other-hint.woff2') format("woff2"),
+   url('/cdn/TensorInter/@{TensorInterVarVer}/ie/Inter-Regular.otf');
+   unicode-range: @UnicodeRangeOther;
+}
+
+@font-face {
+   font-family: 'Inter';
+   font-weight: normal;
+   font-style: italic;
+   src: url('/cdn/TensorInter/@{TensorInterVarVer}/static-hint/Inter-Italic-small-hint.woff2') format("woff2"),
+   url('/cdn/TensorInter/@{TensorInterVarVer}/ie/Inter-Italic.otf');
+   unicode-range: @UnicodeRangeSmall;
+}
+
+@font-face {
+   font-family: 'Inter';
+   font-weight: normal;
+   font-style: italic;
+   src: url('/cdn/TensorInter/@{TensorInterVarVer}/static-hint/Inter-Italic-medium-hint.woff2') format("woff2"),
+   url('/cdn/TensorInter/@{TensorInterVarVer}/ie/Inter-Italic.otf');
+   unicode-range: @UnicodeRangeMedium;
+}
+
+@font-face {
+   font-family: 'Inter';
+   font-weight: normal;
+   font-style: italic;
+   src: url('/cdn/TensorInter/@{TensorInterVarVer}/static-hint/Inter-Italic-other-hint.woff2') format("woff2"),
+   url('/cdn/TensorInter/@{TensorInterVarVer}/ie/Inter-Italic.otf');
+   unicode-range: @UnicodeRangeOther;
+}
+
+@font-face {
+   font-family: 'Inter';
+   font-weight: 500;
+   font-style: normal;
+   src: url('/cdn/TensorInter/@{TensorInterVarVer}/static-hint/Inter-Medium-small-hint.woff2') format("woff2"),
+   url('/cdn/TensorInter/@{TensorInterVarVer}/ie/Inter-Regular.otf');
+   unicode-range: @UnicodeRangeSmall;
+}
+
+@font-face {
+   font-family: 'Inter';
+   font-weight: 500;
+   font-style: normal;
+   src: url('/cdn/TensorInter/@{TensorInterVarVer}/static-hint/Inter-Medium-medium-hint.woff2') format("woff2"),
+   url('/cdn/TensorInter/@{TensorInterVarVer}/ie/Inter-Regular.otf');
+   unicode-range: @UnicodeRangeMedium;
+}
+
+@font-face {
+   font-family: 'Inter';
+   font-weight: 500;
+   font-style: normal;
+   src: url('/cdn/TensorInter/@{TensorInterVarVer}/static-hint/Inter-Medium-other-hint.woff2') format("woff2"),
+   url('/cdn/TensorInter/@{TensorInterVarVer}/ie/Inter-Regular.otf');
+   unicode-range: @UnicodeRangeOther;
+}
+
+@font-face {
+   font-family: 'Inter';
+   font-weight: 500;
+   font-style: italic;
+   src: url('/cdn/TensorInter/@{TensorInterVarVer}/static-hint/Inter-MediumItalic-small-hint.woff2') format("woff2"),
+   url('/cdn/TensorInter/@{TensorInterVarVer}/ie/Inter-Regular.otf');
+   unicode-range: @UnicodeRangeSmall;
+}
+
+@font-face {
+   font-family: 'Inter';
+   font-weight: 500;
+   font-style: italic;
+   src: url('/cdn/TensorInter/@{TensorInterVarVer}/static-hint/Inter-MediumItalic-medium-hint.woff2') format("woff2"),
+   url('/cdn/TensorInter/@{TensorInterVarVer}/ie/Inter-Regular.otf');
+   unicode-range: @UnicodeRangeMedium;
+}
+
+@font-face {
+   font-family: 'Inter';
+   font-weight: 500;
+   font-style: italic;
+   src: url('/cdn/TensorInter/@{TensorInterVarVer}/static-hint/Inter-MediumItalic-other-hint.woff2') format("woff2"),
+   url('/cdn/TensorInter/@{TensorInterVarVer}/ie/Inter-Regular.otf');
+   unicode-range: @UnicodeRangeOther;
+}
+
+@font-face {
+   font-family: 'Inter';
+   font-weight: 600;
+   font-style: normal;
+   src: url('/cdn/TensorInter/@{TensorInterVarVer}/static-hint/Inter-SemiBold-small-hint.woff2') format("woff2"),
+   url('/cdn/TensorInter/@{TensorInterVarVer}/ie/Inter-Regular.otf');
+   unicode-range: @UnicodeRangeSmall;
+}
+
+@font-face {
+   font-family: 'Inter';
+   font-weight: 600;
+   font-style: normal;
+   src: url('/cdn/TensorInter/@{TensorInterVarVer}/static-hint/Inter-SemiBold-medium-hint.woff2') format("woff2"),
+   url('/cdn/TensorInter/@{TensorInterVarVer}/ie/Inter-Regular.otf');
+   unicode-range: @UnicodeRangeMedium;
+}
+
+@font-face {
+   font-family: 'Inter';
+   font-weight: 600;
+   font-style: normal;
+   src: url('/cdn/TensorInter/@{TensorInterVarVer}/static-hint/Inter-SemiBold-other-hint.woff2') format("woff2"),
+   url('/cdn/TensorInter/@{TensorInterVarVer}/ie/Inter-Regular.otf');
+   unicode-range: @UnicodeRangeOther;
+}
+
+@font-face {
+   font-family: 'Inter';
+   font-weight: 600;
+   font-style: italic;
+   src: url('/cdn/TensorInter/@{TensorInterVarVer}/static-hint/Inter-SemiBoldItalic-small-hint.woff2') format("woff2"),
+   url('/cdn/TensorInter/@{TensorInterVarVer}/ie/Inter-Regular.otf');
+   unicode-range: @UnicodeRangeSmall;
+}
+
+@font-face {
+   font-family: 'Inter';
+   font-weight: 600;
+   font-style: italic;
+   src: url('/cdn/TensorInter/@{TensorInterVarVer}/static-hint/Inter-SemiBoldItalic-medium-hint.woff2') format("woff2"),
+   url('/cdn/TensorInter/@{TensorInterVarVer}/ie/Inter-Regular.otf');
+   unicode-range: @UnicodeRangeMedium;
+}
+
+@font-face {
+   font-family: 'Inter';
+   font-weight: 600;
+   font-style: italic;
+   src: url('/cdn/TensorInter/@{TensorInterVarVer}/static-hint/Inter-SemiBoldItalic-other-hint.woff2') format("woff2"),
+   url('/cdn/TensorInter/@{TensorInterVarVer}/ie/Inter-Regular.otf');
+   unicode-range: @UnicodeRangeOther;
+}
+
+
+@font-face {
+   font-family: 'Inter';
+   font-weight: 700;
+   font-style: normal;
+   src: url('/cdn/TensorInter/@{TensorInterVarVer}/static-hint/Inter-SemiBold-small-hint.woff2') format("woff2"),
+   url('/cdn/TensorInter/@{TensorInterVarVer}/ie/Inter-Regular.otf');
+   unicode-range: @UnicodeRangeSmall;
+}
+
+@font-face {
+   font-family: 'Inter';
+   font-weight: 700;
+   font-style: normal;
+   src: url('/cdn/TensorInter/@{TensorInterVarVer}/static-hint/Inter-SemiBold-medium-hint.woff2') format("woff2"),
+   url('/cdn/TensorInter/@{TensorInterVarVer}/ie/Inter-Regular.otf');
+   unicode-range: @UnicodeRangeMedium;
+}
+
+@font-face {
+   font-family: 'Inter';
+   font-weight: 700;
+   font-style: normal;
+   src: url('/cdn/TensorInter/@{TensorInterVarVer}/static-hint/Inter-SemiBold-other-hint.woff2') format("woff2"),
+   url('/cdn/TensorInter/@{TensorInterVarVer}/ie/Inter-Regular.otf');
+   unicode-range: @UnicodeRangeOther;
+}
+
+@font-face {
+   font-family: 'Inter';
+   font-weight: 700;
+   font-style: italic;
+   src: url('/cdn/TensorInter/@{TensorInterVarVer}/static-hint/Inter-SemiBoldItalic-small-hint.woff2') format("woff2"),
+   url('/cdn/TensorInter/@{TensorInterVarVer}/ie/Inter-Regular.otf');
+   unicode-range: @UnicodeRangeSmall;
+}
+
+@font-face {
+   font-family: 'Inter';
+   font-weight: 700;
+   font-style: italic;
+   src: url('/cdn/TensorInter/@{TensorInterVarVer}/static-hint/Inter-SemiBoldItalic-medium-hint.woff2') format("woff2"),
+   url('/cdn/TensorInter/@{TensorInterVarVer}/ie/Inter-Regular.otf');
+   unicode-range: @UnicodeRangeMedium;
+}
+
+@font-face {
+   font-family: 'Inter';
+   font-weight: 700;
+   font-style: italic;
+   src: url('/cdn/TensorInter/@{TensorInterVarVer}/static-hint/Inter-SemiBoldItalic-other-hint.woff2') format("woff2"),
+   url('/cdn/TensorInter/@{TensorInterVarVer}/ie/Inter-Regular.otf');
+   unicode-range: @UnicodeRangeOther;
+}

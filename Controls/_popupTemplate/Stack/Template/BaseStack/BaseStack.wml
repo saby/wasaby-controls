@@ -1,0 +1,13 @@
+<div class="controls_popupTemplate_theme-{{_options.theme}}
+           controls-StackTemplate"
+     ws-tab-cycling="true">
+    <div class="controls-StackTemplate-shadow__container
+                {{ _options.leftContentTemplate ? 'controls-StackTemplate-shadow_zIndex' }}
+                controls-StackTemplate-shadow_direction-{{ _popupDirection }}__container">
+        <div class="controls-StackTemplate-shadow controls-StackTemplate-shadow_direction-{{ _popupDirection }}">
+            <!-- Safari требует наличие дочернего элемента  для отображения тени -->
+            <div class="controls-StackTemplate-shadow__content"></div>
+        </div>
+    </div>
+    <ws:partial template="{{ _options.content }}"/>
+</div>

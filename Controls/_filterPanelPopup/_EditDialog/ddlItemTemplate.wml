@@ -1,0 +1,7 @@
+<ws:partial template="Controls/dropdown:ItemTemplate"
+            scope="{{_options}}"
+            multiLine="{{true}}">
+   <ws:additionalTextTemplate>
+      <div>{{itemData.item.get('comment')}}</div>
+   </ws:additionalTextTemplate>
+</ws:partial>

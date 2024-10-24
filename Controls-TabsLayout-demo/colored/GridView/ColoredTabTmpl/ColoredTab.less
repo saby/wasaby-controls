@@ -1,0 +1,23 @@
+.controlsDemo {
+   &__scroll {
+      height: 100%;
+   }
+}
+
+/*
+    перебиваем ховер в гриде, _только_ пока не выполнено поручение:
+    https://online.sbis.ru/opendoc.html?guid=7b628190-c76b-43bc-8a33-24a62d40eef4
+ */
+.ws-is-hover {
+   .controls-Grid__row_highlightOnHover_default_theme-default {
+      &:hover {
+         /*
+                чек-бокс отдельно
+             */
+         .controls-Grid__row-cell-background-hover-custom-gray_theme-default,
+         .controls-Grid__item_background-hover_custom-gray_theme-default {
+            background-color: var(--unaccented_background-color);
+         }
+      }
+   }
+}

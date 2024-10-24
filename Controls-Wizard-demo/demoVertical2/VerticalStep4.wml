@@ -1,0 +1,26 @@
+<div class="demoVertical-Vertical_fourthBlock">
+        <Controls.list:View
+                source = "{{_viewSource}}"
+                markedKey="{{2}}"
+                allowEmptySelection="{{false}}"
+                markerVisibility="hidden"
+                keyProperty="id"
+                attr:class="demoVertical-Vertical_list">
+            <ws:itemTemplate>
+                <ws:partial template="Controls/list:ItemTemplate"
+                            displayProperty="description"
+                            on:click="_finishStepHandler()"
+                />
+            </ws:itemTemplate>
+        </Controls.list:View>
+        <div class="demoVertical-Vertical_fourthStepGrayText">
+            <p>Проверка выполняется последовательно.</p>
+            <p>Если ответственный не определился - уведомление о новом документе придёт всем пользователям с</p>
+            <p>ролями: 'Администратор системы', 'Настройщик системы' и 'Руководитель предприятия'.</p>
+        </div>
+
+        <Controls.buttons:Button caption="Завершить настройку"
+                                 class="demoVertical-Vertical_completeButton"
+                                 on:click="_finishStepHandler()"/>
+
+</div>

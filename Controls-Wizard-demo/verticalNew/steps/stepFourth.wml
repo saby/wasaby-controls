@@ -1,0 +1,24 @@
+<div class="body_template body_template_message">
+  <ws:if data="{{!_options.record.get('activate')}}">
+      <div class="body_template_row">
+        <span>Если на линии нет свободного оператора, клиенту будет предложено заполнить форму обратной связи. В результате в вашей Службе поддержки будет создано обращение.</span>
+      </div>
+      <div class="body_template_row">
+        Включить возможность?
+      </div>
+      <div class="body_template_row">
+        <Controls.buttons:Button caption="Да" on:click="_onClickButton(true)" buttonStyle="primary" attr:class="EngineDemo-WizardNew__yes"/>
+      </div>
+  </ws:if>
+  <ws:else>
+      <div class="body_template_row">
+        <span>Вы можете выключить эту возможность, если она всё таки вам не нужна..</span>
+      </div>
+      <div class="body_template_row">
+        Выключить возможность?
+      </div>
+      <div class="body_template_row">
+        <Controls.buttons:Button caption="Нет" on:click="_onClickButton(false)" buttonStyle="primary"/>
+      </div>
+  </ws:else>
+</div>

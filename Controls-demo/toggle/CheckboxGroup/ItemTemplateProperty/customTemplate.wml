@@ -1,0 +1,14 @@
+<ws:partial template='Controls/CheckboxGroup:defaultItemTemplate'
+            item="{{item}}"
+            selected="{{selected}}">
+    <ws:contentTemplate>
+        <div>
+            {{item.title}}
+            <ws:if data="{{selected}}">
+                <div class="controls-text-success">
+                    is Completed!
+                </div>
+            </ws:if>
+        </div>
+    </ws:contentTemplate>
+</ws:partial>

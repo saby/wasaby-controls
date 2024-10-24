@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <div class="wrapper">
+        <div class="controls-text-label">viewMode=default</div>
+        <Controls.slider:Base
+                maxValue="{{100}}"
+                minValue="{{0}}"
+                viewMode="default"/>
+        <div class="controls-text-label">viewMode=custom</div>
+        <Controls.slider:Base
+                maxValue="{{100}}"
+                minValue="{{0}}"
+                viewMode="custom"/>
+    </div>
+</div>

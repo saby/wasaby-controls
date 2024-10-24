@@ -1,0 +1,55 @@
+.controls-Grid__groupViewMode_blocks,
+.controls-Grid__groupViewMode_titledBlocks {
+   .controls-GridView__checkbox_relative > .controls-GridView__checkbox_relative,
+   .controls-Grid__row-cell__content {
+      z-index: 1;
+   }
+}
+
+// TODO Проверить и удалить, когда смерджим GridReact. Там этот код вынесен в Controls/_grid/gridReact/group/style.less
+
+// Ширина тени
+@shadow-width: var(--offset_xs);
+
+.controls-List__groupViewMode_titledBlocks,
+.controls-List__groupViewMode_blocks {
+   // Скрываем верхнюю и нижнюю правую тень у левой ячейки
+   .controls-ListView__item_grouped
+      .controls-Grid__row-cell.controls-Grid__row-cell__first-default::after {
+      content: '\200b';
+      clip-path: polygon(
+         calc(-1 * @shadow-width) calc(-1 * @shadow-width),
+         0 calc(-1 * @shadow-width),
+         0 calc(100% + @shadow-width),
+         calc(-1 * @shadow-width) calc(100% + @shadow-width)
+      );
+   }
+
+   // Скрываем верхнюю и нижнюю левую тень у правой ячейки
+   .controls-ListView__item_grouped
+      .controls-Grid__row-cell.controls-Grid__row-cell__last-default::after {
+      content: '\200b';
+      clip-path: polygon(
+         100% calc(-1 * @shadow-width),
+         calc(100% + @shadow-width) calc(-1 * @shadow-width),
+         calc(100% + @shadow-width) calc(100% + @shadow-width),
+         100% calc(100% + @shadow-width)
+      );
+   }
+
+   // Скрываем верхнюю и нижнюю тень у заколспаненой ячейки
+   .controls-ListView__item_grouped
+      .controls-Grid__row-cell__first-default.controls-Grid__row-cell__last-default::after {
+      content: '\200b';
+      clip-path: polygon(
+         calc(-1 * @shadow-width) calc(-1 * @shadow-width),
+         0 calc(-1 * @shadow-width),
+         0 calc(100% + @shadow-width),
+         100% calc(100% + @shadow-width),
+         100% calc(-1 * @shadow-width),
+         calc(100% + @shadow-width) calc(-1 * @shadow-width),
+         calc(100% + @shadow-width) calc(100% + @shadow-width),
+         calc(-1 * @shadow-width) calc(100% + @shadow-width)
+      );
+   }
+}

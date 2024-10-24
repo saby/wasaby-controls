@@ -1,0 +1,64 @@
+<div attr:style="width: {{_options.width || 400}}px;">
+    <Controls.popupTemplate:Stack headingCaption="Редактирование записи">
+        <ws:headerContentTemplate>
+            <div style="display: flex;justify-content: flex-end;flex-grow: 1;">
+                <ws:if data="{{_options.type === 'Edit'}}">
+                    <Controls.buttons:Button iconSize="m"
+                                             iconStyle="danger"
+                                             icon="icon-Erase"
+                                             on:click="_delete()"
+                                             viewMode="linkButton"
+                                             fontColorStyle="link"
+                                             attr:style="margin-right: 15px;"
+                                             attr:class="demo-MyFormController__delete"/>
+                </ws:if>
+                <ws:if data="{{_options.type === 'ExternalView'}}">
+                    <Controls.buttons:Button caption="{{_isReadOnlyFields ? 'Изменить' : 'Сохранить'}}"
+                                             class="controlsDemo__mr1"
+                                             on:click="_clickHandlerReadOnlyState()"
+                                             viewMode="link"/>
+                </ws:if>
+                <Controls.buttons:Button caption="Сохранить"
+                                         on:click="_update()"
+                                         attr:class="demo-MyFormController__save"/>
+            </div>
+        </ws:headerContentTemplate>
+        <ws:bodyContentTemplate>
+            <div>
+                <Controls.form:Controller name="formController"
+                                          source="{{ _source }}"
+                                          bind:record="_record">
+                    <div>
+                        <div class="controls-MyFormController__block">
+                            <div class="controls-MyFormController__row controls-MyFormController__title">Имя:</div>
+                            <div class="controls-MyFormController__row">
+                                <Controls.input:Text bind:value="content.record.name"
+                                                     readOnly="{{_isReadOnlyFields}}"
+                                                     class="demo-MyFormController__name"/>
+                            </div>
+                        </div>
+
+                        <div class="controls-MyFormController__block">
+                            <div class="controls-MyFormController__row controls-MyFormController__title">Адрес:</div>
+                            <div class="controls-MyFormController__row">
+                                <Controls.input:Text bind:value="content.record.address"
+                                                     readOnly="{{_isReadOnlyFields}}"
+                                                     class="demo-MyFormController__address"/>
+                            </div>
+                        </div>
+
+                        <div class="controls-MyFormController__block">
+                            <div class="controls-MyFormController__row controls-MyFormController__title">Мобильный телефон:</div>
+                            <div class="controls-MyFormController__row">
+                                <Controls.input:Phone bind:value="content.record.phone"
+                                                      readOnly="{{_isReadOnlyFields}}"
+                                                      class="demo-MyFormController__phone"/>
+                            </div>
+                        </div>
+                    </div>
+                </Controls.form:Controller>
+            </div>
+        </ws:bodyContentTemplate>
+    </Controls.popupTemplate:Stack>
+    <Controls.popup:Confirmation name="confirmation"/>
+</div>

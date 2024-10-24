@@ -1,0 +1,11 @@
+<div class="controls-Demo__wide-propertyGrid">
+    <div class="controls-text-label">Родительские элементы иерархического списка выделяются синим</div>
+    <Controls.propertyGridEditor:PropertyGridEditor
+            name="propertyGrid"
+            bind:editingObject="_editingObject"
+            typeDescription="{{_typeDescription}}"
+            itemActions="{{_itemActions}}"
+            nodeProperty="@parent"
+            parentProperty="parent">
+    </Controls.propertyGridEditor:PropertyGridEditor>
+</div>

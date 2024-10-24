@@ -1,0 +1,5 @@
+// ItemActionsVisibility="visible" по умолчанию делает подложку у кнопок прозрачной, но тут нам это не нужно.
+// Чтобы роботу не пришлось делать ховер отдельно по кажому списку из цикла, для теста перебьём стиль.
+.controlsDemo__list_RoundBorder_All .controls-itemActionsV_style_transparent {
+   background-color: var(--readonly_text-color);
+}

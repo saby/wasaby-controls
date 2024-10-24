@@ -1,0 +1,10 @@
+<ws:partial template="Controls/grid:GroupTemplate" scope="{{ _options }}" columnAlignGroup="{{1}}">
+   <ws:contentTemplate>
+      <ws:if data="{{item.contents === 'nonexclusive'}}">Неисключительные права</ws:if>
+      <ws:if data="{{item.contents === 'works'}}">Работы</ws:if>
+      <ws:if data="{{item.contents === 'goods'}}">Товары и материалы</ws:if>
+   </ws:contentTemplate>
+   <ws:rightTemplate>
+      <Controls.baseDecorator:Money value="{{rightTemplate.item.metaData.groupResults[rightTemplate.item.contents]}}" fontColorStyle="group" useGrouping="{{false}}"/>
+   </ws:rightTemplate>
+</ws:partial>

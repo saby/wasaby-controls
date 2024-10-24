@@ -1,0 +1,89 @@
+<Controls.calendar:MonthList
+        on:wheel="_options.onWheelHandler()"
+        on:touchmove="_options.onWheelHandler()"
+        topShadowVisibility="{{ _options.shadowVisibility }}"
+        bottomShadowVisibility="{{ _options.shadowVisibility }}"
+        on:mouseEnter="_options.mouseEnterHandler()"
+        on:mouseLeave="_options.mouseLeaveHandler()"
+        attr:class="{{_options.getYearListClasses()}}"
+        attr:data-qa="controls-PeriodLiteDialog__year-list"
+        position="{{_options.position}}"
+        on:positionChanged="_positionChangeHandler()"
+        shadowStyle="shortDatePicker"
+        order="desc"
+        virtualPageSize="{{24}}"
+        displayedRanges="{{ _displayedRanges }}"
+        _limit="{{_options.limit}}"
+>
+    <ws:yearTemplate>
+        <ws:partial template="Controls/calendar:MonthListYearTemplate">
+            <ws:bodyTemplate>
+                <div class="controls-PeriodLiteDialog__body{{_options.isAdaptive && !!_options.slidingPanelOptions ?
+                            '_isAdaptive'}} controls-PeriodLiteDialog-item-yearList
+                            controls-PeriodLiteDialog-item-yearList_{{_options.isAdaptive &&
+                            !!_options.slidingPanelOptions ? 'adaptiveHeight' : 'height'}}"
+                >
+                    <div  class="controls-PeriodLiteDialog-item-yearList-years"
+                          on:mouseenter="_options.onYearMouseEnter(yearTemplate.date.getFullYear())"
+                          on:mouseleave="_options.onYearMouseLeave()"
+                          on:mousemove="_onMouseMove(yearTemplate.date)"
+                          on:mousedown="_onMouseDown()"
+                          on:mouseup="_onMouseUp(yearTemplate.date)"
+                          on:click="_onYearClick(yearTemplate.date)">
+                        <!--                           controls-PeriodLiteDialog__tabPressed-{{_tabPressed}} - если использовать переменную на шаблоне
+                                                       и использовать её в tabindex, то реактивности не будет, поэтому используем эту переменную в классе-->
+                        <ws:if data="{{ (yearTemplate.date.getFullYear() === _options.yearHovered ||
+                                     (_options.isSelectedPeriod(yearTemplate.date, 'year') && !_options.hovered)) &&
+                                      !_options.readOnly && !_options.selectionProcessing }}"
+                        >
+                            <div class="controls-PeriodLiteDialog__item-background-hovered">
+                            </div>
+                        </ws:if>
+                        <ws:if data="{{ !_options.selectionProcessing && _options.multiSelect}}">
+                            <div class="controls-PeriodLiteDialog__item__selection-corners__container"
+                                 on:click="_onYearCornerClick(yearTemplate.date)"
+                            >
+                                <div class="controls-PeriodLiteDialog__item__selection-corners">
+                                </div>
+                            </div>
+                        </ws:if>
+                        <ws:if data="{{ _startCornerVisible(yearTemplate.date) }}">
+                            <div class="controls-PeriodLiteDialog__item-corners__container">
+                                <div class="controls-PeriodLiteDialog__item-corners
+                                            controls-PeriodLiteDialog__item-corners-start">
+                                </div>
+                            </div>
+                        </ws:if>
+                        <ws:if data="{{ _endCornerVisible(yearTemplate.date) }}">
+                            <div class="controls-PeriodLiteDialog__item-corners__container">
+                                <div class="controls-PeriodLiteDialog__item-corners controls-PeriodLiteDialog__item-corners-end">
+                                </div>
+                            </div>
+                        </ws:if>
+                        <div class="controls-PeriodLiteDialog__tabPressed-{{_options.tabPressed}}
+                                    controls-PeriodLiteDialog__vLayoutItem-caption
+                                    {{_options.isCurrentYear(yearTemplate.date.getFullYear()) ?
+                                                                      'controls-text-primary controls-fontweight-bold'}}
+                                    {{_options.getYearItemCssClasses(yearTemplate.date.getFullYear())}}
+                                    {{_options.isAdaptive && !!_options.slidingPanelOptions ? 'controls-padding_top-s controls-padding_bottom-s'}}
+                                    controls-PeriodLiteDialog__yearList-year
+                                    {{_getSelectionClassName(yearTemplate.date)}}
+                                    {{ _isSelectedEnd(yearTemplate.date) ? 'controls-PeriodLiteDialog__item_border-radius-top' }}
+                                    {{ _isSelectedStart(yearTemplate.date) ? 'controls-PeriodLiteDialog__item_border-radius-bottom' }}
+                                    {{ _isSelectedPeriod(yearTemplate.date) ? 'controls-PeriodLiteDialog__item-selected' }}"
+                             data-qa="controls-PeriodLiteDialog__item-caption"
+                             tabindex="{{_options.getTabindex(yearTemplate.date.getFullYear())}}"
+                             on:keyup="_options.keyUpYearHandler(yearTemplate.date.getFullYear())"
+                             on:touchstart="_onYearMouseEnter(yearTemplate.date)"
+                             on:mouseenter="_onYearMouseEnter(yearTemplate.date)"
+                        >
+                            <div class="controls-PeriodLiteDialog__yearList-year__text">
+                                {{ yearTemplate.date.getFullYear() }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ws:bodyTemplate>
+        </ws:partial>
+    </ws:yearTemplate>
+</Controls.calendar:MonthList>

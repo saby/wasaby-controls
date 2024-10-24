@@ -1,0 +1,32 @@
+.controls-ArrowButton_stretched_scroll {
+  z-index: 3;
+  position: absolute;
+
+  &-horizontal {
+    margin: 0 var(--offset_3xs);
+    top: calc(50% - (var(--inline_height_xl) / 2));
+    width: var(--arrow-button_width_scroll);
+  }
+
+  &-vertical {
+    left: calc(50% - (var(--inline_height_xl) / 2));
+  }
+
+  &_direction {
+    &-down {
+      bottom: calc(var(--offset_2xs) * -1);
+    }
+
+    &-up {
+      top: calc(var(--offset_2xs) * -1);
+    }
+
+    &-right {
+      right: 0;
+    }
+
+    &-left {
+      left: 0;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<div class="FloatingButtons-buttons controls_popupTemplate_theme-{{_options.theme}}">
+    <Controls-TabsLayout.verticalTabs:Buttons items="{{ _options.items }}"
+                                      fontColorStyle="primary"
+                                      fontWeight="bold"
+                                      fontSize="xs"
+                                      offset="m"
+                                      itemHeight="{{ 158 }}"
+                                      textTransform="uppercase"
+                                      backgroundStyle="unaccented"
+                                      mainCounterFontColorStyle="default"
+                                      attr:name="itemsContainer"
+                                      on:selectedKeyChanged="_itemClickHandler()"
+    />
+    <div class="FloatingButtons-buttons__templates {{ !_activeItem || _closingItem || _openingItem ? 'FloatingButtons-buttons__templates-overflow'}}">
+        <ws:for data="index, item in _initializedItems">
+            <Controls.Container.Async
+                    attr:key="{{ item.getId() }}"
+                    name="{{ item.getId() }}"
+                    templateName="{{ item.get('template') }}"
+                    on:transitionend="_transitionendHandler()"
+                    on:hideFloatingTab="_hideTabHandler(item)"
+                    on:initFloatingTab="_initTabHandler(item)">
+                <ws:partial template="{{ content.resolvedTemplate }}"
+                            scope="{{ item.get('templateOptions') }}"
+                            minWidth="{{ item.get('minWidth') }}"
+                            maxWidth="{{ _itemMaxWidth }}"
+                            isShowed="{{ _autoWidth }}"
+                            propStorageId="{{ item.propStorageId }}"
+                            attr:templatename="{{ item.get('template') }}"
+                            attr:data-qa="{{ _activeItem === item ? 'FloatingTabs-popup-active' }}"
+                            attr:class="{{ (_activeItem && _activeItem !== item) || (_closingItem && _closingItem !== item) ? 'ws-hidden' }}"
+                            attr:style="{{ _activeItem === item ? 'right: 0; top: 0;' }}  {{ _options.items.at(0) !== item ? 'top: 0'}}"/>
+            </Controls.Container.Async>
+        </ws:for>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper">
+    <Controls.treeGrid:View
+            storeId="ItemTemplateNoClickable"
+            columns="{{_columns}}">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/treeGrid:ItemTemplate" clickable="{{false}}"/>
+        </ws:itemTemplate>
+    </Controls.treeGrid:View>
+</div>

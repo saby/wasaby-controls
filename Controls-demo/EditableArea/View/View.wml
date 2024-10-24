@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+   <div class="ControlsDemo-EditableArea__title controls-text-label">Кликни на текст</div>
+   <div class="controlsDemo__cell">
+      <Controls.editableArea:View
+              editingObject="{{_editingObject}}">
+         <Controls.editableArea:Base bind:value="content.editingObject.text">
+            <ws:editorTemplate>
+               <Controls.input:Text contrastBackground="{{true}}" attr:class="controls-Input_negativeOffset"/>
+            </ws:editorTemplate>
+         </Controls.editableArea:Base>
+      </Controls.editableArea:View>
+   </div>
+</div>

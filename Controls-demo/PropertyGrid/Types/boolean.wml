@@ -1,0 +1,6 @@
+    <Controls-demo.PropertyGrid.BooleanTemplate
+            bind:value="itemValue[name]"
+            scope="{{item}}"
+            caption="{{newName}}">
+    </Controls-demo.PropertyGrid.BooleanTemplate>
+

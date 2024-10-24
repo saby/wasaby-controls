@@ -1,0 +1,12 @@
+<div class="engineDemo_Wizard_block">
+    <ws:if data="{{!_options.finished}}">
+        <h2>Войдите в кабинет СБИС, чтобы подключить кассу к статистике</h2><br/>
+        <h3>Вставьте электронную подпись в компьютер и нажмите кнопку "Войти".<br/>Вы будете видеть чеки и статистику кассы в личном кабинете.</h3>
+
+        <br/>
+        <Controls.buttons:Button caption="Войти" on:click="clickHandler()"/>
+    </ws:if>
+    <ws:else>
+        <h1>Успех</h1>
+    </ws:else>
+</div>

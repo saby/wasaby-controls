@@ -1,0 +1,24 @@
+<div class="controlsDemo__wrapper controlsDemo__ml4">
+    <div class="controlsDemo__cell" data-qa="controlsDemo-datePopupType__datePicker">
+        <div class="controls-text-label">datePopupType=datePicker</div>
+        <Controls.dateRange:Selector bind:startValue="_startValue"
+                                          bind:endValue="_endValue"
+                                          datePopupType="datePicker"
+                                          _date="{{ _date }}"
+        />
+    </div>
+    <div class="controlsDemo__cell" data-qa="controlsDemo-datePopupType__compactDatePicker">
+        <div class="controls-text-label">datePopupType=compactDatePicker</div>
+        <Controls.dateRange:Selector bind:startValue="_startValue"
+                                          bind:endValue="_endValue"
+                                          datePopupType="compactDatePicker"
+                                          _date="{{ _date }}"
+        />
+    </div>
+    <div class="controlsDemo__cell" data-qa="controlsDemo-datePopupType__shortDatePicker">
+        <div class="controls-text-label">datePopupType=shortDatePicker</div>
+        <Controls.dateRange:Selector bind:startValue="_startValue"
+                                          bind:endValue="_endValue"
+                                          datePopupType="shortDatePicker"/>
+    </div>
+</div>
