@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper">
+    <Controls.toggle:Switch caption="{{ !_itemActionsEnabled ? 'Включить' : 'Выключить' }} операции над записью"
+                            bind:value="_itemActionsEnabled"
+                            attr:data-qa="enable-item-actions"
+                            on:valueChanged="_itemActionsEnabledChanged()"/>
+    <Controls.list:View
+                        storeId="ItemActionsSetItemActions"
+                        itemActions="{{_itemActions}}"/>
+</div>

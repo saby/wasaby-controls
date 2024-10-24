@@ -1,0 +1,41 @@
+import * as React from 'react';
+import { IDateMenuOptions } from './IDateMenu';
+import DropdownTemplate from './DropdownTemplate';
+
+export default React.memo(
+    React.forwardRef((props: IDateMenuOptions, ref) => {
+        return (
+            <div
+                ref={ref}
+                data-qa={props.dataQa}
+                className={`ws-ellipsis controls-FilterViewPanel__basicEditor-cloud
+                            controls-FilterViewPanel__basicEditor-cloud-${props.filterViewMode}`}
+            >
+                <DropdownTemplate
+                    ref={props.dropdownRef}
+                    viewMode={props.viewMode}
+                    emptyText={props.emptyText}
+                    emptyKey={props.emptyKey}
+                    filterViewMode={props.filterViewMode}
+                    itemTemplate={props.itemTemplate}
+                    filterIndex={props.filterIndex}
+                    fontColorStyle={props.fontColorStyle}
+                    caption={props.caption || props.emptyText}
+                    extendedCaption={props.extendedCaption}
+                    fontSize={props.fontSize}
+                    items={props.items}
+                    keyProperty={props.keyProperty}
+                    displayProperty={props.displayProperty}
+                    selectedKeys={props.selectedKeys}
+                    attrs={props.attrs}
+                    onItemClick={props.onItemClick}
+                    isNewPeriodTypes={props.isNewPeriodTypes}
+                    periodType={props.periodType}
+                    userPeriods={props.userPeriods}
+                    _date={props._date}
+                    underline="hidden"
+                />
+            </div>
+        );
+    })
+);

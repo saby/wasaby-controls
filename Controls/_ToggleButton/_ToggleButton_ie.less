@@ -1,0 +1,280 @@
+.controls-Button__wrapper_viewMode-pushButton {
+   justify-content: center;
+}
+//button
+.controls-button_outlined-secondary-style_toggled {
+   &.controls-BaseButton {
+      border-color: var(--secondary_toggled_border-color_toggleButton_button);
+      border-width: var(--toggled_border-thickness_toggleButton_button);
+   }
+}
+
+.controls-button_outlined-primary-style_toggled {
+   &.controls-BaseButton {
+      border-color: var(--primary_color);
+      border-width: var(--primary_toggled_border-thickness_toggleButton_button);
+   }
+}
+
+//ghost
+.controls-button_ghost-default-style_toggled {
+   &.controls-BaseButton {
+      border-color: var(--secondary_toggled_border-color_toggleButton_toolButton);
+      background: var(--secondary_toggled_background-color_toggleButton_toolButton);
+   }
+}
+
+.controls-Button_ghost_style-readonly_toggled {
+   background-color: var(--secondary_toggled_background-color_toggleButton_toolButton);
+   border-color: var(--readonly_border-color_button_toolButton);
+}
+
+.controls-button_pushButton-style.controls-BaseButton {
+   border-width: var(--border-thickness_button);
+   border-radius: var(--border-radius_toggleButton_pushButton);
+   box-shadow: none;
+   border-style: solid;
+   min-width: var(--container_inline-height_button_local);
+
+   --container_padding-horizontal_button_local: 0;
+}
+
+.controls-button_pushButton-secondary-style {
+   &.controls-BaseButton {
+      border-color: transparent;
+      background: transparent;
+   }
+}
+
+.controls-button_pushButton-primary-style {
+   &.controls-BaseButton {
+      border-color: transparent;
+   }
+}
+
+.controls-button_pushButton-danger-style {
+   &.controls-BaseButton {
+      border-color: transparent;
+   }
+}
+
+.controls-button_pushButton-success-style {
+   &.controls-BaseButton {
+      border-color: transparent;
+   }
+}
+
+.controls-button_pushButton-readonly-style {
+   &.controls-BaseButton {
+      border-color: transparent;
+   }
+}
+
+.controls-button_pushButton-secondary-style_toggled {
+   &.controls-BaseButton {
+      border-color: var(--secondary_toggled_border-color_toggleButton_pushButton);
+      background: transparent;
+   }
+}
+
+.controls-button_pushButton-primary-style_toggled {
+   &.controls-BaseButton {
+      background: var(--secondary_toggled_border-color_toggleButton_pushButton);
+   }
+}
+
+.controls-Button_pushButton-danger-style_toggled {
+   &.controls-BaseButton {
+      border-color: var(--danger_color);
+   }
+}
+
+.controls-button_pushButton-success-style_toggled {
+   &.controls-BaseButton {
+      border-color: var(--success_color);
+   }
+}
+
+.controls-button_pushButton-readonly-style_toggled {
+   &.controls-BaseButton {
+      border-color: var(--readonly_border-color);
+   }
+}
+
+//background
+.controls-button_pushButton-secondary-style_toggled.controls-Button_bg-contrast {
+   &.controls-BaseButton {
+      background: var(--secondary_contrast_toggled_background-color_toggleButton_pushButton);
+   }
+}
+
+.controls-button_pushButton-readonly-style.controls-Button_bg-contrast {
+   &.controls-BaseButton {
+      background: var(--readonly_contrast_toggled_background-color_toggleButton_pushButton);
+   }
+}
+
+.controls-button_pushButton-readonly-style.controls-Button_bg-same {
+   &.controls-BaseButton {
+      background: transparent;
+   }
+}
+
+.ws-is-hover {
+   .controls-button_pushButton-secondary-style:hover.controls-Button_bg-contrast {
+      &.controls-BaseButton {
+         background: var(--secondary_contrast_hover_background-color_toggleButton_pushButton);
+      }
+   }
+
+   .controls-button_pushButton-secondary-style:hover.controls-Button_bg-same {
+      &.controls-BaseButton {
+         border-color: var(--secondary_toggled_border-color_toggleButton_pushButton);
+         background: transparent;
+      }
+   }
+
+   .controls-button_ghost-default-style_toggled:hover {
+      &.controls-BaseButton {
+         border-color: var(--secondary_toggled_border-color_toggleButton_toolButton);
+         background: var(--secondary_toggled_background-color_toggleButton_toolButton);
+      }
+   }
+
+   .controls-button_ghost-readonly-style_toggled:hover {
+      &.controls-BaseButton {
+         border-color: var(--readonly_border-color_button_toolButton);
+      }
+   }
+}
+
+.ws-is-no-touch,
+.ws-is-touch {
+   .controls-button_pushButton-secondary-style:active.controls-Button_bg-contrast {
+      &.controls-BaseButton {
+         background: var(--secondary_contrast_hover_background-color_toggleButton_pushButton);
+      }
+   }
+
+   .controls-button_pushButton-secondary-style:active.controls-Button_bg-same {
+      &.controls-BaseButton {
+         border-color: var(--secondary_toggled_border-color_toggleButton_pushButton);
+         background: transparent;
+      }
+   }
+
+   .controls-button_ghost-default-style_toggled:active {
+      &.controls-BaseButton {
+         border-color: var(--secondary_toggled_border-color_toggleButton_toolButton);
+      }
+   }
+
+   .controls-button_ghost-readonly-style_toggled:active {
+      &.controls-BaseButton {
+         border-color: var(--readonly_border-color_button_toolButton);
+      }
+   }
+}
+
+//this is square buttons, that's why width is equal to height
+.controls-button_pushButton-style.controls-button_size-xs {
+   min-width: var(--inline_height_xs);
+}
+
+.controls-button_pushButton-style.controls-button_size-s {
+   min-width: var(--inline_height_s);
+}
+
+.controls-button_pushButton-style.controls-button_size-m {
+   min-width: var(--inline_height_m);
+}
+
+.controls-button_pushButton-style.controls-button_size-l {
+   min-width: var(--inline_height_l);
+}
+
+.controls-button_pushButton-style.controls-button_size-xl {
+   min-width: var(--inline_height_xl);
+}
+
+.controls-button_pushButton-style.controls-button_size-2xl {
+   min-width: var(--inline_height_2xl);
+}
+
+.controls-button_pushButton-style.controls-button_size-default {
+   min-width: var(--inline_height_default);
+}
+
+.controls-Button_pushButton:active {
+   box-shadow: none;
+}
+
+.controls-linkButton_link-link-style_toggled {
+   .controls-BaseButton__text {
+      color: var(--link_text-color);
+
+      .ws-is-hover &:hover {
+         color: var(--link_hover_text-color);
+      }
+   }
+}
+
+.controls-linkButton_link-unaccented-style_toggled {
+   .controls-BaseButton__text {
+      color: var(--unaccented_text-color);
+
+      .ws-is-hover &:hover {
+         color: var(--unaccented_hover_text-color);
+      }
+   }
+}
+
+.controls-linkButton_link-danger-style_toggled {
+   .controls-BaseButton__text {
+      color: var(--danger_text-color);
+
+      .ws-is-hover &:hover {
+         color: var(--danger_hover_text-color);
+      }
+   }
+}
+
+.controls-linkButton_link-secondary-style_toggled {
+   .controls-BaseButton__text {
+      color: var(--secondary_text-color);
+
+      .ws-is-hover &:hover {
+         color: var(--secondary_hover_text-color);
+      }
+   }
+}
+
+.controls-linkButton_link-warning-style_toggled {
+   .controls-BaseButton__text {
+      color: var(--warning_text-color);
+
+      .ws-is-hover &:hover {
+         color: var(--warning_hover_text-color);
+      }
+   }
+}
+
+.controls-linkButton_link-primary-style_toggled {
+   .controls-BaseButton__text {
+      color: var(--primary_text-color);
+
+      .ws-is-hover &:hover {
+         color: var(--primary_hover_text-color);
+      }
+   }
+}
+
+.controls-linkButton_link-success-style_toggled {
+   .controls-BaseButton__text {
+      color: var(--success_text-color);
+
+      .ws-is-hover &:hover {
+         color: var(--success_hover_text-color);
+      }
+   }
+}

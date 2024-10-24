@@ -1,0 +1,133 @@
+<div class="demo-Grid">
+   <Controls.buttons:Button caption="Toggle columns" on:click="_onToggleColumnsClicked()"/>
+   <div class="demo-Grid__container">
+      <Controls.browser:Browser
+          source="{{_viewSource}}"
+          keyProperty="id"
+          bind:selectedKeys="_firstSelectedKeys"
+          name="multiSelector"
+          itemActionVisibilityCallback="{{_showAction}}"
+          itemActionsPosition="outside"
+          columns="{{gridColumns}}"
+          itemActions="{{_itemActions}}"
+          stickyHeader="{{false}}"
+          resultsPosition="top"
+          multiSelectVisibility="visible"
+          header="{{gridHeader}}"
+          displayProperty="title"
+          bind:sorting="_sorting"
+          bind:markedKey="_markedKey1"
+      >
+            <Controls.scroll:Container attr:class="demo-Grid__wrapper" attr:test_name="default">
+               <Controls.listDataOld:ListContainer>
+                  <Controls.grid:View
+                          attr:class="demo-Grid__control test_grid_1"
+                          itemTemplate="wml!Controls-demo/List/Grid/DemoItem"
+                          on:actionClick="_onActionClick()">
+                  </Controls.grid:View>
+               </Controls.listDataOld:ListContainer>
+            </Controls.scroll:Container>
+      </Controls.browser:Browser>
+      <Controls.scroll:Container attr:class="demo-Grid__wrapper" attr:test_name="selected_record">
+         <ws:content>
+            <Controls.grid:View
+                    attr:class="demo-Grid__control test_grid_2"
+                    keyProperty="id"
+                    displayProperty="title"
+                    bind:markedKey="_markedKey2"
+                    resultsPosition="top"
+                    header="{{gridHeader}}"
+                    itemTemplate="wml!Controls-demo/List/Grid/DemoItem"
+                    source = "{{_viewSource}}"
+                    itemActions="{{_itemActions}}"
+                    on:actionClick="_onActionClick()"
+                    itemActionVisibilityCallback="{{_showAction}}"
+                    columns="{{gridColumns}}">
+               <ws:itemPadding right="M" left="S" top="s" bottom="s"/>
+            </Controls.grid:View>
+         </ws:content>
+      </Controls.scroll:Container>
+   </div>
+   <div class="demo-Grid__container">
+      <Controls.browser:Browser
+          source="{{_viewSource}}"
+          keyProperty="id"
+          bind:selectedKeys="_secondSelectedKeys"
+          name="multiSelector"
+          itemActionVisibilityCallback="{{_showAction}}"
+          itemActionsPosition="outside"
+          columns="{{gridColumns}}"
+          itemActions="{{_itemActions}}"
+          multiSelectVisibility="visible"
+          displayProperty="title"
+          itemPadding="{{itemPadding}}"
+          bind:markedKey="_markedKey3"
+      >
+            <Controls.scroll:Container attr:class="demo-Grid__wrapper" attr:test_name="mark_record">
+               <Controls.listDataOld:ListContainer>
+
+                     <Controls.grid:View
+                             attr:class="demo-Grid__control test_grid_3"
+                             itemTemplate="wml!Controls-demo/List/Grid/DemoItem"
+                             on:actionClick="_onActionClick()">
+                     </Controls.grid:View>
+
+               </Controls.listDataOld:ListContainer>
+            </Controls.scroll:Container>
+      </Controls.browser:Browser>
+      <Controls.scroll:Container attr:class="demo-Grid__wrapper" attr:test_name="no_title">
+         <ws:content>
+            <Controls.grid:View
+                    attr:class="demo-Grid__control test_grid_4"
+                    keyProperty="id"
+                    displayProperty="title"
+                    bind:markedKey="_markedKey4"
+                    itemTemplate="wml!Controls-demo/List/Grid/DemoItem"
+                    source = "{{_viewSource}}"
+                    itemActions="{{_itemActions}}"
+                    on:actionClick="_onActionClick()"
+                    itemActionVisibilityCallback="{{_showAction}}"
+                    columns="{{gridColumns}}">
+               <ws:itemPadding right="XL" left="L" top="L" bottom="L"/>
+            </Controls.grid:View>
+         </ws:content>
+      </Controls.scroll:Container>
+   </div>
+   <div>
+      <h3>Кликнули на </h3>
+      <span class="action__last_clicked">{{_actionClicked}}</span>
+   </div>
+   <div class="demo-Grid__container test_container_3">
+      <Controls.scroll:Container attr:class="demo-Grid__wrapper">
+         <ws:content>
+            <Controls.grid:View
+                    attr:class="demo-Grid__control test_grid_5"
+                    keyProperty="id"
+                    source = "{{_viewSource}}"
+                    displayProperty="title"
+                    resultsPosition="top"
+                    itemTemplate="wml!Controls-demo/List/Grid/DemoItem"
+                    columns="{{gridColumns2}}"
+                    bind:sorting="_sorting">
+               <ws:header>
+                  <ws:Array>
+                     <ws:Object title=""/>
+                     <ws:Object>
+                        <ws:template>
+                           <Controls.dropdown:Selector
+                              keyProperty="key"
+                              displayProperty="title"
+                              multiselect="{{ false }}"
+                              source="{{ _columnSource }}"
+                              bind:selectedKeys="_selectKeyColumn"
+                              on:selectedKeysChanged="_selectedKeysChangeColumn()"
+                           />
+                        </ws:template>
+                     </ws:Object>
+                  </ws:Array>
+               </ws:header>
+            </Controls.grid:View>
+         </ws:content>
+      </Controls.scroll:Container>
+   </div>
+</div>

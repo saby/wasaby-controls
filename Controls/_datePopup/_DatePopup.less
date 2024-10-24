@@ -1,0 +1,191 @@
+@import '_yearRange';
+@import '_monthsRange';
+@import '_dateRange';
+
+.controls-PeriodDialog {
+   flex-shrink: 1;
+   display: flex;
+   min-height: 1px;
+   flex-direction: column;
+   background-color: var(--unaccented_background-color);
+   border-radius: var(--border-radius_dialog);
+   position: relative;
+   z-index: 1;
+}
+
+.controls-PeriodDialog__body {
+   max-height: calc(
+      var(--monthnav_year_height_datePicker) + var(--item_height_menu) * 14 +
+         var(--calendar-header_height_datePicker) +
+         var(--calendar-header_border-bottom-thickness_datePicker)
+   );
+}
+
+.controls-DatePopup__selector-marginTop_fontSize-m {
+   margin-top: var(--shift-top_PeriodDialog-selector);
+}
+
+.controls-DatePopup__selector-marginTop_fontSize-l {
+   margin-top: var(--shift-top_fontSize-l_PeriodDialog-selector);
+}
+
+.controls-DatePopup__selector-marginTop_fontSize-s {
+   margin-top: var(--shift-top_fontSize-s_PeriodDialog-selector);
+}
+
+.controls-DatePopup__selector-marginLeft {
+   margin-left: var(--shift-left_PeriodDialog-picker);
+}
+
+// Header
+.controls-PeriodDialog__header {
+   flex-shrink: 0;
+   box-sizing: border-box;
+   display: flex;
+   align-items: center;
+   background-color: var(--unaccented_background-color);
+   padding-left: var(--header_padding-left_datePicker);
+   height: var(--header-min-height_dialog);
+
+   // Нужно для сохранения базовой линии в шапке
+   & .controls-CompactDatePicker__header__today {
+      margin-top: 0;
+      line-height: normal;
+   }
+}
+
+.controls-PeriodDialog__header__input {
+   display: flex;
+   align-items: center;
+   width: 100%;
+   gap: var(--offset_s);
+}
+
+.controls-PeriodDialog__stateButton {
+   padding: var(--offset_2xs);
+   width: var(--icon-size_s);
+   height: var(--icon-size_s);
+   cursor: pointer;
+}
+
+.controls-PeriodDialog__stateButton-disabled {
+   visibility: hidden;
+}
+
+.controls-PeriodDialog_stateButton_icon {
+   font-size: var(--icon-size_s);
+   line-height: var(--icon-size_s);
+   font-family: var(--icon_font-family_s);
+   fill: var(--icon-color);
+   color: var(--icon-color);
+   border-radius: var(--border-radius_button);
+}
+
+.controls-PeriodDialog_isAdaptive {
+   .controls-PeriodDialog_stateButton_icon {
+      font-size: var(--icon-size_m);
+   }
+
+   .controls-PeriodDialog__header {
+      padding-left: var(--offset_xs);
+   }
+
+   .controls-PeriodDialog__stateButton {
+      padding-right: var(--offset_xs);
+   }
+}
+
+.ws-is-hover {
+   .controls-PeriodDialog_stateButton_icon:hover {
+      fill: var(--hover_icon-color);
+      color: var(--hover_icon-color);
+   }
+
+   .controls-CompactDatePicker__header__today__container:hover,
+   .controls-PeriodDialog_stateButton_icon:hover {
+      background-color: var(--pale_hover_color);
+   }
+}
+
+.controls-PeriodDialog__stateButton:focus {
+   .controls-PeriodDialog_stateButton_icon_focus {
+      fill: var(--hover_icon-color);
+      color: var(--hover_icon-color);
+   }
+}
+
+.controls-PeriodDialog__header-period_link {
+   flex-grow: 1;
+
+   .controls-BaseButton {
+      --text_font-size_button_local: var(--link-btn_fontsize_datePicker);
+   }
+
+   .controls-DateLinkView__button-value {
+      font-size: var(--link-btn_fontsize_datePicker);
+   }
+}
+
+.controls-PeriodDialog__header-period {
+   flex-grow: 1;
+   display: flex;
+   align-items: center;
+}
+
+.controls-PeriodDialog__header_inputs {
+   display: flex;
+   align-items: baseline;
+}
+
+.controls-PeriodDialog__header-rangeDash {
+   display: inline-block;
+   vertical-align: middle;
+   width: var(--dash_length_dateRangeInput);
+   border-bottom: var(--dash_thickness_dateRangeInput) solid var(--text-color);
+   margin: 0 var(--offset_2xs);
+}
+
+.controls-PeriodDialog__applyButton {
+   margin: 0 var(--header_apply-button_offsets_datePicker);
+
+   --container_inline-height_button_local: var(--header_btn_size_datePicker);
+}
+
+.ws-is-ie11 {
+   // Под IE свойство line-height считается неправильно в абсолютно спозиционированных контейнерах
+   .controls-PeriodDialog__header_calendar::before {
+      line-height: 0;
+   }
+}
+
+.controls-icon_size-datePopupStateButton {
+   font-size: var(--icon-size_s);
+   line-height: var(--icon-size_s);
+   width: var(--icon-size_s);
+   height: var(--icon-size_s);
+   font-family: var(--icon_font-family_s);
+}
+
+.controls-PeriodDialog__cursor-pointer {
+   cursor: pointer;
+}
+
+.controls-PeriodDialog__months {
+   display: flex;
+   flex-direction: column;
+   flex-shrink: 1;
+   min-height: 1px;
+}
+
+.controls-PeriodDialog__picker {
+   margin-top: var(--shift-top_PeriodDialog-picker);
+   margin-left: var(--shift-left_PeriodDialog-picker);
+}
+
+.controls-Scroll__shadow_top_style-datePopup {
+   background: linear-gradient(
+      to bottom,
+      var(--shadow_start-color_datePicker),
+      var(--shadow_end-color_datePicker)
+   );
+}

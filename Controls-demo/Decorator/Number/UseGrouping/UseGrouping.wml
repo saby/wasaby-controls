@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">useGrouping=false</div>
+      <Controls.baseDecorator:Number value="{{_value}}" useGrouping="{{false}}"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">useGrouping=true</div>
+      <Controls.baseDecorator:Number value="{{_value}}" useGrouping="{{true}}"/>
+   </div>
+</div>

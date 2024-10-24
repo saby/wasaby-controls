@@ -1,0 +1,4 @@
+<div>
+    <UI.Theme:ThemeConsumer getContextValue="{{ _getContextValue }}" />
+    <Controls.freezeContext:FreezeConsumer getContextValue="{{ _getFreezeContextValue }}" />
+</div>

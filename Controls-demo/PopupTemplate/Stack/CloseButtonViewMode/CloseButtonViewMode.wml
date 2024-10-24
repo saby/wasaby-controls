@@ -1,0 +1,63 @@
+<div class="controlsDemo__PopupTemplate__demoWrapper controlsDemo_fixedWidth800">
+    <div class="controls-text-label">closeButtonViewMode=linkButton</div>
+    <Controls.popupTemplate:Stack attr:class="controlsDemo-StackTemplate controlsDemo__max-height200 controlsDemo__cell"
+                                  headingCaption="Задача в разработку"
+                                  closeButtonViewMode="linkButton"
+                                  headerBorderVisible="{{false}}">
+        <ws:bodyContentTemplate>
+            <div>
+                <div class="controlsDemo__PopupTemplate__headerWrapper
+                            controls-StackTemplate__top-area-background controls-StackTemplate__top-area-border">
+                    <div class="controlsDemo__ml1 controls-text-label"> Задача в разработку от 29.11.19 №1177635976:</div>
+                </div>
+                <ws:partial template="Controls-demo/Popup/BaseTemplate"></ws:partial>
+            </div>
+        </ws:bodyContentTemplate>
+    </Controls.popupTemplate:Stack>
+    <div class="controls-text-label">closeButtonViewMode=toolButton</div>
+    <Controls.popupTemplate:Stack attr:class="controlsDemo-StackTemplate controlsDemo__max-height200 controlsDemo__cell"
+                                  headingCaption="Задача в разработку"
+                                  closeButtonViewMode="toolButton"
+                                  headerBorderVisible="{{false}}">
+        <ws:bodyContentTemplate>
+            <div>
+                <div class="controlsDemo__PopupTemplate__headerWrapper
+                            controls-StackTemplate__top-area-background controls-StackTemplate__top-area-border">
+                    <div class="controlsDemo__ml1 controls-text-label"> Задача в разработку от 29.11.19 №1177635976:</div>
+                </div>
+                <ws:partial template="Controls-demo/Popup/BaseTemplate"></ws:partial>
+            </div>
+        </ws:bodyContentTemplate>
+    </Controls.popupTemplate:Stack>
+    <div class="controls-text-label">closeButtonViewMode=functionalButton</div>
+    <Controls.popupTemplate:Stack attr:class="controlsDemo-StackTemplate controlsDemo__max-height200 controlsDemo__cell"
+                                  headingCaption="Задача в разработку"
+                                  closeButtonViewMode="functionalButton"
+                                  offset="offset"
+                                  headerBorderVisible="{{false}}">
+        <ws:bodyContentTemplate>
+            <div>
+                <div class="controlsDemo__PopupTemplate__headerWrapper
+                            controls-StackTemplate__top-area-background controls-StackTemplate__top-area-border">
+                    <div class="controlsDemo__ml1 controls-text-label"> Задача в разработку от 29.11.19 №1177635976:</div>
+                </div>
+                <ws:partial template="Controls-demo/Popup/BaseTemplate"></ws:partial>
+            </div>
+        </ws:bodyContentTemplate>
+    </Controls.popupTemplate:Stack>
+    <div class="controls-text-label">closeButtonViewMode=external</div>
+    <Controls.popupTemplate:Stack attr:class="controlsDemo-StackTemplate controlsDemo__max-height200 controlsDemo__cell"
+                                  headingCaption="Задача в разработку"
+                                  closeButtonViewMode="external"
+                                  headerBorderVisible="{{false}}">
+        <ws:bodyContentTemplate>
+            <div>
+                <div class="controlsDemo__PopupTemplate__headerWrapper
+                            controls-StackTemplate__top-area-background controls-StackTemplate__top-area-border">
+                    <div class="controlsDemo__ml1 controls-text-label"> Задача в разработку от 29.11.19 №1177635976:</div>
+                </div>
+                <ws:partial template="Controls-demo/Popup/BaseTemplate"></ws:partial>
+            </div>
+        </ws:bodyContentTemplate>
+    </Controls.popupTemplate:Stack>
+</div>

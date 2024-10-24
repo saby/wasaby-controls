@@ -1,0 +1,19 @@
+<Controls.lookupPopup:Controller scope="{{_options}}">
+  <Controls.popupTemplate:Stack headingCaption="Выберите организацию" attr:class="controlsDemo_fixedWidth550">
+    <ws:bodyContentTemplate>
+      <Controls.browser:Browser
+          source="{{_source}}"
+          keyProperty="id"
+          displayProperty="title"
+      >
+        <Controls.lookupPopup:Container multiSelect="{{false}}">
+            <Controls.listDataOld:ListContainer>
+              <Controls.lookupPopup:ListContainer multiSelect="{{false}}">
+                <Controls.list:View emptyTemplate="Не найдено"/>
+              </Controls.lookupPopup:ListContainer>
+            </Controls.listDataOld:ListContainer>
+        </Controls.lookupPopup:Container>
+      </Controls.browser:Browser>
+    </ws:bodyContentTemplate>
+  </Controls.popupTemplate:Stack>
+</Controls.lookupPopup:Controller>

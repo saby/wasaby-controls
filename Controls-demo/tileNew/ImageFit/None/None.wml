@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper">
+   <Controls.treeTile:View
+      storeId="listData2"
+      tileMode="static"
+      imageFit="none"
+      tileHeight="300"
+      imageProperty="image"
+      attr:data-qa="controlsDemo-tileNew_ImageFit__none">
+      <ws:itemTemplate>
+         <ws:partial
+            template="Controls/tile:ItemTemplate"
+            scope="{{itemTemplate}}"
+            hasTitle="{{itemTemplate.item.contents.isDocument}}"/>
+      </ws:itemTemplate>
+   </Controls.treeTile:View>
+</div>

@@ -1,0 +1,67 @@
+.Keyboard-Qwerty {
+   &__Shift-Button {
+      width: 1em;
+      height: 1em;
+   }
+
+   &__Keyboard-Button {
+      width: 1.5em;
+      height: 1.5em;
+   }
+
+   &__BackSpace-Button_size {
+      &-s {
+         height: var(--icon-size_xs);
+      }
+
+      &-l {
+         height: var(--icon-size_l);
+      }
+   }
+
+   &__Lang-Button {
+      display: flex;
+      align-items: center;
+   }
+
+   &__Lang-Button,
+   &__Accent-Button {
+      &-caption {
+         &-s {
+            font-size: var(--font-size_m);
+         }
+
+         &-l {
+            font-size: var(--font-size_5xl);
+         }
+      }
+   }
+
+   &__Accent-Button-caption {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+   }
+
+   &__Char-Button {
+      &-s {
+         font-size: var(--font-size_m);
+      }
+
+      &-l {
+         font-size: var(--font-size_5xl);
+      }
+   }
+
+   &__Popup {
+      &-s,
+      &-l {
+         padding: 7px 0;
+         width: 100%;
+         display: flex;
+         justify-content: center;
+         flex-shrink: 0;
+         background-color: var(--unaccented_background-color);
+      }
+   }
+}

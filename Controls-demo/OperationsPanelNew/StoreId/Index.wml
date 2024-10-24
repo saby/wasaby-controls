@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper controlsDemo__maxWidth500">
+    <Controls-ListEnv.operationsPanelConnected:View
+                        storeId="listData"/>
+   <Controls.treeGrid:View storeId="listData"
+                           columns="{{_gridColumns}}"/>
+
+</div>

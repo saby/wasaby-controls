@@ -1,0 +1,17 @@
+<Controls.Application isAdaptive="{{ true }}">
+    <div class="ControlDemo__SlidingPanel">
+        <UI.Adaptive:AdaptiveContainer isPhone="{{ _isMobile }}">
+            <Controls.toggle:DoubleSwitch
+                    on:valueChanged="_isMobileChanged()"
+                    value="{{ _isMobile }}"
+                    onCaption="{{'Мобильный'}}" offCaption="{{'Десктоп'}}"/>
+            <Controls.toggle:DoubleSwitch
+                    bind:value="_showHeader"
+                    onCaption="{{'С контентом в шапке'}}" offCaption="{{'Без контента в шапке'}}"/>
+            <Controls.toggle:DoubleSwitch
+                    bind:value="_showToolbar"
+                    onCaption="{{'С тулбаром'}}" offCaption="{{'Без тулбара'}}"/>
+            <Controls.buttons:Button caption="Открыть шторку" on:click="_openSlidingPanelHandler()"/>
+        </UI.Adaptive:AdaptiveContainer>
+    </div>
+</Controls.Application>

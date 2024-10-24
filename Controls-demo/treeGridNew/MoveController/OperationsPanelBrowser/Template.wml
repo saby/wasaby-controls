@@ -1,0 +1,53 @@
+<div class="controlsDemo__wrapper controlsDemo__minWidth600 controlsDemo__maxWidth800 {{ !_placeLeft ? 'tw-self-end' }}">
+    <Controls.browser:Browser
+            bind:selectedKeys="_selectedKeys"
+            bind:excludedKeys="_excludedKeys"
+            on:selectedKeysCountChanged="_notifyHandler('selectedKeysCountChanged')"
+            source="{{_viewSource}}"
+            displayProperty="name"
+            parentProperty="parent"
+            nodeProperty="type"
+            keyProperty="key"
+            markerVisibility="hidden"
+            multiSelectVisibility="visible"
+            hasChildrenProperty="hasChild"
+            itemActions="{{_itemActions}}"
+            columns="{{_columns}}"
+    >
+        <div>
+            <Controls.list:BaseAction name="baseAction"/>
+            <div style="width: 430px;">
+                <Controls.operations:PanelContainer
+                        listMarkedKey="{{null}}">
+                    <Controls.operations:Panel
+                            parentProperty="parent"
+                            nodeProperty="@parent"
+                            keyProperty="id"
+                            source="{{_panelSource}}"
+                            on:itemClick="_onPanelItemClick()"/>
+                </Controls.operations:PanelContainer>
+            </div>
+            <Controls.listDataOld:ListContainer>
+                <Controls.treeGrid:View
+                        name="list"
+                        attr:class="demo-Grid__control"
+                        on:actionClick="_onActionClick()">
+                    <ws:moveDialogTemplate templateName="Controls/moverDialog:Template">
+                        <ws:templateOptions
+                                root="{{null}}"
+                                displayProperty="name"
+                                rootVisible="{{true}}"
+                                rootTitle="Каталог"
+                                keyProperty="key"
+                                parentProperty="parent"
+                                searchParam="title"
+                                nodeProperty="type"
+                                hasChildrenProperty="hasChild"
+                                source="{{_viewSource}}"
+                                columns="{{_columns}}"/>
+                    </ws:moveDialogTemplate>
+                </Controls.treeGrid:View>
+            </Controls.listDataOld:ListContainer>
+        </div>
+    </Controls.browser:Browser>
+</div>

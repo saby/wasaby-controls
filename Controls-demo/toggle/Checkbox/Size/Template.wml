@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center ws-align-items-end" data-qa="controlsDemo_capture">
+        <div data-qa="controlsDemo-checkboxMarkerSize__s" class="controlsDemo__cell controls-margin_right-xl">
+            <Controls.checkbox:Checkbox bind:value="_value1" size="s"/>
+        </div>
+        <div data-qa="controlsDemo-checkboxMarkerSize__m" class="controlsDemo__cell controls-margin_right-xl">
+            <Controls.checkbox:Checkbox bind:value="_value2" size="m"/>
+        </div>
+        <div data-qa="controlsDemo-checkboxMarkerSize__l" class="controlsDemo__cell">
+            <Controls.checkbox:Checkbox bind:value="_value3" size="l"/>
+        </div>
+    </div>
+</div>

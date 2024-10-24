@@ -1,0 +1,17 @@
+<div class="controlsDemo__wrapper controls-demo_MasterDetail-background controlsDemo__wrapper controlsDemo__flexRow controlsDemo__height300">
+  <Controls.masterDetail:Base masterWidth="{{270}}">
+     <ws:master>
+        <Controls.treeGrid:View storeId="master"
+                                style="master"
+                                columns="{{_gridColumns}}"
+                                expanderPosition="right"
+                                expanderIcon="hiddenNode"
+                                on:markedKeyChanged="_onMarkedKeyChanged()">
+        </Controls.treeGrid:View>
+     </ws:master>
+     <ws:detail>
+       <Controls.list:View storeId="detail" backgroundStyle="detail"
+                           attr:class="controlsDemo_fixedWidth500"/>
+     </ws:detail>
+  </Controls.masterDetail:Base>
+</div>

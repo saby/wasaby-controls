@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module id="0641abed-e0fb-4f42-990c-4c24bdbd7bd0" name="Controls-demo" kaizen_zone="916d4071-6bb4-4800-b3ff-2ee6725c9fdc" package="Wasaby" responsible="Бегунов А.В." responsible_uuid="37ed958c-59a8-4fe3-ad08-9fdb98a690d8" version="1.00">
+
+  <description/>
+
+  <depends>
+    <module id="f6fdf353-3ab3-4dbb-8671-01c2b418bf0a" name="Controls"/>
+    <module id="395ba131-ad47-b0a2-1524-d14d6d11072b" name="ItemTemplates"/>
+    <module id="bfd15aec-af0f-40c9-b151-94601c5a0f71" name="Controls-Templates"/>
+    <module id="0df0fce3-53ba-47f8-987d-edf1fd078295" name="WS.Core"/>
+    <module id="7e8aabad-d60f-4c48-aa74-f29d78fd8be2" name="RequireJsLoader"/>
+    <module id="af50caf5-f84b-4b81-a19c-6f6618372dbd" name="Controls-default-theme"/>
+    <module id="a857d050-c754-4d39-90ec-fca5e2ddf022" name="Router"/>
+    <module id="636177e5-4d75-44fa-9173-977dc90ff191" name="File"/>
+    <module id="37e402f1-2fb0-4b73-81c5-113cf94dbf1c" name="WasabyLoader"/>
+    <module id="0641abed-e0fb-4f42-990c-4c24bdbd7555" name="DemoStand"/>
+    <module id="4220f331-8217-437b-810c-8c4479323a27" name="EnvConfig"/>
+    <module id="e4bbd0f2-f7ce-404e-88b2-5130d105b770" name="ParametersWebAPI"/>
+    <module id="74e20c2f-4545-4210-9148-2d05b3cd12fc" name="ParametersLocalAPI"/>
+    <module id="2274d173-fe30-4fcf-81ca-767915919d69" name="EnvTouch"/>
+    <module id="b7223918-657c-4e3d-ac98-f302a52f248c" name="Meta"/>
+  </depends>
+
+  <load_after/>
+
+  <parameters/>
+
+  <resources/>
+
+  <preload/>
+
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:class="controlsDemo__height300" shadowMode="js">
+        <Controls.grid:View
+                storeId="LadderStickyMultilineStickyMultilineLoadUp"
+                columns="{{_columns}}"
+                ladderProperties="{{_ladderProperties}}">
+        </Controls.grid:View>
+    </Controls.scroll:Container>
+</div>

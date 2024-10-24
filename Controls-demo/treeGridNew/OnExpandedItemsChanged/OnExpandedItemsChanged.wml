@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500 controlsDemo_wrapper-treeGrid-base-treeGridView">
+    <Controls.treeGrid:View
+            storeId="OnExpandedItemsChanged"
+            columns="{{_columns}}"
+            collapsedItems="{{_collapsedItems}}"
+            on:expandedItemsChanged="_onExpandedItemsChanged()"/>
+</div>

@@ -1,0 +1,23 @@
+@animation-duration: 300ms;
+
+.FloatingTabs-popup {
+   position: relative;
+   z-index: 2;
+   right: -100%;
+   top: -100%;
+   width: 0;
+   transition-property: top, right;
+   transition-duration: @animation-duration;
+   height: 100%;
+
+   .controls-StackTemplate-shadow {
+      display: block;
+   }
+}
+
+.FloatingTabs-popup_closeButton {
+   position: absolute;
+   top: 10px;
+   right: 12px;
+   z-index: 20;
+}

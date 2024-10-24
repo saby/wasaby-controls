@@ -1,0 +1,67 @@
+.Calculator-History {
+   height: 100%;
+}
+
+.Calculator-History__scroll-container {
+   display: flex;
+   flex-shrink: 0;
+
+   // Хак чтобы история не растягивала калькулятор по высоте.
+   flex-basis: 0;
+   flex-grow: 1;
+}
+
+.Calculator-History__history {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   flex-grow: 1;
+   min-height: 100%;
+   box-sizing: border-box;
+   flex-shrink: 0;
+   padding: 0 var(--offset_s) var(--offset_xs) var(--offset_s);
+}
+
+.Calculator-History__item {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+}
+
+.Calculator-History__input {
+   word-break: break-word;
+   font-size: var(--font-size_m);
+   color: var(--text-color);
+   opacity: 0.51;
+   line-height: var(--line-height_m);
+   min-height: var(--line-height_m);
+}
+
+.Calculator-History__inputItem {
+   display: inline-block;
+}
+
+.Calculator-History__input,
+.Calculator-History__result {
+   max-width: 100%;
+   text-align: right;
+}
+
+.Calculator-History__result {
+   font-size: var(--font-size_xl);
+   color: var(--text-color);
+   padding: var(--offset_2xs) 0;
+
+   .ws-is-mobile-safari & {
+      // так как в мобильном Safari из-за половинчатых пикселей выравнивание по центру работает иначе, выравниваем строку результата с кнопками след. образом:
+      padding: var(--offset_2xs) 0 calc(var(--offset_2xs - 1px)) 0;
+   }
+}
+
+.ws-is-hover .Calculator-History__resultWithoutError:hover {
+   text-decoration: underline;
+}
+
+.ws-is-hover .Calculator-History__operand:hover {
+   text-decoration: underline;
+}

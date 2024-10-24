@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper" xmlns:ws="http://www.w3.org/1999/html">
+   <Controls.scroll:Container attr:class="controlsDemo__height200">
+      <Controls.list:ItemsView items="{{_items}}" keepScrollAfterReload="{{ _keepScrollAfterReload }}"/>
+   </Controls.scroll:Container>
+   <Controls.buttons:Button caption="Пересоздать items" on:click="_resetRows()"/>
+   <Controls.checkbox:Checkbox bind:value="_keepScrollAfterReload" caption="Keep scroll after reset items"/>
+</div>

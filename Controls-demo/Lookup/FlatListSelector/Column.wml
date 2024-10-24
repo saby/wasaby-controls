@@ -1,0 +1,12 @@
+<ws:partial template="Controls/grid:ColumnTemplate" scope="{{ _options }}">
+<ws:contentTemplate>
+  <div>
+    <span class="{{ !_options.item.contents.get('city') && !_options.item.contents.get('owner') ? 'ControlsDemo-Lookup__item_bold' }}">
+      {{contentTemplate.item.contents.get('title')}}
+    </span>
+    <ws:if data="{{_options.item.contents.get('city')}}">
+      <span class="ControlsDemo-Lookup_city"> ({{contentTemplate.item.contents.get('city')}})</span>
+    </ws:if>
+  </div>
+</ws:contentTemplate>
+</ws:partial>

@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper">
+<Controls.treeGrid:View
+    storeId="listData"
+    name="treeGrid"
+    on:customdragStart="_dragStart()"
+    on:customdragEnd="_dragEnd()"
+    attr:class="demo-Grid__control"
+    columns="{{_gridColumns}}"
+    itemsDragNDrop="{{true}}">
+</Controls.treeGrid:View>
+</div>

@@ -1,0 +1,40 @@
+<div class="ws-flexbox ws-flex-column engine-demo__widgets">
+    <div class="engine-demo__widgets_content">
+        <div class="engine-demo__widgets_masterWrapper">
+            <Controls.masterDetail:Base attr:class="engine-demo__widgets_master"
+                                        isAdaptive="{{true}}">
+                <ws:master>
+                    <Controls-ListEnv.filterPanelConnected:View storeId="adaptiveData" isAdaptive="{{true}}"/>
+                </ws:master>
+                <ws:detail>
+                    <div class="ws-flexbox ws-flex-grow-1">
+                        <Controls.grid:View storeId="adaptiveData" attr:class="engine-demo__widgets_list">
+                            <ws:columns>
+                                <ws:Array>
+                                    <ws:Object displayProperty="fullName"/>
+                                    <ws:Object displayProperty="dateOfBirth" displayType="date">
+                                        <ws:displayTypeOptions format="DD MMM'YY"/>
+                                    </ws:Object>
+                                    <ws:Object displayProperty="post"/>
+                                    <ws:Object displayProperty="company"/>
+                                    <ws:Object displayProperty="sex"/>
+                                    <ws:Object displayProperty="department"/>
+                                </ws:Array>
+                            </ws:columns>
+                            <ws:header>
+                                <ws:Array>
+                                    <ws:Object title="Имя"/>
+                                    <ws:Object title="Дата рождения"/>
+                                    <ws:Object title="Должность"/>
+                                    <ws:Object title="Компания"/>
+                                    <ws:Object title="Пол"/>
+                                    <ws:Object title="Отдел"/>
+                                </ws:Array>
+                            </ws:header>
+                        </Controls.grid:View>
+                    </div>
+                </ws:detail>
+            </Controls.masterDetail:Base>
+        </div>
+    </div>
+</div>

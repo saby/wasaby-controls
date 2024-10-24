@@ -1,0 +1,11 @@
+<div template="{{_getTemplateName()}}"
+     on:mousedown="_sendResult()"
+     on:mouseover="_sendResult()"
+     on:mouseenter="_sendResult()"
+     on:mouseleave="_sendResult()">
+   <ws:partial
+      template="{{_options.template}}"
+      scope="{{_options.templateOptions}}"
+      loadResult="{{ _options.loadResult }}"
+   />
+</div>

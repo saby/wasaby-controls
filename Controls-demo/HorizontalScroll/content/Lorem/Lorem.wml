@@ -1,0 +1,23 @@
+<ws:template name="lorem">
+    <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quas, voluptate? Eum incidunt nisi placeat sunt tenetur. Animi distinctio enim, esse excepturi
+        id nihil officia pariatur porro recusandae, unde veritatis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quas, voluptate? Eum incidunt nisi
+        placeat sunt tenetur. Animi distinctio enim, esse excepturi id nihil officia pariatur porro recusandae, unde veritatis?
+    </div>
+</ws:template>
+
+<div class="Controls-demo__lorem">
+    <ws:if data="{{ _options.beforeLength }}">
+        <ws:for data="i in _options.beforeLength">
+            <ws:partial template="lorem" attr:key="before_{{ i }}" attr:class="before_{{ i }}"/>
+        </ws:for>
+    </ws:if>
+
+    <ws:partial template="{{ _options.content }}"/>
+
+    <ws:if data="{{ _options.afterLength }}">
+        <ws:for data="i in _options.afterLength">
+            <ws:partial template="lorem" attr:key="after_{{ i }}" attr:class="after_{{ i }}"/>
+        </ws:for>
+    </ws:if>
+</div>
