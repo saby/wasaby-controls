@@ -1,0 +1,17 @@
+<div class="controlsDemo__flexRow tw-justify-center controlsDemo__childWidth400">
+         <Controls.lookup:Input
+             source="{{_source}}"
+             placeholder="Направление деятельности"
+             searchParam="title"
+             keyProperty="id"
+             parentProperty="parent"
+             nodeProperty="parent@"
+             selectionType="all"
+             suggestWidth="400px"
+             autoDropDown="{{true}}">
+           <ws:suggestTemplate templateName="Controls/suggestPopup:SuggestTemplate"/>
+           <ws:itemTemplate>
+             <ws:partial template="Controls/lookup:ItemTemplate" displayProperty="title"></ws:partial>
+           </ws:itemTemplate>
+         </Controls.lookup:Input>
+</div>

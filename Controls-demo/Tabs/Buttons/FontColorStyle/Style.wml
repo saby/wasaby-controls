@@ -1,0 +1,48 @@
+<div class="root controlsDemo_fixedWidth500">
+    <div class="separator">default</div>
+    <div class="demo-TabButtons ControlsDemo-Tabs__rightAlign">
+        <Controls.tabs:Buttons
+                bind:selectedKey='SelectedKey1'
+                keyProperty="id"
+                items="{{_items1}}"
+        />
+    </div>
+    <div class="separator">selectedStyle='warning'</div>
+    <div class="demo-TabButtons ControlsDemo-Tabs__mainSeparate">
+        <Controls.tabs:Buttons
+                bind:selectedKey='SelectedKey2'
+                keyProperty="id"
+                selectedStyle="warning"
+                items="{{_items1}}"
+        />
+    </div>
+    <div class="separator">fontColorStyle='success'</div>
+    <div class="demo-TabButtons ControlsDemo-Tabs__mainSeparate">
+        <Controls.tabs:Buttons
+                bind:selectedKey='SelectedKey3'
+                keyProperty="id"
+                fontColorStyle="success"
+                items="{{_items1}}"
+        />
+    </div>
+    <div class="separator">fontColorStyle='success' selectedStyle='warning'</div>
+    <div class="demo-TabButtons ControlsDemo-Tabs__mainSeparate">
+        <Controls.tabs:Buttons
+                bind:selectedKey='SelectedKey4'
+                keyProperty="id"
+                fontColorStyle="success"
+                selectedStyle='warning'
+                items="{{_items1}}"
+        />
+    </div>
+
+    <div class="separator">selectedStyle='default'</div>
+    <div class="demo-TabButtons ControlsDemo-Tabs__mainSeparate">
+        <Controls.tabs:Buttons
+                bind:selectedKey='SelectedKey5'
+                keyProperty="id"
+                selectedStyle='default'
+                items="{{_items1}}"
+        />
+    </div>
+</div>

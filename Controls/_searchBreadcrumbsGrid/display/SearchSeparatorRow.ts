@@ -1,0 +1,119 @@
+/**
+ * @kaizen_zone 6c74c736-f802-4b48-b22b-7cd14c0a2e28
+ */
+import { Model } from 'Types/entity';
+import {
+    GridRow,
+    TColspanCallbackResult,
+    IColumn,
+    TColumns,
+    IInitializeColumnsOptions,
+    IItemTemplateParams,
+} from 'Controls/grid';
+import SearchGridCollection from './SearchGridCollection';
+
+export default class SearchSeparatorRow extends GridRow<string> {
+    readonly EditableItem: boolean = false;
+    readonly '[Controls/_itemActions/interface/IItemActionsItem]': boolean = false;
+
+    get Markable(): boolean {
+        return false;
+    }
+
+    readonly Fadable: boolean = false;
+
+    protected _$owner: SearchGridCollection;
+
+    readonly listInstanceName: string = 'controls-SearchBreadcrumbsGrid';
+
+    readonly listElementName: string = 'row';
+
+    // Согласно стандарту разделитель не имеет заливки при ховере.
+    protected _$hoverBackgroundStyle = 'transparent';
+
+    getContents(): string {
+        return 'search-separator';
+    }
+
+    getItemClasses(params: IItemTemplateParams): string {
+        return super.getItemClasses({
+            ...params,
+            clickable: false,
+        });
+    }
+
+    protected _updateRowProps(): void {
+        // Запрашиваем настройки для row,
+        // чтобы иметь возможность повлиять на отображение аналогично хлебным крошкам
+        this._rowProps =
+            typeof this._$getRowProps === 'function'
+                ? this._$getRowProps(
+                      new Model({
+                          keyProperty: this.getKeyProperty(),
+                          rawData: {
+                              [this.getKeyProperty()]: this.getContents(),
+                          },
+                      })
+                  )
+                : null;
+    }
+
+    getUid(): string {
+        return 'search-separator';
+    }
+
+    isEditing(): boolean {
+        return false;
+    }
+
+    isActive(): boolean {
+        return false;
+    }
+
+    isMarked(): boolean {
+        return false;
+    }
+
+    isSelected(): boolean {
+        return false;
+    }
+
+    isSwiped(): boolean {
+        return false;
+    }
+
+    getLevel(): number {
+        return 0;
+    }
+
+    isVisibleCheckbox(): boolean {
+        return false;
+    }
+
+    isLastItem(): boolean {
+        return false;
+    }
+
+    setGridColumnsConfig(columns: TColumns): void {
+        this.setColumnsConfig(columns);
+    }
+
+    protected _initializeColumns(options?: IInitializeColumnsOptions): void {
+        super._initializeColumns({
+            colspanStrategy: 'skipColumns',
+            ...options,
+        });
+    }
+
+    protected _getColspan(column: IColumn, columnIndex: number): TColspanCallbackResult {
+        return undefined;
+    }
+}
+
+Object.assign(SearchSeparatorRow.prototype, {
+    '[Controls/_searchBreadcrumbsGrid/SearchSeparatorRow]': true,
+    '[Controls/_display/SearchSeparator]': true,
+    _moduleName: 'Controls/searchBreadcrumbsGrid:SearchSeparatorRow',
+    _instancePrefix: 'search-separator-row-',
+    _cellModule: 'Controls/searchBreadcrumbsGrid:SearchSeparatorCell',
+});

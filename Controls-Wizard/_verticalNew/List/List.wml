@@ -1,0 +1,100 @@
+<ws:template name="nextStepButton">
+    <Controls.buttons:Button caption="{[Далее]}"
+                             buttonStyle="info"
+                             inlineHeight="xl"
+                             iconStyle="contrast"
+                             fontColorStyle="{{ _options.readOnly ? 'default' : 'contrast'}}"
+                             captionPosition="start"
+                             viewMode="filled"
+                             className="Wizard-Vertical-New-List_steps_story_button_wrapper"
+                             data-qa="Wizard-Vertical-New__nextStepButton"
+                             on:click="_nextStepHandler(_options.selectedStepIndex)"
+    >
+        <ws:iconTemplate>
+            <span class="Wizard-Vertical-New-List_steps_story_button_icon icon-Publish2">
+            </span>
+        </ws:iconTemplate>
+    </Controls.buttons:Button>
+</ws:template>
+
+<ws:template name="step">
+    <div class="Wizard-Vertical-New-List_steps_story_step
+                Wizard-Vertical-New-List_steps_story_step_{{stepStatus}}"
+                data-qa="Wizard-Vertical-New__step_{{stepStatus}}">
+        <div class="Wizard-Vertical-New-List_steps_story_step_wrapper
+                    Wizard-Vertical-New-List_cursor-{{stepStatus !== 'future' ? 'pointer' : 'default'}}"
+             on:click="_clickHandler(index)">
+            <div class="Wizard-Vertical-New-List_steps_story_step_title">{{ title }}</div>
+            <ws:if data="{{required === false && stepStatus !== 'future'}}">
+                <ws:if data="{{_changedRecords[index] !== undefined}}">
+                    <Controls.toggle:Switch
+                        attr:class="Wizard-Vertical-New-List_steps_story_required Wizard-Vertical-New-List_steps_story_required_toggle"
+                        value="{{_changedRecords[index]}}"
+                        on:valueChanged="_switchChangesRecord(index)"
+                        attr:data-qa="Wizard-Vertical-New__toggle"
+                    />
+                </ws:if>
+                <ws:else>
+                    <div class="Wizard-Vertical-New-List_steps_story_required"
+                         data-qa="Wizard-Vertical-New__required">
+                        ?
+                    </div>
+                </ws:else>
+            </ws:if>
+        </div>
+    </div>
+</ws:template>
+
+<div class="controls_Wizard_theme-{{_options.theme}} Wizard-Vertical-New-List_steps_story  controls_theme-{{_options.theme}}">
+    <Controls.list:View source="{{_stepsSource}}"
+                        style="master"
+                        markedKey="{{_markedStepKey}}"
+                        markerStyle="warning"
+                        stickyMarkedItem="{{false}}"
+                        itemPadding="{{_stepPadding}}"
+                        bottomPaddingMode="none"
+                        on:markedKeyChanged="_onMarkedStepKeyChanged()">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/list:ItemTemplate">
+                <ws:contentTemplate>
+                    <div class="Wizard-Vertical-New-List_steps_story_step_wrapper">
+                        {{contentTemplate.item.contents.title}}
+
+                        <ws:if data="{{contentTemplate.item.contents.required === false && _getItemStatus(contentTemplate.item.contents.key) !== 'future'}}">
+                            <ws:if data="{{_changedRecords[contentTemplate.item.contents.key] !== undefined}}">
+                                <Controls.toggle:Switch attr:class="Wizard-Vertical-New-List_steps_story_required Wizard-Vertical-New-List_steps_story_required_toggle"
+                                                        attr:data-qa="Wizard-Vertical-New__toggle"
+                                                        value="{{_changedRecords[contentTemplate.item.contents.key]}}"
+                                                        viewMode="filled"
+                                                        on:valueChanged="_switchChangesRecord(contentTemplate.item.contents.key)"/>
+                            </ws:if>
+                            <ws:else>
+                                <div class="Wizard-Vertical-New-List_steps_story_required"
+                                     data-qa="Wizard-Vertical-New__required">
+                                    ?
+                                </div>
+                            </ws:else>
+                        </ws:if>
+                    </div>
+                </ws:contentTemplate>
+            </ws:partial>
+        </ws:itemTemplate>
+    </Controls.list:View>
+
+    <ws:if data="{{_options.selectedStepIndex === _options.currentStepIndex && _maxSelectedIndex !== _options.selectedStepIndex}}">
+        <ws:partial template="nextStepButton"/>
+    </ws:if>
+
+    <ws:for data="index, item in _options.items">
+        <ws:if data="{{_getItemStatus(index) === 'future'}}">
+            <ws:partial
+                    template="step"
+                    title="{{item.title}}"
+                    index="{{index}}"
+                    stepStatus="{{_getItemStatus(index)}}"
+                    required="{{item.required}}"
+                    record="{{item.record}}"
+            />
+        </ws:if>
+    </ws:for>
+</div>

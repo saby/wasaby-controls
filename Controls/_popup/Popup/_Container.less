@@ -1,0 +1,51 @@
+.controls-Container__overlay {
+   transform: translateZ(0);
+   position: fixed;
+   left: 0;
+   top: 0;
+   right: 0;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.1);
+   cursor: default;
+
+   .ws-is-mobile-chrome-ios,
+   .ws-is-mobile-safari {
+      top: -1000%;
+      height: 2000%;
+   }
+}
+
+.controls-Popup__template {
+   pointer-events: all;
+   max-height: inherit;
+   max-width: inherit;
+   will-change: auto;
+}
+
+.controls-Popup__template-height {
+   height: 100%; // for inheritance
+}
+
+//TODO: Compatible
+.controls-PopupContainer {
+   &.ws-float-area-stack-panel-overflow {
+      /* stylelint-disable-next-line declaration-no-important */
+      position: static !important;
+   }
+}
+
+//TODO: Compatible
+.ws-is-mobile-android {
+   .controls-PopupContainer.ws-float-area-stack-panel-overflow {
+      /* stylelint-disable-next-line declaration-no-important */
+      transform: none !important;
+   }
+}
+
+.controls-Popup__IosFix {
+   padding-top: env(safe-area-inset-top);
+   margin-bottom: env(safe-area-inset-bottom);
+   padding-right: env(safe-area-inset-right);
+   padding-left: env(safe-area-inset-left);
+   box-sizing: border-box;
+}

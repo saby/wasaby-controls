@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls/popup Openers Dialog: should open and close popup 1`] = `
+<div>
+  <div
+    class="controls-PopupContainer ws-float-area-stack-panel-overflow"
+    id="popup"
+    tabindex="0"
+  >
+    <div
+      class="controls-Popup ws-float-area-show-complete controls_themes__wrapper controls-Scroll_webkitOverflowScrollingTouch controls-Popup__lastItem"
+      popupkey="popup-123"
+      style="position: absolute; left: -10000px; top: -10000px; z-index: 10; height: auto; pointer-events: none;"
+      tabindex="0"
+    >
+      <div />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls/popup Openers Stack: should open and close popup 1`] = `
+<div>
+  <div
+    class="controls-PopupContainer ws-float-area-stack-panel-overflow"
+    id="popup"
+    tabindex="0"
+  >
+    <div
+      class="controls-Popup ws-float-area-show-complete  controls-Stack__last-item controls-Popup_shown controls_themes__wrapper controls-Scroll_webkitOverflowScrollingTouch controls-Popup__lastItem"
+      popupkey="popup-123"
+      style="position: fixed; bottom: 0px; z-index: 10; height: 768px; pointer-events: all;"
+      tabindex="0"
+    >
+      <div
+        class="controls_popupTemplate_theme-default controls-Stack__content-wrapper ws-workspace-width-NaN controls_popupTemplate_theme-default controls-Popup__template controls-Popup__template-height"
+        tabindex="0"
+      >
+        <div />
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,11 @@
+<!-- // TODO убрать _OptionsFieldConsumer -->
+<Controls._suggestPopup._OptionsFieldConsumer scope="{{ _options }}">
+    <Controls.context:ContextOptionsConsumer>
+        <ws:contextOptionsInnerComponent>
+            <Controls._suggestPopup.List
+                    scope="{{ content }}"
+                    tabsOptions="{{_options.tabsOptions}}" _dataOptionsValue="{{contextOptionsInnerComponent._dataOptionsValue}}"
+                />
+        </ws:contextOptionsInnerComponent>
+    </Controls.context:ContextOptionsConsumer>
+</Controls._suggestPopup._OptionsFieldConsumer>

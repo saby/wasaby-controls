@@ -1,0 +1,28 @@
+<div class="controlsDemo__wrapper">
+   <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-richTemplate_roundBorder-2xs">
+      <Controls.treeTile:View
+              storeId="listData0"
+              tileMode="static"
+              itemActions="{{_itemActions}}"
+              tileWidth="410"
+              imageProperty="image"
+              roundBorder="{{_roundBorder}}">
+         <ws:itemTemplate>
+            <ws:partial
+                    template="Controls/tile:RichTemplate"
+                    border="{{false}}"
+                    gradientColor="{{itemTemplate.item.contents.gradientColor}}"
+                    titleLines="{{itemTemplate.item.contents.titleLines}}"
+                    descriptionLines="{{itemTemplate.item.contents.titleLines}}"
+                    imageSize="{{itemTemplate.item.contents.imageSize}}"
+                    imageViewMode="{{itemTemplate.item.contents.imageViewMode}}"
+                    imagePosition="{{itemTemplate.item.contents.imagePosition}}"
+                    description="{{itemTemplate.item.contents.description}}"
+                    imageCompressionCoefficient="{{itemTemplate.item.contents.imageCompressionCoefficient}}"
+                    imageEffect="gradient"
+                    scope="{{itemTemplate}}">
+            </ws:partial>
+         </ws:itemTemplate>
+      </Controls.treeTile:View>
+   </div>
+</div>

@@ -1,0 +1,24 @@
+.controls_theme-@{themeName} {
+   // переменные, которые должны переопределяться через wrapper должны быть опеределены на корневом элементе темы
+   --item_shadow-color_columns: var(--shadow-color_c);
+   --item_hover_shadow-color_columns: var(--shadow-color_b);
+}
+
+.controls_columns_theme-@{themeName} {
+   // Переменные для многоколоночного списка
+   //
+   // Ширина элементов
+
+   --item_max-width_columns: 400px;
+   --item_min-width_columns: 270px;
+
+   // Тень
+
+   --item_shadow-size_columns: 0 0 var(--shadow-blur_c);
+}
+
+.ws-is-phone.ws-is-sabypage {
+   .controls_columns_theme-@{themeName} {
+      --item_shadow-size_columns: 0;
+   }
+}

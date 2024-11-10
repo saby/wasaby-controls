@@ -1,0 +1,90 @@
+<div class="controlsDemo__wrapper__padding-left controls-background-unaccented controlsDemo_fixedWidth800 controlsDemo__height200">
+    <Controls-TabsLayout.colored:HorizontalCompactView
+            name="coloredTabs"
+            class="controlsDemo__height200"
+            headTemplate="{{_headCounter}}"
+            bind:selectedKey="_selectedKey">
+        <ws:items>
+            <ws:Array>
+                <ws:Object key="1" title="Просрочено" backgroundStyle="primary" icon="icon-Time" counter="1">
+                    <ws:itemTemplate>
+                        <div style="margin-left: 10px;">
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                            <div>Контент вкладки "Просрочено"</div>
+                        </div>
+                    </ws:itemTemplate>
+                </ws:Object>
+                <ws:Object key="2" title="Сделать" backgroundStyle="link" counter="62" icon="icon-Time">
+                    <ws:itemTemplate>
+                        <div style="margin-left: 10px;">
+                            <div>Контент вкладки "Сделать"</div>
+                            <div>Контент вкладки "Сделать"</div>
+                            <div>Контент вкладки "Сделать"</div>
+                            <div>Контент вкладки "Сделать"</div>
+                            <div>Контент вкладки "Сделать"</div>
+                            <div>Контент вкладки "Сделать"</div>
+                            <div>Контент вкладки "Сделать"</div><div>Контент вкладки "Сделать"</div>
+                            <div>Контент вкладки "Сделать"</div>
+                            <div>Контент вкладки "Сделать"</div>
+                            <div>Контент вкладки "Сделать"</div>
+                            <div>Контент вкладки "Сделать"</div>
+                            <div>Контент вкладки "Сделать"</div>
+                            <div>Контент вкладки "Сделать"</div><div>Контент вкладки "Сделать"</div>
+                            <div>Контент вкладки "Сделать"</div>
+                            <div>Контент вкладки "Сделать"</div>
+                            <div>Контент вкладки "Сделать"</div>
+                            <div>Контент вкладки "Сделать"</div>
+                            <div>Контент вкладки "Сделать"</div>
+                            <div>Контент вкладки "Сделать"</div>
+                        </div>
+                    </ws:itemTemplate>
+                </ws:Object>
+                <ws:Object key="3" title="Сегодня" backgroundStyle="success" counter="950" icon="icon-Time">
+                    <ws:itemTemplate>
+                        <div class="idiot?" style="margin-left: 10px">
+                            <div>Контент вкладки "Выполнен fsadfsadfо"</div>
+                            <div>Контент вкладки "Выполнено"</div>
+                            <div>Контент вкладки "Выполнено"</div>
+                            <div>Контент вкладки "Выполнено"</div><div>Контент вкладки "Выполнено"</div>
+                            <div>Контент вкладки "Выполнено"</div>
+                            <div>Контент вкладки "Выполнено"</div>
+                            <div>Контент вкладки "Выполнено"</div><div>Контент вкладки "Выполнено"</div>
+                            <div>Контент вкладки "Выполнено"</div>
+                            <div>Контент вкладки "Выполнено"</div>
+                            <div>Контент вкладки "Выполнено"</div><div>Контент вкладки "Выполнено"</div>
+                            <div>Контент вкладки "Выполнено"</div>
+                            <div>Контент вкладки "Выполнено"</div>
+                            <div>Контент вкладки "Выполнено"</div>
+                        </div>
+                    </ws:itemTemplate>
+                </ws:Object>
+            </ws:Array>
+        </ws:items>
+    </Controls-TabsLayout.colored:HorizontalCompactView>
+</div>

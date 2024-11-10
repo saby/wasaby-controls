@@ -1,0 +1,26 @@
+<div class="ws-flexbox">
+    <div class="controlsDemo__wrapper controlsDemo_zen_dark">
+        <div class="controlsDemo__cell controlsDemo_fixedWidth500">
+            <div class="controls-text-label">Dark</div>
+            <Controls.themesExt:ZenWrapper brightness="dark" complementaryColor="151, 216, 119" dominantColor="33, 33, 65">
+                <ws:partial template="Controls-demo/themes/ZenWrapper/resources/themedContent" />
+            </Controls.themesExt:ZenWrapper>
+        </div>
+    </div>
+    <div class="controlsDemo__wrapper controlsDemo_zen_light">
+        <div class="controlsDemo__cell controlsDemo_fixedWidth500">
+            <div class="controls-text-label">Light</div>
+            <Controls.themesExt:ZenWrapper brightness="light" complementaryColor="#b22323" dominantColor="#fff">
+                <ws:partial template="Controls-demo/themes/ZenWrapper/resources/themedContent" />
+            </Controls.themesExt:ZenWrapper>
+        </div>
+
+    </div>
+    <div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+        <div class="controlsDemo__cell">
+            <div class="controls-text-label">Original</div>
+            <ws:partial template="Controls-demo/themes/ZenWrapper/resources/themedContent"/>
+        </div>
+
+    </div>
+</div>

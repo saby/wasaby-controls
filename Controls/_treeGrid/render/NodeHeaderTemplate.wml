@@ -1,0 +1,16 @@
+<div class="{{ (gridColumn || itemData).getContentClasses({
+    'hasContent': false
+}) }}">
+    <ws:partial if="{{ beforeContentTemplate }}" template="{{ beforeContentTemplate }}"/>
+
+    <ws:if data="{{ gridColumn.shouldRenderHasMoreButton() }}">
+        <ws:partial template="Controls/baseList:MoreButtonTemplate"
+                    buttonView="{{navigationButtonView}}"
+                    buttonConfig="{{navigationButtonConfig}}"
+                    loadMoreCaption="{{ item.getMoreCaption() }}"
+                    linkFontColorStyle="{{ item.getMoreFontColorStyle() }}"
+                    linkFontSize="xs"
+                    linkClass="controls-TreeGrid__nodeHeaderLoadMore"/>
+    </ws:if>
+</div>
+

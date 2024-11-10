@@ -1,0 +1,29 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">Пример отображения кликабельного элемента, состоящего из двух цветов.</div>
+        <div    attr:style="cursor: pointer"
+                on:mouseenter="_mouseEventHandlerForDoubleColor()"
+                on:mouseleave="_mouseEventHandlerForDoubleColor()"
+                class="ws-flexbox ws-align-items-baseline controlsDemo_fixedWidth350">
+            <div class="icon-Money controls-icon_size-s controls-icon_style-{{_hoveredStateForDoubleColor ? 'secondary' : 'unaccented'}}"></div>
+            <span attr:style="margin-left: 4px" class="controls-text-{{_hoveredStateForDoubleColor ? 'secondary' : 'unaccented'}}">12.07</span>
+            (
+            <Controls.baseDecorator:Money attr:style="margin-right: 4px" value="{{350450}}" fontColorStyle="{{_hoveredStateForDoubleColor ? 'secondary' : 'unaccented'}}"/>
+            <span class="controls-text-{{_hoveredStateForDoubleColor ? 'secondary' : 'unaccented'}}">до 12.08</span>
+            )
+        </div>
+    </div>
+    <div class="controlsDemo__cell">
+        <div    attr:style="cursor: pointer"
+                on:mouseenter="_mouseEventHandlerForTreeColor()"
+                on:mouseleave="_mouseEventHandlerForTreeColor()"
+                class="ws-flexbox ws-align-items-baseline controlsDemo_fixedWidth350">
+            <div class="icon-Money controls-icon_size-s controls-icon_style-{{_hoveredStateForTreeColor ? 'danger' : 'secondary'}}"></div>
+            <span attr:style="margin-left: 4px" class="controls-text-{{_hoveredStateForTreeColor ? 'danger' : 'secondary'}}">12.07</span>
+            (
+            <Controls.baseDecorator:Money attr:style="margin-right: 4px" value="{{350450}}" fontColorStyle="{{_hoveredStateForTreeColor ? 'danger' : 'unaccented'}}"/>
+            <span class="controls-text-{{_hoveredStateForTreeColor ? 'danger' : 'unaccented'}}">до 12.08</span>
+            )
+        </div>
+    </div>
+</div>

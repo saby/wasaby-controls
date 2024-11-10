@@ -1,0 +1,5 @@
+<div class="controlsDemo_fixedWidth400">
+    <Controls-Wizard.vertical:Layout
+            items="{{_items}}"
+            bind:selectedStepIndex="_selectedStepIndex"/>
+</div>

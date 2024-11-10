@@ -1,0 +1,11 @@
+<div class="controls_filterPopup_theme-{{_options.theme}} controls-FilterSelect">
+   <ws:for data="index, item in _options.items">
+            <span class="controls_FilterSelector__separator" if="{{index}}"> / </span>
+      <ws:partial
+         template="{{_options.itemTemplate || _itemTemplate}}"
+         displayProperty="{{_options.displayProperty}}"
+         index="{{index}}"
+         item="{{item}}"
+         on:click="_clickHandler(item)"/>
+   </ws:for>
+</div>

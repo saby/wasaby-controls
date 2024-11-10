@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper controlDemo_Tile_MultiSelect">
+<Controls.treeTile:View
+        tileMode="dynamic"
+        imageProperty="image"
+        storeId="MultiSelect">
+        <ws:itemTemplate>
+                <ws:partial
+                        template="Controls/tile:ItemTemplate"
+                        hasTitle="{{itemTemplate.item.contents.isDocument}}"/>
+        </ws:itemTemplate>
+</Controls.treeTile:View>
+</div>

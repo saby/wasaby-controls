@@ -1,0 +1,62 @@
+<ws:template name="search">
+    <ws:partial template="{{(_options.caption || _backButtonCaption) && _options.menuMode === 'selector' ? 'Controls/ExpandableSearch' : 'Controls/search:Input'}}"
+        on:valueChanged="_valueChanged()"
+        bind:value="_inputSearchValue"
+        on:search="_search()"
+        on:searchReset="_searchReset()"
+        minSearchLength="{{_options.minSearchLength}}"
+        searchDelay="{{_options.searchDelay}}"
+        placeholder="{{placeholder}}"
+        contrastBackground="{{true}}"
+        name="menuSearch"
+        iconSize="{{null}}"
+        searchInputDirection="left"
+        inlineWidth="auto"
+        bind:expanded="_expanded"
+        attr:class="{{(_options.caption || _backButtonCaption) && _options.menuMode === 'selector' ? 'controls-margin_right-2xs'}}"
+/>
+        </ws:template>
+<ws:partial template="Controls/_menu/Popup/HeaderWrapperTemplate"
+            attr:class="controls-Menu__popup_header_searchWrapper
+                 {{!_options.isAdaptive && !_options.icon && (_options.menuMode !== 'selector' || !_options.caption && !_backButtonCaption || _expanded) ? 'controls-Menu__popup_header_searchWrapper_offset'}}
+                 controls-Menu__popup-header-{{_options.multiSelect ? 'multiSelect' : 'singleSelect'}}
+                 {{_options.closeButtonVisible ? 'controls-Menu__popup-header_withClose'}}"
+            scope="{{_options}}"
+            icon="{{_backButtonCaption ? null : _options.icon}}">
+    <div class="ws-flexbox ws-align-items-center {{!_expanded && (_options.caption || _backButtonCaption) ? 'tw-w-full tw-justify-between'}}
+    {{_options.caption ? 'controls-Menu__popup_headerWrapper_search_minWidth_' + (_options.searchWidth || 's')}}
+     {{!_hasValue || _options.viewMode !== 'search' || _options.isAdaptive ? '' : 'controls-Menu__popup_header_searchWrapper-width'}}">
+        <ws:if data="{{_options.menuMode === 'selector' && (_options.caption || _backButtonCaption)}}">
+            <ws:if data="{{_backButtonCaption}}" >
+                <Controls.heading:Back attr:class="controls-BreadCrumbsPath__backButton controls-fontweight-bold controls-padding_left-3xs"
+                                       caption="{{_backButtonCaption}}"
+                                       tooltip="{{_backButtonCaption}}"
+                                       iconStyle="primary"
+                                       fontColorStyle="default"
+                                       on:click="_breadcrumbsClick()"
+                />
+<!--                <Controls-ListEnv.breadcrumbs:Back storeId="{{_options.storeId}}"/>-->
+            </ws:if>
+            <ws:else>
+                <Controls._menu.Popup.HeaderTemplate caption="{{_options.caption}}"
+                                                     attr:class="{{_options.searchParam ? 'controls-padding_left-2xs' : ''}}"/>
+            </ws:else>
+
+            <ws:if data="{{_options.searchParam}}">
+                <ws:partial template="search"
+                            placeholder="{{_options.searchPlaceholder || _options.caption || undefined}}"
+                />
+            </ws:if>
+        </ws:if>
+        <ws:else data="{{_options.searchParam}}">
+            <ws:partial template="search"
+                        placeholder="{{_options.searchPlaceholder}}"
+                        attr:class="controls-Menu__popup_header_search
+                        {{!_options.caption ?
+                           'controls-Menu__popup_header_search_minWidth_' + (_options.searchWidth || 's') +
+                           (!_hasValue || _options.viewMode !== 'search' || _options.isAdaptive ?
+                            ' controls-Menu__popup_header_search_maxWidth_' + (_options.searchWidth || 's'))}}"
+            />
+        </ws:else>
+    </div>
+</ws:partial>

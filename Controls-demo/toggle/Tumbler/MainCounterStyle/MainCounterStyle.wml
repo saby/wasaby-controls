@@ -1,0 +1,17 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center {{_options.theme.indexOf('default') >= 0 ? 'controlsDemo_fixedWidth300'}}"
+         data-qa="controlsDemo_capture">
+        <ws:for data="item in _items">
+            <div class="{{_options.theme.indexOf('default') === -1 ? 'controlsDemo__inline-block controls-padding_right-m'}}">
+                <div class="controls-text-label controlsDemo_widthFit controls-text-label">
+                    MainCounterStyle={{item.style}}
+                </div>
+                <Controls.Tumbler:Control items="{{item.items}}" bind:selectedKey="_selectedKey">
+                    <ws:itemTemplate>
+                        <ws:partial template="Controls/Tumbler:tumblerItemCounterTemplate" scope="{{itemTemplate}}"/>
+                    </ws:itemTemplate>
+                </Controls.Tumbler:Control>
+            </div>
+        </ws:for>
+    </div>
+</div>

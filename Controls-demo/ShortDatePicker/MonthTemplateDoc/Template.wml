@@ -1,0 +1,24 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div
+        class="controlsDemo__flex ws-justify-content-center ws-align-items-center controls_shortDatePicker_theme-{{_options.theme}}"
+        data-qa="controlsDemo_capture">
+        <Controls.shortDatePicker:View
+            attr:class="controlsDemo-ShortDatePicker__large"
+            chooseHalfyears="{{false}}"
+            chooseMonths="{{true}}"
+            chooseQuarters="{{false}}"
+            chooseYears="{{false}}"
+            startValue="{{_startValue}}"
+            endValue="{{_endValue}}">
+            <ws:monthTemplate>
+                <ws:partial template="Controls/shortDatePicker:MonthTemplate">
+                    <ws:contentTemplate>
+                        <span class="{{_isQuarter(contentTemplate.value.getMonth()) ? 'controls-text-danger'}}">
+                            {{_getText(contentTemplate.value)}}
+                        </span>
+                    </ws:contentTemplate>
+                </ws:partial>
+            </ws:monthTemplate>
+        </Controls.shortDatePicker:View>
+    </div>
+</div>

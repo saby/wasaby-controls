@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <ui_module name="Controls-Colors-default-theme"
+               id="6f9dd6db-ddc9-486a-88f0-7daddfb41248"
+               package="Wasaby"
+               kaizen_zone="8af9d112-b835-49ac-bc1c-8b6fdcf5b753"
+               required="1"
+               version="1.00"
+    >
+    <depends>
+        <module id="8eb2d1c0-c57a-4bb1-b41e-67ea30eb288d" name="Controls-Colors"/>
+        <module id="af50caf5-f84b-4b81-a19c-6f6618372dbd" name="Controls-default-theme"/>
+    </depends>
+    <load_after/>
+    <parameters/>
+    <cluster_endpoints/>
+    <resources/>
+    <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

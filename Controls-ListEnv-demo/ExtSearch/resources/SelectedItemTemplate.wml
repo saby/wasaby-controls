@@ -1,0 +1,18 @@
+<ws:partial
+   template="Controls/lookup:ItemTemplate"
+   displayProperty="title"
+   clickable="{{ true }}">
+   <ws:contentTemplate>
+      <div class="js-controls-SelectedCollection__item__caption ws-flexbox ws-flex-nowrap ws-ellipsis ws-align-items-center">
+         <div class="controls-padding_left-2xs ws-ellipsis controls-fontweight-bold controls-text-primary" title="{{ item.get('title') }}">
+            {{ item.get('title') }}
+         </div>
+      </div>
+   </ws:contentTemplate>
+   <ws:crossTemplate>
+      <div
+         class="js-controls-SelectedCollection__item__cross controls-SelectedCollection__item__cross icon-CloseNew ws-disableFastTouch"
+         title="{[ Удалить ]}">
+      </div>
+   </ws:crossTemplate>
+</ws:partial>

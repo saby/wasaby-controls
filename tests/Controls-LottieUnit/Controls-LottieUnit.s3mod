@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module id="6175d92f-d7e7-4add-b8d3-a705ed6b0b77" name="Controls-LottieUnit" version="1.00">
+  <description/>
+  <depends>
+      <module id="c0ca8e26-b7d2-4d5c-88c8-1f6d727e7d44" name="Controls-Lottie"/>
+      <module id="a10cb1cb-b23d-4ef6-a757-4f7382e0e8d1" name="SbisEnvUI"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <test environment="NodeJS" framework="Jest" />
+  <resources/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:class="controlsDemo__height200 controls-background-master">
+        <Controls.grid:View
+                storeId="master"
+                columns="{{_columns}}"
+                style="master"
+                resultsPosition="top"/>
+    </Controls.scroll:Container>
+</div>

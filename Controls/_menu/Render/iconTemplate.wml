@@ -1,0 +1,7 @@
+<Controls.icon:Icon iconStyle="{{(item.get('readOnly') ? 'readonly' : (item.get('iconStyle') || _options.iconStyle || 'secondary'))}}"
+                    iconSize="{{_options.iconSize || itemData.iconSize || iconPadding || 'm'}}"
+                    icon="{{item.get('icon')}}"
+                    class="controls-Menu__icon {{item.get(displayProperty || 'title') ?
+                     'controls-Menu__icon_' + (itemData.iconSize || iconPadding || 'm') + '-' + iconAlign}}
+                     {{!item.get('icon') ? 'controls-Menu__icon-invisible'}}"
+/>

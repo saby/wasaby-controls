@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             tagStyle="info"
+                             placeholder="{{_placeholder}}"
+                             on:tagClick="_showInfoBox()"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             tagStyle="info"
+                             placeholder="{{_placeholder}}"
+                             on:tagHover="_showInfoBox()"/>
+    </div>
+</div>

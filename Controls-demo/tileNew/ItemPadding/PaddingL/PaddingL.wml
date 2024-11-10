@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell controlsDemo__mr2 controlsDemo-hor-padding-l">
+      <Controls.treeTile:View
+          storeId="ItemPaddingPaddingL"
+          tileMode="dynamic"
+          imageProperty="image">
+            <ws:itemPadding left="l" right="l" bottom="l" top="l"/>
+        </Controls.treeTile:View>
+    </div>
+</div>

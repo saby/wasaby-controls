@@ -1,0 +1,76 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+   <ws:for data="cfg in _cfgSource">
+      <div class="demo__grid-cell demo__grid-cell_colspan controls-text-label">
+         fontSize="{{cfg.fontSize}}"; iconStyle="{{cfg.iconStyle}}"; fontColorStyle="{{cfg.fontColorStyle}}"
+      </div>
+      <div class="ws-flexbox">
+         <div class="demo__grid-cell">
+            <Controls.heading:Back
+               caption="Back"
+               fontSize="{{cfg.fontSize}}"
+               iconStyle="{{cfg.iconStyle}}"
+               fontColorStyle="{{cfg.fontColorStyle}}"
+               attr:data-qa="back-button_{{cfg.fontSize}}_{{cfg.iconStyle}}_{{cfg.fontColorStyle}}"
+            />
+         </div>
+         <div class="demo__grid-cell">
+            <Controls.heading:Back
+               caption="Back"
+               iconViewMode="functionalButton"
+
+               fontSize="{{cfg.fontSize}}"
+               iconStyle="{{cfg.iconStyle}}"
+               fontColorStyle="{{cfg.fontColorStyle}}"
+
+               attr:data-qa="back-functionalButton_{{cfg.fontSize}}_{{cfg.iconStyle}}_{{cfg.fontColorStyle}}"
+            />
+         </div>
+      </div>
+      <div class="demo__grid-cell demo__grid-cell_colspan"></div>
+   </ws:for>
+
+   <!-- region contrast styles -->
+   <div class="demo__grid-cell demo__grid-cell_colspan controls-text-contrast darkgray-theme">
+      fontSize="7xl"; fontColorStyle="contrast"; iconStyle="contrast"
+   </div>
+   <div class="ws-flexbox">
+      <div class="demo__grid-cell darkgray-theme">
+         <Controls.heading:Back
+            caption="Back"
+            fontSize="7xl"
+            fontColorStyle="contrast"
+            iconStyle="contrast"
+            attr:data-qa="back-button_7xl_contrast_contrast"
+         />
+      </div>
+      <div class="demo__grid-cell darkgray-theme">
+         <Controls.heading:Back
+            caption="Back"
+            fontSize="7xl"
+            iconViewMode="functionalButton"
+            fontColorStyle="contrast"
+            iconStyle="contrast"
+            attr:data-qa="back-functionalButton_7xl_contrast_contrast"
+         />
+      </div>
+   </div>
+   <div class="demo__grid-cell demo__grid-cell_colspan darkgray-theme"></div>
+   <!-- endregion -->
+
+   <!-- region CSS var -->
+   <div class="demo__grid-cell demo__grid-cell_colspan controls-text-label gray-theme">
+      Customization with CSS var
+   </div>
+   <div class="demo__grid-cell demo__grid-cell_colspan gray-theme css-customise">
+      <Controls.heading:Back
+         caption="Back"
+         fontSize="7xl"
+         iconViewMode="functionalButton"
+         fontColorStyle="default"
+         iconStyle="primary"
+         attr:data-qa="back-functionalButton_7xl_primary_default"
+      />
+   </div>
+   <div class="demo__grid-cell demo__grid-cell_colspan gray-theme"></div>
+   <!-- endregion -->
+</div>

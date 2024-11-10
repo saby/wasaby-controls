@@ -1,0 +1,30 @@
+<div class="controlsDemo__wrapper">
+   <div on:click="removeItems()">remove selected items</div>
+   <Controls.scroll:Container attr:class="controlsDemo__height400 controlsDemo__minWidth600">
+      <Controls.columns:View
+         storeId="ColumnsViewCustomTemplate"
+         columnsMode="auto"
+         multiSelectPosition="custom"
+         itemsReadyCallback="{{_itemsReadyCallback}}"
+         itemActionsClass="controls-itemActionsV_position_bottomRight"
+         itemActions="{{_itemActions}}"
+         name="view"
+         on:selectedKeysChanged="_onSelectedKeysChanged()">
+         <ws:itemTemplate>
+            <!-- опция шаблона имеет приоритет -->
+            <ws:partial template="Controls/columns:ItemTemplate"
+                        highlightOnHover="{{false}}"
+                        shadowVisibility="hidden"
+                        itemActionsClass="controls-itemActionsV_position_topRight">
+               <ws:contentTemplate>
+                  <div class="controlsDemo_ColumnsView_itemTemplate-wrapper controlsDemo_ColumnsView_itemTemplate-border">
+                     <ws:partial template="{{ contentTemplate.multiSelectTemplate }}"/>
+                     <div class="controlsDemo_ColumnsView_itemTemplate-title">{{itemTemplate.item.getContents().get('title')}}   {{itemTemplate.item._contentsIndex}}</div>
+                     <div class="controlsDemo_ColumnsView_itemTemplate-description">{{itemTemplate.item.getContents().get('description')}}</div>
+                  </div>
+               </ws:contentTemplate>
+            </ws:partial>
+         </ws:itemTemplate>
+      </Controls.columns:View>
+   </Controls.scroll:Container>
+</div>

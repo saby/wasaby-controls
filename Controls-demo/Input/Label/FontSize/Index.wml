@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <ws:for data="rows in _fontSizes">
+        <div class="controlsDemo__flex ws-align-items-baseline baseline">
+            <ws:for data="fontSize in rows">
+                <div class="controlsDemo_fixedWidth100 baseline">
+                    <Controls.input:Label caption="Label"
+                                          fontSize="{{fontSize}}"/>
+                </div>
+            </ws:for>
+        </div>
+    </ws:for>
+</div>

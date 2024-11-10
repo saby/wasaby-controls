@@ -1,0 +1,125 @@
+/**
+ * @kaizen_zone 7b560386-8131-481a-b9c0-8b3ede6f29a0
+ */
+import { Control, IControlOptions, TemplateFunction } from 'UI/Base';
+import SyntheticEntry from './SyntheticEntry';
+import { IIntersectionObserverOptions } from './Types';
+import template = require('wml!Controls/_scroll/IntersectionObserver/Container');
+
+export interface IIntersectionObserverContainerOptions
+    extends IControlOptions,
+        IIntersectionObserverOptions {
+    data: object;
+}
+
+/**
+ * Контейнер, позволяющий отслеживать пересечение с внешним контейнером.
+ *
+ * @remark
+ * Полезные ссылки:
+ * * {@link https://github.com/saby/wasaby-controls/blob/rc-20.4000/Controls-default-theme/aliases/_scroll.less переменные тем оформления}
+ *
+ * @class Controls/_scroll/IntersectionObserverContainer
+ * @see Controls/_scroll/IntersectionObserver
+ * @public
+ */
+
+class IntersectionObserverContainer extends Control<IIntersectionObserverContainerOptions> {
+    protected _template: TemplateFunction = template;
+    private _currentContainer: HTMLElement;
+
+    protected _registerObserver() {
+        this._notify(
+            'intersectionObserverRegister',
+            [
+                {
+                    instId: this.getInstanceId(),
+                    observerName: this._options.observerName,
+                    element: this._currentContainer,
+                    threshold: this._options.threshold,
+                    rootMargin: this._options.rootMargin,
+                    data: this._options.data,
+                    handler: this._observeHandler.bind(this),
+                },
+            ],
+            { bubbling: true }
+        );
+    }
+
+    protected _unregisterObserver() {
+        this._notify(
+            'intersectionObserverUnregister',
+            [this.getInstanceId(), this._options.observerName],
+            { bubbling: true }
+        );
+    }
+
+    protected _afterMount(): void {
+        // TODO remove after complete https://online.sbis.ru/opendoc.html?guid=7c921a5b-8882-4fd5-9b06-77950cbe2f79
+        this._currentContainer = this._container.get ? this._container.get(0) : this._container;
+        this._registerObserver();
+    }
+
+    protected _afterRender(oldOptions?: IIntersectionObserverContainerOptions) {
+        super._afterRender(oldOptions);
+        // Может произойти так, что компонент перерисовался, и перезаписался его ref(this._container),
+        // из-за чего остается подписка на несуществующий DOM элемент.
+        // Поэтому проверяем что текущее значение ref соответствует предыдущему, и в случае отличия делаем новую подписку
+        const container = this._container.get ? this._container.get(0) : this._container;
+        if (container !== this._currentContainer) {
+            this._unregisterObserver();
+            this._currentContainer = container;
+            this._registerObserver();
+        }
+    }
+
+    private _observeHandler(item: SyntheticEntry): void {
+        this._notify('intersect', [item]);
+    }
+
+    protected _beforeUnmount(): void {
+        this._unregisterObserver();
+    }
+}
+
+export default IntersectionObserverContainer;
+/**
+ * @name Controls/_scroll/IntersectionObserverContainer#observerName
+ * @cfg {String} Имя которое используется при регистрации в контроллере {@link Controls/scroll:IntersectionObserverController}.
+ * Контроллер следит только за элементами с таким же именем. Если не задано, то используется контроллер на уровне
+ * ближайшей скроллируемой области {@link Controls/scroll:Container}.
+ * @demo Controls-demo/Scroll/IntersectionObserver/Default/Index
+ */
+
+/**
+ * @name Controls/_scroll/IntersectionObserverContainer#threshold
+ * @cfg {Array} Число или массив чисел, указывающий, при каком проценте видимости целевого элемента должен
+ * сработать callback. Например, в этом случае callback функция будет вызываться при появлении в зоне видимости
+ * каждые 25% целевого элемента:  [0, 0.25, 0.5, 0.75, 1]
+ * @demo Controls-demo/Scroll/IntersectionObserver/Threshold/Index
+ */
+
+/**
+ * @name Controls/_scroll/IntersectionObserverContainer#rootMargin
+ * @cfg {String} Смещение прямоугольника, применяемое к bounding box корня при расчёте пересечений/
+ * Эффективно сжимает или увеличивает корень для целей расчёта. Может быть выражено в пикселях (px) или в процентах (%).
+ * Например "50% 0px 0px 0px"
+ * @default "0px 0px 0px 0px".
+ * @demo Controls-demo/Scroll/IntersectionObserver/RootMargin/Index
+ */
+
+/**
+ * @name Controls/_scroll/IntersectionObserverContainer#data
+ * @cfg {Object} Данные которые приходят в событие {@link Controls/_scroll/IntersectionObserver/Container#intersect}
+ * в качестве параметра.
+ * @demo Controls-demo/Scroll/IntersectionObserver/Default/Index
+ */
+
+/**
+ * @event intersect Происходит когда цель достигает порогового значения, указанного в опции threshold
+ * @name Controls/_scroll/IntersectionObserverContainer#intersect
+ * @param {UI/Events:SyntheticEvent} event Дескриптор события.
+ * @param {Controls/_scroll/interface/IIntersectionObserverSyntheticEntry} entry Данные, описывающие
+ * пересечение между целевым элементом и его корневым контейнером.
+ * @demo Controls-demo/Scroll/IntersectionObserver/Default/Index
+ */

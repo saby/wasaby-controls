@@ -1,0 +1,8 @@
+<Controls.popupTemplate:Stack>
+    <ws:bodyContentTemplate>
+        <ws:partial template="Controls-demo/Popup/BaseTemplate"
+                    attr:class="controls-StackTemplate__content-area_padding_theme_{{theme}}
+                                controlsDemo-StackTemplate-without-head">
+        </ws:partial>
+    </ws:bodyContentTemplate>
+</Controls.popupTemplate:Stack>

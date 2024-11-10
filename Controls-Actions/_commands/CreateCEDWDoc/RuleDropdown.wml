@@ -1,0 +1,18 @@
+<Controls.dropdown:Selector
+   keyProperty="{{_options.keyProperty || 'Uuid'}}"
+   displayProperty="{{_options.displayProperty || 'Name'}}"
+   nodeProperty="{{_options.nodeProperty || 'IsFolder'}}"
+   parentProperty="{{_options.parentProperty || 'ParentUuid'}}"
+   groupProperty="GroupId"
+   viewMode="link"
+   selectionType="leaf"
+   source="{{_source}}"
+   menuHeadingCaption="{{_caption}}"
+   emptyText="{[Не выбрано]}"
+   bind:selectedKeys="_selectedKeys"
+   on:selectedKeysChanged="_selectedKeysChangedHandler()">
+   <ws:itemTemplate>
+      <ws:partial template="Controls/menu:ItemTemplate"
+                  marker="{{false}}"/>
+   </ws:itemTemplate>
+</Controls.dropdown:Selector>

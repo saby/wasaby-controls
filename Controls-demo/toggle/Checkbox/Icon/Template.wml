@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell demo-checkboxIcon__default controls-margin_right-xl">
+            <Controls.checkbox:Checkbox bind:value="_value1" icon="icon-Info" iconSize="s" iconStyle="secondary"/>
+        </div>
+        <div class="controlsDemo__cell demo-checkboxIcon__icon controls-margin_right-xl">
+            <Controls.checkbox:Checkbox bind:value="_value2" icon="icon-Info" iconSize="m" iconStyle="primary"/>
+        </div>
+        <div class="controlsDemo__cell demo-checkboxIcon__icon controls-margin_right-xl">
+            <Controls.checkbox:Checkbox bind:value="_value3" icon="icon-Remark" iconSize="s" iconStyle="secondary"/>
+        </div>
+        <div class="controlsDemo__cell demo-checkboxIcon__icon">
+            <Controls.checkbox:Checkbox bind:value="_value4" icon="icon-Remark" iconSize="m" iconStyle="primary"/>
+        </div>
+    </div>
+</div>

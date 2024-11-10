@@ -1,0 +1,28 @@
+<div class="ws-flexbox">
+    <Controls.browser:Browser source="{{ _listSource }}"
+                              keyProperty="key"
+                              displayProperty="title"
+                              selectedKeys="{{ _selectedKeys }}"
+                              on:selectedKeysChanged="_selectedKeysChanged()">
+        <ws:content>
+            <div class="engine-demo__Widgets_filterList ws-flexbox ws-flex-column">
+                <ws:if data="{{ _expandedOperationsPanel }}">
+                    <Controls.operations:PanelContainer>
+                        <Controls.operations:Panel source="{{ _panelSource }}"
+                                                   closeButtonVisible="{{ false }}"
+                                                   on:itemClick="_onPanelItemClick()"/>
+                    </Controls.operations:PanelContainer>
+                </ws:if>
+                <Controls.listDataOld:ListContainer>
+
+                    <Controls.list:HotKeysContainer>
+                        <Controls.list:View name="list"
+                                            multiSelectVisibility="visible"
+                                            itemActionsProperty="itemActions"
+                                            on:actionClick="_onActionClick()"/>
+                    </Controls.list:HotKeysContainer>
+                </Controls.listDataOld:ListContainer>
+            </div>
+        </ws:content>
+    </Controls.browser:Browser>
+</div>

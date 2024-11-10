@@ -1,0 +1,37 @@
+@gradient_height_rich_tile: 48px;
+
+.Controls-Templates-BackgroundItem__image_gradientOverlay_to-bottom::after,
+.Controls-Templates-BackgroundItem__image_gradientOverlay_to-top::after {
+   content: '';
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+}
+
+.Controls-Templates-BackgroundItem__image_gradientOverlay_to-bottom::after {
+   background: linear-gradient(rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.Controls-Templates-BackgroundItem__image_gradientOverlay_to-top::after {
+   background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.35) 100%);
+}
+
+.Controls-Templates-BackgroundItem__content-overlay_top-gradient::after {
+   position: absolute;
+   content: '';
+   height: @gradient_height_rich_tile + 1px;
+   // выводим градиент отдельно от фона, т.к. если делать градиент в качестве фона,
+   // то при большой высоте контента будет выглядеть некрасиво
+   top: -@gradient_height_rich_tile;
+   left: 0;
+   right: 0;
+   pointer-events: none;
+   background: linear-gradient(to top, var(--dominant-color_zen), rgba(var(--dominant_zen_rgb), 0));
+}
+
+.Controls-Templates-BackgroundItem__content-overlay_fill {
+   background: var(--dominant-color_zen);
+   position: relative;
+}

@@ -1,0 +1,28 @@
+<div class="engineDemo_horizontalBase">
+    <div class="engineDemo_horizontalBase_optionSwitch">
+        <Controls.input:Label caption="displayMode: "/>
+        <Controls.RadioGroup:Control
+            keyProperty="name"
+            selectedKey="{{ _displayMode }}"
+            source="{{ _displayModeSource }}"
+            direction="horizontal"
+            on:selectedKeyChanged="_displayModeChanged()"/>
+    </div>
+    <div class="engineDemo_horizontalBase_header">
+        <div class="engineDemo_horizontalBase_headerText">
+            Мастер подключения
+        </div>
+        <ws:if data="{{ selectedStepIndex > 0 }}">
+            <Controls.buttons:Button buttonStyle="primary" caption="Далее" class="engineDemo_horizontalBase_nextButton"
+                                     on:click="nextStep()"/>
+        </ws:if>
+    </div>
+
+    <Controls-Wizard.horizontal:Layout
+        displayMode="{{ _displayMode }}"
+        selectedStepIndex="{{ selectedStepIndex }}"
+        currentStepIndex="{{ currentStepIndex }}"
+        on:selectedStepIndexChanged="selectedStepIndexChangedHandler()"
+        items="{{ items }}">
+    </Controls-Wizard.horizontal:Layout>
+</div>

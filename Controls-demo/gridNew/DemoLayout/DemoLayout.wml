@@ -1,0 +1,41 @@
+<ws:template name="SIDEBAR">
+    <div class="ControlsDemo__grid__demoLayout__sidebar
+                ControlsDemo__grid__demoLayout__sidebar_{{side}}
+                {{ isOpened ? 'ControlsDemo__grid__demoLayout__sidebar_opened' }}">
+
+        <div class="ControlsDemo__grid__demoLayout__sidebar__toggleButtonWrapper">
+            <div class="ControlsDemo__grid__demoLayout__sidebar__toggleButton
+                        {{ !isOpened ? 'ControlsDemo__grid__demoLayout__sidebar__toggleButton_open' }}"
+                 data-qa="controlsDemo-DemoLayout__expander"
+                 on:click="_toggleSidebar(side)">
+                <div class="ControlsDemo__grid__demoLayout__sidebar__toggleButton__text">{{ isOpened ? 'Закрыть' : 'Открыть'}}</div>
+            </div>
+        </div>
+
+        <div class="ControlsDemo__grid__demoLayout__sidebar__content">
+            <ws:for data="index, item in sidebar">
+                <div class="ControlsDemo__grid__demoLayout__sidebar__card" attr:key="{{ index }}">
+                    <ws:partial template="{{ item.template }}"/>
+                </div>
+            </ws:for>
+        </div>
+    </div>
+</ws:template>
+
+<div class="controlsDemo__wrapper">
+    <ws:partial template="SIDEBAR"
+                if="{{ _getSidebarItems('left') }}"
+                side="left"
+                sidebar="{{ _getSidebarItems('left') }}"
+                isOpened="{{ _isLeftSidebarOpened }}"/>
+
+    <div class="ControlsDemo__grid__demoLayout__content">
+        <ws:partial template="{{ _options.content }}" if="{{ _options.content }}"/>
+    </div>
+
+    <ws:partial template="SIDEBAR"
+                if="{{ _getSidebarItems('right') }}"
+                side="right"
+                sidebar="{{ _getSidebarItems('right') }}"
+                isOpened="{{ _isRightSidebarOpened }}"/>
+</div>

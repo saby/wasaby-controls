@@ -1,0 +1,77 @@
+<div class="controls_search_theme-{{_options.theme}}
+			controls-Search__expandable-search
+			{{_options.inlineWidth === 'auto' ? 'controls-Search__expandable-search-inlineWidth_auto'}}
+			{{(_expanded || _options.contrastBackground) ? 'controls-Search__expandable-search-size_' + _options.inlineHeight}}"
+     attr:data-qa="controls-expandableSearch">
+    <ws:if data="{{_expanded}}">
+        <div class="controls-Search__expandable-container
+                    controls-Search__expandable-container_{{_options.shadowVisible ? 'shadowed'}}
+                    controls-Search__expandable-container_{{_options.shadowVisible && _options.contrastBackground ? 'contrast' : 'default'}}
+                    controls-Search__expandable-container_expandable-{{_options.searchInputDirection}}_{{_options.contrastBackground ? 'contrast' : 'default'}}
+                    {{_expanded ? 'controls-Search__expandable-container-inlineHeight-' + _options.inlineHeight}}
+                    {{_options.contrastBackground ? 'controls-Search__expandable-container-inlineHeight_' + _options.inlineHeight}}
+                    {{ _getInlineWidthClasses() }} {{_getWidthAutoClasses()}}"
+			style="{{ _getInlineWidthStyles() }} right:{{_searchInputOffsetRight}}px; left:{{_searchInputOffsetLeft}}px">
+            <div class="controls-Search__expandable-input
+                        controls-Search__expandable-input_{{_options.contrastBackground ? 'contrast' : 'default'}}">
+                <Controls.search:Input
+                            name="searchInput"
+                            searchButtonVisible="{{_options.searchButtonVisible}}"
+                            resetButtonVisible="{{false}}"
+                            searchButtonAlign="right"
+                            constraint="{{_options.constraint}}"
+                            maxLength="{{_options.maxLength}}"
+                            trim="{{_options.trim}}"
+                            contrastBackground="{{_options.contrastBackground}}"
+                            autoComplete="{{_options.autoComplete}}"
+                            leftFieldTemplate="{{_options.leftFieldTemplate}}"
+                            placeholder="{{_options.placeholder}}"
+                            selectOnClick="{{_options.selectOnClick}}"
+                            textAlign="{{_options.textAlign}}"
+                            tooltip="{{_options.tooltip}}"
+                            borderStyle="{{_options.borderStyle}}"
+                            borderVisibility="hidden"
+                            fontColorStyle="{{_options.fontColorStyle}}"
+                            fontSize="{{_options.fontSize}}"
+                            inlineHeight="{{_options.inlineHeight}}"
+                            horizontalPadding="{{_options.inlineHeight === '2xl' ? '2xl' : _options.horizontalPadding}}"
+                            tagStyle="{{_options.tagStyle}}"
+                            validationStatus="{{_options.validationStatus}}"
+                            inputCallback="{{_options.inputCallback}}"
+                            readOnly="{{_options.readOnly}}"
+                            theme="{{_options.theme}}"
+                            value="{{_options.value}}"
+                            iconSize="s"
+                            attr:class="controls-Search__expandable {{ _getInlineWidthClasses() }}"
+							       attr:style="{{ _getInlineWidthStyles() }}"
+                            on:searchClick="_tmplNotify('searchClick')"
+                            on:resetClick="_tmplNotify('resetClick')"
+                            on:search="_search()"
+                            on:searchReset="_searchReset()"
+                            on:valueChanged="_tmplNotify('valueChanged')">
+                    <ws:rightFieldTemplate>
+                        <div class="controls-Search__expandable-reset-button icon-Close controls-Search__expandable-reset-button_{{_options.inlineHeight }}"
+                             data-qa="controls-Search__expandable-reset-button"
+                             on:click="_handleCloseClick()">
+                        </div>
+                    </ws:rightFieldTemplate>
+                </Controls.search:Input>
+            </div>
+        </div>
+    </ws:if>
+	<ws:else>
+		<div class="controls-Search__expandable-button-container
+					{{(_options.contrastBackground ? 'controls-Search__expandable-button-container-size_' : 'controls-inlineheight-') + _options.inlineHeight}}
+					{{_options.contrastBackground && _options.shadowVisible ? 'controls-Search__expandable-button-container_shadowed'}}"
+					on:click="_searchClick()">
+			<ws:partial template="Controls/search:searchButtonTemplate"
+						inlineHeight="{{_options.inlineHeight}}"
+            iconSize="s"
+						searchButtonAlign="right"
+						searchButtonIconStyle="{{_options.searchButtonIconStyle}}"
+            name="searchButton"
+						attr:class="controls-Search__expandable-button controls-Search__expandable-button_offset"
+						attr:data-qa="controls-Search__expandable-button"/>
+		</div>
+	</ws:else>
+</div>

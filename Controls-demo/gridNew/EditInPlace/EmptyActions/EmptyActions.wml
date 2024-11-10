@@ -1,0 +1,10 @@
+<div class="controlsDemo__cell">
+    <Controls.grid:View
+            attr:class="controlsDemo__inline-flex"
+            storeId="EditInPlaceEmptyActions"
+            columns="{{_columns}}">
+        <ws:editingConfig>
+            <ws:Object editOnClick="{{true}}" toolbarVisibility="{{true}}"/>
+        </ws:editingConfig>
+    </Controls.grid:View>
+</div>

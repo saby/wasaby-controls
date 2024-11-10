@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center controlsDemo__cell controlsDemo_fixedWidth500"
+         data-qa="controlsDemo_capture">
+        <Controls.Chips:Control items="{{_items}}"
+                               bind:selectedKeys="_selectedKeys"
+                               attr:data-qa="controlsButtonGroup__first_group">
+            <ws:itemTemplate>
+                <ws:partial template="Controls/Chips:chipsItemCounterTemplate" scope="{{itemTemplate}}"/>
+            </ws:itemTemplate>
+        </Controls.Chips:Control>
+    </div>
+</div>

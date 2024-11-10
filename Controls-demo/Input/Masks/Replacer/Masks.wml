@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <Controls.input:Mask replacer=" "
+                             mask="dddd-dddd-dddd-dddd"
+                             bind:value="_value1"
+                             attr:class="ControlsDemo-MaskInput_ipField"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Mask replacer="_"
+                             mask="dddd-dddd-dddd-dddd"
+                             bind:value="_value2"
+                             attr:class="ControlsDemo-MaskInput_cardField"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Mask replacer="x"
+                             mask="dddd-dddd-dddd-dddd"
+                             bind:value="_value3"
+                             attr:class="ControlsDemo-MaskInput_phoneField"/>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="controlsDemo__wrapper">
+    <Controls.Tumbler:Control
+            displayProperty="id"
+            items="{{_itemsSpacingSource}}"
+            bind:selectedKey="_itemsSpacing"
+    />
+    <Controls.treeGrid:View
+            itemsSpacing="{{_itemsSpacing}}"
+
+            columns="{{_columns}}"
+            storeId="ItemsSpacingBase"
+    >
+        <ws:nodeFooterTemplate>
+            <ws:partial template="Controls/treeGrid:NodeFooterTemplate">
+                This is custom node footer template
+            </ws:partial>
+        </ws:nodeFooterTemplate>
+    </Controls.treeGrid:View>
+</div>

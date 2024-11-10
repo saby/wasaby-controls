@@ -1,0 +1,10 @@
+<div attr:class="controlsDemo__cell"
+     data-qa="controlsDemo-MoreFontColor_styleUnaccented">
+    <div attr:class="controls-text-label">moreFontColorStyle=unaccented</div>
+    <Controls.treeGrid:View
+            name="tree"
+            storeId="NodeFooterMoreFontColorStyleUnaccented"
+            columns="{{ _columns }}"
+            useNewNodeFooters="{{ true }}"
+            moreFontColorStyle="unaccented"/>
+</div>

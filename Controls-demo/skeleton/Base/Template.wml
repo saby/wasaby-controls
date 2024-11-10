@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <Controls.skeleton:Base className="demo_baseskeleton"></Controls.skeleton:Base>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.skeleton:Base className="demo_baseskeleton" active="{true}"></Controls.skeleton:Base>
+    </div>
+</div>
