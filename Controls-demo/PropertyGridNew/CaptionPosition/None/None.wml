@@ -1,0 +1,19 @@
+<div class="controls-Demo__wide-propertyGrid">
+    <Controls.propertyGrid:PropertyGrid
+            bind:editingObject="_editingObject"
+            typeDescription="{{_typeDescription}}"
+            captionPosition="none">
+        <ws:captionColumnOptions
+                width="50%"/>
+        <ws:itemPadding left="m" right="m"/>
+        <ws:itemTemplate>
+            <ws:partial template="Controls/propertyGrid:ItemTemplate"
+                        scope="{{itemTemplate}}">
+                <ws:afterEditorTemplate>
+                    <Controls.buttons:Button buttonStyle="pale" iconSize="s" icon="icon-Question2" viewMode="filled"/>
+                </ws:afterEditorTemplate>
+            </ws:partial>
+        </ws:itemTemplate>
+
+    </Controls.propertyGrid:PropertyGrid>
+</div>

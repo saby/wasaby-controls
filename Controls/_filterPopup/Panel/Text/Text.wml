@@ -1,0 +1,12 @@
+<div class="controls_filterPopup_theme-{{_options.theme}} controls-FilterText">
+   <div class="controls-FilterText__wrapper">
+      <div class="controls-FilterPanelText-caption">{{_options.caption}}</div>
+      <div class="controls-FilterText__resetContainer">
+          <Controls.icon:Icon icon="icon-CloseNew"
+                              attr:title="{[Сбросить]}"
+                              iconSize="FilterTextReset"
+                              attr:class="controls-FilterText__reset"
+                              on:click="_resetHandler()"/>
+      </div>
+   </div>
+</div>

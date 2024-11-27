@@ -1,0 +1,21 @@
+<Controls.lookup:Input
+    attr:class="news-FeedbackSettings__lookup"
+    source="{{_startLookupItems || _lookupSource}}"
+    filter="{{_filter}}"
+    placeholder="{[Выбрать виджет]}"
+    searchParam="search"
+    bind:selectedKeys="_selectedKeys"
+    keyProperty="{{_lookupKey}}"
+    displayProperty="{{_lookupDisplayKey}}"
+    multiSelect="{{false}}"
+    on:itemsChanged="_onWidgetChange()">
+<ws:selectorTemplate templateName="Channel/news:WidgetSelector">
+    <ws:templateOptions productGroupType="{{'HelpDesk'}}"/>
+    <ws:popupOptions width="{{540}}"/>
+</ws:selectorTemplate>
+<ws:suggestTemplate templateName="wml!Controls-Actions/_commands/OpenFeedback/SuggestTemplate">
+    <ws:templateOptions
+            keyProperty="{{_lookupKey}}"
+            displayProperty="{{_lookupDisplayKey}}"/>
+</ws:suggestTemplate>
+</Controls.lookup:Input>

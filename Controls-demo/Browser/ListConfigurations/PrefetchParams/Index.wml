@@ -1,0 +1,38 @@
+<Controls.browser:Browser listsOptions="{{_listConfigurations}}"
+                          prefetchSessionId="demo_prefetch"
+                          keyProperty="id"
+                          on:filterChanged="_filterChanged()"
+                          bind:selectedKeys="_selectedKeys"
+                          bind:excludedKeys="_excludedKeys"
+                          multiSelectVisibility="visible">
+   <div>
+      <Controls.searchDeprecated:InputContainer>
+         <Controls.search:Input placeholder="Введите текст для поиска" attr:class="controlsDemo__browser_search"/>
+      </Controls.searchDeprecated:InputContainer>
+
+      <Controls.filterOld:ViewContainer>
+         <Controls.filter:View
+                 historyId="demo_history_prefetch"
+                 detailPanelTemplateName="Controls/filterPanelPopup:Sticky" />
+      </Controls.filterOld:ViewContainer>
+      <div class="ws-flexbox">
+         <div class="controlsDemo__browser_firstList">
+            <Controls.listDataOld:ListContainer id="firstList">
+               <Controls.list:View />
+            </Controls.listDataOld:ListContainer>
+         </div>
+
+         <div class="controlsDemo__browser_secondList">
+            <Controls.listDataOld:ListContainer id="secondList">
+               <Controls.list:View />
+            </Controls.listDataOld:ListContainer>
+         </div>
+
+         <div class="controlsDemo__browser_secondList">
+            <Controls.listDataOld:ListContainer id="thirdList">
+               <Controls.list:View />
+            </Controls.listDataOld:ListContainer>
+         </div>
+      </div>
+   </div>
+</Controls.browser:Browser>

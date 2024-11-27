@@ -1,0 +1,42 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__mr4">
+        <div class="controls-text-label">contrastBackground and validationStatus="invalid"</div>
+        <Controls.ComboBox source="{{_source}}"
+                                    displayProperty="title"
+                                    keyProperty="key"
+                                    validationStatus="invalid"
+                                    borderVisibility="visible"
+                                    contrastBackground="{{true}}"
+                                    bind:selectedKey="_firstSelectedKey"
+                                    attr:data-qa="controlsDemo_dropdown-validation__contrastInvalid"/>
+    </div>
+    <div class="controlsDemo__mr4">
+        <div class="controls-text-label">contrastBackground and validationStatus="invalidAccent"</div>
+        <Controls.ComboBox source="{{_source}}"
+                                    displayProperty="title"
+                                    keyProperty="key"
+                                    borderVisibility="visible"
+                                    validationStatus="invalidAccent"
+                                    contrastBackground="{{true}}"
+                                    bind:selectedKey="_secondSelectedKey"
+                                    attr:data-qa="controlsDemo_dropdown-validation__contrastInvalidAccent"/>
+    </div>
+    <div class="controlsDemo__mr4">
+        <div class="controls-text-label">validationStatus="invalid"</div>
+        <Controls.ComboBox source="{{_source}}"
+                                    displayProperty="title"
+                                    keyProperty="key"
+                                    validationStatus="invalid"
+                                    bind:selectedKey="_thirdSelectedKey"
+                                    attr:data-qa="controlsDemo_dropdown-validation__validationInvalid"/>
+    </div>
+    <div class="controlsDemo__mr4">
+        <div class="controls-text-label">validationStatus="invalidAccent"</div>
+        <Controls.ComboBox source="{{_source}}"
+                                    displayProperty="title"
+                                    keyProperty="key"
+                                    validationStatus="invalidAccent"
+                                    bind:selectedKey="_fourthSelectedKey"
+                                    attr:data-qa="controlsDemo_dropdown-validation__validationInvalidAccent"/>
+    </div>
+</div>

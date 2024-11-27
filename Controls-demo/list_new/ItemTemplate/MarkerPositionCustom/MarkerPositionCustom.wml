@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper controlsDemo__list_new-itemTepmlate-NoHighlightOnHover controlsDemo_fixedWidth500">
+<Controls.list:View storeId="ItemTemplateMarker">
+  <ws:itemTemplate>
+    <ws:partial template="Controls/list:ItemTemplate"
+                marker="{{true}}"
+                markerPosition="custom"
+                markerClassName="controls-demo__list-marker_position-custom"/>
+  </ws:itemTemplate>
+</Controls.list:View>
+</div>

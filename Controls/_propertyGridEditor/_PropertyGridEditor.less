@@ -1,0 +1,66 @@
+.controls-PropertyGridEditor__editor_captionPosition-top {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   min-width: 0;
+}
+
+.controls-PropertyGridEditor__editor_captionPosition-left {
+   display: flex;
+   width: 100%;
+   min-width: 0;
+}
+
+.controls-PropertyGridEditor__editor-withoutCaption {
+   flex-grow: 1;
+   width: 100%;
+   min-width: 0;
+}
+
+.controls-PropertyGridEditor__multiSelect_caption-left,
+.controls-PropertyGridEditor__multiSelect_caption-none {
+   margin-bottom: auto;
+   display: flex;
+}
+
+.controls-PropertyGridEditor__multiSelect_caption-top {
+   margin-bottom: auto;
+   display: flex;
+   margin-top: var(--inline_height_m);
+}
+
+.ws-is-ie11 .controls-PropertyGridEditor__multiSelect_caption-top {
+   align-self: center;
+}
+
+.controls-PropertyGridEditor__caption_label {
+   max-width: 100%;
+   min-width: 0;
+}
+
+.controls-PropertyGridEditor__editor_nodeCaption_wrapper {
+   display: inline-flex;
+   align-items: baseline;
+}
+
+.controls-PropertyGridEditor__afterEditor_margin {
+   margin-top: auto;
+}
+
+.controls-PropertyGrid__nodeCaption_cursor-pointer {
+   cursor: pointer;
+}
+
+/*
+   Все редакторы в PropertyGrid выровнены по центру, а dropdown - по базовой линии.
+   https://online.sbis.ru/opendoc.html?guid=56e42163-b7ae-4e91-83d1-f8a311e2a73c&client=3
+ */
+.controls-PropertyGridEditor__editor .controls-Dropdown__content-wrapper {
+   align-items: center;
+}
+
+.controls-PropertyGridEditor__editor
+   .controls-Dropdown__content-wrapper
+   .controls-Dropdown__iconTemplate_wrapper {
+   align-items: center;
+}

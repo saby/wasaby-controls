@@ -1,0 +1,25 @@
+<div class="controlsDemo__wrapper">
+<Controls.listDataOld:ListContainer
+    storeId="listData">
+  <Controls.list:View
+      source="{{_source}}">
+    <ws:itemTemplate>
+      <ws:partial template="Controls/list:ItemTemplate"
+                  scope="{{itemTemplate}}">
+        <ws:contentTemplate>
+          <div>
+            {{ contentTemplate.item.contents.title }}
+            <ws:for data="i in 5">
+              <Controls.icon:Icon
+                  icon="{{contentTemplate.item.contents.fontIcon}}"
+                  attr:class="kek"
+                  iconStyle="danger"
+                  iconSize="m"/>
+            </ws:for>
+          </div>
+        </ws:contentTemplate>
+      </ws:partial>
+    </ws:itemTemplate>
+  </Controls.list:View>
+</Controls.listDataOld:ListContainer>
+</div>

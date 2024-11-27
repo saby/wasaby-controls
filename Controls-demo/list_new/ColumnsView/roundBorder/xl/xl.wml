@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper controlsDemo__width800px">
+    <div class="controls-text-label">Размер скруглений xl</div>
+    <Controls.columns:View
+            storeId="ColumnsViewroundBorderxl5">
+        <ws:roundBorder tl="xl" tr="xl" bl="xl" br="xl"/>
+        <ws:itemTemplate>
+            <ws:partial template="Controls/columns:ItemTemplate" attr:class="controlsDemo__height36_item"/>
+        </ws:itemTemplate>
+    </Controls.columns:View>
+</div>

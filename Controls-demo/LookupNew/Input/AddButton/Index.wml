@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper controlsDemo__childWidth400">
+   <Controls.lookup:Input
+      source="{{_source}}"
+      placeholder="Enter company name"
+      searchParam="title"
+      keyProperty="id"
+      multiSelect="{{false}}"
+      selectorTemplate="{{_selectorTemplate}}"
+      addButtonClickCallback="{{_addButtonClickCallback}}"
+      autoDropDown="{{true}}"
+      bind:value="_value"
+      bind:selectedKeys="_selectedKeys">
+      <ws:suggestTemplate templateName="wml!Controls-demo/LookupNew/Input/AddButton/resources/SuggestTemplate" />
+      <ws:footerTemplate templateName="wml!Controls-demo/LookupNew/Input/AddButton/resources/FooterTemplate" />
+   </Controls.lookup:Input>
+</div>

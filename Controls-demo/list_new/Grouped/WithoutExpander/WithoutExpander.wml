@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper">
+<Controls.scroll:Container>
+  <Controls.list:View
+      groupProperty="byDemand"
+      storeId="GroupedWithoutExpander7">
+    <ws:groupTemplate>
+      <ws:partial expanderVisible="{{ false }}" scope="{{ _options }}" template="Controls/list:GroupTemplate"/>
+    </ws:groupTemplate>
+  </Controls.list:View>
+</Controls.scroll:Container>
+</div>

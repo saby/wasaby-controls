@@ -1,0 +1,6 @@
+<ws:partial template="Controls/grid:ColumnTemplate" attr:class="controls-Grid__row-cell__content_baseline_XL" scope="{{ _options }}">
+   <ws:contentTemplate>
+      <div>{{item.contents.name}}</div>
+      <div if="{{item.contents.shared}}" class="icon-small icon-Publish2 icon-primary demo-DragNDrop__MasterDetail_sharedIcon"></div>
+   </ws:contentTemplate>
+</ws:partial>

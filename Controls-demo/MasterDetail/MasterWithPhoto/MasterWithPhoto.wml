@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <Controls.treeGrid:View
+            attr:class="demoTreeWithProto__treeGrid32"
+            storeId="master"
+            columns="{{_columns}}"
+            style="master"/>
+</div>

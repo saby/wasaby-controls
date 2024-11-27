@@ -1,0 +1,21 @@
+<div class="controlsDemo__wrapper">
+<Controls.scroll:Container attr:class="controlsDemo__height400" shadowMode="js">
+  <Controls.grid:View
+      name="grid"
+      storeId="LadderSticky0"
+      columns="{{_columns}}"
+      itemsDragNDrop="{{true}}"
+      on:customdragStart="_dragStart()"
+      on:customdragEnd="_dragEnd()"
+      header="{{_header}}"
+      resultsPosition="top"
+      ladderProperties="{{_ladderProperties}}">
+    <ws:footerTemplate>
+      <ws:partial template="Controls/grid:FooterTemplate">
+        <Controls.list:AddButton caption="Add record" on:click="_beginAdd()"
+                                 data-qa="controlsDemo-GridLadder__addButton"/>
+      </ws:partial>
+    </ws:footerTemplate>
+  </Controls.grid:View>
+</Controls.scroll:Container>
+</div>

@@ -1,0 +1,30 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center controls-background-unaccented-same">
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             inlineHeight="m"
+                             bind:value="_inlineHeightMValue"
+                             contrastBackground="{{true}}"
+                             placeholder="{{_placeholder}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             inlineHeight="l"
+                             bind:value="_inlineHeightLValue"
+                             contrastBackground="{{true}}"
+                             placeholder="{{_placeholder}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             inlineHeight="xl"
+                             bind:value="_inlineHeightXLValue"
+                             contrastBackground="{{true}}"
+                             placeholder="{{_placeholder}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             inlineHeight="2xl"
+                             bind:value="_inlineHeight2XLValue"
+                             contrastBackground="{{true}}"
+                             placeholder="{{_placeholder}}"/>
+    </div>
+</div>

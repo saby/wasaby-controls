@@ -1,0 +1,64 @@
+<ws:template name="leftArrow">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {{_options.displayMode === 'compact' ? '13 30' : '26 64'}}"
+         class="Wizard-Horizontal-StepBar__item-leftArrow
+                        Wizard-Horizontal-StepBar__item-leftArrow-{{stepModifier}}
+                        Wizard-Horizontal-StepBar__item-leftArrow-displayMode-{{_options.displayMode}}">
+        <ws:if data="{{_options.displayMode === 'compact'}}">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.09999 0H13V30H2.09999C0.999994 30 -5.60377e-06 29.1 -5.60377e-06 28C-5.60377e-06 27.6 0.0999944 27.2 0.399994 26.8L8.79999 16.1C9.39999 15.4 9.39999 14.5 8.79999 13.8L0.399994 3.2C-0.300006 2.3 -0.100006 1 0.899994 0.4C1.19999 0.1 1.69999 0 2.09999 0Z" />
+        </ws:if>
+        <ws:else>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.25999 0H26V64H4.25999C3.47525 64.0047 2.70469 63.791 2.03446 63.3828C1.36423 62.9746 0.820768 62.388 0.464846 61.6886C0.108923 60.9892 -0.045426 60.2046 0.0190588 59.4225C0.0835436 58.6404 0.36432 57.8916 0.829989 57.26L17.63 34.51C18.1614 33.7848 18.4478 32.9091 18.4478 32.01C18.4478 31.1109 18.1614 30.2352 17.63 29.51L0.829989 6.74C0.497773 6.29276 0.257629 5.78403 0.123477 5.2433C-0.0106754 4.70257 -0.0361678 4.14059 0.0484773 3.58993C0.133122 3.03927 0.326221 2.51089 0.616582 2.03541C0.906942 1.55993 1.28879 1.14681 1.73999 0.82C2.4724 0.287569 3.3545 0.000535998 4.25999 0V0Z" />
+        </ws:else>
+    </svg>
+</ws:template>
+
+<ws:template name="rightArrow">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {{ _options.displayMode === 'compact' ? '13 30' : '26 64'}}"
+         class="Wizard-Horizontal-StepBar__item-rightArrow
+                            Wizard-Horizontal-StepBar__item-rightArrow-{{stepModifier}}
+                            Wizard-Horizontal-StepBar__item-leftArrow-displayMode-{{_options.displayMode}}
+                            Wizard-Horizontal-StepBar__item-rightArrow-displayMode-{{_options.displayMode}}">
+        <ws:if data="{{_options.displayMode === 'compact'}}">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 4.68659e-07H1.23C1.57095 -0.0066324 1.90871 0.0668156 2.21612 0.214441C2.52352 0.362067 2.79201 0.579752 3 0.850001L12.65 13.85C12.8974 14.1767 13.0313 14.5752 13.0313 14.985C13.0313 15.3948 12.8974 15.7933 12.65 16.12L2.89 29.12C2.68672 29.395 2.42134 29.618 2.11548 29.771C1.80962 29.9239 1.47195 30.0024 1.13 30H0V4.68659e-07Z" />
+        </ws:if>
+        <ws:else>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H3.00578C4.40848 0 5.21002 0.9 6.01156 2L25.2486 29.6C26.2505 31.1 26.2505 33 25.2486 34.4L6.01156 62C5.21002 63.1 4.40848 64 3.00578 64H0V0Z" />
+        </ws:else>
+    </svg>
+</ws:template>
+
+<ws:template name="stepInner">
+    <div class="Wizard-Horizontal-StepBar__item
+                Wizard-Horizontal-StepBar__item-displayMode-{{_options.displayMode}}
+                Wizard-Horizontal-StepBar__item-{{stepModifier}}
+                {{index  === _options.items.getCount() - 1 ? 'Wizard-Horizontal-StepBar__item-last' : ''}}"
+                on:click="clickHandler(index)">
+        <ws:if data="{{index  !== 0}}">
+            <ws:partial template="leftArrow"/>
+        </ws:if>
+        <ws:if data="{{index  !== _options.items.getCount() - 1}}">
+            <ws:partial template="rightArrow"/>
+        </ws:if>
+
+        <div class="Wizard-Horizontal-StepBar__item-title
+                    Wizard-Horizontal-StepBar__item-title-{{stepModifier}} ws-ellipsis"
+            title="{{item.title}}">
+            {{ item.title }}
+        </div>
+    </div>
+</ws:template>
+
+<div class="Wizard-Horizontal-StepBar controls_Wizard_theme-{{_options.theme}}
+            Wizard-Horizontal-StepBar-displayMode-{{_options.displayMode}}">
+    <div class="Wizard-Horizontal-StepBar__items-container">
+        <ws:for data="index, item in _options.items ">
+            <div class="Wizard-Horizontal-StepBar__item-container"
+                 attr:style="width: {{item.width ? item.width + '%' : 'calc(100% / ' + _options.items.getCount() + ')'}};">
+                <ws:partial template="stepInner"
+                            item="{{item}}"
+                            index="{{index}}"
+                            stepModifier="{{getItemModifier(index)}}"/>
+            </div>
+        </ws:for>
+    </div>
+</div>

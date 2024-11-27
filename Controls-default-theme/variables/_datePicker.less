@@ -1,0 +1,144 @@
+.controls_datePicker_theme-@{themeName} {
+   // Переменные для большого выбора периода
+   //
+   // Тени
+
+   --shadow_start-color_datePicker: rgba(204, 204, 204, 0.3);
+   --shadow_end-color_datePicker: rgba(255, 255, 255, 0);
+
+   // Заголовок
+   --header_padding-left_datePicker: var(--offset_s);
+
+   // Переменные для большого выбора периода в режиме переключения года
+   //
+   //Шапка со списком годов
+
+   --yearnav_height_datePicker: 42px;
+   --yearnav_arrow_width_datePicker: 36px;
+   --yearnav_item_height_datePicker: 30px;
+
+   // Выбор месяцев, кварталов и полугодий
+   //
+   // Переменные для заголовка года
+
+   --yearlist_heading_height_datePicker: 32px;
+   --yearlist_heading_text-color_datePicker: var(--primary_text-color);
+
+   //Переменные для разделителей между периодами
+   --yearlist_block-separator_thickness_datePicker: 4px;
+
+   //Переменные для кнопки выбора квартала
+
+   --yearlist_quarters_width_datePicker: 36px;
+
+   //Граница выбранного периода
+   --yearlist_item_hover_border-color_datePicker: #8991a9;
+
+   // Фон выбранного периода
+
+   --yearlist_item_hover_background-color_datePicker: #e6ecfa;
+
+   //Переменные для ячейки месяца
+   --yearlist_month_width_datePicker: 100px;
+
+   // Переменные для заголовка месяцев
+   --calendar-header_height_datePicker: 41px;
+   --calendar-header_border-bottom-thickness_datePicker: var(--border-thickness);
+   --calendar-header_padding-left_datePicker: var(--offset_m);
+
+   //Переменные для текущего года
+
+   --current-year_font-size_datePicker: var(--font-size_l);
+
+   // Переменные для дней недели в заголовке
+
+   --weekdays_text-color_datePicker: var(--unaccented_text-color);
+
+   // Переменные для панели навигации по месяцам
+   //
+   // Размеры и отступы
+
+   --monthnav_width_datePicker: 128px;
+   --monthnav_item_padding-left_datePicker: var(--offset_s);
+
+   //Обводка
+
+   --monthnav_item_font-size_datePicker: var(--font-size_l);
+
+   // Переменные для кнопки года
+   //
+   //Размеры и отступы
+
+   --monthnav_year_height_datePicker: 35px;
+
+   //Переменные для выбранного периода
+   //
+   //Фон
+
+   --rangeSelection_item_background-color_datePicker: #f0f5fb;
+   --rangeSelection_item_hover_background-color_datePicker: #e6ecfa;
+
+   //Обводка
+
+   --rangeSelection_border_thickness_datePicker: 3px;
+   --rangeSelection_border_color_datePicker: #05b;
+   --rangeSelection_border_single_thickness_datePicker: 2px;
+   // needless
+
+   // Переменные для ячейки дня
+   --monthlist_monthview_item_text-color_datePicker: var(--text-color);
+   --yearlist_monthview_heading_height_datePicker: auto;
+   --yearlist_monthview_heading_fontsize_datePicker: var(--font-size_l);
+   --yearlist_monthview_item_icon_right-offset_datePicker: var(--offset_2xs);
+
+   //Переменные для ячейки месяца
+   //
+   // Размеры и отступы
+   --yearlist_monthview_item_size_datePicker: 12px;
+   --yearlist_monthview_item_font-size_datePicker: 8px;
+
+   // Переменные для выбранного периода
+   //
+   // Обводка
+
+   --yearlist_monthview_selection-border_thickness_datePicker: 1px;
+   --yearlist_monthview_selection-border_single_color_datePicker: var(
+      --rangeSelection_border_color_datePicker
+   );
+
+   // Позиционирование попапа
+   --shift-top_PeriodDialog-picker: calc(
+      -1 * ((var(--header-min-height_dialog) - var(--inline_height_default)) / 2)
+   );
+   --shift-left_PeriodDialog-picker: calc(
+      -1 * (var(--header_padding-left_datePicker) + var(--icon-size_s) + var(--offset_m))
+   );
+   --shift-top_PeriodDialog-selector: calc(
+      (var(--height_dateRangeSelector) - var(--header-min-height_dialog)) / 2
+   );
+   --shift-top_fontSize-l_PeriodDialog-selector: calc(
+      (var(--height_dateRangeSelector) - var(--header-min-height_dialog)) / 2 + 1px
+   );
+   --shift-top_fontSize-s_PeriodDialog-selector: calc(
+      (var(--height_dateRangeSelector) - var(--header-min-height_dialog)) / 2 - 1px
+   );
+
+   // Отступы дней недели
+   --header_weekDays_right-offset_datePicker: var(--offset_m);
+   --header_weekDays_left-offset_datePicker: var(--offset_l);
+
+   // Скругление кнопок-стрелок
+   --yearnav_yearsRange-button_border-radius_datePicker: 50%;
+
+   // Размер года
+   --yearnav_item_fontsize_datePicker: var(--font-size_l);
+
+   // Отступы кнопок в шапке
+   --header_close-button_right-offset_datePicker: var(--offset_xs);
+   --header_apply-button_offsets_datePicker: var(--offset_s);
+   --yearsRange_button_offset_datePicker: var(--offset_s);
+   --yearlist_monthview_heading_fontsize_datePicker: var(--font-size_l);
+   --yearlist_quarter-btn_fontsize_datePicker: var(--font-size_3xl);
+   --header_btn_size_datePicker: var(--inline_height_l);
+   --link-btn_fontsize_datePicker: var(--font-size_l);
+}

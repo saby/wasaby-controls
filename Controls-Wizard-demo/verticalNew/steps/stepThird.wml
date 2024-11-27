@@ -1,0 +1,17 @@
+<div class="body_template">
+  <div class="body_template_header body_template_header_content">
+    <span>Давайте поговорим</span>
+  </div>
+  <div class="body_template_row body_template_row_message body_template_row_message_to-me">
+    <div class="body_template_input body_template_row_message_input">Добрый день. Чем могу помочь? </div>
+  </div>
+  <div class="body_template_row body_template_row_message body_template_row_message_from-me">
+    <div class="body_template_input body_template_row_message_input">Добрый день. </div>
+  </div>
+  <div class="body_template_row body_template_row_message body_template_row_message_to-me">
+    <div class="body_template_input body_template_row_message_input">Добрый день. Что именно вас интересует? </div>
+  </div>
+  <div class="body_template_footer">
+    <Controls.input:Area class="body_template_input body_template_row_message_input" placeholder="Текст сообщения" bind:value="_options.record.mailText" />
+  </div>
+</div>

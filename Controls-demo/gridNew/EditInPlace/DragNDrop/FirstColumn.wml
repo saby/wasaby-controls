@@ -1,0 +1,35 @@
+<ws:partial template="Controls/grid:ColumnTemplate" scope="{{_options}}">
+    <ws:contentTemplate>
+        <ws:if data="{{item.isEditing()}}">
+            <div style="padding-left: 6px; width: 100%;">
+                <div class="demo-EditableGrid__editor-flexWrapper" style="width: 100%;">
+                    <div class="demo-EditableGrid__editor-flexWrapper">
+                        <Controls.input:Number contrastBackground="{{true}}" value="{{item.contents.get('documentNum')}}" on:valueChanged="onChange('documentNum', item.contents)" placeholder="Номер"/>
+                    </div>
+                    <div class="demo-EditableGrid__editor-flexWrapper">
+                        <Controls.input:Money contrastBackground="{{true}}" value="{{item.contents.get('taxBase')}}" on:valueChanged="onChange('taxBase', item.contents)"  placeholder="Сумма"/>
+                    </div>
+                </div>
+
+                <div class="demo-EditableGrid__editor-flexWrapper demo-EditableGrid__editor-rowTopSpacing" style="width: 100%;">
+                    <div>
+
+                        <Controls.input:Text contrastBackground="{{true}}" value="{{item.contents.get('document')}}"  on:valueChanged="onChange('document', item.contents)" placeholder="б/н"/>
+                        <Controls.date:Input contrastBackground="{{true}}"/>
+                    </div>
+                    <div>
+                        <Controls.input:Text contrastBackground="{{true}}" value="{{item.contents.get('serviceContract')}}" on:valueChanged="onChange('serviceContract', item.contents)" placeholder="Номер"/>
+                    </div>
+                </div>
+
+
+                <div class="demo-EditableGrid__editor-flexWrapper demo-EditableGrid__editor-rowTopSpacing" style="width: 100%;">
+                    <Controls.input:Text contrastBackground="{{true}}" value="{{item.contents.get('description')}}" on:valueChanged="onChange('description', item.contents)" placeholder="примечание" attr:style="width: 100%;"/>
+                </div>
+            </div>
+        </ws:if>
+        <ws:else>
+            <div>{{item.getContents().get('invoice')}}</div>
+        </ws:else>
+    </ws:contentTemplate>
+</ws:partial>

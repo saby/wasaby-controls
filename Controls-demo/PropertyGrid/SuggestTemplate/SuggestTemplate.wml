@@ -1,0 +1,7 @@
+<Controls.ComboBox
+        displayProperty="title"
+        keyProperty="title"
+        source="{{_source}}"
+        bind:selectedKey="selectedKey"
+        on:selectedKeyChanged="selectedKeyChanged()"
+        attr:class="demo-TextBox js-Controls-PropertyGridEditor__options-{{_options.caption}}"/>

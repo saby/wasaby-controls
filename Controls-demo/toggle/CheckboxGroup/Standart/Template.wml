@@ -1,0 +1,30 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center controlsDemo_fixedWidth500"
+         data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell ws-flex-column ws-align-items-center">
+            <div class="controls-text-label controls-margin_bottom-xs">Горизонтальная группа чекбоксов</div>
+            <Controls.CheckboxGroup:Control
+                    bind:selectedKey="_selectedKey1"
+                    keyProperty="id"
+                    items="{{_items}}"
+                    direction="horizontal"
+            />
+        </div>
+        <div class="ws-flexbox ws-justify-content-center controls-margin_top-l">
+            <div class="controlsDemo__cell ws-flex-column ws-align-items-center">
+                <div class="controls-text-label controls-margin_bottom-xs">Вертикальная группа чекбоксов</div>
+                <Controls.CheckboxGroup:Control bind:selectedKey="_selectedKey2"
+                                               keyProperty="id"
+                                               items="{{_items}}"/>
+            </div>
+            <div class="controlsDemo__cell controls-margin_left-xl ws-flex-column ws-align-items-center">
+                <div class="controls-text-label controls-margin_bottom-xs">Группа чекбоксов с иерархией</div>
+                <Controls.CheckboxGroup:Control items="{{_itemsParent}}"
+                                               parentProperty="parent"
+                                               nodeProperty="node"
+                                               bind:selectedKey="_selectedKey3"
+                                               keyProperty="id"/>
+            </div>
+        </div>
+    </div>
+</div>

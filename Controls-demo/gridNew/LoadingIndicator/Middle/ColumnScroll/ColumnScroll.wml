@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:class="controlsDemo__inline-flex"
+                               attr:style="width: 700px; height: 500px;">
+        <Controls.grid:View
+                name="list"
+                storeId="LoadingIndicatorMiddleColumnScroll"
+                header="{{_header}}"
+                columns="{{_columns}}"
+                rowSeparatorSize="s"
+                columnScroll="{{_columnScroll}}"/>
+    </Controls.scroll:Container>
+
+    <div class="controlsDemo__cell">
+        <Controls.buttons:Button caption="Reload list" on:click="_reloadList()" attr:data-qa="reload-list"/>
+        <Controls.buttons:Button caption="{{ _columnScroll ? 'Disable' : 'Enable' }} column scroll" on:click="_switchColumnScroll()"  attr:data-qa="toggle-column-scroll"/>
+        <Controls.buttons:Button caption="Продолжить сценарий" on:click="_continueScenario()" attr:data-qa="continue-scenario"/>
+    </div>
+</div>

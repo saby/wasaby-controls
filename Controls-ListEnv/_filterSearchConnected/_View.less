@@ -1,0 +1,67 @@
+.controls-ListEnv-FilterSearchConnected-searchWidth {
+   // минимальная ширина строки поиска + отступ слева + отступ справа + кнопка разворота настроек
+   min-width: calc(
+      var(--width_s_inputSearch) + (var(--offset_m) - var(--border-thickness)) + var(--offset_2xs) +
+         var(--icon-size_s) + var(--offset_s)
+   );
+}
+
+.controls-ListEnv-FilterSearchConnected-searchTemplate .controls-InputBase__field {
+   width: auto;
+   min-width: var(--width_s_inputSearch);
+}
+
+.controls-ListEnv-FilterSearchConnected-searchTemplate {
+   .controls-Search__buttons-rightTemplate {
+      margin-right: calc(-1 * var(--border-thickness));
+      overflow: hidden;
+      max-width: unset;
+      height: auto;
+   }
+}
+
+.controls-ListEnv-FilterSearchConnected-RightFieldTemplate {
+   gap: var(--offset_3xs);
+}
+
+.controls-ListEnv-FilterSearchConnected-filterText {
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+   overflow: hidden;
+   height: var(--inline_height_m);
+}
+
+.controls-ListEnv-FilterSearchConnected-cloudTemplate {
+   border-radius: var(--border-radius_m);
+   background-color: var(--secondary_same_background-color);
+   border: var(--border-thickness) solid var(--secondary_same_background-color);
+   box-sizing: border-box;
+}
+
+.controls-ListEnv-FilterSearchConnected-cloudTemplate-padding {
+   padding: 0 var(--offset_s);
+}
+
+.controls-ListEnv-FilterSearchConnected-cloudTemplate-filterViewIcon {
+   color: var(--icon-color_filterButton_filterView);
+   cursor: pointer;
+   font-size: var(--icon-size_filterButton_filterView);
+   font-family: var(--icon_font-family_m);
+}
+
+.controls-ListEnv-FilterSearchConnected-cloudTemplate:active {
+   background-color: var(--secondary_active_background-color);
+}
+
+.controls-ListEnv-FilterSearchConnected-cloudTemplate-crossTemplate {
+   align-items: baseline;
+   display: inline-flex;
+   flex-shrink: 0;
+}
+
+.ws-is-hover {
+   .controls-ListEnv-FilterSearchConnected-cloudTemplate:hover {
+      background-color: var(--secondary_hover_same_background-color);
+   }
+}

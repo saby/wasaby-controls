@@ -1,0 +1,123 @@
+import { ReactElement, ReactNode, useCallback, useContext } from 'react';
+import { Label as LabelControl } from 'Controls/input';
+import { IPropertyGridEditorLayout } from './IPropertyGrid';
+import { ObjectTypeEditorRootContext, TypeHierarchyPadding } from 'Controls-editors/object-type';
+import { Button } from 'Controls/buttons';
+import { InfoboxTarget } from 'Controls/popupTargets';
+import { Container as ScrollContainer } from 'Controls/scroll';
+import { Decorator } from 'Controls/markup';
+import * as rk from 'i18n!Controls-editors';
+
+function Label({
+    title,
+    titlePosition,
+    disabled,
+    required,
+}: IPropertyGridEditorLayout): ReactElement | null {
+    const labelClassName = `controls_PropertyGrid__editor_layout__title 
+                            controls_PropertyGrid__editor_layout__title-${titlePosition}`;
+
+    return title && titlePosition !== 'none' ? (
+        <div className={labelClassName}>
+            <TypeHierarchyPadding />
+            <LabelControl
+                caption={title}
+                required={required && !disabled}
+                className={'controls_PropertyGrid__editor_layout__label'}
+            />
+        </div>
+    ) : null;
+}
+
+function Editor(props: IPropertyGridEditorLayout): ReactElement {
+    const { titlePosition, children, title, metaType, attributeName } = props;
+
+    let editorClassName = `controls_PropertyGrid__editor_layout__editor 
+                             controls_PropertyGrid__editor_layout__editor-title-${titlePosition}`;
+
+    const { hideProperty } = useContext(ObjectTypeEditorRootContext);
+
+    const hidePropertyHandler = useCallback(() => {
+        if (!attributeName) {
+            return;
+        }
+        hideProperty(attributeName);
+    }, [hideProperty, attributeName]);
+
+    let content = (
+        <>
+            {!title || titlePosition === 'none' ? <TypeHierarchyPadding /> : null}
+            {children}
+        </>
+    );
+
+    let closeButton: ReactNode | undefined;
+    if (!!metaType?.getExtended()) {
+        editorClassName += ' ws-flexbox ws-flex-row';
+
+        closeButton = (
+            <Button
+                icon={'icon-Close'}
+                viewMode="link"
+                tooltip={rk('Скрыть свойство')}
+                iconSize={'s'}
+                onClick={hidePropertyHandler}
+            />
+        );
+    }
+
+    let infoButton: ReactNode | undefined;
+    const description = metaType?.getDescription();
+    if (!!description) {
+        infoButton = (
+            <InfoboxTarget
+                trigger="hover"
+                template={
+                    <ScrollContainer className="controls-padding_right-l">
+                        <Decorator value={description} />
+                    </ScrollContainer>
+                }
+                hideDelay={500}
+            >
+                <Button icon={'icon-Info'} viewMode="link" iconSize={'s'} />
+            </InfoboxTarget>
+        );
+    }
+
+    if (!!infoButton || !!closeButton) {
+        editorClassName +=
+            ' controls_PropertyGrid__editor_layout__editor-with-action ws-flexbox tw-items-baseline';
+
+        content = <div className={'controls_PropertyGrid__editor_layout-content'}>{content}</div>;
+    }
+
+    return (
+        <div className={editorClassName}>
+            {content}
+            {infoButton}
+            {closeButton}
+        </div>
+    );
+}
+
+/**
+ * Реакт компонент, для отрисовки редактора внутри проперти грида (для реализации сквозного выравнивания между редакторами)
+ * @class Controls-editors/_propertyGrid/PropertyGridEditorLayout
+ * @public
+ * @demo Controls-demo/ObjectTypeEditor/ButtonPropsEditorPopup/Index
+ */
+
+function PropertyGridEditorLayout(props: IPropertyGridEditorLayout) {
+    const wrapperClassName =
+        'controls_PropertyGrid__editor_layout ' +
+        `controls_PropertyGrid__editor_layout-${props.titlePosition}`;
+
+    return (
+        <div className={wrapperClassName} title={props.description || props.title}>
+            <Label {...props} />
+            <Editor {...props} />
+        </div>
+    );
+}
+
+export default PropertyGridEditorLayout;

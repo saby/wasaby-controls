@@ -1,0 +1,8 @@
+<Controls.popupTemplate:Confirmation style="success">
+    <ws:bodyContentTemplate>
+        <div  style="text-align: center">  Hello, It is Confirmation Template </div>
+    </ws:bodyContentTemplate>
+    <ws:footerContentTemplate >
+        <div  style="text-align: center">  <Controls.buttons:Button caption="{{_options.value}}" on:click="_closeHandler()"/> </div>
+    </ws:footerContentTemplate>
+</Controls.popupTemplate:Confirmation>

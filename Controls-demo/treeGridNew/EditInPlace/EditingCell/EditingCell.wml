@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth800">
+    <Controls.treeGrid:View storeId="EditInPlaceEditingCell"
+                            columns="{{_columns}}"
+                            rowSeparatorSize="l"
+                            columnSeparatorSize="s">
+        <ws:editingConfig editOnClick="{{ true }}" mode="cell"/>
+    </Controls.treeGrid:View>
+</div>

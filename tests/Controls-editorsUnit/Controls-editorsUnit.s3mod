@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module id="132e5fe6-37dc-4970-b29a-a2f5159ac193" name="Controls-editorsUnit" version="1.00">
+  <description/>
+  <depends>
+      <module id="7c6ae293-7359-4a54-8a33-74ce96945d57" name="Controls-editors"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <test environment="NodeJS" framework="Jest" />
+  <resources/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

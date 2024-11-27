@@ -1,0 +1,21 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <Controls.buttons:Button icon="icon-Add" caption="Кнопка" iconSize="s" buttonStyle="primary" viewMode="outlined"/>
+    </div>
+
+    <div class="controlsDemo__cell">
+        <Controls.buttons:Button loading="{{true}}" caption="Загрузка..." iconSize="s" buttonStyle="primary" viewMode="outlined"/>
+    </div>
+
+    <div class="controlsDemo__cell">
+        <Controls.buttons:Button loading="{{true}}" caption="Загрузка..." iconSize="s" icon="icon-Add" buttonStyle="primary" viewMode="outlined"/>
+    </div>
+
+    <div class="controlsDemo__cell">
+        <Controls.buttons:Button loading="{{true}}" caption="Загрузка..." iconSize="s" icon="icon-Add" buttonStyle="primary" viewMode="outlined">
+            <ws:loadingIndicator>
+                <i class="controls-BaseButton__icon controls-icon icon-Refresh"></i>
+            </ws:loadingIndicator>
+        </Controls.buttons:Button>
+    </div>
+</div>

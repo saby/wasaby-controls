@@ -1,0 +1,3 @@
+<div class="controls-demo__SuggestPG-item">
+    {{itemData.getPropValue(item.contents, 'city') || itemData.getPropValue(item.contents, 'name')}}
+</div>

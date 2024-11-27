@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+   <Controls-ListEnv.searchConnected:Input storeId="viewData" />
+   <Controls.explorer:View storeId="viewData">
+      <ws:columns>
+         <ws:Array>
+            <ws:Object displayProperty="title"/>
+         </ws:Array>
+      </ws:columns>
+   </Controls.explorer:View>
+</div>

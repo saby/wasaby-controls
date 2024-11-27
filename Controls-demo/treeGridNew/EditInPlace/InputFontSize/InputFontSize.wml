@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper">
+    <Controls.treeGrid:View
+            storeId="EditInPlaceInputFontSize"
+            columns="{{_columns}}">
+        <ws:editingConfig editOnClick="{{true}}" enabled="{{true}}"/>
+    </Controls.treeGrid:View>
+</div>

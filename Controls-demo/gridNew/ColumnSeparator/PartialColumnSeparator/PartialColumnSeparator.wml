@@ -1,0 +1,28 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell controlsDemo__inline-block">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/gridNew/ColumnSeparator/PartialColumnSeparator/VariantOne/Index' }}">
+            <a href="{{content.href}}">Разделители вокруг колонки "Характеристики"</a>
+        </Router.router:Reference>
+        <Controls-demo.gridNew.ColumnSeparator.PartialColumnSeparator.VariantOne.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controlsDemo__inline-block">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/gridNew/ColumnSeparator/PartialColumnSeparator/VariantTwo/Index' }}">
+            <a href="{{content.href}}">Выключение правого разделителя у колонки "Площадь"</a>
+        </Router.router:Reference>
+        <Controls-demo.gridNew.ColumnSeparator.PartialColumnSeparator.VariantTwo.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controlsDemo__inline-block">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/gridNew/ColumnSeparator/PartialColumnSeparator/VariantThree/Index' }}">
+            <a href="{{content.href}}">Выключение левого разделителя у колонки "Население"</a>
+        </Router.router:Reference>
+        <Controls-demo.gridNew.ColumnSeparator.PartialColumnSeparator.VariantThree.Index/>
+    </div>
+</div>

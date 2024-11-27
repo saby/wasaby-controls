@@ -1,0 +1,56 @@
+<div>
+    <Controls.popup:Stack name="eventStackOpener"
+                                 template="Controls-Deprecated-demo/Popup/Compatible/TestStack"
+                                 isCompoundTemplate="{{true}}"
+                                 autoCloseOnHide="{{false}}">
+    </Controls.popup:Stack>
+    <Controls.popup:Stack name="reviveStackOpener"
+                                 template="Controls-Deprecated-demo/Popup/Compatible/TestRevive"
+                                 isCompoundTemplate="{{true}}">
+    </Controls.popup:Stack>
+    <Controls.popup:Stack name="inputStackOpener"
+                                 template="Controls-Deprecated-demo/Popup/Compatible/TestInput"
+                                 isCompoundTemplate="{{true}}">
+    </Controls.popup:Stack>
+    <Controls.popup:Stack name="validateStackOpener"
+                                 template="Controls-Deprecated-demo/Popup/Compatible/TestValidate"
+                                 isCompoundTemplate="{{true}}">
+    </Controls.popup:Stack>
+    <Controls.popup:Dialog name="dialogOpener"
+                                  template="Controls-Deprecated-demo/Popup/Compatible/TestStack"
+                                  isCompoundTemplate="{{true}}"
+                                  autoCloseOnHide="{{false}}"
+                                  closeOnOutsideClick="{{false}}"
+                                  modal="{{true}}">
+    </Controls.popup:Dialog>
+    <Controls.popup:Stack name="openerStackOpener"
+                                 template="Controls-Deprecated-demo/Popup/Compatible/TestOpener"
+                                 isCompoundTemplate="{{true}}">
+    </Controls.popup:Stack>
+    <Controls.popup:Stack
+        name="actionParentStackOpener"
+        template="Controls-Deprecated-demo/Popup/Compatible/TestActionParentLink/ParentPanel"
+        isCompoundTemplate="{{true}}">
+    </Controls.popup:Stack>
+    <Controls.popup:Stack
+        name="newInOldOpener"
+        template="Controls-Deprecated-demo/Popup/Compatible/TestNewOpenerInOldPanel/OldPanel"
+        isCompoundTemplate="{{true}}">
+    </Controls.popup:Stack>
+    <div>
+        <Controls.buttons:Button attr:class="openStackButton" caption="Open Stack" on:click="openTestStack()"/>
+        <Controls.buttons:Button attr:class="openReviveButton" caption="Revive Test" on:click="openReviveStack()"/>
+        <Controls.buttons:Button attr:class="openInputButton" caption="Input Test" on:click="openInputStack()"/>
+        <Controls.buttons:Button attr:class="openValidateButton" caption="Validate Test" on:click="openValidateStack()"/>
+        <Controls.buttons:Button attr:class="openOpenerButton" caption="Opener Test" on:click="openOpenerStack()"/>
+        <Controls.buttons:Button attr:class="openInputDisabledButton" caption="Input Disabled Test" on:click="openInputDisabledStack()"/>
+        <Controls.buttons:Button attr:class="openActionParentStackButton" caption="Action Parent Test" on:click="openActionParentStack()"/>
+        <Controls.buttons:Button attr:class="openNewInOldButton" caption="New in Old Test" on:click="openNewInOld()"/>
+    </div>
+    <div style="text-align: center;">
+        <Controls.buttons:Button attr:class="openDialogButton" name="dialogButton" caption="Dialog Test" on:click="openDialog()"/>
+    </div>
+    <div>
+        <Controls.input:Text attr:class="outerTextInput" attr:tabindex="{{1}}" placeholder="For catching focus"/>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth550">
+  <div class="controlsDemo__cell demo-Toolbar__iconStyleSecondary_fontColorStyleLink">
+    <div class="controls-text-label">hintTextProperty = 'hintText'</div>
+    <Controls.toolbars:View
+        items="{{_items}}"
+        hintTextProperty="hintText"
+        hintBackgroundStyleProperty="iconStyle"
+        hintBorderStyleProperty="iconStyle"
+        keyProperty="id"
+    />
+  </div>
+</div>

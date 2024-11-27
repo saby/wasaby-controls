@@ -1,0 +1,6 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500 controlsDemo_wrapper-tree-base">
+    <Controls.tree:View
+            storeId="listData"
+            collapsedItems="{{ _collapsedItems }}"
+            on:collapsedItemsChanged="_onCollapsedItemsChanged()"/>
+</div>

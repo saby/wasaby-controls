@@ -1,0 +1,265 @@
+<div attr:class="form" ws-tab-cycling="true">
+<Controls.form:FocusWithEnter>
+  <div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+      <div class="controls-text-label controlsDemo__maxWidth200">Text</div>
+      <Controls.input:Text
+          attr:tabindex="1"
+          attr:data-qa="controlsDemo_FocusWithEnter__Text"
+          name="textInput1"
+          bind:value="_textValue"
+      />
+    </div>
+    <div class="controlsDemo__cell">
+      <div class="controls-text-label controlsDemo__maxWidth200">ReadOnly Field</div>
+      <Controls.input:Text
+          attr:tabindex="2"
+          attr:data-qa="controlsDemo_FocusWithEnter__ReadOnly"
+          name="readonlyInput1"
+          readOnly="{{ true }}"
+          bind:value="_textValue"
+      />
+    </div>
+    <div class="controlsDemo__cell">
+      <div class="controls-text-label controlsDemo__maxWidth200">Date</div>
+      <Controls.date:Input
+          attr:tabindex="3"
+          attr:data-qa="controlsDemo_FocusWithEnter__Date"
+          name="dateInput1"
+          mask="DD.MM.YY"
+          contrastBackground="{{true}}"
+          selectOnClick="{{true}}"
+          bind:value="_dateValue"
+      />
+    </div>
+    <div class="controlsDemo__cell">
+      <div class="controls-text-label controlsDemo__maxWidth200">contrast Text</div>
+      <Controls.input:Text
+          attr:tabindex="4"
+          attr:data-qa="controlsDemo_FocusWithEnter__contrastText"
+          name="textInput1"
+          contrastBackground="{{true}}"
+          selectOnClick="{{true}}"
+          bind:value="_textValue"
+      />
+    </div>
+    <div class="controlsDemo__cell">
+      <div class="controls-text-label controlsDemo__maxWidth200">Switch</div>
+      <Controls.toggle:Switch
+          attr:tabindex="5"
+          attr:data-qa="controlsDemo_FocusWithEnter__Switch"
+          name="checkbox1"
+          bind:value="_flagValue"
+          caption="selected"
+      />
+    </div>
+    <div class="controlsDemo__cell">
+      <div class="controls-text-label controlsDemo__maxWidth200">Spoilet</div>
+      <Controls.cut:TextCut attr:style="width: 200px;" lines="{{2}}" attr:tabindex="6"
+                            attr:data-qa="controlsDemo_FocusWithEnter__Spoilet">
+        <ws:content>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam cupiditate delectus,
+          eaque laboriosam
+          maiores mollitia praesentium quo ratione vel. At cum cumque earum ipsam non quis soluta
+          ullam veritatis.
+        </ws:content>
+      </Controls.cut:TextCut>
+    </div>
+    <div class="controlsDemo__cell">
+      <div class="controls-text-label controlsDemo__maxWidth200">RadioGroup (vertical)</div>
+      <Controls.RadioGroup:Control
+          attr:tabindex="7"
+          attr:data-qa="controlsDemo_FocusWithEnter__RadioGroup-vertical"
+          bind:selectedKey="_radioGroupSelectedKey1"
+          keyProperty="id"
+          parentProperty="parent"
+          nodeProperty="node"
+          source="{{_radioGroupSource1}}"
+      />
+    </div>
+    <div class="controlsDemo__cell">
+      <div class="controls-text-label controlsDemo__maxWidth200">RadioGroup (horizontal)</div>
+      <Controls.RadioGroup:Control
+          attr:tabindex="8"
+          attr:data-qa="controlsDemo_FocusWithEnter__RadioGroup-horizontal"
+          bind:selectedKey="_radioGroupSelectedKey2"
+          keyProperty="id"
+          direction="horizontal"
+          source="{{_radioGroupSource2}}"
+      />
+    </div>
+    <div class="controlsDemo__cell">
+      <div class="controls-text-label controlsDemo__maxWidth200">Tumbler (horizontal)</div>
+      <Controls.Tumbler:Control attr:tabindex="9" items="{{_items1}}" bind:selectedKey="_selectedKey1"
+                                attr:class="ControlsDemo-Tumbler__twoButtons"
+                                attr:data-qa="controlsDemo_FocusWithEnter__TumblerHorizontal"/>
+    </div>
+    <div class="controlsDemo__cell">
+      <div class="controls-text-label controlsDemo__maxWidth200">Tumbler (vertical)</div>
+      <Controls.Tumbler:Control attr:tabindex="10" items="{{_items2}}" bind:selectedKey="_selectedKey2"
+                                direction="vertical"
+                                attr:class="ControlsDemo-Tumbler__twoButtons"
+                                attr:data-qa="controlsDemo_FocusWithEnter__TumblerVertical"/>
+    </div>
+    <div class="controlsDemo__cell">
+      <div class="controls-text-label controlsDemo__maxWidth200">Checkbox</div>
+      <Controls.checkbox:Checkbox
+          attr:tabindex="11"
+          attr:data-qa="controlsDemo_FocusWithEnter__Checkbox"
+          caption="Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+          name="checkbox1"
+          bind:value="_flagValue"
+      />
+    </div>
+    <div class="controlsDemo__cell">
+      <div class="controls-text-label controlsDemo__maxWidth200">Button</div>
+      <Controls.buttons:Button
+          attr:tabindex="12"
+          attr:data-qa="controlsDemo_FocusWithEnter__Button"
+          name="button1"
+          caption="Click me"
+          buttonStyle="primary"/>
+    </div>
+    <div class="controlsDemo__cell">
+      <div class="controls-text-label controlsDemo__maxWidth200">Combobox</div>
+      <Controls.ComboBox
+          attr:tabindex="13"
+          attr:data-qa="controlsDemo_FocusWithEnter__Combobox"
+          attr:class="controlsDemo__maxWidth200"
+          name="combobox1"
+          fontColorStyle="secondary"
+          keyProperty="{{ _keyProperty }}"
+          displayProperty="{{ _displayProperty }}"
+          source="{{ _comboboxSource }}"
+          bind:selectedKey="_selectedKey"
+      />
+    </div>
+    <div class="controlsDemo__cell">
+      <div class="controls-text-label controlsDemo__maxWidth200">Button as link</div>
+      <Controls.buttons:Button
+          attr:tabindex="14"
+          name="linkButton1"
+          caption="Click me"
+          viewMode="linkButton"
+          fontColorStyle="link"/>
+    </div>
+    <div class="controlsDemo__cell">
+      <div class="controls-text-label controlsDemo__maxWidth200">Number</div>
+      <Controls.input:Number
+          attr:tabindex="15"
+          name="numberInput1"
+          bind:value="_numberValue1"
+      />
+    </div>
+    <div class="controlsDemo__cell">
+      <div class="controls-text-label controlsDemo__maxWidth200">Handbook with selection</div>
+      <Controls.lookup:Input
+          attr:tabindex="16"
+          name="handbook1"
+          searchParam="{{ _displayProperty }}"
+          source="{{ _handbookSource }}"
+          keyProperty="{{ _keyProperty }}"
+          multiSelect="{{ false }}"
+          bind:selectedKeys="_handbookSelectedKeys">
+        <ws:itemTemplate>
+          <ws:partial template="Controls/lookup:ItemTemplate"
+                      displayProperty="{{ _displayProperty }}"/>
+        </ws:itemTemplate>
+      </Controls.lookup:Input>
+    </div>
+    <div class="controlsDemo__cell">
+      <div class="controls-text-label controlsDemo__maxWidth200">Handbook without selection</div>
+      <Controls.lookup:Input
+          attr:tabindex="17"
+          name="handbook2"
+          searchParam="{{ _displayProperty }}"
+          source="{{ _handbookSource }}"
+          keyProperty="{{ _keyProperty }}"
+          multiSelect="{{ false }}">
+        <ws:itemTemplate>
+          <ws:partial template="Controls/lookup:ItemTemplate"
+                      displayProperty="{{ _displayProperty }}"/>
+        </ws:itemTemplate>
+      </Controls.lookup:Input>
+    </div>
+    <div class="controlsDemo__cell">
+      <div class="controls-text-label controlsDemo__maxWidth200">Phone</div>
+      <Controls.input:Mask
+          attr:tabindex="18"
+          attr:data-qa="controlsDemo_FocusWithEnter__Phone"
+          name="phone1"
+          mask="+7 (ddd) ddd-dd-dd"
+          bind:value="_phoneValue"/>
+    </div>
+    <div class="controlsDemo__cell">
+      <div class="controls-text-label controlsDemo__maxWidth200">Table with edit at place</div>
+      <Controls.grid:View
+          attr:tabindex="19"
+          attr:data-qa="controlsDemo_FocusWithEnter__TablePlace"
+          attr:class="controlsDemo__inline-flex controlsDemo__maxWidth800"
+          source="{{ _gridSource }}"
+          columns="{{ _gridColumns }}"
+          keyProperty="key"
+          on:deactivated="_deactivatedHandlerList1()"
+          bind:markedKey="_markedKey1">
+        <ws:editingConfig>
+          <ws:Object editOnClick="{{ true }}" editOnEnter="{{ true }}" sequentialEditingMode="cell"/>
+        </ws:editingConfig>
+      </Controls.grid:View>
+    </div>
+    <div class="controlsDemo__cell">
+      <div class="controls-text-label controlsDemo__maxWidth200">Number</div>
+      <Controls.input:Number
+          attr:tabindex="20"
+          attr:data-qa="controlsDemo_FocusWithEnter__Number"
+          name="numberInput2"
+          bind:value="_numberValue2"
+      />
+    </div>
+    <div class="controlsDemo__cell">
+      <div class="controls-text-label controlsDemo__maxWidth200">Table with edit at place and cell mode</div>
+      <Controls.grid:View
+          attr:tabindex="21"
+          attr:class="controlsDemo__inline-flex controlsDemo__maxWidth800"
+          source="{{ _gridSource2 }}"
+          columns="{{ _gridColumns }}"
+          keyProperty="key"
+          on:deactivated="_deactivatedHandlerList2()"
+          bind:markedKey="_markedKey2">
+        <ws:editingConfig>
+          <ws:Object editOnClick="{{ true }}" editOnEnter="{{ true }}" sequentialEditingMode="cell"
+                     mode="cell"/>
+        </ws:editingConfig>
+      </Controls.grid:View>
+    </div>
+    <div class="controlsDemo__cell">
+      <div class="controls-text-label controlsDemo__maxWidth200">Search</div>
+      <Controls.search:Input attr:tabindex="22"
+                             placeholder="Найдется все"
+                             contrastBackground="{{true}}"
+                             attr:class="controlsDemo__searchBase_field"/>
+    </div>
+    <div class="controlsDemo__cell">
+      <div class="controls-text-label controlsDemo__maxWidth200">Spoiler</div>
+      <Controls.spoiler:View attr:tabindex="23" captions="{{['Collapse', 'Expand']}}" bind:expanded="_expanded">
+        <div>Content</div>
+      </Controls.spoiler:View>
+    </div>
+    <div class="controlsDemo__cell">
+      <div class="controls-text-label controlsDemo__maxWidth200">DoubleSwitch</div>
+      <Controls.toggle:DoubleSwitch
+          attr:tabindex="24"
+          bind:value="_dblSwitchValue"
+          onCaption="Наличными"
+          offCaption="По карте"/>
+    </div>
+    <div class="controlsDemo__cell">
+      <div class="controls-text-label controlsDemo__maxWidth200">Toolbar</div>
+      <Controls.toolbars:View
+          items="{{_toolbarItems}}"
+          keyProperty="id"
+      />
+    </div>
+  </div>
+</Controls.form:FocusWithEnter>
+</div>

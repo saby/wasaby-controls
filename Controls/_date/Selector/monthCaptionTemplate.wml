@@ -1,0 +1,6 @@
+<div>
+    <ws:if data="{{icon}}">
+        <div class="controls-icon_size-s controls-PeriodDialog-MonthsRange__month_icon controls-icon_style-{{iconStyle}} {{icon}}"></div>
+    </ws:if>
+    {{caption}}
+</div>

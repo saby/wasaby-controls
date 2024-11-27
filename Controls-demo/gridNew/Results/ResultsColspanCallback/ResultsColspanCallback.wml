@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper">
+    <Controls.grid:View
+            resultsColspanCallback="{{ _resultsColspanCallback }}"
+            storeId="ResultsColspanCallback"
+            columns="{{_columns}}"
+            resultsPosition="bottom"
+            itemsReadyCallback="{{_itemsReadyCallback}}"
+            header="{{_header}}"/>
+</div>

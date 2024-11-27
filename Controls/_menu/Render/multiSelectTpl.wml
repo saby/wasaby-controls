@@ -1,0 +1,13 @@
+<Controls.Container.Async templateName="Controls/checkbox:CheckboxMarker"
+                          attr:tabindex="-1"
+                          attr:class="js-controls-ListView__checkbox
+                                      controls-Menu__row-checkbox
+                                      controls-Menu__row-checkbox-{{checkBoxAlign === 'right' ? 'right' : 'left'}}
+                                      controls-Menu__row-checkbox_{{!item.isVisibleCheckbox() ? 'invisible' : item.isSelected() !== false ?
+                                       'active' : 'default'}}">
+   <ws:templateOptions value="{{item.isSelected()}}"
+                       viewMode="outlined"
+                       triState="{{true}}"
+                       readOnly="{{item.isReadonlyCheckbox() || false}}"
+                       horizontalPadding="null"/>
+</Controls.Container.Async>

@@ -1,0 +1,74 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__flexRow">
+        <div class="controlsDemo__flexColumn">
+            <div class="controls-text-label controlsDemo__mb1">abbreviationType = 'long'</div>
+            <div class="controlsDemo__cell">
+                <div class="controls-text-label">value = 1240</div>
+                <Controls.baseDecorator:Number value="{{1240}}" abbreviationType="long"/>
+            </div>
+            <div class="controlsDemo__cell">
+                <div class="controls-text-label">value = -1240</div>
+                <Controls.baseDecorator:Number value="{{-1240}}" abbreviationType="long"/>
+            </div>
+            <div class="controlsDemo__cell">
+                <div class="controls-text-label">value = 1240480</div>
+                <Controls.baseDecorator:Number value="{{1240480}}" abbreviationType="long"/>
+            </div>
+            <div class="controlsDemo__cell">
+                <div class="controls-text-label">value = -1240480</div>
+                <Controls.baseDecorator:Number value="{{-1240480}}" abbreviationType="long"/>
+            </div>
+            <div class="controlsDemo__cell">
+                <div class="controls-text-label">value = 1240480000</div>
+                <Controls.baseDecorator:Number value="{{1240480000}}" abbreviationType="long"/>
+            </div>
+            <div class="controlsDemo__cell">
+                <div class="controls-text-label">value = -1240480000</div>
+                <Controls.baseDecorator:Number value="{{-1240480000}}" abbreviationType="long"/>
+            </div>
+            <div class="controlsDemo__cell">
+                <div class="controls-text-label">value = 1240480000000</div>
+                <Controls.baseDecorator:Number value="{{1240480000000}}" abbreviationType="long"/>
+            </div>
+            <div class="controlsDemo__cell">
+                <div class="controls-text-label">value = -1240480000000</div>
+                <Controls.baseDecorator:Number value="{{-1240480000000}}" abbreviationType="long"/>
+            </div>
+        </div>
+        <div class="controlsDemo__flexColumn controlsDemo__ml4">
+            <div class="controls-text-label controlsDemo__mb1">abbreviationType = 'short'</div>
+            <div class="controlsDemo__cell">
+                <div class="controls-text-label">value = 1240.23</div>
+                <Controls.baseDecorator:Number value="{{1240.23}}" abbreviationType="short"/>
+            </div>
+            <div class="controlsDemo__cell">
+                <div class="controls-text-label">value = -1240.23</div>
+                <Controls.baseDecorator:Number value="{{-1240.23}}" abbreviationType="short"/>
+            </div>
+            <div class="controlsDemo__cell">
+                <div class="controls-text-label">value = 1240480.23</div>
+                <Controls.baseDecorator:Number value="{{1240480.23}}" abbreviationType="short"/>
+            </div>
+            <div class="controlsDemo__cell">
+                <div class="controls-text-label">value = -1240480.23</div>
+                <Controls.baseDecorator:Number value="{{-1240480.23}}" abbreviationType="short"/>
+            </div>
+            <div class="controlsDemo__cell">
+                <div class="controls-text-label">value = 1240480000.23</div>
+                <Controls.baseDecorator:Number value="{{1240480000.23}}" abbreviationType="short"/>
+            </div>
+            <div class="controlsDemo__cell">
+                <div class="controls-text-label">value = -1240480000.23</div>
+                <Controls.baseDecorator:Number value="{{-1240480000.23}}" abbreviationType="short"/>
+            </div>
+            <div class="controlsDemo__cell">
+                <div class="controls-text-label">value = 1240480000000.23</div>
+                <Controls.baseDecorator:Number value="{{1240480000000.23}}" abbreviationType="short"/>
+            </div>
+            <div class="controlsDemo__cell">
+                <div class="controls-text-label">value = -1240480000000.23</div>
+                <Controls.baseDecorator:Number value="{{-1240480000000.23}}" abbreviationType="short"/>
+            </div>
+        </div>
+    </div>
+</div>

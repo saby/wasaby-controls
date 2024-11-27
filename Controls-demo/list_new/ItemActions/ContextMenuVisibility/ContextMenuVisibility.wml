@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500 controlsDemo__itemActions_list_FooterTemplate">
+    <Controls.list:View
+            storeId="ItemActionsContextMenuVisibility"
+            itemActions="{{_itemActions}}"
+            contextMenuVisibility="{{false}}">
+        <ws:contextMenuConfig>
+            <ws:footerTemplate>
+                <div class="ControlsDemo_MenuFooterTemplate-footer">
+                    {{footerTemplate.footerItemData.item.get('menuFooterText')}}
+                </div>
+            </ws:footerTemplate>
+        </ws:contextMenuConfig>
+    </Controls.list:View>
+</div>

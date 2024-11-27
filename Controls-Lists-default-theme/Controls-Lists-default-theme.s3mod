@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-Lists-default-theme"
+           id="7dafab78-3d12-49ab-920e-023e469d4069"
+           package="Wasaby"
+           kaizen_zone="2556c19f-9bfd-480d-8f3f-4bf55eef93aa"
+           responsible="Авраменко А.С." responsible_uuid="fc13d3f4-52fe-48a8-a088-90057bc85689"
+           required="1"
+           version="1.00">
+  <description/>
+  <depends>
+    <module id="af50caf5-f84b-4b81-a19c-6f6618372dbd" name="Controls-default-theme"/>
+    <module id="3b705300-9d6c-4e98-a79f-079c05bf6f48" name="Controls-Lists"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <cluster_endpoints/>
+  <resources/>
+  <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

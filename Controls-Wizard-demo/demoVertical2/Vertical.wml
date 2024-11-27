@@ -1,0 +1,36 @@
+<div class="demoVertical-Vertical">
+    <Controls.popupTemplate:Stack>
+        <ws:headerContentTemplate>
+            <div class="demoVertical-Vertical__stackHeader">
+                Правило регистрации
+            </div>
+        </ws:headerContentTemplate>
+        <ws:bodyContentTemplate>
+            <div class="demoVertical-Vertical__stackContent">
+                <div class="demoVertical-Vertical_customContent">
+                </div>
+                <Controls-Wizard.vertical:Container
+                    attr:class="demoVertical-Vertical__verticalContainer">
+                    <Controls-Wizard.vertical:Layout
+                        completedStepsIndexVisible="{{_showCompletedSteps}}"
+                        leftPadding="{{_leftPadding}}"
+                        blockLayout="{{_isBlockLayout}}"
+                        itemBackgroundStyle="{{_itemBackgroundStyle}}"
+                        displayMode="compact"
+                        selectedStepIndex="{{selectedStepIndex}}"
+                        mode="{{_mode}}"
+                        items="{{_items}}"
+                        markerSize="{{_showBigMarkerSize ? 'm' : 's'}}"
+                    />
+                </Controls-Wizard.vertical:Container>
+            </div>
+        </ws:bodyContentTemplate>
+    </Controls.popupTemplate:Stack>
+    <Controls.toggle:Switch bind:value="_showCompletedSteps"
+                            attr:data-qa="switch_showCompletedSteps"
+                            attr:style="border-top: 1px solid var(--border-color_switcher);"
+                            caption="Показывать номера у пройденных шагов"/>
+    <Controls.toggle:Switch bind:value="_showBigMarkerSize"
+                            attr:style="border-top: 1px solid var(--border-color_switcher);"
+                            caption="Большой маркер"/>
+</div>

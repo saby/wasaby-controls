@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper controlsDemo__grid-tagStyle">
+    <div class="controlsDemo-toolbar-panel">
+        &nbsp;&nbsp;{{_currentEvent && _currentColumnIndex && _currentValue ? (_currentEvent + ' на колонке №' +
+        _currentColumnIndex + ' со значением ' + _currentValue) : ''}}
+    </div>
+    <Controls.treeGrid:View
+            storeId="TagStyleFromCellData"
+            columns="{{_columns}}"
+            on:tagClick="_onTagClickCustomHandler()"
+            on:tagHover="_onTagHoverCustomHandler()"
+    >
+    </Controls.treeGrid:View>
+    <div>
+        <Controls.checkbox:Checkbox
+                attr:data-qa="multiselect_visibility"
+                value="{{_hasMultiSelect}}"
+                on:valueChanged="_onHasMultiSelectChanged()"
+                caption="Множественный выбор"/>
+    </div>
+</div>
