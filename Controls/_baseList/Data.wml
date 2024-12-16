@@ -1,0 +1,21 @@
+<!-- Чистый список со storeId, строим контейнер работающий со слайсом -->
+<ws:if data="{{_options.storeId}}">
+    <Controls._baseList.Data.ListContainerConnected scope="{{_options}}" _schemeType="withCleanSlice[{{_options.storeId}}]" />
+</ws:if>
+<!-- sendNullRootForMemory костыль. https://online.sbis.ru/opendoc.html?guid=b1349d43-357f-4881-8604-68793a8371fc&client=3 -->
+<ws:else data="{{_options.isSourceControllerFromContext || _options.doNotSendNullRootForMemory}}">
+    <!-- Старая схема через Browser, строим старый DataContainer. Старый DataContainer вставляется через Async,
+         чтобы не тянуть старый код. Контрол построится синхронно, потому что listDataOld тянет Browser. -->
+    <Controls.Container.Async templateName="Controls/listDataOld:DataContainer">
+        <ws:partial
+            template="{{content.resolvedTemplate}}"
+            name="data"
+            scope="{{_options}}"
+            _schemeType="withOldDataContainer"
+        />
+    </Controls.Container.Async>
+</ws:else>
+<ws:else>
+    <!-- На чистых опциях, строим загрузчик, который загрузит данные и построит слайс -->
+    <Controls._baseList.Data.compatible.Controller scope="{{_options}}" name="data" _schemeType="withSyntheticSlice"/>
+</ws:else>

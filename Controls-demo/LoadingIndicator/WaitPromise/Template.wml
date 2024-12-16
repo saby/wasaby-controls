@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell ws-flexbox ws-flex-column controlsDemo__mb2">
+        <div class="controlsDemo__mb1">
+            <Controls.buttons:Button caption="Загрузить текст"
+                                     on:click="_clickHandler()"/>
+        </div>
+        <Controls.LoadingIndicator
+                name="LocalIndicatorDefault"
+                attr:class="controls-demo__indicator_inst">
+            <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+                <ws:if data="{{_showAdditionalText}}">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+                </ws:if>
+            </div>
+        </Controls.LoadingIndicator>
+    </div>
+</div>

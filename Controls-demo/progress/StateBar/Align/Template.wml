@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth350">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">Отображение слева направо</div>
+        <Controls.progress:StateBar data="{{_data}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">Отображение справа налево</div>
+        <Controls.progress:StateBar data="{{_data}}" align="right"/>
+    </div>
+</div>

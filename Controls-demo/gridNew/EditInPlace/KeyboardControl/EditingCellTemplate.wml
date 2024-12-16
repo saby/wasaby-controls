@@ -1,0 +1,23 @@
+<ws:partial template="Controls/grid:ColumnTemplate"
+            scope="{{ _options }}"
+            editable="{{ !(item.getEditingConfig().mode === 'cell' && (
+            	column.config.displayProperty === 'title' || column.config.displayProperty === 'description' || (
+            		column.config.displayProperty === 'price' && item.contents.key === 4
+            	)
+            ))}}"
+>
+    <ws:contentTemplate>
+        <ws:partial template="Controls/list:EditingTemplate"
+                    value="{{ item.contents[column.config.displayProperty || 'title'] }}"
+                    scope="{{ _options }}"
+                    enabled="{{ item.getEditingConfig().mode === 'row' }}">
+            <ws:editorTemplate>
+                <Controls.input:Text contrastBackground="{{ item.getEditingConfig().mode === 'row' }}"
+                                     horizontalPadding="{{ item.getEditingConfig().mode === 'cell' ? 'null' : undefined }}"
+                                     borderVisibility="{{ item.getEditingConfig().mode === 'cell' ? 'hidden' : undefined }}"
+                                     attr:class="js-controls-Grid__editInPlace__input-1"
+                                     bind:value="item.contents[column.config.displayProperty || 'title']"/>
+            </ws:editorTemplate>
+        </ws:partial>
+    </ws:contentTemplate>
+</ws:partial>

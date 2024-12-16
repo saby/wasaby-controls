@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <div data-qa="controlsDemo-Slider__scaleStep10" class="controlsDemo__cell">
+        <div class="controls-text-label">scaleStep=10</div>
+        <Controls.slider:Base
+                maxValue="{{100}}"
+                minValue="{{0}}"
+                bind:value="_value1"
+                scaleStep="{{10}}"
+        />
+    </div>
+    <div data-qa="controlsDemo-Slider__scaleStep100" class="controlsDemo__cell">
+        <div class="controls-text-label">scaleStep=100</div>
+        <Controls.slider:Base
+                maxValue="{{100}}"
+                minValue="{{0}}"
+                bind:value="_value2"
+                scaleStep="{{100}}"
+        />
+    </div>
+</div>

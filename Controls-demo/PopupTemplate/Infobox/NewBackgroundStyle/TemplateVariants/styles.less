@@ -1,0 +1,27 @@
+@maxWidthTemplate: 235px;
+@infoboxTemplateMaxHeight: 55px;
+
+.firstTemplate__innerContent,
+.thirdTemplate__innerContent {
+   background-color: var(--danger_hover_background-color);
+   border: var(--border-thickness) solid var(--danger_border-color);
+   height: calc(@infoboxTemplateMaxHeight - var(--offset_xl));
+}
+
+.firstTemplate,
+.secondTemplate,
+.thirdTemplate {
+   width: @maxWidthTemplate;
+}
+
+.controlsDemo__infobox__size {
+   max-height: @infoboxTemplateMaxHeight;
+}
+
+.controls-demo__infobox {
+   padding: var(--offset_s) calc(var(--offset_m) + var(--offset_xl)) var(--offset_s) var(--offset_m);
+}
+
+.thirdTemplate {
+   padding-right: var(--offset_xs);
+}

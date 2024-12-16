@@ -1,0 +1,28 @@
+<ws:if data="{{!collectionItem.isHiddenGroup() && collectionItem.getContents()}}">
+    <div class="controls-PropertyGrid__group
+                {{expanderAlign ? 'controls-PropertyGrid__group_expander-' + expanderAlign}}
+                {{highlightOnHover ? 'controls-PropertyGrid__row_highlightOnHover'}}"
+         data-qa="controls-PropertyGrid__group"
+         attr:key="{{collectionItem.getUid()}}"
+         style="{{isGridLayout ? getCaptionStyles(collectionItem, 2, true)}}">
+        <div class="controls-PropertyGrid__group-content">
+            <ws:if data="{{!!contentTemplate}}">
+                <ws:partial template="{{contentTemplate}}"
+                            collectionItem="{{collectionItem}}"
+                            item="{{item}}"
+                />
+            </ws:if>
+            <ws:else>
+                {{item}}
+            </ws:else>
+        </div>
+        <ws:if data="{{expanderVisible}}">
+            <div title="{{!collapsedGroups[item] ? rk('Свернуть') : rk('Развернуть')}}"
+                 class="controls-PropertyGrid__groupExpander
+                        {{expanderAlign ? 'controls-PropertyGrid__groupExpander-' + expanderAlign}}
+                        controls-icon
+                        controls-icon_size-s
+                        {{!collapsedGroups[item] ? 'icon-MarkCollapseBold' : 'icon-MarkExpandBold'}}"></div>
+        </ws:if>
+    </div>
+</ws:if>

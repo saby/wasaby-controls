@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth800">
+    <Controls.scroll:Container attr:class="controlsDemo__height400">
+        <Controls.list:HotKeysContainer>
+            <Controls.list:View
+                    storeId="VirtualScrollPagingEdge"
+                    name="list"
+                    attr:class="controlsDemo_line-height18"
+                    moveMarkerOnScrollPaging="{{true}}"
+            >
+                <ws:virtualScrollConfig pageSize="{{20}}"/>
+            </Controls.list:View>
+        </Controls.list:HotKeysContainer>
+    </Controls.scroll:Container>
+</div>

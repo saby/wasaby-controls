@@ -1,0 +1,83 @@
+<Controls.masterDetail:Base attr:class="demo-DragNDrop__MasterDetail">
+   <ws:master>
+      <div>
+         <div class="ws-flexbox demo-DragNDrop__MasterDetail_search">
+            <Controls.search:Input placeholder="Введите"
+                                   attr:class="demo-DragNDrop__MasterDetail_master_search_input"/>
+         </div>
+         <Controls.scroll:Container attr:class="demo-DragNDrop__MasterDetail_master">
+            <Controls.listDataOld:DataContainer name="dataContainer" source="{{_masterSource}}" keyProperty="id" parentProperty="Раздел">
+               <div>
+                  <Controls.listDeprecate:Mover name="masterMover" parentProperty="Раздел"/>
+                  <Controls.listDataOld:ListContainer>
+                     <Controls.masterDetail:List>
+                        <Controls.treeGrid:View
+                           itemsReadyCallback="{{_itemsReadyCallbackMaster}}"
+                           itemsDragNDrop="{{true}}"
+                           on:customdragStart="_dragStartMaster()"
+                           on:customdragEnd="_dragEndMaster()"
+                           on:customdragEnter="_dragEnterMaster()"
+                           style="master"
+                           markerVisibility='visible'
+                           nodeProperty="Раздел@"
+                           expanderDisplayMode="adaptive"
+                           columns="{{gridColumns}}"
+                        >
+                           <ws:draggingTemplate>
+                              <ws:partial template="Controls/dragnDrop:DraggingTemplate"
+                                          mainText="{{draggingTemplate.entity._options.mainText}}"
+                                          image="{{draggingTemplate.entity._options.image}}"
+                                          additionalText="{{draggingTemplate.entity._options.additionalText}}">
+                              </ws:partial>
+                           </ws:draggingTemplate>
+                        </Controls.treeGrid:View>
+                     </Controls.masterDetail:List>
+                  </Controls.listDataOld:ListContainer>
+               </div>
+            </Controls.listDataOld:DataContainer>
+         </Controls.scroll:Container>
+      </div>
+   </ws:master>
+   <ws:detail>
+      <div class="ws-flexbox ws-flex-column ws-flex-grow-1">
+         <div class="ws-flexbox ws-flex-shrink-0 demo-DragNDrop__MasterDetail_search">
+            <Controls.search:Input placeholder="Введите"/>
+         </div>
+         <Controls.scroll:Container attr:class="demo-DragNDrop__MasterDetail_detail">
+            <Controls.listDataOld:DataContainer name="dataContainer" source="{{_detailSource}}" keyProperty="id">
+               <div>
+                  <Controls.listDeprecate:Mover name="detailMover"/>
+                  <Controls.listDataOld:ListContainer>
+                     <Controls.list:View
+                        name="detailList"
+                        itemsReadyCallback="{{_itemsReadyCallbackDetail}}"
+                        itemsDragNDrop="{{true}}"
+                        on:customdragStart="_dragStartDetail()"
+                        on:customdragEnd="_dragEndDetail()">
+                        <ws:filter parent="{{detail.selectedMasterValue || '0'}}">
+                        </ws:filter>
+                        <ws:itemTemplate>
+                           <ws:partial template="Controls/list:ItemTemplate">
+                              <ws:contentTemplate>
+                                 <ws:partial
+                                         item="{{itemTemplate.item.contents}}"
+                                         template="wml!Controls-demo/DragNDrop/MasterDetail/itemTemplates/TaskItemTemplate"
+                                 />
+                              </ws:contentTemplate>
+                           </ws:partial>
+                        </ws:itemTemplate>
+                        <ws:draggingTemplate>
+                           <ws:partial template="Controls/dragnDrop:DraggingTemplate"
+                                       mainText="{{draggingTemplate.entity._options.mainText}}"
+                                       image="{{draggingTemplate.entity._options.image}}"
+                                       additionalText="{{draggingTemplate.entity._options.additionalText}}">
+                           </ws:partial>
+                        </ws:draggingTemplate>
+                     </Controls.list:View>
+                  </Controls.listDataOld:ListContainer>
+               </div>
+            </Controls.listDataOld:DataContainer>
+         </Controls.scroll:Container>
+      </div>
+   </ws:detail>
+</Controls.masterDetail:Base>

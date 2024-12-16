@@ -1,0 +1,29 @@
+<div class="controls-ManagerWrapper">
+   <Controls.event:Register name="scrollDetect" register="customscroll">
+      <Controls.event:Register name="resizeDetect" register="controlResize">
+         <Controls.event:Register name="mousemoveDetect" register="mousemove">
+            <Controls.event:Register name="mouseupDetect" register="mouseup">
+               <Controls.event:Register name="touchmoveDetect" register="touchmove">
+                  <Controls.event:Register name="touchendDetect" register="touchend">
+                     <Controls.event:Register name="mousedownDetect" register="mousedown">
+                        <Controls._compatiblePopup.Global name="PopupGlobal" theme="{{_themeName}}">
+                              <Controls.dragnDrop:Controller name="dragNDropContainer">
+                                 <div>
+                                    <Controls.popup:Container name="PopupContainer" attr:id="popup" on:_documentDragStart="_documentDragStart()"
+                                                              on:_documentDragEnd="_documentDragEnd()"/>
+                                    <ws:if data="{{ content.draggingTemplate }}">
+                                       <ws:partial template="Controls/dragnDrop:DraggingTemplateWrapper"
+                                                   draggingTemplateOptions="{{content.draggingTemplateOptions}}"
+                                                   draggingTemplate="{{content.draggingTemplate}}"/>
+                                    </ws:if>
+                                 </div>
+                              </Controls.dragnDrop:Controller>
+                        </Controls._compatiblePopup.Global>
+                     </Controls.event:Register>
+                  </Controls.event:Register>
+               </Controls.event:Register>
+            </Controls.event:Register>
+         </Controls.event:Register>
+      </Controls.event:Register>
+   </Controls.event:Register>
+</div>

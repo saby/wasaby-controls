@@ -1,0 +1,18 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__ml3">
+      <div class="controls-text-label">Результаты отображаются плоским списком</div>
+      <Controls.dropdown:Selector
+              source="{{_source}}"
+              keyProperty="id"
+              bind:selectedKeys="_selectedKeys2"
+              displayProperty="title"
+              searchParam="title"
+              emptyTemplate="Controls/menu:EmptyTemplate"
+              emptyText="Не выбрано"
+              menuViewMode="list"
+              parentProperty="parent"
+              nodeProperty="@parent"
+              attr:data-qa="ControlsDemo_Dropdown__flat"
+      />
+   </div>
+</div>

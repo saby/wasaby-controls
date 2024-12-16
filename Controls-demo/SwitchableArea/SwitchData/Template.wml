@@ -1,0 +1,23 @@
+<div class="controls-margin-m">
+    <Controls.buttons:Button attr:class="ControlsDemo-SwitchableArea__button_3"
+                             viewMode="outlined"
+                             caption="Switch Data"
+                             on:click="switchDataHandler()"/>
+    <Controls.context:ContextOptionsProvider configs="{{_configs}}" loadResults="{{_loadResult}}">
+        <Controls.switchableArea:WrappedView
+                itemTemplateProperty="itemTemplate"
+                items="{{_items}}"
+                selectedKey="{{_demoSelectedKey}}"
+                storeId="areaData"/>
+    </Controls.context:ContextOptionsProvider>
+    <div class='controlsDemo_fixedWidth500 controlsDemo__flex'>
+        <Controls.buttons:Button attr:class="ControlsDemo-SwitchableArea__button_0"
+                                 viewMode="outlined"
+                                 caption="Content 1"
+                                 on:click="clickHandler('first')"/>
+        <Controls.buttons:Button attr:class="controls-margin_left-m ControlsDemo-SwitchableArea__button_1"
+                                 viewMode="outlined"
+                                 caption="Content 2"
+                                 on:click="clickHandler('second')"/>
+    </div>
+</div>

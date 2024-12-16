@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell controls-padding_left-s controlsDemo_fixedWidth300">
+        <div class="controls-text-label">fontColorStyle=mycustomdecorator</div>
+        <Controls.baseDecorator:Number value="{{_value}}" fontColorStyle="mycustomdecorator"/>
+        <br/>
+        <Controls.baseDecorator:Number value="{{123}}"
+                                       fontColorStyle="mycustomdecorator"
+                                       precision="{{2}}"
+                                       roundMode="trunc"
+                                       showEmptyDecimals="{{true}}"/>
+    </div>
+</div>
+

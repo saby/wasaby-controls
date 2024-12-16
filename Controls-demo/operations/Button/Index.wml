@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper controlsDemo__maxWidth500">
+   <Controls.browser:Browser source="{{_source}}"
+                             bind:selectedKeys="_selectedKeys"
+                             bind:excludedKeys="_excludedKeys"
+                             keyProperty="id">
+      <div>
+         <Controls.operations:Button bind:expanded="_expandedOperationsPanel"/>
+         <ws:if data="{{_expandedOperationsPanel}}">
+            <Controls.operations:PanelContainer>
+               <Controls.operations:Panel source="{{_panelSource}}"/>
+            </Controls.operations:PanelContainer>
+         </ws:if>
+         <Controls.listDataOld:ListContainer>
+            <Controls.list:View/>
+         </Controls.listDataOld:ListContainer>
+      </div>
+   </Controls.browser:Browser>
+</div>

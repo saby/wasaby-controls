@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <Controls.ExpandableSearch bind:value="_searchValue"
+                                         inlineHeight="2xl"
+                                         shadowVisible="{{true}}"
+                                         contrastBackground="{{true}}"
+                                         attr:class="controlsDemo__ml1"/>
+    </div>
+</div>

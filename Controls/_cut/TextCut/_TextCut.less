@@ -1,0 +1,23 @@
+.controls-TextCut__ellipsisWrapper {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+}
+
+& {
+   /* TODO: https://online.sbis.ru/opendoc.html?guid=694c7b40-d1cd-4223-a31d-18ad667fffaf */
+   /* stylelint-disable-next-line unit-no-unknown */
+   @sizes: xs, s, m, l, xl, 2xl, 3xl, 4xl, 5xl, richEditor;
+
+   .for(@sizes, {
+      @lineHeight: extract(@sizes, @_i);
+      @lineHeightVariable: ~'--line-height_@{lineHeight}';
+      .controls-TextCut__ellipsisWrapper_expanded_lineHeight-@{lineHeight} {
+         margin-top: var(@lineHeightVariable);
+      }
+      .controls-TextCut_lineHeight-@{lineHeight} {
+         line-height: var(@lineHeightVariable);
+      }
+   });
+}

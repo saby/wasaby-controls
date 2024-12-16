@@ -1,0 +1,51 @@
+<div class="body_template_toggle">
+    <div class="body_template_toggle">Выберите шаблон (иллюзия выбора)</div>
+    <div class="body_template">
+        <div class="body_template_header body_template_header_content">
+            <span>Давайте поговорим</span>
+        </div>
+      <div class="body_template_row">
+        <Controls.validate:Container>
+          <ws:validators>
+            <ws:Function value="{{_options.record.name}}">Controls/validate:isRequired</ws:Function>
+          </ws:validators>
+          <ws:content>
+            <Controls.input:Text attr:class="body_template_input" placeholder="Как вас зовут" bind:value="_options.record.name" attr:data-qa="EngineDemo-WizardNew__input"/>
+          </ws:content>
+        </Controls.validate:Container>
+      </div>
+        <div class="body_template_row">
+        <Controls.validate:Container>
+          <ws:validators>
+            <ws:Function value="{{_options.record.phone}}">Controls/validate:isRequired</ws:Function>
+          </ws:validators>
+          <ws:content>
+            <Controls.input:Text attr:class="body_template_input" placeholder="Телефон" bind:value="_options.record.phone" attr:data-qa="EngineDemo-WizardNew__input"/>
+          </ws:content>
+        </Controls.validate:Container>
+        </div>
+      <div class="body_template_row">
+        <Controls.input:Text attr:class="body_template_input" placeholder="email" attr:data-qa="EngineDemo-WizardNew__input"/>
+      </div>
+      <div class="body_template_row">
+        <Controls.validate:Container>
+          <ws:validators>
+            <ws:Function value="{{_options.record.company}}">Controls/validate:isRequired</ws:Function>
+          </ws:validators>
+          <ws:content>
+            <Controls.input:Text attr:class="body_template_input" placeholder="Компания" bind:value="_options.record.company" attr:data-qa="EngineDemo-WizardNew__input"/>
+          </ws:content>
+        </Controls.validate:Container>
+      </div>
+        <div class="body_template_row">
+        <Controls.validate:Container>
+          <ws:validators>
+            <ws:Function value="{{_options.record.message}}">Controls/validate:isRequired</ws:Function>
+          </ws:validators>
+          <ws:content>
+            <Controls.input:Text attr:class="body_template_input" placeholder="Текст сообщения" bind:value="_options.record.message" attr:data-qa="EngineDemo-WizardNew__input"/>
+          </ws:content>
+        </Controls.validate:Container>
+        </div>
+    </div>
+</div>

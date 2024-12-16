@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper">
+    <div class="controls-text-label">Мобильная адаптация</div>
+    <Controls.multipleLookup:Input
+        lookupsOptions="{{ _lookupOptions }}"
+        selectedKeys="{{ _selectedKeys }}"
+        on:selectedKeysChanged="_selectedKeysChanged()"
+        on:valueChanged="_valueChanged()"
+        attr:class="controlsDemo_fixedWidth350"
+        attr:data-qa="controlsDemo_MultipleInputNew__base"
+    >
+    </Controls.multipleLookup:Input>
+</div>

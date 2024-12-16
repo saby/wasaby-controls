@@ -1,0 +1,107 @@
+<div class="controlsDemo__wrapper controlDemo__RowWrapper">
+   <div class="demo-SpoilerCut__column1">
+      <div class="controlsDemo__cell">
+         <div class="controls-text-label">lineHeight = xs.</div>
+         <Controls.cut:TextCut attr:style="width: 200px;"
+                               attr:class="controls-fontsize-xs"
+                               lineHeight="xs" lines="{{3}}">
+            <ws:content>
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam cupiditate delectus, eaque laboriosam
+               maiores mollitia praesentium quo ratione vel. At cum cumque earum ipsam non quis soluta ullam veritatis.
+            </ws:content>
+         </Controls.cut:TextCut>
+      </div>
+      <div class="controlsDemo__cell">
+         <div class="controls-text-label">lineHeight = s.</div>
+         <Controls.cut:TextCut attr:style="width: 200px;"
+                               attr:class="controls-fontsize-s"
+                               lineHeight="s" lines="{{3}}">
+            <ws:content>
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam cupiditate delectus, eaque laboriosam
+               maiores mollitia praesentium quo ratione vel. At cum cumque earum ipsam non quis soluta ullam veritatis.
+            </ws:content>
+         </Controls.cut:TextCut>
+      </div>
+      <div class="controlsDemo__cell">
+         <div class="controls-text-label">lineHeight = m.</div>
+         <Controls.cut:TextCut attr:style="width: 200px;"
+                               attr:class="controls-fontsize-m"
+                               lineHeight="m" lines="{{3}}">
+            <ws:content>
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam cupiditate delectus, eaque laboriosam
+               maiores mollitia praesentium quo ratione vel. At cum cumque earum ipsam non quis soluta ullam veritatis.
+            </ws:content>
+         </Controls.cut:TextCut>
+      </div>
+      <div class="controlsDemo__cell">
+         <div class="controls-text-label">lineHeight = l.</div>
+         <Controls.cut:TextCut attr:style="width: 200px;"
+                               attr:class="controls-fontsize-l"
+                               lineHeight="l" lines="{{3}}">
+            <ws:content>
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam cupiditate delectus, eaque laboriosam
+               maiores mollitia praesentium quo ratione vel. At cum cumque earum ipsam non quis soluta ullam veritatis.
+            </ws:content>
+         </Controls.cut:TextCut>
+      </div>
+   </div>
+   <div class="controlsDemo__ml2 demo-SpoilerCut__column2">
+      <div class="controlsDemo__cell">
+         <div class="controls-text-label">lineHeight = xl.</div>
+         <Controls.cut:TextCut attr:style="width: 200px;"
+                               attr:class="controls-fontsize-xl"
+                               lineHeight="xl" lines="{{3}}">
+            <ws:content>
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam cupiditate delectus, eaque laboriosam
+               maiores mollitia praesentium quo ratione vel. At cum cumque earum ipsam non quis soluta ullam veritatis.
+            </ws:content>
+         </Controls.cut:TextCut>
+      </div>
+      <div class="controlsDemo__cell">
+         <div class="controls-text-label">lineHeight = 2xl.</div>
+         <Controls.cut:TextCut attr:style="width: 200px;"
+                               attr:class="controls-fontsize-2xl"
+                               lineHeight="2xl" lines="{{3}}">
+            <ws:content>
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam cupiditate delectus, eaque laboriosam
+               maiores mollitia praesentium quo ratione vel. At cum cumque earum ipsam non quis soluta ullam veritatis.
+            </ws:content>
+         </Controls.cut:TextCut>
+      </div>
+      <div class="controlsDemo__cell">
+         <div class="controls-text-label">lineHeight = 3xl.</div>
+         <Controls.cut:TextCut attr:style="width: 200px;"
+                               attr:class="controls-fontsize-3xl"
+                               lineHeight="3xl" lines="{{3}}">
+            <ws:content>
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam cupiditate delectus, eaque laboriosam
+               maiores mollitia praesentium quo ratione vel. At cum cumque earum ipsam non quis soluta ullam veritatis.
+            </ws:content>
+         </Controls.cut:TextCut>
+      </div>
+   </div>
+   <div class="controlsDemo__ml2 demo-SpoilerCut__column3">
+      <div class="controlsDemo__cell">
+         <div class="controls-text-label">lineHeight = 4xl.</div>
+         <Controls.cut:TextCut attr:style="width: 200px;"
+                               attr:class="controls-fontsize-4xl"
+                               lineHeight="4xl" lines="{{3}}">
+            <ws:content>
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam cupiditate delectus, eaque laboriosam
+               maiores mollitia praesentium quo ratione vel. At cum cumque earum ipsam non quis soluta ullam veritatis.
+            </ws:content>
+         </Controls.cut:TextCut>
+      </div>
+      <div class="controlsDemo__cell">
+         <div class="controls-text-label">lineHeight = 5xl.</div>
+         <Controls.cut:TextCut attr:style="width: 200px;"
+                               attr:class="controls-fontsize-5xl"
+                               lineHeight="5xl" lines="{{3}}">
+            <ws:content>
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam cupiditate delectus, eaque laboriosam
+               maiores mollitia praesentium quo ratione vel. At cum cumque earum ipsam non quis soluta ullam veritatis.
+            </ws:content>
+         </Controls.cut:TextCut>
+      </div>
+   </div>
+</div>

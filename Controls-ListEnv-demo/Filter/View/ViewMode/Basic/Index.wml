@@ -1,0 +1,10 @@
+<div>
+    <Controls-ListEnv.filterConnected:View
+            storeId="basicData"
+            alignment="left"
+            detailPanelTemplateName="Controls/filterPanelPopup:Sticky"/>
+    <Controls.grid:View storeId="basicData"
+                        columns="{{_columns}}"
+                        header="{{_header}}"
+                        attr:class="engine-demo__Widgets_filterList"/>
+</div>

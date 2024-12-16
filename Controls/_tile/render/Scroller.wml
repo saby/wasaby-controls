@@ -1,0 +1,3 @@
+<Controls.scroll:_ListScrollContextConsumer getContextValue="{{_getListScrollContextValueCallback}}">
+<ws:partial template="{{_options.content}}"/>
+</Controls.scroll:_ListScrollContextConsumer>

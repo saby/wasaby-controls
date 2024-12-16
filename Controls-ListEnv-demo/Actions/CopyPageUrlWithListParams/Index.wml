@@ -1,0 +1,15 @@
+<div>
+    <Controls-ListEnv.filterConnected:View storeId="actionsFilter" filterNames="{{['department']}}"/>
+    <div class="ws-flexbox engine-demo__Widgets_filterList">
+            <Controls.grid:View storeId="actionsFilter">
+                <ws:columns>
+                    <ws:Array>
+                        <ws:Object displayProperty="department"/>
+                    </ws:Array>
+                </ws:columns>
+            </Controls.grid:View>
+            <Controls-ListEnv.toolbarConnected:Container storeId="actionsFilter" actions="Controls-ListEnv-demo/Actions/CopyPageUrlWithListParams/listActions">
+                <Controls.toolbars:View direction="vertical"/>
+            </Controls-ListEnv.toolbarConnected:Container>
+    </div>
+</div>

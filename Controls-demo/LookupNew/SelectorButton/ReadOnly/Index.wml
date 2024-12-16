@@ -1,0 +1,40 @@
+<div class="controlsDemo__wrapper controlsDemo__flexColumn controlsDemo_fixedWidth500">
+    <div class="controlsDemo__mb1 controlsDemo__wrapper__horizontal controlsDemo__cell controlsDemo__childWidth400 controlsDemo-Lookup-simple">
+        <div class="controls-text-label controlsDemo__cell">default fontColorStyle</div>
+        <Controls.lookup:Selector
+                source="{{_source}}"
+                displayProperty="title"
+                keyProperty="id"
+                caption="Выберите компанию"
+                readOnly="{{true}}"
+                bind:selectedKeys="_selectedKeys">
+        </Controls.lookup:Selector>
+    </div>
+
+    <div class="controlsDemo__mb1 controlsDemo__wrapper__horizontal controlsDemo__cell controlsDemo__childWidth400 controlsDemo-Lookup-simple">
+        <div class="controls-text-label controlsDemo__cell">fontColorStyle = primary</div>
+        <Controls.lookup:Selector
+                source="{{_source}}"
+                displayProperty="title"
+                keyProperty="id"
+                caption="Выберите компанию"
+                fontColorStyle="primary"
+                readOnly="{{true}}"
+                bind:selectedKeys="_selectedKeys1">
+        </Controls.lookup:Selector>
+    </div>
+
+    <div class="controlsDemo__mb1 controlsDemo__wrapper__horizontal controlsDemo__cell controlsDemo__childWidth400 controlsDemo-Lookup-simple">
+        <div class="controls-text-label controlsDemo__cell">fontColorStyle = primary and multiSelect</div>
+        <Controls.lookup:Selector
+                source="{{_source}}"
+                displayProperty="title"
+                keyProperty="id"
+                caption="Выберите компанию"
+                fontColorStyle="primary"
+                readOnly="{{true}}"
+                multiSelect="{{true}}"
+                bind:selectedKeys="_selectedKeysMulti">
+        </Controls.lookup:Selector>
+    </div>
+</div>

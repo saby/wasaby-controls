@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__ml2">
+        <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys"
+                                    keyProperty="id"
+                                    displayProperty="title"
+                                    selectedAllText="{[Все документы]}"
+                                    selectedAllKey="10000"
+                                    multiSelect="{{true}}"
+                                    items="{{_items}}">
+        </Controls.dropdown:Selector>
+    </div>
+</div>

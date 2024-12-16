@@ -1,0 +1,12 @@
+<div class="controlsDemo__flexColumn controlsDemo__ml2">
+    <Controls.dateRange:Selector
+            bind:startValue="_startValue"
+            bind:endValue="_endValue"
+            datePopupType="shortDatePicker"
+            chooseHalfyears="{{false}}"
+            chooseQuarters="{{false}}">
+        <ws:headerContentTemplate>
+            {{ _getHeaderCaption(headerContentTemplate.startValue, headerContentTemplate.endValue) }}
+        </ws:headerContentTemplate>
+    </Controls.dateRange:Selector>
+</div>

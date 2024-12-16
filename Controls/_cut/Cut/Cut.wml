@@ -1,0 +1,29 @@
+<ws:partial template="{{ _baseCutTemplate }}" attr:class="controls-Cut__container">
+   <ws:content>
+      <div class="controls-Cut"
+           style="{{ _getMaxHeightStyle() }}">
+         <div name="content" class="controls-Cut__content">
+            <ws:partial template="{{ _options.content }}"/>
+         </div>
+         <ws:if data="{{ !_expanded }}">
+            <ws:partial template="{{ content.notExpandedButtonTemplate }}"
+               cutVisible="{{ _cutVisible }}"
+               isIE="{{ _isIE }}"
+               scope="{{ _options }}"
+               lineHeight="m"
+               expanded="{{ false }}"
+            />
+         </ws:if>
+         <ws:else>
+            <div
+                    class="{{ !_expanded ? 'controls-Cut__ellipsisWrapper' }}"
+                    style="{{ _getMarginStyle() }}">
+               <ws:partial template="{{ content.expandedButtonTemplate }}"
+                           scope="{{ _options }}"
+                           lineHeight="m"
+                           expanded="{{ true }}"/>
+            </div>
+         </ws:else>
+      </div>
+   </ws:content>
+</ws:partial>

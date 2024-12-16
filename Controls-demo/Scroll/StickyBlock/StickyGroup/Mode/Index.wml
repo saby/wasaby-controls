@@ -1,0 +1,77 @@
+<div class="controlsDemo__flexRow">
+    <div class="options-wrap demo-scrollMode__verticalHorizontal">
+        <Controls.scroll:Container attr:class="controlsDemo__ml2 controlsDemo_fixedWidth300 controlsDemo__height300"
+                                   scrollOrientation="verticalHorizontal"
+                                   attr:data-qa="controlsDemo_scroll__left">
+            <div class="controlsDemo_fixedWidth550" style="display: grid; grid-template-columns: 70px 70px 70px 70px 1fr;">
+                <ws:for data="index in 3">
+                    <Controls.stickyBlock:StickyGroup mode="replaceable">
+                        <div style="display: contents;">
+                            <Controls.stickyBlock:StickyGroupedBlock position="{{ {'vertical' : 'topBottom', 'horizontal' : 'left'} }}" mode="stackable"
+                                                         fixedZIndex="{{4}}"
+                                                         zIndex="{{3}}"
+                                                         attr:style="border: 1px solid #000;">
+                                <div>
+                                    Header #{{index}}
+                                </div>
+                            </Controls.stickyBlock:StickyGroupedBlock>
+                            <Controls.stickyBlock:StickyGroupedBlock position="{{ {'vertical' : 'topBottom', 'horizontal' : 'left'} }}" mode="stackable"
+                                                         fixedZIndex="{{4}}"
+                                                         zIndex="{{3}}"
+                                                         attr:style="border: 1px solid #000;">
+                                <div>
+                                    Header #{{index + 1}}
+                                </div>
+                            </Controls.stickyBlock:StickyGroupedBlock>
+                            <Controls.stickyBlock:StickyGroupedBlock position="{{ {'vertical' : 'topBottom'} }}" mode="replaceable"
+                                                         attr:style="border: 1px solid #000;">
+                                <div>
+                                    Header #{{index + 2}}
+                                </div>
+                            </Controls.stickyBlock:StickyGroupedBlock>
+                            <Controls.stickyBlock:StickyGroupedBlock position="{{ {'vertical' : 'topBottom'} }}" mode="replaceable"
+                                                         attr:style="border: 1px solid #000;">
+                                <div>
+                                    Header #{{index + 3}}
+                                </div>
+                            </Controls.stickyBlock:StickyGroupedBlock>
+                            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</div>
+                        </div>
+                    </Controls.stickyBlock:StickyGroup>
+                </ws:for>
+                <div style="grid-column-start: 1; grid-column-end: 5;">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+            </div>
+        </Controls.scroll:Container>
+    </div>
+</div>

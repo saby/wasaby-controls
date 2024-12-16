@@ -1,0 +1,35 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth350">
+    <div class="controlsDemo__cell">
+        <div class="skeletondemo_head" >
+            <Controls.skeleton:Image borderRadius="xs" className="skeletondemo_img"></Controls.skeleton:Image>
+            <Controls.skeleton:Text rows="{{2}}" className="skeletondemo_caption"></Controls.skeleton:Text>
+        </div>
+        <div>
+            <Controls.skeleton:Base className="skeletondemo_data"></Controls.skeleton:Base>
+        </div>
+    </div>
+    <div class="controlsDemo__cell">
+        <span class="controls-text-label">images</span>
+        <div class="controlsDemo__cell">
+            <Controls.skeleton:Image></Controls.skeleton:Image>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.skeleton:Image borderRadius="null" size="l"></Controls.skeleton:Image>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.skeleton:Image borderRadius="xs" size="2xl"></Controls.skeleton:Image>
+        </div>
+    </div>
+    <div class="controlsDemo__cell">
+        <span class="controls-text-label">texts</span>
+        <div class="controlsDemo__cell">
+            <Controls.skeleton:Text></Controls.skeleton:Text>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.skeleton:Text rows="{{3}}" fontSize="l"></Controls.skeleton:Text>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.skeleton:Text rows="{{5}}"></Controls.skeleton:Text>
+        </div>
+    </div>
+</div>

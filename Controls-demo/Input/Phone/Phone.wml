@@ -1,0 +1,17 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <Controls.input:Phone attr:class="ControlsDemo-PhoneInput_phoneField"/>
+    </div>
+
+    <div>
+        <div class="Name-Demo__title">Копирование в буфер обмена</div>
+        <ws:for data="item in _copyItems">
+            <div class="engineDemo-ExtendedEditor__copyWrapper-{{item.id}}" on:click="_copyClickHandler(item.id)">
+                <Controls.buttons:Button icon="icon-Copy" viewMode="link" caption="{{item.caption}}"/>
+                <div name="{{item.id}}">
+                    {{item.text}}
+                </div>
+            </div>
+        </ws:for>
+    </div>
+</div>

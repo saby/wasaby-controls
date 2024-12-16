@@ -1,0 +1,34 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontSize=xs</div>
+        <Controls.breadcrumbs:Path keyProperty="id" items="{{_items}}" fontSize="xs"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontSize=s</div>
+        <Controls.breadcrumbs:Path keyProperty="id" items="{{_items}}" fontSize="s"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontSize=m</div>
+        <Controls.breadcrumbs:Path keyProperty="id" items="{{_items}}" fontSize="m"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontSize=l</div>
+        <Controls.breadcrumbs:Path keyProperty="id" items="{{_items}}" fontSize="l" />
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontSize=xl</div>
+        <Controls.breadcrumbs:Path keyProperty="id" items="{{_items}}" fontSize="xl" />
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontSize=2xl</div>
+        <Controls.breadcrumbs:Path keyProperty="id" items="{{_items}}" fontSize="2xl" />
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontSize=3xl</div>
+        <Controls.breadcrumbs:Path keyProperty="id" items="{{_items}}" fontSize="3xl" />
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontSize=4xl</div>
+        <Controls.breadcrumbs:Path keyProperty="id" items="{{_items}}" fontSize="4xl" />
+    </div>
+</div>

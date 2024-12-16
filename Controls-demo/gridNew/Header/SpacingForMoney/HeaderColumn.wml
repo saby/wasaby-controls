@@ -1,0 +1,8 @@
+<ws:partial
+        template="Controls/grid:HeaderContent"
+        scope="{{ _options }}"
+        attr:class="controls-Grid__cell_spacing_money">
+    <ws:contentTemplate>
+        <span>{{gridColumn.column.caption}}</span>
+    </ws:contentTemplate>
+</ws:partial>

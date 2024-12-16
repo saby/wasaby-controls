@@ -1,0 +1,19 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper">
+      <Controls.dropdown:Button
+              keyProperty="key"
+              caption="Создать группу"
+              viewMode="link"
+              items="{{_items}}"
+              attr:class="controlsDemo-menuButton">
+         <ws:itemTemplate>
+            <ws:partial template="Controls/dropdown:ItemTemplate"
+                        multiLine="{{true}}">
+               <ws:additionalTextTemplate>
+                  <div class="controlsDemo-Dropdown_button-maxWidth">{{itemTemplate.item.contents.get('comment')}}</div>
+               </ws:additionalTextTemplate>
+            </ws:partial>
+         </ws:itemTemplate>
+      </Controls.dropdown:Button>
+   </div>
+</div>

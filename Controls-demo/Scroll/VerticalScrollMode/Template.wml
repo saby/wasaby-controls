@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper__padding-left controlsDemo_fixedWidth300">
+    <div class="controlsDemo_ColumnsView_itemTemplate-title controlsDemo__cell">Controls.scroll:ContainerBase</div>
+    <Controls.scroll:Container attr:class="controlsDemo__height300 controlsDemo_fixedWidth300"
+                               verticalScrollMode="buttons">
+        <div >
+            <ws:for data="key in 40">
+                <p>
+                    Lorem ipsum
+                </p>
+            </ws:for>
+        </div>
+    </Controls.scroll:Container>
+</div>

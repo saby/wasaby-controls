@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-Buttons"
+           id="25a0d01b-25d2-41e4-855d-010cb249005f"
+           kaizen_zone="4efc1ffa-202d-406f-befe-efa4a5d4ee0c"
+           package="Wasaby"
+           required="1"
+           version="1.00">
+  <description>Модуль содержит контролы кнопок.</description>
+    <depends>
+      <module id="f6fdf353-3ab3-4dbb-8671-01c2b418bf0a" name="Controls"/>
+      <module id="af50caf5-f84b-4b81-a19c-6f6618372dbd" name="Controls-default-theme"/>
+    </depends>
+  <load_after/>
+  <parameters/>
+  <resources/>
+  <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

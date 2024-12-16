@@ -1,0 +1,22 @@
+<div class="controls-ListView__itemV controls-SearchBreadcrumbsTile__breadcrumbsItem">
+   <Controls.breadcrumbs:Path
+      items="{{item.getContents()}}"
+      keyProperty="{{item.getKeyProperty()}}"
+      displayProperty="{{item.getDisplayProperty()}}"
+      readOnly="{{ item.isReadonly() }}"
+      containerWidth="{{ item.getContainerWidth() }}"
+      backgroundStyle="{{_options.backgroundStyle}}"
+      breadCrumbsItemClickCallback="{{ _onBreadcrumbItemClick }}"
+   >
+      <ws:itemTemplate>
+         <ws:partial template="Controls/breadcrumbs:ItemTemplate">
+            <ws:contentTemplate>
+               <Controls.baseDecorator:Highlight
+                       attr:class="controls-SearchBreadcrumbsTile__breadcrumbsItem_highlight"
+                       highlightedValue="{{ item.getSearchValue() }}"
+                       value="{{ contentTemplate.itemData.item.get(item.getDisplayProperty()) || '' }}" />
+            </ws:contentTemplate>
+         </ws:partial>
+      </ws:itemTemplate>
+   </Controls.breadcrumbs:Path>
+</div>

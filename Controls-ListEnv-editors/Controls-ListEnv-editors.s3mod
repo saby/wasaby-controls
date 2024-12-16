@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-ListEnv-editors"
+           id="db0877f9-cfc6-4cb4-95ff-ee25549318bb"
+           package="Wasaby"
+           kaizen_zone="b9244594-2ac8-4db9-8c67-cd873d12a1c4"
+           responsible="Герасимов А.М." responsible_uuid="0c1a8c24-40ea-4a73-95f4-53e2b5ce615a"
+           required="1"
+           version="1.00">
+  <description/>
+    <depends>
+      <module id="b7223918-657c-4e3d-ac98-f302a52f248c" name="Meta"/>
+      <module id="686f183d-0bcc-4732-b4e4-6016c2a67a0f" name="Types"/>
+      <module id="7c6ae293-7359-4a54-8a33-74ce96945d57" name="Controls-editors"/>
+      <module id="f6fdf353-3ab3-4dbb-8671-01c2b418bf0a" name="Controls"/>
+      <module id="71ffd0b6-e099-4af7-9bd6-24057fb88123" name="Controls-ListEnv-meta"/>
+    </depends>
+  <load_after/>
+  <parameters/>
+  <resources/>
+  <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

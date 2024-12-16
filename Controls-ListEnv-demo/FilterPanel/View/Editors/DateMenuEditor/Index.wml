@@ -1,0 +1,6 @@
+<div class="engine-demo__Widgets_filter-container">
+    <Controls-ListEnv.filterPanelConnected:View filterNames="['dateEditorTerm']"
+                                         storeId="dateMenuData"
+                                         attr:class="engine-demo__Widgets_filterPanel"/>
+    <Controls.list:View storeId="dateMenuData"/>
+</div>

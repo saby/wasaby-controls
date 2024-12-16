@@ -1,0 +1,29 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow controlsDemo__childMaxWidth200 controlsDemo_fixedWidth550">
+
+    <div class="controlsDemo__cell controlsDemo__mr4">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/list_new/Navigation/Cut/CutSize/L/Index' }}">
+            <a href="{{content.href}}">Размер l</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.Navigation.Cut.CutSize.L.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controlsDemo__mr4">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/list_new/Navigation/Cut/CutSize/M/Index' }}">
+            <a href="{{content.href}}">Размер m (по умолчанию)</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.Navigation.Cut.CutSize.M.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controlsDemo__mr4">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/list_new/Navigation/Cut/CutSize/S/Index' }}">
+            <a href="{{content.href}}">Размер s</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.Navigation.Cut.CutSize.S.Index/>
+    </div>
+</div>

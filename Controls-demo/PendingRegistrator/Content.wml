@@ -1,0 +1,5 @@
+<div attr:class="controls-demo__content_container">
+   <Controls.buttons:Button caption="отправить событие registerPending"
+                            class="controls-demo__pending-register"
+                            on:click="_register()"/>
+</div>

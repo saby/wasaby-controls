@@ -1,0 +1,29 @@
+import * as React from 'react';
+import { ITableCellTemplateOptions } from '../interface/ITableCellTemplate';
+import { IColumnTemplateProps } from 'Controls/grid';
+import { useItemData } from 'Controls/gridReact';
+import { TreeGridDataRow as CollectionItem } from 'Controls/treeGrid';
+import CleanGridCell from './CleanGridCell';
+
+interface IGridReactCellRenderProps extends ITableCellTemplateOptions, IColumnTemplateProps {
+    item: CollectionItem;
+    fallbackImage?: string;
+    nodeProperty: string;
+}
+
+const GridReactCellRender = React.memo(function (
+    props: IGridReactCellRenderProps
+): React.ReactElement {
+    const { renderValues } = useItemData([props.nodeProperty, props.imageProperty]);
+    return (
+        <CleanGridCell
+            {...props}
+            isNode={renderValues[props.nodeProperty]}
+            imageSrc={renderValues[props.imageProperty]}
+        />
+    );
+});
+GridReactCellRender.defaultProps = {
+    nodeProperty: 'type',
+};
+export default GridReactCellRender;

@@ -1,0 +1,12 @@
+<div class="controlsDemo__flexRow">
+    <div class="controlsDemo__wrapper">
+        <Controls.menu:Control
+                items="{{_items}}"
+                keyProperty="key"
+                displayProperty="title"
+                nodeProperty="node"
+                parentProperty="parent"
+                hierarchyViewMode="tree"
+        />
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell controls-padding_left-s controlsDemo_fixedWidth300">
+        <div class="controls-text-label">fontColorStyle=mycustomdecorator</div>
+        <Controls.baseDecorator:Money value="{{_value}}" fontColorStyle="mycustomdecorator" data-qa="Controls-demo_Decorator_Money_FontColorStyle__custom-with-decimal"/>
+        <br/>
+        <Controls.baseDecorator:Money value="{{_value1}}" fontColorStyle="mycustomdecorator" data-qa="Controls-demo_Decorator_Money_FontColorStyle__custom-without-decimal"/>
+    </div>
+</div>

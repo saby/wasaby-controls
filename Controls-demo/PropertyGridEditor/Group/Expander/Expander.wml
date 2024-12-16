@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper">
+    <Controls.propertyGridEditor:PropertyGridEditor
+            bind:editingObject="_editingObject"
+            typeDescription="{{_typeDescription}}">
+        <ws:groupTemplate>
+            <ws:partial template="Controls/grid:GroupTemplate"
+                        expanderVisible="{{true}}"
+                        scope="{{groupTemplate}}">
+            </ws:partial>
+        </ws:groupTemplate>
+    </Controls.propertyGridEditor:PropertyGridEditor>
+</div>

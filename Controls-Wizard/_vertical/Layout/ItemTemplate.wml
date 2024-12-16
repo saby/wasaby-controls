@@ -1,0 +1,18 @@
+<ws:partial template="wml!Controls-Wizard/_vertical/Layout/BaseItemTemplate" scope="{{ _options }}">
+    <ws:if  data="{{ stepStatus === 'completed' && completedStepTemplate }}">
+        <div class="Wizard-Vertical-View_step-content">
+            <ws:partial template="{{ completedStepTemplate }}"
+                        scope="{{ completedStepTemplate }}"/>
+        </div>
+    </ws:if>
+    <ws:if  data="{{ stepStatus === 'active' && activeStepTemplate }}">
+        <div class="Wizard-Vertical-View_step-content">
+            <ws:partial template="{{ activeStepTemplate }}"/>
+        </div>
+    </ws:if>
+    <ws:if  data="{{ stepStatus === 'future' && futureStepTemplate}}">
+        <div class="Wizard-Vertical-View_step-content Wizard-Vertical-View_step-comment">
+            <ws:partial template="{{ futureStepTemplate}}"/>
+        </div>
+    </ws:if>
+</ws:partial>

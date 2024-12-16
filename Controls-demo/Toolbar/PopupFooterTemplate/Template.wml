@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <Controls.toolbars:View
+                items="{{_items}}"
+                keyProperty="id"
+        >
+            <ws:popupFooterTemplate>
+                <div class="controls-text-label
+                 controlsDemo__wrapper
+                 controlsDemo_fixedWidth300"
+                >
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam.
+                </div>
+            </ws:popupFooterTemplate>
+        </Controls.toolbars:View>
+    </div>
+</div>

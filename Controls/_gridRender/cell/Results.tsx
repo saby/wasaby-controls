@@ -1,0 +1,284 @@
+/**
+ * @kaizen_zone 36a75113-dfe7-4e08-9a93-ea06b26981f4
+ */
+
+import * as React from 'react';
+import { default as BaseCell, IBaseCellComponentProps } from './Base';
+import {
+    ICellPositionProps,
+    IColspanProps,
+    IColumnScrollColspanProps,
+    IRowspanProps,
+    TFontColorStyle,
+    TFontSize,
+    TFontWeight,
+    THorizontalAlign,
+} from 'Controls/interface';
+import { getBaseCellProps } from 'Controls/_gridRender/cell/utils/Base';
+import { Money, Number } from 'Controls/baseDecorator';
+import { IHorizontalCellPadding } from 'Controls/_gridRender/cell/interface/ICell';
+import { TOverflow } from 'Controls/gridDisplay';
+import {
+    getVerticalPaddingsClasses,
+    getHorizontalPaddingsClasses,
+} from 'Controls/_gridRender/cell/utils/Classes/Offset';
+import { getColumnScrollClasses as getColumnScrollClassesUtil } from 'Controls/_gridRender/cell/utils/Classes/ColumnScroll';
+import { getBackgroundColorStyleClasses } from 'Controls/_gridRender/cell/utils/Classes/BackgroundColorStyle';
+import { TResultsPosition } from 'Controls/gridDisplay';
+import { getColumnSeparatorClasses } from 'Controls/_gridRender/cell/utils/Classes/ColumnSeparator';
+import { IColumnScrollProps } from 'Controls/_gridRender/cell/utils/Props/ColumnScroll';
+import { getColspanRowspanStyles } from './utils/Styles/GridSpan';
+import { getFontClasses } from 'Controls/_gridRender/cell/utils/Classes/Font';
+
+export interface IResultsCellConfig {
+    // выравнивание контента заголовка
+    align?: THorizontalAlign;
+    baseline?: string;
+
+    // текст итогов
+    textOverflow?: TOverflow;
+    backgroundStyle?: string; // compatible
+    backgroundColorStyle?: string;
+
+    fontSize?: TFontSize;
+    fontWeight?: TFontWeight;
+    fontColorStyle?: TFontColorStyle;
+
+    // колспан результатов
+    startColumn?: number;
+    endColumn?: number;
+
+    // Есть ли вертикальные отступы в результатах
+    resultsVerticalPadding?: boolean;
+
+    // отступы
+    padding?: IHorizontalCellPadding;
+
+    // Позиция строки итогов - под хэадером или над футером
+    resultsPosition?: TResultsPosition;
+}
+
+export interface IResultsCellComponentProps
+    extends IBaseCellComponentProps,
+        IResultsCellConfig,
+        IColumnScrollProps,
+        IColspanProps,
+        IRowspanProps,
+        IColumnScrollColspanProps,
+        ICellPositionProps {
+    style?: React.CSSProperties;
+    data?: string | number;
+    format?: string;
+    zIndex?: number;
+
+    // компонент, размещаемый перед contentRender
+    beforeContentRender?: React.ReactElement;
+}
+
+/*------------------------------------------------------------------------------------------*/
+
+// style нужен для stickied
+function getStyle(props: IResultsCellComponentProps): React.CSSProperties | undefined {
+    const styles: React.CSSProperties = { ...props.style, ...getColspanRowspanStyles(props) };
+
+    if (props.zIndex !== undefined) {
+        styles.zIndex = props.zIndex;
+    }
+    return styles;
+}
+
+/*--------------------------------------Классы------------------------------------------*/
+
+function getBaseClasses(
+    className: IResultsCellComponentProps['className'],
+    resultsPosition: IResultsCellComponentProps['resultsPosition']
+) {
+    let baseClasses =
+        'js-controls-GridReact__cell controls-Grid__results-cell__content controls-GridReact__results-cell' +
+        ` controls-GridReact__results-cell_${resultsPosition}`;
+
+    if (className) {
+        baseClasses += ` ${className}`;
+    }
+
+    return baseClasses;
+}
+
+function getMinHeightClasses(
+    resultsVerticalPadding: IResultsCellComponentProps['resultsVerticalPadding']
+) {
+    if (resultsVerticalPadding) {
+        return ' controls-Grid_results-cell_with-padding_min-height';
+    }
+
+    return ' controls-GridReact__minHeight-results';
+}
+
+function getColumnScrollClasses(props: IResultsCellComponentProps) {
+    return (
+        getColumnScrollClassesUtil(props as IColumnScrollProps) +
+        getClassesDependingOnColumnScroll(props)
+    );
+}
+
+function getClassesDependingOnColumnScroll(
+    props: Pick<
+        IResultsCellComponentProps,
+        'hasColumnScroll' | 'columnScrollViewMode' | 'resultsPosition'
+    >
+) {
+    const { columnScrollViewMode, hasColumnScroll, resultsPosition } = props;
+    let classes = '';
+
+    if (hasColumnScroll) {
+        // Отступ под кнопки прокрутки горизонтального скролла.
+        if (columnScrollViewMode === 'arrows' && resultsPosition === 'top') {
+            classes += ' controls-Grid__header-cell_withColumnScrollArrows';
+        }
+    }
+
+    return classes;
+}
+
+function getBaselineClasses(baseline: IResultsCellComponentProps['baseline']) {
+    return ` controls-Grid__results-cell__content_baseline_${baseline ?? 'default'}`;
+}
+
+function getAlignClasses(align: IResultsCellComponentProps['align']) {
+    if (align) {
+        if (align === 'left') {
+            return ' tw-justify-start tw-text-left';
+        }
+        if (align === 'right') {
+            return ' tw-justify-end tw-text-right';
+        }
+        if (align === 'center') {
+            return ' tw-justify-center tw-text-center';
+        }
+    }
+    return '';
+}
+
+function getTextOverflowClasses(textOverflow: IResultsCellComponentProps['textOverflow']) {
+    if (textOverflow === 'ellipsis') {
+        return ' tw-text-ellipsis tw-text-nowrap';
+    }
+    return '';
+}
+
+/*------------------------------------------------------------------------------------------*/
+
+// content render utils
+
+function getContentRender(props: IResultsCellComponentProps): React.ReactElement {
+    const {
+        data,
+        format,
+        contentRender,
+        textOverflow = 'none',
+        fontWeight = 'bold',
+        fontColorStyle = 'secondary',
+        fontSize = 'm',
+    } = props;
+
+    //const column = gridColumn || colData || itemData;
+
+    const textOverflowClasses = getTextOverflowClasses(textOverflow);
+
+    // Если задан рендер контента, то используем его
+    if (contentRender) {
+        return contentRender;
+    }
+
+    if (data === undefined || data === null) {
+        return null;
+    }
+
+    if (format === 'money') {
+        return (
+            <Money
+                value={data}
+                useGrouping
+                fontWeight={fontWeight}
+                fontColorStyle={fontColorStyle}
+                fontSize={fontSize}
+                className={textOverflowClasses}
+            />
+        );
+    }
+
+    if (format === 'integer' || format === 'real') {
+        return (
+            <Number
+                value={data}
+                useGrouping
+                fractionSize={2}
+                fontWeight={fontWeight}
+                fontColorStyle={fontColorStyle}
+                fontSize={fontSize}
+                className={textOverflowClasses}
+            />
+        );
+    }
+
+    return data as unknown as React.ReactElement;
+}
+
+/*------------------------------------------------------------------------------------------*/
+
+function Results(
+    props: IResultsCellComponentProps,
+    ref: React.ForwardedRef<HTMLDivElement>
+): React.ReactElement {
+    const {
+        className,
+        baseline,
+        align,
+        textOverflow,
+        backgroundColorStyle,
+        fontColorStyle,
+        fontSize,
+        fontWeight,
+        padding,
+        resultsPosition,
+    } = props;
+
+    const wrapperRenderClassName =
+        getBaseClasses(className, resultsPosition) +
+        getColumnScrollClasses(props) +
+        getMinHeightClasses(props.resultsVerticalPadding) +
+        getHorizontalPaddingsClasses(padding?.left, padding?.right) +
+        getVerticalPaddingsClasses(padding?.top, padding?.bottom) +
+        getBaselineClasses(baseline) +
+        getAlignClasses(align) +
+        getTextOverflowClasses(textOverflow) +
+        getBackgroundColorStyleClasses(backgroundColorStyle) +
+        getFontClasses({
+            fontColorStyle,
+            fontSize,
+            fontWeight,
+        }) +
+        getColumnSeparatorClasses(props);
+
+    const wrapperRenderStyle = getStyle(props);
+
+    const contentRender = (
+        <>
+            {props.beforeContentRender ?? null}
+            {getContentRender(props)}
+        </>
+    );
+
+    return (
+        <BaseCell
+            {...getBaseCellProps(props)}
+            ref={ref}
+            className={wrapperRenderClassName}
+            style={wrapperRenderStyle}
+            contentRender={contentRender}
+            fixedZIndex={props.fixedZIndex}
+        />
+    );
+}
+
+export default React.forwardRef(Results);
