@@ -1,0 +1,8 @@
+<div class="controlsDemo__cell">
+    <Router.router:Reference attr:class="controls-text-label"
+                             state="app/:app"
+                             app="{{ 'Controls-demo/explorerNew/EditInPlace/LeafsOnly/Index' }}">
+        <a href="{{content.href}}">Редактируются только записи</a>
+    </Router.router:Reference>
+    <Controls-demo.explorerNew.EditInPlace.LeafsOnly.Index/>
+</div>

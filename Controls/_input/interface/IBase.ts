@@ -1,0 +1,191 @@
+/**
+ * @kaizen_zone c4f41dc0-617f-4dae-a3e8-78fd94e09ce2
+ */
+import { IContrastBackgroundOptions, IInputPlaceholderOptions } from 'Controls/interface';
+import { IBorderVisibilityOptions } from 'Controls/_input/interface/IBorderVisibility';
+/**
+ * @typedef {String} TextAlign
+ * @variant left Текст выравнивается по левой стороне.
+ * @variant right Текст выравнивается по правой стороне.
+ * @variant center Текст выравнивается по центру.
+ */
+export type TextAlign = 'left' | 'right' | 'center';
+
+/**
+ * @typedef {String} AutoComplete
+ * @variant off Отключить автозаполнение.
+ * @variant on Включить автозаполнение ранее введенными значениями.
+ * @variant username Включить автозаполнение сохраненными именами пользователей.
+ * @variant current-password Включить автозаполнение текущими паролями для учетной записи, указанной в поле для имени пользователя.
+ * @variant name Включить автозаполнение сохраненными полными именами пользователя.
+ * @variant given-name Включить автозаполнение сохраненными именами пользователя.
+ * @variant additional-name Включить автозаполнение сохраненными отчествами пользователя.
+ * @variant family-name Включить автозаполнение сохраненными фамилиями пользователя.
+ * @variant email Включить автозаполнение сохраненными адресами электронной почты пользователя.
+ * @variant new-password Включить автозаполнение текущими паролями для новой учетной записи или изменении паролей пользователя.
+ * @variant one-time-code Включить автозаполнение сохраненными одноразовыми кодами, используемыми для проверки личности пользователя.
+ * @variant organization-title Включить автозаполнение сохраненными должностями, которую пользователь имеет в организации.
+ * @variant organization Включить автозаполнение сохраненными названиями организаций или компаний
+ * @variant street-address Включить автозаполнение сохраненными адресами улиц пользователя.
+ * @variant country Включить автозаполнение сохраненными кодами страны или территории.
+ * @variant country-name Включить автозаполнение сохраненными названиями стран или территорий.
+ * @variant postal-code Включить автозаполнение сохраненными почтовыми кодами.
+ * @variant cc-name Включить автозаполнение сохраненными полными именами, напечатанными на платежных средствах.
+ * @variant cc-given-name Включить автозаполнение сохраненными именами, указанными на платежных средствах или кредитных картах.
+ * @variant cc-additional-name Включить автозаполнение сохраненными отчествами, указанными на платежных средствах или кредитных картах.
+ * @variant cc-family-name Включить автозаполнение сохраненными фамилиями, указанными на платежных средствах или кредитных картах.
+ * @variant cc-number Включить автозаполнение сохраненными номерами кредитных карт или других номеров, идентифицирующих способ оплаты.
+ * @variant cc-exp Включить автозаполнение сохраненными датами истечения срока действия платежных методов.
+ * @variant language Включить автозаполнение сохраненными предпочтительными языками.
+ * @variant bday Включить автозаполнение сохраненными полными датами рождения.
+ * @variant sex Включить автозаполнение сохраненными гендерными идентичностями.
+ * @variant tel Включить автозаполнение сохраненными полными номерами телефона, включая код страны.
+ * @variant url Включить автозаполнение сохраненными url-адресами.
+ * @description Управление браузерным автозаполнением в поле. Список всех доступных значений смотрите {@link https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete тут}
+ */
+export type AutoComplete =
+    | 'on'
+    | 'off'
+    | 'username'
+    | 'current-password'
+    | 'name'
+    | 'given-name'
+    | 'additional-name'
+    | 'family-name'
+    | 'email'
+    | 'new-password'
+    | 'one-time-code'
+    | 'organization-title'
+    | 'organization'
+    | 'street-address'
+    | 'country'
+    | 'country-name'
+    | 'postal-code'
+    | 'cc-name'
+    | 'cc-given-name'
+    | 'cc-additional-name'
+    | 'cc-family-name'
+    | 'cc-number'
+    | 'cc-exp'
+    | 'language'
+    | 'bday'
+    | 'sex'
+    | 'tel'
+    | 'url'
+    | string;
+
+export interface IBaseOptions
+    extends IContrastBackgroundOptions,
+        IBorderVisibilityOptions,
+        IInputPlaceholderOptions {
+    autoComplete?: AutoComplete;
+    textAlign?: TextAlign;
+    selectOnClick?: boolean;
+    spellCheck?: boolean;
+    tooltip?: string;
+    name?: string;
+    inlineHeight?: string;
+    fontSize?: string;
+    fontWeight?: string;
+    fontColorStyle?: string;
+    paste?: (value: string) => void;
+    bubbling?: boolean;
+}
+
+/**
+ * Интерфейс базового поля ввода.
+ *
+ * @public
+ */
+export interface IBase {
+    readonly '[Controls/_input/interface/IBase]': boolean;
+}
+/**
+ * @name Controls/_input/interface/IBase#autoComplete
+ * @cfg {AutoComplete} Управление браузерным автозаполнением в поле. Список всех доступных значений смотрите {@link https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete тут}
+ * Значения для автозаполнения берутся браузером из его хранилища.
+ * Имя поля используется для доступа к ним. Поэтому, чтобы значения, хранящиеся в одном поле, не применялись к другому, поля должны иметь разные имена.
+ * Для этого мы проксируем имя контрола на нативное поле.
+ * Поэтому, если вы включили автозаполнение и не хотите пересечения значений автозаполнения, то укажите имя контрола.
+ * Выбирать имя следует на основе области использования поля. Например, для формы регистрации логина и пароля предпочтительно использовать имена login и password.
+ * @example
+ * В этом примере при щелчке по полю появляется меню браузера с ранее введенными значениями в этом поле.
+ * <pre>
+ *    <Controls.input:Text autoComplete="on"/>
+ * </pre>
+ * @demo Controls-demo/Input/AutoComplete/Index
+ */
+/**
+ * @name Controls/_input/interface/IBase#textAlign
+ * @cfg {TextAlign} Выравнивание текста по горизонтали в поле.
+ * @demo Controls-demo/Input/TextAlignments/Index
+ */
+/**
+ * @name Controls/_input/interface/IBase#selectOnClick
+ * @cfg {Boolean} Определяет выделение текста после клика по полю.
+ * @remark
+ * * false - Текст не выделяется.
+ * * true - Текст выделяется.
+ * @demo Controls-demo/Input/SelectOnClick/Index
+ */
+/**
+ * @name Controls/_input/interface/IBase#spellCheck
+ * @cfg {Boolean} Определяет наличие браузерной проверки правописания и грамматики в тексте.
+ * @remark
+ * * false - Отсутствует проверка правописания и грамматики.
+ * * true - Браузер проверяет правописание и грамматику в тексте.
+ * @demo Controls-demo/Input/SpellCheck/Index
+ */
+/**
+ * @name Controls/_input/interface/IBase#tooltip
+ * @cfg {String} Текст всплывающей подсказки, отображаемой при наведении указателя мыши на элемент.
+ * @remark
+ * Подсказка отображает указанный текст, только если введенное значение полностью помещается в поле ввода. Когда значение не помещается полностью, подсказка отображает значение из поля ввода.
+ * @demo Controls-demo/Input/Tooltip/Index
+ */
+
+/**
+ * @name Controls/_input/interface/IBase#paste
+ * @function
+ * @description Установить выделенное значение равным указанному значению.
+ * @param {String} value Значение для замены.
+ * @remark
+ * Метод используется, когда выделенное значение не известно, а вам требуется заменить его на другое.
+ * @demo Controls-demo/Input/Paste/Index
+ */
+
+/**
+ * @name Controls/_input/interface/IBase#select
+ * @function
+ * @description Метод используется для выделения текста в поле.
+ * @demo Controls-demo/Search/SearchInput/Select/Index
+ */
+
+/**
+ * @name Controls/_input/interface/IBase#contrastBackground
+ * @cfg {Boolean} Определяет контрастность фона контрола по отношению к ее окружению.
+ * @default true
+ * @variant true Контрастный фон.
+ * @variant false Фон, гармонично сочетающийся с окружением.
+ * @demo Controls-demo/Input/ViewMode/Index
+ * @remark В случаях, когда нужно чтобы фон поля ввода отличался от фона по умолчанию, поле отображалось с заливкой и
+ * горизонтальными отступами от границ, передайте в опцию значение true. В остальных случаях поле ввода прозрачное и без горизонтальных отступов, значение false.
+ * Важно!
+ * Если установлено значение true, и включено отображение границы(borderVisibility), то обводка отобразится при наведении, согласно {@link http://axure.tensor.ru/StandardsV8/%D0%BF%D0%BE%D0%BB%D1%8F_%D0%B2%D0%B2%D0%BE%D0%B4%D0%B0_%D0%B8_%D0%BC%D0%B5%D1%82%D0%BA%D0%B8.html стандарту}
+ */
+
+/**
+ * @name Controls/_input/interface/IHeight#inlineHeight
+ * @cfg {String}
+ * @variant xs
+ * @variant s
+ * @variant m
+ * @variant l
+ * @variant xl
+ * @variant 2xl
+ * @variant 3xl
+ * @variant 4xl
+ * @variant default
+ * @variant auto
+ * @demo Controls-demo/Input/InlineHeight/Index
+ */

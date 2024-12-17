@@ -1,0 +1,30 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper">
+      <Controls.dropdown:Button
+              keyProperty="key"
+              displayProperty="title"
+              caption="{[Выберите город]}"
+              source="{{_source}}"
+              attr:class="controlsDemo-menuButton"
+              attr:data-qa="controlsDemo-menuButton__long-caption">
+         <ws:headerTemplate>
+            <ws:partial template="Controls/dropdown:HeaderTemplate"
+                        caption="{[Шапка с очень-очень длинным заголовком, таким длинным, что он не помещается в меню]}" />
+         </ws:headerTemplate>
+      </Controls.dropdown:Button>
+   </div>
+   <div class="controlsDemo__wrapper">
+      <Controls.dropdown:Button
+              keyProperty="key"
+              displayProperty="title"
+              caption="{[Выберите город]}"
+              source="{{_source}}"
+              attr:class="controlsDemo-menuButton"
+              attr:data-qa="controlsDemo-menuButton__short-caption">
+         <ws:headerTemplate>
+            <ws:partial template="Controls/dropdown:HeaderTemplate" caption="{[Выберите город]}" />
+         </ws:headerTemplate>
+      </Controls.dropdown:Button>
+      <div class="controls-text-label controlsDemo-Dropdown_label">Открытие меню вверх</div>
+   </div>
+</div>

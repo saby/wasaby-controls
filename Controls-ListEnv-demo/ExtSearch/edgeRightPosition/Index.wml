@@ -1,0 +1,9 @@
+<div class="search_Input-demo_wrapper tw-flex tw-items-end tw-flex-col tw-overflow-hidden">
+   <Controls-ListEnv.ExtSearch
+      attr:class="engineDemo-ExtSearch-suggest demo-SuggestNew__withTabs"
+      searchParam="title"
+      filterDescription="{{ _filterDescription }}"
+      on:filterDescriptionChanged="_filterDescriptionChanged()">
+   </Controls-ListEnv.ExtSearch>
+</div>
+

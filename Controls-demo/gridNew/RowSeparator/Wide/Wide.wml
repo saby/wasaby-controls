@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper">
+    <Controls.grid:View
+            attr:class="controlsDemo__inline-flex"
+            storeId="RowSeparatorWide"
+            rowSeparatorSize="l"
+            columns="{{_columns}}"/>
+</div>

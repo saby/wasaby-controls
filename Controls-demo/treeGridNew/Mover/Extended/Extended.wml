@@ -1,0 +1,28 @@
+<div class="controlsDemo__wrapper">
+    <Controls.buttons:Button icon="icon-Move" caption="Переместить" on:click="_moveButtonClick()"
+                             viewMode="linkButton"/>
+    <Controls.treeGrid:View
+            storeId="MoverExtended"
+            name="treeGrid"
+            columns="{{_columns}}"
+            on:selectedKeysChanged="_onSelectedKeysChanged()">
+        <ws:moveDialogTemplate templateName="Controls-demo/treeGridNew/Mover/Extended/ExtendedMoverDialog">
+            <ws:templateOptions
+                    name="extendedMover"
+                    searchParam="title"
+                    multiSelectVisibility="hidden"
+                    parentProperty="parent"
+                    nodeProperty="type"
+                    expanderDisplayMode="adaptive"
+                    hasChildrenProperty="hasChild"
+                    displayProperty="title"
+                    rootVisible="true"
+                    rootTitle="Корень иерархии"
+                    columns="{{_columns}}"/>
+            <!--                            containerWidth="{{containerWidth}}"-->
+        </ws:moveDialogTemplate>
+    </Controls.treeGrid:View>
+    <ws:if data="{{_beforeItemsMoveText}}">
+        <div class="controlsDemo__cell">{{_beforeItemsMoveText}}</div>
+    </ws:if>
+</div>

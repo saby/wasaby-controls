@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500 controlsDemo_wrapper-treeGrid-base-treeGridView">
+    <Controls.scroll:Container class="controlsDemo__height300">
+        <Controls.treeGrid:View
+                storeId="NodeTypePropertyLadder"
+                colspanCallback="{{ _colspanCallback }}"
+                ladderProperties="{{_ladderProperties}}"
+                columns="{{ _columns }}"/>
+    </Controls.scroll:Container>
+</div>

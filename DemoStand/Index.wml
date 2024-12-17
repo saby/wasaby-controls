@@ -1,0 +1,29 @@
+<ws:template name="router">
+    <DemoStand.Router
+        correctTemplate="{{_correctTemplate}}"
+        appRoot="{{_options.appRoot}}"
+        sourceUrl="{{_options.sourceUrl}}"
+    />
+</ws:template>
+
+<Router.router:Route mask="theme/:theme">
+    <DemoStand.ContainerTheme theme="{{ content.theme }}">
+        <SbisEnvUI.Bootstrap scope="{{_options}}"
+                theme="{{ content.theme }}"
+                popupHeaderTheme="{{_getPopupHeaderTheme(content.theme)}}"
+                title="{{_title}}"
+                links="{{ _links }}"
+                dataLoaderModule="DemoStand/DataLoader"
+                loadDataProviders="{{false}}"
+                settingsController="{{_settingsController}}">
+                    <ws:if data="{{_loadResult}}">
+                        <Controls.context:ContextOptionsProvider configs="{{_configs}}" loadResults="{{_loadResult}}">
+                            <ws:partial template="router"/>
+                        </Controls.context:ContextOptionsProvider>
+                    </ws:if>
+                    <ws:else>
+                        <ws:partial template="router"/>
+                    </ws:else>
+        </SbisEnvUI.Bootstrap>
+    </DemoStand.ContainerTheme>
+</Router.router:Route>

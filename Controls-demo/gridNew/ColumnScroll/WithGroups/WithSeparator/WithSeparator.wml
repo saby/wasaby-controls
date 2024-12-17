@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper controlDemo__grid-columnScroll-with-groups">
+    <Controls.scroll:Container attr:style="width: 600px; height: 400px">
+        <Controls.listDataOld:ListContainer>
+            <Controls.grid:View
+                    storeId="ColumnScrollWithGroupsWithSeparator"
+                    rowSeparatorSize="s"
+                    header="{{ _header }}"
+                    columns="{{ _columns }}"
+                    columnScroll="{{ true }}"
+                    stickyColumnsCount="{{ 2 }}"
+                    groupProperty="fullName"/>
+        </Controls.listDataOld:ListContainer>
+    </Controls.scroll:Container>
+</div>

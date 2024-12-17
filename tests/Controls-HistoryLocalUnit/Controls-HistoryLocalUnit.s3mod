@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module id="536720a6-1946-4353-ad81-618a6e4605cc" name="Controls-HistoryLocalUnit" version="1.00">
+  <description/>
+  <depends>
+      <module id="be6c53d7-f6a6-477f-8f50-0fee56315c6e" name="Controls-HistoryLocal"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <test environment="NodeJS" framework="Jest" />
+  <resources/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

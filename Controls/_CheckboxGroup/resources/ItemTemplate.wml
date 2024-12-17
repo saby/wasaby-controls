@@ -1,0 +1,5 @@
+<Controls.checkbox:Checkbox caption="{{contentTemplate || item[displayProperty || 'title']}}"
+                            triState="{{triState}}"
+                            multiline="{{multiline}}"
+                            validationStatus="{{_options.validationStatus}}"
+                            value="{{selected}}"/>

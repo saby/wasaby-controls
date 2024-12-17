@@ -1,0 +1,9 @@
+<Controls.dropdown:Button
+        keyProperty="id"
+        displayProperty="title"
+        viewMode="link"
+        items="{{_items}}"
+        caption="{{_captionText}}"
+        menuHeadingCaption="{[Тип отчета]}"
+        on:menuItemActivate="_onMenuItemActivateHandler()"
+/>

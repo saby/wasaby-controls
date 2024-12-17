@@ -1,0 +1,25 @@
+<ws:template name="editor">
+    <Controls.Container.Async templateName="Controls/source:EnumAdapter">
+        <ws:partial template="{{content.resolvedTemplate}}"
+                    enum="{{_enum}}">
+            <Controls.ComboBox attr:class="controls-PropertyGrid__editor_enum_control"
+                                        displayProperty="title"
+                                        on:selectedKeyChanged="_selectedKeyChanged()"/>
+        </ws:partial>
+    </Controls.Container.Async>
+</ws:template>
+
+<ws:if data="{{_options.jumpingLabel}}">
+    <Controls.Container.Async templateName="wml!Controls/_propertyGridEditors/JumpingLabelContainer">
+        <ws:partial template="{{content.resolvedTemplate}}"
+                    caption="{{_options.caption}}"
+                    required="{{_options.required}}"
+                    fontSize="{{_options.fontSize}}"
+                    scope="{{_options.captionOptions}}">
+            <ws:partial template="editor" />
+        </ws:partial>
+    </Controls.Container.Async>
+</ws:if>
+<ws:else>
+    <ws:partial template="editor" />
+</ws:else>

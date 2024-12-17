@@ -1,0 +1,22 @@
+<div class="controls-LoadingIndicator">
+   <ws:if data="{{ _options.visible && _loadState }}">
+         <div class="controls-loading-indicator controls-Popup__isolatedFocusingContext
+             controls-loading-indicator_content
+             {{_options.isGlobal ? 'controls-loading-indicator_global' : 'controls-loading-indicator_local'}}
+             controls-loading-indicator_overlay-{{_options.overlay}}
+             {{_options.scroll ? 'controls-loading-indicator_scroll controls-loading-indicator_sided'}}
+             {{_options.message ? 'controls-loading-indicator_text'}}
+             {{_options.scroll ? 'controls-loading-indicator_sided-' + _options.scroll}}
+             {{ _options.small === 'small' ? 'controls-loading-indicator_small' }}">
+            <div class="controls-loading-indicator-in">
+                {{_options.message || ''}}
+            </div>
+         </div>
+   </ws:if>
+   <ws:partial template="{{_options.content}}"
+               scope="{{ _options }}"
+               message="{{message}}"
+               on:showIndicator="_showHandler()"
+               on:hideIndicator="_hideHandler()"
+               attr:class="controls-loading-indicator_content"/>
+</div>

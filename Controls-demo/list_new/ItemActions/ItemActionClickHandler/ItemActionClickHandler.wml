@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth550">
+    <Controls.list:View
+            storeId="ItemActionClickHandler"
+            itemActions="{{_itemActions}}"
+            on:actionClick="_actionClick()"/>
+    <ws:if data="{{_clickedMessage}}">
+        <div class="controlsDemo__wrapper controlsDemo_bg-red">{{_clickedMessage || ''}}</div>
+        <div class="controlsDemo__wrapper controlsDemo__pt-none">
+            <a href="#" class="controls-text-link" on:click="_clearMessage()">Очистить</a>
+        </div>
+    </ws:if>
+</div>

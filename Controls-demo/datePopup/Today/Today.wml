@@ -1,0 +1,24 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow controlsDemo__flex-jc-sa">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label controlsDemo__maxWidth200">Today is monday</div>
+        <Controls.datePopup
+                name="datePopup1"
+                selectionType="range"
+                startValue="{{_startValueRange}}"
+                endValue="{{_endValueRange}}"
+                _date="{{_date}}"
+				attr:class="controlsDemo__today_is_monday"
+        />
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label controlsDemo__maxWidth200">Today is weekend</div>
+        <Controls.datePopup
+                name="datePopup2"
+                selectionType="range"
+                startValue="{{_startValueRange}}"
+                endValue="{{_endValueRange}}"
+                _date="{{_dateWeekend}}"
+				attr:class="controlsDemo__today_is_weekend"
+        />
+    </div>
+</div>

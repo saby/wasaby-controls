@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center controlsDemo_fixedWidth500"
+         data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell demo-RadioGroup__group1">
+            <Controls.RadioGroup:Control items="{{_items}}"
+                                        bind:selectedKey="_selectedKey1"/>
+        </div>
+        <div class="controlsDemo__cell demo-RadioGroup__group2">
+            <Controls.RadioGroup:Control items="{{_items}}"
+                                        selectedKey="{{_selectedKey2}}"/>
+        </div>
+    </div>
+</div>

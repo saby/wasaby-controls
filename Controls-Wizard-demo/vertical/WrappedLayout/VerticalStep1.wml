@@ -1,0 +1,36 @@
+<ws:if data="{{!_options.finished}}">
+    <div class="demoVertical-Vertical_firstBlock">
+        <Controls.list:View
+                source="{{_viewSource}}"
+                markedKey="{{2}}"
+                allowEmptySelection="{{false}}"
+                markerVisibility="hidden"
+                keyProperty="id"
+                on:click="_finishStepHandler()"
+                attr:class="demoVertical-Vertical_list">
+            <ws:itemTemplate>
+                <ws:partial template="Controls/list:ItemTemplate"
+                            displayProperty="description"
+                />
+            </ws:itemTemplate>
+        </Controls.list:View>
+    </div>
+</ws:if>
+<ws:else>
+    <div class="demoVertical-Vertical_firstBlock-completed">
+        <div class="demoVertical-Vertical_firstStepResult">
+            <div class="demoVertical-Vertical_keywords">ключевые слова</div>
+            <Controls.input:Text attr:class="demoVertical-Vertical_textInput" inlineHeight="m" fontSize="m"
+                                 contrastBackground="{{true}}"  bind:value="_textInputValue"/>
+            <div class="demoVertical-Vertical_firstStepCloseIcon">
+                <div class="icon-medium icon-CloseNew icon-disabled"></div>
+            </div>
+        </div>
+        <p class="demoVertical-Vertical_firstStepGrayText">
+            Укажите зависимость от <span class="demoVertical-Vertical_accent">контрагента</span>,
+            <span class="demoVertical-Vertical_accent"> нашей организации</span> или
+            <span class="demoVertical-Vertical_accent"> вложений</span>
+        </p>
+    </div>
+</ws:else>
+

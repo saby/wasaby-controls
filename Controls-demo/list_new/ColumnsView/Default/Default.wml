@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper">
+   <Controls.scroll:Container attr:class="controlsDemo__height400 controlsDemo__minWidth600 controlsDemo__maxWidth800">
+      <Controls.columns:View
+         storeId="ColumnsViewDefault"
+         itemActions="{{_itemActions}}"
+         name="listView2"
+         itemsDragNDrop="{{true}}"
+         on:customdragStart="_dragStart()">
+         <ws:itemTemplate>
+            <ws:partial template="Controls/columns:ItemTemplate" attr:class="controlsDemo__height36_item"></ws:partial>
+         </ws:itemTemplate>
+      </Controls.columns:View>
+   </Controls.scroll:Container>
+</div>

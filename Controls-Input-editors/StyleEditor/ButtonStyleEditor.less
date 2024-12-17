@@ -1,0 +1,18 @@
+.controls-ButtonStyleEditor_bubble {
+   display: flex;
+   width: var(--inline_height_m);
+   height: var(--inline_height_m);
+   box-sizing: border-box;
+   border: var(--border-thickness) solid var(--unaccented_border-color);
+   border-radius: 50%;
+   overflow: hidden;
+   transition: 0.2s transform;
+
+   &::before {
+      content: '\200b';
+   }
+
+   .ws-is-hover &:hover {
+      transform: scale(1.15);
+   }
+}

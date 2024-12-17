@@ -1,0 +1,5 @@
+<ws:partial template="{{ _options.content }}"
+            scope="{{_options}}"
+            on:validateEvent="onValidateEvent()"
+            on:validateCreated="onValidateCreated()"
+            on:validateDestroyed="onValidateDestroyed()"/>

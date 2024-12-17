@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:class="controlsDemo__height400"
+                               initialScrollPosition="{{_initialScrollPosition}}">
+        <Controls.list:View
+                storeId="NavigationPagingEdgesUpDirection">
+            <ws:virtualScrollConfig pageSize="{{20}}"/>
+        </Controls.list:View>
+    </Controls.scroll:Container>
+</div>

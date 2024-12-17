@@ -1,0 +1,13 @@
+<div>
+    <ws:for data="item in errors" >
+        <div class="controls-ValidateController__errorMessage">
+            <ws:if data="{{item && item.templateName}}">
+                <Controls.Container.Async templateName="{{item.templateName}}"
+                                          templateOptions="{{(item && item.templateOptions) ? item.templateOptions : null}}"/>
+            </ws:if>
+            <ws:else>
+                <ws:partial template="{{item}}" scope="{{(item && item.templateOptions) ? item.templateOptions : null}}"/>
+            </ws:else>
+        </div>
+    </ws:for>
+</div>

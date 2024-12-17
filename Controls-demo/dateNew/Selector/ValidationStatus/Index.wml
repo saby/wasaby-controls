@@ -1,0 +1,17 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell controlsDemo__flex ws-flex-column ws-align-items-center">
+        <div class="controls-text-label">Валидное состояние</div>
+        <Controls.date:Selector bind:value="_value1"
+                                validationStatus="valid"/>
+    </div>
+    <div class="controlsDemo__cell controlsDemo__flex ws-flex-column ws-align-items-center">
+        <div class="controls-text-label">Невалидное состояние</div>
+        <Controls.date:Selector bind:value="_value2"
+                                validationStatus="invalid"/>
+    </div>
+    <div class="controlsDemo__cell controlsDemo__flex ws-flex-column ws-align-items-center">
+        <div class="controls-text-label">Невалидное состояние в фокусе</div>
+        <Controls.date:Selector bind:value="_value3"
+                                validationStatus="invalidAccent"/>
+    </div>
+</div>

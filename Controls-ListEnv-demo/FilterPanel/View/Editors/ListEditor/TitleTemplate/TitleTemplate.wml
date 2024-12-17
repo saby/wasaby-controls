@@ -1,0 +1,6 @@
+<ws:if data="{{item.contents.id === 5}}">
+    <div class="controls-ListEnv-filterPanel__ListEditor-title">{{item.contents.title}}</div>
+</ws:if>
+<ws:else>
+    {{item.contents.title}}
+</ws:else>

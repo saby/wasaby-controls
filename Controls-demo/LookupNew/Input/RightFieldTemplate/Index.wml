@@ -1,0 +1,19 @@
+<div class="controlsDemo__wrapper controlsDemo__flexColumn">
+    <div class="controlsDemo__mb1 controlsDemo__wrapper__horizontal controlsDemo__cell">
+        <div class="controls-text-label controlsDemo_fixedWidth350">fontSize: s</div>
+        <Controls.lookup:Input
+                bind:selectedKeys="_selectedKeys"
+                bind:value="_value"
+                searchParam="title"
+                source="{{_source}}"
+                keyProperty="id"
+                multiSelect="{{true}}">
+            <ws:itemTemplate>
+                <ws:partial template="Controls/lookup:ItemTemplate" size="s"/>
+            </ws:itemTemplate>
+            <ws:rightFieldTemplate>
+                rightFieldTemplate
+            </ws:rightFieldTemplate>
+        </Controls.lookup:Input>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper">
+      <div class="controls-text-label">C navigation и multiSelect</div>
+      <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys"
+                                  keyProperty="key"
+                                  displayProperty="title"
+                                  multiSelect="{{true}}"
+                                  multiSelectPosition="custom"
+                                  emptyText="All operations"
+                                  source="{{_source}}">
+      </Controls.dropdown:Selector>
+   </div>
+</div>

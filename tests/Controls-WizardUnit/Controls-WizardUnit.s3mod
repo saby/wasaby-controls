@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module id="adb32388-de4f-4709-806a-c5f2aeb5fcb0" name="Controls-WizardUnit" version="1.00">
+  <description/>
+  <depends>
+      <module id="d6e84b3b-e56f-44a0-837b-594bc0db212c" name="Controls-Wizard"/>
+      <module id="140b9c75-19ae-4a1e-aa3c-ee08a3584c44" name="Controls-Wizard-default-theme"/>
+      <module id="a10cb1cb-b23d-4ef6-a757-4f7382e0e8d1" name="SbisEnvUI"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <test environment="NodeJS" framework="Jest" />
+  <resources/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

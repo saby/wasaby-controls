@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+    <Controls.scroll:Container attr:class="controlsDemo__height300" shadowMode="js">
+        <Controls.listDeprecate:Mover name="listMover"/>
+        <Controls.grid:ItemsView
+                keyProperty="key"
+                items="{{_items}}"
+                columns="{{_columns}}"
+                ladderProperties="{{_ladderProperties}}"/>
+    </Controls.scroll:Container>
+</div>

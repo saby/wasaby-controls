@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <Controls.skeleton:Image></Controls.skeleton:Image>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.skeleton:Image borderRadius="null" size="l"></Controls.skeleton:Image>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.skeleton:Image borderRadius="xs" size="2xl" active="{{true}}"></Controls.skeleton:Image>
+    </div>
+</div>

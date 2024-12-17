@@ -1,0 +1,316 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls/ListSliceSnapshots reload должен выполнить перезагрузку и обновить items на стейте 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "items": 0,
+        "loading": false,
+        "executedActionsToDispatch": "undefined"
+    },
+    {
+        "loading": true
+    },
+    {
+        "executedActionsToDispatch": [
+            "reload"
+        ]
+    },
+    {
+        "items": 3,
+        "loading": false,
+        "executedActionsToDispatch": [
+            "newItemsReceived"
+        ]
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots selectionViewMode сбрасывается при перезагрузке (вызов метода reload) 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "loading": false,
+        "selectionViewMode": "hidden",
+        "executedActionsToDispatch": "undefined"
+    },
+    {
+        "selectionViewMode": "selected"
+    },
+    {
+        "loading": true
+    },
+    {
+        "executedActionsToDispatch": [
+            "reload"
+        ]
+    },
+    {
+        "loading": false,
+        "executedActionsToDispatch": [
+            "newItemsReceived"
+        ]
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots Во время метода load можно менять стейт, который не влияет на загрузку данных 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "loading": false,
+        "markedKey": "undefined",
+        "executedActionsToDispatch": "undefined"
+    },
+    {
+        "loading": true
+    },
+    {
+        "executedActionsToDispatch": [
+            "oldSliceLoad"
+        ]
+    },
+    {
+        "loading": false,
+        "executedActionsToDispatch": "undefined"
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots Вызов reload в момент, когда уже идёт загрузка. Стейт loading из-за отмены предыдущей загрузки не должен сбрасываться  1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "loading": false,
+        "filter": {},
+        "executedActionsToDispatch": "undefined"
+    },
+    {
+        "loading": true
+    },
+    {},
+    {
+        "loading": false,
+        "filter": {
+            "key": 1
+        }
+    },
+    {
+        "loading": true
+    },
+    {
+        "executedActionsToDispatch": [
+            "reload"
+        ]
+    },
+    {
+        "loading": false,
+        "executedActionsToDispatch": [
+            "newItemsReceived"
+        ]
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots Вызов reload с параметром keepNavigation должен сохранять навигацию при перезагрузке 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "slice.state.items.getCount": 1,
+        "loading": false,
+        "navigation": {
+            "source": "page",
+            "sourceConfig": {
+                "multiNavigation": false,
+                "pageSize": 1,
+                "page": 0,
+                "hasMore": false
+            }
+        },
+        "executedActionsToDispatch": "undefined"
+    },
+    {
+        "loading": true
+    },
+    {
+        "executedActionsToDispatch": [
+            "oldSliceLoad"
+        ]
+    },
+    {
+        "loading": false,
+        "executedActionsToDispatch": "undefined"
+    },
+    {
+        "loading": true
+    },
+    {
+        "executedActionsToDispatch": [
+            "reload"
+        ]
+    },
+    {
+        "loading": false,
+        "executedActionsToDispatch": [
+            "newItemsReceived"
+        ]
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots Вызов метода load без аргументов. Фильтр не должен меняться. 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "items": 2,
+        "loading": false,
+        "filter": {
+            "department": "Platform"
+        },
+        "executedActionsToDispatch": "undefined"
+    },
+    {
+        "loading": true
+    },
+    {
+        "executedActionsToDispatch": [
+            "oldSliceLoad"
+        ]
+    },
+    {
+        "loading": false,
+        "executedActionsToDispatch": "undefined"
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots Вызов метода search c тем же searchValue, что и на стейте 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "loading": false,
+        "searchValue": "test",
+        "executedActionsToDispatch": "undefined"
+    },
+    {
+        "loading": true
+    },
+    {
+        "executedActionsToDispatch": [
+            "reload"
+        ]
+    },
+    {
+        "loading": false,
+        "executedActionsToDispatch": [
+            "newItemsReceived"
+        ]
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots Повторный вызов метода reload должен отменить предыдущую загрузку, если она выполняется 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "loading": false,
+        "selectionViewMode": "hidden",
+        "executedActionsToDispatch": "undefined"
+    },
+    {
+        "loading": true
+    },
+    {
+        "executedActionsToDispatch": [
+            "reload"
+        ]
+    },
+    {
+        "loading": false,
+        "executedActionsToDispatch": [
+            "newItemsReceived"
+        ]
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots После поиска не должно сбрасываться состояние searchInputValue, если оно менялось, пока выполнялся запрос 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "loading": false,
+        "searchInputValue": "",
+        "searchValue": "",
+        "filter": {},
+        "executedActionsToDispatch": "undefined"
+    },
+    {
+        "searchInputValue": "test"
+    },
+    {},
+    {
+        "loading": true
+    },
+    {
+        "searchInputValue": "testPlus"
+    },
+    {
+        "loading": false,
+        "searchValue": "test",
+        "filter": {
+            "testSearchParam": "test"
+        }
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots При изменении фильтра должна произойти перезагрузка с новым фильтром 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "loading": false,
+        "filter": {},
+        "executedActionsToDispatch": "undefined"
+    },
+    {
+        "loading": true
+    },
+    {},
+    {
+        "loading": false,
+        "filter": {
+            "title": "Платформа"
+        }
+    }
+]
+  </div>
+</DocumentFragment>
+`;

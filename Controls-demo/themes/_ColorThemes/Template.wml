@@ -1,0 +1,56 @@
+<div class="controls-padding-l">
+    <div class="ws-flexbox">
+        <div class="ws-flexbox ws-flex-column ws-align-items-start" data-qa="controlsDemo-ColorThemes__links">
+            <Controls.buttons:Button viewMode="link" icon="icon-Edit" iconSize="s" iconStyle="primary" caption="link" fontColorStyle="primary"></Controls.buttons:Button>
+            <Controls.buttons:Button viewMode="link" icon="icon-Edit" iconSize="s" iconStyle="secondary" caption="link" fontColorStyle="secondary"></Controls.buttons:Button>
+            <Controls.buttons:Button viewMode="link" icon="icon-Edit" iconSize="s" iconStyle="success" caption="link" fontColorStyle="success"></Controls.buttons:Button>
+            <Controls.buttons:Button viewMode="link" icon="icon-Edit" iconSize="s" iconStyle="danger" caption="link" fontColorStyle="danger"></Controls.buttons:Button>
+        </div>
+    </div>
+    <div class="ws-flexbox controls-padding_top-l">
+        <div class="ws-flexbox ws-flex-column ws-align-items-start" data-qa="controlsDemo-ColorThemes__heading">
+            <Controls.heading:Title caption="Primary heading" fontColorStyle="primary"></Controls.heading:Title>
+            <Controls.heading:Title caption="Secondary heading" fontColorStyle="secondary"></Controls.heading:Title>
+            <Controls.heading:Title caption="Success heading" fontColorStyle="success"></Controls.heading:Title>
+            <Controls.heading:Title caption="Danger heading" fontColorStyle="danger"></Controls.heading:Title>
+        </div>
+    </div>
+
+
+    <div class="ws-flexbox controls-padding_top-l">
+        <div class="ws-flexbox ws-flex-column ws-align-items-start" data-qa="controlsDemo-ColorThemes__buttons">
+            <div class="controls-padding_bottom-l">
+                <Controls.buttons:Button contrastBackground="{{false}}" buttonStyle="primary" caption="Button"></Controls.buttons:Button>
+            </div>
+            <div class="controls-padding_bottom-l">
+                <Controls.buttons:Button contrastBackground="{{true}}" buttonStyle="primary" caption="Button"></Controls.buttons:Button>
+            </div>
+            <div class="controls-padding_bottom-l">
+                <Controls.buttons:Button contrastBackground="{{true}}" viewMode="filled" icon="icon-EmptyMessage" iconSize="s" iconStyle="contrast" buttonStyle="primary"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="ws-flexbox controls-padding_top-l">
+        <div class="ws-flexbox ws-flex-column ws-align-items-start" data-qa="controlsDemo-ColorThemes__tabs">
+            <Controls.tabs:Buttons
+                    bind:selectedKey='_tabsSelectedKey'
+                    keyProperty="id"
+                    borderVisible="{{false}}"
+                    items="{{_tabsItems}}"
+            />
+        </div>
+    </div>
+    <div class="ws-flexbox controls-padding_top-l controls-background-unaccented">
+        <Controls.list:ItemsView
+                attr:data-qa="controlsDemo-ColorThemes__listMaster"
+                items="{{_tabsItems}}"
+                style="master"
+                backgroundStyle="master"
+                keyProperty="id"
+                markerVisibility="visible"
+                itemActions="{{_itemActions}}"
+                bind:markedKey="_listSelectedKey"
+        />
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">value = 10, currency = 'Dollar'</div>
+        <Controls.baseDecorator:Money value="{{10}}" currency="Dollar"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">value = 10.10, currency = 'Dollar', currencyPosition = 'left'</div>
+        <Controls.baseDecorator:Money value="{{10.10}}" currency="Dollar" currencyPosition="left"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">value = 10.10, currency = 'Dollar', currencyPosition = 'right'</div>
+        <Controls.baseDecorator:Money value="{{10.10}}" currency="Dollar" currencyPosition="right"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">value = 10, currency = 'Ruble'</div>
+        <Controls.baseDecorator:Money value="{{10}}" currency="Ruble"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">value = 10.10, currency = 'Ruble', currencyPosition = 'left'</div>
+        <Controls.baseDecorator:Money value="{{10.10}}" currency="Ruble" currencyPosition="left"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">value = 10.10, currency = 'Ruble', currencyPosition = 'right'</div>
+        <Controls.baseDecorator:Money value="{{10.10}}" currency="Ruble" currencyPosition="right"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">value = 10, currency = 'Euro'</div>
+        <Controls.baseDecorator:Money value="{{10}}" currency="Euro"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">value = 10.10, currency = 'Euro', currencyPosition = 'left'</div>
+        <Controls.baseDecorator:Money value="{{10.10}}" currency="Euro" currencyPosition="left"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">value = 10.10, currency = 'Euro', currencyPosition = 'right'</div>
+        <Controls.baseDecorator:Money value="{{10.10}}" currency="Euro" currencyPosition="right"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">value = 10.10, currency = '¥'</div>
+        <Controls.baseDecorator:Money value="{{10.10}}" currency="¥"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">value = 10.10, currency = '₨'</div>
+        <Controls.baseDecorator:Money value="{{10.10}}" currency="₨"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">value = 10.10, currency = 'ℳ'</div>
+        <Controls.baseDecorator:Money value="{{10.10}}" currency="ℳ"/>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell demo-switchPosition__default controlsDemo_fixedWidth300">
+            <Controls.toggle:DoubleSwitch attr:class="demo-switch__element"
+                                          bind:value="_value"
+                                          onCaption="Наличными"
+                                          offCaption="По карте"/>
+        </div>
+        <div class="controlsDemo__cell demo-switchPosition__left controlsDemo_fixedWidth300">
+            <Controls.toggle:DoubleSwitch bind:value="_value2" onCaption="Госуслуги">
+                <ws:offCaption>
+                    <ws:partial template="Controls/toggle:doubleSwitchCaptionTemplate" scope="{{captionTemplate}}">
+                        <ws:caption>
+                        <span>
+                            <span class="controls-text-secondary">ЕГАИС</span>
+                            <span> - Обмен данными с ЕГАИС по покупке и продаже алкоголя</span>
+                        </span>
+                        </ws:caption>
+                    </ws:partial>
+                </ws:offCaption>
+            </Controls.toggle:DoubleSwitch>
+        </div>
+    </div>
+</div>

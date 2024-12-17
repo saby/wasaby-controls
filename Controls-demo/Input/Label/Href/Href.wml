@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <Controls.input:Label underline="hovered"
+                              caption="google"
+                              href="https://www.google.ru/"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Label attr:target="_blank"
+                              underline="hovered"
+                              caption="google"
+                              href="https://www.google.ru/"/>
+    </div>
+</div>

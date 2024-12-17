@@ -1,0 +1,70 @@
+<!-- todo переделать после перевода на реакт. Wrapper должен использоваться только когда есть эти значения. Если делать сейчас, то получим деградацию по трафику -->
+<UI.Theme:ThemeWrapper activeTheme="{{_options.activeTheme}}" attr:class="{{_options.themeClassName}}" isUpperScope="{{false}}">
+    <Controls.Pending:ContextProvider registerPending="{{ _registerPendingHandler }}"
+                                      finishPendingOperations="{{ _finishPendingOperationsHandler }}"
+                                      cancelFinishingPending="{{ _cancelFinishingPendingHandler }}">
+        <Controls.LoadingIndicator:ContextProvider showIndicator="{{ _showIndicatorHandlerContext }}" hideIndicator="{{ _hideIndicatorHandlerContext }}">
+            <Controls.popupTemplate:ContextProvider close="{{ _close }}"
+                                                    isPopup="{{ true }}"
+                                                     sendResult="{{ _sendResultContext }}"
+                                                      maximized="{{ _maximizedContext }}"
+                                                    popupId="{{ _options.id }}">
+                <div class="controls-Popup ws-float-area-show-complete {{_options.item.popupOptions.className}}
+                {{ _getHiddenClass(_options.item) }} {{_options.item.position.zoom !== undefined ? 'controls-Zoom'}}
+                {{_safeZoneClasses ? 'controls-Popup__IosFix'}} {{ _getTWContainerClass() }}"
+                     on:animationend="_animated()"
+                     on:transitionend="_animated()"
+                     on:keyup="_keyUp()"
+                     popupkey="{{ _options.id }}"
+                     on:keydown="_keyDown()"
+                     style="position: {{_getPositionStyle(_options.item)}};
+                            left: {{_getStylePositionCoord(_options.item.position.left)}};
+                            right: {{_getStylePositionCoord(_options.item.position.right)}};
+                            top: {{_getStylePositionCoord(_options.item.position.top)}};
+                            bottom: {{_getStylePositionCoord(_options.item.position.bottom)}};
+                            z-index: {{_options.item.currentZIndex }};
+                            width: {{_getStylePositionSize(_options.item.position.width === 'undefined' ? 'auto' : _options.item.position.width)}};
+                            max-width: {{_getStylePositionSize(_options.item.position.maxWidth) }};
+                            min-width: {{_getStylePositionSize(_options.item.position.minWidth)}};
+                            max-height: {{_getStylePositionSize(_options.item.position.maxHeight)}};
+                            min-height: {{_getStylePositionSize(_options.item.position.minHeight)}};
+                            height: {{_getHeight(_options.item)}};
+                            margin: {{_options.item.position.margin !== undefined ? _options.item.position.margin + 'px'}};
+                            zoom: {{_options.item.position.zoom}};
+                            pointer-events: {{ _options.item.controller.TYPE === 'Dialog' ? 'none' : 'all' }}
+"
+                     templatename="{{ _options.templateOptions.pageTemplate || _compatibleTemplateName}}"
+                     template="{{ _stringTemplate ? _options.template}}">
+                    <ws:partial
+                            attr:class="controls_popupTemplate_theme-{{_options.theme}}
+                        controls-Popup__template {{_options.position.height ? 'controls-Popup__template-height'}}"
+                            template="{{_options.content}}"
+                            _prefetchData="{{_prefetchData || _options.prefetchData}}"
+                            _isPrefetchDataMode="{{_isPrefetchDataMode}}"
+                            scope="{{_options}}"
+                            style=""
+                            opener="{{null}}"
+                            __key="{{_options.id}}_content"
+                            name="{{_options.id}}_content"
+                            on:sendResult="_sendResult()"
+                            on:close="_close()"
+                            on:popupDragEnd="_popupDragEnd()"
+                            on:popupDragStart="_popupDragStart()"
+                            on:popupMovingSize="_popupMovingSize()"
+                            on:mouseenter="_popupMouseEnter()"
+                            on:mouseleave="_popupMouseLeave()"
+                            on:maximized="_maximized()"
+                            on:fullscreen="_fullscreen()"
+                            on:register="_registerHandler()"
+                            on:unregister="_unregisterHandler()"
+                            on:controlResize="_controlResizeHandler()"
+                            on:showIndicator="_showIndicatorHandler()"
+                            on:registerPending="_registerPendingEventHandler()"
+                            on:cancelFinishingPending="_cancelFinishingPendingEventHandler()"
+                            on:finishPendingOperations="_finishPendingOperationsHandler()" />
+
+                </div>
+            </Controls.popupTemplate:ContextProvider>
+        </Controls.LoadingIndicator:ContextProvider>
+    </Controls.Pending:ContextProvider>
+</UI.Theme:ThemeWrapper>

@@ -1,0 +1,6 @@
+<div class="controls-margin_top-2xl controls-margin_left-2xl">
+  <div>
+    <div class="controls-text-label">Стэковое окно с возможностью раскрытия на полный экран</div>
+    <Controls.buttons:Button caption="Открыть стэковое окно" on:click="_clickHandler()" />
+  </div>
+</div>

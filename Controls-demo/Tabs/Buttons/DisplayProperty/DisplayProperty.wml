@@ -1,0 +1,17 @@
+<div class="root">
+    <div class="separator">SelectedStyle="unaccented", custom displayProperty</div>
+    <div class="demo-TabButtons ControlsDemo-Tabs__displayProperty">
+        <Controls.tabs:Buttons
+                bind:selectedKey='SelectedKey'
+                keyProperty="id"
+                selectedStyle="unaccented"
+                source="{{_source}}">
+            <ws:itemTemplate>
+                <ws:partial template="Controls/tabs:buttonsItemTemplate"
+                            item="{{itemTemplate.item}}"
+                            displayProperty="carambola"
+                ></ws:partial>
+            </ws:itemTemplate>
+        </Controls.tabs:Buttons>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<Controls.Container.Async templateName="Controls/lookup:Selector">
+    <ws:partial
+        template="{{ content.resolvedTemplate }}"
+        filter="{{ _filter }}"
+        source="{{ _source }}"
+        selectedKeys="{{ _selectedKeys }}"
+        keyProperty="@Queue"
+        caption="{[Выберите сотрудника]}"
+        selectorTemplate="{{ _selectorTemplate }}"
+        displayProperty="Name"
+        on:itemsChanged="_onItemsChanged()"
+        multiSelect="{{ false }}">
+        <ws:itemTemplate>
+            <Controls.Container.Async templateName="Controls/lookup:ItemTemplate">
+                <ws:partial
+                    template="{{ content.resolvedTemplate }}"
+                    scope="{{ itemTemplate }}"
+                    caption="{{ itemTemplate.item.PersonInfo.FullName || itemTemplate.item.Name }}">
+                </ws:partial>
+            </Controls.Container.Async>
+        </ws:itemTemplate>
+    </ws:partial>
+</Controls.Container.Async>

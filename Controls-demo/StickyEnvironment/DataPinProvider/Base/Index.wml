@@ -1,0 +1,33 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+   <Controls.stickyEnvironment:DataPinProvider>
+      <div>
+         <Controls.stickyEnvironment:DataPinConsumer>
+            <ws:content>
+               <div><b>Pinned block:</b> {{ content.pinnedData || 'null' }}</div>
+            </ws:content>
+         </Controls.stickyEnvironment:DataPinConsumer>
+
+         <Controls.scroll:Container attr:style="height: 300px">
+            <div class="space"></div>
+
+            <Controls.stickyEnvironment:DataPinContainer data="block 1">
+               <div class="pin-block">block 1</div>
+            </Controls.stickyEnvironment:DataPinContainer>
+
+            <div class="space"></div>
+
+            <Controls.stickyEnvironment:DataPinContainer data="block 2">
+               <div class="pin-block">block 2</div>
+            </Controls.stickyEnvironment:DataPinContainer>
+
+            <div class="space"></div>
+
+            <Controls.stickyEnvironment:DataPinContainer data="block 3">
+               <div class="pin-block">block 3</div>
+            </Controls.stickyEnvironment:DataPinContainer>
+
+            <div class="space space_big"></div>
+         </Controls.scroll:Container>
+      </div>
+   </Controls.stickyEnvironment:DataPinProvider>
+</div>

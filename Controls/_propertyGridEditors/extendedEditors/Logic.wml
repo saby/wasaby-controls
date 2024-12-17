@@ -1,0 +1,25 @@
+<ws:template name="editor">
+    <Controls.Container.Async templateName="Controls/source:SelectedKey">
+        <ws:partial template="{{content.resolvedTemplate}}"
+                    scope="{{_options}}"
+                    bind:selectedKey="_selectedKey"
+                    on:selectedKeyChanged="_handleSelectedKeyChanged()">
+            <Controls.dropdown:Toggle attr:class="controls-PropertyGrid__editor_dropdown_control"
+                                      scope="{{_options}}"/>
+        </ws:partial>
+    </Controls.Container.Async>
+</ws:template>
+
+<ws:if data="{{_options.jumpingLabel}}">
+    <Controls.Container.Async templateName="wml!Controls/_propertyGridEditors/JumpingLabelContainer">
+        <ws:partial template="{{content.resolvedTemplate}}"
+                    caption="{{_options.caption}}"
+                    scope="{{_options.captionOptions}}"
+                    required="{{_options.required}}">
+            <ws:partial template="editor" />
+        </ws:partial>
+    </Controls.Container.Async>
+</ws:if>
+<ws:else>
+    <ws:partial template="editor" />
+</ws:else>

@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300" data-qa="Controls-demo_toggle_BigSeparator_Base__wrapper">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label controls-text-label">Click to expand content</div>
+        <Controls.ShowMoreButton caption="Button" bind:value="_expanded" attr:data-qa="Controls-demo_toggle_BigSeparator_Base__show-more"/>
+    </div>
+    <ws:if data="{{_expanded}}">
+        <div class="controlsDemo__cell">
+            <div class="controls-text-secondary">Hello!</div>
+        </div>
+    </ws:if>
+</div>

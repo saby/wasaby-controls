@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-Templates-default-theme" kaizen_zone="daa99442-dd54-4dbe-a76b-215360cfb509"
+           id="774ffc20-5d6a-4f4f-b5f8-2447c2704702"
+           package="Wasaby"
+           responsible="Колесов В.А." responsible_uuid="100257d6-3e56-494d-9358-010a8d99f392"
+           required="1"
+           version="1.00">
+  <description/>
+  <depends>
+    <module id="af50caf5-f84b-4b81-a19c-6f6618372dbd" name="Controls-default-theme"/>
+    <module id="bfd15aec-af0f-40c9-b151-94601c5a0f71" name="Controls-Templates"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <cluster_endpoints/>
+  <resources/>
+  <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

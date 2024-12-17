@@ -1,0 +1,19 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <div class="controlsDemo__cell">
+        <Controls.browser:Browser source="{{_viewSource}}"
+                                     keyProperty="id"
+                                     parentProperty="parent">
+                <Controls.listDataOld:ListContainer>
+                    <Controls.explorer:View
+                            keyProperty="id"
+                            columns="{{_columns}}"
+                            bind:root="_root"
+                            displayProperty="title"
+                            nodeProperty="parent@"
+                            viewMode="table">
+                        <ws:editingConfig editOnClick="{{true}}" toolbarVisibility="{{true}}"/>
+                    </Controls.explorer:View>
+                </Controls.listDataOld:ListContainer>
+        </Controls.browser:Browser>
+    </div>
+</div>

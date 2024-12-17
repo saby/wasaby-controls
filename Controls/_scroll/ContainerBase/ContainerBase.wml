@@ -1,0 +1,61 @@
+<!--
+События висят на div а не на partial пототму что, если в шаблоне partial есть несколько корневых нод,
+то обработчики всплывающих событий не срабатывают и атрибуты не навешиваются.
+https://online.sbis.ru/opendoc.html?guid=10a3ac25-9b67-4b76-9706-ba8e73415246
+-->
+<div class="controls-Scroll-ContainerBase controls_scroll_theme-{{ _options.theme }} controls-Scroll__content {{_scrollCssClass}} {{_initialScrollPositionCssClass}}"
+     style="overscroll-behavior-y: {{_overscrollBehavior}};"
+     name="content"
+     data-qa="controls-Scroll__content"
+     on:scroll="_scrollHandler()"
+     on:customscroll="_scrollHandler()"
+     on:wheel="_wheelHandler()"
+     on:doScroll="_doScrollHandler()"
+     on:doHorizontalScroll="_doHorizontalScrollHandler()"
+     on:register="_registerIt()"
+     on:unregister="_unRegisterIt()"
+     on:scrollToElement="_scrollToElement()"
+     on:horizontalScrollToElement="_horizontalScrollToElement()"
+     on:updatePlaceholdersSize="_updatePlaceholdersSize()"
+     on:controlResize="_controlResizeHandler()"
+     on:enableVirtualNavigation="_enableVirtualNavigationHandler()"
+     on:disableVirtualNavigation="_disableVirtualNavigationHandler()"
+     on:touchmove="_onMouseMove()"
+     on:touchleave="_onMouseLeave()"
+     on:mousemove="_onMouseMove()"
+     on:mouseleave="_onMouseLeave()"
+>
+    <div name="userContent"
+         class="controls-Scroll-ContainerBase__content controls-Scroll-ContainerBase__content__{{_options.scrollOrientation}}
+                {{_getContentDirectionClass()}} {{_contentWrapperCssClass}}">
+        <ws:partial
+            attr:class="controls-Scroll-containerBase_userContent"
+            template="{{_options.content}}"
+            scope="{{_options}}"
+            _contentWrapperCssClass="{{undefined}}"
+            _scrollCssClass="{{undefined}}"
+            _overscrollBehavior="{{undefined}}"
+            _initialScrollPositionCssClass="{{undefined}}"
+
+            on:selectedKeysChanged="_selectedKeysChanged()"
+            on:excludedKeysChanged="_excludedKeysChanged()"
+            on:listSelectedKeysCountChanged="_listSelectedKeysCountChanged()"
+            on:beforeSelectionChanged="_tmplNotify('beforeSelectionChanged')"
+            on:itemClick="_itemClick()"
+
+            on:itemMouseDown="_tmplNotify('itemMouseDown')"
+            on:rootChanged="_tmplNotify('rootChanged')"
+            on:sortingChanged="_tmplNotify('sortingChanged')"
+            on:expandedItemsChanged="_tmplNotify('expandedItemsChanged')"
+            on:collapsedItemsChanged="_tmplNotify('collapsedItemsChanged')"
+            on:checkBoxClick="_tmplNotify('checkBoxClick')"
+            on:markedKeyChanged="_tmplNotify('markedKeyChanged')"
+            on:beforeMarkedKeyChanged="_tmplNotify('beforeMarkedKeyChanged')"
+            on:actionClick="_tmplNotify('actionClick')"
+            on:editArrowClick="_tmplNotify('editArrowClick')"
+            on:navigationParamsChanged="_tmplNotify('navigationParamsChanged')"
+
+        />
+    </div>
+
+</div>

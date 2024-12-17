@@ -1,0 +1,25 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell ws-flex-column controlsDemo_fixedWidth400">
+            <div class="controlsDemo__background">
+                <div class="controls-text-label controls-margin_bottom-xs">Акцентный тумбер</div>
+                <Controls.Tumbler:Control items="{{_items}}"
+                                         contrastBackground="{{true}}"
+                                         direction="horizontal"
+                                         bind:selectedKey="_selectedKey2"/>
+            </div>
+        </div>
+        <div class="controlsDemo__cell ws-flex-column ws-align-items-center controls-margin_top-l controlsDemo_fixedWidth400">
+            <div class="controls-text-label controls-margin_bottom-xs">Неакцентный тумблер</div>
+            <Controls.Tumbler:Control items="{{_items}}"
+                                     direction="horizontal"
+                                     bind:selectedKey="_selectedKey1"/>
+        </div>
+        <div class="controlsDemo__cell ws-flex-column ws-align-items-center controls-margin_top-xl controlsDemo_fixedWidth400">
+            <div class="controls-text-label controls-margin_bottom-xs">Большой тумблер</div>
+            <Controls.Tumbler:Control items="{{_items}}"
+                                     inlineHeight="5xl"
+                                     bind:selectedKey="_selectedKey3"/>
+        </div>
+    </div>
+</div>

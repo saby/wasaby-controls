@@ -1,0 +1,11 @@
+<ws:partial template="Controls/columns:ItemTemplate"
+            scope="{{_options}}"
+            highlightOnHover="{{false}}"
+            shadowVisibility="hidden">
+    <ws:contentTemplate>
+        <div class="controlsDemo_ColumnsView_itemTemplate-wrapper controlsDemo_ColumnsView_itemTemplate-border">
+            <div class="controlsDemo_ColumnsView_itemTemplate-title">{{item.getContents().get('title')}}   {{itemTemplate.item._contentsIndex}}</div>
+            <div class="controlsDemo_ColumnsView_itemTemplate-description">{{item.getContents().get('description')}}</div>
+        </div>
+    </ws:contentTemplate>
+</ws:partial>

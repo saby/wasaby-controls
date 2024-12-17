@@ -1,0 +1,105 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-baseline" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__flex ws-justify-content-center ws-align-items-center">
+            <div class="controls-text-label controlsDemo_fixedWidth200">Контурная кнопка:</div>
+            <div class="controlsDemo__flex ws-align-items-center">
+                <div class="controls-margin_right-m">
+                    <Controls.buttons:Button viewMode="outlined"
+                                             caption="Кнопка"
+                                             attr:data-qa="controlsDemo_Buttons__outlined"/>
+                </div>
+                <div class="controls-margin_right-m">
+                    <Controls.buttons:Button viewMode="outlined"
+                                             icon="icon-Send"
+                                             attr:data-qa="controlsDemo_Buttons__outlinedIcon"/>
+                </div>
+                <div>
+                    <Controls.buttons:Button viewMode="outlined"
+                                             caption="Кнопка"
+                                             readOnly="{{true}}"
+                                             attr:data-qa="controlsDemo_Buttons__outlined-readOnly"/>
+                </div>
+            </div>
+        </div>
+        <div class="controlsDemo__flex ws-justify-content-center ws-align-items-center controls-margin_top-m">
+            <div class="controls-text-label controlsDemo_fixedWidth200">Кнопка с заливкой:</div>
+            <div class="controlsDemo__flex ws-align-items-center">
+                <div class="controls-margin_right-m">
+                    <Controls.buttons:Button viewMode="filled"
+                                             caption="Кнопка"
+                                             attr:data-qa="controlsDemo_Buttons__filled"/>
+                </div>
+                <div class="controls-margin_right-m">
+                    <Controls.buttons:Button viewMode="filled"
+                                             iconStyle="contrast"
+                                             icon="icon-Send"
+                                             attr:data-qa="controlsDemo_Buttons__filledIcon"/>
+                </div>
+                <div>
+                    <Controls.buttons:Button viewMode="filled"
+                                             caption="Кнопка"
+                                             readOnly="{{true}}"
+                                             attr:data-qa="controlsDemo_Buttons__filled-readOnly"/>
+                </div>
+            </div>
+        </div>
+        <div class="controlsDemo__flex ws-justify-content-center ws-align-items-center controls-margin_top-m">
+            <div class="controls-text-label controlsDemo_fixedWidth200">Кнопка в виде ссылки:</div>
+            <div class="controlsDemo__flex ws-align-items-center">
+                <div class="controls-margin_right-m">
+                    <Controls.buttons:Button viewMode="link"
+                                             caption="Кнопка"
+                                             attr:data-qa="controlsDemo_Buttons__link"/>
+                </div>
+                <div class="controls-margin_right-m">
+                    <Controls.buttons:Button viewMode="link"
+                                             icon="icon-Send"
+                                             attr:data-qa="controlsDemo_Buttons__linkIcon"/>
+                </div>
+                <div>
+                    <Controls.buttons:Button viewMode="link"
+                                             caption="Кнопка"
+                                             readOnly="{{true}}"
+                                             attr:data-qa="controlsDemo_Buttons__link-readOnly"/>
+                </div>
+            </div>
+        </div>
+        <div class="controlsDemo__flex ws-justify-content-center ws-align-items-center controls-margin_top-m">
+            <div class="controls-text-label controlsDemo_fixedWidth200">Кнопка с заливкой по ховеру:</div>
+            <div class="controlsDemo__flex ws-align-items-center">
+                <div class="controls-margin_right-m">
+                    <Controls.buttons:Button viewMode="ghost"
+                                             caption="Кнопка"
+                                             attr:data-qa="controlsDemo_Buttons__ghost-caption"/>
+                </div>
+                <div class="controls-margin_right-m">
+                    <Controls.buttons:Button viewMode="ghost"
+                                             icon="icon-Send"
+                                             attr:data-qa="controlsDemo_Buttons__ghost"/>
+                </div>
+                <div>
+                    <Controls.buttons:Button viewMode="ghost"
+                                             icon="icon-Send"
+                                             readOnly="{{true}}"
+                                             attr:data-qa="controlsDemo_Buttons__ghost-readOnly"/>
+                </div>
+            </div>
+        </div>
+      <div class="controlsDemo__flex ws-justify-content-center ws-align-items-center controls-margin_top-m">
+        <div class="controls-text-label controlsDemo_fixedWidth200">Квадратная кнопка:</div>
+        <div class="controlsDemo__flex ws-align-items-center">
+          <div class="controls-margin_right-m">
+            <Controls.buttons:Button viewMode="squared"
+                                     icon="icon-Send"
+                                     attr:data-qa="controlsDemo_Buttons__squared"/>
+          </div>
+          <div class="controls-margin_right-m">
+            <Controls.buttons:Button viewMode="squared"
+                                     icon="icon-Send"
+                                     readOnly="{{ true }}"
+                                     attr:data-qa="controlsDemo_Buttons__squaredReadonly"/>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

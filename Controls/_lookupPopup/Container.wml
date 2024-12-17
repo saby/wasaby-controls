@@ -1,0 +1,9 @@
+<ws:partial template="{{_options.content}}"
+            scope="{{_options}}"
+            selectedKeys="{{_selectedKeys}}"
+            excludedKeys="{{_excludedKeys}}"
+            on:selectedKeysChanged="_selectedKeysChanged()"
+            on:excludedKeysChanged="_excludedKeysChanged()"
+            on:listSelectedKeysChanged="_selectedKeysChanged()"
+            on:listExcludedKeysChanged="_excludedKeysChanged()"
+            on:selectComplete="_selectCompleteHandler()"/>
