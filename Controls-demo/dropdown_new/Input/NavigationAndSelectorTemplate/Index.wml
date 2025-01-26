@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+   <div class="controlsDemo__ml2">
+      <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys"
+                                  emptyText="Не выбрано"
+                                  keyProperty="key"
+                                  displayProperty="title"
+                                  navigation="{{_navigation}}"
+                                  source="{{_source}}">
+         <ws:selectorTemplate templateName="Controls-demo/Menu/Control/SelectorTemplate/StackTemplate">
+            <ws:templateOptions items="{{_items}}"/>
+         </ws:selectorTemplate>
+      </Controls.dropdown:Selector>
+   </div>
+</div>

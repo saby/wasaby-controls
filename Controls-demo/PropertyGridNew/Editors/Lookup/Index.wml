@@ -1,0 +1,6 @@
+<Controls.propertyGrid:PropertyGrid
+        bind:editingObject="_editingObject"
+        typeDescription="{{_typeDescription}}">
+    <ws:captionColumnOptions
+            width="50%"/>
+</Controls.propertyGrid:PropertyGrid>

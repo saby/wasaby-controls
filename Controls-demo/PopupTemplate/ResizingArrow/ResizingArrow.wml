@@ -1,0 +1,12 @@
+<Controls.Application>
+    <div class="controlsDemo__wrapper ws-flexbox ws-flex-column">
+        <div class="controlsDemo__cell ws-align-self-start">
+            <div class="controls-text-label">Потяните за правый нижний край</div>
+            <div class="controlsDemo__container" style="width:{{_x}}px; height:{{_y}}px">
+                <Controls.popupTemplate:ResizingArrow
+                        attr:class="controlsDemo__resizingLine controlsDemo__resizingLine_right"
+                        on:offset="_offsetHandler()"/>
+            </div>
+        </div>
+    </div>
+</Controls.Application>

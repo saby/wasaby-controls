@@ -1,0 +1,120 @@
+.controls-Dropdown_iconSize-s_popup {
+   --padding-left_icon_menu_dropdown: var(--offset_2xs);
+}
+
+.controls-Dropdown_withoutHeader_popup {
+   --inline_height-item_menu_dropdown: var(--item_height_menu);
+}
+
+.controls-Dropdown_withHeader_popup {
+   --inline_height-item_menu_dropdown: var(--inline_height_l);
+}
+
+.controls-MenuButton_marker-visible_popup {
+   --item_padding-left_marker_menu: var(--item_padding-left_s_list);
+}
+
+.controls-MenuButton_marker-hidden_popup {
+   --item_padding-left_marker_menu: var(--item_padding-left_m_list);
+}
+
+.controls-MenuButton_isCircle_popup {
+   --offset-left_with_caption_button: calc(
+      (var(--offset_inline-height_menu_button) - var(--icon-size-menu_button)) / 2
+   );
+}
+
+.controls-MenuButton_isDefault_popup {
+   --offset-left_with_caption_button: calc(
+      var(--padding-horizontal_with_caption_button) + var(--border-thickness_button)
+   );
+}
+
+.controls-MenuButton_link_inlineHeight-default_popup {
+   --offset_inline-height_menu_button: var(--inline_height_default_link_button);
+}
+
+.controls-MenuButton_iconSize- {
+   @variants: xs, s, m, l;
+   .for(@variants, {
+      &@{_item}{
+         --icon-size-menu_button: ~'var(--icon-size_@{_item})';
+      }
+   });
+}
+
+.controls-MenuButton_inlineHeight- {
+   @variants: xs, s, m, l, xl, 2xl, 3xl, 4xl, default;
+   .for(@variants,  {
+      &@{_item}_popup {
+        --padding-horizontal_with_caption_button: ~'var(--padding-horizontal_@{_item}_button)';
+        --offset_inline-height_menu_button: ~'var(--inline_height_@{_item})';
+      }
+   });
+}
+
+.controls-MenuButton_outlined_popup,
+.controls-MenuButton_button_popup,
+.controls-MenuButton_ghost_popup,
+.controls-MenuButton_filled_popup {
+   margin-top: calc(
+      -1 * ((
+                  var(--inline_height-item_menu_dropdown, var(--inline_height_l)) -
+                     var(--offset_inline-height_menu_button)
+               ) / 2 + var(--offset_s) + var(--offset_3xs))
+   );
+   margin-left: calc(
+      -1 * ((
+                  var(--item_padding-left_marker_menu, var(--item_padding-left_m_list)) +
+                     var(--offset_s) + var(--padding-left_icon_menu_dropdown, 0px)
+               ) - var(--offset-left_with_caption_button))
+   );
+}
+
+.controls-MenuButton_linkButton_popup,
+.controls-MenuButton_link_popup {
+   margin-top: calc(
+      -1 * ((
+                  var(--inline_height-item_menu_dropdown, var(--inline_height_l)) -
+                     var(--offset_inline-height_menu_button)
+               ) / 2 + var(--offset_s) + var(--offset_3xs))
+   );
+   margin-left: calc(
+      -1 * (var(--item_padding-left_marker_menu, var(--item_padding-left_m_list)) + var(--offset_s) +
+               var(--padding-left_icon_menu_dropdown, 0px))
+   );
+
+   &.controls-MenuButton_withIcon_popup {
+      margin-top: calc(
+         -1 * ((
+                     var(--inline_height-item_menu_dropdown, var(--inline_height_l)) -
+                        var(--icon-size-menu_button)
+                  ) / 2 + var(--offset_s) + var(--offset_3xs))
+      );
+   }
+}
+
+// TODO: Нужно рисовать свои крошки
+.controls-Menu__popup-list .controls-Explorer__PathWrapper {
+   margin-bottom: var(--offset_xs);
+}
+
+.controls-DropdownList_markerPosition-left {
+   --offset_marker_dropdownSelector: calc(var(--icon-size_2xs) + var(--offset_3xs));
+}
+
+.controls-DropdownList_markerPosition-right {
+   --offset_marker_dropdownSelector: 0px;
+}
+
+.controls-DropdownList__margin,
+.controls-DropdownList_multiSelect__margin {
+   margin-top: calc(
+      -1 * ((var(--inline_height-item_menu_dropdown) - var(--height_dropdownSelector)) / 2 +
+               var(--offset_s) + var(--offset_3xs))
+   );
+   margin-left: calc(
+      -1 * (var(--item_padding-left_s_list) + var(--offset_marker_dropdownSelector, 0px) +
+               var(--padding-left_icon_menu_dropdown, 0px) + var(--offset_s))
+   );
+}

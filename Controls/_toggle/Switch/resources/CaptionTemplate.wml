@@ -1,0 +1,13 @@
+<ws:if data="{{caption}}">
+      <span class="controls-Switch__text_{{captionPosition}}Caption
+                  controls-Switch__text_{{readOnly ? 'disabled' : 'enabled'}}_{{value ? 'selected' : 'unselected'}}
+                  {{!multiline ? 'ws-ellipsis'}}"
+            data-qa="controls-Switch__text_{{captionPosition}}Caption">
+         <span class="{{!readOnly && !additionalCaption ? 'controls-Switch__text-decoration'}}">
+             <ws:partial template="{{caption}}"/>
+         </span>
+          <ws:if data="{{additionalCaption}}">
+              <ws:partial template="{{additionalCaption}}"/>
+          </ws:if>
+      </span>
+</ws:if>

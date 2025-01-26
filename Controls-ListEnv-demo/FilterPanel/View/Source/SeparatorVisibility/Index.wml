@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__flexRow">
+        <Controls-ListEnv.filterPanelConnected:View filterNames="['department']"
+                                           storeId="separatorData"
+                                           attr:class="controls-ListEnv__filterPanel"/>
+        <Controls.list:View storeId="separatorData"/>
+    </div>
+</div>

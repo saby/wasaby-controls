@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ws="ws-component">
+<head>
+   <title>Web-Genie</title>
+   <script type="text/javascript">
+      window.wsConfig = {
+         WSRootPath: '/sbis3-ws/ws/',
+         wsRoot: '/sbis3-ws/ws/',
+         WSTheme: 'wi_scheme',
+         resourceRoot: '/',
+         nostyle: true,
+         globalConfigSupport: false
+      };
+      window.WSTheme = 'wi_scheme';
+   </script>
+   <script type="text/javascript" id="dev-style-enable">
+      (function () {
+         window.wsConfig.nostyle = false;
+      })();
+   </script>
+   <script type="text/javascript" data-pack-name="contents" src="/contents.js"></script>
+   <script type="text/javascript" data-pack-name="ws" src="%{CDN_ROOT}JQuery/jquery/3.3.1/jquery-min.js"></script>
+   <script type="text/javascript" data-pack-name="ws" src="%{CDN_ROOT}JQuery/jquery-cookie/04-04-2014/jquery-cookie-min.js"></script>
+   <script type="text/javascript" data-pack-name="ws" src="%{CDN_ROOT}JQuery/jquery-notouch/20.02.2019/jquery-notouch-min.js"></script>
+   <script type="text/javascript" src="/sbis3-ws/ws/ext/requirejs/require.js"></script>
+   <script type="text/javascript" src="/sbis3-ws/ws/ext/requirejs/config.js"></script>
+   <script type="text/javascript" src="/sbis3-ws/ws/lib/core.js"></script>
+   <script type="text/javascript" data-pack-name="ws" src="/sbis3-ws/ws/res/js/bootup.js"></script>
+   <style>
+      .view-main {
+         font-family: Arial, SANS-SERIF;
+         font-size: 13px;
+         padding: 0;
+         margin: 0;
+         height: 100%;
+      }
+
+      #content {
+         padding: 20px;
+      }
+
+      #content table {
+         width: 100%;
+      }
+
+      #content table td {
+         width: 50%;
+         vertical-align: top;
+      }
+
+      #content ul li {
+         height: 27px;
+      }
+
+      #content a {
+         color: #000000;
+         font-size: 16px;
+         margin-bottom: 5px;
+         border-radius: 8px;
+         padding: 5px 10px;
+      }
+
+      #content a:hover {
+         background: #ececec;
+      }
+
+      a[href*=Engine]:after {
+         content: 'Engine';
+         color: orangered;
+         display: inline-block;
+         vertical-align: super;
+         font-size: 55%;
+         margin-left: 7px;
+      }
+
+   </style>
+   <script type="text/javascript" id="ws-include-css"></script>
+</head>
+<body class="view-main">
+<div id="content">
+   <table>
+      <tr>
+         <td>
+            <h3><a href="/Controls-demo/demo.html">VDOM</a></h3>
+            <ul>
+               <li>
+                  <div id="ItemsView"></div>
+               </li>
+               <li>
+                  <div id="Paging"></div>
+               </li>
+               <li>
+                  <div id="ListControl"></div>
+               </li>
+               <li>
+                  <div id="Inputs"></div>
+               </li>
+               <li>
+                  <div id="ListControlScroll"></div>
+               </li>
+               <li>
+                  <div id="Windows"></div>
+               </li>
+               <li>
+                  <div id="Switch"></div>
+               </li>
+               <li>
+                  <div id="ButtonsVdom"></div>
+               </li>
+            </ul>
+            <h3>Просмотр контролов</h3>
+            <ul>
+               <li>
+                  <div id="TextBoxes"></div>
+               </li>
+                <li>
+                    <div id="TimeInterval"></div>
+                </li>
+               <li>
+                  <div id="Buttons"></div>
+               </li>
+               <li>
+                  <div id="tabButtons"></div>
+               </li>
+               <li>
+                  <div id="ButtonsNew"></div>
+               </li>
+               <li>
+                  <div id="Switchers"></div>
+               </li>
+               <li>
+                  <div id="ButtonGroups"></div>
+               </li>
+               <li>
+                  <div id="FieldFormat"></div>
+               </li>
+               <li>
+                  <div id="OP"></div>
+               </li>
+               <li>
+                  <div id="Views"></div>
+               </li>
+               <li>
+                  <div id="ViewsNEWDS"></div>
+               </li>
+               <li>
+                  <div id="TreeDataGridView"></div>
+               </li>
+               <li>
+                  <div id="Enum"></div>
+               </li>
+               <li>
+                  <div id="Flags"></div>
+               </li>
+                <li>
+                    <div id="ViewsScroll"></div>
+                </li>
+                <li>
+                    <div id="ViewsGroup"></div>
+                </li>
+               <li>
+                  <div id="Popup"></div>
+               </li>
+               <li>
+                  <div id="DataBinding"></div>
+               </li>
+                <li>
+                    <div id="DropdownList"></div>
+                </li>
+               <li>
+                  <div id="ButtonContent"></div>
+               </li>
+               <li>
+                  <div id="EditAtPlace"></div>
+               </li>
+               <li>
+                  <div id="MultiView"></div>
+               </li>
+               <li>
+                  <div id="Suggest"></div>
+               </li>
+               <li>
+                  <div id="Browser"></div>
+               </li>
+                <li>
+                    <div id="BrowserEngine"></div>
+                </li>
+               <li>
+                  <div id="BrowserTabs"></div>
+               </li>
+               <li>
+                  <div id="ColumnsEditor"></div>
+               </li>
+			   <li>
+                  <div id="FieldLink"></div>
+               </li>
+               <li>
+                  <div id="FilterButtonHistory"></div>
+               </li>
+               <li>
+                  <div id="InformationWindows"></div>
+               </li>
+               <li>
+                  <div id="Header"></div>
+               </li>
+               <li>
+                  <div id="SearchForm"></div>
+               </li>
+               <li>
+                  <div id="FolderFooter"></div>
+               </li>
+            </ul>
+         </td>
+         <td>
+            <h3>Тестирование</h3>
+            <ul>
+               <li><a href="//localhost:1025/">Юнит тесты</a></li>
+               <li><a href="artifacts/coverage/" title="Генерация отчета: npm run coverage">Отчет о покрытии</a></li>
+            </ul>
+
+            <h3>Темы</h3>
+            <ul>
+               <li>
+                  <div id="onlinesbis"></div>
+               </li>
+               <li>
+                  <div id="demo"></div>
+               </li>
+               <li>
+                  <div id="genie"></div>
+               </li>
+               <li>
+                  <div id="presto"></div>
+               </li>
+            </ul>
+            <h3>Virtual DOM</h3>
+            <ul>
+               <li>
+                  <div id="VD_ListView"></div>
+               </li>
+               <li>
+                  <div id="VD_DataGridView"></div>
+               </li>
+               <li>
+                  <div id="VD_TreeView"></div>
+               </li>
+               <li>
+                  <div id="VD_TreeViewEnv"></div>
+               </li>
+               <li>
+                  <div id="VD_VirtualScroll"></div>
+               </li>
+            </ul>
+            <h3>Edit in place</h3>
+            <ul>
+               <li>
+                  <div id="EditInPlaceViews"></div>
+               </li>
+            </ul>
+            <h3>Theme preview</h3>
+            <ul>
+               <li>
+                  <div id="themepreview"></div>
+               </li>
+
+            </ul>
+            <h3>Индикатор процесса</h3>
+            <ul>
+               <style>.my-own-class { background: deepskyblue }</style>
+               <li>Одно значение<span class="processStateIndicator" data-numvals="1" data-state="50"></span></li>
+               <li>Два значения<span class="processStateIndicator" data-numvals="2" data-state="20,30"></span></li>
+               <li>12, 30/70<span class="processStateIndicator" data-numvals="2" data-numsectors="12" data-state="30,70"></span></li>
+               <li>12, 7/93<span class="processStateIndicator" data-numvals="2" data-numsectors="12" data-state="93,7"></span></li>
+               <li>13, 20/80<span class="processStateIndicator" data-numvals="2" data-numsectors="13" data-state="20,80"></span></li>
+               <li>Пример из спецификации<span class="processStateIndicator" data-numvals="4" data-colors=",,,my-own-class" data-numsectors="13" data-state="20,30,3,47"></span></li>
+               <li>Три значения<span class="processStateIndicator" data-numvals="3" data-state="10,20,30"></span></li>
+               <li>Три значения (второй цвет свой)<span class="processStateIndicator" data-colors=",my-own-class" data-numvals="3" data-state="10,20,30"></span></li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <h3>Темы - демонстрация</h3>
+            <ul>
+               <li>
+                  <div id="onlinesbisDemo"></div>
+               </li>
+               <li>
+                  <div id="prestoDemo"></div>
+               </li>
+               <li>
+                  <div id="genieDemo"></div>
+               </li>
+            </ul>
+         </td>
+         
+      </tr>
+   </table>
+
+</div>
+<script type="text/javascript">
+   require(['Core/core-init'],function () {
+      $(document).ready(function () {
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "ItemsView",
+               caption: 'ItemsView',
+               href: '/pages/demo.html?cname=ItemsView'
+            });
+
+            new r({
+               element: "Paging",
+               caption: 'Paging',
+               href: '/pages/demo.html?cname=Paging'
+            });
+
+            new r({
+               element: "ListControl",
+               caption: 'ListControl',
+               href: '/pages/demo.html?cname=VDomListView'
+            });
+            new r({
+               element: "ListControlScroll",
+               caption: 'ListControlScroll',
+               href: '/pages/demo.html?cname=ListControlScroll'
+            });
+            new r({
+               element: "Switch",
+               caption: 'Switch',
+               href: '/pages/demo.html?cname=Switch'
+            });
+            new r({
+               element: "ButtonsVdom",
+               caption: 'ButtonsVdom',
+               href: '/pages/demo.html?cname=ButtonsVdom'
+
+            });
+            new r({
+               element: "Inputs",
+               caption: 'Inputs',
+               href: '/pages/demo.html?cname=VDomInputs'
+            });
+            new r({
+               element: "Windows",
+               caption: 'Windows',
+               href: '/pages/demo.html?cname=VDomWindows'
+            });
+         });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "Header",
+               caption: 'Header',
+               href: '/pages/Header.html'
+            })
+         });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "prestoDemo",
+               caption: 'presto',
+               href: '/pages/presto.html'
+            })
+         });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "genieDemo",
+               caption: 'genie',
+               href: '/pages/genie.html'
+            })
+         });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "onlinesbisDemo",
+               caption: 'online.sbis',
+               href: '/pages/online.sbis.html'
+            })
+         });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "presto",
+               caption: 'presto',
+               href: '/themes/theme-preview.html?id=presto'
+            })
+         });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "genie",
+               caption: 'genie',
+               href: '/themes/theme-preview.html?id=genie'
+            })
+         });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "demo",
+               caption: 'demo',
+               href: '/themes/theme-preview.html?id=demo'
+            })
+         });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "onlinesbis",
+               caption: 'online.sbis',
+               href: '/themes/theme-preview.html?id=online'
+            })
+         });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "TextBoxes",
+               caption: 'TextBoxes',
+               href: '/pages/textBoxCommonStyles.html'
+            })
+         });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "FolderFooter",
+               caption: 'FolderFooter',
+               href: '/pages/FolderFooter.html'
+            })
+         });
+
+          require(["SBIS3.CONTROLS/Link"], function (r) {
+              new r({
+                  element: "TimeInterval",
+                  caption: 'TimeInterval',
+                  href: '/pages/TimeInterval.html'
+              })
+          });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "Buttons",
+               caption: 'Buttons',
+               href: '/pages/buttonCommonStyles.html'
+            })
+         });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "tabButtons",
+               caption: 'TabButtons',
+               href: '/pages/TabButtons.html'
+            })
+         });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "ButtonsNew",
+               caption: 'Buttons new',
+               href: '/pages/buttonCommonStylesNew.html'
+            })
+         });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "Switchers",
+               caption: 'Switchers',
+               href: '/pages/switcherCommonStyles.html'
+            })
+         });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "ButtonGroups",
+               caption: 'Button groups',
+               href: '/pages/ButtonGroups.html'
+            })
+         });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "FieldFormat",
+               caption: 'FieldFormat',
+               href: '/pages/FieldFormat.html'
+            })
+         });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "OP",
+               caption: 'OperationsPanel',
+               href: '/pages/OperationsPanel.html'
+            })
+         });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+
+            new r({
+               element: "ViewsNEWDS",
+               caption: 'Views New DataSetMixin',
+               href: '/pages/ViewsNEWDS.html'
+            })
+         });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: 'TreeDataGridView',
+               caption: 'TreeDataGridView',
+               href: '/pages/TreeDataGridView.html'
+            })
+         });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "Enum",
+               caption: 'Enum',
+               href: '/pages/Enum.html'
+            })
+         });
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "Flags",
+               caption: 'Flags',
+               href: '/pages/Flags.html'
+            })
+         });
+          require(["SBIS3.CONTROLS/Link"], function (r) {
+              new r({
+                  element: "ViewsScroll",
+                  caption: 'ViewsScroll',
+                  href: '/pages/ViewsScroll.html'
+              })
+          });
+          require(["SBIS3.CONTROLS/Link"], function (r) {
+              new r({
+                  element: "ViewsGroup",
+                  caption: 'ViewsGroup',
+                  href: '/pages/ViewsGroup.html'
+              })
+          });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "Popup",
+               caption: 'Popup',
+               href: '/pages/PopupDemo.html'
+            })
+         });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "DataBinding",
+               caption: 'Data binding',
+               href: '/pages/DataBindingPage.html'
+            })
+         });
+          require(["SBIS3.CONTROLS/Link"], function (r) {
+              new r({
+                  element: "DropdownList",
+                  caption: 'DropdownList',
+                  href: '/pages/DropdownList.html'
+              })
+          });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "ButtonContent",
+               caption: 'Button content',
+               href: '/pages/buttonContent.html'
+            })
+         });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "EditAtPlace",
+               caption: 'Edit At Place',
+               href: '/pages/editAtPlace.html'
+            })
+         });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "MultiView",
+               caption: 'MultiView',
+               href: '/pages/MultiView.html'
+            })
+         });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "Suggest",
+               caption: 'Suggest',
+               href: '/pages/Suggest.html'
+            })
+         });
+
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "Browser",
+               caption: 'Browser',
+               href: '/pages/browser.html'
+            })
+         });
+          require(["SBIS3.CONTROLS/Link"], function (r) {
+              new r({
+                  element: "BrowserEngine",
+                  caption: 'BrowserEngine',
+                  href: '/pages/browserEngine.html'
+              });
+             new r({
+                element: "BrowserTabs",
+                caption: 'BrowserTabs',
+                href: '/pages/Engine.BrowserTabs.html'
+             });
+          });
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "ColumnsEditor",
+               caption: 'Browser ColumnsEditor',
+               href: '/pages/ColumnsEditor.html'
+            })
+         });
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "FieldLink",
+               caption: 'FieldLink',
+               href: '/pages/FieldLink.html'
+            })
+         });
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "FilterButtonHistory",
+               caption: 'FilterButtonHistory',
+               href: '/pages/FilterButtonHistory.html'
+            })
+         });
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "InformationWindows",
+               caption: 'InformationWindows',
+               href: '/pages/informationWindows.html'
+            })
+         });
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "VD_ListView",
+               caption: 'ListView',
+               href: '/pages/VD_ListView.html'
+            })
+         });
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "VD_DataGridView",
+               caption: 'DataGridView',
+               href: '/pages/VD_DataGridView.html'
+            })
+         });
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "VD_TreeView",
+               caption: 'TreeView',
+               href: '/pages/VD_TreeView.html'
+            })
+         });
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "VD_VirtualScroll",
+               caption: 'Virtual Scroll',
+               href: '/pages/VD_VirtualScroll.html'
+            })
+         });
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "VD_TreeViewEnv",
+               caption: 'TreeView - environment',
+               href: '/pages/VD_TreeViewEnv.html'
+            })
+         });
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "EditInPlaceViews",
+               caption: 'Edit in place - views',
+               href: '/pages/EditInPlaceViews.html'
+            })
+         });
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "SearchForm",
+               caption: 'SearchForm',
+               href: '/pages/SearchForm.html'
+            })
+         });
+         require(["SBIS3.CONTROLS/Link"], function (r) {
+            new r({
+               element: "themepreview",
+               caption: 'Theme preview',
+               href: '/theme-preview/preview.html'
+            })
+         });
+         require(['SBIS3.CONTROLS/ProcessStateIndicator'], function(r){
+            $('.processStateIndicator').each(function(){
+               var
+                  colors = this.getAttribute('data-colors'),
+                  sectors = this.getAttribute('data-numsectors') || 10;
+
+               new r({
+                  element: this,
+                  colors: colors && colors.split(',') || undefined,
+                  numValues: +this.getAttribute('data-numvals'),
+                  numSectors: +sectors,
+                  state: this.getAttribute('data-state').split(',')
+               })
+            })
+         })
+      })
+   });
+</script>
+</body>
+</html>

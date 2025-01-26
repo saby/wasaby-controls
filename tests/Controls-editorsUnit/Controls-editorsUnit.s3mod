@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module id="132e5fe6-37dc-4970-b29a-a2f5159ac193" name="Controls-editorsUnit" version="1.00">
+  <description/>
+  <depends>
+      <module id="7c6ae293-7359-4a54-8a33-74ce96945d57" name="Controls-editors"/>
+      <module id="8298f3a2-1964-11ed-861d-0242ac120002" name="Controls-DataEnv"/>
+      <module id="b7223918-657c-4e3d-ac98-f302a52f248c" name="Meta"/>
+  </depends>
+  <load_after/>
+  <parameters/>
+  <test environment="NodeJS" framework="Jest" />
+  <resources/>
+  <typescript>
+    <arg key="typecheck" value="1"/>
+  </typescript>
+</ui_module>

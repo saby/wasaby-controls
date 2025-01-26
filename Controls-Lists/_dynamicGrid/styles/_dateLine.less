@@ -1,0 +1,51 @@
+.ControlsLists-dateLine__variables {
+   --date-line_border_width: 1px;
+   --date-triangle_border_width: 6px;
+   --date-line_border_height: 5000px;
+}
+
+.ControlsLists-dateLine__line {
+   height: var(--date-line_border_height);
+   top: calc(var(--date-line_border_height) * -2);
+   border-right: var(--date-line_border_width) dashed var(--info_color);
+   filter: drop-shadow(0 calc(var(--date-line_border_height) * 2 + 8px) 0 var(--info_color));
+   position: absolute;
+   pointer-events: none;
+   z-index: 5;
+}
+
+.ControlsLists-dateLine__triangle {
+   z-index: 5;
+   display: flex;
+   position: absolute;
+   height: 0;
+}
+
+.ControlsLists-dateLine__triangle_text {
+   color: rgb(255, 255, 255);
+   background-color: var(--info_color);
+   width: max-content;
+   height: var(--font-size_xl);
+   font-size: var(--font-size_xs);
+   padding: 0 var(--padding-horizontal_xs_button) 0 var(--padding-horizontal_xs_button);
+}
+
+.ControlsLists-dateLine__triangle_without_text::before {
+   border-style: solid;
+   border-width: var(--date-triangle_border_width) var(--date-triangle_border_width) 0
+      var(--date-triangle_border_width);
+   border-color: var(--info_color) transparent transparent transparent;
+   width: 0;
+   height: 0;
+   content: '';
+}
+
+.ControlsLists-dateLine__triangle_with_text::before {
+   --date-triangle_border_width: 8.5px;
+   border-style: solid;
+   border-width: var(--date-triangle_border_width) var(--date-triangle_border_width)
+      var(--date-triangle_border_width) 0;
+   border-color: transparent var(--info_color) transparent transparent;
+   height: 0;
+   content: '';
+}

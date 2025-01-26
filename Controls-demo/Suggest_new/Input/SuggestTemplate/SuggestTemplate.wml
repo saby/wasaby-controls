@@ -1,0 +1,45 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper__horizontal controlsDemo__cell demo-SuggestTemplate__listView">
+      <div class="controls-text-label">list:View в шаблоне автодополнения</div>
+      <Controls.SuggestInput
+              attr:class="controlsDemo__input demo-SuggestNew__listViewPopup"
+              bind:value="_suggestCustomValue"
+              displayProperty="title"
+              searchParam="title"
+              navigation="{{_navigation}}"
+              source="{{_source}}">
+          <ws:suggestTemplate templateName="wml!Controls-demo/Suggest_new/Input/SuggestTemplate/resources/SuggestTemplate">
+              <ws:templateOptions demoClass="demo-SuggestInputList"/>
+          </ws:suggestTemplate>
+      </Controls.SuggestInput>
+  </div>
+   <div class="controlsDemo__wrapper__horizontal controlsDemo__cell demo-SuggestTemplate__gridView">
+      <div class="controls-text-label">grid:View в шаблоне автодополнения</div>
+      <Controls.SuggestInput
+              attr:class="controlsDemo__input demo-SuggestNew__gridViewPopup"
+              bind:value="_suggestDefaultValue"
+              displayProperty="title"
+              searchParam="title"
+              navigation="{{_navigation}}"
+              source="{{_source}}">
+          <ws:suggestTemplate templateName="Controls-demo/Suggest_new/Input/SuggestTemplate/resources/SuggestTemplateGrid">
+              <ws:templateOptions demoClass="demo-SuggestInputList"/>
+          </ws:suggestTemplate>
+      </Controls.SuggestInput>
+   </div>
+
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell demo-SuggestTemplate__treeGridView">
+        <div class="controls-text-label">treeGrid:View в шаблоне автодополнения</div>
+        <Controls.SuggestInput
+                attr:class="controlsDemo__input demo-SuggestNew__gridViewPopup"
+                bind:value="_suggestTreeValue"
+                displayProperty="title"
+                searchParam="title"
+                navigation="{{_navigation}}"
+                source="{{_treeSource}}">
+            <ws:suggestTemplate templateName="Controls-demo/Suggest_new/Input/SuggestTemplate/resources/SuggestTemplateTreeGrid">
+                <ws:templateOptions demoClass="demo-SuggestInputList"/>
+            </ws:suggestTemplate>
+        </Controls.SuggestInput>
+    </div>
+</div>

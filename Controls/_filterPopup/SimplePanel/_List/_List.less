@@ -1,0 +1,87 @@
+.controls-SimplePanel-List__row_state_default {
+   background-color: var(--background-color_sticky);
+}
+
+.controls-SimplePanel-List__row_pinned {
+   font-weight: var(--font-weight-bold);
+}
+
+.controls-SimplePanel-List__hierarchyItem-checkbox-rightPadding {
+   margin-right: calc(var(--offset_3xs) + var(--offset_m));
+}
+
+.controls-SimplePanel-List__item-leftPadding_default {
+   padding-left: var(--item_padding-left_s_list);
+}
+
+.controls-SimplePanel-List__item-leftPadding_xs {
+   padding-left: var(--item_padding-horizontal_s_menu);
+}
+
+.controls-SimplePanel-List__emptyItem-leftPadding_multiSelect {
+   padding-left: var(--click-area_width_checkbox);
+}
+
+.controls-SimplePanel-List__item-rightPadding_default {
+   padding-right: var(--item_padding-horizontal_l_menu);
+}
+
+.controls-SimplePanel-List__item-rightPadding_hierarchy {
+   padding-right: calc(
+      var(--hierarchy_icon_offset-right_menu) + var(--hierarchy_icon-size_menu) +
+         var(--hierarchy_icon_offset-left_menu)
+   );
+}
+
+.controls-SimplePanel-List__item-rightPadding_close {
+   padding-right: calc(
+      var(--close-button_offset-left_sticky) + var(--width_closeButton_functionalButton) / 2 -
+         var(--offset_xs)
+   );
+}
+
+.controls-SimplePanel-List__item-rightPadding_history {
+   padding-right: calc(
+      var(--pin-button_offset-left_menu) + var(--pin-button_icon-size_menu) +
+         var(--pin-button_offset-right_menu)
+   );
+}
+
+.controls-SimplePanel-List__item-rightPadding_xs {
+   padding-right: var(--item_padding-horizontal_s_menu);
+}
+
+.controls-Menu__row_levelPadding_m {
+   width: var(--offset_m);
+   flex-shrink: 0;
+}
+
+.controls-SimplePanel-dropdown__emptyItem_font-weight {
+   font-weight: var(--font-weight-bold);
+}
+
+.controls-SimplePanel-dropdown__emptyItem_content.controls-Menu__row {
+   color: var(--text-color);
+}
+
+.controls-SimplePanel-Menu__hierarchyItemTemplate.controls-Menu__row_pinned {
+   font-weight: normal;
+}
+
+.ws-is-hover {
+   .controls-SimplePanel-List__row_state_default:hover {
+      background-color: var(--item_hover_background-color_menu);
+
+      .controls-Menu__row-checkbox_default {
+         visibility: visible;
+      }
+
+      .controls-Menu__row-radioCircle_unselected {
+         visibility: visible;
+      }
+
+      .controls-Menu__row-radioCircle__borderCircle {
+         stroke: var(--border-color);
+      }
+   }
+}

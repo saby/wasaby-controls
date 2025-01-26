@@ -1,0 +1,87 @@
+import { AbstractListActionCreators } from 'Controls-DataEnv/abstractList';
+
+import * as marker from './creators/marker';
+import * as selection from './creators/selection';
+import * as operationsPanel from './creators/operationsPanel';
+import * as items from './creators/items';
+import * as filter from './creators/filter';
+import * as source from './creators/source';
+import * as complexUpdate from './creators/complexUpdate';
+import * as expandCollapse from './creators/expandCollapse';
+import * as error from './creators/error';
+
+/**
+ * Конструкторы действий, доступные в WEB списке.
+ */
+export const ListActionCreators = {
+    ...AbstractListActionCreators,
+
+    /**
+     * Конструкторы действий функционала "Отметка маркером".
+     * @see https://online.sbis.ru/area/c233c9ee-01af-439d-a82f-85d6ef988869 Зона Kaizen
+     */
+    marker: {
+        ...AbstractListActionCreators.marker,
+        ...marker,
+    },
+
+    /**
+     * Конструкторы действий функционала "Отметка чекбоксом".
+     * @see https://online.sbis.ru/area/02f42333-cf50-42e8-bc08-b451cc483285 Зона Kaizen
+     */
+    selection: {
+        ...AbstractListActionCreators.selection,
+        ...selection,
+    },
+
+    /**
+     * Конструкторы действий функционала "Взаимодействие с панелью массовых операций".
+     * @see https://online.sbis.ru/area/ccc545f6-e213-4e99-bd2c-41421c3068b6 Зона Kaizen
+     */
+    operationsPanel: {
+        ...AbstractListActionCreators.operationsPanel,
+        ...operationsPanel,
+    },
+
+    /**
+     * Конструкторы действий функционала "Фильтрация".
+     * @see https://online.sbis.ru/area/849d2ba6-201e-467e-ae1a-d32fca6084bd Зона Kaizen
+     */
+    filter: {
+        ...AbstractListActionCreators.filter,
+        ...filter,
+    },
+
+    /**
+     * Конструкторы действий функционала "Работа с рекордсетом записей".
+     */
+    items: {
+        ...AbstractListActionCreators.items,
+        ...items,
+    },
+
+    /**
+     * Конструкторы действий для работы ViewModel с источником данных.
+     */
+    source: {
+        ...AbstractListActionCreators.source,
+        ...source,
+    },
+    /**
+     * Конструкторы действий функционала "Разворот и сворачивание узлов".
+     */
+    expandCollapse: {
+        ...AbstractListActionCreators.expandCollapse,
+        ...expandCollapse,
+    },
+
+    /**
+     * Конструкторы действий комплексного обновления ViewModel(Slice).
+     */
+    complexUpdate,
+
+    /**
+     * Конструкторы действий функционала "Обработка ошибок в списке".
+     */
+    error,
+};

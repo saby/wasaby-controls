@@ -1,0 +1,55 @@
+<Controls-ListEnv.SuggestSearch name="searchInput"
+                              scope="{{_options}}"
+                              searchButtonVisible="{{false}}"
+                              borderVisibility="hidden"
+                              source="{{_suggestOptions.source}}"
+                              placeholder="{{_suggestOptions.placeholder}}"
+                              navigation="{{_suggestOptions.navigation}}"
+                              filter="{{_suggestOptions.filter}}"
+                              searchParam="{{_suggestOptions.searchParam}}"
+                              displayProperty="{{_suggestOptions.displayProperty}}"
+                              suggestDisplayProperty="{{_suggestOptions.suggestDisplayProperty}}"
+                              keyProperty="{{_suggestOptions.keyProperty}}"
+                              parentProperty="{{_suggestOptions.parentProperty}}"
+                              nodeProperty="{{_suggestOptions.nodeProperty}}"
+                              suggestItemTemplate="{{_suggestOptions.suggestItemTemplate}}"
+                              searchSelectedItemTemplate="{{_suggestOptions.searchSelectedItemTemplate}}"
+                              footerTemplate="{{_suggestOptions.footerTemplate}}"
+                              suggestColumns="{{_suggestOptions.suggestColumns}}"
+                              selectorTemplate="{{_suggestOptions.selectorTemplate}}"
+                              suggestItemPadding="{{_suggestOptions.suggestItemPadding}}"
+                              emptyTemplate="{{_suggestOptions.emptyTemplate}}"
+                              suggestListsOptions="{{null}}"
+                              attr:class="controls_search_theme-{{_options.theme}}">
+    <ws:leftFieldTemplate>
+      <ws:if data="{{_options.leftFieldTemplate}}">
+        <ws:partial template="{{_options.leftFieldTemplate}}" />
+      </ws:if>
+      <ws:else data="{{_menuItems}}">
+        <Controls.dropdown:Selector selectedKeys="{{[_menuSelectedKey]}}"
+                                    keyProperty="id"
+                                    displayProperty="title"
+                                    fontSize="l"
+                                    contentTemplate="{{_menuContentTemplate}}"
+                                    fontColorStyle="primary"
+                                    items="{{_menuItems}}"
+                                    attr:ws-no-focus="true"
+                                    on:selectedKeysChanged="_handleSelectedKeysChanged()"
+                                    on:mousedown="_onMousedown()" />
+      </ws:else>
+    </ws:leftFieldTemplate>
+    <ws:rightFieldTemplate>
+        <div class="search-Input__rightFieldTemplate">
+            <ws:if data="{{_options.rightFieldTemplate}}">
+                <ws:partial template="{{_options.rightFieldTemplate}}"/>
+            </ws:if>
+            <div class="search-Input__searchButton controls-inlineheight-{{_options.inlineHeight}}"
+                 data-qa="Search__searchButton"
+                 on:mousedown="_searchClick(rightFieldTemplate.onSearchClick)">
+                <Controls.icon:Icon attr:class="search-Input__searchButton-icon icon-Search2"
+                                    icon="icon-Search2"
+                                    iconSize="s"/>
+            </div>
+        </div>
+    </ws:rightFieldTemplate>
+</Controls-ListEnv.SuggestSearch>

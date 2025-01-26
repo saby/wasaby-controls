@@ -1,0 +1,3469 @@
+[
+    {
+        "header": {
+            "md5": "7f2b0469be958f95deff0659b66c6d61",
+            "timestamp": "2024-10-01 14:04:19.110399"
+        },
+        "body": {
+            "apply": 1,
+            "id": "0efcb54e-32f1-4760-bbcd-1a97045cf74e",
+            "is_parent": true,
+            "locale": {
+                "ar": {
+                    "name": "موضوع أساسي"
+                },
+                "el": {
+                    "name": "Βασικό θέμα"
+                },
+                "en": {
+                    "name": "Basic theme"
+                },
+                "es": {
+                    "name": "Tema básico"
+                },
+                "fr": {
+                    "name": "Thème de base"
+                },
+                "he": {
+                    "name": "נושא בסיסי"
+                },
+                "kk": {
+                    "name": "Негізгі тақырып"
+                },
+                "ru": {
+                    "name": "Базовая тема"
+                },
+                "tk": {
+                    "name": "Temel Tema"
+                },
+                "uz": {
+                    "name": "Asosiy mavzu"
+                },
+                "zh": {
+                    "name": "基本主题"
+                }
+            },
+            "overrides": null,
+            "selector": "base_font",
+            "styles": [
+                {
+                    "id": "8926c5d5-4418-438e-821e-a58fd69c04a1",
+                    "is_parent": null,
+                    "locale": {
+                        "ru": {
+                            "description": "",
+                            "name": "Заголовок 1"
+                        },
+                        "ar": {
+                            "description": null,
+                            "name": "عنوان 1"
+                        },
+                        "el": {
+                            "description": null,
+                            "name": "Τίτλος 1"
+                        },
+                        "en": {
+                            "description": null,
+                            "name": "Header 1"
+                        },
+                        "es": {
+                            "description": null,
+                            "name": "Título 1"
+                        },
+                        "fr": {
+                            "description": null,
+                            "name": "Titre 1"
+                        },
+                        "he": {
+                            "description": null,
+                            "name": "כּוֹתֶרֶת 1"
+                        },
+                        "kk": {
+                            "description": null,
+                            "name": "Тақырып 1"
+                        },
+                        "tk": {
+                            "description": null,
+                            "name": "Başlık 1"
+                        },
+                        "uz": {
+                            "description": null,
+                            "name": "Sarlavha 1"
+                        },
+                        "zh": {
+                            "description": null,
+                            "name": "标题 1"
+                        }
+                    },
+                    "metatype": "styles/header",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "b348e717-900a-4045-95fc-b7ae98e94bf6",
+                            "key": "font-family",
+                            "locale": {
+                                "ru": {
+                                    "name": "Шрифт"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-family",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "d627754f-8add-4979-a7da-5b783ad6b269",
+                            "key": "font-size",
+                            "locale": {
+                                "ru": {
+                                    "name": "Размер"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-size",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "unit": "px",
+                                        "value": 60
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "e9f9d68d-4550-4d2d-98fb-5eb8ec11d8e1",
+                            "key": "font-weight",
+                            "locale": {
+                                "ru": {
+                                    "name": "Жирность"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-weight",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": "bold"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "c7a80d5c-37c0-4d3e-92fe-8564fa3a3095",
+                            "key": "font-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 1"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "b019e7c5-4bec-4b91-8339-7a1545c866b6",
+                            "key": "text-decoration",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 2"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-decoration",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": "none"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "5c7fc674-d855-48f5-ab2b-44b29d6a8ff9",
+                            "key": "text-transform",
+                            "locale": {
+                                "ru": {
+                                    "name": "Преобразование"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-transform",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": "none"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "136f49f5-1177-4d66-ba8b-01411d49fd6e",
+                            "key": "color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-color",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "fontColor": "var(--text-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "fontColor": "var(--text-color)"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "c9c3d6b6-bfb4-4183-be6c-f4e4cd33dd09",
+                            "key": "background-color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет фона"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-backgroundColor",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "fontBackgroundColor": "var(--background-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "fontBackgroundColor": "var(--background-color)"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "8d776e4a-c587-4e86-abe3-6ea0a2c161f7",
+                            "key": "padding",
+                            "locale": {
+                                "ru": {
+                                    "name": "Отступ"
+                                }
+                            },
+                            "metatypeproperty": "styles/padding",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "padding": "0px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "05c6ca7a-8d26-4dd5-873f-adc3ff6c4065",
+                            "key": "border-width",
+                            "locale": {
+                                "ru": {
+                                    "name": "Толщина границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-width",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "borderWidth": "0px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "700c96a0-3619-474a-8aee-5c3af2b78ee0",
+                            "key": "border-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Стиль границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "borderStyle": "solid"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "84408818-1ec9-40d5-a287-949e701d5c61",
+                            "key": "border-color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-color",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "borderColor": "var(--border-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "borderColor": "var(--border-color)"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "controls_heading-style_h1"
+                },
+                {
+                    "id": "6e300b91-f977-4261-bc5d-80bda7893e9d",
+                    "is_parent": null,
+                    "locale": {
+                        "ru": {
+                            "description": "",
+                            "name": "Заголовок 2"
+                        },
+                        "ar": {
+                            "description": null,
+                            "name": "عنوان 2"
+                        },
+                        "el": {
+                            "description": null,
+                            "name": "Τίτλος 2"
+                        },
+                        "en": {
+                            "description": null,
+                            "name": "Header 2"
+                        },
+                        "es": {
+                            "description": null,
+                            "name": "Título 2"
+                        },
+                        "fr": {
+                            "description": null,
+                            "name": "Titre 2"
+                        },
+                        "he": {
+                            "description": null,
+                            "name": "כּוֹתֶרֶת 2"
+                        },
+                        "kk": {
+                            "description": null,
+                            "name": "Тақырып 2"
+                        },
+                        "tk": {
+                            "description": null,
+                            "name": "Başlık 2"
+                        },
+                        "uz": {
+                            "description": null,
+                            "name": "Sarlavha 2"
+                        },
+                        "zh": {
+                            "description": null,
+                            "name": "标题 2"
+                        }
+                    },
+                    "metatype": "styles/header",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "bcbde31b-461e-4fa8-a3c3-22af5b9b948a",
+                            "key": "font-family",
+                            "locale": {
+                                "ru": {
+                                    "name": "Шрифт"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-family",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "d8982d54-2ff3-45df-9961-00847eb693b8",
+                            "key": "font-size",
+                            "locale": {
+                                "ru": {
+                                    "name": "Размер"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-size",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "unit": "px",
+                                        "value": 28
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "062b0d58-b338-4768-8439-fd899a1ab073",
+                            "key": "font-weight",
+                            "locale": {
+                                "ru": {
+                                    "name": "Жирность"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-weight",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": "bold"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "8ba92963-5386-4fa5-8e20-33eb3e5e637e",
+                            "key": "font-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 1"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "78648a50-374c-4b47-959e-7c0f1a7b33dd",
+                            "key": "text-decoration",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 2"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-decoration",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": "none"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "c8367de2-5078-44aa-8d45-27384c3fda46",
+                            "key": "text-transform",
+                            "locale": {
+                                "ru": {
+                                    "name": "Преобразование"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-transform",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": "none"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "3d60f644-a66a-4a1b-bd80-9bcb9e80cf89",
+                            "key": "color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-color",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "fontColor": "var(--text-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "fontColor": "var(--text-color)"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "32029e05-e78f-4706-9131-f5fa128295e3",
+                            "key": "background-color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет фона"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-backgroundColor",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "fontBackgroundColor": "var(--background-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "fontBackgroundColor": "var(--background-color)"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "f7a24950-059e-413e-9860-ef8ffaab3195",
+                            "key": "padding",
+                            "locale": {
+                                "ru": {
+                                    "name": "Отступ"
+                                }
+                            },
+                            "metatypeproperty": "styles/padding",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "padding": "0px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "f707f25c-9cec-4d72-9005-6cbe4353aa46",
+                            "key": "border-width",
+                            "locale": {
+                                "ru": {
+                                    "name": "Толщина границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-width",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "borderWidth": "0px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "804fdb6b-3b73-46f6-9a1b-4fc11f27e976",
+                            "key": "border-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Стиль границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "borderStyle": "solid"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "c6bbda26-f8d7-4eb8-bbd9-4dd939b72060",
+                            "key": "border-color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-color",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "borderColor": "var(--border-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "borderColor": "var(--border-color)"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "controls_heading-style_h2"
+                },
+                {
+                    "id": "f979fec8-5417-4f9a-a5e2-4cbe3d5a9003",
+                    "is_parent": null,
+                    "locale": {
+                        "ru": {
+                            "description": "",
+                            "name": "Заголовок 3"
+                        },
+                        "ar": {
+                            "description": null,
+                            "name": "عنوان 3"
+                        },
+                        "el": {
+                            "description": null,
+                            "name": "Τίτλος 3"
+                        },
+                        "en": {
+                            "description": null,
+                            "name": "Header 3"
+                        },
+                        "es": {
+                            "description": null,
+                            "name": "Título 3"
+                        },
+                        "fr": {
+                            "description": null,
+                            "name": "Titre 3"
+                        },
+                        "he": {
+                            "description": null,
+                            "name": "כּוֹתֶרֶת 3"
+                        },
+                        "kk": {
+                            "description": null,
+                            "name": "Тақырып 3"
+                        },
+                        "tk": {
+                            "description": null,
+                            "name": "Başlık 3"
+                        },
+                        "uz": {
+                            "description": null,
+                            "name": "Sarlavha 3"
+                        },
+                        "zh": {
+                            "description": null,
+                            "name": "标题 3"
+                        }
+                    },
+                    "metatype": "styles/header",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "ab36c677-d67f-46f9-bb93-e6b6b2ea96de",
+                            "key": "font-family",
+                            "locale": {
+                                "ru": {
+                                    "name": "Шрифт"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-family",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "0c085180-6203-44bd-a2ef-8dafcdeac4f9",
+                            "key": "font-size",
+                            "locale": {
+                                "ru": {
+                                    "name": "Размер"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-size",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "unit": "px",
+                                        "value": 20
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "b658f16f-5c80-4a6c-91a4-7f2e0850e85b",
+                            "key": "font-weight",
+                            "locale": {
+                                "ru": {
+                                    "name": "Жирность"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-weight",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": "bold"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "064f5ef9-bb86-44c5-851c-d414d094643a",
+                            "key": "font-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 1"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "489bcecb-ee62-4366-9e6a-c6c3c58bed4e",
+                            "key": "text-decoration",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 2"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-decoration",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": "none"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "1229c3b6-0d31-4e92-8f3a-cbdc3f40ddd4",
+                            "key": "text-transform",
+                            "locale": {
+                                "ru": {
+                                    "name": "Преобразование"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-transform",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": "none"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "5ef7f540-5fda-4c5a-868b-e7d9c5495964",
+                            "key": "color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-color",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "fontColor": "var(--text-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "fontColor": "var(--text-color)"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "3feb3740-9641-4d4d-ac61-fef461961532",
+                            "key": "background-color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет фона"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-backgroundColor",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "fontBackgroundColor": "var(--background-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "fontBackgroundColor": "var(--background-color)"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "3914440d-5719-4396-aa55-9d6c0c523dd9",
+                            "key": "padding",
+                            "locale": {
+                                "ru": {
+                                    "name": "Отступ"
+                                }
+                            },
+                            "metatypeproperty": "styles/padding",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "padding": "0px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "c49b3d94-1bc2-4664-adb1-3036ffac65ff",
+                            "key": "border-width",
+                            "locale": {
+                                "ru": {
+                                    "name": "Толщина границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-width",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "borderWidth": "0px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "298a8ac3-4782-4bc8-871b-7c2f686f52fd",
+                            "key": "border-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Стиль границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "borderStyle": "solid"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "ba9daa51-c30b-4771-9c36-d1afce1daac7",
+                            "key": "border-color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-color",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "borderColor": "var(--border-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "borderColor": "var(--border-color)"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "controls_heading-style_h3"
+                },
+                {
+                    "id": "a90ee2e2-06ba-4206-877f-1166b4542df9",
+                    "is_parent": null,
+                    "locale": {
+                        "ru": {
+                            "description": "",
+                            "name": "Заголовок 4"
+                        },
+                        "ar": {
+                            "description": null,
+                            "name": "عنوان 4"
+                        },
+                        "el": {
+                            "description": null,
+                            "name": "Τίτλος 4"
+                        },
+                        "en": {
+                            "description": null,
+                            "name": "Header 4"
+                        },
+                        "es": {
+                            "description": null,
+                            "name": "Título 4"
+                        },
+                        "fr": {
+                            "description": null,
+                            "name": "Titre 4"
+                        },
+                        "he": {
+                            "description": null,
+                            "name": "כּוֹתֶרֶת 4"
+                        },
+                        "kk": {
+                            "description": null,
+                            "name": "Тақырып 4"
+                        },
+                        "tk": {
+                            "description": null,
+                            "name": "Başlık 4"
+                        },
+                        "uz": {
+                            "description": null,
+                            "name": "Sarlavha 4"
+                        },
+                        "zh": {
+                            "description": null,
+                            "name": "标题 4"
+                        }
+                    },
+                    "metatype": "styles/header",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "503f6886-7bbd-4850-9cfa-63dcf35577ae",
+                            "key": "font-family",
+                            "locale": {
+                                "ru": {
+                                    "name": "Шрифт"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-family",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "d4e97247-2631-4cd6-87e7-4e582e8f4ca1",
+                            "key": "font-size",
+                            "locale": {
+                                "ru": {
+                                    "name": "Размер"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-size",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "unit": "px",
+                                        "value": 18
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "76943dc1-ffd8-43d8-86d2-1436d76fdccb",
+                            "key": "font-weight",
+                            "locale": {
+                                "ru": {
+                                    "name": "Жирность"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-weight",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": "bold"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "f8cc0a59-ca03-45ec-843a-bb454970ce02",
+                            "key": "font-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 1"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "cb1accf7-8d80-49be-afaf-f1cee6eeb00e",
+                            "key": "text-decoration",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 2"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-decoration",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": "none"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "d779908a-5b75-4b78-89e3-a9d85a6215e1",
+                            "key": "text-transform",
+                            "locale": {
+                                "ru": {
+                                    "name": "Преобразование"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-transform",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": "none"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "3f67c2d6-29ea-456d-90d0-e2bc5be36887",
+                            "key": "color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-color",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "fontColor": "var(--text-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "fontColor": "var(--text-color)"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "230df8c8-cc90-4645-b26d-cc3bc61d0f4b",
+                            "key": "background-color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет фона"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-backgroundColor",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "fontBackgroundColor": "var(--background-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "fontBackgroundColor": "var(--background-color)"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "c9702d4a-45e3-4517-88b1-9fe80b095eb9",
+                            "key": "padding",
+                            "locale": {
+                                "ru": {
+                                    "name": "Отступ"
+                                }
+                            },
+                            "metatypeproperty": "styles/padding",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "padding": "0px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "204bad7c-1d23-4076-b78f-84a5e50adea1",
+                            "key": "border-width",
+                            "locale": {
+                                "ru": {
+                                    "name": "Толщина границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-width",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "borderWidth": "0px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "4c427579-9ccb-455b-b639-f859adb77f99",
+                            "key": "border-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Стиль границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "borderStyle": "solid"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "7b421de8-8e4c-4469-b657-72d12c648cd5",
+                            "key": "border-color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-color",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "borderColor": "var(--border-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "borderColor": "var(--border-color)"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "controls_heading-style_h4"
+                },
+                {
+                    "id": "fe67e463-b120-4091-9bae-7f42ac331747",
+                    "is_parent": null,
+                    "locale": {
+                        "ru": {
+                            "description": "",
+                            "name": "Заголовок 5"
+                        },
+                        "ar": {
+                            "description": null,
+                            "name": "عنوان 5"
+                        },
+                        "el": {
+                            "description": null,
+                            "name": "Τίτλος 5"
+                        },
+                        "en": {
+                            "description": null,
+                            "name": "Header 5"
+                        },
+                        "es": {
+                            "description": null,
+                            "name": "Título 5"
+                        },
+                        "fr": {
+                            "description": null,
+                            "name": "Titre 5"
+                        },
+                        "he": {
+                            "description": null,
+                            "name": "כּוֹתֶרֶת 5"
+                        },
+                        "kk": {
+                            "description": null,
+                            "name": "Тақырып 5"
+                        },
+                        "tk": {
+                            "description": null,
+                            "name": "Başlık 5"
+                        },
+                        "uz": {
+                            "description": null,
+                            "name": "Sarlavha 5"
+                        },
+                        "zh": {
+                            "description": null,
+                            "name": "标题 5"
+                        }
+                    },
+                    "metatype": "styles/header",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "6517b954-c5bf-4cb4-8269-715a2aeddf98",
+                            "key": "font-family",
+                            "locale": {
+                                "ru": {
+                                    "name": "Шрифт"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-family",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "763010e9-1e27-48fe-bcc4-381a0f324995",
+                            "key": "font-size",
+                            "locale": {
+                                "ru": {
+                                    "name": "Размер"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-size",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "unit": "px",
+                                        "value": 16
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "90ff12fe-f636-4496-b16f-3fec44cc8926",
+                            "key": "font-weight",
+                            "locale": {
+                                "ru": {
+                                    "name": "Жирность"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-weight",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": "bold"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "1e4e6de0-a42b-4479-9795-a32b2b8e88a5",
+                            "key": "font-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 1"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "ecb0a718-bdb4-4320-80b7-11abe77958d2",
+                            "key": "text-decoration",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 2"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-decoration",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": "none"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "20ff44ed-7dfb-40c6-be9c-c50fd443b0c7",
+                            "key": "text-transform",
+                            "locale": {
+                                "ru": {
+                                    "name": "Преобразование"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-transform",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": "none"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "4569f9b1-53a9-4e03-8593-2c3c77d36f69",
+                            "key": "color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-color",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "fontColor": "var(--text-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "fontColor": "var(--text-color)"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "05fcb80e-d91f-4140-83b2-2b6409c6f446",
+                            "key": "background-color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет фона"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-backgroundColor",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "fontBackgroundColor": "var(--background-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "fontBackgroundColor": "var(--background-color)"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "b90bf319-e9c5-4a6c-931f-40cd22bef33d",
+                            "key": "padding",
+                            "locale": {
+                                "ru": {
+                                    "name": "Отступ"
+                                }
+                            },
+                            "metatypeproperty": "styles/padding",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "padding": "0px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "86a725ee-ad54-411b-8cbd-2a48e6c23031",
+                            "key": "border-width",
+                            "locale": {
+                                "ru": {
+                                    "name": "Толщина границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-width",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "borderWidth": "0px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "433e177a-6b03-4df2-90f6-6e7c045c2e5e",
+                            "key": "border-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Стиль границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "borderStyle": "solid"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "089c977a-11cb-4675-9fde-82d839633961",
+                            "key": "border-color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-color",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "borderColor": "var(--border-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "borderColor": "var(--border-color)"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "controls_heading-style_h5"
+                },
+                {
+                    "id": "3a85cda0-53dd-11ef-a886-0800200c9a66",
+                    "is_parent": null,
+                    "locale": {
+                        "ru": {
+                            "description": "",
+                            "name": "Заголовок 6"
+                        },
+                        "ar": {
+                            "description": null,
+                            "name": "عنوان 6"
+                        },
+                        "el": {
+                            "description": null,
+                            "name": "Τίτλος 6"
+                        },
+                        "en": {
+                            "description": null,
+                            "name": "Header 6"
+                        },
+                        "es": {
+                            "description": null,
+                            "name": "Título 6"
+                        },
+                        "fr": {
+                            "description": null,
+                            "name": "Titre 6"
+                        },
+                        "he": {
+                            "description": null,
+                            "name": "כּוֹתֶרֶת 6"
+                        },
+                        "kk": {
+                            "description": null,
+                            "name": "Тақырып 6"
+                        },
+                        "tk": {
+                            "description": null,
+                            "name": "Başlık 6"
+                        },
+                        "uz": {
+                            "description": null,
+                            "name": "Sarlavha 6"
+                        },
+                        "zh": {
+                            "description": null,
+                            "name": "标题 6"
+                        }
+                    },
+                    "metatype": "styles/header",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "445d55a0-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-family",
+                            "locale": {
+                                "ru": {
+                                    "name": "Шрифт"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-family",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "494cc320-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-size",
+                            "locale": {
+                                "ru": {
+                                    "name": "Размер"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-size",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "unit": "px",
+                                        "value": 14
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "4ec92e60-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-weight",
+                            "locale": {
+                                "ru": {
+                                    "name": "Жирность"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-weight",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": "bold"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "51feb6e0-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 1"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "574a4e20-53dd-11ef-a886-0800200c9a66",
+                            "key": "text-decoration",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 2"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-decoration",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": "none"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "5c282f70-53dd-11ef-a886-0800200c9a66",
+                            "key": "text-transform",
+                            "locale": {
+                                "ru": {
+                                    "name": "Преобразование"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-transform",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": "none"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "ca1cf991-46d3-46b4-a329-c392ddae1353",
+                            "key": "color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-color",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "fontColor": "var(--text-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "fontColor": "var(--text-color)"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "59555112-bd8b-4278-90b8-584252fd3cdf",
+                            "key": "background-color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет фона"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-backgroundColor",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "fontBackgroundColor": "var(--background-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "fontBackgroundColor": "var(--background-color)"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "3e0d08c9-b653-43d8-b5fb-7d60e00a41c2",
+                            "key": "padding",
+                            "locale": {
+                                "ru": {
+                                    "name": "Отступ"
+                                }
+                            },
+                            "metatypeproperty": "styles/padding",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "padding": "0px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "f0ad6eb2-b3c8-4e85-8340-164e0611f924",
+                            "key": "border-width",
+                            "locale": {
+                                "ru": {
+                                    "name": "Толщина границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-width",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "borderWidth": "0px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "44d9dd91-983c-4e6c-afdc-9c097dd1655e",
+                            "key": "border-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Стиль границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "borderStyle": "solid"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "0f84c09d-e581-4f60-8be8-51d133582e2e",
+                            "key": "border-color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-color",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "borderColor": "var(--border-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "borderColor": "var(--border-color)"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "controls_heading-style_h6"
+                },
+                {
+                    "id": "c80ce78f-b166-4f8a-a177-5dad465c730f",
+                    "is_parent": null,
+                    "locale": {
+                        "ru": {
+                            "description": "",
+                            "name": "Основной текст"
+                        },
+                        "ar": {
+                            "description": null,
+                            "name": "النص الرئيسي"
+                        },
+                        "el": {
+                            "description": null,
+                            "name": "Το κύριο κείμενο"
+                        },
+                        "en": {
+                            "description": null,
+                            "name": "Basic text"
+                        },
+                        "es": {
+                            "description": null,
+                            "name": "El texto principal"
+                        },
+                        "fr": {
+                            "description": null,
+                            "name": "Le texte principal"
+                        },
+                        "he": {
+                            "description": null,
+                            "name": "הטקסט הראשי"
+                        },
+                        "kk": {
+                            "description": null,
+                            "name": "Негізгі мәтін"
+                        },
+                        "tk": {
+                            "description": null,
+                            "name": "Ana metin"
+                        },
+                        "uz": {
+                            "description": null,
+                            "name": "Asosiy matn"
+                        },
+                        "zh": {
+                            "description": null,
+                            "name": "主要文字"
+                        }
+                    },
+                    "metatype": "styles/text",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "5ef49c0f-2989-4746-a5be-b3a2d361a4c7",
+                            "key": "font-family",
+                            "locale": {
+                                "ru": {
+                                    "name": "Шрифт"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-family",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "3e45bc07-2eb4-40da-8379-0fac10573088",
+                            "key": "font-size",
+                            "locale": {
+                                "ru": {
+                                    "name": "Размер"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-size",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "unit": "px",
+                                        "value": 14
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "13fe486a-e0f1-437f-958e-b96252d350c4",
+                            "key": "font-weight",
+                            "locale": {
+                                "ru": {
+                                    "name": "Жирность"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-weight",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "439bb747-b787-42b8-adc6-68b7c69e4b1d",
+                            "key": "font-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 1"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "5a6701bc-0c09-4049-a203-ae5a2e894002",
+                            "key": "text-decoration",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 2"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-decoration",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": "none"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "6ee9dcfb-ebb1-4d30-9dfd-81aba9cbcad5",
+                            "key": "text-transform",
+                            "locale": {
+                                "ru": {
+                                    "name": "Преобразование"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-transform",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": "none"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "06a0dc9f-c54f-495e-8bf5-dcf31ee1b648",
+                            "key": "color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-color",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "fontColor": "var(--text-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "fontColor": "var(--text-color)"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "44daf0c5-0bb3-4d2a-8c3a-4e00f2c1ec8a",
+                            "key": "background-color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет фона"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-backgroundColor",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "fontBackgroundColor": "var(--background-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "fontBackgroundColor": "var(--background-color)"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "0bf38837-43e7-40c4-bf99-5b77d28c737e",
+                            "key": "padding",
+                            "locale": {
+                                "ru": {
+                                    "name": "Отступ"
+                                }
+                            },
+                            "metatypeproperty": "styles/padding",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "padding": "0px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "957eb93a-f7e0-421c-ae83-35adecd34e2b",
+                            "key": "border-width",
+                            "locale": {
+                                "ru": {
+                                    "name": "Толщина границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-width",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "borderWidth": "0px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "1f6d1ec4-627c-466b-8959-f55e46823ccd",
+                            "key": "border-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Стиль границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "borderStyle": "solid"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "eedc1afc-b4ef-430b-9508-528d77432d81",
+                            "key": "border-color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-color",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "borderColor": "var(--border-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "borderColor": "var(--border-color)"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "controls_text-style_default"
+                },
+                {
+                    "id": "9845be00-53dd-11ef-a886-0800200c9a66",
+                    "is_parent": null,
+                    "locale": {
+                        "ru": {
+                            "description": "",
+                            "name": "Крупный текст"
+                        },
+                        "ar": {
+                            "description": null,
+                            "name": "نص كبير"
+                        },
+                        "el": {
+                            "description": null,
+                            "name": "Μεγάλο κείμενο"
+                        },
+                        "en": {
+                            "description": null,
+                            "name": "Large text"
+                        },
+                        "es": {
+                            "description": null,
+                            "name": "Texto grande"
+                        },
+                        "fr": {
+                            "description": null,
+                            "name": "Grand texte"
+                        },
+                        "he": {
+                            "description": null,
+                            "name": "טקסט גדול"
+                        },
+                        "kk": {
+                            "description": null,
+                            "name": "Үлкен мәтін"
+                        },
+                        "tk": {
+                            "description": null,
+                            "name": "Büyük metin"
+                        },
+                        "uz": {
+                            "description": null,
+                            "name": "Katta matn"
+                        },
+                        "zh": {
+                            "description": null,
+                            "name": "大文字"
+                        }
+                    },
+                    "metatype": "styles/text",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "ba3b9700-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-family",
+                            "locale": {
+                                "ru": {
+                                    "name": "Шрифт"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-family",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "be433c90-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-size",
+                            "locale": {
+                                "ru": {
+                                    "name": "Размер"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-size",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "unit": "px",
+                                        "value": 18
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "c3222f50-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-weight",
+                            "locale": {
+                                "ru": {
+                                    "name": "Жирность"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-weight",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "c7544040-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 1"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "cadb4420-53dd-11ef-a886-0800200c9a66",
+                            "key": "text-decoration",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 2"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-decoration",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": "none"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "cf000ea0-53dd-11ef-a886-0800200c9a66",
+                            "key": "text-transform",
+                            "locale": {
+                                "ru": {
+                                    "name": "Преобразование"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-transform",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": "none"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "f41c2f7c-7597-4b5f-8def-9fb2d1f30b9e",
+                            "key": "color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-color",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "fontColor": "var(--text-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "fontColor": "var(--text-color)"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "d84a2a5d-7fde-469e-b1cb-61cf8fc80f85",
+                            "key": "background-color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет фона"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-backgroundColor",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "fontBackgroundColor": "var(--background-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "fontBackgroundColor": "var(--background-color)"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "0bf38837-43e7-40c4-bf99-5b77d28c737e",
+                            "key": "padding",
+                            "locale": {
+                                "ru": {
+                                    "name": "Отступ"
+                                }
+                            },
+                            "metatypeproperty": "styles/padding",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "padding": "0px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "957eb93a-f7e0-421c-ae83-35adecd34e2b",
+                            "key": "border-width",
+                            "locale": {
+                                "ru": {
+                                    "name": "Толщина границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-width",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "borderWidth": "0px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "1f6d1ec4-627c-466b-8959-f55e46823ccd",
+                            "key": "border-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Стиль границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "borderStyle": "solid"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "eedc1afc-b4ef-430b-9508-528d77432d81",
+                            "key": "border-color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-color",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "borderColor": "var(--border-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "borderColor": "var(--border-color)"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "controls_text-style_3xl"
+                },
+                {
+                    "id": "d70101e0-53dd-11ef-a886-0800200c9a66",
+                    "is_parent": null,
+                    "locale": {
+                        "ru": {
+                            "description": "",
+                            "name": "Акцентный текст"
+                        },
+                        "ar": {
+                            "description": null,
+                            "name": "نص لهجة"
+                        },
+                        "el": {
+                            "description": null,
+                            "name": "Έμφαση στο κείμενο"
+                        },
+                        "en": {
+                            "description": null,
+                            "name": "Accent text"
+                        },
+                        "es": {
+                            "description": null,
+                            "name": "Texto acento"
+                        },
+                        "fr": {
+                            "description": null,
+                            "name": "Texte accent"
+                        },
+                        "he": {
+                            "description": null,
+                            "name": "טקסט מבטא"
+                        },
+                        "kk": {
+                            "description": null,
+                            "name": "Акцент мәтін"
+                        },
+                        "tk": {
+                            "description": null,
+                            "name": "Aksan metni"
+                        },
+                        "uz": {
+                            "description": null,
+                            "name": "Bir urg'u matni"
+                        },
+                        "zh": {
+                            "description": null,
+                            "name": "口音文字"
+                        }
+                    },
+                    "metatype": "styles/text",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "d9e78000-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-family",
+                            "locale": {
+                                "ru": {
+                                    "name": "Шрифт"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-family",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "ded47c80-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-size",
+                            "locale": {
+                                "ru": {
+                                    "name": "Размер"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-size",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "unit": "px",
+                                        "value": 16
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "e330f8d0-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-weight",
+                            "locale": {
+                                "ru": {
+                                    "name": "Жирность"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-weight",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "e6e5ea80-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 1"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "eb1f9c90-53dd-11ef-a886-0800200c9a66",
+                            "key": "text-decoration",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 2"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-decoration",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": "none"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "ee704e30-53dd-11ef-a886-0800200c9a66",
+                            "key": "text-transform",
+                            "locale": {
+                                "ru": {
+                                    "name": "Преобразование"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-transform",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": "none"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "fb214006-98a8-4ca5-8b6f-67c7624b1f35",
+                            "key": "color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-color",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "fontColor": "var(--text-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "fontColor": "var(--text-color)"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "0854e490-7a05-4675-b456-1b9ef5c58ce6",
+                            "key": "background-color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет фона"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-backgroundColor",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "fontBackgroundColor": "var(--background-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "fontBackgroundColor": "var(--background-color)"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "0bf38837-43e7-40c4-bf99-5b77d28c737e",
+                            "key": "padding",
+                            "locale": {
+                                "ru": {
+                                    "name": "Отступ"
+                                }
+                            },
+                            "metatypeproperty": "styles/padding",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "padding": "0px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "957eb93a-f7e0-421c-ae83-35adecd34e2b",
+                            "key": "border-width",
+                            "locale": {
+                                "ru": {
+                                    "name": "Толщина границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-width",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "borderWidth": "0px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "1f6d1ec4-627c-466b-8959-f55e46823ccd",
+                            "key": "border-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Стиль границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "borderStyle": "solid"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "eedc1afc-b4ef-430b-9508-528d77432d81",
+                            "key": "border-color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-color",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "borderColor": "var(--border-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "borderColor": "var(--border-color)"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "controls_text-style_xl"
+                },
+                {
+                    "id": "f5a8c150-53dd-11ef-a886-0800200c9a66",
+                    "is_parent": null,
+                    "locale": {
+                        "ru": {
+                            "description": "",
+                            "name": "Дополнительный текст"
+                        },
+                        "ar": {
+                            "description": null,
+                            "name": "نص إضافي"
+                        },
+                        "el": {
+                            "description": null,
+                            "name": "Πρόσθετο κείμενο"
+                        },
+                        "en": {
+                            "description": null,
+                            "name": "Additional text"
+                        },
+                        "es": {
+                            "description": null,
+                            "name": "Texto adicional"
+                        },
+                        "fr": {
+                            "description": null,
+                            "name": "Texte supplémentaire"
+                        },
+                        "he": {
+                            "description": null,
+                            "name": "טקסט נוסף"
+                        },
+                        "kk": {
+                            "description": null,
+                            "name": "Қосымша мәтін"
+                        },
+                        "tk": {
+                            "description": null,
+                            "name": "Ek metin"
+                        },
+                        "uz": {
+                            "description": null,
+                            "name": "Qo'shimcha matn"
+                        },
+                        "zh": {
+                            "description": null,
+                            "name": "附加文字"
+                        }
+                    },
+                    "metatype": "styles/text",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "f9258c00-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-family",
+                            "locale": {
+                                "ru": {
+                                    "name": "Шрифт"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-family",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "fc886610-53dd-11ef-a886-0800200c9a66",
+                            "key": "font-size",
+                            "locale": {
+                                "ru": {
+                                    "name": "Размер"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-size",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "unit": "px",
+                                        "value": 12
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "01919d20-53de-11ef-a886-0800200c9a66",
+                            "key": "font-weight",
+                            "locale": {
+                                "ru": {
+                                    "name": "Жирность"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-weight",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "06cf78c0-53de-11ef-a886-0800200c9a66",
+                            "key": "font-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 1"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "0b487dc0-53de-11ef-a886-0800200c9a66",
+                            "key": "text-decoration",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 2"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-decoration",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": "none"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "0e9cb1d0-53de-11ef-a886-0800200c9a66",
+                            "key": "text-transform",
+                            "locale": {
+                                "ru": {
+                                    "name": "Преобразование"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-transform",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": "none"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "feeda2d7-05dd-4739-b3d3-29494a3e9773",
+                            "key": "color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-color",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "fontColor": "var(--text-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "fontColor": "var(--text-color)"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "4a5337e9-e738-408b-a9a1-ef64ca958144",
+                            "key": "background-color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет фона"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-backgroundColor",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "fontBackgroundColor": "var(--background-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "fontBackgroundColor": "var(--background-color)"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "0bf38837-43e7-40c4-bf99-5b77d28c737e",
+                            "key": "padding",
+                            "locale": {
+                                "ru": {
+                                    "name": "Отступ"
+                                }
+                            },
+                            "metatypeproperty": "styles/padding",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "padding": "0px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "957eb93a-f7e0-421c-ae83-35adecd34e2b",
+                            "key": "border-width",
+                            "locale": {
+                                "ru": {
+                                    "name": "Толщина границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-width",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "borderWidth": "0px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "1f6d1ec4-627c-466b-8959-f55e46823ccd",
+                            "key": "border-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Стиль границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "borderStyle": "solid"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "eedc1afc-b4ef-430b-9508-528d77432d81",
+                            "key": "border-color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-color",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "borderColor": "var(--border-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "borderColor": "var(--border-color)"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "controls_text-style_xs"
+                },
+                {
+                    "id": "2b9f69ab-e07b-44aa-be92-9babb4a0f99e",
+                    "is_parent": null,
+                    "locale": {
+                        "ru": {
+                            "description": "",
+                            "name": "Текст для сайта"
+                        }
+                    },
+                    "metatype": "styles/base-text",
+                    "properties": [
+                        {
+                            "base": true,
+                            "id": "3076cd7c-c147-42ea-9796-e61e7a06421d",
+                            "key": "font-family",
+                            "locale": {
+                                "ru": {
+                                    "name": "Шрифт"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-family",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontFamily": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "dca5afb4-949b-4386-a0e4-e1442a061519",
+                            "key": "font-size",
+                            "locale": {
+                                "ru": {
+                                    "name": "Размер"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-size",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "unit": "px",
+                                        "value": 14
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "b0553b74-cfbb-456b-a68d-628b9ec144bb",
+                            "key": "font-weight",
+                            "locale": {
+                                "ru": {
+                                    "name": "Жирность"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-weight",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontWeight": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "7dc55a9d-6713-4ca7-900a-11e7e52bdd0a",
+                            "key": "font-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 1"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "fontStyle": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "9a750b2c-9503-44cd-8bab-540cdf44a7be",
+                            "key": "text-decoration",
+                            "locale": {
+                                "ru": {
+                                    "name": "Декорирование 2"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-decoration",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textDecoration": "none"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "4d0b9ef7-eda5-4c00-ad30-f892f60e2b19",
+                            "key": "text-transform",
+                            "locale": {
+                                "ru": {
+                                    "name": "Преобразование"
+                                }
+                            },
+                            "metatypeproperty": "styles/text-transform",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "textTransform": "none"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "ed1813d8-4fab-4378-aa91-00ecc1c1f47b",
+                            "key": "color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-color",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "fontColor": "var(--text-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "fontColor": "var(--text-color)"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "863ac8a5-c763-46e1-9c4c-291b360f49ce",
+                            "key": "background-color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет фона"
+                                }
+                            },
+                            "metatypeproperty": "styles/font-backgroundColor",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "fontBackgroundColor": "var(--background-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "fontBackgroundColor": "var(--background-color)"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "0bf38837-43e7-40c4-bf99-5b77d28c737e",
+                            "key": "padding",
+                            "locale": {
+                                "ru": {
+                                    "name": "Отступ"
+                                }
+                            },
+                            "metatypeproperty": "styles/padding",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "padding": "0px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "957eb93a-f7e0-421c-ae83-35adecd34e2b",
+                            "key": "border-width",
+                            "locale": {
+                                "ru": {
+                                    "name": "Толщина границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-width",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "borderWidth": "0px"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "1f6d1ec4-627c-466b-8959-f55e46823ccd",
+                            "key": "border-style",
+                            "locale": {
+                                "ru": {
+                                    "name": "Стиль границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-style",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "",
+                                    "value": {
+                                        "borderStyle": "solid"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "base": false,
+                            "id": "eedc1afc-b4ef-430b-9508-528d77432d81",
+                            "key": "border-color",
+                            "locale": {
+                                "ru": {
+                                    "name": "Цвет границы"
+                                }
+                            },
+                            "metatypeproperty": "styles/border-color",
+                            "settings": null,
+                            "values": [
+                                {
+                                    "mode": "light",
+                                    "value": {
+                                        "borderColor": "var(--border-color)"
+                                    }
+                                },
+                                {
+                                    "mode": "dark",
+                                    "value": {
+                                        "borderColor": "var(--border-color)"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "selector": "controls_text-style_body"
+                }
+            ],
+            "type": 1,
+            "aspect_theme": [
+                {
+                    "identifier": "87688e42-71bf-11ee-b962-0242ac120002",
+                    "keys": null,
+                    "uuid": "dd336bf7-420c-411a-9cc6-b2afa756fbbd"
+                }
+            ],
+            "properties": {
+                "fontPair": {
+                    "header": "Inter",
+                    "text": "Inter"
+                }
+            }
+        }
+    }
+]

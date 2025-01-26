@@ -1,0 +1,5 @@
+<ws:partial template="Controls/grid:ColumnTemplate" attr:class="controls-Grid__row-cell__content_baseline_L" scope="{{ _options }}">
+   <ws:contentTemplate>
+      <Controls.baseDecorator:Money attr:class="ControlsDemo-EipScenarios__money" value="{{item.contents[column.config.displayProperty]}}"/>
+   </ws:contentTemplate>
+</ws:partial>

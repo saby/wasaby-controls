@@ -1,0 +1,10 @@
+<ws:if data="{{column.configIndex >= 2 && column.configIndex !== 5}}">
+   <ws:partial template="Controls/grid:ColumnTemplate" attr:class="controls-Grid__row-cell__content_baseline_L" scope="{{ _options }}">
+      <ws:contentTemplate>
+         <Controls.baseDecorator:Money value="{{item.contents[column.config.displayProperty]}}" useGrouping="{{false}}"/>
+      </ws:contentTemplate>
+   </ws:partial>
+</ws:if>
+<ws:else>
+   <ws:partial template="Controls/grid:ColumnTemplate" attr:class="controls-Grid__row-cell__content_baseline_L" scope="{{ _options }}"/>
+</ws:else>

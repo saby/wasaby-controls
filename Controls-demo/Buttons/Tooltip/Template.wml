@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="controls-margin_right-m">
+            <Controls.buttons:Button attr:class="controlsDemo_fixedWidth100"
+                                     caption="Caption"/>
+        </div>
+        <div class="controls-margin_right-m">
+            <Controls.buttons:Button attr:class="controlsDemo_fixedWidth100"
+                                     caption="Very long long caption"
+                                     tooltip="Button"/>
+        </div>
+        <div class="controls-margin_right-m">
+            <Controls.buttons:Button attr:class="controlsDemo_fixedWidth100"
+                                     caption="Very long long caption"
+                                     attr:data-qa="controlsDemo-Buttons_Tooltip__autolong"/>
+        </div>
+    </div>
+</div>

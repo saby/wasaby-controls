@@ -1,0 +1,74 @@
+<div class="controlsDemo__flex ws-flex-column ws-align-items-center">
+   <div class="controls-text-label controlsDemo__maxWidth200">FontSize</div>
+
+   <div class="controlsDemo__cell">
+      <Controls.dateRange:Input attr:class="controlsDemo__input"
+                                inlineHeight="xs"
+                                fontSize="3xs"
+                                bind:startValue="_startDate"
+                                bind:endValue="_endDate"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <Controls.dateRange:Input attr:class="controlsDemo__input"
+                                inlineHeight="xs"
+                                fontSize="2xs"
+                                bind:startValue="_startDate"
+                                bind:endValue="_endDate"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <Controls.dateRange:Input attr:class="controlsDemo__input"
+                                inlineHeight="xs"
+                                fontSize="xs"
+                                bind:startValue="_startDate"
+                                bind:endValue="_endDate"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <Controls.dateRange:Input attr:class="controlsDemo__input"
+                                inlineHeight="s"
+                                fontSize="s"
+                                bind:startValue="_startDate"
+                                bind:endValue="_endDate"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <Controls.dateRange:Input attr:class="controlsDemo__input"
+                                inlineHeight="m"
+                                fontSize="m"
+                                bind:startValue="_startDate"
+                                bind:endValue="_endDate"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <Controls.dateRange:Input attr:class="controlsDemo__input"
+                                inlineHeight="l"
+                                fontSize="l"
+                                bind:startValue="_startDate"
+                                bind:endValue="_endDate"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <Controls.dateRange:Input attr:class="controlsDemo__input"
+                                inlineHeight="xl"
+                                fontSize="xl"
+                                bind:startValue="_startDate"
+                                bind:endValue="_endDate"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <Controls.dateRange:Input attr:class="controlsDemo__input"
+                                inlineHeight="2xl"
+                                fontSize="2xl"
+                                bind:startValue="_startDate"
+                                bind:endValue="_endDate"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <Controls.dateRange:Input attr:class="controlsDemo__input"
+                                inlineHeight="2xl"
+                                fontSize="3xl"
+                                bind:startValue="_startDate"
+                                bind:endValue="_endDate"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <Controls.dateRange:Input attr:class="controlsDemo__input"
+                                inlineHeight="2xl"
+                                fontSize="4xl"
+                                bind:startValue="_startDate"
+                                bind:endValue="_endDate"/>
+   </div>
+</div>

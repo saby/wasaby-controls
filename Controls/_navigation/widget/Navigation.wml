@@ -1,0 +1,5 @@
+<Controls._navigation.control.Navigation
+        scope="{{_options}}"
+        activeElement="{{_getActiveElement()}}"
+        on:activeElementChanged="_onActiveElementChanged()"
+/>

@@ -1,0 +1,7 @@
+<div>
+   <Controls-ListEnv.filterConnected:View storeId="persons" />
+   <Controls.grid:View storeId="persons"
+                       columns="{{ _columns }}"
+                       header="{{ _header }}"
+   />
+</div>

@@ -1,0 +1,13 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__ml3">
+      <div class="controls-text-label">Placeholder для строки поиска</div>
+      <Controls.dropdown:Selector
+              source="{{_source}}"
+              keyProperty="key"
+              bind:selectedKeys="_selectedKeys"
+              displayProperty="title"
+              searchParam="title"
+              searchPlaceholder="custom placeholder"
+      />
+   </div>
+</div>

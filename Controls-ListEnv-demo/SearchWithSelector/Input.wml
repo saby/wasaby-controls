@@ -1,0 +1,37 @@
+<div class="search_Input-demo_wrapper">
+   <Controls-ListEnv.SearchWithSelector bind:value="_value"
+                 displayProperty="title"
+                 placeholder="{{_placeholder}}"
+                 minSearchLength="{{1}}"
+                 autoDropDown="{{true}}"
+                 searchParam="title"
+                 fontColorStyle="success"
+                 contrastBackground="{{true}}"
+                 filter="{{_filter}}"
+                 source="{{_source}}"
+                 attr:class="search_Input-demo_search">
+      <ws:suggestTemplate templateName="wml!Controls-ListEnv-demo/SearchWithSelector/resources/SuggestTemplate"/>
+      <ws:leftFieldTemplate>
+         <div class="search-Input-demo__menu">
+            <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys"
+                                        keyProperty="id"
+                                        displayProperty="title"
+                                        fontSize="l"
+                                        attr:ws-no-focus="true"
+                                        source="{{_menuSource}}"
+                                        contentTemplate="{{_menuContentTemplate}}"
+                                        on:selectedKeysChanged="_handleSelectedKeysChanged()"
+                                        on:mousedown="_onMousedown()">
+            </Controls.dropdown:Selector>
+         </div>
+      </ws:leftFieldTemplate>
+      <ws:rightFieldTemplate>
+         <div class="search-Input-demo__menu">
+            <Controls.buttons:Button viewMode="link"
+                                     fontColorStyle="unaccented"
+                                     caption="Расширенный поиск"
+                                     attr:class="search_Input-demo_button"/>
+         </div>
+      </ws:rightFieldTemplate>
+   </Controls-ListEnv.SearchWithSelector>
+</div>

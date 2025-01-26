@@ -1,0 +1,15 @@
+import { ObjectType, StringType } from 'Meta/types';
+import * as rk from 'i18n!Controls-Containers';
+
+export const IViewModeOptionsType = ObjectType.id(
+    'Controls-Containers-meta/interface:IViewModeOptionsType'
+)
+    .title(rk('Форма'))
+    .description(rk('Форма'))
+    .properties({
+        reference: StringType.title(rk('Форма'))
+            .editor('Controls-editors/tabs:ReferenceEditor')
+            .defaultValue('controls-Tabs_style-online')
+            .optional()
+            .order(1),
+    });

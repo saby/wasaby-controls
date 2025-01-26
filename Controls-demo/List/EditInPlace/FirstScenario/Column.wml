@@ -1,0 +1,47 @@
+<ws:if data="{{column.configIndex >= 2}}">
+   <ws:partial template="Controls/grid:ColumnTemplate" attr:class="controls-Grid__row-cell__content_baseline_L" scope="{{ _options }}">
+      <ws:contentTemplate>
+         <div class="controlsDemo_EditInPlace__scenarios__editorWrapper controls-EditingTemplateText__editorWrapper controls-EditingTemplateText__editorWrapper_align_{{column.config.align ? column.config.align : 'left'}}">
+            <ws:if data="{{item.isEditing()}}">
+               <Controls.input:Number attr:class="controls-EditingTemplateText__editor"
+                                      bind:value="item.contents[column.config.displayProperty]"
+                                      selectOnClick="{{ false }}"
+                                      precision="{{ 2 }}"
+                                      textAlign="right"
+                                      showEmptyDecimals="{{ true }}" />
+            </ws:if>
+            <ws:else>
+               <div class="controls-EditingTemplateText controls-EditingTemplateText_InputBackgroundVisibility_onhover controls-EditingTemplateText_size_default{{itemData.isActive ? ' controls-EditingTemplateText_active'}}">
+                  <Controls.baseDecorator:Money attr:class="ControlsDemo-EipScenarios__money" value="{{item.contents[column.config.displayProperty]}}"/>
+               </div>
+            </ws:else>
+         </div>
+      </ws:contentTemplate>
+   </ws:partial>
+</ws:if>
+<ws:else>
+   <ws:partial template="Controls/grid:ColumnTemplate" attr:class="controls-Grid__row-cell__content_baseline_L" scope="{{ _options }}">
+      <ws:contentTemplate>
+         <ws:partial template="Controls/list:EditingTemplate"
+                     attr:class="ControlsDemo-EipScenarios__editorWrapper"
+                     value="{{ item.contents[column.config.displayProperty] }}"
+                     scope="{{ _options }}"
+                     align="{{ column.config.align }}"
+                     enabled="{{true}}">
+            <ws:editorTemplate>
+               <ws:if data="{{column.configIndex < 1}}">
+                  <Controls.input:Text bind:value="item.contents[column.config.displayProperty]"
+                                       selectOnClick="{{ false }}" />
+               </ws:if>
+               <ws:else>
+                  <Controls.input:Number bind:value="item.contents[column.config.displayProperty]"
+                                         selectOnClick="{{ false }}"
+                                         precision="{{ 2 }}"
+                                         textAlign="right"
+                                         showEmptyDecimals="{{ true }}" />
+               </ws:else>
+            </ws:editorTemplate>
+         </ws:partial>
+      </ws:contentTemplate>
+   </ws:partial>
+</ws:else>

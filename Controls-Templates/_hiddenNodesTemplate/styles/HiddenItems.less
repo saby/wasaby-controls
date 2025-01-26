@@ -1,0 +1,23 @@
+.Controls-Templates-HiddenItems {
+   &-expandedWrapper {
+      display: grid;
+      justify-items: end;
+      gap: var(--offset_m);
+   }
+
+   &-CardWrapper {
+      display: flex;
+      justify-content: space-between;
+
+      .controls-BaseButton {
+         opacity: 0;
+         margin-right: var(--offset_3xl);
+      }
+
+      &:hover {
+         .controls-BaseButton {
+            opacity: 1;
+         }
+      }
+   }
+}

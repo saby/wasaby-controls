@@ -1,0 +1,62 @@
+<div class="example-Tag">
+   <Controls-demo.Example.resource.BaseDemoInput title="Input field with tag" blocker="{{true}}">
+      <ws:contents>
+         <ws:Array>
+            <ws:Object>
+               <ws:template>
+                  <Controls.input:Text tagStyle="secondary" class="ControlsDemo-ExampleInput_fieldWithTag"
+                                       textAlign="right"
+                                       placeholder="Tooltip"
+                                       on:tagClick="_showInfoBox('secondary')"
+                                       bind:value="_secondaryValue"/>
+               </ws:template>
+            </ws:Object>
+            <ws:Object spacing="normal">
+               <ws:template>
+                  <Controls.input:Text tagStyle="success"
+                                       textAlign="right"
+                                       placeholder="Tooltip"
+                                       on:tagClick="_showInfoBox('success')"
+                                       bind:value="_successValue"/>
+               </ws:template>
+            </ws:Object>
+            <ws:Object spacing="normal">
+               <ws:template>
+                  <Controls.input:Text tagStyle="warning"
+                                       textAlign="right"
+                                       placeholder="Tooltip"
+                                       on:tagClick="_showInfoBox('warning')"
+                                       bind:value="_warningValue"/>
+               </ws:template>
+            </ws:Object>
+            <ws:Object spacing="normal">
+               <ws:template>
+                  <Controls.input:Text tagStyle="danger"
+                                       textAlign="right"
+                                       placeholder="Tooltip"
+                                       on:tagClick="_showInfoBox('danger')"
+                                       bind:value="_dangerValue"/>
+               </ws:template>
+            </ws:Object>
+            <ws:Object spacing="normal">
+               <ws:template>
+                  <Controls.input:Text tagStyle="info"
+                                       textAlign="right"
+                                       placeholder="Tooltip"
+                                       on:tagClick="_showInfoBox('info')"
+                                       bind:value="_infoValue"/>
+               </ws:template>
+            </ws:Object>
+            <ws:Object spacing="normal">
+               <ws:template>
+                  <Controls.input:Text tagStyle="primary"
+                                       textAlign="right"
+                                       placeholder="Tooltip"
+                                       on:tagClick="_showInfoBox('primary')"
+                                       bind:value="_primaryValue"/>
+               </ws:template>
+            </ws:Object>
+         </ws:Array>
+      </ws:contents>
+   </Controls-demo.Example.resource.BaseDemoInput>
+</div>

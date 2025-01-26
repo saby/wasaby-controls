@@ -1,0 +1,45 @@
+// Переменной конструктора еще нигде не определено (24.5100)
+@constructor-background-color: #eae9ee;
+
+.TextEditor__block {
+   background-color: var(--background-color);
+   border-radius: var(--border-radius_s);
+   box-sizing: border-box;
+   margin: 0 0 var(--offset_s) var(--offset_s);
+   padding: var(--offset_m);
+   position: relative;
+}
+
+.TextEditor__inner-block {
+   padding: var(--offset_m);
+   background-color: var(--background-color);
+   border-radius: var(--border-radius_s);
+}
+
+.TextEditor__block_contrast {
+   background-color: @constructor-background-color;
+}
+
+.TextEditor__block__preview {
+   align-content: center;
+   height: 120px;
+   overflow: hidden;
+}
+
+.TextEditor__block__preview__content {
+   width: 100%;
+   position: relative;
+   box-sizing: border-box;
+}
+
+.TextEditor-fade {
+   &::after {
+      background: linear-gradient(to bottom, transparent, @constructor-background-color);
+      bottom: 0;
+      content: '';
+      height: var(--offset_m);
+      left: 0;
+      position: absolute;
+      width: 100%;
+   }
+}

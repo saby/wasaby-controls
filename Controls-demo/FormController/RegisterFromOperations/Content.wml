@@ -1,0 +1,21 @@
+<div class="controls__block-wrapper">
+<div class="controls__block">
+    <div class="tw-flex tw-flex-col controls-padding-xs">
+        <Controls.input:Text
+            name="caption"
+            bind:value="_options.record.caption"
+        
+        />
+        <Controls.input:Text
+            name="additionalText"
+            class="controls-margin_top-m"
+            bind:value="_options.record.additionalText"
+        />
+    </div>
+</div>
+<div class="controls-margin_top-m">
+    <ws:for data="logInfo in _logsInfo">
+        <div>{{ logInfo }}</div>
+    </ws:for>
+</div>
+</div>

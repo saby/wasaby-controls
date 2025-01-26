@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell demo-switchBase__contrast-true controls-margin_right-xl">
+            <Controls.toggle:Switch bind:value="_value"
+                                    viewMode="filled"/>
+        </div>
+        <div class="controlsDemo__cell demo-switchBase__contrast-true">
+            <Controls.toggle:Switch bind:value="_value2"
+                                    viewMode="outlined"/>
+        </div>
+    </div>
+</div>

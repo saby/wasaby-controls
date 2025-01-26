@@ -1,0 +1,36 @@
+.controls-breadcrumbs-widget {
+   display: flex;
+   align-items: stretch;
+}
+
+.controls-breadcrumbs-widget__path-wrapper {
+   align-self: center;
+   min-width: 1px;
+   flex-grow: 1;
+}
+
+.controls-breadcrumbs-widget__image {
+   flex-shrink: 0;
+
+   // box size
+   width: var(--size_3xl_image);
+   height: var(--size_3xl_image);
+   margin-right: var(--offset_m);
+
+   // inner align
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.controls-breadcrumbs-widget__additional-text {
+   margin-top: var(--offset_xs);
+   color: var(--unaccented_text-color);
+   font-size: var(--font-size_l);
+
+   // text overflow setup
+   overflow: hidden;
+   display: -webkit-box;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+}

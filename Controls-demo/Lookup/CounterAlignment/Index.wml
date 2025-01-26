@@ -1,0 +1,19 @@
+<div class="controls-demo-selector-button">
+<div class="controlsDemo__wrapper ControlsDemo-Lookup__container">
+  <div class="controlsDemo__wrapper ControlsDemo-Lookup-control demo-LookupSelector__multiple1">
+    <h4>counterAlignment="right"</h4>
+    <Controls.lookup:Selector
+        source="{{_sourceButton}}"
+        displayProperty="title"
+        keyProperty="id"
+        multiSelect="{{true}}"
+        caption="Выберите компанию"
+        counterAlignment="right"
+        bind:selectedKeys="_selectedKeys"
+        on:selectedKeysChanged="selectedKeysChanged()"
+        selectorTemplate="{{_selectorTemplate}}">
+      <ws:templateOptions source="{{_source}}" multiSelect="{{true}}"/>
+    </Controls.lookup:Selector>
+  </div>
+</div>
+</div>

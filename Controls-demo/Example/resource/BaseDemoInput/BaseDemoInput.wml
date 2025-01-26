@@ -1,0 +1,30 @@
+<div class="example-BaseDemoInput ws-inline-flexbox ws-flex-column">
+   <div class="example-Base__title">
+      <ws:if data="{{_options.title}}">{{_options.title}}</ws:if>
+      <ws:else>&nbsp;</ws:else>
+      <div if="{{_options.blocker}}"
+           class="icon-24 icon-primary action-hover {{_lock ? 'icon-Lock' : 'icon-Unlock'}}"
+           on:click="_switchBlocker()"></div>
+   </div>
+   <ws:for data="item in _options.contents">
+      <ws:if data="{{item.label}}">
+         <div class="ws-align-self-end example-BaseDemoInput__content_{{item.spacing}}Spacing
+                     {{item.label.position === 'left' ? 'ws-flexbox'}}">
+            <Controls.input:Label caption="{{item.label.value}}"
+                                  required="{{item.label.required}}"
+                                  attr:class="ws-flex-shrink-0"
+                                  on:click="_labelClickHandler(item.label.name)"/>
+            <ws:partial template="{{item.template}}"
+                        readOnly="{{_lock}}"
+                        attr:class="example-BaseDemoInput__content{{item.autoWidth ? ' example-BaseDemoInput__content_autoWidth'}}"/>
+         </div>
+      </ws:if>
+      <ws:else>
+         <ws:partial template="{{item.template}}"
+                     readOnly="{{_lock}}"
+                     attr:class="example-BaseDemoInput__content ws-align-self-end
+                                 example-BaseDemoInput__content_{{item.spacing}}Spacing
+                                 {{item.autoWidth ? 'example-BaseDemoInput__content_autoWidth'}}"/>
+      </ws:else>
+   </ws:for>
+</div>

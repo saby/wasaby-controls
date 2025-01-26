@@ -1,0 +1,190 @@
+/**
+ * @kaizen_zone 4eca12bb-c964-409a-b853-a3803e6a37a3
+ */
+import { IConfirmationFooterOptions } from 'Controls/_popup/interface/IConfirmationFooter';
+import { IControlOptions, TemplateFunction } from 'UI/Base';
+import { IPopupWidthOptions } from 'Controls/_popup/interface/IPopupWidth';
+import { ReactElement } from 'react';
+
+export interface IConfirmationOptions
+    extends IConfirmationFooterOptions,
+        IControlOptions,
+        IPopupWidthOptions {
+    closeButtonVisible?: boolean;
+    markerStyle?: IConfirmationStyle;
+    style?: IConfirmationStyle;
+    size?: string;
+    message?: string;
+    messageContentTemplate?: TemplateFunction | ReactElement;
+    messageOptions?: object;
+    details?: string;
+    detailsContentTemplate?: TemplateFunction | ReactElement;
+    detailsOptions?: object;
+    closeHandler?: Function;
+    zIndex?: number; // todo: Compatible
+}
+
+type IConfirmationStyle =
+    | 'default'
+    | 'success'
+    | 'danger'
+    | 'primary'
+    | 'info'
+    | 'warning'
+    | 'secondary';
+
+/**
+ * Интерфейс для опций информационных окон.
+ * @interface Controls/_popup/interface/IConfirmationOpener
+ * @public
+ * @extends Controls/_popup/interface/IConfirmationFooter
+ * @implements Controls/_popup/interface/IPopupWidth
+ */
+export interface IConfirmationOpener {
+    readonly '[Controls/_popup/interface/IConfirmationOpener]': boolean;
+    open(templateOptions: IConfirmationOptions): Promise<boolean | undefined>;
+}
+
+/**
+ * @name Controls/_popup/interface/IConfirmationOpener#closeButtonVisible
+ * @cfg {Boolean} Определяет отображение кнопки закрытия.
+ * @default false
+ */
+
+/**
+ * @name Controls/_popup/interface/IConfirmationOpener#size
+ * @cfg {String} Размер информационного окна. Размер меняется автоматически, если длина основного сообщения превышает
+ * 100 символов или длина дополнительного текста превышает 160 символов.
+ * @variant m (ширина 350px)
+ * @variant l (ширина 440px)
+ * @default m
+ * @deprecated Вспользуйтесь опцией width
+ */
+
+/**
+ * @name Controls/_popup/interface/IConfirmationOpener#message
+ * @cfg {String} Основной текст информационного окна.
+ */
+
+/**
+ * @name Controls/_popup/interface/IConfirmationOpener#messageContentTemplate
+ * @cfg {ReactElement|TemplateFunction} Шаблон основного текста информационного окна
+ * @demo Controls-demo/Popup/Confirmation/MessageContentTemplate/Index
+ */
+
+/**
+ * @name Controls/_popup/interface/IConfirmationOpener#messageOptions
+ * @cfg {Object} Опции, передаваемые в шаблон messageContentTemplate
+ */
+
+/**
+ * @name Controls/_popup/interface/IConfirmationOpener#details
+ * @cfg {String} Дополнительный текст информационного окна
+ */
+
+/**
+ * @name Controls/_popup/interface/IConfirmationOpener#detailsContentTemplate
+ * @cfg {ReactElement|TemplateFunction} Шаблон дополнительного текста информационного окна
+ * @demo Controls-demo/Popup/Confirmation/DetailsContentTemplate/Index
+ */
+
+/**
+ * @name Controls/_popup/interface/IConfirmationOpener#detailsOptions
+ * @cfg {Object} Опции, передаваемые в шаблон detailsContentTemplate
+ */
+
+/**
+ * @name Controls/_popup/interface/IConfirmationOpener#markerStyle
+ * @cfg {string} Стиль маркера.
+ * @variant default
+ * @variant success
+ * @variant danger
+ * @variant secondary
+ * @variant warning
+ * @variant info
+ * @variant none
+ * @default default
+ */
+
+/**
+ * Метод открытия информационного окна.
+ * @name Controls/_popup/interface/IConfirmationOpener#open
+ * @function
+ * @param {Controls/popup:IConfirmationOpener} IConfirmationOptions Конфигурация информационного окна.
+ * @returns {Promise<Boolean>} Результат будет возвращен после того, как пользователь закроет всплывающее окно.
+ * @remark
+ * 1. Если требуется открыть окно, без создания popup:Confirmation в верстке, следует использовать статический метод {@link openPopup}
+ * 2. Если вы хотите использовать собственный шаблон в информационном окне, смотрите
+ * {@link https://n.sbis.ru/article/7efd671b-7069-4037-aba4-df9e8248919a#toc_327f8c02-1f08-4948-ab7a-9699bc0a8931 инструкцию}
+ * @see openPopup
+ * @example
+ * <pre class="brush: html">
+ * <!-- WML -->
+ * <Controls.popup:Confirmation name="confirmationOpener">
+ * </Controls.popup:Confirmation>
+ *
+ * <Controls.buttons:Button caption="open confirmation" on:click="_open()"/>
+ * </pre>
+ * <pre class="brush: js">
+ * // TypeScript
+ *    class MyControl extends Control<IControlOptions>{
+ *       ...
+ *
+ *        _open() {
+ *           var config= {
+ *              message: 'Save changes?'
+ *              type: 'yesnocancel'
+ *           }
+ *           this._children.confirmationOpener.open(config).addCallback(function(result) {
+ *              if (result === true) {
+ *                  console.log('Пользователь выбрал "Да"');
+ *              } else if (result === false) {
+ *                  console.log('Пользователь выбрал "Нет"');
+ *              } else {
+ *                  console.log('Пользователь выбрал "Отмена"');
+ *              }
+ *           });
+ *        }
+ *     };
+ * </pre>
+ */
+
+/*
+ * Open confirmation popup.
+ * @name Controls/_popup/interface/IConfirmationOpener#open
+ * @function
+ * @param {PopupOptions} templateOptions Confirmation options.
+ * @returns {Promise} The deferral will end with the result when the user closes the popup.
+ * @remark
+ * If you want use custom layout in the dialog you need to open popup via {@link dialog opener} using the basic template {@link ConfirmationTemplate}.
+ */
+
+/**
+ * Статический метод для открытия информационного окна. При использовании метода не требуется создавать popup:Confirmation в верстке.
+ * {@link https://n.sbis.ru/article/7efd671b-7069-4037-aba4-df9e8248919a#toc_69ddce1c-7ed2-4b08-a10f-1907d5a79f4e Подробнее}.
+ * @name Controls/_popup/interface/IConfirmationOpener#openPopup
+ * @function
+ * @param {Controls/popup:IConfirmationOpener} IConfirmationOptions Конфигурация информационного окна
+ * @return {Promise<Boolean | undefined>} Результат будет возвращен после того, как пользователь закроет всплывающее окно.
+ * @static
+ * @see open
+ * @example
+ * <pre class="brush: js">
+ *    // TypeScript
+ *    import {Confirmation} from 'Controls/popup';
+ *    ...
+ *    openConfirmation() {
+ *        Confirmation.openPopup({
+ *          message: 'Choose yes or no'
+ *        }).then(function(result) {
+ *          if (result === true) {
+ *              console.log('Пользователь выбрал "Да"');
+ *          } else if (result === false) {
+ *              console.log('Пользователь выбрал "Нет"');
+ *          } else {
+ *              console.log('Пользователь выбрал "Отмена"');
+ *          }
+ *        });
+ *    }
+ * </pre>
+ */

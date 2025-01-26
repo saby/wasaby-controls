@@ -1,0 +1,36 @@
+<div class="Calculator-History controls_Calculator_theme-{{_options.theme}}">
+    <Controls.scroll:Container class="Calculator-History__scroll-container" name="historyScrollContainer">
+        <div class="Calculator-History__history">
+            <ws:for data="calculation in _options.history">
+                <div class="Calculator-History__item">
+                    <div class="Calculator-History__input">
+                        <ws:for data="index, inputItem in calculation.input">
+                                <div class="Calculator-History__inputItem">
+                                    <ws:if data="{{inputItem.operator !== ''}}">
+                                        &nbsp;{{ inputItem.operator }}
+                                    </ws:if>
+                                    <ws:if data="{{inputItem.value}}">
+                                        <span>
+                                          {{ index !== 0 ? ' ' : '' }}
+                                          <Controls-Calculator.Number>
+                                              <span class="Calculator-History__operand">{{ inputItem.value }}</span>
+                                          </Controls-Calculator.Number>
+                                        </span>
+                                    </ws:if>
+                                </div>
+                        </ws:for>
+                    </div>
+                    <ws:if data="{{calculation.isEnded}}">
+                        <div title="{{calculation.result}}" class="Calculator-History__result
+                        {{calculation.withError ? 'Calculator-History__resultWithError' : 'Calculator-History__resultWithoutError ws-ellipsis'}}">
+                            <span>= </span>
+                            <Controls-Calculator.Number>
+                                <span>{{_rk(calculation.result)}}</span>
+                            </Controls-Calculator.Number>
+                        </div>
+                    </ws:if>
+                </div>
+            </ws:for>
+        </div>
+    </Controls.scroll:Container>
+</div>

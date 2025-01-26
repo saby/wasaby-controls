@@ -1,0 +1,19 @@
+<div class="controlsDemo__flexColumn controlsDemo__ml2">
+    <div data-qa="controlsDemo-ArrowButton__readOnly" class="controlsDemo__cell controlsDemo__maxWidth200">
+        <div class="controls-text-label">readOnly=true</div>
+        <Controls.extButtons:ArrowButton attr:data-qa="controlsDemo-ArrowButton__readOnlyButton" readOnly="{{true}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label controlsDemo__maxWidth200">direction=right</div>
+        <Controls.extButtons:ArrowButton direction="right"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label controlsDemo__maxWidth200">direction=left</div>
+        <Controls.extButtons:ArrowButton direction="left"/>
+    </div>
+    <div class="controlDemo__input-row">
+        <Controls.extButtons:ArrowButton direction="left" on:click="_shiftBack()"/>
+        <Controls.extButtons:ArrowButton direction="right" on:click="_shiftForward()"/>
+        <Controls.dateRange:Selector datePopupType="shortDatePicker" attr:class='controlsDemo__ml2' name="selector" bind:startValue="_startValue" bind:endValue="_endValue"/>
+    </div>
+</div>

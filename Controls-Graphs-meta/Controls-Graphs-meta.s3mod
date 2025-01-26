@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-Graphs-meta"
+           kaizen_zone="fd9fa20b-49b9-4974-9a76-1fecd10b7259"
+           id="02d32f81-6d07-4302-85f3-79f502f430d7"
+           package="Wasaby"
+           required="1"
+           version="1.00">
+  <description>Модуль содержит мета-описания графиков для конструктора свойств.</description>
+    <depends>
+      <module id="f6fdf353-3ab3-4dbb-8671-01c2b418bf0a" name="Controls"/>
+      <module id="6fd87d74-4783-446b-abb3-95d74c5f579e" name="Graphs-default-theme"/>
+      <module id="af50caf5-f84b-4b81-a19c-6f6618372dbd" name="Controls-default-theme"/>
+    </depends>
+  <load_after/>
+  <parameters/>
+  <resources/>
+  <preload/>
+  <typescript>
+    <arg key="typecheck" value="1"/>
+  </typescript>
+</ui_module>

@@ -1,0 +1,70 @@
+import * as React from 'react';
+import { TInternalProps } from 'UICore/Executor';
+import {
+    IFontSizeOptions,
+    IFontWeightOptions,
+    IFontColorStyleOptions,
+    TTagStyle,
+} from 'Controls/interface';
+import type { GridRow, GridDataCell, TCellHorizontalAlign } from 'Controls/gridDisplay';
+import type { TCursor } from 'Controls/baseList';
+import { ICellComponentProps } from 'Controls/_gridRender/cell/interface/ICell';
+import type { IBaseExpanderProps } from 'Controls/treeRender';
+
+export interface ICompatibleCellComponentProps
+    extends TInternalProps,
+        IFontColorStyleOptions,
+        IFontSizeOptions,
+        IFontWeightOptions,
+        IBaseExpanderProps {
+    column: GridDataCell;
+    item: GridRow;
+
+    children?: React.ReactElement;
+    contentTemplate?: React.ReactElement | React.FunctionComponent;
+    beforeContentTemplate?: React.Component | React.FunctionComponent;
+    afterContentTemplate?: React.Component | React.FunctionComponent;
+
+    tagStyle?: TTagStyle;
+
+    itemActionsTemplate: typeof React.Component | React.FunctionComponent;
+    itemActionsClass: string;
+
+    ladderWrapper: typeof React.Component | React.FunctionComponent;
+    multiSelectTemplate: typeof React.Component | React.FunctionComponent;
+
+    hoverBackgroundStyle: string;
+    backgroundColorStyle: string;
+    highlightOnHover: boolean;
+    editable: boolean;
+    cursor: TCursor;
+    align: TCellHorizontalAlign;
+
+    onTagClick: (event: React.BaseSyntheticEvent, item: GridRow, columnIndex: number) => void;
+    onTagHover: (event: React.BaseSyntheticEvent, item: GridRow, columnIndex: number) => void;
+
+    onMouseEnter?: Function;
+    onMouseLeave?: Function;
+    onMouseMove?: Function;
+    onClick?: Function;
+    onMouseDown?: Function;
+    onMouseUp?: Function;
+    onKeyDown?: Function;
+    className?: string;
+    dataName?: string;
+    'data-qa'?: string;
+}
+
+// Свойства wasaby-совместимого шаблона ячейки грида
+export interface ICCCPCProps<T extends ICellComponentProps> extends ICompatibleCellComponentProps {
+    // Функция, возвращающая пропсы, которые будут переданы в компонент ячейки,
+    // и продублированы с незначительными изменениями в contentTemplate.
+    getCCCP: (props: ICompatibleCellComponentProps) => Partial<T>;
+    // Функция, возвращающая contentRender для вставки в компонент ячейки.
+    getCompatibleCellContentRender?: (
+        props: ICCCPCProps<ICellComponentProps>,
+        compatibleContentRenderProps: Partial<ICellComponentProps>
+    ) => React.ReactElement;
+    // Ссылка на компонент ячейки
+    _$FCC?: React.FunctionComponent;
+}

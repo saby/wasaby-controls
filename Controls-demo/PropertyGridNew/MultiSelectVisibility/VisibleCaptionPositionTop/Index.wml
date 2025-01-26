@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell controls-Demo__wide-propertyGrid">
+        <div class="controls-text-label">multiSelectVisibility: visible; captionPosition: top;</div>
+        <Controls.propertyGrid:PropertyGrid
+            bind:editingObject="_editingObject"
+            typeDescription="{{_typeDescription}}"
+            multiSelectVisibility="visible"
+            captionPosition="top">
+            <ws:itemPadding top="s" bottom="s" left="null" right="null"/>
+        </Controls.propertyGrid:PropertyGrid>
+    </div>
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell controls-Demo__wide-propertyGrid">
+        <div class="controls-text-label">multiSelectVisibility: hidden; captionPosition: top;</div>
+        <Controls.propertyGrid:PropertyGrid
+            bind:editingObject="_editingObject"
+            typeDescription="{{_typeDescription}}"
+            captionPosition="top">
+        </Controls.propertyGrid:PropertyGrid>
+    </div>
+</div>

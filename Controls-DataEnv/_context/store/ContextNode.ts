@@ -1,0 +1,733 @@
+import {
+    TDataConfigs,
+    IDataConfig,
+    IDataContextConfigs,
+    DataConfigResolver,
+} from 'Controls-DataEnv/dataFactory';
+import type { IRouter } from 'Router/router';
+import type { default as DataContextAPI } from '../DataContext';
+import ContextElement from './ContextElement';
+import type { Slice } from 'Controls-DataEnv/slice';
+import type { IContextNodeChange } from './interface';
+import { logger } from 'Application/Env';
+import { loadAsync } from 'WasabyLoader/ModulesLoader';
+import type { Loader } from 'Controls-DataEnv/dataLoader';
+import { STORE_ROOT_NODE_KEY } from 'Controls-DataEnv/_context/Constants';
+import { isEqual } from 'Types/object';
+
+interface IContextNodeProps {
+    name: string;
+    contextConfigs: IDataContextConfigs;
+    parentNode: ContextNode | null;
+    onChange: Function;
+    onSnapshot: Function;
+    dataContext: DataContextAPI;
+    router?: IRouter;
+    getSlicesConfig?: Function;
+    getSlicesConfigNode?: string;
+    isRoot?: boolean;
+}
+
+interface IRelatedElements {
+    elements: string[];
+    nodes: string[];
+}
+
+function getSliceOrderByDependencies(configs: TDataConfigs): string[] {
+    const entries = Object.entries(configs);
+    const loadedSet = new Set();
+    const sorted: string[] = [];
+
+    while (entries.length) {
+        const element = entries.shift();
+        if (element) {
+            const [configName, config] = element;
+            const valuesDependencies = ContextElement.getValuesDependencies(config);
+            const isLoadedConfig = valuesDependencies.every((item) => loadedSet.has(item));
+            const isCircularConfig = valuesDependencies.some((valueDep) => {
+                const depConfig = configs[valueDep];
+                return (
+                    depConfig &&
+                    ContextElement.getValuesDependencies(depConfig).includes(configName)
+                );
+            });
+
+            if (isLoadedConfig || isCircularConfig) {
+                loadedSet.add(configName);
+                sorted.push(configName);
+            } else {
+                entries.push([configName, config]);
+            }
+        }
+    }
+
+    return sorted;
+}
+
+function checkCircularDependencies(configs: TDataConfigs, name: string): void {
+    Object.entries(configs).forEach(([key, config]) => {
+        if (config.dataFactoryArguments?.sliceExtraValues) {
+            const elementDeps = ContextElement.getValuesDependencies(config);
+            elementDeps.forEach((dependency) => {
+                const dependencyConfig = configs[dependency];
+                const dependencyConfigDeps = ContextElement.getValuesDependencies(dependencyConfig);
+                if (dependencyConfigDeps.includes(key)) {
+                    const depExtraValue = ContextElement.getExtraValueByName(dependencyConfig, key);
+                    const configExtraValue = ContextElement.getExtraValueByName(config, key);
+                    const isCircularProp =
+                        depExtraValue?.dependencyPropName === configExtraValue?.propName &&
+                        configExtraValue?.dependencyPropName === depExtraValue?.propName;
+                    if (isCircularProp) {
+                        throw new Error(`В конфигурации фабрик данных существует циклическая зависимость.
+                     В sliceExtraValues фабрики ${key} указана зависимость от ${dependency}. Узел ${name}`);
+                    }
+                }
+            });
+        }
+    });
+}
+
+async function getLoader(): Promise<typeof Loader> {
+    const module = await loadAsync<typeof import('Controls-DataEnv/dataLoader')>(
+        'Controls-DataEnv/dataLoader'
+    );
+    return module.Loader;
+}
+
+export default class ContextNode {
+    private _$configs: TDataConfigs = {};
+    private _$name: string;
+    private _$data: Record<string, unknown>;
+    private _$isElementsDestroyed: boolean = false;
+    private _$parentNode: ContextNode | null;
+    private readonly _$dataContext: DataContextAPI;
+    private _$elements: Record<string, ContextElement> = {};
+    private _$props: IContextNodeProps;
+    private _$contextConfigs: IContextNodeProps['contextConfigs'];
+    private _$children: Map<string, ContextNode> = new Map();
+    private _$elementOrder: string[] = [];
+    private _$value: Record<string, Slice | unknown> = {};
+    private _$relatedElements: Record<
+        string,
+        {
+            nodes: string[];
+            elements: string[];
+        }
+    > = {};
+
+    constructor(props: IContextNodeProps) {
+        this._$props = props;
+        this._$parentNode = props.parentNode || null;
+        this._onElementSnapshot = this._onElementSnapshot.bind(this);
+        this._onChangeElement = this._onChangeElement.bind(this);
+        this._$dataContext = props.dataContext;
+        this._initState(props.contextConfigs);
+    }
+
+    private _createElementOrder(): void {
+        this._$elementOrder = getSliceOrderByDependencies(this._$configs);
+    }
+
+    private getRelatedElements(contextConfigs: IDataContextConfigs): IRelatedElements {
+        const relatedElements: IRelatedElements = {
+            nodes: [],
+            elements: [],
+        };
+
+        if ('configs' in contextConfigs) {
+            relatedElements.elements = Object.keys(contextConfigs.configs);
+        }
+
+        if (contextConfigs.children) {
+            relatedElements.nodes = Object.keys(contextConfigs.children);
+        }
+
+        return relatedElements;
+    }
+
+    private _getDataConfigs(contextConfigs = this._$contextConfigs): TDataConfigs {
+        if ('configs' in contextConfigs) {
+            return contextConfigs.configs;
+        } else if ('configGetter' in contextConfigs) {
+            let dataConfigs: TDataConfigs;
+            try {
+                //@ts-ignore
+                dataConfigs = !contextConfigs.isAsyncConfigGetter
+                    ? DataConfigResolver.getConfigFromLoaderSync(
+                          contextConfigs,
+                          this._$dataContext,
+                          this.getPath()
+                      )
+                    : DataConfigResolver.convertLoadResultsToFactory(contextConfigs.data as object);
+            } catch (e) {
+                dataConfigs = {};
+                if (e instanceof Error) {
+                    logger.error(
+                        `Произошла ошибка при вызове метода getConfig из модуля ${contextConfigs.configGetter} ${e.message}`
+                    );
+                }
+            }
+
+            if (
+                this._$props.getSlicesConfig &&
+                this._$props.getSlicesConfigNode &&
+                this._$name === this._$props.getSlicesConfigNode
+            ) {
+                const contextConfigsFromGetter = this._$props.getSlicesConfig(
+                    this._$dataContext.getNodeData(this.getPath(true))
+                );
+                return {
+                    ...dataConfigs,
+                    ...contextConfigsFromGetter,
+                };
+            }
+            return dataConfigs;
+        }
+        return {};
+    }
+
+    private initElements(): void {
+        this._$isElementsDestroyed = false;
+        this._createElementOrder();
+
+        this._$elementOrder.forEach((sliceName) => {
+            this.addElement(sliceName, this._$data[sliceName], this._$configs[sliceName]);
+        });
+    }
+
+    private _initState(contextConfigs: IDataContextConfigs): void {
+        this._$contextConfigs = { ...contextConfigs };
+        this._$name = this._$contextConfigs.name || this._$props.name;
+        this._$data = this._$contextConfigs.data || {};
+        this._$dataContext.addNode(this.getPath(false), this._$name, this._$data);
+        this._$configs = this._getDataConfigs();
+        checkCircularDependencies(this._$configs, this._$name);
+        this.initElements();
+
+        if (this._$contextConfigs.children) {
+            this.reInitChildren(this._$contextConfigs.children);
+        }
+    }
+
+    protected _onElementSnapshot(
+        changedElementName: string,
+        elementPartialState: Record<string, unknown>
+    ): void {
+        const changes = this.getChanges(
+            {
+                [changedElementName]: elementPartialState,
+            },
+            changedElementName
+        );
+
+        this._$props.onSnapshot(changes, this.getPath());
+    }
+
+    protected _onChangeElement(): void {
+        this._$value = { ...this._$value };
+        this._$props.onChange();
+    }
+
+    getParent(): ContextNode | null {
+        return this._$parentNode;
+    }
+
+    setParent(newParent: ContextNode): void {
+        const currentParent = this.getParent();
+
+        if (currentParent !== null) {
+            currentParent.detachChildren(this.getName());
+        }
+
+        this._$parentNode = newParent;
+        newParent.registerChildren(this);
+    }
+
+    registerChildren(children: ContextNode): void {
+        this._$children.set(children.getName(), children);
+    }
+
+    getConfigs(): TDataConfigs {
+        return this._$configs;
+    }
+
+    getState(): Record<string, ContextElement> {
+        return this._$elements;
+    }
+
+    getValue(): Record<string, Slice | unknown> {
+        return this._$value;
+    }
+
+    reInitChildren(childConfigs: Record<string, IDataContextConfigs>): void {
+        Object.entries(childConfigs).forEach(([childName, childConfig]) => {
+            const currentChildren = this._$children.get(childName);
+
+            if (currentChildren) {
+                currentChildren.reInitState(childConfig);
+            } else {
+                this.addChild(childName, childConfig);
+            }
+        });
+    }
+
+    getPath(includeSelf: boolean = true): string[] {
+        const path = includeSelf ? [this.getName()] : [];
+        let node: ContextNode | null = this;
+
+        while (node?.getParent()) {
+            node = node?.getParent();
+            if (node) {
+                path.unshift(node.getName());
+            }
+        }
+
+        return path;
+    }
+
+    getData(): Record<string, unknown> {
+        const data: Record<string, unknown> = {};
+        Object.entries(this._$elements).forEach(([elementName, element]) => {
+            data[elementName] = element.getData();
+        });
+        return data;
+    }
+
+    getLoadResults(): Record<string, unknown> {
+        return this._$data;
+    }
+
+    reInitState(configs: IDataContextConfigs): void {
+        this.destroy(true);
+        this._initState(configs);
+    }
+
+    update(configs: IDataContextConfigs, isPartialUpdate: boolean = false): void {
+        const nodeElements = this._getDataConfigs(configs);
+
+        if (nodeElements) {
+            this.updateElements(nodeElements, configs.data || {}, isPartialUpdate);
+        }
+
+        if (configs.children) {
+            this.updateChildren(configs.children, isPartialUpdate);
+        }
+    }
+
+    updateChildren(
+        childConfigs: Record<string, IDataContextConfigs>,
+        isPartialUpdate: boolean = false
+    ): void {
+        Object.entries(childConfigs).forEach(([childName, childConfig]) => {
+            const currentChildren = this._$children.get(childName);
+
+            if (currentChildren) {
+                currentChildren.update(childConfig, isPartialUpdate);
+            } else {
+                this.addChild(childName, childConfig);
+            }
+        });
+    }
+
+    hasAliveChildren(): boolean {
+        if (this.isAlive()) {
+            return true;
+        }
+
+        for (const child of this._$children.values()) {
+            if (child.hasAliveChildren()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    getLoadResult(name: string): unknown {
+        let node: ContextNode | null = this;
+        let hasLoadResultOnNode = this._$data.hasOwnProperty(name);
+        let loadResult = this._$data[name];
+
+        while (!hasLoadResultOnNode && node?.getParent()) {
+            node = node?.getParent();
+            const nodeLoadResults = node?.getLoadResults();
+            hasLoadResultOnNode = !!nodeLoadResults?.hasOwnProperty(name);
+            loadResult = nodeLoadResults?.[name];
+        }
+
+        return loadResult;
+    }
+
+    getName(): string {
+        return this._$name;
+    }
+
+    getElement(name: string, deep: boolean = true): ContextElement | undefined {
+        const element: ContextElement | undefined = this.getState()[name];
+
+        if (!element && deep) {
+            const parentNode: ContextNode | null = this.getParent();
+            if (parentNode) {
+                return parentNode.getElement(name, deep);
+            }
+        }
+
+        return element;
+    }
+
+    isRoot(): boolean {
+        return !!this._$props.isRoot;
+    }
+
+    getNodeByPath(path: string[]): ContextNode | null {
+        const [firstPathItem] = path;
+        let result: ContextNode | null = this.getChild(firstPathItem);
+
+        for (let i = 1; i < path.length; i++) {
+            if (result === undefined || result === null) {
+                return null;
+            }
+
+            const name = path[i];
+
+            result = result.getChild(name);
+        }
+
+        return result;
+    }
+
+    getChild(name: string): ContextNode | null {
+        return this._$name === name ? this : this._$children.get(name) || null;
+    }
+
+    async reloadElement(
+        elementName: string,
+        dataFactoryArguments: IDataConfig['dataFactoryArguments'],
+        isReloadDeps: boolean = true
+    ): Promise<void> {
+        const currentElement = this._$elements[elementName];
+
+        if (!currentElement) {
+            throw new Error(
+                `В узле контекста ${this.getName()} не найден элемент ${elementName} попытке его перезагрузить`
+            );
+        }
+
+        const loader = await getLoader();
+        const currentNodeConfigs = this.getConfigs();
+        const elementConfig = { ...currentNodeConfigs[elementName] };
+        elementConfig.dataFactoryArguments = {
+            ...elementConfig.dataFactoryArguments,
+            ...dataFactoryArguments,
+        };
+        const reloadedConfigs = {
+            [elementName]: elementConfig,
+        };
+
+        if (elementConfig.dependencies && isReloadDeps) {
+            elementConfig.dependencies.forEach((dep) => {
+                reloadedConfigs[dep] = currentNodeConfigs[dep];
+            });
+        } else {
+            elementConfig.dependencies = [];
+        }
+        const loadResult = await loader.load(reloadedConfigs);
+
+        if (elementConfig.dependencies) {
+            elementConfig.dependencies.forEach((reloadedElementDep) => {
+                this.addElement(
+                    reloadedElementDep,
+                    loadResult[reloadedElementDep],
+                    reloadedConfigs[reloadedElementDep]
+                );
+            });
+        }
+
+        this.addElement(elementName, loadResult[elementName], elementConfig);
+        this._$props.onChange();
+    }
+
+    setState(nodePartialState: IContextNodeChange = {}): void {
+        this._$elementOrder.forEach((elementName) => {
+            const elementValue = nodePartialState[elementName];
+
+            if (elementValue) {
+                this._$elements[elementName].setState(elementValue);
+            }
+        });
+        this._$value = { ...this._$value };
+    }
+
+    updateElements(
+        configs: TDataConfigs,
+        loadResults: Record<string, unknown>,
+        isPartialUpdate: boolean = false
+    ): void {
+        this._$data = { ...this._$data, ...loadResults };
+        this._$configs = { ...this._$configs, ...configs };
+        this._$dataContext.addNode(this.getPath(false), this._$name, this._$data);
+
+        Object.entries(configs).forEach(([name, config]) => {
+            const isNeedReplaceElement =
+                !isPartialUpdate || !isEqual(loadResults[name], this._$data[name]);
+
+            if (isNeedReplaceElement) {
+                this.addElement(name, loadResults[name], config);
+            }
+        });
+    }
+
+    updateRelatedConfigs(configs: IDataContextConfigs, elementName: string): void {
+        const relatedElements = this.getRelatedElements(configs);
+        const currentRelatedElements = this._$relatedElements[elementName];
+
+        if (!currentRelatedElements) {
+            this.update(configs);
+        } else {
+            relatedElements.nodes.forEach((relatedNode) => {
+                if (configs.children?.[relatedNode]) {
+                    this.addChild(relatedNode, configs.children[relatedNode]);
+                }
+            });
+
+            const removedNodes = currentRelatedElements.nodes.filter((nodeName) => {
+                return !relatedElements.nodes.includes(nodeName);
+            });
+
+            removedNodes.forEach((remNode) => {
+                const node = this._$children.get(remNode);
+
+                if (node) {
+                    node.destroy(true);
+                    if (!node.hasAliveChildren()) {
+                        this._$children.delete(remNode);
+                    }
+                }
+            });
+
+            if (currentRelatedElements.elements.length) {
+                currentRelatedElements.elements.forEach((element) => {
+                    this.removeElement(element);
+                });
+            }
+
+            if ('configs' in configs || 'configGetter' in configs) {
+                const dataConfigs = this._getDataConfigs(configs);
+                this.updateElements(dataConfigs, configs.data || {});
+            }
+        }
+
+        this._$relatedElements[elementName] = relatedElements;
+    }
+
+    addElement(name: string, loadResult: unknown, config: IDataConfig): void {
+        this.removeElement(name);
+
+        this._$configs[name] = config;
+        this._$data[name] = loadResult;
+
+        const element = new ContextElement({
+            name,
+            onChange: this._onChangeElement,
+            onSnapshot: this._onElementSnapshot,
+            config,
+            loadResult,
+            parentNode: this,
+            dataContext: this._$props.dataContext.getAPI(this.getPath()),
+        });
+
+        this._$elements[name] = element;
+        this._$value = { ...this._$value };
+        this._$value[name] = this._$elements[name].getValue();
+
+        if (element.hasContextConfigs()) {
+            const contextConfig = element.getContextConfigs();
+
+            if (contextConfig) {
+                this.updateRelatedConfigs(contextConfig, element.getName());
+            }
+        }
+
+        this._createElementOrder();
+    }
+
+    addChild(
+        name: string,
+        contextConfigs: IDataContextConfigs,
+        onChange?: Function,
+        isRoot?: boolean
+    ): void {
+        if (this._$children.get(name)) {
+            this._$children.get(name)?.reInitState(contextConfigs);
+        }
+        const node = new ContextNode({
+            router: this._$props.router,
+            parentNode: this,
+            contextConfigs: contextConfigs.hasOwnProperty(STORE_ROOT_NODE_KEY)
+                ? //@ts-ignore
+                  contextConfigs[STORE_ROOT_NODE_KEY]
+                : contextConfigs,
+            name,
+            onChange: onChange
+                ? () => {
+                      onChange();
+                      this._$props.onChange();
+                  }
+                : this._$props.onChange,
+            onSnapshot: this._$props.onSnapshot,
+            dataContext: this._$dataContext,
+            getSlicesConfigNode: this._$props.getSlicesConfigNode,
+            getSlicesConfig: this._$props.getSlicesConfig,
+            isRoot,
+        });
+
+        this._$children.set(name, node);
+    }
+
+    removeElement(name: string): void {
+        if (this._$elements[name]) {
+            this._$elements[name].destroy();
+            this._$value = { ...this._$value };
+            delete this._$value[name];
+            delete this._$elements[name];
+        }
+    }
+
+    getChanges(changes: IContextNodeChange, changedName: string): IContextNodeChange {
+        const nextState: IContextNodeChange = { ...changes };
+
+        Object.entries(changes).forEach(([changedElementName, elementChanges]) => {
+            Object.entries(this._$elements).forEach(([elementName, nodeElement]) => {
+                const elementExtraValues = nodeElement.getExtraValues();
+
+                if (elementExtraValues) {
+                    elementExtraValues.forEach((sliceExtraValue) => {
+                        if (
+                            sliceExtraValue.dependencyName === changedElementName &&
+                            elementChanges.hasOwnProperty(sliceExtraValue.dependencyPropName)
+                        ) {
+                            let newValue: unknown =
+                                elementChanges[sliceExtraValue.dependencyPropName];
+                            if (sliceExtraValue.prepare) {
+                                const changedElementValue =
+                                    this.getState()?.[changedElementName]?.getValue();
+                                newValue = sliceExtraValue.prepare(
+                                    newValue,
+                                    changedElementValue instanceof Object
+                                        ? changedElementValue[
+                                              sliceExtraValue.dependencyPropName as keyof typeof changedElementValue
+                                          ]
+                                        : undefined,
+                                    this.getState()?.[changedElementName]
+                                );
+                            }
+                            nextState[elementName] = nextState[elementName] || {};
+                            nextState[elementName][sliceExtraValue.propName] = newValue;
+                        }
+                    });
+                }
+            });
+        });
+
+        delete nextState[changedName];
+
+        return nextState;
+    }
+
+    toObject(): unknown {
+        const valueObj: Record<string, any> = {};
+
+        Object.entries(this._$elements).forEach(([name, element]) => {
+            valueObj[name] = element.getValue();
+        });
+
+        if (this._$children.size) {
+            valueObj.children = {};
+            this._$children.forEach((value, key) => {
+                valueObj.children[key] = value.toObject();
+            });
+        }
+
+        return valueObj;
+    }
+
+    destroyElements(): void {
+        this._$isElementsDestroyed = true;
+        Object.keys(this._$elements).forEach((elementName) => {
+            this.removeElement(elementName);
+        });
+    }
+
+    destroy(ownElements: boolean = false): void {
+        this.destroyElements();
+
+        const childForClear: string[] = [];
+
+        this._$children.forEach((value) => {
+            if (!value.isRoot() || !ownElements) {
+                value.destroy(ownElements);
+                if (!value.hasAliveChildren()) {
+                    childForClear.push(value.getName());
+                }
+            }
+        });
+
+        childForClear.forEach((childName) => {
+            this._$children.delete(childName);
+        });
+
+        if (!ownElements) {
+            this._$children.clear();
+        }
+
+        /* Может задестроиться рут-нода контекста, которая зависла в задестроенном дереве во время спа перехода.
+         на всякий случай проверяем и открепляем ссылки */
+        if (!ownElements && !this._$children.size) {
+            this.detachFromParent();
+            this._$parentNode = null;
+        }
+    }
+
+    isAlive(): boolean {
+        return !this._$isElementsDestroyed;
+    }
+
+    detachFromParent(): void {
+        const parent = this.getParent();
+
+        if (parent) {
+            const name = this.getName();
+            parent?.detachChildren(name);
+        }
+    }
+
+    detachChildren(name: string): void {
+        if (this._$children.has(name)) {
+            this._$children.delete(name);
+        }
+    }
+
+    static getDependencies(nodeConfigs: Record<string, IDataConfig>): string[] {
+        const nodeDependencies: string[] = [];
+
+        Object.values(nodeConfigs).forEach((elementConfig) => {
+            const elementDeps = ContextElement.getDependencies(elementConfig);
+            elementDeps.forEach((elementDependency) => {
+                if (!nodeDependencies.includes(elementDependency)) {
+                    nodeDependencies.push(elementDependency);
+                }
+            });
+        });
+
+        return nodeDependencies;
+    }
+
+    static isAllDepsInCurrentRoot(configs: Record<string, IDataConfig>): boolean {
+        const nodeElementsNames = Object.keys(configs);
+        const nodeDependencies = ContextNode.getDependencies(configs);
+
+        return nodeDependencies.every((elementDependency) => {
+            return nodeElementsNames.includes(elementDependency);
+        });
+    }
+}
