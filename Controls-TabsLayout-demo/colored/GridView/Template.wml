@@ -1,0 +1,50 @@
+<div class="controlsDemo controlsDemo__wrapper__padding-left controlsDemo__fixedWidth800 controlsDemo__height500">
+    <div class="controlsDemo__ColumnsView_itemTemplate-title controlsDemo__cell">ColoredTabs/GridView</div>
+    <Layout.Selector.Browser
+        attr:class="controlsDemo__browser"
+        searchParam="searchString"
+        source="{{ _source }}"
+        bind:filter="_filter"
+        bind:selectedKeys="_allSelectedKeys"
+        bind:excludedKeys="_allExcludedKeys"
+        minSearchLength="{{ 0 }}"
+        filterSource="{{ _filterSource }}"
+        multiSelectVisibility="visible"
+        multiSelectorVisibility="hidden"
+        on:filterChanged="_filterChangedHandler()">
+        <ws:beforeFilterTemplate>
+            <Controls.buttons:Button
+                fontColorStyle="link"
+                viewMode="link"
+                icon="icon-ArrangeList"
+                iconSize="m"
+                fontSize="l"
+                tooltip="{[Развернуть все вкладки]}"
+                readOnly="{{ false }}"
+                on:click="_distributeClickHandler()"
+            />
+        </ws:beforeFilterTemplate>
+        <ws:search>
+            <Controls.search:Input
+                attr:class="controlsDemo__search"
+                attr:ws-autofocus="{{ true }}"
+                placeholder="Найти по имени вкладки..."
+                contrastBackground="{{ true }}"/>
+        </ws:search>
+        <ws:filterView>
+            <Controls.filter:View name="filterView" />
+        </ws:filterView>
+        <ws:content>
+            <Controls-TabsLayout.coloredGrid:View
+                name="ColoredTabsGrid"
+                backgroundColors="{{ _backgroundColors }}"
+                itemTemplate="{{ _coloredTabTmpl }}"
+                tabsOptions="{{ _tabsOptions }}"
+                bind:tabSelectedKey="_tabSelectedKey"
+                on:listSelectedKeysChanged="_allSelectedKeysChangedHandler()"
+                on:excludedKeysChanged="_allExcludedKeysChangedHandler()"
+                on:itemsReady="_itemsReadyHandler()">
+            </Controls-TabsLayout.coloredGrid:View>
+        </ws:content>
+    </Layout.Selector.Browser>
+</div>

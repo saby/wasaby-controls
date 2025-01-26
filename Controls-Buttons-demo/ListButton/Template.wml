@@ -1,0 +1,10 @@
+<div class="controls-margin_left-xl ws-flexbox ws-flex-column">
+    <div class="Controls-Buttons__Demo__cell controls-margin_bottom-l">
+        <Controls-Buttons.ListButton caption="Добавить"/>
+    </div>
+    <div class="Controls-Buttons__Demo__cell">
+        <Controls-Buttons.ListButton caption="Набор"
+                                     items="{{_items}}"
+                                     menuOptions="{{_menuOptions}}"/>
+    </div>
+</div>

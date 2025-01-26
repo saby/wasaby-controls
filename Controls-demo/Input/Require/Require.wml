@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell controlsDemo__flex controlsDemo_fixedWidth300">
+        <Controls.input:Label caption="Label" required="{{true}}"/>
+        <Controls.input:Text attr:class="ws-flex-grow-1"
+                             bind:value="_requiredValue"/>
+    </div>
+    <div class="controlsDemo__cell controlsDemo__flex controlsDemo_fixedWidth300">
+        <Controls.jumpingLabel:InputContainer attr:class="controlsDemo_fixedWidth300" value="{{_requiredValue1}}"
+                                              required="{{true}}"
+                                              caption="Label">
+            <Controls.input:Text bind:value="_requiredValue1"/>
+        </Controls.jumpingLabel:InputContainer>
+    </div>
+</div>

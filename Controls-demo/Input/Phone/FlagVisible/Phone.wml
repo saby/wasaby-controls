@@ -1,0 +1,28 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+<div class="controlsDemo__cell" data-qa="Controls-demo_Input_Phone_FlagVisible__cell-true">
+    <div class="controls-text-label">flagVisible = true</div>
+    <Controls.input:Phone attr:class="ControlsDemo-PhoneInput_phoneField"
+                          attr:data-qa="Controls-demo_Input_Phone_FlagVisible__true"
+                          onlyMobile="{{true}}"
+                          placeholder="+7 Телефон"
+                          fontSize="xl"
+                          inlineHeight="2xl"
+                          flagVisible="{{true}}"/>
+</div>
+<div class="controlsDemo__cell" data-qa="Controls-demo_Input_Phone_FlagVisible__cell-false">
+    <div class="controls-text-label">flagVisible = false</div>
+    <Controls.input:Phone attr:class="ControlsDemo-PhoneInput_phoneField"
+                          attr:data-qa="Controls-demo_Input_Phone_FlagVisible__false"
+                          onlyMobile="{{true}}"
+                          placeholder="+7 Телефон"
+                          fontSize="xl"
+                          inlineHeight="2xl"
+                          flagVisible="{{false}}"/>
+</div>
+<ws:if data="{{_forTest}}">
+    <div class="controlsDemo__cell">
+    <div class="controls-text-label">for copy to clipboard</div>
+        <Controls.input:Text attr:data-qa="Controls-demo_Input_Phone_FlagVisible__for-copy"/>
+    </div>
+</ws:if>
+</div>

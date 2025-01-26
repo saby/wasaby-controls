@@ -1,0 +1,22 @@
+<div class="engineDemo_Wizard_block">
+    <h1>Регистрация в ФНС</h1>
+    <br/>
+    <h2>Для начала регистрации укажите номер кассы, выберите модель</h2>
+    <Controls.input:Label caption="Номер кассы"/>
+    <br/>
+
+    <Controls.input:Label caption="Модель ККТ"/>
+    <br/>
+    <Controls.input:Text value="Дримкас-Ф" readOnly="{{true}}"/>
+    <br/><br/>
+
+    <Controls.input:Label caption="Контактный телефон"/>
+    <br/>
+    <Controls.input:Text value="+7 (910) 342 32 23" readOnly="{{true}}"/>
+    <br/><br/>
+
+    <ws:if data="{{!_options.finished}}">
+        <Controls.buttons:Button caption="Далее" on:click="clickHandler()"/>
+    </ws:if>
+
+</div>

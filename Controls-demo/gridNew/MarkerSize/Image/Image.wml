@@ -1,0 +1,25 @@
+<ws:template name="GRID_TEMPLATE">
+    <div class="controlsDemo__cell controlsDemo__maxWidth500 controlsDemo__mr2 controlsDemo__markerSize_{{markerSize}}_padding_{{ padding }}">
+        <div class="controls-text-label">markerSize='<b>{{ markerSize || 'default value' }}</b>', padding.top='<b>{{ padding }}</b>'</div>
+        <Controls.grid:View
+                            storeId="{{ storeId }}"
+                            columns="{{ _columns }}">
+            <ws:itemPadding top="{{ padding }}"/>
+            <ws:itemTemplate>
+                <ws:partial template="Controls/grid:ItemTemplate" scope="{{ _options }}" markerSize="{{ markerSize }}"/>
+            </ws:itemTemplate>
+        </Controls.grid:View>
+    </div>
+</ws:template>
+
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <ws:for data="index, size in _imageSizes">
+        <ws:for data="padding in _padding">
+            <ws:partial template="GRID_TEMPLATE"
+                        padding="{{ padding }}"
+                        markerSize="{{ _markerSizes[size] }}"
+                        storeId="{{ size }}ListData"/>
+        </ws:for>
+    </ws:for>
+    <ws:partial template="GRID_TEMPLATE" padding="default" storeId="defaultListData"/>
+</div>

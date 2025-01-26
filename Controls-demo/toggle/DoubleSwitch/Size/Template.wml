@@ -1,0 +1,22 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell">
+            <Controls.toggle:DoubleSwitch bind:value="_value1"
+                                          onCaption="Наличными"
+                                          offCaption="По карте"
+                                          size="l"/>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.toggle:DoubleSwitch bind:value="_value2"
+                                          onCaption="Наличными"
+                                          offCaption="По карте"
+                                          size="m"/>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.toggle:DoubleSwitch bind:value="_value3"
+                                          onCaption="Наличными"
+                                          offCaption="По карте"
+                                          size="s"/>
+        </div>
+    </div>
+</div>

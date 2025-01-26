@@ -1,0 +1,12 @@
+<ws:partial template="Controls/menu:ItemTemplate" scope="{{ _options }}">
+    <ws:contentTemplate>
+        <div class="ws-flexbox ws-flex-column controls-margin-s">
+            <div class="controls-text-secondary">
+                {{itemData.item.get('title')}}
+            </div>
+            <div class="controls-text-unaccented controls-fontsize-xs">
+                {{itemData.item.get('additionalText')}}
+            </div>
+        </div>
+    </ws:contentTemplate>
+</ws:partial>

@@ -1,0 +1,7 @@
+// На корне шаблона попапа задан стиль height: 100%, из-за этого в ie каждый шаблон имеет высоту родителя.
+.ws-is-ie {
+   .controlsDemo-StackTemplate {
+      /* stylelint-disable-next-line declaration-no-important */
+      height: inherit !important;
+   }
+}

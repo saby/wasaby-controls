@@ -1,0 +1,45 @@
+.controls__MasterCounter__wrapper {
+   display: flex;
+   align-items: center;
+   flex-direction: row-reverse;
+   padding: var(--offset_3xs) 0;
+   border-radius: var(--border-radius_2xl);
+   justify-content: center;
+}
+
+.controls__MasterCounter__wrapper_with-arrow {
+   padding: 0;
+   height: var(--icon-size_m);
+   width: var(--icon-size_m);
+}
+
+.controls__MasterCounter__item {
+   padding: 0 var(--offset_xs);
+   font-size: var(--font-size_m);
+   font-weight: normal;
+}
+
+.controls__MasterCounter__item_withSeparator {
+   border-right: calc(2 * var(--border-thickness)) solid var(--unaccented_separator_color);
+}
+
+.controls__MasterCounter__arrow {
+   opacity: 0;
+}
+
+.ws-is-hover {
+   .controls__MasterCounter__wrapper:hover {
+      outline: var(--border-thickness) solid var(--unaccented_border-color);
+   }
+
+   .controls-ListView__item_highlightOnHover:hover,
+   .controls-GridReact__row__hoverMode_row:hover {
+      .controls__MasterCounter__wrapper {
+         background: var(--background-color);
+      }
+
+      .controls__MasterCounter__arrow {
+         opacity: 1;
+      }
+   }
+}

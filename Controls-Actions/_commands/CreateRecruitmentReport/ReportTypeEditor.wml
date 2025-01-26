@@ -1,0 +1,10 @@
+<Controls.source:SelectedKey
+    selectedKey="{{ _options.propertyValue }}"
+    on:selectedKeyChanged="_onSelectedKeyChanged()">
+<Controls.ComboBox
+    keyProperty="key"
+    displayProperty="title"
+    validationStatus="{{_options.validationStatus}}"
+    source="{{ _source }}"
+/>
+</Controls.source:SelectedKey>

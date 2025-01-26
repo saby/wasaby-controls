@@ -1,0 +1,26 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div>
+        <div class="controlsDemo__cell">
+            <div class="controls-text-label">Ввод IP адреса</div>
+            <Controls.input:Mask mask="ddd.ddd.ddd.ddd"
+                                 placeholder="ddd.ddd.ddd.ddd"
+                                 bind:value="_value1"
+                                 attr:class="ControlsDemo-MaskInput_ipField"/>
+        </div>
+        <div class="controlsDemo__cell controlsDemo__flex ws-flex-column ws-align-items-start">
+            <div class="controls-text-label">Ввод кредитной карты</div>
+            <Controls.input:Mask replacer="_"
+                                 mask="dddd dddd dddd dddd"
+                                 bind:value="_value2"
+                                 attr:class="ControlsDemo-MaskInput_cardField"/>
+        </div>
+        <div class="controlsDemo__cell controlsDemo__flex ws-flex-column ws-align-items-start">
+            <div class="controls-text-label">Ввод автомобильного номера</div>
+            <Controls.input:Mask replacer=" "
+                                 mask="xyyyxx"
+                                 formatMaskChars="{{ _formatMaskChars }}"
+                                 bind:value="_value3"
+                                 attr:class="ControlsDemo-MaskInput_phoneField"/>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+// TODO: вернуть использование background из аллиасов controls и удалить перебитие стиля controls-operationsPanelV
+// после выполнения https://online.sbis.ru/opendoc.html?guid=512edb8f-58b7-4bf2-9ff4-33c3b0a9593c
+.controls-ListEnv-BottomBar {
+   background-color: var(--unaccented_background-color);
+   height: var(--inline_height_xl);
+   align-items: baseline;
+}
+
+.controls-ListEnv-BottomBar::before {
+   content: '\200b';
+   display: inline-block;
+   width: 0;
+   line-height: var(--inline_height_xl);
+   font-size: var(--font-size_m);
+}
+
+.controls-ListEnv-BottomBar_expanded {
+   display: flex;
+   box-shadow: 0 0 4px rgba(0, 0, 0, 0.156863);
+   width: calc(100% - var(--offset_2xs));
+   padding: var(--offset_2xs) var(--offset_2xs) var(--offset_2xs) 0;
+}
+
+.controls-ListEnv-BottomBar_collapsed {
+   display: inline-flex;
+   box-shadow: var(--box-shadow_ToolbarBox);
+   border-radius: var(--border-radius_m);
+   margin: var(--offset_2xs);
+}
+
+.controls-ListEnv-BottomBar__operationsPanelWrapper {
+   flex-shrink: 1;
+   width: 100%;
+   min-width: 1px;
+
+   .controls-operationsPanelV {
+      background-color: var(--unaccented_background-color);
+   }
+
+   .controls-operationsPanelV__multiSelector_separator {
+      background-color: var(--separator_color);
+   }
+}
+
+.controls-ListEnv-BottomBar__expander {
+   margin-right: var(--offset_m);
+   margin-left: var(--offset_m);
+   flex-shrink: 0;
+}
+
+.controls-ListEnv-BottomBar__rightTemplate {
+   margin-right: var(--offset_2xs);
+   flex-shrink: 0;
+}
+
+.controls-ListEnv-BottomBar__beforeExpanderTemplate {
+   margin-left: var(--offset_m);
+   flex-shrink: 0;
+}

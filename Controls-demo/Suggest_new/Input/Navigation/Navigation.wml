@@ -1,0 +1,71 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+   <div data-qa="controlsDemo-SuggestNewNavigation__pageNavigation" class="controlsDemo__wrapper__horizontal controlsDemo__cell">
+      <div class="controls-text-label">Постраничная навигация</div>
+      <Controls.SuggestInput
+              attr:class="controlsDemo__input demo-SuggestNew__pageNavigation"
+              bind:value="_suggestCustomValue"
+              displayProperty="title"
+              searchParam="title"
+              navigation="{{_navigation}}"
+              source="{{_source}}">
+          <ws:suggestTemplate templateName="wml!Controls-demo/Suggest_new/Input/Navigation/resources/SuggestTemplate">
+              <ws:templateOptions demoClass="demo-SuggestInputList"/>
+          </ws:suggestTemplate>
+      </Controls.SuggestInput>
+  </div>
+   <div data-qa="controlsDemo-SuggestNewNavigation__noSettingsNavigation" class="controlsDemo__wrapper__horizontal controlsDemo__cell">
+      <div class="controls-text-label">Без указания настроек навигации</div>
+      <Controls.SuggestInput
+              attr:class="controlsDemo__input demo-SuggestNew__noSettingsNavigation"
+              bind:value="_suggestDefaultValue"
+              displayProperty="title"
+              searchParam="title"
+              source="{{_source}}">
+          <ws:suggestTemplate templateName="wml!Controls-demo/Suggest_new/Input/Navigation/resources/SuggestTemplate">
+              <ws:templateOptions demoClass="demo-SuggestInputList"/>
+          </ws:suggestTemplate>
+      </Controls.SuggestInput>
+   </div>
+   <div data-qa="controlsDemo-SuggestNewNavigation__loadData" class="controlsDemo__wrapper__horizontal controlsDemo__cell">
+      <div class="controls-text-label">Подгружать данные, пока не будет достигут порог</div>
+      <Controls.SuggestInput
+              attr:class="controlsDemo__input demo-SuggestNew__loadData"
+              bind:value="_maxCountValue"
+              displayProperty="title"
+              searchParam="title"
+              navigation="{{_maxCountNavigation}}"
+              source="{{_source}}">
+          <ws:suggestTemplate templateName="wml!Controls-demo/Suggest_new/Input/Navigation/resources/SuggestTemplate">
+              <ws:templateOptions demoClass="demo-SuggestInputList"/>
+          </ws:suggestTemplate>
+      </Controls.SuggestInput>
+   </div>
+    <div data-qa="controlsDemo-SuggestNewNavigation__portionedNavigation" class="controlsDemo__wrapper__horizontal controlsDemo__cell">
+        <div class="controls-text-label">Порционная загрузка</div>
+        <Controls.SuggestInput
+                attr:class="controlsDemo__input demo-SuggestNew__pageNavigationUp"
+                displayProperty="title"
+                keyProperty="key"
+                searchParam="title"
+                navigation="{{_portionedNavigation}}"
+                source="{{_portionedSource}}">
+            <ws:suggestTemplate templateName="wml!Controls-demo/Suggest_new/Input/Navigation/resources/SuggestTemplate">
+                <ws:templateOptions demoClass="demo-SuggestInputList" keyProperty="key"/>
+            </ws:suggestTemplate>
+        </Controls.SuggestInput>
+    </div>
+   <div data-qa="controlsDemo-SuggestNewNavigation__pageNavigationUp"  class="controlsDemo__wrapper__horizontal controlsDemo__cell ControlsDemo-Suggest_down">
+      <div class="controls-text-label">Постраничная навигация (вверх)</div>
+      <Controls.SuggestInput
+              attr:class="controlsDemo__input demo-SuggestNew__pageNavigationUp"
+              bind:value="_suggestCustomValueUp"
+              displayProperty="title"
+              searchParam="title"
+              navigation="{{_navigation}}"
+              source="{{_source}}">
+          <ws:suggestTemplate templateName="wml!Controls-demo/Suggest_new/Input/Navigation/resources/SuggestTemplate">
+              <ws:templateOptions demoClass="demo-SuggestInputList"/>
+          </ws:suggestTemplate>
+      </Controls.SuggestInput>
+  </div>
+</div>

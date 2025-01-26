@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper">
+    <Controls-ListEnv.filterConnected:View source="{{_filterSource}}" storeId="dateMenuData"/>
+    <Controls.list:View storeId="dateMenuData">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/list:ItemTemplate">
+                <ws:contentTemplate>
+                    <div>
+                        <span class="controls-padding_right-m">{{itemTemplate.item.contents.get('title')}}</span>
+                        <span>{{itemTemplate.item.contents.get('date').toLocaleDateString()}}</span>
+                    </div>
+                </ws:contentTemplate>
+            </ws:partial>
+        </ws:itemTemplate>
+    </Controls.list:View>
+</div>

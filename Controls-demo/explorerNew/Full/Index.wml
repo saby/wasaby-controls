@@ -1,0 +1,68 @@
+<div class="controlsDemo__wrapper">
+   <div>
+      <div>
+         <Controls.browser:Browser
+            source="{{_viewSource}}"
+
+            keyProperty="id"
+            nodeProperty="parent@"
+            displayProperty="title"
+            parentProperty="parent"
+
+            deepReload="{{_deepReload}}"
+            expandByItemClick="{{_expandByItemClick}}"
+
+            columns="{{_columns}}"
+
+            viewMode="{{_viewMode}}"
+            useColumns="{{_useColumns}}"
+            columnsCount="{{_viewColumnsCount}}"
+
+            bind:root="_root"
+            bind:filter="_filter"
+         >
+            <div>
+               <Controls.listDataOld:ListContainer>
+                  <Controls.explorer:View/>
+               </Controls.listDataOld:ListContainer>
+            </div>
+         </Controls.browser:Browser>
+      </div>
+      <div class="toolbar">
+         <div class="field">
+            <div class="field__caption">view mode</div>
+            <div class="field__editor">
+               <Controls.ComboBox
+                  source="{{_viewModeSource}}"
+                  selectedKey="{{_viewMode}}"
+                  keyProperty="id"
+                  displayProperty="id"
+                  on:selectedKeyChanged="_onViewModeChange()"
+               />
+            </div>
+         </div>
+         <div class="field">
+            <div class="field__caption">view columns count</div>
+            <div class="field__editor">
+               <Controls.input:Number bind:value="_viewColumnsCount"/>
+            </div>
+         </div>
+         <div class="field">
+            <div class="field__editor">
+               <Controls.buttons:Button
+                  caption="Change filter for init reload"
+                  on:click="_changeFilterForInitReload()"
+               />
+            </div>
+         </div>
+         <div class="field">
+            <div class="field__editor">
+               <Controls.checkbox:Checkbox
+                  caption="expandByItemClick"
+                  bind:value="_expandByItemClick"
+               />
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

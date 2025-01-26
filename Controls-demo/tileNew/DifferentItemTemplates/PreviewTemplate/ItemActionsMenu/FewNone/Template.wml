@@ -1,0 +1,25 @@
+<ws:template name="tile">
+   <div class="controlsDemo__wrapper" style="width: 900px;">
+      <Controls.scroll:Container attr:class="controls-demo-Tile__scalingMode_scroll">
+         <Controls.treeTile:View
+                 storeId="listData1"
+                 tileMode="dynamic"
+                 tileScalingMode="{{scalingMode}}"
+                 actionMenuViewMode="preview"
+                 actionMode="adaptive"
+                 itemActions="{{actions}}"
+                 imageHeightProperty="imageHeight"
+                 imageWidthProperty="imageWidth"
+                 tileHeight="200"
+                 tileWidth="50"
+                 imageProperty="image"
+                 imageUrlResolver="{{_imageUrlResolver}}"
+                 imageFit="cover"
+                 itemTemplate="Controls/tile:PreviewTemplate"/>
+      </Controls.scroll:Container>
+   </div>
+</ws:template>
+
+<div class="controlsDemo__wrapper">
+   <ws:partial template="tile" attr:data-qa="controls-Tile_fewActions_noscale" actions="{{_fewActions}}" scalingMode="{{'none'}}"/>
+</div>

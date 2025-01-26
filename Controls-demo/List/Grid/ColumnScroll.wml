@@ -1,0 +1,33 @@
+<div class="demo-Grid" style="padding-left: 12px; max-width: 1500px;">
+   <div class="demo-Grid__container">
+      <Controls.browser:Browser  source="{{_viewSource}}" keyProperty="id"
+                                 bind:selectedKeys="_firstSelectedKeys"
+                                 name="multiSelector"
+                                 columns="{{_gridColumns}}"
+                                 header="{{_gridHeader}}"
+                                 resultsPosition="top"
+                                 preventServerSideColumnScroll="{{true}}"
+                                 columnScroll="{{true}}"
+                                 columnScrollStartPosition="end"
+                                 stickyColumnsCount="{{_stickyColumnsCount > 0 ? _stickyColumnsCount : 1}}"
+                                 backgroundStyle="default"
+                                 markedKey="448390"
+                                 stickyHeader="{{true}}"
+                                 itemActions="{{_itemActions}}">
+            <Controls.scroll:Container attr:class="demo-Grid__wrapper vertical" scn="1" attr:style="width:90%">
+               <Controls.listDataOld:ListContainer>
+                  <Controls.grid:View
+                      itemTemplate="wml!Controls-demo/List/Grid/DemoItem">
+                  </Controls.grid:View>
+               </Controls.listDataOld:ListContainer>
+            </Controls.scroll:Container>
+      </Controls.browser:Browser>
+   </div>
+   <div class="demo-Grid__stickyColumnsCount">
+      <span>Enter number of fixed columns:</span>
+      <Controls.input:Number
+         bind:value="_stickyColumnsCount"
+         precision="{{0}}"
+         onlyPositive="{{true}}" />
+   </div>
+</div>

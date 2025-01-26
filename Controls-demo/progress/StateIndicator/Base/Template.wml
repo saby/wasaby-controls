@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">Одна категория</div>
+        <Controls.progress:StateIndicator
+                data="{{_data}}"
+        />
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">Две категории</div>
+        <Controls.progress:StateIndicator
+                data="{{_dataWithTwoCategories}}"
+        />
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">Три категории</div>
+        <Controls.progress:StateIndicator
+                data="{{_dataWithThreeCategories}}"
+        />
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <Controls.input:Number bind:value="_number"
+                               attr:class="engine-demo-Calculator__input engine-demo-numbers"
+                               attr:style="width:250px"
+                               attr:data-qa="controlsinputNumber__field_one"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Number bind:value="_number"
+                               contrastBackground="{{true}}"
+                               attr:class="engine-demo-Calculator__input engine-demo-numbers"
+                               attr:style="width:250px"
+                               attr:data-qa="controlsinputNumber__field_two"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Number bind:value="_number"
+                               contrastBackground="{{true}}"
+                               attr:class="engine-demo-Calculator__input engine-demo-numbers"
+                               attr:style="width:250px"
+                               attr:data-qa="controlsinputNumber__field_three">
+            <ws:rightFieldTemplate>
+                <div class="controls-icon icon-MarkCollapseBold
+                        controls-icon_style-primary controls-icon_size-s"></div>
+            </ws:rightFieldTemplate>
+        </Controls.input:Number>
+    </div>
+</div>

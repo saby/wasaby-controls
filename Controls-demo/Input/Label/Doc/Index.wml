@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell controlsDemo__flex controlsDemo_fixedWidth300">
+        <Controls.input:Label caption="Label"/>
+        <Controls.input:Text attr:class="ws-flex-grow-1"
+                             bind:value="_value"
+                             placeholder="{{_placeholder}}"/>
+    </div>
+    <div class="controlsDemo__cell controlsDemo_fixedWidth300">
+        <div>
+            <Controls.input:Label caption="Label on top"/>
+        </div>
+        <Controls.input:Text attr:class="controlsDemo_fixedWidth300"
+                             bind:value="_topValue"
+                             placeholder="{{_placeholder}}"/>
+    </div>
+</div>

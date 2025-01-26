@@ -1,0 +1,38 @@
+<ws:template name="tile">
+   <Controls.treeTile:View
+           storeId="listData"
+           tileMode="static"
+           itemActions="{{_itemActions}}"
+           tileWidth="200"
+           imageProperty="image">
+      <ws:itemTemplate>
+         <ws:partial
+                 template="Controls/tile:RichTemplate"
+                 gradientColor="{{itemTemplate.item.contents.gradientColor}}"
+                 titlePosition="onImage"
+                 imageProportion="1:1"
+                 titleLines="{{itemTemplate.item.contents.titleLines}}"
+                 titleColorStyle="{{itemTemplate.item.contents.titleColorStyle}}"
+                 descriptionLines="{{descriptionLines}}"
+                 imageSize="{{itemTemplate.item.contents.imageSize}}"
+                 imageViewMode="{{imageViewMode}}"
+                 imagePosition="{{itemTemplate.item.contents.imagePosition}}"
+                 description="{{itemTemplate.item.contents.description}}"
+                 imageFit="{{imageFit}}"
+                 imageCompressionCoefficient="{{itemTemplate.item.contents.imageCompressionCoefficient}}"
+                 imageEffect="gradient"
+                 scope="{{itemTemplate}}">
+         </ws:partial>
+      </ws:itemTemplate>
+   </Controls.treeTile:View>
+</ws:template>
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth600">
+   <div class="controls-text-label">Шаблон 5.2 с изображением</div>
+   <ws:partial template="tile" imageViewMode="rectangle" descriptionLines="{{3}}"/>
+   <div class="controls-text-label">Шаблон 5.2 без изображения</div>
+   <ws:partial template="tile" imageViewMode="none" descriptionLines="{{3}}"/>
+   <div class="controls-text-label">Шаблон 5.2 без описания</div>
+   <ws:partial template="tile" imageViewMode="rectangle" descriptionLines="{{0}}"/>
+   <div class="controls-text-label">Шаблон 5.2 с изображением</div>
+   <ws:partial template="tile" imageViewMode="rectangle" descriptionLines="{{3}}" imageFit="contain"/>
+</div>

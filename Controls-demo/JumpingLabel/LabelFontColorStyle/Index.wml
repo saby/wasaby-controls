@@ -1,0 +1,50 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+<div class="controlsDemo__cell">
+  <Controls.jumpingLabel:InputContainer attr:class="controlsDemo__input"
+                                        caption="Enter your name"
+                                        fontColorStyle="secondary"
+                                        bind:value="_firstValue">
+    <Controls.input:Text/>
+  </Controls.jumpingLabel:InputContainer>
+</div>
+<div class="controlsDemo__cell">
+  <Controls.jumpingLabel:InputContainer attr:class="controlsDemo__input"
+                                        caption="Enter your name"
+                                        fontColorStyle="danger"
+                                        bind:value="_secondValue">
+    <Controls.input:Text/>
+  </Controls.jumpingLabel:InputContainer>
+</div>
+<div class="controlsDemo__cell">
+  <Controls.jumpingLabel:InputContainer attr:class="controlsDemo__input"
+                                        caption="Enter your name"
+                                        fontColorStyle="success"
+                                        bind:value="_thirdValue">
+    <Controls.input:Text/>
+  </Controls.jumpingLabel:InputContainer>
+</div>
+<div class="controlsDemo__cell">
+  <Controls.jumpingLabel:InputContainer attr:class="controlsDemo__input"
+                                        caption="Enter your name"
+                                        fontColorStyle="info"
+                                        bind:value="_fourthValue">
+    <Controls.input:Text/>
+  </Controls.jumpingLabel:InputContainer>
+</div>
+<div class="controlsDemo__cell">
+  <Controls.jumpingLabel:InputContainer attr:class="controlsDemo__input"
+                                        caption="Enter your name"
+                                        fontColorStyle="label"
+                                        bind:value="_fifthValue">
+    <Controls.input:Text/>
+  </Controls.jumpingLabel:InputContainer>
+</div>
+<div class="controlsDemo__cell">
+  <Controls.jumpingLabel:InputContainer attr:class="controlsDemo__input"
+                                        caption="Enter your name"
+                                        fontColorStyle="primary"
+                                        bind:value="_sixthValue">
+    <Controls.input:Text/>
+  </Controls.jumpingLabel:InputContainer>
+</div>
+</div>

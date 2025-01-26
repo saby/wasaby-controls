@@ -1,0 +1,31 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper__horizontal controlsDemo__cell">
+      <div class="controls-text-label">Шаблон пустого списка с кнопкой</div>
+      <Controls.ComboboxSuggest
+              attr:class="controlsDemo__input demo-SuggestNewSelector__emptyWithButton"
+              bind:value="_suggestCustomValue"
+              displayProperty="title"
+              searchParam="title"
+              navigation="{{_navigation}}"
+              source="{{_source}}">
+          <ws:emptyTemplate templateName="wml!Controls-demo/Suggest_new/Selector/EmptyTemplate/resources/EmptyTemplate"/>
+          <ws:suggestTemplate templateName="wml!Controls-demo/Suggest_new/Selector/EmptyTemplate/resources/SuggestTemplate">
+              <ws:templateOptions demoClass="demo-SuggestInputList"/>
+          </ws:suggestTemplate>
+      </Controls.ComboboxSuggest>
+  </div>
+   <div class="controlsDemo__wrapper__horizontal controlsDemo__cell ControlsDemo-Suggest_padding-left">
+      <div class="controls-text-label">Шаблон пустого списка по умолчанию</div>
+      <Controls.ComboboxSuggest
+              attr:class="controlsDemo__input demo-SuggestNewSelector__emptyDefault"
+              bind:value="_suggestDefaultValue"
+              displayProperty="title"
+              searchParam="title"
+              navigation="{{_navigation}}"
+              source="{{_source}}">
+          <ws:suggestTemplate templateName="wml!Controls-demo/Suggest_new/Selector/EmptyTemplate/resources/SuggestTemplate">
+              <ws:templateOptions demoClass="demo-SuggestInputList"/>
+          </ws:suggestTemplate>
+      </Controls.ComboboxSuggest>
+   </div>
+</div>

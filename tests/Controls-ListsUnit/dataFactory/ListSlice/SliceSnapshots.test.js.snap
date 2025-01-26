@@ -1,0 +1,958 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls/ListSliceSnapshots reload должен выполнить перезагрузку и обновить items на стейте 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "items": 0,
+        "loading": false
+    },
+    {
+        "loading": true
+    },
+    {
+        "otherProps": [
+            "selectedKeys",
+            "excludedKeys",
+            "expandedItems",
+            "collapsedItems",
+            "hasMoreStorage",
+            "filter"
+        ]
+    },
+    {
+        "items": 3,
+        "loading": false
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots selectionViewMode сбрасывается при перезагрузке (вызов метода reload) 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "loading": false,
+        "selectionViewMode": "hidden"
+    },
+    {
+        "selectionViewMode": "selected"
+    },
+    {
+        "loading": true
+    },
+    {
+        "otherProps": [
+            "selectedKeys",
+            "excludedKeys",
+            "expandedItems",
+            "collapsedItems",
+            "hasMoreStorage",
+            "filter"
+        ]
+    },
+    {
+        "loading": false
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots setState slice.setState, отправленные в очередь во время работы другого, должны сгруппироваться в один перед испонением 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "markedKey": 0
+    },
+    {
+        "markedKey": 1
+    },
+    {
+        "markedKey": 10
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots setState Обновление не должно быть отсеяно, если идет попытка установки текущего состояния во время исполнения другого setState 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "markedKey": 2
+    },
+    {
+        "markedKey": 3
+    },
+    {
+        "markedKey": 2
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots setState Обновление не должно происходить, если состояние уже установлено 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "markedKey": 2
+    },
+    {
+        "markedKey": 3
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots setState Экшены должны добавляться в очередь без дублирования уже исполняемых экшенов 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "markedKey": 0
+    },
+    {
+        "markedKey": 1
+    },
+    {
+        "markedKey": 2
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots setState тесты очереди AbstractSlice setState с объектом не отсеивается, если перед ним есть изменение состояния 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "root": null
+    },
+    {
+        "otherProps": [
+            "loading",
+            "selectedKeys",
+            "excludedKeys",
+            "expandedItems",
+            "collapsedItems",
+            "hasMoreStorage",
+            "filter"
+        ]
+    },
+    {
+        "otherProps": [
+            "selectedKeys",
+            "excludedKeys",
+            "expandedItems",
+            "collapsedItems",
+            "hasMoreStorage",
+            "filter"
+        ]
+    },
+    {
+        "root": 1
+    },
+    {
+        "otherProps": [
+            "selectedKeys",
+            "excludedKeys",
+            "expandedItems",
+            "collapsedItems",
+            "expansionModel",
+            "markedKey",
+            "hasMoreStorage",
+            "filter",
+            "breadCrumbsItems",
+            "breadCrumbsItemsWithoutBackButton"
+        ]
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots setState тесты очереди AbstractSlice отложенные setState с объектами должны сгруппироваться в один перед испонением 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "markedKey": 0
+    },
+    {
+        "markedKey": 1
+    },
+    {
+        "markedKey": 9
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots setState тесты очереди AbstractSlice отложенный setState с объектом не должен вызывать обновление, если состояние уже установлено 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "markedKey": 0
+    },
+    {
+        "markedKey": 1
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots Во время метода load можно менять стейт, который не влияет на загрузку данных 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "loading": false,
+        "markedKey": "undefined"
+    },
+    {
+        "loading": true
+    },
+    {
+        "otherProps": [
+            "selectedKeys",
+            "excludedKeys",
+            "expandedItems",
+            "collapsedItems",
+            "hasMoreStorage",
+            "filter"
+        ]
+    },
+    {
+        "loading": false
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots Вызов reload в момент, когда уже идёт загрузка. Стейт loading из-за отмены предыдущей загрузки не должен сбрасываться  1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "loading": false,
+        "filter": {}
+    },
+    {
+        "loading": true,
+        "filter": "НОВАЯ ССЫЛКА"
+    },
+    {
+        "filter": "НОВАЯ ССЫЛКА"
+    },
+    {
+        "loading": false,
+        "filter": {
+            "key": 1
+        }
+    },
+    {
+        "loading": true,
+        "filter": "НОВАЯ ССЫЛКА"
+    },
+    {
+        "filter": "НОВАЯ ССЫЛКА"
+    },
+    {
+        "loading": false,
+        "filter": "НОВАЯ ССЫЛКА"
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots Вызов reload с параметром keepNavigation должен сохранять навигацию при перезагрузке 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "slice.state.items.getCount": 1,
+        "loading": false,
+        "navigation": {
+            "source": "page",
+            "sourceConfig": {
+                "multiNavigation": false,
+                "pageSize": 1,
+                "page": 0,
+                "hasMore": false
+            }
+        }
+    },
+    {
+        "loading": true,
+        "navigation": "НОВАЯ ССЫЛКА"
+    },
+    {
+        "navigation": "НОВАЯ ССЫЛКА"
+    },
+    {
+        "loading": false,
+        "navigation": "НОВАЯ ССЫЛКА"
+    },
+    {
+        "loading": true,
+        "navigation": "НОВАЯ ССЫЛКА"
+    },
+    {
+        "navigation": "НОВАЯ ССЫЛКА"
+    },
+    {
+        "loading": false,
+        "navigation": "НОВАЯ ССЫЛКА"
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots Вызов метода load без аргументов. Фильтр не должен меняться. 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "items": 2,
+        "loading": false,
+        "filter": {
+            "department": "Platform"
+        }
+    },
+    {
+        "loading": true,
+        "filter": "НОВАЯ ССЫЛКА"
+    },
+    {
+        "filter": "НОВАЯ ССЫЛКА"
+    },
+    {
+        "loading": false,
+        "filter": "НОВАЯ ССЫЛКА"
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots Загрузка Если в прикладном bas были изменения, требующие загрузку, она должна выполниться 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "filterDescription": "undefined",
+        "filter": {},
+        "loading": false
+    },
+    {
+        "filterDescription": [
+            {
+                "name": "test",
+                "value": null
+            }
+        ],
+        "filter": "НОВАЯ ССЫЛКА",
+        "loading": true
+    },
+    {
+        "filterDescription": "НОВАЯ ССЫЛКА",
+        "filter": "НОВАЯ ССЫЛКА"
+    },
+    {
+        "filterDescription": "НОВАЯ ССЫЛКА",
+        "filter": {
+            "test": null
+        },
+        "loading": false
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots Загрузка записей по скролу Источник вернул ошибку загрузки 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "errorViewConfig": "undefined",
+        "loading": false
+    },
+    {
+        "loading": true
+    },
+    {
+        "otherProps": [
+            "selectedKeys",
+            "excludedKeys",
+            "expandedItems",
+            "collapsedItems",
+            "hasMoreStorage",
+            "filter"
+        ]
+    },
+    {
+        "errorViewConfig": {
+            "type": "maintenance",
+            "status": 504,
+            "template": "SbisEnvUI/ParkingTemplates:InList",
+            "options": {
+                "message": "Извините, мы на техническом обслуживании",
+                "image": {
+                    "default": "/cdn/Maintenance/1.1.3/img/SERVICE_FOR_MAINTENANCE_default.svg",
+                    "dark": "/cdn/Maintenance/1.1.3/img/SERVICE_FOR_MAINTENANCE_blue.svg"
+                },
+                "action": "function",
+                "details": "",
+                "error": null,
+                "showInDirection": "down"
+            },
+            "mode": "inlist"
+        },
+        "loading": false
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots Иерархия Если сброс поиска был вызван сменой корня, то восстанавливать прошлый корень не надо 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "root": null,
+        "searchValue": "",
+        "viewMode": "table",
+        "loading": false
+    },
+    {
+        "loading": true
+    },
+    {
+        "otherProps": [
+            "selectedKeys",
+            "excludedKeys",
+            "expandedItems",
+            "collapsedItems",
+            "hasMoreStorage",
+            "filter"
+        ]
+    },
+    {
+        "root": 1,
+        "loading": false
+    },
+    {
+        "otherProps": [
+            "selectedKeys",
+            "excludedKeys",
+            "expandedItems",
+            "collapsedItems",
+            "hasMoreStorage",
+            "filter",
+            "searchInputValue",
+            "breadCrumbsItems",
+            "breadCrumbsItemsWithoutBackButton"
+        ]
+    },
+    {
+        "otherProps": [
+            "selectedKeys",
+            "excludedKeys",
+            "expandedItems",
+            "collapsedItems",
+            "hasMoreStorage",
+            "filter",
+            "breadCrumbsItems",
+            "breadCrumbsItemsWithoutBackButton"
+        ]
+    },
+    {
+        "loading": true
+    },
+    {
+        "root": null,
+        "searchValue": "test",
+        "viewMode": "search",
+        "loading": false
+    },
+    {
+        "loading": true
+    },
+    {
+        "otherProps": [
+            "selectedKeys",
+            "excludedKeys",
+            "expandedItems",
+            "collapsedItems",
+            "hasMoreStorage",
+            "filter"
+        ]
+    },
+    {
+        "root": 2,
+        "searchValue": "",
+        "viewMode": "table",
+        "loading": false
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots Открытие и закрытие панели фильтров 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "filterDetailPanelVisible": false
+    },
+    {
+        "filterDetailPanelVisible": true
+    },
+    {
+        "filterDetailPanelVisible": false
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots Отметка маркером Вызов API.mark() с параметром устанавливает корректное значение в стейт 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "markedKey": "undefined"
+    },
+    {
+        "markedKey": 2
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots Отметка маркером Смена состояния markerVisibility При выключении видимости, маркер сбрасывается в null 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "markedKey": 2,
+        "markerVisibility": "visible"
+    },
+    {
+        "markedKey": null,
+        "markerVisibility": "hidden"
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots Повторный вызов метода reload должен отменить предыдущую загрузку, если она выполняется 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "loading": false,
+        "selectionViewMode": "hidden"
+    },
+    {
+        "loading": true
+    },
+    {
+        "otherProps": [
+            "selectedKeys",
+            "excludedKeys",
+            "expandedItems",
+            "collapsedItems",
+            "hasMoreStorage",
+            "filter"
+        ]
+    },
+    {
+        "otherProps": [
+            "selectedKeys",
+            "excludedKeys",
+            "expandedItems",
+            "collapsedItems",
+            "hasMoreStorage",
+            "filter"
+        ]
+    },
+    {
+        "loading": false
+    },
+    {
+        "otherProps": [
+            "selectedKeys",
+            "excludedKeys",
+            "expandedItems",
+            "collapsedItems",
+            "hasMoreStorage",
+            "filter"
+        ]
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots После поиска не должно сбрасываться состояние searchInputValue, если оно менялось, пока выполнялся запрос 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "loading": false,
+        "searchInputValue": "",
+        "searchValue": "",
+        "filter": {}
+    },
+    {
+        "searchInputValue": "test",
+        "filter": "НОВАЯ ССЫЛКА"
+    },
+    {
+        "filter": "НОВАЯ ССЫЛКА"
+    },
+    {
+        "loading": true,
+        "filter": "НОВАЯ ССЫЛКА"
+    },
+    {
+        "searchInputValue": "testPlus",
+        "filter": "НОВАЯ ССЫЛКА"
+    },
+    {
+        "loading": false,
+        "searchValue": "test",
+        "filter": {
+            "testSearchParam": "test"
+        }
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots При изменении фильтра должна произойти перезагрузка с новым фильтром 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "loading": false,
+        "filter": {}
+    },
+    {
+        "loading": true,
+        "filter": "НОВАЯ ССЫЛКА"
+    },
+    {
+        "filter": "НОВАЯ ССЫЛКА"
+    },
+    {
+        "loading": false,
+        "filter": {
+            "title": "Платформа"
+        }
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots При проваливании в папку данные и корень обновляются в одном и том же beforeApplyState 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "root": null,
+        "items": 0,
+        "loading": false
+    },
+    {
+        "loading": true
+    },
+    {
+        "otherProps": [
+            "selectedKeys",
+            "excludedKeys",
+            "expandedItems",
+            "collapsedItems",
+            "hasMoreStorage",
+            "filter"
+        ]
+    },
+    {
+        "root": 0,
+        "items": 2,
+        "loading": false
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots Тесты поиска Вызов метода search c тем же searchValue, что и на стейте 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "loading": false,
+        "searchValue": "test"
+    },
+    {
+        "loading": true
+    },
+    {
+        "otherProps": [
+            "selectedKeys",
+            "excludedKeys",
+            "expandedItems",
+            "collapsedItems",
+            "hasMoreStorage",
+            "filter"
+        ]
+    },
+    {
+        "loading": false
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots Тесты поиска Значение searchInputValue не должно сбрасываться при вызове setState с пустым searchValue 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "loading": false,
+        "searchValue": "testValue",
+        "searchInputValue": "testValue"
+    },
+    {
+        "loading": true
+    },
+    {
+        "loading": false,
+        "searchValue": ""
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots Тесты поиска Значение в строке поиска не сбрасывается, если за время поиска успели сбросить и что-то написать 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "loading": false,
+        "searchValue": "",
+        "searchInputValue": ""
+    },
+    {
+        "searchInputValue": "7777"
+    },
+    {
+        "otherProps": [
+            "selectedKeys",
+            "excludedKeys",
+            "expandedItems",
+            "collapsedItems",
+            "hasMoreStorage",
+            "filter"
+        ]
+    },
+    {
+        "loading": true
+    },
+    {
+        "searchInputValue": ""
+    },
+    {
+        "searchInputValue": "value"
+    },
+    {
+        "loading": false,
+        "searchValue": "7777"
+    },
+    {
+        "otherProps": [
+            "selectedKeys",
+            "excludedKeys",
+            "expandedItems",
+            "collapsedItems",
+            "hasMoreStorage",
+            "filter"
+        ]
+    },
+    {
+        "loading": true
+    },
+    {
+        "loading": false,
+        "searchValue": "value"
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots Тесты поиска При сбросе поиска должны вернуться в узел, с которого начинали поиск 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "loading": false,
+        "searchValue": "",
+        "searchInputValue": "",
+        "viewMode": "undefined",
+        "root": null
+    },
+    {
+        "searchInputValue": "value"
+    },
+    {
+        "loading": true
+    },
+    {
+        "otherProps": [
+            "selectedKeys",
+            "excludedKeys",
+            "expandedItems",
+            "collapsedItems",
+            "hasMoreStorage",
+            "filter"
+        ]
+    },
+    {
+        "loading": false,
+        "root": 1
+    },
+    {
+        "otherProps": [
+            "selectedKeys",
+            "excludedKeys",
+            "expandedItems",
+            "collapsedItems",
+            "hasMoreStorage",
+            "filter",
+            "breadCrumbsItems",
+            "breadCrumbsItemsWithoutBackButton"
+        ]
+    },
+    {
+        "loading": true
+    },
+    {
+        "loading": false,
+        "searchValue": "value",
+        "viewMode": "search",
+        "root": null
+    },
+    {
+        "loading": true
+    },
+    {
+        "loading": false,
+        "searchValue": "",
+        "viewMode": "undefined",
+        "root": 1
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots Тесты поиска При смене корня прикладник может отменить сброс поиска 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "loading": false,
+        "searchValue": "test"
+    },
+    {
+        "loading": true
+    },
+    {
+        "otherProps": [
+            "selectedKeys",
+            "excludedKeys",
+            "expandedItems",
+            "collapsedItems",
+            "hasMoreStorage",
+            "filter"
+        ]
+    },
+    {
+        "loading": false
+    }
+]
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Controls/ListSliceSnapshots Фильтрация Применение структуры фильтров 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "filter": {},
+        "filterDescription": [
+            {
+                "name": "test",
+                "value": null,
+                "resetValue": null
+            }
+        ]
+    },
+    {
+        "filter": "НОВАЯ ССЫЛКА",
+        "filterDescription": [
+            {
+                "name": "test",
+                "value": 1,
+                "resetValue": null,
+                "appliedFrom": "undefined"
+            }
+        ]
+    },
+    {
+        "filter": "НОВАЯ ССЫЛКА",
+        "filterDescription": "НОВАЯ ССЫЛКА"
+    },
+    {
+        "filter": {
+            "test": 1,
+            "testSearchParam": "test",
+            "parent": null,
+            "Разворот": "С разворотом",
+            "usePages": "full"
+        },
+        "filterDescription": "НОВАЯ ССЫЛКА"
+    }
+]
+  </div>
+</DocumentFragment>
+`;

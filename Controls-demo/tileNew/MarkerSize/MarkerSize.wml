@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper controlDemo_Tile_default">
+    <Controls.treeTile:View
+            tileMode="dynamic"
+            imageProperty="image"
+            storeId="MarkerSize"
+    >
+        <ws:itemTemplate>
+            <ws:partial template="Controls/tile:ItemTemplate" markerSize="image-l"/>
+        </ws:itemTemplate>
+    </Controls.treeTile:View>
+</div>

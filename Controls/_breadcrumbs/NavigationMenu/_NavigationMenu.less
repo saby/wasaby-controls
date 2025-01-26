@@ -1,0 +1,14 @@
+// Для desktopMode === 'sticky' и без шапки, когда кнопка закрытия выходит за границы
+// popup, добавляем отступ справа что бы кнопка закрытия не обрезалась из-за того, что
+// popup вплотную прижат к правой границе экрана
+.controls-breadcrumbs-nav-menu__popup_close-btn-external {
+   padding-right: calc(var(--width_closeButton_functionalButton) / 2);
+}
+
+.ws-is-ie {
+   // Для IE убираем фиксированный расчет ширин колонок что бы таблица сайзилась по контенту
+   /* stylelint-disable-next-line selector-max-type */
+   .controls-breadcrumbsPathButton__menu-body table.controls-Grid {
+      table-layout: auto;
+   }
+}

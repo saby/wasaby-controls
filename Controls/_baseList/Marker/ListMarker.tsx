@@ -1,0 +1,45 @@
+/**
+ * @kaizen_zone 54264d06-aeee-417a-83fc-b192e24178b2
+ */
+import * as React from 'react';
+import { TInternalProps } from 'UICore/Executor';
+
+import { TMarkerSize } from 'Controls/display';
+import Component from 'Controls/markerComponent';
+
+export type TMarkerPosition = 'default' | 'outside' | 'custom';
+
+interface IMarkableItem {
+    Markable: boolean;
+    shouldDisplayMarker(marker: boolean): boolean;
+    getMarkerClasses(markerSize: TMarkerSize): string;
+}
+
+interface IProps extends TInternalProps {
+    item: IMarkableItem;
+    marker: boolean;
+    markerSize: TMarkerSize;
+    markerPosition?: TMarkerPosition;
+    className?: string;
+}
+
+function getClassName(props: IProps): string {
+    let className = props.item.getMarkerClasses(props.markerSize);
+    if (!props.markerPosition || props.markerPosition === 'default') {
+        className += ' controls-ListView__itemV_marker_default';
+    }
+    if (props.markerPosition === 'outside') {
+        className += ` controls-ListView__itemV_marker_outside_${props.markerSize || 'content-xs'}`;
+    }
+    if (props.className) {
+        className += ` ${props.className}`;
+    }
+    return className;
+}
+
+export default function ListMarker(props: IProps): React.ReactElement {
+    const shouldDisplay = props.item.Markable && props.item.shouldDisplayMarker(props.marker);
+    return (
+        shouldDisplay && <Component markerSize={props.markerSize} className={getClassName(props)} />
+    );
+}

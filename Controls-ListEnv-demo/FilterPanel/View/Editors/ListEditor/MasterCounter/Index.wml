@@ -1,0 +1,6 @@
+<div class="controlsDemo__wrapper-background">
+    <Controls-ListEnv.filterPanelConnected:View filterNames="['owners']"
+                                         storeId="counterData"
+                                         contrastBackground="{{!_options.isAdaptive}}"
+                                         attr:class="{{!_options.isAdaptive ? 'engine-demo__Widgets_filterPanel'}}"/>
+</div>

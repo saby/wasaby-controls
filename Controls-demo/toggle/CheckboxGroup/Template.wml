@@ -1,0 +1,74 @@
+<div class="controlsDemo__wrapper  controlsDemo__flex controlsDemo__flex-flow_wrap">
+    <div class="controlsDemo__cell demo-checkboxGroupIndex__base controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/CheckboxGroup/Base/Index' }}">
+            <a href="{{content.href}}">Базовая настройка группы чекбоксов</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.CheckboxGroup.Base.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-checkboxGroupIndex__Source controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/CheckboxGroup/Source/Index' }}">
+            <a href="{{content.href}}">В качестве источника данных используется source</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.CheckboxGroup.Source.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-checkboxGroupIndex__horizontal controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/CheckboxGroup/Direction/Index' }}">
+            <a href="{{content.href}}">Настройка ориентации группы чекбоксов</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.CheckboxGroup.Direction.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-checkboxGroupIndex__displayProperty controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/CheckboxGroup/displayProperty/Index' }}">
+            <a href="{{content.href}}">Настройка поля, значение которого будет отображаться</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.CheckboxGroup.displayProperty.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-checkboxGroupIndex__hierarchy controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/CheckboxGroup/ParentProperty/Index' }}">
+            <a data-qa="controlsDemo-checkboxGroup__linkHierarhy" href="{{content.href}}">Настройка чекбоксов с иерархией</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.CheckboxGroup.ParentProperty.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-checkboxGroupIndex__ItemTemplate controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/CheckboxGroup/ItemTemplate/Index' }}">
+            <a href="{{content.href}}">Настройка пользовательского шаблона через ItemTemplate</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.CheckboxGroup.ItemTemplate.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-checkboxGroupIndex__ItemTemplateProperty controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/CheckboxGroup/ItemTemplateProperty/Index' }}">
+            <a href="{{content.href}}">Настройка пользовательского шаблона через ItemTemplateProperty</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.CheckboxGroup.ItemTemplateProperty.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-checkboxGroupIndex__ReadOnly controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/CheckboxGroup/ReadOnly/Index' }}">
+            <a href="{{content.href}}">Настройка состояния 'только для чтения'</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.CheckboxGroup.ReadOnly.Index/>
+    </div>
+    <div class="controlsDemo__cell demo-checkboxGroupIndex__SelectedKey controls-margin_right-l {{_widthClass}}">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/toggle/CheckboxGroup/SelectedKey/Index' }}">
+            <a href="{{content.href}}">Настройка выбранных элементов</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.CheckboxGroup.SelectedKey.Index/>
+    </div>
+</div>

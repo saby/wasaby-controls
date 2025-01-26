@@ -1,0 +1,5 @@
+<Controls.context:DataContextCompatibleConsumer scope="{{ _options }}">
+    <ws:innerComponent>
+        <Controls._popup.WasabyOpeners.Edit.Container scope="{{ innerComponent }}" _dataOptionsValue="{{innerComponent.dataContextCompatibleValue}}" />
+    </ws:innerComponent>
+</Controls.context:DataContextCompatibleConsumer>

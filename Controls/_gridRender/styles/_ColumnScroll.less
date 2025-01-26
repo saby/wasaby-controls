@@ -1,0 +1,75 @@
+@import 'Controls/_scroll/Scroll/_contentEnvironmentZIndex';
+
+.flex-centered() {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+// НА ОБЁРТКЕ ГОРИЗОНТАЛЬНОГО СКРОЛЛА  НЕ ДОЛЖНО быть стилей, которые формируют
+// новый контекст z-index'ов. В противном случае оверлей скроллирования колонок
+// мышью будет ограничен размерами таблицы (даже будучи fixed).
+// https://www.w3.org/TR/css-transforms-1/#transform-rendering
+
+.controls-ColumnScroll__thumb {
+   z-index: @z-index_Scroll-contentEnvironment_horizontal;
+   width: inherit;
+}
+
+.controls-ColumnScroll__shadow {
+   z-index: @z-index_Scroll-shadow;
+   width: var(--columnscroll_shadow-blur_grid);
+}
+
+.controls-ColumnScroll__shadow_with-bottom-padding {
+   bottom: var(--height_outside_itemActions);
+}
+
+// Набор классов для установки градиента горизонтального скролла через backgroundStyle (default, transparent)
+.controls-ColumnScroll__shadow-default,
+.controls-ColumnScroll__shadow-contrast,
+.controls-ColumnScroll__shadow-stack,
+.controls-ColumnScroll__shadow-stackHeader,
+.controls-ColumnScroll__shadow-infoBox-detail {
+   background: linear-gradient(
+      to right,
+      var(--columnscroll_shadow-start-color_grid),
+      var(--columnscroll_shadow-end-color_grid)
+   );
+   border-left: var(--columnscroll_separator_thickness_grid) solid
+      var(--columnscroll_separator_color_grid);
+}
+
+.controls-ColumnScroll__shadow_position-end {
+   right: 0;
+   transform: scaleX(-1);
+}
+
+// Усиление необходимо, т.к. z-index навешивается контроллером скрола через GUID-селектор
+// .GUID-селектор .controls-ColumnScroll__fixedElement {} и имеет больший вес.
+.ws-is-hover
+   .controls-ColumnScroll__fixedElement.controls-Grid__row-cell_single-cell-editable_fixed:hover {
+   z-index: 4;
+}
+
+.controls-VScrollbar.controls-ColumnScroll__thumb,
+.controls-ColumnScroll__scrollToButtons {
+   display: flex;
+}
+
+.controls-ColumnScroll__scrollToButtons {
+   top: calc(0px - (var(--inline_height_ArrowButton) + 2 * var(--offset_2xs)));
+   padding-right: var(--offset_m);
+   padding-top: var(--offset_2xs);
+   padding-bottom: var(--offset_2xs);
+}
+
+// Контейнер стрелок расположен абсолютом поверх итогов, он не должен мешать событиям
+// итогов (ховеру, клику). Сами кнопки должны ловить события мыши.
+.controls-ColumnScroll__scrollToButton {
+   pointer-events: all;
+}
+
+.controls-ColumnScroll__scrollToButton_left {
+   margin-right: var(--offset_xs);
+}

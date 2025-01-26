@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300">
+    <Controls.treeGrid:View
+            storeId="NodeFooterTemplate"
+            columns="{{_columns}}">
+        <ws:nodeFooterTemplate>
+            <ws:partial template="Controls/treeGrid:NodeFooterTemplate">
+                <Controls.list:AddButton caption="Добавить товар"
+                                         on:click="_addButtonHandler(nodeFooterTemplate.item)"/>
+            </ws:partial>
+        </ws:nodeFooterTemplate>
+    </Controls.treeGrid:View>
+</div>

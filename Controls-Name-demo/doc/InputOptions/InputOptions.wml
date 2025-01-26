@@ -1,0 +1,12 @@
+<Controls-Name.Input
+        class="demo__name-input"
+        bind:firstName="_firstName"
+        bind:middleName="_middleName"
+        bind:lastName="_lastName"
+        fields="{{_fields}}"
+        fontColorStyle="primary"
+        fontSize="xl"
+        contrastBackground="{{ false }}"
+        inlineHeight="l"
+        tagStyle="success">
+</Controls-Name.Input>

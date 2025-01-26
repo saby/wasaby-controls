@@ -1,0 +1,24 @@
+<div class="nameDemo__wrapper engineDemo__background">
+   <div class="nameDemo__cell">
+      <div class="nameDemo__label controls-text-label">contrastBackground=true</div>
+      <Controls-Name.Input
+         class="nameDemo__input"
+         bind:firstName="_firstName1"
+         bind:middleName="_middleName1"
+         bind:lastName="_lastName1"
+         fields="{{_fields}}"
+         contrastBackground="{{ true }}">
+      </Controls-Name.Input>
+   </div>
+   <div class="nameDemo__cell">
+      <div class="nameDemo__label controls-text-label">contrastBackground=false</div>
+      <Controls-Name.Input
+         class="nameDemo__input"
+         bind:firstName="_firstName2"
+         bind:middleName="_middleName2"
+         bind:lastName="_lastName2"
+         fields="{{_fields}}"
+         contrastBackground="{{ false }}">
+      </Controls-Name.Input>
+   </div>
+</div>

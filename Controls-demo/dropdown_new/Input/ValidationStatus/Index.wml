@@ -1,0 +1,38 @@
+<div class="controlsDemo__wrapper controlsDemo__flexColumn controlsDemo_fixedWidth350">
+   <div class="controlsDemo__mb1">
+        <div class="controls-text-label">validationStatus: valid</div>
+        <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys"
+                                 keyProperty="id"
+                                 displayProperty="title"
+                                 multiSelect="{{true}}"
+                                 source="{{_source}}"
+                                 validationStatus="valid"/>
+    </div>
+    <div class="controlsDemo__mb1">
+        <div class="controls-text-label">validationStatus: invalid</div>
+        <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys"
+                                 keyProperty="id"
+                                 displayProperty="title"
+                                 multiSelect="{{true}}"
+                                 source="{{_source}}"
+                                 validationStatus="invalid"/>
+    </div>
+    <div class="controlsDemo__mb1">
+        <div class="controls-text-label">validationStatus: invalidAccent</div>
+        <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys"
+                                 keyProperty="id"
+                                 displayProperty="title"
+                                 multiSelect="{{true}}"
+                                 source="{{_source}}"
+                                 validationStatus="invalidAccent"/>
+    </div>
+    <div class="controlsDemo__mb1">
+        <div class="controls-text-label">validationStatus: invalid, readOnly: true</div>
+        <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys"
+                                    keyProperty="id"
+                                    displayProperty="title"
+                                    readOnly="{{true}}"
+                                    source="{{_source}}"
+                                    validationStatus="invalid"/>
+    </div>
+</div>

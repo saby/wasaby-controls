@@ -1,0 +1,38 @@
+<div class="controlsDemo__wrapper">
+    <Controls.buttons:Button caption="Установить {{ _isEmptySource ? 'источник с данными' : 'пустой источник' }}" attr:data-qa="toggle-source" on:click="_toggleSource()"/>
+    <Controls.scroll:Container class="controlsDemo__height500 controlsDemo__width800px">
+      <Controls.listTemplates:ImageDisplayContainer
+          imageProperty="image"
+          imageViewMode="rectangle"
+          imageCheckMode="leaf"
+          imagePosition="left"
+          nodeProperty="{{ _options._dataOptionsValue.listData0.nodeProperty }}"
+          sourceController="{{ _options._dataOptionsValue.listData0.sourceController }}"
+          useCleanStore="{{ true }}">
+        <ws:content>
+          <Controls.treeTile:View
+              storeId="listData0"
+              name="tile"
+              tileMode="static"
+              tileWidth="350"/>
+        </ws:content>
+        <ws:itemTemplate>
+          <ws:partial
+              template="Controls/tile:RichTemplate"
+              fallbackImage="{{ _fallbackImage }}"
+              titleLines="1"
+              descriptionLines="4"
+              imageSize="s"
+              imagePosition="{{ itemTemplate.item.contents.type === true ? 'top' : 'left' }}"
+              description="{{ itemTemplate.item.contents.description }}"
+              imageEffect="gradient"
+              gradientColor="{{ itemTemplate.item.contents.gradientColor }}"
+              gradientDirection="toBottom"
+              gradientStartColor="#fff"
+              gradientStopColor="#fff"
+              gradientType="dark"
+              scope="{{itemTemplate}}"/>
+        </ws:itemTemplate>
+      </Controls.listTemplates:ImageDisplayContainer>
+    </Controls.scroll:Container>
+</div>

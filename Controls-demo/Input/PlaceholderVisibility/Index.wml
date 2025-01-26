@@ -1,0 +1,21 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             readOnly="{{true}}"
+                             placeholderVisibility="editable"
+                             placeholder="Enter your name"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             readOnly="{{true}}"
+                             placeholderVisibility="empty"
+                             placeholder="Enter your name"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             readOnly="{{true}}"
+                             placeholderVisibility="editable"
+                             value="Hello world"
+                             placeholder="Enter your name"/>
+    </div>
+</div>

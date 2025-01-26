@@ -1,0 +1,75 @@
+<div class="ControlsDemo-EditableArea">
+   <div class="ControlsDemo-EditableArea__title">Пример 1 - на подложке</div>
+   <div class="ControlsDemo-EditableArea__firstExample">
+       <div class="ControlsDemo-EditableArea__firstExampleWrapper ws-flexbox ws-align-items-center">
+           <span class="ControlsDemo-EditableArea__label">Шаблон:</span>
+           <Controls.editableArea:View
+                   name="edit"
+                   editingObject="{{_record}}"
+                   backgroundStyle="editableArea"
+                   toolbarVisible="{{true}}">
+               <Controls.editableArea:Base
+                       bind:value="content.editingObject.text1"
+                       attr:class="ControlsDemo-EditableArea__firstExample__editor_wrapper"
+                       fontColorStyle="secondary"
+               >
+                   <ws:editorTemplate>
+                       <Controls.input:Text contrastBackground="{{true}}" selectOnClick="{{ false }}"
+                                            attr:class="controls-Input_negativeOffset"/>
+                   </ws:editorTemplate>
+               </Controls.editableArea:Base>
+           </Controls.editableArea:View>
+       </div>
+   </div>
+
+    <div class="ControlsDemo-EditableArea__title">Пример 2 - на подложке в полную ширину</div>
+    <div class="ControlsDemo-EditableArea__FirstExample__long ws-flexbox ws-align-items-center">
+            <Controls.editableArea:View
+                    name="edit"
+                    editingObject="{{_record1}}"
+                    backgroundStyle="editableArea"
+                    attr:class="ws-flexbox ws-flex-grow-1"
+                    toolbarVisibible="{{true}}">
+                <div class="ControlsDemo-EditableArea__longExample__editor_wrapper">
+                    <Controls.editableArea:Base
+                            bind:value="content.editingObject.text1"
+                            attr:class="ControlsDemo-EditableArea__longExample__editor"
+                            fontColorStyle="secondary"
+                    >
+                        <ws:editorTemplate>
+                            <Controls.input:Text contrastBackground="{{true}}" selectOnClick="{{ false }}"
+                                                 attr:class="controls-Input_negativeOffset ControlsDemo-EditableArea__longExample__input"/>
+                        </ws:editorTemplate>
+                    </Controls.editableArea:Base>
+                </div>
+            </Controls.editableArea:View>
+    </div>
+
+   <div class="ControlsDemo-EditableArea__title">Пример 3 - редактирование во вкладке</div>
+   <div class="ControlsDemo-EditableArea__secondExample ControlsDemo-EditableArea-width">
+         <Controls.tabs:Buttons
+            attr:class="ControlsDemo-EditableArea__tabs"
+            bind:selectedKey="_selectedTab"
+            keyProperty="id"
+            itemTemplateProperty="itemTemplate"
+            source="{{_tabSource}}"
+         />
+   </div>
+   <div class="ControlsDemo-EditableArea__title">Пример 4 - редактирование во вкладке</div>
+
+   <div class="ControlsDemo-EditableArea__thirdExample ControlsDemo-EditableArea-width">
+            <Controls.tabs:Buttons
+            attr:class="ControlsDemo-EditableArea__tabs"
+            bind:selectedKey="_selectedTab2"
+            keyProperty="id"
+            itemTemplateProperty="itemTemplate"
+            source="{{_tabSource2}}"
+
+            name="tabsButtons2"
+            _invalidSize="{{_invalidSize}}"
+            on:afterEndEdit="_resize()"
+            on:activated="_resize()"
+            />
+   </div>
+</div>
+

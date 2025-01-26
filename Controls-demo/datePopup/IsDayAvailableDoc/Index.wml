@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+<div class="controlsDemo__flex ws-justify-content-center ws-flex-column" data-qa="controlsDemo_capture">
+    <div class="controls-text-label controlsDemo__maxWidth500 controls-margin_bottom-m">Заблокирован выбор понедельников
+        и пятниц
+    </div>
+    <Controls.datePopup
+        bind:startValue="_startValue"
+        bind:endValue="_endValue"
+        selectionType="single"
+        _date="{{ _date }}"
+        isDayAvailable="{{ _isDayAvailable }}"/>
+</div>
+</div>

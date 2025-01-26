@@ -1,0 +1,16 @@
+<div class="controlsDemo__flexRow controlsDemo__ml2">
+    <ws:for data="borderRadius in _bordersRadius">
+        <div class="controlsDemo__cell controlsDemo__mb2 controlsDemo__mr2 controlsDemo_fixedWidth500">
+            <div class="controls-text-label">borderRadius="{{borderRadius}}"</div>
+            <Controls.popupTemplate:Dialog attr:style="height: 100%" headingCaption="Задача в разработку" borderRadius="{{borderRadius}}">
+                <ws:bodyContentTemplate>
+                    <div style="text-align: center; padding: 12px; min-height: 100px;">
+                        Chicago, the state of Illinois, is known as The Second City, which refers to its rebuilding
+                        after the fire.
+                        The current city is literally the second Chicago, after the one that disappeared in 1871.
+                    </div>
+                </ws:bodyContentTemplate>
+            </Controls.popupTemplate:Dialog>
+        </div>
+    </ws:for>
+</div>

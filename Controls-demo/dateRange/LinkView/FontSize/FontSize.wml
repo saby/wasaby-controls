@@ -1,0 +1,44 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontSize=xs</div>
+        <Controls.dateRange:LinkView bind:startValue="_startValue"
+                                               bind:endValue="_endValue"
+                                               value="{{_value}}"
+                                               fontSize="xs"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontSize=s</div>
+        <Controls.dateRange:LinkView bind:startValue="_startValue"
+                                               bind:endValue="_endValue"
+                                               value="{{_value}}"
+                                               fontSize="s"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontSize=m</div>
+        <Controls.dateRange:LinkView bind:startValue="_startValue"
+                                               bind:endValue="_endValue"
+                                               value="{{_value}}"
+                                               fontSize="m"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontSize=l</div>
+        <Controls.dateRange:LinkView bind:startValue="_startValue"
+                                               bind:endValue="_endValue"
+                                               value="{{_value}}"
+                                               fontSize="l" />
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontSize=xl</div>
+        <Controls.dateRange:LinkView bind:startValue="_startValue"
+                                               bind:endValue="_endValue"
+                                               value="{{_value}}"
+                                               fontSize="xl" />
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">fontSize=2xl</div>
+        <Controls.dateRange:LinkView bind:startValue="_startValue"
+                                               bind:endValue="_endValue"
+                                               value="{{_value}}"
+                                               fontSize="2xl" />
+    </div>
+</div>

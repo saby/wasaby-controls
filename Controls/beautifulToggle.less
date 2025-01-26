@@ -1,0 +1,70 @@
+.controls-BeautifulToggle {
+   display: flex;
+   align-items: baseline;
+}
+
+.controls-BeautifulToggle_caption_selected {
+   position: relative;
+
+   &::after {
+      content: '\200b';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      // Значение подобрано экспериментально, если устанавливать значение в 2px, то при масштабе,
+      // если кнопки расположены в ряд, у некоторых кнопок линия будет отличаться по высоте.
+      // https://online.sbis.ru/opendoc.html?guid=294730ad-844a-48f5-afb1-7c6929777443&client=3
+      height: 0.13rem;
+      opacity: 0.65;
+      transition: width 0.3s, opacity 0.3s, background 0.3s;
+      border-radius: var(--border-radius_button);
+      background: linear-gradient(
+         to right,
+         transparent,
+         var(--secondary_icon-color) var(--button-cursor-position, 50%),
+         transparent
+      );
+   }
+}
+
+.controls-BeautifulToggle_caption {
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+   min-height: var(--inline_height_m);
+   height: 100%;
+   font-weight: normal;
+   transition: text-shadow 0.3s;
+   padding: 0 var(--border-thickness);
+   margin: var(--offset_3xs) var(--offset_s);
+   color: var(--label_text-color);
+
+   &.controls-BeautifulToggle_caption_selected {
+      color: var(--label_contrast_text-color);
+   }
+}
+
+.controls-BeautifulToggle_caption_selected:active {
+   &::after {
+      opacity: 1;
+   }
+}
+
+.controls-BeautifulToggle_caption:active {
+   color: var(--label_contrast_text-color);
+   text-shadow: 0.5px 0 currentcolor, 0.3px -0.1px 0 currentcolor;
+}
+
+.ws-is-hover {
+   .controls-BeautifulToggle_caption_selected:hover {
+      &::after {
+         opacity: 1;
+      }
+   }
+
+   .controls-BeautifulToggle_caption:hover {
+      color: var(--label_contrast_text-color);
+      text-shadow: 0.5px 0 currentcolor, 0.3px -0.1px 0 currentcolor;
+   }
+}

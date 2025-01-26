@@ -1,0 +1,24 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__wrapper__horizontal controlsDemo__cell controls-Demo__wide-propertyGrid">
+        <div class="controlDemo__input-row">
+            <div class="controlsDemo__cell">
+                <div class="controls-text-label">Количество отображаемых редакторов</div>
+                <Controls.input:Number bind:value="_limit"
+                                       onlyPositive="{{true}}"
+                                       />
+            </div>
+            <div class="controlsDemo__cell">
+                <Controls.buttons:Button caption="Валидировать"
+                                         on:click="_validate()"/>
+            </div>
+        </div>
+        <Controls.validate:Controller name="validateController">
+            <Controls.propertyGrid:PropertyGrid
+                    bind:editingObject="_editingObject"
+                    typeDescription="{{_typeDescription}}"
+                    limit="{{_limit}}">
+                <ws:captionColumnOptions width="50%"/>
+            </Controls.propertyGrid:PropertyGrid>
+        </Controls.validate:Controller>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<Controls.explorer:View
+        storeId="SwipeTile"
+        imageProperty="image"
+        viewMode="tile"
+        actionAlignment="vertical"
+        itemActions="{{_itemActions}}">
+    <ws:tileItemTemplate>
+        <ws:partial template="Controls/tile:ItemTemplate" hasTitle="{{tileItemTemplate.item.contents.isDocument}}"/>
+    </ws:tileItemTemplate>
+</Controls.explorer:View>

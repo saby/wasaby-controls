@@ -1,0 +1,9 @@
+<ws:partial template="{{_options.content}}"
+            on:listSelectedKeysChanged="_notifyProxy()"
+            on:listExcludedKeysChanged="_notifyProxy()"
+            on:listMarkedKeyChanged="_notifyProxy()"
+            on:listRootChanged="_notifyProxy()"
+            on:listExpandedItemsChanged="_notifyProxy()"
+            on:listCollapsedItemsChanged="_notifyProxy()"
+            on:listSortingChanged="_notifyProxy()"
+            scope="{{_options}}"/>
