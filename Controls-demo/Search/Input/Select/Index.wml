@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <Controls.search:Input name="search"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.buttons:Button attr:ws-no-focus="true"
+                                 caption="Select search text"
+                                 on:click="_select()"/>
+    </div>
+</div>

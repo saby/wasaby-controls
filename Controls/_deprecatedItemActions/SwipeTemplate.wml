@@ -1,0 +1,45 @@
+<!-- stan-disable deprecated-anywhere -->
+<ws:template name="swipeTmpl">
+    <ws:if data="{{itemActionsPosition === 'outside'}}">
+        <ws:partial template="{{itemActionsTemplate}}"
+                    itemData="{{itemData}}"
+                    highlightOnHover="{{highlightOnHover}}"/>
+    </ws:if>
+    <ws:else data="{{swipeConfig}}">
+        <div class="controls-itemActionsV_swipe_animationContainer">
+            <div class="controls-Swipe
+                controls-Swipe_{{ itemData.getSwipeAnimation() || none }}"
+                on:animationend="_onActionsSwipeAnimationEnd()">
+                <div class="controls-Swipe_{{swipeConfig.twoColumns ? 'columns' : actionAlignment}}">
+
+                    <ws:if data="{{swipeConfig.twoColumns}}">
+                        <ws:partial
+                                template="wml!Controls/_deprecatedItemActions/SwipeTwoColumns"
+                                itemData="{{itemData}}"
+                                showedActions="{{swipeConfig.twoColumnsActions}}"
+                                swipeConfig="{{swipeConfig}}"
+                                actionCaptionPosition="{{actionCaptionPosition}}"/>
+                    </ws:if>
+                    <ws:else>
+                        <ws:partial
+                                template="wml!Controls/_deprecatedItemActions/SwipeFor"
+                                itemData="{{itemData}}"
+                                showedActions="{{itemData.getActions().showed}}"
+                                swipeConfig="{{swipeConfig}}"
+                                actionAlignment="{{actionAlignment}}"
+                                actionCaptionPosition="{{actionCaptionPosition}}"/>
+                    </ws:else>
+                </div>
+            </div>
+        </div>
+    </ws:else>
+</ws:template>
+<ws:if data="{{!!itemActionsContainerStyles}}">
+    <div class="controls-itemActionsV__container" style="{{itemActionsContainerStyles}}">
+        <ws:partial template="swipeTmpl"/>
+    </div>
+</ws:if>
+<ws:else>
+    <ws:partial template="swipeTmpl"/>
+</ws:else>
+

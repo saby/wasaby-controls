@@ -1,0 +1,31 @@
+@widget_wrapper-width: 1000px;
+@grid-margin-top: 40px;
+@settings-margin-top: 10px;
+
+.ControlsListsEditorsDemo_widget-wrapper {
+   background: var(--background-color);
+   padding-top: var(--offset_2xl);
+   padding-bottom: var(--offset_2xl);
+   border: var(--unaccented_border-color) solid var(--border-thickness);
+   border-radius: var(--border-radius_s);
+   width: @widget_wrapper-width;
+}
+
+.ControlsListsEditorsDemo_control-wrapper {
+   box-shadow: var(--box-shadow_block);
+   background: var(--background-color);
+   padding-top: var(--offset_2xl);
+   padding-bottom: var(--offset_2xl);
+   border-top-right-radius: var(--border-radius_s);
+   width: @widget_wrapper-width;
+   margin-top: @grid-margin-top;
+}
+
+.ControlsListsEditorsDemo-settings-wrapper {
+   width: var(--inline_height_6xl);
+   margin-top: @settings-margin-top;
+}
+
+.ControlsListsEditorDemo_base-wrapper {
+   background: var(--unaccented_background-color);
+}

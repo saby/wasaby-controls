@@ -1,0 +1,18 @@
+<div class="engineDemo-Import_Dialog__wrapper">
+    <div class="engineDemo-Import_Dialog__wrapper">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-ListEnv-demo/Filter/View/ViewMode/Basic/Index' }}">
+            <a href="{{content.href}}">Все фильтры выбраны</a>
+        </Router.router:Reference>
+        <Controls-ListEnv-demo.Filter.View.ViewMode.Basic.Index />
+    </div>
+    <div class="engineDemo-Import_Dialog__wrapper">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-ListEnv-demo/Filter/View/ViewMode/Extended/Index' }}">
+            <a href="{{content.href}}">Ни один фильтр не выбран</a>
+        </Router.router:Reference>
+        <Controls-ListEnv-demo.Filter.View.ViewMode.Extended.Index />
+    </div>
+</div>

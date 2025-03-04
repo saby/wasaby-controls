@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+   <Controls.grid:ItemsView
+      attr:class="controlsDemo__flex"
+      items="{{_items}}"
+      columns="{{_columns}}"
+      on:beforeBeginEdit="_beforeBeginEdit()"
+   >
+      <ws:editingConfig editOnClick="{{true}}" autoAdd="{{ true }}"/>
+   </Controls.grid:ItemsView>
+</div>

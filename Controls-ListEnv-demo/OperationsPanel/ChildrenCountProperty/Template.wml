@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper controlsDemo__minWidth600 controlsDemo__maxWidth800">
+    <Controls.scroll:Container>
+        <div>
+            <Controls-ListEnv.operationsPanelConnected:View storeId="ChildrenCountProperty"/>
+            <Controls.explorer:View storeId="ChildrenCountProperty"
+                                    columns="{{_gridColumns}}"
+                                    childrenCountProperty="{{_childrenCountProperty}}"/>
+        </div>
+    </Controls.scroll:Container>
+</div>

@@ -1,0 +1,40 @@
+<div class="controlsDemo__PopupTemplate__demoWrapper controlsDemo_fixedWidth800">
+    <div class="controls-text-label">rightBorderVisible=true</div>
+    <div class="controlsDemo__flex">
+        <Controls.popupTemplate:Stack attr:class="controlsDemo__height300 controlsDemo__cell"
+                                      headingCaption="Задача в разработку"
+                                      rightBorderVisible="{{true}}"
+                                      headerBorderVisible="{{false}}">
+            <ws:bodyContentTemplate>
+                <div>
+                    <div class="controlsDemo__PopupTemplate__headerWrapper
+                            controls-StackTemplate__top-area-background controls-StackTemplate__top-area-border">
+                        <div class="controlsDemo__ml1 controls-text-label"> Задача в разработку от 29.11.19
+                            №1177635976:
+                        </div>
+                    </div>
+                    <ws:partial template="Controls-demo/Popup/BaseTemplate"></ws:partial>
+                </div>
+            </ws:bodyContentTemplate>
+        </Controls.popupTemplate:Stack>
+    </div>
+    <div class="controls-text-label">rightBorderVisible=false</div>
+    <div class="controlsDemo__flex">
+        <Controls.popupTemplate:Stack attr:class="controlsDemo__height300 controlsDemo__cell"
+                                      headingCaption="Задача в разработку"
+                                      rightBorderVisible="{{false}}"
+                                      headerBorderVisible="{{false}}">
+            <ws:bodyContentTemplate>
+                <div>
+                    <div class="controlsDemo__PopupTemplate__headerWrapper
+                            controls-StackTemplate__top-area-background controls-StackTemplate__top-area-border">
+                        <div class="controlsDemo__ml1 controls-text-label"> Задача в разработку от 29.11.19
+                            №1177635976:
+                        </div>
+                    </div>
+                    <ws:partial template="Controls-demo/Popup/BaseTemplate"></ws:partial>
+                </div>
+            </ws:bodyContentTemplate>
+        </Controls.popupTemplate:Stack>
+    </div>
+</div>

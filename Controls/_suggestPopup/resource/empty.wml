@@ -1,0 +1,12 @@
+<ws:partial template="Controls/grid:EmptyTemplate" scope="{{ _options }}" bottomSpacing="{{ null }}" topSpacing="{{ null }}" contentTemplate="{{ null }}">
+    <ws:content>
+        <div class="controls-Suggest__empty">
+            <ws:if data="{{ contentTemplate }}">
+                <ws:partial template="{{ contentTemplate }}"/>
+            </ws:if>
+            <ws:else>
+                {[Нет данных]}
+            </ws:else>
+        </div>
+    </ws:content>
+</ws:partial>

@@ -1,0 +1,34 @@
+<div class="controlsDemo__wrapper">
+   <div class="controlsDemo__cell">
+      <Router.router:Reference attr:class="controls-text-label"
+                               state="app/:app"
+                               app="{{ 'Controls-demo/dropdown_new/Search/SearchParam/Index' }}">
+         <a href="{{content.href}}">SearchParam</a>
+      </Router.router:Reference>
+      <Controls-demo.dropdown_new.Search.SearchParam.Index/>
+   </div>
+   <div class="controlsDemo__cell">
+      <Router.router:Reference attr:class="controls-text-label"
+                               state="app/:app"
+                               app="{{ 'Controls-demo/dropdown_new/Search/MinSearchLength/Index' }}">
+         <a href="{{content.href}}">MinSearchLength</a>
+      </Router.router:Reference>
+      <Controls-demo.dropdown_new.Search.MinSearchLength.Index/>
+   </div>
+   <div class="controlsDemo__cell">
+      <Router.router:Reference attr:class="controls-text-label"
+                               state="app/:app"
+                               app="{{ 'Controls-demo/dropdown_new/Search/SearchDelay/Index' }}">
+         <a href="{{content.href}}">SearchDelay</a>
+      </Router.router:Reference>
+      <Controls-demo.dropdown_new.Search.SearchDelay.Index/>
+   </div>
+   <div class="controlsDemo__cell">
+      <Router.router:Reference attr:class="controls-text-label"
+                               state="app/:app"
+                               app="{{ 'Controls-demo/dropdown_new/Search/SearchWidth/Index' }}">
+         <a href="{{content.href}}">SearchHeaderTemplate</a>
+      </Router.router:Reference>
+      <Controls-demo.dropdown_new.Search.SearchWidth.Index/>
+   </div>
+</div>

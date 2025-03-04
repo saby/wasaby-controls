@@ -1,0 +1,11 @@
+<div class="controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper">
+      <Controls.dropdown:Button
+              caption="Сайт"
+              source="{{_source}}"
+              keyProperty="key"
+              displayProperty="title"
+              searchParam="title"
+      />
+   </div>
+</div>

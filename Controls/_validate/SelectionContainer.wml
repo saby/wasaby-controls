@@ -1,0 +1,13 @@
+<ws:partial template="{{ _options.content }}"
+            validationStatus="{{_validationStatus}}"
+            scope="{{_options}}"
+            attr:class="controls-ValidateContainer__validationStatus-{{_validationStatus}}"
+            on:selectedKeysChanged="_selectedKeysChangedHandler()"
+            on:selectedKeyChanged="_selectedKeyChangedHandler()"
+            on:valueChanged="_valueChangedHandler()"
+            on:selectorCallback="_selectorCallback()"
+            on:deactivated="_deactivatedHandler()"
+            on:mouseenter="_hoverHandler()"
+            on:focusIn="_focusInHandler()"
+            on:mouseleave="_mouseLeaveHandler()"
+/>

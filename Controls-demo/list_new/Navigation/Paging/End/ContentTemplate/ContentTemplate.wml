@@ -1,0 +1,36 @@
+<ws:template name="contentTemplate">
+    <ws:if data="{{_count}}">
+        <p class="controls-Paging__info" style="text-align: center">{{_count}}</p>
+    </ws:if>
+</ws:template>
+
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth800">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">
+            Имитируем прокрутку к первой непрочитанной записи
+        </div>
+    </div>
+    <Controls.scroll:Container attr:class="controlsDemo__height400">
+        <Controls.list:HotKeysContainer>
+            <Controls.list:View
+                    storeId="NavigationPagingEndContentTemplate"
+                    name="list"
+                    attr:class="controlsDemo_line-height18"
+                    moveMarkerOnScrollPaging="{{true}}"
+                    on:activeElementChanged="_updateCount()"
+                    on:pagingArrowClick="_onPagingArrowClick()"
+            >
+                <ws:pagingContentTemplate>
+                    <ws:partial template="contentTemplate"/>
+                </ws:pagingContentTemplate>
+            </Controls.list:View>
+        </Controls.list:HotKeysContainer>
+    </Controls.scroll:Container>
+
+    <div class="controlsDemo__cell">
+        <Controls.buttons:Button caption="Очистить" on:click="_clear()"></Controls.buttons:Button>
+    </div>
+    <ws:if data="{{_textInfo}}">
+        <div class="controlsDemo__cell">{{ _textInfo }}</div>
+    </ws:if>
+</div>

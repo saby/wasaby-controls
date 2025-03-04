@@ -1,0 +1,16 @@
+<Controls.popupTemplate:Stack headingCaption="PopupManager">
+    <ws:headerContentTemplate>
+        <div class="ws-flexbox ws-justify-content-end ws-flex-grow-1">
+            <Controls.buttons:Button caption="Закрыть"
+                                     on:click="_close()"/>
+        </div>
+    </ws:headerContentTemplate>
+    <ws:bodyContentTemplate>
+        <div style="width: {{ _options.demoWidth || '700px'}};height: 100vh;">
+            <Controls.buttons:Button caption="Открыть stack"
+                                     name="button"
+                                     on:click="_onClick()"
+                                     attr:class="ControlsDemo-TestStack__stack"/>
+        </div>
+    </ws:bodyContentTemplate>
+</Controls.popupTemplate:Stack>

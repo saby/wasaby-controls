@@ -1,0 +1,62 @@
+@marker_thickness: 3px;
+
+.controls-marker,
+.controls-marker_main {
+   &::after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      pointer-events: none;
+      border-radius: var(--container_border-radius_marker_local, var(--border-radius_2xs));
+      background-color: var(--container_color_marker_local, var(--marker_color));
+   }
+
+   &_horizontal {
+      &::after {
+         bottom: 0;
+         left: 0;
+         width: var(--container_width_marker_local, 100%);
+         height: var(--container_height_marker_local, @marker_thickness);
+      }
+   }
+
+   &_vertical {
+      &::after {
+         bottom: 0.5em;
+         left: calc(-1 * var(--offset_m));
+         height: var(--offset_xl);
+      }
+   }
+}
+
+.controls-marker_main::after {
+   width: 42px;
+   bottom: 0;
+   left: 0;
+   height: @marker_thickness;
+}
+
+.controls-marker_style-default::after {
+   background-color: var(--text-color);
+}
+
+.controls-marker_style-unaccented::after {
+   background: var(--item_selected_color);
+}
+
+.controls-marker_style- {
+   @variants: secondary, link, label, danger, warning, success, info, readonly;
+   .for(@variants, { &@{_item} {
+      &::after {
+         background-color: ~'var(--@{_item}_text-color)';
+      }
+   } });
+}
+
+.controls-marker_state-default::after {
+   background: transparent;
+}
+
+.ws-is-hover .controls-marker_state-default:hover::after {
+   background: var(--container_hover-color_marker_local, var(--marker_hover_color));
+}

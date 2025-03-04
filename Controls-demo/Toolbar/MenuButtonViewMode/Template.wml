@@ -1,0 +1,20 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">menuButtonViewMode=ghost</div>
+        <Controls.toolbars:View
+                items="{{_items}}"
+                keyProperty="id"
+                menuButtonViewMode="ghost"
+                attr:data-qa="controlsDemo_toolbars_view__tool_button"
+        />
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">menuButtonViewMode=link</div>
+        <Controls.toolbars:View
+                items="{{_items}}"
+                on:itemClick="_itemClick()"
+                menuButtonViewMode="link"
+                attr:data-qa="controlsDemo_toolbars_view__link"
+        />
+    </div>
+</div>

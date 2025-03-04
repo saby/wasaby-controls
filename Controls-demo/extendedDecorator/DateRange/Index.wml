@@ -1,0 +1,73 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <Controls.extendedDecorator:DateRange startValue="{{_startValue}}"
+                                              endValue="{{_endValue}}"
+                                              displayMode="{{_displayMode}}"
+                                              displayedUnitsNumber="{{_displayedUnitsNumber}}"
+                                              displayedUnits="{{_displayedUnits}}"
+                                              showNullUnits="{{_showNullUnits}}"
+                                              short="{{_short}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.extendedDecorator:DateRange startValue="{{_startValue1}}"
+                                              endValue="{{_endValue1}}"
+                                              displayMode="{{_displayMode}}"
+                                              displayedUnitsNumber="{{_displayedUnitsNumber}}"
+                                              displayedUnits="{{_displayedUnits}}"
+                                              showNullUnits="{{_showNullUnits}}"
+                                              short="{{_short}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.extendedDecorator:DateRange startValue="{{_startValue2}}"
+                                              endValue="{{_endValue2}}"
+                                              displayMode="{{_displayMode}}"
+                                              displayedUnitsNumber="{{_displayedUnitsNumber}}"
+                                              displayedUnits="{{_displayedUnits}}"
+                                              showNullUnits="{{_showNullUnits}}"
+                                              short="{{_short}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.extendedDecorator:DateRange startValue="{{_startValue3}}"
+                                              endValue="{{_endValue3}}"
+                                              displayMode="{{_displayMode}}"
+                                              displayedUnitsNumber="{{_displayedUnitsNumber}}"
+                                              displayedUnits="{{_displayedUnits}}"
+                                              showNullUnits="{{_showNullUnits}}"
+                                              short="{{_short}}"/>
+    </div>
+    <div class="controlsDemo__cell ws-flexbox">
+        <div class="controls-margin_right-m" style="line-height: 24px;">displayMode:</div>
+        <Controls.ComboBox attr:class="controlsDemo_fixedWidth100"
+                                    source="{{_displayModeSource}}"
+                                    displayProperty="title"
+                                    keyProperty="key"
+                                    selectedKey="{{_displayModeKey}}"
+                                    on:selectedKeyChanged="_displayModeChangeHandler()"/>
+    </div>
+    <div class="controlsDemo__cell ws-flexbox">
+        <div class="controls-margin_right-m" style="line-height: 24px;">displayedUnitsNumber:</div>
+        <Controls.ComboBox attr:class="controlsDemo_fixedWidth100"
+                                    source="{{_displayedUnitsNumberSource}}"
+                                    displayProperty="title"
+                                    keyProperty="key"
+                                    selectedKey="{{_displayedUnitsNumberKey}}"
+                                    on:selectedKeyChanged="_displayedUnitsNumberChangeHandler()"/>
+    </div>
+    <div class="controlsDemo__cell ws-flexbox">
+        <div class="controls-margin_right-m" style="line-height: 24px;">displayedUnits:</div>
+        <Controls.ComboBox attr:style="width: 140px;"
+                                    source="{{_displayedUnitsSource}}"
+                                    displayProperty="title"
+                                    keyProperty="key"
+                                    selectedKey="{{_displayedUnitsKey}}"
+                                    on:selectedKeyChanged="_displayedUnitsChangeHandler()"/>
+    </div>
+    <div class="controlsDemo__cell ws-flexbox">
+        <div class="controls-margin_right-m" style="line-height: 24px;">showNullUnits:</div>
+        <Controls.checkbox:Checkbox bind:value="_showNullUnits"/>
+    </div>
+    <div class="controlsDemo__cell ws-flexbox">
+        <div class="controls-margin_right-m" style="line-height: 24px;">short:</div>
+        <Controls.checkbox:Checkbox bind:value="_short"/>
+    </div>
+</div>

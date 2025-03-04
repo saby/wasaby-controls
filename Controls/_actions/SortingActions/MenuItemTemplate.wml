@@ -1,0 +1,22 @@
+<ws:template name="itemTemplate">
+    <ws:partial template="Controls/dropdown:ItemTemplate"
+                scope="{{_options}}"
+                rightTemplate="{{rightTemplate}}"/>
+</ws:template>
+
+<ws:if data="{{_options.item.contents.get('paramName') !== null}}">
+   <ws:partial template="itemTemplate">
+      <ws:rightTemplate>
+         <div class="controls-SortingSelector_arrowWrapper">
+            <div class="controls-SortingSelector_arrowsContainer" on:click="_arrowClick(_options.item.contents)"
+                 attr:title="{{_options.item.contents.get('value')==='DESC' ? _options.item.contents.get('titleDesc') : _options.item.contents.get('titleAsc') }}">
+               <ws:partial attr:class="controls-SortingSelector_arrow"
+                           value="{{_options.item.contents.get('value')}}" template="wml!Controls/_actions/SortingActions/SortingArrow"/>
+            </div>
+         </div>
+      </ws:rightTemplate>
+   </ws:partial>
+</ws:if>
+<ws:else>
+   <ws:partial template="itemTemplate" />
+</ws:else>

@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500 controlsDemo__itemActions_list_HeaderTemplate">
+    <Controls.list:View
+            storeId="ItemActionsContextMenuConfigHeaderTemplate1"
+            itemActionsProperty="itemActions">
+        <ws:contextMenuConfig>
+            <ws:headerTemplate>
+                <div class="ControlsDemo_MenuHeaderTemplate-header">
+                    В шаблоне headerTemplate может быть<br/>размещена дополнительная информация
+                </div>
+            </ws:headerTemplate>
+        </ws:contextMenuConfig>
+    </Controls.list:View>
+</div>

@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">Разворачиваемый поиск с тенью</div>
+         <Controls.ExpandableSearch
+            attr:class="controls-margin-m"
+            inlineHeight="2xl"
+            contrastBackground="{{ true }}"
+            shadowVisible="{{ true }}"
+         />
+    </div>
+</div>
+

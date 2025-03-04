@@ -1,0 +1,24 @@
+<div class="Keyboard-Qwerty__Popup-{{_size}} controls_Keyboard_theme-{{_options.theme}}" data-qa="Keyboard-Qwerty">
+    <Controls-Keyboard.View
+        items="{{_items}}"
+        on:itemClick="_keyboardClickHandler()"
+        on:itemDblClick="_keyboardDblClickHandler()"
+        on:itemLongTap="_keyboardLongTapHandler()"
+        itemSize="{{_size}}"
+        itemFontSize="{{_itemFontSize}}"
+        borderVisible="{{_options.borderVisible}}"
+        itemSpacing="{{_itemSpacing}}">
+        <ws:itemTemplate>
+            <ws:partial
+                template = "{{ itemTemplate.item.contentTemplate }}"
+                isLongShift="{{ _isLongShift }}"
+                isShift="{{ _isShift }}"
+                currentLang="{{ _lang }}"
+                allLangs="{{ _AllLangs }}"
+                isSymbols="{{ _isSymbols }}"
+                size="{{ _size }}"
+                accentButtonCaption="{{ _options.accentButtonCaption }}"
+            />
+        </ws:itemTemplate>
+    </Controls-Keyboard.View>
+</div>

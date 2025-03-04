@@ -1,0 +1,62 @@
+.controls-Layout-SelectorPopup-Sticky {
+   --header_min-height_sticky: var(--inline_height_l);
+}
+
+.controls-Layout-SelectorPopup-Sticky-header-padding_right-default {
+   margin-right: calc(
+      var(--offset_s) + var(--inline_height_closeButton) + var(--offset_2xs) + var(--offset_s)
+   );
+}
+
+.controls-Layout-SelectorPopup-Sticky-with-closeButton {
+   padding-right: calc(var(--inline_height_l) / 2);
+}
+
+.controls-Layout-SelectorPopup-Sticky-header-padding_right-applyButton {
+   margin-right: calc(
+      // отступ под кнопку подтверждения + кнопку закрытия
+      var(--apply-button_inline-height_menuPopup) + (var(--width_closeButton_externalButton) / 2)
+   );
+}
+
+.controls-Layout-SelectorPopup_item-marker-offset {
+   margin-right: var(--offset_xs);
+   margin-left: var(--offset_3xs);
+}
+
+.controls-Layout-SelectorPopup_item-marker-space {
+   width: calc(var(--marker-box_size_radio) + var(--offset_s));
+}
+
+.controls-ListEnv-SelectorPopup__itemActions_position_multiSelect {
+   bottom: calc((var(--item_height_menu) - var(--height_itemActions)) / 2);
+   right: calc(var(--offset_xs) + var(--offset_xs) + var(--inline_height_m));
+}
+
+.controls-Menu__row-checkbox_invisible {
+   visibility: hidden;
+}
+
+.ws-is-no-touch .controls-ListEnv-SelectorPopup__multiSelectPlus_default {
+   visibility: hidden;
+}
+
+.ws-is-hover {
+   .controls-ListView__item_showCheckbox:hover {
+      .controls-Layout-SelectorPopup_item-marker {
+         visibility: visible;
+      }
+
+      .controls-Menu__row-radioCircle__borderCircle {
+         stroke: var(--border-color);
+      }
+
+      .controls-ListEnv-SelectorPopup__multiSelectPlus_default {
+         visibility: visible;
+      }
+
+      .controls-ListEnv-SelectorPopup__multiSelectPlus_unselected {
+         visibility: visible;
+      }
+   }
+}

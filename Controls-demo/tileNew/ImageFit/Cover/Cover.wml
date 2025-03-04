@@ -1,0 +1,21 @@
+<div class="controlsDemo__wrapper">
+   <Controls.treeTile:View
+      storeId="listData1"
+      tileMode="static"
+      imageFit="cover"
+      tileHeight="150"
+      imageUrlResolver="{{_imageUrlResolver}}"
+      tileScalingMode="inside"
+      imageWidthProperty="imageWidth"
+      imageHeightProperty="imageHeight"
+      tileWidthProperty="width"
+      imageProperty="image"
+      attr:data-qa="controlsDemo-tileNew_ImageFit__cover">
+      <ws:itemTemplate>
+         <ws:partial
+            template="Controls/tile:ItemTemplate"
+            scope="{{itemTemplate}}"
+            hasTitle="{{false}}"/>
+      </ws:itemTemplate>
+   </Controls.treeTile:View>
+</div>

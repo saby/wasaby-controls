@@ -1,0 +1,33 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell demo-ButtonsCaptionPosition__rightButton controlsDemo__flex ws-justify-content-center ws-align-items-center">
+            <div class="controls-text-label controlsDemo_fixedWidth350">Текст выравнивается по левой стороне:</div>
+            <Controls.buttons:Button attr:class="controlsDemo_fixedWidth200"
+                                     textAlign="left"
+                                     viewMode="outlined"
+                                     caption="Выполнение"/>
+        </div>
+        <div class="controlsDemo__cell demo-ButtonsCaptionPosition__leftButton controlsDemo__flex ws-justify-content-center ws-align-items-center">
+            <div class="controls-text-label controlsDemo_fixedWidth350">Текст и иконка выравнивается по левой стороне:
+            </div>
+            <Controls.buttons:Button attr:class="controlsDemo_fixedWidth200"
+                                     icon="icon-Minus"
+                                     iconStyle="danger"
+                                     textAlign="left"
+                                     viewMode="outlined"
+                                     captionPosition="end"
+                                     caption="Отрицательно"/>
+        </div>
+
+        <div class="controlsDemo__cell demo-ButtonsCaptionPosition__leftButton controlsDemo__flex ws-justify-content-center ws-align-items-center">
+            <div class="controls-text-label controlsDemo_fixedWidth350">Текст и иконка прижаты к разным краям:</div>
+            <Controls.buttons:Button attr:class="controlsDemo_fixedWidth200"
+                                     icon="icon-Successful"
+                                     iconStyle="success"
+                                     textAlign="justify"
+                                     viewMode="outlined"
+                                     captionPosition="start"
+                                     caption="Положительно"/>
+        </div>
+    </div>
+</div>

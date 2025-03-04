@@ -1,0 +1,17 @@
+<div class="example-Phone">
+   <Controls-demo.Example.resource.BaseDemoInput title="Phone number input field" blocker="{{true}}">
+      <ws:contents>
+         <ws:Array>
+            <ws:Object>
+               <ws:template>
+                  <div class="example-Base__wrapper">
+                     <div class="example-Base__specify">Mobile / Landline phone</div>
+                     <Controls.input:Phone placeholder="Phone number"
+                                           bind:value="_phoneNumberValue"/>
+                  </div>
+               </ws:template>
+            </ws:Object>
+         </ws:Array>
+      </ws:contents>
+   </Controls-demo.Example.resource.BaseDemoInput>
+</div>

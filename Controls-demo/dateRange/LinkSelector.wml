@@ -1,0 +1,42 @@
+<div class="PageWrap">
+   <div class="PageBlock">
+      <div class="PageBlock__title">
+         <div>Controls.dateRange:LinkSelector</div>
+         <div class="controlsDemo__wrapper__padding-left">Text for tests</div>
+      </div>
+      <div class="PageBlock__content">
+         <div class="PageBlock__component-left">
+            <Controls.dateRange:Selector
+               bind:startValue="_startValue"
+               bind:endValue="_endValue"
+               datePopupType="shortDatePicker"/>
+         </div>
+         <div class="PageBlock__component-right">
+            <Controls.dateRange:Selector
+               bind:startValue="_startValue"
+               bind:endValue="_endValue"
+               datePopupType="shortDatePicker"/>
+         </div>
+      </div>
+      <div class="PageBlock__content">
+         <div class="PageBlock__component-left">
+            <Controls.dateRange:Selector
+               bind:startValue="_startValue"
+               bind:endValue="_endValue"
+               datePopupType="shortDatePicker"
+               chooseHalfyears="{{false}}"
+               chooseMonths="{{false}}"
+               chooseQuarters="{{false}}"/>
+         </div>
+         <div class="PageBlock__component-right">
+            <Controls.dateRange:Selector
+               bind:startValue="_startValue"
+               bind:endValue="_endValue"
+               datePopupType="shortDatePicker"
+               chooseHalfyears="{{false}}"
+               chooseMonths="{{false}}"
+               chooseQuarters="{{false}}"/>
+         </div>
+      </div>
+   </div>
+</div>

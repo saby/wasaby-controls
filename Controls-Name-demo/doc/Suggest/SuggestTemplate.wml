@@ -1,0 +1,7 @@
+<Controls.suggestPopup:ListContainer>
+    <Controls.list:View keyProperty="id">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/list:ItemTemplate" displayProperty="suggestValue"/>
+        </ws:itemTemplate>
+    </Controls.list:View>
+</Controls.suggestPopup:ListContainer>

@@ -1,0 +1,7 @@
+<div class="controls-Demo__wide-propertyGrid">
+    <div class="controls-text-label">Source</div>
+    <Controls.propertyGrid:PropertyGrid
+            bind:editingObject="_editingObject"
+            typeDescription="{{_typeDescription}}">
+    </Controls.propertyGrid:PropertyGrid>
+</div>
