@@ -1,0 +1,435 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OperationPanel_Selection_Search_Hierarchy. Тесты взаимодействия ПМО со множественным выделением, поиском и иерархией. Сброс поиска Если ранее были выделены все записи через ПМО, то при сбросе выделение сбрасывается 1`] = `
+<div
+  class="controls_list_theme-default controls-Explorer"
+  data-qa="js-demo-explorer-data-qa"
+  tabindex="0"
+>
+  <div
+    class="controls-Explorer__wrapper"
+    tabindex="0"
+  >
+    <div
+      style="display: none;"
+      tabindex="0"
+    />
+    <div
+      class="controls-BaseControl controls_list_theme-default controls_toggle_theme-default controls-Explorer__view"
+      data-qa="list"
+      tabindex="0"
+    >
+      <div
+        class="controls-BaseControl__fakeFocusElem"
+        name="fakeFocusElem"
+        tabindex="0"
+      />
+      <style
+        data-vdom-ignore="true"
+        name="itemActionsOutsideStyle"
+      />
+      <div
+        class="controls-BaseControl__viewContainer controls-BaseControl__View_uniqueId2 controls-GridControl__viewContainer"
+        name="viewContainer"
+        tabindex="0"
+      >
+        <div
+          class="tw-grid tw-w-full tw-relative controls-Grid controls-Grid_default controls-itemActionsV_menu-hidden"
+          data-qa="gridWrapper"
+          style="grid-template-columns: max-content 1fr;"
+          tabindex="0"
+        >
+          <div
+            class="controls-Grid__loadingIndicator_withMultiselect controls-Grid__loadingIndicator-top"
+            style="display: none;"
+          >
+            <div
+              class="tw-w-full"
+            >
+              <div
+                class="controls-BaseControl__loadingIndicator js-controls-BaseControl__loadingIndicator controls-BaseControl__loadingIndicator-top controls-BaseControl__loadingIndicator__position-top controls-BaseControl__loadingIndicator__state-loading "
+                data-qa="indicator_state_loading_position_top"
+                style="display: none;"
+              >
+                <div
+                  class="controls-BaseControl__loadingIndicator-content"
+                >
+                  <div
+                    class="controls-BaseControl__loadingIndicatorImage"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class=" controls-BaseControl__loadingTrigger controls-BaseControl__loadingTrigger-top"
+            data-qa="loading-trigger-top"
+            style="top: 1px;"
+          />
+          <div
+            class="tw-contents controls-Grid__itemsContainer controls-BaseControl_showActions_onhover controls-BaseControl_hover_enabled controls-BaseControl__itemsContainer_uniqueId2"
+            data-qa="items-container"
+          >
+            <div
+              class=" controls-ListView__itemV controls-GridReact__row tw-contents controls-GridReact__row__hoverMode_row js-controls-Grid__row_editable controls-GridView__item_showActions controls-GridView__item_showActions_row controls-ListView__item_showActions_undefined controls-ListView__item_showCheckbox controls-ListView__item_highlightOnHover"
+              data-qa="row"
+              item-key="1"
+              tabindex="0"
+            >
+              <div
+                class="controls-GridReact__cell js-controls-GridReact__cell js-controls-Grid__row-cell js-controls-ListView__editingTarget controls-ListView__item_contentWrapper js-controls-ListView__measurableContainer js-controls-GridReact__cell  controls-Grid__row-cell-checkbox-default controls-GridReact__cell-default tw-cursor-pointer tw-relative controls-GridReact__cell__hoverMode_row controls-GridReact__cell_first tw-flex controls-hover-background-default tw-items-baseline controls-GridReact__cell-baseline controls-GridReact__cell-baseline_default controls-padding_left-grid_null controls-padding_right-grid_null"
+                data-qa="cell"
+              >
+                <div
+                  class="controls_toggle_theme-undefined controls-CheckboxMarker controls-CheckboxMarker_outlined controls-CheckboxMarker_theme-undefined controls-CheckboxMarker__state-false  controls-padding_top-grid_s controls-padding_bottom-grid_s js-controls-ListView__checkbox controls-CheckboxMarker_inList"
+                  data-qa="controls-CheckboxMarker"
+                  tabindex="-1"
+                >
+                  <svg
+                    class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                    data-qa="controls-CheckboxMarker_state-false"
+                    tabindex="0"
+                    viewBox="0 0 12 12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-false"
+                      d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-subtract "
+                      clip-rule="evenodd"
+                      d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-checked-color_transparent"
+                      clip-rule="evenodd"
+                      d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                      fill-rule="evenodd"
+                    />
+                    <rect
+                      class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                      height="6"
+                      rx="2"
+                      width="6"
+                      x="3"
+                      y="3"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="controls-GridReact__cell js-controls-GridReact__cell js-controls-Grid__row-cell js-controls-ListView__editingTarget controls-ListView__item_contentWrapper js-controls-ListView__measurableContainer js-controls-GridReact__cell  controls-GridReact__cell-default tw-cursor-pointer controls-GridReact__minHeight-data tw-relative controls-GridReact__cell__hoverMode_row controls-GridReact__cell_actionsCell controls-fontsize-treeGrid_node_default controls-GridReact__cell_last tw-flex controls-hover-background-default tw-items-baseline controls-GridReact__cell-baseline controls-GridReact__cell-baseline_default controls-padding_top-grid_s controls-padding_bottom-grid_s controls-padding_left-grid_null controls-padding_right-list_default"
+                data-qa="cell"
+              >
+                <div
+                  class="tw-flex tw-items-baseline "
+                  data-qa="expander-block"
+                >
+                  <div
+                    class="js-controls-Tree__row-expander controls-TreeGrid__row-expander controls-cursor_pointer js-controls-ListView__notEditable controls-TreeGrid__row_default-expander_size_default tw-inline-flex tw-items-center tw-flex-shrink-0 tw-justify-center controls-TreeGrid__row-expander_node_default_position_default controls-TreeGrid__row-expander_node_default controls-TreeGrid__row-expander_node_iconSize_default controls-TreeGrid__row-expander_node_iconStyle_default controls-TreeGrid__row-expander_collapsed controls-TreeGrid__row-expander_node_default_collapsed"
+                    data-qa="row-expander"
+                    tabindex="-1"
+                  />
+                </div>
+                Москва и Московская обл.
+              </div>
+            </div>
+            <div
+              class=" controls-ListView__itemV controls-GridReact__row tw-contents controls-GridReact__row__hoverMode_row js-controls-Grid__row_editable controls-GridView__item_showActions controls-GridView__item_showActions_row controls-ListView__item_showActions_undefined controls-ListView__item_showCheckbox controls-ListView__item_highlightOnHover"
+              data-qa="row"
+              item-key="2"
+              tabindex="0"
+            >
+              <div
+                class="controls-GridReact__cell js-controls-GridReact__cell js-controls-Grid__row-cell js-controls-ListView__editingTarget controls-ListView__item_contentWrapper js-controls-ListView__measurableContainer js-controls-GridReact__cell  controls-Grid__row-cell-checkbox-default controls-GridReact__cell-default tw-cursor-pointer tw-relative controls-GridReact__cell__hoverMode_row controls-GridReact__cell_first tw-flex controls-hover-background-default tw-items-baseline controls-GridReact__cell-baseline controls-GridReact__cell-baseline_default controls-padding_left-grid_null controls-padding_right-grid_null"
+                data-qa="cell"
+              >
+                <div
+                  class="controls_toggle_theme-undefined controls-CheckboxMarker controls-CheckboxMarker_outlined controls-CheckboxMarker_theme-undefined controls-CheckboxMarker__state-false  controls-padding_top-grid_s controls-padding_bottom-grid_s js-controls-ListView__checkbox controls-CheckboxMarker_inList"
+                  data-qa="controls-CheckboxMarker"
+                  tabindex="-1"
+                >
+                  <svg
+                    class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                    data-qa="controls-CheckboxMarker_state-false"
+                    tabindex="0"
+                    viewBox="0 0 12 12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-false"
+                      d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-subtract "
+                      clip-rule="evenodd"
+                      d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-checked-color_transparent"
+                      clip-rule="evenodd"
+                      d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                      fill-rule="evenodd"
+                    />
+                    <rect
+                      class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                      height="6"
+                      rx="2"
+                      width="6"
+                      x="3"
+                      y="3"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="controls-GridReact__cell js-controls-GridReact__cell js-controls-Grid__row-cell js-controls-ListView__editingTarget controls-ListView__item_contentWrapper js-controls-ListView__measurableContainer js-controls-GridReact__cell  controls-GridReact__cell-default tw-cursor-pointer controls-GridReact__minHeight-data tw-relative controls-GridReact__cell__hoverMode_row controls-GridReact__cell_actionsCell controls-fontsize-treeGrid_node_default controls-GridReact__cell_last tw-flex controls-hover-background-default tw-items-baseline controls-GridReact__cell-baseline controls-GridReact__cell-baseline_default controls-padding_top-grid_s controls-padding_bottom-grid_s controls-padding_left-grid_null controls-padding_right-list_default"
+                data-qa="cell"
+              >
+                <div
+                  class="tw-flex tw-items-baseline "
+                  data-qa="expander-block"
+                >
+                  <div
+                    class="js-controls-Tree__row-expander controls-TreeGrid__row-expander controls-cursor_pointer js-controls-ListView__notEditable controls-TreeGrid__row_default-expander_size_default tw-inline-flex tw-items-center tw-flex-shrink-0 tw-justify-center controls-TreeGrid__row-expander_node_default_position_default controls-TreeGrid__row-expander_node_default controls-TreeGrid__row-expander_node_iconSize_default controls-TreeGrid__row-expander_node_iconStyle_default controls-TreeGrid__row-expander_collapsed controls-TreeGrid__row-expander_node_default_collapsed"
+                    data-qa="row-expander"
+                    tabindex="-1"
+                  />
+                </div>
+                Санкт-Петербург и область
+              </div>
+            </div>
+          </div>
+          
+          <div
+            class=" controls-BaseControl__loadingTrigger controls-BaseControl__loadingTrigger-bottom"
+            data-qa="loading-trigger-bottom"
+            style="bottom: 1px;"
+          />
+          <div
+            class="controls-Grid__loadingIndicator_withMultiselect controls-Grid__loadingIndicator-bottom"
+            style="display: none;"
+          >
+            <div
+              class="tw-w-full"
+            >
+              <div
+                class="controls-BaseControl__loadingIndicator js-controls-BaseControl__loadingIndicator controls-BaseControl__loadingIndicator-bottom controls-BaseControl__loadingIndicator__position-bottom controls-BaseControl__loadingIndicator__state-loading "
+                data-qa="indicator_state_loading_position_bottom"
+                style="display: none;"
+              >
+                <div
+                  class="controls-BaseControl__loadingIndicator-content"
+                >
+                  <div
+                    class="controls-BaseControl__loadingIndicatorImage"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tw-contents"
+        />
+        <div
+          class="controls__BaseControl__footer"
+          tabindex="0"
+        />
+        <invisible-node
+          class="ws-hidden"
+          tabindex="-1"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    tabindex="0"
+  />
+  <invisible-node
+    class="ws-hidden"
+    tabindex="-1"
+  />
+</div>
+`;
+
+exports[`OperationPanel_Selection_Search_Hierarchy. Тесты взаимодействия ПМО со множественным выделением, поиском и иерархией. Сброс поиска Если ранее были выделены все записи через ПМО, то при сбросе выделение сбрасывается 2`] = `Array []`;
+
+exports[`OperationPanel_Selection_Search_Hierarchy. Тесты взаимодействия ПМО со множественным выделением, поиском и иерархией. Сброс поиска Если ранее выделили конкретную запись, то при сбросе выделение остается 1`] = `
+<div
+  class="controls_list_theme-default controls-Explorer"
+  data-qa="js-demo-explorer-data-qa"
+  tabindex="0"
+>
+  <div
+    class="controls-Explorer__wrapper"
+    tabindex="0"
+  >
+    <div
+      style="display: none;"
+      tabindex="0"
+    />
+    <div
+      class="controls-BaseControl controls_list_theme-default controls_toggle_theme-default controls-Explorer__view"
+      data-qa="list"
+      tabindex="0"
+    >
+      <div
+        class="controls-BaseControl__fakeFocusElem"
+        name="fakeFocusElem"
+        tabindex="0"
+      />
+      <style
+        data-vdom-ignore="true"
+        name="itemActionsOutsideStyle"
+      />
+      <div
+        class="controls-BaseControl__viewContainer controls-BaseControl__View_uniqueId2 controls-GridControl__viewContainer"
+        name="viewContainer"
+        tabindex="0"
+      >
+        <div
+          class="tw-grid tw-w-full tw-relative controls-Grid controls-Grid_default controls-itemActionsV_menu-hidden"
+          data-qa="gridWrapper"
+          style="grid-template-columns: 1fr;"
+          tabindex="0"
+        >
+          <div
+            class="controls-Grid__loadingIndicator controls-Grid__loadingIndicator-top"
+            style="display: none;"
+          >
+            <div
+              class="tw-w-full"
+            >
+              <div
+                class="controls-BaseControl__loadingIndicator js-controls-BaseControl__loadingIndicator controls-BaseControl__loadingIndicator-top controls-BaseControl__loadingIndicator__position-top controls-BaseControl__loadingIndicator__state-loading "
+                data-qa="indicator_state_loading_position_top"
+                style="display: none;"
+              >
+                <div
+                  class="controls-BaseControl__loadingIndicator-content"
+                >
+                  <div
+                    class="controls-BaseControl__loadingIndicatorImage"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class=" controls-BaseControl__loadingTrigger controls-BaseControl__loadingTrigger-top"
+            data-qa="loading-trigger-top"
+            style="top: 1px;"
+          />
+          <div
+            class="tw-contents controls-Grid__itemsContainer controls-BaseControl_showActions_onhover controls-BaseControl_hover_enabled controls-BaseControl__itemsContainer_uniqueId2"
+            data-qa="items-container"
+          >
+            <div
+              class=" controls-ListView__itemV controls-GridReact__row tw-contents controls-GridReact__row__hoverMode_row js-controls-Grid__row_editable controls-GridView__item_showActions controls-GridView__item_showActions_row controls-ListView__item_showActions_undefined controls-ListView__item_highlightOnHover"
+              data-qa="row"
+              item-key="1"
+              tabindex="0"
+            >
+              <div
+                class="controls-GridReact__cell js-controls-GridReact__cell js-controls-Grid__row-cell js-controls-ListView__editingTarget controls-ListView__item_contentWrapper js-controls-ListView__measurableContainer js-controls-GridReact__cell  controls-GridReact__cell-default tw-cursor-pointer controls-GridReact__minHeight-data tw-relative controls-GridReact__cell__hoverMode_row controls-GridReact__cell_actionsCell controls-Grid__row-cell_selected-undefined controls-fontsize-treeGrid_node_default controls-GridReact__cell_first controls-GridReact__cell_last tw-flex controls-hover-background-default tw-items-baseline controls-GridReact__cell-baseline controls-GridReact__cell-baseline_default controls-padding_top-grid_s controls-padding_bottom-grid_s controls-padding_left-list_default controls-padding_right-list_default"
+                data-qa="cell"
+              >
+                <div
+                  class="controls-ListView__itemV_marker controls-ListView__itemV_marker_size_content-xs  undefined controls-GridReact__cell-marker controls-GridReact__cell-marker_default controls-GridReact__cell-baseline_default controls-ListView__itemV_marker-default_topPadding-grid_s"
+                  data-qa="marker"
+                />
+                <div
+                  class="tw-flex tw-items-baseline "
+                  data-qa="expander-block"
+                >
+                  <div
+                    class="js-controls-Tree__row-expander controls-TreeGrid__row-expander controls-cursor_pointer js-controls-ListView__notEditable controls-TreeGrid__row_default-expander_size_default tw-inline-flex tw-items-center tw-flex-shrink-0 tw-justify-center controls-TreeGrid__row-expander_node_default_position_default controls-TreeGrid__row-expander_node_default controls-TreeGrid__row-expander_node_iconSize_default controls-TreeGrid__row-expander_node_iconStyle_default controls-TreeGrid__row-expander_collapsed controls-TreeGrid__row-expander_node_default_collapsed"
+                    data-qa="row-expander"
+                    tabindex="-1"
+                  />
+                </div>
+                Москва и Московская обл.
+              </div>
+            </div>
+            <div
+              class=" controls-ListView__itemV controls-GridReact__row tw-contents controls-GridReact__row__hoverMode_row js-controls-Grid__row_editable controls-GridView__item_showActions controls-GridView__item_showActions_row controls-ListView__item_showActions_undefined controls-ListView__item_highlightOnHover"
+              data-qa="row"
+              item-key="2"
+              tabindex="0"
+            >
+              <div
+                class="controls-GridReact__cell js-controls-GridReact__cell js-controls-Grid__row-cell js-controls-ListView__editingTarget controls-ListView__item_contentWrapper js-controls-ListView__measurableContainer js-controls-GridReact__cell  controls-GridReact__cell-default tw-cursor-pointer controls-GridReact__minHeight-data tw-relative controls-GridReact__cell__hoverMode_row controls-GridReact__cell_actionsCell controls-fontsize-treeGrid_node_default controls-GridReact__cell_first controls-GridReact__cell_last tw-flex controls-hover-background-default tw-items-baseline controls-GridReact__cell-baseline controls-GridReact__cell-baseline_default controls-padding_top-grid_s controls-padding_bottom-grid_s controls-padding_left-list_default controls-padding_right-list_default"
+                data-qa="cell"
+              >
+                <div
+                  class="tw-flex tw-items-baseline "
+                  data-qa="expander-block"
+                >
+                  <div
+                    class="js-controls-Tree__row-expander controls-TreeGrid__row-expander controls-cursor_pointer js-controls-ListView__notEditable controls-TreeGrid__row_default-expander_size_default tw-inline-flex tw-items-center tw-flex-shrink-0 tw-justify-center controls-TreeGrid__row-expander_node_default_position_default controls-TreeGrid__row-expander_node_default controls-TreeGrid__row-expander_node_iconSize_default controls-TreeGrid__row-expander_node_iconStyle_default controls-TreeGrid__row-expander_collapsed controls-TreeGrid__row-expander_node_default_collapsed"
+                    data-qa="row-expander"
+                    tabindex="-1"
+                  />
+                </div>
+                Санкт-Петербург и область
+              </div>
+            </div>
+          </div>
+          
+          <div
+            class=" controls-BaseControl__loadingTrigger controls-BaseControl__loadingTrigger-bottom"
+            data-qa="loading-trigger-bottom"
+            style="bottom: 1px;"
+          />
+          <div
+            class="controls-Grid__loadingIndicator controls-Grid__loadingIndicator-bottom"
+            style="display: none;"
+          >
+            <div
+              class="tw-w-full"
+            >
+              <div
+                class="controls-BaseControl__loadingIndicator js-controls-BaseControl__loadingIndicator controls-BaseControl__loadingIndicator-bottom controls-BaseControl__loadingIndicator__position-bottom controls-BaseControl__loadingIndicator__state-loading "
+                data-qa="indicator_state_loading_position_bottom"
+                style="display: none;"
+              >
+                <div
+                  class="controls-BaseControl__loadingIndicator-content"
+                >
+                  <div
+                    class="controls-BaseControl__loadingIndicatorImage"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tw-contents"
+        />
+        <div
+          class="controls__BaseControl__footer"
+          tabindex="0"
+        />
+        <invisible-node
+          class="ws-hidden"
+          tabindex="-1"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    tabindex="0"
+  />
+  <invisible-node
+    class="ws-hidden"
+    tabindex="-1"
+  />
+</div>
+`;
+
+exports[`OperationPanel_Selection_Search_Hierarchy. Тесты взаимодействия ПМО со множественным выделением, поиском и иерархией. Сброс поиска Если ранее выделили конкретную запись, то при сбросе выделение остается 2`] = `Array []`;

@@ -1,0 +1,59 @@
+<Controls-demo.gridNew.DemoLayout.Index>
+    <ws:content>
+		<div style="display: inline-block; {{ _useBackground ? 'background-color: #e8f5f0;' }}">
+			<Controls.grid:View name="grid"
+								storeId="EditInPlaceViewTemplates"
+								columns="{{_columns}}">
+				<ws:editingConfig editOnClick="{{ true }}"/>
+				<ws:itemTemplate>
+					<ws:partial template="Controls/grid:ItemTemplate"
+								highlightOnHover="{{ _highlightOnHover }}"/>
+				</ws:itemTemplate>
+			</Controls.grid:View>
+		</div>
+    </ws:content>
+    <ws:rightSidebar isExpanded="{{ true }}">
+        <ws:items>
+            <ws:Array>
+				<ws:Object>
+					<ws:template>
+						<div class="controlsDemo__EditingViewTemplates__useBackground">
+							<h4 class="controlsDemo__mb1">Фон контейнера списка</h4>
+							<button attr:class="controlsDemo__EditingViewTemplates__useBackground_btn controlsDemo__mr1"
+									on:click="_toggleUseBackground()">{{ _useBackground ? 'Выключить' : 'Включить' }} фон</button>
+						</div>
+					</ws:template>
+				</ws:Object>
+
+				<ws:Object>
+					<ws:template>
+						<div class="controlsDemo__EditingViewTemplates__inputBackground">
+							<h4 class="controlsDemo__mb1">Подсветка поля ввода в режиме просмотра</h4>
+							<button attr:class="controlsDemo__EditingViewTemplates__inputBackground_visible controlsDemo__mr1"
+									on:click="_toggleInputBackgroundVisibility('visible')">visible</button>
+							<button attr:class="controlsDemo__EditingViewTemplates__inputBackground_onhover controlsDemo__mr1"
+									on:click="_toggleInputBackgroundVisibility('onhover')">onhover</button>
+							<button attr:class="controlsDemo__EditingViewTemplates__inputBackground_hidden controlsDemo__mr1"
+									on:click="_toggleInputBackgroundVisibility('hidden')">hidden</button>
+						</div>
+					</ws:template>
+				</ws:Object>
+
+				<ws:Object>
+					<ws:template>
+						<div class="controlsDemo__EditingViewTemplates__highlightOnHover">
+							<h4 class="controlsDemo__mb1">Подсветка строки при наведении</h4>
+							<button attr:class="controlsDemo__EditingViewTemplates__highlightOnHover_undefined controlsDemo__mr1"
+									on:click="_toggleHighlightOnHover(undefined)">undefined</button>
+							<button attr:class="controlsDemo__EditingViewTemplates__highlightOnHover_true controlsDemo__mr1"
+									on:click="_toggleHighlightOnHover(true)">true</button>
+							<button attr:class="controlsDemo__EditingViewTemplates__highlightOnHover_false"
+									on:click="_toggleHighlightOnHover(false)">false</button>
+						</div>
+					</ws:template>
+				</ws:Object>
+
+            </ws:Array>
+        </ws:items>
+    </ws:rightSidebar>
+</Controls-demo.gridNew.DemoLayout.Index>

@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell demo-InputCallback__upperCase">
+        <Controls.input:Text inputCallback="{{_upperCaseCallback}}"/>
+    </div>
+    <div class="controlsDemo__cell demo-InputCallback__maxLength">
+        <Controls.input:Number attr:class="controlsDemo__input"
+                               placeholder="Enter number"
+                               inputCallback="{{_lengthCallback}}"
+                               precision="{{0}}"/>
+    </div>
+    <div class="controlsDemo__cell demo-InputCallback__timeInterval">
+        <Controls.input:TimeInterval bind:value="_timeIntervalValue"
+                                     mask="HH:MM"
+                                     inputCallback="{{_hoursFormat}}"/>
+    </div>
+</div>

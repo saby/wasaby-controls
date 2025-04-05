@@ -1,0 +1,26 @@
+<div class="controlsDemo__wrapper controlsDemo__flex controlsDemo_fixedWidth800 controlsDemo__flex-jc-sa">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">iconSize=s</div>
+        <Controls.cut:TextCut attr:style="width: 200px;" lines="{{3}}" iconSize="s">
+            <ws:content>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam cupiditate delectus, eaque laboriosam maiores mollitia praesentium quo ratione vel. At cum cumque earum ipsam non quis soluta ullam veritatis.
+            </ws:content>
+        </Controls.cut:TextCut>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">iconSize=m</div>
+        <Controls.cut:TextCut attr:style="width: 200px;" lines="{{3}}" iconSize="m">
+            <ws:content>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam cupiditate delectus, eaque laboriosam maiores mollitia praesentium quo ratione vel. At cum cumque earum ipsam non quis soluta ullam veritatis.
+            </ws:content>
+        </Controls.cut:TextCut>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">iconSize=l</div>
+        <Controls.cut:TextCut attr:style="width: 200px;" lines="{{3}}" iconSize="l">
+            <ws:content>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam cupiditate delectus, eaque laboriosam maiores mollitia praesentium quo ratione vel. At cum cumque earum ipsam non quis soluta ullam veritatis.
+            </ws:content>
+        </Controls.cut:TextCut>
+    </div>
+</div>

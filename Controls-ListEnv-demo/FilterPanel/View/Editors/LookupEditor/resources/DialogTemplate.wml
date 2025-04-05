@@ -1,0 +1,22 @@
+<Controls.lookupPopup:Controller scope="{{_options}}" name="SelectorController">
+    <Controls.popupTemplate:Dialog closeButtonViewMode="external">
+        <ws:bodyContentTemplate>
+            <Controls.browser:Browser
+                    source="{{_source}}"
+                    keyProperty="id"
+                    filter="{{_filter}}"
+                    multiSelectVisibility="hidden"
+            >
+                <Controls.lookupPopup:Container>
+                    <Controls.listDataOld:ListContainer>
+                        <Controls.lookupPopup:ListContainer>
+                            <Controls.scroll:Container>
+                                <Controls.list:View/>
+                            </Controls.scroll:Container>
+                        </Controls.lookupPopup:ListContainer>
+                    </Controls.listDataOld:ListContainer>
+                </Controls.lookupPopup:Container>
+            </Controls.browser:Browser>
+        </ws:bodyContentTemplate>
+    </Controls.popupTemplate:Dialog>
+</Controls.lookupPopup:Controller>

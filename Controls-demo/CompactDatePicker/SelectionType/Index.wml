@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-justify-content-center ws-flex-column" data-qa="controlsDemo_capture">
+        <div class="controls-text-label controlsDemo__maxWidth200 controls-margin_bottom-m">Выбор 3 или 7 дней</div>
+        <Controls.compactDatePicker:View
+            _date="{{ _date }}"
+            datePopupType="compactDatePicker"
+            attr:class="controlsDemo-CompactDatePicker_height"
+            selectionType="quantum"
+            ranges="{{_ranges}}"
+            bind:startValue="_startValue"
+            bind:endValue="_endValue"/>
+    </div>
+</div>

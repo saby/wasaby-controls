@@ -1,0 +1,65 @@
+<div class="pageWrap controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="option_block">
+        <Controls.dateRange:LinkView
+                bind:startValue="_startValue"
+                bind:endValue="_endValue"
+                fontColorStyle="unaccented"
+        />
+    </div>
+    <div class="option_block">
+        <Controls.dateRange:LinkView
+                bind:startValue="_startValue"
+                bind:endValue="_endValue"
+                fontColorStyle="link"
+        />
+    </div>
+    <div class="option_block">
+        <Controls.dateRange:LinkView
+                bind:startValue="_startValue"
+                bind:endValue="_endValue"
+                fontColorStyle="default"
+        />
+    </div>
+    <div class="option_block">
+        <Controls.dateRange:LinkView
+                bind:startValue="_startValue"
+                bind:endValue="_endValue"
+                fontColorStyle="label"
+        />
+    </div>
+    <div class="option_block">
+        <Controls.dateRange:LinkView
+                bind:startValue="_startValue"
+                bind:endValue="_endValue"
+                fontColorStyle="success"
+        />
+    </div>
+    <div class="option_block">
+        <Controls.dateRange:LinkView
+                bind:startValue="_startValue"
+                bind:endValue="_endValue"
+                fontColorStyle="danger"
+        />
+    </div>
+    <div class="option_block">
+        <Controls.dateRange:LinkView
+                bind:startValue="_startValue"
+                bind:endValue="_endValue"
+                fontColorStyle="primary"
+        />
+    </div>
+    <div class="option_block">
+        <Controls.dateRange:LinkView
+                startValue="{{_startValue}}"
+                endValue="{{_endValue}}"
+                fontColorStyle="secondary"
+        />
+    </div>
+    <div class="option_block">
+        <Controls.dateRange:LinkView
+                startValue="{{_startValue}}"
+                endValue="{{_endValue}}"
+                fontColorStyle="warning"
+        />
+    </div>
+</div>

@@ -1,0 +1,6 @@
+<ws:partial template="{{_options.content}}"
+            scope="{{_options}}"
+            filterButtonItems="{{_options.slice.state.filterDescription}}"
+            on:filterItemsChanged="_filterItemsChanged()"
+            on:search="_search()"
+            on:searchReset="_searchReset()"/>

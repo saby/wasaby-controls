@@ -1,0 +1,42 @@
+<Controls.popupTemplate:Stack on:selectedKeysChanged="_selectedKeysChanged()" headingCaption="{{_options.headingCaption}}" on:sendResult="_sendResult()">
+    <ws:headerContentTemplate>
+        <div>
+            <ws:if data="{{_options.multiSelect && _selectionChanged}}">
+                <Controls.buttons:Button viewMode="outlined" buttonStyle="primary" caption="{[Выбрать]}" on:click="_closeSelectorBind()" attr:class="ControlsDemo-Lookup__selectButton"/>
+            </ws:if>
+        </div>
+    </ws:headerContentTemplate>
+    <ws:bodyContentTemplate>
+        <Controls.lookupPopup:Controller name="SelectorController" selectedItems="{{_options.selectedItems}}">
+            <Controls.browser:Browser
+                searchParam="title"
+                minSearchLength="{{3}}"
+                source="{{_source}}"
+                keyProperty="{{_keyProperty}}"
+                filter="{{_filter}}"
+                displayProperty="title"
+                idProperty="{{_keyProperty}}"
+                multiSelectVisibility="{{_options.multiSelect ? 'visible' : 'hidden'}}"
+                itemPadding="{{_itemPadding}}"
+                columns="{{_columns}}"
+            >
+                <Controls.lookupPopup:Container multiSelect="{{_options.multiSelect ? 'visible'}}" keyProperty="{{_keyProperty}}">
+                    <div class="ws-fragment">
+                        <div class="controlsDemo__wrapper">
+                            <Controls.searchDeprecated:InputContainer>
+                                <Controls.search:Input/>
+                            </Controls.searchDeprecated:InputContainer>
+                        </div>
+                        <Controls.lookupPopup:ListContainer multiSelect="{{_options.multiSelect ? 'visible'}}" keyProperty="{{_keyProperty}}">
+                            <Controls.listDataOld:ListContainer>
+                                <Controls.grid:View emptyTemplate="Не найдено">
+                                </Controls.grid:View>
+                            </Controls.listDataOld:ListContainer>
+                        </Controls.lookupPopup:ListContainer>
+                    </div>
+                </Controls.lookupPopup:Container>
+            </Controls.browser:Browser>
+        </Controls.lookupPopup:Controller>
+    </ws:bodyContentTemplate>
+</Controls.popupTemplate:Stack>
+

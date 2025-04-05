@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper">
+<Controls.list:View storeId="ItemTemplateHref">
+   <ws:itemTemplate>
+      <ws:partial template="Controls/list:ItemTemplate"
+                  href="{{itemTemplate.item.contents.href}}"/>
+   </ws:itemTemplate>
+</Controls.list:View>
+</div>

@@ -1,0 +1,9 @@
+<div class="Demo-HorizontalScroll-Dec__demoRoot">
+	<Controls.scroll:Container attr:class="scrolling_may_be_now Demo-HorizontalScroll__scrollContainer"
+							   leftShadowVisibility="hidden"
+							   rightShadowVisibility="hidden"
+							   horizontalContentFit="contain"
+							   scrollbarVisible="{{ false }}">
+		<Controls-demo.HorizontalScroll.Overlay.Grid.Grid/>
+	</Controls.scroll:Container>
+</div>

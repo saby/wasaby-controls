@@ -1,0 +1,273 @@
+.controls-SimplePanel {
+   .flexbox();
+   .flex-direction(column);
+   position: relative;
+   padding-top: var(--offset_3xs);
+   box-sizing: border-box;
+
+   --inner_stickyPopup_closeButton-topOffset: var(--offset_3xs);
+}
+
+.controls-SimplePanel_withHeader .controls-StickyTemplate__top-area {
+   padding-left: 0;
+}
+
+.controls-SimplePanel-baseline {
+   width: 100%;
+   display: flex;
+   height: var(--header_min-height_stack);
+   align-items: baseline;
+
+   &::before {
+      content: '\200b';
+      line-height: var(--line-height_dialogTemplate_caption);
+      font-size: var(--font-size_3xl);
+   }
+}
+
+.controls-SimplePanel__header-wrapper {
+   width: 100%;
+   height: 100%;
+   min-width: 0;
+}
+
+.controls-SimplePanel__header {
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   align-items: baseline;
+   justify-content: flex-end;
+   flex-grow: 1;
+   min-width: 0;
+
+   // отступ для кнопки подтверждения
+   --apply-button-offset_menuPopup: var(--offset_s);
+}
+
+.controls-SimplePanel__header::before {
+   content: '\200b';
+   font-size: var(--font-size_xl);
+}
+
+.controls-Menu__popup_headerWrapper_search {
+   width: 100%;
+}
+
+.controls-SimplePanel__searchInput {
+   box-sizing: border-box;
+   padding-left: var(--offset_3xs);
+   padding-right: var(--offset_3xs);
+}
+
+.controls-SimplePanel__searchInHeader-marginLeft.controls-Menu__popup_header_searchWrapper {
+   margin-right: 0; // убираем margin с поиска
+}
+
+.controls-SimplePanel__footerContentTemplate-paddingBottom {
+   margin-bottom: calc((var(--offset_xs) - var(--offset_s)));
+}
+
+.controls-SimplePanel__searchInput-marginRight {
+   margin-right: calc(
+      var(--apply-button_inline-height_menuPopup) - var(--offset_s) - var(--offset_st)
+   );
+   margin-left: calc(-1 * var(--header_padding-horizontal_sticky));
+}
+
+.controls-SimplePanel__detail-button {
+   display: inline-flex;
+   align-items: baseline;
+   padding-left: var(--offset_l);
+   min-width: 0;
+}
+
+.controls-SimplePanel_close-padding {
+   padding-right: calc((var(--width_closeButton_functionalButton) / 2) + var(--border-thickness));
+}
+
+.controls-SimplePanel_content {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+   position: relative;
+   width: 100%;
+   min-height: 1px;
+   max-height: inherit;
+   box-sizing: border-box;
+}
+
+.controls-SimplePanel_wrapper-maxWidth {
+   max-width: var(--max-width_filterSimplePanel);
+}
+
+.controls-SimplePanel_wrapper {
+   border-radius: var(--border-radius_m);
+   box-sizing: border-box;
+}
+
+.controls-SimplePanel_background {
+   background: var(--unaccented_background-color);
+}
+
+.controls-SimplePanel-padding-2xs {
+   padding: 0 var(--offset_2xs) var(--offset_2xs);
+}
+
+.controls-SimplePanel-padding-s {
+   padding: var(--offset_s);
+}
+
+.controls-SimplePanel .controls-PopupTemplate__roundBorder_bottom {
+   // Sticky вешает класс со скруглением 'm' на контент, перебиваем на 's'
+   border-radius: var(--border-radius_s);
+}
+
+.controls-SimplePanel__scroll {
+   border-radius: var(--border-radius_s);
+}
+
+.controls-SimplePanel-background {
+   background: var(--background-color_sticky);
+}
+
+.controls-SimplePanel_withHeader-background {
+   background: var(--background-color);
+}
+
+.controls-SimplePanel__header-paddingRight {
+   padding-right: calc(
+      var(--offset_2xs) + var(--inline_height_closeButton) + var(--offset_s) + var(--offset_2xs)
+   );
+}
+
+.controls-SimplePanel_caption {
+   display: flex;
+   align-items: center;
+   height: var(--inline_height_l);
+   padding-right: calc(
+      var(--close-button_offset-left_sticky) + var(--width_closeButton_functionalButton) / 2 -
+         var(--offset_xs)
+   );
+   padding-left: calc(
+      var(--header_padding-horizontal_sticky) + var(--offset_3xs) + var(--icon-size_2xs)
+   );
+}
+
+.controls-SimplePanel__multiple_separator {
+   width: 100%;
+   border-bottom: var(--grouping_separator_thickness_list) solid var(--border-color);
+   margin-top: var(--grouping_padding-vertical_menu);
+   margin-right: var(--grouping_padding-horizontal_menu);
+   margin-bottom: calc(var(--grouping_padding-vertical_menu) - var(--offset_xs) - var(--offset_s));
+   margin-left: var(--grouping_padding-horizontal_menu);
+}
+
+.controls-SimplePanel__applyButton {
+   position: absolute;
+   top: calc(
+      (var(--item_height_menu) - var(--apply-button_inline-height_menuPopup)) / 2 + var(--offset_s)
+   );
+   right: calc(var(--width_closeButton_functionalButton) / 2);
+   z-index: 3;
+}
+
+.controls-SimplePanel .controls-StickyTemplate__close_button {
+   // Крестик должен быть выше, чем стики элемент фильтра (у него z-index 2)
+   z-index: 3;
+}
+
+.controls-FilterView-SimplePanel__buttonTarget-popup_left {
+   margin-left: calc(
+      (
+         (var(--width_filterButton_filterView) - var(--inline_height_closeButton)) / 2 +
+            var(--close-button_offset-right_sticky)
+      )
+   );
+}
+
+// открытие панели быстрых фильтров, если нет кнопки
+.controls-FilterView-SimplePanel-popup_left {
+   // толщина border'a + отступ пункта меню от бордера + отступ от ховера до маркера + ширина маркера + отступ от маркера до текста
+   margin-left: calc(
+      -1 * (var(--offset_s) + var(--item_padding-left_s_list) + var(--icon-size_2xs) +
+               var(--offset_3xs))
+   );
+}
+
+// открытие панели быстрых фильтров, если нет кнопки
+.controls-FilterView-SimplePanel-popup_top-withHeader {
+   margin-top: calc(
+      -1 * ((var(--header_min-height_stack) - var(--inline_height_default_link_button)) / 2 +
+               var(--offset_3xs))
+   );
+}
+
+// открытие панели быстрых фильтров, если нет кнопки и шапки
+.controls-FilterView-SimplePanel-popup_top-withoutHeader {
+   margin-top: calc(
+      -1 * ((var(--item_height_menu) - var(--inline_height_default_link_button)) / 2 +
+               var(--content_padding-top_sticky) + var(--offset_2xs))
+   );
+}
+
+.controls-FilterView-SimplePanel__buttonTarget-popup_top-withoutHeader {
+   // Чтобы при позиционировании над кнопкой, панель открывалась в том же месте, нужно сдвинуть ее на ширину иконки треугольника
+   // толщина border'a + отступ пункта меню от бордера + отступ от ховера до маркера + ширина маркера + отступ от маркера до текста - ширина треугольника
+   margin-left: calc(
+      -1 * (
+            var(--offset_s) + var(--item_padding-left_s_list) + var(--icon-size_2xs) +
+               var(--offset_3xs)
+         ) + var(--item_icon-size_filterView)
+   );
+   margin-top: (
+      calc(
+         -1 * ((var(--item_height_menu) - var(--height_filterView)) / 2 +
+                  var(--content_padding-top_sticky) + var(--offset_2xs))
+      )
+   );
+}
+
+// открытие панели быстрых фильтров от кнопки
+.controls-FilterView-SimplePanel__buttonTarget-popup-right-withHeader,
+.controls-FilterView-SimplePanel__buttonTarget-popup-left-withHeader {
+   margin-top: (
+      calc(
+         -1 * ((var(--header_min-height_stack) - var(--height_filterView)) / 2 + var(--offset_3xs))
+      )
+   );
+}
+
+.controls-FilterView-SimplePanel__buttonTarget-popup-right-withHeader {
+   margin-left: calc(
+      -1 * (var(--offset_2xs) + var(--offset_s)) + ((
+                  var(--height_filterButton_filterView) - var(--icon-size_xs)
+               ) / 2)
+   );
+}
+
+.controls-FilterView-SimplePanel__buttonTarget-popup-left-withHeader {
+   margin-left: calc(
+      (var(--close-button_offset-right_sticky) + var(--offset_s)) -
+         ((var(--height_filterButton_filterView) - var(--inline_height_closeButton)) / 2)
+   );
+}
+
+.controls-SimplePanel__applyButton-space {
+   width: var(--apply-button_inline-height_menuPopup);
+   padding-left: var(--apply-button-offset_menuPopup);
+}
+
+.controls-SimplePanel__applyButton-size {
+   --container_inline-height_button_local: var(--apply-button_inline-height_menuPopup);
+   margin-left: var(--apply-button-offset_menuPopup);
+}
+
+.ws-is-hover {
+   .controls-Menu__row_hovered.controls-Menu__row_hoverBackgroundStyle-filterSimplePanel {
+      background-color: var(--hover_background-color);
+   }
+
+   .controls-Menu__row_hoverBackgroundStyle-filterSimplePanel:hover {
+      background: var(--hover_background-color);
+   }
+}

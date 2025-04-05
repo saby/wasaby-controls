@@ -1,0 +1,14 @@
+<ws:if data="{{_options.dataStoreId}}">
+    <Controls.baseList:ListContainerConnectedCompatible scope="{{_options}}" storeId="{{_options.dataStoreId}}" isBrowser="{{true}}">
+        <Controls.listDataOld:ListContainerEventConverter>
+            <ws:partial template="{{_options.content}}"/>
+        </Controls.listDataOld:ListContainerEventConverter>
+    </Controls.baseList:ListContainerConnectedCompatible>
+</ws:if>
+<ws:else>
+    <Controls.baseList:DataController scope="{{_options}}" factoryConfigs="{{_configs}}" isBrowser="{{true}}" storeId="_browserSyntheticStoreId">
+        <Controls._browserSliced.BrowserSliced.ListEnvCompatible>
+            <ws:partial template="{{_options.content}}"/>
+        </Controls._browserSliced.BrowserSliced.ListEnvCompatible>
+    </Controls.baseList:DataController>
+</ws:else>

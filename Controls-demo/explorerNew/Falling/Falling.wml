@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper">
+        <Controls.explorer:View
+            storeId="Falling"
+            attr:class="demo-Explorer ControlsDemo-Explorer"
+            header="{{_gridHeader}}"
+            columns="{{_columns}}">
+        </Controls.explorer:View>
+</div>

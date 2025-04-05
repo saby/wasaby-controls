@@ -1,0 +1,15 @@
+<ws:if data="{{_options.items || _options.rootVisible}}">
+   <Controls.Container.Async
+      templateOptions="{{_options}}"
+      templateName="Controls/breadcrumbs:HeadingPath"
+      attr:class="js-controls-Explorer__HeadingPathBack"
+      on:itemClick="_onItemClick()"
+      on:hoveredItemChanged="_hoveredCrumbChanged()"
+      on:arrowClick="_onArrowClick()"
+      on:arrowActivated="_onArrowActivated()"
+   />
+</ws:if>
+<ws:else>
+   <!-- нельзя использовать invisible-node. он ломает всплытие событий/-->
+   <div style="display: none"></div>
+</ws:else>

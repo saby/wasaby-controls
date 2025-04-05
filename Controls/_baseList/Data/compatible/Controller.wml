@@ -1,0 +1,9 @@
+<Controls-DataEnv.context:Provider configs="{{_configs}}" loadResults="{{_loadResults}}">
+	<Controls._baseList.Data.compatible.ListContainerConnectedCompatible
+			scope="{{_options}}"
+			searchValue="{{_options.isBrowser ? _options.searchValue : null}}"
+			searchValueForHighlight="{{_options.searchValue}}"
+			name="containerConnected">
+		<ws:partial template="{{_options.content}}"/>
+	</Controls._baseList.Data.compatible.ListContainerConnectedCompatible>
+</Controls-DataEnv.context:Provider>

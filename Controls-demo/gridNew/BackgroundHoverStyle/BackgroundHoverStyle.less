@@ -1,0 +1,11 @@
+.controls-Demo__BackgroundHoverStyle_button_background-default,
+.controls-Demo__BackgroundHoverStyle_button_background-unaccented {
+   background-color: ~'var(--item_hover_background-color_list)';
+}
+
+@variants: primary, secondary, danger, success, warning, info;
+.for(@variants, {
+   .controls-Demo__BackgroundHoverStyle_button_background-@{_item} {
+      background-color: ~'var(--@{_item}_hover_background-color)';
+   }
+});

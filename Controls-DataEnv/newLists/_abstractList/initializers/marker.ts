@@ -1,0 +1,16 @@
+import type { IAbstractListDataFactoryLoadResult } from '../interface/factory/IAbstractListDataFactoryLoadResult';
+import type { IAbstractListDataFactoryArguments } from '../interface/factory/IAbstractListDataFactoryArguments';
+import type { IMarkerState } from '../interface/IAbstractListStateParts';
+import type { Initializer } from '../Initializer';
+
+export default function initState(
+    _: Initializer,
+    __: IAbstractListDataFactoryLoadResult,
+    config: IAbstractListDataFactoryArguments
+): IMarkerState {
+    const markerVisibility = config.markerVisibility || 'onactivated';
+    return {
+        markedKey: markerVisibility === 'hidden' ? undefined : config.markedKey,
+        markerVisibility,
+    };
+}

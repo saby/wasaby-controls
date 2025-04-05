@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300" data-qa="Controls-demo_toggle_BigSeparator_IconMode__wrapper">
+    <div class="controlsDemo__cell demo-BigSeparator__ellipsis">
+        <div class="controls-text-label controls-text-label">iconMode = ellipsis</div>
+        <Controls.ShowMoreButton caption="Button" bind:value="_expandedEllipsis"
+                                      iconMode="ellipsis"
+                                      attr:data-qa="Controls-demo_toggle_BigSeparator_IconMode__show-more-ellipsis"/>
+    </div>
+    <div class="controlsDemo__cell demo-BigSeparator__arrow">
+        <div class="controls-text-label controls-text-label">iconMode = arrow</div>
+        <Controls.ShowMoreButton caption="Button 2" bind:value="_expandedArrow"
+                                      iconMode="arrow"
+                                      attr:data-qa="Controls-demo_toggle_BigSeparator_IconMode__show-more-arrow"/>
+    </div>
+</div>

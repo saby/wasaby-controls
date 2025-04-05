@@ -1,0 +1,6 @@
+<div class="controlsDemo__wrapper">
+    <Controls.grid:View
+            attr:class="controlsDemo__inline-flex"
+            storeId="ColumnsHighlightOnHover"
+            columns="{{_columns}}"/>
+</div>

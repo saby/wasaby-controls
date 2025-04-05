@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center {{_options.theme.indexOf('default')<0 ? 'controlsDemo_fixedWidth500' : 'controlsDemo_fixedWidth300'}}"
+         data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell">
+            <Controls.Tumbler:Control items="{{_items}}"
+                                     bind:selectedKey="_selectedKey1"
+                                     attr:class="ControlsDemo-Tumbler__twoButtons"/>
+        </div>
+        <div class="controlsDemo__cell">
+            <Controls.Tumbler:Control items="{{_items}}"
+                                     selectedKey="{{_selectedKey2}}"
+                                     attr:class="ControlsDemo-Tumbler__muiltyButtons"/>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module name="Controls-Kanban" kaizen_zone="b5b0be19-8739-4415-be4a-64e3d86d7aa8"
+           id="07b75299-1e47-43ba-8b36-aa642cce3de2"
+           package="Wasaby"
+           responsible="Колесов В.А." responsible_uuid="100257d6-3e56-494d-9358-010a8d99f392"
+           required="1"
+           version="1.00">
+  <description>Модуль содержит контролы канбана.</description>
+    <depends>
+      <module id="f6fdf353-3ab3-4dbb-8671-01c2b418bf0a" name="Controls"/>
+      <module id="af50caf5-f84b-4b81-a19c-6f6618372dbd" name="Controls-default-theme"/>
+    </depends>
+  <load_after/>
+  <parameters/>
+  <resources/>
+  <preload/>
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>

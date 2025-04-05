@@ -1,0 +1,6 @@
+<ws:if data="{{_options.react1189933746}}">
+    <Controls._scroll.VirtualScrollContainerReact scope="{{_options}}" register="{{_registerUtil}}"/>
+</ws:if>
+<ws:else>
+    <ws:partial template="{{_options.content}}" attr:class="{{!_isContentVisible ? 'ws-hidden'}}"/>
+</ws:else>

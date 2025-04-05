@@ -1,0 +1,26 @@
+<ws:partial template="Controls/grid:ColumnTemplate" attr:class="controls-Grid__row-cell__content_baseline_L" scope="{{ _options }}">
+   <ws:contentTemplate>
+      <div class="controls-EditingTemplateText__editorWrapper controls-EditingTemplateText__editorWrapper_align_{{column.config.align ? column.config.align : 'left'}}">
+         <ws:if data="{{item.isEditing()}}">
+            <Controls.lookup:Input attr:class="controls-EditingTemplateText__editor"
+                                   bind:value="item.contents.comment"
+                                   searchParam="title"
+                                   source="{{item.contents.source}}"
+                                   bind:selectedKeys="item.contents.selectedKeys"
+                                   keyProperty="id"
+                                   displayProperty="title"
+                                   multiSelect="{{true}}"
+                                   selectOnClick="{{ false }}">
+               <ws:lookupTemplate templateName="Controls-demo/Input/Lookup/FlatListSelector/FlatListSelector"/>
+               <ws:suggestTemplate templateName="Controls-demo/Input/Lookup/Suggest/SuggestTemplate"/>
+            </Controls.lookup:Input>
+         </ws:if>
+         <ws:else>
+            <div class="controls-EditingTemplateText {{column.configIndex !== 5 ? 'controls-EditingTemplateText_InputBackgroundVisibility_onhover'}}{{column.configIndex !== 5 && itemData.isActive ? ' controls-EditingTemplateText_active'}} controls-EditingTemplateText_size_default">
+               <span>{{ item.contents[column.config.displayProperty] }}</span>
+               <span class="ControlsDemo-EipScenarios__comment">{{ item.contents.comment }}</span>
+            </div>
+         </ws:else>
+      </div>
+   </ws:contentTemplate>
+</ws:partial>

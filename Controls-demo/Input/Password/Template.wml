@@ -1,0 +1,18 @@
+<div class="controlsDemo__wrapper  controlsDemo__flex controlsDemo__flex-flow_wrap">
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Input/Password/Base/Index' }}">
+            <a href="{{content.href}}">Базовая настройка и revealable</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.Password.Base.Index/>
+    </div>
+    <div class="controlsDemo__cell controls-margin_right-l">
+        <Router.router:Reference attr:class="controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/Input/Password/MaxLength/Index' }}">
+            <a href="{{content.href}}">Настройка maxLength</a>
+        </Router.router:Reference>
+        <Controls-demo.Input.Password.MaxLength.Index/>
+    </div>
+</div>

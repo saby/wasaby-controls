@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo-toolbar-panel">Выполнили клик по {{_clickedItem}}; активировали {{_activeItem}}</div>
+    <Controls.treeGrid:View
+            attr:class="controlsDemo__margin-top"
+            storeId="ItemClickItemActivate"
+            columns="{{_columns}}"
+            expandByItemClick="{{_expandByItemClick}}"
+            on:itemClick="_onItemClick()"
+            on:itemActivate="_onItemActivate()"
+    />
+    <Controls.buttons:Button caption="Toggle expandByItemClick" on:click="_toggleExpandByItemClick()"/>
+</div>

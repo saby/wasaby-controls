@@ -1,0 +1,58 @@
+<div class="controlsDemo__wrapper controlsDemo__flex controlsDemo__flex-flow_wrap" data-qa="controlsDemo_capture">
+    <div
+        class="controlsDemo__cell demo-Tumbler__MainCounterStyle controls-margin_right-l {{
+            _widthClass
+        }}"
+    >
+        <Router.router:Reference
+            attr:class="controls-text-label"
+            state="app/:app"
+            app="{{ 'Controls-demo/toggle/Tumbler/MainCounterStyle/Index' }}"
+        >
+            <a href="{{ content.href }}">Настройка стилей счётчиков</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Tumbler.MainCounterStyle.Index />
+    </div>
+    <div
+        class="controlsDemo__cell demo-Tumbler__inlineHeight controls-margin_right-l {{
+            _widthClass
+        }}"
+    >
+        <Router.router:Reference
+            attr:class="controls-text-label"
+            state="app/:app"
+            app="{{ 'Controls-demo/toggle/Tumbler/inlineHeight/Index' }}"
+        >
+            <a href="{{ content.href }}">Настройка размеров</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Tumbler.inlineHeight.Index />
+    </div>
+    <div
+        class="controlsDemo__cell demo-Tumbler__BackgroundStyle controls-margin_right-l {{
+            _widthClass
+        }}"
+    >
+        <Router.router:Reference
+            attr:class="controls-text-label"
+            state="app/:app"
+            app="{{ 'Controls-demo/toggle/Tumbler/BackgroundStyle/Index' }}"
+        >
+            <a href="{{ content.href }}">Настройка стиля фона</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Tumbler.BackgroundStyle.Index />
+    </div>
+    <div
+        class="controlsDemo__cell demo-Tumbler__CustomStyle controls-margin_right-l {{
+            _widthClass
+        }}"
+    >
+        <Router.router:Reference
+            attr:class="controls-text-label"
+            state="app/:app"
+            app="{{ 'Controls-demo/toggle/Tumbler/CustomStyle/Index' }}"
+        >
+            <a href="{{ content.href }}">Настройка внешнего вида</a>
+        </Router.router:Reference>
+        <Controls-demo.toggle.Tumbler.CustomStyle.Index />
+    </div>
+</div>

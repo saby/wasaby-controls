@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <Router.router:Reference
+           attr:class="controls-text-label"
+           state="app/:app"
+           app="Controls-demo/dataSource/Tree">
+            <a href="{{content.href}}">Обработка ошибок в дереве</a>
+        </Router.router:Reference>
+    </div>
+</div>

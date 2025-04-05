@@ -1,0 +1,25 @@
+<div class="controlsDemo__wrapper controlsDemo__minWidth600 controlsDemo__maxWidth800" style="height: 300px">
+   <div class="controls-padding-l">
+      <div class="controls-text-label">contrastBackground="{{ false }}"</div>
+      <Controls.operations:Panel
+         source="{{ _panelSource }}"
+         nodeProperty="{{ _nodeProperty }}"
+         parentProperty="{{ _parentProperty }}"
+         keyProperty="{{ _keyProperty }}"
+         bind:selectedKeys="_selectedKeys"
+         bind:excludedKeys="_excludedKeys"
+      />
+   </div>
+   <div class="controls-margin_top-m controls-padding-l controlsDemo__contrastBackground">
+      <div class="controls-text-label">contrastBackground="{{ true }}"</div>
+      <Controls.operations:Panel
+         source="{{ _panelSource }}"
+         nodeProperty="{{ _nodeProperty }}"
+         parentProperty="{{ _parentProperty }}"
+         keyProperty="{{ _keyProperty }}"
+         contrastBackground="{{ true }}"
+         bind:selectedKeys="_selectedKeys"
+         bind:excludedKeys="_excludedKeys"
+      />
+   </div>
+</div>

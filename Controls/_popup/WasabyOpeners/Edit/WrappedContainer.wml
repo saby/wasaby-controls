@@ -1,0 +1,9 @@
+<Controls.Container.Async templateName="Controls/contextDeprecated:DataContextCompatibleConsumer">
+    <ws:content>
+        <ws:partial template="{{ content.resolvedTemplate }}" scope="{{ _options }}">
+            <ws:innerComponent>
+                <Controls._popup.WasabyOpeners.Edit.Container scope="{{ innerComponent }}" _dataOptionsValue="{{innerComponent.dataContextCompatibleValue}}" />
+            </ws:innerComponent>
+        </ws:partial>
+    </ws:content>
+</Controls.Container.Async>

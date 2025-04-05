@@ -1,0 +1,14 @@
+<div class="Wizard-Vertical-Container controls_Wizard_theme-{{_options.theme}}">
+    <Controls.scroll:Container
+        name="wizardScrollContainer"
+        shadowMode="js"
+        topShadowVisibility="{{_options.topShadowVisibility}}"
+        bottomShadowVisibility="{{_options.bottomShadowVisibility}}"
+        attr:class="Wizard-Vertical-Container__scroll"
+        on:scrollStateChanged="_scrollStateChangedHandler()">
+        <div class="Wizard-Vertical-Container__content">
+            <ws:partial
+                template="{{ _options.content }}"/>
+        </div>
+    </Controls.scroll:Container>
+</div>

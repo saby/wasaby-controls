@@ -1,0 +1,12 @@
+<div class="controlsDemo__flexRow {{_options.theme.indexOf('default')<0 ? 'controlsDemo_fixedWidth500' : 'controlsDemo_fixedWidth300'}}">
+   <div class="controlsDemo__wrapper">
+      <Controls.dropdown:Button
+              keyProperty="key"
+              caption="Загрузить"
+              items="{{_items}}"
+              menuBorderStyle="info"
+              menuBorderSize="m"
+              attr:class="controlsDemo-menuButton">
+      </Controls.dropdown:Button>
+   </div>
+</div>

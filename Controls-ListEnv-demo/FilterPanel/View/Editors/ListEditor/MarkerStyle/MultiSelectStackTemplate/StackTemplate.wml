@@ -1,0 +1,29 @@
+<Controls.lookupPopup:Controller scope="{{_options}}" name="SelectorController">
+   <Controls.popupTemplate:Stack on:selectedKeysChanged="_selectedKeysChanged()" headingCaption="Выберите организацию">
+      <ws:headerContentTemplate>
+         <div>
+            <ws:if data="{{_options.multiSelect && _selectionChanged}}">
+               <Controls.buttons:Button viewMode="outlined" buttonStyle="primary" caption="{[Выбрать]}" on:click="_selectComplete()"/>
+            </ws:if>
+         </div>
+      </ws:headerContentTemplate>
+      <ws:bodyContentTemplate>
+         <Controls.browser:Browser
+             source="{{_source}}"
+             keyProperty="id"
+             filter="{{_filter}}"
+             multiSelectVisibility="{{_options.multiSelect ? 'visible'}}"
+         >
+            <Controls.lookupPopup:Container multiSelect="{{_options.multiSelect}}">
+                  <Controls.listDataOld:ListContainer>
+                     <Controls.lookupPopup:ListContainer>
+                        <Controls.scroll:Container>
+                           <Controls.list:View/>
+                        </Controls.scroll:Container>
+                     </Controls.lookupPopup:ListContainer>
+                  </Controls.listDataOld:ListContainer>
+            </Controls.lookupPopup:Container>
+         </Controls.browser:Browser>
+      </ws:bodyContentTemplate>
+   </Controls.popupTemplate:Stack>
+</Controls.lookupPopup:Controller>

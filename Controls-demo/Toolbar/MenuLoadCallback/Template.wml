@@ -1,0 +1,13 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">При клике на меню обработаем данные, установив iconStyle=danger для элементов меню</div>
+        <Controls.toolbars:View
+                items="{{_items}}"
+                menuSource="{{_menuSource}}"
+                parentProperty="parent"
+                nodeProperty="@parent"
+                keyProperty="id"
+                menuLoadCallback="{{_menuLoadCallback}}"
+        />
+    </div>
+</div>

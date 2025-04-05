@@ -1,0 +1,9 @@
+<Controls.contextDeprecated:DataContextCompatibleConsumer>
+    <ws:innerComponent>
+        <Controls.contextDeprecated:ContextOptionsConsumer scope="{{ _options }}">
+            <ws:contextOptionsInnerComponent>
+                <Controls._listDeprecate.Mover scope="{{ contextOptionsInnerComponent }}" name="mover" _dataOptionsValue="{{contextOptionsInnerComponent._dataOptionsValue}}" />
+            </ws:contextOptionsInnerComponent>
+        </Controls.contextDeprecated:ContextOptionsConsumer>
+    </ws:innerComponent>
+</Controls.contextDeprecated:DataContextCompatibleConsumer>

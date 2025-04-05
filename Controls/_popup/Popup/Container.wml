@@ -1,0 +1,36 @@
+<div class="controls-PopupContainer ws-float-area-stack-panel-overflow" id="popup"
+     on:registerPending="_registerPendingHandler()"
+     on:finishPendingOperations="_finishPendingHandler()"
+     on:cancelFinishingPending="_cancelFinishingPendingHandler()">
+    <ws:for data="index, item in _popupItems">
+        <ws:if data="{{index === _overlayIndex}}">
+            <div class="controls-Container__overlay"
+                 on:mousedown="_overlayClickHandler(item)"
+                 on:wheel="_overlayWheelHandler()"
+                 style="z-index: {{item.currentZIndex - 1}};">
+            </div>
+        </ws:if>
+        <ws:if data="{{ !item.popupOptions.isPortal }}">
+            <Controls.Container.Async templateName="Controls/popupTemplateStrategy:Popup" attr:key="{{item.id}}">
+                <ws:partial template="{{ content.resolvedTemplate }}"
+                            id="{{item.id}}" __key="{{item.id}}"
+                            name="{{item.id}}"
+                            theme="{{_options.theme}}"
+                            on:keydown="_keyDownHandler()"
+                            on:activated="_popupActivated(item.id)"
+                            onAfterMount="{{_onTemplateMounted.bind(null, item.id)}}"
+                            className=""
+                            attr:class="
+                   {{_overlayIndex > index ? 'controls-Popup__hidden-closeButton'}}
+                   {{_popupItems.getCount() - 1 === index ? 'controls-Scroll_webkitOverflowScrollingTouch controls-Popup__lastItem'}}
+                   {{_getInvisibleClass(item, _mountedPopups)}}
+                    {{item.position.zoom !== undefined ? 'controls-Zoom'}}"
+                            scope="{{item.popupOptions}}"
+                            position="{{item.position}}"
+                            item="{{ item }}"
+            />
+
+            </Controls.Container.Async>
+        </ws:if>
+    </ws:for>
+</div>

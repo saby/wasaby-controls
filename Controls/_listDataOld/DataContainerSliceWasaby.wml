@@ -1,0 +1,6 @@
+<ws:if data="{{_options.isSourceControllerFromContext}}">
+    <Controls._listDataOld.DataContainer name='data' scope="{{_options}}"/>
+</ws:if>
+<ws:else>
+    <Controls.baseList:DataController name='data' scope="{{_options}}" isInsideDataContainer="{{true}}"/>
+</ws:else>

@@ -1,0 +1,6 @@
+<Controls.filterPopup:DetailPanel attr:class="{{_limitWidth ? 'controls-FilterPanel__width-m'}}"
+                                  topTemplate="{{_topTemplate}}"
+                                  items="{{_options.items}}">
+   <ws:itemTemplate templateName="wml!Controls-ListEnv-demo/Filter/NotConnectedView/RichDemo/resources/itemTemplateMainBlock"/>
+   <ws:additionalTemplate templateName="wml!Controls-ListEnv-demo/Filter/NotConnectedView/RichDemo/resources/additionalTemplateItems"/>
+</Controls.filterPopup:DetailPanel>
