@@ -1,0 +1,850 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls/baseDecorator:Money abbreviationType=long 1`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="1 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        1 тыс
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money abbreviationType=long 2`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="1 000 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        1 млн
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money abbreviationType=long 3`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="1 000 000 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        1 млрд
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money abbreviationType=long 4`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="1 000 000 000 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        1 трлн
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money currency=Dollar 1`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="100 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        100 000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs controls-margin_right-2xs"
+      >
+        .00
+      </span>
+    </span>
+    <span
+      class="controls-fontsize-s controls-text-default controls-fontweight-default"
+    >
+      $
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money currencyPosition=left 1`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="100 000.00"
+  >
+    <span
+      class="controls-fontsize-s controls-text-default controls-fontweight-default"
+    >
+      $
+    </span>
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default controls-margin_left-2xs"
+      >
+        100 000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs"
+      >
+        .00
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money currencySize 1`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="1 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        1 000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs controls-margin_right-2xs"
+      >
+        .00
+      </span>
+    </span>
+    <span
+      class="controls-fontsize-xs controls-text-default controls-fontweight-default"
+    >
+      $
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money currencySize 2`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="1 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        1 000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs controls-margin_right-2xs"
+      >
+        .00
+      </span>
+    </span>
+    <span
+      class="controls-fontsize-s controls-text-default controls-fontweight-default"
+    >
+      $
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money currencySize 3`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="1 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        1 000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs controls-margin_right-2xs"
+      >
+        .00
+      </span>
+    </span>
+    <span
+      class="controls-fontsize-m controls-text-default controls-fontweight-default"
+    >
+      $
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money currencySize 4`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="1 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        1 000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs controls-margin_right-2xs"
+      >
+        .00
+      </span>
+    </span>
+    <span
+      class="controls-fontsize-l controls-text-default controls-fontweight-default"
+    >
+      $
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money currencySize 5`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="1 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        1 000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs controls-margin_right-2xs"
+      >
+        .00
+      </span>
+    </span>
+    <span
+      class="controls-fontsize-xl controls-text-default controls-fontweight-default"
+    >
+      $
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money currencySize 6`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="1 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        1 000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs controls-margin_right-2xs"
+      >
+        .00
+      </span>
+    </span>
+    <span
+      class="controls-fontsize-2xl controls-text-default controls-fontweight-default"
+    >
+      $
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money currencySize 7`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="1 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        1 000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs controls-margin_right-2xs"
+      >
+        .00
+      </span>
+    </span>
+    <span
+      class="controls-fontsize-3xl controls-text-default controls-fontweight-default"
+    >
+      $
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money currencySize 8`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="1 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        1 000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs controls-margin_right-2xs"
+      >
+        .00
+      </span>
+    </span>
+    <span
+      class="controls-fontsize-4xl controls-text-default controls-fontweight-default"
+    >
+      $
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money currencySize 9`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="1 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        1 000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs controls-margin_right-2xs"
+      >
+        .00
+      </span>
+    </span>
+    <span
+      class="controls-fontsize-5xl controls-text-default controls-fontweight-default"
+    >
+      $
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money currencySize 10`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="1 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        1 000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs controls-margin_right-2xs"
+      >
+        .00
+      </span>
+    </span>
+    <span
+      class="controls-fontsize-6xl controls-text-default controls-fontweight-default"
+    >
+      $
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money currencySize 11`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="1 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        1 000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs controls-margin_right-2xs"
+      >
+        .00
+      </span>
+    </span>
+    <span
+      class="controls-fontsize-7xl controls-text-default controls-fontweight-default"
+    >
+      $
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money currencySize 12`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="1 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        1 000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs controls-margin_right-2xs"
+      >
+        .00
+      </span>
+    </span>
+    <span
+      class="controls-fontsize-8xl controls-text-default controls-fontweight-default"
+    >
+      $
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money currencyStyle 1`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="100 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        100 000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs controls-margin_right-2xs"
+      >
+        .00
+      </span>
+    </span>
+    <span
+      class="controls-fontsize-s controls-text-primary controls-fontweight-default"
+    >
+      $
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money currencyStyle 2`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="100 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        100 000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs controls-margin_right-2xs"
+      >
+        .00
+      </span>
+    </span>
+    <span
+      class="controls-fontsize-s controls-text-secondary controls-fontweight-default"
+    >
+      $
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money currencyStyle 3`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="100 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        100 000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs controls-margin_right-2xs"
+      >
+        .00
+      </span>
+    </span>
+    <span
+      class="controls-fontsize-s controls-text-success controls-fontweight-default"
+    >
+      $
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money currencyStyle 4`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="100 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        100 000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs controls-margin_right-2xs"
+      >
+        .00
+      </span>
+    </span>
+    <span
+      class="controls-fontsize-s controls-text-warning controls-fontweight-default"
+    >
+      $
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money currencyStyle 5`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="100 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        100 000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs controls-margin_right-2xs"
+      >
+        .00
+      </span>
+    </span>
+    <span
+      class="controls-fontsize-s controls-text-danger controls-fontweight-default"
+    >
+      $
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money currencyStyle 6`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="100 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        100 000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs controls-margin_right-2xs"
+      >
+        .00
+      </span>
+    </span>
+    <span
+      class="controls-fontsize-s controls-text-unaccented controls-fontweight-default"
+    >
+      $
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money currencyStyle 7`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="100 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        100 000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs controls-margin_right-2xs"
+      >
+        .00
+      </span>
+    </span>
+    <span
+      class="controls-fontsize-s controls-text-link controls-fontweight-default"
+    >
+      $
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money currencyStyle 8`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="100 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        100 000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs controls-margin_right-2xs"
+      >
+        .00
+      </span>
+    </span>
+    <span
+      class="controls-fontsize-s controls-text-label controls-fontweight-default"
+    >
+      $
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money currencyStyle 9`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="100 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        100 000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs controls-margin_right-2xs"
+      >
+        .00
+      </span>
+    </span>
+    <span
+      class="controls-fontsize-s controls-text-info controls-fontweight-default"
+    >
+      $
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money currencyStyle 10`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="100 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        100 000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs controls-margin_right-2xs"
+      >
+        .00
+      </span>
+    </span>
+    <span
+      class="controls-fontsize-s controls-text-default controls-fontweight-default"
+    >
+      $
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money currencyStyle 11`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="100 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        100 000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs controls-margin_right-2xs"
+      >
+        .00
+      </span>
+    </span>
+    <span
+      class="controls-fontsize-s controls-text-contrast controls-fontweight-default"
+    >
+      $
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money default 1`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="100 000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        100 000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs"
+      >
+        .00
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Controls/baseDecorator:Money useGrouping=false 1`] = `
+<div>
+  <span
+    class="controls-DecoratorMoney controls-text-default"
+    title="100000.00"
+  >
+    <span
+      class=""
+    >
+      <span
+        class="controls-fontsize-m controls-text-default controls-fontweight-default"
+      >
+        100000
+      </span>
+      <span
+        class="controls-fontweight-default controls-DecoratorMoney__fraction__colorStyle-readonly controls-text-readonly controls-fontsize-xs"
+      >
+        .00
+      </span>
+    </span>
+  </span>
+</div>
+`;

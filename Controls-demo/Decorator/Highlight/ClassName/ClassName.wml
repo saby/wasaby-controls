@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper">
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">className = controlsDemo_green</div>
+      <Controls.baseDecorator:Highlight attr:style="white-space: pre-line;" value="{{_value}}" highlightedValue="{{_highlightedValue}}" highlightClassName="controlsDemo_green"/>
+   </div>
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">className = controlsDemo_red</div>
+      <Controls.baseDecorator:Highlight attr:style="white-space: pre-line;" value="{{_value}}" highlightedValue="{{_highlightedValue}}" highlightClassName="controlsDemo_red"/>
+   </div>
+</div>

@@ -1,0 +1,26 @@
+.ControlsLists-overviewTree__breadCrumbsItem {
+   color: var(--text-color);
+   display: flex;
+   position: relative;
+   align-items: baseline;
+}
+
+.ControlsLists-overviewTree__breadCrumbsItem::before {
+   content: '\200b';
+   width: 0;
+   font-size: var(--font-size_4xl);
+}
+
+.ControlsLists-overviewTree__breadCrumbsItem__root {
+   font-weight: bold;
+   font-size: var(--font-size_4xl);
+}
+
+.ControlsLists-overviewTree__breadCrumbsItem__node {
+   font-size: var(--font-size_l);
+}
+
+.ControlsLists-overviewTree__breadCrumbsItem__icon::before {
+   position: absolute;
+   bottom: 0;
+}

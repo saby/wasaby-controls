@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             value="text"
+                             readOnly="{{false}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             value="text"
+                             readOnly="{{true}}"/>
+    </div>
+</div>

@@ -1,0 +1,3 @@
+<Controls-DataEnv.context:Provider value="{{_prefetchResults}}">
+    <ws:partial template="{{_options.content}}" prefetchResults="{{_prefetchResults}}"/>
+</Controls-DataEnv.context:Provider>

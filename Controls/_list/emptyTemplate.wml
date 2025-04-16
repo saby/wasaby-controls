@@ -1,0 +1,9 @@
+<div class="{{ item.getContentClasses({
+    'align': align,
+    'isEditing': isEditing,
+    'topSpacing': topSpacing,
+    'bottomSpacing': bottomSpacing
+  }) }}"
+     attr:data-qa="empty">
+  <ws:partial template="{{ contentTemplate }}" item="{{ item }}"/>
+</div>

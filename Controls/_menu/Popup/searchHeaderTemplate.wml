@@ -1,0 +1,44 @@
+<ws:template name="search">
+    <ws:partial template="{{'Controls/search:Input'}}"
+        on:valueChanged="_valueChanged()"
+        bind:value="_inputSearchValue"
+        on:search="_search()"
+        on:searchReset="_searchReset()"
+        minSearchLength="{{_options.minSearchLength}}"
+        searchDelay="{{_options.searchDelay}}"
+        placeholder="{{placeholder}}"
+        contrastBackground="{{true}}"
+        name="menuSearch"
+        iconSize="{{null}}"
+        searchInputDirection="left"
+        inlineWidth="auto"
+/>
+</ws:template>
+
+<ws:if data="{{_options.menuMode === 'selector'}}">
+    <ws:partial template="{{'Controls/selectorSticky:HeaderTemplate'}}" scope="{{_options}}" />
+</ws:if>
+<ws:else>
+    <ws:partial template="Controls/_menu/Popup/HeaderWrapperTemplate"
+                attr:class="controls-Menu__popup_header_searchWrapper
+                     {{_options.isAdaptive || _options.icon ? 'controls-Menu__popup-header_' + ((_options.multiSelect || _options.markerVisibility !== 'hidden') ? 'withSelect' : 'withoutSelect')}}
+                     {{_options.multiSelect ? 'controls-Menu__popup-header-multiSelect' : 'controls-margin_right-st'}}
+                     {{_options.closeButtonVisible ? 'controls-Menu__popup-header_withClose'}}"
+                scope="{{_options}}"
+                icon="{{_backButtonCaption ? null : _options.icon}}">
+        <div class="ws-flexbox ws-align-items-center controls-Menu__popup_headerWrapper_search tw-max-w-full {{!_expanded && (_options.caption || _backButtonCaption) ? 'tw-w-full tw-justify-between'}}
+        {{_options.caption ? 'controls-Menu__popup_headerWrapper_search_minWidth_' + (_options.searchWidth || 's')}}
+         {{(!_hasValue || _options.viewMode !== 'search') && (!_options.isAdaptive || _options.allowAdaptive === false)  ? '' : 'controls-Menu__popup_header_searchWrapper-width'}}">
+            <ws:if data="{{_options.searchParam}}">
+                <ws:partial template="search"
+                            placeholder="{{_options.searchPlaceholder}}"
+                            attr:class="controls-Menu__popup_header_search
+                            {{!_options.caption ?
+                               'controls-Menu__popup_header_search_minWidth_' + (_options.searchWidth || 's') +
+                               (!_hasValue || _options.viewMode !== 'search' || _options.isAdaptive ?
+                                ' controls-Menu__popup_header_search_maxWidth_' + (_options.searchWidth || 's'))}}"
+                />
+            </ws:if>
+        </div>
+    </ws:partial>
+</ws:else>

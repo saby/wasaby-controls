@@ -1,0 +1,41 @@
+.controls-GridReact-IE-grid {
+  display: table;
+  width: 100%;
+
+  .controls-GridReact__cell, .controls-GridReact__results-cell, .controls-GridReact__header-cell {
+    display: table-cell;
+  }
+}
+
+.controls-GridReact-IE-colgroup {
+  display: table-column-group;
+}
+
+.controls-GridReact-IE-column {
+  display: table-column;
+}
+
+.controls-GridReact-IE-grid .controls-GridReact__row {
+  display: table-row;
+}
+
+.controls-GridReact-IE-grid .controls-Grid__itemsContainer {
+  display: table-row-group;
+}
+
+.controls-GridReact-IE-grid .controls-GridReact__header {
+  display: table-header-group;
+}
+
+.controls-GridReact-IE-cell-without-width {
+  width: 100%;
+}
+
+.controls-GridReact-IE-grid .controls-GridReact__cell-baseline::before {
+  content: '';
+  width: 0;
+}
+
+.controls-GridReact-IE-multiselect-column {
+  width: var(--click-area_width_checkbox);
+}

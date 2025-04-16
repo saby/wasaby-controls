@@ -1,0 +1,130 @@
+/**
+ * @kaizen_zone 9377bd5b-f96c-43f4-bb99-324d7bfb4363
+ */
+import * as React from 'react';
+import { IColumnConfig, ICellProps, TColumnWidth, TGetRowPropsCallback } from 'Controls/gridRender';
+import { TOffsetSize } from 'Controls/interface';
+import { THoverMode, IDynamicColumnConfig } from '../interfaces/IDynamicGridComponent';
+import { DISABLE_HOVER_STYLES_FOR_EDITABLE_DYNAMIC_CELLS_WRAPPER } from 'Controls-Lists/_dynamicGrid/shared/constants';
+
+export interface IBaseDynamicColumnProps {
+    dynamicColumn: IDynamicColumnConfig;
+    dynamicColumnsGridDataLength: number;
+    columnsSpacing: TOffsetSize;
+    getCellProps?: Function;
+}
+
+export interface IGetBaseDynamicColumnProps extends IBaseDynamicColumnProps {
+    render: React.ReactElement;
+    key: string;
+    getRowProps?: TGetRowPropsCallback;
+    width?: TColumnWidth;
+    className?: string;
+    hoverMode?: THoverMode;
+    dataProperty: string;
+    dynamicColumnWidth?: TColumnWidth;
+}
+interface IRowWrapperRender {
+    render: React.ReactElement;
+    dataProperty: string;
+    getRowProps?: TGetRowPropsCallback;
+    wrapperClassName?: string;
+    wrapperStyle?: object;
+}
+export function RowWrapperRender(props: IRowWrapperRender): React.ReactElement {
+    const onClick = React.useCallback((event) => {
+        if (
+            props.task88221034654496 &&
+            event.target.classList.contains('js-ControlsLists-dynamicGrid__dynamicCellsWrapper')
+        ) {
+            event.stopPropagation();
+        }
+    }, []);
+    return (
+        <div className={props.wrapperClassName} style={props.wrapperStyle} onClick={onClick}>
+            {props.render}
+        </div>
+    );
+}
+
+/**
+ * Функция генерации колонки основного Grid, предназначенной для вывода динамических колонок.
+ * Шаблон данной колонки представляет собой Grid-layout, выводящий внутри себя набор динамических колонок
+ * отрисовываемой строки.
+ * @param props
+ */
+export function getBaseDynamicColumn(props: IGetBaseDynamicColumnProps): IColumnConfig {
+    const {
+        dynamicColumn,
+        dynamicColumnsGridDataLength,
+        columnsSpacing,
+        render,
+        width,
+        key,
+        className,
+        getRowProps,
+        dataProperty,
+        editingConfig,
+        task88221034654496,
+    } = props;
+    let columnsCountWithSubColumns = dynamicColumnsGridDataLength;
+    let subColumnsCount = 1;
+    if (dynamicColumn.subColumns) {
+        columnsCountWithSubColumns *= dynamicColumn.subColumns.length;
+        subColumnsCount = dynamicColumn.subColumns.length;
+    }
+    const wrapperStyle = {
+        gridTemplateColumns: `repeat(${columnsCountWithSubColumns}, calc(var(--dynamic-column_width) / ${subColumnsCount}))`,
+    };
+    let wrapperClassName =
+        'ControlsLists-dynamicGrid__dynamicCellsWrapper' +
+        ' js-ControlsLists-dynamicGrid__dynamicCellsWrapper';
+    if (columnsSpacing) {
+        wrapperClassName += ` ControlsLists-dynamicGrid__dynamicCellsWrapper_columns-spacing_${columnsSpacing}`;
+    }
+    if (className) {
+        wrapperClassName += ` ${className}`;
+    }
+
+    const preparedDynamicColumn = {
+        ...dynamicColumn,
+    };
+
+    if (editingConfig?.mode === 'cell') {
+        preparedDynamicColumn.dynamicCellEditorRender = dynamicColumn.editorRender;
+        delete preparedDynamicColumn.editorRender;
+    }
+
+    return {
+        ...preparedDynamicColumn,
+        width,
+        key,
+        render: React.createElement(RowWrapperRender, {
+            wrapperClassName,
+            wrapperStyle,
+            render,
+            getRowProps,
+            dataProperty,
+            task88221034654496,
+        }),
+        getCellProps: (item): ICellProps => {
+            // Внимание! Это CellProps большой ячейки внутри которой уже рендерится сетка.
+            // Не надо путать getCellProps для тех и для других, они не доолжны пересекаться.
+            // Запрашиваем пользовательские пропсы для ячейки.
+            const cellProps = props.getCellProps?.(item);
+            // Отступы отключаются, чтобы они не суммировались с отступами внутренних ячеек
+            return {
+                baseline: 'none',
+                ...cellProps,
+                className:
+                    (cellProps?.className ? `${cellProps.className} ` : ' ') +
+                    DISABLE_HOVER_STYLES_FOR_EDITABLE_DYNAMIC_CELLS_WRAPPER,
+                padding: {
+                    left: 'null',
+                    right: 'null',
+                },
+                valign: 'center',
+            };
+        },
+    };
+}

@@ -1,0 +1,27 @@
+<div>
+<div>
+  <div class="controls-text-label">MultipleInput</div>
+  <Controls.multipleLookup:Input
+      lookupsOptions="{{ _lookupOptions }}"
+      selectedKeys="{{ _selectedKeys }}"
+      on:selectedKeysChanged="_selectedKeysChanged()"
+      on:valueChanged="_valueChanged()"
+      attr:class="controlsDemo_fixedWidth550"
+      attr:data-qa="controlsDemo_MultipleInputNew__base"
+  >
+  </Controls.multipleLookup:Input>
+</div>
+<div>
+  <div class="controls-text-label">readOnly MultipleInput</div>
+  <Controls.multipleLookup:Input
+      lookupsOptions="{{ _lookupOptions }}"
+      selectedKeys="{{ _selectedKeysReadOnlyLookup }}"
+      on:selectedKeysChanged="_selectedKeysChanged()"
+      on:valueChanged="_valueChanged()"
+      readOnly="{{ true }}"
+      attr:class="controlsDemo_fixedWidth550"
+      attr:data-qa="controlsDemo_MultipleInputNew__readonly"
+  >
+  </Controls.multipleLookup:Input>
+</div>
+</div>

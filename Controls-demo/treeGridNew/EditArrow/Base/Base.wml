@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <Controls.treeGrid:View
+            attr:style="width: 500px;"
+            showEditArrow="{{ true }}"
+            columns="{{ _columns }}"
+            header="{{ _header }}"
+            storeId="EditArrowBase">
+    </Controls.treeGrid:View>
+</div>

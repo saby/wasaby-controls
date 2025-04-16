@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper">
+   <Controls.scroll:Container class="controlsDemo__height500 controlsDemo__maxWidth600">
+      <Controls.tile:View
+              storeId="RichTplDescription"
+              tileMode="static"
+              imageProperty="image">
+         <ws:itemTemplate>
+            <ws:partial
+                    scope="{{ itemTemplate }}"
+                    template="Controls/tile:RichTemplate"
+                    descriptionLines="{{ itemTemplate.item.contents.descriptionLines }}"
+                    description="{{ itemTemplate.item.contents.description }}"/>
+         </ws:itemTemplate>
+      </Controls.tile:View>
+   </Controls.scroll:Container>
+</div>

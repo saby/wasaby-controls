@@ -1,0 +1,21 @@
+<ws:partial template="Controls/grid:ColumnTemplate" scope="{{_options}}">
+<ws:contentTemplate>
+  <div class="tw-flex">
+    <ws:if data="{{(item.contents[column.config.nodeProperty] === false || item.contents[column.config.nodeProperty] === true) && !column.config.dialogMode}}">
+      <Controls.icon:Icon
+          attr:class="controls-margin_right-2xs"
+          icon='icon-CreateFolder2'
+          iconStyle="secondary"
+          iconSize='s'/>
+    </ws:if>
+    <ws:if data="{{item.searchValue}}">
+    <Controls.baseDecorator:Highlight
+        value="{{item.contents[column.config.displayProperty]}}"
+        highlightedValue="{{item.searchValue}}"/>
+    </ws:if>
+    <ws:else>
+      <span>{{item.contents[column.config.displayProperty]}}</span>
+    </ws:else>
+  </div>
+</ws:contentTemplate>
+</ws:partial>

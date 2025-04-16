@@ -1,0 +1,17 @@
+<ws:partial
+      template="{{_options.content}}"
+      on:itemClick="_itemClickHandler()"
+      on:itemMouseEnter="_itemMouseEnterHandler()"
+      on:itemMouseLeave="_itemMouseLeaveHandler()"
+      on:mouseleave="_mouseleaveHandler()"
+      on:itemKeyDown="_itemKeyDownHandler()"
+      startValue="{{_displayedStartValue}}"
+      endValue="{{_displayedEndValue}}"
+      selectionType="{{_options.selectionType}}"
+      selectionProcessing="{{_selectionProcessing}}"
+      selectionBaseValue="{{_selectionBaseValue}}"
+      selectionHoveredValue="{{_selectionHoveredValue}}"
+      hoveredStartValue="{{_hoveredStartValue}}"
+      hoveredEndValue="{{_hoveredEndValue}}"
+      quantum="{{_quantum}}"
+/>

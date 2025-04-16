@@ -1,0 +1,206 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hierarchy. Тесты взаимодействия с иерархией. Поддержка прикладных возможностей Прикладник может свернуть узлы после платформенного beforeApplyState 1`] = `
+<div
+  class="controls_list_theme-default controls_toggle_theme-default controls-BaseControl controls-BaseControl_hover_enabled"
+  data-qa="js-demo-tree-grid-data-qa"
+  tabindex="0"
+  ws-autofocus="true"
+>
+  <div
+    class="tw-grid tw-w-full tw-relative controls-Grid controls-Grid_undefined"
+    data-qa="gridWrapper"
+    style="grid-template-columns: 1fr;"
+    tabindex="0"
+  >
+    <div
+      class="controls-Grid__loadingIndicator controls-Grid__loadingIndicator-top"
+      style="display: none;"
+    >
+      <div
+        class="tw-w-full"
+      >
+        <div
+          class="controls-BaseControl__loadingIndicator js-controls-BaseControl__loadingIndicator controls-BaseControl__loadingIndicator-top controls-BaseControl__loadingIndicator__position-top controls-BaseControl__loadingIndicator__state-loading "
+          data-qa="indicator_state_loading_position_top"
+          style="display: none;"
+        >
+          <div
+            class="controls-BaseControl__loadingIndicator-content"
+          >
+            <div
+              class="controls-BaseControl__loadingIndicatorImage"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class=" controls-BaseControl__loadingTrigger controls-BaseControl__loadingTrigger-top"
+      data-qa="loading-trigger-top"
+      style=""
+    />
+    <div
+      class="tw-contents controls-Grid__itemsContainer controls-BaseControl_showActions_onhover"
+      data-qa="items-container"
+    >
+      <div
+        class=" controls-ListView__itemV controls-GridReact__row tw-contents controls-GridReact__row__hoverMode_row js-controls-Grid__row_editable controls-GridView__item_showActions controls-GridView__item_showActions_row controls-ListView__item_showActions_inside controls-ListView__item_highlightOnHover"
+        data-qa="row"
+        item-key="1"
+        tabindex="0"
+      >
+        <div
+          class="controls-GridReact__cell js-controls-GridReact__cell js-controls-Grid__row-cell js-controls-ListView__editingTarget controls-ListView__item_contentWrapper js-controls-ListView__measurableContainer js-controls-GridReact__cell  tw-cursor-pointer controls-GridReact__minHeight-data tw-relative controls-GridReact__cell__hoverMode_row controls-GridReact__cell_actionsCell controls-Grid__row-cell_selected-undefined controls-fontsize-treeGrid_node_default controls-GridReact__cell_first controls-GridReact__cell_last tw-flex controls-hover-background-default tw-items-baseline controls-GridReact__cell-baseline controls-GridReact__cell-baseline_default controls-padding_top-grid_s controls-padding_bottom-grid_s controls-padding_left-list_default controls-padding_right-list_default"
+          data-qa="cell"
+          tabindex="0"
+        >
+          <div
+            class="controls-ListView__itemV_marker controls-ListView__itemV_marker_size_content-xs  undefined controls-GridReact__cell-marker controls-GridReact__cell-marker_default controls-GridReact__cell-baseline_default controls-ListView__itemV_marker-default_topPadding-grid_s"
+            data-qa="marker"
+          />
+          <div
+            class="tw-flex tw-items-baseline "
+            data-qa="expander-block"
+          >
+            <div
+              class="js-controls-Tree__row-expander controls-TreeGrid__row-expander controls-cursor_pointer js-controls-ListView__notEditable controls-TreeGrid__row_default-expander_size_default tw-inline-flex tw-items-center tw-flex-shrink-0 tw-justify-center controls-TreeGrid__row-expander_node_default_position_default controls-TreeGrid__row-expander_node_default controls-TreeGrid__row-expander_node_iconSize_default controls-TreeGrid__row-expander_node_iconStyle_default controls-TreeGrid__row-expander_collapsed controls-TreeGrid__row-expander_node_default_collapsed"
+              data-qa="row-expander"
+              tabindex="-1"
+            />
+          </div>
+          Москва и Московская обл.
+        </div>
+      </div>
+      <div
+        class=" controls-ListView__itemV controls-GridReact__row tw-contents controls-GridReact__row__hoverMode_row js-controls-Grid__row_editable controls-GridView__item_showActions controls-GridView__item_showActions_row controls-ListView__item_showActions_inside controls-ListView__item_highlightOnHover"
+        data-qa="row"
+        item-key="2"
+        tabindex="0"
+      >
+        <div
+          class="controls-GridReact__cell js-controls-GridReact__cell js-controls-Grid__row-cell js-controls-ListView__editingTarget controls-ListView__item_contentWrapper js-controls-ListView__measurableContainer js-controls-GridReact__cell  tw-cursor-pointer controls-GridReact__minHeight-data tw-relative controls-GridReact__cell__hoverMode_row controls-GridReact__cell_actionsCell controls-fontsize-treeGrid_node_default controls-GridReact__cell_first controls-GridReact__cell_last tw-flex controls-hover-background-default tw-items-baseline controls-GridReact__cell-baseline controls-GridReact__cell-baseline_default controls-padding_top-grid_s controls-padding_bottom-grid_s controls-padding_left-list_default controls-padding_right-list_default"
+          data-qa="cell"
+          tabindex="0"
+        >
+          <div
+            class="tw-flex tw-items-baseline "
+            data-qa="expander-block"
+          >
+            <div
+              class="js-controls-Tree__row-expander controls-TreeGrid__row-expander controls-cursor_pointer js-controls-ListView__notEditable controls-TreeGrid__row_default-expander_size_default tw-inline-flex tw-items-center tw-flex-shrink-0 tw-justify-center controls-TreeGrid__row-expander_node_default_position_default controls-TreeGrid__row-expander_node_default controls-TreeGrid__row-expander_node_iconSize_default controls-TreeGrid__row-expander_node_iconStyle_default controls-TreeGrid__row-expander_collapsed controls-TreeGrid__row-expander_node_default_collapsed"
+              data-qa="row-expander"
+              tabindex="-1"
+            />
+          </div>
+          Санкт-Петербург и область
+        </div>
+      </div>
+      <div
+        class=" controls-ListView__itemV controls-GridReact__row tw-contents controls-GridReact__row__hoverMode_row js-controls-Grid__row_editable controls-GridView__item_showActions controls-GridView__item_showActions_row controls-ListView__item_showActions_inside controls-ListView__item_highlightOnHover"
+        data-qa="row"
+        item-key="3"
+        tabindex="0"
+      >
+        <div
+          class="controls-GridReact__cell js-controls-GridReact__cell js-controls-Grid__row-cell js-controls-ListView__editingTarget controls-ListView__item_contentWrapper js-controls-ListView__measurableContainer js-controls-GridReact__cell  tw-cursor-pointer controls-GridReact__minHeight-data tw-relative controls-GridReact__cell__hoverMode_row controls-GridReact__cell_actionsCell controls-fontsize-treeGrid_node_default controls-GridReact__cell_first controls-GridReact__cell_last tw-flex controls-hover-background-default tw-items-baseline controls-GridReact__cell-baseline controls-GridReact__cell-baseline_default controls-padding_top-grid_s controls-padding_bottom-grid_s controls-padding_left-list_default controls-padding_right-list_default"
+          data-qa="cell"
+          tabindex="0"
+        >
+          <div
+            class="tw-flex tw-items-baseline "
+            data-qa="expander-block"
+          >
+            <div
+              class="js-controls-Tree__row-expander controls-TreeGrid__row-expander controls-cursor_pointer js-controls-ListView__notEditable controls-TreeGrid__row_default-expander_size_default tw-inline-flex tw-items-center tw-flex-shrink-0 tw-justify-center controls-TreeGrid__row-expander_node_default_position_default controls-TreeGrid__row-expander_node_default controls-TreeGrid__row-expander_node_iconSize_default controls-TreeGrid__row-expander_node_iconStyle_default controls-TreeGrid__row-expander_collapsed controls-TreeGrid__row-expander_node_default_collapsed"
+              data-qa="row-expander"
+              tabindex="-1"
+            />
+          </div>
+          Адыгея
+        </div>
+      </div>
+      <div
+        class=" controls-ListView__itemV controls-GridReact__row tw-contents controls-GridReact__row__hoverMode_row js-controls-Grid__row_editable controls-GridView__item_showActions controls-GridView__item_showActions_row controls-ListView__item_showActions_inside controls-ListView__item_highlightOnHover"
+        data-qa="row"
+        item-key="39"
+        tabindex="0"
+      >
+        <div
+          class="controls-GridReact__cell js-controls-GridReact__cell js-controls-Grid__row-cell js-controls-ListView__editingTarget controls-ListView__item_contentWrapper js-controls-ListView__measurableContainer js-controls-GridReact__cell  tw-cursor-pointer controls-GridReact__minHeight-data tw-relative controls-GridReact__cell__hoverMode_row controls-GridReact__cell_actionsCell controls-fontsize-treeGrid_node_default controls-GridReact__cell_first controls-GridReact__cell_last tw-flex controls-hover-background-default tw-items-baseline controls-GridReact__cell-baseline controls-GridReact__cell-baseline_default controls-padding_top-grid_s controls-padding_bottom-grid_s controls-padding_left-list_default controls-padding_right-list_default"
+          data-qa="cell"
+          tabindex="0"
+        >
+          <div
+            class="tw-flex tw-items-baseline "
+            data-qa="expander-block"
+          >
+            <div
+              class="js-controls-Tree__row-expander controls-TreeGrid__row-expander controls-cursor_pointer js-controls-ListView__notEditable controls-TreeGrid__row_default-expander_size_default tw-inline-flex tw-items-center tw-flex-shrink-0 tw-justify-center controls-TreeGrid__row-expander_node_default_position_default controls-TreeGrid__row-expander_node_default controls-TreeGrid__row-expander_node_iconSize_default controls-TreeGrid__row-expander_node_iconStyle_default controls-TreeGrid__row-expander_collapsed controls-TreeGrid__row-expander_node_default_collapsed"
+              data-qa="row-expander"
+              tabindex="-1"
+            />
+          </div>
+          Нижегородская (Горьковская)
+        </div>
+      </div>
+      <div
+        class=" controls-ListView__itemV controls-GridReact__row tw-contents controls-GridReact__row__hoverMode_row js-controls-Grid__row_editable controls-GridView__item_showActions controls-GridView__item_showActions_row controls-ListView__item_showActions_inside controls-ListView__item_highlightOnHover"
+        data-qa="row"
+        item-key="78"
+        tabindex="0"
+      >
+        <div
+          class="controls-GridReact__cell js-controls-GridReact__cell js-controls-Grid__row-cell js-controls-ListView__editingTarget controls-ListView__item_contentWrapper js-controls-ListView__measurableContainer js-controls-GridReact__cell  tw-cursor-pointer controls-GridReact__minHeight-data tw-relative controls-GridReact__cell__hoverMode_row controls-GridReact__cell_actionsCell controls-fontsize-treeGrid_node_default controls-GridReact__cell_first controls-GridReact__cell_last tw-flex controls-hover-background-default tw-items-baseline controls-GridReact__cell-baseline controls-GridReact__cell-baseline_default controls-padding_top-grid_s controls-padding_bottom-grid_s controls-padding_left-list_default controls-padding_right-list_default"
+          data-qa="cell"
+          tabindex="0"
+        >
+          <div
+            class="tw-flex tw-items-baseline "
+            data-qa="expander-block"
+          >
+            <div
+              class="js-controls-Tree__row-expander controls-TreeGrid__row-expander controls-cursor_pointer js-controls-ListView__notEditable controls-TreeGrid__row_default-expander_size_default tw-inline-flex tw-items-center tw-flex-shrink-0 tw-justify-center controls-TreeGrid__row-expander_node_default_position_default controls-TreeGrid__row-expander_node_default controls-TreeGrid__row-expander_node_iconSize_default controls-TreeGrid__row-expander_node_iconStyle_default controls-TreeGrid__row-expander_collapsed controls-TreeGrid__row-expander_node_default_collapsed"
+              data-qa="row-expander"
+              tabindex="-1"
+            />
+          </div>
+          Ярославская обл.
+        </div>
+      </div>
+    </div>
+    <div
+      class=" controls-BaseControl__loadingTrigger controls-BaseControl__loadingTrigger-bottom"
+      data-qa="loading-trigger-bottom"
+      style=""
+    />
+    <div
+      class="controls-Grid__loadingIndicator controls-Grid__loadingIndicator-bottom"
+      style="display: none;"
+    >
+      <div
+        class="tw-w-full"
+      >
+        <div
+          class="controls-BaseControl__loadingIndicator js-controls-BaseControl__loadingIndicator controls-BaseControl__loadingIndicator-bottom controls-BaseControl__loadingIndicator__position-bottom controls-BaseControl__loadingIndicator__state-loading "
+          data-qa="indicator_state_loading_position_bottom"
+          style="display: none;"
+        >
+          <div
+            class="controls-BaseControl__loadingIndicator-content"
+          >
+            <div
+              class="controls-BaseControl__loadingIndicatorImage"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="tw-contents"
+  />
+</div>
+`;
+
+exports[`Hierarchy. Тесты взаимодействия с иерархией. Поддержка прикладных возможностей Прикладник может свернуть узлы после платформенного beforeApplyState 2`] = `Array []`;

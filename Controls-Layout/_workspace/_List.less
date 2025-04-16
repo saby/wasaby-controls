@@ -1,0 +1,113 @@
+.controls-Layout-Workspace {
+   --min-width_adaptive_inputSearch: 105px;
+   display: flex;
+   flex-direction: column;
+   min-height: 0;
+   position: relative;
+}
+
+.controls-Layout-Workspace__header {
+   display: flex;
+   align-items: center;
+   height: var(--header_height_Layout-browser);
+}
+
+// У Sticky блока z-index установлен в фиксированное значение (fixedZIndex передаётся опцией)
+// Но он применяется, только когда блок стикается
+// В сценарии из задачи https://online.sbis.ru/opendoc.html?guid=72c24ca4-3e96-49f9-b9c4-c7ab28486618
+// при открытии stack панели возникает момент, когда stickyBlock находится в незастиканом состоянии и его перекрывают
+// элементы, которые находятся под ним
+.controls-Layout-Workspace__header_sticky.controls-StickyBlock {
+   z-index: 5;
+}
+
+.controls-Layout-Workspace__content {
+   flex-shrink: 1;
+   height: 100%;
+   min-height: 0;
+   display: flex;
+   flex-direction: column;
+}
+
+.controls-Layout-Workspace__search,
+.controls-Layout-Workspace__beforeSearchTemplate,
+.controls-Layout-Workspace__operationsButton,
+.controls-Layout-Workspace__header {
+   flex-shrink: 0;
+}
+
+.controls-Layout-Workspace__search_margin {
+   margin-left: var(--outer_padding, var(--search_offset_Layout-browser));
+}
+
+.controls-Layout-Workspace__search_margin_afterTemplate {
+   margin-left: var(--search_offset_Layout-browser);
+}
+
+.controls-Layout-Workspace__search_width {
+   width: var(--width_l_inputSearch);
+}
+
+.controls-Layout-Workspace__search_width_s {
+   min-width: var(--width_s_inputSearch);
+   max-width: var(--width_s_inputSearch);
+}
+
+.controls-Layout-Workspace__search_width_l {
+   min-width: var(--width_l_inputSearch);
+   max-width: var(--width_l_inputSearch);
+}
+
+.controls-Layout-Workspace__search_width_xl {
+   min-width: var(--width_xl_inputSearch);
+   max-width: var(--width_xl_inputSearch);
+}
+
+.controls-Layout-Workspace__beforeSearchTemplate {
+   margin-left: var(--outer_padding, var(--offset_m));
+}
+
+.controls-Layout-Workspace__beforeFilterTemplate {
+   flex-shrink: 0;
+   margin-left: var(--outer_padding, var(--offset_m));
+}
+
+.controls-Layout-Workspace__operationsButton {
+   margin-left: var(--search_offset_Layout-browser);
+}
+
+.controls-Layout-Workspace__filter-wrapper {
+   display: flex;
+   justify-content: flex-end;
+   width: 100%;
+   min-width: 0;
+   flex-shrink: 1;
+   margin-left: var(--offset_m);
+}
+
+.controls-Layout-Workspace__filter-wrapper_withFilterButton {
+   margin-right: var(--filter-button_offset_Layout-browser);
+}
+
+.controls-Layout-Workspace__filter-wrapper_withoutFilterButton {
+   margin-right: var(--filter_offset-right_Layout-browser);
+}
+
+.controls-Layout-Workspace__filterButton {
+   flex-shrink: 1;
+}
+
+.controls-Layout-Workspace__misspell {
+   margin-left: var(--search_offset_Layout-browser);
+   margin-right: var(--filter_offset-right_Layout-browser);
+}
+
+.controls-Layout-Workspace__search_adaptive {
+   min-width: var(--min-width_adaptive_inputSearch);
+   width: 100%;
+   flex-shrink: 1;
+}
+
+.controls-Layout-Workspace__filter-wrapper_adaptive {
+   width: auto;
+}

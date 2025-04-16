@@ -1,0 +1,216 @@
+/**
+ * @kaizen_zone 0ad19bb5-20cc-4d4e-90b9-eb7a0aa12d81
+ */
+import { Control, IControlOptions, TemplateFunction } from 'UI/Base';
+import template = require('wml!Controls/_ExpandableSearch/Search');
+import { EventUtils } from 'UI/Events';
+import { SyntheticEvent } from 'UI/Events';
+import { ISearchInputOptions } from 'Controls/search';
+import { Input } from 'Controls/search';
+import 'css!Controls/search';
+
+export interface IExpandableSearchOptions
+    extends IControlOptions,
+        Omit<
+            ISearchInputOptions,
+            'resetButtonVisible' | 'searchButtonAlign' | 'iconSize' | 'borderVisibility'
+        > {
+    /**
+     * @name Controls/ExpandableSearch#inlineWidth
+     * @cfg {String} Ширина строки поиска.
+     * @variant s Строка поиска малой ширины.
+     * @variant l Строка поиска большой ширины.
+     * @variant auto Строка поиска растягивается на всю доступную ширину родительского элемента в направлении своего открытия. **ВАЖНО: родитель должен обладать CSS-свойством position: relative**
+     * @default s
+     * @demo Controls-demo/Search/ExpandableInput/InlineWidth/Index
+     */
+    inlineWidth?: string;
+    /**
+     * @name Controls/ExpandableSearch#expanded
+     * @cfg {Boolean} Состояние развернутости строки поиска.
+     * @variant false Строка поиска свернута.
+     * @variant true Строка поиска развернута.
+     * @default false
+     */
+    expanded?: boolean;
+
+    /**
+     * @name Controls/ExpandableSearch#contrastBackground
+     * @cfg {Boolean} Определяет контрастность кнопки отображения строки поиска по отношению к её окружению.
+     * @variant false Прозрачный фон кнопки
+     * @variant true Кнопка отображается с фоном и обводкой
+     * @default false
+     */
+    contrastBackground?: boolean;
+
+    /**
+     * @name Controls/ExpandableSearch#searchInputDirection
+     * @cfg {Boolean} Определяет направление разворота строки поиска.
+     * @variant left Строка поиска при клике на кнопку разворота расширяется влево.
+     * @variant right Строка поиска при клике на кнопку разворота расширяется вправо.
+     * @default right
+     */
+    searchInputDirection?: string;
+
+    /**
+     * @name Controls/ExpandableSearch#shadowVisible
+     * @cfg {Boolean} Определяет внешний вид строки поиска.
+     * @variant true Строка поиска отображается с тенью, кнопка отображения строки поиска с заливкой.
+     * @variant false Строка поиска отображается с обводкой, кнопка отображения строки поиска без заливки.
+     * @default false
+     * @demo Controls-demo/Search/ExpandableInput/ShadowVisible/Index
+     */
+    shadowVisible?: boolean;
+    onExpandedChanged?: (expanded: boolean) => void;
+}
+/**
+ * Контрол "Разворачиваемый поиск". Является однострочным полем ввода. Контрол используют в реестрах для ввода поискового запроса.
+ *
+ * @extends UI/Base:Control
+ * @implements Controls/search:Input
+ * @implements Controls/search:IExpandableInput
+ * @ignoreOptions searchButtonAlign
+ * @public
+ * @demo Controls-ListEnv-demo/ExpandableSearchInput/Base/Index
+ */
+
+export default class ExpandableSearch extends Control<IExpandableSearchOptions> {
+    protected _expanded: boolean = false;
+    protected _template: TemplateFunction = template;
+    protected _tmplNotify: Function = EventUtils.tmplNotify;
+    protected _moveFocusToInput: boolean = false;
+    protected _children: {
+        searchInput: Input;
+        searchButton: Control;
+    };
+    protected _searchInputOffsetRight?: number;
+    protected _searchInputOffsetLeft?: number;
+
+    protected _beforeMount(options: IExpandableSearchOptions): void {
+        this._setExpanded(options.expanded);
+    }
+
+    protected _beforeUpdate(options: IExpandableSearchOptions) {
+        if (options.expanded !== this._options.expanded) {
+            this._setExpanded(options.expanded);
+        }
+    }
+
+    protected _afterUpdate(): void {
+        if (this._expanded && this._children.searchInput && this._moveFocusToInput) {
+            this._children.searchInput.activate({ enableScreenKeyboard: true });
+            this._moveFocusToInput = false;
+        }
+    }
+
+    reset(collapse?: boolean): void {
+        if (this._expanded) {
+            this._children.searchInput.reset();
+            if (collapse) {
+                this._setExpandedWithNotify(false);
+            }
+        }
+    }
+
+    private _setExpanded(value?: boolean): void {
+        this._expanded = !!value;
+        this._calculateSearchInputOffset();
+    }
+
+    private _calculateSearchInputOffset() {
+        if (this._container && this._options.inlineWidth === 'auto') {
+            let searchInputContainerWidth: number;
+            let searchButtonNoExpandedPosition: number;
+
+            if (this._options.searchInputDirection === 'left') {
+                const searchIconOffset =
+                    (this?._container?.getBoundingClientRect().right || 0) -
+                    (
+                        this._children.searchButton as unknown as { _container: HTMLElement }
+                    )?._container.getBoundingClientRect().right;
+                searchInputContainerWidth = (
+                    this?._container?.parentNode as HTMLElement
+                )?.getBoundingClientRect().right;
+                searchButtonNoExpandedPosition =
+                    this?._container?.getBoundingClientRect().right || 0;
+                this._searchInputOffsetRight =
+                    searchInputContainerWidth - searchButtonNoExpandedPosition + searchIconOffset;
+                this._searchInputOffsetLeft = 0;
+            } else {
+                searchInputContainerWidth = (
+                    this?._container?.parentNode as HTMLElement
+                )?.getBoundingClientRect().left;
+                searchButtonNoExpandedPosition =
+                    this?._container?.getBoundingClientRect().left || 0;
+                this._searchInputOffsetLeft =
+                    searchButtonNoExpandedPosition - searchInputContainerWidth;
+                this._searchInputOffsetRight = 0;
+            }
+        }
+    }
+
+    protected _getWidthAutoClasses() {
+        if (this._options.inlineWidth === 'auto' && this._options.searchInputDirection === 'left') {
+            return 'controls-Search__expandable-container_inlineWidthAuto';
+        }
+        return '';
+    }
+
+    private _setExpandedWithNotify(value: boolean) {
+        this._setExpanded(value);
+        this._notify('expandedChanged', [this._expanded]);
+    }
+
+    protected _search(_event: SyntheticEvent, value: string): void {
+        this._notify('search', [value]);
+    }
+
+    protected _searchReset(): void {
+        this._notify('searchReset', ['']);
+    }
+
+    protected _searchClick(event: SyntheticEvent): void {
+        this._moveFocusToInput = true;
+        event.stopPropagation();
+        this._setExpandedWithNotify(true);
+    }
+
+    protected _handleCloseClick(): void {
+        this.reset();
+        this._setExpandedWithNotify(false);
+    }
+    protected _getInlineWidthClasses(): string {
+        if (typeof this._options.inlineWidth === 'string') {
+            return `controls-Search-inlineWidth-${this._options.inlineWidth}`;
+        }
+        return '';
+    }
+
+    protected _getInlineWidthStyles(): string {
+        if (typeof this._options.inlineWidth === 'number') {
+            return `width: ${this._options.inlineWidth}px;`;
+        }
+        return '';
+    }
+
+    protected _getIconSize(inlineHeight: string): string | unknown {
+        if (['s', 'xs', 'm', 'default'].includes(inlineHeight)) {
+            return '2xs';
+        } else if (inlineHeight === 'l') {
+            return 'm_trigger';
+        } else if (['xl', '2xl', '3xl'].includes(inlineHeight)) {
+            return 'm';
+        }
+    }
+
+    static getDefaultOptions(): object {
+        return {
+            inlineWidth: 's',
+            inlineHeight: 'default',
+            horizontalPadding: '2xs',
+            contrastBackground: false,
+            searchInputDirection: 'right',
+            shadowVisible: false,
+        };
+    }
+}

@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Source. Тесты загрузки данных. Отмена загрузки данных без последующего обновления слайса сбрасывает индикатор загрузки 1`] = `
+<div
+  data-qa="js-demo-list"
+>
+  <div
+    class="controls-BaseControl controls_list_theme-default controls_toggle_theme-default"
+    data-qa="list"
+    tabindex="0"
+  >
+    <div
+      class="controls-BaseControl__fakeFocusElem"
+      name="fakeFocusElem"
+      tabindex="0"
+    />
+    <style
+      data-vdom-ignore="true"
+      name="itemActionsOutsideStyle"
+    />
+    <div
+      class="controls-BaseControl__viewContainer controls-BaseControl__View_uniqueId2"
+      name="viewContainer"
+      tabindex="0"
+    >
+      <div
+        class="controls-ListViewV controls_list_theme-default controls-ListView_default controls-itemActionsV_menu-hidden"
+        tabindex="0"
+      >
+        <div
+          class="controls-BaseControl__loadingIndicator js-controls-BaseControl__loadingIndicator controls-BaseControl__loadingIndicator-top controls-BaseControl__loadingIndicator__position-top controls-BaseControl__loadingIndicator__state-loading "
+          data-qa="indicator_state_loading_position_top"
+          style="display: none;"
+        >
+          <div
+            class="controls-BaseControl__loadingIndicator-content"
+          >
+            <div
+              class="controls-BaseControl__loadingIndicatorImage"
+            />
+          </div>
+        </div>
+        <div
+          class=" controls-BaseControl__loadingTrigger controls-BaseControl__loadingTrigger-top"
+          data-qa="loading-trigger-top"
+          style="top: 1px;"
+        />
+        <div
+          class="controls-ListViewV__itemsContainer controls-BaseControl_hover_enabled controls-BaseControl__itemsContainer_uniqueId2"
+          data-qa="items-container"
+          name="itemsContainer"
+        >
+          <div
+            class="controls-ListView__itemV-relative controls-ListView__itemV controls-ListView__item_default controls-ListView__item_contentWrapper js-controls-ListView__editingTarget  controls-ListView__itemV_cursor-pointer  controls-ListView__item_showActions js-controls-ListView__measurableContainer controls-ListView__item__unmarked_default controls-ListView__item_highlightOnHover controls-hover-background-default"
+            data-qa="item"
+            item-key="1"
+            tabindex="0"
+          >
+            <div
+              class="controls-ListView__itemContent  controls-ListView__item_default-topPadding_default controls-ListView__item_default-bottomPadding_default controls-ListView__item-rightPadding_default controls-ListView__item-leftPadding_default "
+            >
+              Hilary Osborne
+            </div>
+          </div>
+          <div
+            class="controls-ListView__itemV-relative controls-ListView__itemV controls-ListView__item_default controls-ListView__item_contentWrapper js-controls-ListView__editingTarget  controls-ListView__itemV_cursor-pointer  controls-ListView__item_showActions js-controls-ListView__measurableContainer controls-ListView__item__unmarked_default controls-ListView__item_highlightOnHover controls-hover-background-default"
+            data-qa="item"
+            item-key="2"
+            tabindex="0"
+          >
+            <div
+              class="controls-ListView__itemContent  controls-ListView__item_default-topPadding_default controls-ListView__item_default-bottomPadding_default controls-ListView__item-rightPadding_default controls-ListView__item-leftPadding_default "
+            >
+              Jorden Pate
+            </div>
+          </div>
+          <div
+            class="controls-ListView__itemV-relative controls-ListView__itemV controls-ListView__item_default controls-ListView__item_contentWrapper js-controls-ListView__editingTarget  controls-ListView__itemV_cursor-pointer  controls-ListView__item_showActions js-controls-ListView__measurableContainer controls-ListView__item__unmarked_default controls-ListView__item_highlightOnHover controls-hover-background-default"
+            data-qa="item"
+            item-key="3"
+            tabindex="0"
+          >
+            <div
+              class="controls-ListView__itemContent  controls-ListView__item_default-topPadding_default controls-ListView__item_default-bottomPadding_default controls-ListView__item-rightPadding_default controls-ListView__item-leftPadding_default "
+            >
+              Benjamin Pruitt
+            </div>
+          </div>
+          <div
+            class="controls-ListView__itemV-relative controls-ListView__itemV controls-ListView__item_default controls-ListView__item_contentWrapper js-controls-ListView__editingTarget  controls-ListView__itemV_cursor-pointer  controls-ListView__item_showActions js-controls-ListView__measurableContainer controls-ListView__item__unmarked_default controls-ListView__item_highlightOnHover controls-hover-background-default"
+            data-qa="item"
+            item-key="4"
+            tabindex="0"
+          >
+            <div
+              class="controls-ListView__itemContent  controls-ListView__item_default-topPadding_default controls-ListView__item_default-bottomPadding_default controls-ListView__item-rightPadding_default controls-ListView__item-leftPadding_default "
+            >
+              Tiger O'Neill
+            </div>
+          </div>
+          <div
+            class="controls-ListView__itemV-relative controls-ListView__itemV controls-ListView__item_default controls-ListView__item_contentWrapper js-controls-ListView__editingTarget  controls-ListView__itemV_cursor-pointer  controls-ListView__item_showActions js-controls-ListView__measurableContainer controls-ListView__item__unmarked_default controls-ListView__item_highlightOnHover controls-hover-background-default"
+            data-qa="item"
+            item-key="5"
+            tabindex="0"
+          >
+            <div
+              class="controls-ListView__itemContent  controls-ListView__item_default-topPadding_default controls-ListView__item_default-bottomPadding_default controls-ListView__item-rightPadding_default controls-ListView__item-leftPadding_default "
+            >
+              Yetta Herrera
+            </div>
+          </div>
+        </div>
+        <div
+          class=" controls-BaseControl__loadingTrigger controls-BaseControl__loadingTrigger-bottom"
+          data-qa="loading-trigger-bottom"
+          style="bottom: 1px;"
+        />
+        <div
+          class="controls-BaseControl__loadingIndicator js-controls-BaseControl__loadingIndicator controls-BaseControl__loadingIndicator-bottom controls-BaseControl__loadingIndicator__position-bottom controls-BaseControl__loadingIndicator__state-loading "
+          data-qa="indicator_state_loading_position_bottom"
+          style="display: none;"
+        >
+          <div
+            class="controls-BaseControl__loadingIndicator-content"
+          >
+            <div
+              class="controls-BaseControl__loadingIndicatorImage"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="controls__BaseControl__footer"
+        tabindex="0"
+      />
+      <invisible-node
+        class="ws-hidden"
+        tabindex="-1"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Source. Тесты загрузки данных. Отмена загрузки данных без последующего обновления слайса сбрасывает индикатор загрузки 2`] = `
+Array [
+  Array [
+    	- loading: true -> false,
+  ],
+]
+`;

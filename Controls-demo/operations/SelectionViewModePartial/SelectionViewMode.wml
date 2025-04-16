@@ -1,0 +1,10 @@
+<Controls-demo.operations.ListWithOperationsPanel
+        source="{{_viewSource}}"
+        nodeProperty="Раздел@"
+        parentProperty="Раздел"
+        keyProperty="id"
+        displayProperty="department"
+        bind:selectionViewMode="_selectionViewMode"
+>
+    <Controls.grid:View columns="{{_gridColumns}}"/>
+</Controls-demo.operations.ListWithOperationsPanel>

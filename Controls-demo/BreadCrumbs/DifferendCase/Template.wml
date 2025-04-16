@@ -1,0 +1,29 @@
+<div>
+    <div class="controlsDemo__wrapper controlsDemo_fixedWidth800">
+        <div class="controlsDemo__cell">
+            <div class="controls-text-label">
+                Текущая папка + Хлебные крошки меньше, или равны ширине отведенного места
+            </div>
+            <div class="controlsDemo__differentCase controlsDemo__differentCase_fixedWidth">
+                <Controls.breadcrumbs:HeadingPath keyProperty="id" parentProperty="parent" items="{{_itemsCase1}}"/>
+            </div>
+        </div>
+        <div class="controlsDemo__cell">
+            <div class="controls-text-label">
+                Текущая папка + Хлебные крошки, больше ширины отведенного места.
+            </div>
+            case: папка >= 50%, хк &lt;= 50%
+            <div class="controlsDemo__differentCase controlsDemo__differentCase_fixedWidth">
+                <Controls.breadcrumbs:HeadingPath keyProperty="id" parentProperty="parent" items="{{_itemsCase2}}"/>
+            </div>
+            case: папка >= 50%, хк >= 50%
+            <div class="controlsDemo__differentCase controlsDemo__differentCase_fixedWidth">
+                <Controls.breadcrumbs:HeadingPath keyProperty="id" parentProperty="parent" items="{{_itemsCase3}}"/>
+            </div>
+            case: папка &lt;= 50%, хк >= 50%
+            <div class="controlsDemo__differentCase controlsDemo__differentCase_fixedWidth">
+                <Controls.breadcrumbs:HeadingPath keyProperty="id" parentProperty="parent" items="{{_itemsCase4}}"/>
+            </div>
+        </div>
+    </div>
+</div>

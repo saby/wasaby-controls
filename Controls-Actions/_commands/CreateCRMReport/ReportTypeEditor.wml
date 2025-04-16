@@ -1,0 +1,11 @@
+<Controls.validate:Highlighter validationStatus="{{_options.validationStatus}}">
+<Controls.dropdown:Button
+        keyProperty="id"
+        viewMode="link"
+        source="{{_source}}"
+        caption="{{_captionText}}"
+        menuHeadingCaption="{[Тип отчета]}"
+        on:menuItemActivate="_menuItemActivate()"
+        nodeProperty="@parent"
+        parentProperty="parent"/>
+</Controls.validate:Highlighter>>

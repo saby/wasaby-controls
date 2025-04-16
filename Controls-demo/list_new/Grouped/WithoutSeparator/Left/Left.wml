@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper">
+<Controls.scroll:Container>
+  <Controls.list:View
+      groupProperty="byDemand"
+      storeId="GroupedWithoutSeparatorLeft9">
+    <ws:groupTemplate>
+      <ws:partial scope="{{ _options }}" separatorVisibility="{{ false }}" template="Controls/list:GroupTemplate"
+                  textAlign="left"/>
+    </ws:groupTemplate>
+  </Controls.list:View>
+</Controls.scroll:Container>
+</div>

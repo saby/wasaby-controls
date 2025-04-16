@@ -1,0 +1,22 @@
+<div class="controlsDemo__decoratorGroup_wrapper controlsDemo_fixedWidth400">
+    <div class="controls-text-label">
+        Тултипы в декораторах, при ограниченном контейнере
+    </div>
+    <div class="controlsDemo__decoratorGroup_container ws-flexbox ws-flex-column">
+        <Controls.baseDecorator:Date value="{{_value}}"
+                                 format="{{_format}}"
+                                 attr:class="ws-ellipsis"/>
+        <Controls.baseDecorator:Highlight value="{{_value2}}"
+                                      highlightedValue="подсвечиваю"
+                                      tooltip="{{_value2}}"
+                                      attr:class="ws-ellipsis"/>
+        <Controls.baseDecorator:Money value="{{100000000}}"
+                                  useGrouping="{{true}}"
+                                  attr:class="ws-ellipsis"/>
+        <Controls.baseDecorator:Number value="{{12345678912345}}"
+                                   useGrouping="{{false}}"
+                                   attr:class="ws-ellipsis"/>
+        <Controls.extendedDecorator:Phone value="84942228771"
+                                  attr:class="ws-ellipsis"/>
+    </div>
+</div>

@@ -1,0 +1,138 @@
+// Ширина тени
+@shadow-width: var(--shadow-blur_c);
+
+.controls-GridReact__groupViewMode_blocks_contentWrapper,
+.controls-GridReact__groupViewMode_titledBlocks_contentWrapper {
+   z-index: 1;
+   flex-grow: 1;
+   height: 100%;
+   min-width: 0;
+   background-color: inherit;
+   border-radius: inherit;
+   box-sizing: border-box;
+}
+
+// Рисуем развёрнутый залитый скругленный заголовок у titledBlocks
+.controls-List__groupViewMode_titledBlocks
+   .controls-ListView__group
+   .controls-ListView__GroupContentWrapper::after {
+   clip-path: polygon(
+      calc(-1 * @shadow-width) calc(-1 * @shadow-width),
+      calc(100% + @shadow-width) calc(-1 * @shadow-width),
+      calc(100% + @shadow-width) 100%,
+      calc(-1 * @shadow-width) 100%
+   );
+}
+
+// Рисуем свёрнутый залитый скругленный заголовок titledBlocks
+.controls-List__groupViewMode_titledBlocks
+   .controls-ListView__group_collapsed
+   .controls-ListView__GroupContentWrapper::after {
+   clip-path: none;
+}
+
+// Уменьшаем z-index стики группы, для titledBlocks, если она не застикана.
+.controls-List__groupViewMode_titledBlocks
+   .controls-ListView__GroupContentWrapper.controls-StickyBlock:has(
+      > .controls-StickyHeader__shadow-bottom.ws-hidden
+   ) {
+   z-index: 1;
+}
+
+// Для последней записи группировки блоками не нужен border-bottom
+.controls-ListView__item_grouped_blocks_last > .controls-GridReact__cell {
+   border-bottom-color: transparent;
+}
+
+// Для первой записи группировки блоками не нужен border-top
+.controls-ListView__item_grouped_blocks_first > .controls-GridReact__cell,
+.controls-ListView__group_SpaceItem_top + .controls-GridReact__row .controls-GridReact__cell {
+   border-top-color: transparent;
+}
+
+.controls-List__groupViewMode_titledBlocks,
+.controls-List__groupViewMode_blocks {
+   // Скрываем тень блоков, которая заезжает под строку итогов
+   .controls-GridReact__results-cell:last-child,
+   .controls-GridReact__results-cell:first-child {
+      &.controls-background-unaccented {
+         box-shadow: 0 calc(-1 * @shadow-width) 0 @shadow-width var(--unaccented_background-color);
+      }
+
+      &.controls-background-default {
+         box-shadow: 0 calc(-1 * @shadow-width) 0 @shadow-width var(--background-color);
+      }
+   }
+
+   // Скрываем тени у средних ячеек
+   .controls-ListView__item_grouped
+      .controls-GridReact__cell.controls-ListView__item_contentWrapper::after {
+      content: none;
+   }
+
+   // Скрываем верхнюю нижнюю правую тень у левой ячейки
+   .controls-ListView__item_grouped
+      .controls-GridReact__cell.controls-GridReact__cell_first::after {
+      content: '\200b';
+      clip-path: polygon(
+         calc(-1 * @shadow-width) calc(-1 * @shadow-width),
+         0 calc(-1 * @shadow-width),
+         0 calc(100% + @shadow-width),
+         calc(-1 * @shadow-width) calc(100% + @shadow-width)
+      );
+   }
+
+   // Скрываем верхнюю нижнюю левую тень у правой ячейки
+   .controls-ListView__item_grouped .controls-GridReact__cell.controls-GridReact__cell_last::after {
+      content: '\200b';
+      clip-path: polygon(
+         100% calc(-1 * @shadow-width),
+         calc(100% + @shadow-width) calc(-1 * @shadow-width),
+         calc(100% + @shadow-width) calc(100% + @shadow-width),
+         calc(100% - @shadow-width) calc(100% + @shadow-width)
+      );
+   }
+
+   // Скрываем верхнюю нижнюю тень у заколспаненой ячейки
+   .controls-ListView__item_grouped
+      .controls-GridReact__cell_first.controls-GridReact__cell_last::after {
+      content: '\200b';
+      clip-path: polygon(
+         calc(-1 * @shadow-width) calc(-1 * @shadow-width),
+         0 calc(-1 * @shadow-width),
+         0 calc(100% + @shadow-width),
+         100% calc(100% + @shadow-width),
+         100% calc(-1 * @shadow-width),
+         calc(100% + @shadow-width) calc(-1 * @shadow-width),
+         calc(100% + @shadow-width) calc(100% + @shadow-width),
+         calc(-1 * @shadow-width) calc(100% + @shadow-width)
+      );
+   }
+
+   // Скрываем верхнюю тень у подвала залитого блока со скруглением
+   .controls-ListView__group_SpaceItem_bottom
+      > .controls-GridReact__cell_first.controls-GridReact__cell_last::after {
+      clip-path: polygon(
+         calc(-1 * @shadow-width) 0,
+         calc(100% + @shadow-width) 0,
+         calc(100% + @shadow-width) calc(100% + @shadow-width),
+         calc(-1 * @shadow-width) calc(100% + @shadow-width)
+      );
+      border-bottom-left-radius: var(--border-radius_s);
+      border-bottom-right-radius: var(--border-radius_s);
+   }
+
+   // Скрываем нижнюю тень у шапки залитого блока со скруглением
+   .controls-ListView__group_SpaceItem_top
+      > .controls-GridReact__cell_first.controls-GridReact__cell_last::after {
+      clip-path: polygon(
+         calc(-1 * @shadow-width) calc(-1 * @shadow-width),
+         calc(100% + @shadow-width) calc(-1 * @shadow-width),
+         calc(100% + @shadow-width) 100%,
+         calc(-1 * @shadow-width) 100%
+      );
+      border-top-left-radius: var(--border-radius_s);
+      border-top-right-radius: var(--border-radius_s);
+      z-index: 1;
+   }
+}

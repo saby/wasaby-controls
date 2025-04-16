@@ -1,0 +1,15 @@
+<div>
+    <div>В демо примере демонстрируется поведение списка при значении опции searchNavigationMode: 'expand'</div>
+    <div>Введите в строку поиска текст "Sata" и кликните по крошке</div>
+    <Controls-ListEnv.searchConnected:Input storeId="SearchNavigationMode" />
+    <Controls.explorer:View
+        storeId="SearchNavigationMode"
+        attr:class="demo-Explorer ControlsDemo-Explorer"
+        columns="{{_viewColumns}}">
+      <ws:emptyTemplate>
+        <ws:partial template="Controls/grid:EmptyTemplate" topSpacing="xl" bottomSpacing="l">
+          <ws:contentTemplate>Не найдено</ws:contentTemplate>
+        </ws:partial>
+      </ws:emptyTemplate>
+    </Controls.explorer:View>
+</div>

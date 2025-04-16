@@ -1,0 +1,36 @@
+.controls__object-type__group {
+   grid-column: 1 / none;
+
+   &__header {
+      gap: var(--offset_3xs);
+      align-items: baseline;
+   }
+
+   &__header-container {
+      height: var(--inline_height_label_local, var(--inline_height_default_label));
+      align-items: center;
+   }
+
+   &__title {
+      font-size: var(--font-size_l);
+      font-weight: var(--font-weight-bold);
+   }
+
+   &-nested {
+      font-size: var(--font-size_xs);
+      color: var(--text-color);
+      line-height: var(--inline_height_m);
+      text-transform: uppercase;
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--offset_2xs);
+   }
+
+   &__content {
+      overflow-y: hidden;
+      overflow-x: hidden;
+      display: grid;
+      grid-template-columns: auto minmax(0, auto) minmax(50%, 1fr);
+      grid-row-gap: var(--offset_s);
+      align-items: baseline;
+   }
+}

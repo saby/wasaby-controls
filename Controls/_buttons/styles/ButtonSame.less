@@ -1,0 +1,388 @@
+/* stylelint-disable declaration-no-important, no-descending-specificity */
+.controls-button-old-browser {
+   // для старых браузеров отключаем color-mix
+   &.controls-BaseButton {
+      --secondary_outlined-same_border-color_button: var(--brand_color);
+      --secondary_outlined-same_hover-border-color_button: var(--brand_color);
+      --primary_outlined-same_border-color_button: var(--primary_color);
+      --danger_outlined-same_border-color_button: var(--danger_color);
+      --success_outlined-same_border-color_button: var(--success_color);
+      --info_outlined-same_border-color_button: var(--info_color);
+      --warning_outlined-same_border-color_button: var(--warning_color);
+   }
+}
+
+.controls-Button_notCircle {
+   &.controls-button_filled-same-style,
+   &.controls-button_outlined-same-style {
+      --align-items_button_local: baseline;
+
+      .controls-BaseButton__wrapper {
+         padding: 0 var(--container_padding-horizontal_button_local);
+      }
+   }
+}
+
+.controls-button_outlined-same-style {
+   --container_border-color_button_local: var(--secondary_border-color_button);
+   --container_background-color_button_local: var(--secondary_background-color_button);
+   --text_color_button_local: var(--text-color_button);
+   --container_shadow_button_local: var(--box-shadow_button);
+   --container_border-style_button_local: solid;
+   --icon_color_button_local: var(--icon-color);
+}
+
+.controls-button_outlined-same-primary-style {
+   --container_border-color_button_local: var(--primary_outlined-same_border-color_button);
+   --container_background-color_button_local: var(--primary_background-color_button);
+   --icon_color_button_local: var(--primary_icon-color);
+
+   .ws-is-hover &:hover {
+      --container_border-color_button_local: var(--primary_outlined-same_hover-border-color_button);
+      --container_background-color_button_local: var(--primary_hover_background-color_button);
+   }
+
+   .ws-is-touch &:active,
+   .ws-is-no-touch &:active {
+      --container_background-color_button_local: var(--primary_active_background-color_button);
+   }
+}
+
+.controls-button_outlined-same-danger-style {
+   --container_border-color_button_local: var(--danger_outlined-same_border-color_button);
+   --container_background-color_button_local: var(--danger_background-color_button);
+   --icon_color_button_local: var(--danger_icon-color);
+
+   .ws-is-hover &:hover {
+      --container_border-color_button_local: var(--danger_outlined-same_hover-border-color_button);
+      --container_background-color_button_local: var(--danger_hover_background-color_button);
+   }
+
+   .ws-is-touch &:active,
+   .ws-is-no-touch &:active {
+      --container_background-color_button_local: var(--danger_active_background-color_button);
+   }
+}
+
+.controls-button_outlined-same-success-style {
+   --container_border-color_button_local: var(--success_outlined-same_border-color_button);
+   --container_background-color_button_local: var(--success_background-color_button);
+   --icon_color_button_local: var(--success_icon-color);
+
+   .ws-is-hover &:hover {
+      --container_border-color_button_local: var(--success_outlined-same_hover-border-color_button);
+      --container_background-color_button_local: var(--success_hover_background-color_button);
+   }
+
+   .ws-is-touch &:active,
+   .ws-is-no-touch &:active {
+      --container_background-color_button_local: var(--success_active_background-color_button);
+   }
+}
+
+.controls-button_outlined-same-info-style {
+   --container_border-color_button_local: var(--info_outlined-same_border-color_button);
+   --container_background-color_button_local: var(--info_background-color_button);
+   --icon_color_button_local: var(--info_icon-color);
+
+   .ws-is-hover &:hover {
+      --container_border-color_button_local: var(--info_outlined-same_hover-border-color_button);
+      --container_background-color_button_local: var(--info_hover_background-color_button);
+   }
+
+   .ws-is-touch &:active,
+   .ws-is-no-touch &:active {
+      --container_background-color_button_local: var(--info_active_background-color_button);
+   }
+}
+
+.controls-button_outlined-same-warning-style {
+   --container_border-color_button_local: var(--warning_outlined-same_border-color_button);
+   --container_background-color_button_local: var(--warning_background-color_button);
+   --icon_color_button_local: var(--warning_icon-color);
+
+   .ws-is-hover &:hover {
+      --container_border-color_button_local: var(--warning_outlined-same_hover-border-color_button);
+      --container_background-color_button_local: var(--warning_hover_background-color_button);
+   }
+
+   .ws-is-touch &:active,
+   .ws-is-no-touch &:active {
+      --container_background-color_button_local: var(--warning_active_background-color_button);
+   }
+}
+
+.controls-button_outlined-same-default-style,
+.controls-button_outlined-same-brand-style,
+.controls-button_outlined-same-secondary-style,
+.controls-button_outlined-same-unaccented-style,
+.controls-button_outlined-same-pale-style {
+   --text_color_button_local: var(--text-color);
+   --icon_color_button_local: var(--icon-color);
+   --container_shadow_button_local: var(--box-shadow_pale-button);
+   --container_background-color_button_local: var(--background-color_button);
+   --container_border-color_button_local: var(--secondary_outlined-same_border-color_button);
+
+   .ws-is-hover &:hover {
+      --container_border-color_button_local: var(
+         --secondary_outlined-same_hover-border-color_button
+      );
+      --container_background-color_button_local: var(--background-color);
+   }
+
+   .ws-is-touch &:active,
+   .ws-is-no-touch &:active {
+      --container_background-color_button_local: color-mix(
+         in srgb,
+         var(--brand_color) 5%,
+         var(--background-color)
+      );
+      --container_border-color_button_local: var(
+         --secondary_outlined-same_hover-border-color_button
+      );
+   }
+}
+
+.controls-button_outlined-same-brand-style {
+   --icon_color_button_local: var(--brand_color);
+}
+
+.controls-button_outlined-same-secondary-style {
+   --icon_color_button_local: var(--secondary_icon-color);
+}
+
+.controls-button_filled-same-style {
+   --container_border-color_button_local: transparent;
+   --container_border-width_button_local: var(--border-thickness_button);
+   --container_border-style_button_local: solid;
+   --icon_color_button_local: var(--icon-color);
+   --container_shadow_button_local: var(--box-shadow_button);
+}
+
+.controls-button_outlined-same-readonly-style,
+.controls-button_filled-same-readonly-style {
+   --container_shadow_button_local: var(--box-shadow_button) !important;
+   --text_color_button_local: var(--readonly_text-color) !important;
+   --container_border-color_button_local: var(--readonly_border-color_button) !important;
+}
+
+.controls-button_outlined-same-readonly-style {
+   --container_background-color_button_local: var(--readonly_background-color_button) !important;
+}
+
+.controls-button_filled-same-readonly-style {
+   --container_background-color_button_local: transparent !important;
+}
+
+.controls-button_filled-same-style,
+.controls-button_outlined-same-style {
+   .controls-Button_textAlign-left {
+      justify-content: left;
+   }
+
+   .controls-Button_textAlign-center,
+   .controls-Button_textAlign-none {
+      justify-content: center;
+   }
+
+   .controls-Button_textAlign-right {
+      justify-content: flex-end;
+   }
+
+   .controls-Button_textAlign-justify {
+      justify-content: space-between;
+
+      // При выравнивании через space-between, также учитывается и before, поэтому задаем ему order в середине
+      &.controls-BaseButton__wrapper::before {
+         order: 1;
+      }
+
+      &.controls-BaseButton__wrapper_captionPosition_end::before {
+         order: 2;
+      }
+   }
+
+   // todo Удалить когда кнопки переведут на сервис стилей.
+   &.controls-button_icon-style-readonly {
+      --icon_color_button_local: var(--readonly_icon-color) !important;
+   }
+
+   &.controls-button_icon-style-primary {
+      --icon_color_button_local: var(--primary_icon-color);
+   }
+
+   &.controls-button_icon-style-contrast {
+      --icon_color_button_local: var(--contrast_icon-color);
+   }
+
+   &.controls-button_icon-style-secondary {
+      --icon_color_button_local: var(--secondary_icon-color);
+   }
+
+   &.controls-button_icon-style-success {
+      --icon_color_button_local: var(--success_icon-color);
+   }
+
+   &.controls-button_icon-style-warning {
+      --icon_color_button_local: var(--warning_icon-color);
+   }
+
+   &.controls-button_icon-style-danger {
+      --icon_color_button_local: var(--danger_icon-color);
+   }
+
+   &.controls-button_icon-style-info {
+      --icon_color_button_local: var(--info_icon-color);
+   }
+
+   &.controls-button_icon-style-link {
+      --icon_color_button_local: var(--link_icon-color);
+   }
+
+   &.controls-button_icon-style-unaccented {
+      --icon_color_button_local: var(--unaccented_icon-color);
+   }
+
+   &.controls-button_icon-style-default {
+      --icon_color_button_local: var(--icon-color);
+   }
+
+   &.controls-button_icon-style-brand {
+      --icon_color_button_local: var(--brand_color);
+   }
+
+   &.controls-button_icon-style-label {
+      --icon_color_button_local: var(--label_icon-color);
+   }
+}
+
+.controls-Button__text_viewMode-outlined-same,
+.controls-Button__text_viewMode-filled-same {
+   text-shadow: var(--text-shadow_button);
+}
+
+.controls-Button__text_readonly_filled-same,
+.controls-Button__text_readonly_outlined-same {
+   text-shadow: none;
+}
+
+.controls-Button_circle {
+   &.controls-button_filled-same-style,
+   &.controls-button_outlined-same-style {
+      width: var(--container_inline-height_button_local);
+      min-width: var(--container_inline-height_button_local);
+   }
+}
+
+.controls-button_filled-same-primary-style {
+   --container_background-color_button_local: var(--primary_same_background-color);
+
+   .ws-is-hover &:hover {
+      --container_background-color_button_local: var(--primary_hover_same_background-color);
+   }
+
+   .ws-is-touch &:active,
+   .ws-is-no-touch &:active {
+      --container_background-color_button_local: var(--primary_active_same_background-color);
+   }
+}
+
+.controls-button_filled-same-secondary-style {
+   --container_background-color_button_local: var(--secondary_same_background-color);
+
+   .ws-is-hover &:hover {
+      --container_background-color_button_local: var(--secondary_hover_same_background-color);
+   }
+
+   .ws-is-touch &:active,
+   .ws-is-no-touch &:active {
+      --container_background-color_button_local: var(--secondary_active_same_background-color);
+   }
+}
+
+.controls-button_filled-same-danger-style {
+   --container_background-color_button_local: var(--danger_same_background-color);
+
+   .ws-is-hover &:hover {
+      --container_background-color_button_local: var(--danger_hover_same_background-color);
+   }
+
+   .ws-is-touch &:active,
+   .ws-is-no-touch &:active {
+      --container_background-color_button_local: var(--danger_active_same_background-color);
+   }
+}
+
+.controls-button_filled-same-success-style {
+   --container_background-color_button_local: var(--success_same_background-color);
+
+   .ws-is-hover &:hover {
+      --container_background-color_button_local: var(--success_hover_same_background-color);
+   }
+
+   .ws-is-touch &:active,
+   .ws-is-no-touch &:active {
+      --container_background-color_button_local: var(--success_active_same_background-color);
+   }
+}
+
+.controls-button_filled-same-warning-style {
+   --container_background-color_button_local: var(--warning_same_background-color);
+
+   .ws-is-hover &:hover {
+      --container_background-color_button_local: var(--warning_hover_same_background-color);
+   }
+
+   .ws-is-touch &:active,
+   .ws-is-no-touch &:active {
+      --container_background-color_button_local: var(--warning_active_same_background-color);
+   }
+}
+
+.controls-button_filled-same-unaccented-style {
+   --container_background-color_button_local: var(--unaccented_background-color);
+
+   .ws-is-hover &:hover {
+      --container_background-color_button_local: var(--unaccented_hover_background-color);
+   }
+
+   .ws-is-touch &:active,
+   .ws-is-no-touch &:active {
+      --container_background-color_button_local: var(--unaccented_active_background-color);
+   }
+}
+
+.controls-button_filled-same-info-style {
+   --container_background-color_button_local: var(--info_same_background-color);
+
+   .ws-is-hover &:hover {
+      --container_background-color_button_local: var(--info_hover_same_background-color);
+   }
+
+   .ws-is-touch &:active,
+   .ws-is-no-touch &:active {
+      --container_background-color_button_local: var(--info_active_same_background-color);
+   }
+}
+
+.controls-button_filled-same-default-style {
+   --container_background-color_button_local: var(--default_contrast_background-color_button);
+   --text_color_button_local: var(--text-color_button);
+
+   .ws-is-hover &:hover {
+      --container_background-color_button_local: var(--default_contrast_background-color_button);
+   }
+
+   .ws-is-touch &:active,
+   .ws-is-no-touch &:active {
+      --container_background-color_button_local: var(--default_active_background-color_button);
+   }
+}
+
+.ws-is-touch,
+.ws-is-no-touch {
+   .controls-button-style.controls-button_filled-same-style:active,
+   .controls-button-style.controls-button_outlined-same-style:active {
+      --container_shadow_button_local: none;
+   }
+}

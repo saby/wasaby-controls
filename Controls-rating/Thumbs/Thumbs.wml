@@ -1,0 +1,9 @@
+<div class="Controls-rating__Thumbs_container ws-flexbox ws-align-items-center">
+    <ws:for data="index, item in _configuration">
+        <div class="Controls-rating__item-{{item.name}} controls-cursor_pointer controls-icon_size-{{_options.iconSize}}
+                    controls-icon_style-unaccented controls-margin_right-{{_getItemMargin()}} icon-{{item.icon}}
+                    {{_getItemSelected(item)}}"
+             on:click="_mouseClickHandler(item.name)">
+        </div>
+    </ws:for>
+</div>

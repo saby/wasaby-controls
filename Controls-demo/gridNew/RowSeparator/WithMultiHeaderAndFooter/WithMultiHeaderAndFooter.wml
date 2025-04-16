@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper controls-MasterDetail_details-newDesign">
+    <Controls.grid:View
+            attr:class="controlsDemo__inline-flex"
+            storeId="RowSeparatorWithMultiHeaderAndFooter"
+            header="{{_header}}"
+            rowSeparatorSize="s"
+            columns="{{_columns}}"
+            newDesign="{{true}}">
+        <ws:footerTemplate>
+            <ws:partial template="Controls/grid:FooterTemplate" scope="{{ footerTemplate }}">
+                <div>Подвал растянут</div>
+            </ws:partial>
+        </ws:footerTemplate>
+    </Controls.grid:View>
+</div>

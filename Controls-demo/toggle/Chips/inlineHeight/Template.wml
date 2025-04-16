@@ -1,0 +1,29 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center controlsDemo_fixedWidth600"
+         data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell">
+            <div class="controls-text-label">inlineHeight=m</div>
+            <Controls.Chips:Control items="{{_items}}"
+                                   inlineHeight="m"
+                                   fontSize="m"
+                                   bind:selectedKeys="_selectedKeys1"
+                                   attr:class="ControlsDemo-ButtonGroup__inlineHeight-m"/>
+        </div>
+        <div class="controlsDemo__cell">
+            <div class="controls-text-label">inlineHeight=xl</div>
+            <Controls.Chips:Control items="{{_items}}"
+                                   inlineHeight="xl"
+                                   fontSize="xl"
+                                   bind:selectedKeys="_selectedKeys2"
+                                   attr:class="ControlsDemo-ButtonGroup__inlineHeight-xl"/>
+        </div>
+        <div class="controlsDemo__cell">
+            <div class="controls-text-label">inlineHeight=5xl</div>
+            <Controls.Chips:Control items="{{_items}}"
+                                   inlineHeight="5xl"
+                                   fontSize="5xl"
+                                   bind:selectedKeys="_selectedKeys3"
+                                   attr:class="ControlsDemo-ButtonGroup__inlineHeight-5xl"/>
+        </div>
+    </div>
+</div>

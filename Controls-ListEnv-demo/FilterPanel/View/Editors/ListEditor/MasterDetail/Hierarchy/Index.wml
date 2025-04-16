@@ -1,0 +1,25 @@
+<div class="ws-flexbox controlsDemo__wrapper controlsDemo__height800">
+    <Controls.masterDetail:Base masterWidth="{{270}}">
+        <ws:master>
+            <Controls-ListEnv.filterPanelConnected:View
+                editorsViewMode="default"
+                storeId="documents"
+                filterNames="{{ ['document'] }}"
+            />
+        </ws:master>
+        <ws:detail>
+            <div class="engine-demo__Widgets_filterList ws-flexbox ws-flex-column">
+                <Controls.grid:View
+                    storeId="documents"
+                    columns="{{_columns}}"
+                    header="{{_header}}">
+                    <ws:itemTemplate>
+                       <ws:partial template="Controls/grid:ItemTemplate"
+                          expanderSize="l"
+                          scope="{{ itemTemplate }}" />
+                   </ws:itemTemplate>
+               </Controls.grid:View>
+            </div>
+        </ws:detail>
+    </Controls.masterDetail:Base>
+</div>

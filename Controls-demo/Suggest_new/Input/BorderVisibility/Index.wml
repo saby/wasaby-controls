@@ -1,0 +1,47 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+   <div class="controlsDemo__wrapper__horizontal controlsDemo__cell demo-SuggestBorderVisibility__partial">
+      <div class="controls-text-label">borderVisibility="partial"</div>
+      <Controls.SuggestInput
+              attr:class="controlsDemo__input demo-SuggestNew__noDelay"
+              data-qa="controlsDemo_Suggest_BorderVisibility__partial"
+              bind:value="_suggestCustomValue"
+              displayProperty="title"
+              searchParam="title"
+              borderVisibility="partial"
+              placeholder="partial"
+              navigation="{{_navigation}}"
+              source="{{_source}}">
+      </Controls.SuggestInput>
+  </div>
+   <div class="controlsDemo__wrapper__horizontal controlsDemo__cell demo-SuggestBorderVisibility__hidden">
+      <div class="controls-text-label">borderVisibility="hidden"</div>
+      <Controls.SuggestInput
+              attr:class="controlsDemo__input  demo-SuggestNew__withDelay"
+              data-qa="controlsDemo_Suggest_BorderVisibility__hidden"
+              bind:value="_suggestDefaultValue"
+              displayProperty="title"
+              searchParam="title"
+              borderVisibility="hidden"
+              placeholder="hidden"
+              navigation="{{_navigation}}"
+              source="{{_source}}">
+      </Controls.SuggestInput>
+   </div>
+   <div class="controlsDemo__wrapper__horizontal controlsDemo__cell demo-SuggestBorderVisibility__partial">
+     <div class="controls-text-label">borderVisibility="partial", если ширина окна автодополнения меньше ширины поля</div>
+     <Controls.SuggestInput
+         attr:class="controlsDemo__input"
+         data-qa="controlsDemo_Suggest_BorderVisibility__partialWidthLess"
+         bind:value="_suggestDefaultValue2"
+         displayProperty="title"
+         searchParam="title"
+         borderVisibility="partial"
+         placeholder="partial"
+         autoDropDown="{{true}}"
+         navigation="{{_navigation}}"
+         source="{{_source}}">
+       <ws:suggestTemplate templateName="Controls/suggestPopup:SuggestTemplate"/>
+       <ws:suggestPopupOptions width="150px"/>
+     </Controls.SuggestInput>
+   </div>
+</div>

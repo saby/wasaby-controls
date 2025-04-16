@@ -1,0 +1,18 @@
+<ws:template name="browserContent">
+    <ws:partial template="{{_options.content}}"
+                scope="{{_options}}"
+                filterButtonItems="{{_options.slice.state.filterDescription}}"
+                on:filterItemsChanged="_filterItemsChanged()"
+                on:search="_search()"
+                on:searchReset="_searchReset()"/>
+</ws:template>
+
+
+<ws:if data="{{_options.listsOptions}}">
+    <Controls.contextDeprecated:DataContextCompatibleProvider value="{{_contextState}}">
+        <ws:partial template="browserContent"/>
+    </Controls.contextDeprecated:DataContextCompatibleProvider>
+</ws:if>
+<ws:else>
+    <ws:partial template="browserContent"/>
+</ws:else>

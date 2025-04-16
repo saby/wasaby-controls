@@ -1,0 +1,165 @@
+.controls-Layout-SelectorPopup-Sticky_header-minHeight {
+   --header_min-height_sticky: var(--inline_height_l);
+}
+
+.controls-Layout-SelectorPopup-Sticky_item-minHeight {
+   --header_min-height_sticky: var(--item_height_menu);
+}
+
+.controls-Layout-SelectorPopup-Sticky_closeButton {
+   --close-button_offset-top_sticky: calc(
+      (var(--header_min-height_sticky) - var(--inline_height_closeButton)) / 2
+   );
+}
+
+.controls-Layout-SelectorPopup-Sticky-header-margin_left-expander {
+   --expander_padding-left_SelectorPopup: calc(
+      var(--offset_2xs) + var(--size_xs_image) + var(--image_s_padding-right_treeGrid)
+   );
+   // var(--offset_m) + var(--border-thickness) - отступ строки поиска
+   margin-left: calc(
+      var(--expander_padding-left_SelectorPopup) - var(--offset_m) - var(--border-thickness)
+   );
+}
+
+.controls-Layout-SelectorPopup-Sticky-header-padding_left-expander {
+   padding-left: calc(var(--offset_m) + var(--border-thickness));
+}
+
+.controls-Layout-SelectorPopup-header_searchInput {
+   margin-left: calc(-1 * var(--offset_m));
+}
+
+.controls-Layout-SelectorPopup-Sticky-header-breadCrumbs-padding {
+   padding-left: var(--offset_2xs);
+}
+
+.controls-Layout-SelectorPopup-Sticky_closeButton_withHeader {
+   --close-button_offset-top_sticky: calc(var(--offset_s));
+   --close-button_offset-right_sticky: calc(var(--offset_s) + var(--offset_2xs));
+}
+
+.controls-Layout-SelectorPopup-Sticky-header-padding_right-default {
+   margin-right: calc(
+      var(--offset_s) + var(--inline_height_closeButton) + var(--offset_2xs) + var(--offset_s)
+   );
+}
+
+.controls-Layout-SelectorPopup-Sticky-header-padding_right-adaptive {
+   margin-right: var(--offset_m);
+}
+
+.controls-Layout-SelectorPopup-Sticky-header-padding_right-withHeader {
+   margin-right: var(--offset_s);
+}
+
+.controls-Layout-SelectorPopup-Sticky-with-closeButton {
+   padding-right: calc(var(--inline_height_l) / 2);
+}
+
+.controls-Layout-SelectorPopup-Sticky-header-padding_right-applyButton-visible-adaptive {
+   margin-right: calc(
+      // отступ под кнопку подтверждения + кнопку закрытия
+      var(--apply-button_inline-height_menuPopup) + var(--offset_m) + var(--offset_m) -
+         var(--offset_2xs)
+   );
+}
+
+.controls-Layout-SelectorPopup-Sticky-header-padding_right-applyButton-visible {
+   margin-right: calc(
+      // отступ под кнопку подтверждения + кнопку закрытия
+      var(--apply-button_inline-height_menuPopup) + (var(--width_closeButton_externalButton) / 2)
+   );
+}
+
+.controls-Layout-SelectorPopup-Sticky-header-padding_right-applyButton {
+   margin-right: calc(
+      // отступ под кнопку закрытия
+      var(--width_closeButton_externalButton) / 2
+   );
+}
+
+.controls_Layout-SelectorPopup-Sticky-header-applyButtonSpace_left {
+   width: calc(var(--apply-button_inline-height_menuPopup) + var(--offset_m));
+   flex-shrink: 999;
+}
+
+.controls_Layout-SelectorPopup-Sticky-header-applyButtonSpace_right {
+   min-width: calc(var(--apply-button_inline-height_menuPopup) + var(--offset_m));
+}
+
+.controls-Layout-SelectorPopup-Sticky-breadCrumbsPath {
+   min-height: var(--inline_height_xl);
+   height: var(--inline_height_xl);
+}
+
+.controls-Layout-SelectorPopup-Sticky__applyButton {
+   position: absolute;
+   z-index: 2;
+}
+
+.controls-Layout-SelectorPopup-Sticky__applyButton-default {
+   right: calc(var(--width_closeButton_functionalButton) / 2);
+   top: calc(
+      (var(--inline_height_l) - var(--apply-button_inline-height_menuPopup)) / 2 + var(--offset_s)
+   );
+}
+
+.controls-Layout-SelectorPopup-Sticky__applyButton-adaptive {
+   right: var(--offset_m);
+   top: calc(
+      (var(--inline_height_5xl) - var(--apply-button_inline-height_menuPopup)) / 2 + var(--offset_s)
+   );
+}
+
+.controls-Layout-SelectorPopup-Sticky__multiSelect_adaptive {
+   --apply-button_inline-height_menuPopup: var(--inline_height_xl);
+}
+
+.controls-Layout-SelectorPopup_item-marker-offset {
+   margin-right: var(--offset_xs);
+   margin-left: var(--offset_3xs);
+}
+
+.controls-Layout-SelectorPopup_item-marker-space {
+   min-width: calc(var(--offset_3xs) + var(--marker-box_size_radio) + var(--offset_xs));
+}
+
+.controls-ListEnv-SelectorPopup__itemActions_position_multiSelect {
+   bottom: calc((var(--item_height_menu) - var(--height_itemActions)) / 2);
+   right: calc(var(--offset_xs) + var(--offset_xs) + var(--inline_height_m));
+}
+
+.controls-Menu__row-checkbox_invisible {
+   visibility: hidden;
+}
+
+.ws-is-no-touch .controls-ListEnv-SelectorPopup__multiSelectPlus_default {
+   visibility: hidden;
+}
+
+.controls-TreeGrid__row-expander_selectorHiddenNode {
+   pointer-events: none;
+}
+
+.ws-is-hover {
+   .controls-Layout-SelectorPopup_item:hover {
+      .controls-Layout-SelectorPopup_item-marker {
+         visibility: visible;
+      }
+   }
+
+   .controls-ListView__item_showCheckbox:hover {
+      .controls-Menu__row-radioCircle__borderCircle {
+         stroke: var(--border-color);
+      }
+
+      .controls-ListEnv-SelectorPopup__multiSelectPlus_default {
+         visibility: visible;
+      }
+
+      .controls-ListEnv-SelectorPopup__multiSelectPlus_unselected {
+         visibility: visible;
+      }
+   }
+}

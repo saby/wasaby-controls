@@ -1,0 +1,46 @@
+<Controls.lookupPopup:Controller
+    attr:class="demo-Selector__departmentsLayout"
+    name="SelectorController"
+    selectedItems="{{_options.selectedItems}}">
+    <Controls.browser:Browser
+        source="{{_source}}"
+        keyProperty="{{_keyProperty}}"
+        filter="{{_filter}}"
+        searchParam="title"
+        minSearchLength="{{3}}"
+        displayProperty="title"
+        idProperty="{{_keyProperty}}"
+        multiSelectVisibility="{{_options.multiSelect ? 'visible'}}"
+    >
+        <div class="ws-fragment">
+            <div class="controlsDemo__wrapper">
+                <Controls.searchDeprecated:InputContainer>
+                    <Controls.search:Input/>
+                </Controls.searchDeprecated:InputContainer>
+            </div>
+            <Controls.lookupPopup:Container keyProperty="{{_keyProperty}}" multiSelect="{{_options.multiSelect}}">
+                    <Controls.listDataOld:ListContainer>
+                        <Controls.lookupPopup:ListContainer>
+                            <Controls.list:View
+                                attr:class="ControlsDemo-Selector__flatListDepartments"
+                            >
+                                <ws:itemTemplate>
+                                    <ws:partial template="Controls/list:ItemTemplate">
+                                        <ws:contentTemplate>
+                                            <div class="controlsDemo-Selector__listItem">
+                                                <span class="controlsDemo__mr1_control">{{itemTemplate.item.contents.get('department')}}</span>
+                                                <span class="controlsDemo-Selector__title">{{itemTemplate.item.contents.get('owner')}}
+                                                    <span class="controlsDemo-Selector__icon icon-16 icon-Company icon-disabled"></span> (78)
+                                                </span>
+                                            </div>
+                                        </ws:contentTemplate>
+                                    </ws:partial>
+                                </ws:itemTemplate>
+                           </Controls.list:View>
+                        </Controls.lookupPopup:ListContainer>
+                    </Controls.listDataOld:ListContainer>
+            </Controls.lookupPopup:Container>
+        </div>
+    </Controls.browser:Browser>
+</Controls.lookupPopup:Controller>
+
