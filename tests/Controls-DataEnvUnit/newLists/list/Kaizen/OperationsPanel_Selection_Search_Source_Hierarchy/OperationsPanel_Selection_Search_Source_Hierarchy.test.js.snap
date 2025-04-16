@@ -1,0 +1,414 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OperationsPanel_Selection_Search_Source_Hierarchy. Тесты взаимодействия ПМО со множественным выделением, поиском, сурсом и иерархией. Если во время поиска выделить все элементы, то после сброса поиска сбросится и выделение 1`] = `
+<div
+  class="controls_list_theme-default controls-Explorer"
+  data-qa="js-demo-explorer-data-qa"
+  tabindex="0"
+>
+  <div
+    class="controls-Explorer__wrapper"
+    tabindex="0"
+  >
+    <div
+      class="controls-Explorer__HeadingPathWrapper"
+      tabindex="0"
+    >
+      <div
+        class="controls-StickyBlock  controls-background-default-sticky controls-Explorer__HeadingPath-undefined"
+        style="max-width: calc(100%);"
+      >
+        <div
+          class="controls-Explorer__PathWrapper controls_toggle_theme-default controls-StickyBlock__content"
+          tabindex="0"
+        >
+          <div
+            class="controls-BreadCrumbsPath controls_breadcrumbs_theme-default controls-Explorer__Path"
+            data-qa="controls-BreadCrumbsPath"
+            tabindex="0"
+          >
+            <div
+              class="controls-BreadCrumbsPath__wrapper"
+            >
+              <div
+                class="controls_breadcrumbs_theme-default controls-BreadCrumbsPath__backButton__wrapper controls-BreadCrumbsPath__backButton__wrapper__only"
+                data-qa="controls-BreadCrumbsBackButton"
+                tabindex="0"
+              >
+                <div
+                  class="controls-BreadCrumbsPath__backButton__container"
+                >
+                  <div
+                    class="controls-Back controls-BreadCrumbsPath__backButton"
+                    tabindex="0"
+                    title="Москва и Московская обл."
+                  >
+                    <div
+                      class="controls-Back__wrapper controls-Back__wrapper_iconViewMode-default controls-fontsize-headingPathBack"
+                    >
+                      <div
+                        class="controls-Back__icon-wrapper  ws-align-items-center"
+                      >
+                        <div
+                          class="controls-Back__icon_view-default"
+                          data-qa="controls-Back_arrow"
+                        >
+                          <svg
+                            class="controls-padding_right-s controls-Explorer__HeadingPath-IconBack-height controls-margin_left-2xs controls-Back__icon_style-primary"
+                            style="enable-background: new 0 0 9 20;"
+                            tabindex="0"
+                            viewBox="0 0 9 20"
+                            xml:space="preserve"
+                          >
+                            <path
+                              clip-rule="evenodd"
+                              d="M6.87828 3.5L9 5.15195L3.54204 11.5L9 17.848L6.87828 19.5L0 11.5L6.87828 3.5Z"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="controls-Back__caption controls-Back__caption_style-default controls-Back__caption_overflow-ellipsis"
+                      >
+                        Москва и Московская обл.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="controls-BaseControl controls_list_theme-default controls_toggle_theme-default controls-Explorer__view"
+      data-qa="list"
+      tabindex="0"
+    >
+      <div
+        class="controls-BaseControl__fakeFocusElem"
+        name="fakeFocusElem"
+        tabindex="0"
+      />
+      <style
+        data-vdom-ignore="true"
+        name="itemActionsOutsideStyle"
+      />
+      <div
+        class="controls-BaseControl__viewContainer controls-BaseControl__View_uniqueId2 controls-GridControl__viewContainer"
+        name="viewContainer"
+        tabindex="0"
+      >
+        <div
+          class="tw-grid tw-w-full tw-relative controls-Grid controls-Grid_default controls-itemActionsV_menu-hidden"
+          data-qa="gridWrapper"
+          style="grid-template-columns: max-content 1fr;"
+          tabindex="0"
+        >
+          <div
+            class="controls-Grid__loadingIndicator_withMultiselect controls-Grid__loadingIndicator-top"
+            style="display: none;"
+          >
+            <div
+              class="tw-w-full"
+            >
+              <div
+                class="controls-BaseControl__loadingIndicator js-controls-BaseControl__loadingIndicator controls-BaseControl__loadingIndicator-top controls-BaseControl__loadingIndicator__position-top controls-BaseControl__loadingIndicator__state-loading "
+                data-qa="indicator_state_loading_position_top"
+                style="display: none;"
+              >
+                <div
+                  class="controls-BaseControl__loadingIndicator-content"
+                >
+                  <div
+                    class="controls-BaseControl__loadingIndicatorImage"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class=" controls-BaseControl__loadingTrigger controls-BaseControl__loadingTrigger-top"
+            data-qa="loading-trigger-top"
+            style="top: 1px;"
+          />
+          <div
+            class="tw-contents controls-Grid__itemsContainer controls-BaseControl_showActions_onhover controls-BaseControl_hover_enabled controls-BaseControl__itemsContainer_uniqueId2"
+            data-qa="items-container"
+          >
+            <div
+              class=" controls-ListView__itemV controls-GridReact__row tw-contents controls-GridReact__row__hoverMode_row js-controls-Grid__row_editable controls-GridView__item_showActions controls-GridView__item_showActions_row controls-ListView__item_showActions_undefined controls-ListView__item_showCheckbox controls-ListView__item_highlightOnHover"
+              data-qa="row"
+              item-key="1_1"
+              item-parent-key="1"
+              tabindex="0"
+            >
+              <div
+                class="controls-GridReact__cell js-controls-GridReact__cell js-controls-Grid__row-cell js-controls-ListView__editingTarget controls-ListView__item_contentWrapper js-controls-ListView__measurableContainer js-controls-GridReact__cell  controls-Grid__row-cell-checkbox-default controls-GridReact__cell-default tw-cursor-pointer tw-relative controls-GridReact__cell__hoverMode_row controls-GridReact__cell_first tw-flex controls-hover-background-default tw-items-baseline controls-GridReact__cell-baseline controls-GridReact__cell-baseline_default controls-padding_left-grid_null controls-padding_right-grid_null"
+                data-qa="cell"
+              >
+                <div
+                  class="controls_toggle_theme-undefined controls-CheckboxMarker controls-CheckboxMarker_outlined controls-CheckboxMarker_theme-undefined controls-CheckboxMarker__state-false  controls-padding_top-grid_s controls-padding_bottom-grid_s js-controls-ListView__checkbox controls-CheckboxMarker_inList"
+                  data-qa="controls-CheckboxMarker"
+                  tabindex="-1"
+                >
+                  <svg
+                    class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                    data-qa="controls-CheckboxMarker_state-false"
+                    tabindex="0"
+                    viewBox="0 0 12 12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-false"
+                      d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-subtract "
+                      clip-rule="evenodd"
+                      d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-checked-color_transparent"
+                      clip-rule="evenodd"
+                      d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                      fill-rule="evenodd"
+                    />
+                    <rect
+                      class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                      height="6"
+                      rx="2"
+                      width="6"
+                      x="3"
+                      y="3"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="controls-GridReact__cell js-controls-GridReact__cell js-controls-Grid__row-cell js-controls-ListView__editingTarget controls-ListView__item_contentWrapper js-controls-ListView__measurableContainer js-controls-GridReact__cell  controls-GridReact__cell-default tw-cursor-pointer controls-GridReact__minHeight-data tw-relative controls-GridReact__cell__hoverMode_row controls-GridReact__cell_actionsCell controls-fontsize-treeGrid_node_default controls-GridReact__cell_last tw-flex controls-hover-background-default tw-items-baseline controls-GridReact__cell-baseline controls-GridReact__cell-baseline_default controls-padding_top-grid_s controls-padding_bottom-grid_s controls-padding_left-grid_null controls-padding_right-list_default"
+                data-qa="cell"
+              >
+                <div
+                  class="tw-flex tw-items-baseline "
+                  data-qa="expander-block"
+                >
+                  <div
+                    class="js-controls-Tree__row-expander controls-TreeGrid__row-expander controls-cursor_pointer js-controls-ListView__notEditable controls-TreeGrid__row_default-expander_size_default tw-inline-flex tw-items-center tw-flex-shrink-0 tw-justify-center controls-TreeGrid__row-expander_node_default_position_default controls-TreeGrid__row-expander_node_default controls-TreeGrid__row-expander_node_iconSize_default controls-TreeGrid__row-expander_node_iconStyle_default controls-TreeGrid__row-expander_collapsed controls-TreeGrid__row-expander_node_default_collapsed"
+                    data-qa="row-expander"
+                    tabindex="-1"
+                  />
+                </div>
+                Москва
+              </div>
+            </div>
+            <div
+              class=" controls-ListView__itemV controls-GridReact__row tw-contents controls-GridReact__row__hoverMode_row js-controls-Grid__row_editable controls-GridView__item_showActions controls-GridView__item_showActions_row controls-ListView__item_showActions_undefined controls-ListView__item_showCheckbox controls-ListView__item_highlightOnHover"
+              data-qa="row"
+              item-key="1_2"
+              item-parent-key="1"
+              tabindex="0"
+            >
+              <div
+                class="controls-GridReact__cell js-controls-GridReact__cell js-controls-Grid__row-cell js-controls-ListView__editingTarget controls-ListView__item_contentWrapper js-controls-ListView__measurableContainer js-controls-GridReact__cell  controls-Grid__row-cell-checkbox-default controls-GridReact__cell-default tw-cursor-pointer tw-relative controls-GridReact__cell__hoverMode_row controls-GridReact__cell_first tw-flex controls-hover-background-default tw-items-baseline controls-GridReact__cell-baseline controls-GridReact__cell-baseline_default controls-padding_left-grid_null controls-padding_right-grid_null"
+                data-qa="cell"
+              >
+                <div
+                  class="controls_toggle_theme-undefined controls-CheckboxMarker controls-CheckboxMarker_outlined controls-CheckboxMarker_theme-undefined controls-CheckboxMarker__state-false  controls-padding_top-grid_s controls-padding_bottom-grid_s js-controls-ListView__checkbox controls-CheckboxMarker_inList"
+                  data-qa="controls-CheckboxMarker"
+                  tabindex="-1"
+                >
+                  <svg
+                    class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                    data-qa="controls-CheckboxMarker_state-false"
+                    tabindex="0"
+                    viewBox="0 0 12 12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-false"
+                      d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-subtract "
+                      clip-rule="evenodd"
+                      d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      class="controls-CheckboxMarker__icon-checked-color_transparent"
+                      clip-rule="evenodd"
+                      d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                      fill-rule="evenodd"
+                    />
+                    <rect
+                      class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                      height="6"
+                      rx="2"
+                      width="6"
+                      x="3"
+                      y="3"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="controls-GridReact__cell js-controls-GridReact__cell js-controls-Grid__row-cell js-controls-ListView__editingTarget controls-ListView__item_contentWrapper js-controls-ListView__measurableContainer js-controls-GridReact__cell  controls-GridReact__cell-default tw-cursor-pointer controls-GridReact__minHeight-data tw-relative controls-GridReact__cell__hoverMode_row controls-GridReact__cell_actionsCell controls-GridReact__cell_last tw-flex controls-hover-background-default tw-items-baseline controls-GridReact__cell-baseline controls-GridReact__cell-baseline_default controls-padding_top-grid_s controls-padding_bottom-grid_s controls-padding_left-grid_null controls-padding_right-list_default"
+                data-qa="cell"
+              >
+                <div
+                  class="tw-flex tw-items-baseline "
+                  data-qa="expander-block"
+                >
+                  <div
+                    class="controls-Tree__row-expanderPadding tw-flex-shrink-0 tw-invisible controls-TreeGrid__row-expanderPadding_size_default js-controls-ListView__notEditable"
+                  />
+                </div>
+                Абрамцево
+              </div>
+            </div>
+          </div>
+          
+          <div
+            class=" controls-BaseControl__loadingTrigger controls-BaseControl__loadingTrigger-bottom"
+            data-qa="loading-trigger-bottom"
+            style="bottom: 1px;"
+          />
+          <div
+            class="controls-Grid__loadingIndicator_withMultiselect controls-Grid__loadingIndicator-bottom"
+            style="display: none;"
+          >
+            <div
+              class="tw-w-full"
+            >
+              <div
+                class="controls-BaseControl__loadingIndicator js-controls-BaseControl__loadingIndicator controls-BaseControl__loadingIndicator-bottom controls-BaseControl__loadingIndicator__position-bottom controls-BaseControl__loadingIndicator__state-loading "
+                data-qa="indicator_state_loading_position_bottom"
+                style="display: none;"
+              >
+                <div
+                  class="controls-BaseControl__loadingIndicator-content"
+                >
+                  <div
+                    class="controls-BaseControl__loadingIndicatorImage"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tw-contents"
+        />
+        <div
+          class="controls__BaseControl__footer"
+          tabindex="0"
+        />
+        <invisible-node
+          class="ws-hidden"
+          tabindex="-1"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    tabindex="0"
+  />
+  <invisible-node
+    class="ws-hidden"
+    tabindex="-1"
+  />
+</div>
+`;
+
+exports[`OperationsPanel_Selection_Search_Source_Hierarchy. Тесты взаимодействия ПМО со множественным выделением, поиском, сурсом и иерархией. Если во время поиска выделить все элементы, то после сброса поиска сбросится и выделение 2`] = `
+Array [
+  Array [
+    	- searchValue: '' -> 'округ',
+    	- loading: false -> false,
+    		loading: false,
+    			loading: true,
+    				loading: false,
+    	- viewCommands: {"from":[]} -> {"to":["resetScroll"]},
+    	- viewMode: 'table' -> 'search',
+    	- root: '1' -> null,
+    	- expandedItems: {"from":[]} -> {"to":[]},
+    	- filter: {"from":{}} -> {"to":{"title":"округ","parent":null,"searchStartedFromRoot":"1","Разворот":"С разворотом","usePages":"full"}},
+    	- breadCrumbsItems: {"from":[{"$serialized$":"inst","module":"Types/entity:Model","id":9,"state":{"$options":{"state":"Unchanged","adapter":{"$serialized$":"inst","module":"Types/entity:adapter.Json","id":10,"state":{"$options":{}}},"rawData":{"key":"1","title":"Москва и Московская обл.","parent":null,"node":true},"keyProperty":"key"},"_changedFields":{},"_instanceId":"client-model-2","_isDeleted":false}}]} -> {"to":null},
+    	- backButtonCaption: 'Москва и Московская обл.' -> '',
+    	- activeElement: '1_1' -> '1',
+    	- previousViewMode: undefined -> 'table',
+    	- expansionModel: {"from":{}} -> {"to":{}},
+  ],
+  Array [
+    	- collection: 'Controls/treeGrid:TreeGridCollection' -> 'Controls/searchBreadcrumbsGrid:SearchGridCollection',
+    	- viewCommands: {"from":["resetScroll"]} -> {"to":["resetScroll","resetScroll"]},
+    	- selectionModel: {"from":{}} -> {"to":{}},
+  ],
+  Array [
+    	- selectedKeys: {"from":[]} -> {"to":[null]},
+    	- excludedKeys: {"from":[]} -> {"to":[null]},
+    	- listCommandsSelection: {"from":"undefined"} -> {"to":{"selected":[null],"excluded":[null]}},
+    		listCommandsSelection: undefined,
+    			listCommandsSelection: {"selected":[null],"excluded":[null]},
+    				listCommandsSelection: {"selected":[null],"excluded":[null]},
+    	- selectionModel: {"from":{}} -> {"to":{}},
+    		selectionModel: {},
+    			selectionModel: {},
+    				selectionModel: {},
+    	- count: 0 -> null,
+    	- isAllSelected: false -> true,
+    	- selectionViewMode: 'hidden' -> 'all',
+  ],
+  Array [
+    Изменений не произошло,
+  ],
+  Array [
+    	- searchValue: 'округ' -> '',
+    	- selectedKeys: {"from":[null]} -> {"to":[]},
+    	- excludedKeys: {"from":[null]} -> {"to":[]},
+    	- listCommandsSelection: {"from":{"selected":[null],"excluded":[null]}} -> {"to":{"selected":[],"excluded":[]}},
+    		listCommandsSelection: {"selected":[null],"excluded":[null]},
+    			listCommandsSelection: {"selected":[],"excluded":[]},
+    				listCommandsSelection: {"selected":[],"excluded":[]},
+    	- selectionModel: {"from":{}} -> {"to":{}},
+    		selectionModel: {},
+    			selectionModel: {},
+    				selectionModel: {},
+    	- count: null -> 0,
+    	- isAllSelected: true -> false,
+    	- selectionViewMode: 'all' -> 'hidden',
+    	- loading: false -> false,
+    		loading: false,
+    			loading: true,
+    				loading: false,
+    	- viewCommands: {"from":["resetScroll","resetScroll"]} -> {"to":["resetScroll","resetScroll","resetScroll"]},
+    	- viewMode: 'search' -> 'table',
+    	- root: null -> '1',
+    	- filter: {"from":{"title":"округ","parent":null,"searchStartedFromRoot":"1","Разворот":"С разворотом","usePages":"full"}} -> {"to":{}},
+    	- breadCrumbsItems: {"from":null} -> {"to":[{"$serialized$":"inst","module":"Types/entity:Model","id":11,"state":{"$options":{"state":"Unchanged","adapter":{"$serialized$":"inst","module":"Types/entity:adapter.Json","id":12,"state":{"$options":{}}},"rawData":{"key":"1","title":"Москва и Московская обл.","parent":null,"node":true},"keyProperty":"key"},"_changedFields":{},"_instanceId":"client-model-3","_isDeleted":false}}]},
+    	- backButtonCaption: '' -> 'Москва и Московская обл.',
+    	- activeElement: '1' -> '1_1',
+  ],
+  Array [
+    	- collection: 'Controls/searchBreadcrumbsGrid:SearchGridCollection' -> 'Controls/treeGrid:TreeGridCollection',
+    	- searchInputFocused: false -> true,
+    	- count: 0 -> 0,
+    		count: 0,
+    			count: null,
+    				count: 0,
+    	- isAllSelected: false -> false,
+    		isAllSelected: false,
+    			isAllSelected: true,
+    				isAllSelected: false,
+    	- listId: undefined -> 'uniqueId0',
+    	- selectedKeys: {"from":[]} -> {"to":[]},
+    	- excludedKeys: {"from":[]} -> {"to":[]},
+    	- viewCommands: {"from":["resetScroll","resetScroll","resetScroll"]} -> {"to":["resetScroll","resetScroll","resetScroll","resetScroll"]},
+    	- selectionModel: {"from":{}} -> {"to":{}},
+  ],
+]
+`;

@@ -1,0 +1,17 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             constraint="[0-9]"
+                             placeholder="constraint=[0-9]"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             constraint="[a-zA-Z]"
+                             placeholder="constraint=[a-zA-Z]"/>
+    </div>
+    <ws:if data="{{_forTest}}">
+        <div class="controlsDemo__cell">
+            <Controls.input:Text attr:class="controlsDemo__input"/>
+        </div>
+    </ws:if>
+</div>

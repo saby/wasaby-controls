@@ -1,0 +1,27 @@
+<div>
+   <Controls.input:Label caption="{{_options.caption}}" attr:class="demo-TextBox"/>
+   <ws:if data="{{_options.baseObject}}">
+      <Controls-demo.PropertyGrid.ObjectTemplate
+              scope="{{_options}}"
+              on:objChanged="_valueChangedHandlerObj()"/>
+   </ws:if>
+   <ws:else data="{{!_options.items}}">
+      <Controls.input:Area
+              scope="{{_options}}"
+              on:valueChanged="_valueChangedHandler()"
+              attr:class="demo-TextBox js-Controls-PropertyGridEditor__options-{{_options.caption}}"/>
+   </ws:else>
+   <ws:else>
+      <Controls-demo.PropertyGrid.SuggestTemplate.SuggestTemplate
+              value="{{_options.value}}"
+              displayProperty="title"
+              searchParam="title"
+              autoDropDown="{{true}}"
+              items="{{_options.items}}"
+              caption="{{_options.caption}}"
+              minSearchLength="1"
+              on:choose="_chooseSuggestHandler()"
+              config="{{_options.config}}"
+      />
+   </ws:else>
+</div>

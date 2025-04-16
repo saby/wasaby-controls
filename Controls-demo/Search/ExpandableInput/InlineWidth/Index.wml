@@ -1,0 +1,19 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">inlineWidth="s"</div>
+        <Controls.ExpandableSearch bind:value="_searchValue"
+                                         inlineWidth="s"
+                                         contrastBackground="{{true}}"
+                                         shadowVisible="{{true}}"
+                                         attr:class="controlsDemo__ml1"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">inlineWidth="l"</div>
+        <Controls.ExpandableSearch bind:value="_searchValue"
+                                         inlineWidth="l"
+                                         contrastBackground="{{true}}"
+                                         shadowVisible="{{true}}"
+                                         attr:class="controlsDemo__ml1"
+                                         attr:data-qa="SearchInput_InlineWidth__L"/>
+    </div>
+</div>

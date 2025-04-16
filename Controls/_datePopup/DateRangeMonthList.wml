@@ -1,0 +1,30 @@
+<Controls.calendar:MonthList
+    shadowStyle="datePopup"
+    bottomShadowVisibility="hidden"
+    position="{{ _options.position }}"
+    _limit="15"
+    segmentSize="15"
+    virtualPageSize="15"
+    viewMode="month"
+    attr:class="controls-PeriodDialog-DateRangeItem__months
+                                   {{ !_options.isDayAvailable && (!_options.monthsHovered && !_options.dateRangeHovered) || _options.monthSelectionProcessing || _isMobile ? 'controls-PeriodDialog-DateRangeItem__months_notHovered' }}"
+    on:positionChanged="_positionChangedHandler()"
+>
+    <ws:monthTemplate>
+        <div>
+            <Controls._datePopup.DateRangeMonthTemplate
+                _getMonthSelectionClass="{{ _getMonthSelectionClass }}"
+                _getMonthHoverClass="{{ _getMonthHoverClass }}"
+                date="{{ monthTemplate.date }}"
+                startValue="{{ _options.startValue }}"
+                endValue="{{ _options.endValue }}"
+                selectionBaseValue="{{ _options.selectionBaseValue }}"
+                monthSelectionProcessing="{{ _options.monthSelectionProcessing }}"
+                hoveredYear="{{ _options.hoveredYear || _hoveredYear }}"
+                on:yearClick="_yearClick()"
+                on:yearEnter="_yearEnter()"
+                on:yearLeave="_yearLeave()"
+            />
+        </div>
+    </ws:monthTemplate>
+</Controls.calendar:MonthList>

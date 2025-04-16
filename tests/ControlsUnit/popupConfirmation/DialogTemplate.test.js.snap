@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls/_popupConfirmation/Opener/Dialog Корректно рисуется сообщениие с ссылкой 1`] = `
+<div>
+  <div
+    class="controls_popupTemplate_theme-default controls-ConfirmationTemplate
+             controls-ConfirmationTemplate__width-d controls-Popup__isolatedFocusingContext"
+    tabindex="0"
+  >
+    <div
+      class="controls-ConfirmationTemplate__body controls-ConfirmationTemplate__style-secondary"
+    >
+      <div
+        class="controls-ConfirmationTemplate__marker controls-ConfirmationTemplate__marker__style-secondary"
+        data-qa="controls-ConfirmationTemplate__marker__style-secondary"
+      />
+      <div
+        class="controls-ConfirmationTemplate__close-button"
+      />
+      <div
+        class="controls-ConfirmationTemplate__main"
+        data-qa="controls-ConfirmationTemplate__main"
+      >
+        <div>
+          <div
+            class="controls-ConfirmationDialog__message
+            "
+            data-qa="controls-ConfirmationDialog__message"
+          >
+            <div
+              class="controls-ConfirmationDialog__message-centered"
+            >
+              <div
+                tabindex="0"
+              >
+                <span>
+                  Текст сообщения содержит
+                  <a
+                    href="https://ya.ru"
+                  >
+                    ссылку
+                  </a>
+                  <span>
+                    .
+                  </span>
+                  <span
+                    class="LinkDecorator__emoji richEditor_Base-RichEditor__noneditable"
+                  >
+                    😈
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div />
+      </div>
+      <div
+        class="controls-ConfirmationTemplate__footer"
+        data-qa="controls-ConfirmationTemplate__footer"
+      >
+        <div
+          class="controls-ConfirmationDialog__buttonContainer"
+        >
+          <div
+            class="controls-ConfirmationDialog__button-standard
+                            "
+          >
+            <span
+              class="controls-BaseButton controls-Button_clickable controls-Button_bg-same controls-button-style controls-button_outlined-style controls-button_size-default controls-button_outlined-primary-style   controls-Button_notCircle controls-fontsize-m controls-button_fontsize-m controls-notFocusOnEnter controls-ConfirmationDialog__button"
+              data-qa="controls-ConfirmationDialog__button-true"
+              tabindex="0"
+              ws-autofocus="true"
+            >
+              <span
+                class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-outlined controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center"
+              >
+                <span
+                  class="controls-BaseButton__text controls-Button__text_viewMode-outlined"
+                  tabindex="0"
+                >
+                  Да
+                </span>
+              </span>
+            </span>
+          </div>
+          <div
+            class="controls-ConfirmationDialog__button-standard
+                            controls-ConfirmationDialog__no-cancel-button"
+          >
+            <span
+              class="controls-BaseButton controls-Button_clickable controls-Button_bg-same controls-button-style controls-button_outlined-style controls-button_size-default controls-button_outlined-secondary-style   controls-Button_notCircle controls-fontsize-m controls-button_fontsize-m controls-notFocusOnEnter controls-ConfirmationDialog__button"
+              data-qa="controls-ConfirmationDialog__button-false"
+              tabindex="0"
+            >
+              <span
+                class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-outlined controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-center"
+              >
+                <span
+                  class="controls-BaseButton__text controls-Button__text_viewMode-outlined"
+                  tabindex="0"
+                >
+                  Нет
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

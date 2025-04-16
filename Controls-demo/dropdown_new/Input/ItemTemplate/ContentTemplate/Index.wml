@@ -1,0 +1,19 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__mr4">
+        <div class="controls-text-label">Выпадающий список с itemTemplate</div>
+        <Controls.dropdown:Selector bind:selectedKeys="_selectedKeys"
+                                 keyProperty="id"
+                                 displayProperty="title"
+                                 multiSelect="{{true}}"
+                                 source="{{_source}}">
+            <ws:itemTemplate>
+                <ws:partial
+                        template="Controls/dropdown:ItemTemplate">
+                    <ws:contentTemplate>
+                        <div>{{itemTemplate.item.contents.get('title')}}</div>
+                    </ws:contentTemplate>
+                </ws:partial>
+            </ws:itemTemplate>
+        </Controls.dropdown:Selector>
+    </div>
+</div>

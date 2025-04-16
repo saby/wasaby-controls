@@ -1,0 +1,85 @@
+[
+    {
+        "header": {
+            "md5": "df15d9b1d8d052a5f4a6a140c64796b8",
+            "clouds": null,
+            "timestamp": "2025-04-10 10:06:21.084526"
+        },
+        "body": {
+            "apply": 1,
+            "id": "be749d51-5165-4ac5-9aee-d178f69be826",
+            "is_parent": null,
+            "locale": {
+                "en": {
+                    "name": "Basic theme2"
+                },
+                "ru": {
+                    "name": "Базовая тема 2"
+                }
+            },
+            "overrides": {
+                "base_font": {
+                    "controls_heading-style_h1": {
+                        "border-color": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "borderColor": null
+                                    },
+                                    "mode": "dark"
+                                },
+                                {
+                                    "value": {
+                                        "borderColor": null
+                                    },
+                                    "mode": "light"
+                                }
+                            ]
+                        },
+                        "font-family": {
+                            "values": [
+                                {
+                                    "value": {},
+                                    "mode": ""
+                                }
+                            ]
+                        },
+                        "font-size": {
+                            "values": [
+                                {
+                                    "value": {
+                                        "unit": "px",
+                                        "value": 32
+                                    },
+                                    "mode": ""
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "scope": "0",
+            "scope_type": "GLOBAL",
+            "selector": "base_font2",
+            "styles": [],
+            "type": 1,
+            "aspect_theme": [
+                {
+                    "identifier": "87688e42-71bf-11ee-b962-0242ac120002",
+                    "keys": null,
+                    "uuid": "b09ea425-ca4a-4ae3-aa26-3fc6b1a1a264"
+                }
+            ],
+            "parent": {
+                "id": "0efcb54e-32f1-4760-bbcd-1a97045cf74e",
+                "title": "Базовая тема"
+            },
+            "properties": {
+                "fontPair": {
+                    "header": "Inter",
+                    "text": "Inter"
+                }
+            }
+        }
+    }
+]

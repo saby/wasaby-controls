@@ -1,0 +1,30 @@
+<div class="controlsDemo__wrapper-background">
+<div class="ws-flexbox ws-align-items-baseline engine-demo__Widgets__contentRight_withMargin"></div>
+<div class="ws-flexbox ws-align-items-center ws-justify-content-between">
+  <Controls-ListEnv.filterConnected:View editorsViewMode="{{ _editorsViewMode }}"
+                                         alignment="left" storeId="nomenclature" attr:class="engine-demo__Widgets__filter-padding" attr:data-qa="engine-demo__Widgets__filter-padding"/>
+  <div class="ws-flexbox ws-align-items-baseline engine-demo__Widgets__contentRight">
+    <Controls-ListEnv.breadcrumbs:View storeId="nomenclature" attr:class="engine-demo__Widgets__filter" attr:data-qa="engine-demo__Widgets__breadcrumbs"/>
+    <Controls-ListEnv.operationsConnected:Button storeId="nomenclature"  attr:class="engine-demo__Widgets__filter"/>
+  </div>
+</div>
+<div class="ws-flexbox">
+  <Controls.masterDetail:Base masterWidth="{{100}}"
+                              attr:class="engine-demo__Widgets_list">
+    <ws:detail>
+      <div class="ws-flexbox ws-flex-column engine-demo__Widgets_list">
+        <Controls-ListEnv.operationsPanelConnected:View
+            storeId="nomenclature"/>
+        <Controls.explorer:View
+            attr:data-qa="engine-demo__Widgets__explorer"
+            storeId="nomenclature"
+            columns="{{_columns}}"
+            header="{{_nomenclatureHeader}}"/>
+      </div>
+    </ws:detail>
+  </Controls.masterDetail:Base>
+  <Controls-ListEnv.toolbarConnected:Container storeId="nomenclature" actions="Controls-ListEnv-demo/Actions/RequiresSelection/listActions">
+    <Controls.toolbars:View direction="vertical"/>
+  </Controls-ListEnv.toolbarConnected:Container>
+</div>
+</div>

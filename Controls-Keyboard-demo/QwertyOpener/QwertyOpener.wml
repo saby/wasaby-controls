@@ -1,0 +1,16 @@
+<div>
+    <Controls-Keyboard.QwertyOpener size="s">
+        <p class="engine-demo-QwertyOpener__elem">
+            Выберите одно из ниже доступных полей ввода и нажмите не него:
+        </p>
+        <Controls.input:Text bind:value="_searchString" class="engine-demo-QwertyOpener__elem" />
+        <Controls.input:Area class="engine-demo-QwertyOpener__elem controlsDemo_fixedWidth300" />
+        <Controls.input:Money bind:value="_moneyValue" attr:style="width:200px" />
+        <Controls.input:Phone className="controlsDemo__input" inlineHeight="xl" fontSize="l" />
+        <Controls.dateRange:Input
+            bind:startValue="_startDate"
+            bind:endValue="_endDate"
+            mask="{{ mask }}"
+        />
+    </Controls-Keyboard.QwertyOpener>
+</div>

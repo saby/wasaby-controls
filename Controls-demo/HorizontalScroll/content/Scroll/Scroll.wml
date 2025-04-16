@@ -1,0 +1,4 @@
+<Controls.scroll:Container scrollOrientation="verticalHorizontal"
+                           attr:style="width: {{_options.width}}; height: {{_options.height }};">
+    <ws:partial template="{{ _options.content }}"/>
+</Controls.scroll:Container>

@@ -1,0 +1,87 @@
+import * as React from 'react';
+import { Icon } from 'Controls/icon';
+import {
+    IComponentProps,
+    IComponentTheme,
+    IIconOptions,
+    IIconSizeOptions,
+} from 'Controls/interface';
+import { useTheme } from 'UI/Contexts';
+
+export interface IHeaderWrapperTemplateProps
+    extends IIconOptions,
+        IIconSizeOptions,
+        IComponentProps,
+        IComponentTheme {
+    isAdaptive?: boolean;
+    className?: string;
+    children?: JSX.Element;
+    onMouseenter?: React.MouseEventHandler;
+    onClick?: React.MouseEventHandler;
+    searchParam?: string;
+    cursor?: string;
+}
+
+export default React.forwardRef(function HeaderTemplate(props: IHeaderWrapperTemplateProps, ref) {
+    const theme = useTheme(props);
+    return (
+        <div
+            ref={ref}
+            style={props.style || props.attrs?.style}
+            className={`controls_dropdownPopup_theme-${theme}
+            controls_list_theme-${theme}
+            controls_toggle_theme-${theme}
+            controls-Menu__popup-header
+            tw-cursor-${props.cursor || 'pointer'}
+            ${
+                !props.icon
+                    ? 'controls-Menu__popup_headerIcon_' +
+                      (props.headingIconSize || 'm') +
+                      '_padding-left'
+                    : ''
+            }
+            ${
+                isAdaptive(props)
+                    ? 'controls-Menu__popup-header_adaptive controls-Menu__popup-header_offset'
+                    : 'controls-MenuButton__popup-header'
+            } ${props.className || props.attrs?.className || ''}`}
+            onMouseEnter={props.onMouseenter}
+            onClick={props.onClick}
+        >
+            <IconTemplate {...props} />
+            <ContentTemplate {...props} />
+        </div>
+    );
+});
+
+function ContentTemplate(props: IHeaderWrapperTemplateProps) {
+    if (props.children) {
+        return props.children;
+    }
+    return null;
+}
+
+function IconTemplate(props: IHeaderWrapperTemplateProps) {
+    if (props.icon && (!isAdaptive(props) || !props.searchParam)) {
+        const contentClassPadding =
+            'controls-Menu__popup_headerIcon_' +
+            (props.iconSize || 'm') +
+            '_padding-right ' +
+            'controls-Menu__popup_headerIcon_' +
+            (props.iconSize || 'm') +
+            '_padding-left';
+        return (
+            <div
+                className={`controls-Menu__popup-headerIcon_wrapper
+                    ${contentClassPadding}`}
+            >
+                <Icon iconSize={props.iconSize || 'm'} icon={props.icon} iconStyle="secondary" />
+            </div>
+        );
+    }
+    return null;
+}
+
+function isAdaptive(props): boolean {
+    return !!(props.isAdaptive && props.allowAdaptive !== false);
+}

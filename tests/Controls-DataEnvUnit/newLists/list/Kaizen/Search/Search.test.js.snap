@@ -1,0 +1,402 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Поиск. Взаимодействие со строкой поиска. Значение в строке поиска не сбрасывается, если за время поиска успели сбросить и что-то написать. 1`] = `
+<div
+  data-qa="js-demo-search-input-data-qa"
+>
+  <div
+    class="controls-Render js-controls-Render  controls-Render_background-same controls-Render_textAlign-left controls-Render_search_borderRadius controls-Render_state-search-valid controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default controls-Render_state-search-valid_caretEmpty controls-inlineheight-default controls-Render-inlineheight-default  controls-search controls_search_theme-default controls-notFocusOnEnter "
+    tabindex="0"
+    title=""
+  >
+    <div
+      class="controls-Render__wrapper"
+    >
+      <span
+        class="controls-Render__baseline"
+      >
+        ﻿
+      </span>
+      <div
+        class="controls_search_theme-default controls-Search__buttons controls-Search__buttons-leftTemplate"
+      />
+      <div
+        class="controls-InputBase__field controls-Search__field_margin-null controls-Search__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+        data-qa="controls-Render__field"
+      >
+        <input
+          autocapitalize="on"
+          autocomplete="off"
+          class="controls-Field js-controls-Field controls-InputBase__nativeField controls-Search__nativeField_caretEmpty controls-Search__nativeField_caretEmpty_theme_default"
+          inputmode="text"
+          name="ws-input_2000-01-01"
+          spellcheck="true"
+          tabindex="0"
+          type="text"
+          value="value"
+        />
+        <div
+          class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+        >
+          <div
+            class="controls-Render__placeholder controls-Render__placeholder_overflow"
+          >
+            Найти
+          </div>
+        </div>
+      </div>
+      <div
+        class="controls_search_theme-default controls-Search__buttons controls-Search__buttons-rightTemplate"
+      >
+        <div
+          class="controls-Search__button
+                            
+                            controls-Search__button_enabled
+                            controls-Search__resetButton
+                            controls-Search__resetButton_position
+                            controls-Search__resetButton_color icon-Close"
+          data-qa="Search__resetButton"
+          title="Очистить"
+          ws-no-focus="true"
+        />
+        <div
+          class="
+                    controls_search_theme-default controls-Search__button
+                    controls-Search__button_enabled
+                    controls-Search__searchButton
+                    controls-Search__searchButton_iconSize-s
+                    controls-Search__searchButton-right_inlineheight-default
+                    controls-Search__searchButton_position-right
+                    controls-Search__searchButton_color
+                    icon-Search2
+                    undefined"
+          data-qa="Search__searchButton"
+          ws-no-focus="true"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Поиск. Взаимодействие со строкой поиска. Значение в строке поиска не сбрасывается, если за время поиска успели сбросить и что-то написать. 2`] = `
+Array [
+  Array [
+    	- searchValue: '' -> 'value',
+    		searchValue: '',
+    			searchValue: '7777',
+    				searchValue: 'value',
+    	- loading: false -> false,
+    		loading: false,
+    			loading: true,
+    				loading: false,
+    	- viewCommands: {"from":[]} -> {"to":["resetScroll"]},
+    	- viewMode: 'table' -> 'search',
+    	- expandedItems: {"from":[]} -> {"to":[]},
+    	- filter: {"from":{}} -> {"to":{"name":"value"}},
+    	- previousViewMode: undefined -> 'table',
+    	- expansionModel: {"from":{}} -> {"to":{}},
+  ],
+  Array [
+    	- filter: {"from":{"name":"value"}} -> {"to":{"name":"value"}},
+    	- viewCommands: {"from":["resetScroll"]} -> {"to":["resetScroll","resetScroll"]},
+    	- selectionModel: {"from":{}} -> {"to":{}},
+  ],
+  Array [
+    	- viewCommands: {"from":["resetScroll","resetScroll"]} -> {"to":["resetScroll","resetScroll","resetScroll"]},
+    	- selectionModel: {"from":{}} -> {"to":{}},
+  ],
+]
+`;
+
+exports[`Поиск. Взаимодействие со строкой поиска. Значение в строке поиска не сбрасывается, при вызове обновления с пустым searchValue. 1`] = `
+<div
+  data-qa="js-demo-search-input-data-qa"
+>
+  <div
+    class="controls-Render js-controls-Render  controls-Render_background-same controls-Render_textAlign-left controls-Render_search_borderRadius controls-Render_state-search-valid controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default controls-Render_state-search-valid_caretEmpty controls-inlineheight-default controls-Render-inlineheight-default  controls-search controls_search_theme-default controls-notFocusOnEnter "
+    tabindex="0"
+    title=""
+  >
+    <div
+      class="controls-Render__wrapper"
+    >
+      <span
+        class="controls-Render__baseline"
+      >
+        ﻿
+      </span>
+      <div
+        class="controls_search_theme-default controls-Search__buttons controls-Search__buttons-leftTemplate"
+      />
+      <div
+        class="controls-InputBase__field controls-Search__field_margin-null controls-Search__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+        data-qa="controls-Render__field"
+      >
+        <input
+          autocapitalize="on"
+          autocomplete="off"
+          class="controls-Field js-controls-Field controls-InputBase__nativeField controls-Search__nativeField_caretEmpty controls-Search__nativeField_caretEmpty_theme_default"
+          inputmode="text"
+          name="ws-input_2000-01-01"
+          spellcheck="true"
+          tabindex="0"
+          type="text"
+          value="testValue"
+        />
+        <div
+          class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+        >
+          <div
+            class="controls-Render__placeholder controls-Render__placeholder_overflow"
+          >
+            Найти
+          </div>
+        </div>
+      </div>
+      <div
+        class="controls_search_theme-default controls-Search__buttons controls-Search__buttons-rightTemplate"
+      >
+        <div
+          class="controls-Search__button
+                            
+                            controls-Search__button_enabled
+                            controls-Search__resetButton
+                            controls-Search__resetButton_position
+                            controls-Search__resetButton_color icon-Close"
+          data-qa="Search__resetButton"
+          title="Очистить"
+          ws-no-focus="true"
+        />
+        <div
+          class="
+                    controls_search_theme-default controls-Search__button
+                    controls-Search__button_enabled
+                    controls-Search__searchButton
+                    controls-Search__searchButton_iconSize-s
+                    controls-Search__searchButton-right_inlineheight-default
+                    controls-Search__searchButton_position-right
+                    controls-Search__searchButton_color
+                    icon-Search2
+                    undefined"
+          data-qa="Search__searchButton"
+          ws-no-focus="true"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Поиск. Взаимодействие со строкой поиска. Значение в строке поиска не сбрасывается, при вызове обновления с пустым searchValue. 2`] = `
+Array [
+  Array [
+    	- collection: undefined -> 'Controls/display:Collection',
+    	- searchValue: 'testValue' -> '',
+    	- loading: false -> false,
+    		loading: false,
+    			loading: true,
+    				loading: false,
+    	- viewCommands: {"from":[]} -> {"to":["resetScroll"]},
+    	- expandedItems: {"from":[]} -> {"to":[]},
+    	- filter: {"from":{"name":"testValue"}} -> {"to":{}},
+    	- previousViewMode: undefined -> 'search',
+    	- expansionModel: {"from":{}} -> {"to":{}},
+  ],
+  Array [
+    	- viewCommands: {"from":["resetScroll"]} -> {"to":["resetScroll","resetScroll"]},
+    	- selectionModel: {"from":{}} -> {"to":{}},
+    	- needShowStub: true -> false,
+  ],
+]
+`;
+
+exports[`Поиск. Взаимодействие со строкой поиска. Поиск можно сбросить после инициализации со значением. 1`] = `
+<div
+  data-qa="js-demo-search-input-data-qa"
+>
+  <div
+    class="controls-Render js-controls-Render  controls-Render_background-same controls-Render_textAlign-left controls-Render_search_borderRadius controls-Render_state-search-valid controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default controls-Render_state-search-valid_caretEmpty controls-inlineheight-default controls-Render-inlineheight-default  controls-search controls_search_theme-default controls-notFocusOnEnter "
+    tabindex="0"
+    title=""
+  >
+    <div
+      class="controls-Render__wrapper"
+    >
+      <span
+        class="controls-Render__baseline"
+      >
+        ﻿
+      </span>
+      <div
+        class="controls_search_theme-default controls-Search__buttons controls-Search__buttons-leftTemplate"
+      />
+      <div
+        class="controls-InputBase__field controls-Search__field_margin-null controls-Search__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+        data-qa="controls-Render__field"
+      >
+        <input
+          autocapitalize="on"
+          autocomplete="off"
+          class="controls-Field js-controls-Field controls-InputBase__nativeField controls-Search__nativeField_caretEmpty controls-Search__nativeField_caretEmpty_theme_default"
+          inputmode="text"
+          name="ws-input_2000-01-01"
+          spellcheck="true"
+          tabindex="0"
+          type="text"
+          value=""
+        />
+        <div
+          class="controls-InputBase__placeholder controls-InputBase__placeholder_displayed-under-caret"
+        >
+          <div
+            class="controls-Render__placeholder controls-Render__placeholder_overflow"
+          >
+            Найти
+          </div>
+        </div>
+      </div>
+      <div
+        class="controls_search_theme-default controls-Search__buttons controls-Search__buttons-rightTemplate"
+      >
+        <div
+          class="controls-Search__button
+                            controls-Search__resetButton-invisible
+                            controls-Search__button_enabled
+                            controls-Search__resetButton
+                            controls-Search__resetButton_position
+                            controls-Search__resetButton_color icon-Close"
+          data-qa="Search__resetButton"
+          title="Очистить"
+          ws-no-focus="true"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Поиск. Взаимодействие со строкой поиска. Поиск можно сбросить после инициализации со значением. 2`] = `
+Array [
+  Array [
+    	- searchValue: 'searchValue' -> '',
+    	- loading: false -> false,
+    		loading: false,
+    			loading: true,
+    				loading: false,
+    	- viewCommands: {"from":[]} -> {"to":["resetScroll"]},
+    	- expandedItems: {"from":[]} -> {"to":[]},
+    	- filter: {"from":{"name":"searchValue"}} -> {"to":{}},
+    	- previousViewMode: undefined -> 'search',
+    	- expansionModel: {"from":{}} -> {"to":{}},
+  ],
+  Array [
+    	- searchInputFocused: false -> true,
+    	- viewCommands: {"from":["resetScroll"]} -> {"to":["resetScroll","resetScroll"]},
+    	- selectionModel: {"from":{}} -> {"to":{}},
+    	- needShowStub: true -> false,
+  ],
+]
+`;
+
+exports[`Поиск. Взаимодействие со строкой поиска. После поиска не должно сбрасываться значение строки поиска, если оно менялось пока выполнялся запрос. 1`] = `
+<div
+  data-qa="js-demo-search-input-data-qa"
+>
+  <div
+    class="controls-Render js-controls-Render  controls-Render_background-same controls-Render_textAlign-left controls-Render_search_borderRadius controls-Render_state-search-valid controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default controls-Render_state-search-valid_caretEmpty controls-inlineheight-default controls-Render-inlineheight-default  controls-search controls_search_theme-default controls-notFocusOnEnter "
+    tabindex="0"
+    title=""
+  >
+    <div
+      class="controls-Render__wrapper"
+    >
+      <span
+        class="controls-Render__baseline"
+      >
+        ﻿
+      </span>
+      <div
+        class="controls_search_theme-default controls-Search__buttons controls-Search__buttons-leftTemplate"
+      />
+      <div
+        class="controls-InputBase__field controls-Search__field_margin-null controls-Search__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+        data-qa="controls-Render__field"
+      >
+        <input
+          autocapitalize="on"
+          autocomplete="off"
+          class="controls-Field js-controls-Field controls-InputBase__nativeField controls-Search__nativeField_caretEmpty controls-Search__nativeField_caretEmpty_theme_default"
+          inputmode="text"
+          name="ws-input_2000-01-01"
+          spellcheck="true"
+          tabindex="0"
+          type="text"
+          value="test"
+        />
+        <div
+          class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+        >
+          <div
+            class="controls-Render__placeholder controls-Render__placeholder_overflow"
+          >
+            Найти
+          </div>
+        </div>
+      </div>
+      <div
+        class="controls_search_theme-default controls-Search__buttons controls-Search__buttons-rightTemplate"
+      >
+        <div
+          class="controls-Search__button
+                            
+                            controls-Search__button_enabled
+                            controls-Search__resetButton
+                            controls-Search__resetButton_position
+                            controls-Search__resetButton_color icon-Close"
+          data-qa="Search__resetButton"
+          title="Очистить"
+          ws-no-focus="true"
+        />
+        <div
+          class="
+                    controls_search_theme-default controls-Search__button
+                    controls-Search__button_enabled
+                    controls-Search__searchButton
+                    controls-Search__searchButton_iconSize-s
+                    controls-Search__searchButton-right_inlineheight-default
+                    controls-Search__searchButton_position-right
+                    controls-Search__searchButton_color
+                    icon-Search2
+                    undefined"
+          data-qa="Search__searchButton"
+          ws-no-focus="true"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Поиск. Взаимодействие со строкой поиска. После поиска не должно сбрасываться значение строки поиска, если оно менялось пока выполнялся запрос. 2`] = `
+Array [
+  Array [
+    	- searchValue: '' -> 'test',
+    	- loading: false -> false,
+    		loading: false,
+    			loading: true,
+    				loading: false,
+    	- viewCommands: {"from":[]} -> {"to":["resetScroll"]},
+    	- viewMode: 'table' -> 'search',
+    	- expandedItems: {"from":[]} -> {"to":[]},
+    	- filter: {"from":{}} -> {"to":{"name":"test"}},
+    	- previousViewMode: undefined -> 'table',
+    	- expansionModel: {"from":{}} -> {"to":{}},
+  ],
+  Array [
+    	- viewCommands: {"from":["resetScroll"]} -> {"to":["resetScroll","resetScroll"]},
+    	- selectionModel: {"from":{}} -> {"to":{}},
+    	- needShowStub: false -> true,
+  ],
+]
+`;

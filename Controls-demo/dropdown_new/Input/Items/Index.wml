@@ -1,0 +1,11 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+   <div class="controlsDemo__ml2">
+      <Controls.dropdown:Selector
+              keyProperty="key"
+              displayProperty="title"
+              items="{{_items}}"
+              selectedKeys="{{_selectedKeys}}"
+              on:selectedKeysChanged="_selectedKeysChanged()">
+      </Controls.dropdown:Selector>
+   </div>
+</div>

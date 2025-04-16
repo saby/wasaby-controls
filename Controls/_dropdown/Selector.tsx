@@ -1,0 +1,668 @@
+/**
+ * @kaizen_zone 5b9ef316-9f00-45a5-a6b7-3b9f6627b1da
+ */
+import * as React from 'react';
+import DefaultContentTemplate from './Selector/resources/DefaultContentTemplate';
+import { getWasabyContext } from 'UICore/Contexts';
+import { FocusRoot } from 'UI/Focus';
+import { factory } from 'Types/chain';
+import { Model } from 'Types/entity';
+import { List, RecordSet } from 'Types/collection';
+import { isSingleSelectionItem, loadItems, loadSelectedItems } from './Util';
+import { getText, getFullText, getMoreText } from './Utils/getTextSelector';
+import { isEqual } from 'Types/object';
+import Controller from './_Controller';
+import { TKey } from './interface/IDropdownController';
+import { BaseDropdown, filterBySelectionUtil } from './BaseDropdown';
+import { isLoaded, loadAsync, loadSync } from 'WasabyLoader/ModulesLoader';
+import { SyntheticEvent } from 'UI/Events';
+import { Opener as PopupOpener, isLeftMouseButton, IStickyPopupOptions } from 'Controls/popup';
+import { InfoboxTarget } from 'Controls/popupTargets';
+import IBaseSelectorOptions from './interface/IBaseSelectorOptions';
+import getDropdownControllerOptions from './Utils/GetDropdownControllerOptions';
+import * as Merge from 'Core/core-merge';
+import { isRenderer } from './Utils/isRenderer';
+import 'css!Controls/dropdown';
+import 'css!Controls/CommonClasses';
+import { IBaseDropdownOptions } from 'Controls/_dropdown/interface/IBaseDropdown';
+import { IBasePopupDropdownOptions } from 'Controls/_dropdown/interface/IBasePopupDropdown';
+import { IValidationStatusOptions } from 'Controls/_interface/IValidationStatus';
+import { IUnderlineOptions } from 'Controls/_interface/IUnderline';
+import { ILazyItemsLoadingOptions } from 'Controls/_dropdown/interface/ILazyItemsLoading';
+import { IHeightOptions } from 'Controls/_interface/IHeight';
+import { IHeaderTemplate } from 'Controls/_dropdown/interface/IHeaderTemplate';
+
+export interface ISelectorOptions
+    extends IBaseSelectorOptions,
+        IBaseDropdownOptions,
+        IBasePopupDropdownOptions,
+        IValidationStatusOptions,
+        IUnderlineOptions,
+        ILazyItemsLoadingOptions,
+        IHeightOptions,
+        IHeaderTemplate {}
+
+interface ISelectorState {
+    highlightedOnFocus: boolean;
+    countItems: number;
+    itemsIsLoaded: boolean;
+    selectedItems: Model[];
+}
+
+const ContentTemplate = React.forwardRef(function (props, ref) {
+    const templateProps = {
+        item: props.item,
+        icon: props.icon,
+        iconSize: props.item?.get('iconSize') || props.iconSize,
+        iconStyle: props.iconStyle,
+        fontSize: props.fontSize,
+        fontColorStyle: props.fontColorStyle,
+        inlineHeight: props.inlineHeight,
+        text: props.text,
+        underline: props.underline,
+        tooltip: props.needInfobox ? '' : props.tooltip,
+        countItems: props.countItems,
+        hasMoreText: props.hasMoreText,
+        isEmptyItem: props.isEmptyItem,
+        validationStatus: props.validationStatus,
+        readOnly: props.readOnly,
+        needOpenMenuOnClick: props.needOpenMenuOnClick,
+        footerTemplate: props.footerTemplate || props.footerContentTemplate,
+        className: props.highlightedOnFocus ? 'controls-focused-item_background' : '',
+        tabindex: 0,
+        ref,
+    };
+    if (typeof props.contentTemplate === 'string') {
+        const ContentTpl = loadSync(props.contentTemplate);
+        return <ContentTpl {...templateProps} />;
+    } else if (typeof props.contentTemplate === 'object' && !isRenderer(props.contentTemplate)) {
+        return props.contentTemplate;
+    } else if (props.contentTemplate) {
+        return <props.contentTemplate {...templateProps} />;
+    } else {
+        return <DefaultContentTemplate {...templateProps} />;
+    }
+});
+
+/**
+ * Контрол, позволяющий выбрать значение из списка. Отображается в виде ссылки.
+ * Текст ссылки отображает выбранные значения. Значения выбирают в выпадающем меню, которое по умолчанию закрыто.
+ *
+ * @remark
+ * Меню можно открыть кликом на контрол. Для работы единичным параметром selectedKeys используйте контрол с {@link Controls/source:SelectedKey}.
+ *
+ * Полезные ссылки:
+ * * {@link /materials/DemoStand/app/Controls-demo%2Fdropdown_new%2FInput%2FIndex демо-пример}
+ * * {@link /doc/platform/developmentapl/interface-development/controls/input-elements/dropdown-menu/ руководство разработчика}
+ * * {@link https://git.sbis.ru/saby/wasaby-controls/-/blob/rc-24.6100/Controls-default-theme/variables/_dropdown.less переменные тем оформления dropdown}
+ * * {@link https://git.sbis.ru/saby/wasaby-controls/-/blob/rc-24.6100/Controls-default-theme/variables/_dropdownPopup.less переменные тем оформления dropdownPopup}
+ *
+ * @extends UI/Base:Control
+ * @mixes Controls/menu:IMenuPopup
+ * @mixes Controls/menu:IMenuControl
+ * @mixes Controls/menu:IMenuBase
+ * @mixes Controls/dropdown:IBaseDropdown
+ * @mixes Controls/dropdown:IBasePopupDropdown
+ * @mixes Controls/dropdown:IGrouped
+ * @mixes Controls/dropdown:IEmptyItem
+ * @mixes Controls/dropdown:IHeaderTemplate
+ * @mixes Controls/dropdown:ILazyItemsLoading
+ * @mixes Controls/dropdown:IUnderline
+ * @mixes Controls/dropdown:IBaseSelectorOptions
+ * @implements Controls/interface:ISource
+ * @implements Controls/interface:IMultiSelectable
+ * @implements Controls/interface/IPromisedSelectable
+ * @implements Controls/interface:IFilterChanged
+ * @implements Controls/interface:ISelectorDialog
+ * @implements Controls/interface:IIconSize
+ * @implements Controls/interface:IIconStyle
+ * @implements Controls/interface:ITextValue
+ * @implements Controls/interface:IFontSize
+ * @implements Controls/interface:IFontColorStyle
+ * @implements Controls/interface:ISearch
+ * @implements Controls/interface:IHeight
+ * @ignoreEvents beforeSelectionChanged
+ *
+ * @public
+ * @demo Controls-demo/dropdown_new/Input/Source/Simple/Index
+ */
+
+/*
+ * Control that shows list of options. In the default state, the list is collapsed, showing only one choice.
+ * The full list of options is displayed when you click on the control.
+ *
+ * To work with single selectedKeys option you can use control with {@link Controls/source:SelectedKey}.
+ * @extends UI/Base:Control
+ * @implements Controls/interface:ISource
+ * @implements Controls/interface:IHierarchy
+ * @implements Controls/interface:IFilterChanged
+ * @implements Controls/interface:INavigation
+ * @mixes Controls/Input/interface/IValidation
+ * @implements Controls/interface:IMultiSelectable
+ * @mixes Controls/dropdown:IHeaderTemplate
+ * @implements Controls/interface:ISelectorDialog
+ * @mixes Controls/dropdown:IGrouped
+ * @implements Controls/interface:ITextValue
+ *
+ * @public
+ * @author Золотова Э.Е.
+ * @demo Controls-demo/dropdown_new/Input/Source/Index
+ */
+class Selector extends BaseDropdown<ISelectorOptions, ISelectorState> {
+    protected _controller: Controller;
+
+    constructor(props: ISelectorOptions) {
+        super(props);
+        this._handleMouseDown = this._handleMouseDown.bind(this);
+        this._dataLoadCallback = this._dataLoadCallback.bind(this);
+        this._prepareDisplayState = this._prepareDisplayState.bind(this);
+        this._selectorTemplateResult = this._selectorTemplateResult.bind(this);
+        this._getPopupClassName = this._getPopupClassName.bind(this);
+        this._deactivated = this._deactivated.bind(this);
+        this._controller = new Controller(this._getControllerOptions(props));
+        const needToGetCountItems = props.items && (!props.source || props.buildByItems);
+        this.state = {
+            highlightedOnFocus: this._getHighlightedOnFocus(props),
+            countItems: needToGetCountItems ? this._getCountItems(props.items, props) : -1,
+            itemsIsLoaded: false,
+            selectedItems: this._controller.getSelectedItems(),
+        };
+    }
+
+    componentDidMount() {
+        if (this.props.navigation && this.props.selectedKeys && this.props.selectedKeys.length) {
+            loadSelectedItems(this._controller, this.props);
+        } else {
+            loadItems(this._controller, this.props);
+        }
+    }
+
+    componentDidUpdate(prevProps: ISelectorState): void {
+        const newState: Partial<ISelectorState> = {};
+        this._controller.update(this._getControllerOptions(this.props));
+        if (
+            this.props.emptyText !== prevProps.emptyText ||
+            this.props.selectedAllText !== prevProps.selectedAllText ||
+            this.props.items !== prevProps.items
+        ) {
+            if (this._controller.getItems()) {
+                // Если в контроллере нет итемов, значит они перезагружаются,
+                // после перезагрузки _getCountItems будет вызван
+                newState.countItems = this._getCountItems(this._controller.getItems(), this.props);
+            }
+        }
+        newState.highlightedOnFocus = this._getHighlightedOnFocus(this.props);
+        if (
+            (newState.countItems && newState.countItems !== this.state.countItems) ||
+            newState.highlightedOnFocus !== this.state.highlightedOnFocus
+        ) {
+            this.setState(newState);
+        }
+    }
+
+    protected _getHighlightedOnFocus(props): boolean {
+        return this.context?.workByKeyboard && !props.readOnly;
+    }
+
+    _getControllerOptions(props: ISelectorOptions): object {
+        const controllerOptions = getDropdownControllerOptions(props, this.context);
+        const selectedKeys =
+            !props.selectedKeys || !props.selectedKeys.length
+                ? props.emptyText
+                    ? [props.emptyKey ?? null]
+                    : []
+                : props.selectedKeys;
+        return {
+            ...controllerOptions,
+            ...{
+                markerVisibility: 'onactivated',
+                dataLoadCallback: this._dataLoadCallback,
+                selectedKeys,
+                allowPin: false,
+                selectedItemsChangedCallback: this._prepareDisplayState,
+                selectorDialogResult: this._selectorTemplateResult,
+                getPopupClassName: this._getPopupClassName,
+                emptyKey: props.emptyKey ?? null,
+            },
+        };
+    }
+
+    _getPopupClassName(): string {
+        if (this.props.popupClassName) {
+            return this.props.popupClassName;
+        }
+        const items = this._controller.getItems();
+        let className = '';
+        if (isLoaded('Controls/menu')) {
+            const menuLib = loadSync('Controls/menu');
+            const markerPosition = menuLib.getMarkerPosition(items, this.props);
+            className += `controls-DropdownList_markerPosition-${markerPosition} `;
+
+            const hasIcon =
+                this.state.selectedItems?.[0]?.get('icon') ||
+                menuLib.getIconInRoot(items, this.props);
+            const itemIconSize = this.state.selectedItems?.[0]?.get('icon')
+                ? this.state.selectedItems?.[0]?.get('iconSize')
+                : null;
+            if (hasIcon) {
+                className += `controls-Dropdown_iconSize-${
+                    itemIconSize || this.props.iconSize
+                }_popup `;
+            }
+        }
+        className += this.props.menuHeadingCaption
+            ? 'controls-Dropdown_withHeader_popup '
+            : 'controls-Dropdown_withoutHeader_popup ';
+        className += this.props.multiSelect
+            ? 'controls-DropdownList_multiSelect__margin'
+            : 'controls-DropdownList__margin';
+        return className;
+    }
+
+    _getMenuPopupConfig(): IStickyPopupOptions {
+        return {
+            opener: this,
+            eventHandlers: {
+                onOpen: this._onOpen.bind(this),
+                onClose: this._onClose.bind(this),
+                onResult: this._onResult.bind(this),
+            },
+        };
+    }
+
+    _selectedItemsChangedHandler(
+        items: Model[],
+        newSelectedKeys: TKey[],
+        excludedKeys: TKey[]
+    ): void | unknown {
+        const text =
+            getText(items, this.props, this._controller) +
+            getMoreText(items, this.props.maxVisibleItems);
+        this._callHandler(this.props.onTextValueChanged, 'textValueChanged', [text]);
+
+        if (excludedKeys && !isEqual(this.props.excludedKeys, excludedKeys)) {
+            const excludedKeysArgs = this._getSelectedKeysEventArgs(
+                this.props.excludedKeys || [],
+                excludedKeys
+            );
+            this._callHandler(this.props.onExcludedKeysChanged, 'excludedKeysChanged', [
+                excludedKeysArgs,
+            ]);
+        }
+
+        if (!isEqual(this.props.selectedKeys, newSelectedKeys) || this.props.task1178744737) {
+            const selectedKeysArgs = this._getSelectedKeysEventArgs(
+                this.props.selectedKeys || [],
+                newSelectedKeys
+            );
+            return this._callHandler(
+                this.props.onSelectedKeysChanged,
+                'selectedKeysChanged',
+                selectedKeysArgs
+            );
+        }
+    }
+
+    _dataLoadCallback(items: RecordSet<Model>): void {
+        if (this.props.dataLoadCallback) {
+            this.props.dataLoadCallback(items);
+        }
+
+        const newCountItems = this._getCountItems(items, this.props);
+        if (this.state.countItems !== newCountItems) {
+            this.setState({
+                countItems: newCountItems,
+            });
+        }
+    }
+
+    _prepareDisplayState(items: Model[]): void {
+        const newState = {
+            itemsIsLoaded: true,
+        };
+        if (items.length) {
+            if (!isEqual(this.state.selectedItems, items)) {
+                this.setState({
+                    ...newState,
+                    selectedItems: items,
+                });
+            }
+        } else if (newState.itemsIsLoaded !== this.state.itemsIsLoaded) {
+            this.setState(newState);
+        }
+    }
+
+    _handleMouseDown(event: SyntheticEvent<MouseEvent>): void {
+        if (this.props.onMouseDown) {
+            this.props.onMouseDown(event);
+        }
+        if ((!isLeftMouseButton(event) || this.props.readOnly) ?? this.context.readOnly) {
+            return;
+        }
+        this._clickHandled = false;
+        this._openMenu().then((result) => {
+            this._openMenuResultHandler(result, event);
+        });
+    }
+
+    _onSingleItemClick(result: Model[], event?: SyntheticEvent): void {
+        const selectedKeys = this._getSelectedKeys(result, this.props.keyProperty);
+        this._selectedItemsChangedHandler(result, selectedKeys);
+        this._callHandler(this.props.onMenuItemClick, 'menuItemClick', [...result, event]);
+    }
+
+    openMenu(popupOptions?: IStickyPopupOptions): void {
+        this._openMenu(popupOptions).then((result) => {
+            if (result) {
+                this._onSingleItemClick(result);
+            }
+        });
+    }
+
+    private _openMenu(popupOptions?: IStickyPopupOptions): Promise<Model[]> {
+        const config = this._getMenuPopupConfig();
+        this._controller.setMenuPopupTarget(this._ref.current);
+        this._controller.setMenuPopupOpener(this._popupOpenerRef.current);
+
+        return this._controller.openMenu(Merge(config, popupOptions || {}));
+    }
+
+    protected _resultHandler(action: string, data: object): void {
+        switch (action) {
+            case 'applyClick':
+                this._applyClick(data.items, data.selection?.selected, data.selection?.excluded);
+                break;
+            case 'selectorResult':
+                this._selectorResult(data);
+                break;
+        }
+    }
+
+    protected _itemClick(data: Model, event: SyntheticEvent): void {
+        const item = this._controller.getPreparedItem(data);
+        const selectedKeys = this._getSelectedKeys([item], this.props.keyProperty);
+        const selectedKeysResult = this._selectedItemsChangedHandler([item], selectedKeys);
+        const itemClickResult = this._callHandler(this.props.onMenuItemClick, 'menuItemClick', [
+            item,
+            event,
+        ]);
+
+        // selectedKeysChanged стреляет только если ключи различаются и не подходит для отмены закрытия меню
+        // нужно использовать menuItemClick, который стреляет каждый раз
+        const res = selectedKeysResult ?? itemClickResult;
+        // dropDown must close by default, but user can cancel closing, if returns false from event
+        if (res !== false) {
+            this._controller.updateHistoryAndCloseMenu(item);
+            this._controller.setSelectedKeys(selectedKeys);
+
+            if (this.props.searchParam && !selectedKeys.includes(this.props.emptyKey ?? null)) {
+                // Если был поиск, items будут занулены, чтобы не потерять выбранные значения сохраним их в selectedItems.
+                this._setSelectedItems([data]);
+            } else {
+                this._prepareDisplayState([item]);
+            }
+        }
+    }
+
+    protected _applyClick(data: Model[], selectedKeys?: TKey[], excludedKeys?: TKey[]): void {
+        const selected = this._getSelectedKeys(factory(data).toArray(), this.props.keyProperty);
+        if (
+            this.props.parentProperty &&
+            this.props.multiSelect &&
+            !isLoaded(filterBySelectionUtil)
+        ) {
+            loadAsync(filterBySelectionUtil).then(() => {
+                this._applySelectedItems(data, selected, excludedKeys);
+            });
+        } else {
+            this._applySelectedItems(data, selected, excludedKeys);
+        }
+    }
+
+    private _applySelectedItems(data: Model[], selectedKeys?: TKey[], excludedKeys?: TKey[]) {
+        this._controller.updateHistoryAndCloseMenu(data);
+        this._controller.setSelectedKeys(selectedKeys);
+        this._controller.setExcludedKeys(excludedKeys);
+        let items;
+
+        if (this.props.searchParam && !selectedKeys.includes(this.props.emptyKey ?? null)) {
+            // Если был поиск, items будут занулены, чтобы не потерять выбранные значения сохраним их в selectedItems.
+            items = this._setSelectedItems(data);
+        } else {
+            items = this._controller.updateSelection(selectedKeys, excludedKeys);
+        }
+        this._selectedItemsChangedHandler(items, selectedKeys, excludedKeys);
+    }
+
+    protected _selectorResult(data: object): void {
+        const selectedKeys = this._getSelectedKeys(factory(data).toArray(), this.props.keyProperty);
+        const selectedItems = this._controller.getFormattedSelectedItems(data, selectedKeys);
+        this._controller.setSelectedKeys(selectedKeys);
+        this._controller.handleSelectorResult(data);
+        this._selectedItemsChangedHandler(selectedItems, selectedKeys);
+    }
+
+    protected _selectorTemplateResult(selectedItems: List<Model>): void {
+        const result =
+            this._callHandler(this.props.onSelectorCallback, 'selectedCallback', [
+                this._initSelectorItems,
+                selectedItems,
+            ]) || selectedItems;
+        this._selectorResult(result);
+    }
+
+    private _setSelectedItems(selectedItems: Model[]): Model[] | void {
+        const items = this._controller.getItems().clone();
+        items?.assign(selectedItems);
+        return this._controller.updateSelectedItems(items);
+    }
+
+    private _getCountItems(items: RecordSet, props: ISelectorOptions): number {
+        let countItems = items.getCount();
+        if (props.emptyText) {
+            countItems += 1;
+        }
+        if (props.selectedAllText) {
+            countItems += 1;
+        }
+        return countItems;
+    }
+
+    private _getSelectedKeys(items: Model[], keyProperty: string): TKey[] {
+        const keys = [];
+        if (
+            isSingleSelectionItem(
+                items[0],
+                this.props.selectedAllText,
+                this.props.keyProperty,
+                this.props.selectedAllKey
+            )
+        ) {
+            keys.push(this.props.selectedAllKey);
+        } else if (
+            isSingleSelectionItem(
+                items[0],
+                this.props.emptyText,
+                this.props.keyProperty,
+                this.props.emptyKey
+            )
+        ) {
+            if (this.props.emptyKey !== undefined) {
+                keys.push(this.props.emptyKey);
+            }
+        } else {
+            factory(items).each((item) => {
+                keys.push(item.get(keyProperty));
+            });
+        }
+        return keys;
+    }
+
+    private _getSelectedKeysEventArgs(currentSelectedKeys: TKey[], newSelectedKeys: TKey[]) {
+        const added = [];
+        const deleted = [];
+        newSelectedKeys.forEach((newSelectedKey) => {
+            if (!currentSelectedKeys.includes(newSelectedKey)) {
+                added.push(newSelectedKey);
+            }
+        });
+        currentSelectedKeys.forEach((currentSelectedKey) => {
+            if (!newSelectedKeys.includes(currentSelectedKey)) {
+                deleted.push(currentSelectedKey);
+            }
+        });
+
+        return [newSelectedKeys, added, deleted];
+    }
+
+    protected _deactivated(): void {
+        if (this.props.closeMenuOnOutsideClick) {
+            this.closeMenu();
+        }
+    }
+
+    render() {
+        const props = this.props;
+        const state = this.state;
+        const readOnly = props.readOnly ?? this.context?.readOnly;
+        const needInfobox =
+            props.maxVisibleItems &&
+            readOnly &&
+            state.selectedItems?.length > props.maxVisibleItems;
+        const isEmptyItem = isSingleSelectionItem(
+            state.selectedItems?.[0],
+            props.emptyText,
+            props.keyProperty,
+            props.emptyKey
+        );
+        const isAllSelectedItem = isSingleSelectionItem(
+            state.selectedItems?.[0],
+            props.selectedAllText,
+            props.keyProperty,
+            props.selectedAllKey
+        );
+        const item = isAllSelectedItem || isEmptyItem ? null : state.selectedItems?.[0];
+        const icon = isEmptyItem || isAllSelectedItem ? null : item?.get('icon');
+        const text = getText(state.selectedItems, props, this._controller);
+        const hasMoreText = getMoreText(state.selectedItems, props.maxVisibleItems);
+        const tooltip = getFullText(state.selectedItems, props, this._controller);
+        const isNeedOpenMenu =
+            props.selectedItems ||
+            !(state.countItems < 2 && !props.footerTemplate && !props.footerContentTemplate);
+
+        return (
+            <>
+                <FocusRoot
+                    as="div"
+                    //TODO: Временное решение, ждем ошибку: https://online.sbis.ru/opendoc.html?guid=fd50888a-06bb-4b7d-820d-dd5d26b48ce0&client=3
+                    ref={(element) => this._setRef(element)}
+                    {...props.attrs}
+                    className={`controls-Dropdown ${
+                        state.highlightedOnFocus ? 'controls-focused-item_background' : ''
+                    } ${props.className || props.attrs?.className || ''}`}
+                    data-qa={props.attrs?.['data-qa'] || props['data-qa'] || props.dataQa}
+                    onDeactivated={this._deactivated}
+                    onClick={this._handleClick}
+                    onMouseDown={this._handleMouseDown}
+                    onMouseEnter={this._handleMouseEnter}
+                    onMouseLeave={this._handleMouseLeave}
+                    onKeyDown={this._handleKeyDown}
+                >
+                    <InfoboxTarget
+                        targetSide="bottom"
+                        trigger={needInfobox ? 'hover' : 'demand'}
+                        horizontalPadding="null"
+                        template="Controls/dropdown:_InfoBoxContentTemplate"
+                        templateOptions={{
+                            selectedItems: state.selectedItems,
+                            displayProperty: props.displayProperty,
+                        }}
+                    >
+                        <div className="ws-inline-flexbox controls-Dropdown__infoboxWrapper">
+                            {state.selectedItems?.length || state.itemsIsLoaded ? (
+                                <ContentTemplate
+                                    contentTemplate={props.contentTemplate}
+                                    selectedItems={state.selectedItems}
+                                    item={item}
+                                    icon={icon}
+                                    iconSize={item?.get('iconSize') || props.iconSize}
+                                    iconStyle={props.iconStyle}
+                                    fontSize={props.fontSize}
+                                    fontColorStyle={props.fontColorStyle}
+                                    inlineHeight={props.inlineHeight}
+                                    text={text}
+                                    underline={props.underline}
+                                    tooltip={needInfobox ? '' : tooltip}
+                                    countItems={state.countItems}
+                                    hasMoreText={hasMoreText}
+                                    isEmptyItem={isEmptyItem}
+                                    validationStatus={props.validationStatus}
+                                    readOnly={readOnly}
+                                    needOpenMenuOnClick={isNeedOpenMenu}
+                                    footerTemplate={
+                                        props.footerTemplate || props.footerContentTemplate
+                                    }
+                                />
+                            ) : null}
+                        </div>
+                    </InfoboxTarget>
+                </FocusRoot>
+                <PopupOpener className="tw-contents" ref={this._popupOpenerRef} />
+            </>
+        );
+    }
+
+    static contextType = getWasabyContext();
+
+    static defaultProps: Partial<ISelectorOptions> = {
+        iconSize: 's',
+        maxVisibleItems: 1,
+        validationStatus: 'valid',
+        closeMenuOnOutsideClick: true,
+        selectedAllKey: null,
+        underline: 'hovered',
+        selectionType: 'all',
+    };
+}
+
+export default Selector;
+
+/**
+ * @event selectedKeysChanged Происходит при изменении выбранных элементов.
+ * @param {UI/Events:SyntheticEvent} eventObject Дескриптор события.
+ * @param {Array.<Number|String>} keys Набор ключей выбранных элементов.
+ * @remark Из обработчика события можно возвращать результат обработки. Если результат будет равен false, выпадающий список не закроется.
+ * По умолчанию, когда выбран пункт с иерархией, выпадающий список закрывается.
+ * @example
+ * В следующем примере создается список и устанавливается опция selectedKeys со значением [1, 2, 3], а также показано, как изменить сообщение, выведенное пользователю на основе выбора.
+ * <pre class="brush: html; highlight: [3,4]">
+ * <!-- WML -->
+ * <Controls.dropdown:Selector
+ *     on:selectedKeysChanged="onSelectedKeysChanged()"
+ *     selectedKeys="{{ _selectedKeys }}"/>
+ *    <h1>{{ _message }}</h1>
+ * </pre>
+ * <pre class="brush: js;">
+ * // JavaScript
+ * _beforeMount: function() {
+ *    this._selectedKeys = [1, 2, 3];
+ * },
+ * onSelectedKeysChanged: function(e, keys) {
+ *    this._selectedKeys = keys; //We don't use binding in this example so we have to update state manually.
+ *    if (keys.length > 0) {
+ *       this._message = 'Selected ' + keys.length + ' items.';
+ *    } else {
+ *       this._message = 'You have not selected any items.';
+ *    }
+ * }
+ * </pre>
+ */
+
+/**
+ * @event Происходит при клике по элементу выпадающего списка.
+ * @name Controls/_dropdown/Selector#menuItemClick
+ * @param {UI/Events:SyntheticEvent} eventObject Дескриптор события.
+ * @param {Types/entity:Record} item Элемент, по которому производим клик.
+ * @remark Событие используют, когда необходимо обработать клик по элементу выпадающего списка, который уже выбран.
+ * В остальных случаях используйте событие @{link selectedKeysChanged}.
+ */

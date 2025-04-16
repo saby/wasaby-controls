@@ -1,0 +1,46 @@
+<div class="PageWrap" style="padding-top: 50px;">
+    <div class="PageBlock__componentWrap ws-flexbox" style="justify-content: space-around; flex-wrap: wrap; align-items: flex-start;">
+        <!-- _displayDate задаем для случаев когда по умолчанию откроется текущий день. -->
+        <!-- Принудительно окрываем на периоде из прошлого, что бы не было проблем с эталонами. -->
+        <!-- https://online.sbis.ru/opendoc.html?guid=e7dc54f8-1b15-4c93-9d38-e6f33022b53d -->
+        <div>
+            <Controls.datePopup
+                    attr:class="controlsDemo_datePopup__readonly-one"
+                    _displayDate="{{_startValue}}"
+                    _date="{{ _startValue }}"
+                    selectionType="single"
+                    readOnly="{{true}}"
+                    name="datePopup1"
+            />
+        </div>
+        <div>
+            <Controls.datePopup
+                    attr:class="controlsDemo_datePopup__readonly-two"
+                    _displayDate="{{_startValue}}"
+                    _date="{{ _startValue }}"
+                    selectionType="range"
+                    readOnly="{{true}}"
+                    name="datePopup2"
+            />
+        </div>
+        <div>
+            <Controls.datePopup
+                    attr:class="controlsDemo_datePopup__readonly-three"
+                    startValue="{{_startValue}}"
+                    endValue="{{_startValue}}"
+                    readOnly="{{true}}"
+                    _date="{{ _startValue }}"
+            />
+        </div>
+        <div>
+            <Controls.datePopup
+                    attr:class="controlsDemo_datePopup__readonly-four"
+                    startValue="{{_startValue}}"
+                    endValue="{{_endValue}}"
+                    selectionType="range"
+                    readOnly="{{true}}"
+                    _date="{{ _startValue }}"
+            />
+        </div>
+    </div>
+</div>

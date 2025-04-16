@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper">
+    <Controls.propertyGridEditor:PropertyGridEditor
+            bind:editingObject="_editingObject"
+            typeDescription="{{_typeDescription}}"
+            groupProperty="group">
+        <ws:groupTemplate>
+            <ws:partial template="Controls/propertyGridEditor:GroupTemplate">
+                <ws:contentTemplate>
+                    <div>Тестовая группа</div>
+                </ws:contentTemplate>
+            </ws:partial>
+        </ws:groupTemplate>
+    </Controls.propertyGridEditor:PropertyGridEditor>
+</div>

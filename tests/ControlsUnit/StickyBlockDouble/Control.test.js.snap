@@ -1,0 +1,440 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls/stickyBlockDouble renders for scrolling 1`] = `
+<div>
+  <div
+    class="controls-Scroll-Container controls-Scroll controls_scroll_theme-default controls-Scroll-Container_start-position"
+    tabindex="0"
+  >
+    <div
+      class="controls-Scroll-ContainerBase controls_scroll_theme-default controls-Scroll__content  controls-Scroll__content_hideNativeScrollbar controls-Scroll__content_hideNativeScrollbar_ff-ie-edge controls-Scroll-ContainerBase__scroll_vertical controls-Scroll-ContainerBase__scrollPosition-regular controls-Scroll-Container__base controls-BlockLayout__blockGroup undefined controls-Scroll__backgroundShadow controls-Scroll__background-Shadow_style-default controls-Scroll__background-Shadow_top-auto_bottom-auto_style-default"
+      data-qa="controls-Scroll__content"
+      name="content"
+      tabindex="0"
+    >
+      <div
+        class="controls-Scroll-ContainerBase__content controls-Scroll-ContainerBase__content__vertical controls-Scroll-ContainerBase__content-direction_column"
+        name="userContent"
+      >
+        <div
+          class="controls-Scroll-containerBase_userContent"
+        >
+          <div
+            class="controls-StickyBlock controls-background-default-sticky "
+            style="top: 0px;"
+          >
+            <div
+              class="controls-StickyBlock__content"
+            >
+              <div
+                tabindex="0"
+              />
+              <div
+                style="position: absolute; top: 0px; opacity: 0; transition: opacity 0.1s;"
+              >
+                <div
+                  class="compact-content"
+                  style="height: 20px;"
+                >
+                  Compact Content
+                </div>
+              </div>
+              <div
+                style="transition: opacity 0.1s;"
+              >
+                <div
+                  class="normal-content"
+                  style="height: 100px;"
+                >
+                  Normal Content
+                </div>
+              </div>
+            </div>
+            <div
+              class="controls-StickyBlock__observationTarget_top"
+              data-stickyblockid="4"
+              style="top: -2px;"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_top2"
+              data-stickyblockid="4"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_top2Right"
+              data-stickyblockid="4"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_bottomLeft"
+              data-stickyblockid="4"
+              style="bottom: -2px;"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_bottomRight"
+              data-stickyblockid="4"
+              style="bottom: -2px;"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_left"
+              data-stickyblockid="4"
+              style="left: -2px;"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_right"
+              data-stickyblockid="4"
+              style="right: -2px;"
+            />
+          </div>
+          <p>
+            lorem
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls/stickyBlockDouble renders with mode 1`] = `
+<div>
+  <div
+    class="controls-Scroll-Container controls-Scroll controls_scroll_theme-default controls-Scroll-Container_start-position"
+    tabindex="0"
+  >
+    <div
+      class="controls-Scroll-ContainerBase controls_scroll_theme-default controls-Scroll__content  controls-Scroll__content_hideNativeScrollbar controls-Scroll__content_hideNativeScrollbar_ff-ie-edge controls-Scroll-ContainerBase__scroll_vertical controls-Scroll-ContainerBase__scrollPosition-regular controls-Scroll-Container__base controls-BlockLayout__blockGroup undefined controls-Scroll__backgroundShadow controls-Scroll__background-Shadow_style-default controls-Scroll__background-Shadow_top-auto_bottom-auto_style-default"
+      data-qa="controls-Scroll__content"
+      name="content"
+      tabindex="0"
+    >
+      <div
+        class="controls-Scroll-ContainerBase__content controls-Scroll-ContainerBase__content__vertical controls-Scroll-ContainerBase__content-direction_column"
+        name="userContent"
+      >
+        <div
+          class="controls-Scroll-containerBase_userContent"
+        >
+          <div
+            class="controls-StickyBlock controls-background-default-sticky "
+            style="top: 0px;"
+          >
+            <div
+              class="controls-StickyBlock__content"
+            >
+              <div
+                tabindex="0"
+              />
+              <div
+                style="position: absolute; top: 0px; opacity: 0; transition: opacity 0.1s;"
+              >
+                <div>
+                  Compact Content
+                </div>
+              </div>
+              <div
+                style="transition: opacity 0.1s;"
+              >
+                <div>
+                  Normal Content
+                </div>
+              </div>
+            </div>
+            <div
+              class="controls-StickyBlock__observationTarget_top"
+              data-stickyblockid="2"
+              style="top: -2px;"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_top2"
+              data-stickyblockid="2"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_top2Right"
+              data-stickyblockid="2"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_bottomLeft"
+              data-stickyblockid="2"
+              style="bottom: -2px;"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_bottomRight"
+              data-stickyblockid="2"
+              style="bottom: -2px;"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_left"
+              data-stickyblockid="2"
+              style="left: -2px;"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_right"
+              data-stickyblockid="2"
+              style="right: -2px;"
+            />
+          </div>
+          <p>
+            lorem
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls/stickyBlockDouble renders with no compactContentTemplate 1`] = `
+<div>
+  <div
+    class="controls-Scroll-Container controls-Scroll controls_scroll_theme-default controls-Scroll-Container_start-position"
+    tabindex="0"
+  >
+    <div
+      class="controls-Scroll-ContainerBase controls_scroll_theme-default controls-Scroll__content  controls-Scroll__content_hideNativeScrollbar controls-Scroll__content_hideNativeScrollbar_ff-ie-edge controls-Scroll-ContainerBase__scroll_vertical controls-Scroll-ContainerBase__scrollPosition-regular controls-Scroll-Container__base controls-BlockLayout__blockGroup undefined controls-Scroll__backgroundShadow controls-Scroll__background-Shadow_style-default controls-Scroll__background-Shadow_top-auto_bottom-auto_style-default"
+      data-qa="controls-Scroll__content"
+      name="content"
+      tabindex="0"
+    >
+      <div
+        class="controls-Scroll-ContainerBase__content controls-Scroll-ContainerBase__content__vertical controls-Scroll-ContainerBase__content-direction_column"
+        name="userContent"
+      >
+        <div
+          class="controls-Scroll-containerBase_userContent"
+        >
+          <div
+            class="controls-StickyBlock controls-background-default-sticky "
+            style="top: 0px;"
+          >
+            <div
+              class="controls-StickyBlock__content"
+            >
+              <div
+                tabindex="0"
+              />
+              <div
+                style="transition: opacity 0.1s;"
+              >
+                <div>
+                  Normal Content
+                </div>
+              </div>
+            </div>
+            <div
+              class="controls-StickyBlock__observationTarget_top"
+              data-stickyblockid="1"
+              style="top: -2px;"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_top2"
+              data-stickyblockid="1"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_top2Right"
+              data-stickyblockid="1"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_bottomLeft"
+              data-stickyblockid="1"
+              style="bottom: -2px;"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_bottomRight"
+              data-stickyblockid="1"
+              style="bottom: -2px;"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_left"
+              data-stickyblockid="1"
+              style="left: -2px;"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_right"
+              data-stickyblockid="1"
+              style="right: -2px;"
+            />
+          </div>
+          <p>
+            lorem
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls/stickyBlockDouble renders with props 1`] = `
+<div>
+  <div
+    class="controls-Scroll-Container controls-Scroll controls_scroll_theme-default controls-Scroll-Container_start-position"
+    tabindex="0"
+  >
+    <div
+      class="controls-Scroll-ContainerBase controls_scroll_theme-default controls-Scroll__content  controls-Scroll__content_hideNativeScrollbar controls-Scroll__content_hideNativeScrollbar_ff-ie-edge controls-Scroll-ContainerBase__scroll_vertical controls-Scroll-ContainerBase__scrollPosition-regular controls-Scroll-Container__base controls-BlockLayout__blockGroup undefined controls-Scroll__backgroundShadow controls-Scroll__background-Shadow_style-default controls-Scroll__background-Shadow_top-auto_bottom-auto_style-default"
+      data-qa="controls-Scroll__content"
+      name="content"
+      tabindex="0"
+    >
+      <div
+        class="controls-Scroll-ContainerBase__content controls-Scroll-ContainerBase__content__vertical controls-Scroll-ContainerBase__content-direction_column"
+        name="userContent"
+      >
+        <div
+          class="controls-Scroll-containerBase_userContent"
+        >
+          <div
+            class="controls-StickyBlock controls-background-default-sticky "
+            style="top: 0px;"
+          >
+            <div
+              class="controls-StickyBlock__content"
+            >
+              <div
+                tabindex="0"
+              />
+              <div
+                style="position: absolute; top: 0px; opacity: 0; transition: opacity 0.1s;"
+              >
+                <div>
+                  Compact Content
+                </div>
+              </div>
+              <div
+                style="transition: opacity 0.1s;"
+              >
+                <div>
+                  Normal Content
+                </div>
+              </div>
+            </div>
+            <div
+              class="controls-StickyBlock__observationTarget_top"
+              data-stickyblockid="0"
+              style="top: -2px;"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_top2"
+              data-stickyblockid="0"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_top2Right"
+              data-stickyblockid="0"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_bottomLeft"
+              data-stickyblockid="0"
+              style="bottom: -2px;"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_bottomRight"
+              data-stickyblockid="0"
+              style="bottom: -2px;"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_left"
+              data-stickyblockid="0"
+              style="left: -2px;"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_right"
+              data-stickyblockid="0"
+              style="right: -2px;"
+            />
+          </div>
+          <p>
+            lorem
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls/stickyBlockDouble renders with shadowMode 1`] = `
+<div>
+  <div
+    class="controls-Scroll-Container controls-Scroll controls_scroll_theme-default controls-Scroll-Container_start-position"
+    tabindex="0"
+  >
+    <div
+      class="controls-Scroll-ContainerBase controls_scroll_theme-default controls-Scroll__content  controls-Scroll__content_hideNativeScrollbar controls-Scroll__content_hideNativeScrollbar_ff-ie-edge controls-Scroll-ContainerBase__scroll_vertical controls-Scroll-ContainerBase__scrollPosition-regular controls-Scroll-Container__base controls-BlockLayout__blockGroup undefined controls-Scroll__backgroundShadow controls-Scroll__background-Shadow_style-default controls-Scroll__background-Shadow_top-auto_bottom-auto_style-default"
+      data-qa="controls-Scroll__content"
+      name="content"
+      tabindex="0"
+    >
+      <div
+        class="controls-Scroll-ContainerBase__content controls-Scroll-ContainerBase__content__vertical controls-Scroll-ContainerBase__content-direction_column"
+        name="userContent"
+      >
+        <div
+          class="controls-Scroll-containerBase_userContent"
+        >
+          <div
+            class="controls-StickyBlock controls-background-default-sticky "
+            style="top: 0px;"
+          >
+            <div
+              class="controls-StickyBlock__content"
+            >
+              <div
+                tabindex="0"
+              />
+              <div
+                style="position: absolute; top: 0px; opacity: 0; transition: opacity 0.1s;"
+              >
+                <div>
+                  Compact Content
+                </div>
+              </div>
+              <div
+                style="transition: opacity 0.1s;"
+              >
+                <div>
+                  Normal Content
+                </div>
+              </div>
+            </div>
+            <div
+              class="controls-StickyBlock__observationTarget_top"
+              data-stickyblockid="3"
+              style="top: -2px;"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_top2"
+              data-stickyblockid="3"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_top2Right"
+              data-stickyblockid="3"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_bottomLeft"
+              data-stickyblockid="3"
+              style="bottom: -2px;"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_bottomRight"
+              data-stickyblockid="3"
+              style="bottom: -2px;"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_left"
+              data-stickyblockid="3"
+              style="left: -2px;"
+            />
+            <div
+              class="controls-StickyBlock__observationTarget_right"
+              data-stickyblockid="3"
+              style="right: -2px;"
+            />
+          </div>
+          <p>
+            lorem
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

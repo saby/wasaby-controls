@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth350">
+    <div class="controlsDemo__cell" data-qa="controlsDemo-HeadingTitleFontWeight__notDefined">
+        <div class="controls-text-label">fontWeight is not defined</div>
+        <Controls.heading:Title caption="Heading" fontColorStyle="primary" fontSize="xl"/>
+    </div>
+    <div class="controlsDemo__cell" data-qa="controlsDemo-HeadingTitleFontWeight__normal">
+        <div class="controls-text-label">fontWeight=normal</div>
+        <Controls.heading:Title caption="Heading" fontWeight="normal" fontColorStyle="primary" fontSize="xl"/>
+    </div>
+    <div class="controlsDemo__cell" data-qa="controlsDemo-HeadingTitleFontWeight__bold">
+        <div class="controls-text-label"> fontWeight=bold</div>
+        <Controls.heading:Title caption="Heading" fontWeight="bold" fontColorStyle="primary" fontSize="xl"/>
+    </div>
+</div>

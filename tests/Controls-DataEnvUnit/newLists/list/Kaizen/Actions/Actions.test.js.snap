@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Actions. Тесты действий над записями. Состояние контекстных операций (itemActions) Если в setState были заданы новые действия, происходит обновление модели 1`] = `
+<div
+  class="controls_list_theme-default controls_toggle_theme-default controls-BaseControl controls-BaseControl_hover_enabled controls-Scroll-containerBase_userContent"
+  data-qa="js-demo-grid-new"
+  tabindex="0"
+  ws-autofocus="true"
+>
+  <div
+    class="tw-grid tw-w-full tw-relative controls-Grid controls-Grid_undefined"
+    data-qa="gridWrapper"
+    style="grid-template-columns: 1fr 1fr;"
+    tabindex="0"
+  >
+    <div
+      class="controls-Grid__loadingIndicator controls-Grid__loadingIndicator-top"
+      style="display: none;"
+    >
+      <div
+        class="tw-w-full"
+      >
+        <div
+          class="controls-BaseControl__loadingIndicator js-controls-BaseControl__loadingIndicator controls-BaseControl__loadingIndicator-top controls-BaseControl__loadingIndicator__position-top controls-BaseControl__loadingIndicator__state-loading "
+          data-qa="indicator_state_loading_position_top"
+          style="display: none;"
+        >
+          <div
+            class="controls-BaseControl__loadingIndicator-content"
+          >
+            <div
+              class="controls-BaseControl__loadingIndicatorImage"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class=" controls-BaseControl__loadingTrigger controls-BaseControl__loadingTrigger-top"
+      data-qa="loading-trigger-top"
+      style="top: 1px;"
+    />
+    <div
+      class="tw-contents controls-Grid__itemsContainer controls-BaseControl_showActions_onhover"
+      data-qa="items-container"
+    >
+      <div
+        class=" controls-ListView__itemV controls-GridReact__row tw-contents controls-GridReact__row__hoverMode_row js-controls-Grid__row_editable controls-GridView__item_showActions controls-GridView__item_showActions_row controls-ListView__item_showActions_inside controls-ListView__item_highlightOnHover"
+        data-qa="row"
+        item-key="1"
+        tabindex="0"
+      >
+        <div
+          class="controls-GridReact__cell js-controls-GridReact__cell js-controls-Grid__row-cell js-controls-ListView__editingTarget controls-ListView__item_contentWrapper js-controls-ListView__measurableContainer js-controls-GridReact__cell  tw-cursor-pointer controls-GridReact__minHeight-data tw-relative controls-GridReact__cell__hoverMode_row controls-GridReact__cell_first tw-flex controls-hover-background-default tw-items-baseline controls-GridReact__cell-baseline controls-GridReact__cell-baseline_default controls-padding_top-grid_s controls-padding_bottom-grid_s controls-padding_left-list_default controls-padding_right-grid_default"
+          data-qa="cell"
+          tabindex="0"
+        >
+          Hilary Osborne
+        </div>
+        <div
+          class="controls-GridReact__cell js-controls-GridReact__cell js-controls-Grid__row-cell js-controls-ListView__editingTarget controls-ListView__item_contentWrapper js-controls-ListView__measurableContainer js-controls-GridReact__cell  tw-cursor-pointer controls-GridReact__minHeight-data tw-relative controls-GridReact__cell__hoverMode_row controls-GridReact__cell_actionsCell controls-GridReact__cell_last tw-flex controls-hover-background-default tw-items-baseline controls-GridReact__cell-baseline controls-GridReact__cell-baseline_default controls-padding_top-grid_s controls-padding_bottom-grid_s controls-padding_left-grid_default controls-padding_right-list_default"
+          data-qa="cell"
+        >
+          Norway
+        </div>
+      </div>
+      <div
+        class=" controls-ListView__itemV controls-GridReact__row tw-contents controls-GridReact__row__hoverMode_row js-controls-Grid__row_editable controls-GridView__item_showActions controls-GridView__item_showActions_row controls-ListView__item_showActions_inside controls-ListView__item_highlightOnHover"
+        data-qa="row"
+        item-key="2"
+        tabindex="0"
+      >
+        <div
+          class="controls-GridReact__cell js-controls-GridReact__cell js-controls-Grid__row-cell js-controls-ListView__editingTarget controls-ListView__item_contentWrapper js-controls-ListView__measurableContainer js-controls-GridReact__cell  tw-cursor-pointer controls-GridReact__minHeight-data tw-relative controls-GridReact__cell__hoverMode_row controls-Grid__row-cell_selected-undefined controls-GridReact__cell_first tw-flex controls-hover-background-default tw-items-baseline controls-GridReact__cell-baseline controls-GridReact__cell-baseline_default controls-padding_top-grid_s controls-padding_bottom-grid_s controls-padding_left-list_default controls-padding_right-grid_default"
+          data-qa="cell"
+          tabindex="0"
+        >
+          <div
+            class="controls-ListView__itemV_marker controls-ListView__itemV_marker_size_content-xs  undefined controls-GridReact__cell-marker controls-GridReact__cell-marker_default controls-GridReact__cell-baseline_default controls-ListView__itemV_marker-default_topPadding-grid_s"
+            data-qa="marker"
+          />
+          Jorden Pate
+        </div>
+        <div
+          class="controls-GridReact__cell js-controls-GridReact__cell js-controls-Grid__row-cell js-controls-ListView__editingTarget controls-ListView__item_contentWrapper js-controls-ListView__measurableContainer js-controls-GridReact__cell  tw-cursor-pointer controls-GridReact__minHeight-data tw-relative controls-GridReact__cell__hoverMode_row controls-GridReact__cell_actionsCell controls-Grid__row-cell_selected-undefined controls-GridReact__cell_last tw-flex controls-hover-background-default tw-items-baseline controls-GridReact__cell-baseline controls-GridReact__cell-baseline_default controls-padding_top-grid_s controls-padding_bottom-grid_s controls-padding_left-grid_default controls-padding_right-list_default"
+          data-qa="cell"
+        >
+          Philippines
+        </div>
+      </div>
+      <div
+        class=" controls-ListView__itemV controls-GridReact__row tw-contents controls-GridReact__row__hoverMode_row js-controls-Grid__row_editable controls-GridView__item_showActions controls-GridView__item_showActions_row controls-ListView__item_showActions_inside controls-ListView__item_highlightOnHover"
+        data-qa="row"
+        item-key="3"
+        tabindex="0"
+      >
+        <div
+          class="controls-GridReact__cell js-controls-GridReact__cell js-controls-Grid__row-cell js-controls-ListView__editingTarget controls-ListView__item_contentWrapper js-controls-ListView__measurableContainer js-controls-GridReact__cell  tw-cursor-pointer controls-GridReact__minHeight-data tw-relative controls-GridReact__cell__hoverMode_row controls-GridReact__cell_first tw-flex controls-hover-background-default tw-items-baseline controls-GridReact__cell-baseline controls-GridReact__cell-baseline_default controls-padding_top-grid_s controls-padding_bottom-grid_s controls-padding_left-list_default controls-padding_right-grid_default"
+          data-qa="cell"
+          tabindex="0"
+        >
+          Benjamin Pruitt
+        </div>
+        <div
+          class="controls-GridReact__cell js-controls-GridReact__cell js-controls-Grid__row-cell js-controls-ListView__editingTarget controls-ListView__item_contentWrapper js-controls-ListView__measurableContainer js-controls-GridReact__cell  tw-cursor-pointer controls-GridReact__minHeight-data tw-relative controls-GridReact__cell__hoverMode_row controls-GridReact__cell_actionsCell controls-GridReact__cell_last tw-flex controls-hover-background-default tw-items-baseline controls-GridReact__cell-baseline controls-GridReact__cell-baseline_default controls-padding_top-grid_s controls-padding_bottom-grid_s controls-padding_left-grid_default controls-padding_right-list_default"
+          data-qa="cell"
+        >
+          Norway
+        </div>
+      </div>
+      <div
+        class=" controls-ListView__itemV controls-GridReact__row tw-contents controls-GridReact__row__hoverMode_row js-controls-Grid__row_editable controls-GridView__item_showActions controls-GridView__item_showActions_row controls-ListView__item_showActions_inside controls-ListView__item_highlightOnHover"
+        data-qa="row"
+        item-key="4"
+        tabindex="0"
+      >
+        <div
+          class="controls-GridReact__cell js-controls-GridReact__cell js-controls-Grid__row-cell js-controls-ListView__editingTarget controls-ListView__item_contentWrapper js-controls-ListView__measurableContainer js-controls-GridReact__cell  tw-cursor-pointer controls-GridReact__minHeight-data tw-relative controls-GridReact__cell__hoverMode_row controls-GridReact__cell_first tw-flex controls-hover-background-default tw-items-baseline controls-GridReact__cell-baseline controls-GridReact__cell-baseline_default controls-padding_top-grid_s controls-padding_bottom-grid_s controls-padding_left-list_default controls-padding_right-grid_default"
+          data-qa="cell"
+          tabindex="0"
+        >
+          Tiger O'Neill
+        </div>
+        <div
+          class="controls-GridReact__cell js-controls-GridReact__cell js-controls-Grid__row-cell js-controls-ListView__editingTarget controls-ListView__item_contentWrapper js-controls-ListView__measurableContainer js-controls-GridReact__cell  tw-cursor-pointer controls-GridReact__minHeight-data tw-relative controls-GridReact__cell__hoverMode_row controls-GridReact__cell_actionsCell controls-GridReact__cell_last tw-flex controls-hover-background-default tw-items-baseline controls-GridReact__cell-baseline controls-GridReact__cell-baseline_default controls-padding_top-grid_s controls-padding_bottom-grid_s controls-padding_left-grid_default controls-padding_right-list_default"
+          data-qa="cell"
+        >
+          Peru
+        </div>
+      </div>
+      <div
+        class=" controls-ListView__itemV controls-GridReact__row tw-contents controls-GridReact__row__hoverMode_row js-controls-Grid__row_editable controls-GridView__item_showActions controls-GridView__item_showActions_row controls-ListView__item_showActions_inside controls-ListView__item_highlightOnHover"
+        data-qa="row"
+        item-key="5"
+        tabindex="0"
+      >
+        <div
+          class="controls-GridReact__cell js-controls-GridReact__cell js-controls-Grid__row-cell js-controls-ListView__editingTarget controls-ListView__item_contentWrapper js-controls-ListView__measurableContainer js-controls-GridReact__cell  tw-cursor-pointer controls-GridReact__minHeight-data tw-relative controls-GridReact__cell__hoverMode_row controls-GridReact__cell_first tw-flex controls-hover-background-default tw-items-baseline controls-GridReact__cell-baseline controls-GridReact__cell-baseline_default controls-padding_top-grid_s controls-padding_bottom-grid_s controls-padding_left-list_default controls-padding_right-grid_default"
+          data-qa="cell"
+          tabindex="0"
+        >
+          Yetta Herrera
+        </div>
+        <div
+          class="controls-GridReact__cell js-controls-GridReact__cell js-controls-Grid__row-cell js-controls-ListView__editingTarget controls-ListView__item_contentWrapper js-controls-ListView__measurableContainer js-controls-GridReact__cell  tw-cursor-pointer controls-GridReact__minHeight-data tw-relative controls-GridReact__cell__hoverMode_row controls-GridReact__cell_actionsCell controls-GridReact__cell_last tw-flex controls-hover-background-default tw-items-baseline controls-GridReact__cell-baseline controls-GridReact__cell-baseline_default controls-padding_top-grid_s controls-padding_bottom-grid_s controls-padding_left-grid_default controls-padding_right-list_default"
+          data-qa="cell"
+        >
+          Austria
+        </div>
+      </div>
+    </div>
+    <div
+      class=" controls-BaseControl__loadingTrigger controls-BaseControl__loadingTrigger-bottom"
+      data-qa="loading-trigger-bottom"
+      style="bottom: 1px;"
+    />
+    <div
+      class="controls-Grid__loadingIndicator controls-Grid__loadingIndicator-bottom"
+      style="display: none;"
+    >
+      <div
+        class="tw-w-full"
+      >
+        <div
+          class="controls-BaseControl__loadingIndicator js-controls-BaseControl__loadingIndicator controls-BaseControl__loadingIndicator-bottom controls-BaseControl__loadingIndicator__position-bottom controls-BaseControl__loadingIndicator__state-loading "
+          data-qa="indicator_state_loading_position_bottom"
+          style="display: none;"
+        >
+          <div
+            class="controls-BaseControl__loadingIndicator-content"
+          >
+            <div
+              class="controls-BaseControl__loadingIndicatorImage"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Actions. Тесты действий над записями. Состояние контекстных операций (itemActions) Если в setState были заданы новые действия, происходит обновление модели 2`] = `Array []`;

@@ -1,0 +1,30 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow controlsDemo__flexRow_noWrap controlsDemo__childMaxWidth500">
+
+    <div class="controlsDemo__cell controlsDemo__mr4">
+        <Router.router:Reference attr:class="controlsDemo__ItemActionsPosition_text-label controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/list_new/ItemActions/ItemActionsPosition/Inside/Index' }}">
+            <a href="{{content.href}}">Внутри строки</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.ItemActions.ItemActionsPosition.Inside.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controlsDemo__mr4">
+        <Router.router:Reference attr:class="controlsDemo__ItemActionsPosition_text-label controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/list_new/ItemActions/ItemActionsPosition/Outside/Index' }}">
+            <a href="{{content.href}}">Снаружи строки</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.ItemActions.ItemActionsPosition.Outside.Index/>
+    </div>
+
+    <div class="controlsDemo__cell controlsDemo__mr4">
+        <Router.router:Reference attr:class="controlsDemo__ItemActionsPosition_text-label controls-text-label"
+                                 state="app/:app"
+                                 app="{{ 'Controls-demo/list_new/ItemActions/ItemActionsPosition/Custom/Index' }}">
+            <a href="{{content.href}}">В произвольном месте прикладного шаблона</a>
+        </Router.router:Reference>
+        <Controls-demo.list_new.ItemActions.ItemActionsPosition.Custom.Index/>
+    </div>
+
+</div>

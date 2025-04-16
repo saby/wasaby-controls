@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search_Source. Тесты поиска с сурсом. Поддержка прикладных возможностей Сохранение поиска при SPA переходе 1`] = `
+<div
+  data-qa="js-demo-search-input-data-qa"
+>
+  <div
+    class="controls-Render js-controls-Render  controls-Render_background-same controls-Render_textAlign-left controls-Render_search_borderRadius controls-Render_state-search-valid controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default controls-Render_state-search-valid_caretEmpty controls-inlineheight-default controls-Render-inlineheight-default  controls-search controls_search_theme-default controls-notFocusOnEnter "
+    tabindex="0"
+    title=""
+  >
+    <div
+      class="controls-Render__wrapper"
+    >
+      <span
+        class="controls-Render__baseline"
+      >
+        ﻿
+      </span>
+      <div
+        class="controls_search_theme-default controls-Search__buttons controls-Search__buttons-leftTemplate"
+      />
+      <div
+        class="controls-InputBase__field controls-Search__field_margin-null controls-Search__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+        data-qa="controls-Render__field"
+      >
+        <input
+          autocapitalize="on"
+          autocomplete="off"
+          class="controls-Field js-controls-Field controls-InputBase__nativeField controls-Search__nativeField_caretEmpty controls-Search__nativeField_caretEmpty_theme_default"
+          inputmode="text"
+          name="ws-input_2000-01-01"
+          spellcheck="true"
+          tabindex="0"
+          type="text"
+          value="Москва"
+        />
+        <div
+          class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+        >
+          <div
+            class="controls-Render__placeholder controls-Render__placeholder_overflow"
+          >
+            Найти
+          </div>
+        </div>
+      </div>
+      <div
+        class="controls_search_theme-default controls-Search__buttons controls-Search__buttons-rightTemplate"
+      >
+        <div
+          class="controls-Search__button
+                            
+                            controls-Search__button_enabled
+                            controls-Search__resetButton
+                            controls-Search__resetButton_position
+                            controls-Search__resetButton_color icon-Close"
+          data-qa="Search__resetButton"
+          title="Очистить"
+          ws-no-focus="true"
+        />
+        <div
+          class="
+                    controls_search_theme-default controls-Search__button
+                    controls-Search__button_enabled
+                    controls-Search__searchButton
+                    controls-Search__searchButton_iconSize-s
+                    controls-Search__searchButton-right_inlineheight-default
+                    controls-Search__searchButton_position-right
+                    controls-Search__searchButton_color
+                    icon-Search2
+                    undefined"
+          data-qa="Search__searchButton"
+          ws-no-focus="true"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Search_Source. Тесты поиска с сурсом. Поддержка прикладных возможностей Сохранение поиска при SPA переходе 2`] = `Array []`;

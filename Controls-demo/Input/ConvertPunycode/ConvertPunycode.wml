@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell demo-convertPunycode_false controlsDemo_fixedWidth300">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             convertPunycode="{{false}}"
+                             placeholder="convertPunycode=false"/>
+    </div>
+    <div class="controlsDemo__cell demo-convertPunycode_true controlsDemo_fixedWidth300">
+        <Controls.input:Text attr:class="controlsDemo__input"
+                             convertPunycode="{{true}}"
+                             placeholder="convertPunycode=true"/>
+    </div>
+    <input class="controlsDemo_fixedWidth300" type="text" value="http://xn--h1alffa9f.xn--p1ai/" id="text"/>
+    <Controls.buttons:Button class="controlsDemo_convertPunycode-button"
+                             caption="Copy text"
+                             on:click="_copyText()"/>
+</div>

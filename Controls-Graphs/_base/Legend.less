@@ -1,0 +1,29 @@
+.controls-Graphs-legend {
+   align-items: center;
+   width: 100%;
+   display: flex;
+
+   &_item {
+      display: flex;
+      align-items: center;
+      margin-right: var(--legendItem__rightOffset, var(--offset_m));
+
+      &_color {
+         border-radius: 4px;
+         min-width: 12px;
+         min-height: 12px;
+         border-style: solid;
+         border-width: var(--border-thickness);
+
+         &_notVisible.controls-Graphs-legend_item_color {
+            background-color: var(--background-color);
+         }
+      }
+
+      &_text {
+         flex-shrink: 1;
+         min-width: 1px;
+         user-select: none;
+      }
+   }
+}

@@ -1,0 +1,19 @@
+<div class="search_Input-demo_wrapper">
+   <Controls-ListEnv.SearchWithSelector bind:value="_value"
+                 displayProperty="title"
+                 autoDropDown="{{true}}"
+                 searchParam="title"
+                 contrastBackground="{{true}}"
+                 suggestListsOptions="{{_suggestListsOptions}}"
+                 attr:class="search_Input-demo_search">
+      <ws:suggestTemplate templateName="wml!Controls-ListEnv-demo/SearchWithSelector/resources/SuggestTemplate"/>
+      <ws:rightFieldTemplate>
+         <div class="search-Input-demo__menu">
+            <Controls.buttons:Button viewMode="link"
+                                     fontColorStyle="unaccented"
+                                     caption="Расширенный поиск"
+                                     attr:class="search_Input-demo_button"/>
+         </div>
+      </ws:rightFieldTemplate>
+   </Controls-ListEnv.SearchWithSelector>
+</div>

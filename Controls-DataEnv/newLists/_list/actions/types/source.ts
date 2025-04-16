@@ -1,0 +1,323 @@
+import type { TAbstractAction } from 'Controls-DataEnv/dispatcher';
+import type { TAbstractListActions } from 'Controls-DataEnv/abstractList';
+import type { IListSavedState } from 'Controls/dataSource';
+import {
+    IBaseSourceConfig,
+    Direction,
+    INavigationSourceConfig,
+    IIgnoreNavigationConfig,
+} from 'Controls-DataEnv/listTypes';
+import type { TFilter, TKey } from 'Controls-DataEnv/interface';
+import type { RecordSet } from 'Types/collection';
+import type { CrudEntityKey } from 'Types/source';
+import type { IReloadItemOptions } from 'Controls/listCommands';
+import type { IListState } from '../../interface/IListState';
+import type { IHasMoreStorage } from 'Controls/baseTreeDisplay';
+
+//# region Экспорты для публичных типов.
+/**
+ * Тип действия, для загрузки предыдущей пачки данных.
+ */
+export type TLoadPrevAction = TAbstractListActions.source.TLoadPrevAction;
+
+/**
+ * Тип действия, для загрузки следующей пачки данных.
+ */
+export type TLoadNextAction = TAbstractListActions.source.TLoadNextAction;
+//# endregion Экспорты для публичных типов.
+
+/**
+ * Тип действия TSetSavedSourceStateAction.
+ */
+export type TSetSavedSourceStateAction = TAbstractAction<
+    'setSavedSourceState',
+    {
+        id: string;
+        state: IListSavedState;
+    }
+>;
+
+/**
+ * Тип действия TUpdateSavedSourceStateAction.
+ */
+export type TUpdateSavedSourceStateAction = TAbstractAction<'updateSavedSourceState', {}>;
+
+/**
+ * Тип действия TReloadAction.
+ */
+export type TReloadAction = TAbstractAction<
+    'reload',
+    {
+        sourceConfig?: INavigationSourceConfig;
+        keepNavigation?: boolean;
+        onResolve?: Function;
+        onReject?: Function;
+    }
+>;
+
+/**
+ * Тип действия TNewItemsReceivedAction.
+ */
+export type TNewItemsReceivedAction = TAbstractAction<
+    'newItemsReceived',
+    {
+        nextState?: IListState;
+        currentState?: IListState;
+        items: RecordSet;
+        additionalPromise?: Promise<Partial<IListState>>;
+        itemsDirection?: Direction;
+        loadConfig?: {
+            sourceConfig?: IBaseSourceConfig | IIgnoreNavigationConfig;
+            keepNavigation?: boolean;
+        } | null;
+
+        onResolve?: Function;
+        onReject?: Function;
+    }
+>;
+
+/**
+ * Тип действия TLoadAction.
+ */
+export type TLoadAction = TAbstractAction<
+    'load',
+    {
+        sourceConfig?: IBaseSourceConfig;
+    }
+>;
+
+/**
+ * Тип действия TOldSliceLoadAction.
+ */
+export type TOldSliceLoadAction = TAbstractAction<
+    'oldSliceLoad',
+    {
+        state?: IListState;
+        direction?: Direction;
+        key?: TKey;
+        filter?: TFilter;
+        addItemsAfterLoad?: boolean;
+        navigationSourceConfig?: IBaseSourceConfig;
+        disableSetState?: boolean;
+
+        awaitLoad?: boolean;
+        onResolve?: Function;
+        onReject?: Function;
+
+        isDefaultError?: boolean;
+    }
+>;
+
+/**
+ * Тип действия TDataLoadedSuccessAction.
+ */
+export type TDataLoadedSuccessAction = TAbstractAction<
+    'dataLoadedSuccess',
+    {
+        items: RecordSet;
+        direction?: Direction;
+        key?: TKey;
+        nextState: Partial<IListState>;
+        additionalPromise?: Promise<Partial<IListState>>;
+        currentState: IListState;
+
+        onResolve?: Function;
+        onReject?: Function;
+    }
+>;
+
+/**
+ * Тип действия TFetchAction.
+ */
+export type TFetchAction = TAbstractAction<'fetch', {}>;
+
+/**
+ * Тип действия TRequestFetchAction.
+ */
+export type TRequestFetchAction = TAbstractAction<'requestFetch', {}>;
+
+/**
+ * Тип действия TInitSourceAction.
+ */
+export type TInitSourceAction = TAbstractAction<'initSource', {}>;
+
+/**
+ * Тип действия TAwaitAllRequests.
+ */
+export type TAwaitAllRequests = TAbstractAction<'awaitAllRequests', {}>;
+/**
+ * Тип действия для отмены текущей загрузки данных.
+ */
+export type TRejectLoadAction = TAbstractAction<'rejectLoad', {}>;
+
+/**
+ * Тип действия TLoadOnSourceControllerAction.
+ */
+export type TLoadOnSourceControllerAction = TAbstractAction<
+    'loadOnSourceController',
+    {
+        state?: IListState;
+        direction?: Direction;
+        key?: TKey;
+        filter?: TFilter;
+        addItemsAfterLoad?: boolean;
+        navigationSourceConfig?: IBaseSourceConfig;
+        keepNavigation?: boolean;
+        useServicePool?: boolean;
+
+        awaitLoad?: boolean;
+        onResolve?: Function;
+        onReject?: Function;
+
+        isDefaultError?: boolean;
+    }
+>;
+
+/**
+ * Тип действия TReloadOnSourceControllerAction.
+ */
+export type TReloadOnSourceControllerAction = TAbstractAction<
+    'reloadOnSourceController',
+    {
+        sourceController: Exclude<IListState['sourceController'], undefined>;
+        sourceConfig?: IBaseSourceConfig | IIgnoreNavigationConfig;
+        isFirstLoad?: boolean;
+        addItemsAfterLoad?: boolean;
+        keepNavigation?: boolean;
+
+        onResolve?: Function;
+        onReject?: Function;
+    }
+>;
+
+/**
+ * Тип действия TLoadNodesAction.
+ */
+export type TLoadNodesAction = TAbstractAction<
+    'loadNodes',
+    {
+        keys: TKey[];
+        currentState: IListState;
+        nextState: IListState;
+
+        awaitLoad?: boolean;
+        onResolve?: Function;
+        onReject?: Function;
+    }
+>;
+
+/**
+ * Тип действия TLoadToDirectionAction.
+ */
+export type TLoadToDirectionAction = TAbstractAction<
+    'loadToDirection',
+    {
+        direction: Direction;
+        addItemsAfterLoad?: boolean;
+        useServicePool?: boolean;
+
+        retryAction?: () => void;
+
+        onResolve?: Function;
+        onReject?: Function;
+    }
+>;
+
+/**
+ * Тип действия TSetPreloadedItemsAction.
+ */
+export type TSetPreloadedItemsAction = TAbstractAction<
+    'setPreloadedItems',
+    {
+        direction?: Direction;
+        items: RecordSet;
+        onResolve?: Function;
+        onReject?: Function;
+    }
+>;
+
+/**
+ * Тип действия TResolveStateAfterUpdateItemsAction.
+ */
+export type TResolveStateAfterUpdateItemsAction = TAbstractAction<
+    'resolveStateAfterUpdateItems',
+    {
+        currentState: IListState;
+        nextState?: Partial<IListState>;
+
+        resultRef: {
+            current: object;
+        };
+    }
+>;
+
+/**
+ * Тип действия TReloadItemAction.
+ */
+export type TReloadItemAction = TAbstractAction<
+    'reloadItem',
+    {
+        key: CrudEntityKey;
+        options?: IReloadItemOptions;
+        onResolve?: Function;
+        onReject?: Function;
+    }
+>;
+
+/**
+ * Тип действия TReloadItemsAction.
+ */
+export type TReloadItemsAction = TAbstractAction<
+    'reloadItems',
+    {
+        keys: CrudEntityKey[];
+        onResolve?: Function;
+        onReject?: Function;
+    }
+>;
+
+/**
+ * Тип действия TUpdateHasMoreStorageAction.
+ */
+export type TUpdateHasMoreStorageAction = TAbstractAction<
+    'updateHasMoreStorage',
+    {
+        nextState: IListState;
+        hasMoreStorage?: IHasMoreStorage;
+    }
+>;
+
+/*
+ * LOG разработки.
+ * 1) Экшен при успешной дозагрузке, нотифицирующий прикладника.
+ * Сейчас это dataLoadedSuccess, было - dataLoadedInner.
+ * 2) Приватный экшен вызова загрузки на sourceController.
+ * Сейчас это loadOnSourceController.
+ * Все обращения к контроллеру должны быть единичными, т.е. вызываться из уничерсального экшена.
+ * */
+/**
+ * Тип действий для работы с источником данных, доступные в WEB списке.
+ */
+export type TAnySourceAction =
+    | TAbstractListActions.source.TAnySourceAction
+    | TSetSavedSourceStateAction
+    | TUpdateSavedSourceStateAction
+    | TReloadAction
+    | TFetchAction
+    | TNewItemsReceivedAction
+    | TLoadOnSourceControllerAction
+    | TReloadItemAction
+    | TReloadItemsAction
+    | TReloadOnSourceControllerAction
+    | TResolveStateAfterUpdateItemsAction
+    | TLoadNodesAction
+    | TLoadAction
+    | TLoadToDirectionAction
+    | TDataLoadedSuccessAction
+    | TSetPreloadedItemsAction
+    | TOldSliceLoadAction
+    | TRequestFetchAction
+    | TAwaitAllRequests
+    | TInitSourceAction
+    | TRejectLoadAction
+    | TUpdateHasMoreStorageAction;

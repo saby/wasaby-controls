@@ -1,0 +1,48 @@
+import type { TKey } from 'Controls/interface';
+import type { IAbstractListState } from 'Controls-DataEnv/abstractList';
+import { relation as entityRelation } from 'Types/entity';
+import type { CrudEntityKey } from 'Types/source';
+
+export function isExpanded(state: IAbstractListState, key: TKey): boolean {
+    if (state.isLatestInteractorVersion) {
+        return !!state.expansionModel.get(key as CrudEntityKey);
+    }
+    // TODO: Переделать проверку на ExpansionMap, когда она будет создаваться везде.
+    //  Проверка по данным неверна, т.к. это не ответственность ViewModel.
+    const { expandedItems, collapsedItems } = state;
+    if (!expandedItems || !collapsedItems) {
+        return false;
+    }
+    return expandedItems.includes(key) || (isExpandAll(state) && !collapsedItems.includes(key));
+}
+
+export const ALL_EXPANDED_VALUE = null;
+
+export function isExpandAll({ expandedItems }: IAbstractListState): boolean {
+    return expandedItems[0] === ALL_EXPANDED_VALUE;
+}
+
+export function createRelation(viewModelState: IAbstractListState): entityRelation.Hierarchy {
+    return new entityRelation.Hierarchy(viewModelState);
+}
+
+export function canBeRoot(
+    viewModelState: IAbstractListState,
+    key: TKey,
+    relation: entityRelation.Hierarchy = createRelation(viewModelState)
+): boolean {
+    return (
+        relation.getRootKey() === key ||
+        isNode(viewModelState, key, relation) ||
+        !viewModelState.items?.getRecordById(key as CrudEntityKey)
+    );
+}
+
+export function isNode(
+    viewModelState: IAbstractListState,
+    key: TKey,
+    relation: entityRelation.Hierarchy = createRelation(viewModelState)
+): boolean {
+    const item = viewModelState.items && viewModelState.items.getRecordById(key as CrudEntityKey);
+    return !!item && relation.isNode(item) !== null;
+}

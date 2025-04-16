@@ -1,0 +1,131 @@
+.controls-Graphs_RoundChart {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+
+   &_tooltip {
+      padding: var(--offset_xs);
+      color: var(--tooltip_text-color_Graphs-comparison);
+      font-family: var(--font-family);
+      border-width: var(--border-thickness);
+      border-style: solid;
+      border-radius: var(--border-radius_xs);
+
+      &.controls-Graphs_RoundChart_tooltip_background {
+         background-color: var(--tooltip_background-color);
+      }
+
+      &_header {
+         display: flex;
+         align-items: baseline;
+         font-size: var(--font-size_xs);
+      }
+
+      &_point {
+         width: var(--offset_s);
+         height: var(--offset_s);
+         border-radius: 50%;
+         margin-right: var(--offset_s);
+         flex-shrink: 0;
+      }
+
+      &_value {
+         margin-left: var(--offset_l);
+         font-size: var(--font-size_m);
+      }
+
+      &_caption {
+         word-break: break-word;
+      }
+   }
+
+   &__innerTemplate {
+      &_offset {
+         &_s {
+            top: calc(var(--offset_s) - var(--border-thickness));
+         }
+
+         &_xs {
+            top: var(--offset_xs);
+         }
+
+         &_with_top-caption {
+            top: calc(-1 * var(--offset_3xs));
+         }
+      }
+
+      &_caption {
+         &_offset {
+            &_xs {
+               top: calc(-1 * var(--offset_xs));
+            }
+
+            &_2xs {
+               top: calc(-1 * var(--offset_2xs));
+            }
+
+            &_3xs {
+               top: calc(-1 * (var(--offset_3xs) + var(--border-thickness)));
+            }
+         }
+      }
+
+      &_value_withTopCaption {
+         line-height: var(--inline_height_l);
+      }
+
+      &__additionCaption_height {
+         line-height: calc(var(--inline_height_xs) + 2px);
+      }
+   }
+
+   &__graphsContainer {
+      position: relative;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      &Size {
+         &_short {
+            width: var(--graph_container-size_round-chart_local, 50%);
+         }
+
+         &_full {
+            width: var(--graph_container-size_round-chart_local, 100%);
+         }
+      }
+   }
+
+   &__innerContainer {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+
+   .highcharts-point {
+      stroke: none;
+   }
+}
+
+.controls-Graphs__roundChart-size {
+   &-s {
+      --graph_container-size_round-chart_local: 180px;
+   }
+
+   &-m {
+      --graph_container-size_round-chart_local: 240px;
+   }
+
+   &-l {
+      --graph_container-size_round-chart_local: 300px;
+   }
+}

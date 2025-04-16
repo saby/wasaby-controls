@@ -1,0 +1,19 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo__cell">
+        <div class="controls-text-label">itemActions</div>
+        <Controls.toolbars:View
+                name="Toolbar_itemActions"
+                attr:id="Toolbar_itemActions"
+                parentProperty="parent"
+                nodeProperty="@parent"
+                keyProperty="id"
+                additionalProperty="additional"
+                items="{{_items}}"
+                popupClassName="controls-Toolbar_test_popupClassName"
+                on:itemClick="_itemClick()"
+                itemsSpacing="big"
+                itemActions="{{_itemActions}}"
+                itemActionVisibilityCallback="{{_itemActionVisibilityCallback}}"
+        />
+    </div>
+</div>

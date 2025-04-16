@@ -1,0 +1,47 @@
+.controls-Graphs-LinearChart {
+   height: 100%;
+
+   // line hover
+   /* stylelint-disable-next-line no-descending-specificity */
+   .dashed .highcharts-graph,
+   .dashed.highcharts-series-1 .highcharts-graph {
+      stroke-width: 1;
+      stroke-dasharray: 8, 3;
+   }
+
+   /* stylelint-disable-next-line no-descending-specificity */
+   .highcharts-graph {
+      transition: stroke-width 0.2s ease;
+   }
+
+   .dashed.highcharts-series-hover .highcharts-graph {
+      stroke-width: 2;
+   }
+
+   .highcharts-series-hover.highcharts-areaspline-series .highcharts-graph {
+      stroke-width: 3;
+   }
+
+   .highcharts-legend-item {
+      stroke: none;
+   }
+
+   &__minHeight {
+      min-height: 223px;
+   }
+}
+
+.controls-Graphs-tooltip {
+   color: var(--tooltip_text-color_Graphs-comparison);
+   box-sizing: border-box;
+   background-color: var(--tooltip_background-color);
+   border-radius: var(--border-radius_s);
+   border: calc(2 * var(--border-thickness)) solid var(--readonly_text-color);
+   padding: var(--tooltip_content_padding_Graphs-comparison);
+   font-size: var(--font-size_s);
+}
+
+.controls-Graphs-tooltip_legend {
+   width: var(--offset_s);
+   height: var(--offset_s);
+}

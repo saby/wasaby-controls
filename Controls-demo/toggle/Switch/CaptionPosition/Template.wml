@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell demo-switchPosition__default">
+            <Controls.toggle:Switch attr:class="demo-switch__element"
+                                    bind:value="_value"
+                                    captionPosition="end"
+                                    caption="end position"/>
+        </div>
+        <div class="controlsDemo__cell demo-switchPosition__left">
+            <Controls.toggle:Switch bind:value="_value2"
+                                    captionPosition="start"
+                                    caption="start position"/>
+        </div>
+    </div>
+</div>

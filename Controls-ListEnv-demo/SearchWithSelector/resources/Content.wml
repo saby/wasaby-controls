@@ -1,0 +1,11 @@
+<ws:partial template="Controls/dropdown:inputDefaultContentTemplate" scope="{{_options}}">
+    <ws:contentTemplate>
+        <div class="search-Input-demo__menu-wrapper">
+            <div class="search-Input-demo__menu-text">{{text}}</div>
+            <Controls.icon:Icon iconSize="xs"
+                                icon="icon-ExpandLight"
+                                attr:class="search-Input-demo__menu-icon"/>
+            <div class="search-Input-demo__menu-separator"> </div>
+        </div>
+    </ws:contentTemplate>
+</ws:partial>

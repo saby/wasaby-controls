@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls/ListSliceSnapshots Загрузка записей по скролу Источник вернул ошибку загрузки 1`] = `
+<DocumentFragment>
+  <div>
+    [
+    {
+        "errorViewConfig": "undefined",
+        "loading": false
+    },
+    {
+        "loading": true
+    },
+    {},
+    {
+        "errorViewConfig": {
+            "type": "maintenance",
+            "status": 504,
+            "template": "SbisEnvUI/ParkingTemplates:InList",
+            "options": {
+                "message": "Извините, мы на техническом обслуживании",
+                "image": {
+                    "default": "/cdn/Maintenance/1.1.3/img/SERVICE_FOR_MAINTENANCE_default.svg",
+                    "dark": "/cdn/Maintenance/1.1.3/img/SERVICE_FOR_MAINTENANCE_blue.svg"
+                },
+                "action": "function",
+                "details": "",
+                "error": null,
+                "showInDirection": "down"
+            },
+            "mode": "inlist"
+        },
+        "loading": false
+    }
+]
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,34 @@
+.ControlsLists-timelineGrid__tag_light {
+   z-index: 2;
+   width: var(--border-radius_m);
+   height: var(--border-radius_m);
+   background: transparent;
+   pointer-events: auto;
+   position: absolute;
+   top: 0;
+   right: 0;
+
+   &::before {
+      content: '';
+      width: var(--border-radius_xs);
+      height: var(--border-radius_xs);
+      border-radius: 50%;
+      top: var(--offset_2xs);
+      right: var(--offset_xs);
+      position: absolute;
+      pointer-events: none;
+   }
+}
+
+.ControlsLists-timelineGrid__tag_light-style- {
+   @variants: danger, primary, success, secondary, warning;
+   .for(@variants, { &@{_item} {
+    &::before {
+      background: ~'var(--@{_item}_icon-color)';
+    }
+  } });
+}
+
+.ControlsLists-timelineGrid__tag_light-style-info::before {
+   background: var(--unaccented_icon-color);
+}

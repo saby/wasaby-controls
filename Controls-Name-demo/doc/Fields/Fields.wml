@@ -1,0 +1,23 @@
+<div>
+    <Controls-Name.Input
+            class="demo__name-input"
+            bind:firstName="_firstName"
+            bind:middleName="_middleName"
+            bind:lastName="_lastName"
+            fields="{{_fields}}">
+    </Controls-Name.Input>
+    <Controls-Name.Input
+            class="demo__name-input"
+            bind:firstName="_firstName2"
+            bind:middleName="_middleName2"
+            bind:lastName="_lastName2"
+            fields="{{_fields2}}">
+    </Controls-Name.Input>
+    <Controls-Name.Input
+            class="demo__name-input"
+            bind:firstName="_firstName3"
+            bind:middleName="_middleName3"
+            bind:lastName="_lastName3"
+            fields="{{_fields3}}">
+    </Controls-Name.Input>
+</div>

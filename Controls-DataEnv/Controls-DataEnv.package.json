@@ -1,0 +1,27 @@
+[
+  {
+    "include": [
+      "Controls-DataEnv/dispatcher",
+      "Controls-DataEnv/abstractList"
+    ],
+    "output": "controls-abstract-list-data-env.package.js"
+  },
+  {
+    "include": [
+      "Controls-DataEnv/list"
+    ],
+    "includePackages": [
+      "Controls/controls-abstract-list-data-env.package.js"
+    ],
+    "output": "controls-list-data-env.package.js"
+  },
+  {
+   "include": [
+     "Controls-DataEnv/context",
+     "Controls-DataEnv/slice",
+     "Controls-DataEnv/dataFactory",
+     "Controls-DataEnv/dataLoader"
+   ],
+   "output": "controls-context-data-env.package.js"
+  }
+]

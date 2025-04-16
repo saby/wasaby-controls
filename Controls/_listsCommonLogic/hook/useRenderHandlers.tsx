@@ -1,0 +1,422 @@
+import * as React from 'react';
+
+import type { CrudEntityKey } from 'Types/source';
+
+import type {
+    AbstractListSlice,
+    IAbstractListAPI,
+    IAbstractListState,
+} from 'Controls-DataEnv/abstractList';
+
+import type { TUseInteractorCommandsHookProps } from '../interface/TUseInteractorCommandsHookProps';
+import type { IAbstractViewCommandHandlers } from '../interface/IAbstractViewCommandHandlers';
+import type { IAbstractComponentEventHandlers } from '../interface/IAbstractComponentEventHandlers';
+
+import { UILogic } from '../UILogic';
+import { Model } from 'Types/entity';
+
+import { IAction, ISelectionObject } from 'Controls/interface';
+import { BaseAction } from 'Controls/actions';
+import { isLoaded, loadAsync, loadSync } from 'WasabyLoader/ModulesLoader';
+import { SyntheticEvent } from 'UICommon/Events';
+
+const { getKey } = UILogic.Common;
+
+type TUseRenderHandlersProps = TUseInteractorCommandsHookProps & TUseRenderHandlersPropsCompatible;
+
+export type TUseRenderHandlersPropsCompatible = {
+    sliceForOldItemActions: AbstractListSlice;
+    contextForOldItemActions: Record<string | symbol, unknown>;
+};
+
+const getMarkerStrategy = async (
+    cb: (result: ReturnType<(typeof import('Controls/marker'))['getMarkerStrategy']>) => void,
+    ...args: Parameters<(typeof import('Controls/marker'))['getMarkerStrategy']>
+) => {
+    const path = 'Controls/marker';
+    const lib = isLoaded(path)
+        ? loadSync<typeof import('Controls/marker')>(path)
+        : await loadAsync<typeof import('Controls/marker')>(path);
+    cb(lib.getMarkerStrategy(...args));
+};
+
+export function getRenderHandlers<TViewCommandHandlers extends IAbstractViewCommandHandlers>(
+    viewModelAPI: React.MutableRefObject<IAbstractListAPI>,
+    viewModelState: React.MutableRefObject<IAbstractListState>,
+    componentHandlers: React.MutableRefObject<IAbstractComponentEventHandlers>,
+    props: React.MutableRefObject<TUseRenderHandlersProps>
+): TViewCommandHandlers {
+    const abstract: Omit<IAbstractViewCommandHandlers, 'onViewTriggerVisibilityChanged'> = {
+        onCheckboxClick(event: React.MouseEvent, item: Model | Model[]): void {
+            viewModelAPI.current.select(getKey(item), { isRangeSelection: event.shiftKey });
+        },
+        onItemClick(event: React.MouseEvent, item: Model | Model[]): void {
+            itemAbstractActivation(getKey(item), viewModelAPI.current, viewModelState.current, {
+                expandByItemClick: props.current.expandByItemClick,
+                changeRootByItemClick: props.current.changeRootByItemClick,
+                onActivate: () => {
+                    componentHandlers.current.onItemClick?.(item, event);
+                },
+            });
+        },
+        onExpanderClick(
+            _event: React.MouseEvent,
+            item: Model | Model[],
+            {
+                markItem = true,
+            }: {
+                markItem?: boolean;
+            } = {}
+        ): void {
+            const key = getKey(item);
+            const params = {
+                markItem,
+            };
+
+            if (UILogic.Hierarchy.isExpanded(viewModelState.current, key)) {
+                viewModelAPI.current.collapse(key, params);
+            } else {
+                viewModelAPI.current.expand(key, params);
+            }
+        },
+        onHasMoreClick(_event: React.MouseEvent, item: Model | Model[]): void {
+            // Мобильная ViewModel накидывает префикс, костыль пока коллекции "умные".
+            viewModelAPI.current.expand((getKey(item) as string).replace('node-footer-', ''));
+        },
+        onItemKeyDownEnter(
+            event: React.KeyboardEvent<HTMLDivElement>,
+            _item: Model | Model[]
+        ): void {
+            onKeyDownEnter(event, viewModelAPI.current, viewModelState.current, props.current);
+        },
+        onItemKeyDownArrowLeft(
+            _event: React.KeyboardEvent<HTMLDivElement>,
+            _item: Model | Model[]
+        ): void {
+            onKeyDownArrowLeft(viewModelAPI.current, viewModelState.current);
+        },
+        onItemKeyDownArrowRight(
+            _event: React.KeyboardEvent<HTMLDivElement>,
+            _item: Model | Model[]
+        ): void {
+            onKeyDownArrowRight(viewModelAPI.current, viewModelState.current);
+        },
+        onItemKeyDownArrowUp(
+            event: React.KeyboardEvent<HTMLDivElement>,
+            _item: Model | Model[]
+        ): void {
+            onKeyDownArrowUp(event, viewModelAPI.current, viewModelState.current);
+        },
+        onItemKeyDownArrowDown(
+            event: React.KeyboardEvent<HTMLDivElement>,
+            _item: Model | Model[]
+        ): void {
+            onKeyDownArrowDown(event, viewModelAPI.current, viewModelState.current);
+        },
+        onItemKeyDownSpace(
+            event: React.KeyboardEvent<HTMLDivElement>,
+            _item: Model | Model[]
+        ): void {
+            onKeyDownSpace(event, viewModelAPI.current, viewModelState.current);
+        },
+        onItemKeyDownBackSpace(
+            event: React.KeyboardEvent<HTMLDivElement>,
+            _item: Model | Model[]
+        ): void {
+            onKeyDownBackSpace(event, viewModelAPI.current, viewModelState.current);
+        },
+        onViewKeyDownArrowLeft(_event: React.KeyboardEvent<HTMLDivElement>): void {
+            onKeyDownArrowLeft(viewModelAPI.current, viewModelState.current);
+        },
+        onViewKeyDownArrowRight(_event: React.KeyboardEvent<HTMLDivElement>): void {
+            onKeyDownArrowRight(viewModelAPI.current, viewModelState.current);
+        },
+        onViewKeyDownArrowUp(event: React.KeyboardEvent<HTMLDivElement>): void {
+            onKeyDownArrowUp(event, viewModelAPI.current, viewModelState.current);
+        },
+        onViewKeyDownArrowDown(event: React.KeyboardEvent<HTMLDivElement>): void {
+            onKeyDownArrowDown(event, viewModelAPI.current, viewModelState.current);
+        },
+        onViewKeyDownEnter(event: React.KeyboardEvent<HTMLDivElement>): void {
+            onKeyDownEnter(event, viewModelAPI.current, viewModelState.current, props.current);
+        },
+        onViewKeyDownSpace(event: React.KeyboardEvent<HTMLDivElement>): void {
+            onKeyDownSpace(event, viewModelAPI.current, viewModelState.current);
+        },
+        onViewKeyDownBackSpace(event: React.KeyboardEvent<HTMLDivElement>): void {
+            onKeyDownBackSpace(event, viewModelAPI.current, viewModelState.current);
+        },
+        onViewKeyDownDel(event: React.KeyboardEvent<HTMLDivElement>): void {
+            // todo: В будущем для выполнения действий над записями
+            //  будут использоваться Actions на слайсе.
+            //  Тогда тут нужно будет учесть выполнение этих действий.
+            if (viewModelState.current.listActions?.length) {
+                const actionParams = {
+                    id: 'remove',
+                    actionName: 'Controls/actions:Remove',
+                };
+                const actionOptions = viewModelState.current.listActions.find((item) => {
+                    return (
+                        item.id === actionParams.id || item.actionName === actionParams.actionName
+                    );
+                });
+                if (actionOptions) {
+                    loadAsync<typeof import('Controls/actions')>('Controls/actions').then(
+                        ({ createAction }) => {
+                            const action = createAction(
+                                actionOptions.actionName,
+                                actionOptions as Record<string, unknown>
+                            );
+
+                            if (action) {
+                                executeAction({
+                                    action,
+                                    actionOptions: {
+                                        ...actionOptions,
+                                        // Контекст listActions - весь список, поэтому они выполняются со списочным контекстом.
+                                        // Этот контекст нужен уже на конструкторе.
+                                        context: props.current.contextForOldItemActions,
+                                    },
+                                    slice: props.current.sliceForOldItemActions,
+                                    context: props.current.contextForOldItemActions,
+                                    event,
+                                });
+                            }
+                        }
+                    );
+                }
+            }
+        },
+
+        // Нужно перетаскивать из BaseControl весь каскад методов,
+        // обрабатывающих скрытие, показ по ховеру, отображение меню и обработку кликов в ItemActions,
+        // а также контроллеры ActionsController и HoverFreeze.
+        // Пока обработка спускаемого коллбека для схемы со слайсом - единственный вариант корректно выполнить действие.
+        onActionClick(
+            action: IAction | BaseAction,
+            _item: Model,
+            container: HTMLDivElement,
+            nativeEvent: React.MouseEvent
+        ): void {
+            // TODO Запись уже отмечена маркером, но нам нужно всё равно передавать selection,
+            //  Потому что стейт слайса на момент вызова ещё не применяется.
+            //  В итоге мы тут всегда будм получать предыдущее неактуальное выделение.
+            //  Надо научиться запускать экшн после применения состояния слайса,
+            //  тогда selection тут будет не нужен.
+            executeAction({
+                action,
+                slice: props.current.sliceForOldItemActions,
+                event: nativeEvent,
+                container,
+            });
+        },
+    };
+
+    return abstract as TViewCommandHandlers;
+}
+
+function onKeyDownArrowLeft(
+    viewModelAPI: IAbstractListAPI,
+    viewModelState: IAbstractListState
+): void {
+    toggleMarkedNode(viewModelAPI, viewModelState, 'collapse');
+}
+
+function onKeyDownArrowRight(
+    viewModelAPI: IAbstractListAPI,
+    viewModelState: IAbstractListState
+): void {
+    toggleMarkedNode(viewModelAPI, viewModelState, 'expand');
+}
+
+function onKeyDownArrowUp(
+    event: React.KeyboardEvent<HTMLDivElement>,
+    viewModelAPI: IAbstractListAPI,
+    viewModelState: IAbstractListState
+): void {
+    event.stopPropagation();
+    event.preventDefault();
+
+    const { collection } = viewModelState;
+
+    if (collection) {
+        getMarkerStrategy((strategy) => {
+            viewModelAPI.mark(strategy.getMarkedKeyByDirection(viewModelState, collection, 'Up'));
+        }, collection);
+    }
+}
+
+function onKeyDownArrowDown(
+    event: React.KeyboardEvent<HTMLDivElement>,
+    viewModelAPI: IAbstractListAPI,
+    viewModelState: IAbstractListState
+): void {
+    event.stopPropagation();
+    event.preventDefault();
+
+    const { collection } = viewModelState;
+
+    if (collection) {
+        getMarkerStrategy((strategy) => {
+            viewModelAPI.mark(strategy.getMarkedKeyByDirection(viewModelState, collection, 'Down'));
+        }, collection);
+    }
+}
+
+function onKeyDownEnter(
+    event: React.KeyboardEvent<HTMLDivElement>,
+    viewModelAPI: IAbstractListAPI,
+    viewModelState: IAbstractListState,
+    props: TUseRenderHandlersProps
+): void {
+    event.stopPropagation();
+    event.preventDefault();
+
+    if (typeof viewModelState.markedKey !== 'undefined') {
+        // @ts-ignore
+        itemAbstractActivation(viewModelState.markedKey, viewModelAPI, viewModelState, {
+            changeRootByItemClick: props.changeRootByItemClick,
+        });
+    }
+}
+
+function onKeyDownSpace(
+    event: React.KeyboardEvent<HTMLDivElement>,
+    viewModelAPI: IAbstractListAPI,
+    viewModelState: IAbstractListState
+): void {
+    event.stopPropagation();
+    event.preventDefault();
+    if (typeof viewModelState.markedKey !== 'undefined' && viewModelState.markedKey !== null) {
+        viewModelAPI.select(viewModelState.markedKey, {
+            direction: event.shiftKey ? 'backward' : 'forward',
+        });
+    }
+}
+
+function onKeyDownBackSpace(
+    event: React.KeyboardEvent<HTMLDivElement>,
+    viewModelAPI: IAbstractListAPI,
+    viewModelState: IAbstractListState
+): void {
+    event.stopPropagation();
+    event.preventDefault();
+    const backButtonItem = viewModelState.backButtonItem;
+    if (typeof backButtonItem !== 'undefined' && viewModelState.parentProperty) {
+        viewModelAPI.changeRoot(backButtonItem.get(viewModelState.parentProperty));
+    }
+}
+
+function itemAbstractActivation(
+    key: CrudEntityKey,
+    viewModelAPI: IAbstractListAPI,
+    viewModelState: IAbstractListState,
+    props: {
+        expandByItemClick?: boolean;
+        changeRootByItemClick?: boolean;
+        onActivate?: () => void;
+    }
+): void {
+    const relation = UILogic.Hierarchy.createRelation(viewModelState);
+
+    if (props.changeRootByItemClick && UILogic.Hierarchy.canBeRoot(viewModelState, key, relation)) {
+        viewModelAPI.changeRoot(key);
+    } else if (props.expandByItemClick && UILogic.Hierarchy.isNode(viewModelState, key, relation)) {
+        viewModelAPI.expand(key, { markItem: true });
+    } else {
+        viewModelAPI.mark(key);
+        props.onActivate?.();
+    }
+}
+
+function toggleMarkedNode(
+    viewModelAPI: IAbstractListAPI,
+    viewModelState: IAbstractListState,
+    action: 'expand' | 'collapse'
+) {
+    const { markerVisibility, markedKey } = viewModelState;
+
+    if (markerVisibility === 'hidden' || typeof markedKey === 'undefined' || markedKey === null) {
+        return;
+    }
+
+    if (UILogic.Hierarchy.isNode(viewModelState, markedKey)) {
+        const isExpanded = UILogic.Hierarchy.isExpanded(viewModelState, markedKey);
+        if (action === 'expand' && !isExpanded) {
+            viewModelAPI.expand(markedKey);
+        } else if (action === 'collapse' && isExpanded) {
+            viewModelAPI.collapse(markedKey);
+        }
+    }
+}
+
+interface IExecuteActionProps {
+    action: IAction | BaseAction;
+    actionOptions?: object;
+    storeId?: string;
+    slice?: AbstractListSlice;
+    context?: Record<string | symbol, unknown>;
+    event?: React.MouseEvent | React.KeyboardEvent;
+    container?: HTMLDivElement;
+    selection?: ISelectionObject;
+}
+
+// Хелпер, вызывающий action как действие тулбара. Тебуется для:
+// 1. Запуска действия по клавише на клавиатуре
+// 2. Кейса, когда ItemActions заданы как запускаемые действия, аналогично actions тулбара.
+// Контекст - это просто объект ключ-значение. Это не обязательно равно какому-либо контексту списка.
+function executeAction({
+    action,
+    actionOptions,
+    slice,
+    context,
+    event,
+    container,
+    selection,
+    storeId,
+}: IExecuteActionProps): false | void | Promise<unknown> {
+    if (!action) {
+        return;
+    }
+    const { executeAction: baseExecutor } =
+        loadSync<typeof import('Controls/actions')>('Controls/actions');
+    const clickEvent: React.MouseEvent =
+        event?.type === 'click'
+            ? (event as React.MouseEvent)
+            : // @ts-expect-error за отcутствием оригинального события приходится пробрасывать null
+              (new SyntheticEvent(null, {
+                  target: event?.target,
+                  type: 'click',
+              }) as React.MouseEvent);
+
+    let actionState = {};
+
+    if (isBaseAction(action)) {
+        actionState = action.getState();
+        if (context) {
+            action.setContext(context);
+        }
+    }
+
+    const toolbarItem = new Model({
+        keyProperty: 'id',
+        rawData: {
+            ...actionState,
+            ...actionOptions,
+        },
+    });
+    return baseExecutor({
+        storeId,
+        action: action as BaseAction,
+        toolbarItem,
+        clickEvent,
+        slice,
+        opener: event?.target as HTMLElement | undefined,
+        container,
+        selection,
+    });
+}
+
+function isBaseAction(action: IAction | BaseAction): action is BaseAction {
+    return action.hasOwnProperty('getState') && action.hasOwnProperty('setContext');
+}

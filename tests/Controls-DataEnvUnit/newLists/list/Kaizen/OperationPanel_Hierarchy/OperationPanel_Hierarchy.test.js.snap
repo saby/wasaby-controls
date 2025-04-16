@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OperationPanel_Hierarchy. Тесты взаимодействия ПМО с иерархией. Если подсчитать количество записей нельзя, то будет отправлен запрос на указанную бл 1`] = `
+<div
+  data-qa="js-demo-pmo-data-qa"
+>
+  <div
+    class="controls_operations_theme-default controls-operationsPanelV controls-operationsPanelV_initialized"
+    tabindex="0"
+  >
+    <div
+      class="controls_operations_theme-default controls-operationsPanelV__multiSelector"
+    >
+      <div
+        class="controls_toggle_theme-default controls-CheckboxMarker controls-CheckboxMarker_outlined controls-CheckboxMarker_theme-default controls-CheckboxMarker__state-null controls-MultiSelector__checkbox controls-MultiSelector__checkbox_align"
+        data-qa="controls-CheckboxMarker"
+        tabindex="0"
+      >
+        <svg
+          class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+          data-qa="controls-CheckboxMarker_state-null"
+          tabindex="0"
+          viewBox="0 0 12 12"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-null"
+            d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+          />
+          <path
+            class="controls-CheckboxMarker__icon-subtract "
+            clip-rule="evenodd"
+            d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+            fill-rule="evenodd"
+          />
+          <path
+            class="controls-CheckboxMarker__icon-checked-color_transparent"
+            clip-rule="evenodd"
+            d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+            fill-rule="evenodd"
+          />
+          <rect
+            class="controls-CheckboxMarker__state-null__icon-color__enabled"
+            height="6"
+            rx="2"
+            width="6"
+            x="3"
+            y="3"
+          />
+        </svg>
+      </div>
+      <div
+        class="controls_operations_theme-default  controls-operationsPanelV__container"
+      >
+        <span
+          class="controls-BaseButton controls-Button_clickable controls-Button_bg-same controls-linkButton-style controls-button_link-style  controls-linkButton_link-default-style  controls-linkButton_fontColorStyle-default-style  controls-Button_notCircle controls-fontsize-m controls-button_fontsize-m controls-notFocusOnEnter controls-MenuButton controls-MenuButton__Wrapper controls-MultiSelector__button undefined"
+          data-qa="controls-operations__simpleMultiSelector"
+          tabindex="0"
+        >
+          <span
+            class="controls-BaseButton__wrapper controls-Button__wrapper_viewMode-link controls-BaseButton__wrapper_captionPosition_end controls-Button_textAlign-none"
+          >
+            <span
+              class="controls-BaseButton__text controls-Button__text_viewMode-link"
+              tabindex="0"
+            >
+              Отмечено 42
+            </span>
+          </span>
+        </span>
+        <span
+          class="tw-block tw-hidden tw-contents"
+        />
+        <div
+          class="controls-LoadingIndicator controls-operationsPanelV__loadingIndicatorImg-wrapper"
+          tabindex="0"
+        >
+          <div
+            class="controls-loading-indicator_content"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="controls-operationsPanelV__multiSelector_separator"
+    />
+    <div
+      class="controls-operationsPanelV__actions controls-operationsPanelV__actions"
+      name="toolbarBlock"
+    />
+    <div
+      class="controls-operationsPanelV__multiSelector_separator controls-operationsPanelV__multiSelector_separator_right"
+    />
+    <div
+      class="controls-operationsPanelNew__closeButton controls-icon icon-Close controls-icon_size-m controls-icon_style-unaccented"
+      data-qa="controls-OperationsPanel__close"
+    />
+    <div
+      tabindex="0"
+    />
+  </div>
+</div>
+`;
+
+exports[`OperationPanel_Hierarchy. Тесты взаимодействия ПМО с иерархией. Если подсчитать количество записей нельзя, то будет отправлен запрос на указанную бл 2`] = `
+Array [
+  Array [
+    Изменений не произошло,
+  ],
+  Array [
+    Изменений не произошло,
+  ],
+  Array [
+    	- lastCheckedKey: undefined -> '1',
+    	- selectedKeys: {"from":[]} -> {"to":["1"]},
+    	- excludedKeys: {"from":[]} -> {"to":[]},
+    	- listCommandsSelection: {"from":{"selected":[],"excluded":[]}} -> {"to":{"selected":["1"],"excluded":[]}},
+    		listCommandsSelection: {"selected":[],"excluded":[]},
+    			listCommandsSelection: {"selected":["1"],"excluded":[]},
+    				listCommandsSelection: {"selected":["1"],"excluded":[]},
+    					listCommandsSelection: {"selected":["1"],"excluded":[]},
+    						listCommandsSelection: {"selected":["1"],"excluded":[]},
+    	- selectionModel: {"from":{}} -> {"to":{}},
+    		selectionModel: {},
+    			selectionModel: {},
+    				selectionModel: {},
+    	- count: 0 -> null,
+    	- markedKey: undefined -> '1',
+    	- countLoading: false -> true,
+    	- selectionViewMode: 'hidden' -> 'all',
+  ],
+  Array [
+    	- count: null -> 42,
+    	- countLoading: true -> false,
+  ],
+]
+`;

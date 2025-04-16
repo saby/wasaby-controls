@@ -1,0 +1,102 @@
+/**
+ * @kaizen_zone 54264d06-aeee-417a-83fc-b192e24178b2
+ */
+import * as rk from 'i18n!Controls';
+import { TemplateFunction } from 'UI/Base';
+import { IIndicatorProps } from './WrapperIndicatorsTemplate';
+import Spinner from './Spinner';
+import * as React from 'react';
+
+/**
+ * Шаблон, который по умолчанию используется для отображения индикатора порционной загрузки в списочных контролах.
+ *
+ * @class Controls/_baseList/indicators/IterativeLoadingTemplate
+ * @public
+ * @see Controls/list
+ * @example
+ * <pre class="brush: html; highlight: [3-10]">
+ * <!-- WML -->
+ * <Controls.list:View source="{{_viewSource}}">
+ *     <ws:iterativeLoadingTemplate>
+ *         <ws:partial template="Controls/list:IterativeLoadingTemplate"
+ *                      scope="{{iterativeLoadingTemplate}}">
+ *             <ws:footerTemplate>
+ *                 <div>Дополнительная информация</div>
+ *             </ws:footerTemplate>
+ *         </ws:partial>
+ *     </ws:iterativeLoadingTemplate>
+ * </Controls.list:View>
+ * </pre>
+ */
+
+interface IIterativeLoadingTemplateProps extends IIndicatorProps {
+    /**
+     * @cfg {TemplateFunction|React.Component|undefined} Пользовательский шаблон, описывающий подвал индикатора.
+     * @example
+     * <pre class="brush: html; highlight: [6-8]">
+     * <!-- WML -->
+     * <Controls.list:View source="{{_viewSource}}">
+     *    <ws:iterativeLoadingTemplate>
+     *       <ws:partial template="Controls/list:IterativeLoadingTemplate"
+     *                   scope="{{iterativeLoadingTemplate}}">
+     *          <ws:footerTemplate>
+     *              <div>Дополнительная информация при поиске/div>
+     *          </ws:footerTemplate>
+     *       </ws:partial>
+     *    </ws:iterativeLoadingTemplate>
+     * </Controls.list:View>
+     * </pre>
+     */
+    footerTemplate?: TemplateFunction | React.Component;
+    /**
+     * @cfg {string|undefined} Текст кнопки, значение по дефолту: "Прервать поиск".
+     * @example
+     * <pre class="brush: html; highlight: [6]">
+     * <!-- WML -->
+     * <Controls.list:View source="{{_viewSource}}">
+     *    <ws:iterativeLoadingTemplate>
+     *       <ws:partial template="Controls/list:IterativeLoadingTemplate"
+     *                   scope="{{iterativeLoadingTemplate}}"
+     *                   loadingIndicatorCaption="Остановить поиск">
+     *          <ws:footerTemplate>
+     *              <div>Дополнительная информация при поиске/div>
+     *          </ws:footerTemplate>
+     *       </ws:partial>
+     *    </ws:iterativeLoadingTemplate>
+     * </Controls.list:View>
+     * </pre>
+     */
+    loadingIndicatorCaption?: string;
+}
+
+export default function IterativeLoadingTemplate(
+    props: IIterativeLoadingTemplateProps
+): JSX.Element {
+    const footer = props.footerTemplate && (
+        <div className="controls-BaseControl__portionedSearch-footerTemplate">
+            {typeof props.footerTemplate === 'function' && (
+                <props.footerTemplate item={props?.item} />
+            )}
+            {typeof props.footerTemplate === 'object' &&
+                React.cloneElement(props.footerTemplate, {
+                    ...props.footerTemplate.props,
+                    item: props?.item,
+                })}
+            {typeof props.footerTemplate !== 'object' && typeof props.footerTemplate !== 'function'
+                ? props.footerTemplate
+                : ''}
+        </div>
+    );
+
+    return (
+        <div className="controls-BaseControl__loadingIndicator-content controls-BaseControl__search-content">
+            <Spinner />
+            <div className="tw-flex tw-flex-col">
+                <div className="js-controls-BaseControl__abortSearch controls-BaseControl__abortSearch">
+                    {rk(props.loadingIndicatorCaption ?? 'Прервать поиск')}
+                </div>
+                {footer}
+            </div>
+        </div>
+    );
+}

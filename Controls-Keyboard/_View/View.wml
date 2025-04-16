@@ -1,0 +1,59 @@
+<ws:template name="baseButtonTemplate">
+    <ws:if data="{{item.icon}}">
+        <div class="{{item.icon}} {{item.iconSize ? 'controls-icon_size-' + item.iconSize}}
+            {{item.iconStyle ? 'controls-icon_style-' + item.iconStyle}}">
+        </div>
+    </ws:if>
+    <ws:else>
+        <div class="Keyboard-View__itemCaption Keyboard-View__itemCaption">
+            {{item.caption}}
+        </div>
+    </ws:else>
+</ws:template>
+
+<ws:template name="itemTemplate">
+    <ws:if data="{{item.type === 'remove' && !item.contentTemplate}}">
+      <svg viewBox="0 0 {{_options.itemSize === 's' ? '44 44' : '75 75'}}" fill="none" xmlns="http://www.w3.org/2000/svg"
+           class="Keyboard-View__item_border-hidden{{ _options.shadowVisible ? ' Keyboard-View__item-remove__drop-shadow'}}">
+        <ws:if data="{{_options.itemSize === 's'}}">
+          <path
+                d="M5.68961 6.35102C7.33509 2.48739 10.9897 0 15.0209 0H33.7783C39.4236 0 44 4.8048 44 10.7317V33.2683C44 39.1952 39.4237 44 33.7783 44H15.0209C10.9897 44 7.33509 41.5126 5.68961 37.649L0.890435 26.3807C-0.296812 23.5932 -0.296812 20.4068 0.890435 17.6193L5.68961 6.35102Z"/>
+          <path class="Keyboard-View__item_remove-caption" d="M27.8062 17.73L17.9833 27.5529"/>
+          <path class="Keyboard-View__item_remove-caption" d="M27.8065 27.5529L17.9836 17.73"/>
+        </ws:if>
+        <ws:else>
+          <path
+                d="M10.393 10.4895C13.0753 4.13758 19.3655 0 26.3398 0H57.7241C72.973 0 75 2 75 17.0455V57.9545C75 73 72.973 75 57.7241 75H26.3398C19.3655 75 13.0753 70.8624 10.393 64.5106L1.75505 44.056C-0.0168362 39.8601 -0.016838 35.1399 1.75503 30.944L10.393 10.4895Z"/>
+          <path class="Keyboard-View__item_remove-caption" d="M47.397 30.2216L30.6534 46.9652"/>
+          <path class="Keyboard-View__item_remove-caption" d="M47.3975 46.9652L30.6539 30.2216"/>
+        </ws:else>
+      </svg>
+    </ws:if>
+    <ws:else>
+        <div class="Keyboard-View__item_border-{{_options.borderVisible ? 'visible' : 'hidden'}}
+                    {{_options.shadowVisible ? 'Keyboard-View__item_clickable-shadow'}}">
+            <ws:partial template="{{ item.contentTemplate ? _options.itemTemplate : 'baseButtonTemplate' }}"
+                        item="{{ item }}"/>
+        </div>
+    </ws:else>
+
+</ws:template>
+
+<div class="Keyboard-View controls_Keyboard_theme-{{_options.theme}} controls_theme-{{ _options.theme }}">
+    <ws:for data="rowIndex, row in _options.items">
+        <div class="Keyboard-View__row Keyboard-View__row_itemSpacing-{{ _options.itemSpacing }}
+            {{ rowIndex === _options.items.length - 1 ? 'Keyboard-View__row_last' : '' }}">
+            <ws:for data="colIndex, item in row">
+                <ws:partial template="itemTemplate"
+                            item="{{item}}"
+                            attr:title="{{item.tooltip}}"
+                            attr:class="
+                            {{_getItemClasses(item, colIndex, rowIndex)}} {{_getItemBackgroundClasses(item)}}"
+                            attr:data-qa="{{'Keyboard-View__item-' + item.value}}"
+                            on:click="_clickHandler(item)"
+                            on:dblclick="_dblClickHandler(item)"
+                            on:longtap="_longTapHandler(item)"/>
+            </ws:for>
+        </div>
+    </ws:for>
+</div>

@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500 controlsDemo_line-height18">
+    <Controls.scroll:Container initialScrollPosition="{{ _initialScrollPosition }}" attr:class="controlsDemo__maxWidth500 controlsDemo__height400">
+        <Controls.treeGrid:View
+                storeId="VirtualScrollDefault0"
+                colspanCallback="{{ _colspanCallback }}"
+                columns="{{_columns}}">
+            <ws:virtualScrollConfig pageSize="{{20}}"/>
+        </Controls.treeGrid:View>
+    </Controls.scroll:Container>
+</div>

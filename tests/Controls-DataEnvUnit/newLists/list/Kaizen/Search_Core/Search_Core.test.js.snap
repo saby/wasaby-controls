@@ -1,0 +1,1050 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Поиск. Core. Многократный вызов поиска с одинаковым значением во время загрузки данных приводит к новой загрузке данных без сброса индикатора загрузки. 1`] = `
+<div
+  data-qa="js-demo-search-input-data-qa"
+>
+  <div
+    class="controls-Render js-controls-Render  controls-Render_background-same controls-Render_textAlign-left controls-Render_search_borderRadius controls-Render_state-search-valid controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default controls-Render_state-search-valid_caretEmpty controls-inlineheight-default controls-Render-inlineheight-default  controls-search controls_search_theme-default controls-notFocusOnEnter "
+    tabindex="0"
+    title=""
+  >
+    <div
+      class="controls-Render__wrapper"
+    >
+      <span
+        class="controls-Render__baseline"
+      >
+        ﻿
+      </span>
+      <div
+        class="controls_search_theme-default controls-Search__buttons controls-Search__buttons-leftTemplate"
+      />
+      <div
+        class="controls-InputBase__field controls-Search__field_margin-null controls-Search__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+        data-qa="controls-Render__field"
+      >
+        <input
+          autocapitalize="on"
+          autocomplete="off"
+          class="controls-Field js-controls-Field controls-InputBase__nativeField controls-Search__nativeField_caretEmpty controls-Search__nativeField_caretEmpty_theme_default"
+          inputmode="text"
+          name="ws-input_2000-01-01"
+          spellcheck="true"
+          tabindex="0"
+          type="text"
+          value="test"
+        />
+        <div
+          class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+        >
+          <div
+            class="controls-Render__placeholder controls-Render__placeholder_overflow"
+          >
+            Найти
+          </div>
+        </div>
+      </div>
+      <div
+        class="controls_search_theme-default controls-Search__buttons controls-Search__buttons-rightTemplate"
+      >
+        <div
+          class="controls-Search__button
+                            
+                            controls-Search__button_enabled
+                            controls-Search__resetButton
+                            controls-Search__resetButton_position
+                            controls-Search__resetButton_color icon-Close"
+          data-qa="Search__resetButton"
+          title="Очистить"
+          ws-no-focus="true"
+        />
+        <div
+          class="
+                    controls_search_theme-default controls-Search__button
+                    controls-Search__button_enabled
+                    controls-Search__searchButton
+                    controls-Search__searchButton_iconSize-s
+                    controls-Search__searchButton-right_inlineheight-default
+                    controls-Search__searchButton_position-right
+                    controls-Search__searchButton_color
+                    icon-Search2
+                    undefined"
+          data-qa="Search__searchButton"
+          ws-no-focus="true"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Поиск. Core. Многократный вызов поиска с одинаковым значением во время загрузки данных приводит к новой загрузке данных без сброса индикатора загрузки. 2`] = `
+Array [
+  Array [
+    	- collection: undefined -> 'Controls/display:Collection',
+    	- loading: false -> true,
+  ],
+  Array [
+    	- loading: true -> false,
+    	- expandedItems: {"from":[]} -> {"to":[]},
+    	- filter: {"from":{"name":"test"}} -> {"to":{"name":"test"}},
+    	- previousViewMode: undefined -> 'search',
+    	- expansionModel: {"from":{}} -> {"to":{}},
+  ],
+  Array [
+    	- filter: {"from":{"name":"test"}} -> {"to":{"name":"test"}},
+  ],
+]
+`;
+
+exports[`Поиск. Core. Поддержка прикладных возможностей. Возможность изменить значение в строке поиска через setState. 1`] = `
+<div
+  data-qa="js-demo-search-input-data-qa"
+>
+  <div
+    class="controls-Render js-controls-Render  controls-Render_background-same controls-Render_textAlign-left controls-Render_search_borderRadius controls-Render_state-search-valid controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default controls-Render_state-search-valid_caretEmpty controls-inlineheight-default controls-Render-inlineheight-default  controls-search controls_search_theme-default controls-notFocusOnEnter "
+    tabindex="0"
+    title=""
+  >
+    <div
+      class="controls-Render__wrapper"
+    >
+      <span
+        class="controls-Render__baseline"
+      >
+        ﻿
+      </span>
+      <div
+        class="controls_search_theme-default controls-Search__buttons controls-Search__buttons-leftTemplate"
+      />
+      <div
+        class="controls-InputBase__field controls-Search__field_margin-null controls-Search__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+        data-qa="controls-Render__field"
+      >
+        <input
+          autocapitalize="on"
+          autocomplete="off"
+          class="controls-Field js-controls-Field controls-InputBase__nativeField controls-Search__nativeField_caretEmpty controls-Search__nativeField_caretEmpty_theme_default"
+          inputmode="text"
+          name="ws-input_2000-01-01"
+          spellcheck="true"
+          tabindex="0"
+          type="text"
+          value="value"
+        />
+        <div
+          class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+        >
+          <div
+            class="controls-Render__placeholder controls-Render__placeholder_overflow"
+          >
+            Найти
+          </div>
+        </div>
+      </div>
+      <div
+        class="controls_search_theme-default controls-Search__buttons controls-Search__buttons-rightTemplate"
+      >
+        <div
+          class="controls-Search__button
+                            
+                            controls-Search__button_enabled
+                            controls-Search__resetButton
+                            controls-Search__resetButton_position
+                            controls-Search__resetButton_color icon-Close"
+          data-qa="Search__resetButton"
+          title="Очистить"
+          ws-no-focus="true"
+        />
+        <div
+          class="
+                    controls_search_theme-default controls-Search__button
+                    controls-Search__button_enabled
+                    controls-Search__searchButton
+                    controls-Search__searchButton_iconSize-s
+                    controls-Search__searchButton-right_inlineheight-default
+                    controls-Search__searchButton_position-right
+                    controls-Search__searchButton_color
+                    icon-Search2
+                    undefined"
+          data-qa="Search__searchButton"
+          ws-no-focus="true"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Поиск. Core. Поддержка прикладных возможностей. Возможность изменить значение в строке поиска через setState. 2`] = `
+Array [
+  Array [
+    	- collection: undefined -> 'Controls/display:Collection',
+    	- searchInputValue: '' -> 'value',
+  ],
+]
+`;
+
+exports[`Поиск. Core. Смена режима отображения при поиске Изменение режима отображения при наличии опции adaptiveSearchMode. В результате поиска отображение плитки меняется на searchTile. 1`] = `
+<div
+  data-qa="js-demo-list"
+>
+  <div
+    class="controls-BaseControl controls_list_theme-default controls_toggle_theme-default"
+    data-qa="list"
+    tabindex="0"
+  >
+    <div
+      class="controls-BaseControl__fakeFocusElem"
+      name="fakeFocusElem"
+      tabindex="0"
+    />
+    <style
+      data-vdom-ignore="true"
+      name="itemActionsOutsideStyle"
+    />
+    <div
+      class="controls-BaseControl__viewContainer controls-BaseControl__View_uniqueId4"
+      name="viewContainer"
+      tabindex="0"
+    >
+      <div
+        class="controls_list_theme-default controls-TileView_new controls-TileView__itemPaddingContainer controls-TileView__itemsPaddingContainer_spacingLeft_default controls-TileView__itemsPaddingContainer_spacingRight_default controls-TileView__itemsPaddingContainer_spacingTop_default controls-TileView__itemsPaddingContainer_spacingBottom_default controls-itemActionsV_menu-hidden"
+        tabindex="0"
+      >
+        <div
+          class="controls-ListViewV controls-TileView controls-TileView_orientation-vertical controls-ListViewV__itemsContainer controls-BaseControl_hover_enabled controls-BaseControl__itemsContainer_uniqueId4"
+          data-qa="tile-container"
+          name="itemsContainer"
+        >
+          <div
+            class="controls-BaseControl__loadingIndicator js-controls-BaseControl__loadingIndicator controls-BaseControl__loadingIndicator-top controls-BaseControl__loadingIndicator__position-top controls-BaseControl__loadingIndicator__state-loading controls-verticalTile__loadingIndicator"
+            data-qa="indicator_state_loading_position_top"
+            style="display: none;"
+          >
+            <div
+              class="controls-BaseControl__loadingIndicator-content"
+            >
+              <div
+                class="controls-BaseControl__loadingIndicatorImage"
+              />
+            </div>
+          </div>
+          <div
+            class="controls-Tile__loadingTrigger_vertical controls-BaseControl__loadingTrigger controls-BaseControl__loadingTrigger-top"
+            data-qa="loading-trigger-top"
+            style="top: 1px;"
+          />
+          <div
+            class="controls-TileView__item controls-ListView__itemV js-controls-ListView__editingTarget controls-TileView__item_unscalable ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default  controls-TileView__item_roundBorder_topLeft_default controls-TileView__item_roundBorder_topRight_default controls-TileView__item_roundBorder_bottomLeft_default controls-TileView__item_roundBorder_bottomRight_default controls-ListView__itemV_cursor-pointer  controls-TileView__item controls-ListView__itemV js-controls-ListView__editingTarget controls-TileView__item_unscalable ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default  controls-TileView__item_roundBorder_topLeft_default controls-TileView__item_roundBorder_topRight_default controls-TileView__item_roundBorder_bottomLeft_default controls-TileView__item_roundBorder_bottomRight_default"
+            data-qa="item"
+            item-key="2"
+            style="flex-basis: 250px; min-width: 250px;"
+            tabindex="0"
+          >
+            <div
+              class=""
+              style="padding-top: 80%;"
+            />
+            <div
+              class="  controls-TileView__item_roundBorder_topLeft_default controls-TileView__item_roundBorder_topRight_default controls-TileView__item_roundBorder_bottomLeft_default controls-TileView__item_roundBorder_bottomRight_default controls-TileView__itemContent js-controls-ListView__measurableContainer controls-TileView__item_border_visible controls-TileView__item_border_default controls-TileView__item_shadow_visible controls-TileView__item_unscaleable controls-ListView__item_showActions"
+            >
+              <div
+                class="controls-TileView__imageWrapper"
+                data-qa="controls-TileView__item_not_animated"
+              >
+                <div
+                  class=""
+                  style="padding-top: 80%;"
+                />
+                <div
+                  class=""
+                >
+                  <div
+                    class=" controls-TileView__image controls-TileView__image_align_center "
+                    data-qa="controls-ItemTemplate__image"
+                    loading="lazy"
+                    src=""
+                  />
+                </div>
+              </div>
+              <div
+                class=""
+              >
+                <div
+                  class=" controls-TileView__title  controls-TileView__title_invisible"
+                  title="Jorden Pate"
+                >
+                  <div
+                    class=""
+                    data-qa="controls-ItemTemplate__title"
+                    itemprop="name"
+                  >
+                    <span
+                      class="controls-DecoratorHighlight"
+                    >
+                      <span
+                        class="controls-Highlight_highlight"
+                        data-qa="controls-DecoratorHighlight__highlight"
+                      >
+                        Jorden Pate
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class=" controls-ListView__itemV js-controls-List_invisible-for-VirtualScroll controls-TileView__item_invisible  controls-TileView__item ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default"
+            data-qa="controls-TileView__item_not_invisible"
+            item-key="invisible-tree-tile-item-48"
+            style="flex-basis: 250px; min-width: 250px;"
+          />
+          <div
+            class=" controls-ListView__itemV js-controls-List_invisible-for-VirtualScroll controls-TileView__item_invisible  controls-TileView__item ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default"
+            data-qa="controls-TileView__item_not_invisible"
+            item-key="invisible-tree-tile-item-49"
+            style="flex-basis: 250px; min-width: 250px;"
+          />
+          <div
+            class=" controls-ListView__itemV js-controls-List_invisible-for-VirtualScroll controls-TileView__item_invisible  controls-TileView__item ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default"
+            data-qa="controls-TileView__item_not_invisible"
+            item-key="invisible-tree-tile-item-50"
+            style="flex-basis: 250px; min-width: 250px;"
+          />
+          <div
+            class=" controls-ListView__itemV js-controls-List_invisible-for-VirtualScroll controls-TileView__item_invisible  controls-TileView__item ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default"
+            data-qa="controls-TileView__item_not_invisible"
+            item-key="invisible-tree-tile-item-51"
+            style="flex-basis: 250px; min-width: 250px;"
+          />
+          <div
+            class=" controls-ListView__itemV js-controls-List_invisible-for-VirtualScroll controls-TileView__item_invisible  controls-TileView__item ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default"
+            data-qa="controls-TileView__item_not_invisible"
+            item-key="invisible-tree-tile-item-52"
+            style="flex-basis: 250px; min-width: 250px;"
+          />
+          <div
+            class=" controls-ListView__itemV js-controls-List_invisible-for-VirtualScroll controls-TileView__item_invisible  controls-TileView__item ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default"
+            data-qa="controls-TileView__item_not_invisible"
+            item-key="invisible-tree-tile-item-53"
+            style="flex-basis: 250px; min-width: 250px;"
+          />
+          <div
+            class=" controls-ListView__itemV js-controls-List_invisible-for-VirtualScroll controls-TileView__item_invisible  controls-TileView__item ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default"
+            data-qa="controls-TileView__item_not_invisible"
+            item-key="invisible-tree-tile-item-54"
+            style="flex-basis: 250px; min-width: 250px;"
+          />
+          <div
+            class=" controls-ListView__itemV js-controls-List_invisible-for-VirtualScroll controls-TileView__item_invisible  controls-TileView__item ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default"
+            data-qa="controls-TileView__item_not_invisible"
+            item-key="invisible-tree-tile-item-55"
+            style="flex-basis: 250px; min-width: 250px;"
+          />
+          <div
+            class=" controls-ListView__itemV js-controls-List_invisible-for-VirtualScroll controls-TileView__item_invisible  controls-TileView__item ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default"
+            data-qa="controls-TileView__item_not_invisible"
+            item-key="invisible-tree-tile-item-56"
+            style="flex-basis: 250px; min-width: 250px;"
+          />
+          <div
+            class=" controls-ListView__itemV js-controls-List_invisible-for-VirtualScroll controls-TileView__item_invisible  controls-TileView__item ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default"
+            data-qa="controls-TileView__item_not_invisible"
+            item-key="invisible-tree-tile-item-57"
+            style="flex-basis: 250px; min-width: 250px;"
+          />
+          <div
+            class="controls-TileView__item_invisible controls-ListView__itemV controls-TreeTileView__separator js-controls-List_invisible-for-VirtualScroll"
+            data-qa="controls-TileView__item_invisible"
+            item-key="invisible-tree-tile-item-58"
+          />
+          <div
+            class="controls-Tile__loadingTrigger_vertical controls-BaseControl__loadingTrigger controls-BaseControl__loadingTrigger-bottom"
+            data-qa="loading-trigger-bottom"
+            style="bottom: 1px;"
+          />
+          <div
+            class="controls-BaseControl__loadingIndicator js-controls-BaseControl__loadingIndicator controls-BaseControl__loadingIndicator-bottom controls-BaseControl__loadingIndicator__position-bottom controls-BaseControl__loadingIndicator__state-loading controls-verticalTile__loadingIndicator"
+            data-qa="indicator_state_loading_position_bottom"
+            style="display: none;"
+          >
+            <div
+              class="controls-BaseControl__loadingIndicator-content"
+            >
+              <div
+                class="controls-BaseControl__loadingIndicatorImage"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="controls__BaseControl__footer"
+        tabindex="0"
+      />
+      <invisible-node
+        class="ws-hidden"
+        tabindex="-1"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Поиск. Core. Смена режима отображения при поиске Изменение режима отображения при наличии опции adaptiveSearchMode. В результате поиска отображение плитки меняется на searchTile. 2`] = `
+Array [
+  Array [
+    	- searchValue: '' -> 'Jorden Pate',
+    	- loading: false -> false,
+    		loading: false,
+    			loading: true,
+    				loading: false,
+    	- viewCommands: {"from":[]} -> {"to":["resetScroll"]},
+    	- viewMode: 'tile' -> 'searchTile',
+    	- expandedItems: {"from":[]} -> {"to":[]},
+    	- filter: {"from":{}} -> {"to":{"name":"Jorden Pate"}},
+    	- previousViewMode: undefined -> 'tile',
+    	- expansionModel: {"from":{}} -> {"to":{}},
+  ],
+  Array [
+    	- collection: 'Controls/tile:TileCollection' -> 'Controls/searchBreadcrumbsTile:SearchTileCollection',
+    	- viewCommands: {"from":["resetScroll"]} -> {"to":["resetScroll","resetScroll"]},
+    	- selectionModel: {"from":{}} -> {"to":{}},
+  ],
+]
+`;
+
+exports[`Поиск. Core. Смена режима отображения при поиске Изменение режима отображения при наличии опции adaptiveSearchMode. Если за время поиска поменяли режим отображения, то после сброса мы должны откатиться на измененный. 1`] = `
+<div
+  data-qa="js-demo-list"
+>
+  <div
+    class="controls-BaseControl controls_list_theme-default controls_toggle_theme-default"
+    data-qa="list"
+    tabindex="0"
+  >
+    <div
+      class="controls-BaseControl__fakeFocusElem"
+      name="fakeFocusElem"
+      tabindex="0"
+    />
+    <style
+      data-vdom-ignore="true"
+      name="itemActionsOutsideStyle"
+    />
+    <div
+      class="controls-BaseControl__viewContainer controls-BaseControl__View_uniqueId8"
+      name="viewContainer"
+      tabindex="0"
+    >
+      <div
+        class="controls_list_theme-default controls-TileView_new controls-TileView__itemPaddingContainer controls-TileView__itemsPaddingContainer_spacingLeft_default controls-TileView__itemsPaddingContainer_spacingRight_default controls-TileView__itemsPaddingContainer_spacingTop_default controls-TileView__itemsPaddingContainer_spacingBottom_default controls-itemActionsV_menu-hidden"
+        tabindex="0"
+      >
+        <div
+          class="controls-ListViewV controls-TileView controls-TileView_orientation-vertical controls-ListViewV__itemsContainer controls-BaseControl_hover_enabled controls-BaseControl__itemsContainer_uniqueId8"
+          data-qa="tile-container"
+          name="itemsContainer"
+        >
+          <div
+            class="controls-BaseControl__loadingIndicator js-controls-BaseControl__loadingIndicator controls-BaseControl__loadingIndicator-top controls-BaseControl__loadingIndicator__position-top controls-BaseControl__loadingIndicator__state-loading controls-verticalTile__loadingIndicator"
+            data-qa="indicator_state_loading_position_top"
+            style="display: none;"
+          >
+            <div
+              class="controls-BaseControl__loadingIndicator-content"
+            >
+              <div
+                class="controls-BaseControl__loadingIndicatorImage"
+              />
+            </div>
+          </div>
+          <div
+            class="controls-Tile__loadingTrigger_vertical controls-BaseControl__loadingTrigger controls-BaseControl__loadingTrigger-top"
+            data-qa="loading-trigger-top"
+            style="top: 1px;"
+          />
+          <div
+            class="controls-TileView__item controls-ListView__itemV js-controls-ListView__editingTarget controls-TileView__item_unscalable ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default  controls-TileView__item_roundBorder_topLeft_default controls-TileView__item_roundBorder_topRight_default controls-TileView__item_roundBorder_bottomLeft_default controls-TileView__item_roundBorder_bottomRight_default controls-ListView__itemV_cursor-pointer  controls-TileView__item controls-ListView__itemV js-controls-ListView__editingTarget controls-TileView__item_unscalable ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default  controls-TileView__item_roundBorder_topLeft_default controls-TileView__item_roundBorder_topRight_default controls-TileView__item_roundBorder_bottomLeft_default controls-TileView__item_roundBorder_bottomRight_default"
+            data-qa="item"
+            item-key="1"
+            style="flex-basis: 250px; min-width: 250px;"
+            tabindex="0"
+          >
+            <div
+              class=""
+              style="padding-top: 80%;"
+            />
+            <div
+              class="  controls-TileView__item_roundBorder_topLeft_default controls-TileView__item_roundBorder_topRight_default controls-TileView__item_roundBorder_bottomLeft_default controls-TileView__item_roundBorder_bottomRight_default controls-TileView__itemContent js-controls-ListView__measurableContainer controls-TileView__item_border_visible controls-TileView__item_border_default controls-TileView__item_shadow_visible controls-TileView__item_unscaleable controls-ListView__item_showActions"
+            >
+              <div
+                class="controls-TileView__imageWrapper"
+                data-qa="controls-TileView__item_not_animated"
+              >
+                <div
+                  class=""
+                  style="padding-top: 80%;"
+                />
+                <div
+                  class=""
+                >
+                  <div
+                    class=" controls-TileView__image controls-TileView__image_align_center "
+                    data-qa="controls-ItemTemplate__image"
+                    loading="lazy"
+                    src=""
+                  />
+                </div>
+              </div>
+              <div
+                class=""
+              >
+                <div
+                  class=" controls-TileView__title  controls-TileView__title_invisible"
+                  title="Hilary Osborne"
+                >
+                  <div
+                    class=""
+                    data-qa="controls-ItemTemplate__title"
+                    itemprop="name"
+                  >
+                    Hilary Osborne
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="controls-TileView__item controls-ListView__itemV js-controls-ListView__editingTarget controls-TileView__item_unscalable ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default  controls-TileView__item_roundBorder_topLeft_default controls-TileView__item_roundBorder_topRight_default controls-TileView__item_roundBorder_bottomLeft_default controls-TileView__item_roundBorder_bottomRight_default controls-ListView__itemV_cursor-pointer  controls-TileView__item controls-ListView__itemV js-controls-ListView__editingTarget controls-TileView__item_unscalable ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default  controls-TileView__item_roundBorder_topLeft_default controls-TileView__item_roundBorder_topRight_default controls-TileView__item_roundBorder_bottomLeft_default controls-TileView__item_roundBorder_bottomRight_default"
+            data-qa="item"
+            item-key="2"
+            style="flex-basis: 250px; min-width: 250px;"
+            tabindex="0"
+          >
+            <div
+              class=""
+              style="padding-top: 80%;"
+            />
+            <div
+              class="  controls-TileView__item_roundBorder_topLeft_default controls-TileView__item_roundBorder_topRight_default controls-TileView__item_roundBorder_bottomLeft_default controls-TileView__item_roundBorder_bottomRight_default controls-TileView__itemContent js-controls-ListView__measurableContainer controls-TileView__item_border_visible controls-TileView__item_border_default controls-TileView__item_shadow_visible controls-TileView__item_unscaleable controls-ListView__item_showActions"
+            >
+              <div
+                class="controls-TileView__imageWrapper"
+                data-qa="controls-TileView__item_not_animated"
+              >
+                <div
+                  class=""
+                  style="padding-top: 80%;"
+                />
+                <div
+                  class=""
+                >
+                  <div
+                    class=" controls-TileView__image controls-TileView__image_align_center "
+                    data-qa="controls-ItemTemplate__image"
+                    loading="lazy"
+                    src=""
+                  />
+                </div>
+              </div>
+              <div
+                class=""
+              >
+                <div
+                  class=" controls-TileView__title  controls-TileView__title_invisible"
+                  title="Jorden Pate"
+                >
+                  <div
+                    class=""
+                    data-qa="controls-ItemTemplate__title"
+                    itemprop="name"
+                  >
+                    Jorden Pate
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="controls-TileView__item controls-ListView__itemV js-controls-ListView__editingTarget controls-TileView__item_unscalable ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default  controls-TileView__item_roundBorder_topLeft_default controls-TileView__item_roundBorder_topRight_default controls-TileView__item_roundBorder_bottomLeft_default controls-TileView__item_roundBorder_bottomRight_default controls-ListView__itemV_cursor-pointer  controls-TileView__item controls-ListView__itemV js-controls-ListView__editingTarget controls-TileView__item_unscalable ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default  controls-TileView__item_roundBorder_topLeft_default controls-TileView__item_roundBorder_topRight_default controls-TileView__item_roundBorder_bottomLeft_default controls-TileView__item_roundBorder_bottomRight_default"
+            data-qa="item"
+            item-key="3"
+            style="flex-basis: 250px; min-width: 250px;"
+            tabindex="0"
+          >
+            <div
+              class=""
+              style="padding-top: 80%;"
+            />
+            <div
+              class="  controls-TileView__item_roundBorder_topLeft_default controls-TileView__item_roundBorder_topRight_default controls-TileView__item_roundBorder_bottomLeft_default controls-TileView__item_roundBorder_bottomRight_default controls-TileView__itemContent js-controls-ListView__measurableContainer controls-TileView__item_border_visible controls-TileView__item_border_default controls-TileView__item_shadow_visible controls-TileView__item_unscaleable controls-ListView__item_showActions"
+            >
+              <div
+                class="controls-TileView__imageWrapper"
+                data-qa="controls-TileView__item_not_animated"
+              >
+                <div
+                  class=""
+                  style="padding-top: 80%;"
+                />
+                <div
+                  class=""
+                >
+                  <div
+                    class=" controls-TileView__image controls-TileView__image_align_center "
+                    data-qa="controls-ItemTemplate__image"
+                    loading="lazy"
+                    src=""
+                  />
+                </div>
+              </div>
+              <div
+                class=""
+              >
+                <div
+                  class=" controls-TileView__title  controls-TileView__title_invisible"
+                  title="Benjamin Pruitt"
+                >
+                  <div
+                    class=""
+                    data-qa="controls-ItemTemplate__title"
+                    itemprop="name"
+                  >
+                    Benjamin Pruitt
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="controls-TileView__item controls-ListView__itemV js-controls-ListView__editingTarget controls-TileView__item_unscalable ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default  controls-TileView__item_roundBorder_topLeft_default controls-TileView__item_roundBorder_topRight_default controls-TileView__item_roundBorder_bottomLeft_default controls-TileView__item_roundBorder_bottomRight_default controls-ListView__itemV_cursor-pointer  controls-TileView__item controls-ListView__itemV js-controls-ListView__editingTarget controls-TileView__item_unscalable ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default  controls-TileView__item_roundBorder_topLeft_default controls-TileView__item_roundBorder_topRight_default controls-TileView__item_roundBorder_bottomLeft_default controls-TileView__item_roundBorder_bottomRight_default"
+            data-qa="item"
+            item-key="4"
+            style="flex-basis: 250px; min-width: 250px;"
+            tabindex="0"
+          >
+            <div
+              class=""
+              style="padding-top: 80%;"
+            />
+            <div
+              class="  controls-TileView__item_roundBorder_topLeft_default controls-TileView__item_roundBorder_topRight_default controls-TileView__item_roundBorder_bottomLeft_default controls-TileView__item_roundBorder_bottomRight_default controls-TileView__itemContent js-controls-ListView__measurableContainer controls-TileView__item_border_visible controls-TileView__item_border_default controls-TileView__item_shadow_visible controls-TileView__item_unscaleable controls-ListView__item_showActions"
+            >
+              <div
+                class="controls-TileView__imageWrapper"
+                data-qa="controls-TileView__item_not_animated"
+              >
+                <div
+                  class=""
+                  style="padding-top: 80%;"
+                />
+                <div
+                  class=""
+                >
+                  <div
+                    class=" controls-TileView__image controls-TileView__image_align_center "
+                    data-qa="controls-ItemTemplate__image"
+                    loading="lazy"
+                    src=""
+                  />
+                </div>
+              </div>
+              <div
+                class=""
+              >
+                <div
+                  class=" controls-TileView__title  controls-TileView__title_invisible"
+                  title="Tiger O'Neill"
+                >
+                  <div
+                    class=""
+                    data-qa="controls-ItemTemplate__title"
+                    itemprop="name"
+                  >
+                    Tiger O'Neill
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="controls-TileView__item controls-ListView__itemV js-controls-ListView__editingTarget controls-TileView__item_unscalable ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default  controls-TileView__item_roundBorder_topLeft_default controls-TileView__item_roundBorder_topRight_default controls-TileView__item_roundBorder_bottomLeft_default controls-TileView__item_roundBorder_bottomRight_default controls-ListView__itemV_cursor-pointer  controls-TileView__item controls-ListView__itemV js-controls-ListView__editingTarget controls-TileView__item_unscalable ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default  controls-TileView__item_roundBorder_topLeft_default controls-TileView__item_roundBorder_topRight_default controls-TileView__item_roundBorder_bottomLeft_default controls-TileView__item_roundBorder_bottomRight_default"
+            data-qa="item"
+            item-key="5"
+            style="flex-basis: 250px; min-width: 250px;"
+            tabindex="0"
+          >
+            <div
+              class=""
+              style="padding-top: 80%;"
+            />
+            <div
+              class="  controls-TileView__item_roundBorder_topLeft_default controls-TileView__item_roundBorder_topRight_default controls-TileView__item_roundBorder_bottomLeft_default controls-TileView__item_roundBorder_bottomRight_default controls-TileView__itemContent js-controls-ListView__measurableContainer controls-TileView__item_border_visible controls-TileView__item_border_default controls-TileView__item_shadow_visible controls-TileView__item_unscaleable controls-ListView__item_showActions"
+            >
+              <div
+                class="controls-TileView__imageWrapper"
+                data-qa="controls-TileView__item_not_animated"
+              >
+                <div
+                  class=""
+                  style="padding-top: 80%;"
+                />
+                <div
+                  class=""
+                >
+                  <div
+                    class=" controls-TileView__image controls-TileView__image_align_center "
+                    data-qa="controls-ItemTemplate__image"
+                    loading="lazy"
+                    src=""
+                  />
+                </div>
+              </div>
+              <div
+                class=""
+              >
+                <div
+                  class=" controls-TileView__title  controls-TileView__title_invisible"
+                  title="Yetta Herrera"
+                >
+                  <div
+                    class=""
+                    data-qa="controls-ItemTemplate__title"
+                    itemprop="name"
+                  >
+                    Yetta Herrera
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class=" controls-ListView__itemV js-controls-List_invisible-for-VirtualScroll controls-TileView__item_invisible  controls-TileView__item ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default"
+            data-qa="controls-TileView__item_not_invisible"
+            item-key="invisible-tile-item-25"
+            style="flex-basis: 250px; min-width: 250px;"
+          />
+          <div
+            class=" controls-ListView__itemV js-controls-List_invisible-for-VirtualScroll controls-TileView__item_invisible  controls-TileView__item ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default"
+            data-qa="controls-TileView__item_not_invisible"
+            item-key="invisible-tile-item-26"
+            style="flex-basis: 250px; min-width: 250px;"
+          />
+          <div
+            class=" controls-ListView__itemV js-controls-List_invisible-for-VirtualScroll controls-TileView__item_invisible  controls-TileView__item ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default"
+            data-qa="controls-TileView__item_not_invisible"
+            item-key="invisible-tile-item-27"
+            style="flex-basis: 250px; min-width: 250px;"
+          />
+          <div
+            class=" controls-ListView__itemV js-controls-List_invisible-for-VirtualScroll controls-TileView__item_invisible  controls-TileView__item ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default"
+            data-qa="controls-TileView__item_not_invisible"
+            item-key="invisible-tile-item-28"
+            style="flex-basis: 250px; min-width: 250px;"
+          />
+          <div
+            class=" controls-ListView__itemV js-controls-List_invisible-for-VirtualScroll controls-TileView__item_invisible  controls-TileView__item ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default"
+            data-qa="controls-TileView__item_not_invisible"
+            item-key="invisible-tile-item-29"
+            style="flex-basis: 250px; min-width: 250px;"
+          />
+          <div
+            class=" controls-ListView__itemV js-controls-List_invisible-for-VirtualScroll controls-TileView__item_invisible  controls-TileView__item ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default"
+            data-qa="controls-TileView__item_not_invisible"
+            item-key="invisible-tile-item-30"
+            style="flex-basis: 250px; min-width: 250px;"
+          />
+          <div
+            class=" controls-ListView__itemV js-controls-List_invisible-for-VirtualScroll controls-TileView__item_invisible  controls-TileView__item ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default"
+            data-qa="controls-TileView__item_not_invisible"
+            item-key="invisible-tile-item-31"
+            style="flex-basis: 250px; min-width: 250px;"
+          />
+          <div
+            class=" controls-ListView__itemV js-controls-List_invisible-for-VirtualScroll controls-TileView__item_invisible  controls-TileView__item ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default"
+            data-qa="controls-TileView__item_not_invisible"
+            item-key="invisible-tile-item-32"
+            style="flex-basis: 250px; min-width: 250px;"
+          />
+          <div
+            class=" controls-ListView__itemV js-controls-List_invisible-for-VirtualScroll controls-TileView__item_invisible  controls-TileView__item ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default"
+            data-qa="controls-TileView__item_not_invisible"
+            item-key="invisible-tile-item-33"
+            style="flex-basis: 250px; min-width: 250px;"
+          />
+          <div
+            class=" controls-ListView__itemV js-controls-List_invisible-for-VirtualScroll controls-TileView__item_invisible  controls-TileView__item ws-flex-grow-1 controls-TileView__item_spacingLeft_default controls-TileView__item_spacingRight_default controls-TileView__item_spacingTop_default controls-TileView__item_spacingBottom_default"
+            data-qa="controls-TileView__item_not_invisible"
+            item-key="invisible-tile-item-34"
+            style="flex-basis: 250px; min-width: 250px;"
+          />
+          <div
+            class="controls-TileView__item_invisible controls-ListView__itemV controls-TreeTileView__separator js-controls-List_invisible-for-VirtualScroll"
+            data-qa="controls-TileView__item_invisible"
+            item-key="invisible-tile-item-35"
+          />
+          <div
+            class="controls-Tile__loadingTrigger_vertical controls-BaseControl__loadingTrigger controls-BaseControl__loadingTrigger-bottom"
+            data-qa="loading-trigger-bottom"
+            style="bottom: 1px;"
+          />
+          <div
+            class="controls-BaseControl__loadingIndicator js-controls-BaseControl__loadingIndicator controls-BaseControl__loadingIndicator-bottom controls-BaseControl__loadingIndicator__position-bottom controls-BaseControl__loadingIndicator__state-loading controls-verticalTile__loadingIndicator"
+            data-qa="indicator_state_loading_position_bottom"
+            style="display: none;"
+          >
+            <div
+              class="controls-BaseControl__loadingIndicator-content"
+            >
+              <div
+                class="controls-BaseControl__loadingIndicatorImage"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="controls__BaseControl__footer"
+        tabindex="0"
+      />
+      <invisible-node
+        class="ws-hidden"
+        tabindex="-1"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Поиск. Core. Смена режима отображения при поиске Изменение режима отображения при наличии опции adaptiveSearchMode. Если за время поиска поменяли режим отображения, то после сброса мы должны откатиться на измененный. 2`] = `
+Array [
+  Array [
+    	- searchValue: '' -> 'Jorden Pate',
+    	- loading: false -> false,
+    		loading: false,
+    			loading: true,
+    				loading: false,
+    	- viewCommands: {"from":[]} -> {"to":["resetScroll"]},
+    	- viewMode: 'table' -> 'search',
+    	- expandedItems: {"from":[]} -> {"to":[]},
+    	- filter: {"from":{}} -> {"to":{"name":"Jorden Pate"}},
+    	- previousViewMode: undefined -> 'table',
+    	- expansionModel: {"from":{}} -> {"to":{}},
+  ],
+  Array [
+    	- collection: 'Controls/display:Collection' -> 'Controls/searchBreadcrumbsGrid:SearchGridCollection',
+    	- viewCommands: {"from":["resetScroll"]} -> {"to":["resetScroll","resetScroll"]},
+    	- selectionModel: {"from":{}} -> {"to":{}},
+  ],
+  Array [
+    	- viewMode: 'search' -> 'searchTile',
+    		viewMode: 'search',
+    			viewMode: 'tile',
+    				viewMode: 'searchTile',
+  ],
+  Array [
+    	- searchValue: 'Jorden Pate' -> '',
+    	- loading: false -> false,
+    		loading: false,
+    			loading: true,
+    				loading: false,
+    	- viewCommands: {"from":["resetScroll","resetScroll"]} -> {"to":["resetScroll","resetScroll","resetScroll"]},
+    	- viewMode: 'searchTile' -> 'tile',
+    	- filter: {"from":{"name":"Jorden Pate"}} -> {"to":{}},
+    	- previousViewMode: 'table' -> 'tile',
+  ],
+  Array [
+    	- collection: 'Controls/searchBreadcrumbsTile:SearchTileCollection' -> 'Controls/tile:TileCollection',
+    	- searchInputFocused: false -> true,
+    	- viewCommands: {"from":["resetScroll","resetScroll","resetScroll"]} -> {"to":["resetScroll","resetScroll","resetScroll","resetScroll"]},
+    	- selectionModel: {"from":{}} -> {"to":{}},
+  ],
+]
+`;
+
+exports[`Поиск. Core. Смена режима отображения при поиске Можно изменить режим отображения поиска, если не задан searchParam. 1`] = `
+<div
+  data-qa="js-demo-search-input-data-qa"
+>
+  <div
+    class="controls-Render js-controls-Render  controls-Render_background-same controls-Render_textAlign-left controls-Render_search_borderRadius controls-Render_state-search-valid controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default controls-Render_state-search-valid_caretEmpty controls-inlineheight-default controls-Render-inlineheight-default  controls-search controls_search_theme-default controls-notFocusOnEnter "
+    tabindex="0"
+    title=""
+  >
+    <div
+      class="controls-Render__wrapper"
+    >
+      <span
+        class="controls-Render__baseline"
+      >
+        ﻿
+      </span>
+      <div
+        class="controls_search_theme-default controls-Search__buttons controls-Search__buttons-leftTemplate"
+      />
+      <div
+        class="controls-InputBase__field controls-Search__field_margin-null controls-Search__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+        data-qa="controls-Render__field"
+      >
+        <input
+          autocapitalize="on"
+          autocomplete="off"
+          class="controls-Field js-controls-Field controls-InputBase__nativeField controls-Search__nativeField_caretEmpty controls-Search__nativeField_caretEmpty_theme_default"
+          inputmode="text"
+          name="ws-input_2000-01-01"
+          spellcheck="true"
+          tabindex="0"
+          type="text"
+          value=""
+        />
+        <div
+          class="controls-InputBase__placeholder controls-InputBase__placeholder_displayed-under-caret"
+        >
+          <div
+            class="controls-Render__placeholder controls-Render__placeholder_overflow"
+          >
+            Найти
+          </div>
+        </div>
+      </div>
+      <div
+        class="controls_search_theme-default controls-Search__buttons controls-Search__buttons-rightTemplate"
+      >
+        <div
+          class="controls-Search__button
+                            controls-Search__resetButton-invisible
+                            controls-Search__button_enabled
+                            controls-Search__resetButton
+                            controls-Search__resetButton_position
+                            controls-Search__resetButton_color icon-Close"
+          data-qa="Search__resetButton"
+          title="Очистить"
+          ws-no-focus="true"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Поиск. Core. Смена режима отображения при поиске Можно изменить режим отображения поиска, если не задан searchParam. 2`] = `
+Array [
+  Array [
+    	- collection: undefined -> 'Controls/display:Collection',
+    	- viewMode: 'table' -> 'search',
+  ],
+]
+`;
+
+exports[`Поиск. Core. Состояние загрузки не должно влиять на значение для строки поиска. 1`] = `
+<div
+  class="controls-Scroll-containerBase_userContent"
+  data-qa="js-demo-search-input-data-qa"
+>
+  <div
+    class="controls-Render js-controls-Render  controls-Render_background-same controls-Render_textAlign-left controls-Render_search_borderRadius controls-Render_state-search-valid controls-fontsize-m controls-fontweight-default controls-Render-fontsize-m controls-text-default controls-Render_state-search-valid_caretEmpty controls-inlineheight-default controls-Render-inlineheight-default  controls-search controls_search_theme-default controls-notFocusOnEnter "
+    tabindex="0"
+    title=""
+  >
+    <div
+      class="controls-Render__wrapper"
+    >
+      <span
+        class="controls-Render__baseline"
+      >
+        ﻿
+      </span>
+      <div
+        class="controls_search_theme-default controls-Search__buttons controls-Search__buttons-leftTemplate"
+      />
+      <div
+        class="controls-InputBase__field controls-Search__field_margin-null controls-Search__field_theme_default_margin-null controls-Render__field controls-Render__field_textAlign_left ws-ellipsis controls-Render__field_zIndex"
+        data-qa="controls-Render__field"
+      >
+        <input
+          autocapitalize="on"
+          autocomplete="off"
+          class="controls-Field js-controls-Field controls-InputBase__nativeField controls-Search__nativeField_caretEmpty controls-Search__nativeField_caretEmpty_theme_default"
+          inputmode="text"
+          name="ws-input_2000-01-01"
+          spellcheck="true"
+          tabindex="0"
+          type="text"
+          value="Philippines"
+        />
+        <div
+          class="controls-InputBase__placeholder ws-hidden controls-InputBase__placeholder_displayed-under-caret"
+        >
+          <div
+            class="controls-Render__placeholder controls-Render__placeholder_overflow"
+          >
+            Найти
+          </div>
+        </div>
+      </div>
+      <div
+        class="controls_search_theme-default controls-Search__buttons controls-Search__buttons-rightTemplate"
+      >
+        <div
+          class="controls-Search__button
+                            
+                            controls-Search__button_enabled
+                            controls-Search__resetButton
+                            controls-Search__resetButton_position
+                            controls-Search__resetButton_color icon-Close"
+          data-qa="Search__resetButton"
+          title="Очистить"
+          ws-no-focus="true"
+        />
+        <div
+          class="
+                    controls_search_theme-default controls-Search__button
+                    controls-Search__button_enabled
+                    controls-Search__searchButton
+                    controls-Search__searchButton_iconSize-s
+                    controls-Search__searchButton-right_inlineheight-default
+                    controls-Search__searchButton_position-right
+                    controls-Search__searchButton_color
+                    icon-Search2
+                    undefined"
+          data-qa="Search__searchButton"
+          ws-no-focus="true"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Поиск. Core. Состояние загрузки не должно влиять на значение для строки поиска. 2`] = `
+Array [
+  Array [
+    	- searchValue: '' -> 'Philippines',
+    	- loading: true -> false,
+    		loading: true,
+    			loading: false,
+    				loading: true,
+    					loading: false,
+    	- filter: {"from":{}} -> {"to":{"country":"Philippines"}},
+    		filter: {},
+    			filter: {"country":"Norway"},
+    				filter: {"country":"Philippines"},
+    	- expandedItems: {"from":[]} -> {"to":[]},
+    		expandedItems: [],
+    			expandedItems: [],
+    				expandedItems: [],
+    	- viewCommands: {"from":[]} -> {"to":["resetScroll"]},
+    	- viewMode: 'table' -> 'search',
+    	- previousViewMode: undefined -> 'table',
+    	- expansionModel: {"from":{}} -> {"to":{}},
+  ],
+  Array [
+    	- viewCommands: {"from":["resetScroll"]} -> {"to":["resetScroll","resetScroll"]},
+    	- selectionModel: {"from":{}} -> {"to":{}},
+  ],
+]
+`;

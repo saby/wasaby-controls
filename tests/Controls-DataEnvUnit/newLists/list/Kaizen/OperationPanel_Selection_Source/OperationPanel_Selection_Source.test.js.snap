@@ -1,0 +1,406 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OperationPanel_Selection_Source. Тесты взаимодействия ПМО со множественным выделением и загрузкой данных. Перезагрузка списка в режиме отображения отобранных элементов возвращает список к отображению всех элементов 1`] = `
+<div
+  class="controls-Scroll-containerBase_userContent"
+  data-qa="js-demo-list"
+>
+  <div
+    class="controls-BaseControl controls_list_theme-default controls_toggle_theme-default"
+    data-qa="list"
+    tabindex="0"
+  >
+    <div
+      class="controls-BaseControl__fakeFocusElem"
+      name="fakeFocusElem"
+      tabindex="0"
+    />
+    <style
+      data-vdom-ignore="true"
+      name="itemActionsOutsideStyle"
+    />
+    <div
+      class="controls-BaseControl__viewContainer controls-BaseControl__View_uniqueId2"
+      name="viewContainer"
+      tabindex="0"
+    >
+      <div
+        class="controls-ListViewV controls_list_theme-default controls-ListView_default controls-itemActionsV_menu-hidden"
+        tabindex="0"
+      >
+        <div
+          class="controls-BaseControl__loadingIndicator js-controls-BaseControl__loadingIndicator controls-BaseControl__loadingIndicator-top controls-BaseControl__loadingIndicator__position-top controls-BaseControl__loadingIndicator__state-loading "
+          data-qa="indicator_state_loading_position_top"
+          style="display: none;"
+        >
+          <div
+            class="controls-BaseControl__loadingIndicator-content"
+          >
+            <div
+              class="controls-BaseControl__loadingIndicatorImage"
+            />
+          </div>
+        </div>
+        <div
+          class=" controls-BaseControl__loadingTrigger controls-BaseControl__loadingTrigger-top"
+          data-qa="loading-trigger-top"
+          style="top: 1px;"
+        />
+        <div
+          class="controls-ListViewV__itemsContainer controls-BaseControl_hover_enabled controls-BaseControl__itemsContainer_uniqueId2"
+          data-qa="items-container"
+          name="itemsContainer"
+        >
+          <div
+            class="controls-ListView__itemV-relative controls-ListView__itemV controls-ListView__item_default controls-ListView__item_contentWrapper js-controls-ListView__editingTarget  controls-ListView__itemV_cursor-pointer  controls-ListView__item_showActions controls-ListView__item_showCheckbox js-controls-ListView__measurableContainer controls-ListView__item__marked_default controls-ListView__item_highlightOnHover controls-hover-background-default"
+            data-qa="item"
+            item-key="1"
+            tabindex="0"
+          >
+            <div
+              class="controls_toggle_theme-undefined controls-CheckboxMarker controls-CheckboxMarker_outlined controls-CheckboxMarker_theme-undefined controls-CheckboxMarker__state-false js-controls-ListView__notEditable controls-List_DragNDrop__notDraggable js-controls-ListView__checkbox js-controls-DragScroll__notDraggable controls-CheckboxMarker_inList controls-ListView__checkbox  controls-cursor_pointer  controls-ListView__checkbox_marginTop_s controls-ListView__checkbox_position-default "
+              data-qa="controls-CheckboxMarker"
+              tabindex="-1"
+            >
+              <svg
+                class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                data-qa="controls-CheckboxMarker_state-false"
+                tabindex="0"
+                viewBox="0 0 12 12"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-false"
+                  d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                />
+                <path
+                  class="controls-CheckboxMarker__icon-subtract "
+                  clip-rule="evenodd"
+                  d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                  fill-rule="evenodd"
+                />
+                <path
+                  class="controls-CheckboxMarker__icon-checked-color_transparent"
+                  clip-rule="evenodd"
+                  d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                  fill-rule="evenodd"
+                />
+                <rect
+                  class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                  height="6"
+                  rx="2"
+                  width="6"
+                  x="3"
+                  y="3"
+                />
+              </svg>
+            </div>
+            <div
+              class="controls-ListView__itemContent  controls-ListView__item_default-topPadding_default controls-ListView__item_default-bottomPadding_default controls-ListView__item-rightPadding_default controls-ListView__itemContent_withCheckboxes controls-ListView__itemContent_withCheckboxes_default "
+            >
+              <div
+                class="controls-ListView__itemV_marker controls-ListView__itemV_marker_size_content-xs   controls-ListView__itemV_marker_default"
+                data-qa="marker"
+              />
+              Hilary Osborne
+            </div>
+          </div>
+          <div
+            class="controls-ListView__itemV-relative controls-ListView__itemV controls-ListView__item_default controls-ListView__item_contentWrapper js-controls-ListView__editingTarget  controls-ListView__itemV_cursor-pointer  controls-ListView__item_showActions controls-ListView__item_showCheckbox js-controls-ListView__measurableContainer controls-ListView__item__unmarked_default controls-ListView__item_highlightOnHover controls-hover-background-default"
+            data-qa="item"
+            item-key="2"
+            tabindex="0"
+          >
+            <div
+              class="controls_toggle_theme-undefined controls-CheckboxMarker controls-CheckboxMarker_outlined controls-CheckboxMarker_theme-undefined controls-CheckboxMarker__state-false js-controls-ListView__notEditable controls-List_DragNDrop__notDraggable js-controls-ListView__checkbox js-controls-DragScroll__notDraggable controls-CheckboxMarker_inList controls-ListView__checkbox  controls-cursor_pointer  controls-ListView__checkbox_marginTop_s controls-ListView__checkbox_position-default "
+              data-qa="controls-CheckboxMarker"
+              tabindex="-1"
+            >
+              <svg
+                class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                data-qa="controls-CheckboxMarker_state-false"
+                tabindex="0"
+                viewBox="0 0 12 12"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-false"
+                  d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                />
+                <path
+                  class="controls-CheckboxMarker__icon-subtract "
+                  clip-rule="evenodd"
+                  d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                  fill-rule="evenodd"
+                />
+                <path
+                  class="controls-CheckboxMarker__icon-checked-color_transparent"
+                  clip-rule="evenodd"
+                  d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                  fill-rule="evenodd"
+                />
+                <rect
+                  class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                  height="6"
+                  rx="2"
+                  width="6"
+                  x="3"
+                  y="3"
+                />
+              </svg>
+            </div>
+            <div
+              class="controls-ListView__itemContent  controls-ListView__item_default-topPadding_default controls-ListView__item_default-bottomPadding_default controls-ListView__item-rightPadding_default controls-ListView__itemContent_withCheckboxes controls-ListView__itemContent_withCheckboxes_default "
+            >
+              Jorden Pate
+            </div>
+          </div>
+          <div
+            class="controls-ListView__itemV-relative controls-ListView__itemV controls-ListView__item_default controls-ListView__item_contentWrapper js-controls-ListView__editingTarget  controls-ListView__itemV_cursor-pointer  controls-ListView__item_showActions controls-ListView__item_showCheckbox js-controls-ListView__measurableContainer controls-ListView__item__unmarked_default controls-ListView__item_highlightOnHover controls-hover-background-default"
+            data-qa="item"
+            item-key="3"
+            tabindex="0"
+          >
+            <div
+              class="controls_toggle_theme-undefined controls-CheckboxMarker controls-CheckboxMarker_outlined controls-CheckboxMarker_theme-undefined controls-CheckboxMarker__state-false js-controls-ListView__notEditable controls-List_DragNDrop__notDraggable js-controls-ListView__checkbox js-controls-DragScroll__notDraggable controls-CheckboxMarker_inList controls-ListView__checkbox  controls-cursor_pointer  controls-ListView__checkbox_marginTop_s controls-ListView__checkbox_position-default "
+              data-qa="controls-CheckboxMarker"
+              tabindex="-1"
+            >
+              <svg
+                class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                data-qa="controls-CheckboxMarker_state-false"
+                tabindex="0"
+                viewBox="0 0 12 12"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-false"
+                  d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                />
+                <path
+                  class="controls-CheckboxMarker__icon-subtract "
+                  clip-rule="evenodd"
+                  d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                  fill-rule="evenodd"
+                />
+                <path
+                  class="controls-CheckboxMarker__icon-checked-color_transparent"
+                  clip-rule="evenodd"
+                  d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                  fill-rule="evenodd"
+                />
+                <rect
+                  class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                  height="6"
+                  rx="2"
+                  width="6"
+                  x="3"
+                  y="3"
+                />
+              </svg>
+            </div>
+            <div
+              class="controls-ListView__itemContent  controls-ListView__item_default-topPadding_default controls-ListView__item_default-bottomPadding_default controls-ListView__item-rightPadding_default controls-ListView__itemContent_withCheckboxes controls-ListView__itemContent_withCheckboxes_default "
+            >
+              Benjamin Pruitt
+            </div>
+          </div>
+          <div
+            class="controls-ListView__itemV-relative controls-ListView__itemV controls-ListView__item_default controls-ListView__item_contentWrapper js-controls-ListView__editingTarget  controls-ListView__itemV_cursor-pointer  controls-ListView__item_showActions controls-ListView__item_showCheckbox js-controls-ListView__measurableContainer controls-ListView__item__unmarked_default controls-ListView__item_highlightOnHover controls-hover-background-default"
+            data-qa="item"
+            item-key="4"
+            tabindex="0"
+          >
+            <div
+              class="controls_toggle_theme-undefined controls-CheckboxMarker controls-CheckboxMarker_outlined controls-CheckboxMarker_theme-undefined controls-CheckboxMarker__state-false js-controls-ListView__notEditable controls-List_DragNDrop__notDraggable js-controls-ListView__checkbox js-controls-DragScroll__notDraggable controls-CheckboxMarker_inList controls-ListView__checkbox  controls-cursor_pointer  controls-ListView__checkbox_marginTop_s controls-ListView__checkbox_position-default "
+              data-qa="controls-CheckboxMarker"
+              tabindex="-1"
+            >
+              <svg
+                class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                data-qa="controls-CheckboxMarker_state-false"
+                tabindex="0"
+                viewBox="0 0 12 12"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-false"
+                  d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                />
+                <path
+                  class="controls-CheckboxMarker__icon-subtract "
+                  clip-rule="evenodd"
+                  d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                  fill-rule="evenodd"
+                />
+                <path
+                  class="controls-CheckboxMarker__icon-checked-color_transparent"
+                  clip-rule="evenodd"
+                  d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                  fill-rule="evenodd"
+                />
+                <rect
+                  class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                  height="6"
+                  rx="2"
+                  width="6"
+                  x="3"
+                  y="3"
+                />
+              </svg>
+            </div>
+            <div
+              class="controls-ListView__itemContent  controls-ListView__item_default-topPadding_default controls-ListView__item_default-bottomPadding_default controls-ListView__item-rightPadding_default controls-ListView__itemContent_withCheckboxes controls-ListView__itemContent_withCheckboxes_default "
+            >
+              Tiger O'Neill
+            </div>
+          </div>
+          <div
+            class="controls-ListView__itemV-relative controls-ListView__itemV controls-ListView__item_default controls-ListView__item_contentWrapper js-controls-ListView__editingTarget  controls-ListView__itemV_cursor-pointer  controls-ListView__item_showActions controls-ListView__item_showCheckbox js-controls-ListView__measurableContainer controls-ListView__item__unmarked_default controls-ListView__item_highlightOnHover controls-hover-background-default"
+            data-qa="item"
+            item-key="5"
+            tabindex="0"
+          >
+            <div
+              class="controls_toggle_theme-undefined controls-CheckboxMarker controls-CheckboxMarker_outlined controls-CheckboxMarker_theme-undefined controls-CheckboxMarker__state-false js-controls-ListView__notEditable controls-List_DragNDrop__notDraggable js-controls-ListView__checkbox js-controls-DragScroll__notDraggable controls-CheckboxMarker_inList controls-ListView__checkbox  controls-cursor_pointer  controls-ListView__checkbox_marginTop_s controls-ListView__checkbox_position-default "
+              data-qa="controls-CheckboxMarker"
+              tabindex="-1"
+            >
+              <svg
+                class="controls-CheckboxMarker__icon-checked controls-CheckboxMarker__icon-size-s controls-CheckboxMarker__icon-checked-horizontalPadding-default"
+                data-qa="controls-CheckboxMarker_state-false"
+                tabindex="0"
+                viewBox="0 0 12 12"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="controls-CheckboxMarker__icon-border_enabled controls-CheckboxMarker__icon-border-state-false"
+                  d="M8 0.5H4C2.067 0.5 0.5 2.067 0.5 4V8C0.5 9.933 2.067 11.5 4 11.5H8C9.933 11.5 11.5 9.933 11.5 8V4C11.5 2.067 9.933 0.5 8 0.5Z"
+                />
+                <path
+                  class="controls-CheckboxMarker__icon-subtract "
+                  clip-rule="evenodd"
+                  d="M8 0.5C8 0.22386 7.77614 0 7.5 0H4C1.79086 0 0 1.79086 0 4V8C0 10.2091 1.79086 12 4 12H8C10.2091 12 12 10.2091 12 8V7.5C12 7.22386 11.7761 7 11.5 7C11.2239 7 11 7.22386 11 7.5V8C11 9.6569 9.6569 11 8 11H4C2.34315 11 1 9.6569 1 8V4C1 2.34315 2.34315 1 4 1H7.5C7.77614 1 8 0.77614 8 0.5Z"
+                  fill-rule="evenodd"
+                />
+                <path
+                  class="controls-CheckboxMarker__icon-checked-color_transparent"
+                  clip-rule="evenodd"
+                  d="M11.7609 1.16985C12.0549 1.41657 12.0814 1.84159 11.8201 2.11915L6.43652 8.77431C6.29706 8.92242 6.09549 9.00491 5.88564 8.99977C5.67579 8.99463 5.47903 8.90237 5.34789 8.74764L3.15612 6.16144C2.91036 5.87145 2.96017 5.44831 3.26737 5.21632C3.57456 4.98433 4.02283 5.03134 4.26858 5.32133L5.93279 7.28503L10.7553 1.22569C11.0166 0.948133 11.4669 0.923132 11.7609 1.16985Z"
+                  fill-rule="evenodd"
+                />
+                <rect
+                  class="controls-CheckboxMarker__state-null__icon-color__transparent"
+                  height="6"
+                  rx="2"
+                  width="6"
+                  x="3"
+                  y="3"
+                />
+              </svg>
+            </div>
+            <div
+              class="controls-ListView__itemContent  controls-ListView__item_default-topPadding_default controls-ListView__item_default-bottomPadding_default controls-ListView__item-rightPadding_default controls-ListView__itemContent_withCheckboxes controls-ListView__itemContent_withCheckboxes_default "
+            >
+              Yetta Herrera
+            </div>
+          </div>
+        </div>
+        <div
+          class=" controls-BaseControl__loadingTrigger controls-BaseControl__loadingTrigger-bottom"
+          data-qa="loading-trigger-bottom"
+          style="bottom: 1px;"
+        />
+        <div
+          class="controls-BaseControl__loadingIndicator js-controls-BaseControl__loadingIndicator controls-BaseControl__loadingIndicator-bottom controls-BaseControl__loadingIndicator__position-bottom controls-BaseControl__loadingIndicator__state-loading "
+          data-qa="indicator_state_loading_position_bottom"
+          style="display: none;"
+        >
+          <div
+            class="controls-BaseControl__loadingIndicator-content"
+          >
+            <div
+              class="controls-BaseControl__loadingIndicatorImage"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="controls__BaseControl__footer"
+        tabindex="0"
+      />
+      <invisible-node
+        class="ws-hidden"
+        tabindex="-1"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`OperationPanel_Selection_Source. Тесты взаимодействия ПМО со множественным выделением и загрузкой данных. Перезагрузка списка в режиме отображения отобранных элементов возвращает список к отображению всех элементов 2`] = `
+Array [
+  Array [
+    	- collection: undefined -> 'Controls/display:Collection',
+    	- lastCheckedKey: undefined -> 1,
+    	- selectedKeys: {"from":[]} -> {"to":[1]},
+    	- excludedKeys: {"from":[]} -> {"to":[]},
+    	- listCommandsSelection: {"from":"undefined"} -> {"to":{"selected":[1],"excluded":[]}},
+    		listCommandsSelection: undefined,
+    			listCommandsSelection: {"selected":[1],"excluded":[]},
+    				listCommandsSelection: {"selected":[1],"excluded":[]},
+    					listCommandsSelection: {"selected":[1],"excluded":[]},
+    						listCommandsSelection: {"selected":[1],"excluded":[]},
+    	- selectionModel: {"from":{}} -> {"to":{}},
+    		selectionModel: {},
+    			selectionModel: {},
+    				selectionModel: {},
+    	- markedKey: undefined -> 1,
+    	- selectionViewMode: 'hidden' -> 'all',
+  ],
+  Array [
+    	- count: 0 -> 1,
+    	- listId: undefined -> 'uniqueId0',
+  ],
+  Array [
+    	- selectionViewMode: 'all' -> 'selected',
+    	- listCommandsSelection: {"from":{"selected":[1],"excluded":[]}} -> {"to":{"selected":[1],"excluded":[]}},
+    	- showSelectedCount: undefined -> 1,
+  ],
+  Array [
+    	- command: null -> 'selected',
+  ],
+  Array [
+    	- command: 'selected' -> null,
+  ],
+  Array [
+    	- viewCommands: {"from":[]} -> {"to":["resetScroll"]},
+    	- selectionModel: {"from":{}} -> {"to":{}},
+  ],
+  Array [
+    	- selectedKeys: {"from":[1]} -> {"to":[]},
+    	- listCommandsSelection: {"from":{"selected":[1],"excluded":[]}} -> {"to":{"selected":[1],"excluded":[]}},
+    		listCommandsSelection: {"selected":[1],"excluded":[]},
+    			listCommandsSelection: {"selected":[1],"excluded":[]},
+    				listCommandsSelection: {"selected":[1],"excluded":[]},
+    	- selectionModel: {"from":{}} -> {"to":{}},
+    	- count: 1 -> 0,
+  ],
+  Array [
+    Изменений не произошло,
+  ],
+  Array [
+    	- loading: false -> true,
+  ],
+  Array [
+    	- loading: true -> false,
+    	- expandedItems: {"from":[]} -> {"to":[]},
+    	- filter: {"from":{}} -> {"to":{}},
+    	- expansionModel: {"from":{}} -> {"to":{}},
+  ],
+  Array [
+    	- viewCommands: {"from":["resetScroll"]} -> {"to":["resetScroll","resetScroll"]},
+    	- selectionModel: {"from":{}} -> {"to":{}},
+  ],
+]
+`;

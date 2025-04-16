@@ -1,0 +1,15 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <div attr:class="controlsDemo__cell">
+        <Controls.scroll:Container attr:style="max-height: 200px">
+            <Controls.list:View
+                    storeId="TrackedPropertiesTrackedPropertiesTemplate"
+                    trackedProperties="{{_trackedProperties}}">
+                <ws:trackedPropertiesTemplate>
+                    <Controls.list:TrackedPropertiesTemplate position="right">
+                        <div>Значение отслеживаемого свойства {{trackedPropertiesTemplate.trackedValues.trackedVal}}</div>
+                    </Controls.list:TrackedPropertiesTemplate>
+                </ws:trackedPropertiesTemplate>
+            </Controls.list:View>
+        </Controls.scroll:Container>
+    </div>
+</div>

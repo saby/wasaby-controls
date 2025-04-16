@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper controlDemo_Tile_scale-default">
+<Controls.treeTile:View
+        attr:class="demo-ScaleOnHover__default"
+        tileMode="dynamic"
+        imageProperty="image"
+        tileScalingMode="outside"
+        storeId="ScaleOnHoverDefault">
+        <ws:itemTemplate>
+                <ws:partial
+                        template="Controls/tile:ItemTemplate"
+                        hasTitle="{{itemTemplate.item.contents.isDocument}}"/>
+        </ws:itemTemplate>
+</Controls.treeTile:View>
+</div>

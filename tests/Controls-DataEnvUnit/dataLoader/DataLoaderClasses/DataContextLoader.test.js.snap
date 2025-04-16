@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls-DataEnv/dataLoader:DataContextLoader getPendingPromisesInfo Должна вернуться строка с перечислением зависших узлов контекста данных и объектов, которые зависли 1`] = `
+"Узел контекста, в котором завис промис: root, 
+Элементы, которые зависли во время загрузки: 
+0. Название зависшей фабрики: Controls-DataEnvUnit/dataLoader/factories/withPendingPromise
+Ключ в конфигурации контекста: pendingFactory
+Узел контекста, в котором завис промис: root, contextNode1, 
+Элементы, которые зависли во время загрузки: 
+0. Название зависшей фабрики: Controls-DataEnvUnit/dataLoader/factories/withPendingPromise
+Ключ в конфигурации контекста: pendingFactory
+Узел контекста, в котором завис промис: root, contextNode2, 
+Элементы, которые зависли во время загрузки: 
+0. Название зависшей фабрики: Controls-DataEnvUnit/dataLoader/factories/withPendingPromise
+Ключ в конфигурации контекста: pendingFactory"
+`;

@@ -1,0 +1,7 @@
+<Controls.baseList:DataContainerConnected
+    storeId="{{_options.storeId}}"
+    insideList="{{true}}"
+    sliceOwnedByExplorer="{{true}}"
+    scope="{{_options}}">
+    <Controls._explorer.View name="explorer" storeId="{{_options.storeId}}"/>
+</Controls.baseList:DataContainerConnected>

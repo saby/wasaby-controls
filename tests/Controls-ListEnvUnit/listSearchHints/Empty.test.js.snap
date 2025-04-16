@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls-ListEnv/listSearchHints:Empty Without filters 1`] = `
+<div
+  class="controls-BaseControl__search-content controls-BaseControl__loadingIndicator-content tw-inline-flex tw-items-center"
+  data-qa="continue-search"
+>
+  <div
+    class="tw-flex tw-flex-col"
+  >
+    <div
+      class="controls-BaseControl__continueSearch_positionHint"
+    >
+      Нет результатов поиска
+    </div>
+    
+    <div
+      class="controls-BaseControl__continueSearch_details"
+    />
+  </div>
+</div>
+`;

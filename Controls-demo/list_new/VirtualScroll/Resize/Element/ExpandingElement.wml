@@ -1,0 +1,7 @@
+<ws:partial template="Controls/list:ItemTemplate" attr:class="controlsDemo__height{{ _isBig ? 500 : 300}}" scope="{{_options}}">
+    <ws:contentTemplate>
+        <div>
+            Меняющий размер элемент
+        </div>
+    </ws:contentTemplate>
+</ws:partial>

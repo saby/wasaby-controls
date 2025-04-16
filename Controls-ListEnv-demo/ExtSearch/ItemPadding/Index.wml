@@ -1,0 +1,9 @@
+<div class="search_Input-demo_wrapper">
+    <Controls-ListEnv.ExtSearchConnected
+        storeId="settings"
+        attr:style="width: 300px"
+        attr:class="engineDemo-ExtSearch-suggest"
+        searchParam="title"
+        filterNames="{{ _filterNames }}"
+    />
+</div>

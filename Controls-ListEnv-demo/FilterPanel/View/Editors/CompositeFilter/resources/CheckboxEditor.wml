@@ -1,0 +1,7 @@
+<Controls.filterPanel:BaseEditor scope="{{_options}}" closeButtonVisible="{{false}}">
+    <ws:editorTemplate>
+        <Controls.checkbox:Checkbox scope="{{_options}}"
+                                  bind:value="_value"
+                                  on:valueChanged="_handleValueChanged()"/>
+    </ws:editorTemplate>
+</Controls.filterPanel:BaseEditor>

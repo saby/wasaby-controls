@@ -1,0 +1,10 @@
+<div class="ControlsDemo-SlidingPanel_RestrictiveContainer">
+    <Controls.buttons:Button
+        attr:class="ControlsDemo-SlidingPanel_RestrictiveContainer-button"
+        caption="Открыть шторку" on:click="_openSlidingPanelHandler()"/>
+    <Controls.toggle:DoubleSwitch
+        attr:class="ControlsDemo-SlidingPanel_RestrictiveContainer-button"
+        bind:value="_insideRestrictiveContainer"
+        onCaption="{{'Открывать в рамках restrictiveContainer'}}" offCaption="{{'Открывать на весь экран'}}"/>
+    <div class="ControlsDemo-Popup-slidingPanel_RestrictiveContainer-container">Это restrictiveContainer</div>
+</div>

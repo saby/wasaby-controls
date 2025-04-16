@@ -1,0 +1,34 @@
+.controls-ButtonStyleEditor_bubble {
+   display: flex;
+   width: var(--inline_height_m);
+   height: var(--inline_height_m);
+   box-sizing: border-box;
+   border: var(--border-thickness) solid var(--unaccented_border-color);
+   border-radius: 50%;
+   overflow: hidden;
+   transition: 0.2s transform;
+
+   &::before {
+      content: '\200b';
+   }
+
+   .ws-is-hover &:hover {
+      transform: scale(1.15);
+   }
+}
+
+.controls-StyleEditor_item {
+   border-radius: var(--border-radius_s);
+}
+
+.controls-StyleEditor_item_active {
+   background: var(--active_background-color);
+}
+
+.controls-ButtonStyleEditor_bubble-link {
+   background: var(--link_text-color);
+}
+
+.controls-ButtonStyleEditor_bubble-label {
+   background: var(--label_text-color);
+}
