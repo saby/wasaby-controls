@@ -1,0 +1,9 @@
+<Controls.contextDeprecated:ContextOptionsConsumer scope="{{ _options }}">
+    <ws:contextOptionsInnerComponent>
+      <Controls.contextDeprecated:DataContextCompatibleConsumer scope="{{_options}}">
+        <ws:innerComponent>
+        <Controls._breadcrumbs.Container scope="{{ contextOptionsInnerComponent }}" _dataOptionsValue="{{innerComponent.dataContextCompatibleValue || contextOptionsInnerComponent._dataOptionsValue}}" />
+        </ws:innerComponent>
+      </Controls.contextDeprecated:DataContextCompatibleConsumer>
+    </ws:contextOptionsInnerComponent>
+</Controls.contextDeprecated:ContextOptionsConsumer>

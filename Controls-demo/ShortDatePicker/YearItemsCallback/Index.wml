@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper">
+    <Controls.shortDatePicker:View
+            attr:style="height: 100%; width: 140px;"
+            startValue="{{_startValue}}"
+            endValue="{{_endValue}}"
+            arrowVisible="{{false}}"
+            displayedRanges="{{_displayedRanges}}"
+            chooseYears="{{false}}"
+            chooseHalfyears="{{false}}"
+            chooseMonths="{{true}}"
+            yearItemsCallback="{{_yearItemsCallback}}"
+            on:sendResult="_sendResultHandler()">
+    </Controls.shortDatePicker:View>
+</div>

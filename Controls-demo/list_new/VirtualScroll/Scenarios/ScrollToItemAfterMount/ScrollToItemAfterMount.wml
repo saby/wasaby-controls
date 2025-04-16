@@ -1,0 +1,9 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <span class="controls-text-label controlsDemo__mb1">Проверяем подскролл к записи через публичный метод после построения. Должны видеть Запись с ключом 50.</span>
+    <Controls.scroll:Container attr:class="controlsDemo__maxWidth500 controlsDemo__height500">
+        <Controls.list:View storeId="VirtualScrollScenariosScrollToItemAfterMount"
+                            name="list">
+            <ws:virtualScrollConfig pageSize="{{100}}"/>
+        </Controls.list:View>
+    </Controls.scroll:Container>
+</div>

@@ -1,0 +1,20 @@
+<Controls.validate:Highlighter validationStatus="{{_options.validationStatus}}">
+   <Controls.dropdown:Selector
+           class="tw-w-full"
+           keyProperty="{{_options.keyProperty || 'Uuid'}}"
+           displayProperty="{{_options.displayProperty || 'Name'}}"
+           nodeProperty="{{_options.nodeProperty || 'IsFolder'}}"
+           parentProperty="{{_options.parentProperty || 'ParentUuid'}}"
+           viewMode="link"
+           selectionType="leaf"
+           source="{{_source}}"
+           menuHeadingCaption="{{_caption}}"
+           emptyText="{[Не выбрано]}"
+           bind:selectedKeys="_selectedKeys"
+           on:selectedKeysChanged="_selectedKeysChangedHandler()">
+      <ws:itemTemplate>
+         <ws:partial template="Controls/menu:ItemTemplate"
+                     marker="{{false}}"/>
+      </ws:itemTemplate>
+   </Controls.dropdown:Selector>
+</Controls.validate:Highlighter>

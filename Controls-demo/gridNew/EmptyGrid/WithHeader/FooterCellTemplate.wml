@@ -1,0 +1,6 @@
+<ws:partial template="Controls/grid:FooterColumnTemplate" scope="{{ _options }}">
+    <ws:content>
+        <div>myVar: {{myVar}}</div>
+    </ws:content>
+</ws:partial>
+

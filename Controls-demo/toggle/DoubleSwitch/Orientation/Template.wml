@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell demo-doubleSwitchOrientation__default">
+            <Controls.toggle:DoubleSwitch bind:value="_value"
+                                          orientation="horizontal"
+                                          onCaption="Наличными"
+                                          offCaption="По карте"/>
+        </div>
+        <div class="controlsDemo__cell demo-doubleSwitchOrientation__vertical">
+            <Controls.toggle:DoubleSwitch bind:value="_value2"
+                                          orientation="vertical"
+                                          onCaption="Наличными"
+                                          offCaption="По карте"/>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<ws:template name="OtherControl">
+    <div class="demoOtherControl_wrapper">
+        <div class="controlsDemo__inline-flex">
+            <Controls.buttons:Button
+                    attr:style="margin-right: 15px"
+                    contrastBackground="{{true}}"
+                    icon="icon-TFAttach"
+                    caption="Прикрепить"
+                    viewMode="linkButton"
+                    iconSize="s"
+                    iconStyle="secondary"></Controls.buttons:Button>
+            <Controls.searchDeprecated:InputContainer>
+                <Controls.search:Input
+                        contrastBackground="{{true}}"
+                        attr:class="demo-Search__searchinput"/>
+            </Controls.searchDeprecated:InputContainer>
+        </div>
+        <div class="controlsDemo__inline-flex">
+            <Controls.paging:Paging
+                    pagingMode="base"
+                    showEndButton="{{true}}"
+                    arrowState="{{_arrowState}}"
+                    on:onArrowClick="_onPagingArrowClick()"/>
+        </div>
+    </div>
+</ws:template>
+
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth800" style="position: relative">
+    <Controls.scroll:Container attr:class="controlsDemo__height400">
+        <Controls.list:HotKeysContainer>
+            <Controls.list:View
+                    name="list"
+                    attr:class="controlsDemo_line-height18"
+                    moveMarkerOnScrollPaging="{{true}}"
+                    storeId="NavigationPagingOtherControl"
+                    on:activeElementChanged="_updatePagingArrow()"/>
+        </Controls.list:HotKeysContainer>
+    </Controls.scroll:Container>
+    <ws:partial template="OtherControl"/>
+</div>

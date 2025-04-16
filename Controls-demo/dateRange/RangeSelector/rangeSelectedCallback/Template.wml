@@ -1,0 +1,31 @@
+<div class="controlsDemo__wrapper">
+    <div class="controlsDemo-RageLink__componentWrap controlsDemo-RangeLink_capture">
+        <Controls.date:ContextProvider>
+            <div class="controlsDemo-RageLink__componentWrap__selector-container">
+                <Controls.dateRange:SelectorConsumer
+                        bind:startValue="_startValue"
+                        bind:endValue="_endValue"
+                        attr:class="ws-flex-grow-1"
+                        rangeSelectedCallback="{{rangeSelectedCallback}}"
+                />
+                <Controls.date:ArrowButtonConsumer direction="left" attr:class="controls-margin_left-m"/>
+                <Controls.date:ArrowButtonConsumer direction="right" attr:class="controls-margin_left-m"/>
+            </div>
+        </Controls.date:ContextProvider>
+        <div>With quantum</div>
+        <Controls.date:ContextProvider>
+            <div class="controlsDemo-RageLink__componentWrap__selector-container">
+                <Controls.dateRange:SelectorConsumer
+                        bind:startValue="_startValue1"
+                        bind:endValue="_endValue1"
+                        attr:class="ws-flex-grow-1"
+                        rangeSelectedCallback="{{rangeSelectedCallback1}}"
+                        ranges="{{ {'weeks': [1]} }}"
+                        selectionType="quantum"
+                />
+                <Controls.date:ArrowButtonConsumer direction="left" attr:class="controls-margin_left-m"/>
+                <Controls.date:ArrowButtonConsumer direction="right" attr:class="controls-margin_left-m"/>
+            </div>
+        </Controls.date:ContextProvider>
+    </div>
+</div>

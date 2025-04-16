@@ -1,0 +1,63 @@
+<div class="controlsDemo-Link__PageWrap">
+   <div class="controlsDemo-Link__PageBlock">
+      <div class="controlsDemo-Link__title"></div>
+      <div class="controlsDemo-Link__content">
+         <div class="controlsDemo-Link__componentWrap">
+            <Controls.date:Selector
+                    datePopupType="compactDatePicker"
+			   attr:test_name="default_range"
+               bind:value="_value"/>
+         </div>
+         <div class="controlsDemo-Link__componentWrap">
+            <Controls.date:ContextProvider>
+               <div class="controlsDemo-Link__componentWrap__selector-container">
+                  <Controls.date:SelectorConsumer
+                          attr:class="ws-flex-grow-1"
+                          bind:value="_value"
+                          attr:test_name="show_arrow_range"
+                  />
+                  <Controls.date:ArrowButtonConsumer direction="left" attr:class="controls-margin_left-m"/>
+                  <Controls.date:ArrowButtonConsumer direction="right" attr:class="controls-margin_left-m"/>
+               </div>
+            </Controls.date:ContextProvider>
+         </div>
+         <div class="controlsDemo-Link__componentWrap">
+            <Controls.date:Selector
+               bind:value="_value"
+               chooseHalfyears="{{false}}"
+               chooseQuarters="{{false}}"
+               viewMode="link"
+               fontColorStyle="link"
+			   attr:test_name="months_range"
+            />
+         </div>
+         <div class="controlsDemo-Link__componentWrap">
+            <Controls.date:Selector
+               bind:value="_value"
+               chooseHalfyears="{{false}}"
+               chooseMonths="{{false}}"
+               viewMode="link"
+               fontColorStyle="unaccented"
+			   attr:test_name="quarters_range"
+            />
+
+         </div>
+         <div class="controlsDemo-Link__componentWrap">
+            <Controls.date:Selector
+               viewMode="label"
+               emptyCaption="не задан"
+			   attr:test_name="range_not_value"
+            />
+         </div>
+         <div class="controlsDemo-Link__componentWrap">
+            <Controls.date:Selector
+               bind:value="_value"
+               chooseHalfyears="{{false}}"
+               chooseMonths="{{false}}"
+               chooseQuarters="{{false}}"
+			   attr:test_name="range_years_only"
+            />
+         </div>
+      </div>
+   </div>
+</div>

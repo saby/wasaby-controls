@@ -1,0 +1,12 @@
+<div class="controlsDemo__wrapper controlsDemo__flex ws-justify-content-center">
+    <div class="controlsDemo__flex ws-flex-column ws-align-items-center" data-qa="controlsDemo_capture">
+        <div class="controlsDemo__cell ws-flexbox ws-justify-content-center controlsDemo_fixedWidth500">
+            <Controls.Chips:Control items="{{_items}}"
+                                   bind:selectedKeys="_selectedKeys1"/>
+        </div>
+        <div class="controlsDemo__cell ws-flexbox ws-justify-content-center controlsDemo_fixedWidth500">
+            <Controls.Chips:Control items="{{_items}}"
+                                   selectedKeys="{{_selectedKeys2}}"/>
+        </div>
+    </div>
+</div>

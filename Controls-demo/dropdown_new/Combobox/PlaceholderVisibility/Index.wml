@@ -1,0 +1,40 @@
+<div class="controlsDemo__wrapper controlsDemo__flexRow">
+    <div class="controlsDemo__mr4 controlsDemo__input" data-qa="controlsDemo__input_simple">
+        <div class="controls-text-label">placeholderVisibility = editable, without items</div>
+        <Controls.ComboBox source="{{_emptySource}}"
+                                    displayProperty="title"
+                                    keyProperty="key"
+                                    placeholder="custom placeholder"
+                                    placeholderVisibility="editable"
+                                    bind:selectedKey="_selectedKey"/>
+    </div>
+    <div class="controlsDemo__mr4 controlsDemo__input" data-qa="controlsDemo__input_readonly">
+        <div class="controls-text-label">placeholderVisibility="editable" and readOnly</div>
+        <Controls.ComboBox source="{{_source}}"
+                                    displayProperty="title"
+                                    keyProperty="key"
+                                    placeholder="custom placeholder"
+                                    placeholderVisibility="editable"
+                                    readOnly="{{true}}"
+                                    bind:selectedKey="_readOnlySelectedKey"/>
+    </div>
+    <div class="controlsDemo__mr4 controlsDemo__input" data-qa="controlsDemo__input_readonly">
+        <div class="controls-text-label">placeholderVisibility="empty", without items</div>
+        <Controls.ComboBox source="{{_emptySource}}"
+                                    displayProperty="title"
+                                    keyProperty="key"
+                                    placeholder="custom placeholder"
+                                    placeholderVisibility="empty"
+                                    bind:selectedKey="_readOnlySelectedKey"/>
+    </div>
+    <div class="controlsDemo__mr4 controlsDemo__input" data-qa="controlsDemo__input_readonly">
+        <div class="controls-text-label">placeholderVisibility="empty" and readOnly</div>
+        <Controls.ComboBox source="{{_source}}"
+                                    displayProperty="title"
+                                    keyProperty="key"
+                                    placeholder="custom placeholder"
+                                    placeholderVisibility="empty"
+                                    readOnly="{{true}}"
+                                    bind:selectedKey="_readOnlySelectedKey"/>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="controlsDemo__flexRow">
+    <div class="controlsDemo__wrapper controlsDemo__flexColumn">
+        <div class="controlsDemo__mb1 controlsDemo__wrapper__horizontal controlsDemo__cell controlsDemo__childWidth400 controlsDemo-Lookup-multi_readOnly">
+            <div class="controls-text-label">default backgroundStyle</div>
+            <Controls.lookup:Input
+                bind:selectedKeys="_selectedKeys"
+                source="{{_source}}"
+                keyProperty="id"
+                multiSelect="{{true}}"
+                readOnly="{{true}}"/>
+        </div>
+        <div class="controlsDemo__mb1 controlsDemo__wrapper__horizontal controlsDemo__cell controlsDemo__childWidth400 controlsDemo-Lookup-multi_readOnly controls-background-unaccented">
+            <div class="controls-text-label">backgroundStyle='unaccented'</div>
+            <Controls.lookup:Input
+                bind:selectedKeys="_selectedKeys"
+                source="{{_source}}"
+                keyProperty="id"
+                multiSelect="{{true}}"
+                readOnly="{{true}}"
+                backgroundStyle="unaccented"/>
+        </div>
+    </div>
+</div>

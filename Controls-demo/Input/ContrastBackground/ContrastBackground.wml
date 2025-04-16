@@ -1,0 +1,10 @@
+<div class="controlsDemo__wrapper controlsDemo__background controlsDemo__flex ws-flex-column ws-align-items-center">
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="demo-contrastBackground__inputTrue"
+                             contrastBackground="{{true}}"/>
+    </div>
+    <div class="controlsDemo__cell">
+        <Controls.input:Text attr:class="demo-contrastBackground__inputFalse"
+                             contrastBackground="{{false}}"/>
+    </div>
+</div>

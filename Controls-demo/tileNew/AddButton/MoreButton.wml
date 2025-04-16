@@ -1,0 +1,18 @@
+<ws:partial template="Controls/tile:AdditionalItemTemplate"
+            size="custom"
+            shadowVisibility="hidden"
+            cursor="default"
+            scope="{{_options}}">
+    <ws:contentTemplate>
+        <Controls.buttons:Button readOnly="{{false}}"
+                                 icon="icon-ArrowTimeForward"
+                                 iconSize="s"
+                                 caption="Все"
+                                 captionPosition="left"
+                                 fontSize="xl"
+                                 inlineHeight="2xl"
+                                 buttonStyle="default"
+                                 viewMode="filled"
+                                 tooltip="caption"/>
+    </ws:contentTemplate>
+</ws:partial>

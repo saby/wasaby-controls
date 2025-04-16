@@ -1,0 +1,12 @@
+<Controls.Container.Async templateName="EDO3/Rule/Chooser">
+    <ws:partial template="{{ content.resolvedTemplate }}"
+                autoDropDown="{{ true }}"
+                multiSelect="{{ false }}"
+                placeholder="{[Регламент]}"
+                selectedKeys="{{ _selectedKeys }}"
+                selectionType="leaf"
+                validationStatus="{{ _options.validationStatus }}"
+                on:selectedKeysChanged="_selectedKeysChangedHandler()">
+        <ws:filter DocType="{{ [_options.docType] }}" Действующий="{{ true }}"/>
+    </ws:partial>
+</Controls.Container.Async>

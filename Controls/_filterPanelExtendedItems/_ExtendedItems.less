@@ -1,0 +1,109 @@
+.controls-FilterViewPanel__additional-editors {
+   display: flex;
+   min-width: 100%;
+   box-sizing: border-box;
+   margin-left: calc(-1 * var(--offset_st));
+}
+
+.controls-FilterViewPanel__additional-editors-default,
+.controls-FilterViewPanel__additional-editors-in-row {
+   flex-wrap: wrap;
+}
+
+.controls-FilterViewPanel__additional_left-column {
+   min-width: 50%;
+   flex-shrink: 0;
+}
+
+.controls-FilterViewPanel__additional_left-column-maxWidth {
+   max-width: 70%;
+}
+
+.controls-FilterViewPanel__additional_left-column-maxWidth_adaptive {
+   max-width: 100%;
+}
+
+.controls-FilterViewPanel__additional_left-column,
+.controls-FilterViewPanel__additional_right-column {
+   display: flex;
+   flex-direction: column;
+   align-items: baseline;
+}
+
+.controls-FilterViewPanel__additional_right-column {
+   min-width: 30%;
+}
+
+.controls-FilterViewPanel__additional-default {
+   border-top: var(--border-thickness) solid var(--border-color_switcher);
+}
+
+.controls-FilterViewPanel__additional-editor_default {
+   height: var(--inline_height_m);
+   line-height: var(--inline_height_m);
+}
+
+.controls-FilterViewPanel__additional-editor_adaptive {
+   height: var(--inline_height_l);
+   line-height: var(--inline_height_l);
+}
+
+.controls-FilterViewPanel__additional-editor {
+   display: inline-block;
+   cursor: pointer;
+   padding: 0 var(--additional-editor_horizontal-offset_filterViewPanel);
+   margin-right: auto;
+   border-radius: var(--border-radius_m);
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   max-width: 100%;
+   box-sizing: border-box;
+}
+
+.controls-text-filterExtendedItem {
+   color: var(--label_contrast_text-color);
+}
+
+.controls-FilterViewPanel__additional-editor-popup {
+   margin-bottom: var(--offset_3xs);
+}
+
+.controls-FilterViewPanel__additional-editor-popup-in-row {
+   margin-right: var(--offset_m);
+}
+
+.controls-FilterViewPanel__additional-editor-default,
+.controls-FilterViewPanel__additional-editor-default_last {
+   margin-right: var(--offset_2xs);
+   margin-bottom: var(--offset_2xs);
+}
+
+.ws-is-hover {
+   .controls-FilterViewPanel__additional-editor:hover {
+      background: var(--background-color);
+   }
+
+   .controls-FilterViewPanel__additional-editor-default:hover,
+   .controls-FilterViewPanel__additional-editor-default_last:hover {
+      background: var(--pale_hover_color);
+   }
+}
+
+.ws-is-no-touch,
+.ws-is-touch {
+   .controls-FilterViewPanel__additional-editor-default:active {
+      background: var(--pale_hover_color);
+      color: var(--text-color);
+   }
+}
+
+// todo Нет возможности навесить класс напрямую на кнопку
+//_filterPanelExtendedItems:Control->date:LinkView Класс навесится на враппе, а не на кнопку
+.controls-linkButton_fontColorStyle-filterExtendedItem-style {
+   --text_color_button_local: var(--label_contrast_text-color);
+
+   .ws-is-hover &:hover {
+      --text_color_button_local: var(--label_contrast_text-color);
+   }
+}

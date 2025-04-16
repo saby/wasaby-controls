@@ -1,0 +1,16 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth300">
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">textOverflow = "ellipsis"</div>
+      <Controls.heading:Back
+         textOverflow="ellipsis"
+         caption="Текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст"
+      />
+   </div>
+   <div class="controlsDemo__cell">
+      <div class="controls-text-label">textOverflow = "none"</div>
+      <Controls.heading:Back
+         textOverflow="none"
+         caption="Текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст"
+      />
+   </div>
+</div>

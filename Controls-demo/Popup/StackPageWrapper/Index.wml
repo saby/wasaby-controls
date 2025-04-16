@@ -1,0 +1,12 @@
+<div class="ws-flexbox ws-flex-row ws-justify-content-center" style="width: 100%;">
+    <Controls.popupTemplate:StackPageWrapper on:workspaceResize="_resizeHandler()"
+                                             propStorageId="new_tab_panel"
+                                             minWidth="{{_options.theme !== 'default' ? 870 : 600}}"
+                                             maxWidth="{{1400}}"
+                                             width="{{ _width }}"
+                                             minSavedWidth="{{ _minSavedWidth }}"
+                                             maxSavedWidth=" {{ _maxSavedWidth }}"
+                                             workspaceWidth="{{1000}}">
+        <ws:partial template="Controls-demo/Popup/StackPageWrapper/resources/Template"/>
+    </Controls.popupTemplate:StackPageWrapper>
+</div>

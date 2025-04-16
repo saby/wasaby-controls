@@ -1,0 +1,6 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500 controlsDemo_wrapper-treeGrid-base-treeGridView">
+    <Controls.buttons:Button on:click="_buttonClick()" caption="Continue loading"/>
+    <Controls.treeGrid:View
+            storeId="_testsBreakNodeLoading"
+            columns="{{_columns}}"/>
+</div>

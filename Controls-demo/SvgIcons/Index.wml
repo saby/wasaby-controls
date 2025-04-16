@@ -1,0 +1,93 @@
+<div style="margin: 25px;">
+
+      <Controls.buttons:Button caption="load svg" viewMode="link" on:click="_attachIcon()"/>
+   <div class="controls-demo_svgIcons">
+      <div class="controls-demo_button_wrapper">
+         <div class="ws-flexbox ws-align-items-baseline controls-demo-svg_container">
+            <div class="controls-fontsize-3xs">baseline</div><div class="controls-demo_svg-icon"></div><div class="controls-fontsize-3xs">baseline</div>
+         </div>
+         <div class="ws-flexbox ws-align-items-baseline controls-demo-svg_container">
+            <div class="controls-fontsize-2xs">baseline</div><div class="controls-demo_svg-icon"></div><div class="controls-fontsize-2xs">baseline</div>
+         </div>
+         <div class="ws-flexbox ws-align-items-baseline controls-demo-svg_container">
+            <div class="controls-fontsize-xs">baseline</div><div class="controls-demo_svg-icon"></div><div class="controls-fontsize-xs">baseline</div>
+         </div>
+         <div class="ws-flexbox ws-align-items-baseline controls-demo-svg_container">
+            <div class="controls-fontsize-s">baseline</div><div class="controls-demo_svg-icon"></div><div class="controls-fontsize-s">baseline</div>
+         </div>
+         <div class="ws-flexbox ws-align-items-baseline controls-demo-svg_container">
+            <div class="controls-fontsize-m">baseline</div><div class="controls-demo_svg-icon"></div><div class="controls-fontsize-m">baseline</div>
+         </div>
+         <div class="ws-flexbox ws-align-items-baseline controls-demo-svg_container">
+            <div class="controls-fontsize-l">baseline</div><div class="controls-demo_svg-icon"></div><div class="controls-fontsize-l">baseline</div>
+         </div>
+         <div class="ws-flexbox ws-align-items-baseline controls-demo-svg_container">
+            <div class="controls-fontsize-xl">baseline</div><div class="controls-demo_svg-icon"></div><div class="controls-fontsize-xl">baseline</div>
+         </div>
+         <div class="ws-flexbox ws-align-items-baseline controls-demo-svg_container">
+            <div class="controls-fontsize-2xl">baseline</div><div class="controls-demo_svg-icon"></div><div class="controls-fontsize-2xl">baseline</div>
+         </div>
+         <div class="ws-flexbox ws-align-items-baseline controls-demo-svg_container">
+            <div class="controls-fontsize-3xl">baseline</div><div class="controls-demo_svg-icon"></div><div class="controls-fontsize-3xl">baseline</div>
+         </div>
+         <div class="ws-flexbox ws-align-items-baseline controls-demo-svg_container">
+            <div class="controls-fontsize-4xl">baseline</div><div class="controls-demo_svg-icon"></div><div class="controls-fontsize-4xl">baseline</div>
+         </div>
+         <div class="ws-flexbox ws-align-items-baseline controls-demo-svg_container">
+            <div class="controls-fontsize-5xl">baseline</div><div class="controls-demo_svg-icon"></div><div class="controls-fontsize-5xl">baseline</div>
+         </div>
+      </div>
+
+      <div class="controls-demo_button_wrapper">
+         <div class="ws-flexbox ws-flex-column">
+            button height = m
+            icon size = s
+            <div>
+               <Controls.buttons:Button attr:class="controls-demo_button_margin"
+                                        viewMode="filled"
+                                        inlineHeight="m"
+                                        iconStyle="contrast"
+                                        buttonStyle="primary"
+                                        icon="{{_icon}}"
+                                        iconSize="s"/>
+            </div>
+         </div>
+
+         <div class="ws-flexbox ws-flex-column">
+            button height = l
+            icon size = m
+            <div>
+               <Controls.buttons:Button attr:class="controls-demo_button_margin"
+                                        viewMode="filled"
+                                        inlineHeight="l"
+                                        iconStyle="contrast"
+                                        buttonStyle="primary"
+                                        icon="{{_icon}}"
+                                        iconSize="m"/>
+            </div>
+         </div>
+
+         <div class="ws-flexbox ws-flex-column">
+            button height = xl
+            icon size = l
+            <div>
+               <Controls.buttons:Button attr:class="controls-demo_button_margin"
+                                        viewMode="filled"
+                                        inlineHeight="xl"
+                                        iconStyle="contrast"
+                                        buttonStyle="primary"
+                                        icon="{{_icon}}"
+                                        iconSize="l"/>
+            </div>
+         </div>
+
+         <Controls.dropdown:Button attr:class="controls-demo_button_margin"
+                                   source="{{_source}}"
+                                   caption="button with text"
+                                   viewMode="link"
+                                   buttonStyle="primary"
+                                   icon="{{_icon}}"
+                                   iconSize="m"/>
+      </div>
+   </div>
+</div>

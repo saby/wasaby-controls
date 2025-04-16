@@ -1,0 +1,82 @@
+<div class="controlsDemo__flexColumn" attr:style="width: 300px">
+    <div class="controlsDemo__wrapper">
+        <Controls.popupTemplate:Sticky>
+            <ws:headerContentTemplate>
+                <div>headerBackgroundStyle=default</div>
+            </ws:headerContentTemplate>
+            <ws:bodyContentTemplate>
+                <div class="controlsDemo-PopupTemplate__list-item">backgroundStyle=default</div>
+            </ws:bodyContentTemplate>
+        </Controls.popupTemplate:Sticky>
+    </div>
+    <div class="controlsDemo__wrapper">
+        <Controls.popupTemplate:Sticky headerBackgroundStyle="unaccented" backgroundStyle="unaccented">
+            <ws:headerContentTemplate>
+                <div>headerBackgroundStyle=unaccented</div>
+            </ws:headerContentTemplate>
+            <ws:bodyContentTemplate>
+                <div class="controlsDemo-PopupTemplate__list-item">backgroundStyle=unaccented</div>
+            </ws:bodyContentTemplate>
+        </Controls.popupTemplate:Sticky>
+    </div>
+    <div class="controlsDemo__wrapper">
+        <Controls.popupTemplate:Sticky headerBackgroundStyle="secondary" backgroundStyle="secondary">
+            <ws:headerContentTemplate>
+                <div>headerBackgroundStyle=secondary</div>
+            </ws:headerContentTemplate>
+            <ws:bodyContentTemplate>
+                <div class="controlsDemo-PopupTemplate__list-item">backgroundStyle=secondary</div>
+            </ws:bodyContentTemplate>
+        </Controls.popupTemplate:Sticky>
+    </div>
+    <div class="controlsDemo__wrapper">
+        <Controls.popupTemplate:Sticky headerBackgroundStyle="primary" backgroundStyle="primary">
+            <ws:headerContentTemplate>
+                <div>headerBackgroundStyle=primary</div>
+            </ws:headerContentTemplate>
+            <ws:bodyContentTemplate>
+                <div class="controlsDemo-PopupTemplate__list-item">backgroundStyle=primary</div>
+            </ws:bodyContentTemplate>
+        </Controls.popupTemplate:Sticky>
+    </div>
+    <div class="controlsDemo__wrapper">
+        <Controls.popupTemplate:Sticky headerBackgroundStyle="danger" backgroundStyle="danger">
+            <ws:headerContentTemplate>
+                <div>headerBackgroundStyle=danger</div>
+            </ws:headerContentTemplate>
+            <ws:bodyContentTemplate>
+                <div class="controlsDemo-PopupTemplate__list-item">backgroundStyle=danger</div>
+            </ws:bodyContentTemplate>
+        </Controls.popupTemplate:Sticky>
+    </div>
+    <div class="controlsDemo__wrapper">
+        <Controls.popupTemplate:Sticky headerBackgroundStyle="warning" backgroundStyle="warning">
+            <ws:headerContentTemplate>
+                <div>headerBackgroundStyle=warning</div>
+            </ws:headerContentTemplate>
+            <ws:bodyContentTemplate>
+                <div class="controlsDemo-PopupTemplate__list-item">backgroundStyle=warning</div>
+            </ws:bodyContentTemplate>
+        </Controls.popupTemplate:Sticky>
+    </div>
+    <div class="controlsDemo__wrapper">
+        <Controls.popupTemplate:Sticky headerBackgroundStyle="info" backgroundStyle="info">
+            <ws:headerContentTemplate>
+                <div>headerBackgroundStyle=info</div>
+            </ws:headerContentTemplate>
+            <ws:bodyContentTemplate>
+                <div class="controlsDemo-PopupTemplate__list-item">backgroundStyle=info</div>
+            </ws:bodyContentTemplate>
+        </Controls.popupTemplate:Sticky>
+    </div>
+    <div class="controlsDemo__wrapper">
+        <Controls.popupTemplate:Sticky headerBackgroundStyle="success" backgroundStyle="success">
+            <ws:headerContentTemplate>
+                <div>headerBackgroundStyle=success</div>
+            </ws:headerContentTemplate>
+            <ws:bodyContentTemplate>
+                <div class="controlsDemo-PopupTemplate__list-item">backgroundStyle=success</div>
+            </ws:bodyContentTemplate>
+        </Controls.popupTemplate:Sticky>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<ws:template name="mainrouter">
+    <Router.router:Route mask="DemoStand/*traverse">
+        <DemoStand.TemplateWrapper>
+            <ws:if data="{{content.templateName && content.templateLoaded}}">
+                <ws:if data="{{ isReloading && !_configLoaded }}">
+                    <invisible-node/>
+                </ws:if>
+                <ws:else>
+                    <Controls.Container.Async templateName="{{content.templateName}}"
+                                              attr:id="newListView" attr:class="ControlsDemo-Page_content"/>
+                </ws:else>
+            </ws:if>
+            <ws:else>
+                <div>{{_options.correctTemplate ? 'Не указан шаблон.' : 'Шаблон не найден.'}} Может быть перейти на&nbsp;<a
+                        href='#' on:click="goHomeHandler()">разводящую</a></div>
+            </ws:else>
+        </DemoStand.TemplateWrapper>
+    </Router.router:Route>
+</ws:template>
+
+<div class="ControlsDemo-Page ws-flexbox ws-flex-column">
+    <Router.router:Route mask="hideMenuButton=:hideMenuButton">
+        <ws:if data="{{ !content.hideMenuButton && _isMenuButtonVisible() }}">
+            <div class="ws-flexbox ws-flex-row" id="Header">
+                <a attr:class="ws-link"
+                    attr:id="Back"
+                    attr:style="width: 100px"
+                    on:click="goHomeHandler()">&lt;&nbsp;Меню</a>
+                <ws:if data="{{sourceUrl}}">
+                    <div class="ws-flex-grow-1 ws-flexbox ws-flex-column">
+                        <a attr:class="ws-link ws-align-self-end"
+                            attr:id="Source"
+                            attr:style="width: 100px"
+                            attr:target="_blank"
+                            attr:href="{{sourceUrl}}"
+                        >Source</a>
+                   </div>
+                </ws:if>
+            </div>
+        </ws:if>
+        <ws:else>
+            <invisible-node/>
+        </ws:else>
+    </Router.router:Route>
+    <ws:if data="{{ _hasScrollContainer }}">
+        <Controls.scroll:Container attr:class="ControlsDemo-Page_scrollContainer" scrollOrientation="verticalHorizontal">
+            <ws:partial template="mainrouter"/>
+        </Controls.scroll:Container>
+    </ws:if>
+    <ws:else>
+        <ws:partial template="mainrouter"/>
+    </ws:else>
+</div>

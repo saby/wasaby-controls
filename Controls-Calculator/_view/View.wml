@@ -1,0 +1,48 @@
+<div
+    on:keyDown="_viewKeyDownHandler()"
+    on:keyUp="_viewKeyUpHandler()"
+    on:focusin="_focusInHandler()"
+    on:focusout="_focusOutHandler()"
+    class="Calculator-View
+           {{_isActive ? 'Calculator-View__active'}}
+           Calculator-View_{{_options.viewMode}}">
+
+    <ws:if data="{{_options.viewMode === 'extended'}}">
+        <div class="Calculator-View__outputArea">
+            <Controls-Calculator._view.History
+                attr:class="Calculator-View__history"
+                name="calculationHistory"
+                history="{{_history}}"/>
+        </div>
+    </ws:if>
+
+    <div class="Calculator-View__input-keyboard Calculator-View__input-keyboard_{{_options.viewMode}}">
+        <Controls.input:Render
+                attr:class="Calculator-View__input"
+                attr:ws-autofocus="{{true}}"
+                fontSize="{{_inputFontSize}}"
+                contrastBackground="{{true}}"
+                fontWeight="bold"
+                inlineHeight="calculator">
+            <div class="Calculator-View__valueWrapper" title="{{_inputValue}}">
+                <ws:if data="{{_inputValue === null}}">
+                <span class="controls-text-readonly">
+                    0
+                </span>
+                </ws:if>
+                <ws:else>
+                <span class="controls-text-secondary">
+                    {{_rk(_prepareValue(_inputValue))}}
+                </span>
+                </ws:else>
+            </div>
+        </Controls.input:Render>
+        <Controls-Keyboard.View
+                on:itemClick="_virtualKeyboardClickHandler()"
+                attr:class="Calculator-View__keyboard"
+                name="keyboardView"
+                items="{{_keyboardButtons}}"
+                activeItem="{{_activeItem}}">
+        </Controls-Keyboard.View>
+    </div>
+</div>

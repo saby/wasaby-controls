@@ -1,0 +1,7 @@
+<div class="controlsDemo__wrapper controlsDemo_fixedWidth500">
+    <Controls-ListEnv.searchConnected:Input storeId="MultiselectionSelectionType" />
+    <Controls.scroll:Container attr:class="controlsDemo__height300">
+        <Controls.tree:View storeId="MultiselectionSelectionType"
+                            feature1188089336="{{true}}"/>
+    </Controls.scroll:Container>
+</div>

@@ -1,0 +1,329 @@
+@variants-of-background: primary, pale;
+@drop-shadow_remove-btn: 0px 0px calc(var(--shadow-blur_b) / 2) var(--shadow-color_b);
+
+.Keyboard-View {
+   display: inline-block;
+   flex-direction: column;
+   user-select: none;
+
+   &__row {
+      display: flex;
+
+      /* rtl:ignore */
+      direction: ltr;
+
+      &_itemSpacing-s {
+         margin-bottom: var(--item_offset_Keyboard_view_s);
+      }
+
+      &_itemSpacing-m {
+         margin-bottom: var(--offset_s);
+      }
+
+      &_itemSpacing-l {
+         margin-bottom: var(--item_offset_Keyboard_view_l);
+      }
+
+      &_last {
+         margin-bottom: 0;
+      }
+   }
+
+   &__item {
+      border-radius: var(--item_border-radius_Keyboard_view);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      border-color: var(--item_border-color_Keyboard_view);
+
+      &_border-visible {
+         border-width: var(--border-thickness);
+      }
+
+      &_border-hidden {
+         border-width: 0;
+      }
+
+      @variants-of-size: s, m, l;
+      @unstandard-buttons: space, shift, accentButton;
+      @left-margin_Keyboard_view_qwerty-row: qwertySecondRow, qwertyThirdRow;
+
+      /* Для исключения пересечения названий переменных во вложенных циклах
+       используются 2 разных цикла */
+
+      .for(@variants-of-size, {
+         @size: @_item;
+
+         &_spacing-@{size} {
+
+            /* rtl:ignore */
+            margin-right: ~"var(--item_offset_Keyboard_view_@{size})";
+         }
+
+         &_left-margin-qwertySecondRow-@{size} {
+            margin-left: ~"calc(var(--item_size_Keyboard_view_@{size}) * 0.71)";
+         }
+
+         &_left-margin-qwertyThirdRow-@{size} {
+            margin-left: ~"calc(var(--item_size_Keyboard_view_@{size}) * 0.4)";
+         }
+
+         &_size-@{size} {
+            width: ~"var(--item_size_Keyboard_view_@{size})"; /* т.к. кнопки квадратные ширина равна высоте */
+            height: ~"var(--item_size_Keyboard_view_@{size})";
+         }
+
+         &.Keyboard-View__item_size-shift-@{size} {
+            width: ~"calc(var(--item_size_Keyboard_view_@{size}) * 1.4)"; /* т.к. кнопки квадратные ширина считается от высоты */
+         }
+      });
+
+      &.Keyboard-View__item_size-space-s {
+         width: ~'calc(var(--item_size_Keyboard_view_s) * 7.95)';
+      }
+
+      &.Keyboard-View__item_size-space-l {
+         width: ~'calc(var(--item_size_Keyboard_view_l) * 7.8)';
+      }
+
+      &.Keyboard-View__item_size-accentButton-s {
+         width: ~'calc(var(--item_size_Keyboard_view_s) * 2.1)';
+      }
+
+      &.Keyboard-View__item_size-accentButton-l {
+         width: ~'calc(var(--item_size_Keyboard_view_l) * 2.13)';
+      }
+
+      &_spacing-m {
+         /* rtl:ignore */
+         margin-right: var(--offset_s);
+      }
+
+      &_font-size-s {
+         font-size: var(--font-size_3xl);
+      }
+
+      &_font-size-m {
+         font-size: var(--font-size_4xl);
+      }
+
+      &_font-size-l {
+         font-size: var(--font-size_7xl);
+      }
+
+      &_clickable {
+         cursor: pointer;
+         border-style: solid;
+      }
+
+      &_clickable-shadow {
+         box-shadow: var(--item_shadow_Keyboard_view);
+      }
+
+      &_readOnly {
+         background: var(--pale_color);
+         color: var(--readonly_text-color);
+      }
+
+      &_last {
+         /* rtl:ignore */
+         margin-right: 0;
+      }
+
+      &_mainAction {
+         color: var(--contrast_icon-color);
+      }
+
+      &_accentAction {
+         color: var(--info_text-color);
+      }
+
+      &_action {
+         color: var(--action_text-color_Keyboard_view);
+      }
+
+      &_input {
+         color: var(--text-color);
+      }
+
+      &_remove {
+         fill: var(--action_background-color_Keyboard_view);
+
+         &_size-s {
+            width: var(--item_size_Keyboard_view_s);
+         }
+
+         &-caption {
+            stroke: var(--text-color);
+         }
+      }
+
+      &_translucent {
+         border-color: transparent;
+         background: var(--translucent_background-color);
+      }
+
+      .for(@variants-of-background, {
+         &.controls-background-contrast-@{_item} {
+            background: ~'var(--@{_item}_color)';
+         }
+      });
+
+      &.controls-background-contrast-unaccented {
+         background: var(--unaccented_contrast_background-color);
+      }
+
+      &.controls-background-contrast-pale {
+         background: var(--pale_color);
+      }
+
+      &.controls-background-action {
+         background: var(--action_background-color_Keyboard_view);
+      }
+
+      &.controls-background-default {
+         background: var(--default_background-color_Keyboard_view);
+      }
+
+      &.Keyboard-View__item_action-action-active {
+         background: var(--action_active_background-color_Keyboard_view);
+         border-color: var(--item_border-color_Keyboard_view);
+         box-shadow: none;
+      }
+
+      &.Keyboard-View__item_action-contrast-pale-active,
+      &.Keyboard-View__item_accentAction-contrast-pale-active {
+         background: var(--pale_active_color);
+         border-color: var(--item_border-color_Keyboard_view);
+         box-shadow: none;
+      }
+
+      &.Keyboard-View__item_input-default-active {
+         background: var(--default_active_background-color_Keyboard_view);
+         border-color: var(--item_border-color_Keyboard_view);
+         box-shadow: none;
+      }
+
+      &.Keyboard-View__item_input-primary-active {
+         background-color: var(--primary_active_same_background-color);
+         border-color: var(--item_border-color_Keyboard_view);
+         box-shadow: none;
+      }
+
+      &.Keyboard-View__item_action-primary-active,
+      &.Keyboard-View__item_accentAction-primary-active,
+      &.Keyboard-View__item_mainAction-primary-active {
+         background-color: var(--primary_active_color);
+         border-color: var(--item_border-color_Keyboard_view);
+         box-shadow: none;
+      }
+
+      &.Keyboard-View__item_input-unaccented-active {
+         background-color: var(--pale_active_color);
+         border-color: var(--item_border-color_Keyboard_view);
+         box-shadow: none;
+      }
+
+      &.Keyboard-View__item_action-unaccented-active,
+      &.Keyboard-View__item_accentAction-unaccented-active,
+      &.Keyboard-View__item_mainAction-unaccented-active {
+         background-color: var(--unaccented_accontrast_same_background-color);
+         border-color: var(--item_border-color_Keyboard_view);
+         box-shadow: none;
+      }
+   }
+}
+
+// todo поправить заливку после
+// https://online.sbis.ru/opendoc.html?guid=d276a717-cda9-44a7-a2fb-28d4f66f3ffc
+.ws-is-hover {
+   //default
+   .Keyboard-View__item_remove:hover {
+      fill: var(--action_hover_background-color_Keyboard_view);
+   }
+
+   .Keyboard-View__item_clickable.Keyboard-View__item {
+      .for(@variants-of-background, {
+         &.controls-background-@{_item}-same:hover {
+            background: ~'var(--@{_item}_hover_same_background-color)';
+         }
+
+         &.controls-background-contrast-@{_item}:hover {
+            background: ~'var(--@{_item}_hover_color)';
+         }
+      });
+
+      &.controls-background-unaccented-same:hover {
+         background: var(--pale_hover_color);
+      }
+
+      &.controls-background-contrast-unaccented:hover {
+         background: var(--unaccented_hover_contrast_background-color);
+      }
+
+      &.controls-background-default:hover {
+         background: var(--default_hover_background-color_Keyboard_view);
+      }
+
+      &.controls-background-action:hover {
+         background: var(--action_hover_background-color_Keyboard_view);
+      }
+   }
+
+   .Keyboard-View__item_translucent:hover {
+      background: var(--translucent_hover_background-color);
+   }
+}
+
+.ws-is-touch .Keyboard-View__item_remove:active,
+.ws-is-no-touch .Keyboard-View__item_remove:active {
+   fill: var(--pale_active_color);
+   box-shadow: none;
+}
+
+//default
+.ws-is-touch,
+.ws-is-no-touch {
+   .Keyboard-View__item_clickable.Keyboard-View__item {
+      .for(@variants-of-background, {
+         &.controls-background-@{_item}-same:active {
+            background: ~'var(--@{_item}_active_same_background-color)';
+            border-color: var(--item_border-color_Keyboard_view);
+            box-shadow: none;
+         }
+
+         &.controls-background-contrast-@{_item}:active {
+            background: ~'var(--@{_item}_active_color)';
+            border-color: var(--item_border-color_Keyboard_view);
+            box-shadow: none;
+         }
+      });
+
+      &.controls-background-unaccented-same:active {
+         background: var(--pale_active_color);
+         border-color: var(--item_border-color_Keyboard_view);
+         box-shadow: none;
+      }
+
+      &.controls-background-contrast-unaccented:active {
+         background: var(--unaccented_active_contrast_background-color);
+         border-color: var(--item_border-color_Keyboard_view);
+         box-shadow: none;
+      }
+
+      &.controls-background-default:active {
+         background: var(--default_active_background-color_Keyboard_view);
+         box-shadow: none;
+      }
+
+      &.controls-background-action:active {
+         background: var(--action_active_background-color_Keyboard_view);
+         box-shadow: none;
+      }
+   }
+}
+
+.Keyboard-View__item-remove__drop-shadow {
+   filter: drop-shadow(@drop-shadow_remove-btn);
+}

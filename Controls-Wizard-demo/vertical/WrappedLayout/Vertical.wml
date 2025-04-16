@@ -1,0 +1,28 @@
+<div style="height: 800px; width: 630px;">
+    <Controls.popupTemplate:Stack>
+        <ws:headerContentTemplate>
+            <div class="demoVertical-Vertical__stackHeader">
+                Правило регистрации
+            </div>
+        </ws:headerContentTemplate>
+        <ws:bodyContentTemplate>
+            <div class="demoVertical-Vertical__stackContent">
+                <div class="demoVertical-Vertical_customContent">
+                </div>
+                <Controls-Wizard.vertical:Container
+                    attr:class="demoVertical-Vertical__verticalContainer">
+                    <Controls-Wizard.vertical:WrappedLayout
+                            stepViewMode="number"
+                            leftPadding="{{true}}"
+                            completedStepsIndexVisible="{{false}}"
+                            itemBackgroundStyle="{{_itemBackgroundStyle}}"
+                            displayMode="compact"
+                            selectedStepIndex="{{selectedStepIndex}}"
+                            items="{{_items}}"
+                            storeId="areaData"
+                    />
+                </Controls-Wizard.vertical:Container>
+            </div>
+        </ws:bodyContentTemplate>
+    </Controls.popupTemplate:Stack>
+</div>

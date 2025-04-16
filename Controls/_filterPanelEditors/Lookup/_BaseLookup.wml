@@ -1,0 +1,12 @@
+<ws:partial template="{{_options.content}}"
+            scope="{{_options}}"
+            on:textValueChanged="_handleTextValueChanged()"
+            on:extendedCaptionClick="_extendedCaptionClickHandler()"
+            on:resetClick="_resetClick()"
+            on:itemsChanged="_itemsChangedHandler()"
+            on:lookupClick="_handleLookupClick()"
+            suggestTemplate="{{_suggestTemplate}}"
+            items="{{_items}}"
+            textValue="{{_textValue}}"
+            dataLoadCallback="{{_dataLoadCallback}}"
+            />

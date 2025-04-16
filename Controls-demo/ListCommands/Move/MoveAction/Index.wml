@@ -1,0 +1,8 @@
+<div class="controlsDemo__wrapper">
+    <Controls-ListEnv.operationsPanelConnected:View storeId="listData"/>
+    <Controls.treeGrid:View
+            storeId="listData"
+            name="list"
+            attr:class="demo-Grid__control"
+            columns="{{_gridColumns}}"/>
+</div>

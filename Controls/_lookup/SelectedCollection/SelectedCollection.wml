@@ -1,0 +1,15 @@
+<Controls._lookup.SelectedCollection.SelectedCollectionRender
+    scope="{{_options}}"
+    item="{{item}}"
+    isSingleItem="{{_visibleItems.length === 1}}"
+    counterTemplate="{{_counterTemplate}}"
+    visibleItems="{{_visibleItems}}"
+    crossTemplate="{{_crossTemplate}}"
+    itemClickHandler="{{_itemClick}}"
+    openInfoBoxHandler="{{_openInfoBox}}"
+    getItemOrder="{{_getItemOrder}}"
+    getItemGridStyles="{{_getItemGridStyles}}"
+    getItemMaxWidth="{{_getItemMaxWidth}}"
+    counterWidth="{{_counterWidth}}"
+    needShowCounter="{{_needShowCounter}}"
+/>

@@ -1,0 +1,6 @@
+<div class="controls-demo_LiteSelector-block">
+    <Controls.dateRange:Selector
+            datePopupType="shortDatePicker"
+            bind:startValue="_startValue"
+            bind:endValue="_endValue"/>
+</div>

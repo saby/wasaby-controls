@@ -1,0 +1,14 @@
+<div class="controlsDemo__wrapper controlsDemo__wrapper__afterEditorTemplate controls-Demo__wide-propertyGrid">
+    <Controls.propertyGrid:PropertyGrid
+            bind:editingObject="_editingObject"
+            typeDescription="{{_typeDescription}}"
+            captionPosition="left">
+        <ws:itemTemplate>
+            <ws:partial template="Controls/propertyGrid:ItemTemplate">
+                <ws:afterEditorTemplate>
+                    <Controls.buttons:Button buttonStyle="pale" iconSize="s" icon="icon-Question2" viewMode="filled"/>
+                </ws:afterEditorTemplate>
+            </ws:partial>
+        </ws:itemTemplate>
+    </Controls.propertyGrid:PropertyGrid>
+</div>

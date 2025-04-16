@@ -1,0 +1,23 @@
+<div class="controls-Demo__wide-propertyGrid">
+   <Controls.validate:Controller name="validateController">
+      <Controls.propertyGrid:PropertyGrid
+         bind:editingObject="_editingObject"
+         typeDescription="{{_typeDescription}}">
+         <ws:captionColumnOptions
+            width="50%"/>
+         <ws:groupTemplate>
+            <ws:partial template="Controls/propertyGrid:GroupTemplate"
+                        scope="{{groupTemplate}}">
+               <ws:contentTemplate>
+                  <div class="controls-demo-group-title">Заголовок группы</div>
+               </ws:contentTemplate>
+            </ws:partial>
+         </ws:groupTemplate>
+      </Controls.propertyGrid:PropertyGrid>
+   </Controls.validate:Controller>
+   <Controls.buttons:Button
+      caption="Валидировать"
+      on:click="_validate()"/>
+</div>
+
+

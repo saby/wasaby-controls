@@ -1,0 +1,15 @@
+<ws:partial template="Controls/grid:ColumnTemplate" scope="{{ _options }}">
+    <ws:contentTemplate>
+        <ws:if data="{{item.contents['parent'] === null}}">
+            <ws:partial template="Controls/list:EditingTemplate"
+                        value="{{ item.contents['country'] }}"
+                        scope="{{ _options }}"
+                        enabled="{{ true }}">
+                <ws:editorTemplate>
+                    <Controls.input:Text contrastBackground="{{true}}" fontSize="inherit"
+                                         bind:value="item.contents['country']" selectOnClick="{{ false }}"/>
+                </ws:editorTemplate>
+            </ws:partial>
+        </ws:if>
+    </ws:contentTemplate>
+</ws:partial>
